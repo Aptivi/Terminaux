@@ -86,7 +86,7 @@ namespace Terminaux.Shell.Arguments
                 }
 
                 // Then, the split by the slash (/) characters
-                if (!done && argumentExpression.Contains('/'))
+                if (!done && argumentExpression.Contains("/"))
                 {
                     string[] expressions = argumentExpression.Split('/');
                     autoCompleter = (_) => [.. expressions];

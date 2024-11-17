@@ -17,9 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Configuration;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -27,21 +25,11 @@ namespace Terminaux.Shell.Shells.Unified
     /// Exits the subshell
     /// </summary>
     /// <remarks>
-    /// If the UESH shell is a subshell, you can exit it. However, you can't use this command to log out of your account, because it can't exit the mother shell. The only to exit it is to use the logout command.
+    /// If the MESH shell is a subshell, you can exit it. However, you can't use this command to log out of your account, because it can't exit the mother shell. The only to exit it is to use the logout command.
     /// </remarks>
     class ExitUnifiedCommand : BaseCommand, ICommand
     {
-
-        public override int Execute(CommandParameters parameters, ref string variableValue)
-        {
-            if (ShellManager.IsOnMotherShell() && Config.MainConfig.EnableHomepage)
-            {
-                // User requested to go back to The Nitrocid Homepage
-                ShellManager.KillShellInternal();
-                return 0;
-            }
+        public override void Execute(CommandParameters parameters) =>
             ShellManager.KillShell();
-            return 0;
-        }
     }
 }

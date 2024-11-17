@@ -17,18 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Themes;
-using Nitrocid.Misc.Screensaver;
-using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
-using Nitrocid.Security.Permissions;
-using Nitrocid.Users;
-using Nitrocid.Users.Groups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Scripting;
 using Terminaux.Shell.Shells;
 
 namespace Terminaux.Shell.Arguments
@@ -40,16 +32,6 @@ namespace Terminaux.Shell.Arguments
     {
         private static readonly Dictionary<string, Func<string[], string[]>> completions = new()
         {
-            { "user",       (_) => UserManagement.ListAllUsers().ToArray() },
-            { "username",   (_) => UserManagement.ListAllUsers().ToArray() },
-            { "group",      (_) => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
-            { "groupname",  (_) => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
-            { "modname",    (_) => ModManager.ListMods().Keys.ToArray() },
-            { "splashname", (_) => SplashManager.GetNamesOfSplashes() },
-            { "saver",      (_) => ScreensaverManager.GetScreensaverNames() },
-            { "theme",      (_) => ThemeTools.GetInstalledThemes().Keys.ToArray() },
-            { "$variable",  (_) => UESHVariables.Variables.Keys.ToArray() },
-            { "perm",       (_) => Enum.GetNames<PermissionTypes>() },
             { "cmd",        (_) => PopulateCommands() },
             { "command",    (_) => PopulateCommands() },
             { "shell",      (_) => ShellManager.AvailableShells.Keys.ToArray() },

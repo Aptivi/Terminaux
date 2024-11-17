@@ -32,10 +32,11 @@ namespace Terminaux.Shell.Shells.Unified
     class HelpUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override void Execute(CommandParameters parameters)
         {
             // Determine which type to show
             bool useSimplified = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-simplified");
+            bool showCount = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-count");
             bool showGeneral = parameters.SwitchesList.Length == 0 ||
                 SwitchManager.ContainsSwitch(parameters.SwitchesList, "-general") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
             bool showMod = parameters.SwitchesList.Length > 0 &&
@@ -44,15 +45,14 @@ namespace Terminaux.Shell.Shells.Unified
                 (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-alias") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
             bool showUnified = parameters.SwitchesList.Length > 0 &&
                 (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-unified") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
-            bool showAddon = parameters.SwitchesList.Length > 0 &&
-                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addon") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
+            bool showExtra = parameters.SwitchesList.Length > 0 &&
+                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-extra") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
 
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
-                HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showMod, showAlias, showUnified, showAddon);
+                HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showAlias, showUnified, showExtra, showCount);
             else
                 HelpPrint.ShowHelpExtended(parameters.ArgumentsList[0], useSimplified);
-            return 0;
         }
 
     }

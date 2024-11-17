@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,10 +48,10 @@ namespace Terminaux.Shell.Arguments
         /// Command switches
         /// </summary>
         public SwitchInfo[] Switches { get; private set; } = [
-            new SwitchInfo("set", /* Localizable */ "Sets the value of the output to the selected UESH variable", false, true)
+            new SwitchInfo("set", "Sets the value of the output to the selected MESH variable", false, true)
         ];
         /// <summary>
-        /// Whether to accept the -set switch to set the UESH variable value
+        /// Whether to accept the -set switch to set the MESH variable value
         /// </summary>
         public bool AcceptsSet { get; private set; }
         /// <summary>

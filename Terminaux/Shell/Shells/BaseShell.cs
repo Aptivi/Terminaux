@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-
 namespace Terminaux.Shell.Shells
 {
     /// <summary>
@@ -27,7 +24,6 @@ namespace Terminaux.Shell.Shells
     /// </summary>
     public abstract class BaseShell : IShell
     {
-
         /// <inheritdoc/>
         public virtual string ShellType { get; private set; } = "";
 
@@ -35,11 +31,6 @@ namespace Terminaux.Shell.Shells
         public virtual bool Bail { get; set; }
 
         /// <inheritdoc/>
-        public virtual void InitializeShell(params object[] ShellArgs)
-        {
-            DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
-            throw new KernelException(KernelExceptionType.NotImplementedYet);
-        }
-
+        public abstract void InitializeShell(params object[] ShellArgs);
     }
 }

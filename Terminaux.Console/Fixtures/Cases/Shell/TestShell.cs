@@ -17,25 +17,30 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
+using System;
+using System.Text;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Extensions;
 using Terminaux.Shell.Shells;
+using Terminaux.Console.Fixtures.Cases.Shell.Shells;
 
-namespace Terminaux.Shell.Shells.Unified
+namespace Terminaux.Console.Fixtures.Cases.Shell
 {
-    /// <summary>
-    /// Loads shell histories
-    /// </summary>
-    /// <remarks>
-    /// You can use this command to load shell histories.
-    /// </remarks>
-    class LoadHistoriesUnifiedCommand : BaseCommand, ICommand
+    internal class TestShell : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Shell;
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public void RunFixture()
         {
-            ShellManager.LoadHistories();
-            return 0;
+            ShellManager.RegisterShell("TestShell", new TestShellInfo());
+            ShellManager.StartShell("TestShell");
+            ShellManager.UnregisterShell("TestShell");
         }
-
     }
 }

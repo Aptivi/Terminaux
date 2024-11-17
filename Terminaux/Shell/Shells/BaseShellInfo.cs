@@ -17,23 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
 using System.Collections.Generic;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Prompts;
 
 namespace Terminaux.Shell.Shells
 {
     /// <summary>
-    /// Shell information for both the KS shells and the custom shells made by mods
+    /// Shell information
     /// </summary>
     public abstract class BaseShellInfo : IShellInfo
     {
-        internal List<CommandInfo> modCommands = [];
-        internal List<CommandInfo> addonCommands = [];
+        internal List<CommandInfo> extraCommands = [];
         internal Dictionary<string, PromptPresetBase> customShellPresets = [];
         internal static CommandInfo fallbackNonSlashCommand =
-            new("slashreminder", /* Localizable */ "Reminder for the slash commands",
+            new("slashreminder", "Reminder for the slash commands",
                 [
                     new CommandArgumentInfo()
                 ], new SlashReminderCommand());
@@ -43,21 +42,20 @@ namespace Terminaux.Shell.Shells
         /// <inheritdoc/>
         public virtual List<CommandInfo> Commands => [];
         /// <inheritdoc/>
-        public virtual List<CommandInfo> ModCommands => modCommands;
-        /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> ShellPresets => [];
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> CustomShellPresets => customShellPresets;
         /// <inheritdoc/>
         public virtual BaseShell? ShellBase => null;
         /// <inheritdoc/>
-        public virtual PromptPresetBase CurrentPreset =>
-
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-        /// <inheritdoc/>
-        public virtual bool AcceptsNetworkConnection => false;
-        /// <inheritdoc/>
-        public virtual string NetworkConnectionType => "";
+        public virtual PromptPresetBase CurrentPreset
+        {
+            get
+            {
+                var presets = PromptPresetManager.GetAllPresetsFromShell(ShellType);
+                return presets.Count > 0 ? presets[PromptPresetManager.CurrentPresets[ShellType]] : new PromptPresetBase();
+            }
+        }
         /// <inheritdoc/>
         public virtual bool OneLineWrap => false;
         /// <inheritdoc/>

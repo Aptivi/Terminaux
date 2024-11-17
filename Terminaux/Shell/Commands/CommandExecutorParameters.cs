@@ -47,10 +47,6 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         internal ShellExecuteInfo ShellInstance;
 
-        internal CommandExecutorParameters(string RequestedCommand, CommandInfo RequestedCommandInfo, ShellType ShellType, ShellExecuteInfo ShellInstance) :
-            this(RequestedCommand, RequestedCommandInfo, ShellManager.GetShellTypeName(ShellType), ShellInstance)
-        { }
-
         internal CommandExecutorParameters(string RequestedCommand, CommandInfo RequestedCommandInfo, string ShellType, ShellExecuteInfo ShellInstance)
         {
             this.RequestedCommand = RequestedCommand;

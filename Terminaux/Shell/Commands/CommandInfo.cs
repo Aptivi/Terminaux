@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Languages;
 using System.Linq;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
@@ -35,7 +34,7 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         public string Command { get; private set; }
         /// <summary>
-        /// The untranslated help definition of command. Translated by <see cref="GetTranslatedHelpEntry()"/>
+        /// The help definition of command
         /// </summary>
         public string HelpDefinition { get; set; }
         /// <summary>
@@ -47,14 +46,10 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         public BaseCommand CommandBase { get; private set; }
         /// <summary>
-        /// Command properties
-        /// </summary>
-        public CommandFlags Flags { get; private set; }
-        /// <summary>
         /// Aliases for this command
         /// </summary>
         public AliasInfo[] Aliases =>
-            AliasManager.builtinAliases.Union(AliasManager.aliases)
+            AliasManager.aliases
                 .Where((ai) => ai.Command == Command)
                 .ToArray();
 
@@ -65,14 +60,12 @@ namespace Terminaux.Shell.Commands
         /// <param name="HelpDefinition">Command help definition</param>
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
-        /// <param name="Flags">Command flags</param>
-        public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[]? CommandArgumentInfo, BaseCommand? CommandBase, CommandFlags Flags = CommandFlags.None)
+        public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[]? CommandArgumentInfo, BaseCommand? CommandBase)
         {
             this.Command = Command;
             this.HelpDefinition = HelpDefinition;
             this.CommandArgumentInfo = CommandArgumentInfo ?? [];
             this.CommandBase = CommandBase ?? new UndefinedCommand();
-            this.Flags = Flags;
         }
 
         /// <summary>
@@ -83,12 +76,5 @@ namespace Terminaux.Shell.Commands
         internal CommandInfo(string Command, string HelpDefinition) :
             this(Command, HelpDefinition, null, null)
         { }
-
-        /// <summary>
-        /// Gets the translated version of help entry (KS built-in commands and addon commands only)
-        /// </summary>
-        public string GetTranslatedHelpEntry() =>
-            Translate.DoTranslation(HelpDefinition);
-
     }
 }

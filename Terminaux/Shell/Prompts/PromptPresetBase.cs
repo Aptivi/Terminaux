@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging;
-
 namespace Terminaux.Shell.Prompts
 {
     /// <summary>
@@ -49,38 +47,26 @@ namespace Terminaux.Shell.Prompts
         /// <inheritdoc/>
         public virtual string PresetShellType { get; } = "Shell";
 
-        internal virtual string PresetPromptBuilder()
-        {
-            DebugWriter.WriteDebug(DebugLevel.W, "Tried to call prompt builder on base.");
-            return "> ";
-        }
+        internal virtual string PresetPromptBuilder() =>
+            "> ";
 
         string IPromptPreset.PresetPromptBuilder() =>
             PresetPromptBuilder();
 
-        internal virtual string PresetPromptCompletionBuilder()
-        {
-            DebugWriter.WriteDebug(DebugLevel.W, "Tried to call prompt builder on base.");
-            return "[+] > ";
-        }
+        internal virtual string PresetPromptCompletionBuilder() =>
+            "[+] > ";
 
         string IPromptPreset.PresetPromptCompletionBuilder() =>
             PresetPromptCompletionBuilder();
 
-        internal virtual string PresetPromptBuilderShowcase()
-        {
-            DebugWriter.WriteDebug(DebugLevel.W, "Tried to call prompt builder on base.");
-            return "> ";
-        }
+        internal virtual string PresetPromptBuilderShowcase() =>
+            "> ";
 
         string IPromptPreset.PresetPromptBuilderShowcase() =>
             PresetPromptBuilderShowcase();
 
-        internal virtual string PresetPromptCompletionBuilderShowcase()
-        {
-            DebugWriter.WriteDebug(DebugLevel.W, "Tried to call prompt builder on base.");
-            return "[+] > ";
-        }
+        internal virtual string PresetPromptCompletionBuilderShowcase() =>
+            "[+] > ";
 
         string IPromptPreset.PresetPromptCompletionBuilderShowcase() =>
             PresetPromptCompletionBuilderShowcase();

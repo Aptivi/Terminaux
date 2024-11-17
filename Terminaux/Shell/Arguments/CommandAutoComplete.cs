@@ -17,10 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Kernel.Debugging;
 using System.IO;
 using System.Linq;
 using Terminaux.Shell.Commands;
@@ -38,18 +34,15 @@ namespace Terminaux.Shell.Arguments
         internal static string[] GetSuggestions(string text, int index)
         {
             // First, cut the text to index
-            text = text[..index];
-            DebugWriter.WriteDebug(DebugLevel.I, "Text to auto complete: {0} (idx: {1})", text, index);
+            text = text.Substring(0, index);
 
             // Then, check to see is we have shells
-            DebugWriter.WriteDebug(DebugLevel.I, "Shell count: {0}", ShellManager.ShellStack.Count);
             if (ShellManager.ShellStack.Count <= 0)
                 return [];
 
             // Get the commands based on the current shell type
             var shellType = ShellManager.CurrentShellType;
             var ShellCommandNames = CommandManager.GetCommandNames(shellType);
-            DebugWriter.WriteDebug(DebugLevel.I, "Commands count for type {0}: {1}", shellType, ShellCommandNames.Length);
 
             // If text is not provided, return the command list without filtering
             if (string.IsNullOrEmpty(text))
@@ -64,36 +57,18 @@ namespace Terminaux.Shell.Arguments
             string[] finalCommandArgsEnclosed = finalCommandArgs.SplitEncloseDoubleQuotes();
             int LastArgumentIndex = finalCommandArgsEnclosed.Length - 1;
             string LastArgument = finalCommandArgsEnclosed.Length > 0 ? finalCommandArgsEnclosed[LastArgumentIndex] : "";
-            DebugWriter.WriteDebug(DebugLevel.I, "Command name: {0}", CommandName);
-            DebugWriter.WriteDebug(DebugLevel.I, "Command arguments [{0}]: {1}", finalCommandArgsEnclosed.Length, finalCommandArgs);
-            DebugWriter.WriteDebug(DebugLevel.I, "last argument: {0}", LastArgument);
 
-            // Make a file and folder list
-            string[] finalCompletions;
-            if (!string.IsNullOrEmpty(finalCommandArgs))
+            // Make a list
+            string[] finalCompletions = [];
+            if (string.IsNullOrEmpty(finalCommandArgs))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Creating list of files and directories starting with argument {0} [{1}]...", LastArgument, LastArgument.Length);
-                string lookupPath = Path.IsPathRooted(LastArgument) ? Path.GetDirectoryName(LastArgument) ?? "" : FilesystemTools.NeutralizePath(LastArgument, CurrentDirectory.CurrentDir);
-                lookupPath = Checking.FolderExists(lookupPath) ? lookupPath : Path.GetDirectoryName(CurrentDirectory.CurrentDir + "/" + LastArgument) ?? "";
-                finalCompletions = Listing.CreateList(lookupPath, true)
-                    .Select(x => Path.IsPathRooted(LastArgument) ? FilesystemTools.NeutralizePath(x.FilePath) : FilesystemTools.NeutralizePath(x.FilePath).Replace(CurrentDirectory.CurrentDir + "/", ""))
-                    .Where(x => x.StartsWith(LastArgument))
-                    .Select(x => x[LastArgument.Length..])
-                    .ToArray();
-                DebugWriter.WriteDebug(DebugLevel.I, "Initially invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Creating list of commands starting with command {0} [{1}]...", CommandName, CommandName.Length);
                 finalCompletions = ShellCommandNames
                     .Where(x => x.StartsWith(CommandName))
-                    .Select(x => x[CommandName.Length..])
+                    .Select(x => x.Substring(CommandName.Length))
                     .ToArray();
-                DebugWriter.WriteDebug(DebugLevel.I, "Initially invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
             }
 
             // Check to see if there is such command
-            DebugWriter.WriteDebug(DebugLevel.I, "Command {0} exists? {1}", CommandName, ShellCommandNames.Contains(CommandName));
             if (!ShellCommandNames.Contains(CommandName))
                 return finalCompletions;
 
@@ -102,9 +77,8 @@ namespace Terminaux.Shell.Arguments
             var CommandArgumentInfos = cmdInfo.CommandArgumentInfo;
             foreach (var CommandArgumentInfo in CommandArgumentInfos)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has argument info? {1}", CommandName, CommandArgumentInfo is not null);
                 if (CommandArgumentInfo is null)
-                    // No arguments. Return file list
+                    // No arguments. Return nothing
                     return finalCompletions;
 
                 // There are arguments! Now, check to see if it has the accessible auto completer from the last argument
@@ -112,18 +86,15 @@ namespace Terminaux.Shell.Arguments
                     LastArgumentIndex < CommandArgumentInfo.Arguments.Length && LastArgumentIndex >= 0 ?
                     CommandArgumentInfo.Arguments[LastArgumentIndex].Options.AutoCompleter :
                     null;
-                DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has auto complete info? {1}", CommandName, AutoCompleter is not null);
                 if (AutoCompleter is null)
-                    // No delegate. Return file list
+                    // No delegate. Return nothing
                     return finalCompletions;
 
                 // We have the delegate! Invoke it.
-                DebugWriter.WriteDebug(DebugLevel.I, "If we reach here, it means we have a delegate! Executing delegate with {0} [{1}]...", LastArgument, LastArgument.Length);
                 finalCompletions = AutoCompleter.Invoke(finalCommandArgsEnclosed)
                     .Where(x => x.StartsWith(LastArgument))
-                    .Select(x => x[LastArgument.Length..])
+                    .Select(x => x.Substring(LastArgument.Length))
                     .ToArray();
-                DebugWriter.WriteDebug(DebugLevel.I, "Invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
                 return finalCompletions;
             }
             return finalCompletions;

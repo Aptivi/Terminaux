@@ -17,11 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -34,17 +31,16 @@ namespace Terminaux.Shell.Shells.Unified
     class FindCmdsUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override void Execute(CommandParameters parameters)
         {
             var commands = CommandManager.FindCommands(parameters.ArgumentsList[0], ShellManager.CurrentShellType);
             foreach (var command in commands)
             {
-                TextWriters.Write("- ", false, KernelColorType.ListEntry);
-                TextWriters.Write(command.Command, KernelColorType.ListValue);
+                TextWriterRaw.WritePlain("- ", false);
+                TextWriterRaw.WritePlain(command.Command);
             }
             if (commands.Length == 0)
-                TextWriters.Write(Translate.DoTranslation("No commands found."), KernelColorType.Error);
-            return 0;
+                TextWriterRaw.WritePlain("No commands found.");
         }
 
     }

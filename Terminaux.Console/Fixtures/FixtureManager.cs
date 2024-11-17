@@ -26,6 +26,7 @@ using Terminaux.Console.Fixtures.Cases.Inputs.CJK;
 using Terminaux.Console.Fixtures.Cases.Presentations;
 using Terminaux.Console.Fixtures.Cases.Reader;
 using Terminaux.Console.Fixtures.Cases.Screens;
+using Terminaux.Console.Fixtures.Cases.Shell;
 using Terminaux.Console.Fixtures.Cases.Tui;
 using Terminaux.Console.Fixtures.Cases.Writer;
 
@@ -321,6 +322,9 @@ namespace Terminaux.Console.Fixtures
             new RenderEllipsis(),
             new RenderCircle(),
             new RenderArc(),
+
+            // Shell
+            new TestShell(),
         ];
     }
 }

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Configuration;
 using Terminaux.Shell.Shells;
 
 namespace Terminaux.Shell.Help
@@ -31,36 +30,24 @@ namespace Terminaux.Shell.Help
         /// Shows the list of commands under the current shell type
         /// </summary>
         /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
+        /// <param name="showCount">Shows command count</param>
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelp(bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended("", ShellManager.CurrentShellType, Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
-
-        /// <summary>
-        /// Shows the list of commands under the specified shell type
-        /// </summary>
-        /// <param name="commandType">A specified shell type</param>
-        /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
-        /// <param name="showAlias">Shows all aliased commands</param>
-        /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelp(ShellType commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended("", ShellManager.GetShellTypeName(commandType), Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
+        /// <param name="showExtra">Shows all kernel extra commands</param>
+        public static void ShowHelp(bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+            ShowHelpExtended("", ShellManager.CurrentShellType, false, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
         /// Shows the help of a command, or command list under the current shell type if nothing is specified
         /// </summary>
         /// <param name="command">A specified command</param>
         /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
+        /// <param name="showCount">Shows command count</param>
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelp(string command, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended(command, ShellManager.CurrentShellType, Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
+        /// <param name="showExtra">Shows all kernel extra commands</param>
+        public static void ShowHelp(string command, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+            ShowHelpExtended(command, ShellManager.CurrentShellType, false, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
         /// Shows the help of a command, or command list under the specified shell type if nothing is specified
@@ -68,50 +55,24 @@ namespace Terminaux.Shell.Help
         /// <param name="command">A specified command</param>
         /// <param name="commandType">A specified shell type</param>
         /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
+        /// <param name="showCount">Shows command count</param>
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelp(string command, ShellType commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended(command, ShellManager.GetShellTypeName(commandType), Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
-
-        /// <summary>
-        /// Shows the help of a command, or command list under the specified shell type if nothing is specified
-        /// </summary>
-        /// <param name="command">A specified command</param>
-        /// <param name="commandType">A specified shell type</param>
-        /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
-        /// <param name="showAlias">Shows all aliased commands</param>
-        /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelp(string command, string commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended(command, commandType, Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
+        /// <param name="showExtra">Shows all kernel extra commands</param>
+        public static void ShowHelp(string command, string commandType, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+            ShowHelpExtended(command, commandType, false, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
         /// Shows the list of commands under the current shell type
         /// </summary>
         /// <param name="simplified">Uses simplified help</param>
         /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
+        /// <param name="showCount">Shows command count</param>
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelpExtended(bool simplified = false, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended("", ShellManager.CurrentShellType, simplified, showGeneral, showMod, showAlias, showUnified, showAddon);
-
-        /// <summary>
-        /// Shows the list of commands under the specified shell type
-        /// </summary>
-        /// <param name="simplified">Uses simplified help</param>
-        /// <param name="commandType">A specified shell type</param>
-        /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
-        /// <param name="showAlias">Shows all aliased commands</param>
-        /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelpExtended(ShellType commandType, bool simplified = false, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended("", ShellManager.GetShellTypeName(commandType), simplified, showGeneral, showMod, showAlias, showUnified, showAddon);
+        /// <param name="showExtra">Shows all kernel extra commands</param>
+        public static void ShowHelpExtended(bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+            ShowHelpExtended("", ShellManager.CurrentShellType, simplified, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
         /// Shows the help of a command, or command list under the current shell type if nothing is specified
@@ -119,12 +80,12 @@ namespace Terminaux.Shell.Help
         /// <param name="simplified">Uses simplified help</param>
         /// <param name="command">A specified command</param>
         /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
+        /// <param name="showCount">Shows command count</param>
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelpExtended(string command, bool simplified = false, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended(command, ShellManager.CurrentShellType, simplified, showGeneral, showMod, showAlias, showUnified, showAddon);
+        /// <param name="showExtra">Shows all kernel extra commands</param>
+        public static void ShowHelpExtended(string command, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+            ShowHelpExtended(command, ShellManager.CurrentShellType, simplified, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
         /// Shows the help of a command, or command list under the specified shell type if nothing is specified
@@ -133,25 +94,11 @@ namespace Terminaux.Shell.Help
         /// <param name="command">A specified command</param>
         /// <param name="commandType">A specified shell type</param>
         /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
+        /// <param name="showCount">Shows command count</param>
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelpExtended(string command, ShellType commandType, bool simplified = false, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended(command, ShellManager.GetShellTypeName(commandType), simplified, showGeneral, showMod, showAlias, showUnified, showAddon);
-
-        /// <summary>
-        /// Shows the help of a command, or command list under the specified shell type if nothing is specified
-        /// </summary>
-        /// <param name="simplified">Uses simplified help</param>
-        /// <param name="command">A specified command</param>
-        /// <param name="commandType">A specified shell type</param>
-        /// <param name="showGeneral">Shows all general commands</param>
-        /// <param name="showMod">Shows all mod commands</param>
-        /// <param name="showAlias">Shows all aliased commands</param>
-        /// <param name="showUnified">Shows all unified commands</param>
-        /// <param name="showAddon">Shows all kernel addon commands</param>
-        public static void ShowHelpExtended(string command, string commandType, bool simplified = false, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false)
+        /// <param name="showExtra">Shows all kernel extra commands</param>
+        public static void ShowHelpExtended(string command, string commandType, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)
         {
             // Check to see if command exists
             if (!string.IsNullOrWhiteSpace(command))
@@ -162,7 +109,7 @@ namespace Terminaux.Shell.Help
                 if (simplified)
                     HelpPrintTools.ShowCommandListSimplified(commandType);
                 else
-                    HelpPrintTools.ShowCommandList(commandType, showGeneral, showMod, showAlias, showUnified, showAddon);
+                    HelpPrintTools.ShowCommandList(commandType, showGeneral, showAlias, showUnified, showExtra, showCount);
             }
         }
     }

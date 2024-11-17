@@ -24,7 +24,7 @@ using Terminaux.Shell.Prompts;
 namespace Terminaux.Shell.Shells
 {
     /// <summary>
-    /// Shell information interface for both the KS shells and the custom shells made by mods
+    /// Shell information interface
     /// </summary>
     public interface IShellInfo
     {
@@ -36,10 +36,6 @@ namespace Terminaux.Shell.Shells
         /// Built-in shell commands
         /// </summary>
         List<CommandInfo> Commands { get; }
-        /// <summary>
-        /// Mod commands
-        /// </summary>
-        List<CommandInfo> ModCommands { get; }
         /// <summary>
         /// Built-in shell presets
         /// </summary>
@@ -57,14 +53,6 @@ namespace Terminaux.Shell.Shells
         /// </summary>
         PromptPresetBase CurrentPreset { get; }
         /// <summary>
-        /// Whether the shell accepts network connection
-        /// </summary>
-        bool AcceptsNetworkConnection { get; }
-        /// <summary>
-        /// Network connection type defined for the shell (valid only on shells that have <see cref="AcceptsNetworkConnection"/> set to true)
-        /// </summary>
-        string NetworkConnectionType { get; }
-        /// <summary>
         /// Whether the shell uses one line for input
         /// </summary>
         bool OneLineWrap { get; }
@@ -73,7 +61,7 @@ namespace Terminaux.Shell.Shells
         /// </summary>
         bool SlashCommand { get; }
         /// <summary>
-        /// For shells that have <see cref="SlashCommand"/> enabled, this is the command that gets executed everytime we encounter text that doesn't start with the slash.
+        /// For shells that have <see cref="SlashCommand"/> enabled, this is the command that gets executed every time we encounter text that doesn't start with the slash.
         /// </summary>
         CommandInfo NonSlashCommandInfo { get; }
     }

@@ -19,53 +19,21 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
-using File = Nitrocid.Drivers.Console.Bases.File;
-using FileIO = System.IO.File;
-using Manipulation = Nitrocid.Files.Operations.Manipulation;
-using System.Text.RegularExpressions;
 using System.Linq;
 using Terminaux.Reader;
 using System.Collections.ObjectModel;
-using Newtonsoft.Json;
-using Nitrocid.Kernel;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Users;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Drivers;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Drivers.Console;
-using Nitrocid.Security.Permissions;
-using Nitrocid.Drivers.Console.Bases;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel.Events;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Kernel.Power;
-using Nitrocid.Misc.Text.Probers.Regexp;
-using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.Shell.ShellBase.Shells.Unified;
-using Nitrocid.Shell.Shells.Admin;
-using Nitrocid.Shell.Shells.UESH;
-using Nitrocid.Shell.Shells.Text;
-using Nitrocid.Shell.Shells.Hex;
-using Nitrocid.Shell.Shells.Debug;
 using Textify.General;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Inputs;
-using Terminaux.Base.Extensions;
 using Terminaux.Reader.History;
 using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Commands.ProcessExecution;
-using Terminaux.Shell.Scripting;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Switches;
+using Terminaux.Shell.Shells.Unified;
+using Terminaux.Colors.Data;
+using System.Threading;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells
 {
@@ -74,43 +42,17 @@ namespace Terminaux.Shell.Shells
     /// </summary>
     public static class ShellManager
     {
-
         internal static List<ShellExecuteInfo> ShellStack = [];
         internal static string lastCommand = "";
-        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
-        internal static Dictionary<string, List<string>> histories = new()
-        {
-            { "General",                    new() },
-            { $"{ShellType.AdminShell}",    new() },
-            { $"{ShellType.DebugShell}",    new() },
-            { $"{ShellType.HexShell}",      new() },
-            { $"{ShellType.Shell}",         new() },
-            { $"{ShellType.TextShell}",     new() },
-        };
 
         internal readonly static List<CommandInfo> unifiedCommandDict =
         [
-            new CommandInfo("exec", /* Localizable */ "Executes an external process",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "process"),
-                        new CommandArgumentPart(false, "args")
-                    ],
-                    [
-                        new SwitchInfo("forked", /* Localizable */ "Executes the process without interrupting the shell thread. A separate window will be created.", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new ExecUnifiedCommand()),
-
-            new CommandInfo("exit", /* Localizable */ "Exits the shell if running on subshell",
+            new CommandInfo("exit", "Exits the shell if running on subshell",
                 [
                     new CommandArgumentInfo()
                 ], new ExitUnifiedCommand()),
 
-            new CommandInfo("findcmds", /* Localizable */ "Finds the available commands in the current shell type",
+            new CommandInfo("findcmds", "Finds the available commands in the current shell type",
                 [
                     new CommandArgumentInfo(
                     [
@@ -118,7 +60,7 @@ namespace Terminaux.Shell.Shells
                     ], false)
                 ], new FindCmdsUnifiedCommand()),
 
-            new CommandInfo("help", /* Localizable */ "Help page",
+            new CommandInfo("help", "Help page",
                 [
                     new CommandArgumentInfo(
                     [
@@ -128,90 +70,44 @@ namespace Terminaux.Shell.Shells
                         })
                     ],
                     [
-                        new SwitchInfo("general", /* Localizable */ "Shows general commands (default)", new SwitchOptions()
+                        new SwitchInfo("general", "Shows general commands (default)", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("mod", /* Localizable */ "Shows mod commands", new SwitchOptions()
+                        new SwitchInfo("mod", "Shows mod commands", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("alias", /* Localizable */ "Shows aliased commands", new SwitchOptions()
+                        new SwitchInfo("alias", "Shows aliased commands", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("unified", /* Localizable */ "Shows unified commands", new SwitchOptions()
+                        new SwitchInfo("unified", "Shows unified commands", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("addon", /* Localizable */ "Shows kernel addon commands", new SwitchOptions()
+                        new SwitchInfo("extra", "Shows kernel extra commands", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("all", /* Localizable */ "Shows all commands", new SwitchOptions()
+                        new SwitchInfo("all", "Shows all commands", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("simplified", /* Localizable */ "Uses simplified help", new SwitchOptions()
+                        new SwitchInfo("simplified", "Uses simplified help", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ], false)
-                ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
+                ], new HelpUnifiedCommand()),
 
-            new CommandInfo("loadhistories", /* Localizable */ "Loads shell histories",
-                [
-                    new CommandArgumentInfo()
-                ], new LoadHistoriesUnifiedCommand()),
-
-            new CommandInfo("presets", /* Localizable */ "Opens the shell preset library",
+            new CommandInfo("presets", "Opens the shell preset library",
                 [
                     new CommandArgumentInfo()
                 ], new PresetsUnifiedCommand()),
-
-            new CommandInfo("repeat", /* Localizable */ "Repeats the last action or the specified command",
-                [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true
-                        }),
-                        new CommandArgumentPart(false, "command"),
-                    })
-                ], new RepeatUnifiedCommand()),
-
-            new CommandInfo("savehistories", /* Localizable */ "Saves shell histories",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveHistoriesUnifiedCommand()),
-
-            new CommandInfo("tip", /* Localizable */ "Shows a random kernel tip",
-                [
-                    new CommandArgumentInfo()
-                ], new TipUnifiedCommand()),
-
-            new CommandInfo("wrap", /* Localizable */ "Wraps the console output",
-                [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType)
-                        })
-                    })
-                ], new WrapUnifiedCommand()),
         ];
 
-        internal readonly static Dictionary<string, BaseShellInfo> availableShells = new()
-        {
-            { "Shell", new UESHShellInfo() },
-            { "TextShell", new TextShellInfo() },
-            { "HexShell", new HexShellInfo() },
-            { "AdminShell", new AdminShellInfo() },
-            { "DebugShell", new DebugShellInfo() }
-        };
-        internal readonly static Dictionary<string, BaseShellInfo> availableCustomShells = [];
+        internal readonly static Dictionary<string, BaseShellInfo> availableShells = [];
 
         /// <summary>
         /// List of unified commands
@@ -223,13 +119,13 @@ namespace Terminaux.Shell.Shells
         /// List of available shells
         /// </summary>
         public static ReadOnlyDictionary<string, BaseShellInfo> AvailableShells =>
-            new(availableShells.Union(availableCustomShells).ToDictionary());
+            new(availableShells);
 
         /// <summary>
         /// Current shell type
         /// </summary>
         public static string CurrentShellType =>
-            ShellStack[^1].ShellType;
+            ShellStack[ShellStack.Count - 1].ShellType;
 
         /// <summary>
         /// Last shell type
@@ -241,20 +137,17 @@ namespace Terminaux.Shell.Shells
                 if (ShellStack.Count == 0)
                 {
                     // We don't have any shell. Return Shell.
-                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to call LastShellType on empty shell stack. Assuming UESH...");
                     return "Shell";
                 }
                 else if (ShellStack.Count == 1)
                 {
                     // We only have one shell. Consider current as last.
-                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to call LastShellType on shell stack containing only one shell. Assuming curent...");
                     return CurrentShellType;
                 }
                 else
                 {
                     // We have more than one shell. Return the shell type for a shell before the last one.
-                    var type = ShellStack[^2].ShellType;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Returning shell type {0} for last shell from the stack...", type);
+                    var type = ShellStack[ShellStack.Count - 2].ShellType;
                     return type;
                 }
             }
@@ -263,66 +156,30 @@ namespace Terminaux.Shell.Shells
         /// <summary>
         /// Inputs for command then parses a specified command.
         /// </summary>
-        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+        /// <remarks>All new shells implemented should use this routine to allow effective and consistent line parsing.</remarks>
         public static void GetLine() =>
-            GetLine("", "", CurrentShellType, true, Config.MainConfig.SetTitleOnCommandExecution);
+            GetLine("", CurrentShellType, true);
 
         /// <summary>
-        /// Parses a specified command.
+        /// Inputs for command then parses a specified command.
         /// </summary>
         /// <param name="FullCommand">The full command string</param>
-        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+        /// <remarks>All new shells implemented should use this routine to allow effective and consistent line parsing.</remarks>
         public static void GetLine(string FullCommand) =>
-            GetLine(FullCommand, "", CurrentShellType, true, Config.MainConfig.SetTitleOnCommandExecution);
+            GetLine(FullCommand, CurrentShellType, true);
 
         /// <summary>
         /// Parses a specified command.
         /// </summary>
         /// <param name="FullCommand">The full command string</param>
-        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
-        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "") =>
-            GetLine(FullCommand, OutputPath, CurrentShellType, true, Config.MainConfig.SetTitleOnCommandExecution);
-
-        /// <summary>
-        /// Parses a specified command.
-        /// </summary>
-        /// <param name="FullCommand">The full command string</param>
-        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
         /// <param name="ShellType">Shell type</param>
-        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell) =>
-            GetLine(FullCommand, OutputPath, GetShellTypeName(ShellType), true, Config.MainConfig.SetTitleOnCommandExecution);
-
-        /// <summary>
-        /// Parses a specified command.
-        /// </summary>
-        /// <param name="FullCommand">The full command string</param>
-        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
-        /// <param name="ShellType">Shell type</param>
-        /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
-        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true) =>
-            GetLine(FullCommand, OutputPath, ShellType, restoreDriver, Config.MainConfig.SetTitleOnCommandExecution);
-
-        /// <summary>
-        /// Parses a specified command.
-        /// </summary>
-        /// <param name="FullCommand">The full command string</param>
-        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
-        /// <param name="ShellType">Shell type</param>
-        /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
-        /// <param name="setTitle">Whether to set the console title</param>
-        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        internal static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true, bool setTitle = true)
+        /// <param name="enableHistory">Whether to enable history support or not</param>
+        /// <remarks>All new shells implemented should use this routine to allow effective and consistent line parsing.</remarks>
+        internal static void GetLine(string FullCommand, string ShellType = "Shell", bool enableHistory = true)
         {
             // Check for sanity
             if (string.IsNullOrEmpty(FullCommand))
                 FullCommand = "";
-
-            // Variables
-            string? TargetFile = "";
-            string TargetFileName = "";
 
             // Get the shell info
             var shellInfo = GetShellInfo(ShellType);
@@ -333,9 +190,9 @@ namespace Terminaux.Shell.Shells
                 Suggestions = (text, index, _) => CommandAutoComplete.GetSuggestions(text, index),
                 SuggestionsDelimiters = [' '],
                 TreatCtrlCAsInput = true,
-                InputForegroundColor = KernelColorTools.GetColor(KernelColorType.Input),
+                InputForegroundColor = ConsoleColors.Silver,
                 HistoryName = ShellType,
-                HistoryEnabled = Config.MainConfig.InputHistoryEnabled,
+                HistoryEnabled = enableHistory,
             };
 
             // Check to see if the full command string ends with the semicolon
@@ -347,30 +204,16 @@ namespace Terminaux.Shell.Shells
                 // Tell the user to provide the command
                 StringBuilder commandBuilder = new(FullCommand);
 
-                // We need to put a synclock in the below steps, because the cancellation handlers seem to be taking their time to try to suppress the
-                // thread abort error messages. If the shell tried to write to the console while these handlers were still working, the command prompt
-                // would either be incomplete or not printed to the console at all.
+                // Populate the prompt
                 string prompt = "";
-                lock (CancellationHandlers.GetCancelSyncLock(ShellType))
-                {
-                    // Print a prompt
-                    var preset = PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType);
-                    if (!string.IsNullOrEmpty(FullCommand))
-                        prompt = preset.PresetPromptCompletion;
-                    else
-                        prompt = preset.PresetPrompt;
-                }
-
-                // Raise shell initialization event
-                EventsManager.FireEvent(EventType.ShellInitialized, ShellType);
+                var preset = PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType);
+                if (!string.IsNullOrEmpty(FullCommand))
+                    prompt = preset.PresetPromptCompletion;
+                else
+                    prompt = preset.PresetPrompt;
 
                 // Wait for command
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
-                string strcommand =
-                    shellInfo.OneLineWrap ?
-                    InputTools.ReadLineWrapped(prompt, "", settings) :
-                    InputTools.ReadLine(prompt, "", settings);
-                DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
+                string strcommand = TermReader.Read(prompt, "", settings, oneLineWrap: shellInfo.OneLineWrap);
                 if (strcommand == ";")
                     strcommand = "";
 
@@ -387,12 +230,12 @@ namespace Terminaux.Shell.Shells
 
                 // There are cases when the kernel panics or reboots in the middle of the command input. If reboot is requested,
                 // ensure that we're really gone.
-                if (PowerManager.RebootRequested)
+                var ShellInstance = ShellStack[ShellStack.Count - 1];
+                if (ShellInstance.interrupting)
                     return;
             }
 
             // Check for a type of command
-            CancellationHandlers.AllowCancel();
             var SplitCommands = FullCommand.Split(new[] { " ; " }, StringSplitOptions.RemoveEmptyEntries);
             var Commands = CommandManager.GetCommands(ShellType);
             for (int i = 0; i < SplitCommands.Length; i++)
@@ -402,43 +245,18 @@ namespace Terminaux.Shell.Shells
                 // Then, check to see if this shell uses the slash command
                 if (shellInfo.SlashCommand)
                 {
-                    if (!Command.StartsWith('/'))
+                    // Check if we need to remove the slash
+                    if (!Command.StartsWith("/"))
                     {
                         // Not a slash command. Do things differently
-                        var ShellInstance = ShellStack[^1];
-                        DebugWriter.WriteDebug(DebugLevel.I, "Non-slash cmd exec succeeded. Running with {0}", Command);
+                        var ShellInstance = ShellStack[ShellStack.Count - 1];
                         var Params = new CommandExecutorParameters(Command, shellInfo.NonSlashCommandInfo ?? BaseShellInfo.fallbackNonSlashCommand, ShellType, ShellInstance);
                         CommandExecutor.StartCommandThread(Params);
-                        UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
                         continue;
                     }
                     else
-                    {
-                        // Strip the slash
-                        Command = Command[1..].Trim();
-                    }
+                        Command = Command.Substring(1).Trim();
                 }
-
-                // Fire an event of PreExecuteCommand
-                EventsManager.FireEvent(EventType.PreExecuteCommand, ShellType, Command);
-
-                // Initialize local UESH variables (if found)
-                string localVarStoreMatchRegex = /* lang=regex */ @"^\((.+)\)\s+";
-                var localVarStoreMatch = RegexpTools.Match(Command, localVarStoreMatchRegex);
-                string varStoreString = localVarStoreMatch.Groups[1].Value;
-                DebugWriter.WriteDebug(DebugLevel.I, "varStoreString is: {0}", varStoreString);
-                string varStoreStringFull = localVarStoreMatch.Value;
-                var varStoreVars = UESHVariables.GetVariablesFrom(varStoreString);
-
-                // First, check to see if we already have that variable. If we do, get its old value.
-                List<(string, string)> oldVarValues = [];
-                foreach (string varStoreKey in varStoreVars.varStoreKeys)
-                {
-                    if (UESHVariables.Variables.ContainsKey(varStoreKey))
-                        oldVarValues.Add((varStoreKey, UESHVariables.GetVariable(varStoreKey)));
-                }
-                UESHVariables.InitializeVariablesFrom(varStoreString);
-                Command = Command[varStoreStringFull.Length..];
 
                 // Check to see if the command is a comment
                 if (!string.IsNullOrWhiteSpace(Command) && !Command.StartsWithAnyOf([" ", "#"]))
@@ -452,205 +270,37 @@ namespace Terminaux.Shell.Shells
                         break;
 
                     // Now, split the arguments
-                    string arguments = string.Join(' ', words.Skip(1));
-
-                    // Get the target file and path
-                    TargetFile = RegexpTools.Unescape(commandName);
-                    bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
-                    bool pathValid = Parsing.TryParsePath(TargetFile ?? "");
-                    if (!existsInPath || string.IsNullOrEmpty(TargetFile))
-                        TargetFile = FilesystemTools.NeutralizePath(commandName);
-                    if (pathValid)
-                        TargetFileName = Path.GetFileName(TargetFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finished finalCommand: {0}", commandName);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finished TargetFile: {0}", TargetFile);
+                    string arguments = string.Join(" ", words.Skip(1));
 
                     // Reads command written by user
                     try
                     {
-                        // Set title
-                        if (setTitle)
-                            ConsoleMisc.SetTitle($"{KernelReleaseInfo.ConsoleTitle} - {Command}");
-
                         // Check the command
                         bool exists = Commands.Any((ci) => ci.Command == commandName || ci.Aliases.Any((ai) => ai.Alias == commandName));
                         if (exists)
                         {
                             // Execute the command
-                            DebugWriter.WriteDebug(DebugLevel.I, "Executing command");
                             var cmdInfo = Commands.Single((ci) => ci.Command == commandName || ci.Aliases.Any((ai) => ai.Alias == commandName));
-
-                            // Check to see if the command supports redirection
-                            if (cmdInfo.Flags.HasFlag(CommandFlags.RedirectionSupported))
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Redirection supported!");
-                                Command = InitializeRedirection(Command);
-                            }
-
-                            // Check to see if the optional path is specified
-                            if (!string.IsNullOrEmpty(OutputPath))
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Output path provided!");
-                                InitializeOutputPathWriter(OutputPath);
-                            }
 
                             if (!string.IsNullOrEmpty(commandName) || !commandName.StartsWithAnyOf([" ", "#"]))
                             {
-
-                                // Check to see if a user is able to execute a command
-                                if (ShellType == "Shell")
-                                {
-                                    if (cmdInfo.Flags.HasFlag(CommandFlags.Strict))
-                                    {
-                                        if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
-                                            !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
-                                        {
-                                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
-                                            TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
-                                            UESHVariables.SetVariable("UESHErrorCode", "-4");
-                                            break;
-                                        }
-                                    }
-                                }
-
                                 // Check the command before starting
-                                if (KernelEntry.Maintenance & cmdInfo.Flags.HasFlag(CommandFlags.NoMaintenance))
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
-                                    TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
-                                    UESHVariables.SetVariable("UESHErrorCode", "-3");
-                                }
-                                else
-                                {
-                                    var ShellInstance = ShellStack[^1];
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
-                                    var Params = new CommandExecutorParameters(Command, cmdInfo, ShellType, ShellInstance);
-                                    CommandExecutor.StartCommandThread(Params);
-                                    UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
-                                }
-                            }
-                        }
-                        else if (pathValid & ShellType == "Shell")
-                        {
-                            // If we're in the UESH shell, parse the script file or executable file
-                            if (Checking.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", commandName);
-                                try
-                                {
-                                    // Create a new instance of process
-                                    PermissionsTools.Demand(PermissionTypes.ExecuteProcesses);
-                                    if (pathValid)
-                                    {
-                                        var targetCommand = Command.Replace(TargetFileName, "");
-                                        targetCommand = targetCommand.TrimStart('\0', ' ');
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
-                                        var Params = new ExecuteProcessThreadParameters(TargetFile, targetCommand);
-                                        ProcessStartCommandThread.Start(Params);
-                                        ProcessStartCommandThread.Wait();
-                                        ProcessStartCommandThread.Stop();
-                                        UESHVariables.SetVariable("UESHErrorCode", "0");
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to start process: {0}", ex.Message);
-                                    TextWriters.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, KernelColorType.Error, commandName, ex.Message);
-                                    DebugWriter.WriteDebugStackTrace(ex);
-                                    if (ex is KernelException kex)
-                                        UESHVariables.SetVariable("UESHErrorCode", $"{KernelExceptionTools.GetErrorCode(kex)}");
-                                    else
-                                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
-                                }
-                            }
-                            else if (Checking.FileExists(TargetFile) & TargetFile.EndsWith(".uesh"))
-                            {
-                                try
-                                {
-                                    PermissionsTools.Demand(PermissionTypes.ExecuteScripts);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
-                                    UESHParse.Execute(TargetFile, arguments);
-                                    UESHVariables.SetVariable("UESHErrorCode", "0");
-                                }
-                                catch (Exception ex)
-                                {
-                                    TextWriters.Write(Translate.DoTranslation("Error trying to execute script: {0}"), true, KernelColorType.Error, ex.Message);
-                                    DebugWriter.WriteDebugStackTrace(ex);
-                                    if (ex is KernelException kex)
-                                        UESHVariables.SetVariable("UESHErrorCode", $"{KernelExceptionTools.GetErrorCode(kex)}");
-                                    else
-                                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
-                                }
-                            }
-                            else
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found parsing target file", commandName);
-                                TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
-                                UESHVariables.SetVariable("UESHErrorCode", "-2");
+                                var ShellInstance = ShellStack[ShellStack.Count - 1];
+                                var Params = new CommandExecutorParameters(Command, cmdInfo, ShellType, ShellInstance);
+                                CommandExecutor.StartCommandThread(Params);
                             }
                         }
                         else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found", commandName);
-                            TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
-                            UESHVariables.SetVariable("UESHErrorCode", "-1");
-                        }
+                            TextWriterRaw.WritePlain("Shell message: The requested command {0} is not found. See 'help' for available commands.", commandName);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriters.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
-                        if (ex is KernelException kex)
-                            UESHVariables.SetVariable("UESHErrorCode", $"{KernelExceptionTools.GetErrorCode(kex)}");
-                        else
-                            UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
+                        TextWriterRaw.WritePlain("Error trying to execute command." + CharManager.NewLine + "Error {0}: {1}", ex.GetType().FullName ?? "<null>", ex.Message);
                     }
                 }
-
-                // Fire an event of PostExecuteCommand and reset all local variables
-                var varStoreKeys = varStoreVars.varStoreKeys;
-                foreach (string varStoreKey in varStoreKeys)
-                    UESHVariables.RemoveVariable(varStoreKey);
-                foreach (var varStoreKeyOld in oldVarValues)
-                {
-                    string key = varStoreKeyOld.Item1;
-                    string value = varStoreKeyOld.Item2;
-                    UESHVariables.InitializeVariable(key);
-                    UESHVariables.SetVariable(key, value);
-                }
-                EventsManager.FireEvent(EventType.PostExecuteCommand, ShellType, Command);
             }
-
-            // Restore console output to its original state if any
-            if (DriverHandler.CurrentConsoleDriverLocal.DriverName != "Default" && restoreDriver)
-            {
-                if (DriverHandler.CurrentConsoleDriverLocal is File writer)
-                    writer.FilterVT = false;
-                if (DriverHandler.CurrentConsoleDriverLocal is FileSequence writerSeq)
-                    writerSeq.FilterVT = false;
-                DriverHandler.EndLocalDriver<IConsoleDriver>();
-            }
-
-            // Restore title and cancel possibility state
-            if (setTitle)
-                ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
-            CancellationHandlers.InhibitCancel();
             lastCommand = FullCommand;
         }
-
-        /// <summary>
-        /// Gets the shell type name
-        /// </summary>
-        /// <param name="shellType">Shell type enumeration</param>
-        public static string GetShellTypeName(ShellType shellType) =>
-            shellType.ToString();
-
-        /// <summary>
-        /// Gets the shell information instance
-        /// </summary>
-        /// <param name="shellType">Shell type from enum</param>
-        public static BaseShellInfo GetShellInfo(ShellType shellType) =>
-            GetShellInfo(GetShellTypeName(shellType));
 
         /// <summary>
         /// Gets the shell information instance
@@ -664,23 +314,44 @@ namespace Terminaux.Shell.Shells
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellArgs">Arguments to pass to shell</param>
-        public static void StartShell(ShellType ShellType, params object[] ShellArgs) =>
-            StartShell(GetShellTypeName(ShellType), ShellArgs);
-
-        /// <summary>
-        /// Starts the shell
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        /// <param name="ShellArgs">Arguments to pass to shell</param>
         public static void StartShell(string ShellType, params object[] ShellArgs)
         {
-            if (ShellStack.Count >= 1)
+            int shellCount = ShellStack.Count;
+            try
             {
-                // The shell stack has a mother shell. Start another shell.
-                StartShellInternal(ShellType, ShellArgs);
+                // Make a shell executor based on shell type to select a specific executor (if the shell type is not MESH, and if the new shell isn't a mother shell)
+                // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
+                var ShellExecute = GetShellExecutor(ShellType) ??
+                    throw new TerminauxException($"Can't get shell executor for {ShellType}");
+
+                // Make a new instance of shell information
+                var ShellCommandThread = RegenerateCommandThread(ShellType);
+                var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
+
+                // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
+                ShellStack.Add(ShellInfo);
+                if (!HistoryTools.IsHistoryRegistered(ShellType))
+                    HistoryTools.LoadFromInstance(new HistoryInfo(ShellType, []));
+
+                // Reset title in case we're going to another shell
+                ShellExecute.InitializeShell(ShellArgs);
             }
-            else
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Shells can't start unless the mother shell has started."));
+            catch (Exception ex)
+            {
+                // There is an exception trying to run the shell. Throw the message to the caller.
+                throw new TerminauxException("Failed trying to initialize shell", ex);
+            }
+            finally
+            {
+                // There is either an unknown shell error trying to be initialized or a shell has manually set Bail to true prior to exiting, like the JSON shell
+                // that sets this property when it fails to open the JSON file due to syntax error or something. If we haven't added the shell to the shell stack,
+                // do nothing. Else, purge that shell with KillShell(). Otherwise, we'll get another shell's commands in the wrong shell and other problems will
+                // occur until the ghost shell has exited either automatically or manually, so check to see if we have added the newly created shell to the shell
+                // stack and kill that faulted shell so that we can have the correct shell in the most recent shell, ^1, from the stack.
+                int newShellCount = ShellStack.Count;
+                if (newShellCount > shellCount)
+                    KillShell();
+            }
         }
 
         /// <summary>
@@ -688,12 +359,17 @@ namespace Terminaux.Shell.Shells
         /// </summary>
         public static void KillShell()
         {
-            // We must have at least two shells to kill the last shell. Else, we will have zero shells running, making us look like we've logged out!
-            if (IsOnMotherShell())
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can not kill the mother shell!"));
-
-            // Not a mother shell, so bail.
-            KillShellInternal();
+            if (ShellStack.Count >= 1)
+            {
+                var shell = ShellStack[ShellStack.Count - 1];
+                var shellBase = ShellStack[ShellStack.Count - 1].ShellBase;
+                if (shellBase is not null)
+                {
+                    shell.interrupting = true;
+                    shellBase.Bail = true;
+                }
+                PurgeShells();
+            }
         }
 
         /// <summary>
@@ -707,97 +383,15 @@ namespace Terminaux.Shell.Shells
         /// Gets the shell executor based on the shell type
         /// </summary>
         /// <param name="ShellType">The requested shell type</param>
-        public static BaseShell? GetShellExecutor(ShellType ShellType) =>
-            GetShellExecutor(GetShellTypeName(ShellType));
-
-        /// <summary>
-        /// Gets the shell executor based on the shell type
-        /// </summary>
-        /// <param name="ShellType">The requested shell type</param>
         public static BaseShell? GetShellExecutor(string ShellType) =>
             GetShellInfo(ShellType).ShellBase;
 
         /// <summary>
-        /// Registers the custom shell. Should be called when mods start up.
+        /// Registers the custom shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellTypeInfo">The shell type information</param>
         public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
-        {
-            if (!ShellTypeExists(ShellType))
-            {
-                // First, add the shell
-                availableCustomShells.Add(ShellType, ShellTypeInfo);
-
-                // Then, add the default preset if the current preset is not found
-                if (PromptPresetManager.CurrentPresets.ContainsKey(ShellType))
-                    return;
-
-                // Rare state.
-                DebugWriter.WriteDebug(DebugLevel.I, "Reached rare state or unconfigurable shell.");
-                var presets = ShellTypeInfo.ShellPresets;
-                var basePreset = new PromptPresetBase();
-                if (presets is not null)
-                {
-                    // Add a default preset
-                    if (presets.ContainsKey("Default"))
-                        PromptPresetManager.CurrentPresets.Add(ShellType, "Default");
-                    else
-                        PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
-                }
-                else
-                {
-                    // Make a base shell preset and set it as default.
-                    PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Unregisters the custom shell. Should be called when mods shut down.
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        public static void UnregisterShell(string ShellType)
-        {
-            if (!IsShellBuiltin(ShellType))
-            {
-                // First, remove the shell
-                availableCustomShells.Remove(ShellType);
-
-                // Then, remove the preset
-                PromptPresetManager.CurrentPresets.Remove(ShellType);
-            }
-        }
-
-        /// <summary>
-        /// Is the shell pre-defined in Nitrocid KS?
-        /// </summary>
-        /// <param name="ShellType">Shell type</param>
-        /// <returns>If available in ShellType, then it's a built-in shell, thus returning true. Otherwise, false for custom shells.</returns>
-        public static bool IsShellBuiltin(string ShellType) =>
-            availableShells.ContainsKey(ShellType);
-
-        /// <summary>
-        /// Does the shell exist?
-        /// </summary>
-        /// <param name="ShellType">Shell type to check</param>
-        /// <returns>True if it exists; false otherwise.</returns>
-        public static bool ShellTypeExists(string ShellType) =>
-            AvailableShells.ContainsKey(ShellType);
-
-        /// <summary>
-        /// Is the current shell a mother shell?
-        /// </summary>
-        /// <returns>True if the shell stack is at most one shell. False if running in the second shell or higher.</returns>
-        public static bool IsOnMotherShell() =>
-            ShellStack.Count < 2;
-
-        /// <summary>
-        /// Registers the addon shell. Should be called when addons start up.
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        /// <param name="ShellTypeInfo">The shell type information</param>
-        internal static void RegisterAddonShell(string ShellType, BaseShellInfo ShellTypeInfo)
         {
             if (!ShellTypeExists(ShellType))
             {
@@ -809,7 +403,6 @@ namespace Terminaux.Shell.Shells
                     return;
 
                 // Rare state.
-                DebugWriter.WriteDebug(DebugLevel.I, "Reached rare state or unconfigurable shell.");
                 var presets = ShellTypeInfo.ShellPresets;
                 var basePreset = new PromptPresetBase();
                 if (presets is not null)
@@ -829,12 +422,12 @@ namespace Terminaux.Shell.Shells
         }
 
         /// <summary>
-        /// Unregisters the addon shell. Should be called when addons shut down.
+        /// Unregisters the custom shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        internal static void UnregisterAddonShell(string ShellType)
+        public static void UnregisterShell(string ShellType)
         {
-            if (IsShellBuiltin(ShellType))
+            if (ShellTypeExists(ShellType))
             {
                 // First, remove the shell
                 availableShells.Remove(ShellType);
@@ -844,175 +437,18 @@ namespace Terminaux.Shell.Shells
             }
         }
 
-        internal static void SaveHistories()
-        {
-            foreach (string history in histories.Keys)
-            {
-                if (HistoryTools.IsHistoryRegistered(history))
-                    histories[history] = [.. HistoryTools.GetHistoryEntries(history)];
-            }
-            FileIO.WriteAllText(PathsManagement.ShellHistoriesPath, JsonConvert.SerializeObject(histories, Formatting.Indented));
-        }
-
-        internal static void LoadHistories()
-        {
-            string path = PathsManagement.ShellHistoriesPath;
-            if (!Checking.FileExists(path))
-                return;
-            histories = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(FileIO.ReadAllText(path)) ?? [];
-            foreach (string history in histories.Keys)
-            {
-                if (!HistoryTools.IsHistoryRegistered(history))
-                    HistoryTools.LoadFromInstance(new HistoryInfo(history, histories[history]));
-                else
-                    HistoryTools.Switch(history, [.. histories[history]]);
-            }
-        }
-
         /// <summary>
-        /// Force starts the shell
+        /// Does the shell exist?
         /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        /// <param name="ShellArgs">Arguments to pass to shell</param>
-        internal static void StartShellInternal(ShellType ShellType, params object[] ShellArgs) =>
-            StartShellInternal(GetShellTypeName(ShellType), ShellArgs);
+        /// <param name="ShellType">Shell type to check</param>
+        /// <returns>True if it exists; false otherwise.</returns>
+        public static bool ShellTypeExists(string ShellType) =>
+            AvailableShells.ContainsKey(ShellType);
 
-        /// <summary>
-        /// Force starts the shell
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        /// <param name="ShellArgs">Arguments to pass to shell</param>
-        internal static void StartShellInternal(string ShellType, params object[] ShellArgs)
-        {
-            int shellCount = ShellStack.Count;
-            try
+        internal static Thread RegenerateCommandThread(string ShellType) =>
+            new((cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams))
             {
-                // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
-                // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
-                var ShellExecute = GetShellExecutor(ShellType) ??
-                    throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get shell executor for") + $" {ShellType}");
-
-                // Make a new instance of shell information
-                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
-                var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
-
-                // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
-                ShellStack.Add(ShellInfo);
-                if (!HistoryTools.IsHistoryRegistered(ShellType))
-                    HistoryTools.LoadFromInstance(new HistoryInfo(ShellType, []));
-
-                // Reset title in case we're going to another shell
-                ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
-                ShellExecute.InitializeShell(ShellArgs);
-            }
-            catch (Exception ex)
-            {
-                // There is an exception trying to run the shell. Throw the message to the debugger and to the caller.
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
-                DebugWriter.WriteDebug(DebugLevel.E, "Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
-                DebugWriter.WriteDebug(DebugLevel.E, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "If you don't see \"Purge\" from {0} after few lines, this indicates that we're in a seriously corrupted state.", nameof(StartShellInternal));
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Failed trying to initialize shell"), ex);
-            }
-            finally
-            {
-                // There is either an unknown shell error trying to be initialized or a shell has manually set Bail to true prior to exiting, like the JSON shell
-                // that sets this property when it fails to open the JSON file due to syntax error or something. If we haven't added the shell to the shell stack,
-                // do nothing. Else, purge that shell with KillShell(). Otherwise, we'll get another shell's commands in the wrong shell and other problems will
-                // occur until the ghost shell has exited either automatically or manually, so check to see if we have added the newly created shell to the shell
-                // stack and kill that faulted shell so that we can have the correct shell in the most recent shell, ^1, from the stack.
-                int newShellCount = ShellStack.Count;
-                DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
-                if (newShellCount > shellCount)
-                    KillShellInternal();
-
-                // Terminaux has introduced recent changes surrounding the history feature of the reader that allows it to save and load custom histories, so we
-                // need to make use of it to be able to save histories in one file.
-                SaveHistories();
-            }
-        }
-
-        /// <summary>
-        /// Force kills the last running shell
-        /// </summary>
-        internal static void KillShellInternal()
-        {
-            if (ShellStack.Count >= 1)
-            {
-                var shellBase = ShellStack[^1].ShellBase;
-                if (shellBase is not null)
-                    shellBase.Bail = true;
-                PurgeShells();
-            }
-        }
-
-        /// <summary>
-        /// Kills all the shells
-        /// </summary>
-        internal static void KillAllShells()
-        {
-            for (int i = ShellStack.Count - 1; i >= 0; i--)
-            {
-                var shellBase = ShellStack[i].ShellBase;
-                if (shellBase is not null)
-                    shellBase.Bail = true;
-            }
-            PurgeShells();
-        }
-
-        /// <summary>
-        /// Initializes the redirection
-        /// </summary>
-        private static string InitializeRedirection(string Command)
-        {
-            // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-            string RedirectionPattern = /*lang=regex*/ @"(?:( (?:>>|>>>) )(.+?))+$";
-            if (RegexpTools.IsMatch(Command, RedirectionPattern))
-            {
-                var outputMatch = Regex.Match(Command, RedirectionPattern);
-                var outputFiles = outputMatch.Groups[2].Captures.Select((cap) => cap.Value).ToArray();
-                var outputFileModes = outputMatch.Groups[1].Captures.Select((cap) => cap.Value).ToArray();
-                List<string> filePaths = [];
-                for (int i = 0; i < outputFiles.Length; i++)
-                {
-                    string outputFile = outputFiles[i];
-                    bool isOverwrite = outputFileModes[i] != " >>> ";
-                    string OutputFilePath = FilesystemTools.NeutralizePath(outputFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found for file {1} with overwrite mode [{0}].", isOverwrite, OutputFilePath);
-                    if (isOverwrite)
-                        Manipulation.ClearFile(OutputFilePath);
-                    filePaths.Add(OutputFilePath);
-                }
-                DriverHandler.BeginLocalDriver<IConsoleDriver>("FileSequence");
-                ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).PathsToWrite = [.. filePaths];
-                ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).FilterVT = true;
-                Command = Command.RemoveSuffix(outputMatch.Value);
-            }
-            else if (Command.EndsWith(" |SILENT|"))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Silence found. Redirecting to null writer...");
-                DriverHandler.BeginLocalDriver<IConsoleDriver>("Null");
-                Command = Command.RemoveSuffix(" |SILENT|");
-            }
-
-            return Command;
-        }
-
-        /// <summary>
-        /// Initializes the optional file path writer
-        /// </summary>
-        private static void InitializeOutputPathWriter(string OutputPath)
-        {
-            // Checks to see if the user provided optional path
-            if (!string.IsNullOrWhiteSpace(OutputPath))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
-                OutputPath = FilesystemTools.NeutralizePath(OutputPath);
-                DriverHandler.BeginLocalDriver<IConsoleDriver>("File");
-                ((File)DriverHandler.CurrentConsoleDriverLocal).PathToWrite = OutputPath;
-            }
-        }
-
+                Name = $"{ShellType} Command Thread"
+            };
     }
 }

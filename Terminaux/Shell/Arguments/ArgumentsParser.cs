@@ -17,20 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Arguments;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Regexp;
-using Nitrocid.Modifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
+using Terminaux.Base;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using Textify.General;
+using Textify.Tools;
 
 namespace Terminaux.Shell.Arguments
 {
@@ -39,15 +36,6 @@ namespace Terminaux.Shell.Arguments
     /// </summary>
     public static class ArgumentsParser
     {
-        /// <summary>
-        /// Parses the shell command arguments
-        /// </summary>
-        /// <param name="CommandText">Command text that the user provided</param>
-        /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
-        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, ShellType CommandType) =>
-            ParseShellCommandArguments(CommandText, null, ShellManager.GetShellTypeName(CommandType));
-
         /// <summary>
         /// Parses the shell command arguments
         /// </summary>
@@ -62,41 +50,26 @@ namespace Terminaux.Shell.Arguments
         /// </summary>
         /// <param name="CommandText">Command text that the user provided</param>
         /// <param name="cmdInfo">Command information</param>
-        /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
-        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo? cmdInfo, ShellType CommandType) =>
-            ParseShellCommandArguments(CommandText, cmdInfo, ShellManager.GetShellTypeName(CommandType));
-
-        /// <summary>
-        /// Parses the shell command arguments
-        /// </summary>
-        /// <param name="CommandText">Command text that the user provided</param>
-        /// <param name="cmdInfo">Command information</param>
         /// <param name="CommandType">Shell command type.</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
         public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo? cmdInfo, string CommandType)
         {
             string Command;
             CommandInfo[] ShellCommands;
-            CommandInfo[] ModCommands;
 
             // Change the available commands list according to command type
             ShellCommands = CommandManager.GetCommands(CommandType);
-            ModCommands = ModManager.ListModCommands(CommandType);
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();
             var wordsOrig = CommandText.SplitEncloseDoubleQuotesNoRelease();
-            string arguments = string.Join(' ', words.Skip(1));
-            string argumentsOrig = string.Join(' ', wordsOrig.Skip(1));
-            for (int i = 0; i <= words.Length - 1; i++)
-                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
+            string arguments = string.Join(" ", words.Skip(1));
+            string argumentsOrig = string.Join(" ", wordsOrig.Skip(1));
             Command = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
-            var aliases = AliasManager.GetEntireAliasListFromType(CommandType);
-            var CommandInfo = ModCommands.Any((info) => info.Command == Command) ? ModCommands.Single((info) => info.Command == Command) :
-                              ShellCommands.Any((info) => info.Command == Command) ? ShellCommands.Single((info) => info.Command == Command) :
+            var aliases = AliasManager.GetAliasListFromType(CommandType);
+            var CommandInfo = ShellCommands.Any((info) => info.Command == Command) ? ShellCommands.Single((info) => info.Command == Command) :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
                               cmdInfo;
             var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
@@ -105,69 +78,34 @@ namespace Terminaux.Shell.Arguments
             var shellInfo = ShellManager.GetShellInfo(CommandType);
             if (shellInfo.SlashCommand)
             {
-                if (!CommandText.StartsWith('/'))
-                {
-                    // Change the command info to the non-slash one
+                // Either change the command info or strip the slash
+                if (!CommandText.StartsWith("/"))
                     CommandInfo = cmdInfo;
-                }
                 else
-                {
-                    // Strip the slash
-                    CommandText = CommandText[1..].Trim();
-                }
+                    CommandText = CommandText.Substring(1).Trim();
             }
 
             // Now, process the arguments
             if (CommandInfo != null)
-                return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
+                return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo);
             else
                 return (fallback, new[] { fallback });
         }
 
-        /// <summary>
-        /// Parses the kernel argument arguments
-        /// </summary>
-        /// <param name="ArgumentText">Kernel argument text that the user provided</param>
-        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText)
-        {
-            string Argument;
-            var KernelArguments = ArgumentParse.AvailableCMDLineArgs;
-
-            // Split the requested argument string into words
-            var words = ArgumentText.SplitEncloseDoubleQuotes();
-            var wordsOrig = ArgumentText.SplitEncloseDoubleQuotesNoRelease();
-            string arguments = string.Join(' ', words.Skip(1));
-            string argumentsOrig = string.Join(' ', wordsOrig.Skip(1));
-            for (int i = 0; i <= words.Length - 1; i++)
-                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
-            Argument = words[0];
-
-            // Check to see if the caller has provided a switch that subtracts the number of required arguments
-            var ArgumentInfo = KernelArguments.TryGetValue(Argument, out ArgumentInfo? argInfo) ? argInfo : null;
-            var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
-            if (ArgumentInfo != null)
-                return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
-            else
-                return (fallback, new[] { fallback });
-        }
-
-        private static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo? CommandInfo, ArgumentInfo? ArgumentInfo)
+        private static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo)
         {
             ProvidedArgumentsInfo? satisfiedArg = null;
             List<ProvidedArgumentsInfo> totalArgs = [];
 
-            // Check the command and argument info
-            bool isCommand = CommandInfo is not null;
-
             // Split the switches properly now
             string switchRegex =
                 /* lang=regex */ @"((?<= )-\S+=((""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+))|(?<= )-\S+";
-            var EnclosedSwitches = RegexpTools
-                .Matches(CommandText, switchRegex)
-                .Select((match) => match.Value)
-                .ToArray();
-            CommandText = RegexpTools.Filter(CommandText, switchRegex);
+            var matches = RegexTools.Matches(CommandText, switchRegex);
+            List<string> enclosedSwitchList = [];
+            foreach (Match match in matches)
+                enclosedSwitchList.Add(match.Value);
+            string[] enclosedSwitches = [.. enclosedSwitchList];
+            CommandText = RegexTools.Filter(CommandText, switchRegex);
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();
@@ -178,24 +116,21 @@ namespace Terminaux.Shell.Arguments
             var EnclosedArgMatchesOrig = wordsOrig.Skip(1);
             var EnclosedArgs = EnclosedArgMatches.ToArray();
             var EnclosedArgsOrig = EnclosedArgMatches.ToArray();
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} arguments parsed: {1}", EnclosedArgs.Length, string.Join(", ", EnclosedArgs));
 
             // Get the string of arguments
             string strArgs = words.Length > 0 ? string.Join(" ", EnclosedArgMatches) : "";
             string strArgsOrig = words.Length > 0 ? string.Join(" ", EnclosedArgMatchesOrig) : "";
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgsOrig: {0}", strArgsOrig);
 
             // Split the switches to their key-value counterparts
-            var EnclosedSwitchKeyValuePairs = SwitchManager.GetSwitchValues(EnclosedSwitches, true);
+            var EnclosedSwitchKeyValuePairs = SwitchManager.GetSwitchValues(enclosedSwitches, true);
 
             // Check to see if we're optionalizing some required arguments starting from the last required argument
             int minimumArgumentsOffset = 0;
             string[] unknownSwitchesList = [];
             string[] conflictingSwitchesList = [];
             string[] noValueSwitchesList = [];
-            var argInfos = (isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo) ??
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get argument info for command or argument"));
+            var argInfos = CommandInfo?.CommandArgumentInfo ??
+                throw new TerminauxException("Can't get argument info for command");
             foreach (var argInfo in argInfos)
             {
                 bool RequiredArgumentsProvided = true;
@@ -205,26 +140,20 @@ namespace Terminaux.Shell.Arguments
                 bool switchNumberProvided = true;
                 bool exactWordingProvided = true;
 
-                // Check for argument info
-                DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", argInfo is not null);
-
                 // Optionalize some of the arguments if there are switches that optionalize them
                 if (argInfo is not null)
                 {
-                    foreach (string enclosedSwitch in EnclosedSwitches)
+                    foreach (string enclosedSwitch in enclosedSwitches)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Optionalizer is processing switch {0}...", enclosedSwitch);
-                        var switches = argInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch[1..]);
+                        var switches = argInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch.Substring(1));
                         if (switches.Any())
                             foreach (var switchInfo in switches.Where(switchInfo => minimumArgumentsOffset < switchInfo.OptionalizeLastRequiredArguments))
                                 minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Minimum arguments offset is now {0}", minimumArgumentsOffset);
                     }
                 }
                 int finalRequiredArgs = argInfo is not null ? argInfo.MinimumArguments - minimumArgumentsOffset : 0;
                 if (finalRequiredArgs < 0)
                     finalRequiredArgs = 0;
-                DebugWriter.WriteDebug(DebugLevel.I, "Required arguments count is now {0}", finalRequiredArgs);
 
                 // Check to see if the caller has provided required number of arguments
                 if (argInfo is not null)
@@ -233,28 +162,26 @@ namespace Terminaux.Shell.Arguments
                         !argInfo.ArgumentsRequired;
                 else
                     RequiredArgumentsProvided = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "RequiredArgumentsProvided is {0}. Refer to the value of argument info.", RequiredArgumentsProvided);
 
                 // Check to see if the caller has provided required number of switches
                 if (argInfo is not null)
                     RequiredSwitchesProvided =
                         argInfo.Switches.Length == 0 ||
-                        EnclosedSwitches.Length >= argInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
+                        enclosedSwitches.Length >= argInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
                         !argInfo.Switches.Any((@switch) => @switch.IsRequired);
                 else
                     RequiredSwitchesProvided = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchesProvided is {0}. Refer to the value of argument info.", RequiredSwitchesProvided);
 
                 // Check to see if the caller has provided required number of switches that require arguments
                 if (argInfo is not null)
                 {
-                    if (argInfo.Switches.Length == 0 || EnclosedSwitches.Length == 0 ||
+                    if (argInfo.Switches.Length == 0 || enclosedSwitches.Length == 0 ||
                         !argInfo.Switches.Any((@switch) => @switch.ArgumentsRequired))
                         RequiredSwitchArgumentsProvided = true;
                     else
                     {
                         var allSwitches = argInfo.Switches.Where((@switch) => @switch.ArgumentsRequired).Select((@switch) => @switch.SwitchName).ToArray();
-                        var allProvidedSwitches = EnclosedSwitches.Where((@switch) => allSwitches.Contains($"{@switch[1..]}")).ToArray();
+                        var allProvidedSwitches = enclosedSwitches.Where((@switch) => allSwitches.Contains($"{@switch.Substring(1)}")).ToArray();
                         foreach (var providedSwitch in allProvidedSwitches)
                         {
                             if (string.IsNullOrWhiteSpace(EnclosedSwitchKeyValuePairs.Single((kvp) => kvp.Item1 == providedSwitch).Item2))
@@ -264,16 +191,15 @@ namespace Terminaux.Shell.Arguments
                 }
                 else
                     RequiredSwitchArgumentsProvided = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
                 // Check to see if the caller has provided switches that don't accept values with the values
                 if (argInfo is not null)
                 {
                     var allSwitches = argInfo.Switches.Where((@switch) => !@switch.AcceptsValues).Select((@switch) => @switch.SwitchName).ToArray();
-                    var allProvidedSwitches = EnclosedSwitches
+                    var allProvidedSwitches = enclosedSwitches
                         .Where((@switch) => @switch.Contains('='))
-                        .Where((@switch) => allSwitches.Contains($"{@switch[1..@switch.IndexOf('=')]}"))
-                        .Select((@switch) => $"{@switch[..@switch.IndexOf('=')]}")
+                        .Where((@switch) => allSwitches.Contains($"{@switch.Substring(1, @switch.IndexOf("="))}"))
+                        .Select((@switch) => $"{@switch.Substring(0, @switch.IndexOf("="))}")
                         .ToArray();
                     List<string> rejected = [];
                     foreach (var providedSwitch in allProvidedSwitches)
@@ -283,15 +209,13 @@ namespace Terminaux.Shell.Arguments
                     }
                     noValueSwitchesList = [.. rejected];
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
                 // Check to see if the caller has provided non-existent switches
                 if (argInfo is not null)
                     unknownSwitchesList = EnclosedSwitchKeyValuePairs
                         .Select((kvp) => kvp.Item1)
-                        .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
+                        .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key.Substring(1)))
                         .ToArray();
-                DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", unknownSwitchesList.Length);
 
                 // Check to see if the caller has provided conflicting switches
                 if (argInfo is not null)
@@ -304,7 +228,6 @@ namespace Terminaux.Shell.Arguments
                         string @switch = kvp.Item1;
                         if (unknownSwitchesList.Contains(@switch))
                             continue;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Processing switch: {0}", @switch);
 
                         // Get the switch and its conflicts list
                         var switchEnumerator = argInfo.Switches
@@ -316,18 +239,12 @@ namespace Terminaux.Shell.Arguments
                             string[] switchConflicts = initialConflicts
                                 .Select((conflicting) => $"-{conflicting}")
                                 .ToArray();
-                            DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
 
                             // Now, get the last switch and check to see if it's provided with the conflicting switch
-                            string lastSwitch = processed.Count > 0 ? processed[^1] : "";
+                            string lastSwitch = processed.Count > 0 ? processed[processed.Count - 1] : "";
                             if (switchConflicts.Contains(lastSwitch))
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Conflict! {0} and {1} conflict with each other.", @switch, lastSwitch);
                                 conflicts.Add($"{@switch} vs. {lastSwitch}");
-                            }
                             processed.Add(@switch);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Marked conflicts: {0} [{1}]", conflicts.Count, string.Join(", ", conflicts));
-                            DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
                         }
                     }
                     conflictingSwitchesList = [.. conflicts];
@@ -390,7 +307,7 @@ namespace Terminaux.Shell.Arguments
                     EnclosedArgs,
                     strArgsOrig,
                     EnclosedArgsOrig,
-                    EnclosedSwitches,
+                    enclosedSwitches,
                     RequiredArgumentsProvided,
                     RequiredSwitchesProvided,
                     RequiredSwitchArgumentsProvided,
@@ -415,7 +332,6 @@ namespace Terminaux.Shell.Arguments
             }
 
             // Install the parsed values to the new class instance
-            DebugWriter.WriteDebug(DebugLevel.I, "Finalizing...");
             return (satisfiedArg, totalArgs.ToArray());
         }
     }

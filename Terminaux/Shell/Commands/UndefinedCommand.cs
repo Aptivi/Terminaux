@@ -17,8 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+
 namespace Terminaux.Shell.Commands
 {
     internal class UndefinedCommand : BaseCommand, ICommand
-    { }
+    {
+        public override void Execute(CommandParameters parameters)
+        {
+            throw new NotImplementedException("This command is not defined.");
+        }
+    }
 }

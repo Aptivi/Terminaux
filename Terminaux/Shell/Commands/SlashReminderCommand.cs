@@ -17,20 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Commands
 {
     internal class SlashReminderCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override void Execute(CommandParameters parameters)
         {
-            TextWriters.Write(
-                "* " + Translate.DoTranslation("This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:") + $" /{parameters.CommandText} {parameters.ArgumentsText}", true, KernelColorType.Tip);
-            return 0;
+            TextWriterRaw.WritePlain(
+                "* This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:" + $" /{parameters.CommandText} {parameters.ArgumentsText}");
         }
 
     }

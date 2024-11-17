@@ -37,8 +37,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Languages;
-
 namespace Terminaux.Shell.Switches
 {
     /// <summary>
@@ -52,7 +50,7 @@ namespace Terminaux.Shell.Switches
         /// </summary>
         public string SwitchName { get; private set; }
         /// <summary>
-        /// The untranslated help definition of this switch. Translated by <see cref="GetTranslatedHelpEntry()"/>
+        /// The help definition of this switch
         /// </summary>
         public string HelpDefinition { get; private set; }
         /// <summary>
@@ -140,11 +138,5 @@ namespace Terminaux.Shell.Switches
                 IsNumeric = IsNumeric,
             };
         }
-
-        /// <summary>
-        /// Gets the translated version of help entry (KS built-in switches only)
-        /// </summary>
-        public string GetTranslatedHelpEntry() =>
-            Translate.DoTranslation(HelpDefinition);
     }
 }

@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-
 namespace Terminaux.Shell.Commands
 {
     /// <summary>
@@ -32,28 +29,20 @@ namespace Terminaux.Shell.Commands
         /// Executes a command
         /// </summary>
         /// <param name="parameters">Command parameters including passed arguments and switches information</param>
-        /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
-        /// <returns>Error code for the command</returns>
-        public virtual int Execute(CommandParameters parameters, ref string variableValue)
-        {
-            DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
-            throw new KernelException(KernelExceptionType.NotImplementedYet);
-        }
+        public abstract void Execute(CommandParameters parameters);
 
         /// <summary>
         /// Executes a command on dumb consoles
         /// </summary>
         /// <param name="parameters">Command parameters including passed arguments and switches information</param>
-        /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
-        /// <returns>Error code for the command</returns>
-        public virtual int ExecuteDumb(CommandParameters parameters, ref string variableValue) =>
-            Execute(parameters, ref variableValue);
+        public virtual void ExecuteDumb(CommandParameters parameters) =>
+            Execute(parameters);
 
         /// <summary>
         /// The help helper
         /// </summary>
-        public virtual void HelpHelper() =>
-            DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
+        public virtual void HelpHelper()
+        { }
 
     }
 }

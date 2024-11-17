@@ -1,14 +1,14 @@
 ﻿//
-// Terminaux  Copyright (C) 2023-2024  Aptivi
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
 //
-// This file is part of Terminaux
+// This file is part of Nitrocid KS
 //
-// Terminaux is free software: you can redistribute it and/or modify
+// Nitrocid KS is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Terminaux is distributed in the hope that it will be useful,
+// Nitrocid KS is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -17,22 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Console.Fixtures
+using Terminaux.Shell.Commands;
+using Terminaux.Writer.ConsoleWriters;
+
+namespace Terminaux.Console.Fixtures.Cases.Shell.Shells.Commands
 {
-    internal enum FixtureCategory
+    class WriteArgCommand : BaseCommand, ICommand
     {
-        Unapplicable,
-        Reader,
-        Writer,
-        Input,
-        InputCjk,
-        Color,
-        TextualUi,
-        Screen,
-        Presentation,
-        Console,
-        Image,
-        Graphics,
-        Shell,
+        public override void Execute(CommandParameters parameters) =>
+            TextWriterColor.Write(parameters.ArgumentsText);
     }
 }

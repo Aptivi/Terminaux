@@ -17,8 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using Nitrocid.Kernel.Threading;
+using System.Threading;
 
 namespace Terminaux.Shell.Shells
 {
@@ -27,12 +26,10 @@ namespace Terminaux.Shell.Shells
     /// </summary>
     public class ShellExecuteInfo
     {
-
-        internal int LastErrorCode = 0;
-        internal readonly List<KernelThread> AltCommandThreads = [];
+        internal bool interrupting = false;
+        internal Thread shellCommandThread;
         private readonly string shellType;
         private readonly BaseShell? shellBase;
-        private readonly KernelThread shellCommandThread;
 
         /// <summary>
         /// Shell type
@@ -47,7 +44,7 @@ namespace Terminaux.Shell.Shells
         /// <summary>
         /// Shell command thread
         /// </summary>
-        public KernelThread ShellCommandThread => shellCommandThread;
+        public Thread ShellCommandThread => shellCommandThread;
 
         /// <summary>
         /// Installs the values to a new instance of ShellInfo
@@ -55,17 +52,7 @@ namespace Terminaux.Shell.Shells
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellBase">Shell base class</param>
         /// <param name="ShellCommandThread">Shell command thread</param>
-        public ShellExecuteInfo(ShellType ShellType, BaseShell? ShellBase, KernelThread ShellCommandThread) :
-            this(ShellManager.GetShellTypeName(ShellType), ShellBase, ShellCommandThread)
-        { }
-
-        /// <summary>
-        /// Installs the values to a new instance of ShellInfo
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        /// <param name="ShellBase">Shell base class</param>
-        /// <param name="ShellCommandThread">Shell command thread</param>
-        public ShellExecuteInfo(string ShellType, BaseShell? ShellBase, KernelThread ShellCommandThread)
+        public ShellExecuteInfo(string ShellType, BaseShell? ShellBase, Thread ShellCommandThread)
         {
             shellType = ShellType;
             shellBase = ShellBase;

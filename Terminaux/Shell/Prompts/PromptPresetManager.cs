@@ -18,16 +18,12 @@
 //
 
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
 using Textify.General;
 using Terminaux.Shell.Shells;
+using Terminaux.Base;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Prompts
 {
@@ -36,32 +32,11 @@ namespace Terminaux.Shell.Prompts
     /// </summary>
     public static class PromptPresetManager
     {
-
         // Current presets
         internal static Dictionary<string, string> CurrentPresets = new()
         {
             { "Shell", "Default" },
-            { "FTPShell", "Default" },
-            { "MailShell", "Default" },
-            { "SFTPShell", "Default" },
-            { "TextShell", "Default" },
-            { "RSSShell", "Default" },
-            { "JsonShell", "Default" },
-            { "HTTPShell", "Default" },
-            { "HexShell", "Default" },
-            { "AdminShell", "Default" },
-            { "SqlShell", "Default" },
-            { "DebugShell", "Default" },
         };
-
-        /// <summary>
-        /// Sets the shell preset
-        /// </summary>
-        /// <param name="PresetName">The preset name</param>
-        /// <param name="ShellType">Type of shell</param>
-        /// <param name="ThrowOnNotFound">If the preset is not found, throw an exception. Otherwise, use the default preset.</param>
-        public static void SetPreset(string PresetName, ShellType ShellType, bool ThrowOnNotFound = true) =>
-            SetPreset(PresetName, ShellManager.GetShellTypeName(ShellType), ThrowOnNotFound);
 
         /// <summary>
         /// Sets the shell preset
@@ -76,28 +51,12 @@ namespace Terminaux.Shell.Prompts
 
             // Check to see if we have the preset
             if (Presets.ContainsKey(PresetName) || CustomPresets.ContainsKey(PresetName))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} exists. Setting dryly...", PresetName, ShellType.ToString());
                 CurrentPresets[ShellType] = PresetName;
-            }
             else if (ThrowOnNotFound)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
-                throw new KernelException(KernelExceptionType.NoSuchShellPreset, Translate.DoTranslation("The specified preset {0} is not found."), PresetName);
-            }
+                throw new TerminauxException("The specified preset {0} is not found.", PresetName);
             else
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Preset {0} for {1} doesn't exist. Setting dryly to default...", PresetName, ShellType.ToString());
                 CurrentPresets[ShellType] = "Default";
-            }
         }
-
-        /// <summary>
-        /// Gets the current preset base from the shell
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        public static PromptPresetBase GetCurrentPresetBaseFromShell(ShellType ShellType) =>
-            GetCurrentPresetBaseFromShell(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the current preset base from the shell
@@ -110,36 +69,15 @@ namespace Terminaux.Shell.Prompts
         /// Gets the predefined presets from the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, PromptPresetBase> GetPresetsFromShell(ShellType ShellType) =>
-            GetPresetsFromShell(ShellManager.GetShellTypeName(ShellType));
-
-        /// <summary>
-        /// Gets the predefined presets from the shell
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
         public static Dictionary<string, PromptPresetBase> GetPresetsFromShell(string ShellType) =>
             ShellManager.GetShellInfo(ShellType).ShellPresets;
 
         /// <summary>
-        /// Gets the custom presets (defined by mods) from the shell
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, PromptPresetBase> GetCustomPresetsFromShell(ShellType ShellType) =>
-            GetCustomPresetsFromShell(ShellManager.GetShellTypeName(ShellType));
-
-        /// <summary>
-        /// Gets the custom presets (defined by mods) from the shell
+        /// Gets the custom presets from the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         public static Dictionary<string, PromptPresetBase> GetCustomPresetsFromShell(string ShellType) =>
             ShellManager.GetShellInfo(ShellType).CustomShellPresets;
-
-        /// <summary>
-        /// Gets all presets from the shell
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, PromptPresetBase> GetAllPresetsFromShell(ShellType ShellType) =>
-            GetAllPresetsFromShell(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets all presets from the shell
@@ -159,25 +97,11 @@ namespace Terminaux.Shell.Prompts
         /// Writes the shell prompt
         /// </summary>
         /// <param name="ShellType">Shell type</param>
-        public static void WriteShellPrompt(ShellType ShellType) =>
-            WriteShellPrompt(ShellManager.GetShellTypeName(ShellType));
-
-        /// <summary>
-        /// Writes the shell prompt
-        /// </summary>
-        /// <param name="ShellType">Shell type</param>
         public static void WriteShellPrompt(string ShellType)
         {
             var CurrentPresetBase = GetCurrentPresetBaseFromShell(ShellType);
-            TextWriters.Write(CurrentPresetBase.PresetPrompt, false, KernelColorType.Input);
+            TextWriterRaw.WritePlain(CurrentPresetBase.PresetPrompt, false);
         }
-
-        /// <summary>
-        /// Writes the shell completion prompt
-        /// </summary>
-        /// <param name="ShellType">Shell type</param>
-        public static void WriteShellCompletionPrompt(ShellType ShellType) =>
-            WriteShellCompletionPrompt(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Writes the shell completion prompt
@@ -186,7 +110,7 @@ namespace Terminaux.Shell.Prompts
         public static void WriteShellCompletionPrompt(string ShellType)
         {
             var CurrentPresetBase = GetCurrentPresetBaseFromShell(ShellType);
-            TextWriters.Write(CurrentPresetBase.PresetPromptCompletion, false, KernelColorType.Input);
+            TextWriterRaw.WritePlain(CurrentPresetBase.PresetPromptCompletion, false);
         }
 
         /// <summary>
@@ -194,13 +118,6 @@ namespace Terminaux.Shell.Prompts
         /// </summary>
         public static string PromptForPresets() =>
             PromptForPresets(ShellManager.CurrentShellType);
-
-        /// <summary>
-        /// Prompts a user to select the preset
-        /// </summary>
-        /// <param name="shellType">Sets preset in shell type</param>
-        public static string PromptForPresets(ShellType shellType) =>
-            PromptForPresets(shellType.ToString());
 
         /// <summary>
         /// Prompts a user to select the preset
@@ -216,7 +133,7 @@ namespace Terminaux.Shell.Prompts
 
             // Now, prompt the user
             var PresetNames = Presets.Select((kvp) => (kvp.Key, kvp.Value.PresetPromptShowcase)).ToArray();
-            int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString(Translate.DoTranslation("Select preset for {0}:"), shellType), PresetNames);
+            int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString("Select preset for {0}:", shellType), PresetNames);
             if (SelectedPreset == -1)
                 return "Default";
             string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset - 1);
