@@ -17,10 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
 using Terminaux.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -37,9 +35,9 @@ namespace Terminaux.Shell.Aliases
         /// <summary>
         /// Adds alias
         /// </summary>
-        /// <param name="SourceAlias">A command to be aliased. It should exist in both shell and remote debug.</param>
+        /// <param name="SourceAlias">A command to be aliased. It should exist in the shell.</param>
         /// <param name="Destination">A one-word command to alias to.</param>
-        /// <param name="Type">Alias type, whether it be shell or remote debug.</param>
+        /// <param name="Type">Shell type.</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
         public static bool AddAlias(string SourceAlias, string Destination, string Type)
         {
@@ -51,12 +49,7 @@ namespace Terminaux.Shell.Aliases
                     throw new TerminauxException("Command not found to alias to {0}.", Destination);
                 else if (DoesAliasExist(Destination, Type))
                     throw new TerminauxException("Alias already found: {0}", SourceAlias);
-                var aliasInstance = new AliasInfo()
-                {
-                    alias = Destination,
-                    command = SourceAlias,
-                    type = Type,
-                };
+                var aliasInstance = new AliasInfo(Destination, SourceAlias, Type);
                 aliases.Add(aliasInstance);
                 return true;
             }
@@ -68,7 +61,7 @@ namespace Terminaux.Shell.Aliases
         /// Removes alias
         /// </summary>
         /// <param name="TargetAlias">An alias that needs to be removed.</param>
-        /// <param name="Type">Alias type.</param>
+        /// <param name="Type">Shell type.</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
         public static bool RemoveAlias(string TargetAlias, string Type)
         {
@@ -86,7 +79,7 @@ namespace Terminaux.Shell.Aliases
         /// Checks to see if the specified alias exists.
         /// </summary>
         /// <param name="TargetAlias">The existing alias</param>
-        /// <param name="Type">The alias type</param>
+        /// <param name="Type">Shell type.</param>
         /// <returns>True if it exists; false if it doesn't exist</returns>
         public static bool DoesAliasExist(string TargetAlias, string Type) =>
             GetAliasListFromType(Type).Any((info) => info.Alias == TargetAlias && info.Type == Type);
@@ -102,7 +95,7 @@ namespace Terminaux.Shell.Aliases
         /// Gets the alias.
         /// </summary>
         /// <param name="TargetAlias">The existing alias</param>
-        /// <param name="Type">The alias type</param>
+        /// <param name="Type">Shell type.</param>
         /// <returns>Alias info if it exists. Throws if it doesn't exist.</returns>
         public static AliasInfo GetAlias(string TargetAlias, string Type)
         {

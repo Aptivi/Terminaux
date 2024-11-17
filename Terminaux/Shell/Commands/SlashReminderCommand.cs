@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Commands
@@ -26,8 +27,8 @@ namespace Terminaux.Shell.Commands
 
         public override void Execute(CommandParameters parameters)
         {
-            TextWriterRaw.WritePlain(
-                "* This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:" + $" /{parameters.CommandText} {parameters.ArgumentsText}");
+            TextWriterColor.WriteColor(
+                "* This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:" + $" /{parameters.CommandText} {parameters.ArgumentsText}", ConsoleColors.Yellow);
         }
 
     }

@@ -17,16 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Text;
-using Terminaux.Base;
-using Terminaux.Base.Buffered;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Base.Extensions;
 using Terminaux.Shell.Shells;
 using Terminaux.Console.Fixtures.Cases.Shell.Shells;
 

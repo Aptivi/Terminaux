@@ -17,11 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terminaux.Console.Fixtures.Cases.Shell.Shells.Commands;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;

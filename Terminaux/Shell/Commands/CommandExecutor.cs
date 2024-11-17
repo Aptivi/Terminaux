@@ -25,6 +25,7 @@ using Textify.General;
 using Terminaux.Shell.Arguments;
 using Terminaux.Base.Checks;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 using Textify.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Shell.Shells;
@@ -67,7 +68,7 @@ namespace Terminaux.Shell.Commands
                 argSatisfied = satisfied is not null;
                 if (satisfied is null)
                 {
-                    TextWriterRaw.WritePlain("Required arguments are not provided for all usages below:");
+                    TextWriterColor.WriteColor("Required arguments are not provided for all usages below:", ConsoleColors.Red);
                     for (int i = 0; i < total.Length; i++)
                     {
                         ProvidedArgumentsInfo unsatisfied = total[i];
@@ -75,70 +76,73 @@ namespace Terminaux.Shell.Commands
                         var argInfo = unsatisfied.ArgumentInfo;
                         if (argInfo is null)
                         {
-                            TextWriterRaw.WritePlain($"- [{i + 1}] {command}: ", false);
-                            TextWriterRaw.WritePlain("Unknown argument");
+                            TextWriterRaw.WriteRaw(new ListEntry()
+                            {
+                                Entry = $"- [{i + 1}] {command}: ",
+                                Value = "Unknown argument"
+                            }.Render() + "\n");
                             continue;
                         }
 
                         // Write usage number
                         string renderedUsage = !string.IsNullOrEmpty(argInfo.RenderedUsage) ? " " + argInfo.RenderedUsage : "";
-                        TextWriterRaw.WritePlain($"- [{i + 1}] {command}{renderedUsage}");
+                        TextWriterColor.WriteColor($"- [{i + 1}] {command}{renderedUsage}", ConsoleColors.Yellow);
 
                         // Check for required arguments
                         if (!unsatisfied.RequiredArgumentsProvided)
-                            TextWriterRaw.WritePlain("Required arguments are not provided.");
+                            TextWriterColor.WriteColor("Required arguments are not provided.", ConsoleColors.Olive);
 
                         // Check for required switches
                         if (!unsatisfied.RequiredSwitchesProvided)
-                            TextWriterRaw.WritePlain("Required switches are not provided.");
+                            TextWriterColor.WriteColor("Required switches are not provided.", ConsoleColors.Olive);
 
                         // Check for required switch arguments
                         if (!unsatisfied.RequiredSwitchArgumentsProvided)
-                            TextWriterRaw.WritePlain("One of the switches requires a value that is not provided.");
+                            TextWriterColor.WriteColor("One of the switches requires a value that is not provided.", ConsoleColors.Olive);
 
                         // Check for unknown switches
                         if (unsatisfied.UnknownSwitchesList.Length > 0)
                         {
-                            TextWriterRaw.WritePlain("Switches that are listed below are unknown.");
+                            TextWriterColor.WriteColor("Switches that are listed below are unknown.", ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.UnknownSwitchesList,
-                            }.Render());
+                            }.Render() + "\n");
                         }
 
                         // Check for conflicting switches
                         if (unsatisfied.ConflictingSwitchesList.Length > 0)
                         {
-                            TextWriterRaw.WritePlain("Switches that are listed below conflict with each other.");
+                            TextWriterColor.WriteColor("Switches that are listed below conflict with each other.", ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.ConflictingSwitchesList,
-                            }.Render());
+                            }.Render() + "\n");
                         }
 
                         // Check for switches that don't accept values
                         if (unsatisfied.NoValueSwitchesList.Length > 0)
                         {
-                            TextWriterRaw.WritePlain("The below switches don't accept values.");
+                            TextWriterColor.WriteColor("The below switches don't accept values.", ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.NoValueSwitchesList,
-                            }.Render());
+                            }.Render() + "\n");
                         }
 
                         // Check for invalid number in numeric arguments
                         if (!unsatisfied.NumberProvided)
-                            TextWriterRaw.WritePlain("One or more of the arguments expect a numeric value, but you provided an invalid number.");
+                            TextWriterColor.WriteColor("One or more of the arguments expect a numeric value, but you provided an invalid number.", ConsoleColors.Olive);
 
                         // Check for invalid exact wording
                         if (!unsatisfied.ExactWordingProvided)
-                            TextWriterRaw.WritePlain("One or more of the arguments expect an exact wording, but you provided an invalid word.");
+                            TextWriterColor.WriteColor("One or more of the arguments expect an exact wording, but you provided an invalid word.", ConsoleColors.Olive);
 
                         // Check for invalid number in numeric switches
                         if (!unsatisfied.SwitchNumberProvided)
-                            TextWriterRaw.WritePlain("One or more of the switches expect a numeric value, but you provided an invalid number.");
+                            TextWriterColor.WriteColor("One or more of the switches expect a numeric value, but you provided an invalid number.", ConsoleColors.Olive);
                     }
-                    TextWriterRaw.WritePlain("Consult the help entry for this command for more info");
+                    TextWriterColor.WriteColor("Consult the help entry for this command for more info", ConsoleColors.Red);
                     return;
                 }
 
@@ -164,11 +168,11 @@ namespace Terminaux.Shell.Commands
             }
             catch (ThreadInterruptedException)
             {
-                TextWriterRaw.WritePlain("Command is being interrupted...");
+                TextWriterColor.WriteColor("Command is being interrupted...", ConsoleColors.Red);
             }
             catch (Exception ex)
             {
-                TextWriterRaw.WritePlain("Error trying to execute command {2}." + CharManager.NewLine + "Error {0}: {1}", ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
+                TextWriterColor.WriteColor("Error trying to execute command {2}." + CharManager.NewLine + "Error {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
             }
         }
 
@@ -183,7 +187,7 @@ namespace Terminaux.Shell.Commands
             }
             catch (Exception ex)
             {
-                TextWriterRaw.WritePlain($"Command aborted for the following reason: {ex.Message}");
+                TextWriterColor.WriteColor($"Command aborted for the following reason: {ex.Message}", ConsoleColors.Red);
             }
         }
 

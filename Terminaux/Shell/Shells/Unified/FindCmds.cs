@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Colors.Data;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -36,11 +37,11 @@ namespace Terminaux.Shell.Shells.Unified
             var commands = CommandManager.FindCommands(parameters.ArgumentsList[0], ShellManager.CurrentShellType);
             foreach (var command in commands)
             {
-                TextWriterRaw.WritePlain("- ", false);
-                TextWriterRaw.WritePlain(command.Command);
+                TextWriterColor.WriteColor("- ", false, ConsoleColors.Yellow);
+                TextWriterColor.WriteColor(command.Command, ConsoleColors.Olive);
             }
             if (commands.Length == 0)
-                TextWriterRaw.WritePlain("No commands found.");
+                TextWriterColor.WriteColor("No commands found.", ConsoleColors.Grey);
         }
 
     }

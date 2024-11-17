@@ -291,11 +291,11 @@ namespace Terminaux.Shell.Shells
                             }
                         }
                         else
-                            TextWriterRaw.WritePlain("Shell message: The requested command {0} is not found. See 'help' for available commands.", commandName);
+                            TextWriterColor.WriteColor("Shell message: The requested command {0} is not found. See 'help' for available commands.", ConsoleColors.Red, commandName);
                     }
                     catch (Exception ex)
                     {
-                        TextWriterRaw.WritePlain("Error trying to execute command." + CharManager.NewLine + "Error {0}: {1}", ex.GetType().FullName ?? "<null>", ex.Message);
+                        TextWriterColor.WriteColor("Error trying to execute command." + CharManager.NewLine + "Error {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
                     }
                 }
             }

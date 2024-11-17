@@ -18,15 +18,16 @@
 //
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Aliases;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Shell.Help
 {
@@ -43,57 +44,69 @@ namespace Terminaux.Shell.Help
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
-            TextWriterRaw.WritePlain("Available commands:" + (showCount ? " [{0}]" : ""), commands.Length);
+            TextWriterColor.WriteColor("Available commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, commands.Length);
 
             // The built-in commands
             if (showGeneral)
             {
-                TextWriterRaw.WritePlain(CharManager.NewLine + "General commands:" + (showCount ? " [{0}]" : ""), commandList.Count);
+                TextWriterColor.WriteColor(CharManager.NewLine + "General commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, commandList.Count);
                 if (commandList.Count == 0)
-                    TextWriterRaw.WritePlain("  - No shell commands.");
+                    TextWriterColor.WriteColor("  - No shell commands.", ConsoleColors.Silver);
                 foreach (var cmd in commandList)
                 {
-                    TextWriterRaw.WritePlain("  - {0}: ", false, cmd.Command);
-                    TextWriterRaw.WritePlain("{0}", cmd.HelpDefinition);
+                    TextWriterRaw.WriteRaw(new ListEntry()
+                    {
+                        Entry = cmd.Command,
+                        Value = cmd.HelpDefinition,
+                    }.Render() + "\n");
                 }
             }
 
             // The extra commands
             if (showExtra)
             {
-                TextWriterRaw.WritePlain(CharManager.NewLine + "Extra commands:" + (showCount ? " [{0}]" : ""), ExtraCommandList.Count);
+                TextWriterColor.WriteColor(CharManager.NewLine + "Extra commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, ExtraCommandList.Count);
                 if (ExtraCommandList.Count == 0)
-                    TextWriterRaw.WritePlain("  - No extra commands.");
+                    TextWriterColor.WriteColor("  - No extra commands.", ConsoleColors.Silver);
                 foreach (var cmd in ExtraCommandList)
                 {
-                    TextWriterRaw.WritePlain("  - {0}: ", false, cmd.Command);
-                    TextWriterRaw.WritePlain("{0}", cmd.HelpDefinition);
+                    TextWriterRaw.WriteRaw(new ListEntry()
+                    {
+                        Entry = cmd.Command,
+                        Value = cmd.HelpDefinition,
+                    }.Render() + "\n");
                 }
             }
 
             // The alias commands
             if (showAlias)
             {
-                TextWriterRaw.WritePlain(CharManager.NewLine + "Alias commands:" + (showCount ? " [{0}]" : ""), AliasedCommandList.Count);
+                TextWriterColor.WriteColor(CharManager.NewLine + "Alias commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
-                    TextWriterRaw.WritePlain("  - No alias commands.");
+                    TextWriterColor.WriteColor("  - No alias commands.", ConsoleColors.Silver);
                 foreach (var cmd in AliasedCommandList)
                 {
-                    TextWriterRaw.WritePlain("  - {0} -> {1}: ", false, cmd.Key.Alias, cmd.Value.Command);
-                    TextWriterRaw.WritePlain("{0}", cmd.Value.HelpDefinition);
+                    TextWriterRaw.WriteRaw(new ListEntry()
+                    {
+                        Entry = $"{cmd.Key.Alias} -> {cmd.Value.Command}",
+                        Value = cmd.Value.HelpDefinition,
+                    }.Render() + "\n");
                 }
             }
 
             // The unified commands
             if (showUnified)
             {
-                TextWriterRaw.WritePlain(CharManager.NewLine + "Unified commands:" + (showCount ? " [{0}]" : ""), unifiedCommandList.Count);
+                TextWriterColor.WriteColor(CharManager.NewLine + "Unified commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
-                    TextWriterRaw.WritePlain("  - No unified commands.");
+                    TextWriterColor.WriteColor("  - No unified commands.", ConsoleColors.Silver);
                 foreach (var cmd in unifiedCommandList)
                 {
-                    TextWriterRaw.WritePlain("  - {0}: ", false, cmd.Command);
-                    TextWriterRaw.WritePlain("{0}", cmd.HelpDefinition);
+                    TextWriterRaw.WriteRaw(new ListEntry()
+                    {
+                        Entry = cmd.Command,
+                        Value = cmd.HelpDefinition,
+                    }.Render() + "\n");
                 }
             }
         }
@@ -102,7 +115,7 @@ namespace Terminaux.Shell.Help
         {
             // Get visible commands
             var commands = CommandManager.GetCommandNames(commandType);
-            TextWriterColor.Write(string.Join(", ", commands));
+            TextWriterColor.Write(string.Join(", ", commands), ConsoleColors.Silver);
         }
 
         internal static void ShowHelpUsage(string command, string commandType)
@@ -142,10 +155,11 @@ namespace Terminaux.Shell.Help
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
                     HelpDefinition = "Command defined by " + command;
-                TextWriterRaw.WritePlain("Command:", false);
-                TextWriterRaw.WritePlain($" {FinalCommand}");
-                TextWriterRaw.WritePlain("Description:", false);
-                TextWriterRaw.WritePlain($" {HelpDefinition}");
+                TextWriterRaw.WriteRaw(new ListEntry()
+                {
+                    Entry = FinalCommand,
+                    Value = HelpDefinition,
+                }.Render() + "\n");
 
                 // Iterate through command argument information instances
                 var argumentInfos = FinalCommandList[FinalCommand].CommandArgumentInfo ?? [];
@@ -164,32 +178,41 @@ namespace Terminaux.Shell.Help
                     }
 
                     // Print usage information
-                    TextWriterRaw.WritePlain("Usage:", false);
-                    TextWriterRaw.WritePlain($" {FinalCommand} {renderedUsage}");
+                    TextWriterRaw.WriteRaw(new ListEntry()
+                    {
+                        Entry = "Usage",
+                        Value = $" {FinalCommand} {renderedUsage}",
+                    }.Render() + "\n");
 
                     // If we have arguments, print their descriptions
                     if (Arguments.Length != 0)
                     {
-                        TextWriterRaw.WritePlain("This command has the below arguments that change how it works:");
+                        TextWriterColor.WriteColor("This command has the below arguments that change how it works:", ConsoleColors.Silver);
                         foreach (var argument in Arguments)
                         {
                             string argumentName = argument.ArgumentExpression;
                             string argumentDesc = argument.Options.ArgumentDescription;
-                            TextWriterRaw.WritePlain($"  {argumentName}: ", false);
-                            TextWriterRaw.WritePlain(argumentDesc);
+                            TextWriterRaw.WriteRaw(new ListEntry()
+                            {
+                                Entry = $"  {argumentName}",
+                                Value = argumentDesc,
+                            }.Render() + "\n");
                         }
                     }
 
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
-                        TextWriterRaw.WritePlain("This command has the below switches that change how it works:");
+                        TextWriterColor.WriteColor("This command has the below switches that change how it works:", ConsoleColors.Silver);
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;
                             string switchDesc = Switch.HelpDefinition;
-                            TextWriterRaw.WritePlain($"  -{switchName}: ", false);
-                            TextWriterRaw.WritePlain(switchDesc);
+                            TextWriterRaw.WriteRaw(new ListEntry()
+                            {
+                                Entry = $"  -{switchName}",
+                                Value = switchDesc,
+                            }.Render() + "\n");
                         }
                     }
                 }
@@ -198,7 +221,7 @@ namespace Terminaux.Shell.Help
                 FinalCommandList[FinalCommand].CommandBase?.HelpHelper();
             }
             else
-                TextWriterRaw.WritePlain("No help for command \"{0}\".", command);
+                TextWriterColor.WriteColor("No help for command \"{0}\".", ConsoleColors.Red, command);
         }
     }
 }

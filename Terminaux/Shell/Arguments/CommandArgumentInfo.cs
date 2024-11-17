@@ -47,13 +47,7 @@ namespace Terminaux.Shell.Arguments
         /// <summary>
         /// Command switches
         /// </summary>
-        public SwitchInfo[] Switches { get; private set; } = [
-            new SwitchInfo("set", "Sets the value of the output to the selected MESH variable", false, true)
-        ];
-        /// <summary>
-        /// Whether to accept the -set switch to set the MESH variable value
-        /// </summary>
-        public bool AcceptsSet { get; private set; }
+        public SwitchInfo[] Switches { get; private set; } = [];
         /// <summary>
         /// Whether to accept infinite number of arguments
         /// </summary>
@@ -133,24 +127,15 @@ namespace Terminaux.Shell.Arguments
         /// Installs a new instance of the command argument info class
         /// </summary>
         public CommandArgumentInfo()
-            : this([], [], false, false)
+            : this([], [], false)
         { }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
-        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
-        public CommandArgumentInfo(bool AcceptsSet)
-            : this([], [], AcceptsSet, false)
-        { }
-
-        /// <summary>
-        /// Installs a new instance of the command argument info class
-        /// </summary>
-        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         /// <param name="infiniteBounds">Whether to accept infinite number of arguments or not</param>
-        public CommandArgumentInfo(bool AcceptsSet, bool infiniteBounds)
-            : this([], [], AcceptsSet, infiniteBounds)
+        public CommandArgumentInfo(bool infiniteBounds)
+            : this([], [], infiniteBounds)
         { }
 
         /// <summary>
@@ -158,26 +143,16 @@ namespace Terminaux.Shell.Arguments
         /// </summary>
         /// <param name="Arguments">Command arguments</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments)
-            : this(Arguments, [], false, false)
+            : this(Arguments, [], false)
         { }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
         /// <param name="Arguments">Command arguments</param>
-        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
-        public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet)
-            : this(Arguments, [], AcceptsSet, false)
-        { }
-
-        /// <summary>
-        /// Installs a new instance of the command argument info class
-        /// </summary>
-        /// <param name="Arguments">Command arguments</param>
-        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         /// <param name="infiniteBounds">Whether to accept infinite number of arguments or not</param>
-        public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet, bool infiniteBounds)
-            : this(Arguments, [], AcceptsSet, infiniteBounds)
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool infiniteBounds)
+            : this(Arguments, [], infiniteBounds)
         { }
 
         /// <summary>
@@ -185,26 +160,16 @@ namespace Terminaux.Shell.Arguments
         /// </summary>
         /// <param name="Switches">Command switches</param>
         public CommandArgumentInfo(SwitchInfo[] Switches)
-            : this([], Switches, false, false)
+            : this([], Switches, false)
         { }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
         /// <param name="Switches">Command switches</param>
-        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
-        public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet)
-            : this([], Switches, AcceptsSet, false)
-        { }
-
-        /// <summary>
-        /// Installs a new instance of the command argument info class
-        /// </summary>
-        /// <param name="Switches">Command switches</param>
-        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         /// <param name="infiniteBounds">Whether to accept infinite number of arguments or not</param>
-        public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet, bool infiniteBounds)
-            : this([], Switches, AcceptsSet, infiniteBounds)
+        public CommandArgumentInfo(SwitchInfo[] Switches, bool infiniteBounds)
+            : this([], Switches, infiniteBounds)
         { }
 
         /// <summary>
@@ -213,7 +178,7 @@ namespace Terminaux.Shell.Arguments
         /// <param name="Arguments">Command arguments</param>
         /// <param name="Switches">Command switches</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)
-            : this(Arguments, Switches, false, false)
+            : this(Arguments, Switches, false)
         { }
 
         /// <summary>
@@ -221,28 +186,13 @@ namespace Terminaux.Shell.Arguments
         /// </summary>
         /// <param name="Arguments">Command arguments</param>
         /// <param name="Switches">Command switches</param>
-        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
-        public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)
-            : this(Arguments, Switches, AcceptsSet, false)
-        { }
-
-        /// <summary>
-        /// Installs a new instance of the command argument info class
-        /// </summary>
-        /// <param name="Arguments">Command arguments</param>
-        /// <param name="Switches">Command switches</param>
-        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         /// <param name="infiniteBounds">Whether to accept infinite number of arguments or not</param>
-        public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet, bool infiniteBounds)
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool infiniteBounds)
         {
             var finalArgs = Arguments ?? [];
             var finalSwitches = Switches ?? [];
             this.Arguments = finalArgs;
-            if (AcceptsSet)
-                this.Switches = this.Switches.Union(finalSwitches).ToArray();
-            else
-                this.Switches = finalSwitches;
-            this.AcceptsSet = AcceptsSet;
+            this.Switches = finalSwitches;
             InfiniteBounds = infiniteBounds;
         }
 
