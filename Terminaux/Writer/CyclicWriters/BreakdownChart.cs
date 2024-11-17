@@ -40,6 +40,7 @@ namespace Terminaux.Writer.CyclicWriters
         private int interiorHeight = 0;
         private bool showcase = false;
         private bool vertical = false;
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -96,6 +97,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Chart elements
         /// </summary>
         public ChartElement[] Elements
@@ -112,10 +122,10 @@ namespace Terminaux.Writer.CyclicWriters
         {
             return TextWriterWhereColor.RenderWhere(
                 RenderBreakdownChart(
-                    elements, InteriorWidth, InteriorHeight, Showcase, Vertical), Left, Top);
+                    elements, InteriorWidth, InteriorHeight, Showcase, Vertical, UseColors), Left, Top);
         }
 
-        internal static string RenderBreakdownChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool vertical = false)
+        internal static string RenderBreakdownChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool vertical = false, bool useColor = true)
         {
             StringBuilder breakdownChart = new();
             if (vertical)
@@ -157,11 +167,11 @@ namespace Terminaux.Writer.CyclicWriters
                         int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
                         spaces = spaces < 0 ? 0 : spaces;
                         breakdownChart.Append(
-                            ColorTools.RenderSetConsoleColor(element.Color) +
+                            (useColor ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
                             " ■ " +
-                            ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) +
+                            (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                             element.Name.Truncate(nameLength - 4 - $"{maxValueDisplay}".Length) + "  " +
-                            ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) +
+                            (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                             element.Value +
                             new string(' ', spaces) +
                             " ┃ "
@@ -197,9 +207,9 @@ namespace Terminaux.Writer.CyclicWriters
                         // Render the element and its value
                         int length = (int)(value * wholeLength / maxValue);
                         breakdownChart.Append(
-                            ColorTools.RenderSetConsoleColor(color, true) +
+                            (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
                             "  " +
-                            ColorTools.RenderResetBackground()
+                            (useColor ? ColorTools.RenderResetBackground() : "")
                         );
                         break;
                     }
@@ -223,9 +233,9 @@ namespace Terminaux.Writer.CyclicWriters
                     // Render the element bar
                     int length = (int)Math.Round(value * InteriorWidth / maxValue);
                     breakdownChart.Append(
-                        ColorTools.RenderSetConsoleColor(color, true) +
+                        (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
                         new string(' ', length) +
-                        ColorTools.RenderResetBackground()
+                        (useColor ? ColorTools.RenderResetBackground() : "")
                     );
                 }
 
@@ -255,11 +265,11 @@ namespace Terminaux.Writer.CyclicWriters
 
                         // Render the showcase element
                         breakdownChart.Append(
-                            ColorTools.RenderSetConsoleColor(color) +
+                            (useColor ? ColorTools.RenderSetConsoleColor(color) : "") +
                             " ■ " +
-                            ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) +
+                            (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                             name + "  " +
-                            ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) +
+                            (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                             value +
                             spaces
                         );

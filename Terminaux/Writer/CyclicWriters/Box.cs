@@ -33,7 +33,7 @@ namespace Terminaux.Writer.CyclicWriters
         private int interiorWidth = 0;
         private int interiorHeight = 0;
         private Color boxColor = ColorTools.CurrentForegroundColor;
-        private bool customColor = false;
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -77,11 +77,16 @@ namespace Terminaux.Writer.CyclicWriters
         public Color Color
         {
             get => boxColor;
-            set
-            {
-                boxColor = value;
-                customColor = true;
-            }
+            set => boxColor = value;
+        }
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
         }
 
         /// <summary>
@@ -91,7 +96,7 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render()
         {
             return RenderBox(
-                Left, Top, InteriorWidth, InteriorHeight, Color, customColor);
+                Left, Top, InteriorWidth, InteriorHeight, Color, UseColors);
         }
 
         internal static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BoxColor, bool useColor)

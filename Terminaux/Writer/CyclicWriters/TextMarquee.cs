@@ -20,6 +20,7 @@
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Sequences;
 using Textify.General;
 
@@ -36,6 +37,9 @@ namespace Terminaux.Writer.CyclicWriters
         private int leftIdx = 0;
         private int rightIdx = 0;
         private int textWidth = 0;
+        private bool useColors = true;
+        private Color fgColor = ColorTools.CurrentForegroundColor;
+        private Color bgColor = ColorTools.CurrentBackgroundColor;
 
         /// <summary>
         /// Text to render. All VT sequences and control characters are trimmed away.
@@ -59,12 +63,44 @@ namespace Terminaux.Writer.CyclicWriters
         public int Delay { get; set; } = 30;
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
+        /// Foreground color
+        /// </summary>
+        public Color ForegroundColor
+        {
+            get => fgColor;
+            set => fgColor = value;
+        }
+
+        /// <summary>
+        /// Background color
+        /// </summary>
+        public Color BackgroundColor
+        {
+            get => bgColor;
+            set => bgColor = value;
+        }
+
+        /// <summary>
         /// Renders a scrolling text marquee
         /// </summary>
         /// <returns>The result</returns>
         public string Render()
         {
             int finalWidth = ConsoleWrapper.WindowWidth - LeftMargin - RightMargin;
+            var builder = new StringBuilder();
+            builder.Append(
+                (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
+                (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")
+            );
             if (textWidth > finalWidth)
             {
                 // Process the width
@@ -118,12 +154,13 @@ namespace Terminaux.Writer.CyclicWriters
                     if (leftIdx == 0)
                         pausing = true;
                 }
-
-                // Return the result
-                return renderedBuilder.ToString();
+                builder.Append(renderedBuilder.ToString());
             }
-            else
-                return Text;
+            builder.Append(
+                (UseColors ? ColorTools.RenderResetBackground() : "") +
+                (UseColors ? ColorTools.RenderResetForeground() : "")
+            );
+            return builder.ToString();
         }
 
         /// <summary>

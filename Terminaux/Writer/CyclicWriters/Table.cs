@@ -45,7 +45,7 @@ namespace Terminaux.Writer.CyclicWriters
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private List<CellOptions> settings = [];
         private BorderSettings borderSettings = new();
-        private bool customColor = false;
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -107,11 +107,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color SeparatorColor
         {
             get => separatorColor;
-            set
-            {
-                separatorColor = value;
-                customColor = true;
-            }
+            set => separatorColor = value;
         }
 
         /// <summary>
@@ -120,11 +116,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color HeaderColor
         {
             get => headerColor;
-            set
-            {
-                headerColor = value;
-                customColor = true;
-            }
+            set => headerColor = value;
         }
 
         /// <summary>
@@ -133,11 +125,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ValueColor
         {
             get => valueColor;
-            set
-            {
-                valueColor = value;
-                customColor = true;
-            }
+            set => valueColor = value;
         }
 
         /// <summary>
@@ -146,11 +134,16 @@ namespace Terminaux.Writer.CyclicWriters
         public Color BackgroundColor
         {
             get => backgroundColor;
-            set
-            {
-                backgroundColor = value;
-                customColor = true;
-            }
+            set => backgroundColor = value;
+        }
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
         }
 
         /// <summary>
@@ -159,11 +152,7 @@ namespace Terminaux.Writer.CyclicWriters
         public List<CellOptions> Settings
         {
             get => settings;
-            set
-            {
-                settings = value;
-                customColor = true;
-            }
+            set => settings = value;
         }
 
         /// <summary>
@@ -187,7 +176,7 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render()
         {
             return RenderTable(
-                Rows, Left, Top, InteriorWidth, InteriorHeight, Header, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, customColor, Settings, BorderSettings, Title);
+                Rows, Left, Top, InteriorWidth, InteriorHeight, Header, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, UseColors, Settings, BorderSettings, Title);
         }
 
         internal static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null, string title = "")
@@ -233,6 +222,7 @@ namespace Terminaux.Writer.CyclicWriters
                 InteriorWidth = maxCellWidth * columnsCount - 1,
                 InteriorHeight = height,
                 Settings = tableBorderSettings,
+                UseColors = useColor,
             };
             if (useColor)
             {

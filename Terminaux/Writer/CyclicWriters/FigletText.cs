@@ -42,7 +42,7 @@ namespace Terminaux.Writer.CyclicWriters
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private bool customPos = false;
-        private bool customColor = false;
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -120,11 +120,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ForegroundColor
         {
             get => foregroundColor;
-            set
-            {
-                foregroundColor = value;
-                customColor = true;
-            }
+            set => foregroundColor = value;
         }
 
         /// <summary>
@@ -133,11 +129,16 @@ namespace Terminaux.Writer.CyclicWriters
         public Color BackgroundColor
         {
             get => backgroundColor;
-            set
-            {
-                backgroundColor = value;
-                customColor = true;
-            }
+            set => backgroundColor = value;
+        }
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
         }
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render()
         {
             return RenderFiglet(
-                Text, Font, ForegroundColor, BackgroundColor, customColor, LeftMargin, RightMargin);
+                Text, Font, ForegroundColor, BackgroundColor, UseColors, LeftMargin, RightMargin);
         }
 
         internal void UpdateInternalTop()

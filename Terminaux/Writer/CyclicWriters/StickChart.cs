@@ -38,6 +38,7 @@ namespace Terminaux.Writer.CyclicWriters
         private int interiorWidth = 0;
         private int interiorHeight = 0;
         private bool showcase = false;
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -85,6 +86,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Chart elements
         /// </summary>
         public ChartElement[] Elements
@@ -101,10 +111,10 @@ namespace Terminaux.Writer.CyclicWriters
         {
             return TextWriterWhereColor.RenderWhere(
                 RenderStickChart(
-                    elements, InteriorWidth, InteriorHeight, Showcase), Left, Top);
+                    elements, InteriorWidth, InteriorHeight, Showcase, UseColors), Left, Top);
         }
 
-        internal static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false)
+        internal static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool useColor = true)
         {
             // Some variables
             int maxNameLength = InteriorWidth / 4;
@@ -129,11 +139,11 @@ namespace Terminaux.Writer.CyclicWriters
                     int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
                     spaces = spaces < 0 ? 0 : spaces;
                     stickChart.Append(
-                        ColorTools.RenderSetConsoleColor(element.Color) +
+                        (useColor ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
                         " ■ " +
-                        ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) +
+                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                         element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
-                        ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) +
+                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                         element.Value +
                         new string(' ', spaces) +
                         " ┃ "
@@ -163,16 +173,16 @@ namespace Terminaux.Writer.CyclicWriters
                     var elementTuple = shownElementHeights[e];
                     ChartElement? element = elementTuple.ce;
                     int height = elementTuple.Item2;
-                    var color = inverse <= height ? element.Color : ColorTools.CurrentBackgroundColor;
+                    var color = inverse <= height ? element.Color : (useColor ? ColorTools.CurrentBackgroundColor : "");
                     string name = element.Name;
                     double value = element.Value;
 
                     // Render the element and its value
                     int length = (int)(value * wholeLength / maxValue);
                     stickChart.Append(
-                        ColorTools.RenderSetConsoleColor(color, true) +
+                        (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
                         "  " +
-                        ColorTools.RenderResetBackground()
+                        (useColor ? ColorTools.RenderResetBackground() : "")
                     );
                     processedWidth += 2;
                 }

@@ -19,6 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 
 namespace Terminaux.Writer.CyclicWriters
 {
@@ -29,6 +30,36 @@ namespace Terminaux.Writer.CyclicWriters
     {
         private int step = 0;
         private readonly string[] spinners = [];
+        private bool useColors = true;
+        private Color fgColor = ColorTools.CurrentForegroundColor;
+        private Color bgColor = ColorTools.CurrentBackgroundColor;
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
+        /// Foreground color
+        /// </summary>
+        public Color ForegroundColor
+        {
+            get => fgColor;
+            set => fgColor = value;
+        }
+
+        /// <summary>
+        /// Background color
+        /// </summary>
+        public Color BackgroundColor
+        {
+            get => bgColor;
+            set => bgColor = value;
+        }
 
         /// <summary>
         /// Renders a spinner
@@ -43,7 +74,12 @@ namespace Terminaux.Writer.CyclicWriters
                 step = 0;
 
             // Return the spinner
-            return spinner;
+            return
+                (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
+                (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
+                spinner +
+                (UseColors ? ColorTools.RenderResetBackground() : "") +
+                (UseColors ? ColorTools.RenderResetForeground() : "");
         }
 
         internal string Peek() =>

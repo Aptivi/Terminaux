@@ -31,6 +31,7 @@ namespace Terminaux.Writer.CyclicWriters
     {
         private string[] fileLines = [];
         private Color color = ColorTools.CurrentForegroundColor;
+        private bool useColors = true;
 
         /// <summary>
         /// Text color
@@ -62,6 +63,15 @@ namespace Terminaux.Writer.CyclicWriters
         public int TargetPosition { get; set; }
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Renders a LineHandle segment group
         /// </summary>
         /// <returns>Rendered LineHandle text that will be used by the renderer</returns>
@@ -71,12 +81,12 @@ namespace Terminaux.Writer.CyclicWriters
             {
                 SourcePosition = Math.Min(SourcePosition, TargetPosition);
                 TargetPosition = Math.Max(SourcePosition, TargetPosition);
-                return RenderLineHandleRanged(fileLines, Position, SourcePosition, TargetPosition, Color);
+                return RenderLineHandleRanged(fileLines, Position, SourcePosition, TargetPosition, Color, UseColors);
             }
-            return RenderLineHandleRanged(fileLines, Position, SourcePosition, 0, Color);
+            return RenderLineHandleRanged(fileLines, Position, SourcePosition, 0, Color, UseColors);
         }
 
-        internal static string RenderLineHandleRanged(string[] Array, int LineNumber, int startPos, int endPos, Color color)
+        internal static string RenderLineHandleRanged(string[] Array, int LineNumber, int startPos, int endPos, Color color, bool useColor = true)
         {
             // Get the builder
             StringBuilder builder = new();
@@ -105,14 +115,17 @@ namespace Terminaux.Writer.CyclicWriters
                 RepeatBlanks = 0;
             if (RepeatMarkers < 0)
                 RepeatMarkers = 0;
-            builder.AppendLine($"{ColorTools.RenderSetConsoleColor(color)} {LineNumber} | {LineContent}");
-            builder.AppendLine($"{ColorTools.RenderSetConsoleColor(color)} {new string(' ', digits)} | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
+            builder.AppendLine($"{(useColor ? ColorTools.RenderSetConsoleColor(color) : "")} {LineNumber} | {LineContent}");
+            builder.AppendLine($"{(useColor ? ColorTools.RenderSetConsoleColor(color) : "")} {new string(' ', digits)} | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
 
             // Write the resulting buffer
-            builder.Append(
-                ColorTools.RenderRevertForeground() +
-                ColorTools.RenderRevertBackground()
-            );
+            if (useColor)
+            {
+                builder.Append(
+                    ColorTools.RenderRevertForeground() +
+                    ColorTools.RenderRevertBackground()
+                );
+            }
             return builder.ToString();
         }
 

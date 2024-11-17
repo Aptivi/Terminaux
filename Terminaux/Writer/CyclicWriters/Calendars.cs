@@ -43,6 +43,7 @@ namespace Terminaux.Writer.CyclicWriters
         private Color valueColor = ColorTools.CurrentForegroundColor;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private BorderSettings borderSettings = new();
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -144,6 +145,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Border settings to use
         /// </summary>
         public BorderSettings BorderSettings
@@ -168,9 +178,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <returns>Rendered calendar that will be used by the renderer</returns>
         public string Render() =>
-            RenderCalendar(Left, Top, InteriorWidth, InteriorHeight, Year, Month, Culture, Calendar, CellOptions, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, BorderSettings);
+            RenderCalendar(Left, Top, InteriorWidth, InteriorHeight, Year, Month, Culture, Calendar, CellOptions, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, BorderSettings, UseColors);
 
-        internal static string RenderCalendar(int left, int top, int width, int height, int year, int month, CultureInfo culture, Calendar calendar, List<CellOptions> cellOptions, Color separatorColor, Color headerColor, Color valueColor, Color backgroundColor, BorderSettings borderSettings)
+        internal static string RenderCalendar(int left, int top, int width, int height, int year, int month, CultureInfo culture, Calendar calendar, List<CellOptions> cellOptions, Color separatorColor, Color headerColor, Color valueColor, Color backgroundColor, BorderSettings borderSettings, bool useColor = true)
         {
             var calendarRendered = new StringBuilder();
             var calendarDays = culture.DateTimeFormat.DayNames;
@@ -224,6 +234,7 @@ namespace Terminaux.Writer.CyclicWriters
                 SeparatorColor = separatorColor,
                 Rows = calendarData,
                 Title = CalendarTitle,
+                UseColors = useColor,
             };
             calendarRendered.Append(calendarTable.Render());
             return calendarRendered.ToString();

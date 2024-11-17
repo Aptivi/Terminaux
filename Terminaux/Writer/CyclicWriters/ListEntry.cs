@@ -30,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters
     {
         private Color keyColor = ConsoleColors.Yellow;
         private Color valueColor = ConsoleColors.Olive;
-        private bool customColor = false;
+        private bool useColors = true;
 
         /// <summary>
         /// List key name
@@ -48,11 +48,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color KeyColor
         {
             get => keyColor;
-            set
-            {
-                keyColor = value;
-                customColor = true;
-            }
+            set => keyColor = value;
         }
 
         /// <summary>
@@ -61,11 +57,16 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ValueColor
         {
             get => valueColor;
-            set
-            {
-                valueColor = value;
-                customColor = true;
-            }
+            set => valueColor = value;
+        }
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <returns>Rendered ListEntry text that will be used by the renderer</returns>
         public string Render() =>
-            RenderListEntry(Entry, Value, KeyColor, ValueColor, Indentation, customColor);
+            RenderListEntry(Entry, Value, KeyColor, ValueColor, Indentation, UseColors);
 
         internal static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0, bool useColor = true)
         {

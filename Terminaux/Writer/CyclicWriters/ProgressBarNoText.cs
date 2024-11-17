@@ -36,6 +36,7 @@ namespace Terminaux.Writer.CyclicWriters
         private int maxPosition = 0;
         private int indeterminateStep = 0;
         private bool indeterminateBackwards = false;
+        private bool useColors = true;
         private ColorGradients indeterminateGradient = ColorGradients.GetGradients(ConsoleColors.DarkGreen, ConsoleColors.Lime, 50);
         private Spinner progressSpinner = BuiltinSpinners.Dots;
         private Color progressForegroundColor = ConsoleColors.DarkGreen;
@@ -119,6 +120,15 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ProgressSpinnerTextColor { get; set; } = ConsoleColors.Grey;
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Progress vertical inactive track character for drawing
         /// </summary>
         public char ProgressVerticalInactiveTrackChar { get; set; } = '┃';
@@ -157,7 +167,7 @@ namespace Terminaux.Writer.CyclicWriters
             // Render the spinner
             var rendered = new StringBuilder();
             rendered.Append(
-                ColorTools.RenderSetConsoleColor(ProgressSpinnerTextColor) +
+                (UseColors ? ColorTools.RenderSetConsoleColor(ProgressSpinnerTextColor) : "") +
                 $" {progressSpinner.Render()} "
             );
 
@@ -179,6 +189,7 @@ namespace Terminaux.Writer.CyclicWriters
                 indeterminateStep = indeterminateStep,
                 indeterminateGradient = indeterminateGradient,
                 indeterminateBackwards = indeterminateBackwards,
+                UseColors = UseColors,
             };
             rendered.Append(bar.Render());
             indeterminateStep = bar.indeterminateStep;
@@ -187,7 +198,7 @@ namespace Terminaux.Writer.CyclicWriters
 
             // Return the result
             rendered.Append(
-                ColorTools.RenderResetColors()
+                (UseColors ? ColorTools.RenderResetColors() : "")
             );
             return rendered.ToString();
         }

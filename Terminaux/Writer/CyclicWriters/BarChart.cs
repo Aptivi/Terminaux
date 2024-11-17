@@ -36,6 +36,7 @@ namespace Terminaux.Writer.CyclicWriters
         private int top = 0;
         private int interiorWidth = 0;
         private bool showcase = false;
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -74,6 +75,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Chart elements
         /// </summary>
         public ChartElement[] Elements
@@ -90,10 +100,10 @@ namespace Terminaux.Writer.CyclicWriters
         {
             return TextWriterWhereColor.RenderWhere(
                 RenderBarChart(
-                    elements, InteriorWidth, Showcase), Left, Top);
+                    elements, InteriorWidth, Showcase, UseColors), Left, Top);
         }
 
-        internal static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false)
+        internal static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false, bool useColor = true)
         {
             // Some variables
             int maxNameLength = InteriorWidth / 4;
@@ -122,10 +132,10 @@ namespace Terminaux.Writer.CyclicWriters
                     int nameWidth = ConsoleChar.EstimateCellWidth(name);
                     int spaces = nameLength - nameWidth;
                     barChart.Append(
-                        ColorTools.RenderSetConsoleColor(color) +
+                        (useColor ? ColorTools.RenderSetConsoleColor(color) : "") +
                         name.Truncate(nameLength) +
                         new string(' ', spaces) +
-                        ColorTools.RenderResetForeground() +
+                        (useColor ? ColorTools.RenderResetForeground() : "") +
                         " ┃ "
                     );
                 }
@@ -133,12 +143,12 @@ namespace Terminaux.Writer.CyclicWriters
                 // Render the element and its value
                 int length = (int)(value * chartLength / maxValue);
                 barChart.AppendLine(
-                    ColorTools.RenderSetConsoleColor(color, true) +
+                    (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
                     new string(' ', length) +
-                    ColorTools.RenderSetConsoleColor(color) +
-                    ColorTools.RenderResetBackground() +
+                    (useColor ? ColorTools.RenderSetConsoleColor(color) : "") +
+                    (useColor ? ColorTools.RenderResetBackground() : "") +
                     $" {value}" +
-                    ColorTools.RenderResetForeground()
+                    (useColor ? ColorTools.RenderResetForeground() : "")
                 );
             }
 

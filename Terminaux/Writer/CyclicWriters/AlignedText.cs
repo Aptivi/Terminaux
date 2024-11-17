@@ -44,7 +44,7 @@ namespace Terminaux.Writer.CyclicWriters
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private TextSettings settings = new();
         private bool customTop = false;
-        private bool customColor = false;
+        private bool useColors = true;
         private bool rainbow = false;
         private bool rainbowBg = false;
 
@@ -109,11 +109,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ForegroundColor
         {
             get => foregroundColor;
-            set
-            {
-                foregroundColor = value;
-                customColor = true;
-            }
+            set => foregroundColor = value;
         }
 
         /// <summary>
@@ -122,11 +118,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color BackgroundColor
         {
             get => backgroundColor;
-            set
-            {
-                backgroundColor = value;
-                customColor = true;
-            }
+            set => backgroundColor = value;
         }
 
         /// <summary>
@@ -145,6 +137,15 @@ namespace Terminaux.Writer.CyclicWriters
         {
             get => oneLine;
             set => oneLine = value;
+        }
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
         }
 
         /// <summary>
@@ -174,12 +175,12 @@ namespace Terminaux.Writer.CyclicWriters
             int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
             if (!OneLine)
                 return RenderAligned(
-                    Top, Text, ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
+                    Top, Text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
             else
             {
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 return RenderAligned(
-                    Top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
+                    Top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
             }
         }
 

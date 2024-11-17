@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters
@@ -27,13 +28,47 @@ namespace Terminaux.Writer.CyclicWriters
     public class NerdFonts : IStaticRenderable
     {
         private readonly string nerdfonts = "";
+        private bool useColors = true;
+        private Color fgColor = ColorTools.CurrentForegroundColor;
+        private Color bgColor = ColorTools.CurrentBackgroundColor;
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
+        /// Foreground color
+        /// </summary>
+        public Color ForegroundColor
+        {
+            get => fgColor;
+            set => fgColor = value;
+        }
+
+        /// <summary>
+        /// Background color
+        /// </summary>
+        public Color BackgroundColor
+        {
+            get => bgColor;
+            set => bgColor = value;
+        }
 
         /// <summary>
         /// Renders a Nerd Fonts glyph
         /// </summary>
         /// <returns>A string representation of the Nerd Fonts glyph</returns>
         public string Render() =>
-            nerdfonts;
+            (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
+            (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
+            nerdfonts +
+            (UseColors ? ColorTools.RenderResetBackground() : "") +
+            (UseColors ? ColorTools.RenderResetForeground() : "");
 
         /// <summary>
         /// Makes a new nerdfonts instance

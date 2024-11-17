@@ -34,7 +34,7 @@ namespace Terminaux.Writer.CyclicWriters
     {
         private Color keyColor = ConsoleColors.Yellow;
         private Color valueColor = ConsoleColors.Olive;
-        private bool customColor = false;
+        private bool useColors = true;
 
         /// <summary>
         /// List key color
@@ -42,11 +42,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color KeyColor
         {
             get => keyColor;
-            set
-            {
-                keyColor = value;
-                customColor = true;
-            }
+            set => keyColor = value;
         }
 
         /// <summary>
@@ -55,11 +51,16 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ValueColor
         {
             get => valueColor;
-            set
-            {
-                valueColor = value;
-                customColor = true;
-            }
+            set => valueColor = value;
+        }
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <returns>Rendered Listing text that will be used by the renderer</returns>
         public string Render() =>
-            RenderList(Objects, KeyColor, ValueColor, customColor, Stringifier, KeyStringifier, ValueStringifier, RecursiveStringifier);
+            RenderList(Objects, KeyColor, ValueColor, UseColors, Stringifier, KeyStringifier, ValueStringifier, RecursiveStringifier);
 
         internal static string RenderList(IEnumerable? List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<object, string>? stringifier = null, Func<object, string>? keyStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
@@ -116,6 +117,7 @@ namespace Terminaux.Writer.CyclicWriters
                             Value = valuesString,
                             KeyColor = ListKeyColor,
                             ValueColor = ListValueColor,
+                            UseColors = useColor,
                         }.Render()
                     );
                 }
@@ -130,6 +132,7 @@ namespace Terminaux.Writer.CyclicWriters
                             Value = valueStringifier is not null && value is not null ? new Func<object, string>((obj) => valueStringifier(obj)).Invoke(value) : value?.ToString() ?? "<<null>>",
                             KeyColor = ListKeyColor,
                             ValueColor = ListValueColor,
+                            UseColors = useColor,
                         }.Render()
                     );
                 }
@@ -141,6 +144,7 @@ namespace Terminaux.Writer.CyclicWriters
                             Value = (stringifier is not null ? stringifier(ListEntry) : ListEntry).ToString(),
                             KeyColor = ListKeyColor,
                             ValueColor = ListValueColor,
+                            UseColors = useColor,
                         }.Render()
                     );
                 EntryNumber += 1;

@@ -47,7 +47,7 @@ namespace Terminaux.Writer.CyclicWriters
         private BorderSettings settings = new();
         private TextSettings textSettings = new();
         private bool customPos = false;
-        private bool customColor = false;
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -127,11 +127,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color Color
         {
             get => borderColor;
-            set
-            {
-                borderColor = value;
-                customColor = true;
-            }
+            set => borderColor = value;
         }
 
         /// <summary>
@@ -140,11 +136,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color TextColor
         {
             get => textColor;
-            set
-            {
-                textColor = value;
-                customColor = true;
-            }
+            set => textColor = value;
         }
 
         /// <summary>
@@ -153,11 +145,16 @@ namespace Terminaux.Writer.CyclicWriters
         public Color BackgroundColor
         {
             get => backgroundColor;
-            set
-            {
-                backgroundColor = value;
-                customColor = true;
-            }
+            set => backgroundColor = value;
+        }
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
         }
 
         /// <summary>
@@ -187,7 +184,7 @@ namespace Terminaux.Writer.CyclicWriters
             if (!customPos)
                 UpdateInternalTop();
             return RenderBorder(
-                Title, text, Left, Top, InteriorWidth, InteriorHeight, Settings, TextSettings, Color, BackgroundColor, TextColor, customColor);
+                Title, text, Left, Top, InteriorWidth, InteriorHeight, Settings, TextSettings, Color, BackgroundColor, TextColor, UseColors);
         }
 
         internal void UpdateInternalTop()
@@ -217,6 +214,7 @@ namespace Terminaux.Writer.CyclicWriters
                     InteriorHeight = InteriorHeight,
                     Settings = settings,
                     TitleSettings = textSettings,
+                    UseColors = useColor,
                 };
                 var box = new Box()
                 {
@@ -224,6 +222,7 @@ namespace Terminaux.Writer.CyclicWriters
                     Top = Top,
                     InteriorWidth = InteriorWidth,
                     InteriorHeight = InteriorHeight,
+                    UseColors = useColor,
                 };
                 if (useColor)
                 {

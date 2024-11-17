@@ -49,7 +49,7 @@ namespace Terminaux.Writer.CyclicWriters
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private TextSettings settings = new();
         private bool customSize = false;
-        private bool customColor = false;
+        private bool useColors = true;
 
         /// <summary>
         /// Left position
@@ -110,11 +110,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ForegroundColor
         {
             get => foregroundColor;
-            set
-            {
-                foregroundColor = value;
-                customColor = true;
-            }
+            set => foregroundColor = value;
         }
 
         /// <summary>
@@ -123,11 +119,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Color BackgroundColor
         {
             get => backgroundColor;
-            set
-            {
-                backgroundColor = value;
-                customColor = true;
-            }
+            set => backgroundColor = value;
         }
 
         /// <summary>
@@ -137,6 +129,15 @@ namespace Terminaux.Writer.CyclicWriters
         {
             get => settings;
             set => settings = value;
+        }
+
+        /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
         }
 
         /// <summary>
@@ -192,10 +193,10 @@ namespace Terminaux.Writer.CyclicWriters
             string[] lines = TextWriterTools.GetFinalLines(Text, width);
             if (PositionWise)
                 return RenderTextPoswise(
-                    lines, Settings, ForegroundColor, BackgroundColor, Width, Height, Left, Top, customColor, Row, Column);
+                    lines, Settings, ForegroundColor, BackgroundColor, Width, Height, Left, Top, UseColors, Row, Column);
             else
                 return RenderTextLinewise(
-                    lines, Settings, ForegroundColor, BackgroundColor, Height, Left, Top, customColor, Line, ref incrementRate);
+                    lines, Settings, ForegroundColor, BackgroundColor, Height, Left, Top, UseColors, Line, ref incrementRate);
         }
 
         internal void UpdateInternalSize()

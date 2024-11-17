@@ -34,6 +34,7 @@ namespace Terminaux.Writer.CyclicWriters
         internal int indeterminateStep = 0;
         internal ColorGradients indeterminateGradient = ColorGradients.GetGradients(ConsoleColors.DarkGreen, ConsoleColors.Lime, 50);
         internal bool indeterminateBackwards = false;
+        private bool useColors = true;
         private int position = 0;
         private int maxPosition = 0;
         private Color progressActiveForegroundColor = ConsoleColors.Lime;
@@ -122,6 +123,15 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ProgressPercentageTextColor { get; set; } = ConsoleColors.Silver;
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Progress vertical inactive track character for drawing
         /// </summary>
         public char ProgressVerticalInactiveTrackChar { get; set; } = '┃';
@@ -173,7 +183,7 @@ namespace Terminaux.Writer.CyclicWriters
                     // Get the gradient and render it
                     var gradientColor = indeterminateGradient[indeterminateStep - 1 < 0 ? 0 : indeterminateStep - 1];
                     rendered.Append(
-                        ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor)
+                        (UseColors ? ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor) : "")
                     );
                     for (int i = 0; i < Height; i++)
                         rendered.AppendLine($"{ProgressVerticalInactiveTrackChar}");
@@ -182,12 +192,12 @@ namespace Terminaux.Writer.CyclicWriters
                 {
                     int remaining = Height - cells;
                     rendered.Append(
-                        ColorTools.RenderSetConsoleColor(ProgressActiveForegroundColor)
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ProgressActiveForegroundColor) : "")
                     );
                     for (int i = 0; i < cells; i++)
                         rendered.AppendLine($"{ProgressVerticalActiveTrackChar}");
                     rendered.Append(
-                        ColorTools.RenderSetConsoleColor(ProgressForegroundColor)
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ProgressForegroundColor) : "")
                     );
                     for (int i = 0; i < remaining; i++)
                         rendered.AppendLine($"{ProgressVerticalInactiveTrackChar}");
@@ -225,16 +235,16 @@ namespace Terminaux.Writer.CyclicWriters
                     // Get the gradient and render it
                     var gradientColor = indeterminateGradient[indeterminateStep - 1 < 0 ? 0 : indeterminateStep - 1];
                     rendered.Append(
-                        ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor) +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor) : "") +
                         new string(ProgressHorizontalInactiveTrackChar, cells + percentageWidth - 1)
                     );
                 }
                 else
                 {
                     rendered.Append(
-                        ColorTools.RenderSetConsoleColor(ProgressActiveForegroundColor) +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ProgressActiveForegroundColor) : "") +
                         new string(ProgressHorizontalActiveTrackChar, cells) +
-                        ColorTools.RenderSetConsoleColor(ProgressForegroundColor) +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ProgressForegroundColor) : "") +
                         new string(ProgressHorizontalInactiveTrackChar, progressWidth - cells)
                     );
 
@@ -243,7 +253,7 @@ namespace Terminaux.Writer.CyclicWriters
                     {
                         int percentage = (int)(position * 100 / (double)maxPosition);
                         rendered.Append(
-                            ColorTools.RenderSetConsoleColor(ProgressPercentageTextColor) +
+                            (UseColors ? ColorTools.RenderSetConsoleColor(ProgressPercentageTextColor) : "") +
                             $" {percentage,3}%"
                         );
                     }
@@ -252,7 +262,7 @@ namespace Terminaux.Writer.CyclicWriters
 
             // Return the result
             rendered.Append(
-                ColorTools.RenderResetColors()
+                (UseColors ? ColorTools.RenderResetColors() : "")
             );
             return rendered.ToString();
         }

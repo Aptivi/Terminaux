@@ -43,6 +43,7 @@ namespace Terminaux.Writer.CyclicWriters
         private Color optionColor = ConsoleColors.Black;
         private Color optionForegroundColor = ConsoleColors.Yellow;
         private Color optionBackgroundColor = ConsoleColors.Olive;
+        private bool useColors = true;
 
         /// <summary>
         /// Key bindings
@@ -126,6 +127,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Left position
         /// </summary>
         public int Left { get; set; }
@@ -151,9 +161,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered Keybindings text that will be used by the renderer</returns>
         public string Render() =>
             TextWriterWhereColor.RenderWhere(
-                RenderKeybindings(KeybindingList, BuiltinKeybindings, BuiltinColor, BuiltinForegroundColor, BuiltinBackgroundColor, OptionColor, OptionForegroundColor, OptionBackgroundColor, BackgroundColor, Width, HelpKeyInfo), Left, Top);
+                RenderKeybindings(KeybindingList, BuiltinKeybindings, BuiltinColor, BuiltinForegroundColor, BuiltinBackgroundColor, OptionColor, OptionForegroundColor, OptionBackgroundColor, BackgroundColor, Width, HelpKeyInfo, UseColors), Left, Top);
 
-        internal static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int width, ConsoleKeyInfo? helpKeyInfo)
+        internal static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int width, ConsoleKeyInfo? helpKeyInfo, bool useColor = true)
         {
             var bindingsBuilder = new StringBuilder();
             helpKeyInfo ??= new('K', ConsoleKey.K, false, false, false);
@@ -176,11 +186,11 @@ namespace Terminaux.Writer.CyclicWriters
                 if (canDraw)
                 {
                     bindingsBuilder.Append(
-                        $"{ColorTools.RenderSetConsoleColor(isBuiltin ? builtinColor : optionColor, false, true)}" +
-                        $"{ColorTools.RenderSetConsoleColor(isBuiltin ? builtinBackgroundColor : optionBackgroundColor, true)}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(isBuiltin ? builtinColor : optionColor, false, true) : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(isBuiltin ? builtinBackgroundColor : optionBackgroundColor, true) : "")}" +
                         KeybindingTools.GetBindingKeyShortcut(binding, false) +
-                        $"{ColorTools.RenderSetConsoleColor(isBuiltin ? builtinForegroundColor : optionForegroundColor)}" +
-                        $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(isBuiltin ? builtinForegroundColor : optionForegroundColor) : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(backgroundColor, true) : "")}" +
                         $" {binding.BindingName}  "
                     );
                 }
@@ -192,17 +202,20 @@ namespace Terminaux.Writer.CyclicWriters
                         break;
                     bindingsBuilder.Append(
                         new string(' ', spaces) +
-                        $"{ColorTools.RenderSetConsoleColor(builtinColor, false, true)}" +
-                        $"{ColorTools.RenderSetConsoleColor(builtinBackgroundColor, true)}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(builtinColor, false, true) : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(builtinBackgroundColor, true) : "")}" +
                         renderedExtraBinding
                     );
                     break;
                 }
             }
-            bindingsBuilder.Append(
-                ColorTools.RenderRevertForeground() +
-                ColorTools.RenderRevertBackground()
-            );
+            if (useColor)
+            {
+                bindingsBuilder.Append(
+                    ColorTools.RenderRevertForeground() +
+                    ColorTools.RenderRevertBackground()
+                );
+            }
             return bindingsBuilder.ToString();
         }
 
