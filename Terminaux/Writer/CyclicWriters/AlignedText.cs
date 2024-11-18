@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 
@@ -63,7 +64,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Top position
+        /// Text to render
         /// </summary>
         public string Text
         {
@@ -277,7 +278,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <param name="text">Text to use</param>
         /// <param name="vars">Variables to format the text with</param>
-        public AlignedText(string text, params object[] vars)
+        public AlignedText(Mark text, params object[] vars)
         {
             // Install the values
             this.text = TextTools.FormatString(text, vars);

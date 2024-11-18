@@ -24,6 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
 using Terminaux.Writer.CyclicWriters.Builtins;
+using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
 
 namespace Terminaux.Writer.CyclicWriters
@@ -255,9 +256,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// <param name="progressSpinner">Spinner instance to use, or <see cref="BuiltinSpinners.Dots"/></param>
         /// <param name="progressMarquee">Marquee writer to use</param>
         /// <param name="args">Arguments to format the string with</param>
-        public ProgressBar(string text, int position, int maxPosition, Spinner? progressSpinner = null, TextMarquee? progressMarquee = null, params object?[]? args)
+        public ProgressBar(Mark text, int position, int maxPosition, Spinner? progressSpinner = null, TextMarquee? progressMarquee = null, params object?[]? args)
         {
-            this.text = text.FormatString(args);
+            this.text = ((string)text).FormatString(args);
             this.position = position;
             this.maxPosition = maxPosition;
             this.progressSpinner = progressSpinner ?? BuiltinSpinners.Dots;

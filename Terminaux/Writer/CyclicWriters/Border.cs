@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 
@@ -200,7 +201,7 @@ namespace Terminaux.Writer.CyclicWriters
             top = ConsoleWrapper.WindowHeight / 2 - interiorHeight / 2 - 1;
         }
 
-        internal static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
+        internal static string RenderBorder(string title, Mark text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
         {
             StringBuilder border = new();
             try

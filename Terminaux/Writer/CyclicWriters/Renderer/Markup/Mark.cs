@@ -63,6 +63,20 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             new(markup);
 
         /// <summary>
+        /// Makes a string from the markup
+        /// </summary>
+        /// <param name="mark">Markup instance</param>
+        public static implicit operator string(Mark mark) =>
+            mark.ParseMarkup();
+
+        /// <summary>
+        /// Makes a wide string from the markup
+        /// </summary>
+        /// <param name="mark">Markup instance</param>
+        public static implicit operator WideString(Mark mark) =>
+            (WideString)mark.ParseMarkup();
+
+        /// <summary>
         /// Constructor without any argument to create a markup representation class without text
         /// </summary>
         public Mark()

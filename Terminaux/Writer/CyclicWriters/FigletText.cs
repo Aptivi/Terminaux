@@ -22,6 +22,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.Data.Figlet;
 using Textify.Data.Figlet.Utilities.Lines;
 using Textify.General;
@@ -187,7 +188,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// <param name="figletFont">Figlet font to render with</param>
         /// <param name="text">Text to use</param>
         /// <param name="vars">Variables to format the text with</param>
-        public FigletText(FigletFont figletFont, string text, params object[] vars)
+        public FigletText(FigletFont figletFont, Mark text, params object[] vars)
         {
             // Install the values
             this.text = TextTools.FormatString(text, vars);

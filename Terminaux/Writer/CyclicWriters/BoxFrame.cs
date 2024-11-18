@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 
@@ -281,7 +282,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <param name="text">Text to use</param>
         /// <param name="vars">Variables to format the text with</param>
-        public BoxFrame(string text, params object[] vars)
+        public BoxFrame(Mark text, params object[] vars)
         {
             this.text = TextTools.FormatString(text, vars);
         }

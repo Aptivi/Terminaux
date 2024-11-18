@@ -22,6 +22,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Sequences;
+using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
 
 namespace Terminaux.Writer.CyclicWriters
@@ -168,9 +169,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <param name="text">Text to render. All VT sequences and control characters are trimmed away.</param>
         /// <param name="args">Arguments to format the string with</param>
-        public TextMarquee(string text, params object?[]? args)
+        public TextMarquee(Mark text, params object?[]? args)
         {
-            this.text = VtSequenceTools.FilterVTSequences(text.FormatString(args)).ReplaceAll(CharManager.GetAllControlChars(), "");
+            this.text = VtSequenceTools.FilterVTSequences(((string)text).FormatString(args)).ReplaceAll(CharManager.GetAllControlChars(), "");
             textWidth = ConsoleChar.EstimateCellWidth(this.text);
         }
     }
