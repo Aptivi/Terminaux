@@ -20,7 +20,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Base.Extensions;
-using Textify.General.Structures;
 
 namespace Terminaux.Tests.Base
 {

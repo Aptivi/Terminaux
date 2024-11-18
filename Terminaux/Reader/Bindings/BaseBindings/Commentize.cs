@@ -17,21 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class Commentize : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('#', ConsoleKey.D3, true, true, false),
-        ];
-
-        /// <inheritdoc/>
-        public override bool IsExit => false;
-
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {

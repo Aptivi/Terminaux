@@ -17,18 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class Yank : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('\u0019', ConsoleKey.Y, false, false, true)
-        ];
-
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {

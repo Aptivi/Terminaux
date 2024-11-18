@@ -17,23 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class Return : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            // for Windows
-            new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false),
-            new ConsoleKeyInfo('\n', ConsoleKey.J, false, false, true),
-
-            // for Linux
-            new ConsoleKeyInfo('\n', ConsoleKey.Enter, false, false, false),
-        ];
-
         /// <inheritdoc/>
         public override bool IsExit => true;
 

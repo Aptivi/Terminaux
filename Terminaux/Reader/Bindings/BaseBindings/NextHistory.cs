@@ -17,19 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class NextHistory : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('\0', ConsoleKey.DownArrow, false, false, false)
-        ];
-
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {

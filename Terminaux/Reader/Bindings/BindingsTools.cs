@@ -31,45 +31,282 @@ namespace Terminaux.Reader.Bindings
     {
         internal static List<BaseBinding> baseBindings =
         [
-            new GoRight(),
-            new GoLeft(),
-            new Home(),
-            new End(),
-            new Rubout(),
-            new Return(),
-            new ReturnNothing(),
-            new PreviousHistory(),
-            new NextHistory(),
-            new FirstHistory(),
-            new LastHistory(),
-            new Delete(),
-            new BackwardOneWord(),
-            new ForwardOneWord(),
-            new NextSuggestion(),
-            new PreviousSuggestion(),
-            new CutToStart(),
-            new CutToEnd(),
-            new CutBackwardOneWord(),
-            new CutForwardOneWord(),
-            new Yank(),
-            new UppercaseOneWord(),
-            new LowercaseOneWord(),
-            new UppercaseAll(),
-            new LowercaseAll(),
-            new UpAndForwardOneWord(),
-            new LowAndForwardOneWord(),
-            new ShowSuggestions(),
-            new Refresh(),
-            new InsertMode(),
-            new RefreshClear(),
-            new CutHorizontalLine(),
-            new SubstituteChars(),
-            new SubstituteWords(),
-            new Commentize(),
-            new Conceal(),
+            new GoRight()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.RightArrow, false, false, false),
+                    new ConsoleKeyInfo('\u0006', ConsoleKey.F, false, false, true)
+                ]
+            },
+            new GoLeft()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.LeftArrow, false, false, false),
+                    new ConsoleKeyInfo('\u0002', ConsoleKey.B, false, false, true)
+                ]
+            },
+            new Home()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.Home, false, false, false),
+                    new ConsoleKeyInfo('\u0001', ConsoleKey.A, false, false, true)
+                ]
+            },
+            new End()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.End, false, false, false),
+                    new ConsoleKeyInfo('\u0005', ConsoleKey.E, false, false, true)
+                ]
+            },
+            new Rubout()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\b', ConsoleKey.Backspace, false, false, false),
+                    new ConsoleKeyInfo('\u007f', ConsoleKey.Backspace, false, false, false),
+                    new ConsoleKeyInfo('\0', ConsoleKey.Backspace, false, false, false),
+                    new ConsoleKeyInfo('\b', ConsoleKey.Backspace, false, false, true),
+                ]
+            },
+            new Return()
+            {
+                BoundKeys =
+                [
+                    // for Windows
+                    new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false),
+                    new ConsoleKeyInfo('\n', ConsoleKey.J, false, false, true),
+
+                    // for Linux
+                    new ConsoleKeyInfo('\n', ConsoleKey.Enter, false, false, false),
+                ]
+            },
+            new ReturnNothing()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\x03', ConsoleKey.C, false, false, true),
+                ]
+            },
+            new PreviousHistory()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.UpArrow, false, false, false)
+                ]
+            },
+            new NextHistory()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.DownArrow, false, false, false)
+                ]
+            },
+            new FirstHistory()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('<', ConsoleKey.OemComma, true, true, false),
+                    new ConsoleKeyInfo('<', 0, false, false, false),
+                ]
+            },
+            new LastHistory()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('>', ConsoleKey.OemPeriod, true, true, false),
+                    new ConsoleKeyInfo('>', 0, false, false, false),
+                ]
+            },
+            new Delete()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.Delete, false, false, false)
+                ]
+            },
+            new BackwardOneWord()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('b', ConsoleKey.B, false, true, false)
+                ]
+            },
+            new ForwardOneWord()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('f', ConsoleKey.F, false, true, false)
+                ]
+            },
+            new NextSuggestion()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\t', ConsoleKey.Tab, false, false, false)
+                ]
+            },
+            new PreviousSuggestion()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\t', ConsoleKey.Tab, true, false, false)
+                ]
+            },
+            new CutToStart()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\u0015', ConsoleKey.U, false, false, true)
+                ]
+            },
+            new CutToEnd()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\u000B', ConsoleKey.K, false, false, true)
+                ]
+            },
+            new CutBackwardOneWord()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\u0017', ConsoleKey.W, false, false, true)
+                ]
+            },
+            new CutForwardOneWord()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('d', ConsoleKey.D, false, true, false),
+                    new ConsoleKeyInfo('\xE4', ConsoleKey.D, false, false, false),
+                ]
+            },
+            new Yank()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\u0019', ConsoleKey.Y, false, false, true)
+                ]
+            },
+            new UppercaseOneWord()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('u', ConsoleKey.U, false, true, false)
+                ]
+            },
+            new LowercaseOneWord()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('l', ConsoleKey.L, false, true, false)
+                ]
+            },
+            new UppercaseAll()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.U, false, true, true)
+                ]
+            },
+            new LowercaseAll()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.L, false, true, true)
+                ]
+            },
+            new UpAndForwardOneWord()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('c', ConsoleKey.C, false, true, false)
+                ]
+            },
+            new LowAndForwardOneWord()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('v', ConsoleKey.V, false, true, false)
+                ]
+            },
+            new ShowSuggestions()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('s', ConsoleKey.S, false, true, false),
+                ]
+            },
+            new Refresh()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('r', ConsoleKey.R, false, true, false),
+                ]
+            },
+            new InsertMode()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.Insert, false, false, false)
+                ]
+            },
+            new RefreshClear()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\u000c', ConsoleKey.L, false, false, true),
+                ]
+            },
+            new CutHorizontalLine()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\\', ConsoleKey.Oem5, false, true, false)
+                ]
+            },
+            new SubstituteChars()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\u0014', ConsoleKey.T, false, false, true)
+                ]
+            },
+            new SubstituteWords()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('t', ConsoleKey.T, false, true, false)
+                ]
+            },
+            new Commentize()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('#', ConsoleKey.D3, true, true, false),
+                ]
+            },
+            new Conceal()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('C', ConsoleKey.C, true, true, false),
+                ]
+            },
 
 #if DEBUG
             new DebugPos()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('\0', ConsoleKey.D, true, true, true)
+                ]
+            }
 #endif
         ];
 

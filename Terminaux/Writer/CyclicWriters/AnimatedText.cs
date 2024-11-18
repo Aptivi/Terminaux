@@ -21,12 +21,10 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Textify.General;
 
 namespace Terminaux.Writer.CyclicWriters
 {

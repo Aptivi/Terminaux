@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Inputs;
@@ -31,10 +32,18 @@ namespace Terminaux.Reader.Bindings
     /// </summary>
     public abstract class BaseBinding : IBinding
     {
+        private readonly List<ConsoleKeyInfo> customKeys = [];
+
         /// <summary>
-        /// Key to bind to
+        /// Key to bind this keybinding to
         /// </summary>
-        public virtual ConsoleKeyInfo[] BoundKeys { get; } = [];
+        public ConsoleKeyInfo[] BoundKeys { get; internal set; } = [];
+
+        /// <summary>
+        /// Custom keys to bind this keybinding to
+        /// </summary>
+        public List<ConsoleKeyInfo>? CustomKeys =>
+            IsBindingOverridable ? customKeys : null;
 
         /// <summary>
         /// Resets the suggestions text position
@@ -47,13 +56,20 @@ namespace Terminaux.Reader.Bindings
         public virtual bool IsExit { get; }
 
         /// <summary>
+        /// Can this binding be overridden?
+        /// </summary>
+        public virtual bool IsBindingOverridable =>
+            false;
+
+        /// <summary>
         /// Whether the binding matched
         /// </summary>
         /// <param name="input">Input key</param>
         public virtual bool BindMatched(ConsoleKeyInfo input)
         {
             bool match = false;
-            foreach (var key in BoundKeys)
+            var finalKeys = IsBindingOverridable && CustomKeys?.Count > 0 ? CustomKeys : [.. BoundKeys];
+            foreach (var key in finalKeys)
             {
                 match = input.Key == key.Key &&
                         input.KeyChar == key.KeyChar &&

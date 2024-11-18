@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 namespace Terminaux.Reader.Bindings
 {
@@ -30,6 +31,11 @@ namespace Terminaux.Reader.Bindings
         /// Keys to bind to
         /// </summary>
         public ConsoleKeyInfo[] BoundKeys { get; }
+
+        /// <summary>
+        /// Custom keys to bind this keybinding to
+        /// </summary>
+        public List<ConsoleKeyInfo>? CustomKeys { get; }
 
         /// <summary>
         /// Resets the suggestions text position

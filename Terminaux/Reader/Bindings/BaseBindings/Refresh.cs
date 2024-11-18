@@ -17,18 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class Refresh : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('r', ConsoleKey.R, false, true, false),
-        ];
-
         /// <inheritdoc/>
         public override bool IsExit => false;
 

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Linq;
 using Terminaux.Reader.Tools;
 using Textify.General;
@@ -26,12 +25,6 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class PreviousSuggestion : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('\t', ConsoleKey.Tab, true, false, false)
-        ];
-
         /// <inheritdoc/>
         public override bool ResetSuggestionsTextPos =>
             false;

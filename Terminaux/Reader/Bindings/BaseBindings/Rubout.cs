@@ -17,22 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class Rubout : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('\b', ConsoleKey.Backspace, false, false, false),
-            new ConsoleKeyInfo('\u007f', ConsoleKey.Backspace, false, false, false),
-            new ConsoleKeyInfo('\0', ConsoleKey.Backspace, false, false, false),
-            new ConsoleKeyInfo('\b', ConsoleKey.Backspace, false, false, true),
-        ];
-
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {

@@ -17,18 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class LowercaseAll : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('\0', ConsoleKey.L, false, true, true)
-        ];
-
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {

@@ -17,18 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class Conceal : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('C', ConsoleKey.C, true, true, false),
-        ];
-
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {

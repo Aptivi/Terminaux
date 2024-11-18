@@ -17,19 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class ForwardOneWord : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('f', ConsoleKey.F, false, true, false)
-        ];
-
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {

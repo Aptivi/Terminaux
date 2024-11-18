@@ -17,20 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class GoRight : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('\0', ConsoleKey.RightArrow, false, false, false),
-            new ConsoleKeyInfo('\u0006', ConsoleKey.F, false, false, true)
-        ];
-
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {

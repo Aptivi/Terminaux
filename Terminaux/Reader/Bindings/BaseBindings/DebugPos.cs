@@ -29,12 +29,6 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class DebugPos : BaseBinding, IBinding
     {
         /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('\0', ConsoleKey.D, true, true, true)
-        ];
-
-        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             // Show debug background positions

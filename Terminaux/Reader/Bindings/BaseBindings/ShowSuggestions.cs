@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
@@ -27,12 +26,6 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 {
     internal class ShowSuggestions : BaseBinding, IBinding
     {
-        /// <inheritdoc/>
-        public override ConsoleKeyInfo[] BoundKeys { get; } =
-        [
-            new ConsoleKeyInfo('s', ConsoleKey.S, false, true, false),
-        ];
-
         /// <inheritdoc/>
         public override bool IsExit => false;
 
