@@ -27,6 +27,7 @@ using Terminaux.Sequences;
 using Terminaux.Writer.CyclicWriters.Renderer.Effects;
 using Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins;
 using Textify.General;
+using Textify.General.Structures;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
 {
@@ -72,7 +73,18 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
         /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
         /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
         /// <returns>A string that can be written to the console with the parsed markup representations</returns>
-        public static string ParseMarkup(string markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
+        public static string ParseMarkup(string markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "") =>
+            ParseMarkup((WideString)markup, foregroundColor, backgroundColor, initialFormat);
+
+        /// <summary>
+        /// Parses the markup representation
+        /// </summary>
+        /// <param name="markup">Markup representation</param>
+        /// <param name="foregroundColor">Foreground color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
+        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
+        public static string ParseMarkup(WideString markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
         {
             // Markup is inspired by BBCode and can have escaped starting and ending sequence characters.
             var finalResult = new StringBuilder(markup);
@@ -83,8 +95,8 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             int nestLevel = -1;
             for (int i = 0; i < markup.Length; i++)
             {
-                char markupChar = markup[i];
-                char nextChar = i + 1 < markup.Length ? markup[i + 1] : '\0';
+                WideChar markupChar = markup[i];
+                WideChar nextChar = i + 1 < markup.Length ? markup[i + 1] : (WideChar)'\0';
 
                 // Check to see if we are escaping or not
                 if (((markupChar == '[' && nextChar == '[') || (markupChar == ']' && nextChar == ']')) && queuedSequences.Count == 0)
@@ -117,7 +129,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                 }
                 else if (markupChar == '[' && nextChar == '/' && queuedSequences.Count > 0)
                 {
-                    char nextTwoChar = i + 2 < markup.Length ? markup[i + 2] : '\0';
+                    WideChar nextTwoChar = i + 2 < markup.Length ? markup[i + 2] : (WideChar)'\0';
                     if (nextTwoChar != ']')
                         throw new TerminauxException("Invalid end tag specifier.");
                     if (queuedSequences.Count > 0)
@@ -139,7 +151,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                 // Add a character
                 if (append)
                 {
-                    appended.Append(markupChar);
+                    appended.Append((string)markupChar);
                     if (markupChar == ']' && queuedSequences.Count > 0)
                     {
                         queuedSequences[queuedSequences.Count - 1].represent = appended.ToString();
@@ -235,7 +247,18 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
         /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
         /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
         /// <returns>A string that can be written to the console with the parsed markup representations</returns>
-        public static bool TryParseMarkup(string markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
+        public static bool TryParseMarkup(string markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "") =>
+            TryParseMarkup((WideString)markup, foregroundColor, backgroundColor, initialFormat);
+
+        /// <summary>
+        /// Parses the markup representation
+        /// </summary>
+        /// <param name="markup">Markup representation</param>
+        /// <param name="foregroundColor">Foreground color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
+        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
+        public static bool TryParseMarkup(WideString markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
         {
             try
             {

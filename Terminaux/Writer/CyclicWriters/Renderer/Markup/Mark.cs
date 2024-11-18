@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Textify.General.Structures;
+
 namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
 {
     /// <summary>
@@ -24,12 +26,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
     /// </summary>
     public class Mark
     {
-        private string markup = "";
+        private WideString markup = (WideString)"";
 
         /// <summary>
         /// Markup representation
         /// </summary>
-        public string Markup
+        public WideString Markup
         {
             get => markup;
             set
@@ -47,6 +49,20 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             MarkupTools.ParseMarkup(Markup);
 
         /// <summary>
+        /// Makes a <see cref="Mark"/> instance from a string implicitly
+        /// </summary>
+        /// <param name="markup">Markup representation</param>
+        public static implicit operator Mark(string markup) =>
+            new(markup);
+
+        /// <summary>
+        /// Makes a <see cref="Mark"/> instance from a wide string implicitly
+        /// </summary>
+        /// <param name="markup">Markup representation</param>
+        public static implicit operator Mark(WideString markup) =>
+            new(markup);
+
+        /// <summary>
         /// Constructor without any argument to create a markup representation class without text
         /// </summary>
         public Mark()
@@ -58,7 +74,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
         /// <param name="markup">Markup representation of a text</param>
         public Mark(string markup)
         {
-            Markup = markup;
+            Markup = (WideString)markup;
         }
     }
 }
