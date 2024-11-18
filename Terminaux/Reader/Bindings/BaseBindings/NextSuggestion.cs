@@ -26,6 +26,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class NextSuggestion : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override bool ResetSuggestionsTextPos =>
             false;
 

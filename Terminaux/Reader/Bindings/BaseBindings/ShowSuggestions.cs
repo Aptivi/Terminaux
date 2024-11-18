@@ -27,7 +27,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class ShowSuggestions : BaseBinding, IBinding
     {
         /// <inheritdoc/>
-        public override bool IsExit => false;
+        public override bool IsBindingOverridable => true;
 
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)

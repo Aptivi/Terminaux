@@ -22,6 +22,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class LowercaseAll : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             for (int i = 0; i < state.CurrentText.Length; i++)

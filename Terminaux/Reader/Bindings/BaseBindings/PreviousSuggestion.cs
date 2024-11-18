@@ -30,6 +30,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             false;
 
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             // Get suggestions

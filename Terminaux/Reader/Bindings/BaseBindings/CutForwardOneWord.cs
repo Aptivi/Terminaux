@@ -24,6 +24,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class CutForwardOneWord : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             // If we're at the start of the text, bail.

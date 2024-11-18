@@ -22,6 +22,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class Commentize : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             state.commentized = !state.commentized;

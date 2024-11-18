@@ -22,6 +22,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class CutHorizontalLine : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             // Remove whitespaces before and after the cursor

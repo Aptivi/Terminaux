@@ -22,6 +22,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class Yank : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             // Re-write the text and set the current cursor position as appropriate

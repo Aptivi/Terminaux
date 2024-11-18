@@ -22,9 +22,10 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class InsertMode : BaseBinding, IBinding
     {
         /// <inheritdoc/>
-        public override void DoAction(TermReaderState state)
-        {
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
+        public override void DoAction(TermReaderState state) =>
             state.insertIsReplace = !state.insertIsReplace;
-        }
     }
 }

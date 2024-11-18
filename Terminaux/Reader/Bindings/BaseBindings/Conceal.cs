@@ -22,6 +22,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class Conceal : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             if (state.PasswordMode)

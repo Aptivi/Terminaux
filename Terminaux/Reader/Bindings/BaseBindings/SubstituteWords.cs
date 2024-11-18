@@ -24,6 +24,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class SubstituteWords : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             // First, check the boundaries

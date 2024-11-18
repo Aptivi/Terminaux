@@ -24,6 +24,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class NextHistory : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             // If we're at the end of the history, bail.

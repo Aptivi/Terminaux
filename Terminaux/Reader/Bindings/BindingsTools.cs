@@ -326,9 +326,14 @@ namespace Terminaux.Reader.Bindings
             // If we have the key in the bound keys list (either built-in or custom), don't add the key to the list.
             bool found = false;
             foreach (var baseBinding in AllBindings)
+            {
                 foreach (var baseKey in baseBinding.BoundKeys)
                     if (binding.BoundKeys.Contains(baseKey))
                         found = true;
+                foreach (var baseKey in baseBinding.CustomKeys ?? [])
+                    if (binding.CustomKeys?.Contains(baseKey) ?? false)
+                        found = true;
+            }
 
             // Else, just add it.
             if (!found)
