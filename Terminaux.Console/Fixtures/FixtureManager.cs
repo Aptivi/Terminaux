@@ -299,6 +299,7 @@ namespace Terminaux.Console.Fixtures
             new AlternateBuffers(),
             new Sizes(),
             new BeepTones(),
+            new BeepSynth(),
             new ProgressTest(),
             new ProgressFailTest(),
             new ProgressWarnFailTest(),
