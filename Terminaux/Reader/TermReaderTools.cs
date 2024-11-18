@@ -258,6 +258,9 @@ namespace Terminaux.Reader
             if (!state.CanInsert)
                 return;
 
+            // Replace some of the characters
+            newText = newText.Replace("\t", "    ").ReplaceAll(CharManager.GetAllControlChars(), "");
+
             // Get the longest sentence width and crop the text appropriately
             if (!state.OneLineWrap)
             {
