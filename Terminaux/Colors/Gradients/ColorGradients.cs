@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Colors.Gradients
 {
@@ -146,6 +147,24 @@ namespace Terminaux.Colors.Gradients
             }
             return gradients;
         }
+
+        /// <summary>
+        /// Get shades of colors (to the darkest)
+        /// </summary>
+        /// <param name="color">Color to be shaded</param>
+        /// <param name="steps">Steps for shades</param>
+        /// <returns>A gradient collection instance containing shade information</returns>
+        public static ColorGradients GetShades(Color color, int steps = 10) =>
+            GetGradients(color, ConsoleColors.Black, steps);
+
+        /// <summary>
+        /// Get tints of colors (to the brightest)
+        /// </summary>
+        /// <param name="color">Color to be tinted</param>
+        /// <param name="steps">Steps for tints</param>
+        /// <returns>A gradient collection instance containing tint information</returns>
+        public static ColorGradients GetTints(Color color, int steps = 10) =>
+            GetGradients(color, ConsoleColors.White, steps);
 
         /// <summary>
         /// Gets the number of gradients

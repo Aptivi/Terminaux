@@ -464,6 +464,62 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests trying to get the color shades of ten steps
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetShades()
+        {
+            var source = new Color(ConsoleColors.Green);
+            var last = new Color(ConsoleColors.Black);
+            var grads = ColorGradients.GetShades(source);
+            grads.ShouldNotBeNull();
+            grads.ShouldNotBeEmpty();
+            grads.Count.ShouldBe(11);
+            grads[0].ShouldNotBeNull();
+            grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
+            grads[1].IntermediateColor.Hex.ShouldBe("#007300");
+            grads[2].IntermediateColor.Hex.ShouldBe("#006600");
+            grads[3].IntermediateColor.Hex.ShouldBe("#005A00");
+            grads[4].IntermediateColor.Hex.ShouldBe("#004D00");
+            grads[5].IntermediateColor.Hex.ShouldBe("#004000");
+            grads[6].IntermediateColor.Hex.ShouldBe("#003300");
+            grads[7].IntermediateColor.Hex.ShouldBe("#002600");
+            grads[8].IntermediateColor.Hex.ShouldBe("#001A00");
+            grads[9].IntermediateColor.Hex.ShouldBe("#000D00");
+            grads[grads.Count - 1].ShouldNotBeNull();
+            grads[grads.Count - 1].IntermediateColor.PlainSequenceTrueColor.ShouldBe(last.PlainSequenceTrueColor);
+        }
+
+        /// <summary>
+        /// Tests trying to get the color tints of ten steps
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetTints()
+        {
+            var source = new Color(ConsoleColors.Green);
+            var last = new Color(ConsoleColors.White);
+            var grads = ColorGradients.GetTints(source);
+            grads.ShouldNotBeNull();
+            grads.ShouldNotBeEmpty();
+            grads.Count.ShouldBe(11);
+            grads[0].ShouldNotBeNull();
+            grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
+            grads[1].IntermediateColor.Hex.ShouldBe("#1A8D1A");
+            grads[2].IntermediateColor.Hex.ShouldBe("#339933");
+            grads[3].IntermediateColor.Hex.ShouldBe("#4CA64C");
+            grads[4].IntermediateColor.Hex.ShouldBe("#66B366");
+            grads[5].IntermediateColor.Hex.ShouldBe("#80BF80");
+            grads[6].IntermediateColor.Hex.ShouldBe("#99CC99");
+            grads[7].IntermediateColor.Hex.ShouldBe("#B2D9B2");
+            grads[8].IntermediateColor.Hex.ShouldBe("#CCE6CC");
+            grads[9].IntermediateColor.Hex.ShouldBe("#E6F2E6");
+            grads[grads.Count - 1].ShouldNotBeNull();
+            grads[grads.Count - 1].IntermediateColor.PlainSequenceTrueColor.ShouldBe(last.PlainSequenceTrueColor);
+        }
+
+        /// <summary>
         /// Tests trying to get a blended color
         /// </summary>
         [TestMethod]
