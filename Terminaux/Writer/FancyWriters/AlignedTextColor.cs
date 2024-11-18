@@ -321,7 +321,7 @@ namespace Terminaux.Writer.FancyWriters
                 Text = TextTools.FormatString(Text, leftMargin, rightMargin, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-                return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, 0, Vars);
+                return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, 0, null, Vars);
             }
             catch (Exception ex)
             {
@@ -341,7 +341,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderAligned(int top, string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            AlignedText.RenderAligned(top, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, alignment, leftMargin, rightMargin, 0, Vars);
+            AlignedText.RenderAligned(top, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, alignment, leftMargin, rightMargin, 0, null, Vars);
 
         /// <summary>
         /// Renders an aligned text
@@ -354,7 +354,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderAligned(int top, string Text, Color ForegroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            AlignedText.RenderAligned(top, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, alignment, leftMargin, rightMargin, 0, Vars);
+            AlignedText.RenderAligned(top, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, alignment, leftMargin, rightMargin, 0, null, Vars);
 
         /// <summary>
         /// Renders an aligned text
@@ -368,7 +368,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, true, alignment, leftMargin, rightMargin, 0, Vars);
+            AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, true, alignment, leftMargin, rightMargin, 0, null, Vars);
 
         /// <summary>
         /// Renders an aligned text (just the first line)

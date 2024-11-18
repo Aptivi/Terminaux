@@ -51,7 +51,24 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             };
             TextWriterRaw.WritePlain("Full decoration:  " + decoration1.Render());
             TextWriterRaw.WritePlain("Start decoration: " + decoration2.RenderStart());
-            TextWriterRaw.WritePlain("End decoration:   " + decoration3.RenderEnd());
+            TextWriterRaw.WritePlain("End decoration:   " + decoration3.RenderEnd() + "\n");
+
+            var alignedTextUndecorated = new AlignedText("Aligned text")
+            {
+                ForegroundColor = ConsoleColors.Yellow,
+                Top = 6,
+                LeftMargin = "Aligned text without decoration: ".Length,
+            };
+            var alignedTextDecorated = new AlignedText("Aligned text")
+            {
+                ForegroundColor = ConsoleColors.Yellow,
+                UseColors = true,
+                Top = 7,
+                LeftMargin = "Aligned text without decoration: ".Length,
+                Decoration = decoration2,
+            };
+            TextWriterRaw.WritePlain("Aligned text without decoration: " + alignedTextUndecorated.Render());
+            TextWriterRaw.WritePlain("Aligned text with decoration:    " + alignedTextDecorated.Render());
         }
     }
 }

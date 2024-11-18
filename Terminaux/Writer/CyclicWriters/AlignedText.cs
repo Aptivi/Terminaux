@@ -47,6 +47,7 @@ namespace Terminaux.Writer.CyclicWriters
         private bool useColors = true;
         private bool rainbow = false;
         private bool rainbowBg = false;
+        private Decoration? decoration = null;
 
         /// <summary>
         /// Top position
@@ -167,6 +168,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Decorations to add an appetizing prefix and suffix to the text
+        /// </summary>
+        public Decoration? Decoration
+        {
+            get => decoration;
+            set => decoration = value;
+        }
+
+        /// <summary>
         /// Renders an aligned figlet text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
@@ -175,12 +185,12 @@ namespace Terminaux.Writer.CyclicWriters
             int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
             if (!OneLine)
                 return RenderAligned(
-                    Top, Text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
+                    Top, Text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState, Decoration);
             else
             {
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 return RenderAligned(
-                    Top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
+                    Top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState, Decoration);
             }
         }
 
@@ -192,12 +202,25 @@ namespace Terminaux.Writer.CyclicWriters
             top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
         }
 
-        internal static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, int rainbowState = 0, params object[] Vars)
+        internal static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, int rainbowState = 0, Decoration? decoration = null, params object[] Vars)
         {
             try
             {
+                // Decorate the text if needed
+                var decoratedText = new StringBuilder(Text.FormatString(Text, Vars));
+                if (decoration is not null)
+                {
+                    decoratedText.Insert(0,
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}"
+                    );
+                    decoratedText.Insert(0, decoration.RenderStart());
+                    decoratedText.Append(decoration.RenderEnd());
+                }
+                Text = decoratedText.ToString();
+
+                // Process the sentences
                 var aligned = new StringBuilder();
-                Text = TextTools.FormatString(Text, Vars);
                 int width = ConsoleWrapper.WindowWidth - rightMargin - leftMargin;
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, width);
                 for (int i = 0; i < sentences.Length; i++)
