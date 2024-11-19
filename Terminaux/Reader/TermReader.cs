@@ -467,7 +467,7 @@ namespace Terminaux.Reader
 
                         // Write the bell character if invalid
                         if (readState.OperationWasInvalid)
-                            ConsoleWrapper.BeepSeq();
+                            ConsoleMisc.Bell(settings.Bell);
                         readState.operationWasInvalid = false;
 
                         // Cursor is visible

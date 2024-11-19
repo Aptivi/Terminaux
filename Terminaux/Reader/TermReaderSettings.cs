@@ -20,6 +20,7 @@
 using System;
 using System.IO;
 using Terminaux.Base;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader.Highlighting;
@@ -69,6 +70,7 @@ namespace Terminaux.Reader
         private Stream cueRubout = cueRuboutFallback;
         private Stream cueWrite = cueWriteFallback;
         private int initialPosition = 0;
+        private ConsoleBell bell = ConsoleBell.Audible;
 
         /// <summary>
         /// Password mask character
@@ -383,6 +385,15 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
+        /// Console bell type for invalid reader operation
+        /// </summary>
+        public ConsoleBell Bell
+        {
+            get => bell;
+            set => bell = value;
+        }
+
+        /// <summary>
         /// Initializes an empty reader settings instance
         /// </summary>
         public TermReaderSettings()
@@ -410,6 +421,7 @@ namespace Terminaux.Reader
             SyntaxHighlighter = settings.SyntaxHighlighter;
             PlaceholderText = settings.PlaceholderText;
             KeyboardCues = settings.KeyboardCues;
+            Bell = settings.Bell;
         }
     }
 }

@@ -25,6 +25,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Base.TermInfo;
 using Terminaux.Sequences;
@@ -482,6 +483,33 @@ namespace Terminaux.Base.Extensions
             TextWriterRaw.WriteRaw("\e[?5h");
             Thread.Sleep(delay);
             TextWriterRaw.WriteRaw("\e[?5l");
+        }
+
+        /// <summary>
+        /// Emits the console bell using either audible or visible bell types
+        /// </summary>
+        /// <param name="bell">Type of console bell</param>
+        /// <param name="delay">Delay of the bell (audible and visual)</param>
+        /// <param name="freq">Frequency of the bell (audible)</param>
+        public static void Bell(ConsoleBell bell = ConsoleBell.Audible, int delay = -1, int freq = -1)
+        {
+            switch (bell)
+            {
+                case ConsoleBell.Audible:
+                    if (delay == -1 || freq == -1)
+                        ConsoleWrapper.BeepSeq();
+                    else
+                        ConsoleWrapper.Beep(freq, delay);
+                    return;
+                case ConsoleBell.Visual:
+                    if (delay == -1)
+                        Flash();
+                    else
+                        Flash(delay);
+                    return;
+                default:
+                    return;
+            }
         }
 
         internal static uint GetMode(IntPtr stdHandle)
