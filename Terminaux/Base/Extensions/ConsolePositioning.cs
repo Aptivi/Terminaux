@@ -172,7 +172,7 @@ namespace Terminaux.Base.Extensions
             bool vtSeq = false;
             foreach ((var _, var sequences) in sequencesCollections)
             {
-                if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
+                if (sequences.Length > 0 && vtSeqIdx < sequences.Length && sequences[vtSeqIdx].Index == i)
                 {
                     // We're at an index which is the same as the captured VT sequence. Get the sequence
                     seq = sequences[vtSeqIdx].Value;
