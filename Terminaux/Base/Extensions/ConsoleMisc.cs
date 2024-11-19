@@ -23,8 +23,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions.Native;
+using Terminaux.Base.TermInfo;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
@@ -463,6 +465,23 @@ namespace Terminaux.Base.Extensions
             if ((mode & 4) == 0)
                 return NativeMethods.SetConsoleMode(stdHandle, mode | 4);
             return true;
+        }
+
+        /// <summary>
+        /// Flashes the screen
+        /// </summary>
+        public static void Flash() =>
+            TermInfoDesc.Current.FlashScreen?.RenderSequence();
+
+        /// <summary>
+        /// Flashes the screen
+        /// </summary>
+        /// <param name="delay">Delay as specified</param>
+        public static void Flash(int delay)
+        {
+            TextWriterRaw.WriteRaw("\e[?5h");
+            Thread.Sleep(delay);
+            TextWriterRaw.WriteRaw("\e[?5l");
         }
 
         internal static uint GetMode(IntPtr stdHandle)
