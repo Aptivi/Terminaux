@@ -27,6 +27,7 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Gradients;
 using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
@@ -232,7 +233,8 @@ namespace Terminaux.Inputs.Styles
             int hslBarY = 1;
             int grayRampBarY = hslBarY + (boxHeight * 3) + 3;
             int rgbRampBarY = grayRampBarY + boxHeight + 3;
-            int infoRampBarY = rgbRampBarY + boxHeight + 4;
+            int shadeTintRampBarY = rgbRampBarY + boxHeight + 4;
+            int infoRampBarY = shadeTintRampBarY + boxHeight + 3;
             var initialBackground = ColorTools.CurrentBackgroundColor;
 
             // Buffer the hue ramp
@@ -412,6 +414,34 @@ namespace Terminaux.Inputs.Styles
                 );
             }
 
+            // Buffer the shade and tint ramp
+            if (ConsoleWrapper.WindowHeight - 2 > shadeTintRampBarY + 3)
+            {
+                StringBuilder shadeRamp = new();
+                StringBuilder tintRamp = new();
+                var shades = ColorGradients.GetShades(selectedColor, boxWidth);
+                var tints = ColorGradients.GetTints(selectedColor, boxWidth);
+                for (int i = 0; i < boxWidth; i++)
+                {
+                    shadeRamp.Append($"{new Color(shades[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    tintRamp.Append($"{new Color(tints[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                }
+                var shadeTintFrame = new BoxFrame("Shade and Tint")
+                {
+                    Left = hslBarX,
+                    Top = shadeTintRampBarY,
+                    InteriorWidth = boxWidth,
+                    InteriorHeight = boxHeight,
+                };
+                selector.Append(
+                    shadeTintFrame.Render() +
+                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, shadeTintRampBarY + 2) +
+                    shadeRamp.ToString() +
+                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, shadeTintRampBarY + 3) +
+                    tintRamp.ToString()
+                );
+            }
+
             // Buffer the color info and the color blindness boxes
             if (ConsoleWrapper.WindowHeight - 2 > infoRampBarY + 5)
             {
@@ -425,7 +455,7 @@ namespace Terminaux.Inputs.Styles
                     InteriorWidth = halfBoxWidth,
                     InteriorHeight = boxHeight + 2,
                 };
-                var colorBlindnessFrame = new BoxFrame($"Transform [{colorBlindnessSeverity:0.00}]")
+                var colorBlindnessFrame = new BoxFrame($"Transform [[{colorBlindnessSeverity:0.00}]]")
                 {
                     Left = otherHalfLeft,
                     Top = infoRampBarY,
