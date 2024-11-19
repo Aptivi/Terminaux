@@ -31,7 +31,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     {
         private bool redBoxVisible = true;
         private bool greenBoxVisible = true;
-        private bool blueBoxVisible = true;
+        private bool rgbBoxVisible = true;
         private long renders = 0;
         private bool paused = false;
         private readonly Keybinding[] bindings =
@@ -39,7 +39,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             new("Exit", ConsoleKey.Escape),
             new("Show/hide red box", ConsoleKey.R),
             new("Show/hide green box", ConsoleKey.G),
-            new("Show/hide blue box", ConsoleKey.B),
+            new("Show/hide RGB box", ConsoleKey.B),
             new("Increase FPS", ConsoleKey.UpArrow),
             new("Decrease FPS", ConsoleKey.DownArrow),
             new("Pause/Resume", ConsoleKey.Spacebar),
@@ -89,8 +89,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 builder.Append(box.Render());
             }
 
-            // Blue box
-            if (blueBoxVisible)
+            // RGB box
+            if (rgbBoxVisible)
             {
                 int consoleHalf = ConsoleWrapper.WindowWidth / 2;
                 int startX = consoleHalf - (consoleHalf * 3 / 4) + 8;
@@ -104,7 +104,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                     Top = y,
                     InteriorWidth = width,
                     InteriorHeight = height,
-                    Color = ConsoleColors.Blue,
+                    Color = new($"hsl:{renders % 360};50;50"),
                 };
                 builder.Append(box.Render());
             }
@@ -125,6 +125,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             }.Render());
 
             // Return the result
+            renders++;
             return builder.ToString();
         }
 
@@ -135,17 +136,20 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             {
                 redBoxVisible = !redBoxVisible;
                 ui.uiScreen.RequireRefresh();
-            }));
+            }
+            ));
             Keybindings.Add((bindings[2], (TextualUI ui) =>
             {
                 greenBoxVisible = !greenBoxVisible;
                 ui.uiScreen.RequireRefresh();
-            }));
+            }
+            ));
             Keybindings.Add((bindings[3], (TextualUI ui) =>
             {
-                blueBoxVisible = !blueBoxVisible;
+                rgbBoxVisible = !rgbBoxVisible;
                 ui.uiScreen.RequireRefresh();
-            }));
+            }
+            ));
             Keybindings.Add((bindings[4], (_) =>
             {
                 if (paused)
@@ -153,7 +157,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 RefreshDelay--;
                 if (RefreshDelay <= 20)
                     RefreshDelay = 20;
-            }));
+            }
+            ));
             Keybindings.Add((bindings[5], (_) =>
             {
                 if (paused)
@@ -161,7 +166,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 RefreshDelay++;
                 if (RefreshDelay >= 1000)
                     RefreshDelay = 1000;
-            }));
+            }
+            ));
             Keybindings.Add((bindings[6], (_) =>
             {
                 paused = !paused;
@@ -169,7 +175,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                     RefreshDelay = 0;
                 else
                     RefreshDelay = 40;
-            }));
+            }
+            ));
             RefreshDelay = 40;
         }
     }
