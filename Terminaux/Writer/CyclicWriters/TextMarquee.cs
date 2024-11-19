@@ -169,9 +169,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <param name="text">Text to render. All VT sequences and control characters are trimmed away.</param>
         /// <param name="args">Arguments to format the string with</param>
-        public TextMarquee(Mark text, params object?[]? args)
+        public TextMarquee(Mark? text = null, params object?[]? args)
         {
-            this.text = VtSequenceTools.FilterVTSequences(((string)text).FormatString(args)).ReplaceAll(CharManager.GetAllControlChars(), "");
+            this.text = VtSequenceTools.FilterVTSequences(((string)(text ?? "")).FormatString(args)).ReplaceAll(CharManager.GetAllControlChars(), "");
             textWidth = ConsoleChar.EstimateCellWidth(this.text);
         }
     }

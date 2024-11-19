@@ -282,9 +282,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <param name="text">Text to use</param>
         /// <param name="vars">Variables to format the text with</param>
-        public BoxFrame(Mark text, params object[] vars)
+        public BoxFrame(Mark? text = null, params object[] vars)
         {
-            this.text = TextTools.FormatString(text, vars);
+            this.text = TextTools.FormatString(text ?? "", vars);
         }
     }
 }

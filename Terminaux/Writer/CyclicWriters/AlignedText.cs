@@ -278,10 +278,10 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <param name="text">Text to use</param>
         /// <param name="vars">Variables to format the text with</param>
-        public AlignedText(Mark text, params object[] vars)
+        public AlignedText(Mark? text = null, params object[] vars)
         {
             // Install the values
-            this.text = TextTools.FormatString(text, vars);
+            this.text = TextTools.FormatString(text ?? "", vars);
             UpdateInternalTop();
         }
     }

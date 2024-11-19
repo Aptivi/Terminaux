@@ -249,7 +249,7 @@ namespace Terminaux.Writer.CyclicWriters
 
                 // Return a rendered AlignedText
                 string finalTokenized = tokenized.ToString();
-                var alignedPath = new AlignedText("")
+                var alignedPath = new AlignedText()
                 {
                     ForegroundColor = ForegroundColor,
                     BackgroundColor = BackgroundColor,
