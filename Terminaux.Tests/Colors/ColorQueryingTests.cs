@@ -561,5 +561,33 @@ namespace Terminaux.Tests.Colors
             var actual = TransformationTools.GetDarkBackground(specifier);
             actual.ShouldBe(expected);
         }
+
+        /// <summary>
+        /// Tests desaturating the color
+        /// </summary>
+        [TestMethod]
+        [DataRow("255;255;255", 25, "255;255;255")]
+        [DataRow("255;127;63", 50, "207;142;110")]
+        [DataRow("255;0;0", 100, "128;128;128")]
+        [Description("Querying")]
+        public void TestDesaturate(string specifier, int level, string expected)
+        {
+            var actual = TransformationTools.Desaturate(specifier, level);
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests saturating the color
+        /// </summary>
+        [TestMethod]
+        [DataRow("255;255;255", 25, "255;255;255")]
+        [DataRow("25;87;32", 50, "0;107;11")]
+        [DataRow("255;0;0", 100, "255;0;0")]
+        [Description("Querying")]
+        public void TestSaturate(string specifier, int level, string expected)
+        {
+            var actual = TransformationTools.Saturate(specifier, level);
+            actual.ShouldBe(expected);
+        }
     }
 }

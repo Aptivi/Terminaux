@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Colors.Models;
+using Terminaux.Colors.Models.Conversion;
 
 namespace Terminaux.Colors.Transformation
 {
@@ -178,6 +179,109 @@ namespace Terminaux.Colors.Transformation
             return new(targetR, targetG, targetB);
         }
 
+        /// <summary>
+        /// Desaturates the color using the desaturation factor
+        /// </summary>
+        /// <param name="source">Source color to desaturate</param>
+        /// <param name="target">Target desaturation level from 0 to 100</param>
+        /// <returns>Desaturated color</returns>
+        public static Color Desaturate(Color source, int target)
+        {
+            // Check the target value
+            target = target <= 0 ? 0 : target;
+            target = target > 100 ? 100 : target;
+
+            // Convert to HSL and reduce the saturation
+            var hsl = ConversionTools.ConvertFromRgb<HueSaturationLightness>(source.RGB);
+            double saturation = hsl.Saturation;
+            saturation -= target / 100d;
+            saturation = ClampZeroOne(saturation);
+            return new Color($"hsl:{hsl.HueWhole};{saturation * 100};{hsl.LightnessWhole}");
+        }
+
+        /// <summary>
+        /// Saturates the color using the saturation factor
+        /// </summary>
+        /// <param name="source">Source color to saturate</param>
+        /// <param name="target">Target saturation level from 0 to 100</param>
+        /// <returns>Saturated color</returns>
+        public static Color Saturate(Color source, int target)
+        {
+            // Check the target value
+            target = target <= 0 ? 0 : target;
+            target = target > 100 ? 100 : target;
+
+            // Convert to HSL and reduce the saturation
+            var hsl = ConversionTools.ConvertFromRgb<HueSaturationLightness>(source.RGB);
+            double saturation = hsl.Saturation;
+            saturation += target / 100d;
+            saturation = ClampZeroOne(saturation);
+            return new Color($"hsl:{hsl.HueWhole};{saturation * 100};{hsl.LightnessWhole}");
+        }
+
+        /// <summary>
+        /// Darkens the color using the darkening factor
+        /// </summary>
+        /// <param name="source">Source color to darken</param>
+        /// <param name="target">Target darkening level from 0 to 100</param>
+        /// <returns>Darkened color</returns>
+        public static Color Darken(Color source, int target)
+        {
+            // Check the target value
+            target = target <= 0 ? 0 : target;
+            target = target > 100 ? 100 : target;
+
+            // Convert to HSL and reduce the lightness
+            var hsl = ConversionTools.ConvertFromRgb<HueSaturationLightness>(source.RGB);
+            double lightness = hsl.Lightness;
+            lightness -= target / 100d;
+            lightness = ClampZeroOne(lightness);
+            return new Color($"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{lightness * 100}");
+        }
+
+        /// <summary>
+        /// Lightens the color using the lightening factor
+        /// </summary>
+        /// <param name="source">Source color to lighten</param>
+        /// <param name="target">Target lightening level from 0 to 100</param>
+        /// <returns>Lightened color</returns>
+        public static Color Lighten(Color source, int target)
+        {
+            // Check the target value
+            target = target <= 0 ? 0 : target;
+            target = target > 100 ? 100 : target;
+
+            // Convert to HSL and reduce the lightness
+            var hsl = ConversionTools.ConvertFromRgb<HueSaturationLightness>(source.RGB);
+            double lightness = hsl.Lightness;
+            lightness += target / 100d;
+            lightness = ClampZeroOne(lightness);
+            return new Color($"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{lightness * 100}");
+        }
+
+        /// <summary>
+        /// Spins the color
+        /// </summary>
+        /// <param name="source">Source color to spin</param>
+        /// <param name="target">Spin angle</param>
+        /// <returns>Spinned color</returns>
+        public static Color Spin(Color source, int target)
+        {
+            // Convert to HSL to spin
+            var hsl = ConversionTools.ConvertFromRgb<HueSaturationLightness>(source.RGB);
+            double hue = (hsl.HueWhole + target) % 360;
+            hue = hue < 0 ? hue + 360 : hue;
+            return new Color($"hsl:{hue};{hsl.SaturationWhole};{hsl.LightnessWhole}");
+        }
+
+        /// <summary>
+        /// Gets the color complement
+        /// </summary>
+        /// <param name="source">Source color to get its complement</param>
+        /// <returns>Complement color</returns>
+        public static Color Complement(Color source) =>
+            Spin(source, 180);
+
         internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput, ColorSettings settings)
         {
             (int r, int g, int b) = (rInput, gInput, bInput);
@@ -189,5 +293,8 @@ namespace Terminaux.Colors.Transformation
             }
             return (r, g, b);
         }
+
+        private static double ClampZeroOne(double target) =>
+            Math.Min(1, Math.Max(0, target));
     }
 }
