@@ -124,7 +124,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 
             // Render text inside it
             ConsoleWrapper.CursorVisible = false;
-            var bounded = new BoundedText(text, vars)
+            var bounded = new BoundedText()
             {
                 Left = borderX + 1,
                 Top = borderY,
@@ -132,6 +132,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 Height = maxHeight,
                 ForegroundColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,
+                Text = text.FormatString(vars)
             };
             boxBuffer.Append(
                 bounded.Render()
