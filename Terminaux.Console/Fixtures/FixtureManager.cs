@@ -275,6 +275,8 @@ namespace Terminaux.Console.Fixtures
             new CliInfoPaneSlowTestRefreshing(),
             new CliDoublePaneTest(),
             new CliDoublePaneSlowTest(),
+            new TestScreenPartVisibilityTui(),
+            new TestScreenPartVisibilityRefreshTui(),
             
             // Screen
             new TestScreen(),
