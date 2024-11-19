@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Base;
 using Terminaux.Reader.Bindings.BaseBindings;
 
 namespace Terminaux.Reader.Bindings
@@ -349,9 +350,59 @@ namespace Terminaux.Reader.Bindings
             // Get the chosen bindings
             var chosenBindings = AllBindings.Where((bindingInfo) => bindingInfo.BindMatched(cki));
 
-            // Execute the commands based on them
+            // Unbind a custom binding
             foreach (var chosenBinding in chosenBindings)
                 customBindings.Remove(chosenBinding);
+        }
+
+        /// <summary>
+        /// Overrides the binding using a console key info instance
+        /// </summary>
+        /// <param name="sourceCki">Source console key info to search for</param>
+        /// <param name="targetCki">Target console key info to override the base bindings defined by <see cref="BaseBinding.CustomKeys"/></param>
+        public static void Override(ConsoleKeyInfo sourceCki, ConsoleKeyInfo targetCki)
+        {
+            // Check to see if the target key is already used
+            var chosenBindings = AllBindings.Where((bindingInfo) => bindingInfo.BindMatched(targetCki));
+            if (chosenBindings.Any())
+                return;
+
+            // Override the binding
+            foreach (var binding in AllBindings)
+            {
+                // Use the base bind matching to detect a binding
+                if (!binding.BaseBindMatched(sourceCki))
+                    continue;
+
+                // Add this key to the override list
+                if (binding.CustomKeys is not null && binding.IsBindingOverridable)
+                    binding.CustomKeys.Add(targetCki);
+            }
+        }
+
+        /// <summary>
+        /// Removes the binding override using a console key info instance
+        /// </summary>
+        /// <param name="sourceCki">Source console key info to search for</param>
+        /// <param name="targetCki">Target console key info to remove an override as defined in <see cref="BaseBinding.CustomKeys"/></param>
+        public static void RemoveOverride(ConsoleKeyInfo sourceCki, ConsoleKeyInfo targetCki)
+        {
+            // Check to see if the target key is already used
+            var chosenBindings = AllBindings.Where((bindingInfo) => bindingInfo.BindMatched(targetCki));
+            if (!chosenBindings.Any())
+                return;
+
+            // Override the binding
+            foreach (var binding in AllBindings)
+            {
+                // Use the base bind matching to detect a binding
+                if (!binding.BaseBindMatched(sourceCki))
+                    continue;
+
+                // Add this key to the override list
+                if (binding.CustomKeys is not null && binding.IsBindingOverridable)
+                    binding.CustomKeys.Remove(targetCki);
+            }
         }
 
         internal static void Execute(TermReaderState state)

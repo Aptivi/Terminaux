@@ -65,20 +65,8 @@ namespace Terminaux.Reader.Bindings
         /// Whether the binding matched
         /// </summary>
         /// <param name="input">Input key</param>
-        public virtual bool BindMatched(ConsoleKeyInfo input)
-        {
-            bool match = false;
-            var finalKeys = IsBindingOverridable && CustomKeys?.Count > 0 ? CustomKeys : [.. BoundKeys];
-            foreach (var key in finalKeys)
-            {
-                match = input.Key == key.Key &&
-                        input.KeyChar == key.KeyChar &&
-                        input.Modifiers == key.Modifiers;
-                if (match)
-                    break;
-            }
-            return match;
-        }
+        public virtual bool BindMatched(ConsoleKeyInfo input) =>
+            IsBindingOverridable && CustomKeys?.Count > 0 ? OverridenBindMatched(input) : BaseBindMatched(input);
 
         /// <summary>
         /// Do the action
@@ -153,6 +141,34 @@ namespace Terminaux.Reader.Bindings
             }
             else
                 TermReaderTools.InsertNewText(text);
+        }
+
+        internal bool BaseBindMatched(ConsoleKeyInfo input)
+        {
+            bool match = false;
+            foreach (var key in BoundKeys)
+            {
+                match = input.Key == key.Key &&
+                        input.KeyChar == key.KeyChar &&
+                        input.Modifiers == key.Modifiers;
+                if (match)
+                    break;
+            }
+            return match;
+        }
+
+        internal bool OverridenBindMatched(ConsoleKeyInfo input)
+        {
+            bool match = false;
+            foreach (var key in CustomKeys ?? [])
+            {
+                match = input.Key == key.Key &&
+                        input.KeyChar == key.KeyChar &&
+                        input.Modifiers == key.Modifiers;
+                if (match)
+                    break;
+            }
+            return match;
         }
     }
 }

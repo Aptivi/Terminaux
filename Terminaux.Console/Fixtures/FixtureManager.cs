@@ -48,6 +48,7 @@ namespace Terminaux.Console.Fixtures
             new PromptWithDynamicPromptText(),
             new PromptWithOneLineWrap(),
             new PromptWithPlaceholderText(),
+            new PromptWithOverride(),
             new PromptPassword(),
             new PromptPasswordHidden(),
             new PromptPasswordWithPromptText(),
