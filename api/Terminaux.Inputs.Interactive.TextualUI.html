@@ -105,7 +105,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Interactive_TextualUI_Guid.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Interactive.TextualUI.Guid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L40">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L41">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Interactive_TextualUI_Guid_" data-uid="Terminaux.Inputs.Interactive.TextualUI.Guid*"></a>
   <h4 id="Terminaux_Inputs_Interactive_TextualUI_Guid" data-uid="Terminaux.Inputs.Interactive.TextualUI.Guid">Guid</h4>
@@ -136,7 +136,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Interactive_TextualUI_Keybindings.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Interactive.TextualUI.Keybindings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L66">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L67">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Interactive_TextualUI_Keybindings_" data-uid="Terminaux.Inputs.Interactive.TextualUI.Keybindings*"></a>
   <h4 id="Terminaux_Inputs_Interactive_TextualUI_Keybindings" data-uid="Terminaux.Inputs.Interactive.TextualUI.Keybindings">Keybindings</h4>
@@ -145,7 +145,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual List&lt;(Keybinding binding, Action&lt;TextualUI&gt; action)&gt; Keybindings { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual List&lt;(Keybinding binding, Action&lt;TextualUI, ConsoleKeyInfo, PointerEventContext?&gt; action)&gt; Keybindings { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -157,7 +157,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;(<a class="xref" href="Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.html">Keybinding</a> <span class="xref">binding</span>, <span class="xref">Action</span>&lt;<a class="xref" href="Terminaux.Inputs.Interactive.TextualUI.html">TextualUI</a>&gt; <span class="xref">action</span>)&gt;</td>
+        <td><span class="xref">List</span>&lt;(<a class="xref" href="Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.html">Keybinding</a> <span class="xref">binding</span>, <span class="xref">Action</span>&lt;<a class="xref" href="Terminaux.Inputs.Interactive.TextualUI.html">TextualUI</a>, <span class="xref">ConsoleKeyInfo</span>, <a class="xref" href="Terminaux.Inputs.Pointer.PointerEventContext.html">PointerEventContext</a>&gt; <span class="xref">action</span>)&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -171,7 +171,7 @@ in the overridden value, and to define the delegates in separate private functio
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Interactive_TextualUI_Name.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Interactive.TextualUI.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L52">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L53">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Interactive_TextualUI_Name_" data-uid="Terminaux.Inputs.Interactive.TextualUI.Name*"></a>
   <h4 id="Terminaux_Inputs_Interactive_TextualUI_Name" data-uid="Terminaux.Inputs.Interactive.TextualUI.Name">Name</h4>
@@ -202,7 +202,7 @@ in the overridden value, and to define the delegates in separate private functio
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Interactive_TextualUI_RefreshDelay.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Interactive.TextualUI.RefreshDelay%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L57">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L58">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Interactive_TextualUI_RefreshDelay_" data-uid="Terminaux.Inputs.Interactive.TextualUI.RefreshDelay*"></a>
   <h4 id="Terminaux_Inputs_Interactive_TextualUI_RefreshDelay" data-uid="Terminaux.Inputs.Interactive.TextualUI.RefreshDelay">RefreshDelay</h4>
@@ -233,7 +233,7 @@ in the overridden value, and to define the delegates in separate private functio
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Interactive_TextualUI_Renderables.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Interactive.TextualUI.Renderables%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L71">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L72">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Interactive_TextualUI_Renderables_" data-uid="Terminaux.Inputs.Interactive.TextualUI.Renderables*"></a>
   <h4 id="Terminaux_Inputs_Interactive_TextualUI_Renderables" data-uid="Terminaux.Inputs.Interactive.TextualUI.Renderables">Renderables</h4>
@@ -264,7 +264,7 @@ in the overridden value, and to define the delegates in separate private functio
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Interactive_TextualUI_State.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Interactive.TextualUI.State%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L46">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L47">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Interactive_TextualUI_State_" data-uid="Terminaux.Inputs.Interactive.TextualUI.State*"></a>
   <h4 id="Terminaux_Inputs_Interactive_TextualUI_State" data-uid="Terminaux.Inputs.Interactive.TextualUI.State">State</h4>
@@ -297,7 +297,7 @@ in the overridden value, and to define the delegates in separate private functio
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Interactive_TextualUI_Render.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Interactive.TextualUI.Render%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L81">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L82">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Interactive_TextualUI_Render_" data-uid="Terminaux.Inputs.Interactive.TextualUI.Render*"></a>
   <h4 id="Terminaux_Inputs_Interactive_TextualUI_Render" data-uid="Terminaux.Inputs.Interactive.TextualUI.Render">Render()</h4>
@@ -340,7 +340,7 @@ renderable container specified in that property will overwrite what's been rende
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Interactive_TextualUI.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Interactive.TextualUI%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L31" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Interactive/TextualUI.cs/#L32" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
