@@ -21,6 +21,7 @@ using System;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Interactive.Selectors;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Styles.Selection
@@ -63,6 +64,14 @@ namespace Terminaux.Inputs.Styles.Selection
             new("Selects all the elements in the same group and category", ConsoleKey.A),
             new("Selects all the elements in all groups in the same category", ConsoleKey.A, ConsoleModifiers.Shift),
             new("Selects all the elements in all groups in all categories", ConsoleKey.A, ConsoleModifiers.Shift | ConsoleModifiers.Control),
+        ];
+        internal static Keybinding[] bindingsMouse =
+        [
+            new("Goes one element up", PointerButton.WheelUp),
+            new("Goes one element down", PointerButton.WheelDown),
+            new("Select", PointerButton.Left, PointerButtonPress.Released),
+            new("Show item info", PointerButton.Right, PointerButtonPress.Released),
+            new("Update position", PointerButton.None, PointerButtonPress.Moved),
         ];
 
         internal static int[] PromptSelection(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple)

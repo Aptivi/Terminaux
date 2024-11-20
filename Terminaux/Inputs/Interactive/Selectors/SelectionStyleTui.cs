@@ -480,6 +480,141 @@ namespace Terminaux.Inputs.Interactive.Selectors
             return found == indexes.Count;
         }
 
+        private void ProcessLeftClick(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
+        {
+            if (mouse is null)
+                return;
+            if (DetermineArrowPressed(mouse))
+            {
+                UpdatePositionBasedOnArrowPress(mouse);
+                showcaseLine = 0;
+            }
+            else if (DetermineSidebarArrowPressed(mouse))
+                UpdateSidebarPositionBasedOnArrowPress(mouse);
+            else
+            {
+                showcaseLine = 0;
+                if (UpdateSelectedIndexWithMousePos(mouse))
+                {
+                    if (!multiple)
+                        Exit(ui, false);
+                    else
+                        ModifyChoice(ui, key, mouse);
+                }
+            }
+        }
+
+        private bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse)
+        {
+            if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
+                return false;
+
+            // Make pages based on console window height
+            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+            int answersPerPage = listEndPosition - 7;
+            int currentPage = (highlightedAnswer - 1) / answersPerPage;
+            int startIndex = answersPerPage * currentPage;
+            int endIndex = answersPerPage * (currentPage + 1) - 1;
+
+            // Now, translate coordinates to the selected index
+            if (mouse.Coordinates.y <= listStartPosition + 1 || mouse.Coordinates.y >= listEndPosition - 4)
+                return false;
+            int listIndex = mouse.Coordinates.y - (listStartPosition + 1);
+            listIndex = startIndex + listIndex;
+            listIndex = listIndex > allAnswers.Count ? allAnswers.Count : listIndex;
+            highlightedAnswer = listIndex;
+            return true;
+        }
+
+        private bool DetermineArrowPressed(PointerEventContext mouse)
+        {
+            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+            int answersPerPage = listEndPosition - 5;
+            int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
+            int interiorWidth = ConsoleWrapper.WindowWidth - 6 - sidebarWidth;
+            if (allAnswers.Count <= answersPerPage)
+                return false;
+            return
+                PointerTools.PointerWithinRange(mouse,
+                    (interiorWidth + 3, listStartPosition + 2),
+                    (interiorWidth + 3, listStartPosition + 1 + answersPerPage));
+        }
+
+        private bool DetermineSidebarArrowPressed(PointerEventContext mouse)
+        {
+            if (!sidebar)
+                return false;
+            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+            int answersPerPage = listEndPosition - 5;
+            if (allAnswers.Count <= answersPerPage)
+                return false;
+            return
+                PointerTools.PointerWithinRange(mouse,
+                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 2),
+                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 1 + answersPerPage));
+        }
+
+        private void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+        {
+            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+            int answersPerPage = listEndPosition - 5;
+            int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
+            int interiorWidth = ConsoleWrapper.WindowWidth - 6 - sidebarWidth;
+            if (allAnswers.Count <= answersPerPage)
+                return;
+            if (mouse.Coordinates.x == interiorWidth + 3)
+            {
+                if (mouse.Coordinates.y == listStartPosition + 2)
+                {
+                    highlightedAnswer--;
+                    if (highlightedAnswer < 1)
+                        highlightedAnswer = 1;
+                    Update(true);
+                }
+                else if (mouse.Coordinates.y == listStartPosition + 1 + answersPerPage)
+                {
+                    highlightedAnswer++;
+                    if (highlightedAnswer > allAnswers.Count)
+                        highlightedAnswer = allAnswers.Count;
+                    Update(false);
+                }
+            }
+        }
+
+        private void UpdateSidebarPositionBasedOnArrowPress(PointerEventContext mouse)
+        {
+            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+            int answersPerPage = listEndPosition - 5;
+            if (allAnswers.Count <= answersPerPage)
+                return;
+            if (mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 3)
+            {
+                if (mouse.Coordinates.y == listStartPosition + 2)
+                {
+                    showcaseLine--;
+                    if (showcaseLine < 0)
+                        showcaseLine = 0;
+                }
+                else if (mouse.Coordinates.y == listStartPosition + 1 + answersPerPage)
+                {
+                    int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
+                    var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+                    string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
+                    string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
+                    if (lines.Length <= answersPerPage)
+                        return;
+                    showcaseLine++;
+                    if (showcaseLine > lines.Length - answersPerPage)
+                        showcaseLine = lines.Length - answersPerPage;
+                }
+            }
+        }
+
         internal SelectionStyleTui(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple)
         {
             // Check values
@@ -521,6 +656,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.bindings[12], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.showBindings[2], Help));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], GoUp));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], GoDown));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[3], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[4], ShowItemInfo));
 
             // Install mode-dependent keybindings
             if (multiple)
