@@ -480,9 +480,9 @@ namespace Terminaux.Base.Extensions
         /// <param name="delay">Delay as specified</param>
         public static void Flash(int delay)
         {
-            TextWriterRaw.WriteRaw("\e[?5h");
+            TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?5h");
             Thread.Sleep(delay);
-            TextWriterRaw.WriteRaw("\e[?5l");
+            TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?5l");
         }
 
         /// <summary>
