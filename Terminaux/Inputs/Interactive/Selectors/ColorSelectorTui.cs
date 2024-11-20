@@ -455,8 +455,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((ColorSelector.bindings[2], Help));
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[0], ShowColorInfo));
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[1], SelectWebColor));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[2], (_, _, _) => finalSettings.Opacity++));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[3], (_, _, _) => finalSettings.Opacity--));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[2], (_, _, _) =>
+            {
+                finalSettings.Opacity++;
+                UpdateColor(ref selectedColor, type, finalSettings);
+            }));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[3], (_, _, _) =>
+            {
+                finalSettings.Opacity--;
+                UpdateColor(ref selectedColor, type, finalSettings);
+            }));
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[4], (ui, _, _) => ChangeMode(ui, false)));
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[5], (ui, _, _) => ChangeMode(ui, true)));
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[6], (ui, _, _) => ChangeSimulation(ui, false)));
@@ -574,6 +582,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             trueColorHue = hsl.HueWhole;
             trueColorSaturation = hsl.SaturationWhole;
             trueColorLightness = hsl.LightnessWhole;
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void ChangeMode(TextualUI ui, bool goBack)
@@ -591,6 +600,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     type = ColorType.TrueColor;
             }
             UpdateKeybindings();
+            UpdateColor(ref selectedColor, type, finalSettings);
             ui.uiScreen.RequireRefresh();
         }
 
@@ -608,6 +618,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (colorBlindnessSimulationIdx >= Enum.GetNames(typeof(TransformationFormula)).Length + 1)
                     colorBlindnessSimulationIdx--;
             }
+            UpdateColor(ref selectedColor, type, finalSettings);
             ui.uiScreen.RequireRefresh();
         }
 
@@ -625,6 +636,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (colorBlindnessSeverity > 1.0)
                     colorBlindnessSeverity = 1.0;
             }
+            UpdateColor(ref selectedColor, type, finalSettings);
             ui.uiScreen.RequireRefresh();
         }
 
@@ -678,6 +690,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 else if (withinTransparencyBarBoundaries)
                     finalSettings.Opacity++;
             }
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void ChangeHue(TextualUI ui, bool goBack)
@@ -734,6 +747,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         colorValue16 = ConsoleColor.White;
                     break;
             }
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void IncrementColor(ColorType type)
@@ -754,6 +768,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         colorValue16 = ConsoleColor.Black;
                     break;
             }
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void DecrementHue(ColorType type)
@@ -763,6 +778,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             trueColorHue--;
             if (trueColorHue < 0)
                 trueColorHue = 360;
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void IncrementHue(ColorType type)
@@ -772,6 +788,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             trueColorHue++;
             if (trueColorHue > 360)
                 trueColorHue = 0;
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void DecrementLightness(ColorType type)
@@ -781,6 +798,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             trueColorLightness--;
             if (trueColorLightness < 0)
                 trueColorLightness = 100;
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void IncrementLightness(ColorType type)
@@ -790,6 +808,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             trueColorLightness++;
             if (trueColorLightness > 100)
                 trueColorLightness = 0;
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void DecrementSaturation(ColorType type)
@@ -799,6 +818,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             trueColorSaturation--;
             if (trueColorSaturation < 0)
                 trueColorSaturation = 100;
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         private void IncrementSaturation(ColorType type)
@@ -808,6 +828,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             trueColorSaturation++;
             if (trueColorSaturation > 100)
                 trueColorSaturation = 0;
+            UpdateColor(ref selectedColor, type, finalSettings);
         }
 
         internal ColorSelectorTui(Color color, ColorSettings settings)
