@@ -1225,6 +1225,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.Selectors.ColorSelectorTui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.ColorSelectorTui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.Selectors.FigletSelectorTui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.FigletSelectorTui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.Selectors.SpinnerSelectorTui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.SpinnerSelectorTui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.Selectors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Interactive.TextualUI.yml",
       "output": {
         ".html": {
