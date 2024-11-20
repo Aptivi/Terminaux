@@ -43,6 +43,12 @@ namespace Terminaux.Reader.Bindings
         public bool ResetSuggestionsTextPos { get; }
 
         /// <summary>
+        /// Whether this binding adds manipulated to the changes list or not. If there is no difference after executing
+        /// this binding, even if this is set to true, the new input text won't be appended.
+        /// </summary>
+        public bool AppendsChangesList { get; }
+
+        /// <summary>
         /// Whether the bind matched
         /// </summary>
         /// <param name="input">Key</param>

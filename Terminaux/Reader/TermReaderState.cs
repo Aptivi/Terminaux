@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
@@ -58,6 +59,7 @@ namespace Terminaux.Reader
         internal bool concealing;
         internal bool refreshRequired;
         internal string oldText = "";
+        internal List<string> changes = [];
         internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
 
         /// <summary>

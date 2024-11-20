@@ -406,23 +406,39 @@ namespace Terminaux.Reader.Bindings
 
         internal static void Execute(TermReaderState state)
         {
+            // Some variables
+            string oldInput = state.CurrentText.ToString();
+            bool addToUndo = false;
+
             // Get the chosen bindings
             var chosenBindings = AllBindings.Where((bindingInfo) => bindingInfo.BindMatched(state.pressedKey));
 
             // Execute the commands based on them
             foreach (var chosenBinding in chosenBindings)
             {
+                addToUndo = chosenBinding.AppendsChangesList;
                 chosenBinding.DoAction(state);
                 if (chosenBinding.ResetSuggestionsTextPos)
                     state.currentSuggestionsTextPos = -1;
+                ChangeChangesList(state, oldInput, state.CurrentText.ToString(), addToUndo);
             }
 
             // If there are no bindings, select the "print character" action
             if (!chosenBindings.Any())
             {
+                addToUndo = true;
                 fallbackBinding.DoAction(state);
                 state.currentSuggestionsTextPos = -1;
+                ChangeChangesList(state, oldInput, state.CurrentText.ToString(), addToUndo);
             }
+        }
+
+        private static void ChangeChangesList(TermReaderState state, string oldInput, string newInput, bool add)
+        {
+            // Determine whether this execution results in a change of input and add this change to the undo list,
+            // if necessary.
+            if (newInput != oldInput && add)
+                state.changes.Add(newInput);
         }
 
         internal static bool IsTerminate(ConsoleKeyInfo cki)

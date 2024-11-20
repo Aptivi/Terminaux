@@ -51,6 +51,12 @@ namespace Terminaux.Reader.Bindings
         public virtual bool ResetSuggestionsTextPos { get; } = true;
 
         /// <summary>
+        /// Whether this binding adds manipulated to the changes list or not. If there is no difference after executing
+        /// this binding, even if this is set to true, the new input text won't be appended.
+        /// </summary>
+        public virtual bool AppendsChangesList { get; } = true;
+
+        /// <summary>
         /// Does this binding cause the input to exit?
         /// </summary>
         public virtual bool IsExit { get; }
