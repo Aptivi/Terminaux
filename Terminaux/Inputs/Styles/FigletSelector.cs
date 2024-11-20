@@ -19,17 +19,11 @@
 
 using Textify.Data.Figlet;
 using System;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using Terminaux.Base;
-using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
-using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Interactive.Selectors;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -38,7 +32,8 @@ namespace Terminaux.Inputs.Styles
     /// </summary>
     public static class FigletSelector
     {
-        private readonly static Keybinding[] bindings =
+        internal readonly static string[] fonts = [.. FigletTools.GetFigletFonts().Keys];
+        internal readonly static Keybinding[] bindings =
         [
             new("Previous", ConsoleKey.LeftArrow),
             new("Next", ConsoleKey.RightArrow),
@@ -46,7 +41,7 @@ namespace Terminaux.Inputs.Styles
             new("Cancel", ConsoleKey.Escape),
             new("Help", ConsoleKey.H),
         ];
-        private readonly static Keybinding[] additionalBindings =
+        internal readonly static Keybinding[] additionalBindings =
         [
             new("Select", ConsoleKey.S),
             new("Manual Select", ConsoleKey.S, ConsoleModifiers.Shift),
@@ -54,7 +49,7 @@ namespace Terminaux.Inputs.Styles
             new("Previous", PointerButton.WheelUp),
             new("Next", PointerButton.WheelDown),
         ];
-        private readonly static Keybinding[] charSelectBindings =
+        internal readonly static Keybinding[] charSelectBindings =
         [
             new("Previous", ConsoleKey.LeftArrow),
             new("Next", ConsoleKey.RightArrow),
@@ -75,287 +70,21 @@ namespace Terminaux.Inputs.Styles
         /// <returns>Selected figlet font</returns>
         public static string PromptForFiglet(string font)
         {
-            // Some initial variables to populate figlet fonts
-            string[] fonts = [.. FigletTools.GetFigletFonts().Keys];
-            var figletSelections = InputChoiceTools.GetInputChoices(fonts.Select((font, num) => ($"{num}", font)).ToArray()).ToArray();
-            string fontName = fonts.Contains(font) ? font : "small";
+            var figletSelectorTui = new FigletSelectorTui(font);
+            TextualUITools.RunTui(figletSelectorTui);
+            return figletSelectorTui.GetResultingFigletName();
+        }
 
-            // Determine the font index
-            int selectedFont;
+        internal static int DetermineFigletIndex(string name)
+        {
+            int selectedFont = 0;
             for (selectedFont = 0; selectedFont < fonts.Length; selectedFont++)
             {
                 string queriedFont = fonts[selectedFont];
-                if (queriedFont == fontName)
+                if (queriedFont == name)
                     break;
             }
-
-            // Now, clear the console and let the user select a figlet font while displaying a small text in the middle
-            // of the console
-            bool cancel = false;
-            var screen = new Screen();
-            try
-            {
-                bool bail = false;
-                string text = "Test";
-
-                // Make a buffer that represents the TUI
-                var screenPart = new ScreenPart();
-                screenPart.AddDynamicText(() =>
-                {
-                    var buffer = new StringBuilder();
-
-                    // Write the text using the selected figlet font
-                    var figletFont = FigletTools.GetFigletFont(fontName);
-                    var figletDisplay = new AlignedFigletText(figletFont, text)
-                    {
-                        Settings = new()
-                        {
-                            Alignment = TextAlignment.Middle
-                        }
-                    };
-                    buffer.Append(figletDisplay.Render());
-
-                    // Write the selected font name and the keybindings
-                    var figletInfo = new AlignedText($"{fontName} - [{selectedFont + 1}/{fonts.Length}]")
-                    {
-                        Top = 1,
-                        Settings = new()
-                        {
-                            Alignment = TextAlignment.Middle
-                        }
-                    };
-                    var figletKeybindings = new Keybindings()
-                    {
-                        Width = ConsoleWrapper.WindowWidth - 1,
-                        Top = ConsoleWrapper.WindowHeight - 1,
-                        KeybindingList = bindings,
-                    };
-                    buffer.Append(figletInfo.Render());
-                    buffer.Append(figletKeybindings.Render());
-                    return buffer.ToString();
-                });
-
-                // Now, make the interactive TUI resizable.
-                screen.AddBufferedPart("Figlet selector", screenPart);
-                ScreenTools.SetCurrent(screen);
-                while (!bail)
-                {
-                    // Render
-                    ScreenTools.Render();
-
-                    // Wait for input
-                    SpinWait.SpinUntil(() => Input.InputAvailable);
-                    if (Input.MouseInputAvailable)
-                    {
-                        // Mouse input received.
-                        var mouse = Input.ReadPointer();
-                        if (mouse is null)
-                            continue;
-                        switch (mouse.Button)
-                        {
-                            case PointerButton.WheelUp:
-                                selectedFont--;
-                                if (selectedFont < 0)
-                                    selectedFont = fonts.Length - 1;
-                                fontName = fonts[selectedFont];
-                                screen.RequireRefresh();
-                                break;
-                            case PointerButton.WheelDown:
-                                selectedFont++;
-                                if (selectedFont > fonts.Length - 1)
-                                    selectedFont = 0;
-                                fontName = fonts[selectedFont];
-                                screen.RequireRefresh();
-                                break;
-                        }
-                    }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
-                    {
-                        var key = Input.ReadKey();
-                        switch (key.Key)
-                        {
-                            case ConsoleKey.Enter:
-                                bail = true;
-                                break;
-                            case ConsoleKey.Escape:
-                                bail = true;
-                                cancel = true;
-                                break;
-                            case ConsoleKey.LeftArrow:
-                                selectedFont--;
-                                if (selectedFont < 0)
-                                    selectedFont = fonts.Length - 1;
-                                fontName = fonts[selectedFont];
-                                screen.RequireRefresh();
-                                break;
-                            case ConsoleKey.RightArrow:
-                                selectedFont++;
-                                if (selectedFont > fonts.Length - 1)
-                                    selectedFont = 0;
-                                fontName = fonts[selectedFont];
-                                screen.RequireRefresh();
-                                break;
-                            case ConsoleKey.S:
-                                bool write = key.Modifiers.HasFlag(ConsoleModifiers.Shift);
-                                if (write)
-                                {
-                                    string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
-                                    if (!fonts.Contains(promptedFontName))
-                                        InfoBoxModalColor.WriteInfoBoxModal("The font doesn't exist.");
-                                    else
-                                        fontName = promptedFontName;
-                                }
-                                else
-                                {
-                                    selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection("Font selection", figletSelections, "Select a figlet font from the list below");
-                                    fontName = fonts[selectedFont];
-                                }
-                                screen.RequireRefresh();
-                                break;
-                            case ConsoleKey.C:
-                                ColorTools.LoadBack();
-                                screen.RemoveBufferedPart(screenPart.Id);
-                                ShowChars(screen, fontName);
-                                screen.AddBufferedPart("Figlet selector", screenPart);
-                                screen.RequireRefresh();
-                                break;
-                            case ConsoleKey.H:
-                                Keybinding[] allBindings = [.. bindings, .. additionalBindings];
-                                KeybindingTools.ShowKeybindingInfobox(allBindings);
-                                screen.RequireRefresh();
-                                break;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                InfoBoxModalColor.WriteInfoBoxModal("Figlet selector failed: " + ex.Message);
-            }
-            finally
-            {
-                ScreenTools.UnsetCurrent(screen);
-                ColorTools.LoadBack();
-            }
-            return cancel ? font : fontName;
-        }
-
-        private static void ShowChars(Screen screen, string fontName)
-        {
-            var screenPart = new ScreenPart();
-            try
-            {
-                // Capital letters are from range 65 to 90, small letters are from range 97 to 122, and numbers are
-                // from range 48 to 57.
-                bool bail = false;
-                int[] chars = Enumerable.Range(65, 90 - 65 + 1)
-                    .Union(Enumerable.Range(97, 122 - 97 + 1))
-                    .Union(Enumerable.Range(48, 57 - 48 + 1))
-                    .ToArray();
-                int index = 0;
-
-                // Make a buffer that represents the TUI
-                screenPart.AddDynamicText(() =>
-                {
-                    var buffer = new StringBuilder();
-
-                    // Write the text using the selected figlet font
-                    string character = ((char)chars[index]).ToString();
-                    var figletFont = FigletTools.GetFigletFont(fontName);
-                    var figletDisplay = new AlignedFigletText(figletFont, character)
-                    {
-                        Settings = new()
-                        {
-                            Alignment = TextAlignment.Middle
-                        }
-                    };
-                    buffer.Append(figletDisplay.Render());
-
-                    // Write the selected character name and the keybindings
-                    var figletInfo = new AlignedText($"{character} - [{index + 1}/{chars.Length}]")
-                    {
-                        Top = 1,
-                        Settings = new()
-                        {
-                            Alignment = TextAlignment.Middle
-                        }
-                    };
-                    var figletKeybindings = new Keybindings()
-                    {
-                        Width = ConsoleWrapper.WindowWidth - 1,
-                        Top = ConsoleWrapper.WindowHeight - 1,
-                        KeybindingList = charSelectBindings,
-                    };
-                    buffer.Append(figletInfo.Render());
-                    buffer.Append(figletKeybindings.Render());
-                    return buffer.ToString();
-                });
-
-                // Now, make the interactive TUI resizable.
-                screen.AddBufferedPart("Figlet selector - show characters", screenPart);
-                while (!bail)
-                {
-                    // Render
-                    ScreenTools.Render();
-
-                    // Wait for input
-                    SpinWait.SpinUntil(() => Input.InputAvailable);
-                    if (Input.MouseInputAvailable)
-                    {
-                        // Mouse input received.
-                        var mouse = Input.ReadPointer();
-                        if (mouse is null)
-                            continue;
-                        switch (mouse.Button)
-                        {
-                            case PointerButton.WheelUp:
-                                index--;
-                                if (index < 0)
-                                    index = chars.Length - 1;
-                                screen.RequireRefresh();
-                                break;
-                            case PointerButton.WheelDown:
-                                index++;
-                                if (index > chars.Length - 1)
-                                    index = 0;
-                                screen.RequireRefresh();
-                                break;
-                        }
-                    }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
-                    {
-                        // Keyboard input received.
-                        var key = Input.ReadKey().Key;
-                        switch (key)
-                        {
-                            case ConsoleKey.Enter:
-                                bail = true;
-                                break;
-                            case ConsoleKey.LeftArrow:
-                                index--;
-                                if (index < 0)
-                                    index = chars.Length - 1;
-                                screen.RequireRefresh();
-                                break;
-                            case ConsoleKey.RightArrow:
-                                index++;
-                                if (index > chars.Length - 1)
-                                    index = 0;
-                                screen.RequireRefresh();
-                                break;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                InfoBoxModalColor.WriteInfoBoxModal("Figlet selector failed: " + ex.Message);
-            }
-            finally
-            {
-                if (screen.CheckBufferedPart(screenPart.Id))
-                    screen.RemoveBufferedPart(screenPart.Id);
-            }
+            return selectedFont;
         }
 
         static FigletSelector()
