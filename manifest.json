@@ -255,6 +255,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.ConsoleBell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.ConsoleBell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Extensions.Data.SynthInfo.Chapter.yml",
       "output": {
         ".html": {
@@ -1219,6 +1229,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Interactive.TextualUI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.TextualUIState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.TextualUIState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.TextualUITools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.TextualUITools.html"
         }
       },
       "version": ""
