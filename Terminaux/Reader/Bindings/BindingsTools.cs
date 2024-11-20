@@ -298,6 +298,21 @@ namespace Terminaux.Reader.Bindings
                     new ConsoleKeyInfo('C', ConsoleKey.C, true, true, false),
                 ]
             },
+            new UndoChange()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo((char)0x1f, ConsoleKey.OemMinus, true, false, true),
+                    new ConsoleKeyInfo('\0', ConsoleKey.D7, false, false, true),
+                ]
+            },
+            new UndoChanges()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('r', ConsoleKey.R, false, true, false),
+                ]
+            },
 
 #if DEBUG
             new DebugPos()
