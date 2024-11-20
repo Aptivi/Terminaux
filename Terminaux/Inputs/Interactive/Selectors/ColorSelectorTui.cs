@@ -55,10 +55,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private ConsoleColors colorValue255 = ConsoleColors.Fuchsia;
         private ConsoleColor colorValue16 = ConsoleColor.Magenta;
         private bool cancel = false;
-        private Color initialColor = ConsoleColors.White;
         private Color selectedColor = ConsoleColors.White;
         private ColorType type = ColorType.FourBitColor;
         private readonly ColorSettings finalSettings = new(ColorTools.GlobalSettings);
+        private readonly Color initialColor = ConsoleColors.White;
 
         /// <inheritdoc/>
         public override string Render()
@@ -445,7 +445,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private void UpdateKeybindings(ColorType color)
+        private void UpdateKeybindings()
         {
             Keybindings.Clear();
 
@@ -465,11 +465,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[9], (ui, _, _) => ChangeSimulationSeverity(ui, true)));
 
             // Mouse bindings
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[10], (ui, key, mouse) => ChangeValue(ui, key, mouse, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[11], (ui, key, mouse) => ChangeValue(ui, key, mouse, true)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[10], (_, _, mouse) => ChangeValue(mouse, false)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[11], (_, _, mouse) => ChangeValue(mouse, true)));
 
             // Type-specific bindings
-            switch (color)
+            switch (type)
             {
                 case ColorType.TrueColor:
                     Keybindings.Add((ColorSelector.additionalBindingsTrueColor[12], (ui, _, _) => ChangeHue(ui, true)));
@@ -590,7 +590,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (type > ColorType.FourBitColor)
                     type = ColorType.TrueColor;
             }
-            UpdateKeybindings(type);
+            UpdateKeybindings();
             ui.uiScreen.RequireRefresh();
         }
 
@@ -628,11 +628,56 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.uiScreen.RequireRefresh();
         }
 
-        private void ChangeValue(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse, bool goBack)
+        private void ChangeValue(PointerEventContext? mouse, bool goBack)
         {
-            // TODO: Implement positioning information from keybinding callback. This will change mode temporarily.
-            ChangeMode(ui, goBack);
-            ui.uiScreen.RequireRefresh();
+            if (mouse is null)
+                return;
+
+            // Some variables
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6 + (ConsoleWrapper.WindowWidth % 2 == 0 ? 0 : 1);
+            int boxHeight = 2;
+            int hslBarX = ConsoleWrapper.WindowWidth / 2 + 2;
+            int hslBarY = 1;
+            int grayRampBarY = hslBarY + (boxHeight * 3) + 3;
+            int colorBoxX = 2;
+            int colorBoxY = 1;
+            int colorBoxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+            int colorBoxHeight = ConsoleWrapper.WindowHeight - 5;
+
+            // Detect boundaries
+            bool withinColorBoxBoundaries = PointerTools.PointerWithinRange(mouse, (colorBoxX + 1, colorBoxY + 1), (colorBoxWidth + colorBoxX, colorBoxHeight + colorBoxY));
+            bool withinHueBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 1), (hslBarX + boxWidth, hslBarY + 2));
+            bool withinSaturationBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 3), (hslBarX + boxWidth, hslBarY + 4));
+            bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 5), (hslBarX + boxWidth, hslBarY + 6));
+            bool withinTransparencyBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, grayRampBarY + 1), (hslBarX + boxWidth - 7, grayRampBarY + 2));
+
+            // DO the action!
+            if (goBack)
+            {
+                if (withinColorBoxBoundaries)
+                    DecrementColor(type);
+                else if (withinHueBarBoundaries)
+                    DecrementHue(type);
+                else if (withinSaturationBarBoundaries)
+                    DecrementSaturation(type);
+                else if (withinLightnessBarBoundaries)
+                    DecrementLightness(type);
+                else if (withinTransparencyBarBoundaries)
+                    finalSettings.Opacity--;
+            }
+            else
+            {
+                if (withinColorBoxBoundaries)
+                    IncrementColor(type);
+                else if (withinHueBarBoundaries)
+                    IncrementHue(type);
+                else if (withinSaturationBarBoundaries)
+                    IncrementSaturation(type);
+                else if (withinLightnessBarBoundaries)
+                    IncrementLightness(type);
+                else if (withinTransparencyBarBoundaries)
+                    finalSettings.Opacity++;
+            }
         }
 
         private void ChangeHue(TextualUI ui, bool goBack)
@@ -770,7 +815,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             initialColor = color;
             selectedColor = color;
             finalSettings = settings;
-            UpdateKeybindings(ColorType.FourBitColor);
+            UpdateKeybindings();
         }
     }
 }
