@@ -18,27 +18,10 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using Terminaux.Base;
-using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
-using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Interactive.Selectors;
-using Terminaux.Inputs.Pointer;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Textify.Tools;
 
 namespace Terminaux.Inputs.Styles.Selection
 {

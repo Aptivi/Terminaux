@@ -19,14 +19,8 @@
 
 using System;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using Terminaux.Base;
-using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
-using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.CyclicWriters.Builtins;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

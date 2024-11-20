@@ -18,13 +18,9 @@
 //
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using Terminaux.Base;
-using Terminaux.Base.Buffered;
-using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
@@ -33,9 +29,6 @@ using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Colors.Transformation.Formulas;
-using Terminaux.Colors.Transformation.Tools;
-using Terminaux.Colors.Transformation.Tools.ColorBlind;
-using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
