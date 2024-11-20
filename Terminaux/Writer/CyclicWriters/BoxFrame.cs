@@ -251,7 +251,7 @@ namespace Terminaux.Writer.CyclicWriters
                     string finalText =
                         $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
                         $"{TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)}" +
-                        $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $"{settings.BorderLeftHorizontalIntersectionChar} " : "")}";
+                        $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "")}";
                     int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.TitleAlignment, Left + 2);
                     frameBuilder.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
