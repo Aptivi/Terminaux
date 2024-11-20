@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Base.Buffered;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -63,7 +64,7 @@ namespace Terminaux.Inputs.Interactive
         /// You can edit this to add your custom keybindings, but it's preferrable to either place them in a constructor or
         /// in the overridden value, and to define the delegates in separate private functions inside the UI class.
         /// </remarks>
-        public virtual List<(Keybinding binding, Action<TextualUI> action)> Keybindings { get; } = [];
+        public virtual List<(Keybinding binding, Action<TextualUI, ConsoleKeyInfo, PointerEventContext?> action)> Keybindings { get; } = [];
 
         /// <summary>
         /// List of renderable contianers that are going to be laid out on top of what <see cref="Render()"/> prints to the console.

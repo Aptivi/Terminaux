@@ -26,6 +26,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -140,11 +141,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 // Keyboard bindings
                 Keybindings.Add((FigletSelector.bindings[0], Previous));
                 Keybindings.Add((FigletSelector.bindings[1], Next));
-                Keybindings.Add((FigletSelector.bindings[2], (ui) => Exit(ui, false)));
-                Keybindings.Add((FigletSelector.bindings[3], (ui) => Exit(ui, true)));
+                Keybindings.Add((FigletSelector.bindings[2], (ui, _, _) => Exit(ui, false)));
+                Keybindings.Add((FigletSelector.bindings[3], (ui, _, _) => Exit(ui, true)));
                 Keybindings.Add((FigletSelector.bindings[4], Help));
-                Keybindings.Add((FigletSelector.additionalBindings[0], (ui) => Select(ui, false)));
-                Keybindings.Add((FigletSelector.additionalBindings[1], (ui) => Select(ui, true)));
+                Keybindings.Add((FigletSelector.additionalBindings[0], (ui, _, _) => Select(ui, false)));
+                Keybindings.Add((FigletSelector.additionalBindings[1], (ui, _, _) => Select(ui, true)));
                 Keybindings.Add((FigletSelector.additionalBindings[2], Showcase));
 
                 // Mouse bindings
@@ -159,7 +160,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private void Previous(TextualUI ui)
+        private void Previous(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             if (screenNum == 0)
             {
@@ -177,7 +178,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.uiScreen.RequireRefresh();
         }
 
-        private void Next(TextualUI ui)
+        private void Next(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             if (screenNum == 0)
             {
@@ -201,7 +202,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void Help(TextualUI ui)
+        private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             Keybinding[] allBindings = [.. FigletSelector.bindings, .. FigletSelector.additionalBindings];
             KeybindingTools.ShowKeybindingInfobox(allBindings);
@@ -228,13 +229,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.uiScreen.RequireRefresh();
         }
 
-        private void Showcase(TextualUI ui)
+        private void Showcase(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             UpdateKeybindings(++screenNum);
             ui.uiScreen.RequireRefresh();
         }
 
-        private void GoBack(TextualUI ui)
+        private void GoBack(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             UpdateKeybindings(--screenNum);
             ui.uiScreen.RequireRefresh();

@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
@@ -213,7 +215,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void GoUp(TextualUI ui)
+        private void GoUp(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             highlightedAnswer--;
             if (highlightedAnswer < 1)
@@ -221,7 +223,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Update(true);
         }
 
-        private void GoDown(TextualUI ui)
+        private void GoDown(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             highlightedAnswer++;
             if (highlightedAnswer > allAnswers.Count)
@@ -229,19 +231,19 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Update(false);
         }
 
-        private void GoFirst(TextualUI ui)
+        private void GoFirst(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             highlightedAnswer = 1;
             Update(true);
         }
 
-        private void GoLast(TextualUI ui)
+        private void GoLast(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             highlightedAnswer = allAnswers.Count;
             Update(false);
         }
 
-        private void PreviousPage(TextualUI ui)
+        private void PreviousPage(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -254,7 +256,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Update(true);
         }
 
-        private void NextPage(TextualUI ui)
+        private void NextPage(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -267,7 +269,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Update(false);
         }
 
-        private void SearchPrompt(TextualUI ui)
+        private void SearchPrompt(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             // Prompt the user for search term
             var entriesString = allAnswers.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
@@ -311,7 +313,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.uiScreen.RequireRefresh();
         }
 
-        private void ShowcaseGoUp(TextualUI ui)
+        private void ShowcaseGoUp(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             if (!sidebar)
                 return;
@@ -320,7 +322,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 showcaseLine = 0;
         }
 
-        private void ShowcaseGoDown(TextualUI ui)
+        private void ShowcaseGoDown(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             if (!sidebar)
                 return;
@@ -338,10 +340,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 showcaseLine = lines.Length - answersPerPage;
         }
 
-        private void ShowCount(TextualUI ui) =>
+        private void ShowCount(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse) =>
             showCount = !showCount;
 
-        private void ShowItemInfo(TextualUI ui)
+        private void ShowItemInfo(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
             string choiceName = highlightedAnswerChoiceInfo.ChoiceName;
@@ -355,20 +357,20 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private void ShowSidebar(TextualUI ui)
+        private void ShowSidebar(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             sidebar = !sidebar;
             ui.uiScreen.RequireRefresh();
         }
 
-        private void Help(TextualUI ui)
+        private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             Keybinding[] allBindings = multiple ? SelectionStyleBase.bindingsMultiple : SelectionStyleBase.bindings;
             KeybindingTools.ShowKeybindingInfobox(allBindings);
             ui.uiScreen.RequireRefresh();
         }
 
-        private void ModifyChoice(TextualUI ui)
+        private void ModifyChoice(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             if (!selectedAnswers.Remove(highlightedAnswer - 1))
                 selectedAnswers.Add(highlightedAnswer - 1);
@@ -504,8 +506,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             highlightedAnswer = allAnswers.Any((ici) => ici.ChoiceDefault) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
 
             // Install keybindings
-            Keybindings.Add((SelectionStyleBase.bindings[0], (ui) => Exit(ui, false)));
-            Keybindings.Add((SelectionStyleBase.bindings[1], (ui) => Exit(ui, true)));
+            Keybindings.Add((SelectionStyleBase.bindings[0], (ui, _, _) => Exit(ui, false)));
+            Keybindings.Add((SelectionStyleBase.bindings[1], (ui, _, _) => Exit(ui, true)));
             Keybindings.Add((SelectionStyleBase.bindings[2], GoUp));
             Keybindings.Add((SelectionStyleBase.bindings[3], GoDown));
             Keybindings.Add((SelectionStyleBase.bindings[4], GoFirst));
@@ -524,9 +526,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (multiple)
             {
                 Keybindings.Add((SelectionStyleBase.bindingsMultiple[13], ModifyChoice));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[14], (_) => ProcessSelectAll(1)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[15], (_) => ProcessSelectAll(2)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], (_) => ProcessSelectAll(3)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[14], (_, _, _) => ProcessSelectAll(1)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[15], (_, _, _) => ProcessSelectAll(2)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], (_, _, _) => ProcessSelectAll(3)));
             }
         }
     }

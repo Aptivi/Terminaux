@@ -29,6 +29,7 @@ using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Colors.Transformation.Formulas;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
@@ -449,39 +450,39 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Clear();
 
             // General keybindings
-            Keybindings.Add((ColorSelector.bindings[0], (ui) => Exit(ui, false)));
-            Keybindings.Add((ColorSelector.bindings[1], (ui) => Exit(ui, true)));
+            Keybindings.Add((ColorSelector.bindings[0], (ui, _, _) => Exit(ui, false)));
+            Keybindings.Add((ColorSelector.bindings[1], (ui, _, _) => Exit(ui, true)));
             Keybindings.Add((ColorSelector.bindings[2], Help));
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[0], ShowColorInfo));
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[1], SelectWebColor));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[2], (_) => finalSettings.Opacity++));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[3], (_) => finalSettings.Opacity--));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[4], (ui) => ChangeMode(ui, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[5], (ui) => ChangeMode(ui, true)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[6], (ui) => ChangeSimulation(ui, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[7], (ui) => ChangeSimulation(ui, true)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[8], (ui) => ChangeSimulationSeverity(ui, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[9], (ui) => ChangeSimulationSeverity(ui, true)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[2], (_, _, _) => finalSettings.Opacity++));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[3], (_, _, _) => finalSettings.Opacity--));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[4], (ui, _, _) => ChangeMode(ui, false)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[5], (ui, _, _) => ChangeMode(ui, true)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[6], (ui, _, _) => ChangeSimulation(ui, false)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[7], (ui, _, _) => ChangeSimulation(ui, true)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[8], (ui, _, _) => ChangeSimulationSeverity(ui, false)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[9], (ui, _, _) => ChangeSimulationSeverity(ui, true)));
 
             // Mouse bindings
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[10], (ui) => ChangeValue(ui, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[11], (ui) => ChangeValue(ui, true)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[10], (ui, key, mouse) => ChangeValue(ui, key, mouse, false)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[11], (ui, key, mouse) => ChangeValue(ui, key, mouse, true)));
 
             // Type-specific bindings
             switch (color)
             {
                 case ColorType.TrueColor:
-                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[12], (ui) => ChangeHue(ui, true)));
-                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[13], (ui) => ChangeLightness(ui, true)));
-                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[14], (ui) => ChangeSaturation(ui, true)));
-                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[15], (ui) => ChangeHue(ui, false)));
-                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[16], (ui) => ChangeLightness(ui, false)));
-                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[17], (ui) => ChangeSaturation(ui, false)));
+                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[12], (ui, _, _) => ChangeHue(ui, true)));
+                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[13], (ui, _, _) => ChangeLightness(ui, true)));
+                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[14], (ui, _, _) => ChangeSaturation(ui, true)));
+                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[15], (ui, _, _) => ChangeHue(ui, false)));
+                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[16], (ui, _, _) => ChangeLightness(ui, false)));
+                    Keybindings.Add((ColorSelector.additionalBindingsTrueColor[17], (ui, _, _) => ChangeSaturation(ui, false)));
                     break;
                 case ColorType.EightBitColor:
                 case ColorType.FourBitColor:
-                    Keybindings.Add((ColorSelector.additionalBindingsNormalColor[12], (ui) => ChangeColor(ui, true)));
-                    Keybindings.Add((ColorSelector.additionalBindingsNormalColor[13], (ui) => ChangeColor(ui, false)));
+                    Keybindings.Add((ColorSelector.additionalBindingsNormalColor[12], (ui, _, _) => ChangeColor(ui, true)));
+                    Keybindings.Add((ColorSelector.additionalBindingsNormalColor[13], (ui, _, _) => ChangeColor(ui, false)));
                     break;
             }
         }
@@ -495,7 +496,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void Help(TextualUI ui)
+        private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             Keybinding[] allBindings =
                 type == ColorType.TrueColor ?
@@ -505,7 +506,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.uiScreen.RequireRefresh();
         }
 
-        private void ShowColorInfo(TextualUI ui)
+        private void ShowColorInfo(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             switch (colorBlindnessSimulationIdx)
             {
@@ -559,7 +560,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             InfoBoxModalColor.WriteInfoBoxModal(title, rendered);
         }
 
-        private void SelectWebColor(TextualUI ui)
+        private void SelectWebColor(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             ui.uiScreen.RequireRefresh();
             var colors = WebSafeColors.GetColorList();
@@ -627,7 +628,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.uiScreen.RequireRefresh();
         }
 
-        private void ChangeValue(TextualUI ui, bool goBack)
+        private void ChangeValue(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse, bool goBack)
         {
             // TODO: Implement positioning information from keybinding callback. This will change mode temporarily.
             ChangeMode(ui, goBack);

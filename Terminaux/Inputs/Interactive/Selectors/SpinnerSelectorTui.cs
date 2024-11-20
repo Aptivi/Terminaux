@@ -27,6 +27,7 @@ using Terminaux.Writer.CyclicWriters.Builtins;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -104,7 +105,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             return (Spinner)spinnerObject;
         }
 
-        private void Previous(TextualUI ui)
+        private void Previous(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             selectedSpinner--;
             if (selectedSpinner < 0)
@@ -113,7 +114,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.uiScreen.RequireRefresh();
         }
 
-        private void Next(TextualUI ui)
+        private void Next(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             selectedSpinner++;
             if (selectedSpinner > SpinnerSelector.spinners.Length - 1)
@@ -128,7 +129,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void Help(TextualUI ui)
+        private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             Keybinding[] allBindings = [.. SpinnerSelector.bindings, .. SpinnerSelector.additionalBindings];
             KeybindingTools.ShowKeybindingInfobox(allBindings);
@@ -162,11 +163,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Keyboard bindings
             Keybindings.Add((SpinnerSelector.bindings[0], Previous));
             Keybindings.Add((SpinnerSelector.bindings[1], Next));
-            Keybindings.Add((SpinnerSelector.bindings[2], (ui) => Exit(ui, false)));
-            Keybindings.Add((SpinnerSelector.bindings[3], (ui) => Exit(ui, true)));
+            Keybindings.Add((SpinnerSelector.bindings[2], (ui, _, _) => Exit(ui, false)));
+            Keybindings.Add((SpinnerSelector.bindings[3], (ui, _, _) => Exit(ui, true)));
             Keybindings.Add((SpinnerSelector.bindings[4], Help));
-            Keybindings.Add((SpinnerSelector.additionalBindings[0], (ui) => Select(ui, false)));
-            Keybindings.Add((SpinnerSelector.additionalBindings[1], (ui) => Select(ui, true)));
+            Keybindings.Add((SpinnerSelector.additionalBindings[0], (ui, _, _) => Select(ui, false)));
+            Keybindings.Add((SpinnerSelector.additionalBindings[1], (ui, _, _) => Select(ui, true)));
 
             // Mouse bindings
             Keybindings.Add((SpinnerSelector.additionalBindings[2], Previous));

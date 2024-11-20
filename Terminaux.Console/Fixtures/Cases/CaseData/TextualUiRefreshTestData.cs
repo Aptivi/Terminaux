@@ -22,6 +22,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -131,26 +132,26 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
         internal TextualUiRefreshTestData()
         {
-            Keybindings.Add((bindings[0], TextualUITools.ExitTui));
-            Keybindings.Add((bindings[1], (TextualUI ui) =>
+            Keybindings.Add((bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
+            Keybindings.Add((bindings[1], (ui, _, _) =>
             {
                 redBoxVisible = !redBoxVisible;
                 ui.uiScreen.RequireRefresh();
             }
             ));
-            Keybindings.Add((bindings[2], (TextualUI ui) =>
+            Keybindings.Add((bindings[2], (ui, _, _) =>
             {
                 greenBoxVisible = !greenBoxVisible;
                 ui.uiScreen.RequireRefresh();
             }
             ));
-            Keybindings.Add((bindings[3], (TextualUI ui) =>
+            Keybindings.Add((bindings[3], (ui, _, _) =>
             {
                 rgbBoxVisible = !rgbBoxVisible;
                 ui.uiScreen.RequireRefresh();
             }
             ));
-            Keybindings.Add((bindings[4], (_) =>
+            Keybindings.Add((bindings[4], (_, _, _) =>
             {
                 if (paused)
                     return;
@@ -159,7 +160,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                     RefreshDelay = 20;
             }
             ));
-            Keybindings.Add((bindings[5], (_) =>
+            Keybindings.Add((bindings[5], (_, _, _) =>
             {
                 if (paused)
                     return;
@@ -168,7 +169,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                     RefreshDelay = 1000;
             }
             ));
-            Keybindings.Add((bindings[6], (_) =>
+            Keybindings.Add((bindings[6], (_, _, _) =>
             {
                 paused = !paused;
                 if (paused)

@@ -85,11 +85,13 @@ namespace Terminaux.Inputs.Interactive
 
                     // Process the user input
                     ui.state = TextualUIState.Busy;
-                    List<(Keybinding binding, Action<TextualUI> action)> bindings = [];
+                    List<(Keybinding binding, Action<TextualUI, ConsoleKeyInfo, PointerEventContext?> action)> bindings = [];
+                    PointerEventContext? mouse = null;
+                    ConsoleKeyInfo key = default;
                     if (Input.MouseInputAvailable)
                     {
                         // Mouse input has been received
-                        var mouse = Input.ReadPointer();
+                        mouse = Input.ReadPointer();
                         if (mouse is null)
                             continue;
 
@@ -99,7 +101,7 @@ namespace Terminaux.Inputs.Interactive
                     else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
                         // Keyboard input received
-                        var key = Input.ReadKey();
+                        key = Input.ReadKey();
 
                         // Match the key binding
                         bindings = MatchBindings(ui, key, null);
@@ -107,7 +109,7 @@ namespace Terminaux.Inputs.Interactive
 
                     // Execute the action according to the bindings
                     foreach (var binding in bindings)
-                        binding.action.Invoke(ui);
+                        binding.action.Invoke(ui, key, mouse);
                 }
             }
             catch (Exception ex)
@@ -130,7 +132,7 @@ namespace Terminaux.Inputs.Interactive
         public static void ExitTui(TextualUI ui) =>
             ui.state = TextualUIState.Bailing;
 
-        private static List<(Keybinding binding, Action<TextualUI> action)> MatchBindings(TextualUI ui, ConsoleKeyInfo cki, PointerEventContext? mouseEvent)
+        private static List<(Keybinding binding, Action<TextualUI, ConsoleKeyInfo, PointerEventContext?> action)> MatchBindings(TextualUI ui, ConsoleKeyInfo cki, PointerEventContext? mouseEvent)
         {
             if (mouseEvent is not null)
             {

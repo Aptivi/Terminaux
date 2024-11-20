@@ -22,6 +22,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -118,18 +119,18 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
         internal TextualUiSimpleTestData()
         {
-            Keybindings.Add((new Keybinding("Exit", ConsoleKey.Escape), TextualUITools.ExitTui));
-            Keybindings.Add((new Keybinding("Show/hide red box", ConsoleKey.R), (TextualUI ui) =>
+            Keybindings.Add((new Keybinding("Exit", ConsoleKey.Escape), (ui, _, _) => TextualUITools.ExitTui(ui)));
+            Keybindings.Add((new Keybinding("Show/hide red box", ConsoleKey.R), (ui, _, _) =>
             {
                 redBoxVisible = !redBoxVisible;
                 ui.uiScreen.RequireRefresh();
             }));
-            Keybindings.Add((new Keybinding("Show/hide green box", ConsoleKey.G), (TextualUI ui) =>
+            Keybindings.Add((new Keybinding("Show/hide green box", ConsoleKey.G), (ui, _, _) =>
             {
                 greenBoxVisible = !greenBoxVisible;
                 ui.uiScreen.RequireRefresh();
             }));
-            Keybindings.Add((new Keybinding("Show/hide blue box", ConsoleKey.B), (TextualUI ui) =>
+            Keybindings.Add((new Keybinding("Show/hide blue box", ConsoleKey.B), (ui, _, _) =>
             {
                 blueBoxVisible = !blueBoxVisible;
                 ui.uiScreen.RequireRefresh();
