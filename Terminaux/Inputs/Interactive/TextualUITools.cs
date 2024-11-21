@@ -136,7 +136,7 @@ namespace Terminaux.Inputs.Interactive
         {
             if (mouseEvent is not null)
             {
-                return ui.Keybindings.FindAll((match) =>
+                var mouseBindings = ui.Keybindings.FindAll((match) =>
                 {
                     return
                         match.binding.BindingUsesMouse == true &&
@@ -144,16 +144,22 @@ namespace Terminaux.Inputs.Interactive
                         match.binding.BindingPointerButtonPress == mouseEvent.ButtonPress &&
                         match.binding.BindingPointerModifiers == mouseEvent.Modifiers;
                 });
+                if (mouseBindings.Count == 0 && ui.Fallback is not null)
+                    mouseBindings.Add((new("Dynamic", (PointerButton)0), ui.Fallback));
+                return mouseBindings;
             }
             else
             {
-                return ui.Keybindings.FindAll((match) =>
+                var keyboardBindings = ui.Keybindings.FindAll((match) =>
                 {
                     return
                         match.binding.BindingUsesMouse == false &&
                         match.binding.BindingKeyName == cki.Key &&
                         match.binding.BindingKeyModifiers == cki.Modifiers;
                 });
+                if (keyboardBindings.Count == 0 && ui.Fallback is not null)
+                    keyboardBindings.Add((new("Dynamic", (PointerButton)0), ui.Fallback));
+                return keyboardBindings;
             }
         }
 

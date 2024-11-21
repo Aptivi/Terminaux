@@ -34,6 +34,8 @@ namespace Terminaux.Inputs.Interactive
         internal TextualUIState state = TextualUIState.Ready;
         internal Screen uiScreen = new();
         private Guid guid = Guid.NewGuid();
+        private Action<TextualUI, ConsoleKeyInfo, PointerEventContext?>? fallback;
+        private bool fallbackSet = false;
 
         /// <summary>
         /// Unique ID for this textual UI
@@ -65,6 +67,20 @@ namespace Terminaux.Inputs.Interactive
         /// in the overridden value, and to define the delegates in separate private functions inside the UI class.
         /// </remarks>
         public virtual List<(Keybinding binding, Action<TextualUI, ConsoleKeyInfo, PointerEventContext?> action)> Keybindings { get; } = [];
+
+        /// <summary>
+        /// Fallback keybinding in case defined keybinding doesn't exist. Can only be set once.
+        /// </summary>
+        public Action<TextualUI, ConsoleKeyInfo, PointerEventContext?>? Fallback
+        {
+            get => fallback;
+            set
+            {
+                if (!fallbackSet)
+                    fallback = value;
+                fallbackSet = true;
+            }
+        }
 
         /// <summary>
         /// List of renderable contianers that are going to be laid out on top of what <see cref="Render()"/> prints to the console.

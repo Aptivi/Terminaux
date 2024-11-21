@@ -33,10 +33,6 @@ namespace Terminaux.Inputs.Interactive
     /// </summary>
     public class BaseInteractiveTui<TPrimary, TSecondary> : IInteractiveTui<TPrimary, TSecondary>
     {
-        internal Dictionary<string, ScreenPart> trackedParts = [];
-        internal Screen? screen;
-        internal bool isExiting = false;
-
         /// <summary>
         /// Current selection for the first pane
         /// </summary>
