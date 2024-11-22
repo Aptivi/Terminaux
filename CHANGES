@@ -1,10 +1,10 @@
-We've made this release to bring in some small improvements
+We've made this release to fix a regression.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements and bug fixes
+- `[*]` Backported a fix from Terminaux 6.0 that fixes a regression found in the selection style regarding mouse detection
 
 Review the commit history if you want to get a deep insight about the changes.
 
