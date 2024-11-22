@@ -37,7 +37,7 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         Waiting,
         /// <summary>
-        /// This textual UI is busy becuase it's processing user input
+        /// This textual UI is busy because it's processing user input
         /// </summary>
         Busy,
         /// <summary>
