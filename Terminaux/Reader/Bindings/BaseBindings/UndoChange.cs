@@ -24,6 +24,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     internal class UndoChange : BaseBinding, IBinding
     {
         /// <inheritdoc/>
+        public override bool IsBindingOverridable => true;
+
+        /// <inheritdoc/>
         public override bool AppendsChangesList => false;
 
         /// <inheritdoc/>
