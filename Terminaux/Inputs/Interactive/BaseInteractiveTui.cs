@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Base.Buffered;
 
 namespace Terminaux.Inputs.Interactive
 {

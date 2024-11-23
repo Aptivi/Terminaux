@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Console.Fixtures.Cases.Shell.Shells.Commands
+namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
-    class WriteCommand : BaseCommand, ICommand
+    internal static class UnconditionalFunctions
     {
-        public override void Execute(CommandParameters parameters) =>
-            TextWriterColor.Write("Test text");
+        internal static void TestWrite() =>
+            TextWriterColor.Write("Hello world!");
+
+        internal static void TestWriteArgs(string name) =>
+            TextWriterColor.Write($"Hello, {name}!");
     }
 }

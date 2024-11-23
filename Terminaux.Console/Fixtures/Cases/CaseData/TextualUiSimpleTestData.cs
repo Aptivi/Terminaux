@@ -22,7 +22,6 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Interactive;
-using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

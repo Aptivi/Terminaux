@@ -17,14 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Console.Fixtures.Cases.Shell.Shells.Commands
+namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
-    class WriteCommand : BaseCommand, ICommand
+    internal static class ConditionalFunctions
     {
-        public override void Execute(CommandParameters parameters) =>
-            TextWriterColor.Write("Test text");
+        internal static int TestRead()
+        {
+            TextWriterColor.Write("Console.Read is called. Write 'A' in uppercase");
+            int charNum = TermReaderTools.GetInput(true).KeyChar;
+            return charNum;
+        }
+
+        internal static double TestReadArgs(double dividend, double divisor) =>
+            dividend % divisor;
     }
 }

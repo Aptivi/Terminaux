@@ -215,6 +215,8 @@ namespace Terminaux.Console.Fixtures
             new TestHexViewerInteractive(),
             new TestTextEditorInteractive(),
             new TestTextViewerInteractive(),
+            new TestTestFixturesInteractive(),
+            new TestTestFixtures(),
 
             // Input (CJK)
             new TestInputSelectionCjk(),
