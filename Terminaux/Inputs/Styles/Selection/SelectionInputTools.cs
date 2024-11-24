@@ -282,6 +282,7 @@ namespace Terminaux.Inputs.Styles.Selection
             int processedHeight = 0;
             int processedChoices = 0;
             var tristates = GetCategoryTristates(selections, choices, currentSelections);
+            int relatedIdx = -1;
             for (int categoryIdx = 0; categoryIdx < selections.Length; categoryIdx++)
             {
                 InputChoiceCategoryInfo? category = selections[categoryIdx];
@@ -314,13 +315,14 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
                     for (int i = 0; i < group.Choices.Length; i++)
                     {
+                        relatedIdx++;
                         bool selected = processedChoices == currentSelection;
                         var choice = group.Choices[i];
                         string AnswerTitle = choice.ChoiceTitle ?? "";
                         bool disabled = choice.ChoiceDisabled;
 
                         // Get the option
-                        string modifiers = $"{(selected ? ">" : disabled ? "X" : " ")}{(isMultiple ? $" [{(currentSelections.Contains(i) ? "*" : " ")}]" : "")}";
+                        string modifiers = $"{(selected ? ">" : disabled ? "X" : " ")}{(isMultiple ? $" [{(currentSelections.Contains(relatedIdx) ? "*" : " ")}]" : "")}";
                         string AnswerOption = selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
                         if (AnswerTitleLeft < width)
                         {
