@@ -130,6 +130,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 Top = borderY,
                 Line = currIdx,
                 Height = maxHeight,
+                Width = maxWidth + 1,
                 ForegroundColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,
                 Text = text.FormatString(vars)
