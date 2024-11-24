@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Shell.Aliases;
+using Terminaux.Shell.Arguments.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
@@ -87,12 +88,38 @@ namespace Terminaux.Shell.Arguments
 
             // Now, process the arguments
             if (CommandInfo != null)
-                return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo);
+                return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
             else
                 return (fallback, new[] { fallback });
         }
 
-        private static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo)
+        /// <summary>
+        /// Parses the arguments
+        /// </summary>
+        /// <param name="ArgumentText">Argument text that the user provided</param>
+        /// <param name="argsDict">A dictionary of argument info instances</param>
+        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed argument</returns>
+        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText, Dictionary<string, ArgumentInfo> argsDict)
+        {
+            string Argument;
+
+            // Split the requested argument string into words
+            var words = ArgumentText.SplitEncloseDoubleQuotes();
+            var wordsOrig = ArgumentText.SplitEncloseDoubleQuotesNoRelease();
+            string arguments = string.Join(" ", words.Skip(1));
+            string argumentsOrig = string.Join(" ", wordsOrig.Skip(1));
+            Argument = words[0];
+
+            // Check to see if the caller has provided a switch that subtracts the number of required arguments
+            var ArgumentInfo = argsDict.TryGetValue(Argument, out ArgumentInfo? argInfo) ? argInfo : null;
+            var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
+            if (ArgumentInfo != null)
+                return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
+            else
+                return (fallback, new[] { fallback });
+        }
+
+        private static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo? CommandInfo, ArgumentInfo? argumentInfo)
         {
             ProvidedArgumentsInfo? satisfiedArg = null;
             List<ProvidedArgumentsInfo> totalArgs = [];
@@ -129,8 +156,8 @@ namespace Terminaux.Shell.Arguments
             string[] unknownSwitchesList = [];
             string[] conflictingSwitchesList = [];
             string[] noValueSwitchesList = [];
-            var argInfos = CommandInfo?.CommandArgumentInfo ??
-                throw new TerminauxException("Can't get argument info for command");
+            var argInfos = (CommandInfo is not null ? CommandInfo.CommandArgumentInfo : argumentInfo?.ArgArgumentInfo) ??
+                throw new TerminauxException("Can't get argument info for command or argument");
             foreach (var argInfo in argInfos)
             {
                 bool RequiredArgumentsProvided = true;
