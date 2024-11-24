@@ -68,5 +68,9 @@ namespace Terminaux.Inputs.Styles.Selection
         /// Disabled option color
         /// </summary>
         public Color DisabledOptionColor { get; set; } = new(ConsoleColors.Grey);
+        /// <summary>
+        /// Background color
+        /// </summary>
+        public Color BackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
     }
 }

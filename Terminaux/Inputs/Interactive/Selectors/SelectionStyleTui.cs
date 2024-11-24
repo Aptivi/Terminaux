@@ -77,12 +77,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Width = wholeWidth,
                     Height = sentenceLineCount > 5 ? 5 : sentenceLineCount,
                     ForegroundColor = settings.QuestionColor,
+                    BackgroundColor = settings.BackgroundColor,
                     Line = questionLine,
                     Text = question,
                 };
                 var questionText = new Border()
                 {
                     Color = settings.SeparatorColor,
+                    BackgroundColor = settings.BackgroundColor,
                     Left = 2,
                     Top = 1,
                     InteriorWidth = wholeWidth,
@@ -100,6 +102,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 InteriorWidth = interiorWidth,
                 InteriorHeight = answersPerPage,
                 Color = settings.SeparatorColor,
+                BackgroundColor = settings.BackgroundColor,
             };
             selectionBuilder.Append(
                 border.Render() +
@@ -107,7 +110,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     3, listStartPosition + 2,
                     highlightedAnswer - 1, multiple ? [.. selectedAnswers] : null, answersPerPage, interiorWidth,
                     false, SelectionInputTools.GetChoicesFromCategories(answers).Count, false,
-                    settings.OptionColor,
+                    settings.OptionColor, settings.BackgroundColor,
                     selectedForegroundColor: settings.SelectedOptionColor,
                     altForegroundColor: settings.AltOptionColor,
                     altSelectedForegroundColor: settings.SelectedOptionColor,
@@ -140,6 +143,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Width = sidebarWidth - 3,
                     Height = answersPerPage,
                     ForegroundColor = settings.TextColor,
+                    BackgroundColor = settings.BackgroundColor,
                     Line = showcaseLine,
                     Text = finalSidebarText,
                 };
@@ -150,6 +154,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     InteriorWidth = sidebarWidth - 3,
                     InteriorHeight = answersPerPage,
                     Color = settings.SeparatorColor,
+                    BackgroundColor = settings.BackgroundColor,
                 };
                 selectionBuilder.Append(
                     sidebarBorder.Render() +
@@ -165,6 +170,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                         SliderActiveForegroundColor = settings.SeparatorColor,
                         SliderForegroundColor = TransformationTools.GetDarkBackground(settings.SeparatorColor),
+                        SliderBackgroundColor = settings.BackgroundColor,
                     };
                     selectionBuilder.Append(
                         TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
@@ -181,6 +187,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Left = 0,
                 Top = ConsoleWrapper.WindowHeight - 1,
                 Width = ConsoleWrapper.WindowWidth - 1,
+                BackgroundColor = settings.BackgroundColor,
             };
             selectionBuilder.Append(
                 keybindingsRenderable.Render()
