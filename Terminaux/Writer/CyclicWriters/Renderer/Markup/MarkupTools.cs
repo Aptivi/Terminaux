@@ -205,6 +205,8 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                         {
                             foreach (string part in representations)
                             {
+                                if (string.IsNullOrWhiteSpace(part))
+                                    continue;
                                 if (effectNames.TryGetValue(part, out var effect))
                                     representationBuilder.Append(effect.EffectStart);
                                 else if (ColorTools.TryParseColor(part))
