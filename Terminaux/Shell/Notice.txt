@@ -1,0 +1,10 @@
+﻿When making changes to Nitrocid, consider cherry-picking them manually from
+the main Nitrocid codebase to here, then make a usual commit after testing the
+changes properly.
+
+On the other hand, if you're looking to make changes to the shell here,
+consider backporting them to the Nitrocid codebase for all the supported
+series so that Nitrocid can make use of the changes.
+
+This is done on purpose, because process execution and scripting features are
+out of Terminaux's shell scope, so they'll stay in the Nitrocid codebase.
