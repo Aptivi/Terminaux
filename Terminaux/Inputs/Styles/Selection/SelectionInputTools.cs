@@ -511,25 +511,36 @@ namespace Terminaux.Inputs.Styles.Selection
             int choiceCount = 0;
             int offset = 0;
             Dictionary<int, int> choicePages = [];
+
+            void ProcessPage()
+            {
+                if (choiceCount >= height - offset)
+                {
+                    choicePages.Add(page, choiceCount);
+                    page++;
+                    choiceCount = 0;
+                    offset = 0;
+                }
+            }
             foreach (var category in categories)
             {
                 if (categories.Length > 1)
+                {
                     offset++;
+                    ProcessPage();
+                }
 
                 foreach (var group in category.Groups)
                 {
                     if (category.Groups.Length > 1)
+                    {
                         offset++;
+                        ProcessPage();
+                    }
                     for (int i = 0; i < group.Choices.Length; i++)
                     {
                         choiceCount++;
-                        if (choiceCount == height - offset)
-                        {
-                            choicePages.Add(page, choiceCount);
-                            page++;
-                            choiceCount = 0;
-                            offset = 0;
-                        }
+                        ProcessPage();
                     }
                 }
             }

@@ -60,16 +60,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 5;
-            int pages = allAnswers.Count / answersPerPage;
-            if (allAnswers.Count % answersPerPage == 0)
-                pages--;
+            var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
             var selectionBuilder = new StringBuilder();
-
-            // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
-            // causing confusion. Pages, again, are one-based.
-            int currentPage = (highlightedAnswer - 1) / answersPerPage;
-            int startIndex = answersPerPage * currentPage;
-            int endIndex = answersPerPage * (currentPage + 1) - 1;
 
             // Write the question.
             var questionText = new AlignedText()
@@ -107,7 +99,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool showHint = !string.IsNullOrWhiteSpace(highlightedAnswerChoiceInfo.ChoiceDescription);
             if (showHint || showCount)
             {
-                string renderedHint = (showCount ? $"[{(multiple ? $"{selectedAnswers.Count} | " : "")}{currentPage + 1}/{pages} | {highlightedAnswer}/{allAnswers.Count}]" : "") + (showHint ? "[TAB]" : "");
+                int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer);
+                string renderedHint = (showCount ? $"[{(multiple ? $"{selectedAnswers.Count} | " : "")}{currentPage + 1}/{choiceNums.Count} | {highlightedAnswer}/{allAnswers.Count}]" : "") + (showHint ? "[TAB]" : "");
                 int descHintAreaX = interiorWidth - ConsoleChar.EstimateCellWidth(renderedHint) + 2;
                 int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                 selectionBuilder.Append(
@@ -248,7 +241,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int answersPerPage = listEndPosition - 5;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
             int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer) - 1;
-            highlightedAnswer -= currentPage != -1 ? choiceNums[currentPage] : 0;
+            highlightedAnswer -= currentPage != -1 ? choiceNums[currentPage] : choiceNums[0];
             if (highlightedAnswer < 1)
                 highlightedAnswer = 1;
             Update(true);
@@ -513,7 +506,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int answersPerPage = listEndPosition - 7;
             int currentPage = (highlightedAnswer - 1) / answersPerPage;
             int startIndex = answersPerPage * currentPage;
-            int endIndex = answersPerPage * (currentPage + 1) - 1;
 
             // Now, translate coordinates to the selected index
             if (mouse.Coordinates.y <= listStartPosition + 1 || mouse.Coordinates.y >= listEndPosition - 4)
