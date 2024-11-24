@@ -45,11 +45,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private List<int> selectedAnswers = [];
         private readonly string question = "";
         private readonly InputChoiceCategoryInfo[] answers = [];
-        private readonly InputChoiceCategoryInfo[] altAnswers = [];
         private readonly SelectionStyleSettings settings = SelectionStyleSettings.GlobalSettings;
         private readonly bool kiosk;
         private readonly bool multiple;
-        private readonly bool showCategories;
         private readonly InputChoiceCategoryInfo[] categories = [];
         private readonly List<InputChoiceInfo> allAnswers = [];
 
@@ -626,11 +624,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Install values
             this.question = question;
             this.answers = answers;
-            this.altAnswers = altAnswers;
             this.settings = settings ?? SelectionStyleSettings.GlobalSettings;
             this.kiosk = kiosk;
             this.multiple = multiple;
-            showCategories = categories.Length > 0;
 
             // Make selected choices from the ChoiceDefaultSelected value.
             selectedAnswers = allAnswers.Any((ici) => ici.ChoiceDefaultSelected) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx + 1).ToList() : [];
