@@ -249,8 +249,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 5;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
-            int currentPage = highlightedAnswer / answersPerPage;
-            highlightedAnswer -= choiceNums[currentPage];
+            int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer) - 1;
+            highlightedAnswer -= currentPage != -1 ? choiceNums[currentPage] : 0;
             if (highlightedAnswer < 1)
                 highlightedAnswer = 1;
             Update(true);
@@ -262,7 +262,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 5;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
-            int currentPage = highlightedAnswer / answersPerPage;
+            int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer);
             highlightedAnswer += choiceNums[currentPage];
             if (highlightedAnswer > allAnswers.Count)
                 highlightedAnswer = allAnswers.Count;

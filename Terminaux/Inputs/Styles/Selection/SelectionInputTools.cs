@@ -538,6 +538,21 @@ namespace Terminaux.Inputs.Styles.Selection
             return choicePages;
         }
 
+        internal static int DetermineCurrentPage(InputChoiceCategoryInfo[] categories, int height, int currentNum)
+        {
+            var pages = GetChoicePages(categories, height);
+            int page = 0;
+            int position = 0;
+            foreach (var pageKvp in pages)
+            {
+                page = pageKvp.Key;
+                position += pageKvp.Value;
+                if (position >= currentNum)
+                    break;
+            }
+            return page;
+        }
+
         internal static (InputChoiceCategoryInfo, InputChoiceGroupInfo) GetCategoryGroupFrom(int choiceNum, InputChoiceCategoryInfo[] categories)
         {
             int choiceCount = 0;
