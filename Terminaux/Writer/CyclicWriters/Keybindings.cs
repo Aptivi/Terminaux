@@ -44,6 +44,7 @@ namespace Terminaux.Writer.CyclicWriters
         private Color optionForegroundColor = ConsoleColors.Yellow;
         private Color optionBackgroundColor = ConsoleColors.Olive;
         private bool useColors = true;
+        private bool writeLabels = true;
 
         /// <summary>
         /// Key bindings
@@ -151,6 +152,15 @@ namespace Terminaux.Writer.CyclicWriters
         public int Width { get; set; }
 
         /// <summary>
+        /// Whether to write labels or not
+        /// </summary>
+        public bool WriteLabels
+        {
+            get => writeLabels;
+            set => writeLabels = value;
+        }
+
+        /// <summary>
         /// Help key info
         /// </summary>
         public ConsoleKeyInfo? HelpKeyInfo { get; set; }
@@ -161,9 +171,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered Keybindings text that will be used by the renderer</returns>
         public string Render() =>
             TextWriterWhereColor.RenderWhere(
-                RenderKeybindings(KeybindingList, BuiltinKeybindings, BuiltinColor, BuiltinForegroundColor, BuiltinBackgroundColor, OptionColor, OptionForegroundColor, OptionBackgroundColor, BackgroundColor, Width, HelpKeyInfo, UseColors), Left, Top);
+                RenderKeybindings(KeybindingList, BuiltinKeybindings, BuiltinColor, BuiltinForegroundColor, BuiltinBackgroundColor, OptionColor, OptionForegroundColor, OptionBackgroundColor, BackgroundColor, Width, HelpKeyInfo, UseColors, WriteLabels), Left, Top);
 
-        internal static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int width, ConsoleKeyInfo? helpKeyInfo, bool useColor = true)
+        internal static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int width, ConsoleKeyInfo? helpKeyInfo, bool useColor = true, bool writeLabels = true)
         {
             var bindingsBuilder = new StringBuilder();
             helpKeyInfo ??= new('K', ConsoleKey.K, false, false, false);
@@ -186,12 +196,17 @@ namespace Terminaux.Writer.CyclicWriters
                 if (canDraw)
                 {
                     bindingsBuilder.Append(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(isBuiltin ? builtinColor : optionColor, false, true) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(isBuiltin ? builtinBackgroundColor : optionBackgroundColor, true) : "")}" +
-                        KeybindingTools.GetBindingKeyShortcut(binding, false) +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(isBuiltin ? builtinForegroundColor : optionForegroundColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(backgroundColor, true) : "")}" +
-                        $" {binding.BindingName}  "
+                        new KeyShortcut()
+                        {
+                            Shortcut = binding,
+                            BackgroundColor = backgroundColor,
+                            OptionColor = isBuiltin ? builtinColor : optionColor,
+                            OptionBackgroundColor = isBuiltin ? builtinBackgroundColor : optionBackgroundColor,
+                            OptionForegroundColor = isBuiltin ? builtinForegroundColor : optionForegroundColor,
+                            UseColors = useColor,
+                            Width = maxLength,
+                            WriteLabel = writeLabels,
+                        }.Render()
                     );
                 }
                 else
