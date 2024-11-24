@@ -109,7 +109,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool showHint = !string.IsNullOrWhiteSpace(highlightedAnswerChoiceInfo.ChoiceDescription);
             if (showHint || showCount)
             {
-                string renderedHint = (showCount ? $"[{(multiple ? $"{selectedAnswers.Count} | " : "")}{currentPage + 1}/{pages} | {highlightedAnswerChoiceInfo}/{allAnswers.Count}]" : "") + (showHint ? "[TAB]" : "");
+                string renderedHint = (showCount ? $"[{(multiple ? $"{selectedAnswers.Count} | " : "")}{currentPage + 1}/{pages} | {highlightedAnswer}/{allAnswers.Count}]" : "") + (showHint ? "[TAB]" : "");
                 int descHintAreaX = interiorWidth - ConsoleChar.EstimateCellWidth(renderedHint) + 2;
                 int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                 selectionBuilder.Append(
