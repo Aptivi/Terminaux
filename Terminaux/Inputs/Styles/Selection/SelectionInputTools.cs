@@ -281,26 +281,34 @@ namespace Terminaux.Inputs.Styles.Selection
             List<int> selectionHeights = [];
             int processedHeight = 0;
             int processedChoices = 0;
-            foreach (var category in selections)
+            var tristates = GetCategoryTristates(selections, choices, currentSelections);
+            for (int categoryIdx = 0; categoryIdx < selections.Length; categoryIdx++)
             {
+                InputChoiceCategoryInfo? category = selections[categoryIdx];
+                var tristate = tristates[categoryIdx];
                 if (selections.Length > 1)
                 {
+                    string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
                     choiceText.AppendLine(
                         ColorTools.RenderSetConsoleColor(ConsoleColorData.Silver.Color) +
                         ColorTools.RenderSetConsoleColor(backgroundColor, true) +
-                        category.Name.Truncate(width)
+                        $"{modifiers}{category.Name}".Truncate(width)
                     );
                     processedHeight++;
                 }
 
-                foreach (var group in category.Groups)
+                var groupTristates = GetGroupTristates(category.Groups, choices, currentSelections);
+                for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
                 {
+                    InputChoiceGroupInfo? group = category.Groups[groupIdx];
+                    var groupTristate = groupTristates[groupIdx];
                     if (category.Groups.Length > 1)
                     {
+                        string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
                         choiceText.AppendLine(
                             ColorTools.RenderSetConsoleColor(ConsoleColorData.Grey.Color) +
                             ColorTools.RenderSetConsoleColor(backgroundColor, true) +
-                            $"  {group.Name}".Truncate(width)
+                            $"  {modifiers}{group.Name}".Truncate(width)
                         );
                         processedHeight++;
                     }
@@ -448,6 +456,51 @@ namespace Terminaux.Inputs.Styles.Selection
                 foreach (var group in category.Groups)
                     choices.AddRange(group.Choices);
             return choices;
+        }
+
+        internal static List<SelectionTristate> GetCategoryTristates(InputChoiceCategoryInfo[] categories, List<InputChoiceInfo> choices, int[]? currentSelections)
+        {
+            List<SelectionTristate> categoryTristates = [];
+            foreach (var category in categories)
+            {
+                SelectionTristate tristate = SelectionTristate.Unselected;
+                var tristates = GetGroupTristates(category.Groups, choices, currentSelections);
+                tristate =
+                    tristates.All((ts) => ts == SelectionTristate.Selected) ? SelectionTristate.Selected :
+                    tristates.All((ts) => ts == SelectionTristate.Unselected) ? SelectionTristate.Unselected :
+                    SelectionTristate.FiftyFifty;
+                categoryTristates.Add(tristate);
+            }
+            return categoryTristates;
+        }
+
+        internal static List<SelectionTristate> GetGroupTristates(InputChoiceGroupInfo[] groups, List<InputChoiceInfo> choices, int[]? currentSelections)
+        {
+            List<SelectionTristate> groupTristates = [];
+            foreach (var group in groups)
+            {
+                SelectionTristate tristate = SelectionTristate.Unselected;
+                var tristates = GetChoiceTristates(group.Choices, choices, currentSelections);
+                tristate =
+                    tristates.All((ts) => ts == SelectionTristate.Selected) ? SelectionTristate.Selected :
+                    tristates.All((ts) => ts == SelectionTristate.Unselected) ? SelectionTristate.Unselected :
+                    SelectionTristate.FiftyFifty;
+                groupTristates.Add(tristate);
+            }
+            return groupTristates;
+        }
+
+        internal static List<SelectionTristate> GetChoiceTristates(InputChoiceInfo[] groupChoices, List<InputChoiceInfo> choices, int[]? currentSelections)
+        {
+            List<SelectionTristate> choiceTristates = [];
+            currentSelections ??= [];
+            var indexes = choices.Select((ici, idx) => (ici, idx)).Where((tuple) => groupChoices.Contains(tuple.ici)).Select((tuple) => tuple.idx);
+            foreach (var index in indexes)
+            {
+                SelectionTristate tristate = currentSelections.Contains(index) ? SelectionTristate.Selected : SelectionTristate.Unselected;
+                choiceTristates.Add(tristate);
+            }
+            return choiceTristates;
         }
 
         internal static Dictionary<int, int> GetChoicePages(InputChoiceCategoryInfo[] categories, int height)
