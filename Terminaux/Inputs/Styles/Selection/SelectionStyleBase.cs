@@ -52,8 +52,10 @@ namespace Terminaux.Inputs.Styles.Selection
             new("Goes to the previous page", ConsoleKey.PageUp),
             new("Goes to the next page", ConsoleKey.PageDown),
             new("Searches for an element", ConsoleKey.F),
-            new("Go up in a sidebar", ConsoleKey.E),
-            new("Go down in a sidebar", ConsoleKey.D),
+            new("Go up in a sidebar", ConsoleKey.E, ConsoleModifiers.Shift),
+            new("Go down in a sidebar", ConsoleKey.D, ConsoleModifiers.Shift),
+            new("Go up in a question box", ConsoleKey.E),
+            new("Go down in a question box", ConsoleKey.D),
             new("Show page and choice count", ConsoleKey.P),
             new("Show item info", ConsoleKey.Tab),
         ];

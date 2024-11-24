@@ -24,6 +24,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -39,6 +40,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
     internal class SelectionStyleTui : TextualUI
     {
         private int highlightedAnswer = 1;
+        private int questionLine;
         private int showcaseLine;
         private bool showCount;
         private bool sidebar;
@@ -53,24 +55,42 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         public override string Render()
         {
-            int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
-            int interiorWidth = ConsoleWrapper.WindowWidth - 6 - sidebarWidth;
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
+            int interiorWidth = wholeWidth - sidebarWidth;
 
-            // Make pages based on console window height
-            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            // Get choice numbers and some positions
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 5;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
             var selectionBuilder = new StringBuilder();
 
-            // Write the question.
-            var questionText = new AlignedText()
+            // Write the question in a bordered box.
+            if (sentenceLineCount > 0)
             {
-                Text = question,
-                ForegroundColor = settings.QuestionColor,
-                Top = 0,
-            };
-            selectionBuilder.Append(questionText.Render());
+                var boundedQuestion = new BoundedText()
+                {
+                    Left = 3,
+                    Top = 1,
+                    Width = wholeWidth,
+                    Height = sentenceLineCount > 5 ? 5 : sentenceLineCount,
+                    ForegroundColor = settings.QuestionColor,
+                    Line = questionLine,
+                    Text = question,
+                };
+                var questionText = new Border()
+                {
+                    Color = settings.SeparatorColor,
+                    Left = 2,
+                    Top = 1,
+                    InteriorWidth = wholeWidth,
+                    InteriorHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount
+                };
+                selectionBuilder.Append(questionText.Render());
+                selectionBuilder.Append(boundedQuestion.Render());
+            }
 
             // Populate the answers
             var border = new Border()
@@ -79,7 +99,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Top = listStartPosition + 1,
                 InteriorWidth = interiorWidth,
                 InteriorHeight = answersPerPage,
-                Color = settings.OptionColor,
+                Color = settings.SeparatorColor,
             };
             selectionBuilder.Append(
                 border.Render() +
@@ -129,7 +149,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Top = listStartPosition + 1,
                     InteriorWidth = sidebarWidth - 3,
                     InteriorHeight = answersPerPage,
-                    Color = settings.TextColor,
+                    Color = settings.SeparatorColor,
                 };
                 selectionBuilder.Append(
                     sidebarBorder.Render() +
@@ -143,6 +163,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         Height = answersPerPage - 2,
                         SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                         SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                        SliderActiveForegroundColor = settings.SeparatorColor,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(settings.SeparatorColor),
                     };
                     selectionBuilder.Append(
                         TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
@@ -329,6 +351,28 @@ namespace Terminaux.Inputs.Interactive.Selectors
             showcaseLine++;
             if (showcaseLine > lines.Length - answersPerPage)
                 showcaseLine = lines.Length - answersPerPage;
+        }
+
+        private void QuestionGoUp(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
+        {
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            if (sentenceLineCount <= 5)
+                return;
+            questionLine--;
+            if (questionLine < 0)
+                questionLine = 0;
+        }
+
+        private void QuestionGoDown(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
+        {
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            if (sentenceLineCount <= 5)
+                return;
+            questionLine++;
+            if (questionLine + 5 > sentenceLineCount)
+                questionLine = sentenceLineCount - 5;
         }
 
         private void ShowCount(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse) =>
@@ -640,8 +684,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.bindings[8], SearchPrompt));
             Keybindings.Add((SelectionStyleBase.bindings[9], ShowcaseGoUp));
             Keybindings.Add((SelectionStyleBase.bindings[10], ShowcaseGoDown));
-            Keybindings.Add((SelectionStyleBase.bindings[11], ShowCount));
-            Keybindings.Add((SelectionStyleBase.bindings[12], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.bindings[11], QuestionGoUp));
+            Keybindings.Add((SelectionStyleBase.bindings[12], QuestionGoDown));
+            Keybindings.Add((SelectionStyleBase.bindings[13], ShowCount));
+            Keybindings.Add((SelectionStyleBase.bindings[14], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.showBindings[2], Help));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[0], GoUp));
@@ -653,10 +699,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Install mode-dependent keybindings
             if (multiple)
             {
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[13], ModifyChoice));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[14], (_, _, _) => ProcessSelectAll(1)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[15], (_, _, _) => ProcessSelectAll(2)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], (_, _, _) => ProcessSelectAll(3)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[15], ModifyChoice));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], (_, _, _) => ProcessSelectAll(1)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[17], (_, _, _) => ProcessSelectAll(2)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[18], (_, _, _) => ProcessSelectAll(3)));
             }
         }
     }
