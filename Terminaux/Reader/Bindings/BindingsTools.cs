@@ -193,13 +193,6 @@ namespace Terminaux.Reader.Bindings
                     new ConsoleKeyInfo('\u0019', ConsoleKey.Y, false, false, true)
                 ]
             },
-            new Paste()
-            {
-                BoundKeys =
-                [
-                    new ConsoleKeyInfo('\0', ConsoleKey.V, false, true, true)
-                ]
-            },
             new UppercaseOneWord()
             {
                 BoundKeys =
