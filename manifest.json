@@ -1135,6 +1135,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Clipboards.ClipboardManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Clipboards.ClipboardManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Clipboards.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Clipboards.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Input.yml",
       "output": {
         ".html": {
