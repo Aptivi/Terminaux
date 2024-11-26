@@ -70,6 +70,11 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to enable the list entry indicator
+        /// </summary>
+        public bool Indicator { get; set; } = true;
+
+        /// <summary>
         /// Specifies a zero-based level of indentation
         /// </summary>
         public int Indentation { get; set; }
@@ -81,7 +86,7 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render() =>
             RenderListEntry(Entry, Value, KeyColor, ValueColor, Indentation, UseColors);
 
-        internal static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0, bool useColor = true)
+        internal static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0, bool useColor = true, bool writeIndicator = true)
         {
             // First, get the spaces count to indent
             if (indent < 0)
@@ -92,7 +97,7 @@ namespace Terminaux.Writer.CyclicWriters
             var listBuilder = new StringBuilder();
             listBuilder.Append(
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
-                $"{spaces}- {entry}: " +
+                $"{spaces}{(writeIndicator ? "- " : "")}{entry}: " +
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
                 value +
                 $"{(useColor ? ColorTools.RenderRevertForeground() : "")}"
