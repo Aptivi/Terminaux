@@ -135,19 +135,19 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             Keybindings.Add((bindings[1], (ui, _, _) =>
             {
                 redBoxVisible = !redBoxVisible;
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
             }
             ));
             Keybindings.Add((bindings[2], (ui, _, _) =>
             {
                 greenBoxVisible = !greenBoxVisible;
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
             }
             ));
             Keybindings.Add((bindings[3], (ui, _, _) =>
             {
                 rgbBoxVisible = !rgbBoxVisible;
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
             }
             ));
             Keybindings.Add((bindings[4], (_, _, _) =>

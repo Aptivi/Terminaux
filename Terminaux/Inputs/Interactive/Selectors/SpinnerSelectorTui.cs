@@ -111,7 +111,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (selectedSpinner < 0)
                 selectedSpinner = SpinnerSelector.spinners.Length - 1;
             spinner = SpinnerSelector.spinners[selectedSpinner];
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void Next(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
@@ -120,7 +120,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (selectedSpinner > SpinnerSelector.spinners.Length - 1)
                 selectedSpinner = 0;
             spinner = SpinnerSelector.spinners[selectedSpinner];
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void Exit(TextualUI ui, bool cancel)
@@ -133,7 +133,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             Keybinding[] allBindings = [.. SpinnerSelector.bindings, .. SpinnerSelector.additionalBindings];
             KeybindingTools.ShowKeybindingInfobox(allBindings);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void Select(TextualUI ui, bool write)
@@ -153,7 +153,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 spinner = SpinnerSelector.spinners[selectedSpinner];
             }
             selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(spinner);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         internal SpinnerSelectorTui(string name)

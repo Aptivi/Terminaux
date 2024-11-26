@@ -297,7 +297,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (!RegexTools.IsValidRegex(keyword))
             {
                 InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
                 return;
             }
 
@@ -315,7 +315,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 idx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
                 if (idx < 0)
                 {
-                    ui.uiScreen.RequireRefresh();
+                    ui.RequireRefresh();
                     return;
                 }
             }
@@ -330,7 +330,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Update the TUI
             Update(false);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ShowcaseGoUp(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
@@ -395,21 +395,21 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
                 InfoBoxModalColor.WriteInfoBoxModal("Item info", finalSidebarText);
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
             }
         }
 
         private void ShowSidebar(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             sidebar = !sidebar;
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             Keybinding[] allBindings = multiple ? SelectionStyleBase.bindingsMultiple : SelectionStyleBase.bindings;
             KeybindingTools.ShowKeybindingInfobox(allBindings);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ModifyChoice(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)

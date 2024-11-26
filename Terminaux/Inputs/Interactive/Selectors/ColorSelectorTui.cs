@@ -511,7 +511,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 [.. ColorSelector.bindings, ..ColorSelector.additionalBindingsTrueColor] :
                 [.. ColorSelector.bindings, ..ColorSelector.additionalBindingsNormalColor] ;
             KeybindingTools.ShowKeybindingInfobox(allBindings);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ShowColorInfo(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
@@ -526,7 +526,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     ShowColorInfoBox($"Color info ({formula})", selectedColor, true, (TransformationFormula)(colorBlindnessSimulationIdx - 1), colorBlindnessSeverity);
                     break;
             }
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private string ShowColorInfo(Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
@@ -570,7 +570,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void SelectWebColor(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
             var colors = WebSafeColors.GetColorList();
             string[] names = WebSafeColors.GetColorNames();
             int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(names.Select((n, idx) => new InputChoiceInfo($"{idx + 1}", n)).ToArray(), "Select a web-safe color from the list below.");
@@ -601,7 +601,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
             UpdateKeybindings();
             UpdateColor(ref selectedColor, type, finalSettings);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ChangeSimulation(TextualUI ui, bool goBack)
@@ -619,7 +619,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     colorBlindnessSimulationIdx--;
             }
             UpdateColor(ref selectedColor, type, finalSettings);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ChangeSimulationSeverity(TextualUI ui, bool goBack)
@@ -637,7 +637,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     colorBlindnessSeverity = 1.0;
             }
             UpdateColor(ref selectedColor, type, finalSettings);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ChangeValue(PointerEventContext? mouse, bool goBack)
@@ -699,7 +699,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementHue(type);
             else
                 IncrementHue(type);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ChangeLightness(TextualUI ui, bool goBack)
@@ -708,7 +708,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementLightness(type);
             else
                 IncrementLightness(type);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ChangeSaturation(TextualUI ui, bool goBack)
@@ -717,7 +717,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementSaturation(type);
             else
                 IncrementSaturation(type);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void ChangeColor(TextualUI ui, bool goBack)
@@ -726,7 +726,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementColor(type);
             else
                 IncrementColor(type);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void DecrementColor(ColorType type)

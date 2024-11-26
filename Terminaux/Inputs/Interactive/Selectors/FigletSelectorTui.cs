@@ -175,7 +175,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (showcaseIndex < 0)
                     showcaseIndex = chars.Length - 1;
             }
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void Next(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
@@ -193,7 +193,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (showcaseIndex > chars.Length - 1)
                     showcaseIndex = 0;
             }
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void Exit(TextualUI ui, bool cancel)
@@ -206,7 +206,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             Keybinding[] allBindings = [.. FigletSelector.bindings, .. FigletSelector.additionalBindings];
             KeybindingTools.ShowKeybindingInfobox(allBindings);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void Select(TextualUI ui, bool write)
@@ -226,19 +226,19 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 font = FigletSelector.fonts[selectedFont];
             }
             selectedFont = FigletSelector.DetermineFigletIndex(font);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void Showcase(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             UpdateKeybindings(++screenNum);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         private void GoBack(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             UpdateKeybindings(--screenNum);
-            ui.uiScreen.RequireRefresh();
+            ui.RequireRefresh();
         }
 
         internal FigletSelectorTui(string font)

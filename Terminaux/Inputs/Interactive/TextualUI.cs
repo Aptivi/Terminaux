@@ -96,5 +96,11 @@ namespace Terminaux.Inputs.Interactive
         /// renderable container specified in that property will overwrite what's been rendered.
         /// </remarks>
         public abstract string Render();
+
+        /// <summary>
+        /// Tells the textual UI that the refresh is required
+        /// </summary>
+        public void RequireRefresh() =>
+            uiScreen.RequireRefresh();
     }
 }

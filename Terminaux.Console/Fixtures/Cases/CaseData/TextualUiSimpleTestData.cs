@@ -122,17 +122,17 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             Keybindings.Add((new Keybinding("Show/hide red box", ConsoleKey.R), (ui, _, _) =>
             {
                 redBoxVisible = !redBoxVisible;
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
             }));
             Keybindings.Add((new Keybinding("Show/hide green box", ConsoleKey.G), (ui, _, _) =>
             {
                 greenBoxVisible = !greenBoxVisible;
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
             }));
             Keybindings.Add((new Keybinding("Show/hide blue box", ConsoleKey.B), (ui, _, _) =>
             {
                 blueBoxVisible = !blueBoxVisible;
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
             }));
         }
     }

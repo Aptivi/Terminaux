@@ -343,7 +343,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (!RegexTools.IsValidRegex(keyword))
             {
                 InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");
-                ui.uiScreen.RequireRefresh();
+                ui.RequireRefresh();
                 return;
             }
             var regex = new Regex(keyword);
