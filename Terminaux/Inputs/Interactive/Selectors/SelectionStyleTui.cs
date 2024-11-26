@@ -325,7 +325,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 InfoBoxModalColor.WriteInfoBoxModal("No item found.");
 
             // Change the highlighted answer number
-            var resultNum = int.Parse(resultEntries[idx].ChoiceName);
+            var resultNum = idx >= resultEntries.Length ? highlightedAnswer : int.Parse(resultEntries[idx].ChoiceName);
             highlightedAnswer = resultNum;
 
             // Update the TUI
