@@ -36,8 +36,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{C96DC3
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminaux.Spectre", "Terminaux.Spectre\Terminaux.Spectre.csproj", "{07497075-D850-48AC-B11C-00092C4A978D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,10 +74,6 @@ Global
 		{1690D007-56AF-4CC9-B98B-78CB953D795A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1690D007-56AF-4CC9-B98B-78CB953D795A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1690D007-56AF-4CC9-B98B-78CB953D795A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07497075-D850-48AC-B11C-00092C4A978D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07497075-D850-48AC-B11C-00092C4A978D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07497075-D850-48AC-B11C-00092C4A978D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07497075-D850-48AC-B11C-00092C4A978D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,7 +90,6 @@ Global
 		{95ACDB5C-1392-4262-9756-55715D61BF2A} = {874FF28F-7521-4B89-AE93-1D0BC6E7EAB1}
 		{4F83E9A9-4F19-49F8-8FA9-285FB3B9A7B4} = {4EF3C357-D122-4787-96AC-C581AF0FCA6A}
 		{1690D007-56AF-4CC9-B98B-78CB953D795A} = {95ACDB5C-1392-4262-9756-55715D61BF2A}
-		{07497075-D850-48AC-B11C-00092C4A978D} = {4EF3C357-D122-4787-96AC-C581AF0FCA6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B37391FF-0173-461C-9E91-F9A1C920ECE8}
