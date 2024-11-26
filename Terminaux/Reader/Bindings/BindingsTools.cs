@@ -328,6 +328,7 @@ namespace Terminaux.Reader.Bindings
                     new ConsoleKeyInfo('8', ConsoleKey.D8, false, true, false),
                     new ConsoleKeyInfo('9', ConsoleKey.D9, false, true, false),
                     new ConsoleKeyInfo('-', ConsoleKey.OemMinus, false, true, false),
+                    new ConsoleKeyInfo('-', ConsoleKey.Subtract, false, true, false),
                 ]
             },
 
