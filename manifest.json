@@ -315,6 +315,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.Margin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.Margin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.Padding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.Padding.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Structures.yml",
       "output": {
         ".html": {
