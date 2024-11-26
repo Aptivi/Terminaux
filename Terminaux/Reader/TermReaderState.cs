@@ -58,6 +58,7 @@ namespace Terminaux.Reader
         internal bool operationWasInvalid;
         internal bool concealing;
         internal bool refreshRequired;
+        internal List<char> argNumbers = [];
         internal string oldText = "";
         internal List<string> changes = [];
         internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
@@ -286,6 +287,22 @@ namespace Terminaux.Reader
         {
             get => refreshRequired;
             set => refreshRequired = value;
+        }
+
+        /// <summary>
+        /// Argument number to utilize
+        /// </summary>
+        public int ArgumentNumber
+        {
+            get
+            {
+                if (argNumbers.Count == 0)
+                    return 1;
+                string argNumberStr = new([.. argNumbers]);
+                if (!int.TryParse(argNumberStr, out int argNumber))
+                    return 1;
+                return argNumber;
+            }
         }
 
         /// <summary>

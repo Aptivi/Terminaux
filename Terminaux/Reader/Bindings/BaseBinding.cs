@@ -57,6 +57,11 @@ namespace Terminaux.Reader.Bindings
         public virtual bool AppendsChangesList { get; } = true;
 
         /// <summary>
+        /// Whether this binding uses the argument number for repetition or for other action.
+        /// </summary>
+        public virtual bool ArgumentNumberIsRepetition { get; } = true;
+
+        /// <summary>
         /// Does this binding cause the input to exit?
         /// </summary>
         public virtual bool IsExit { get; }

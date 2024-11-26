@@ -49,6 +49,11 @@ namespace Terminaux.Reader.Bindings
         public bool AppendsChangesList { get; }
 
         /// <summary>
+        /// Whether this binding uses the argument number for repetition or for other action.
+        /// </summary>
+        public bool ArgumentNumberIsRepetition { get; }
+
+        /// <summary>
         /// Whether the bind matched
         /// </summary>
         /// <param name="input">Key</param>

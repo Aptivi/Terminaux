@@ -313,6 +313,23 @@ namespace Terminaux.Reader.Bindings
                     new ConsoleKeyInfo('r', ConsoleKey.R, false, true, false),
                 ]
             },
+            new ProcessArgDigit()
+            {
+                BoundKeys =
+                [
+                    new ConsoleKeyInfo('0', ConsoleKey.D0, false, true, false),
+                    new ConsoleKeyInfo('1', ConsoleKey.D1, false, true, false),
+                    new ConsoleKeyInfo('2', ConsoleKey.D2, false, true, false),
+                    new ConsoleKeyInfo('3', ConsoleKey.D3, false, true, false),
+                    new ConsoleKeyInfo('4', ConsoleKey.D4, false, true, false),
+                    new ConsoleKeyInfo('5', ConsoleKey.D5, false, true, false),
+                    new ConsoleKeyInfo('6', ConsoleKey.D6, false, true, false),
+                    new ConsoleKeyInfo('7', ConsoleKey.D7, false, true, false),
+                    new ConsoleKeyInfo('8', ConsoleKey.D8, false, true, false),
+                    new ConsoleKeyInfo('9', ConsoleKey.D9, false, true, false),
+                    new ConsoleKeyInfo('-', ConsoleKey.OemMinus, false, true, false),
+                ]
+            },
 
 #if DEBUG
             new DebugPos()
@@ -427,12 +444,16 @@ namespace Terminaux.Reader.Bindings
 
             // Get the chosen bindings
             var chosenBindings = AllBindings.Where((bindingInfo) => bindingInfo.BindMatched(state.pressedKey));
+            bool clearArgumentNumber = false;
 
             // Execute the commands based on them
             foreach (var chosenBinding in chosenBindings)
             {
                 addToUndo = chosenBinding.AppendsChangesList;
-                chosenBinding.DoAction(state);
+                clearArgumentNumber = chosenBinding is not ProcessArgDigit;
+                int repetitions = chosenBinding.ArgumentNumberIsRepetition ? state.ArgumentNumber : 1;
+                for (int i = 0; i < repetitions; i++)
+                    chosenBinding.DoAction(state);
                 if (chosenBinding.ResetSuggestionsTextPos)
                     state.currentSuggestionsTextPos = -1;
                 ChangeChangesList(state, oldInput, state.CurrentText.ToString(), addToUndo);
@@ -442,10 +463,16 @@ namespace Terminaux.Reader.Bindings
             if (!chosenBindings.Any())
             {
                 addToUndo = true;
-                fallbackBinding.DoAction(state);
+                clearArgumentNumber = true;
+                for (int i = 0; i < state.ArgumentNumber; i++)
+                    fallbackBinding.DoAction(state);
                 state.currentSuggestionsTextPos = -1;
                 ChangeChangesList(state, oldInput, state.CurrentText.ToString(), addToUndo);
             }
+
+            // Clear the argument number if needed
+            if (clearArgumentNumber)
+                state.argNumbers.Clear();
         }
 
         private static void ChangeChangesList(TermReaderState state, string oldInput, string newInput, bool add)
