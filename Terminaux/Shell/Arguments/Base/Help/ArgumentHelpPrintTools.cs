@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;
