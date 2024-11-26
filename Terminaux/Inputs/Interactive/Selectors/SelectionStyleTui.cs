@@ -95,6 +95,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
 
             // Populate the answers
+            List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(categories);
             var border = new Border()
             {
                 Left = 2,
@@ -103,6 +104,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 InteriorHeight = answersPerPage,
                 Color = settings.SeparatorColor,
                 BackgroundColor = settings.BackgroundColor,
+                Settings = new()
+                {
+                    BorderRightFrameEnabled = choices.Count <= answersPerPage,
+                }
             };
             selectionBuilder.Append(
                 border.Render() +
