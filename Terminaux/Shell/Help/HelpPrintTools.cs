@@ -159,6 +159,7 @@ namespace Terminaux.Shell.Help
                 {
                     Entry = FinalCommand,
                     Value = HelpDefinition,
+                    Indicator = false,
                 }.Render() + "\n");
 
                 // Iterate through command argument information instances
@@ -181,7 +182,8 @@ namespace Terminaux.Shell.Help
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
                         Entry = "Usage",
-                        Value = $" {FinalCommand} {renderedUsage}",
+                        Value = $"{FinalCommand} {renderedUsage}",
+                        Indicator = false,
                     }.Render() + "\n");
 
                     // If we have arguments, print their descriptions
@@ -194,8 +196,10 @@ namespace Terminaux.Shell.Help
                             string argumentDesc = argument.Options.ArgumentDescription;
                             TextWriterRaw.WriteRaw(new ListEntry()
                             {
-                                Entry = $"  {argumentName}",
+                                Entry = argumentName,
                                 Value = argumentDesc,
+                                Indentation = 1,
+                                Indicator = false,
                             }.Render() + "\n");
                         }
                     }
@@ -210,8 +214,10 @@ namespace Terminaux.Shell.Help
                             string switchDesc = Switch.HelpDefinition;
                             TextWriterRaw.WriteRaw(new ListEntry()
                             {
-                                Entry = $"  -{switchName}",
+                                Entry = $"-{switchName}",
                                 Value = switchDesc,
+                                Indentation = 1,
+                                Indicator = false,
                             }.Render() + "\n");
                         }
                     }

@@ -84,7 +84,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <returns>Rendered ListEntry text that will be used by the renderer</returns>
         public string Render() =>
-            RenderListEntry(Entry, Value, KeyColor, ValueColor, Indentation, UseColors);
+            RenderListEntry(Entry, Value, KeyColor, ValueColor, Indentation, UseColors, Indicator);
 
         internal static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0, bool useColor = true, bool writeIndicator = true)
         {
