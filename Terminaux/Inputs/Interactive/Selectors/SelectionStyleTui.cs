@@ -96,13 +96,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Populate the answers
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(categories);
-            var border = new Border()
+            var border = new BoxFrame()
             {
                 Left = 2,
                 Top = listStartPosition + 1,
                 InteriorWidth = interiorWidth,
                 InteriorHeight = answersPerPage,
-                Color = settings.SeparatorColor,
+                FrameColor = settings.SeparatorColor,
                 BackgroundColor = settings.BackgroundColor,
                 Settings = new()
                 {

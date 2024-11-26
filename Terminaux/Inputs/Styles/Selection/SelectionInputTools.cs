@@ -290,10 +290,11 @@ namespace Terminaux.Inputs.Styles.Selection
                 if (selections.Length > 1)
                 {
                     string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
+                    string finalRendered = $"{modifiers}{category.Name}".Truncate(width);
                     choiceText.AppendLine(
                         ColorTools.RenderSetConsoleColor(ConsoleColorData.Silver.Color) +
                         ColorTools.RenderSetConsoleColor(backgroundColor, true) +
-                        $"{modifiers}{category.Name}".Truncate(width)
+                        finalRendered + new string(' ', width - ConsoleChar.EstimateCellWidth(finalRendered))
                     );
                     processedHeight++;
                 }
@@ -306,10 +307,11 @@ namespace Terminaux.Inputs.Styles.Selection
                     if (category.Groups.Length > 1)
                     {
                         string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
+                        string finalRendered = $"  {modifiers}{group.Name}".Truncate(width);
                         choiceText.AppendLine(
                             ColorTools.RenderSetConsoleColor(ConsoleColorData.Grey.Color) +
                             ColorTools.RenderSetConsoleColor(backgroundColor, true) +
-                            $"  {modifiers}{group.Name}".Truncate(width)
+                            finalRendered + new string(' ', width - ConsoleChar.EstimateCellWidth(finalRendered))
                         );
                         processedHeight++;
                     }
