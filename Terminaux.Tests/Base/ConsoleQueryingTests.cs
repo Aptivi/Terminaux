@@ -20,6 +20,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Sequences.Builder;
 using Textify.General;
 using Textify.General.Data;
@@ -365,6 +366,53 @@ namespace Terminaux.Tests.Base
             string actualSentence = ConsoleMisc.ReverseRtl(sentence);
             ConsoleMisc.TerminalReversesRtlText = false;
             actualSentence.ShouldBe(expectedSentence);
+        }
+
+        /// <summary>
+        /// Tests padding
+        /// </summary>
+        [TestMethod]
+        [DataRow(2, 2, 2, 2)]
+        [DataRow(2, 2, 2, 0)]
+        [DataRow(2, 2, 0, 2)]
+        [DataRow(2, 0, 2, 2)]
+        [DataRow(0, 2, 2, 2)]
+        [DataRow(2, 0, 2, 0)]
+        [DataRow(0, 2, 0, 2)]
+        [DataRow(0, 0, 0, 0)]
+        [Description("Querying")]
+        public void TestPadding(int left, int top, int right, int bottom)
+        {
+            var padding = new Padding(left, top, right, bottom);
+            padding.Left.ShouldBe(left);
+            padding.Top.ShouldBe(top);
+            padding.Right.ShouldBe(right);
+            padding.Bottom.ShouldBe(bottom);
+        }
+
+        /// <summary>
+        /// Tests margins
+        /// </summary>
+        [TestMethod]
+        [DataRow(2, 2, 2, 2, 10, 10, 6, 6)]
+        [DataRow(2, 2, 2, 0, 10, 10, 6, 8)]
+        [DataRow(2, 2, 0, 2, 10, 10, 8, 6)]
+        [DataRow(2, 0, 2, 2, 10, 10, 6, 8)]
+        [DataRow(0, 2, 2, 2, 10, 10, 8, 6)]
+        [DataRow(2, 0, 2, 0, 10, 10, 6, 10)]
+        [DataRow(0, 2, 0, 2, 10, 10, 10, 6)]
+        [DataRow(0, 0, 0, 0, 10, 10, 10, 10)]
+        [Description("Querying")]
+        public void TestMargins(int left, int top, int right, int bottom, int width, int height, int expectedWidth, int expectedHeight)
+        {
+            var padding = new Padding(left, top, right, bottom);
+            var margin = new Margin(padding, width, height);
+            margin.Margins.Left.ShouldBe(left);
+            margin.Margins.Top.ShouldBe(top);
+            margin.Margins.Right.ShouldBe(right);
+            margin.Margins.Bottom.ShouldBe(bottom);
+            margin.Width.ShouldBe(expectedWidth);
+            margin.Height.ShouldBe(expectedHeight);
         }
 
     }
