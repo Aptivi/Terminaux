@@ -172,6 +172,8 @@ namespace Terminaux.Console.Fixtures
             new TestCanvasErase(),
             new TestAnimatedCanvas(),
             new TestDecoration(),
+            new TestException(),
+            new TestExceptionInner(),
 
             // Input
             new TestInputSelection(),
