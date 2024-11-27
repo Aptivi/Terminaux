@@ -39,6 +39,7 @@ namespace Terminaux.Writer.CyclicWriters
     public class SyntaxText : IStaticRenderable
     {
         private int top = 0;
+        private string syntax = "csharp";
         private string text = "";
         private string pathToHighlight = "";
         private int leftMargin = 0;
@@ -54,6 +55,15 @@ namespace Terminaux.Writer.CyclicWriters
         {
             get => top;
             set => top = value;
+        }
+
+        /// <summary>
+        /// Language type
+        /// </summary>
+        public string Syntax
+        {
+            get => syntax;
+            set => syntax = value;
         }
 
         /// <summary>
@@ -139,7 +149,7 @@ namespace Terminaux.Writer.CyclicWriters
                         {
                             // It doesn't exist. It's possible that Windows users might have installed highlight using the
                             // Windows installer. Look at "%SYSTEMDRIVE%/Program Files/Highlight/highlight.exe".
-                            finalHighlightProcess = Path.GetFullPath("%SYSTEMDRIVE%/Program Files/Highlight/highlight.exe");
+                            finalHighlightProcess = Path.GetFullPath($"{Environment.GetEnvironmentVariable("SYSTEMDRIVE")}/Program Files/Highlight/highlight.exe");
                             if (!File.Exists(finalHighlightProcess))
                                 canHighlight = false;
                         }
@@ -152,14 +162,36 @@ namespace Terminaux.Writer.CyclicWriters
                 string output = Text;
                 if (canHighlight)
                 {
-                    // type "C:\Program Files\Highlight\src\cli\arg_parser.cc" | "%SYSTEMDRIVE%/Program Files/Highlight/highlight.exe" --syntax=cpp --out-format=ansi
-                    var highlightProcessInfo = new ProcessStartInfo(finalHighlightProcess)
+                    try
                     {
-                        RedirectStandardOutput = true,
-                    };
-                    var highlightProcess = Process.Start(highlightProcessInfo);
-                    highlightProcess.WaitForExit();
-                    output = highlightProcess.StandardOutput.ReadToEnd();
+                        // Make a temporary file and write data to it
+                        string tempPath = Path.GetTempFileName();
+                        var stream = new StreamWriter(tempPath);
+                        stream.WriteLine(output);
+                        stream.Close();
+
+                        // Populate command and argument, depending on platform
+                        string command = PlatformHelper.IsOnWindows() ? "cmd" : "cat";
+                        string arguments = $"\"{tempPath}\" | \"{finalHighlightProcess}\" --out-format=ansi --syntax={Syntax}";
+                        arguments = PlatformHelper.IsOnWindows() ? $"/C \"type {arguments}\"" : arguments;
+
+                        // Formulate the final start info and start the highlighter process
+                        var highlightProcessInfo = new ProcessStartInfo(command, arguments)
+                        {
+                            RedirectStandardOutput = true,
+                        };
+                        var highlightProcess = Process.Start(highlightProcessInfo);
+                        highlightProcess.WaitForExit();
+                        output = highlightProcess.StandardOutput.ReadToEnd();
+
+                        // Delete the temporary file
+                        File.Delete(tempPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine("Failed to render syntax text: " + ex.Message);
+                        Debug.WriteLine(ex);
+                    }
                 }
 
                 // Add the result
@@ -201,7 +233,6 @@ namespace Terminaux.Writer.CyclicWriters
         {
             // Install the values
             this.text = TextTools.FormatString(text ?? "", vars);
-            UpdateInternalTop();
         }
     }
 }
