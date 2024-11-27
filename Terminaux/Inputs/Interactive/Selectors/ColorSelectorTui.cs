@@ -64,35 +64,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
         /// <inheritdoc/>
         public override string Render()
         {
-            // Reset some variables
-            colorBlindnessSimulationIdx = 0;
-            colorBlindnessSeverity = 0.6;
-
-            // Set initial colors
-            var hsl = ConversionTools.ToHsl(selectedColor.RGB);
-            type = selectedColor.Type;
-            switch (type)
-            {
-                case ColorType.TrueColor:
-                    trueColorHue = hsl.HueWhole;
-                    trueColorSaturation = hsl.SaturationWhole;
-                    trueColorLightness = hsl.LightnessWhole;
-                    break;
-                case ColorType.EightBitColor:
-                    colorValue255 = selectedColor.ColorEnum255;
-                    break;
-                case ColorType.FourBitColor:
-                    colorValue16 = selectedColor.ColorEnum16;
-                    break;
-                default:
-                    throw new TerminauxException("Invalid color type in the color selector");
-            }
-            UpdateColor(ref selectedColor, type, finalSettings);
-            return RenderColorSelector(selectedColor, type, finalSettings);
-        }
-
-        private string RenderColorSelector(Color selectedColor, ColorType type, ColorSettings finalSettings)
-        {
             if (selectedColor.RGB is null)
                 throw new TerminauxInternalException("Selected color RGB instance is null.");
             var selector = new StringBuilder();
@@ -866,6 +837,31 @@ namespace Terminaux.Inputs.Interactive.Selectors
             initialColor = color;
             selectedColor = color;
             finalSettings = settings;
+
+            // Reset some variables
+            colorBlindnessSimulationIdx = 0;
+            colorBlindnessSeverity = 0.6;
+
+            // Set initial colors
+            var hsl = ConversionTools.ToHsl(selectedColor.RGB);
+            type = selectedColor.Type;
+            switch (type)
+            {
+                case ColorType.TrueColor:
+                    trueColorHue = hsl.HueWhole;
+                    trueColorSaturation = hsl.SaturationWhole;
+                    trueColorLightness = hsl.LightnessWhole;
+                    break;
+                case ColorType.EightBitColor:
+                    colorValue255 = selectedColor.ColorEnum255;
+                    break;
+                case ColorType.FourBitColor:
+                    colorValue16 = selectedColor.ColorEnum16;
+                    break;
+                default:
+                    throw new TerminauxException("Invalid color type in the color selector");
+            }
+            UpdateColor(ref selectedColor, type, finalSettings);
             UpdateKeybindings();
         }
     }
