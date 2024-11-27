@@ -17,7 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -28,12 +32,12 @@ namespace Terminaux.Writer.CyclicWriters
     /// </summary>
     public class StemLeafChart : IStaticRenderable
     {
-        private ChartElement[] elements = [];
+        private double[] elements = [];
         private int left = 0;
         private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
-        private bool showcase = false;
+        private Color stemColor = ColorTools.CurrentForegroundColor;
+        private Color leafColor = ColorTools.CurrentForegroundColor;
+        private Color separatorColor = ColorTools.CurrentForegroundColor;
         private bool useColors = true;
 
         /// <summary>
@@ -55,33 +59,6 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
-        }
-
-        /// <summary>
-        /// Show the element list
-        /// </summary>
-        public bool Showcase
-        {
-            get => showcase;
-            set => showcase = value;
-        }
-
-        /// <summary>
         /// Whether to use colors or not
         /// </summary>
         public bool UseColors
@@ -91,12 +68,39 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Chart elements
+        /// Chart elements (for numbers)
         /// </summary>
-        public ChartElement[] Elements
+        public double[] Elements
         {
             get => elements;
             set => elements = value;
+        }
+
+        /// <summary>
+        /// Stem color
+        /// </summary>
+        public Color StemColor
+        {
+            get => stemColor;
+            set => stemColor = value;
+        }
+
+        /// <summary>
+        /// Leaf color
+        /// </summary>
+        public Color LeafColor
+        {
+            get => leafColor;
+            set => leafColor = value;
+        }
+
+        /// <summary>
+        /// Separator color
+        /// </summary>
+        public Color SeparatorColor
+        {
+            get => separatorColor;
+            set => separatorColor = value;
         }
 
         /// <summary>
@@ -105,18 +109,69 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
-            return TextWriterWhereColor.RenderWhere(
-                RenderStemLeafChart(
-                    elements, InteriorWidth, InteriorHeight, Showcase, UseColors), Left, Top);
-        }
+            StringBuilder stemLeafChart = new();
+            Dictionary<int, List<int>> stemLeafs = [];
 
-        internal static string RenderStemLeafChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool useColor = true)
-        {
-            StringBuilder stemleafChart = new();
+            // First, sort the numeric elements
+            Array.Sort(Elements);
 
-            // TODO: This is just a scaffolding code.
+            // Get the digits and split it according to the conditions.
+            foreach (var element in Elements)
+            {
+                // If this number describes a decimal, then we need to split the numeric part into the stem and the
+                // decimal part into the leaf.
+                int floor = (int)Math.Floor(element);
+                int ceiling = (int)Math.Ceiling(element);
+                bool isDecimal = element != floor && element != ceiling;
+                int stem = 0, leaf = 0;
+                if (isDecimal)
+                {
+                    // The stem is a numeric part and the leaf is a fractional part as a whole number.
+                    stem = (int)Math.Truncate(element);
+                    leaf = (int)(((decimal)element - stem) * 100m);
+                }
+                else
+                {
+                    // The stem describes digits of tens and greater and the leaf is the digit of ones.
+                    stem = (int)(element / 10);
+                    leaf = (int)(element % 10);
+                }
+
+                // Add the stem and the leaf
+                if (!stemLeafs.ContainsKey(stem))
+                    stemLeafs.Add(stem, []);
+                stemLeafs[stem].Add(leaf);
+            }
+
+            // Render the stems and the leafs
+            int maxStemWidth = stemLeafs.Max((kvp) => LineHandle.GetDigits(kvp.Key));
+            foreach (var stem in stemLeafs.Keys)
+            {
+                // Write the stem
+                var leafs = stemLeafs[stem];
+                int stemWidth = LineHandle.GetDigits(stem);
+                int maxSpaces = maxStemWidth - stemWidth;
+                stemLeafChart.Append(
+                    $"{(UseColors ? ColorTools.RenderSetConsoleColor(StemColor) : "")}" +
+                    new string(' ', maxSpaces) + stem +
+                    $"{(UseColors ? ColorTools.RenderSetConsoleColor(SeparatorColor) : "")} | "
+                );
+
+                // Write the leafs
+                foreach (int leaf in leafs)
+                {
+                    stemLeafChart.Append(
+                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(LeafColor) : "")}" +
+                        leaf + " "
+                    );
+                }
+
+                // Add a new line
+                stemLeafChart.AppendLine();
+            }
+
             // Return the result
-            return stemleafChart.ToString();
+            return TextWriterWhereColor.RenderWhere(stemLeafChart.ToString(), Left, Top);
         }
 
         /// <summary>
