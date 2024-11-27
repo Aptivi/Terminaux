@@ -64,8 +64,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
         /// <inheritdoc/>
         public override string Render()
         {
-            if (selectedColor.RGB is null)
-                throw new TerminauxInternalException("Selected color RGB instance is null.");
             var selector = new StringBuilder();
 
             // First, render the preview box
@@ -198,8 +196,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                             Frequency = colorBlindnessSeverity
                         }]
                     });
-                    if (mono.RGB is null)
-                        throw new TerminauxInternalException("Gray ramp RGB instance is null.");
                     for (int i = 0; i < boxWidth - 7; i++)
                     {
                         double width = (double)i / boxWidth;
@@ -533,8 +529,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var transformed = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new() { Transformations = formulas });
                 selectedColor = transformed;
             }
-            if (selectedColor.RGB is null)
-                throw new TerminauxInternalException("Selected color RGB instance for color info is null.");
 
             // Get all the types except RGB and show their values individually
             var baseType = typeof(BaseColorModel);

@@ -63,12 +63,6 @@ namespace Terminaux.Colors.Gradients
                 return gradients;
             }
 
-            // Check for nulls
-            if (sourceColor.RGB is null)
-                throw new TerminauxException("Source color's RGB instance is null");
-            if (targetColor.RGB is null)
-                throw new TerminauxException("Target color's RGB instance is null");
-
             // Now, form the gradients
             int colorRedThreshold = sourceColor.RGB.R - targetColor.RGB.R;
             int colorGreenThreshold = sourceColor.RGB.G - targetColor.RGB.G;

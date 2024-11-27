@@ -39,12 +39,8 @@ namespace Terminaux.Colors.Data
         /// </summary>
         /// <param name="color">Color to match</param>
         /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
-        public static ConsoleColorData MatchColorData(Color color)
-        {
-            if (color.RGB is null)
-                throw new ArgumentNullException(nameof(color));
-            return MatchColorData(color.RGB);
-        }
+        public static ConsoleColorData MatchColorData(Color color) =>
+            MatchColorData(color.RGB);
 
         /// <summary>
         /// Gets a color data instance that matches the available color instances

@@ -222,7 +222,7 @@ namespace Terminaux.Colors.Models
         #region Color finalizers
         private void ApplyTransparency(int alpha, Color alphaColor)
         {
-            if (alpha == 255 || alphaColor is null || alphaColor.RGB is null)
+            if (alpha == 255 || alphaColor is null)
                 return;
 
             // In order to apply "transparency," we need to get both the normalized alpha and the inverse

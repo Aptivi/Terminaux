@@ -115,11 +115,7 @@ namespace Terminaux.Inputs.Styles
             var finalSettings = settings ?? new(ColorTools.GlobalSettings);
 
             // Initial color is selected
-            if (initialColor.RGB is null)
-                return initialColor;
             Color selectedColor = new(initialColor.RGB.R, initialColor.RGB.G, initialColor.RGB.B, finalSettings);
-            if (selectedColor.RGB is null)
-                return selectedColor;
             var colorSelectorTui = new ColorSelectorTui(selectedColor, finalSettings);
             TextualUITools.RunTui(colorSelectorTui);
             return colorSelectorTui.GetResultingColor();
