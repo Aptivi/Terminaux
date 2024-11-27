@@ -55,6 +55,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private ConsoleColors colorValue255 = ConsoleColors.Fuchsia;
         private ConsoleColor colorValue16 = ConsoleColor.Magenta;
         private bool cancel = false;
+        private bool showColorList = false;
         private Color selectedColor = ConsoleColors.White;
         private ColorType type = ColorType.FourBitColor;
         private readonly ColorSettings finalSettings = new(ColorTools.GlobalSettings);
@@ -99,270 +100,292 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // First, render the preview box
             selector.Append(RenderPreviewBox(selectedColor));
 
-            // Then, render the hue, saturation, and lightness bars
+            // Then, decide whether to render the bars or to render the color list
             int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6 + (ConsoleWrapper.WindowWidth % 2 == 0 ? 0 : 1);
-            int boxHeight = 2;
-            int hslBarX = ConsoleWrapper.WindowWidth / 2 + 2;
-            int hslBarY = 1;
-            int grayRampBarY = hslBarY + boxHeight * 3 + 3;
-            int rgbRampBarY = grayRampBarY + boxHeight + 3;
-            int shadeTintRampBarY = rgbRampBarY + boxHeight + 4;
-            int infoRampBarY = shadeTintRampBarY + boxHeight + 3;
-            var initialBackground = ColorTools.CurrentBackgroundColor;
-
-            // Buffer the hue ramp
-            if (ConsoleWrapper.WindowHeight - 2 > hslBarY + 2)
+            int boxHeight = ConsoleWrapper.WindowHeight - 5;
+            int generalX = ConsoleWrapper.WindowWidth / 2 + 2;
+            if (type != ColorType.TrueColor && showColorList)
             {
-                int finalHue = type == ColorType.TrueColor ? trueColorHue : ConversionTools.ToHsl(selectedColor.RGB).HueWhole;
-                int finalSaturation = type == ColorType.TrueColor ? trueColorSaturation : ConversionTools.ToHsl(selectedColor.RGB).SaturationWhole;
-                int finalLightness = type == ColorType.TrueColor ? trueColorLightness : ConversionTools.ToHsl(selectedColor.RGB).LightnessWhole;
-
-                // Make a box frame for the HSL indicator
-                var hslIndicator = new BoxFrame($"H: {finalHue}/360 | S: {finalSaturation}/100 | L: {finalLightness}/100")
+                var selectionNames = Enum.GetNames(type == ColorType.FourBitColor ? typeof(ConsoleColor) : typeof(ConsoleColors)).ToList();
+                var finalSelections = selectionNames.Select((type, idx) => new InputChoiceInfo($"{idx + 1}", type)).ToArray();
+                var selectionBorder = new BoxFrame($"List of {finalSelections.Length} predefined colors")
                 {
-                    Left = hslBarX,
-                    Top = hslBarY,
+                    Left = generalX,
+                    Top = 1,
                     InteriorWidth = boxWidth,
-                    InteriorHeight = boxHeight * 3,
-                };
-
-                // Deal with the hue
-                StringBuilder hueRamp = new();
-                for (int i = 0; i < boxWidth; i++)
-                {
-                    double width = (double)i / boxWidth;
-                    int hue = (int)(360 * width);
-                    hueRamp.Append($"{new Color($"hsl:{hue};100;50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                }
-                var finalHueColor = new Color($"hsl:{finalHue};100;50", finalSettings);
-                var hueSlider = new Slider(finalHue, 0, 360)
-                {
-                    Width = boxWidth,
-                    SliderActiveForegroundColor = finalHueColor,
-                    SliderForegroundColor = TransformationTools.GetDarkBackground(finalHueColor),
-                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
-                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
-                };
-
-                // Deal with the saturation
-                StringBuilder satRamp = new();
-                for (int i = 0; i < boxWidth; i++)
-                {
-                    double width = (double)i / boxWidth;
-                    int sat = (int)(100 * width);
-                    satRamp.Append($"{new Color($"hsl:{finalHue};{sat};50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                }
-                var finalSatColor = new Color($"hsl:{finalHue};{finalSaturation};50", finalSettings);
-                var satSlider = new Slider(finalSaturation, 0, 100)
-                {
-                    Width = boxWidth,
-                    SliderActiveForegroundColor = finalSatColor,
-                    SliderForegroundColor = TransformationTools.GetDarkBackground(finalSatColor),
-                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
-                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
-                };
-
-                // Deal with the lightness
-                StringBuilder ligRamp = new();
-                for (int i = 0; i < boxWidth; i++)
-                {
-                    double width = (double)i / boxWidth;
-                    int lig = (int)(100 * width);
-                    ligRamp.Append($"{new Color($"hsl:{finalHue};100;{lig}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                }
-                var finalLigColor = new Color($"hsl:{finalHue};100;{finalLightness}", finalSettings);
-                var ligSlider = new Slider(finalLightness, 0, 100)
-                {
-                    Width = boxWidth,
-                    SliderActiveForegroundColor = finalLigColor,
-                    SliderForegroundColor = TransformationTools.GetDarkBackground(finalLigColor),
-                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
-                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                    InteriorHeight = boxHeight,
                 };
                 selector.Append(
-                    hslIndicator.Render() +
-                    ContainerTools.RenderRenderable(hueSlider, new(hslBarX + 1, hslBarY + 2)) +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 2) +
-                    hueRamp.ToString() +
-                    ContainerTools.RenderRenderable(satSlider, new(hslBarX + 1, hslBarY + 4)) +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 4) +
-                    satRamp.ToString() +
-                    ContainerTools.RenderRenderable(ligSlider, new(hslBarX + 1, hslBarY + 6)) +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 6) +
-                    ligRamp.ToString()
+                    selectionBorder.Render() +
+                    SelectionInputTools.RenderSelections(finalSelections, generalX + 1, 2, type == ColorType.FourBitColor ? (int)colorValue16 : (int)colorValue255, boxHeight, boxWidth)
                 );
             }
-
-            // Buffer the gray ramp
-            if (ConsoleWrapper.WindowHeight - 2 > grayRampBarY + 2)
+            else
             {
-                StringBuilder grayRamp = new();
-                StringBuilder transparencyRamp = new();
-                var mono = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new(finalSettings)
+                // Render the hue, saturation, and lightness bars
+                boxHeight = 2;
+                int hslBarX = generalX;
+                int hslBarY = 1;
+                int grayRampBarY = hslBarY + boxHeight * 3 + 3;
+                int rgbRampBarY = grayRampBarY + boxHeight + 3;
+                int shadeTintRampBarY = rgbRampBarY + boxHeight + 4;
+                int infoRampBarY = shadeTintRampBarY + boxHeight + 3;
+                var initialBackground = ColorTools.CurrentBackgroundColor;
+
+                // Buffer the hue ramp
+                if (ConsoleWrapper.WindowHeight - 2 > hslBarY + 2)
                 {
-                    Transformations = [new Monochromacy()
+                    int finalHue = type == ColorType.TrueColor ? trueColorHue : ConversionTools.ToHsl(selectedColor.RGB).HueWhole;
+                    int finalSaturation = type == ColorType.TrueColor ? trueColorSaturation : ConversionTools.ToHsl(selectedColor.RGB).SaturationWhole;
+                    int finalLightness = type == ColorType.TrueColor ? trueColorLightness : ConversionTools.ToHsl(selectedColor.RGB).LightnessWhole;
+
+                    // Make a box frame for the HSL indicator
+                    var hslIndicator = new BoxFrame($"H: {finalHue}/360 | S: {finalSaturation}/100 | L: {finalLightness}/100")
                     {
-                        Frequency = colorBlindnessSeverity
-                    }]
-                });
-                if (mono.RGB is null)
-                    throw new TerminauxInternalException("Gray ramp RGB instance is null.");
-                for (int i = 0; i < boxWidth - 7; i++)
-                {
-                    double width = (double)i / boxWidth;
-                    int gray = (int)(mono.RGB.R * width);
-                    grayRamp.Append($"{new Color($"{gray};{gray};{gray}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                    int transparency = (int)(mono.RGB.originalAlpha * width);
-                    transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                }
-                var rampFrame = new BoxFrame($"Gray: {mono.RGB.R}/255 | Transp.: {finalSettings.Opacity}/255")
-                {
-                    Left = hslBarX,
-                    Top = grayRampBarY,
-                    InteriorWidth = boxWidth - 7,
-                    InteriorHeight = boxHeight,
-                };
-                selector.Append(
-                    rampFrame.Render() +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, grayRampBarY + 2) +
-                    grayRamp.ToString() +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, grayRampBarY + 3) +
-                    transparencyRamp.ToString()
-                );
-            }
+                        Left = hslBarX,
+                        Top = hslBarY,
+                        InteriorWidth = boxWidth,
+                        InteriorHeight = boxHeight * 3,
+                    };
 
-            // Buffer the dark/light indicator
-            if (ConsoleWrapper.WindowHeight - 2 > grayRampBarY + 2)
-            {
-                StringBuilder darkLightIndicator = new();
-                var indicator = selectedColor.Brightness == ColorBrightness.Light ? ConsoleColors.White : ConsoleColors.Black;
-                darkLightIndicator.Append($"{new Color(indicator, finalSettings).VTSequenceBackgroundTrueColor}    {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                var darkLightFrame = new BoxFrame("")
-                {
-                    Left = ConsoleWrapper.WindowWidth - 8,
-                    Top = grayRampBarY,
-                    InteriorWidth = 4,
-                    InteriorHeight = 2,
-                };
-                selector.Append(
-                    darkLightFrame.Render() +
-                    CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 7 + 1, grayRampBarY + 2) +
-                    darkLightIndicator.ToString() +
-                    CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 7 + 1, grayRampBarY + 3) +
-                    darkLightIndicator.ToString()
-                );
-            }
+                    // Deal with the hue
+                    StringBuilder hueRamp = new();
+                    for (int i = 0; i < boxWidth; i++)
+                    {
+                        double width = (double)i / boxWidth;
+                        int hue = (int)(360 * width);
+                        hueRamp.Append($"{new Color($"hsl:{hue};100;50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    }
+                    var finalHueColor = new Color($"hsl:{finalHue};100;50", finalSettings);
+                    var hueSlider = new Slider(finalHue, 0, 360)
+                    {
+                        Width = boxWidth,
+                        SliderActiveForegroundColor = finalHueColor,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(finalHueColor),
+                        SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                        SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                    };
 
-            // Buffer the RGB ramp
-            if (ConsoleWrapper.WindowHeight - 2 > rgbRampBarY + 4)
-            {
-                StringBuilder redRamp = new();
-                StringBuilder greenRamp = new();
-                StringBuilder blueRamp = new();
-                for (int i = 0; i < boxWidth; i++)
-                {
-                    double width = (double)i / boxWidth;
-                    int red = (int)(selectedColor.RGB.R * width);
-                    int green = (int)(selectedColor.RGB.G * width);
-                    int blue = (int)(selectedColor.RGB.B * width);
-                    redRamp.Append($"{new Color($"{red};0;0", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                    greenRamp.Append($"{new Color($"0;{green};0", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                    blueRamp.Append($"{new Color($"0;0;{blue}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                }
-                var rgbFrame = new BoxFrame($"R: {selectedColor.RGB.R} | G: {selectedColor.RGB.G} | B: {selectedColor.RGB.B}")
-                {
-                    Left = hslBarX,
-                    Top = rgbRampBarY,
-                    InteriorWidth = boxWidth,
-                    InteriorHeight = boxHeight + 1,
-                };
-                selector.Append(
-                    rgbFrame.Render() +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, rgbRampBarY + 2) +
-                    redRamp.ToString() +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, rgbRampBarY + 3) +
-                    greenRamp.ToString() +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, rgbRampBarY + 4) +
-                    blueRamp.ToString()
-                );
-            }
+                    // Deal with the saturation
+                    StringBuilder satRamp = new();
+                    for (int i = 0; i < boxWidth; i++)
+                    {
+                        double width = (double)i / boxWidth;
+                        int sat = (int)(100 * width);
+                        satRamp.Append($"{new Color($"hsl:{finalHue};{sat};50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    }
+                    var finalSatColor = new Color($"hsl:{finalHue};{finalSaturation};50", finalSettings);
+                    var satSlider = new Slider(finalSaturation, 0, 100)
+                    {
+                        Width = boxWidth,
+                        SliderActiveForegroundColor = finalSatColor,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(finalSatColor),
+                        SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                        SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                    };
 
-            // Buffer the shade and tint ramp
-            if (ConsoleWrapper.WindowHeight - 2 > shadeTintRampBarY + 3)
-            {
-                StringBuilder shadeRamp = new();
-                StringBuilder tintRamp = new();
-                var shades = ColorGradients.GetShades(selectedColor, boxWidth);
-                var tints = ColorGradients.GetTints(selectedColor, boxWidth);
-                for (int i = 0; i < boxWidth; i++)
-                {
-                    shadeRamp.Append($"{new Color(shades[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                    tintRamp.Append($"{new Color(tints[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                }
-                var shadeTintFrame = new BoxFrame("Shade and Tint")
-                {
-                    Left = hslBarX,
-                    Top = shadeTintRampBarY,
-                    InteriorWidth = boxWidth,
-                    InteriorHeight = boxHeight,
-                };
-                selector.Append(
-                    shadeTintFrame.Render() +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, shadeTintRampBarY + 2) +
-                    shadeRamp.ToString() +
-                    CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, shadeTintRampBarY + 3) +
-                    tintRamp.ToString()
-                );
-            }
-
-            // Buffer the color info and the color blindness boxes
-            if (ConsoleWrapper.WindowHeight - 2 > infoRampBarY + 5)
-            {
-                // Render the two boxes
-                int halfBoxWidth = boxWidth / 2 - 2;
-                int otherHalfLeft = hslBarX + boxWidth / 2 + 2;
-                var colorInfoFrame = new BoxFrame("Color info")
-                {
-                    Left = hslBarX,
-                    Top = infoRampBarY,
-                    InteriorWidth = halfBoxWidth,
-                    InteriorHeight = boxHeight + 2,
-                };
-                var colorBlindnessFrame = new BoxFrame($"Transform [[{colorBlindnessSeverity:0.00}]]")
-                {
-                    Left = otherHalfLeft,
-                    Top = infoRampBarY,
-                    InteriorWidth = halfBoxWidth * 2 + 5 == boxWidth ? halfBoxWidth + 1 : halfBoxWidth,
-                    InteriorHeight = boxHeight + 2,
-                };
-                selector.Append(
-                    colorInfoFrame.Render() +
-                    colorBlindnessFrame.Render()
-                );
-
-                // Render the color info
-                string colorInfoText = ShowColorInfo(selectedColor);
-                string[] wrapped = colorInfoText.GetWrappedSentencesByWords(halfBoxWidth);
-                for (int i = 0; i < wrapped.Length; i++)
-                {
-                    int x = hslBarX + 1;
-                    int y = infoRampBarY + 1 + i;
-                    if (y > infoRampBarY + boxHeight + 2)
-                        break;
-                    string wrappedMessage = wrapped[i];
-                    string spaces = new(' ', halfBoxWidth - wrappedMessage.Length);
+                    // Deal with the lightness
+                    StringBuilder ligRamp = new();
+                    for (int i = 0; i < boxWidth; i++)
+                    {
+                        double width = (double)i / boxWidth;
+                        int lig = (int)(100 * width);
+                        ligRamp.Append($"{new Color($"hsl:{finalHue};100;{lig}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    }
+                    var finalLigColor = new Color($"hsl:{finalHue};100;{finalLightness}", finalSettings);
+                    var ligSlider = new Slider(finalLightness, 0, 100)
+                    {
+                        Width = boxWidth,
+                        SliderActiveForegroundColor = finalLigColor,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(finalLigColor),
+                        SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                        SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                    };
                     selector.Append(
-                        TextWriterWhereColor.RenderWhere(wrappedMessage + spaces, x, y)
+                        hslIndicator.Render() +
+                        ContainerTools.RenderRenderable(hueSlider, new(hslBarX + 1, hslBarY + 2)) +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 2) +
+                        hueRamp.ToString() +
+                        ContainerTools.RenderRenderable(satSlider, new(hslBarX + 1, hslBarY + 4)) +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 4) +
+                        satRamp.ToString() +
+                        ContainerTools.RenderRenderable(ligSlider, new(hslBarX + 1, hslBarY + 6)) +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 6) +
+                        ligRamp.ToString()
                     );
                 }
 
-                // Render the color blindness selections
-                var selectionNames = Enum.GetNames(typeof(TransformationFormula)).ToList();
-                selectionNames.Insert(0, "None");
-                var finalSelections = selectionNames.Select((type, idx) => new InputChoiceInfo($"{idx + 1}", type)).ToArray();
-                selector.Append(
-                    SelectionInputTools.RenderSelections(finalSelections, otherHalfLeft + 1, infoRampBarY + 1, colorBlindnessSimulationIdx, boxHeight + 2, halfBoxWidth)
-                );
+                // Buffer the gray ramp
+                if (ConsoleWrapper.WindowHeight - 2 > grayRampBarY + 2)
+                {
+                    StringBuilder grayRamp = new();
+                    StringBuilder transparencyRamp = new();
+                    var mono = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new(finalSettings)
+                    {
+                        Transformations = [new Monochromacy()
+                        {
+                            Frequency = colorBlindnessSeverity
+                        }]
+                    });
+                    if (mono.RGB is null)
+                        throw new TerminauxInternalException("Gray ramp RGB instance is null.");
+                    for (int i = 0; i < boxWidth - 7; i++)
+                    {
+                        double width = (double)i / boxWidth;
+                        int gray = (int)(mono.RGB.R * width);
+                        grayRamp.Append($"{new Color($"{gray};{gray};{gray}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        int transparency = (int)(mono.RGB.originalAlpha * width);
+                        transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    }
+                    var rampFrame = new BoxFrame($"Gray: {mono.RGB.R}/255 | Transp.: {finalSettings.Opacity}/255")
+                    {
+                        Left = hslBarX,
+                        Top = grayRampBarY,
+                        InteriorWidth = boxWidth - 7,
+                        InteriorHeight = boxHeight,
+                    };
+                    selector.Append(
+                        rampFrame.Render() +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, grayRampBarY + 2) +
+                        grayRamp.ToString() +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, grayRampBarY + 3) +
+                        transparencyRamp.ToString()
+                    );
+                }
+
+                // Buffer the dark/light indicator
+                if (ConsoleWrapper.WindowHeight - 2 > grayRampBarY + 2)
+                {
+                    StringBuilder darkLightIndicator = new();
+                    var indicator = selectedColor.Brightness == ColorBrightness.Light ? ConsoleColors.White : ConsoleColors.Black;
+                    darkLightIndicator.Append($"{new Color(indicator, finalSettings).VTSequenceBackgroundTrueColor}    {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    var darkLightFrame = new BoxFrame("")
+                    {
+                        Left = ConsoleWrapper.WindowWidth - 8,
+                        Top = grayRampBarY,
+                        InteriorWidth = 4,
+                        InteriorHeight = 2,
+                    };
+                    selector.Append(
+                        darkLightFrame.Render() +
+                        CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 7 + 1, grayRampBarY + 2) +
+                        darkLightIndicator.ToString() +
+                        CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 7 + 1, grayRampBarY + 3) +
+                        darkLightIndicator.ToString()
+                    );
+                }
+
+                // Buffer the RGB ramp
+                if (ConsoleWrapper.WindowHeight - 2 > rgbRampBarY + 4)
+                {
+                    StringBuilder redRamp = new();
+                    StringBuilder greenRamp = new();
+                    StringBuilder blueRamp = new();
+                    for (int i = 0; i < boxWidth; i++)
+                    {
+                        double width = (double)i / boxWidth;
+                        int red = (int)(selectedColor.RGB.R * width);
+                        int green = (int)(selectedColor.RGB.G * width);
+                        int blue = (int)(selectedColor.RGB.B * width);
+                        redRamp.Append($"{new Color($"{red};0;0", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        greenRamp.Append($"{new Color($"0;{green};0", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        blueRamp.Append($"{new Color($"0;0;{blue}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    }
+                    var rgbFrame = new BoxFrame($"R: {selectedColor.RGB.R} | G: {selectedColor.RGB.G} | B: {selectedColor.RGB.B}")
+                    {
+                        Left = hslBarX,
+                        Top = rgbRampBarY,
+                        InteriorWidth = boxWidth,
+                        InteriorHeight = boxHeight + 1,
+                    };
+                    selector.Append(
+                        rgbFrame.Render() +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, rgbRampBarY + 2) +
+                        redRamp.ToString() +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, rgbRampBarY + 3) +
+                        greenRamp.ToString() +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, rgbRampBarY + 4) +
+                        blueRamp.ToString()
+                    );
+                }
+
+                // Buffer the shade and tint ramp
+                if (ConsoleWrapper.WindowHeight - 2 > shadeTintRampBarY + 3)
+                {
+                    StringBuilder shadeRamp = new();
+                    StringBuilder tintRamp = new();
+                    var shades = ColorGradients.GetShades(selectedColor, boxWidth);
+                    var tints = ColorGradients.GetTints(selectedColor, boxWidth);
+                    for (int i = 0; i < boxWidth; i++)
+                    {
+                        shadeRamp.Append($"{new Color(shades[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        tintRamp.Append($"{new Color(tints[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    }
+                    var shadeTintFrame = new BoxFrame("Shade and Tint")
+                    {
+                        Left = hslBarX,
+                        Top = shadeTintRampBarY,
+                        InteriorWidth = boxWidth,
+                        InteriorHeight = boxHeight,
+                    };
+                    selector.Append(
+                        shadeTintFrame.Render() +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, shadeTintRampBarY + 2) +
+                        shadeRamp.ToString() +
+                        CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, shadeTintRampBarY + 3) +
+                        tintRamp.ToString()
+                    );
+                }
+
+                // Buffer the color info and the color blindness boxes
+                if (ConsoleWrapper.WindowHeight - 2 > infoRampBarY + 5)
+                {
+                    // Render the two boxes
+                    int halfBoxWidth = boxWidth / 2 - 2;
+                    int otherHalfLeft = hslBarX + boxWidth / 2 + 2;
+                    var colorInfoFrame = new BoxFrame("Color info")
+                    {
+                        Left = hslBarX,
+                        Top = infoRampBarY,
+                        InteriorWidth = halfBoxWidth,
+                        InteriorHeight = boxHeight + 2,
+                    };
+                    var colorBlindnessFrame = new BoxFrame($"Transform [[{colorBlindnessSeverity:0.00}]]")
+                    {
+                        Left = otherHalfLeft,
+                        Top = infoRampBarY,
+                        InteriorWidth = halfBoxWidth * 2 + 5 == boxWidth ? halfBoxWidth + 1 : halfBoxWidth,
+                        InteriorHeight = boxHeight + 2,
+                    };
+                    selector.Append(
+                        colorInfoFrame.Render() +
+                        colorBlindnessFrame.Render()
+                    );
+
+                    // Render the color info
+                    string colorInfoText = ShowColorInfo(selectedColor);
+                    string[] wrapped = colorInfoText.GetWrappedSentencesByWords(halfBoxWidth);
+                    for (int i = 0; i < wrapped.Length; i++)
+                    {
+                        int x = hslBarX + 1;
+                        int y = infoRampBarY + 1 + i;
+                        if (y > infoRampBarY + boxHeight + 2)
+                            break;
+                        string wrappedMessage = wrapped[i];
+                        string spaces = new(' ', halfBoxWidth - wrappedMessage.Length);
+                        selector.Append(
+                            TextWriterWhereColor.RenderWhere(wrappedMessage + spaces, x, y)
+                        );
+                    }
+
+                    // Render the color blindness selections
+                    var selectionNames = Enum.GetNames(typeof(TransformationFormula)).ToList();
+                    selectionNames.Insert(0, "None");
+                    var finalSelections = selectionNames.Select((type, idx) => new InputChoiceInfo($"{idx + 1}", type)).ToArray();
+                    selector.Append(
+                        SelectionInputTools.RenderSelections(finalSelections, otherHalfLeft + 1, infoRampBarY + 1, colorBlindnessSimulationIdx, boxHeight + 2, halfBoxWidth)
+                    );
+                }
             }
 
             // Finally, the keybindings
@@ -491,6 +514,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 case ColorType.FourBitColor:
                     Keybindings.Add((ColorSelector.additionalBindingsNormalColor[12], (ui, _, _) => ChangeColor(ui, true)));
                     Keybindings.Add((ColorSelector.additionalBindingsNormalColor[13], (ui, _, _) => ChangeColor(ui, false)));
+                    Keybindings.Add((ColorSelector.additionalBindingsNormalColor[14], (ui, _, _) => ShowColorList(ui)));
                     break;
             }
         }
@@ -726,6 +750,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementColor(type);
             else
                 IncrementColor(type);
+            ui.RequireRefresh();
+        }
+
+        private void ShowColorList(TextualUI ui)
+        {
+            showColorList = !showColorList;
             ui.RequireRefresh();
         }
 

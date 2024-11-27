@@ -92,6 +92,7 @@ namespace Terminaux.Inputs.Styles
             .. additionalBindingsGeneral,
             new("Previous color", ConsoleKey.LeftArrow),
             new("Next color", ConsoleKey.RightArrow),
+            new("Show and hide color list", ConsoleKey.L),
         ];
 
         /// <summary>
