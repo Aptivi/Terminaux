@@ -46,8 +46,8 @@ namespace Terminaux.Inputs.Styles
             new("Select", ConsoleKey.S),
             new("Manual Select", ConsoleKey.S, ConsoleModifiers.Shift),
             new("Character Showcase", ConsoleKey.C),
-            new("Previous", PointerButton.WheelUp),
-            new("Next", PointerButton.WheelDown),
+            new("Previous", PointerButton.WheelUp, PointerButtonPress.Scrolled),
+            new("Next", PointerButton.WheelDown, PointerButtonPress.Scrolled),
         ];
         internal readonly static Keybinding[] charSelectBindings =
         [

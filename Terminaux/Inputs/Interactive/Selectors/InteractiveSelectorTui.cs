@@ -379,8 +379,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Base bindings
             Keybindings.Add((new Keybinding("Go one element up", ConsoleKey.UpArrow), (_, _, _) => GoUp()));
             Keybindings.Add((new Keybinding("Go one element down", ConsoleKey.DownArrow), (_, _, _) => GoDown()));
-            Keybindings.Add((new Keybinding("Go one element up", PointerButton.WheelUp), (_, _, mouse) => GoUpDeterministic(mouse)));
-            Keybindings.Add((new Keybinding("Go one element down", PointerButton.WheelDown), (_, _, mouse) => GoDownDeterministic(mouse)));
+            Keybindings.Add((new Keybinding("Go one element up", PointerButton.WheelUp, PointerButtonPress.Scrolled), (_, _, mouse) => GoUpDeterministic(mouse)));
+            Keybindings.Add((new Keybinding("Go one element down", PointerButton.WheelDown, PointerButtonPress.Scrolled), (_, _, mouse) => GoDownDeterministic(mouse)));
             Keybindings.Add((new Keybinding("Go to the first element", ConsoleKey.Home), (_, _, _) => First()));
             Keybindings.Add((new Keybinding("Go to the last element", ConsoleKey.End), (_, _, _) => Last()));
             Keybindings.Add((new Keybinding("Go to the previous page", ConsoleKey.PageUp), (_, _, _) => PreviousPage()));

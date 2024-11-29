@@ -69,8 +69,8 @@ namespace Terminaux.Inputs.Styles.Selection
         ];
         internal static Keybinding[] bindingsMouse =
         [
-            new("Goes one element up", PointerButton.WheelUp),
-            new("Goes one element down", PointerButton.WheelDown),
+            new("Goes one element up", PointerButton.WheelUp, PointerButtonPress.Scrolled),
+            new("Goes one element down", PointerButton.WheelDown, PointerButtonPress.Scrolled),
             new("Select", PointerButton.Left, PointerButtonPress.Released),
             new("Show item info", PointerButton.Right, PointerButtonPress.Released),
             new("Update position", PointerButton.None, PointerButtonPress.Moved),
