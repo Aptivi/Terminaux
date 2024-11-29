@@ -634,50 +634,72 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (mouse is null)
                 return;
 
-            // Some variables
             int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6 + (ConsoleWrapper.WindowWidth % 2 == 0 ? 0 : 1);
-            int boxHeight = 2;
-            int hslBarX = ConsoleWrapper.WindowWidth / 2 + 2;
-            int hslBarY = 1;
-            int grayRampBarY = hslBarY + (boxHeight * 3) + 3;
-            int colorBoxX = 2;
-            int colorBoxY = 1;
+            int boxHeight = ConsoleWrapper.WindowHeight - 5;
+            int generalX = ConsoleWrapper.WindowWidth / 2 + 2;
+            int colorBoxX = 2, colorBoxY = 1;
             int colorBoxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-            int colorBoxHeight = ConsoleWrapper.WindowHeight - 5;
 
             // Detect boundaries
-            bool withinColorBoxBoundaries = PointerTools.PointerWithinRange(mouse, (colorBoxX + 1, colorBoxY + 1), (colorBoxWidth + colorBoxX, colorBoxHeight + colorBoxY));
-            bool withinHueBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 1), (hslBarX + boxWidth, hslBarY + 2));
-            bool withinSaturationBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 3), (hslBarX + boxWidth, hslBarY + 4));
-            bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 5), (hslBarX + boxWidth, hslBarY + 6));
-            bool withinTransparencyBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, grayRampBarY + 1), (hslBarX + boxWidth - 7, grayRampBarY + 2));
+            bool withinColorBoxBoundaries = PointerTools.PointerWithinRange(mouse, (colorBoxX + 1, colorBoxY + 1), (colorBoxWidth + colorBoxX, boxHeight + colorBoxY));
 
-            // DO the action!
-            if (goBack)
+            // Do the action!
+            if (withinColorBoxBoundaries)
             {
-                if (withinColorBoxBoundaries)
+                if (goBack)
                     DecrementColor(type);
-                else if (withinHueBarBoundaries)
-                    DecrementHue(type);
-                else if (withinSaturationBarBoundaries)
-                    DecrementSaturation(type);
-                else if (withinLightnessBarBoundaries)
-                    DecrementLightness(type);
-                else if (withinTransparencyBarBoundaries)
-                    finalSettings.Opacity--;
+                else
+                    IncrementColor(type);
             }
             else
             {
-                if (withinColorBoxBoundaries)
-                    IncrementColor(type);
-                else if (withinHueBarBoundaries)
-                    IncrementHue(type);
-                else if (withinSaturationBarBoundaries)
-                    IncrementSaturation(type);
-                else if (withinLightnessBarBoundaries)
-                    IncrementLightness(type);
-                else if (withinTransparencyBarBoundaries)
-                    finalSettings.Opacity++;
+                if (type != ColorType.TrueColor && showColorList)
+                {
+                    bool withinColorListBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, colorBoxY + 1), (colorBoxWidth + generalX, boxHeight + colorBoxY));
+                    if (withinColorListBoundaries)
+                    {
+                        if (goBack)
+                            DecrementColor(type);
+                        else
+                            IncrementColor(type);
+                    }
+                }
+                else
+                {
+                    boxHeight = 2;
+                    int hslBarY = 1;
+                    int grayRampBarY = hslBarY + (boxHeight * 3) + 3;
+
+                    // Detect boundaries
+                    bool withinHueBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 1), (generalX + boxWidth, hslBarY + 2));
+                    bool withinSaturationBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 3), (generalX + boxWidth, hslBarY + 4));
+                    bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 5), (generalX + boxWidth, hslBarY + 6));
+                    bool withinTransparencyBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, grayRampBarY + 1), (generalX + boxWidth - 7, grayRampBarY + 2));
+
+                    // Do the action!
+                    if (goBack)
+                    {
+                        if (withinHueBarBoundaries)
+                            DecrementHue(type);
+                        else if (withinSaturationBarBoundaries)
+                            DecrementSaturation(type);
+                        else if (withinLightnessBarBoundaries)
+                            DecrementLightness(type);
+                        else if (withinTransparencyBarBoundaries)
+                            finalSettings.Opacity--;
+                    }
+                    else
+                    {
+                        if (withinHueBarBoundaries)
+                            IncrementHue(type);
+                        else if (withinSaturationBarBoundaries)
+                            IncrementSaturation(type);
+                        else if (withinLightnessBarBoundaries)
+                            IncrementLightness(type);
+                        else if (withinTransparencyBarBoundaries)
+                            finalSettings.Opacity++;
+                    }
+                }
             }
             UpdateColor(ref selectedColor, type, finalSettings);
         }

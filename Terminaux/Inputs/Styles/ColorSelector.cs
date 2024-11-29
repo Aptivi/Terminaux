@@ -74,8 +74,8 @@ namespace Terminaux.Inputs.Styles
             new("Previous color blindness simulation", ConsoleKey.M),
             new("Increase transformation frequency", ConsoleKey.N, ConsoleModifiers.Control),
             new("Decrease transformation frequency", ConsoleKey.M, ConsoleModifiers.Control),
-            new("Increase value", PointerButton.WheelDown),
-            new("Decrease value", PointerButton.WheelUp),
+            new("Increase value", PointerButton.WheelDown, PointerButtonPress.Scrolled),
+            new("Decrease value", PointerButton.WheelUp, PointerButtonPress.Scrolled),
         ];
         internal readonly static Keybinding[] additionalBindingsTrueColor =
         [
