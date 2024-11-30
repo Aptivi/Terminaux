@@ -222,7 +222,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         {
                             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                            int answersPerPage = listEndPosition - 7;
+                            int answersPerPage = listEndPosition - 5;
                             if (AllAnswers.Count <= answersPerPage)
                                 return false;
                             return
@@ -235,7 +235,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         {
                             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                            int answersPerPage = listEndPosition - 7;
+                            int answersPerPage = listEndPosition - 5;
                             if (AllAnswers.Count <= answersPerPage)
                                 return;
                             if (mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 3)
