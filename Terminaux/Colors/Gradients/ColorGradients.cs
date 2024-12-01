@@ -161,6 +161,22 @@ namespace Terminaux.Colors.Gradients
             GetGradients(color, ConsoleColors.White, steps);
 
         /// <summary>
+        /// Gets a color that represents a stage
+        /// </summary>
+        /// <param name="low">Low stage color (that is, indicates low level)</param>
+        /// <param name="mid">Middle stage color (that is, indicates middle level)</param>
+        /// <param name="high">High stage color (that is, indicates high level)</param>
+        /// <param name="minLevel">Minimum level</param>
+        /// <param name="currentLevel">Current level</param>
+        /// <param name="maxLevel">Maximum level</param>
+        /// <param name="smooth">Whether to use gradients or one of the three static colors</param>
+        /// <returns></returns>
+        public static Color StageLevelSmooth(Color low, Color mid, Color high, double minLevel, double currentLevel, double maxLevel, bool smooth = false)
+        {
+            throw new NotImplementedException("Scaffolding function.");
+        }
+
+        /// <summary>
         /// Gets the number of gradients
         /// </summary>
         public int Count =>
