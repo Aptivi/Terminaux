@@ -268,6 +268,7 @@ namespace Terminaux.Console.Fixtures
             new ColorBackTestDry(),
             new ColorTransparencyTest(),
             new ColorGradientTest(),
+            new ColorLevelTest(),
 
             // Interactive TUI
             new CliInfoPaneTest(),

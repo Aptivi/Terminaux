@@ -170,10 +170,54 @@ namespace Terminaux.Colors.Gradients
         /// <param name="currentLevel">Current level</param>
         /// <param name="maxLevel">Maximum level</param>
         /// <param name="smooth">Whether to use gradients or one of the three static colors</param>
+        /// <param name="lowLevel">Low level position where the middle color starts</param>
+        /// <param name="midLevel">Middle level position where the high color starts</param>
         /// <returns></returns>
-        public static Color StageLevelSmooth(Color low, Color mid, Color high, double minLevel, double currentLevel, double maxLevel, bool smooth = false)
+        public static Color StageLevelSmooth(Color low, Color mid, Color high, double currentLevel, double minLevel = 0, double maxLevel = 1, bool smooth = false, double lowLevel = .33, double midLevel = .66)
         {
-            throw new NotImplementedException("Scaffolding function.");
+            // Swap the values if any
+            double finalMinLevel = Math.Min(minLevel, maxLevel);
+            double finalMaxLevel = Math.Max(minLevel, maxLevel);
+
+            // Check the current level
+            double CheckLevel(double level)
+            {
+                if (level < finalMinLevel)
+                    level = finalMinLevel;
+                if (level > finalMaxLevel)
+                    level = finalMaxLevel;
+                return level;
+            }
+            currentLevel = CheckLevel(currentLevel);
+
+            // Check the low, mid, and high levels
+            lowLevel = CheckLevel(lowLevel);
+            midLevel = CheckLevel(midLevel);
+
+            // Build the gradient or determine the color level
+            Color level;
+            if (smooth)
+            {
+                // Create gradient list
+                var gradients = GetGradients([(0, low), (lowLevel, mid), (midLevel, high)], high, 100);
+
+                // Get the color according to the step that represents the level
+                int levelIdx = (int)(currentLevel * 100 / finalMaxLevel);
+                level = gradients[levelIdx].IntermediateColor;
+            }
+            else
+            {
+                // Get the color according to the current level
+                if (currentLevel >= midLevel)
+                    level = high;
+                else if (currentLevel >= lowLevel)
+                    level = mid;
+                else
+                    level = low;
+            }
+
+            // Return the representative color
+            return level;
         }
 
         /// <summary>
