@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -146,16 +147,26 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to enable drop shadow or not
+        /// </summary>
+        public bool DropShadow { get; set; }
+
+        /// <summary>
+        /// Drop shadow color
+        /// </summary>
+        public Color ShadowColor { get; set; } = ConsoleColors.Grey;
+
+        /// <summary>
         /// Renders an aligned figlet text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
             return RenderBoxFrame(
-                Text, Left, Top, InteriorWidth, InteriorHeight, Settings, TitleSettings, FrameColor, BackgroundColor, TitleColor, UseColors);
+                Text, Left, Top, InteriorWidth, InteriorHeight, Settings, TitleSettings, FrameColor, BackgroundColor, TitleColor, UseColors, DropShadow, ShadowColor);
         }
 
-        internal static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
+        internal static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, Color BackgroundColor, Color TextColor, bool useColor, bool dropShadow, Color shadowColor, params object[] vars)
         {
             try
             {
@@ -232,6 +243,30 @@ namespace Terminaux.Writer.CyclicWriters
                         frameBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
                             $"{settings.BorderRightFrameChar}"
+                        );
+                    }
+                }
+
+                // Drop shadow (if any)
+                if (dropShadow)
+                {
+                    for (int i = 1; i <= InteriorHeight + 1; i++)
+                    {
+                        if (settings.BorderRightFrameEnabled)
+                        {
+                            frameBuilder.Append(
+                                (useColor ? ColorTools.RenderSetConsoleColor(shadowColor, true) : "") +
+                                $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 3, Top + i + 1)}" +
+                                " "
+                            );
+                        }
+                    }
+                    if (settings.BorderLowerFrameEnabled)
+                    {
+                        frameBuilder.Append(
+                            (useColor ? ColorTools.RenderSetConsoleColor(shadowColor, true) : "") +
+                            $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + InteriorHeight + 3)}" +
+                            $"{new string(' ', InteriorWidth + 2)}"
                         );
                     }
                 }

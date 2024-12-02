@@ -24,6 +24,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -177,6 +178,16 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to enable drop shadow or not
+        /// </summary>
+        public bool DropShadow { get; set; }
+
+        /// <summary>
+        /// Drop shadow color
+        /// </summary>
+        public Color ShadowColor { get; set; } = ConsoleColors.Grey;
+
+        /// <summary>
         /// Renders an aligned figlet text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
@@ -185,7 +196,7 @@ namespace Terminaux.Writer.CyclicWriters
             if (!customPos)
                 UpdateInternalTop();
             return RenderBorder(
-                Title, text, Left, Top, InteriorWidth, InteriorHeight, Settings, TextSettings, Color, BackgroundColor, TextColor, UseColors);
+                Title, text, Left, Top, InteriorWidth, InteriorHeight, Settings, TextSettings, Color, BackgroundColor, TextColor, UseColors, DropShadow, ShadowColor);
         }
 
         internal void UpdateInternalTop()
@@ -201,7 +212,7 @@ namespace Terminaux.Writer.CyclicWriters
             top = ConsoleWrapper.WindowHeight / 2 - interiorHeight / 2 - 1;
         }
 
-        internal static string RenderBorder(string title, Mark text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
+        internal static string RenderBorder(string title, Mark text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, bool dropShadow, Color shadowColor, params object[] vars)
         {
             StringBuilder border = new();
             try
@@ -216,6 +227,8 @@ namespace Terminaux.Writer.CyclicWriters
                     Settings = settings,
                     TitleSettings = textSettings,
                     UseColors = useColor,
+                    DropShadow = dropShadow,
+                    ShadowColor = shadowColor,
                 };
                 var box = new Box()
                 {

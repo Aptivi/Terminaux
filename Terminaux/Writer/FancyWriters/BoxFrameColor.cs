@@ -824,7 +824,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="TextColor">BoxFrame text color</param>
         /// <returns>The rendered box frame</returns>
         public static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color FrameColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
-            BoxFrame.RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, FrameColor, BackgroundColor, TextColor, true, vars);
+            BoxFrame.RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, FrameColor, BackgroundColor, TextColor, true, false, ConsoleColors.Grey, vars);
 
         static BoxFrameColor()
         {
