@@ -29,7 +29,6 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;
 using System.Text.RegularExpressions;
@@ -624,7 +623,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     int answer = WriteInfoBoxSelection(choices, "Select one of the entries:");
                                     if (answer < 0)
                                         break;
-                                    var resultIdx = int.Parse(resultEntries[answer].Item1);
+                                    var resultIdx = int.Parse(resultEntries[answer].ChoiceName);
                                     currentSelection = resultIdx - 1;
                                 }
                                 else

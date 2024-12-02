@@ -396,8 +396,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void ShowItemInfo(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
-            string choiceName = highlightedAnswerChoiceInfo.ChoiceName;
-            string choiceTitle = highlightedAnswerChoiceInfo.ChoiceTitle;
             string choiceDesc = highlightedAnswerChoiceInfo.ChoiceDescription;
             if (!string.IsNullOrWhiteSpace(choiceDesc))
             {

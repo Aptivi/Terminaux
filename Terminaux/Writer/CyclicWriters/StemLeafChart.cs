@@ -23,7 +23,6 @@ using System.Linq;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters
 {

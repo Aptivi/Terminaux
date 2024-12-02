@@ -32,7 +32,6 @@ using Terminaux.Colors.Transformation.Formulas;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
