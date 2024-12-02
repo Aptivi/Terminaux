@@ -84,9 +84,17 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     InteriorWidth = boxWidth,
                     InteriorHeight = boxHeight,
                 };
+                var selections = new Selection(finalSelections)
+                {
+                    Left = generalX + 1,
+                    Top = 2,
+                    CurrentSelection = type == ColorType.FourBitColor ? (int)colorValue16 : (int)colorValue255,
+                    Height = boxHeight,
+                    Width = boxWidth,
+                };
                 selector.Append(
                     selectionBorder.Render() +
-                    SelectionInputTools.RenderSelections(finalSelections, generalX + 1, 2, type == ColorType.FourBitColor ? (int)colorValue16 : (int)colorValue255, boxHeight, boxWidth)
+                    selections.Render()
                 );
             }
             else
@@ -349,8 +357,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     var selectionNames = Enum.GetNames(typeof(TransformationFormula)).ToList();
                     selectionNames.Insert(0, "None");
                     var finalSelections = selectionNames.Select((type, idx) => new InputChoiceInfo($"{idx + 1}", type)).ToArray();
+                    var selections = new Selection(finalSelections)
+                    {
+                        Left = otherHalfLeft + 1,
+                        Top = infoRampBarY + 1,
+                        CurrentSelection = colorBlindnessSimulationIdx,
+                        Height = boxHeight + 2,
+                        Width = halfBoxWidth,
+                    };
                     selector.Append(
-                        SelectionInputTools.RenderSelections(finalSelections, otherHalfLeft + 1, infoRampBarY + 1, colorBlindnessSimulationIdx, boxHeight + 2, halfBoxWidth)
+                        selections.Render()
                     );
                 }
             }

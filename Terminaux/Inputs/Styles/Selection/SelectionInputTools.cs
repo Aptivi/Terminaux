@@ -31,6 +31,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Selections = Terminaux.Writer.CyclicWriters.Selection;
 using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Selection
@@ -64,6 +65,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="disabledBackgroundColor">Background color of the disabled item</param>
         /// <returns>A string that you can use with the raw console writer or with the screen part renderer</returns>
         /// <exception cref="TerminauxException"></exception>
+        [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
         public static string RenderSelections(InputChoiceInfo[] selections, int left, int top, int currentSelection, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
             // Check for values
@@ -111,6 +113,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="disabledBackgroundColor">Background color of the disabled item</param>
         /// <returns>A string that you can use with the raw console writer or with the screen part renderer</returns>
         /// <exception cref="TerminauxException"></exception>
+        [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
         public static string RenderSelections(InputChoiceInfo[] selections, int left, int top, int currentSelection, int[]? currentSelections, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
             // Check for values
@@ -133,6 +136,7 @@ namespace Terminaux.Inputs.Styles.Selection
             return RenderSelectionsInternal(selections, left, top, currentSelection, currentSelections, selectionChoices, width, sliderInside, altChoicePos, swapSelectedColors, foregroundColor, backgroundColor, selectedForegroundColor, selectedBackgroundColor, altForegroundColor, altBackgroundColor, altSelectedForegroundColor, altSelectedBackgroundColor, disabledForegroundColor, disabledBackgroundColor);
         }
 
+        [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
         internal static string RenderSelectionsInternal(InputChoiceInfo[] selections, int left, int top, int currentSelection, int[]? currentSelections, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
             InputChoiceCategoryInfo[] selectionsCategory =
@@ -169,6 +173,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="disabledBackgroundColor">Background color of the disabled item</param>
         /// <returns>A string that you can use with the raw console writer or with the screen part renderer</returns>
         /// <exception cref="TerminauxException"></exception>
+        [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
         public static string RenderSelections(InputChoiceCategoryInfo[] selections, int left, int top, int currentSelection, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
             // Check for values
@@ -219,6 +224,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="disabledBackgroundColor">Background color of the disabled item</param>
         /// <returns>A string that you can use with the raw console writer or with the screen part renderer</returns>
         /// <exception cref="TerminauxException"></exception>
+        [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
         public static string RenderSelections(InputChoiceCategoryInfo[] selections, int left, int top, int currentSelection, int[]? currentSelections, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
             // Check for values
@@ -244,213 +250,29 @@ namespace Terminaux.Inputs.Styles.Selection
             return RenderSelectionsInternal(selections, left, top, currentSelection, currentSelections, selectionChoices, width, sliderInside, altChoicePos, swapSelectedColors, foregroundColor, backgroundColor, selectedForegroundColor, selectedBackgroundColor, altForegroundColor, altBackgroundColor, altSelectedForegroundColor, altSelectedBackgroundColor, disabledForegroundColor, disabledBackgroundColor);
         }
 
+        [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
         internal static string RenderSelectionsInternal(InputChoiceCategoryInfo[] selections, int left, int top, int currentSelection, int[]? currentSelections, int height, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
-            // Determine if multiple or single
-            List<InputChoiceInfo> choices = GetChoicesFromCategories(selections);
-            bool isMultiple = currentSelections is not null;
-            if ((currentSelection < 0 || currentSelection >= choices.Count) && !isMultiple)
-                throw new TerminauxInternalException("Can't determine if the selection input is single or multiple");
-            if (altChoicePos < 0 || altChoicePos > choices.Count)
-                altChoicePos = choices.Count;
-
-            // Check for colors
-            bool useColor =
-                foregroundColor is not null || backgroundColor is not null ||
-                selectedForegroundColor is not null || selectedBackgroundColor is not null ||
-                altForegroundColor is not null || altBackgroundColor is not null ||
-                altSelectedForegroundColor is not null || altSelectedBackgroundColor is not null ||
-                disabledForegroundColor is not null || disabledBackgroundColor is not null;
-            foregroundColor ??= ColorTools.CurrentForegroundColor;
-            backgroundColor ??= ColorTools.CurrentBackgroundColor;
-            selectedForegroundColor ??= ColorTools.CurrentForegroundColor;
-            selectedBackgroundColor ??= ColorTools.CurrentBackgroundColor;
-            altForegroundColor ??= ColorTools.CurrentForegroundColor;
-            altBackgroundColor ??= ColorTools.CurrentBackgroundColor;
-            altSelectedForegroundColor ??= ColorTools.CurrentForegroundColor;
-            altSelectedBackgroundColor ??= ColorTools.CurrentBackgroundColor;
-            disabledForegroundColor ??= ColorTools.CurrentForegroundColor;
-            disabledBackgroundColor ??= ColorTools.CurrentBackgroundColor;
-
-            // Now, render the choices
-            StringBuilder buffer = new();
-            StringBuilder choiceText = new();
-            string prefix = isMultiple ? "  [ ] " : "  ";
-            int AnswerTitleLeft = choices.Max(x => (selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) ").Length);
-            int leftPos = left + (sliderInside ? 1 : 0);
-            List<int> selectionHeights = [];
-            int processedHeight = 0;
-            int processedChoices = 0;
-            var tristates = GetCategoryTristates(selections, choices, currentSelections);
-            int relatedIdx = -1;
-            for (int categoryIdx = 0; categoryIdx < selections.Length; categoryIdx++)
+            return new Selections(selections)
             {
-                InputChoiceCategoryInfo? category = selections[categoryIdx];
-                var tristate = tristates[categoryIdx];
-                if (selections.Length > 1)
+                Left = left,
+                Top = top,
+                CurrentSelection = currentSelection,
+                CurrentSelections = currentSelections,
+                Height = height,
+                Width = width,
+                SliderInside = sliderInside,
+                AltChoicePos = altChoicePos,
+                SwapSelectedColors = swapSelectedColors,
+                Settings = new()
                 {
-                    string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
-                    string finalRendered = $"{modifiers}{category.Name}".Truncate(width);
-                    choiceText.AppendLine(
-                        ColorTools.RenderSetConsoleColor(ConsoleColorData.Silver.Color) +
-                        ColorTools.RenderSetConsoleColor(backgroundColor, true) +
-                        finalRendered + new string(' ', width - ConsoleChar.EstimateCellWidth(finalRendered))
-                    );
-                    processedHeight++;
+                    BackgroundColor = backgroundColor ?? ColorTools.CurrentBackgroundColor,
+                    OptionColor = foregroundColor ?? ColorTools.CurrentForegroundColor,
+                    AltOptionColor = altForegroundColor ?? ColorTools.CurrentBackgroundColor,
+                    SelectedOptionColor = selectedForegroundColor ?? ColorTools.CurrentBackgroundColor,
+                    DisabledOptionColor = disabledForegroundColor ?? ColorTools.CurrentBackgroundColor,
                 }
-
-                var groupTristates = GetGroupTristates(category.Groups, choices, currentSelections);
-                for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
-                {
-                    InputChoiceGroupInfo? group = category.Groups[groupIdx];
-                    var groupTristate = groupTristates[groupIdx];
-                    if (category.Groups.Length > 1)
-                    {
-                        string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
-                        string finalRendered = $"  {modifiers}{group.Name}".Truncate(width);
-                        choiceText.AppendLine(
-                            ColorTools.RenderSetConsoleColor(ConsoleColorData.Grey.Color) +
-                            ColorTools.RenderSetConsoleColor(backgroundColor, true) +
-                            finalRendered + new string(' ', width - ConsoleChar.EstimateCellWidth(finalRendered))
-                        );
-                        processedHeight++;
-                    }
-                    for (int i = 0; i < group.Choices.Length; i++)
-                    {
-                        relatedIdx++;
-                        bool selected = processedChoices == currentSelection;
-                        var choice = group.Choices[i];
-                        string AnswerTitle = choice.ChoiceTitle ?? "";
-                        bool disabled = choice.ChoiceDisabled;
-
-                        // Get the option
-                        string modifiers = $"{(selected ? ">" : disabled ? "X" : " ")}{(isMultiple ? $" [{(currentSelections.Contains(relatedIdx) ? "*" : " ")}]" : "")}";
-                        string AnswerOption = selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
-                        if (AnswerTitleLeft < width)
-                        {
-                            string renderedChoice = selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
-                            int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
-                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
-                        }
-                        AnswerOption = AnswerOption.Truncate(width - 4);
-
-                        // Render an entry
-                        bool isAlt = i > altChoicePos;
-                        var finalForeColor =
-                            choice.ChoiceDisabled ? disabledForegroundColor :
-                            selected ?
-                                (isAlt ?
-                                    (swapSelectedColors ? altSelectedBackgroundColor : altSelectedForegroundColor) :
-                                    (swapSelectedColors ? selectedBackgroundColor : selectedForegroundColor)
-                                ) :
-                                (isAlt ? altForegroundColor : foregroundColor);
-                        var finalBackColor =
-                            choice.ChoiceDisabled ? disabledBackgroundColor :
-                            selected ?
-                                (isAlt ?
-                                    (swapSelectedColors ? altSelectedForegroundColor : altSelectedBackgroundColor) :
-                                    (swapSelectedColors ? selectedForegroundColor : selectedBackgroundColor)
-                                ) :
-                                (isAlt ? altBackgroundColor : backgroundColor);
-                        if (useColor)
-                        {
-                            choiceText.AppendLine(
-                                ColorTools.RenderSetConsoleColor(finalForeColor) +
-                                ColorTools.RenderSetConsoleColor(finalBackColor, true) +
-                                AnswerOption + new string(' ', width - AnswerOption.Length)
-                            );
-                        }
-                        else
-                        {
-                            choiceText.AppendLine(
-                                AnswerOption + new string(' ', width - AnswerOption.Length)
-                            );
-                        }
-                        processedHeight++;
-                        processedChoices++;
-                        selectionHeights.Add(processedHeight);
-                    }
-                }
-            }
-
-            // Render the choices
-            int selectionHeight = selectionHeights[currentSelection];
-            int currentPage = (selectionHeight - 1) / height;
-            int startIndex = height * currentPage;
-            var choiceTextLines = choiceText.ToString().SplitNewLines();
-            bool wiped = false;
-            for (int i = 0; i <= height - 1; i++)
-            {
-                // Populate the selection box
-                int finalIndex = i + startIndex;
-                int optionTop = top + finalIndex - startIndex;
-                if (finalIndex >= selectionHeights[selectionHeights.Count - 1])
-                {
-                    if (useColor && !wiped)
-                    {
-                        wiped = true;
-                        buffer.Append(
-                            ColorTools.RenderRevertForeground() +
-                            ColorTools.RenderRevertBackground()
-                        );
-                    }
-                    buffer.Append(
-                        CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
-                        new string(' ', width)
-                    );
-                }
-                else
-                {
-                    string line = choiceTextLines[finalIndex];
-                    buffer.Append(
-                        CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
-                        line
-                    );
-                }
-            }
-
-            // Render the vertical bar
-            if (choices.Count > height && height >= 4)
-            {
-                int finalWidth = sliderInside ? left + width + 1 : left + width;
-                var slider = new Slider(currentSelection + 1, 0, choices.Count)
-                {
-                    Vertical = true,
-                    Height = height - 2,
-                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
-                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
-                };
-                if (useColor)
-                {
-                    slider.SliderActiveForegroundColor = foregroundColor;
-                    slider.SliderForegroundColor = TransformationTools.GetDarkBackground(foregroundColor);
-                    slider.SliderBackgroundColor = backgroundColor;
-                    buffer.Append(
-                        TextWriterWhereColor.RenderWhereColorBack("▲", finalWidth, top, foregroundColor, backgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("▼", finalWidth, top + height - 1, foregroundColor, backgroundColor)
-                    );
-                }
-                else
-                {
-                    buffer.Append(
-                        TextWriterWhereColor.RenderWhere("▲", finalWidth, top) +
-                        TextWriterWhereColor.RenderWhere("▼", finalWidth, top + height - 1)
-                    );
-                }
-                buffer.Append(
-                    ContainerTools.RenderRenderable(slider, new(finalWidth, top + 1))
-                );
-            }
-
-            // Render the final result
-            if (useColor)
-            {
-                buffer.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
-                );
-            }
-            return buffer.ToString();
+            }.Render();
         }
 
         internal static List<InputChoiceInfo> GetChoicesFromCategories(InputChoiceCategoryInfo[] categories)

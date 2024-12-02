@@ -36,6 +36,7 @@ using System.Text.RegularExpressions;
 using Textify.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
+using Selections = Terminaux.Writer.CyclicWriters.Selection;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -302,8 +303,25 @@ namespace Terminaux.Inputs.Styles.Infobox
                     boxBuffer.Append(border.Render());
 
                     // Now, render the selections
+                    var selectionsRendered = new Selections(selections)
+                    {
+                        Left = selectionBoxPosX,
+                        Top = selectionBoxPosY,
+                        CurrentSelection = currentSelection,
+                        Height = selectionChoices,
+                        Width = maxSelectionWidth,
+                        SliderInside = true,
+                        AltChoicePos = selections.Length,
+                        SwapSelectedColors = true,
+                        Settings = new()
+                        {
+                            OptionColor = InfoBoxTitledSelectionColor,
+                            SelectedOptionColor = InfoBoxTitledSelectionColor,
+                            BackgroundColor = BackgroundColor,
+                        }
+                    };
                     boxBuffer.Append(
-                        SelectionInputTools.RenderSelections(selections, selectionBoxPosX, selectionBoxPosY, currentSelection, selectionChoices, maxSelectionWidth, true, selections.Length, true, InfoBoxTitledSelectionColor, BackgroundColor, InfoBoxTitledSelectionColor, BackgroundColor)
+                        selectionsRendered.Render()
                     );
 
                     // Return the buffer

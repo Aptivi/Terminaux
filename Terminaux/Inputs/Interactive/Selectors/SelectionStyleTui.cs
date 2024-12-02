@@ -109,17 +109,20 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     BorderRightFrameEnabled = choices.Count <= answersPerPage,
                 }
             };
+            var selections = new Selection(categories)
+            {
+                Left = 3,
+                Top = listStartPosition + 2,
+                CurrentSelection = highlightedAnswer - 1,
+                CurrentSelections = multiple ? [.. selectedAnswers] : null,
+                Height = answersPerPage,
+                Width = interiorWidth,
+                AltChoicePos = SelectionInputTools.GetChoicesFromCategories(answers).Count,
+                Settings = settings,
+            };
             selectionBuilder.Append(
                 border.Render() +
-                SelectionInputTools.RenderSelections(categories,
-                    3, listStartPosition + 2,
-                    highlightedAnswer - 1, multiple ? [.. selectedAnswers] : null, answersPerPage, interiorWidth,
-                    false, SelectionInputTools.GetChoicesFromCategories(answers).Count, false,
-                    settings.OptionColor, settings.BackgroundColor,
-                    selectedForegroundColor: settings.SelectedOptionColor,
-                    altForegroundColor: settings.AltOptionColor,
-                    altSelectedForegroundColor: settings.SelectedOptionColor,
-                    disabledForegroundColor: settings.DisabledOptionColor)
+                selections.Render()
             );
 
             // Write description hint
