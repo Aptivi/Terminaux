@@ -18,8 +18,10 @@
 //
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Text;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Terminaux.SequenceTypesGen.Decoy;
@@ -27,9 +29,9 @@ using Terminaux.SequenceTypesGen.Decoy;
 namespace Terminaux.SequenceTypesGen
 {
     [Generator]
-    public class SequenceTypeGen : ISourceGenerator
+    public class SequenceTypeGen : IIncrementalGenerator
     {
-        public void Execute(GeneratorExecutionContext context)
+        public void Initialize(IncrementalGeneratorInitializationContext context)
         {
             // Get the color data content
             var asm = typeof(SequenceTypeGen).Assembly;
@@ -38,8 +40,9 @@ namespace Terminaux.SequenceTypesGen
             string content = reader.ReadToEnd();
 
             // Read all the console sequences data
-            var list = JsonConvert.DeserializeObject<SequenceTypeInfo[]>(content) ??
-                throw new Exception("No sequences");
+            var list = JsonConvert.DeserializeObject<SequenceTypeInfo[]>(content);
+            if (list is null)
+                return;
             SequencesGeneralEnumGenerator(list, context);
             SequencesGeneralClassGenerator(list, context);
             SequencesEnumGenerator(list, context);
@@ -48,10 +51,7 @@ namespace Terminaux.SequenceTypesGen
             SequencesToolsGenerator(list, context);
         }
 
-        public void Initialize(GeneratorInitializationContext context)
-        { }
-
-        private void SequencesGeneralEnumGenerator(SequenceTypeInfo[] list, GeneratorExecutionContext context)
+        private void SequencesGeneralEnumGenerator(SequenceTypeInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -124,10 +124,13 @@ namespace Terminaux.SequenceTypesGen
                 }
                 """;
             builder.AppendLine(footer);
-            context.AddSource($"VtSequenceType.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("VtSequenceType.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void SequencesGeneralClassGenerator(SequenceTypeInfo[] list, GeneratorExecutionContext context)
+        private void SequencesGeneralClassGenerator(SequenceTypeInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -242,10 +245,13 @@ namespace Terminaux.SequenceTypesGen
 
             // Add the footer
             builder.AppendLine(footer);
-            context.AddSource($"VtSequenceRegexes.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("VtSequenceRegexes.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void SequencesEnumGenerator(SequenceTypeInfo[] list, GeneratorExecutionContext context)
+        private void SequencesEnumGenerator(SequenceTypeInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -315,10 +321,13 @@ namespace Terminaux.SequenceTypesGen
 
             // Add the footer
             builder.AppendLine(footer);
-            context.AddSource($"VtSequenceSpecificTypes.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("VtSequenceSpecificTypes.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void SequencesClassGenerator(SequenceTypeInfo[] list, GeneratorExecutionContext context)
+        private void SequencesClassGenerator(SequenceTypeInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -459,11 +468,14 @@ namespace Terminaux.SequenceTypesGen
 
                 // Add the footer
                 builder.AppendLine(footer);
-                context.AddSource($"{typeName}Sequences.cs", builder.ToString());
+                context.RegisterPostInitializationOutput(ctx =>
+                {
+                    ctx.AddSource($"{typeName}Sequences.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+                });
             }
         }
 
-        private void SequencesDictionaryGenerator(SequenceTypeInfo[] list, GeneratorExecutionContext context)
+        private void SequencesDictionaryGenerator(SequenceTypeInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -506,11 +518,13 @@ namespace Terminaux.SequenceTypesGen
                 """;
             string footer =
                 $$"""
-                        };
+                            return generator.DynamicInvoke(arguments).ToString();
+                        }
                     }
                 }
                 """;
             var builder = new StringBuilder(header);
+            List<string> processedDelegates = [];
 
             // Populate the sequence class for every type
             for (int typeIdx = 0; typeIdx < list.Length; typeIdx++)
@@ -550,6 +564,9 @@ namespace Terminaux.SequenceTypesGen
                     }
 
                     // Build the dictionary entry
+                    string processedDelegate = $"Func<{seqParamsBuilder}string>";
+                    if (!processedDelegates.Contains(processedDelegate))
+                        processedDelegates.Add(processedDelegate);
                     builder.AppendLine(
                         $$"""
                                     { VtSequenceSpecificTypes.{{seqName}},
@@ -561,12 +578,52 @@ namespace Terminaux.SequenceTypesGen
                 }
             }
 
+            // Now, build the DeterministicExecution() function
+            builder.AppendLine(
+                """
+                        };
+
+                        private static string DeterministicExecution(Delegate generator, params object[] arguments)
+                        {
+                """
+            );
+            for (int i = 0; i < processedDelegates.Count; i++)
+            {
+                // Build the clause and get the type
+                StringBuilder argsBuilder = new();
+                string clause = i == 0 ? "if" : "else if";
+                string type = processedDelegates[i];
+
+                // Build the parameter list
+                string[] parameters = type.Substring(5, type.Length - 6).Split([", "], StringSplitOptions.None);
+                for (int j = 0; j < parameters.Length - 1; j++)
+                {
+                    string param = parameters[j];
+                    string paramClause =
+                        param == "string" ? $"arguments[{j}].ToString()" : $"({param})arguments[{j}]";
+                    argsBuilder.Append(paramClause);
+                    if (j < parameters.Length - 2)
+                        argsBuilder.Append(", ");
+                }
+
+                // Add the conditional statement to invoke the generator
+                builder.AppendLine(
+                    $$"""
+                                {{clause}} (generator is {{type}} gen{{i}})
+                                    return gen{{i}}.Invoke({{argsBuilder}});
+                    """
+                );
+            }
+
             // Add the footer
             builder.AppendLine(footer);
-            context.AddSource($"VtSequenceBuilderTools.g.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("VtSequenceBuilderTools.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void SequencesToolsGenerator(SequenceTypeInfo[] list, GeneratorExecutionContext context)
+        private void SequencesToolsGenerator(SequenceTypeInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -641,7 +698,10 @@ namespace Terminaux.SequenceTypesGen
 
             // Add the footer
             builder.AppendLine(footer);
-            context.AddSource($"VtSequenceTools.g.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("VtSequenceTools.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
     }
 }
