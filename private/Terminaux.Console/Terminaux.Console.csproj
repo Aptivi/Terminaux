@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Terminaux.Images\Terminaux.Images.csproj" />
-    <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
+    <ProjectReference Include="..\..\public\Terminaux.Images\Terminaux.Images.csproj" />
+    <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
 
     <PackageReference Remove="Microsoft.SourceLink.GitHub" />
   </ItemGroup>
