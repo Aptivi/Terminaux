@@ -1,4 +1,7 @@
-OUTPUTS = Terminaux.*/bin Terminaux.*/obj Terminaux/bin Terminaux/obj
+ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+OUTPUTS  := \
+	-name "bin" -or \
+	-name "obj"
 
 .PHONY: all
 
@@ -16,6 +19,6 @@ doc:
 	$(MAKE) -C tools invoke-doc-build
 
 clean:
-	rm -rf $(OUTPUTS)
+	find $(ROOT_DIR) -type d \( $(OUTPUTS) \) -print -exec rm -rf {} +
 
 # This makefile is just a wrapper for tools scripts.
