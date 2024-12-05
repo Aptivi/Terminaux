@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Color | Terminaux API - Aptivi </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Color | Terminaux API - Aptivi ">
+    
+    <meta name="description" content="Color information class">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terminaux.Colors.Color">
+
+
+
+  <h1 id="Terminaux_Colors_Color" data-uid="Terminaux.Colors.Color" class="text-break">Class Color</h1>
+  <div class="markdown level0 summary"><p>Color information class</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">object</span></div>
+    <div class="level1"><span class="xref">Color</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terminaux.html">Terminaux</a>.<a class="xref" href="Terminaux.Colors.html">Colors</a></h6>
+  <h6><strong>Assembly</strong>: Terminaux.dll</h6>
+  <h5 id="Terminaux_Colors_Color_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(ColorSerializer))]
+public class Color</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_ConsoleColor_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.ConsoleColor)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L222">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_ConsoleColor_" data-uid="Terminaux.Colors.Color.#ctor(System.ConsoleColor)">Color(ConsoleColor)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(ConsoleColor ColorDef)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="parametername">ColorDef</span></td>
+        <td><p>The color taken from <span class="xref">System.ConsoleColor</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_ConsoleColor_Terminaux_Colors_ColorSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.ConsoleColor%2CTerminaux.Colors.ColorSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L232">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_ConsoleColor_Terminaux_Colors_ColorSettings_" data-uid="Terminaux.Colors.Color.#ctor(System.ConsoleColor,Terminaux.Colors.ColorSettings)">Color(ConsoleColor, ColorSettings)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(ConsoleColor ColorDef, ColorSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="parametername">ColorDef</span></td>
+        <td><p>The color taken from <span class="xref">System.ConsoleColor</span></p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.ColorSettings.html">ColorSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Color settings to use while building the color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_Drawing_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.Drawing.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L285">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_Drawing_Color_" data-uid="Terminaux.Colors.Color.#ctor(System.Drawing.Color)">Color(Color)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color from Drawing</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L241">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_Int32_" data-uid="Terminaux.Colors.Color.#ctor(System.Int32)">Color(int)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(int ColorNum)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">ColorNum</span></td>
+        <td><p>The color number or a decimal number that specifies the RGB values up to 16777215</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L182">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Colors.Color.#ctor(System.Int32,System.Int32,System.Int32)">Color(int, int, int)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(int R, int G, int B)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">R</span></td>
+        <td><p>The red level</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">G</span></td>
+        <td><p>The green level</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">B</span></td>
+        <td><p>The blue level</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ColorSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.ColorSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L194">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ColorSettings_" data-uid="Terminaux.Colors.Color.#ctor(System.Int32,System.Int32,System.Int32,Terminaux.Colors.ColorSettings)">Color(int, int, int, ColorSettings)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(int R, int G, int B, ColorSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">R</span></td>
+        <td><p>The red level</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">G</span></td>
+        <td><p>The green level</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">B</span></td>
+        <td><p>The blue level</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.ColorSettings.html">ColorSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Color settings to use while building the color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_Int32_Terminaux_Colors_ColorSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.Int32%2CTerminaux.Colors.ColorSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L251">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_Int32_Terminaux_Colors_ColorSettings_" data-uid="Terminaux.Colors.Color.#ctor(System.Int32,Terminaux.Colors.ColorSettings)">Color(int, ColorSettings)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(int ColorNum, ColorSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">ColorNum</span></td>
+        <td><p>The color number or a decimal number that specifies the RGB values up to 16777215</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.ColorSettings.html">ColorSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Color settings to use while building the color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L260">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_String_" data-uid="Terminaux.Colors.Color.#ctor(System.String)">Color(string)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(string ColorSpecifier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">ColorSpecifier</span></td>
+        <td><p>A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_System_String_Terminaux_Colors_ColorSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(System.String%2CTerminaux.Colors.ColorSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L270">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_System_String_Terminaux_Colors_ColorSettings_" data-uid="Terminaux.Colors.Color.#ctor(System.String,Terminaux.Colors.ColorSettings)">Color(string, ColorSettings)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(string ColorSpecifier, ColorSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">ColorSpecifier</span></td>
+        <td><p>A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.ColorSettings.html">ColorSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Color settings to use while building the color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_Terminaux_Colors_Data_ConsoleColors_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(Terminaux.Colors.Data.ConsoleColors)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L203">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_Terminaux_Colors_Data_ConsoleColors_" data-uid="Terminaux.Colors.Color.#ctor(Terminaux.Colors.Data.ConsoleColors)">Color(ConsoleColors)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(ConsoleColors ColorDef)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a></td>
+        <td><span class="parametername">ColorDef</span></td>
+        <td><p>The color taken from <a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color__ctor_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_ColorSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.%23ctor(Terminaux.Colors.Data.ConsoleColors%2CTerminaux.Colors.ColorSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L213">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color__ctor_" data-uid="Terminaux.Colors.Color.#ctor*"></a>
+  <h4 id="Terminaux_Colors_Color__ctor_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_ColorSettings_" data-uid="Terminaux.Colors.Color.#ctor(Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.ColorSettings)">Color(ConsoleColors, ColorSettings)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(ConsoleColors ColorDef, ColorSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a></td>
+        <td><span class="parametername">ColorDef</span></td>
+        <td><p>The color taken from <a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.ColorSettings.html">ColorSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Color settings to use while building the color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Brightness.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Brightness%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L145">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Brightness_" data-uid="Terminaux.Colors.Color.Brightness*"></a>
+  <h4 id="Terminaux_Colors_Color_Brightness" data-uid="Terminaux.Colors.Color.Brightness">Brightness</h4>
+  <div class="markdown level1 summary"><p>Determines the color brightness whether it indicates dark or light mode</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ColorBrightness Brightness { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Transformation.Contrast.ColorBrightness.html">ColorBrightness</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_ColorEnum16.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.ColorEnum16%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L163">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_ColorEnum16_" data-uid="Terminaux.Colors.Color.ColorEnum16*"></a>
+  <h4 id="Terminaux_Colors_Color_ColorEnum16" data-uid="Terminaux.Colors.Color.ColorEnum16">ColorEnum16</h4>
+  <div class="markdown level1 summary"><p>The color value converted to <span class="xref">System.ConsoleColor</span>. Not applicable [-1] to non-4-bit colors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConsoleColor ColorEnum16 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ConsoleColor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_ColorEnum255.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.ColorEnum255%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L157">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_ColorEnum255_" data-uid="Terminaux.Colors.Color.ColorEnum255*"></a>
+  <h4 id="Terminaux_Colors_Color_ColorEnum255" data-uid="Terminaux.Colors.Color.ColorEnum255">ColorEnum255</h4>
+  <div class="markdown level1 summary"><p>The color value converted to <a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConsoleColors ColorEnum255 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_ColorId.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.ColorId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L55">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_ColorId_" data-uid="Terminaux.Colors.Color.ColorId*"></a>
+  <h4 id="Terminaux_Colors_Color_ColorId" data-uid="Terminaux.Colors.Color.ColorId">ColorId</h4>
+  <div class="markdown level1 summary"><p>The color ID for 256- and 16-color modes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConsoleColorData ColorId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Data.ConsoleColorData.html">ConsoleColorData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Empty.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Empty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L60">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Empty_" data-uid="Terminaux.Colors.Color.Empty*"></a>
+  <h4 id="Terminaux_Colors_Color_Empty" data-uid="Terminaux.Colors.Color.Empty">Empty</h4>
+  <div class="markdown level1 summary"><p>Empty color singleton</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color Empty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Hex.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Hex%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L126">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Hex_" data-uid="Terminaux.Colors.Color.Hex*"></a>
+  <h4 id="Terminaux_Colors_Color_Hex" data-uid="Terminaux.Colors.Color.Hex">Hex</h4>
+  <div class="markdown level1 summary"><p>Hexadecimal representation of the color</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Hex { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Name.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L132">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Name_" data-uid="Terminaux.Colors.Color.Name*"></a>
+  <h4 id="Terminaux_Colors_Color_Name" data-uid="Terminaux.Colors.Color.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Color name representation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Opacity.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Opacity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L169">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Opacity_" data-uid="Terminaux.Colors.Color.Opacity*"></a>
+  <h4 id="Terminaux_Colors_Color_Opacity" data-uid="Terminaux.Colors.Color.Opacity">Opacity</h4>
+  <div class="markdown level1 summary"><p>Color opacity from 0 (transparent) to 255 (opaque)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Opacity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_PlainSequence.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.PlainSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L66">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_PlainSequence_" data-uid="Terminaux.Colors.Color.PlainSequence*"></a>
+  <h4 id="Terminaux_Colors_Color_PlainSequence" data-uid="Terminaux.Colors.Color.PlainSequence">PlainSequence</h4>
+  <div class="markdown level1 summary"><p>Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PlainSequence { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_PlainSequenceOriginal.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.PlainSequenceOriginal%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L72">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_PlainSequenceOriginal_" data-uid="Terminaux.Colors.Color.PlainSequenceOriginal*"></a>
+  <h4 id="Terminaux_Colors_Color_PlainSequenceOriginal" data-uid="Terminaux.Colors.Color.PlainSequenceOriginal">PlainSequenceOriginal</h4>
+  <div class="markdown level1 summary"><p>Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PlainSequenceOriginal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_PlainSequenceTrueColor.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.PlainSequenceTrueColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L108">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_PlainSequenceTrueColor_" data-uid="Terminaux.Colors.Color.PlainSequenceTrueColor*"></a>
+  <h4 id="Terminaux_Colors_Color_PlainSequenceTrueColor" data-uid="Terminaux.Colors.Color.PlainSequenceTrueColor">PlainSequenceTrueColor</h4>
+  <div class="markdown level1 summary"><p>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PlainSequenceTrueColor { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_RGB.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.RGB%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L50">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_RGB_" data-uid="Terminaux.Colors.Color.RGB*"></a>
+  <h4 id="Terminaux_Colors_Color_RGB" data-uid="Terminaux.Colors.Color.RGB">RGB</h4>
+  <div class="markdown level1 summary"><p>An instance of RGB</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RedGreenBlue RGB { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Models.RedGreenBlue.html">RedGreenBlue</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Type.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Type%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L138">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Type_" data-uid="Terminaux.Colors.Color.Type*"></a>
+  <h4 id="Terminaux_Colors_Color_Type" data-uid="Terminaux.Colors.Color.Type">Type</h4>
+  <div class="markdown level1 summary"><p>Color type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ColorType Type { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.ColorType.html">ColorType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_VTSequenceBackground.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.VTSequenceBackground%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L93">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_VTSequenceBackground_" data-uid="Terminaux.Colors.Color.VTSequenceBackground*"></a>
+  <h4 id="Terminaux_Colors_Color_VTSequenceBackground" data-uid="Terminaux.Colors.Color.VTSequenceBackground">VTSequenceBackground</h4>
+  <div class="markdown level1 summary"><p>Parsable VT sequence (Background)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string VTSequenceBackground { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_VTSequenceBackgroundOriginal.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.VTSequenceBackgroundOriginal%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L99">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_VTSequenceBackgroundOriginal_" data-uid="Terminaux.Colors.Color.VTSequenceBackgroundOriginal*"></a>
+  <h4 id="Terminaux_Colors_Color_VTSequenceBackgroundOriginal" data-uid="Terminaux.Colors.Color.VTSequenceBackgroundOriginal">VTSequenceBackgroundOriginal</h4>
+  <div class="markdown level1 summary"><p>Parsable VT sequence (Background, original)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string VTSequenceBackgroundOriginal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_VTSequenceBackgroundTrueColor.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.VTSequenceBackgroundTrueColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L120">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_VTSequenceBackgroundTrueColor_" data-uid="Terminaux.Colors.Color.VTSequenceBackgroundTrueColor*"></a>
+  <h4 id="Terminaux_Colors_Color_VTSequenceBackgroundTrueColor" data-uid="Terminaux.Colors.Color.VTSequenceBackgroundTrueColor">VTSequenceBackgroundTrueColor</h4>
+  <div class="markdown level1 summary"><p>Parsable VT sequence (Background, true color)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string VTSequenceBackgroundTrueColor { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_VTSequenceForeground.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.VTSequenceForeground%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L78">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_VTSequenceForeground_" data-uid="Terminaux.Colors.Color.VTSequenceForeground*"></a>
+  <h4 id="Terminaux_Colors_Color_VTSequenceForeground" data-uid="Terminaux.Colors.Color.VTSequenceForeground">VTSequenceForeground</h4>
+  <div class="markdown level1 summary"><p>Parsable VT sequence (Foreground)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string VTSequenceForeground { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_VTSequenceForegroundOriginal.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.VTSequenceForegroundOriginal%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L84">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_VTSequenceForegroundOriginal_" data-uid="Terminaux.Colors.Color.VTSequenceForegroundOriginal*"></a>
+  <h4 id="Terminaux_Colors_Color_VTSequenceForegroundOriginal" data-uid="Terminaux.Colors.Color.VTSequenceForegroundOriginal">VTSequenceForegroundOriginal</h4>
+  <div class="markdown level1 summary"><p>Parsable VT sequence (Foreground, original)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string VTSequenceForegroundOriginal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_VTSequenceForegroundTrueColor.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.VTSequenceForegroundTrueColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L114">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_VTSequenceForegroundTrueColor_" data-uid="Terminaux.Colors.Color.VTSequenceForegroundTrueColor*"></a>
+  <h4 id="Terminaux_Colors_Color_VTSequenceForegroundTrueColor" data-uid="Terminaux.Colors.Color.VTSequenceForegroundTrueColor">VTSequenceForegroundTrueColor</h4>
+  <div class="markdown level1 summary"><p>Parsable VT sequence (Foreground, true color)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string VTSequenceForegroundTrueColor { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L340">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Equals_" data-uid="Terminaux.Colors.Color.Equals*"></a>
+  <h4 id="Terminaux_Colors_Color_Equals_System_Object_" data-uid="Terminaux.Colors.Color.Equals(System.Object)">Equals(object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">object.Equals(object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Equals_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Equals(Terminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L352">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Equals_" data-uid="Terminaux.Colors.Color.Equals*"></a>
+  <h4 id="Terminaux_Colors_Color_Equals_Terminaux_Colors_Color_" data-uid="Terminaux.Colors.Color.Equals(Terminaux.Colors.Color)">Equals(Color)</h4>
+  <div class="markdown level1 summary"><p>Checks to see if this instance of the color is equal to another instance of the color</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Color other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Another instance of the color to compare with this color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><p>True if both the colors match; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_Equals_Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.Equals(Terminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L361">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_Equals_" data-uid="Terminaux.Colors.Color.Equals*"></a>
+  <h4 id="Terminaux_Colors_Color_Equals_Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Colors.Color.Equals(Terminaux.Colors.Color,Terminaux.Colors.Color)">Equals(Color, Color)</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the first instance of the color is equal to another instance of the color</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Color other, Color other2)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Another instance of the color to compare with another</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">other2</span></td>
+        <td><p>Another instance of the color to compare with another</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><p>True if both the colors match; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_GetHashCode.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L392">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_GetHashCode_" data-uid="Terminaux.Colors.Color.GetHashCode*"></a>
+  <h4 id="Terminaux_Colors_Color_GetHashCode" data-uid="Terminaux.Colors.Color.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">object.GetHashCode()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_ToString.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L336">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_ToString_" data-uid="Terminaux.Colors.Color.ToString*"></a>
+  <h4 id="Terminaux_Colors_Color_ToString" data-uid="Terminaux.Colors.Color.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the usage of the terminal palette.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">object.ToString()</span></div>
+  <h3 id="operators">Operators
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_op_Equality_Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.op_Equality(Terminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L384">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_op_Equality_" data-uid="Terminaux.Colors.Color.op_Equality*"></a>
+  <h4 id="Terminaux_Colors_Color_op_Equality_Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Colors.Color.op_Equality(Terminaux.Colors.Color,Terminaux.Colors.Color)">operator ==(Color, Color)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Color a, Color b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">a</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">b</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_op_Implicit_System_ConsoleColor__Terminaux_Colors_Color.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.op_Implicit(System.ConsoleColor)~Terminaux.Colors.Color%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L306">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_op_Implicit_" data-uid="Terminaux.Colors.Color.op_Implicit*"></a>
+  <h4 id="Terminaux_Colors_Color_op_Implicit_System_ConsoleColor__Terminaux_Colors_Color" data-uid="Terminaux.Colors.Color.op_Implicit(System.ConsoleColor)~Terminaux.Colors.Color">implicit operator Color(ConsoleColor)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Color(ConsoleColor ColorDef)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="parametername">ColorDef</span></td>
+        <td><p>The color taken from <span class="xref">System.ConsoleColor</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_op_Implicit_System_Drawing_Color__Terminaux_Colors_Color.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.op_Implicit(System.Drawing.Color)~Terminaux.Colors.Color%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L330">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_op_Implicit_" data-uid="Terminaux.Colors.Color.op_Implicit*"></a>
+  <h4 id="Terminaux_Colors_Color_op_Implicit_System_Drawing_Color__Terminaux_Colors_Color" data-uid="Terminaux.Colors.Color.op_Implicit(System.Drawing.Color)~Terminaux.Colors.Color">implicit operator Color(Color)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Color(Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color from Drawing</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_op_Implicit_System_Int32__Terminaux_Colors_Color.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.op_Implicit(System.Int32)~Terminaux.Colors.Color%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L314">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_op_Implicit_" data-uid="Terminaux.Colors.Color.op_Implicit*"></a>
+  <h4 id="Terminaux_Colors_Color_op_Implicit_System_Int32__Terminaux_Colors_Color" data-uid="Terminaux.Colors.Color.op_Implicit(System.Int32)~Terminaux.Colors.Color">implicit operator Color(int)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Color(int ColorNum)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">ColorNum</span></td>
+        <td><p>The color number</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_op_Implicit_System_String__Terminaux_Colors_Color.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.op_Implicit(System.String)~Terminaux.Colors.Color%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L322">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_op_Implicit_" data-uid="Terminaux.Colors.Color.op_Implicit*"></a>
+  <h4 id="Terminaux_Colors_Color_op_Implicit_System_String__Terminaux_Colors_Color" data-uid="Terminaux.Colors.Color.op_Implicit(System.String)~Terminaux.Colors.Color">implicit operator Color(string)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Color(string ColorSpecifier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">ColorSpecifier</span></td>
+        <td><p>A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_op_Implicit_Terminaux_Colors_Data_ConsoleColors__Terminaux_Colors_Color.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.op_Implicit(Terminaux.Colors.Data.ConsoleColors)~Terminaux.Colors.Color%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L298">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_op_Implicit_" data-uid="Terminaux.Colors.Color.op_Implicit*"></a>
+  <h4 id="Terminaux_Colors_Color_op_Implicit_Terminaux_Colors_Data_ConsoleColors__Terminaux_Colors_Color" data-uid="Terminaux.Colors.Color.op_Implicit(Terminaux.Colors.Data.ConsoleColors)~Terminaux.Colors.Color">implicit operator Color(ConsoleColors)</h4>
+  <div class="markdown level1 summary"><p>Makes a new instance of color class from specifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Color(ConsoleColors ColorDef)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a></td>
+        <td><span class="parametername">ColorDef</span></td>
+        <td><p>The color taken from <a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color_op_Inequality_Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color.op_Inequality(Terminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L388">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Color_op_Inequality_" data-uid="Terminaux.Colors.Color.op_Inequality*"></a>
+  <h4 id="Terminaux_Colors_Color_op_Inequality_Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Colors.Color.op_Inequality(Terminaux.Colors.Color,Terminaux.Colors.Color)">operator !=(Color, Color)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Color a, Color b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">a</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">b</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terminaux.Colors.Transformation.Contrast.ColorContrast.html#Terminaux_Colors_Transformation_Contrast_ColorContrast_GetContrastColorHalf_Terminaux_Colors_Color_">ColorContrast.GetContrastColorHalf(Color)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terminaux.Colors.Transformation.Contrast.ColorContrast.html#Terminaux_Colors_Transformation_Contrast_ColorContrast_GetContrastColorNtsc_Terminaux_Colors_Color_">ColorContrast.GetContrastColorNtsc(Color)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Color.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Color%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Colors/Color.cs/#L41" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
