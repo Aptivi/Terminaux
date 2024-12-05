@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyTitle>Terminaux.Images</AssemblyTitle>
-    <AssemblyDescription>Console Manipulation Library - Image Processing</AssemblyDescription>
+    <AssemblyTitle>Terminaux.ResizeListener</AssemblyTitle>
+    <AssemblyDescription>Console Manipulation Library - Resize Listener</AssemblyDescription>
     <Description>
       A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.
-
-      This provides developers the image processing component for both .NET Framework 4.8 and .NET 8.0 applications.
+      
+      This provides developers the console resize listener component for both .NET Framework 4.8 and .NET 8.0 applications.
     </Description>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Terminaux.Images</AssemblyName>
-    <PackageId>Terminaux.Images</PackageId>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    <AssemblyName>Terminaux.ResizeListener</AssemblyName>
+    <PackageId>Terminaux.ResizeListener</PackageId>
     <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
     <PackageProjectUrl>https://github.com/Aptivi/Terminaux</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
@@ -26,29 +26,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md">
+    <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\Terminaux\OfficialAppIcon-Terminaux-512.png">
+    <None Include="..\..\assets\OfficialAppIcon-Terminaux-512.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.2.0" />
+    <PackageReference Include="SpecProbe.Software" Version="3.3.0" Condition="'$(TargetFramework)' == 'net8.0'" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources/Icons/**/*" />
+    <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
 </Project>

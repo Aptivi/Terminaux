@@ -5,7 +5,7 @@
 <br>
     
 <img
-  src = 'https://cdn.jsdelivr.net/gh/Aptivi/Terminaux@main/Terminaux/OfficialAppIcon-Terminaux-512.png'
+  src = 'https://cdn.jsdelivr.net/gh/Aptivi/Terminaux@main/assets/OfficialAppIcon-Terminaux-512.png'
   width = 256
   align = center
 />

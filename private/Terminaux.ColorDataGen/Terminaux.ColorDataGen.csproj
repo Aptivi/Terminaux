@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\Terminaux\Colors\Data\ConsoleColorData.cs" Link="Essentials\ConsoleColorData.cs" />
-    <Compile Include="..\Terminaux\Colors\Data\ConsoleColorDataEquality.cs" Link="Essentials\ConsoleColorDataEquality.cs" />
-    <Compile Include="..\Terminaux\Colors\Data\ConsoleColorDataSerializer.cs" Link="Essentials\ConsoleColorDataSerializer.cs" />
+    <Compile Include="..\..\public\Terminaux\Colors\Data\ConsoleColorData.cs" Link="Essentials\ConsoleColorData.cs" />
+    <Compile Include="..\..\public\Terminaux\Colors\Data\ConsoleColorDataEquality.cs" Link="Essentials\ConsoleColorDataEquality.cs" />
+    <Compile Include="..\..\public\Terminaux\Colors\Data\ConsoleColorDataSerializer.cs" Link="Essentials\ConsoleColorDataSerializer.cs" />
   </ItemGroup>
 
   <ItemGroup>

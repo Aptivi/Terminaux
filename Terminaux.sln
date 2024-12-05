@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux", "Terminaux\Terminaux.csproj", "{10697319-2F9F-4A93-BA6D-8A60DA2DF2DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux", "public\Terminaux\Terminaux.csproj", "{10697319-2F9F-4A93-BA6D-8A60DA2DF2DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Console", "Terminaux.Console\Terminaux.Console.csproj", "{50FD1BF6-E278-4341-BAE6-32C1F95F4673}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Console", "private\Terminaux.Console\Terminaux.Console.csproj", "{50FD1BF6-E278-4341-BAE6-32C1F95F4673}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Tests", "Terminaux.Tests\Terminaux.Tests.csproj", "{23C5263C-ACEF-4135-B684-9C38279B88AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Tests", "private\Terminaux.Tests\Terminaux.Tests.csproj", "{23C5263C-ACEF-4135-B684-9C38279B88AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.ResizeListener", "Terminaux.ResizeListener\Terminaux.ResizeListener.csproj", "{B3D948F4-DEF1-474E-BB78-EF77FB0923AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.ResizeListener", "public\Terminaux.ResizeListener\Terminaux.ResizeListener.csproj", "{B3D948F4-DEF1-474E-BB78-EF77FB0923AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.ColorDataGen", "Terminaux.ColorDataGen\Terminaux.ColorDataGen.csproj", "{1E259649-5E89-4F1D-A01F-0DD360CB1C5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.ColorDataGen", "private\Terminaux.ColorDataGen\Terminaux.ColorDataGen.csproj", "{1E259649-5E89-4F1D-A01F-0DD360CB1C5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.SequenceTypesGen", "Terminaux.SequenceTypesGen\Terminaux.SequenceTypesGen.csproj", "{2FAC1DBF-C01E-433E-AE56-D291D821C711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.SequenceTypesGen", "private\Terminaux.SequenceTypesGen\Terminaux.SequenceTypesGen.csproj", "{2FAC1DBF-C01E-433E-AE56-D291D821C711}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.TermInfoGen", "Terminaux.TermInfoGen\Terminaux.TermInfoGen.csproj", "{8DBE98A3-1E8E-4B97-B3A6-2C66D7CEBA05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.TermInfoGen", "private\Terminaux.TermInfoGen\Terminaux.TermInfoGen.csproj", "{8DBE98A3-1E8E-4B97-B3A6-2C66D7CEBA05}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Private", "Private", "{874FF28F-7521-4B89-AE93-1D0BC6E7EAB1}"
 EndProject
@@ -27,11 +27,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C6ABD1F9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generators", "Generators", "{95ACDB5C-1392-4262-9756-55715D61BF2A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Images", "Terminaux.Images\Terminaux.Images.csproj", "{4F83E9A9-4F19-49F8-8FA9-285FB3B9A7B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Images", "public\Terminaux.Images\Terminaux.Images.csproj", "{4F83E9A9-4F19-49F8-8FA9-285FB3B9A7B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Extensions", "Terminaux.Extensions\Terminaux.Extensions.csproj", "{D937E463-BD01-433B-BA38-EDD0C94A6ADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Extensions", "public\Terminaux.Extensions\Terminaux.Extensions.csproj", "{D937E463-BD01-433B-BA38-EDD0C94A6ADE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.NerdFontGen", "Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj", "{1690D007-56AF-4CC9-B98B-78CB953D795A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.NerdFontGen", "private\Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj", "{1690D007-56AF-4CC9-B98B-78CB953D795A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{1A6C5FEE-74A0-4AEA-8F90-5B69996F5B78}"
 	ProjectSection(SolutionItems) = preProject
@@ -92,7 +92,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{10697319-2F9F-4A93-BA6D-8A60DA2DF2DA} = {43460793-9477-46C4-A7BD-5A647D2210ED}
-		{50FD1BF6-E278-4341-BAE6-32C1F95F4673} = {43460793-9477-46C4-A7BD-5A647D2210ED}
+		{50FD1BF6-E278-4341-BAE6-32C1F95F4673} = {C6ABD1F9-AA3F-418B-B976-6AF93D453921}
 		{23C5263C-ACEF-4135-B684-9C38279B88AD} = {C6ABD1F9-AA3F-418B-B976-6AF93D453921}
 		{B3D948F4-DEF1-474E-BB78-EF77FB0923AF} = {4EF3C357-D122-4787-96AC-C581AF0FCA6A}
 		{1E259649-5E89-4F1D-A01F-0DD360CB1C5F} = {95ACDB5C-1392-4262-9756-55715D61BF2A}
