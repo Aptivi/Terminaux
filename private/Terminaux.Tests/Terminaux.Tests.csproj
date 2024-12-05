@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
+    <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
 </Project>

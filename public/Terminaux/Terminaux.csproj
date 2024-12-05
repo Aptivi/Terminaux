@@ -25,14 +25,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md">
+    <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="OfficialAppIcon-Terminaux-512.png">
+    <None Include="..\..\assets\OfficialAppIcon-Terminaux-512.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -53,10 +53,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Terminaux.ColorDataGen\Terminaux.ColorDataGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="..\Terminaux.SequenceTypesGen\Terminaux.SequenceTypesGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="..\Terminaux.TermInfoGen\Terminaux.TermInfoGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="..\Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\private\Terminaux.ColorDataGen\Terminaux.ColorDataGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\private\Terminaux.SequenceTypesGen\Terminaux.SequenceTypesGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\private\Terminaux.TermInfoGen\Terminaux.TermInfoGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\private\Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 
   <ItemGroup>

@@ -36,7 +36,7 @@ checkerror $? "dotnet is not found"
 
 # Push packages
 echo Pushing packages...
-find .. -type f -path "*/bin/$releaseconf/*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "nuget.org" \;
+find .. -type f -path "**/bin/$releaseconf/*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "nuget.org" \;
 checkerror $? "Failed to push"
 
 # Inform success
