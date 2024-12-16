@@ -115,6 +115,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.ConsoleLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.ConsoleLogger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.ConsoleResizeHandler.yml",
       "output": {
         ".html": {
