@@ -33,6 +33,9 @@ namespace Terminaux.Console
     {
         static void Main()
         {
+            // Initialize logging
+            ConsoleLogger.EnableLogging = true;
+
             // Run the resize listener
             ConsoleResizeHandler.StartResizeListener();
 

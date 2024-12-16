@@ -96,6 +96,7 @@ namespace Terminaux.Base.Checks
             if (acknowledged)
                 return;
             busy = true;
+            ConsoleLogger.Info("Checking for console");
 
             // First, get the assembly for whitelist
             var asm = Assembly.GetEntryAssembly();
