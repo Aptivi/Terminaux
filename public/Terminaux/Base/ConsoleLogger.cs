@@ -33,7 +33,6 @@ namespace Terminaux.Base
     /// </summary>
     public static class ConsoleLogger
     {
-        private static Guid logId = Guid.NewGuid();
         private static BaseLogger? abstractLogger = null;
         private static bool enableLogging;
 
@@ -47,7 +46,7 @@ namespace Terminaux.Base
             {
                 enableLogging = value;
                 if (enableLogging)
-                    abstractLogger = new SerilogLogger(new LoggerConfiguration().WriteTo.File(GetLogFilePath()));
+                    abstractLogger = new SerilogLogger(new LoggerConfiguration().WriteTo.File(LogTools.GenerateLogFilePath(out _)));
                 else
                     abstractLogger = null;
             }
@@ -82,17 +81,5 @@ namespace Terminaux.Base
 
         internal static void Warning(Exception ex, string message, params object?[]? args) =>
             abstractLogger?.Warning(ex, message, args);
-
-        private static string GetLogFilePath()
-        {
-            string dumpFilePath =
-                PlatformHelper.IsOnWindows() ?
-                $"{Environment.GetEnvironmentVariable("LOCALAPPDATA")}\\Aptivi\\Logs" :
-                $"{Environment.GetEnvironmentVariable("HOME")}/.config/Aptivi/Logs";
-            string assembly = Assembly.GetEntryAssembly().GetName().Name;
-            logId = Guid.NewGuid();
-            Directory.CreateDirectory(dumpFilePath);
-            return Path.Combine(dumpFilePath, $"terminaux_log_{assembly}_{DateTimeOffset.Now:yyyyMMddhhmmssfffffff}_{logId}.txt");
-        }
     }
 }
