@@ -1,10 +1,11 @@
-We've made this release to update Magico.
+We've made this release to update SpecProbe.Software and to fix a bug regarding the selection style.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated Magico
+- `[*]` Updated SpecProbe.Software
+- `[*]` Fixed rendering bug in the selection style in certain circumstances
 
 Review the commit history if you want to get a deep insight about the changes.
 
