@@ -138,7 +138,6 @@ namespace Terminaux.Inputs.Styles.Selection
             List<int> SelectedAnswers = [];
             AllAnswers.AddRange(AltAnswers);
             bool allDisabled = AllAnswers.All((ici) => ici.ChoiceDisabled);
-            int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
 
             // We need to not to run the selection style when everything is disabled
             if (allDisabled)

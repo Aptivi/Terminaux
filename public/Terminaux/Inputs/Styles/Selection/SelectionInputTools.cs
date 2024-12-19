@@ -158,7 +158,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
             // Now, render the selections
             StringBuilder buffer = new();
-            int AnswerTitleLeft = selections.Max(x => (isMultiple ? $"  [ ] {x.ChoiceName}) " : $"  {x.ChoiceName}) ").Length);
+            int AnswerTitleLeft = selections.Max(x => ConsoleChar.EstimateCellWidth(isMultiple ? $"  [ ] {x.ChoiceName}) " : $"  {x.ChoiceName}) "));
             int currentPage = currentSelection / selectionChoices;
             int startIndex = selectionChoices * currentPage;
             for (int i = 0; i <= selectionChoices - 1; i++)
@@ -186,7 +186,7 @@ namespace Terminaux.Inputs.Styles.Selection
                 if (AnswerTitleLeft < width)
                 {
                     string renderedChoice = $"{modifiers} {choice.ChoiceName}) ";
-                    int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
+                    int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
                     AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                 }
                 AnswerOption = AnswerOption.Truncate(width - 4);
@@ -214,7 +214,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     buffer.Append(
                         ColorTools.RenderSetConsoleColor(finalForeColor) +
                         ColorTools.RenderSetConsoleColor(finalBackColor, true) +
-                        TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - AnswerOption.Length), leftPos, optionTop, finalForeColor, finalBackColor) +
+                        TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - ConsoleChar.EstimateCellWidth(AnswerOption)), leftPos, optionTop, finalForeColor, finalBackColor) +
                         ColorTools.RenderRevertForeground() +
                         ColorTools.RenderRevertBackground()
                     );
@@ -222,7 +222,7 @@ namespace Terminaux.Inputs.Styles.Selection
                 else
                 {
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - AnswerOption.Length), leftPos, optionTop)
+                        TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - ConsoleChar.EstimateCellWidth(AnswerOption)), leftPos, optionTop)
                     );
                 }
             }
