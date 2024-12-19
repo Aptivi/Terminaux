@@ -93,25 +93,26 @@
   <h6><strong>Assembly</strong>: Terminaux.dll</h6>
   <h5 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class ListWriterColor</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Also, this writer doesn&#39;t support indeterminate progress bars. Please use its cyclic writer equivalent.&quot;)]
+public static class ListWriterColor</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L241">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L212">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary)">RenderList(IDictionary)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})">RenderList(IDictionary, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Renders the list entries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderList(IDictionary List)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderList(IDictionary List, Func&lt;object, string&gt;? keyObjectStringifier = null, Func&lt;object, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -127,6 +128,24 @@
         <td><span class="xref">IDictionary</span></td>
         <td><span class="parametername">List</span></td>
         <td><p>A dictionary that will be listed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyObjectStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -148,19 +167,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L250">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L224">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color)">RenderList(IDictionary, Color, Color)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})">RenderList(IDictionary, Color, Color, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Renders the list entries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderList(IDictionary List, Color ListKeyColor, Color ListValueColor)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderList(IDictionary List, Color ListKeyColor, Color ListValueColor, Func&lt;object, string&gt;? keyObjectStringifier = null, Func&lt;object, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -190,53 +209,22 @@
         <td><p>A value color.</p>
 </td>
       </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
       <tr>
-        <th>Type</th>
-        <th>Description</th>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyObjectStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
       </tr>
-    </thead>
-    <tbody>
       <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
       </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L526">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable)">RenderList(IEnumerable)</h4>
-  <div class="markdown level1 summary"><p>Renders the list entries.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderList(IEnumerable List)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
       <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span></td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed.</p>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -258,19 +246,80 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L535">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L429">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color)">RenderList(IEnumerable, Color, Color)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable,System.Func{System.Object,System.String},System.Func{System.Object,System.String})">RenderList(IEnumerable, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Renders the list entries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderList(IEnumerable List, Color ListKeyColor, Color ListValueColor)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderList(IEnumerable List, Func&lt;object, string&gt;? objectStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span></td>
+        <td><span class="parametername">List</span></td>
+        <td><p>A dictionary that will be listed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">objectStringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L440">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Func{System.Object,System.String},System.Func{System.Object,System.String})">RenderList(IEnumerable, Color, Color, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
+  <div class="markdown level1 summary"><p>Renders the list entries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderList(IEnumerable List, Color ListKeyColor, Color ListValueColor, Func&lt;object, string&gt;? objectStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -300,6 +349,18 @@
         <td><p>A value color.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">objectStringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -319,19 +380,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__1_System_Collections_Generic_IEnumerable___0__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L383">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L336">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__1_System_Collections_Generic_IEnumerable___0__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList``1(System.Collections.Generic.IEnumerable{``0})">RenderList&lt;T&gt;(IEnumerable&lt;T&gt;)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{System.Object,System.String})">RenderList&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Renders the list entries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderList&lt;T&gt;(IEnumerable&lt;T&gt; List)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderList&lt;T&gt;(IEnumerable&lt;T&gt; List, Func&lt;T, string&gt;? stringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -347,6 +408,18 @@
         <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">List</span></td>
         <td><p>A dictionary that will be listed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">stringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -383,19 +456,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func___0_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L392">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L347">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList``1(System.Collections.Generic.IEnumerable{``0},Terminaux.Colors.Color,Terminaux.Colors.Color)">RenderList&lt;T&gt;(IEnumerable&lt;T&gt;, Color, Color)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func___0_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList``1(System.Collections.Generic.IEnumerable{``0},Terminaux.Colors.Color,Terminaux.Colors.Color,System.Func{``0,System.String},System.Func{System.Object,System.String})">RenderList&lt;T&gt;(IEnumerable&lt;T&gt;, Color, Color, Func&lt;T, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Renders the list entries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderList&lt;T&gt;(IEnumerable&lt;T&gt; List, Color ListKeyColor, Color ListValueColor)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderList&lt;T&gt;(IEnumerable&lt;T&gt; List, Color ListKeyColor, Color ListValueColor, Func&lt;T, string&gt;? stringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -423,6 +496,18 @@
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">ListValueColor</span></td>
         <td><p>A value color.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">stringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -459,19 +544,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__2_System_Collections_Generic_Dictionary___0___1__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__2_System_Collections_Generic_Dictionary___0___1__System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7B%60%601%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L128">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L109">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__2_System_Collections_Generic_Dictionary___0___1__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList``2(System.Collections.Generic.Dictionary{``0,``1})">RenderList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__2_System_Collections_Generic_Dictionary___0___1__System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList``2(System.Collections.Generic.Dictionary{``0,``1},System.Func{``0,System.String},System.Func{``1,System.String},System.Func{System.Object,System.String})">RenderList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, Func&lt;TKey, string&gt;?, Func&lt;TValue, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Renders the list entries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, Func&lt;TKey, string&gt;? keyStringifier = null, Func&lt;TValue, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -487,6 +572,24 @@
         <td><span class="xref">Dictionary</span>&lt;TKey, TValue&gt;</td>
         <td><span class="parametername">List</span></td>
         <td><p>A dictionary that will be listed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TKey, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TValue, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -527,19 +630,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7B%60%601%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L137">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L121">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList``2(System.Collections.Generic.Dictionary{``0,``1},Terminaux.Colors.Color,Terminaux.Colors.Color)">RenderList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, Color, Color)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList``2(System.Collections.Generic.Dictionary{``0,``1},Terminaux.Colors.Color,Terminaux.Colors.Color,System.Func{``0,System.String},System.Func{``1,System.String},System.Func{System.Object,System.String})">RenderList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, Color, Color, Func&lt;TKey, string&gt;?, Func&lt;TValue, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Renders the list entries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, Color ListKeyColor, Color ListValueColor)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, Color ListKeyColor, Color ListValueColor, Func&lt;TKey, string&gt;? keyStringifier = null, Func&lt;TValue, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -567,6 +670,24 @@
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">ListValueColor</span></td>
         <td><p>A value color.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TKey, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TValue, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -607,53 +728,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L189">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L175">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary)">WriteList(IDictionary)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})">WriteList(IDictionary, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList(IDictionary List)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IDictionary</span></td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L197">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,System.Boolean)">WriteList(IDictionary, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt, and wraps output if needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList(IDictionary List, bool Wrap)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteList(IDictionary List, Func&lt;object, string&gt;? keyObjectStringifier = null, Func&lt;object, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -672,74 +759,40 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyObjectStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L206">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L187">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color)">WriteList(IDictionary, Color, Color)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})">WriteList(IDictionary, Color, Color, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList(IDictionary List, Color ListKeyColor, Color ListValueColor)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IDictionary</span></td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">ListKeyColor</span></td>
-        <td><p>A key color.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">ListValueColor</span></td>
-        <td><p>A value color.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L216">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)">WriteList(IDictionary, Color, Color, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList(IDictionary List, Color ListKeyColor, Color ListValueColor, bool Wrap)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteList(IDictionary List, Color ListKeyColor, Color ListValueColor, Func&lt;object, string&gt;? keyObjectStringifier = null, Func&lt;object, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -770,62 +823,40 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyObjectStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L474">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L394">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable)">WriteList(IEnumerable)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,System.Func{System.Object,System.String},System.Func{System.Object,System.String})">WriteList(IEnumerable, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList(IEnumerable List)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span></td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L482">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,System.Boolean)">WriteList(IEnumerable, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt, and wraps output if needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList(IEnumerable List, bool Wrap)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteList(IEnumerable List, Func&lt;object, string&gt;? objectStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -844,74 +875,34 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">objectStringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L491">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L405">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color)">WriteList(IEnumerable, Color, Color)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Func{System.Object,System.String},System.Func{System.Object,System.String})">WriteList(IEnumerable, Color, Color, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList(IEnumerable List, Color ListKeyColor, Color ListValueColor)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span></td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">ListKeyColor</span></td>
-        <td><p>A key color.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">ListValueColor</span></td>
-        <td><p>A value color.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L501">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)">WriteList(IEnumerable, Color, Color, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList(IEnumerable List, Color ListKeyColor, Color ListValueColor, bool Wrap)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteList(IEnumerable List, Color ListKeyColor, Color ListValueColor, Func&lt;object, string&gt;? objectStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -942,62 +933,34 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">objectStringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IDictionary_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IDictionary_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L156">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L150">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IDictionary_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary)">WriteListPlain(IDictionary)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IDictionary_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})">WriteListPlain(IDictionary, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteListPlain(IDictionary List)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IDictionary</span></td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IDictionary_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L164">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IDictionary_System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary,System.Boolean)">WriteListPlain(IDictionary, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt plainly, and wraps output if needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteListPlain(IDictionary List, bool Wrap)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteListPlain(IDictionary List, Func&lt;object, string&gt;? keyObjectStringifier = null, Func&lt;object, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1016,62 +979,40 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyObjectStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IEnumerable_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IEnumerable_System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L441">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L370">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IEnumerable_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable)">WriteListPlain(IEnumerable)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IEnumerable_System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable,System.Func{System.Object,System.String},System.Func{System.Object,System.String})">WriteListPlain(IEnumerable, Func&lt;object, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteListPlain(IEnumerable List)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span></td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IEnumerable_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L449">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IEnumerable_System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable,System.Boolean)">WriteListPlain(IEnumerable, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt plainly, and wraps output if needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteListPlain(IEnumerable List, bool Wrap)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteListPlain(IEnumerable List, Func&lt;object, string&gt;? objectStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1090,28 +1031,34 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">objectStringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__1_System_Collections_Generic_IEnumerable___0__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L298">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L277">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__1_System_Collections_Generic_IEnumerable___0__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain``1(System.Collections.Generic.IEnumerable{``0})">WriteListPlain&lt;T&gt;(IEnumerable&lt;T&gt;)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{System.Object,System.String})">WriteListPlain&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteListPlain&lt;T&gt;(IEnumerable&lt;T&gt; List)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteListPlain&lt;T&gt;(IEnumerable&lt;T&gt; List, Func&lt;T, string&gt;? stringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1127,6 +1074,18 @@
         <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">List</span></td>
         <td><p>A dictionary that will be listed to the terminal prompt.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">stringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -1148,74 +1107,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__1_System_Collections_Generic_IEnumerable___0__System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__2_System_Collections_Generic_Dictionary___0___1__System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7B%60%601%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L306">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L47">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__1_System_Collections_Generic_IEnumerable___0__System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">WriteListPlain&lt;T&gt;(IEnumerable&lt;T&gt;, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt plainly, and wraps output if needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteListPlain&lt;T&gt;(IEnumerable&lt;T&gt; List, bool Wrap)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__2_System_Collections_Generic_Dictionary___0___1__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L43">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__2_System_Collections_Generic_Dictionary___0___1__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain``2(System.Collections.Generic.Dictionary{``0,``1})">WriteListPlain&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__2_System_Collections_Generic_Dictionary___0___1__System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain``2(System.Collections.Generic.Dictionary{``0,``1},System.Func{``0,System.String},System.Func{``1,System.String},System.Func{System.Object,System.String})">WriteListPlain&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, Func&lt;TKey, string&gt;?, Func&lt;TValue, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteListPlain&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteListPlain&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, Func&lt;TKey, string&gt;? keyStringifier = null, Func&lt;TValue, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1231,6 +1135,24 @@
         <td><span class="xref">Dictionary</span>&lt;TKey, TValue&gt;</td>
         <td><span class="parametername">List</span></td>
         <td><p>A dictionary that will be listed to the terminal prompt.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TKey, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TValue, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -1256,78 +1178,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__2_System_Collections_Generic_Dictionary___0___1__System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L51">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain__2_System_Collections_Generic_Dictionary___0___1__System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain``2(System.Collections.Generic.Dictionary{``0,``1},System.Boolean)">WriteListPlain&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt plainly, and wraps output if needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteListPlain&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, bool Wrap)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;TKey, TValue&gt;</td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TKey</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L331">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L301">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``1(System.Collections.Generic.IEnumerable{``0})">WriteList&lt;T&gt;(IEnumerable&lt;T&gt;)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{System.Object,System.String})">WriteList&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList&lt;T&gt;(IEnumerable&lt;T&gt; List)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteList&lt;T&gt;(IEnumerable&lt;T&gt; List, Func&lt;T, string&gt;? stringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1343,6 +1206,18 @@
         <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">List</span></td>
         <td><p>A dictionary that will be listed to the terminal prompt.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">stringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -1364,135 +1239,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func___0_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L339">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L312">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">WriteList&lt;T&gt;(IEnumerable&lt;T&gt;, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt, and wraps output if needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList&lt;T&gt;(IEnumerable&lt;T&gt; List, bool Wrap)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L348">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``1(System.Collections.Generic.IEnumerable{``0},Terminaux.Colors.Color,Terminaux.Colors.Color)">WriteList&lt;T&gt;(IEnumerable&lt;T&gt;, Color, Color)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func___0_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``1(System.Collections.Generic.IEnumerable{``0},Terminaux.Colors.Color,Terminaux.Colors.Color,System.Func{``0,System.String},System.Func{System.Object,System.String})">WriteList&lt;T&gt;(IEnumerable&lt;T&gt;, Color, Color, Func&lt;T, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList&lt;T&gt;(IEnumerable&lt;T&gt; List, Color ListKeyColor, Color ListValueColor)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">ListKeyColor</span></td>
-        <td><p>A key color.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">ListValueColor</span></td>
-        <td><p>A value color.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L358">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__1_System_Collections_Generic_IEnumerable___0__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``1(System.Collections.Generic.IEnumerable{``0},Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)">WriteList&lt;T&gt;(IEnumerable&lt;T&gt;, Color, Color, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList&lt;T&gt;(IEnumerable&lt;T&gt; List, Color ListKeyColor, Color ListValueColor, bool Wrap)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteList&lt;T&gt;(IEnumerable&lt;T&gt; List, Color ListKeyColor, Color ListValueColor, Func&lt;T, string&gt;? stringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1523,9 +1282,15 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">stringifier</span></td>
+        <td><p>A function that stringifies an entry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -1547,19 +1312,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7B%60%601%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L76">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L72">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``2(System.Collections.Generic.Dictionary{``0,``1})">WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``2(System.Collections.Generic.Dictionary{``0,``1},System.Func{``0,System.String},System.Func{``1,System.String},System.Func{System.Object,System.String})">WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, Func&lt;TKey, string&gt;?, Func&lt;TValue, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, Func&lt;TKey, string&gt;? keyStringifier = null, Func&lt;TValue, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1575,6 +1340,24 @@
         <td><span class="xref">Dictionary</span>&lt;TKey, TValue&gt;</td>
         <td><span class="parametername">List</span></td>
         <td><p>A dictionary that will be listed to the terminal prompt.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TKey, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TValue, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -1600,143 +1383,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Func%7B%60%600%2CSystem.String%7D%2CSystem.Func%7B%60%601%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L84">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L84">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``2(System.Collections.Generic.Dictionary{``0,``1},System.Boolean)">WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the list entries into the terminal prompt, and wraps output if needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, bool Wrap)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;TKey, TValue&gt;</td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TKey</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L93">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``2(System.Collections.Generic.Dictionary{``0,``1},Terminaux.Colors.Color,Terminaux.Colors.Color)">WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, Color, Color)</h4>
+  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Func___0_System_String__System_Func___1_System_String__System_Func_System_Object_System_String__" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``2(System.Collections.Generic.Dictionary{``0,``1},Terminaux.Colors.Color,Terminaux.Colors.Color,System.Func{``0,System.String},System.Func{``1,System.String},System.Func{System.Object,System.String})">WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, Color, Color, Func&lt;TKey, string&gt;?, Func&lt;TValue, string&gt;?, Func&lt;object, string&gt;?)</h4>
   <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, Color ListKeyColor, Color ListValueColor)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;TKey, TValue&gt;</td>
-        <td><span class="parametername">List</span></td>
-        <td><p>A dictionary that will be listed to the terminal prompt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">ListKeyColor</span></td>
-        <td><p>A key color.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">ListValueColor</span></td>
-        <td><p>A value color.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TKey</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList%60%602(System.Collections.Generic.Dictionary%7B%60%600%2C%60%601%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L103">View Source</a>
-  </span>
-  <a id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*"></a>
-  <h4 id="Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList__2_System_Collections_Generic_Dictionary___0___1__Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList``2(System.Collections.Generic.Dictionary{``0,``1},Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)">WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt;, Color, Color, bool)</h4>
-  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, Color ListKeyColor, Color ListValueColor, bool Wrap)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteList&lt;TKey, TValue&gt;(Dictionary&lt;TKey, TValue&gt; List, Color ListKeyColor, Color ListValueColor, Func&lt;TKey, string&gt;? keyStringifier = null, Func&lt;TValue, string&gt;? valueStringifier = null, Func&lt;object, string&gt;? recursiveStringifier = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1767,9 +1426,21 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Wrap</span></td>
-        <td><p>Wraps the output as needed.</p>
+        <td><span class="xref">Func</span>&lt;TKey, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">keyStringifier</span></td>
+        <td><p>A function that stringifies a key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;TValue, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">valueStringifier</span></td>
+        <td><p>A function that stringifies a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">object</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">recursiveStringifier</span></td>
+        <td><p>A function that stringifies a recursed entry.</p>
 </td>
       </tr>
     </tbody>
@@ -1802,10 +1473,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/new/x/oob/4.3.x/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_ListWriterColor.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.ListWriterColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/x/oob/4.3.x/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L36" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/ListWriterColor.cs/#L36" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
