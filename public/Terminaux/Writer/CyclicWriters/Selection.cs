@@ -178,7 +178,7 @@ namespace Terminaux.Writer.CyclicWriters
             StringBuilder buffer = new();
             StringBuilder choiceText = new();
             string prefix = isMultiple ? "  [ ] " : "  ";
-            int AnswerTitleLeft = choices.Max(x => (Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) ").Length);
+            int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
             int leftPos = Left + (SliderInside ? 1 : 0);
             List<int> selectionHeights = [];
             int processedHeight = 0;
@@ -231,7 +231,7 @@ namespace Terminaux.Writer.CyclicWriters
                         if (AnswerTitleLeft < Width)
                         {
                             string renderedChoice = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
-                            int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
+                            int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                         }
                         AnswerOption = AnswerOption.Truncate(Width - 4);
@@ -259,13 +259,13 @@ namespace Terminaux.Writer.CyclicWriters
                             choiceText.AppendLine(
                                 ColorTools.RenderSetConsoleColor(finalForeColor) +
                                 ColorTools.RenderSetConsoleColor(finalBackColor, true) +
-                                AnswerOption + new string(' ', Width - AnswerOption.Length)
+                                AnswerOption + new string(' ', Width - ConsoleChar.EstimateCellWidth(AnswerOption))
                             );
                         }
                         else
                         {
                             choiceText.AppendLine(
-                                AnswerOption + new string(' ', Width - AnswerOption.Length)
+                                AnswerOption + new string(' ', Width - ConsoleChar.EstimateCellWidth(AnswerOption))
                             );
                         }
                         processedHeight++;
