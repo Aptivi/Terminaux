@@ -2955,26 +2955,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AreaChart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.AreaChart.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Asciinema.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Asciinema.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BarChart.yml",
       "output": {
         ".html": {
@@ -3155,16 +3135,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.LineChart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.LineChart.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.LineHandle.yml",
       "output": {
         ".html": {
@@ -3199,16 +3169,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.CyclicWriters.NerdFonts.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.PieChart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.PieChart.html"
         }
       },
       "version": ""
@@ -3939,16 +3899,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.CyclicWriters.TextPath.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.WinsLosses.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.WinsLosses.html"
         }
       },
       "version": ""
