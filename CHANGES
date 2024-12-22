@@ -1,11 +1,10 @@
-We've made this release to update SpecProbe.Software and to fix a bug regarding the selection style.
+We've made this release to add more emoticons!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated SpecProbe.Software
-- `[*]` Fixed rendering bug in the selection style in certain circumstances
+- `[+]` Added more emojis
 
 Review the commit history if you want to get a deep insight about the changes.
 
