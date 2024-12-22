@@ -103,8 +103,9 @@ namespace Terminaux.Images.Icons
 
                     // Write the selected icon name and the keybindings
                     buffer.Append(
-                        new AlignedText($"{iconName} - [{selectedIcon + 1}/{icons.Length}]", TextAlignment.Middle)
+                        new AlignedText()
                         {
+                            Text = $"{iconName} - [{selectedIcon + 1}/{icons.Length}]",
                             Settings = new() { Alignment = TextAlignment.Middle },
                             Top = 1
                         }.Render() +
