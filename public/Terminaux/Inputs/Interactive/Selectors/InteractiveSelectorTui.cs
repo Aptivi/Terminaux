@@ -392,7 +392,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((new Keybinding("Exits the interactive TUI", ConsoleKey.Escape), (ui, _, _) => Exit(ui)));
 
             // Informational selector TUI
-            if (selectorTui.SecondPaneInteractable)
+            if (!selectorTui.SecondPaneInteractable)
             {
                 Keybindings.Add((new Keybinding("Go one line up (informational)", ConsoleKey.W), (_, _, _) => InteractiveTuiTools.InfoScrollUp(selectorTui)));
                 Keybindings.Add((new Keybinding("Go one line down (informational)", ConsoleKey.S), (_, _, _) => InteractiveTuiTools.InfoScrollDown(selectorTui)));
