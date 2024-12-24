@@ -1,6 +1,6 @@
 @echo off
 
-REM    Terminaux  Copyright (C) 2018-2021  Aptivi
+REM    Terminaux  Copyright (C) 2023-2025  Aptivi
 REM
 REM    This file is part of Terminaux
 REM
