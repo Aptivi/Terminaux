@@ -312,8 +312,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Get the result entries
             var regex = new Regex(keyword);
             var resultEntries = entriesString
-                .Where((entry) => regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle))
-                .Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
+                .Select((entry, idx) => (idx, (entry.ChoiceName, entry.ChoiceTitle)))
+                .Where((entry) => regex.IsMatch(entry.Item2.ChoiceName) || regex.IsMatch(entry.Item2.ChoiceTitle))
+                .Select((entry) => ($"{entry.idx + 1}", $"{entry.Item2.ChoiceName}: {entry.Item2.ChoiceTitle}")).ToArray();
 
             // Act, depending on the result entries
             int idx = 0;
@@ -333,7 +334,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 InfoBoxModalColor.WriteInfoBoxModal("No item found.");
 
             // Change the highlighted answer number
-            var resultNum = idx >= resultEntries.Length ? highlightedAnswer : int.Parse(resultEntries[idx].ChoiceName);
+            var resultNum = idx >= resultEntries.Length ? highlightedAnswer : int.Parse(resultEntries[idx].Item1);
             highlightedAnswer = resultNum;
 
             // Update the TUI
