@@ -368,6 +368,7 @@ namespace Terminaux.Writer.CyclicWriters
         public Selection(InputChoiceCategoryInfo[] categories)
         {
             Selections = categories;
+            AltChoicePos = Selections.Length;
         }
 
         /// <summary>
