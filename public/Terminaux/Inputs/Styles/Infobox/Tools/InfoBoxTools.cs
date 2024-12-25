@@ -112,6 +112,9 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 Top = borderY,
                 InteriorWidth = maxWidth,
                 InteriorHeight = maxHeight,
+                Color = InfoBoxColor,
+                TextColor = InfoBoxColor,
+                BackgroundColor = BackgroundColor,
                 Settings = settings,
             };
             if (!string.IsNullOrEmpty(title))
