@@ -68,6 +68,11 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to treat the line as double-width or single-width
+        /// </summary>
+        public bool DoubleWidth { get; set; } = true;
+
+        /// <summary>
         /// Line color
         /// </summary>
         public Color Color
@@ -80,24 +85,22 @@ namespace Terminaux.Writer.CyclicWriters
         /// Renders a line
         /// </summary>
         /// <returns>Rendered line that will be used by the renderer</returns>
-        public string Render() =>
-            RenderLine(StartPos, EndPos, Color, AntiAlias);
-
-        internal static string RenderLine(Coordinate firstPoint, Coordinate secondPoint, Color lineColor, bool antiAlias)
+        public string Render()
         {
             StringBuilder buffer = new();
 
             // Get the parameters and make a canvas
             var parameters =
                 antiAlias ?
-                GetCellParamsAntiAlias(firstPoint, secondPoint, lineColor) :
-                GetCellParamsNoAntiAlias(firstPoint, secondPoint, lineColor);
+                GetCellParamsAntiAlias(StartPos, EndPos, lineColor) :
+                GetCellParamsNoAntiAlias(StartPos, EndPos, lineColor);
             var canvas = new Canvas()
             {
                 Transparent = true,
                 InteriorHeight = ConsoleWrapper.WindowHeight,
                 InteriorWidth = ConsoleWrapper.WindowWidth,
                 Pixels = parameters,
+                DoubleWidth = DoubleWidth,
             };
             buffer.Append(canvas.Render());
             return buffer.ToString();
