@@ -89,7 +89,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
                 int diffX = i - Width / 2;
                 int prevDiffX = i - 1 - Width / 2;
                 int nextDiffX = i + 1 - Width / 2;
-                int drawX = centerX + diffX;
+                int drawX = centerX + diffX + 1;
 
                 // Now, get the height difference
                 int height = (int)Math.Round(Height * Math.Sqrt(Math.Pow(Width, 2) / 4.0 - Math.Pow(diffX, 2)) / Width);
