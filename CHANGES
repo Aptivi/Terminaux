@@ -1,25 +1,12 @@
-This version of Terminaux is a revolution of the entire project that contains many exciting features packed with significant improvements to existing features. This version is a bridge to what eventually becomes the seventh major version of Terminaux, 7.0.
+Terminaux 6.0.1 is a hot-fix of the 6.0.0 version that fixes the most severe last-minute bugs.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added audio cues for terminal reader
-- `[+]` Added more color features, such as color blending, color contrast, color tints and shades, and more
-- `[+]` Added console markup
-- `[+]` Added aligned text writers
-- `[+]` Added beep synth
-- `[+]` Added more reader keybindings
-- `[+]` Added cyclic writers and renderables
-- `[+]` Added cyclic screen
-- `[+]` Added `TermInfo` argument parsing
-- `[+]` Added shell functionality from Nitrocid KS
-- `[+]` Added command line argument parsing
-- `[*]` Used `TermInfo` to generate escape sequences for common operations
-- `[*]` Fixed Mono compatibility
-- `[*]` Improved appearance in some elements
-- `[*]` Description box for selection style
-- `[-]` `TextWriterWrappedColor` to be replaced by `TruncatedText`
+- `[*]` Fixed switch not working
+- `[*]` Fixed infobox coloring
+- `[*]` Other fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
