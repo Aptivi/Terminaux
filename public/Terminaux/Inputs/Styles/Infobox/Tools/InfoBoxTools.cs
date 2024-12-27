@@ -36,7 +36,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
     {
         internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(string[] splitFinalLines, int extraHeight = 0)
         {
-            int maxWidth = splitFinalLines.Max(ConsoleChar.EstimateCellWidth);
+            int maxWidth = splitFinalLines.Length > 0 ? splitFinalLines.Max(ConsoleChar.EstimateCellWidth) : 0;
             if (maxWidth < 30)
                 maxWidth = 30;
             if (maxWidth > ConsoleWrapper.WindowWidth - 4)
