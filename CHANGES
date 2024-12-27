@@ -1,12 +1,11 @@
-Terminaux 6.0.1 is a hot-fix of the 6.0.0 version that fixes the most severe last-minute bugs.
+Terminaux 6.0.2 is a hot-fix of the 6.0.1 version that fixes a bug that causes infoboxes to crash when encountered with no text.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed switch not working
-- `[*]` Fixed infobox coloring
-- `[*]` Other fixes
+- `[+]` Added Ghostty support
+- `[*]` Fixed infobox crashing in zero-length text
 
 Review the commit history if you want to get a deep insight about the changes.
 
