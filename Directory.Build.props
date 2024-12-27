@@ -3,7 +3,7 @@
         <Version>4.3.14</Version>
         <Authors>Aptivi</Authors>
         <Company>Aptivi</Company>
-        <Copyright>Copyright (c) 2022-2024 Aptivi</Copyright>
+        <Copyright>Copyright (c) 2023-2025 Aptivi</Copyright>
         <LangVersion>latest</LangVersion>
         <DebugType>portable</DebugType>
         <SignAssembly>True</SignAssembly>
