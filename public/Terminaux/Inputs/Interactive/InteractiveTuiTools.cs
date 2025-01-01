@@ -89,6 +89,10 @@ namespace Terminaux.Inputs.Interactive
                 interactiveTui.SecondPaneCurrentSelection = pos;
             else
                 interactiveTui.FirstPaneCurrentSelection = pos;
+
+            // Check the positioning
+            FirstOnUnderflow(interactiveTui);
+            LastOnOverflow(interactiveTui);
         }
 
         /// <summary>
