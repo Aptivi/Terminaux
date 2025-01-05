@@ -66,13 +66,4 @@
     <EmbeddedResource Include="Resources\Cues\*.mp3" />
   </ItemGroup>
 
-  <!-- Remove this when development of 6.1.0 starts -->
-  <ItemGroup>
-    <Compile Remove="Writer\CyclicWriters\LineChart.cs" />
-    <Compile Remove="Writer\CyclicWriters\AreaChart.cs" />
-    <Compile Remove="Writer\CyclicWriters\PieChart.cs" />
-    <Compile Remove="Writer\CyclicWriters\WinsLosses.cs" />
-    <Compile Remove="Writer\CyclicWriters\Asciinema.cs" />
-  </ItemGroup>
-
 </Project>
