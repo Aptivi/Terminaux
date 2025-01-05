@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -31,11 +32,26 @@ namespace Terminaux.Shell.Arguments.Base
     public static class ArgumentParse
     {
         /// <summary>
-        /// Parses specified arguments
+        /// Parses specified arguments (modern way)
         /// </summary>
         /// <param name="ArgumentsInput">Input Arguments</param>
         /// <param name="arguments">A dictionary of argument info instances</param>
         public static void ParseArguments(string[]? ArgumentsInput, Dictionary<string, ArgumentInfo> arguments)
+        {
+            ArgumentsInput ??= [];
+            string[] finalArguments = FinalizeArguments(ArgumentsInput, arguments);
+            ParseArgumentsInternal(finalArguments, arguments);
+        }
+        
+        /// <summary>
+        /// Parses specified arguments (legacy way)
+        /// </summary>
+        /// <param name="ArgumentsInput">Input Arguments</param>
+        /// <param name="arguments">A dictionary of argument info instances</param>
+        public static void ParseArgumentsLegacy(string[]? ArgumentsInput, Dictionary<string, ArgumentInfo> arguments) =>
+            ParseArgumentsInternal(ArgumentsInput, arguments);
+
+        internal static void ParseArgumentsInternal(string[]? ArgumentsInput, Dictionary<string, ArgumentInfo> arguments)
         {
             // Check for the arguments written by the user
             try
@@ -100,6 +116,23 @@ namespace Terminaux.Shell.Arguments.Base
         /// <returns>True if found in the arguments list and passed. False otherwise.</returns>
         public static bool IsArgumentPassed(string[]? ArgumentsInput, string argumentName, Dictionary<string, ArgumentInfo> arguments)
         {
+            ArgumentsInput ??= [];
+            string[] finalArguments = FinalizeArguments(ArgumentsInput, arguments);
+            return IsArgumentPassedInternal(finalArguments, argumentName, arguments);
+        }
+
+        /// <summary>
+        /// Checks to see if the specific argument name is passed (legacy way)
+        /// </summary>
+        /// <param name="ArgumentsInput">List of passed arguments</param>
+        /// <param name="argumentName">Argument name to check</param>
+        /// <param name="arguments">A dictionary of argument info instances</param>
+        /// <returns>True if found in the arguments list and passed. False otherwise.</returns>
+        public static bool IsArgumentPassedLegacy(string[]? ArgumentsInput, string argumentName, Dictionary<string, ArgumentInfo> arguments) =>
+            IsArgumentPassedInternal(ArgumentsInput, argumentName, arguments);
+
+        internal static bool IsArgumentPassedInternal(string[]? ArgumentsInput, string argumentName, Dictionary<string, ArgumentInfo> arguments)
+        {
             // Check for the arguments written by the user
             try
             {
@@ -123,5 +156,29 @@ namespace Terminaux.Shell.Arguments.Base
             }
         }
 
+        private static string[] FinalizeArguments(string[] argumentsInput, Dictionary<string, ArgumentInfo> arguments)
+        {
+            // Parse the arguments. Assume that unknown arguments are parameters of arguments
+            List<string> finalArguments = [];
+            StringBuilder builder = new();
+            foreach (var argInput in argumentsInput)
+            {
+                if (arguments.TryGetValue(argInput, out ArgumentInfo? argInfoVal))
+                {
+                    // If we came across a valid argument, add the result and clear the builder
+                    if (builder.Length > 0)
+                    {
+                        finalArguments.Add(builder.ToString().Trim());
+                        builder.Clear();
+                    }
+                }
+
+                // Add the argument name
+                builder.Append(argInput + " ");
+            }
+            if (builder.Length > 0)
+                finalArguments.Add(builder.ToString().Trim());
+            return [.. finalArguments];
+        }
     }
 }
