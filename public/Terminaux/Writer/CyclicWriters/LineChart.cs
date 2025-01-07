@@ -17,7 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Linq;
 using System.Text;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -122,9 +127,100 @@ namespace Terminaux.Writer.CyclicWriters
 
         internal static string RenderLineChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool run = false, bool useColor = true)
         {
-            StringBuilder lineChart = new();
+            // Some variables
+            int maxNameLength = InteriorWidth / 4;
+            int wholeLength = InteriorHeight - 1;
+            var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
+            double maxValue = shownElements.Max((element) => element.Value);
+            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
+            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+            var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * wholeLength / maxValue))).ToArray();
+            int showcaseLength = showcase ? nameLength + 3 : 0;
+            double lineWidth = (double)(InteriorWidth - (showcaseLength + 3)) / shownElements.Length / 2;
+            int median = (int)shownElements.Average((element) => element.Value);
+            int medianPosition = (int)(median * wholeLength / maxValue);
 
-            // TODO: This is just a scaffolding code.
+            // Fill the line chart with the showcase first
+            StringBuilder lineChart = new();
+            for (int i = 0; i < InteriorHeight; i++)
+            {
+                // If showcase is on, show names and values.
+                int processedWidth = 0;
+                if (showcase && i < shownElements.Length)
+                {
+                    var element = shownElements[i];
+                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Name);
+                    int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
+                    spaces = spaces < 0 ? 0 : spaces;
+                    lineChart.Append(
+                        (useColor ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
+                        " ■ " +
+                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
+                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        element.Value +
+                        new string(' ', spaces) +
+                        " ┃ "
+                    );
+                    processedWidth += showcaseLength;
+                }
+                else if (showcase)
+                {
+                    lineChart.Append(
+                        new string(' ', showcaseLength) +
+                        " ┃ "
+                    );
+                    processedWidth += showcaseLength;
+                }
+                else
+                {
+                    lineChart.Append(
+                        " ┃ "
+                    );
+                    processedWidth += 3;
+                }
+
+                // Render all elements
+                int inverse = InteriorHeight - i;
+                int e = 0;
+                while (processedWidth < InteriorWidth)
+                {
+                    var elementTuple = shownElementHeights[e];
+                    var nextElementTuple = e + 1 < shownElementHeights.Length ? shownElementHeights[e + 1] : default;
+                    ChartElement? element = elementTuple.ce;
+                    int height = elementTuple.Item2;
+                    ChartElement? nextElement = nextElementTuple.ce;
+                    int nextHeight = nextElementTuple.Item2;
+
+                    double threshold = nextElement is null ? 0 : (nextHeight - height) / lineWidth;
+                    for (int w = 0; w < (int)lineWidth; w++)
+                    {
+                        int finalHeight = (int)Math.Round(height + (threshold * w));
+                        var color =
+                            inverse == finalHeight ? element.Color :
+                            inverse == medianPosition && run ? ConsoleColors.Fuchsia :
+                            (useColor ? ColorTools.CurrentBackgroundColor : "");
+                        double value = element.Value;
+
+                        // Render the element and its value
+                        lineChart.Append(
+                            (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
+                            "  " +
+                            (useColor ? ColorTools.RenderResetBackground() : "")
+                        );
+                        processedWidth += 2;
+                        if (nextElement is null)
+                            break;
+                    }
+                    e++;
+                    if (e >= shownElements.Length)
+                        break;
+                }
+
+                if (i < InteriorHeight - 1)
+                    lineChart.AppendLine();
+            }
+
             // Return the result
             return lineChart.ToString();
         }
