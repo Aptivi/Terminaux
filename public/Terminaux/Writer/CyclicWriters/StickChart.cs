@@ -125,6 +125,7 @@ namespace Terminaux.Writer.CyclicWriters
             nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
             var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * wholeLength / maxValue))).ToArray();
             int showcaseLength = showcase ? nameLength + 3 : 0;
+            double stickWidth = (double)(InteriorWidth - (showcaseLength + 3)) / shownElements.Length / 2;
 
             // Fill the stick chart with the showcase first
             StringBuilder stickChart = new();
@@ -168,23 +169,31 @@ namespace Terminaux.Writer.CyclicWriters
 
                 // Render all elements
                 int inverse = InteriorHeight - i;
-                for (int e = 0; e < shownElementHeights.Length && processedWidth < InteriorWidth; e++)
+                int e = 0;
+                while (processedWidth < InteriorWidth)
                 {
                     var elementTuple = shownElementHeights[e];
                     ChartElement? element = elementTuple.ce;
                     int height = elementTuple.Item2;
-                    var color = inverse <= height ? element.Color : (useColor ? ColorTools.CurrentBackgroundColor : "");
-                    string name = element.Name;
-                    double value = element.Value;
 
-                    // Render the element and its value
-                    int length = (int)(value * wholeLength / maxValue);
-                    stickChart.Append(
-                        (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
-                        "  " +
-                        (useColor ? ColorTools.RenderResetBackground() : "")
-                    );
-                    processedWidth += 2;
+                    for (int w = 0; w < (int)stickWidth; w++)
+                    {
+                        var color =
+                            inverse <= height ? element.Color :
+                            (useColor ? ColorTools.CurrentBackgroundColor : "");
+                        double value = element.Value;
+
+                        // Render the element and its value
+                        stickChart.Append(
+                            (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
+                            "  " +
+                            (useColor ? ColorTools.RenderResetBackground() : "")
+                        );
+                        processedWidth += 2;
+                    }
+                    e++;
+                    if (e >= shownElements.Length)
+                        break;
                 }
 
                 if (i < InteriorHeight - 1)
