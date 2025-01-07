@@ -62,7 +62,8 @@ namespace Terminaux.Inputs.Styles.Editor
         /// </summary>
         /// <param name="bytes">Byte array to showcase</param>
         /// <param name="settings">TUI settings</param>
-        public static void OpenInteractive(ref byte[] bytes, InteractiveTuiSettings? settings = null)
+        /// <param name="fullscreen">Whether it's a fullscreen viewer or not</param>
+        public static void OpenInteractive(ref byte[] bytes, InteractiveTuiSettings? settings = null, bool fullscreen = false)
         {
             // Set status
             status = "Ready";
@@ -81,19 +82,23 @@ namespace Terminaux.Inputs.Styles.Editor
                     // Now, render the keybindings
                     RenderKeybindings(ref screen, settings);
 
-                    // Render the box
-                    RenderHexViewBox(ref screen, settings);
+                    // Check to see if we need to render the box and the status
+                    if (!fullscreen)
+                    {
+                        // Render the box
+                        RenderHexViewBox(ref screen, settings);
+
+                        // Render the status
+                        RenderStatus(ref screen, settings);
+                    }
 
                     // Now, render the visual hex with the current selection
-                    RenderContentsInHexWithSelection(byteIdx, ref screen, bytes, settings);
-
-                    // Render the status
-                    RenderStatus(ref screen, settings);
+                    RenderContentsInHexWithSelection(byteIdx, ref screen, bytes, settings, fullscreen);
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
                     var keypress = Input.ReadKey();
-                    HandleKeypress(keypress, ref bytes, settings);
+                    HandleKeypress(keypress, ref bytes, screen, fullscreen, settings);
 
                     // Reset, in case selection changed
                     screen.RemoveBufferedParts();
@@ -183,7 +188,7 @@ namespace Terminaux.Inputs.Styles.Editor
             screen.AddBufferedPart("Hex editor interactive - Hex view box", part);
         }
 
-        private static void RenderContentsInHexWithSelection(int byteIdx, ref Screen screen, byte[] bytes, InteractiveTuiSettings settings)
+        private static void RenderContentsInHexWithSelection(int byteIdx, ref Screen screen, byte[] bytes, InteractiveTuiSettings settings, bool fullscreen)
         {
             // First, update the status
             StatusNumInfo(bytes);
@@ -192,8 +197,9 @@ namespace Terminaux.Inputs.Styles.Editor
             var part = new ScreenPart();
             part.AddDynamicText(() =>
             {
+                int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
                 var builder = new StringBuilder();
-                int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+                int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
                 int currentSelection = byteIdx / 16;
                 int currentPage = currentSelection / byteLinesPerPage;
                 int startIndex = byteLinesPerPage * currentPage;
@@ -210,53 +216,62 @@ namespace Terminaux.Inputs.Styles.Editor
                 builder.Append(
                     $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
                     $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
-                    $"{TextWriterWhereColor.RenderWhere(rendered, 1, 2)}"
+                    $"{TextWriterWhereColor.RenderWhere(rendered, fullscreen ? 0 : 1, SeparatorMinimumHeightInterior)}"
                 );
                 return builder.ToString();
             });
             screen.AddBufferedPart("Hex editor interactive - Contents", part);
         }
 
-        private static void HandleKeypress(ConsoleKeyInfo key, ref byte[] bytes, InteractiveTuiSettings settings)
+        private static void HandleKeypress(ConsoleKeyInfo key, ref byte[] bytes, Screen screen, bool fullscreen, InteractiveTuiSettings settings)
         {
             // Check to see if we have this binding
             switch (key.Key)
             {
                 case ConsoleKey.LeftArrow:
                     MoveBackward();
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.RightArrow:
                     MoveForward(bytes);
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.UpArrow:
                     MoveUp();
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.DownArrow:
                     MoveDown(bytes);
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.PageUp:
-                    PreviousPage(bytes);
+                    PreviousPage(bytes, screen, fullscreen);
                     break;
                 case ConsoleKey.PageDown:
-                    NextPage(bytes);
+                    NextPage(bytes, screen, fullscreen);
                     break;
                 case ConsoleKey.Home:
                     Beginning();
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.End:
                     End(bytes);
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.Escape:
                     bail = true;
                     break;
                 case ConsoleKey.K:
                     RenderKeybindingsBox(settings);
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.F1:
                     Insert(ref bytes, settings);
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.F2:
                     Remove(ref bytes);
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.F3:
                     if (key.Modifiers == ConsoleModifiers.Shift)
@@ -265,13 +280,16 @@ namespace Terminaux.Inputs.Styles.Editor
                         ReplaceAllWhat(ref bytes, settings);
                     else
                         Replace(ref bytes, settings);
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.F4:
                     NumInfo(bytes, settings);
+                    screen.RequireRefresh();
                     break;
                 case ConsoleKey.Oem2:
                 case ConsoleKey.Divide:
                     FindNext(ref bytes, settings);
+                    screen.RequireRefresh();
                     break;
             }
         }
@@ -518,9 +536,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 $"Binary: {byteNumBinary}";
         }
 
-        private static void PreviousPage(byte[] bytes)
+        private static void PreviousPage(byte[] bytes, Screen screen, bool fullscreen)
         {
-            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+            int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
+            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
             int currentSelection = byteIdx / 16;
             int currentPage = currentSelection / byteLinesPerPage;
             int startIndex = byteLinesPerPage * currentPage;
@@ -528,11 +547,13 @@ namespace Terminaux.Inputs.Styles.Editor
             if (startByte > bytes.Length)
                 startByte = bytes.Length;
             byteIdx = startByte - 1 < 0 ? 0 : startByte - 1;
+            screen.RequireRefresh();
         }
 
-        private static void NextPage(byte[] bytes)
+        private static void NextPage(byte[] bytes, Screen screen, bool fullscreen)
         {
-            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+            int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
+            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
             int currentSelection = byteIdx / 16;
             int currentPage = currentSelection / byteLinesPerPage;
             int endIndex = byteLinesPerPage * (currentPage + 1);
@@ -540,6 +561,7 @@ namespace Terminaux.Inputs.Styles.Editor
             if (startByte > bytes.Length - 1)
                 startByte = bytes.Length - 1;
             byteIdx = startByte;
+            screen.RequireRefresh();
         }
 
         private static void Beginning() =>

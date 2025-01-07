@@ -73,7 +73,8 @@ namespace Terminaux.Inputs.Styles.Editor
         /// </summary>
         /// <param name="lines">Target number of lines</param>
         /// <param name="settings">TUI settings</param>
-        public static void OpenInteractive(ref List<string> lines, InteractiveTuiSettings? settings = null)
+        /// <param name="fullscreen">Whether it's a fullscreen viewer or not</param>
+        public static void OpenInteractive(ref List<string> lines, InteractiveTuiSettings? settings = null, bool fullscreen = false)
         {
             // Set status
             status = "Ready";
@@ -98,19 +99,23 @@ namespace Terminaux.Inputs.Styles.Editor
                     // Now, render the keybindings
                     RenderKeybindings(ref screen, settings);
 
-                    // Render the box
-                    RenderTextViewBox(ref screen, settings);
+                    // Check to see if we need to render the box and the status
+                    if (!fullscreen)
+                    {
+                        // Render the box
+                        RenderTextViewBox(ref screen, settings);
 
-                    // Now, render the visual hex with the current selection
-                    RenderContentsWithSelection(lineIdx, ref screen, lines, settings);
+                        // Render the status
+                        RenderStatus(ref screen, settings);
+                    }
 
-                    // Render the status
-                    RenderStatus(ref screen, settings);
+                    // Now, render the visual text with the current selection
+                    RenderContentsWithSelection(lineIdx, ref screen, lines, settings, fullscreen);
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
                     var keypress = Input.ReadKey();
-                    HandleKeypress(keypress, ref lines, screen, settings);
+                    HandleKeypress(keypress, ref lines, screen, fullscreen, settings);
 
                     // Reset, in case selection changed
                     screen.RemoveBufferedParts();
@@ -200,7 +205,7 @@ namespace Terminaux.Inputs.Styles.Editor
             screen.AddBufferedPart("Text editor interactive - Text view box", part);
         }
 
-        private static void RenderContentsWithSelection(int lineIdx, ref Screen screen, List<string> lines, InteractiveTuiSettings settings)
+        private static void RenderContentsWithSelection(int lineIdx, ref Screen screen, List<string> lines, InteractiveTuiSettings settings, bool fullscreen)
         {
             // First, update the status
             StatusTextInfo(lines);
@@ -214,15 +219,15 @@ namespace Terminaux.Inputs.Styles.Editor
             part.AddDynamicText(() =>
             {
                 // Get the widths and heights
-                int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
-                int SeparatorMinimumHeightInterior = 2;
+                int SeparatorConsoleWidthInterior = fullscreen ? ConsoleWrapper.WindowWidth : ConsoleWrapper.WindowWidth - 2;
+                int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
 
                 // Get the colors
                 var unhighlightedColorBackground = settings.BackgroundColor;
                 var highlightedColorBackground = settings.PaneSelectedItemBackColor;
 
                 // Get the start and the end indexes for lines
-                int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+                int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
                 int currentPage = lineIdx / lineLinesPerPage;
                 int startIndex = lineLinesPerPage * currentPage + 1;
                 int endIndex = lineLinesPerPage * (currentPage + 1);
@@ -309,33 +314,33 @@ namespace Terminaux.Inputs.Styles.Editor
             screen.AddBufferedPart("Text editor interactive - Contents", part);
         }
 
-        private static void HandleKeypress(ConsoleKeyInfo key, ref List<string> lines, Screen screen, InteractiveTuiSettings settings)
+        private static void HandleKeypress(ConsoleKeyInfo key, ref List<string> lines, Screen screen, bool fullscreen, InteractiveTuiSettings settings)
         {
             switch (key.Key)
             {
                 case ConsoleKey.LeftArrow:
-                    MoveBackward(lines);
+                    MoveBackward(lines, screen);
                     return;
                 case ConsoleKey.RightArrow:
-                    MoveForward(lines);
+                    MoveForward(lines, screen);
                     return;
                 case ConsoleKey.UpArrow:
-                    MoveUp(lines);
+                    MoveUp(lines, screen);
                     return;
                 case ConsoleKey.DownArrow:
-                    MoveDown(lines);
+                    MoveDown(lines, screen);
                     return;
                 case ConsoleKey.PageUp:
-                    PreviousPage(lines);
+                    PreviousPage(lines, screen, fullscreen);
                     return;
                 case ConsoleKey.PageDown:
-                    NextPage(lines);
+                    NextPage(lines, screen, fullscreen);
                     return;
                 case ConsoleKey.Home:
-                    Beginning(lines);
+                    Beginning(lines, screen);
                     return;
                 case ConsoleKey.End:
-                    End(lines);
+                    End(lines, screen);
                     return;
             }
             if (entering)
@@ -344,19 +349,19 @@ namespace Terminaux.Inputs.Styles.Editor
                 switch (key.Key)
                 {
                     case ConsoleKey.Backspace:
-                        RuboutChar(ref lines);
+                        RuboutChar(ref lines, screen);
                         break;
                     case ConsoleKey.Delete:
-                        DeleteChar(ref lines);
+                        DeleteChar(ref lines, screen);
                         break;
                     case ConsoleKey.Escape:
                         SwitchEnter(lines, screen);
                         break;
                     case ConsoleKey.Enter:
-                        Insert(ref lines);
+                        Insert(ref lines, screen);
                         break;
                     default:
-                        InsertChar(key.KeyChar, ref lines);
+                        InsertChar(key.KeyChar, ref lines, screen);
                         break;
                 }
             }
@@ -369,40 +374,43 @@ namespace Terminaux.Inputs.Styles.Editor
                         break;
                     case ConsoleKey.K:
                         RenderKeybindingsBox(settings);
+                        screen.RequireRefresh();
                         break;
                     case ConsoleKey.I:
                         SwitchEnter(lines, screen);
                         break;
                     case ConsoleKey.X:
-                        DeleteChar(ref lines);
+                        DeleteChar(ref lines, screen);
                         break;
                     case ConsoleKey.F1:
                         if (key.Modifiers == ConsoleModifiers.Shift)
-                            InsertNoMove(ref lines);
+                            InsertNoMove(ref lines, screen);
                         else
-                            Insert(ref lines);
+                            Insert(ref lines, screen);
                         break;
                     case ConsoleKey.F2:
                         if (key.Modifiers == ConsoleModifiers.Shift)
-                            RemoveLineNoMove(ref lines);
+                            RemoveLineNoMove(ref lines, screen);
                         else
-                            RemoveLine(ref lines);
+                            RemoveLine(ref lines, screen);
                         break;
                     case ConsoleKey.F3:
                         if (key.Modifiers == ConsoleModifiers.Shift)
                             ReplaceAll(ref lines, settings);
                         else
                             Replace(ref lines, settings);
+                        screen.RequireRefresh();
                         break;
                     case ConsoleKey.Oem2:
                     case ConsoleKey.Divide:
-                        FindNext(ref lines, settings);
+                        FindNext(ref lines, settings, screen);
+                        screen.RequireRefresh();
                         break;
                 }
             }
         }
 
-        private static void InsertChar(char keyChar, ref List<string> lines)
+        private static void InsertChar(char keyChar, ref List<string> lines, Screen screen)
         {
             // Check the lines
             if (lines.Count == 0)
@@ -410,10 +418,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Insert a character
             lines[lineIdx] = lines[lineIdx].Insert(lines[lineIdx].Length == 0 ? 0 : lineColIdx, $"{keyChar}");
-            MoveForward(lines);
+            MoveForward(lines, screen);
         }
 
-        private static void RuboutChar(ref List<string> lines)
+        private static void RuboutChar(ref List<string> lines, Screen screen)
         {
             // Check the lines
             if (lines.Count == 0)
@@ -427,19 +435,19 @@ namespace Terminaux.Inputs.Styles.Editor
                 int colIdx = absolutes[lineColIdx - 1].Item1;
                 int seqLength = absolutes[lineColIdx - 1].Item2.Length;
                 lines[lineIdx] = lines[lineIdx].Remove(colIdx, seqLength);
-                MoveBackward(lines);
+                MoveBackward(lines, screen);
             }
             else if (lineIdx > 0)
             {
                 string substring = lines[lineIdx];
                 int oldLen = lines[lineIdx - 1].Length;
                 lines[lineIdx - 1] = lines[lineIdx - 1] + substring;
-                RemoveLine(ref lines);
-                UpdateColumnIndex(oldLen, lines);
+                RemoveLine(ref lines, screen);
+                UpdateColumnIndex(oldLen, lines, screen);
             }
         }
 
-        private static void DeleteChar(ref List<string> lines)
+        private static void DeleteChar(ref List<string> lines, Screen screen)
         {
             // Check the lines
             if (lines.Count == 0)
@@ -455,10 +463,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 int colIdx = absolutes[lineColIdx].Item1;
                 int seqLength = absolutes[lineColIdx].Item2.Length;
                 lines[lineIdx] = lines[lineIdx].Remove(colIdx, seqLength);
-                UpdateLineIndex(lineIdx, lines);
+                UpdateLineIndex(lineIdx, lines, screen);
             }
             else
-                RemoveLine(ref lines);
+                RemoveLine(ref lines, screen);
         }
 
         private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
@@ -473,19 +481,19 @@ namespace Terminaux.Inputs.Styles.Editor
             InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
         }
 
-        private static void MoveBackward(List<string> lines) =>
-            UpdateColumnIndex(lineColIdx - 1, lines);
+        private static void MoveBackward(List<string> lines, Screen screen) =>
+            UpdateColumnIndex(lineColIdx - 1, lines, screen);
 
-        private static void MoveForward(List<string> lines) =>
-            UpdateColumnIndex(lineColIdx + 1, lines);
+        private static void MoveForward(List<string> lines, Screen screen) =>
+            UpdateColumnIndex(lineColIdx + 1, lines, screen);
 
-        private static void MoveUp(List<string> lines) =>
-            UpdateLineIndex(lineIdx - 1, lines);
+        private static void MoveUp(List<string> lines, Screen screen) =>
+            UpdateLineIndex(lineIdx - 1, lines, screen);
 
-        private static void MoveDown(List<string> lines) =>
-            UpdateLineIndex(lineIdx + 1, lines);
+        private static void MoveDown(List<string> lines, Screen screen) =>
+            UpdateLineIndex(lineIdx + 1, lines, screen);
 
-        private static void Insert(ref List<string> lines)
+        private static void Insert(ref List<string> lines, Screen screen)
         {
             // Insert a line
             if (lines.Count == 0)
@@ -502,11 +510,11 @@ namespace Terminaux.Inputs.Styles.Editor
                 lines.Insert(lineIdx + 1, substringNewLine);
             }
 
-            MoveDown(lines);
-            UpdateColumnIndex(0, lines);
+            MoveDown(lines, screen);
+            UpdateColumnIndex(0, lines, screen);
         }
 
-        private static void RemoveLine(ref List<string> lines)
+        private static void RemoveLine(ref List<string> lines, Screen screen)
         {
             // Check the lines
             if (lines.Count == 0)
@@ -514,20 +522,20 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Remove a line
             RemoveLine(ref lines, lineIdx + 1);
-            MoveUp(lines);
+            MoveUp(lines, screen);
         }
 
-        private static void InsertNoMove(ref List<string> lines)
+        private static void InsertNoMove(ref List<string> lines, Screen screen)
         {
             // Insert a line
             if (lines.Count == 0)
                 lines.Add("");
             else
                 lines.Insert(lineIdx + 1, "");
-            UpdateLineIndex(lineIdx, lines);
+            UpdateLineIndex(lineIdx, lines, screen);
         }
 
-        private static void RemoveLineNoMove(ref List<string> lines)
+        private static void RemoveLineNoMove(ref List<string> lines, Screen screen)
         {
             // Check the lines
             if (lines.Count == 0)
@@ -535,7 +543,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Remove a line
             RemoveLine(ref lines, lineIdx + 1);
-            UpdateLineIndex(lineIdx, lines);
+            UpdateLineIndex(lineIdx, lines, screen);
         }
 
         private static void Replace(ref List<string> lines, InteractiveTuiSettings settings)
@@ -566,7 +574,7 @@ namespace Terminaux.Inputs.Styles.Editor
             Replace(ref lines, replacementText, replacedText);
         }
 
-        private static void FindNext(ref List<string> lines, InteractiveTuiSettings settings)
+        private static void FindNext(ref List<string> lines, InteractiveTuiSettings settings, Screen screen)
         {
             // Check the lines
             if (lines.Count == 0)
@@ -640,8 +648,8 @@ namespace Terminaux.Inputs.Styles.Editor
             // Update line index and column index if found. Otherwise, show a message
             if (found)
             {
-                UpdateLineIndex(r, lines);
-                UpdateColumnIndex(c, lines);
+                UpdateLineIndex(r, lines, screen);
+                UpdateColumnIndex(c, lines, screen);
                 cachedFind = text;
             }
             else
@@ -672,43 +680,45 @@ namespace Terminaux.Inputs.Styles.Editor
                 status += $" | Tab: {(int)currChar[0]}";
         }
 
-        private static void PreviousPage(List<string> lines)
+        private static void PreviousPage(List<string> lines, Screen screen, bool fullscreen)
         {
-            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+            int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
+            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
             int currentPage = lineIdx / lineLinesPerPage;
             int startIndex = lineLinesPerPage * currentPage;
             if (startIndex > lines.Count)
                 startIndex = lines.Count;
-            UpdateLineIndex(startIndex - 1 < 0 ? 0 : startIndex - 1, lines);
+            UpdateLineIndex(startIndex - 1 < 0 ? 0 : startIndex - 1, lines, screen);
         }
 
-        private static void NextPage(List<string> lines)
+        private static void NextPage(List<string> lines, Screen screen, bool fullscreen)
         {
-            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+            int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
+            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
             int currentPage = lineIdx / lineLinesPerPage;
             int endIndex = lineLinesPerPage * (currentPage + 1);
             if (endIndex > lines.Count - 1)
                 endIndex = lines.Count - 1;
-            UpdateLineIndex(endIndex, lines);
+            UpdateLineIndex(endIndex, lines, screen);
         }
 
-        private static void Beginning(List<string> lines) =>
-            UpdateLineIndex(0, lines);
+        private static void Beginning(List<string> lines, Screen screen) =>
+            UpdateLineIndex(0, lines, screen);
 
-        private static void End(List<string> lines) =>
-            UpdateLineIndex(lines.Count - 1, lines);
+        private static void End(List<string> lines, Screen screen) =>
+            UpdateLineIndex(lines.Count - 1, lines, screen);
 
-        private static void UpdateLineIndex(int lnIdx, List<string> lines)
+        private static void UpdateLineIndex(int lnIdx, List<string> lines, Screen screen)
         {
             lineIdx = lnIdx;
             if (lineIdx > lines.Count - 1)
                 lineIdx = lines.Count - 1;
             if (lineIdx < 0)
                 lineIdx = 0;
-            UpdateColumnIndex(lineColIdx, lines);
+            UpdateColumnIndex(lineColIdx, lines, screen);
         }
 
-        private static void UpdateColumnIndex(int clIdx, List<string> lines)
+        private static void UpdateColumnIndex(int clIdx, List<string> lines, Screen screen)
         {
             lineColIdx = clIdx;
             if (lines.Count == 0)
@@ -722,13 +732,14 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = maxLen;
             if (lineColIdx < 0)
                 lineColIdx = 0;
+            screen.RequireRefresh();
         }
 
         private static void SwitchEnter(List<string> lines, Screen screen)
         {
             entering = !entering;
             screen.RequireRefresh();
-            UpdateLineIndex(lineIdx, lines);
+            UpdateLineIndex(lineIdx, lines, screen);
         }
 
         private static (int, string)[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
