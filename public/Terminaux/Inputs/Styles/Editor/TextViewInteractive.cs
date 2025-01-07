@@ -59,7 +59,8 @@ namespace Terminaux.Inputs.Styles.Editor
         /// </summary>
         /// <param name="lines">Target number of lines</param>
         /// <param name="settings">TUI settings</param>
-        public static void OpenInteractive(List<string> lines, InteractiveTuiSettings? settings = null)
+        /// <param name="fullscreen">Whether it's a fullscreen viewer or not</param>
+        public static void OpenInteractive(List<string> lines, InteractiveTuiSettings? settings = null, bool fullscreen = false)
         {
             // Set status
             status = "Ready";
@@ -84,14 +85,18 @@ namespace Terminaux.Inputs.Styles.Editor
                     // Now, render the keybindings
                     RenderKeybindings(ref screen, settings);
 
-                    // Render the box
-                    RenderTextViewBox(ref screen, settings);
+                    // Check to see if we need to render the box and the status
+                    if (!fullscreen)
+                    {
+                        // Render the box
+                        RenderTextViewBox(ref screen, settings);
 
-                    // Now, render the visual hex with the current selection
-                    RenderContentsWithSelection(lineIdx, ref screen, lines, settings);
+                        // Render the status
+                        RenderStatus(ref screen, settings);
+                    }
 
-                    // Render the status
-                    RenderStatus(ref screen, settings);
+                    // Now, render the visual text with the current selection
+                    RenderContentsWithSelection(lineIdx, ref screen, lines, settings, fullscreen);
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
@@ -186,7 +191,7 @@ namespace Terminaux.Inputs.Styles.Editor
             screen.AddBufferedPart("Text editor interactive - Text view box", part);
         }
 
-        private static void RenderContentsWithSelection(int lineIdx, ref Screen screen, List<string> lines, InteractiveTuiSettings settings)
+        private static void RenderContentsWithSelection(int lineIdx, ref Screen screen, List<string> lines, InteractiveTuiSettings settings, bool fullscreen)
         {
             // First, update the status
             StatusTextInfo(lines);
@@ -201,14 +206,14 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 // Get the widths and heights
                 int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
-                int SeparatorMinimumHeightInterior = 2;
+                int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
 
                 // Get the colors
                 var unhighlightedColorBackground = settings.BackgroundColor;
                 var highlightedColorBackground = settings.PaneSelectedItemBackColor;
 
                 // Get the start and the end indexes for lines
-                int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+                int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4 + SeparatorMinimumHeightInterior;
                 int currentPage = lineIdx / lineLinesPerPage;
                 int startIndex = lineLinesPerPage * currentPage + 1;
                 int endIndex = lineLinesPerPage * (currentPage + 1);

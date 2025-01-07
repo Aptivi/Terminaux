@@ -219,6 +219,7 @@ namespace Terminaux.Console.Fixtures
             new TestHexViewerInteractive(),
             new TestTextEditorInteractive(),
             new TestTextViewerInteractive(),
+            new TestTextViewerFullscreenInteractive(),
             new TestTestFixturesInteractive(),
             new TestTestFixtures(),
 
@@ -256,6 +257,7 @@ namespace Terminaux.Console.Fixtures
             new TestHexViewerInteractiveCjk(),
             new TestTextEditorInteractiveCjk(),
             new TestTextViewerInteractiveCjk(),
+            new TestTextViewerFullscreenInteractiveCjk(),
 
             // Color
             new ColorTest(),
