@@ -177,6 +177,7 @@ namespace Terminaux.Console.Fixtures
             new TestStemLeafChart(),
             new TestSyntaxText(),
             new TestLineChart(),
+            new TestWinsLosses(),
 
             // Input
             new TestInputSelection(),
