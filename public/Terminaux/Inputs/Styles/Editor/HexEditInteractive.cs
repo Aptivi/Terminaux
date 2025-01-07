@@ -302,7 +302,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModalColorBack("Available keybindings", bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
         }
 
         private static void MoveBackward()
@@ -507,11 +507,7 @@ namespace Terminaux.Inputs.Styles.Editor
             string byteNumBinary = Convert.ToString(byteNum, 2);
 
             // Print the number information
-            string header = "Number information:";
-            int maxLength = header.Length > ConsoleWrapper.WindowWidth - 4 ? ConsoleWrapper.WindowWidth - 4 : header.Length;
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(
-                header + CharManager.NewLine +
-                new string('=', maxLength) + CharManager.NewLine + CharManager.NewLine +
+            InfoBoxModalColor.WriteInfoBoxModalColorBack("Number information",
                 $"Hexadecimal:  {byteNumHex}" + CharManager.NewLine +
                 $"Octal:        {byteNumOctal}" + CharManager.NewLine +
                 $"Number:       {byteNumNumber}" + CharManager.NewLine +

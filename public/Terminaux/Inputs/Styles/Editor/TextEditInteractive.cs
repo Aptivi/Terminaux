@@ -478,7 +478,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(finalBindings);
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModalColorBack("Available keybindings", bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
         }
 
         private static void MoveBackward(List<string> lines, Screen screen) =>
