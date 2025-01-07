@@ -62,29 +62,26 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="args">Arguments to format the text</param>
         public static void WriteWrapped(string text, Color foregroundColor, Color backgroundColor, bool force = false, params object?[]? args)
         {
-            lock (TextWriterRaw.WriteLock)
+            try
             {
-                try
+                // Use the text viewer to avoid code repetition
+                text = text.FormatString(args);
+                var lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth).ToList();
+                if (force || lines.Count >= ConsoleWrapper.WindowHeight)
                 {
-                    // Use the text viewer to avoid code repetition
-                    text = text.FormatString(args);
-                    var lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth).ToList();
-                    if (force || lines.Count >= ConsoleWrapper.WindowHeight)
+                    TextViewInteractive.OpenInteractive(lines, new()
                     {
-                        TextViewInteractive.OpenInteractive(lines, new()
-                        {
-                            PaneSelectedItemBackColor = foregroundColor,
-                            BackgroundColor = backgroundColor,
-                        }, true);
-                    }
-                    else
-                        TextWriterColor.WriteColorBack(text, foregroundColor, backgroundColor);
+                        PaneSelectedItemBackColor = foregroundColor,
+                        BackgroundColor = backgroundColor,
+                    }, true);
                 }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
-                }
+                else
+                    TextWriterColor.WriteColorBack(text, foregroundColor, backgroundColor);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
         }
     }
