@@ -29,7 +29,6 @@ namespace Terminaux.Writer.ConsoleWriters
     /// <summary>
     /// List entry writer with color support
     /// </summary>
-    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Also, this writer doesn't support indeterminate progress bars. Please use its cyclic writer equivalent.")]
     public static class ListEntryWriterColor
     {
         /// <summary>
