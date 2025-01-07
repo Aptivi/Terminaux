@@ -104,6 +104,11 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to render the bars upside down or not
+        /// </summary>
+        public bool UpsideDown { get; set; }
+
+        /// <summary>
         /// Renders a stick chart
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
@@ -111,10 +116,10 @@ namespace Terminaux.Writer.CyclicWriters
         {
             return TextWriterWhereColor.RenderWhere(
                 RenderStickChart(
-                    elements, InteriorWidth, InteriorHeight, Showcase, UseColors), Left, Top);
+                    elements, InteriorWidth, InteriorHeight, Showcase, UseColors, UpsideDown), Left, Top);
         }
 
-        internal static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool useColor = true)
+        internal static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool useColor = true, bool upsideDown = false)
         {
             // Some variables
             int maxNameLength = InteriorWidth / 4;
@@ -168,7 +173,7 @@ namespace Terminaux.Writer.CyclicWriters
                 }
 
                 // Render all elements
-                int inverse = InteriorHeight - i;
+                int inverse = upsideDown ? i : InteriorHeight - i;
                 int e = 0;
                 while (processedWidth < InteriorWidth)
                 {
