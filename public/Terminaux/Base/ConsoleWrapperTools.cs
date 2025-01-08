@@ -655,7 +655,7 @@ namespace Terminaux.Base
             Write(VtSequenceBasicChars.BellChar);
 
         private static void Clear() =>
-            Console.Clear();
+            Write(ConsoleClearing.GetClearWholeScreenSequence());
 
         private static void ClearLoadBack()
         {
