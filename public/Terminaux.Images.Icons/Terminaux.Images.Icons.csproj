@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyTitle>Terminaux.Images</AssemblyTitle>
+    <AssemblyTitle>Terminaux.Images.Icons</AssemblyTitle>
     <AssemblyDescription>Console Manipulation Library - Image Processing</AssemblyDescription>
     <Description>
       A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.
-      This provides developers the image processing component for both .NET Framework 4.8 and .NET 8.0 applications.
+      This provides developers icons provided by OpenMoji for both .NET Framework 4.8 and .NET 8.0 applications.
     </Description>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Terminaux.Images</AssemblyName>
-    <PackageId>Terminaux.Images</PackageId>
+    <AssemblyName>Terminaux.Images.Icons</AssemblyName>
+    <PackageId>Terminaux.Images.Icons</PackageId>
     <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
     <PackageProjectUrl>https://github.com/Aptivi/Terminaux</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
@@ -39,15 +39,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.4.0" />
+    <ProjectReference Include="..\..\public\Terminaux.Images\Terminaux.Images.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Placeholders\*" />
+    <EmbeddedResource Include="Resources/Icons/**/*" />
   </ItemGroup>
 
 </Project>

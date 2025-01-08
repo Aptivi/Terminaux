@@ -95,7 +95,7 @@ namespace Terminaux.Images.Icons
         private static string GetPrefix(IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal)
         {
             // Build the prefix according to the color and the quality of the icons requested.
-            var prefixBuilder = new StringBuilder($"Terminaux.Images.Resources.Icons.{color}");
+            var prefixBuilder = new StringBuilder($"Terminaux.Images.Icons.Resources.Icons.{color}");
             if (quality == IconsQuality.High)
                 prefixBuilder.Append("_HQ");
             else if (quality == IconsQuality.Scalable)
