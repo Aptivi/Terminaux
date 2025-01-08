@@ -329,6 +329,7 @@ namespace Terminaux.Console.Fixtures
             new ProgressFourTest(),
             new ProgressDecrementTest(),
             new TestCursorCoord(),
+            new AllowBackground(),
 
             // Image
             new RenderImage(),
