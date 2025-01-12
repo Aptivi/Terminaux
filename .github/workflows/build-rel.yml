@@ -2,18 +2,24 @@ name: Build Project (Release)
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
     
 jobs:
   build:
     strategy:
       matrix:
         runs-on: [ubuntu-latest, windows-latest, macos-latest]
+      fail-fast: false
     runs-on: ${{ matrix.runs-on }}
 
     steps:
       - uses: actions/checkout@v4
         with:
+          submodules: 'true'
           ref: ${{ github.ref }}
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -22,9 +28,14 @@ jobs:
       - name: Solution Compilation (Windows)
         if: matrix.runs-on == 'windows-latest'
         run: cd tools ; ./build.cmd ; cd ..
-      - name: Solution Compilation (Unix)
-        if: matrix.runs-on != 'windows-latest'
+      - name: Solution Compilation (macOS)
+        if: matrix.runs-on == 'macos-latest'
         run: make
+      - name: Solution Compilation (Unix)
+        if: matrix.runs-on == 'ubuntu-latest'
+        run: |
+          sudo apt install mono-complete
+          make
       - name: Testing
         run: dotnet test --no-build --configuration Release
         
