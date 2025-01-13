@@ -1,11 +1,15 @@
-Terminaux 6.0.3 is a patch release that addresses a bug in the interactive selection TUI.
+Terminaux 6.1.0 is a release on top of the 6.0.0 version that adds some features and improvements.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated Magick.NET
-- `[*]` Fixed selection movement allowing illegal positions in the interactive selection TUI
+- `[+]` Added modern argument parsing (from Nitrocid 0.1.2.0)
+- `[+]` Added wrapped writer
+- `[+]` Added full screen editors and viewers
+- `[+]` Added more charts
+- `[*]` General improvements and bug fixes
+- `[-]` Removed obsolete screen part functions
 
 Review the commit history if you want to get a deep insight about the changes.
 
