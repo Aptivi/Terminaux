@@ -20,11 +20,7 @@
 using Aptivestigate.Logging;
 using Aptivestigate.Serilog;
 using Serilog;
-using Serilog.Sinks.File;
-using SpecProbe.Software.Platform;
 using System;
-using System.IO;
-using System.Reflection;
 
 namespace Terminaux.Base
 {
