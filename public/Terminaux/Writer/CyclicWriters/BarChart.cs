@@ -21,6 +21,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -107,13 +108,12 @@ namespace Terminaux.Writer.CyclicWriters
         {
             // Some variables
             int maxNameLength = InteriorWidth / 4;
-            int nameLength = elements.Max((element) => ConsoleChar.EstimateCellWidth(element.Name));
+            var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
+            double maxValue = shownElements.Max((element) => element.Value);
+            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
             nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
             int showcaseLength = showcase ? nameLength + 3 : 0;
-            int wholeLength = InteriorWidth - showcaseLength;
-            int maxNumLength = elements.Max((element) => $" {element.Value}".Length);
-            int chartLength = wholeLength - maxNumLength;
-            double maxValue = elements.Max((element) => element.Value);
+            int wholeLength = InteriorWidth - showcaseLength - (showcase ? 3 : 0);
 
             // Fill the bar chart with the elements first
             StringBuilder barChart = new();
@@ -129,25 +129,27 @@ namespace Terminaux.Writer.CyclicWriters
                 // Render the showcase
                 if (showcase)
                 {
-                    int nameWidth = ConsoleChar.EstimateCellWidth(name);
-                    int spaces = nameLength - nameWidth;
+                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length));
+                    int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
+                    spaces = spaces < 0 ? 0 : spaces;
                     barChart.Append(
-                        (useColor ? ColorTools.RenderSetConsoleColor(color) : "") +
-                        name.Truncate(nameLength) +
+                        (useColor ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
+                        " ■ " +
+                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
+                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        element.Value +
                         new string(' ', spaces) +
-                        (useColor ? ColorTools.RenderResetForeground() : "") +
                         " ┃ "
                     );
                 }
 
                 // Render the element and its value
-                int length = (int)(value * chartLength / maxValue);
+                int length = (int)(value * wholeLength / maxValue);
                 barChart.AppendLine(
                     (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
                     new string(' ', length) +
-                    (useColor ? ColorTools.RenderSetConsoleColor(color) : "") +
                     (useColor ? ColorTools.RenderResetBackground() : "") +
-                    $" {value}" +
                     (useColor ? ColorTools.RenderResetForeground() : "")
                 );
             }
