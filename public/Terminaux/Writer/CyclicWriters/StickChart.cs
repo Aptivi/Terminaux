@@ -141,7 +141,7 @@ namespace Terminaux.Writer.CyclicWriters
                 if (showcase && i < shownElements.Length)
                 {
                     var element = shownElements[i];
-                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Name);
+                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length));
                     int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
                     spaces = spaces < 0 ? 0 : spaces;
                     stickChart.Append(
