@@ -549,15 +549,11 @@ namespace Terminaux.Colors
                 {
                     if (canSet | ForceSet)
                         currentBackgroundColor = ColorSequence;
-                    else if (!canSet)
-                        currentBackgroundColor = Color.Empty;
                 }
                 else
                 {
                     if (canSet | ForceSet)
                         currentForegroundColor = ColorSequence;
-                    else if (!canSet)
-                        currentForegroundColor = Color.Empty;
                 }
             }
         }
