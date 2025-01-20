@@ -45,6 +45,7 @@ namespace Terminaux.Writer.CyclicWriters
         private Color optionBackgroundColor = ConsoleColors.Olive;
         private bool useColors = true;
         private bool writeLabels = true;
+        private bool writeHelpKeyInfo = true;
 
         /// <summary>
         /// Key bindings
@@ -161,6 +162,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to write help key info at the end of the keybinding bar upon overflow
+        /// </summary>
+        public bool WriteHelpKeyInfo
+        {
+            get => writeHelpKeyInfo;
+            set => writeHelpKeyInfo = value;
+        }
+
+        /// <summary>
         /// Help key info
         /// </summary>
         public ConsoleKeyInfo? HelpKeyInfo { get; set; }
@@ -171,9 +181,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered Keybindings text that will be used by the renderer</returns>
         public string Render() =>
             TextWriterWhereColor.RenderWhere(
-                RenderKeybindings(KeybindingList, BuiltinKeybindings, BuiltinColor, BuiltinForegroundColor, BuiltinBackgroundColor, OptionColor, OptionForegroundColor, OptionBackgroundColor, BackgroundColor, Width, HelpKeyInfo, UseColors, WriteLabels), Left, Top);
+                RenderKeybindings(KeybindingList, BuiltinKeybindings, BuiltinColor, BuiltinForegroundColor, BuiltinBackgroundColor, OptionColor, OptionForegroundColor, OptionBackgroundColor, BackgroundColor, Width, HelpKeyInfo, UseColors, WriteLabels, WriteHelpKeyInfo), Left, Top);
 
-        internal static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int width, ConsoleKeyInfo? helpKeyInfo, bool useColor = true, bool writeLabels = true)
+        internal static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int width, ConsoleKeyInfo? helpKeyInfo, bool useColor = true, bool writeLabels = true, bool writeHelpKeyInfo = true)
         {
             var bindingsBuilder = new StringBuilder();
             helpKeyInfo ??= new('K', ConsoleKey.K, false, false, false);
@@ -209,7 +219,7 @@ namespace Terminaux.Writer.CyclicWriters
                         }.Render()
                     );
                 }
-                else
+                else if (writeHelpKeyInfo)
                 {
                     // We can't render anymore, so just break and write a binding to show more if it's provided
                     int spaces = width - actualLength - bindingExtraLength + 1;

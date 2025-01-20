@@ -73,6 +73,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Width = ConsoleWrapper.WindowWidth - 1,
                 Top = ConsoleWrapper.WindowHeight - 1,
                 KeybindingList = SpinnerSelector.bindings,
+                WriteHelpKeyInfo = false,
             };
             buffer.Append(spinnerInfo.Render());
             buffer.Append(spinnerKeybindings.Render());

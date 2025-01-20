@@ -84,6 +84,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Width = ConsoleWrapper.WindowWidth - 1,
                     Top = ConsoleWrapper.WindowHeight - 1,
                     KeybindingList = FigletSelector.bindings,
+                    WriteHelpKeyInfo = false,
                 };
                 buffer.Append(figletInfo.Render());
                 buffer.Append(figletKeybindings.Render());

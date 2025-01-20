@@ -114,7 +114,8 @@ namespace Terminaux.Images.Icons
                             KeybindingList = bindings,
                             Left = 0,
                             Top = ConsoleWrapper.WindowHeight - 1,
-                            Width = ConsoleWrapper.WindowWidth - 1
+                            Width = ConsoleWrapper.WindowWidth - 1,
+                            WriteHelpKeyInfo = false,
                         }.Render());
                     return buffer.ToString();
                 });

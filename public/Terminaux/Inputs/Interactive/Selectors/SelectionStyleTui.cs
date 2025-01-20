@@ -196,6 +196,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Top = ConsoleWrapper.WindowHeight - 1,
                 Width = ConsoleWrapper.WindowWidth - 1,
                 BackgroundColor = settings.BackgroundColor,
+                WriteHelpKeyInfo = false,
             };
             selectionBuilder.Append(
                 keybindingsRenderable.Render()

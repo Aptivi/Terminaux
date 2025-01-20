@@ -376,6 +376,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Width = ConsoleWrapper.WindowWidth - 1,
                 Top = ConsoleWrapper.WindowHeight - 1,
                 KeybindingList = ColorSelector.bindings,
+                WriteHelpKeyInfo = false,
             };
             selector.Append(figletKeybindings.Render());
             return selector.ToString();

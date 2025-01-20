@@ -205,6 +205,7 @@ namespace Terminaux.Inputs.Interactive
                 Left = 0,
                 Top = ConsoleWrapper.WindowHeight - 1,
                 Width = ConsoleWrapper.WindowWidth - 1,
+                WriteHelpKeyInfo = false,
             };
             elements.Append(keybindingsRenderable.Render());
 
