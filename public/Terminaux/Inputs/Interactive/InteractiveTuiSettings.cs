@@ -28,77 +28,224 @@ namespace Terminaux.Inputs.Interactive
     /// </summary>
     public class InteractiveTuiSettings
     {
+        private static readonly InteractiveTuiSettings globalSettings = new();
+        private Color backgroundColor = ConsoleColors.Black;
+        private Color foregroundColor = ConsoleColors.Yellow;
+        private Color paneBackgroundColor = ConsoleColors.Black;
+        private Color paneSeparatorColor = ConsoleColors.Green;
+        private Color paneSelectedSeparatorColor = ConsoleColors.Lime;
+        private Color paneSelectedItemForeColor = ConsoleColors.Black;
+        private Color paneSelectedItemBackColor = ConsoleColors.Olive;
+        private Color paneItemForeColor = ConsoleColors.Olive;
+        private Color paneItemBackColor = ConsoleColors.Black;
+        private Color optionBackgroundColor = ConsoleColors.Olive;
+        private Color keyBindingOptionColor = ConsoleColors.Black;
+        private Color optionForegroundColor = ConsoleColors.Yellow;
+        private Color keyBindingBuiltinBackgroundColor = ConsoleColors.Green;
+        private Color keyBindingBuiltinColor = ConsoleColors.Black;
+        private Color keyBindingBuiltinForegroundColor = ConsoleColors.Lime;
+        private Color boxBackgroundColor = ConsoleColors.Black;
+        private Color boxForegroundColor = ConsoleColors.Yellow;
+        private BorderSettings borderSettings = BorderSettings.GlobalSettings;
+
+        /// <summary>
+        /// Global interactive TUI settings
+        /// </summary>
+        public static InteractiveTuiSettings GlobalSettings =>
+            globalSettings;
+
         /// <summary>
         /// Interactive TUI background color
         /// </summary>
-        public Color BackgroundColor { get; set; } = ConsoleColors.Black;
+        public Color BackgroundColor
+        {
+            get => backgroundColor;
+            set => backgroundColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI foreground color
         /// </summary>
-        public Color ForegroundColor { get; set; } = ConsoleColors.Yellow;
+        public Color ForegroundColor
+        {
+            get => foregroundColor;
+            set => foregroundColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI pane background color
         /// </summary>
-        public Color PaneBackgroundColor { get; set; } = ConsoleColors.Black;
+        public Color PaneBackgroundColor
+        {
+            get => paneBackgroundColor;
+            set => paneBackgroundColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI pane separator color
         /// </summary>
-        public Color PaneSeparatorColor { get; set; } = ConsoleColors.Green;
+        public Color PaneSeparatorColor
+        {
+            get => paneSeparatorColor;
+            set => paneSeparatorColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI pane selected separator color
         /// </summary>
-        public Color PaneSelectedSeparatorColor { get; set; } = ConsoleColors.Lime;
+        public Color PaneSelectedSeparatorColor
+        {
+            get => paneSelectedSeparatorColor;
+            set => paneSelectedSeparatorColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI pane selected item color (foreground)
         /// </summary>
-        public Color PaneSelectedItemForeColor { get; set; } = ConsoleColors.Black;
+        public Color PaneSelectedItemForeColor
+        {
+            get => paneSelectedItemForeColor;
+            set => paneSelectedItemForeColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI pane selected item color (background)
         /// </summary>
-        public Color PaneSelectedItemBackColor { get; set; } = ConsoleColors.Olive;
+        public Color PaneSelectedItemBackColor
+        {
+            get => paneSelectedItemBackColor;
+            set => paneSelectedItemBackColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI pane item color (foreground)
         /// </summary>
-        public Color PaneItemForeColor { get; set; } = ConsoleColors.Olive;
+        public Color PaneItemForeColor
+        {
+            get => paneItemForeColor;
+            set => paneItemForeColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI pane item color (background)
         /// </summary>
-        public Color PaneItemBackColor { get; set; } = ConsoleColors.Black;
+        public Color PaneItemBackColor
+        {
+            get => paneItemBackColor;
+            set => paneItemBackColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI option background color
         /// </summary>
-        public Color OptionBackgroundColor { get; set; } = ConsoleColors.Olive;
+        public Color OptionBackgroundColor
+        {
+            get => optionBackgroundColor;
+            set => optionBackgroundColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI key binding in option color
         /// </summary>
-        public Color KeyBindingOptionColor { get; set; } = ConsoleColors.Black;
+        public Color KeyBindingOptionColor
+        {
+            get => keyBindingOptionColor;
+            set => keyBindingOptionColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI option foreground color
         /// </summary>
-        public Color OptionForegroundColor { get; set; } = ConsoleColors.Yellow;
+        public Color OptionForegroundColor
+        {
+            get => optionForegroundColor;
+            set => optionForegroundColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI built-in key binding background color
         /// </summary>
-        public Color KeyBindingBuiltinBackgroundColor { get; set; } = ConsoleColors.Green;
+        public Color KeyBindingBuiltinBackgroundColor
+        {
+            get => keyBindingBuiltinBackgroundColor;
+            set => keyBindingBuiltinBackgroundColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI built-in key binding foreground color in the background color
         /// </summary>
-        public Color KeyBindingBuiltinColor { get; set; } = ConsoleColors.Black;
+        public Color KeyBindingBuiltinColor
+        {
+            get => keyBindingBuiltinColor;
+            set => keyBindingBuiltinColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI built-in key binding foreground color outside the background color
         /// </summary>
-        public Color KeyBindingBuiltinForegroundColor { get; set; } = ConsoleColors.Lime;
+        public Color KeyBindingBuiltinForegroundColor
+        {
+            get => keyBindingBuiltinForegroundColor;
+            set => keyBindingBuiltinForegroundColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI box background color
         /// </summary>
-        public Color BoxBackgroundColor { get; set; } = ConsoleColors.Black;
+        public Color BoxBackgroundColor
+        {
+            get => boxBackgroundColor;
+            set => boxBackgroundColor = value;
+        }
+
         /// <summary>
         /// Interactive TUI box foreground color
         /// </summary>
-        public Color BoxForegroundColor { get; set; } = ConsoleColors.Yellow;
+        public Color BoxForegroundColor
+        {
+            get => boxForegroundColor;
+            set => boxForegroundColor = value;
+        }
+
         /// <summary>
         /// Border settings to use when rendering the interactive TUI
         /// </summary>
-        public BorderSettings BorderSettings { get; set; } = new();
+        public BorderSettings BorderSettings
+        {
+            get => borderSettings;
+            set => borderSettings = value;
+        }
+
+        /// <summary>
+        /// Makes a new instance of the interactive TUI settings
+        /// </summary>
+        public InteractiveTuiSettings()
+        { }
+
+        /// <summary>
+        /// Makes a new instance of the interactive TUI settings with the copied settings
+        /// </summary>
+        /// <param name="settings">Settings instance to copy settings from</param>
+        public InteractiveTuiSettings(InteractiveTuiSettings settings)
+        {
+            BackgroundColor = settings.BackgroundColor;
+            ForegroundColor = settings.ForegroundColor;
+            BoxBackgroundColor = settings.BoxBackgroundColor;
+            BoxForegroundColor = settings.BoxForegroundColor;
+            KeyBindingOptionColor = settings.KeyBindingOptionColor;
+            KeyBindingBuiltinColor = settings.KeyBindingBuiltinColor;
+            KeyBindingBuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor;
+            KeyBindingBuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor;
+            OptionForegroundColor = settings.OptionForegroundColor;
+            OptionBackgroundColor = settings.OptionBackgroundColor;
+            PaneItemForeColor = settings.PaneItemForeColor;
+            PaneItemBackColor = settings.PaneItemBackColor;
+            PaneSeparatorColor = settings.PaneSeparatorColor;
+            PaneSelectedItemForeColor = settings.PaneSelectedItemForeColor;
+            PaneSelectedItemBackColor = settings.PaneSelectedItemBackColor;
+            PaneSelectedSeparatorColor = settings.PaneSelectedSeparatorColor;
+            PaneBackgroundColor = settings.PaneBackgroundColor;
+            BorderSettings = settings.BorderSettings;
+        }
     }
 }

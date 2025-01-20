@@ -79,7 +79,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Set status
             status = "Ready";
             bail = false;
-            settings ??= new();
+            settings ??= InteractiveTuiSettings.GlobalSettings;
 
             // Check to see if the list of lines is empty
             if (lines.Count == 0)

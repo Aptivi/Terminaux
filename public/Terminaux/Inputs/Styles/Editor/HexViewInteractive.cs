@@ -62,7 +62,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Set status
             status = "Ready";
             bail = false;
-            settings ??= new();
+            settings ??= InteractiveTuiSettings.GlobalSettings;
 
             // Main loop
             byteIdx = 0;

@@ -55,7 +55,7 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Interactive TUI settings
         /// </summary>
-        public InteractiveTuiSettings Settings { get; set; } = new();
+        public InteractiveTuiSettings Settings { get; set; } = InteractiveTuiSettings.GlobalSettings;
         /// <summary>
         /// All key bindings for your interactive user interface
         /// </summary>
