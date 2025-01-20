@@ -212,7 +212,7 @@ namespace Terminaux.Writer.CyclicWriters
                 else
                 {
                     // We can't render anymore, so just break and write a binding to show more if it's provided
-                    int spaces = width - actualLength - bindingExtraLength;
+                    int spaces = width - actualLength - bindingExtraLength + 1;
                     if (spaces <= 0)
                         break;
                     bindingsBuilder.Append(
