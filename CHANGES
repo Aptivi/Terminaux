@@ -1,10 +1,11 @@
-Terminaux 6.1.0.1 is a patch release that fixes background related issues.
+Terminaux 6.1.1 is a small release that lets you configure the interactive TUI globally.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements and bug fixes
+- `[+]` Added global interactive TUI settings
+- `[*]` Reduced clutter of the keybindings
 
 Review the commit history if you want to get a deep insight about the changes.
 
