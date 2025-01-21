@@ -75,6 +75,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilterInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilterSeverity.yml",
       "output": {
         ".html": {
@@ -105,6 +115,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.ConsoleLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.ConsoleLogger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.ConsoleResizeHandler.yml",
       "output": {
         ".html": {
@@ -129,6 +149,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Base.ConsoleWrapperTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.ConsoleAcoustic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.ConsoleAcoustic.html"
         }
       },
       "version": ""
@@ -215,10 +245,50 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Extensions.Data.CharWidthType.yml",
+      "source_relative_path": "api/Terminaux.Base.Extensions.ConsoleTaskbarProgress.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Base.Extensions.Data.CharWidthType.html"
+          "relative_path": "api/Terminaux.Base.Extensions.ConsoleTaskbarProgress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.ConsoleTaskbarProgressEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.ConsoleTaskbarProgressEnum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.ConsoleBell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.ConsoleBell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.SynthInfo.Chapter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.SynthInfo.Chapter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.SynthInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.SynthInfo.html"
         }
       },
       "version": ""
@@ -245,10 +315,120 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.Coordinate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.Coordinate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.Margin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.Margin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.Padding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.Padding.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.TermInfo.ExtendedCapabilities.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Base.TermInfo.ExtendedCapabilities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterExtractor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterExtractor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueDesc-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueDesc-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.html"
         }
       },
       "version": ""
@@ -289,16 +469,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoCapsKind.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCapsKind.html"
         }
       },
       "version": ""
@@ -525,6 +695,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLab.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLab.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLabFull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLabFull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLchFull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLchFull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLuv.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLuv.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLuvFull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLuvFull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.Conversion.ConversionTools.yml",
       "output": {
         ".html": {
@@ -585,6 +815,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.HunterLab.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.HunterLab.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.LumaChromaUv.yml",
       "output": {
         ".html": {
@@ -599,6 +839,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminanceTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminanceTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminantType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminantType.html"
         }
       },
       "version": ""
@@ -655,6 +915,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Yxy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Yxy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.yml",
       "output": {
         ".html": {
@@ -705,6 +975,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.BaseTransformationFormula.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.BaseTransformationFormula.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.yml",
       "output": {
         ".html": {
@@ -745,10 +1025,90 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Transformation.TransformationFormula.yml",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Colors.Transformation.TransformationFormula.html"
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Inverse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Inverse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Monochromacy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Monochromacy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.ITransformationFormula.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.ITransformationFormula.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Tools.ColorBlind.ColorBlindDeficiency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Tools.ColorBlind.ColorBlindDeficiency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Tools.ColorBlind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Tools.ColorBlind.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Tools.MonochromacyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Tools.MonochromacyType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Tools.html"
         }
       },
       "version": ""
@@ -785,290 +1145,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Extensions.Enumerations.EnumerableExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Extensions.Enumerations.EnumerableExtensions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Extensions.Enumerations.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Extensions.Enumerations.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Graphics.GraphicsTools.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Graphics.GraphicsTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.IGeometricShape.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.IGeometricShape.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.AllIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.AllIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.CodiconsIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.CodiconsIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.CustomIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.CustomIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.DeviconsIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.DeviconsIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.FontAwesomeExtensionIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.FontAwesomeExtensionIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.FontAwesomeIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.FontAwesomeIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.IecPowerIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.IecPowerIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.LogosIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.LogosIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.MaterialIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.MaterialIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.NerdFontsTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.NerdFontsTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.NerdFontsTypes.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.NerdFontsTypes.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.OcticonsIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.OcticonsIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.PomodoroIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.PomodoroIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.PowerLineExtraIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.PowerLineExtraIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.PowerLineIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.PowerLineIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.WeatherIcons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.WeatherIcons.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.NerdFonts.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Circle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Circle.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Ellipsis.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Ellipsis.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Parallelogram.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Parallelogram.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Rectangle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Rectangle.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Square.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Square.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Trapezoid.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Trapezoid.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Triangle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Triangle.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.html"
         }
       },
       "version": ""
@@ -1115,6 +1195,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Icons.IconsSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Icons.IconsSelector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Images.Icons.yml",
       "output": {
         ".html": {
@@ -1145,20 +1235,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.InputChoiceInfo.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Input.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.InputChoiceInfo.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.InputChoiceTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.InputChoiceTools.html"
+          "relative_path": "api/Terminaux.Inputs.Input.html"
         }
       },
       "version": ""
@@ -1175,6 +1255,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-1.yml",
       "output": {
         ".html": {
@@ -1185,20 +1275,40 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html"
+          "relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-2.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.html"
+          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiSettings.html"
         }
       },
       "version": ""
@@ -1209,6 +1319,76 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.Selectors.ColorSelectorTui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.ColorSelectorTui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.Selectors.FigletSelectorTui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.FigletSelectorTui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.Selectors.SpinnerSelectorTui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.SpinnerSelectorTui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.Selectors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.TextualUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.TextualUI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.TextualUIState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.TextualUIState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.TextualUITools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.TextualUITools.html"
         }
       },
       "version": ""
@@ -1249,16 +1429,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Pointer.PointerEventContext.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerListener.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Pointer.PointerListener.html"
         }
       },
       "version": ""
@@ -1485,6 +1655,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Choice.ChoiceStyleSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Choice.ChoiceStyleSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Choice.yml",
       "output": {
         ".html": {
@@ -1505,6 +1685,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.HexEditInteractive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Editor.HexEditInteractive.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.TextEditInteractive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Editor.TextEditInteractive.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.FigletSelector.yml",
       "output": {
         ".html": {
@@ -1515,30 +1745,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.IconsSelector.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.IconsSelector.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html"
         }
       },
       "version": ""
@@ -1559,6 +1769,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputPasswordColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxModalColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxModalColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxNonModalColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxNonModalColor.html"
         }
       },
       "version": ""
@@ -1615,6 +1845,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.InputChoiceCategoryInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceCategoryInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.InputChoiceGroupInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceGroupInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.InputChoiceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.InputChoiceTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.yml",
       "output": {
         ".html": {
@@ -1655,16 +1925,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.yml",
       "output": {
         ".html": {
@@ -1675,10 +1935,110 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.SpinnerSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.SpinnerSelector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.Fixture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.Fixture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureConditional-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureConditional-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureConditional.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureConditional.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureUnconditional-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureUnconditional-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureUnconditional.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureUnconditional.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.FixtureRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.FixtureRunner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.FixtureSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.FixtureSelector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.TestFixtures.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.TestFixtures.html"
         }
       },
       "version": ""
@@ -1885,26 +2245,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.ResizeListener.ConsoleResizeListener.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.ResizeListener.ConsoleResizeListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.ResizeListener.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.ResizeListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Sequences.Builder.Types.ApcSequences.yml",
       "output": {
         ".html": {
@@ -2065,6 +2405,426 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Aliases.AliasInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Aliases.AliasInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Aliases.AliasManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Aliases.AliasManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Aliases.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Aliases.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.ArgumentsParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.ArgumentsParser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentExecutor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentParameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentParameters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentParse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentParse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.Base.Help.ArgumentHelpPrint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.Base.Help.ArgumentHelpPrint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.Base.Help.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.Base.Help.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.Base.IArgument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.Base.IArgument.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentPart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentPart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentPartOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentPartOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.CommandAutoCompletionList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.CommandAutoCompletionList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.ProvidedArgumentsInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.ProvidedArgumentsInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Arguments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Arguments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.BaseCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.BaseCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.CommandExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.CommandExecutor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.CommandInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.CommandInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.CommandManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.CommandManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.CommandParameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.CommandParameters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.ICommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.ICommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Help.HelpPrint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Help.HelpPrint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Help.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Help.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Prompts.IPromptPreset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Prompts.IPromptPreset.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Prompts.PromptPresetBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Prompts.PromptPresetBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Prompts.PromptPresetManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Prompts.PromptPresetManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Prompts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Prompts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Shells.BaseShell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Shells.BaseShell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Shells.BaseShellInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Shells.BaseShellInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Shells.IShell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Shells.IShell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Shells.IShellInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Shells.IShellInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Shells.ShellExecuteInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Shells.ShellExecuteInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Shells.ShellManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Shells.ShellManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Shells.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Shells.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Switches.SwitchInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Switches.SwitchInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Switches.SwitchManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Switches.SwitchManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Switches.SwitchOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Switches.SwitchOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Switches.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Switches.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.ListEntryWriterColor.yml",
       "output": {
         ".html": {
@@ -2115,10 +2875,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.WrappedWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.WrappedWriter.html"
         }
       },
       "version": ""
@@ -2135,40 +2925,1050 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedFigletText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedFigletText.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedText.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedCanvas.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedCanvas.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.DynamicWriters.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.DynamicWriters.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BarChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.BarChart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Border.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Border.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BoundedText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.BoundedText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Box.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Box.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BoxFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.BoxFrame.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BreakdownChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.BreakdownChart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.BuiltinSpinners.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.BuiltinSpinners.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Calendars.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Calendars.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Canvas.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Canvas.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Decoration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Decoration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Emoji.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Emoji.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Eraser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Eraser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.FigletText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.FigletText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Kaomoji.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Kaomoji.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.KeyShortcut.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.KeyShortcut.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Keybindings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Keybindings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Line.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Line.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.LineChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.LineChart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.LineHandle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.LineHandle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ListEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.ListEntry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Listing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Listing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.NerdFonts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.NerdFonts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.PowerLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.PowerLine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBar.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBarNoText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBarNoText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Container.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Container.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.ContainerTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.ContainerTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.BoldEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.BoldEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ConcealEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ConcealEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.DimEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.DimEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.InvertEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.InvertEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ItalicEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ItalicEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.RapidBlinkEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.RapidBlinkEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.SlowBlinkEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.SlowBlinkEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StandoutEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StandoutEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StrikethroughEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StrikethroughEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.UnderlineEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.UnderlineEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.IEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.IEffect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.Mark.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.Mark.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AllIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AllIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaRepresentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaRepresentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CellOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CellOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ChartElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ChartElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CodiconsIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CodiconsIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CustomIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CustomIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.DeviconsIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.DeviconsIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FigletTextTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FigletTextTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeExtensionIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeExtensionIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.IecPowerIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.IecPowerIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.KeybindingTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.KeybindingTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.LogosIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.LogosIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.MaterialIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.MaterialIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.OcticonsIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.OcticonsIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PomodoroIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PomodoroIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineExtraIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineExtraIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineSegment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineSegment.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextAlignment.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextWriterTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextWriterTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.WeatherIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.WeatherIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Selection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Selection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Arc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Arc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Circle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Circle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Square.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Square.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.SimpleProgress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.SimpleProgress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Slider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Slider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Spinner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Spinner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.StemLeafChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.StemLeafChart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.StickChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.StickChart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.SyntaxText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.SyntaxText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Table.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Table.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.TextException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.TextException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.TextMarquee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.TextMarquee.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.TextPath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.TextPath.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.WinsLosses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.WinsLosses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.AlignedFigletTextColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.AlignedFigletTextColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.AlignedTextColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.AlignedTextColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BarChartColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.BarChartColor.html"
         }
       },
       "version": ""
@@ -2215,20 +4015,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.yml",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BreakdownChartColor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html"
+          "relative_path": "api/Terminaux.Writer.FancyWriters.BreakdownChartColor.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.CenteredTextColor.yml",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.CanvasColor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.CenteredTextColor.html"
+          "relative_path": "api/Terminaux.Writer.FancyWriters.CanvasColor.html"
         }
       },
       "version": ""
@@ -2335,6 +4135,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.StickChartColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.StickChartColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.FancyWriters.TableColor.yml",
       "output": {
         ".html": {
@@ -2345,60 +4155,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderSettings.yml",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedLineText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderSettings.html"
+          "relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedLineText.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.CellOptions.yml",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.CellOptions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTextTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTextTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineSegment.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineSegment.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.html"
+          "relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedText.html"
         }
       },
       "version": ""
@@ -2409,6 +4179,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.FancyWriters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.IStaticRenderable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.IStaticRenderable.html"
         }
       },
       "version": ""
@@ -2445,30 +4225,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.Tools.Keybinding.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.Tools.Keybinding.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.Tools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.Tools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.MiscWriters.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.MiscWriters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.html"
         }
       },
       "version": ""
@@ -2487,11 +4257,31 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "logo.svg"
         }
       },
       "version": ""
