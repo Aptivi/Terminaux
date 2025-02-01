@@ -156,7 +156,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (!string.IsNullOrWhiteSpace(Text))
                 {
                     // Render the text accordingly
-                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
+                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 10) : Text;
                     if (useColor)
                     {
                         separator.Append(
@@ -164,7 +164,7 @@ namespace Terminaux.Writer.FancyWriters
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
-                    separator.Append($"──╢ {Text} ╟──");
+                    separator.Append($"──╢ {Text} ");
                 }
 
                 // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -172,12 +172,13 @@ namespace Terminaux.Writer.FancyWriters
                 if (canPosition)
                 {
                     int width = ConsoleChar.EstimateCellWidth(separator.ToString());
-                    RepeatTimes = ConsoleWrapper.WindowWidth - width - 4;
+                    RepeatTimes = ConsoleWrapper.WindowWidth - width - 1;
                 }
 
                 // Write the closing minus sign.
                 if (RepeatTimes > 0)
                 {
+                    separator.Append('╟');
                     if (useColor)
                     {
                         separator.Append(
@@ -187,7 +188,6 @@ namespace Terminaux.Writer.FancyWriters
                     }
                     separator.Append(new string('─', RepeatTimes));
                 }
-                separator.Append('╢');
 
                 // Return the resulting separator
                 if (useColor)

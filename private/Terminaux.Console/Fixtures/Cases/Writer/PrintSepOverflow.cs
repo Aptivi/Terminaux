@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
