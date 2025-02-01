@@ -65,21 +65,25 @@ namespace Terminaux.Inputs.Styles
         internal readonly static Keybinding[] additionalBindingsGeneral =
         [
             new("Color information", ConsoleKey.I),
+            new("Next color blindness simulation", ConsoleKey.N),
+            new("Previous color blindness simulation", ConsoleKey.M),
+            new("Increase transformation frequency", ConsoleKey.N, ConsoleModifiers.Control),
+            new("Decrease transformation frequency", ConsoleKey.M, ConsoleModifiers.Control),
+        ];
+        internal readonly static Keybinding[] additionalBindingsReadWrite =
+        [
+            .. additionalBindingsGeneral,
             new("Select web color", ConsoleKey.W),
             new("Increase opaqueness", ConsoleKey.O),
             new("Increase transparency", ConsoleKey.P),
             new("Next color mode", ConsoleKey.Tab),
             new("Previous color mode", ConsoleKey.Tab, ConsoleModifiers.Shift),
-            new("Next color blindness simulation", ConsoleKey.N),
-            new("Previous color blindness simulation", ConsoleKey.M),
-            new("Increase transformation frequency", ConsoleKey.N, ConsoleModifiers.Control),
-            new("Decrease transformation frequency", ConsoleKey.M, ConsoleModifiers.Control),
             new("Increase value", PointerButton.WheelDown, PointerButtonPress.Scrolled),
             new("Decrease value", PointerButton.WheelUp, PointerButtonPress.Scrolled),
         ];
         internal readonly static Keybinding[] additionalBindingsTrueColor =
         [
-            .. additionalBindingsGeneral,
+            .. additionalBindingsReadWrite,
             new("Reduce color hue", ConsoleKey.LeftArrow),
             new("Reduce color lightness", ConsoleKey.LeftArrow, ConsoleModifiers.Control),
             new("Reduce saturation", ConsoleKey.DownArrow),
@@ -89,7 +93,7 @@ namespace Terminaux.Inputs.Styles
         ];
         internal readonly static Keybinding[] additionalBindingsNormalColor =
         [
-            .. additionalBindingsGeneral,
+            .. additionalBindingsReadWrite,
             new("Previous color", ConsoleKey.LeftArrow),
             new("Next color", ConsoleKey.RightArrow),
             new("Show and hide color list", ConsoleKey.L),
@@ -99,24 +103,26 @@ namespace Terminaux.Inputs.Styles
         /// Opens the color selector
         /// </summary>
         /// <param name="settings">Settings to use</param>
+        /// <param name="readOnly">Whether you need to make the color selector read-only or read-write.</param>
         /// <returns>An instance of Color to get the resulting color</returns>
-        public static Color OpenColorSelector(ColorSettings? settings = null) =>
-            OpenColorSelector(ConsoleColors.White, settings);
+        public static Color OpenColorSelector(ColorSettings? settings = null, bool readOnly = false) =>
+            OpenColorSelector(ConsoleColors.White, settings, readOnly);
 
         /// <summary>
         /// Opens the color selector
         /// </summary>
         /// <param name="initialColor">Initial color to use</param>
         /// <param name="settings">Settings to use</param>
+        /// <param name="readOnly">Whether you need to make the color selector read-only or read-write.</param>
         /// <returns>An instance of Color to get the resulting color</returns>
-        public static Color OpenColorSelector(Color initialColor, ColorSettings? settings = null)
+        public static Color OpenColorSelector(Color initialColor, ColorSettings? settings = null, bool readOnly = false)
         {
             // Select appropriate settings
             var finalSettings = settings ?? new(ColorTools.GlobalSettings);
 
             // Initial color is selected
             Color selectedColor = new(initialColor.RGB.R, initialColor.RGB.G, initialColor.RGB.B, finalSettings);
-            var colorSelectorTui = new ColorSelectorTui(selectedColor, finalSettings);
+            var colorSelectorTui = new ColorSelectorTui(selectedColor, finalSettings, readOnly);
             TextualUITools.RunTui(colorSelectorTui);
             return colorSelectorTui.GetResultingColor();
         }

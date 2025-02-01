@@ -216,6 +216,8 @@ namespace Terminaux.Console.Fixtures
             new TestInputInfoBoxSliderMin(),
             new ColorSelectorTest(),
             new ColorSelectorNoPaletteTest(),
+            new ColorSelectorNoWriteTest(),
+            new ColorSelectorNoPaletteNoWriteTest(),
             new KeyInfo(),
             new MouseInfo(),
             new TestHexEditorInteractive(),
