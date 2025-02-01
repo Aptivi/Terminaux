@@ -21,6 +21,7 @@ using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
@@ -559,12 +560,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Get all the types except RGB and show their values individually
             var baseType = typeof(BaseColorModel);
             var derivedTypes = baseType.Assembly.GetTypes().Where((type) => type.IsSubclassOf(baseType) && type != typeof(RedGreenBlue)).ToArray();
+            int maxBindingLength = derivedTypes.Max((colorType) => ConsoleChar.EstimateCellWidth(colorType.Name));
             StringBuilder builder = new();
             foreach (var colorType in derivedTypes)
             {
                 // Get the value
                 var converted = ConversionTools.ConvertFromRgb(selectedColor.RGB, colorType);
-                builder.AppendLine(converted.ToString());
+                builder.AppendLine(colorType.Name + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(colorType.Name)) + $" | {converted}");
             }
             return
                 $$"""
@@ -572,7 +574,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 True:     {{selectedColor.PlainSequenceTrueColor}}
                 Hex:      {{selectedColor.Hex}}
                 Type:     {{selectedColor.Type}}
-                    
+                
+                ---
+
                 {{builder}}
                 """;
         }
