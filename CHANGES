@@ -1,11 +1,11 @@
-Terminaux 6.1.1 is a small release that lets you configure the interactive TUI globally.
+Terminaux 6.1.2 is a small release that fixes the appearance of the separator. We've also added the color viewer as a thank-you for your patience for the web redesign.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added global interactive TUI settings
-- `[*]` Reduced clutter of the keybindings
+- `[+]` Added the color viewer
+- `[*]` Fixed the appearance of the separator when overflowing
 
 Review the commit history if you want to get a deep insight about the changes.
 
