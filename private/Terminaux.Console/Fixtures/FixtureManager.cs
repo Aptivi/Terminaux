@@ -105,6 +105,7 @@ namespace Terminaux.Console.Fixtures
             new PrintSepFCjk(),
             new PrintSepColorCjk(),
             new PrintSepColorFCjk(),
+            new PrintSepOverflow(),
             new PrintWithNewLines(),
             new PrintWithNulls(),
             new PrintTemplate(),
