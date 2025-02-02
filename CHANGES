@@ -1,11 +1,10 @@
-Terminaux 6.1.2 is a small release that fixes the appearance of the separator. We've also added the color viewer as a thank-you for your patience for the web redesign.
+This version brings several improvements to the Terminaux library.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added the color viewer
-- `[*]` Fixed the appearance of the separator when overflowing
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
