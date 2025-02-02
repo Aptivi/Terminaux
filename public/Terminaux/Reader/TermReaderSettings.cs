@@ -410,17 +410,33 @@ namespace Terminaux.Reader
 
             PasswordMaskChar = settings.PasswordMaskChar;
             HistoryEnabled = settings.HistoryEnabled;
+            HistoryName = settings.HistoryName;
             LeftMargin = settings.LeftMargin;
             RightMargin = settings.RightMargin;
             InputForegroundColor = settings.InputForegroundColor;
             InputBackgroundColor = settings.InputBackgroundColor;
+            InputPlaceholderForegroundColor = settings.InputPlaceholderForegroundColor;
+            InputPromptForegroundColor = settings.InputPromptForegroundColor;
             Suggestions = settings.suggestions;
             SuggestionsDelimiters = settings.suggestionsDelims;
             TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
             SyntaxHighlighterEnabled = settings.SyntaxHighlighterEnabled;
             SyntaxHighlighter = settings.SyntaxHighlighter;
+            PrintDefaultValue = settings.PrintDefaultValue;
+            WriteDefaultValue = settings.WriteDefaultValue;
+            DefaultValueFormat = settings.DefaultValueFormat;
             PlaceholderText = settings.PlaceholderText;
             KeyboardCues = settings.KeyboardCues;
+            BassBoomLibraryPath = settings.BassBoomLibraryPath;
+            PlayWriteCue = settings.PlayWriteCue;
+            PlayRuboutCue = settings.PlayRuboutCue;
+            PlayEnterCue = settings.PlayEnterCue;
+            CueVolume = settings.CueVolume;
+            CueVolumeBoost = settings.CueVolumeBoost;
+            CueEnter = settings.CueEnter;
+            CueRubout = settings.CueRubout;
+            CueWrite = settings.CueWrite;
+            InitialPosition = settings.InitialPosition;
             Bell = settings.Bell;
         }
     }
