@@ -149,10 +149,10 @@ namespace Terminaux.Shell.Commands
                 // Now, assume that an argument is satisfied
                 var ArgumentInfo = satisfied;
                 string Command = ArgumentInfo.Command;
-                var Args = ArgumentInfo.ArgumentsList.Select(RegexTools.Unescape).ToArray();
+                var Args = ArgumentInfo.ArgumentsList.Select(TextTools.Unescape).ToArray();
                 var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
-                var Switches = ArgumentInfo.SwitchesList.Select(RegexTools.Unescape).ToArray();
-                string StrArgs = RegexTools.Unescape(ArgumentInfo.ArgumentsText);
+                var Switches = ArgumentInfo.SwitchesList.Select(TextTools.Unescape).ToArray();
+                string StrArgs = TextTools.Unescape(ArgumentInfo.ArgumentsText);
                 string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
 
                 // Execute the command
