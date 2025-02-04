@@ -13,7 +13,6 @@
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
         <Deterministic>true</Deterministic>
-        <DeterministicSourcePaths>true</DeterministicSourcePaths>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -23,8 +22,5 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
-    </ItemGroup>
-    <ItemGroup>
-        <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
     </ItemGroup>
 </Project>
