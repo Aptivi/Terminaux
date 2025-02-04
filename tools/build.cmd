@@ -1,6 +1,6 @@
 @echo off
 
-REM    Terminaux  Copyright (C) 2018-2021  Aptivi
+REM    Terminaux  Copyright (C) 2023-2025  Aptivi
 REM
 REM    This file is part of Terminaux
 REM
@@ -21,16 +21,20 @@ REM This script builds and packs the artifacts. Use when you have VS installed.
 set releaseconfig=%1
 if "%releaseconfig%" == "" set releaseconfig=Release
 
+set buildoptions=%*
+call set buildoptions=%%buildoptions:*%1=%%
+if "%buildoptions%" == "*=" set buildoptions=
+
 :download
 echo Downloading packages...
-"%ProgramFiles%\dotnet\dotnet.exe" msbuild "..\Terminaux.sln" -t:restore -p:Configuration=%releaseconfig%
+"%ProgramFiles%\dotnet\dotnet.exe" restore "..\Terminaux.sln" -p:Configuration=%releaseconfig% %buildoptions%
 if %errorlevel% == 0 goto :build
 echo There was an error trying to download packages (%errorlevel%).
 goto :finished
 
 :build
-echo Building...
-"%ProgramFiles%\dotnet\dotnet.exe" msbuild "..\Terminaux.sln" -p:Configuration=%releaseconfig%
+echo Building Terminaux...
+"%ProgramFiles%\dotnet\dotnet.exe" build "..\Terminaux.sln" -p:Configuration=%releaseconfig% %buildoptions%
 if %errorlevel% == 0 goto :success
 echo There was an error trying to build (%errorlevel%).
 goto :finished

@@ -28,7 +28,7 @@ jobs:
         id: release-asset
         run: |
           chmod +x tools/*.sh
-          make
+          make rel-ci
           make doc
           cd tools ; ./docgen-pack.sh ; cd ..
           echo "SUBJECT=$(cat CHANGES.TITLE)" >> "$GITHUB_OUTPUT"
