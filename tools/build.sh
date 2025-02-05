@@ -17,6 +17,15 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Convenience functions
+checkerror() {
+    if [ $1 != 0 ]
+    then
+        printf "$2 - Error $1\n" >&2
+        exit $1
+    fi
+}
+
 # This script builds. Use when you have dotnet installed.
 releaseconf=$1
 if [ -z $releaseconf ]; then
@@ -25,27 +34,17 @@ fi
 
 # Check for dependencies
 dotnetpath=`which dotnet`
-if [ ! $? == 0 ]; then
-	echo dotnet is not found.
-	exit 1
-fi
+checkerror $? "dotnet is not found"
 
 # Download packages
 echo Downloading packages...
-"$dotnetpath" msbuild "../Terminaux.sln" -t:restore -p:Configuration=$releaseconf
-if [ ! $? == 0 ]; then
-	echo Download failed.
-	exit 1
-fi
+"$dotnetpath" restore "../Terminaux.sln" -p:Configuration=$releaseconf ${@:2}
+checkerror $? "Failed to download packages"
 
-# Build KS
-echo Building KS...
-"$dotnetpath" msbuild "../Terminaux.sln" -p:Configuration=$releaseconf
-if [ ! $? == 0 ]; then
-	echo Build failed.
-	exit 1
-fi
+# Build
+echo Building...
+"$dotnetpath" build "../Terminaux.sln" -p:Configuration=$releaseconf ${@:2}
+checkerror $? "Failed to build Terminaux"
 
 # Inform success
 echo Build successful.
-exit 0
