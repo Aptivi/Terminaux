@@ -2,9 +2,9 @@ name: "CodeQL Analysis"
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "x/oob/4.3.x", "x/oob/5.4.x" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "x/oob/4.3.x", "x/oob/5.4.x" ]
   schedule:
     - cron: '06 12 * * *'
 
