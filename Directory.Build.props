@@ -1,13 +1,13 @@
 <Project>
     <PropertyGroup>
-        <Version>6.1.4</Version>
+        <Version>1.2.0</Version>
         <Authors>Aptivi</Authors>
         <Company>Aptivi</Company>
-        <Copyright>Copyright (c) 2023-2025 Aptivi</Copyright>
+        <Copyright>Copyright (c) 2024-2025 Aptivi</Copyright>
         <LangVersion>latest</LangVersion>
         <DebugType>portable</DebugType>
-        <Nullable>enable</Nullable>
         <SignAssembly>True</SignAssembly>
+        <Nullable>enable</Nullable>
         <WarningsAsErrors>CS9057,CS8002,nullable</WarningsAsErrors>
         <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
@@ -22,5 +22,16 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    </ItemGroup>
+    <Target Name="EnsureCommitShaInclusion" BeforeTargets="GenerateNuspec" Condition="'$(Configuration)' == 'Debug' And '$(SourceRevisionId)' != '' And '$(ContinuousIntegrationBuild)' == 'true'">
+        <ReadLinesFromFile File="$(RootPath)/private/BuildTargets/obj/.dtp">
+            <Output TaskParameter="Lines" ItemName="DateTimePart"/>
+        </ReadLinesFromFile>
+        <CreateProperty Value="$(Version)-%(DateTimePart.Identity)+$(SourceRevisionId)">
+            <Output TaskParameter="Value" PropertyName="PackageVersion"/>
+        </CreateProperty>
+    </Target>
+    <ItemGroup Condition="'$(MSBuildProjectFile)' != 'BuildTargets.csproj'">
+        <ProjectReference Include="$(RootPath)/private/BuildTargets/BuildTargets.csproj" PrivateAssets="All" />
     </ItemGroup>
 </Project>
