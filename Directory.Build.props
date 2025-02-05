@@ -1,9 +1,9 @@
 <Project>
     <PropertyGroup>
-        <Version>1.2.0</Version>
+        <Version>6.1.4</Version>
         <Authors>Aptivi</Authors>
         <Company>Aptivi</Company>
-        <Copyright>Copyright (c) 2024-2025 Aptivi</Copyright>
+        <Copyright>Copyright (c) 2023-2025 Aptivi</Copyright>
         <LangVersion>latest</LangVersion>
         <DebugType>portable</DebugType>
         <SignAssembly>True</SignAssembly>
@@ -12,6 +12,8 @@
         <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <IncludeSymbols>True</IncludeSymbols>
         <Deterministic>true</Deterministic>
     </PropertyGroup>
 
