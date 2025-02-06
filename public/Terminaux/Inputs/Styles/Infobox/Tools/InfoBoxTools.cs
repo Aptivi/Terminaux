@@ -132,7 +132,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 Left = borderX + 1,
                 Top = borderY,
                 Line = currIdx,
-                Height = maxHeight,
+                Height = maxHeight - maxHeightOffset,
                 Width = maxWidth + 1,
                 ForegroundColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,
