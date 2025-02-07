@@ -1145,26 +1145,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.GraphicsTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.GraphicsTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Images.Icons.IconsColor.yml",
       "output": {
         ".html": {
@@ -1879,16 +1859,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.html"
         }
       },
       "version": ""
@@ -2835,10 +2805,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.ListWriterColor.yml",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.SeparatorWriterColor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html"
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.SeparatorWriterColor.html"
         }
       },
       "version": ""
@@ -3945,290 +3915,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.AlignedFigletTextColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.AlignedFigletTextColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.AlignedTextColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.AlignedTextColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BarChartColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.BarChartColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BorderColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.BorderColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BorderTextColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.BorderTextColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BoxColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.BoxColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BoxFrameColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.BoxFrameColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BreakdownChartColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.BreakdownChartColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.CanvasColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.CanvasColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.FigletColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.FigletColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.FigletWhereColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.FigletWhereColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.PowerLineColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.PowerLineColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.ProgressBarColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.ProgressBarColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.ProgressBarVerticalColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.ProgressBarVerticalColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.RainbowBackTextWriterColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.RainbowBackTextWriterColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.RainbowTextWriterColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.RainbowTextWriterColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.SliderColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.SliderColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.SliderVerticalColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.SliderVerticalColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.StickChartColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.StickChartColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.TableColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.TableColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedLineText.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedLineText.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedText.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedText.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.IStaticRenderable.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.IStaticRenderable.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.KeybindingsWriter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.KeybindingsWriter.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.LineHandleWriter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.LineHandleWriter.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.html"
         }
       },
       "version": ""
