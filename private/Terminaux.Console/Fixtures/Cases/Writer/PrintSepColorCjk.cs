@@ -19,7 +19,7 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {

@@ -35,43 +35,12 @@ namespace Terminaux.Writer.CyclicWriters
     public class FigletText : IStaticRenderable
     {
         private FigletFont figletFont = FigletFonts.GetByName("small");
-        private int left = 0;
-        private int top = 0;
         private string text = "";
         private int leftMargin = 0;
         private int rightMargin = 0;
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
-        private bool customPos = false;
         private bool useColors = true;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        [Obsolete("FigletWhereColor is going to be obsolete soon. Use renderable positioning system instead.")]
-        public int Left
-        {
-            get => left;
-            set
-            {
-                left = value;
-                customPos = true;
-            }
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        [Obsolete("FigletWhereColor is going to be obsolete soon. Use renderable positioning system instead.")]
-        public int Top
-        {
-            get => top;
-            set
-            {
-                top = value;
-                customPos = true;
-            }
-        }
 
         /// <summary>
         /// Top position
@@ -79,12 +48,7 @@ namespace Terminaux.Writer.CyclicWriters
         public string Text
         {
             get => text;
-            set
-            {
-                text = value;
-                if (!customPos)
-                    UpdateInternalTop();
-            }
+            set => text = value;
         }
 
         /// <summary>
@@ -93,12 +57,7 @@ namespace Terminaux.Writer.CyclicWriters
         public int LeftMargin
         {
             get => leftMargin;
-            set
-            {
-                leftMargin = value;
-                if (!customPos)
-                    UpdateInternalTop();
-            }
+            set => leftMargin = value;
         }
 
         /// <summary>
@@ -107,12 +66,7 @@ namespace Terminaux.Writer.CyclicWriters
         public int RightMargin
         {
             get => rightMargin;
-            set
-            {
-                rightMargin = value;
-                if (!customPos)
-                    UpdateInternalTop();
-            }
+            set => rightMargin = value;
         }
 
         /// <summary>
@@ -161,14 +115,6 @@ namespace Terminaux.Writer.CyclicWriters
                 Text, Font, ForegroundColor, BackgroundColor, UseColors, LeftMargin, RightMargin);
         }
 
-        internal void UpdateInternalTop()
-        {
-            string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-
-            // Install the values
-            top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-        }
-
         internal static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             var builder = new StringBuilder();
@@ -193,7 +139,6 @@ namespace Terminaux.Writer.CyclicWriters
             // Install the values
             this.text = TextTools.FormatString(text ?? "", vars);
             this.figletFont = figletFont;
-            UpdateInternalTop();
         }
     }
 }

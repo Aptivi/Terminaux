@@ -24,10 +24,9 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
-namespace Terminaux.Writer.FancyWriters
+namespace Terminaux.Writer.ConsoleWriters
 {
     /// <summary>
     /// Separator writer
@@ -150,7 +149,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 var separator = new StringBuilder();
                 bool canPosition = !ConsoleWrapper.IsDumb;
-                Text = TextTools.FormatString(Text, Vars);
+                Text = Text.FormatString(Vars);
 
                 // Print the suffix and the text
                 if (!string.IsNullOrWhiteSpace(Text))
