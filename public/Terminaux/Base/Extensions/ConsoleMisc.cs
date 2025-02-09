@@ -55,8 +55,11 @@ namespace Terminaux.Base.Extensions
         /// <param name="Text">The text to be set</param>
         public static void SetTitle(string Text)
         {
+            if (string.IsNullOrWhiteSpace(Text))
+                return;
             char BellChar = Convert.ToChar(7);
             char EscapeChar = Convert.ToChar(27);
+            Text = Text.SplitNewLines()[0];
             string Sequence = $"{EscapeChar}]0;{Text}{BellChar}";
             TextWriterRaw.WriteRaw(Sequence);
         }
