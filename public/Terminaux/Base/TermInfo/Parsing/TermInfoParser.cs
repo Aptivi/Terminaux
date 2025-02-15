@@ -125,7 +125,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             var (stringNames, _) = ReadStrings(indices, data, header[ExtStringCount]);
 
             List<TermInfoValueDesc<string?>> stringDescs = [];
-            List<string?> stringKeys = [];
+            List<string> stringKeys = [];
             for (int i = 0; i < strings.Length; i++)
             {
                 string name = stringNames[i];
