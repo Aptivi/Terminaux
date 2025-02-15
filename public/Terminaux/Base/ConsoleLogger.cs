@@ -29,23 +29,20 @@ namespace Terminaux.Base
     /// </summary>
     public static class ConsoleLogger
     {
-        private static BaseLogger? abstractLogger = null;
-        private static bool enableLogging;
+        private static BaseLogger? abstractLogger = new SerilogLogger(new LoggerConfiguration().WriteTo.File(LogTools.GenerateLogFilePath(out _)));
 
         /// <summary>
         /// Whether to enable logging or not
         /// </summary>
-        public static bool EnableLogging
+        public static bool EnableLogging { get; set; }
+
+        /// <summary>
+        /// Sets the logger to use
+        /// </summary>
+        public static BaseLogger? AbstractLogger
         {
-            get => enableLogging;
-            set
-            {
-                enableLogging = value;
-                if (enableLogging)
-                    abstractLogger = new SerilogLogger(new LoggerConfiguration().WriteTo.File(LogTools.GenerateLogFilePath(out _)));
-                else
-                    abstractLogger = null;
-            }
+            get => EnableLogging ? abstractLogger : null;
+            set => abstractLogger = value;
         }
 
         internal static void Debug(string message, params object?[]? args) =>
