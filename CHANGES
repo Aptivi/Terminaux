@@ -1,10 +1,10 @@
-This version brings several improvements to the Terminaux library.
+This version brings a new feature.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements and bug fixes
+- `[+]` Added reader-wide busy state
 
 Review the commit history if you want to get a deep insight about the changes.
 
