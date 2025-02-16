@@ -51,6 +51,12 @@ namespace Terminaux.Reader
             globalSettings;
 
         /// <summary>
+        /// Is the terminal reader busy? It's not the same as <see cref="TermReaderTools.Busy"/>, because it only checks the reader and not the entire input system.
+        /// </summary>
+        public static bool IsReaderBusy =>
+            state is not null;
+
+        /// <summary>
         /// Reads the input with password character masking
         /// </summary>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
