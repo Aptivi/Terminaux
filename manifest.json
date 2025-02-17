@@ -2695,6 +2695,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Shells.BaseShellInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Shells.BaseShellInfo-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Shell.Shells.BaseShellInfo.yml",
       "output": {
         ".html": {
