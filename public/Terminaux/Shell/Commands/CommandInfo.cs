@@ -58,6 +58,16 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         /// <param name="Command">Command</param>
         /// <param name="HelpDefinition">Command help definition</param>
+        /// <param name="CommandBase">Command base for execution</param>
+        public CommandInfo(string Command, string HelpDefinition, BaseCommand? CommandBase) :
+            this(Command, HelpDefinition, null, CommandBase)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of command info class
+        /// </summary>
+        /// <param name="Command">Command</param>
+        /// <param name="HelpDefinition">Command help definition</param>
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
         public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[]? CommandArgumentInfo, BaseCommand? CommandBase)

@@ -32,10 +32,7 @@ namespace Terminaux.Shell.Shells
         internal List<CommandInfo> extraCommands = [];
         internal Dictionary<string, PromptPresetBase> customShellPresets = [];
         internal static CommandInfo fallbackNonSlashCommand =
-            new("slashreminder", "Reminder for the slash commands",
-                [
-                    new CommandArgumentInfo()
-                ], new SlashReminderCommand());
+            new("slashreminder", "Reminder for the slash commands", new SlashReminderCommand());
 
         /// <inheritdoc/>
         public virtual object ShellLock => new();

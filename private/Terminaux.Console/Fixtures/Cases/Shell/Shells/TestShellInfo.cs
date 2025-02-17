@@ -32,10 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.Shell.Shells
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("write", "Writes test text",
-                [
-                    new CommandArgumentInfo()
-                ], new WriteCommand()),
+            new CommandInfo("write", "Writes test text", new WriteCommand()),
 
             new CommandInfo("writearg", "Writes test text with argument support",
                 [

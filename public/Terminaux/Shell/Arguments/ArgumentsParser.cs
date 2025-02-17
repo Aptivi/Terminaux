@@ -158,6 +158,8 @@ namespace Terminaux.Shell.Arguments
             string[] noValueSwitchesList = [];
             var argInfos = (CommandInfo is not null ? CommandInfo.CommandArgumentInfo : argumentInfo?.ArgArgumentInfo) ??
                 throw new TerminauxException("Can't get argument info for command or argument");
+            if (argInfos.Length == 0)
+                argInfos = [new CommandArgumentInfo()];
             foreach (var argInfo in argInfos)
             {
                 bool RequiredArgumentsProvided = true;

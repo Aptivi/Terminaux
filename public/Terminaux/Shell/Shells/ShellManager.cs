@@ -47,10 +47,7 @@ namespace Terminaux.Shell.Shells
 
         internal readonly static List<CommandInfo> unifiedCommandDict =
         [
-            new CommandInfo("exit", "Exits the shell if running on subshell",
-                [
-                    new CommandArgumentInfo()
-                ], new ExitUnifiedCommand()),
+            new CommandInfo("exit", "Exits the shell if running on subshell", new ExitUnifiedCommand()),
 
             new CommandInfo("findcmds", "Finds the available commands in the current shell type",
                 [
@@ -101,10 +98,7 @@ namespace Terminaux.Shell.Shells
                     ], false)
                 ], new HelpUnifiedCommand()),
 
-            new CommandInfo("presets", "Opens the shell preset library",
-                [
-                    new CommandArgumentInfo()
-                ], new PresetsUnifiedCommand()),
+            new CommandInfo("presets", "Opens the shell preset library", new PresetsUnifiedCommand()),
         ];
 
         internal readonly static Dictionary<string, BaseShellInfo> availableShells = [];
