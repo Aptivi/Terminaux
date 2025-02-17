@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
@@ -43,9 +44,37 @@ namespace Terminaux.Shell.Shells
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> CustomShellPresets => customShellPresets;
         /// <inheritdoc/>
-        public virtual BaseShell? ShellBase => null;
+        public virtual bool OneLineWrap => false;
         /// <inheritdoc/>
-        public virtual PromptPresetBase CurrentPreset
+        public virtual bool SlashCommand => false;
+        /// <inheritdoc/>
+        public virtual CommandInfo NonSlashCommandInfo =>
+            fallbackNonSlashCommand;
+        /// <inheritdoc/>
+        public virtual BaseShell? ShellBase =>
+            Activator.CreateInstance<BaseShell>();
+        /// <inheritdoc/>
+        public virtual PromptPresetBase CurrentPreset =>
+            new();
+        /// <summary>
+        /// Shell type. Taken from <see cref="ShellBase"/> for easier access
+        /// </summary>
+        public string ShellType =>
+            ShellBase?.ShellType ?? "";
+    }
+
+    /// <summary>
+    /// Shell information for both the KS shells and the custom shells made by mods
+    /// </summary>
+    public abstract class BaseShellInfo<TShell> : BaseShellInfo, IShellInfo
+        where TShell : BaseShell, IShell
+    {
+        /// <inheritdoc/>
+        public override BaseShell? ShellBase =>
+            Activator.CreateInstance<TShell>();
+
+        /// <inheritdoc/>
+        public override PromptPresetBase CurrentPreset
         {
             get
             {
@@ -53,16 +82,5 @@ namespace Terminaux.Shell.Shells
                 return presets.Count > 0 ? presets[PromptPresetManager.CurrentPresets[ShellType]] : new PromptPresetBase();
             }
         }
-        /// <inheritdoc/>
-        public virtual bool OneLineWrap => false;
-        /// <inheritdoc/>
-        public virtual bool SlashCommand => false;
-        /// <inheritdoc/>
-        public virtual CommandInfo NonSlashCommandInfo =>
-            fallbackNonSlashCommand;
-        /// <summary>
-        /// Shell type. Taken from <see cref="ShellBase"/> for easier access
-        /// </summary>
-        public string ShellType => ShellBase?.ShellType ?? "";
     }
 }

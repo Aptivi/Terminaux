@@ -25,7 +25,7 @@ using Terminaux.Shell.Shells;
 
 namespace Terminaux.Console.Fixtures.Cases.Shell.Shells
 {
-    internal class TestShellInfo : BaseShellInfo, IShellInfo
+    internal class TestShellInfo : BaseShellInfo<TestShellInstance>, IShellInfo
     {
         /// <summary>
         /// List of commands
@@ -42,7 +42,5 @@ namespace Terminaux.Console.Fixtures.Cases.Shell.Shells
                     ])
                 ], new WriteArgCommand()),
         ];
-
-        public override BaseShell ShellBase => new TestShellInstance();
     }
 }
