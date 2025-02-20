@@ -52,7 +52,9 @@ namespace Terminaux.Images
             if (string.IsNullOrWhiteSpace(imagePath))
                 throw new TerminauxException("Image path is not provided.");
 
+            ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
+            ConsoleLogger.Debug("Image file length is {0} bytes", imageStream.Length);
             return OpenImage(imageStream);
         }
 
@@ -68,6 +70,7 @@ namespace Terminaux.Images
                 throw new TerminauxException("Image data is not provided.");
 
             var imageStream = new MemoryStream(imageBytes);
+            ConsoleLogger.Debug("Image stream length is {0} bytes", imageStream.Length);
             return OpenImage(imageStream);
         }
 
@@ -87,9 +90,11 @@ namespace Terminaux.Images
             {
                 BackgroundColor = MagickColors.Transparent,
             };
+            ConsoleLogger.Debug("Created Magick read settings, can seek: {0}", imageStream.CanSeek);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
             var image = new MagickImage(imageStream, settings);
+            ConsoleLogger.Debug("Returning valid Magick image of format {0}...", image.Format);
             return image;
         }
 
@@ -111,7 +116,9 @@ namespace Terminaux.Images
             if (string.IsNullOrWhiteSpace(imagePath))
                 throw new TerminauxException("Image path is not provided.");
 
+            ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
+            ConsoleLogger.Debug("Image file length is {0} bytes", imageStream.Length);
             return GetColorsFromImage(imageStream);
         }
 
@@ -127,6 +134,7 @@ namespace Terminaux.Images
                 throw new TerminauxException("Image data is not provided.");
 
             var imageStream = new MemoryStream(imageBytes);
+            ConsoleLogger.Debug("Image stream length is {0} bytes", imageStream.Length);
             return GetColorsFromImage(imageStream);
         }
 
@@ -143,6 +151,7 @@ namespace Terminaux.Images
 
             // Open the image
             var image = OpenImage(imageStream);
+            ConsoleLogger.Debug("Returning valid Magick image of format {0}...", image.Format);
             return GetColorsFromImage(image);
         }
 
@@ -159,6 +168,7 @@ namespace Terminaux.Images
 
             // Get the amount of pixels to get color information
             var pixelCollection = image.GetPixels();
+            ConsoleLogger.Debug("Width: {0}, height: {1}", image.Width, image.Height);
             Color[,] colors = new Color[image.Width, image.Height];
 
             // Iterate through each pixel
@@ -171,6 +181,7 @@ namespace Terminaux.Images
                 var pixelColor = pixel.ToColor();
                 if (pixelColor is null)
                     continue;
+                ConsoleLogger.Debug("[{0}, {1}] RGBA: {2}, {3}, {4}, {5}", pixelX, pixelY, pixelColor.R, pixelColor.G, pixelColor.B, pixelColor.A);
                 var color = new Color(pixelColor.R, pixelColor.G, pixelColor.B, new(ColorTools.GlobalSettings) { Opacity = pixelColor.A });
                 colors[pixelX, pixelY] = color;
             }
@@ -236,6 +247,7 @@ namespace Terminaux.Images
         public static string RenderImage(Stream imageStream, int width, int height, int left, int top, Color? background = null)
         {
             var imageColors = GetColorsFromImage(imageStream);
+            ConsoleLogger.Debug("Can seek: {0}", imageStream.CanSeek);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
             return RenderImage(imageColors, width, height, left, top, background, true);
@@ -306,6 +318,7 @@ namespace Terminaux.Images
         public static string RenderImage(Stream imageStream, int width, int height, Color? background = null)
         {
             var imageColors = GetColorsFromImage(imageStream);
+            ConsoleLogger.Debug("Can seek: {0}", imageStream.CanSeek);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
@@ -332,6 +345,7 @@ namespace Terminaux.Images
             int imageHeight = imageColors.GetLength(1);
             double imageWidthThreshold = (double)imageWidth / width;
             double imageHeightThreshold = (double)imageHeight / height;
+            ConsoleLogger.Debug("Width: {0} [T: {1}], height: {2} [T: {3}]", imageWidth, imageWidthThreshold, imageHeight, imageHeightThreshold);
 
             // Build the buffer
             StringBuilder buffer = new();
@@ -362,6 +376,7 @@ namespace Terminaux.Images
 
             // Return the resulting buffer
             buffer.Append(ColorTools.RenderRevertBackground());
+            ConsoleLogger.Debug("Need to write {0} bytes to the console", buffer.Length);
             return buffer.ToString();
         }
     }

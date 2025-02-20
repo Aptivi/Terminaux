@@ -71,6 +71,7 @@ namespace Terminaux.Images.Icons
             string[] icons = IconsManager.GetIconNames();
             var iconsSelections = InputChoiceTools.GetInputChoices(icons.Select((icon, num) => ($"{num}", icon)).ToArray()).ToArray();
             string iconName = icons.Contains(icon) ? icon : "heart-suit";
+            ConsoleLogger.Debug("Got {0} selections with {1} as default", iconsSelections.Length, iconName);
 
             // Determine the icon index
             int selectedIcon;
@@ -78,7 +79,10 @@ namespace Terminaux.Images.Icons
             {
                 string queriedIcon = icons[selectedIcon];
                 if (queriedIcon == iconName)
+                {
+                    ConsoleLogger.Debug("Found {0} at index {1}", queriedIcon, selectedIcon);
                     break;
+                }
             }
 
             // Now, clear the console and let the user select an icon
@@ -99,6 +103,7 @@ namespace Terminaux.Images.Icons
                     int width = height * 2;
                     int left = ConsoleWrapper.WindowWidth / 2 - height;
                     int top = ConsoleWrapper.WindowHeight / 2 - height / 2;
+                    ConsoleLogger.Debug("Rendering {0} [W: {1}, H: {2}, T: {3}, B: {4}]", iconName, width, height, left, top);
                     buffer.Append(IconsManager.RenderIcon(iconName, width, height, left, top));
 
                     // Write the selected icon name and the keybindings

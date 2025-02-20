@@ -50,13 +50,19 @@ namespace Terminaux.Images.Icons
         {
             // Check for icon
             string[] iconNames = GetIconNames(color, quality);
+            ConsoleLogger.Debug("Got {0} icons from quality {1}", iconNames.Length, quality);
             if (!iconNames.Contains(iconName))
+            {
+                ConsoleLogger.Error("Can't find {0} of all {1} icons", iconName, iconNames.Length);
                 throw new TerminauxException($"Icon {iconName} doesn't exist.");
+            }
 
             // Now, get the fully qualified name of the icon and render it
             string iconFullyQualifiedName = BuildFullyQualifiedIconName(iconName, color, quality);
+            ConsoleLogger.Info("Got icon fully qualified name {0} from {1}, {2}, {3}", iconFullyQualifiedName, iconName, color, quality);
             var stream = typeof(IconsManager).Assembly.GetManifestResourceStream(iconFullyQualifiedName) ??
                 throw new TerminauxException($"Icon {iconName} exists, but failed to load.");
+            ConsoleLogger.Debug("Stream length is {0} bytes", stream.Length);
             return ImageProcessor.RenderImage(stream, width, height, left, top, background);
         }
 
@@ -73,8 +79,12 @@ namespace Terminaux.Images.Icons
             string prefix = GetPrefix(color, quality);
             string[] icons = GetIconGroup(color, quality);
             string extension = quality == IconsQuality.Scalable ? ".svg" : ".png";
+            ConsoleLogger.Info("Prefix is {0} from color {1} and quality {2}, which has an extension of {3}", prefix, color, quality, extension);
             foreach (string icon in icons)
+            {
+                ConsoleLogger.Debug("Populating {0}...", icon);
                 names.Add(icon.RemovePrefix(prefix).RemoveSuffix(extension));
+            }
 
             // Return the emoji names
             return [.. names];
@@ -89,6 +99,7 @@ namespace Terminaux.Images.Icons
 
             // We're done here.
             string extension = quality == IconsQuality.Scalable ? ".svg" : ".png";
+            ConsoleLogger.Info("Prefix is {0} from color {1} and quality {2}, which has an extension of {3}. Icon name is {4}", prefix, color, quality, extension, iconName);
             return prefix + iconName + extension;
         }
 
