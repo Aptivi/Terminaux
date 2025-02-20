@@ -21,7 +21,11 @@
           "relative_path": "api/Terminaux.Base.Buffered.Screen.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Buffered.Screen",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Buffered.Screen.yml\" sourcestartlinenumber=\"1\">A screen instance to store your buffered screen parts</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -31,7 +35,11 @@
           "relative_path": "api/Terminaux.Base.Buffered.ScreenPart.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Buffered.ScreenPart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Buffered.ScreenPart.yml\" sourcestartlinenumber=\"1\">Buffered screen part</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -41,7 +49,11 @@
           "relative_path": "api/Terminaux.Base.Buffered.ScreenTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Buffered.ScreenTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Buffered.ScreenTools.yml\" sourcestartlinenumber=\"1\">Buffered screen tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -51,7 +63,11 @@
           "relative_path": "api/Terminaux.Base.Buffered.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Buffered",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -61,7 +77,11 @@
           "relative_path": "api/Terminaux.Base.Checks.ConsoleChecker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Checks.ConsoleChecker",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleChecker.yml\" sourcestartlinenumber=\"1\">Console sanity checking module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -71,7 +91,11 @@
           "relative_path": "api/Terminaux.Base.Checks.ConsoleFilter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Checks.ConsoleFilter",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleFilter.yml\" sourcestartlinenumber=\"1\">Console filter tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -81,7 +105,11 @@
           "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Checks.ConsoleFilterInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleFilterInfo.yml\" sourcestartlinenumber=\"1\">Filtered console information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -91,7 +119,11 @@
           "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterSeverity.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Checks.ConsoleFilterSeverity",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleFilterSeverity.yml\" sourcestartlinenumber=\"1\">Console filter severity</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -101,7 +133,11 @@
           "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Checks.ConsoleFilterType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleFilterType.yml\" sourcestartlinenumber=\"1\">Console filter types</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -111,7 +147,11 @@
           "relative_path": "api/Terminaux.Base.Checks.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Checks",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -121,7 +161,11 @@
           "relative_path": "api/Terminaux.Base.ConsoleLogger.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.ConsoleLogger",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.ConsoleLogger.yml\" sourcestartlinenumber=\"1\">Console logger class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -131,7 +175,11 @@
           "relative_path": "api/Terminaux.Base.ConsoleResizeHandler.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.ConsoleResizeHandler",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.ConsoleResizeHandler.yml\" sourcestartlinenumber=\"1\">The console resize listener module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -141,7 +189,11 @@
           "relative_path": "api/Terminaux.Base.ConsoleWrapper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.ConsoleWrapper",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.ConsoleWrapper.yml\" sourcestartlinenumber=\"1\">Wrapper for the <xref href=\"System.Console\" data-throw-if-not-resolved=\"false\"></xref> class to ensure safety against dumb consoles. This connects to the console wrapper that Terminaux manages.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -151,7 +203,11 @@
           "relative_path": "api/Terminaux.Base.ConsoleWrapperTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.ConsoleWrapperTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.ConsoleWrapperTools.yml\" sourcestartlinenumber=\"1\">Wrapper for the <xref href=\"System.Console\" data-throw-if-not-resolved=\"false\"></xref> class to ensure safety against dumb consoles and Windows-only features.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -161,7 +217,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleAcoustic.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleAcoustic",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleAcoustic.yml\" sourcestartlinenumber=\"1\">Sound-related extensions for console</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -171,7 +231,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleChar.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleChar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleChar.yml\" sourcestartlinenumber=\"1\">Console character manipulation routines</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -181,7 +245,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleClearing.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleClearing",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleClearing.yml\" sourcestartlinenumber=\"1\">Console clearing tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -191,7 +259,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleCursor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleCursor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleCursor.yml\" sourcestartlinenumber=\"1\">Console cursor tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -201,7 +273,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleCursorType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleCursorType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleCursorType.yml\" sourcestartlinenumber=\"1\">Console cursor type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -211,7 +287,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleFormatting.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleFormatting",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleFormatting.yml\" sourcestartlinenumber=\"1\">Text formatting tools for the console</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -221,7 +301,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleFormattingType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleFormattingType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleFormattingType.yml\" sourcestartlinenumber=\"1\">Console formatting type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -231,7 +315,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleMisc.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleMisc",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleMisc.yml\" sourcestartlinenumber=\"1\">Miscellaneous extensions for the console</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -241,7 +329,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsolePositioning.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsolePositioning",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsolePositioning.yml\" sourcestartlinenumber=\"1\">Console positioning tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -251,7 +343,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleTaskbarProgress.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleTaskbarProgress",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleTaskbarProgress.yml\" sourcestartlinenumber=\"1\">Console taskbar progress class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -261,7 +357,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.ConsoleTaskbarProgressEnum.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleTaskbarProgressEnum",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleTaskbarProgressEnum.yml\" sourcestartlinenumber=\"1\">Console taskbar progress enumeration</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -271,7 +371,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.Data.ConsoleBell.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.Data.ConsoleBell",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.Data.ConsoleBell.yml\" sourcestartlinenumber=\"1\">Console bell type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -281,7 +385,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.Data.SynthInfo.Chapter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.Data.SynthInfo.Chapter",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.Data.SynthInfo.Chapter.yml\" sourcestartlinenumber=\"1\">Chapter synthesis class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -291,7 +399,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.Data.SynthInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.Data.SynthInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.Data.SynthInfo.yml\" sourcestartlinenumber=\"1\">Console synth info</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -301,7 +413,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.Data.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.Data",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -311,7 +427,11 @@
           "relative_path": "api/Terminaux.Base.Extensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -321,7 +441,11 @@
           "relative_path": "api/Terminaux.Base.Structures.Coordinate.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures.Coordinate",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.Coordinate.yml\" sourcestartlinenumber=\"1\">Coordinate struct</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -331,7 +455,11 @@
           "relative_path": "api/Terminaux.Base.Structures.Margin.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures.Margin",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.Margin.yml\" sourcestartlinenumber=\"1\">Margin struct</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -341,7 +469,11 @@
           "relative_path": "api/Terminaux.Base.Structures.Padding.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures.Padding",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.Padding.yml\" sourcestartlinenumber=\"1\">Padding struct</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -351,7 +483,11 @@
           "relative_path": "api/Terminaux.Base.Structures.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -361,7 +497,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.ExtendedCapabilities.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.ExtendedCapabilities",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.ExtendedCapabilities.yml\" sourcestartlinenumber=\"1\">Represents extended capabilities.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -371,7 +511,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterExtractor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Parsing.Parameters.ParameterExtractor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterExtractor.yml\" sourcestartlinenumber=\"1\">Parameter extractor class (does not process parameters)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -381,7 +525,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Parsing.Parameters.ParameterInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterInfo.yml\" sourcestartlinenumber=\"1\">Parameter information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -391,7 +539,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Parsing.Parameters.ParameterType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterType.yml\" sourcestartlinenumber=\"1\">Parameter type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -401,7 +553,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Parsing.Parameters",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -411,7 +567,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueDesc-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Parsing.TermInfoValueDesc<T>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.Parsing.TermInfoValueDesc-1.yml\" sourcestartlinenumber=\"1\">Description class of a terminal info value</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -421,7 +581,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Parsing.TermInfoValueType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.Parsing.TermInfoValueType.yml\" sourcestartlinenumber=\"1\">Terminal info value type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -431,7 +595,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.Parsing.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Parsing",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -441,7 +609,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.Boolean.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.TermInfoCaps.Boolean",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.TermInfoCaps.Boolean.yml\" sourcestartlinenumber=\"1\">Represents known boolean terminfo capabilities.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -451,7 +623,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.Num.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.TermInfoCaps.Num",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.TermInfoCaps.Num.yml\" sourcestartlinenumber=\"1\">Represents known numeric terminfo capabilities.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -461,7 +637,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.String.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.TermInfoCaps.String",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.TermInfoCaps.String.yml\" sourcestartlinenumber=\"1\">Represents known string terminfo capabilities.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -471,7 +651,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.TermInfoCaps",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.TermInfoCaps.yml\" sourcestartlinenumber=\"1\">Represents known terminal information capabilities.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -481,7 +665,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.TermInfoDesc.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.TermInfoDesc",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.TermInfoDesc.yml\" sourcestartlinenumber=\"1\">Represents a parsed terminfo description.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -491,7 +679,11 @@
           "relative_path": "api/Terminaux.Base.TermInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -501,7 +693,11 @@
           "relative_path": "api/Terminaux.Base.TerminauxException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TerminauxException",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TerminauxException.yml\" sourcestartlinenumber=\"1\">Terminaux exception class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -511,7 +707,11 @@
           "relative_path": "api/Terminaux.Base.TerminauxInternalException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TerminauxInternalException",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TerminauxInternalException.yml\" sourcestartlinenumber=\"1\">Terminaux exception class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -521,7 +721,11 @@
           "relative_path": "api/Terminaux.Base.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -531,7 +735,11 @@
           "relative_path": "api/Terminaux.Colors.Color.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Color",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Color.yml\" sourcestartlinenumber=\"1\">Color information class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -541,7 +749,11 @@
           "relative_path": "api/Terminaux.Colors.ColorSerializer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.ColorSerializer",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.ColorSerializer.yml\" sourcestartlinenumber=\"1\">Color serializer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -551,7 +763,11 @@
           "relative_path": "api/Terminaux.Colors.ColorSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.ColorSettings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.ColorSettings.yml\" sourcestartlinenumber=\"1\">The color settings class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -561,7 +777,11 @@
           "relative_path": "api/Terminaux.Colors.ColorTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.ColorTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.ColorTools.yml\" sourcestartlinenumber=\"1\">Color tools and management</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -571,7 +791,11 @@
           "relative_path": "api/Terminaux.Colors.ColorType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.ColorType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.ColorType.yml\" sourcestartlinenumber=\"1\">Color type enumeration</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -581,7 +805,11 @@
           "relative_path": "api/Terminaux.Colors.Data.ConsoleColorData.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Data.ConsoleColorData",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Data.ConsoleColorData.yml\" sourcestartlinenumber=\"1\">Console color data</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -591,7 +819,11 @@
           "relative_path": "api/Terminaux.Colors.Data.ConsoleColorDataSerializer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Data.ConsoleColorDataSerializer",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Data.ConsoleColorDataSerializer.yml\" sourcestartlinenumber=\"1\">Console color data serializer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -601,7 +833,11 @@
           "relative_path": "api/Terminaux.Colors.Data.ConsoleColors.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Data.ConsoleColors",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Data.ConsoleColors.yml\" sourcestartlinenumber=\"1\">All 255 console colors</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -611,7 +847,11 @@
           "relative_path": "api/Terminaux.Colors.Data.WebSafeColors.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Data.WebSafeColors",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Data.WebSafeColors.yml\" sourcestartlinenumber=\"1\">Web safe color list as specified by W3C.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -621,7 +861,11 @@
           "relative_path": "api/Terminaux.Colors.Data.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Data",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -631,7 +875,11 @@
           "relative_path": "api/Terminaux.Colors.Gradients.ColorGradient.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Gradients.ColorGradient",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Gradients.ColorGradient.yml\" sourcestartlinenumber=\"1\">A color gradient enumeration class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -641,7 +889,11 @@
           "relative_path": "api/Terminaux.Colors.Gradients.ColorGradientEnumerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Gradients.ColorGradientEnumerator",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Gradients.ColorGradientEnumerator.yml\" sourcestartlinenumber=\"1\">The color gradient enumerator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -651,7 +903,11 @@
           "relative_path": "api/Terminaux.Colors.Gradients.ColorGradients.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Gradients.ColorGradients",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Gradients.ColorGradients.yml\" sourcestartlinenumber=\"1\">The color gradients class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -661,7 +917,11 @@
           "relative_path": "api/Terminaux.Colors.Gradients.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Gradients",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -671,7 +931,11 @@
           "relative_path": "api/Terminaux.Colors.Interop.SystemColorConverter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Interop.SystemColorConverter",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Interop.SystemColorConverter.yml\" sourcestartlinenumber=\"1\">Provides you with tools to convert <xref href=\"System.Drawing.Color?text=System.Drawing%27s+Color\" data-throw-if-not-resolved=\"false\"></xref> to and from <xref href=\"Terminaux.Colors.Color?text=Terminaux%27s+Color\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -681,7 +945,11 @@
           "relative_path": "api/Terminaux.Colors.Interop.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Interop",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -691,7 +959,11 @@
           "relative_path": "api/Terminaux.Colors.Models.BaseColorModel.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.BaseColorModel",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.BaseColorModel.yml\" sourcestartlinenumber=\"1\">Base color model</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -701,7 +973,11 @@
           "relative_path": "api/Terminaux.Colors.Models.CieLab.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.CieLab",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLab.yml\" sourcestartlinenumber=\"1\">The CieLab class instance (Observer = 2 degs, Illuminant = D65)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -711,7 +987,11 @@
           "relative_path": "api/Terminaux.Colors.Models.CieLabFull.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.CieLabFull",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLabFull.yml\" sourcestartlinenumber=\"1\">The CieLab class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -721,7 +1001,11 @@
           "relative_path": "api/Terminaux.Colors.Models.CieLch.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.CieLch",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLch.yml\" sourcestartlinenumber=\"1\">The CieLch class instance (Observer = 2 degs, Illuminant = D65)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -731,7 +1015,11 @@
           "relative_path": "api/Terminaux.Colors.Models.CieLchFull.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.CieLchFull",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLchFull.yml\" sourcestartlinenumber=\"1\">The CieLch class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -741,7 +1029,11 @@
           "relative_path": "api/Terminaux.Colors.Models.CieLuv.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.CieLuv",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLuv.yml\" sourcestartlinenumber=\"1\">The CieLuv class instance (Observer = 2 degs, Illuminant = D65)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -751,7 +1043,11 @@
           "relative_path": "api/Terminaux.Colors.Models.CieLuvFull.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.CieLuvFull",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLuvFull.yml\" sourcestartlinenumber=\"1\">The CieLuv class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -761,7 +1057,11 @@
           "relative_path": "api/Terminaux.Colors.Models.Conversion.ConversionTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.Conversion.ConversionTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.Conversion.ConversionTools.yml\" sourcestartlinenumber=\"1\">Color conversion tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -771,7 +1071,11 @@
           "relative_path": "api/Terminaux.Colors.Models.Conversion.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.Conversion",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -781,7 +1085,11 @@
           "relative_path": "api/Terminaux.Colors.Models.CyanMagentaYellow.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.CyanMagentaYellow",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CyanMagentaYellow.yml\" sourcestartlinenumber=\"1\">The CMY class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -791,7 +1099,11 @@
           "relative_path": "api/Terminaux.Colors.Models.CyanMagentaYellowKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.CyanMagentaYellowKey",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CyanMagentaYellowKey.yml\" sourcestartlinenumber=\"1\">The CMYK class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -801,7 +1113,11 @@
           "relative_path": "api/Terminaux.Colors.Models.HueSaturationLightness.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.HueSaturationLightness",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.HueSaturationLightness.yml\" sourcestartlinenumber=\"1\">The Hue, Saturation, and Lightness (HSL) model</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -811,7 +1127,11 @@
           "relative_path": "api/Terminaux.Colors.Models.HueSaturationValue.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.HueSaturationValue",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.HueSaturationValue.yml\" sourcestartlinenumber=\"1\">The Hue, Saturation, and Value (HSV) model</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -821,7 +1141,11 @@
           "relative_path": "api/Terminaux.Colors.Models.HunterLab.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.HunterLab",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.HunterLab.yml\" sourcestartlinenumber=\"1\">The HunterLab class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -831,7 +1155,11 @@
           "relative_path": "api/Terminaux.Colors.Models.LumaChromaUv.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.LumaChromaUv",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.LumaChromaUv.yml\" sourcestartlinenumber=\"1\">The Luma chroma (YUV, PAL, SDTV with BT.470) model</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -841,7 +1169,11 @@
           "relative_path": "api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.LumaInPhaseQuadrature",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.LumaInPhaseQuadrature.yml\" sourcestartlinenumber=\"1\">The Luma, In-phase, and Quadrature (YIQ, NTSC 1953) model</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -851,7 +1183,11 @@
           "relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminanceTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.Parsing.IlluminanceTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.Parsing.IlluminanceTools.yml\" sourcestartlinenumber=\"1\">Standard illuminance tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -861,7 +1197,11 @@
           "relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminantType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.Parsing.IlluminantType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.Parsing.IlluminantType.yml\" sourcestartlinenumber=\"1\">Illuminant type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -871,7 +1211,11 @@
           "relative_path": "api/Terminaux.Colors.Models.Parsing.ParsingTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.Parsing.ParsingTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.Parsing.ParsingTools.yml\" sourcestartlinenumber=\"1\">Tools to parse RGB specifiers for general use</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -881,7 +1225,11 @@
           "relative_path": "api/Terminaux.Colors.Models.Parsing.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.Parsing",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -891,7 +1239,11 @@
           "relative_path": "api/Terminaux.Colors.Models.RedGreenBlue.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.RedGreenBlue",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.RedGreenBlue.yml\" sourcestartlinenumber=\"1\">The RGB class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -901,7 +1253,11 @@
           "relative_path": "api/Terminaux.Colors.Models.RedYellowBlue.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.RedYellowBlue",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.RedYellowBlue.yml\" sourcestartlinenumber=\"1\">The RYB class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -911,7 +1267,11 @@
           "relative_path": "api/Terminaux.Colors.Models.Xyz.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.Xyz",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.Xyz.yml\" sourcestartlinenumber=\"1\">The XYZ class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -921,7 +1281,11 @@
           "relative_path": "api/Terminaux.Colors.Models.Yxy.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.Yxy",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.Yxy.yml\" sourcestartlinenumber=\"1\">The YXY class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -931,7 +1295,11 @@
           "relative_path": "api/Terminaux.Colors.Models.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -941,7 +1309,11 @@
           "relative_path": "api/Terminaux.Colors.Templates.PredefinedComponentType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Templates.PredefinedComponentType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Templates.PredefinedComponentType.yml\" sourcestartlinenumber=\"1\">Specifies all the predefined component types required in all the templates</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -951,7 +1323,11 @@
           "relative_path": "api/Terminaux.Colors.Templates.TemplateInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Templates.TemplateInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Templates.TemplateInfo.yml\" sourcestartlinenumber=\"1\">Template information containing colors set to each component of the template</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -961,7 +1337,11 @@
           "relative_path": "api/Terminaux.Colors.Templates.TemplateTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Templates.TemplateTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Templates.TemplateTools.yml\" sourcestartlinenumber=\"1\">Template tools class to manage templates</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -971,7 +1351,11 @@
           "relative_path": "api/Terminaux.Colors.Templates.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Templates",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -981,7 +1365,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.BaseTransformationFormula.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.BaseTransformationFormula",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.BaseTransformationFormula.yml\" sourcestartlinenumber=\"1\">Color transformation formula</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -991,7 +1379,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Contrast.ColorBrightness",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.yml\" sourcestartlinenumber=\"1\">Color brightness enumeration</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1001,7 +1393,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Contrast.ColorContrast",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Contrast.ColorContrast.yml\" sourcestartlinenumber=\"1\">Color contrast tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1011,7 +1407,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorContrastType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Contrast.ColorContrastType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Contrast.ColorContrastType.yml\" sourcestartlinenumber=\"1\">The color contrast type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1021,7 +1421,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Contrast.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Contrast",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1031,7 +1435,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Formulas.ColorBlind",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Formulas.ColorBlind.yml\" sourcestartlinenumber=\"1\">Color blindness simulation formula</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1041,7 +1449,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Inverse.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Formulas.Inverse",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Formulas.Inverse.yml\" sourcestartlinenumber=\"1\">Inverse colors</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1051,7 +1463,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Monochromacy.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Formulas.Monochromacy",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Formulas.Monochromacy.yml\" sourcestartlinenumber=\"1\">Full color blindness, can only see grayscale.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1061,7 +1477,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Formulas.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Formulas",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1071,7 +1491,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.ITransformationFormula.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.ITransformationFormula",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.ITransformationFormula.yml\" sourcestartlinenumber=\"1\">Transformation formula interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1081,7 +1505,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Tools.ColorBlind.ColorBlindDeficiency.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Tools.ColorBlind.ColorBlindDeficiency",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Tools.ColorBlind.ColorBlindDeficiency.yml\" sourcestartlinenumber=\"1\">Deficiency type of the color blindness</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1091,7 +1519,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Tools.ColorBlind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Tools.ColorBlind",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1101,7 +1533,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Tools.MonochromacyType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Tools.MonochromacyType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Tools.MonochromacyType.yml\" sourcestartlinenumber=\"1\">Monochromacy type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1111,7 +1547,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.Tools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Tools",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1121,7 +1561,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.TransformationTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.TransformationTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.TransformationTools.yml\" sourcestartlinenumber=\"1\">Color transformation tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1131,7 +1575,11 @@
           "relative_path": "api/Terminaux.Colors.Transformation.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1141,7 +1589,11 @@
           "relative_path": "api/Terminaux.Colors.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1151,7 +1603,11 @@
           "relative_path": "api/Terminaux.Images.Icons.IconsColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Icons.IconsColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.Icons.IconsColor.yml\" sourcestartlinenumber=\"1\">Specifies the color variant of the icons</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1161,7 +1617,11 @@
           "relative_path": "api/Terminaux.Images.Icons.IconsManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Icons.IconsManager",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.Icons.IconsManager.yml\" sourcestartlinenumber=\"1\">Icon management class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1171,7 +1631,11 @@
           "relative_path": "api/Terminaux.Images.Icons.IconsQuality.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Icons.IconsQuality",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.Icons.IconsQuality.yml\" sourcestartlinenumber=\"1\">Specifies the quality of the icons</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1181,7 +1645,11 @@
           "relative_path": "api/Terminaux.Images.Icons.IconsSelector.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Icons.IconsSelector",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.Icons.IconsSelector.yml\" sourcestartlinenumber=\"1\">Icons selector</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1191,7 +1659,11 @@
           "relative_path": "api/Terminaux.Images.Icons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Icons",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1201,7 +1673,11 @@
           "relative_path": "api/Terminaux.Images.ImageProcessor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.ImageProcessor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.ImageProcessor.yml\" sourcestartlinenumber=\"1\">Class for processing images</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1211,7 +1687,11 @@
           "relative_path": "api/Terminaux.Images.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1221,7 +1701,11 @@
           "relative_path": "api/Terminaux.Inputs.Input.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Input",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Input.yml\" sourcestartlinenumber=\"1\">Input management tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1231,7 +1715,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.BaseInteractiveTui<T>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.yml\" sourcestartlinenumber=\"1\">A base class for your interactive user interface for terminal apps</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1241,7 +1729,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-2.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.BaseInteractiveTui<TPrimary, TSecondary>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.BaseInteractiveTui-2.yml\" sourcestartlinenumber=\"1\">A base class for your interactive user interface for terminal apps</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1251,7 +1743,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.IInteractiveTui<T>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.IInteractiveTui-1.yml\" sourcestartlinenumber=\"1\">An interface for your interactive user interface for terminal apps</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1261,7 +1757,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-2.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.IInteractiveTui<TPrimary, TSecondary>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.IInteractiveTui-2.yml\" sourcestartlinenumber=\"1\">An interface for your interactive user interface for terminal apps</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1271,7 +1771,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.InteractiveTuiBinding<T>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-1.yml\" sourcestartlinenumber=\"1\">Interactive TUI binding information class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1281,7 +1785,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-2.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.InteractiveTuiBinding<TPrimary, TSecondary>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-2.yml\" sourcestartlinenumber=\"1\">Interactive TUI binding information class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1291,7 +1799,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.InteractiveTuiSettings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.InteractiveTuiSettings.yml\" sourcestartlinenumber=\"1\">Interactive TUI settings</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1301,7 +1813,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.InteractiveTuiTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.InteractiveTuiTools.yml\" sourcestartlinenumber=\"1\">Tools for the interactive TUI implementation</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1311,7 +1827,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.ColorSelectorTui.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.Selectors.ColorSelectorTui",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.Selectors.ColorSelectorTui.yml\" sourcestartlinenumber=\"1\">Color selection application</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1321,7 +1841,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.FigletSelectorTui.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.Selectors.FigletSelectorTui",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.Selectors.FigletSelectorTui.yml\" sourcestartlinenumber=\"1\">Figlet selector</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1331,7 +1855,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.SpinnerSelectorTui.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.Selectors.SpinnerSelectorTui",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.Selectors.SpinnerSelectorTui.yml\" sourcestartlinenumber=\"1\">Spinner selector</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1341,7 +1869,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.Selectors.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.Selectors",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1351,7 +1883,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.TextualUI.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.TextualUI",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.TextualUI.yml\" sourcestartlinenumber=\"1\">Base textual UI class for your interactive applications</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1361,7 +1897,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.TextualUIState.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.TextualUIState",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.TextualUIState.yml\" sourcestartlinenumber=\"1\">State of the textual UI</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1371,7 +1911,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.TextualUITools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.TextualUITools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.TextualUITools.yml\" sourcestartlinenumber=\"1\">Tools for the textual UI</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1381,7 +1925,11 @@
           "relative_path": "api/Terminaux.Inputs.Interactive.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1391,7 +1939,11 @@
           "relative_path": "api/Terminaux.Inputs.Pointer.PointerButton.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Pointer.PointerButton",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Pointer.PointerButton.yml\" sourcestartlinenumber=\"1\">Pointer button</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1401,7 +1953,11 @@
           "relative_path": "api/Terminaux.Inputs.Pointer.PointerButtonPress.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Pointer.PointerButtonPress",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Pointer.PointerButtonPress.yml\" sourcestartlinenumber=\"1\">Pointer button press</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1411,7 +1967,11 @@
           "relative_path": "api/Terminaux.Inputs.Pointer.PointerEventContext.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Pointer.PointerEventContext",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Pointer.PointerEventContext.yml\" sourcestartlinenumber=\"1\">Pointer event context</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1421,7 +1981,11 @@
           "relative_path": "api/Terminaux.Inputs.Pointer.PointerModifiers.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Pointer.PointerModifiers",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Pointer.PointerModifiers.yml\" sourcestartlinenumber=\"1\">Pointer modifiers</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1431,7 +1995,11 @@
           "relative_path": "api/Terminaux.Inputs.Pointer.PointerTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Pointer.PointerTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Pointer.PointerTools.yml\" sourcestartlinenumber=\"1\">Pointer tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1441,7 +2009,11 @@
           "relative_path": "api/Terminaux.Inputs.Pointer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Pointer",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1451,7 +2023,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Elements.DynamicTextElement.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Elements.DynamicTextElement",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Elements.DynamicTextElement.yml\" sourcestartlinenumber=\"1\">Dynamic text element</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1461,7 +2037,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Elements.IElement.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Elements.IElement",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Elements.IElement.yml\" sourcestartlinenumber=\"1\">A presentation element</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1471,7 +2051,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Elements.TextElement.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Elements.TextElement",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Elements.TextElement.yml\" sourcestartlinenumber=\"1\">Text element</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1481,7 +2065,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Elements.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Elements",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1491,7 +2079,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.BaseInputMethod-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs.BaseInputMethod<T>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.BaseInputMethod-1.yml\" sourcestartlinenumber=\"1\">Base input method</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1501,7 +2093,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs.IInputMethod<TInput>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.IInputMethod-1.yml\" sourcestartlinenumber=\"1\">Presentation input method element</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1511,7 +2107,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs.IInputMethod",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.IInputMethod.yml\" sourcestartlinenumber=\"1\">Presentation input method element</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1521,7 +2121,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.InputInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs.InputInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.InputInfo.yml\" sourcestartlinenumber=\"1\">Input information for the presentation</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1531,7 +2135,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod.yml\" sourcestartlinenumber=\"1\">Masked text input method</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1541,7 +2149,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod.yml\" sourcestartlinenumber=\"1\">Selection input method (single selection, uses informational box)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1551,7 +2163,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod.yml\" sourcestartlinenumber=\"1\">Selection multiple input method (multiple selection, uses informational box)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1561,7 +2177,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.TextInputMethod.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs.TextInputMethod",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.TextInputMethod.yml\" sourcestartlinenumber=\"1\">Text input method</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1571,7 +2191,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Inputs",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1581,7 +2205,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.PresentationPage.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.PresentationPage",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.PresentationPage.yml\" sourcestartlinenumber=\"1\">Presentation page</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1591,7 +2219,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.PresentationTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.PresentationTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.PresentationTools.yml\" sourcestartlinenumber=\"1\">Presentation tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1601,7 +2233,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.Slideshow.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation.Slideshow",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Slideshow.yml\" sourcestartlinenumber=\"1\">The presentation containing all the pages</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1611,7 +2247,11 @@
           "relative_path": "api/Terminaux.Inputs.Presentation.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Presentation",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1621,7 +2261,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Choice.ChoiceOutputType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Choice.ChoiceOutputType.yml\" sourcestartlinenumber=\"1\">The enumeration for the choice command output type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1631,7 +2275,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Choice.ChoiceStyle.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Choice.ChoiceStyle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Choice.ChoiceStyle.yml\" sourcestartlinenumber=\"1\">Choice style for input module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1641,7 +2289,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Choice.ChoiceStyleSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Choice.ChoiceStyleSettings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Choice.ChoiceStyleSettings.yml\" sourcestartlinenumber=\"1\">Settings for the choice input style, <xref href=\"Terminaux.Inputs.Styles.Choice.ChoiceStyle\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1651,7 +2303,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Choice.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Choice",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1661,7 +2317,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.ColorSelector.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.ColorSelector",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.ColorSelector.yml\" sourcestartlinenumber=\"1\">Color selection application</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1671,7 +2331,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Editor.HexEditInteractive.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Editor.HexEditInteractive",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Editor.HexEditInteractive.yml\" sourcestartlinenumber=\"1\">Interactive hex editor</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1681,7 +2345,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Editor.HexViewInteractive",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.yml\" sourcestartlinenumber=\"1\">Interactive hex viewer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1691,7 +2359,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Editor.TextEditInteractive.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Editor.TextEditInteractive",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Editor.TextEditInteractive.yml\" sourcestartlinenumber=\"1\">Interactive text editor</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1701,7 +2373,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Editor.TextViewInteractive",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.yml\" sourcestartlinenumber=\"1\">Interactive text viewer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1711,7 +2387,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Editor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Editor",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1721,7 +2401,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.FigletSelector.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.FigletSelector",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.FigletSelector.yml\" sourcestartlinenumber=\"1\">Figlet selector</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1731,7 +2415,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.yml\" sourcestartlinenumber=\"1\">Info box writer with buttons and color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1741,7 +2429,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.yml\" sourcestartlinenumber=\"1\">Info box writer with input and color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1751,7 +2443,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputPasswordColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxInputPasswordColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputPasswordColor.yml\" sourcestartlinenumber=\"1\">Info box writer with password input and color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1761,7 +2457,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxModalColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxModalColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxModalColor.yml\" sourcestartlinenumber=\"1\">Info box writer with color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1771,7 +2471,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxNonModalColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxNonModalColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxNonModalColor.yml\" sourcestartlinenumber=\"1\">Info box writer with color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1781,7 +2485,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.yml\" sourcestartlinenumber=\"1\">Info box writer with progress and color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1791,7 +2499,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.yml\" sourcestartlinenumber=\"1\">Info box writer with selection and color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1801,7 +2513,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.yml\" sourcestartlinenumber=\"1\">Info box writer with selection and color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1811,7 +2527,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.yml\" sourcestartlinenumber=\"1\">Info box writer with slider and color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1821,7 +2541,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1831,7 +2555,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceCategoryInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.InputChoiceCategoryInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.InputChoiceCategoryInfo.yml\" sourcestartlinenumber=\"1\">Input choice category info</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1841,7 +2569,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceGroupInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.InputChoiceGroupInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.InputChoiceGroupInfo.yml\" sourcestartlinenumber=\"1\">Input choice group info</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1851,7 +2583,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.InputChoiceInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.InputChoiceInfo.yml\" sourcestartlinenumber=\"1\">Choice information for input</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1861,7 +2597,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.InputChoiceTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.InputChoiceTools.yml\" sourcestartlinenumber=\"1\">Input choice tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1871,7 +2611,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.yml\" sourcestartlinenumber=\"1\">Multiple selection style for input module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1881,7 +2625,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Selection.SelectionStyle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Selection.SelectionStyle.yml\" sourcestartlinenumber=\"1\">Selection style for input module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1891,7 +2639,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Selection.SelectionStyleSettings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.yml\" sourcestartlinenumber=\"1\">Settings for the selection style</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1901,7 +2653,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.Selection.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Selection",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1911,7 +2667,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.SpinnerSelector.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.SpinnerSelector",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.SpinnerSelector.yml\" sourcestartlinenumber=\"1\">Spinner selector</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1921,7 +2681,11 @@
           "relative_path": "api/Terminaux.Inputs.Styles.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1931,7 +2695,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.Fixture.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures.Fixture",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.TestFixtures.Fixture.yml\" sourcestartlinenumber=\"1\">Test fixture class (general)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1941,7 +2709,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureConditional-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures.FixtureConditional<TDelegate>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.TestFixtures.FixtureConditional-1.yml\" sourcestartlinenumber=\"1\">Test fixture class (routines that don't return <a href=\"https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/void\">void</a>)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1951,7 +2723,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureConditional.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures.FixtureConditional",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.TestFixtures.FixtureConditional.yml\" sourcestartlinenumber=\"1\">Test fixture class (routines that don't return <a href=\"https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/void\">void</a>)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1961,7 +2737,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureUnconditional-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures.FixtureUnconditional<TDelegate>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.TestFixtures.FixtureUnconditional-1.yml\" sourcestartlinenumber=\"1\">Test fixture class (routines that return <a href=\"https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/void\">void</a>)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1971,7 +2751,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.FixtureUnconditional.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures.FixtureUnconditional",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.TestFixtures.FixtureUnconditional.yml\" sourcestartlinenumber=\"1\">Test fixture class (routines that return <a href=\"https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/void\">void</a>)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1981,7 +2765,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.FixtureRunner.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures.Tools.FixtureRunner",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.TestFixtures.Tools.FixtureRunner.yml\" sourcestartlinenumber=\"1\">Fixture runner class to start test fixtures</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1991,7 +2779,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.FixtureSelector.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures.Tools.FixtureSelector",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.TestFixtures.Tools.FixtureSelector.yml\" sourcestartlinenumber=\"1\">Fixture selector initializer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2001,7 +2793,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.Tools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures.Tools",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2011,7 +2807,11 @@
           "relative_path": "api/Terminaux.Inputs.TestFixtures.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.TestFixtures",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2021,7 +2821,11 @@
           "relative_path": "api/Terminaux.Inputs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2031,7 +2835,11 @@
           "relative_path": "api/Terminaux.Reader.Bindings.BaseBinding.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Bindings.BaseBinding",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.Bindings.BaseBinding.yml\" sourcestartlinenumber=\"1\">Base key binding</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2041,7 +2849,11 @@
           "relative_path": "api/Terminaux.Reader.Bindings.BindingsTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Bindings.BindingsTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.Bindings.BindingsTools.yml\" sourcestartlinenumber=\"1\">Terminal reader binding tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2051,7 +2863,11 @@
           "relative_path": "api/Terminaux.Reader.Bindings.IBinding.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Bindings.IBinding",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.Bindings.IBinding.yml\" sourcestartlinenumber=\"1\">Key binding interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2061,7 +2877,11 @@
           "relative_path": "api/Terminaux.Reader.Bindings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Bindings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2071,7 +2891,11 @@
           "relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlighting.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Highlighting.SyntaxHighlighting",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.Highlighting.SyntaxHighlighting.yml\" sourcestartlinenumber=\"1\">Syntax highlighting class that contains components</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2081,7 +2905,11 @@
           "relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlightingComponent.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Highlighting.SyntaxHighlightingComponent",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.Highlighting.SyntaxHighlightingComponent.yml\" sourcestartlinenumber=\"1\">Syntax highlighting tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2091,7 +2919,11 @@
           "relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlightingTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Highlighting.SyntaxHighlightingTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.Highlighting.SyntaxHighlightingTools.yml\" sourcestartlinenumber=\"1\">Syntax highlighting tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2101,7 +2933,11 @@
           "relative_path": "api/Terminaux.Reader.Highlighting.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Highlighting",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2111,7 +2947,11 @@
           "relative_path": "api/Terminaux.Reader.History.HistoryInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.History.HistoryInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.History.HistoryInfo.yml\" sourcestartlinenumber=\"1\">Terminal reader history information class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2121,7 +2961,11 @@
           "relative_path": "api/Terminaux.Reader.History.HistoryTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.History.HistoryTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.History.HistoryTools.yml\" sourcestartlinenumber=\"1\">History tools for the terminal reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2131,7 +2975,11 @@
           "relative_path": "api/Terminaux.Reader.History.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.History",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2141,7 +2989,11 @@
           "relative_path": "api/Terminaux.Reader.TermReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.TermReader",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.TermReader.yml\" sourcestartlinenumber=\"1\">Terminal input reader module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2151,7 +3003,11 @@
           "relative_path": "api/Terminaux.Reader.TermReaderSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.TermReaderSettings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.TermReaderSettings.yml\" sourcestartlinenumber=\"1\">Settings for the reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2161,7 +3017,11 @@
           "relative_path": "api/Terminaux.Reader.TermReaderState.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.TermReaderState",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.TermReaderState.yml\" sourcestartlinenumber=\"1\">State of the reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2171,7 +3031,11 @@
           "relative_path": "api/Terminaux.Reader.TermReaderTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.TermReaderTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.TermReaderTools.yml\" sourcestartlinenumber=\"1\">Terminal reader tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2181,7 +3045,11 @@
           "relative_path": "api/Terminaux.Reader.Tools.ConditionalTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Tools.ConditionalTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.Tools.ConditionalTools.yml\" sourcestartlinenumber=\"1\">Conditional tools for reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2191,7 +3059,11 @@
           "relative_path": "api/Terminaux.Reader.Tools.PositioningTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Tools.PositioningTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Reader.Tools.PositioningTools.yml\" sourcestartlinenumber=\"1\">Positioning tools for the console input reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2201,7 +3073,11 @@
           "relative_path": "api/Terminaux.Reader.Tools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader.Tools",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2211,7 +3087,11 @@
           "relative_path": "api/Terminaux.Reader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Reader",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2221,7 +3101,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.Types.ApcSequences.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.Types.ApcSequences",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.ApcSequences.yml\" sourcestartlinenumber=\"1\">List of APC sequences and their regular expressions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2231,7 +3115,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.Types.C1Sequences.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.Types.C1Sequences",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.C1Sequences.yml\" sourcestartlinenumber=\"1\">List of C1 sequences and their regular expressions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2241,7 +3129,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.Types.CsiSequences.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.Types.CsiSequences",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.CsiSequences.yml\" sourcestartlinenumber=\"1\">List of CSI sequences and their regular expressions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2251,7 +3143,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.Types.DcsSequences.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.Types.DcsSequences",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.DcsSequences.yml\" sourcestartlinenumber=\"1\">List of DCS sequences and their regular expressions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2261,7 +3157,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.Types.EscSequences.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.Types.EscSequences",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.EscSequences.yml\" sourcestartlinenumber=\"1\">List of ESC sequences and their regular expressions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2271,7 +3171,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.Types.OscSequences.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.Types.OscSequences",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.OscSequences.yml\" sourcestartlinenumber=\"1\">List of OSC sequences and their regular expressions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2281,7 +3185,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.Types.PmSequences.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.Types.PmSequences",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.PmSequences.yml\" sourcestartlinenumber=\"1\">List of PM sequences and their regular expressions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2291,7 +3199,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.Types.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.Types",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2301,7 +3213,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBasicChars.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.VtSequenceBasicChars",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.VtSequenceBasicChars.yml\" sourcestartlinenumber=\"1\">VT sequence basic characters for forming VT sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2311,7 +3227,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBuilderTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.VtSequenceBuilderTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.VtSequenceBuilderTools.yml\" sourcestartlinenumber=\"1\">VT sequence builder tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2321,7 +3241,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceSpecificTypes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder.VtSequenceSpecificTypes",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.VtSequenceSpecificTypes.yml\" sourcestartlinenumber=\"1\">Specific VT sequences sorted by type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2331,7 +3255,11 @@
           "relative_path": "api/Terminaux.Sequences.Builder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.Builder",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2341,7 +3269,11 @@
           "relative_path": "api/Terminaux.Sequences.VtSequenceRegexes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.VtSequenceRegexes",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.VtSequenceRegexes.yml\" sourcestartlinenumber=\"1\">VT sequence regular expressions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2351,7 +3283,11 @@
           "relative_path": "api/Terminaux.Sequences.VtSequenceTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.VtSequenceTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.VtSequenceTools.yml\" sourcestartlinenumber=\"1\">Provides all the tools for manipulating with the VT sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2361,7 +3297,11 @@
           "relative_path": "api/Terminaux.Sequences.VtSequenceType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.VtSequenceType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.VtSequenceType.yml\" sourcestartlinenumber=\"1\">Denotes the VT sequence type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2371,7 +3311,11 @@
           "relative_path": "api/Terminaux.Sequences.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2381,7 +3325,11 @@
           "relative_path": "api/Terminaux.Shell.Aliases.AliasInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Aliases.AliasInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Aliases.AliasInfo.yml\" sourcestartlinenumber=\"1\">Command alias information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2391,7 +3339,11 @@
           "relative_path": "api/Terminaux.Shell.Aliases.AliasManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Aliases.AliasManager",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Aliases.AliasManager.yml\" sourcestartlinenumber=\"1\">Alias management module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2401,7 +3353,11 @@
           "relative_path": "api/Terminaux.Shell.Aliases.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Aliases",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2411,7 +3367,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.ArgumentsParser.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.ArgumentsParser",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.ArgumentsParser.yml\" sourcestartlinenumber=\"1\">Argument parser tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2421,7 +3381,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentExecutor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.Base.ArgumentExecutor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.Base.ArgumentExecutor.yml\" sourcestartlinenumber=\"1\">Argument executor base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2431,7 +3395,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.Base.ArgumentInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.Base.ArgumentInfo.yml\" sourcestartlinenumber=\"1\">Argument information class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2441,7 +3409,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentParameters.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.Base.ArgumentParameters",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.Base.ArgumentParameters.yml\" sourcestartlinenumber=\"1\">Argument parameters that holds information about arguments and switches</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2451,7 +3423,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.Base.ArgumentParse.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.Base.ArgumentParse",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.Base.ArgumentParse.yml\" sourcestartlinenumber=\"1\">Argument parser class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2461,7 +3437,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.Base.Help.ArgumentHelpPrint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.Base.Help.ArgumentHelpPrint",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.Base.Help.ArgumentHelpPrint.yml\" sourcestartlinenumber=\"1\">Argument help system module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2471,7 +3451,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.Base.Help.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.Base.Help",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2481,7 +3465,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.Base.IArgument.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.Base.IArgument",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.Base.IArgument.yml\" sourcestartlinenumber=\"1\">Base kernel argument executor</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2491,7 +3479,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.Base.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.Base",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2501,7 +3493,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.CommandArgumentInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.CommandArgumentInfo.yml\" sourcestartlinenumber=\"1\">Command argument info class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2511,7 +3507,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentPart.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.CommandArgumentPart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.CommandArgumentPart.yml\" sourcestartlinenumber=\"1\">Command argument part class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2521,7 +3521,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.CommandArgumentPartOptions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.CommandArgumentPartOptions",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.CommandArgumentPartOptions.yml\" sourcestartlinenumber=\"1\">Command argument part options class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2531,7 +3535,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.CommandAutoCompletionList.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.CommandAutoCompletionList",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.CommandAutoCompletionList.yml\" sourcestartlinenumber=\"1\">The list of known command auto completion patterns</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2541,7 +3549,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.ProvidedArgumentsInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments.ProvidedArgumentsInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Arguments.ProvidedArgumentsInfo.yml\" sourcestartlinenumber=\"1\">Provided arguments information class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2551,7 +3563,11 @@
           "relative_path": "api/Terminaux.Shell.Arguments.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Arguments",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2561,7 +3577,11 @@
           "relative_path": "api/Terminaux.Shell.Commands.BaseCommand.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.BaseCommand",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.BaseCommand.yml\" sourcestartlinenumber=\"1\">The command executor class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2571,7 +3591,11 @@
           "relative_path": "api/Terminaux.Shell.Commands.CommandExecutor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.CommandExecutor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.CommandExecutor.yml\" sourcestartlinenumber=\"1\">Command executor module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2581,7 +3605,11 @@
           "relative_path": "api/Terminaux.Shell.Commands.CommandInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.CommandInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.CommandInfo.yml\" sourcestartlinenumber=\"1\">Command information class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2591,7 +3619,11 @@
           "relative_path": "api/Terminaux.Shell.Commands.CommandManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.CommandManager",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.CommandManager.yml\" sourcestartlinenumber=\"1\">Command management class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2601,7 +3633,11 @@
           "relative_path": "api/Terminaux.Shell.Commands.CommandParameters.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.CommandParameters",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.CommandParameters.yml\" sourcestartlinenumber=\"1\">Command parameters that holds information about arguments and switches</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2611,7 +3647,11 @@
           "relative_path": "api/Terminaux.Shell.Commands.ICommand.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.ICommand",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.ICommand.yml\" sourcestartlinenumber=\"1\">Base command executor</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2621,7 +3661,11 @@
           "relative_path": "api/Terminaux.Shell.Commands.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2631,7 +3675,11 @@
           "relative_path": "api/Terminaux.Shell.Help.HelpPrint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Help.HelpPrint",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Help.HelpPrint.yml\" sourcestartlinenumber=\"1\">Help system for shells module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2641,7 +3689,11 @@
           "relative_path": "api/Terminaux.Shell.Help.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Help",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2651,7 +3703,11 @@
           "relative_path": "api/Terminaux.Shell.Prompts.IPromptPreset.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Prompts.IPromptPreset",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Prompts.IPromptPreset.yml\" sourcestartlinenumber=\"1\">Prompt preset interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2661,7 +3717,11 @@
           "relative_path": "api/Terminaux.Shell.Prompts.PromptPresetBase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Prompts.PromptPresetBase",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Prompts.PromptPresetBase.yml\" sourcestartlinenumber=\"1\">Base prompt preset</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2671,7 +3731,11 @@
           "relative_path": "api/Terminaux.Shell.Prompts.PromptPresetManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Prompts.PromptPresetManager",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Prompts.PromptPresetManager.yml\" sourcestartlinenumber=\"1\">Prompt preset management module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2681,7 +3745,11 @@
           "relative_path": "api/Terminaux.Shell.Prompts.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Prompts",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2691,7 +3759,11 @@
           "relative_path": "api/Terminaux.Shell.Shells.BaseShell.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Shells.BaseShell",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.BaseShell.yml\" sourcestartlinenumber=\"1\">Base abstract shell class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2701,7 +3773,11 @@
           "relative_path": "api/Terminaux.Shell.Shells.BaseShellInfo-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Shells.BaseShellInfo<TShell>",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.BaseShellInfo-1.yml\" sourcestartlinenumber=\"1\">Shell information for both the KS shells and the custom shells made by mods</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2711,7 +3787,11 @@
           "relative_path": "api/Terminaux.Shell.Shells.BaseShellInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Shells.BaseShellInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.BaseShellInfo.yml\" sourcestartlinenumber=\"1\">Shell information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2721,7 +3801,11 @@
           "relative_path": "api/Terminaux.Shell.Shells.IShell.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Shells.IShell",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.IShell.yml\" sourcestartlinenumber=\"1\">Base shell functions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2731,7 +3815,11 @@
           "relative_path": "api/Terminaux.Shell.Shells.IShellInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Shells.IShellInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.IShellInfo.yml\" sourcestartlinenumber=\"1\">Shell information interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2741,7 +3829,11 @@
           "relative_path": "api/Terminaux.Shell.Shells.ShellExecuteInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Shells.ShellExecuteInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.ShellExecuteInfo.yml\" sourcestartlinenumber=\"1\">Shell execution information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2751,7 +3843,11 @@
           "relative_path": "api/Terminaux.Shell.Shells.ShellManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Shells.ShellManager",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.ShellManager.yml\" sourcestartlinenumber=\"1\">Base shell module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2761,7 +3857,11 @@
           "relative_path": "api/Terminaux.Shell.Shells.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Shells",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2771,7 +3871,11 @@
           "relative_path": "api/Terminaux.Shell.Switches.SwitchInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Switches.SwitchInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Switches.SwitchInfo.yml\" sourcestartlinenumber=\"1\">Information for command switches</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2781,7 +3885,11 @@
           "relative_path": "api/Terminaux.Shell.Switches.SwitchManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Switches.SwitchManager",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Switches.SwitchManager.yml\" sourcestartlinenumber=\"1\">Switch management module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2791,7 +3899,11 @@
           "relative_path": "api/Terminaux.Shell.Switches.SwitchOptions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Switches.SwitchOptions",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Switches.SwitchOptions.yml\" sourcestartlinenumber=\"1\">Switch options for a switch</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2801,7 +3913,11 @@
           "relative_path": "api/Terminaux.Shell.Switches.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Switches",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2811,7 +3927,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.ListEntryWriterColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.ListEntryWriterColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.ListEntryWriterColor.yml\" sourcestartlinenumber=\"1\">List entry writer with color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2821,7 +3941,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.SeparatorWriterColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.SeparatorWriterColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.SeparatorWriterColor.yml\" sourcestartlinenumber=\"1\">Separator writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2831,7 +3955,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.TextWriterColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.TextWriterColor.yml\" sourcestartlinenumber=\"1\">Console text writer with color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2841,7 +3969,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.yml\" sourcestartlinenumber=\"1\">Console text writer with color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2851,7 +3983,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.TextWriterRaw",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.yml\" sourcestartlinenumber=\"1\">Raw text writers for console</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2861,7 +3997,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.TextWriterSlowColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.yml\" sourcestartlinenumber=\"1\">Console text writer with color support (slow write)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2871,7 +4011,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.TextWriterWhereColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.yml\" sourcestartlinenumber=\"1\">Console text writer with color support (positional write)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2881,7 +4025,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.yml\" sourcestartlinenumber=\"1\">Console text writer with color support (slow positional write)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2891,7 +4039,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.WrappedWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.WrappedWriter",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.WrappedWriter.yml\" sourcestartlinenumber=\"1\">Wrapped writer similar to <code>less</code> and <code>more</code> commands on Unix</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2901,7 +4053,11 @@
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2911,7 +4067,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedFigletText.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.AlignedFigletText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.AlignedFigletText.yml\" sourcestartlinenumber=\"1\">Aligned figlet text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2921,7 +4081,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedText.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.AlignedText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.AlignedText.yml\" sourcestartlinenumber=\"1\">Aligned text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2931,7 +4095,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedCanvas.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.AnimatedCanvas",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.AnimatedCanvas.yml\" sourcestartlinenumber=\"1\">Animated canvas renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2941,7 +4109,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedText.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.AnimatedText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.AnimatedText.yml\" sourcestartlinenumber=\"1\">Animated text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2951,7 +4123,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.BarChart.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.BarChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.BarChart.yml\" sourcestartlinenumber=\"1\">Bar chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2961,7 +4137,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Border.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Border",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Border.yml\" sourcestartlinenumber=\"1\">Aligned text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2971,7 +4151,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.BoundedText.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.BoundedText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.BoundedText.yml\" sourcestartlinenumber=\"1\">Bounded text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2981,7 +4165,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Box.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Box",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Box.yml\" sourcestartlinenumber=\"1\">Box renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2991,7 +4179,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.BoxFrame.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.BoxFrame",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.BoxFrame.yml\" sourcestartlinenumber=\"1\">Box frame renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3001,7 +4193,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.BreakdownChart.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.BreakdownChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.BreakdownChart.yml\" sourcestartlinenumber=\"1\">Breakdown chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3011,7 +4207,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.BuiltinSpinners.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Builtins.BuiltinSpinners",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Builtins.BuiltinSpinners.yml\" sourcestartlinenumber=\"1\">Built-in spinners</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3021,7 +4221,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Builtins",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3031,7 +4235,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Calendars.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Calendars",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Calendars.yml\" sourcestartlinenumber=\"1\">Calendars renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3041,7 +4249,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Canvas.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Canvas",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Canvas.yml\" sourcestartlinenumber=\"1\">Canvas renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3051,7 +4263,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Decoration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Decoration",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Decoration.yml\" sourcestartlinenumber=\"1\">Decoration renderer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3061,7 +4277,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Emoji.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Emoji",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Emoji.yml\" sourcestartlinenumber=\"1\">Emoji renderer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3071,7 +4291,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Eraser.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Eraser",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Eraser.yml\" sourcestartlinenumber=\"1\">Eraser renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3081,7 +4305,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.FigletText.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.FigletText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.FigletText.yml\" sourcestartlinenumber=\"1\">Figlet text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3091,7 +4319,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Kaomoji.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Kaomoji",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Kaomoji.yml\" sourcestartlinenumber=\"1\">Kaomoji renderer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3101,7 +4333,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.KeyShortcut.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.KeyShortcut",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.KeyShortcut.yml\" sourcestartlinenumber=\"1\">KeyShortcut renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3111,7 +4347,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Keybindings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Keybindings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Keybindings.yml\" sourcestartlinenumber=\"1\">Keybindings renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3121,7 +4361,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Line.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Line",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Line.yml\" sourcestartlinenumber=\"1\">Line renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3131,7 +4375,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.LineChart.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.LineChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.LineChart.yml\" sourcestartlinenumber=\"1\">Line chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3141,7 +4389,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.LineHandle.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.LineHandle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.LineHandle.yml\" sourcestartlinenumber=\"1\">Line handle renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3151,7 +4403,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.ListEntry.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.ListEntry",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.ListEntry.yml\" sourcestartlinenumber=\"1\">ListEntry renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3161,7 +4417,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Listing.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Listing",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Listing.yml\" sourcestartlinenumber=\"1\">Listing renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3171,7 +4431,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.NerdFonts.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.NerdFonts",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.NerdFonts.yml\" sourcestartlinenumber=\"1\">Nerd Fonts renderer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3181,7 +4445,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.PowerLine.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.PowerLine",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.PowerLine.yml\" sourcestartlinenumber=\"1\">PowerLine renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3191,7 +4459,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBar.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.ProgressBar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.ProgressBar.yml\" sourcestartlinenumber=\"1\">Progress bar with text</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3201,7 +4473,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBarNoText.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.ProgressBarNoText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.ProgressBarNoText.yml\" sourcestartlinenumber=\"1\">Progress bar without text</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3211,7 +4487,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Container.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Container",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Container.yml\" sourcestartlinenumber=\"1\">Container for all the renderables</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3221,7 +4501,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.ContainerTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.ContainerTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.ContainerTools.yml\" sourcestartlinenumber=\"1\">Container tools for renderables</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3231,7 +4515,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.BoldEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.BoldEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.BoldEffect.yml\" sourcestartlinenumber=\"1\">Bold text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3241,7 +4529,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ConcealEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ConcealEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ConcealEffect.yml\" sourcestartlinenumber=\"1\">Conceal text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3251,7 +4543,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.DimEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.DimEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.DimEffect.yml\" sourcestartlinenumber=\"1\">Dim text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3261,7 +4557,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.InvertEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.InvertEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.InvertEffect.yml\" sourcestartlinenumber=\"1\">Invert text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3271,7 +4571,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ItalicEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ItalicEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.ItalicEffect.yml\" sourcestartlinenumber=\"1\">Italic text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3281,7 +4585,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.RapidBlinkEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.RapidBlinkEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.RapidBlinkEffect.yml\" sourcestartlinenumber=\"1\">Rapid blink text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3291,7 +4599,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.SlowBlinkEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.SlowBlinkEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.SlowBlinkEffect.yml\" sourcestartlinenumber=\"1\">Slow blink text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3301,7 +4613,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StandoutEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StandoutEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StandoutEffect.yml\" sourcestartlinenumber=\"1\">Standout text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3311,7 +4627,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StrikethroughEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StrikethroughEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.StrikethroughEffect.yml\" sourcestartlinenumber=\"1\">Strikethrough text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3321,7 +4641,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.UnderlineEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.UnderlineEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.UnderlineEffect.yml\" sourcestartlinenumber=\"1\">Underline text effect</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3331,7 +4655,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3341,7 +4669,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.IEffect.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects.IEffect",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Effects.IEffect.yml\" sourcestartlinenumber=\"1\">Text effect interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3351,7 +4683,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Effects.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Effects",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3361,7 +4697,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.Mark.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Markup.Mark",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Markup.Mark.yml\" sourcestartlinenumber=\"1\">String with console markup support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3371,7 +4711,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupTools.yml\" sourcestartlinenumber=\"1\">Markup parsing and processing tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3381,7 +4725,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Markup",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3391,7 +4739,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AllIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.AllIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AllIcons.yml\" sourcestartlinenumber=\"1\">List of All Nerd Fonts icons (12484 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3401,7 +4753,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaRepresentation.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaRepresentation",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaRepresentation.yml\" sourcestartlinenumber=\"1\">Representation class for the Asciinema specification</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3411,7 +4767,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings.yml\" sourcestartlinenumber=\"1\">All border tools here</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3421,7 +4781,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CellOptions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.CellOptions",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CellOptions.yml\" sourcestartlinenumber=\"1\">Table and canvas cell options</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3431,7 +4795,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ChartElement.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.ChartElement",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ChartElement.yml\" sourcestartlinenumber=\"1\">Chart element for bar charts, breakdown charts, and other analytical renderers</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3441,7 +4809,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CodiconsIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.CodiconsIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CodiconsIcons.yml\" sourcestartlinenumber=\"1\">List of Codicons Nerd Fonts icons (64 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3451,7 +4823,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CustomIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.CustomIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CustomIcons.yml\" sourcestartlinenumber=\"1\">List of Custom Nerd Fonts icons (36 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3461,7 +4837,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.DeviconsIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.DeviconsIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.DeviconsIcons.yml\" sourcestartlinenumber=\"1\">List of Devicons Nerd Fonts icons (213 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3471,7 +4851,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FigletTextTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.FigletTextTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FigletTextTools.yml\" sourcestartlinenumber=\"1\">Tools for text manipulation</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3481,7 +4865,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeExtensionIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeExtensionIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeExtensionIcons.yml\" sourcestartlinenumber=\"1\">List of FontAwesomeExtension Nerd Fonts icons (186 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3491,7 +4879,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FontAwesomeIcons.yml\" sourcestartlinenumber=\"1\">List of FontAwesome Nerd Fonts icons (2317 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3501,7 +4893,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.IecPowerIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.IecPowerIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.IecPowerIcons.yml\" sourcestartlinenumber=\"1\">List of IecPower Nerd Fonts icons (5 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3511,7 +4907,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.yml\" sourcestartlinenumber=\"1\">Keybinding class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3521,7 +4921,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.KeybindingTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.KeybindingTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.KeybindingTools.yml\" sourcestartlinenumber=\"1\">Keybinding tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3531,7 +4935,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.LogosIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.LogosIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.LogosIcons.yml\" sourcestartlinenumber=\"1\">List of Logos Nerd Fonts icons (124 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3541,7 +4949,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.MaterialIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.MaterialIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.MaterialIcons.yml\" sourcestartlinenumber=\"1\">List of Material Nerd Fonts icons (8967 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3551,7 +4963,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTools.yml\" sourcestartlinenumber=\"1\">Nerd Fonts tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3561,7 +4977,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTypes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTypes",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.NerdFontsTypes.yml\" sourcestartlinenumber=\"1\">Nerd Fonts types</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3571,7 +4991,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.OcticonsIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.OcticonsIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.OcticonsIcons.yml\" sourcestartlinenumber=\"1\">List of Octicons Nerd Fonts icons (336 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3581,7 +5005,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PomodoroIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.PomodoroIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PomodoroIcons.yml\" sourcestartlinenumber=\"1\">List of Pomodoro Nerd Fonts icons (11 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3591,7 +5019,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineExtraIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineExtraIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineExtraIcons.yml\" sourcestartlinenumber=\"1\">List of PowerLineExtra Nerd Fonts icons (36 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3601,7 +5033,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineIcons.yml\" sourcestartlinenumber=\"1\">List of PowerLine Nerd Fonts icons (495 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3611,7 +5047,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineSegment.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineSegment",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineSegment.yml\" sourcestartlinenumber=\"1\">PowerLine segment</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3621,7 +5061,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineTools.yml\" sourcestartlinenumber=\"1\">PowerLine tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3631,7 +5075,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders.yml\" sourcestartlinenumber=\"1\">Pre-defined border list class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3641,7 +5089,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextAlignment.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.TextAlignment",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextAlignment.yml\" sourcestartlinenumber=\"1\">Text alignment for some of the writers and applications</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3651,7 +5103,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.TextSettings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextSettings.yml\" sourcestartlinenumber=\"1\">Text settings to manipulate writing</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3661,7 +5117,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextWriterTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.TextWriterTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextWriterTools.yml\" sourcestartlinenumber=\"1\">Text writer tools</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3671,7 +5131,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.WeatherIcons.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.WeatherIcons",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.WeatherIcons.yml\" sourcestartlinenumber=\"1\">List of Weather Nerd Fonts icons (275 icons installed)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3681,7 +5145,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3691,7 +5159,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3701,7 +5173,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Selection.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Selection",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Selection.yml\" sourcestartlinenumber=\"1\">Selection cyclic renderer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3711,7 +5187,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Arc.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Arc",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Arc.yml\" sourcestartlinenumber=\"1\">An arc</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3721,7 +5201,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Circle.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Circle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Circle.yml\" sourcestartlinenumber=\"1\">A circle</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3731,7 +5215,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Ellipsis",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.yml\" sourcestartlinenumber=\"1\">An ellipsis</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3741,7 +5229,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.yml\" sourcestartlinenumber=\"1\">Geometric shape interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3751,7 +5243,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Parallelogram",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.yml\" sourcestartlinenumber=\"1\">A parallelogram</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3761,7 +5257,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Rectangle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.yml\" sourcestartlinenumber=\"1\">A rectangle</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3771,7 +5271,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Square.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Square",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Square.yml\" sourcestartlinenumber=\"1\">A square</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3781,7 +5285,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Trapezoid",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.yml\" sourcestartlinenumber=\"1\">A trapezoid</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3791,7 +5299,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Triangle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.yml\" sourcestartlinenumber=\"1\">A triangle</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3801,7 +5313,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Shapes",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3811,7 +5327,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.SimpleProgress.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.SimpleProgress",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.SimpleProgress.yml\" sourcestartlinenumber=\"1\">Simple progress bar with and without percentage support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3821,7 +5341,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Slider.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Slider",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Slider.yml\" sourcestartlinenumber=\"1\">Simple slider with and without percentage support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3831,7 +5355,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Spinner.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Spinner",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Spinner.yml\" sourcestartlinenumber=\"1\">Spinner cyclic renderer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3841,7 +5369,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.StemLeafChart.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.StemLeafChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.StemLeafChart.yml\" sourcestartlinenumber=\"1\">Stem and leaf chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3851,7 +5383,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.StickChart.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.StickChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.StickChart.yml\" sourcestartlinenumber=\"1\">Stick chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3861,7 +5397,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.SyntaxText.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.SyntaxText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.SyntaxText.yml\" sourcestartlinenumber=\"1\">Syntax text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3871,7 +5411,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Table.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Table",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Table.yml\" sourcestartlinenumber=\"1\">Table renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3881,7 +5425,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.TextException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.TextException",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.TextException.yml\" sourcestartlinenumber=\"1\">Exception text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3891,7 +5439,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.TextMarquee.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.TextMarquee",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.TextMarquee.yml\" sourcestartlinenumber=\"1\">Text marquee that scrolls for long text similar to how music players work</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3901,7 +5453,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.TextPath.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.TextPath",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.TextPath.yml\" sourcestartlinenumber=\"1\">Path text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3911,7 +5467,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.WinsLosses.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.WinsLosses",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.WinsLosses.yml\" sourcestartlinenumber=\"1\">Wins and losses chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3921,7 +5481,11 @@
           "relative_path": "api/Terminaux.Writer.CyclicWriters.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3931,7 +5495,11 @@
           "relative_path": "api/Terminaux.Writer.IStaticRenderable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.IStaticRenderable",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.IStaticRenderable.yml\" sourcestartlinenumber=\"1\">Static renderable writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3941,7 +5509,11 @@
           "relative_path": "api/Terminaux.Writer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer",
+      "Summary": null
     },
     {
       "type": "Toc",
