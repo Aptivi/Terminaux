@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 
 namespace Terminaux.Shell.Arguments
@@ -52,6 +54,14 @@ namespace Terminaux.Shell.Arguments
         /// Whether to accept infinite number of arguments
         /// </summary>
         public bool InfiniteBounds { get; private set; }
+        /// <summary>
+        /// Argument checker function (executed before actual command execution after basic argument processing)
+        /// </summary>
+        /// <remarks>
+        /// When this checker function returns 0, this means that all arguments are satisfied.<br></br>
+        /// When this checker function returns something other than 0, this means that not all arguments are satisfied.
+        /// </remarks>
+        public Func<CommandParameters, int> ArgChecker { get; set; } = (_) => 0;
         /// <summary>
         /// Rendered usage
         /// </summary>

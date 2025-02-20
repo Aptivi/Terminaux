@@ -154,13 +154,19 @@ namespace Terminaux.Shell.Commands
                 var Switches = ArgumentInfo.SwitchesList.Select(TextTools.Unescape).ToArray();
                 string StrArgs = TextTools.Unescape(ArgumentInfo.ArgumentsText);
                 string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
+                
+                // Prepare the command parameter instance and run the argument handler if any
+                var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, Command);
+                int argCheckerReturnCode = 0;
+                if (argSatisfied)
+                {
+                    argCheckerReturnCode = satisfied.ArgumentInfo?.ArgChecker.Invoke(parameters) ?? 0;
+                    argSatisfied = argCheckerReturnCode == 0;
+                }
 
                 // Execute the command
                 if (argSatisfied)
                 {
-                    // Prepare the command parameter instance
-                    var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, Command);
-
                     // Now, get the base command and execute it
                     var CommandBase = RequestedCommandInfo.CommandBase;
                     CommandDelegate(CommandBase, parameters);
