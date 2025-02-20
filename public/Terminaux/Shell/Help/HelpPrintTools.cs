@@ -157,7 +157,13 @@ namespace Terminaux.Shell.Help
                     HelpDefinition = "Command defined by " + command;
                 TextWriterRaw.WriteRaw(new ListEntry()
                 {
-                    Entry = FinalCommand,
+                    Entry = "Command",
+                    Value = FinalCommand,
+                    Indicator = false,
+                }.Render() + "\n");
+                TextWriterRaw.WriteRaw(new ListEntry()
+                {
+                    Entry = "Description",
                     Value = HelpDefinition,
                     Indicator = false,
                 }.Render() + "\n");
@@ -179,26 +185,24 @@ namespace Terminaux.Shell.Help
                     }
 
                     // Print usage information
-                    TextWriterRaw.WriteRaw(new ListEntry()
-                    {
-                        Entry = "Usage",
-                        Value = $"{FinalCommand} {renderedUsage}",
-                        Indicator = false,
-                    }.Render() + "\n");
+                    TextWriterRaw.Write();
+                    TextWriterColor.WriteColor($"{FinalCommand} {renderedUsage}", ConsoleColors.Yellow);
 
                     // If we have arguments, print their descriptions
                     if (Arguments.Length != 0)
                     {
-                        TextWriterColor.WriteColor("This command has the below arguments that change how it works:", ConsoleColors.Silver);
+                        TextWriterColor.WriteColor("* This command has the below arguments that change how it works:", ConsoleColors.Silver);
                         foreach (var argument in Arguments)
                         {
                             string argumentName = argument.ArgumentExpression;
                             string argumentDesc = argument.Options.ArgumentDescription;
+                            if (string.IsNullOrWhiteSpace(argumentDesc))
+                                argumentDesc = "Unspecified argument description";
                             TextWriterRaw.WriteRaw(new ListEntry()
                             {
                                 Entry = argumentName,
                                 Value = argumentDesc,
-                                Indentation = 1,
+                                Indentation = 2,
                                 Indicator = false,
                             }.Render() + "\n");
                         }
@@ -207,16 +211,18 @@ namespace Terminaux.Shell.Help
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
-                        TextWriterColor.WriteColor("This command has the below switches that change how it works:", ConsoleColors.Silver);
+                        TextWriterColor.WriteColor("* This command has the below switches that change how it works:", ConsoleColors.Silver);
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;
                             string switchDesc = Switch.HelpDefinition;
+                            if (string.IsNullOrWhiteSpace(switchDesc))
+                                switchDesc = "Unspecified switch description";
                             TextWriterRaw.WriteRaw(new ListEntry()
                             {
                                 Entry = $"-{switchName}",
                                 Value = switchDesc,
-                                Indentation = 1,
+                                Indentation = 2,
                                 Indicator = false,
                             }.Render() + "\n");
                         }
