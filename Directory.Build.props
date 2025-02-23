@@ -33,7 +33,4 @@
             <Output TaskParameter="Value" PropertyName="PackageVersion"/>
         </CreateProperty>
     </Target>
-    <ItemGroup Condition="'$(MSBuildProjectFile)' != 'BuildTargets.csproj'">
-        <ProjectReference Include="$(RootPath)/private/BuildTargets/BuildTargets.csproj" PrivateAssets="All" />
-    </ItemGroup>
 </Project>
