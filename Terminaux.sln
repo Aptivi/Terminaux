@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTargets", "private\BuildTargets\BuildTargets.csproj", "{9A0A9BCC-B377-448E-80F6-87016E056992}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux", "public\Terminaux\Terminaux.csproj", "{10697319-2F9F-4A93-BA6D-8A60DA2DF2DA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Console", "private\Terminaux.Console\Terminaux.Console.csproj", "{50FD1BF6-E278-4341-BAE6-32C1F95F4673}"
@@ -37,8 +39,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{C96DC3
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminaux.Images.Icons", "public\Terminaux.Images.Icons\Terminaux.Images.Icons.csproj", "{0F164B28-7356-4E69-97E3-DFE93B5430BC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTargets", "private\BuildTargets\BuildTargets.csproj", "{9A0A9BCC-B377-448E-80F6-87016E056992}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
