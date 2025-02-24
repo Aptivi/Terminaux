@@ -313,6 +313,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Left = selectionBoxPosX,
                         Top = selectionBoxPosY,
                         CurrentSelection = currentSelection,
+                        CurrentSelections = [.. selectedChoices],
                         Height = selectionChoices,
                         Width = maxSelectionWidth,
                         SliderInside = true,
