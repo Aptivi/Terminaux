@@ -218,8 +218,9 @@ namespace Terminaux.Writer.CyclicWriters
             try
             {
                 // StringBuilder to put out the final rendering text
-                var boxFrame = new BoxFrame(title, vars)
+                var boxFrame = new BoxFrame()
                 {
+                    Text = title.FormatString(vars),
                     Left = Left,
                     Top = Top,
                     InteriorWidth = InteriorWidth,
