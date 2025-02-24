@@ -1,10 +1,10 @@
-This version brings an improved appearance for the help feature.
+This version fixes the border cyclic writer.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Improved help usage appearance
+- `[*]` General improvements
 
 Review the commit history if you want to get a deep insight about the changes.
 
