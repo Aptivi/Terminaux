@@ -644,16 +644,15 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 var regex = new Regex(keyword);
                                 var resultEntries = entriesString
-                                    .Where((entry) => regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle))
-                                    .Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
+                                    .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, idx))
+                                    .Where((entry) => regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)).ToArray();
                                 if (resultEntries.Length > 0)
                                 {
-                                    var choices = InputChoiceTools.GetInputChoices(resultEntries);
+                                    var choices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
                                     int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
                                     if (answer < 0)
                                         break;
-                                    var resultIdx = int.Parse(resultEntries[answer].ChoiceName);
-                                    currentSelection = resultIdx - 1;
+                                    currentSelection = resultEntries[answer].idx;
                                 }
                                 else
                                     InfoBoxModalColor.WriteInfoBoxModal("No item found.");
