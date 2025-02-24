@@ -313,15 +313,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Get the result entries
             var regex = new Regex(keyword);
             var resultEntries = entriesString
-                .Select((entry, idx) => (idx, (entry.ChoiceName, entry.ChoiceTitle)))
-                .Where((entry) => regex.IsMatch(entry.Item2.ChoiceName) || regex.IsMatch(entry.Item2.ChoiceTitle))
-                .Select((entry) => ($"{entry.idx + 1}", $"{entry.Item2.ChoiceName}: {entry.Item2.ChoiceTitle}")).ToArray();
+                .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, itemNum: idx + 1))
+                .Where((entry) => regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)).ToArray();
 
             // Act, depending on the result entries
             int idx = 0;
             if (resultEntries.Length > 1)
             {
-                var choices = InputChoiceTools.GetInputChoices(resultEntries);
+                var choices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
                 idx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
                 if (idx < 0)
                 {
@@ -335,7 +334,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 InfoBoxModalColor.WriteInfoBoxModal("No item found.");
 
             // Change the highlighted answer number
-            var resultNum = idx >= resultEntries.Length ? highlightedAnswer : int.Parse(resultEntries[idx].Item1);
+            var resultNum = idx >= resultEntries.Length ? highlightedAnswer : resultEntries[idx].itemNum;
             highlightedAnswer = resultNum;
 
             // Update the TUI
