@@ -17,6 +17,9 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Repository root
+ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
+
 # Convenience functions
 checkerror() {
     if [ $1 != 0 ]
@@ -42,12 +45,12 @@ export DOTNET_NOLOGO=1
 
 # Download packages
 echo Downloading packages...
-"$dotnetpath" restore "../Terminaux.sln" -p:Configuration=$releaseconf ${@:2}
+"$dotnetpath" restore "$ROOTDIR/Terminaux.sln" -p:Configuration=$releaseconf ${@:2}
 checkerror $? "Failed to download packages"
 
 # Build
 echo Building...
-"$dotnetpath" build "../Terminaux.sln" -p:Configuration=$releaseconf ${@:2}
+"$dotnetpath" build "$ROOTDIR/Terminaux.sln" -p:Configuration=$releaseconf ${@:2}
 checkerror $? "Failed to build Terminaux"
 
 # Inform success
