@@ -30,4 +30,4 @@ jobs:
         run: |
           dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
           chmod +x tools/*.sh
-          cd tools ; NUGET_APIKEY=${{ secrets.GITHUB_TOKEN }} ./push.sh Debug github ; cd ..
+          NUGET_APIKEY=${{ secrets.GITHUB_TOKEN }} ./tools/push.sh Debug github
