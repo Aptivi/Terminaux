@@ -1,21 +1,7 @@
 #!/bin/bash
 
-#   Terminaux  Copyright (C) 2023-2025  Aptivi
-# 
-#   This file is part of Terminaux
-# 
-#   Terminaux is free software: you can redistribute it and/or modify
-#   it under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or
-#   (at your option) any later version.
-# 
-#   Terminaux is distributed in the hope that it will be useful,
-#   but WITHOUT ANY WARRANTY; without even the implied warranty of
-#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#   GNU General Public License for more details.
-# 
-#   You should have received a copy of the GNU General Public License
-#   along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# Repository root
+ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
 
 # Check for dependencies
 msbuildpath=`which docfx`
@@ -28,9 +14,9 @@ fi
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export DOTNET_NOLOGO=1
 
-# Build KS
+# Build docs
 echo Building documentation...
-docfx ../DocGen/docfx.json
+docfx $ROOTDIR/DocGen/docfx.json
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1

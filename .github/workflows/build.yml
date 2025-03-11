@@ -23,17 +23,15 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+      - name: Setup Mono (Unix)
+        if: matrix.runs-on == 'ubuntu-latest'
+        run: sudo apt install mono-complete
       - name: Solution Compilation (Windows)
         if: matrix.runs-on == 'windows-latest'
-        run: cd tools ; ./build.cmd Debug -p:ContinuousIntegrationBuild=true ; cd ..
-      - name: Solution Compilation (macOS)
-        if: matrix.runs-on == 'macos-latest'
-        run: make dbg-ci
+        run: ./tools/build.cmd Debug -p:ContinuousIntegrationBuild=true
       - name: Solution Compilation (Unix)
-        if: matrix.runs-on == 'ubuntu-latest'
-        run: |
-          sudo apt install mono-complete
-          make dbg-ci
+        if: matrix.runs-on != 'windows-latest'
+        run: make dbg-ci
       - name: Testing
         run: dotnet test --no-build --configuration Debug
         
