@@ -1,27 +1,38 @@
 #!/bin/bash
 
-# This script builds KS and packs the artifacts. Use when you have MSBuild installed.
-ksversion=$(grep "<Version>" ../Directory.Build.props | cut -d "<" -f 2 | cut -d ">" -f 2)
+# Repository root
+ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
+
+# Convenience functions
+checkerror() {
+    if [ $1 != 0 ]
+    then
+        printf "$2 - Error $1\n" >&2
+        exit $1
+    fi
+}
+
+# This script builds the documentation and packs the artifacts.
+version=$(grep "<Version>" $ROOTDIR/Directory.Build.props | cut -d "<" -f 2 | cut -d ">" -f 2)
+checkerror $? "Failed to get version. Check to make sure that the version is specified correctly in D.B.props"
 
 # Check for dependencies
 zippath=`which zip`
-if [ ! $? == 0 ]; then
-	echo zip is not found.
-	exit 1
-fi
+checkerror $? "zip is not found"
 
 # Pack documentation
 echo Packing documentation...
-cd "../docs/" && "$zippath" -r /tmp/$ksversion-doc.zip . && cd -
-if [ ! $? == 0 ]; then
-	echo Packing failed.
-	exit 1
-fi
+cd "$ROOTDIR/docs/" && "$zippath" -r /tmp/$version-doc.zip . && cd -
+checkerror $? "Failed to pack"
 
 # Inform success
-rm -rf "../DocGen/api"
-rm -rf "../DocGen/obj"
-rm -rf "../docs"
-mv /tmp/$ksversion-doc.zip .
+rm -rf "$ROOTDIR/DocGen/api"
+checkerror $? "Failed to remove api folder"
+rm -rf "$ROOTDIR/DocGen/obj"
+checkerror $? "Failed to remove obj folder"
+rm -rf "$ROOTDIR/docs"
+checkerror $? "Failed to remove docs folder"
+mv /tmp/$version-doc.zip "$ROOTDIR/tools"
+checkerror $? "Failed to move archive from temporary folder"
 echo Pack successful.
 exit 0
