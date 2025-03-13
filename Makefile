@@ -1,3 +1,8 @@
+# Below is a workaround for .NET SDK 7.0 trying to allocate large amounts of memory for GC work:
+# https://github.com/dotnet/runtime/issues/85556#issuecomment-1529177092
+DOTNET_HEAP_LIMIT_INT = $(shell sysctl -n hw.memsize 2>/dev/null || grep MemAvailable /proc/meminfo | awk '{print $$2 * 1024}')
+DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $(DOTNET_HEAP_LIMIT_INT))
+
 ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 OUTPUTS  := \
 	-name "bin" -or \
@@ -9,22 +14,32 @@ OUTPUTS  := \
 
 all: all-online
 
-all-online:
-	$(MAKE) -C tools invoke-build
+all-online: invoke-build
 
 dbg:
-	$(MAKE) -C tools invoke-build ENVIRONMENT=Debug
+	$(MAKE) invoke-build ENVIRONMENT=Debug
 
 dbg-ci:
-	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Debug
+	$(MAKE) invoke-build-ci ENVIRONMENT=Debug
 
 rel-ci:
-	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Release
+	$(MAKE) invoke-build-ci ENVIRONMENT=Release
 
-doc:
-	$(MAKE) -C tools invoke-doc-build
+doc: invoke-doc-build
 
 clean:
 	find $(ROOT_DIR) -type d \( $(OUTPUTS) \) -print -exec rm -rf {} +
 
-# This makefile is just a wrapper for tools scripts.
+# Below targets specify functions for full build
+
+invoke-build:
+	chmod +x ./tools/build.sh
+	./tools/build.sh "$(ENVIRONMENT)" || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh "$(ENVIRONMENT)")
+
+invoke-build-ci:
+	chmod +x ./tools/build.sh
+	./tools/build.sh "$(ENVIRONMENT)" -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh "$(ENVIRONMENT)" -p:ContinuousIntegrationBuild=true)
+
+invoke-doc-build:
+	chmod +x ./tools/docgen.sh
+	./tools/docgen.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/docgen.sh)
