@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyTitle>Terminaux.Spectre</AssemblyTitle>
+    <AssemblyDescription>Console Manipulation Library - Spectre.Console Interoperability Tool</AssemblyDescription>
+    <Description>
+      A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.
+      This provides developers the interoperability tool between Spectre.Console and Terminaux with translated functions.
+    </Description>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Terminaux.Spectre</AssemblyName>
+    <PackageId>Terminaux.Spectre</PackageId>
+    <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
+    <PackageProjectUrl>https://github.com/Aptivi/Terminaux</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Aptivi/Terminaux</RepositoryUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\OfficialAppIcon-Terminaux-512.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
+  </ItemGroup>
+
+</Project>
