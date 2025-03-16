@@ -464,7 +464,8 @@ namespace Terminaux.Reader
                         readState.pressedKey = struckKey;
 
                         // Play keyboard cue if enabled
-                        HandleCue(settings, struckKey);
+                        if (settings.KeyboardCues && cueSupported)
+                            HandleCue(settings, struckKey);
 
                         // Handle it
                         BindingsTools.Execute(readState);

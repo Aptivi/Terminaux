@@ -1,10 +1,10 @@
-This version updates SpecProbe and ImageMagick.
+This version adds a workaround for the development version of BassBoom LibMPV.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated SpecProbe and ImageMagick
+- `[*]` Added workaround for development version of BassBoom LibMPV
 
 Review the commit history if you want to get a deep insight about the changes.
 
