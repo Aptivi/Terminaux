@@ -61,3 +61,7 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+*.sh text eol=lf
+PKGBUILD* text eol=lf
+*.cmd text=auto eol=crlf
