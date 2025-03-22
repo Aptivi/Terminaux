@@ -33,13 +33,10 @@ clean:
 # Below targets specify functions for full build
 
 invoke-build:
-	chmod +x ./tools/build.sh
 	./tools/build.sh "$(ENVIRONMENT)" || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh "$(ENVIRONMENT)")
 
 invoke-build-ci:
-	chmod +x ./tools/build.sh
 	./tools/build.sh "$(ENVIRONMENT)" -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh "$(ENVIRONMENT)" -p:ContinuousIntegrationBuild=true)
 
 invoke-doc-build:
-	chmod +x ./tools/docgen.sh
 	./tools/docgen.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/docgen.sh)
