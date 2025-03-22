@@ -27,7 +27,6 @@ jobs:
       - name: Release Asset Preparation
         id: release-asset
         run: |
-          chmod +x tools/*.sh
           make rel-ci
           make doc
           ./tools/docgen-pack.sh
@@ -48,9 +47,7 @@ jobs:
           files: |
             tools/*.zip
       - name: Package Publication
-        run: |
-          chmod +x tools/*.sh
-          NUGET_APIKEY=${{ secrets.NUGET_APIKEY }} ./tools/push.sh
+        run: NUGET_APIKEY=${{ secrets.NUGET_APIKEY }} ./tools/push.sh
       - name: Notify build
         uses: tsickert/discord-webhook@v6.0.0
         with:
