@@ -36,8 +36,10 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
 namespace Terminaux.Inputs.Interactive.Selectors
@@ -82,8 +84,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 {
                     Left = generalX,
                     Top = 1,
-                    InteriorWidth = boxWidth,
-                    InteriorHeight = boxHeight,
+                    Width = boxWidth,
+                    Height = boxHeight,
                 };
                 var selections = new Selection(finalSelections)
                 {
@@ -122,8 +124,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         Left = hslBarX,
                         Top = hslBarY,
-                        InteriorWidth = boxWidth,
-                        InteriorHeight = boxHeight * 3,
+                        Width = boxWidth,
+                        Height = boxHeight * 3,
                     };
 
                     // Deal with the hue
@@ -217,8 +219,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         Left = hslBarX,
                         Top = grayRampBarY,
-                        InteriorWidth = boxWidth - 7,
-                        InteriorHeight = boxHeight,
+                        Width = boxWidth - 7,
+                        Height = boxHeight,
                     };
                     selector.Append(
                         rampFrame.Render() +
@@ -239,8 +241,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         Left = ConsoleWrapper.WindowWidth - 8,
                         Top = grayRampBarY,
-                        InteriorWidth = 4,
-                        InteriorHeight = 2,
+                        Width = 4,
+                        Height = 2,
                     };
                     selector.Append(
                         darkLightFrame.Render() +
@@ -271,8 +273,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         Left = hslBarX,
                         Top = rgbRampBarY,
-                        InteriorWidth = boxWidth,
-                        InteriorHeight = boxHeight + 1,
+                        Width = boxWidth,
+                        Height = boxHeight + 1,
                     };
                     selector.Append(
                         rgbFrame.Render() +
@@ -301,8 +303,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         Left = hslBarX,
                         Top = shadeTintRampBarY,
-                        InteriorWidth = boxWidth,
-                        InteriorHeight = boxHeight,
+                        Width = boxWidth,
+                        Height = boxHeight,
                     };
                     selector.Append(
                         shadeTintFrame.Render() +
@@ -323,15 +325,15 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         Left = hslBarX,
                         Top = infoRampBarY,
-                        InteriorWidth = halfBoxWidth,
-                        InteriorHeight = boxHeight + 2,
+                        Width = halfBoxWidth,
+                        Height = boxHeight + 2,
                     };
                     var colorBlindnessFrame = new BoxFrame($"Transform [[{colorBlindnessSeverity:0.00}]]")
                     {
                         Left = otherHalfLeft,
                         Top = infoRampBarY,
-                        InteriorWidth = halfBoxWidth * 2 + 5 == boxWidth ? halfBoxWidth + 1 : halfBoxWidth,
-                        InteriorHeight = boxHeight + 2,
+                        Width = halfBoxWidth * 2 + 5 == boxWidth ? halfBoxWidth + 1 : halfBoxWidth,
+                        Height = boxHeight + 2,
                     };
                     selector.Append(
                         colorInfoFrame.Render() +
@@ -408,8 +410,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 Left = boxX,
                 Top = boxY,
-                InteriorWidth = boxWidth,
-                InteriorHeight = boxHeight,
+                Width = boxWidth,
+                Height = boxHeight,
             };
             builder.Append(previewBorder.Render());
 
@@ -418,16 +420,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 Left = boxX + 1,
                 Top = boxY,
-                InteriorWidth = boxWidth,
-                InteriorHeight = boxHeight / 2,
+                Width = boxWidth,
+                Height = boxHeight / 2,
                 Color = selectedColor,
             };
             var transformedBox = new Box()
             {
                 Left = boxX + 1,
                 Top = boxY + boxHeight / 2,
-                InteriorWidth = boxWidth,
-                InteriorHeight = boxHeight / 2 + (ConsoleWrapper.WindowHeight % 2 == 0 ? 1 : 0),
+                Width = boxWidth,
+                Height = boxHeight / 2 + (ConsoleWrapper.WindowHeight % 2 == 0 ? 1 : 0),
                 Color = finalColor,
             };
             builder.Append(

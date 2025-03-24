@@ -33,10 +33,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     {
         private int year = 0;
         private int month = 0;
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
         private CultureInfo culture = new("en-US");
         private Color separatorColor = ColorTools.CurrentForegroundColor;
         private Color headerColor = ColorTools.CurrentForegroundColor;
@@ -44,42 +40,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private BorderSettings borderSettings = new();
         private bool useColors = true;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
-        }
 
         /// <summary>
         /// Year of the calendar
@@ -178,7 +138,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// </summary>
         /// <returns>Rendered calendar that will be used by the renderer</returns>
         public override string Render() =>
-            RenderCalendar(Left, Top, InteriorWidth, InteriorHeight, Year, Month, Culture, Calendar, CellOptions, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, BorderSettings, UseColors);
+            RenderCalendar(Left, Top, Width, Height, Year, Month, Culture, Calendar, CellOptions, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, BorderSettings, UseColors);
 
         internal static string RenderCalendar(int left, int top, int width, int height, int year, int month, CultureInfo culture, Calendar calendar, List<CellOptions> cellOptions, Color separatorColor, Color headerColor, Color valueColor, Color backgroundColor, BorderSettings borderSettings, bool useColor = true)
         {
@@ -223,8 +183,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 Left = left,
                 Top = top,
-                InteriorWidth = width,
-                InteriorHeight = height,
+                Width = width,
+                Height = height,
                 Header = true,
                 Settings = cellOptions,
                 BorderSettings = borderSettings,

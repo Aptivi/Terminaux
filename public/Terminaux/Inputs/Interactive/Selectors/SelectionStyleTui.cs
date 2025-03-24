@@ -31,8 +31,10 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.Tools;
 
 namespace Terminaux.Inputs.Interactive.Selectors
@@ -87,8 +89,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     BackgroundColor = settings.BackgroundColor,
                     Left = 2,
                     Top = 1,
-                    InteriorWidth = wholeWidth,
-                    InteriorHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount
+                    Width = wholeWidth,
+                    Height = sentenceLineCount > 5 ? 5 : sentenceLineCount
                 };
                 selectionBuilder.Append(questionText.Render());
                 selectionBuilder.Append(boundedQuestion.Render());
@@ -100,8 +102,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 Left = 2,
                 Top = listStartPosition + 1,
-                InteriorWidth = interiorWidth,
-                InteriorHeight = answersPerPage,
+                Width = interiorWidth,
+                Height = answersPerPage,
                 FrameColor = settings.SeparatorColor,
                 BackgroundColor = settings.BackgroundColor,
                 Settings = new()
@@ -159,8 +161,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 {
                     Left = interiorWidth + 5,
                     Top = listStartPosition + 1,
-                    InteriorWidth = sidebarWidth - 3,
-                    InteriorHeight = answersPerPage,
+                    Width = sidebarWidth - 3,
+                    Height = answersPerPage,
                     Color = settings.SeparatorColor,
                     BackgroundColor = settings.BackgroundColor,
                 };

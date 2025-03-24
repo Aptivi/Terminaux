@@ -34,38 +34,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     public class BarChart : GraphicalCyclicWriter, IStaticRenderable
     {
         private ChartElement[] elements = [];
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
         private bool showcase = false;
         private bool useColors = true;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
 
         /// <summary>
         /// Show the element list
@@ -102,7 +72,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             return TextWriterWhereColor.RenderWhere(
                 RenderBarChart(
-                    elements, InteriorWidth, Showcase, UseColors), Left, Top);
+                    elements, Width, Showcase, UseColors), Left, Top);
         }
 
         internal static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false, bool useColor = true)

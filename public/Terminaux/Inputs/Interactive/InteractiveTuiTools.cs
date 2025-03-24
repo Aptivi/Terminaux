@@ -33,7 +33,9 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Inputs.Interactive
 {
@@ -169,8 +171,8 @@ namespace Terminaux.Inputs.Interactive
             {
                 Left = 0,
                 Top = SeparatorMinimumHeight,
-                InteriorWidth = SeparatorHalfConsoleWidthInterior,
-                InteriorHeight = SeparatorMaximumHeightInterior,
+                Width = SeparatorHalfConsoleWidthInterior,
+                Height = SeparatorMaximumHeightInterior,
                 Settings = interactiveTui.Settings.BorderSettings,
                 Color = finalForeColorFirstPane,
                 BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
@@ -179,8 +181,8 @@ namespace Terminaux.Inputs.Interactive
             {
                 Left = SeparatorHalfConsoleWidth,
                 Top = SeparatorMinimumHeight,
-                InteriorWidth = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
-                InteriorHeight = SeparatorMaximumHeightInterior,
+                Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
+                Height = SeparatorMaximumHeightInterior,
                 Settings = interactiveTui.Settings.BorderSettings,
                 Color = finalForeColorSecondPane,
                 BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
@@ -321,8 +323,8 @@ namespace Terminaux.Inputs.Interactive
             {
                 Left = SeparatorHalfConsoleWidth,
                 Top = SeparatorMinimumHeight,
-                InteriorWidth = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
-                InteriorHeight = SeparatorMaximumHeightInterior,
+                Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
+                Height = SeparatorMaximumHeightInterior,
                 Settings = interactiveTui.Settings.BorderSettings,
                 Color = finalForeColorSecondPane,
                 BackgroundColor = interactiveTui.Settings.PaneBackgroundColor

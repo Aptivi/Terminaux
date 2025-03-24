@@ -39,6 +39,8 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -110,8 +112,8 @@ namespace Terminaux.Inputs.Presentation
                     {
                         Left = presentationUpperBorderLeft,
                         Top = presentationUpperBorderTop,
-                        InteriorWidth = presentationLowerInnerBorderLeft,
-                        InteriorHeight = presentationLowerInnerBorderTop,
+                        Width = presentationLowerInnerBorderLeft,
+                        Height = presentationLowerInnerBorderTop,
                         Settings = presentation.BorderSettings,
                         FrameColor = presentation.FrameColor,
                         BackgroundColor = presentation.BackgroundColor
@@ -120,8 +122,8 @@ namespace Terminaux.Inputs.Presentation
                     {
                         Left = presentationUpperInnerBorderLeft,
                         Top = presentationUpperBorderTop,
-                        InteriorWidth = presentationLowerInnerBorderLeft,
-                        InteriorHeight = presentationLowerInnerBorderTop,
+                        Width = presentationLowerInnerBorderLeft,
+                        Height = presentationLowerInnerBorderTop,
                         Color = presentation.BackgroundColor
                     };
                     builder.Append(

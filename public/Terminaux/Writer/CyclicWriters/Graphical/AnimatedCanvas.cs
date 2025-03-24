@@ -27,48 +27,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class AnimatedCanvas : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
         private int frame = 0;
         private Color canvasColor = ColorTools.CurrentBackgroundColor;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
-        }
 
         /// <summary>
         /// Canvas color
@@ -118,8 +78,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 Pixels = pixelOptionArray,
                 Left = Left,
                 Top = Top,
-                InteriorWidth = InteriorWidth,
-                InteriorHeight = InteriorHeight,
+                Width = Width,
+                Height = Height,
             };
             return canvas.Render();
         }

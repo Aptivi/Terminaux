@@ -20,6 +20,7 @@
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -35,8 +36,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Left = 2,
                 Top = 2,
                 Color = ConsoleColors.Green,
-                InteriorWidth = 20,
-                InteriorHeight = 20,
+                Width = 20,
+                Height = 20,
                 Pixels =
                 [
                     // Draw the top part of the "T" letter

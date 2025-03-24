@@ -31,39 +31,20 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
-namespace Terminaux.Writer.CyclicWriters.Simple
+namespace Terminaux.Writer.CyclicWriters.Graphical
 {
     /// <summary>
     /// Selection cyclic renderer
     /// </summary>
-    public class Selection : SimpleCyclicWriter, IStaticRenderable
+    public class Selection : GraphicalCyclicWriter, IStaticRenderable
     {
         /// <summary>
         /// List of selection categories
         /// </summary>
         public InputChoiceCategoryInfo[] Selections { get; set; } = [];
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left { get; set; }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top { get; set; }
-
-        /// <summary>
-        /// Selection width
-        /// </summary>
-        public int Width { get; set; }
-
-        /// <summary>
-        /// Selection height
-        /// </summary>
-        public int Height { get; set; }
 
         /// <summary>
         /// Alternative choice position (one-based)

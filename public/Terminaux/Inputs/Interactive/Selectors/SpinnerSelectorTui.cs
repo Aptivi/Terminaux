@@ -29,6 +29,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {

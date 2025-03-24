@@ -23,6 +23,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -47,8 +48,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Rows = Rows,
                 Left = 4,
                 Top = 2,
-                InteriorWidth = ConsoleWrapper.WindowWidth - 7,
-                InteriorHeight = ConsoleWrapper.WindowHeight - 5,
+                Width = ConsoleWrapper.WindowWidth - 7,
+                Height = ConsoleWrapper.WindowHeight - 5,
                 Header = true,
                 Settings =
                 [

@@ -22,6 +22,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -38,8 +39,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     Text = "Hello world!",
                     Left = 2,
                     Top = 1,
-                    InteriorWidth = 6,
-                    InteriorHeight = 2,
+                    Width = 6,
+                    Height = 2,
                     Color = new Color(ConsoleColors.Green),
                 }.Render(),
                 new Border()
@@ -47,8 +48,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     Text = "Hello world!",
                     Left = ConsoleWrapper.WindowWidth - 10,
                     Top = 1,
-                    InteriorWidth = 6,
-                    InteriorHeight = 2,
+                    Width = 6,
+                    Height = 2,
                     Color = new Color(ConsoleColors.Black),
                     BackgroundColor = new Color(ConsoleColors.Yellow),
                     TextColor = new Color(ConsoleColors.Black),
@@ -59,8 +60,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     Text = "Hello world!",
                     Left = ConsoleWrapper.WindowWidth / 2 - 6,
                     Top = 1,
-                    InteriorWidth = 12,
-                    InteriorHeight = 1,
+                    Width = 12,
+                    Height = 1,
                     Color = new Color(ConsoleColors.Red),
                 }.Render(),
                 new Border()
@@ -69,8 +70,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     Text = "Hello world!",
                     Left = ConsoleWrapper.WindowWidth / 2 - 6,
                     Top = ConsoleWrapper.WindowHeight / 2 - 1,
-                    InteriorWidth = 12,
-                    InteriorHeight = 1,
+                    Width = 12,
+                    Height = 1,
                 }.Render());
             TextWriterWhereColor.WriteWhere("If you can see these, it's a success!", 0, ConsoleWrapper.WindowHeight - 1);
         }

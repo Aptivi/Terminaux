@@ -33,49 +33,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     public class StickChart : GraphicalCyclicWriter, IStaticRenderable
     {
         private ChartElement[] elements = [];
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
         private bool showcase = false;
         private bool useColors = true;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
-        }
-
+        
         /// <summary>
         /// Show the element list
         /// </summary>
@@ -116,7 +76,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             return TextWriterWhereColor.RenderWhere(
                 RenderStickChart(
-                    elements, InteriorWidth, InteriorHeight, Showcase, UseColors, UpsideDown), Left, Top);
+                    elements, Width, Height, Showcase, UseColors, UpsideDown), Left, Top);
         }
 
         internal static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool useColor = true, bool upsideDown = false)

@@ -36,8 +36,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class BoundedText : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int left = 0;
-        private int top = 0;
         private string text = "";
         private bool positionWise = false;
         private int width = 0;
@@ -53,24 +51,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private bool useColors = true;
 
         /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
         /// A text to render
         /// </summary>
         public string Text
@@ -82,7 +62,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Left margin of the aligned figlet text
         /// </summary>
-        public int Width
+        public override int Width
         {
             get => width;
             set
@@ -95,7 +75,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Right margin of the aligned figlet text
         /// </summary>
-        public int Height
+        public override int Height
         {
             get => height;
             set

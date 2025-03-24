@@ -26,8 +26,10 @@ using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
@@ -110,8 +112,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             {
                 Left = borderX,
                 Top = borderY,
-                InteriorWidth = maxWidth,
-                InteriorHeight = maxHeight,
+                Width = maxWidth,
+                Height = maxHeight,
                 Color = InfoBoxColor,
                 TextColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,

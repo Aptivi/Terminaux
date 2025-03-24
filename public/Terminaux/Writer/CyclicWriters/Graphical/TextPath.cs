@@ -33,11 +33,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class TextPath : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int left = 0;
-        private int top = 0;
         private string pathText = "";
         private bool oneLine = false;
-        private int width = 0;
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
         private Color rootDriveColor = ColorTools.CurrentForegroundColor;
         private Color separatorColor = ColorTools.CurrentForegroundColor;
@@ -49,39 +46,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private bool rainbowBg = false;
 
         /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
         /// Path text to render
         /// </summary>
         public string PathText
         {
             get => pathText;
             set => pathText = value;
-        }
-
-        /// <summary>
-        /// Width of the path text
-        /// </summary>
-        public int Width
-        {
-            get => width;
-            set => width = value;
         }
 
         /// <summary>

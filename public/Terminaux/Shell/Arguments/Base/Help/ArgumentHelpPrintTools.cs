@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Shell.Arguments.Base.Help
 {

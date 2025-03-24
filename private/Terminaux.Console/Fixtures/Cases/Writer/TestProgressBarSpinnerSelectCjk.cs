@@ -26,6 +26,7 @@ using Terminaux.Writer.CyclicWriters;
 using System.Threading;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {

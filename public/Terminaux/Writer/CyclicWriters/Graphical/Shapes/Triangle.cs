@@ -20,33 +20,13 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 
-namespace Terminaux.Writer.CyclicWriters.Shapes
+namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
     /// <summary>
     /// A triangle
     /// </summary>
-    public class Triangle : IStaticRenderable, IGeometricShape
+    public class Triangle : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
     {
-        /// <summary>
-        /// Triangle width
-        /// </summary>
-        public int Width { get; }
-
-        /// <summary>
-        /// Triangle height
-        /// </summary>
-        public int Height { get; }
-
-        /// <summary>
-        /// Zero-based left position of the terminal to write this triangle to
-        /// </summary>
-        public int Left { get; }
-
-        /// <summary>
-        /// Zero-based top position of the terminal to write this triangle to
-        /// </summary>
-        public int Top { get; }
-
         /// <summary>
         /// Whether to print this filled triangle or just the outline
         /// </summary>
@@ -59,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders a triangle
         /// </summary>
         /// <returns>A rendered triangle using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render() =>
+        public override string Render() =>
             new Trapezoid(0, Width, Height, Left, Top, Filled, ShapeColor).Render();
 
         /// <summary>

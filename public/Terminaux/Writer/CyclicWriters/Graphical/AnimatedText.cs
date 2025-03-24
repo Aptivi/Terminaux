@@ -33,9 +33,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class AnimatedText : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int top = 0;
-        private int left = 0;
-        private int width = 0;
         private int frame = 0;
         private string[] frames = [];
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
@@ -44,33 +41,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private bool useColors = true;
         private bool rainbow = false;
         private bool rainbowBg = false;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Width of the animated text
-        /// </summary>
-        public int Width
-        {
-            get => width;
-            set => width = value;
-        }
 
         /// <summary>
         /// Text frames
@@ -146,12 +116,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 var animated = new StringBuilder();
                 string text = frames[frame];
-                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, width);
+                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, Width);
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
                     StringBuilder finalSentence = new();
-                    int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, width, Settings.Alignment, left);
+                    int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, Width, Settings.Alignment, Left);
                     if (rainbowState != 0)
                     {
                         var stringInfo = new StringInfo(sentence);
@@ -173,7 +143,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     animated.Append(
                         $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, top + i, true, Settings.Alignment == TextAlignment.Left ? left + width : 0)
+                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, Top + i, true, Settings.Alignment == TextAlignment.Left ? Left + Width : 0)
                     );
                     finalSentence.Clear();
                 }

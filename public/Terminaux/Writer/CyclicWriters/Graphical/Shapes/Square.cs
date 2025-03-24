@@ -20,34 +20,13 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 
-namespace Terminaux.Writer.CyclicWriters.Shapes
+namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
     /// <summary>
     /// A square
     /// </summary>
-    public class Square : IStaticRenderable, IGeometricShape
+    public class Square : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
     {
-        /// <summary>
-        /// Square width
-        /// </summary>
-        public int Width =>
-            Height;
-
-        /// <summary>
-        /// Square height
-        /// </summary>
-        public int Height { get; }
-
-        /// <summary>
-        /// Zero-based left position of the terminal to write this square to
-        /// </summary>
-        public int Left { get; }
-
-        /// <summary>
-        /// Zero-based top position of the terminal to write this square to
-        /// </summary>
-        public int Top { get; }
-
         /// <summary>
         /// Whether to print this filled square or just the outline
         /// </summary>
@@ -60,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders a square
         /// </summary>
         /// <returns>A rendered square using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render() =>
+        public override string Render() =>
             new Rectangle(Width, Height, Left, Top, Filled, ShapeColor).Render();
 
         /// <summary>
@@ -74,6 +53,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         public Square(int height, int left, int top, bool filled = false, Color? shapeColor = null)
         {
             Height = height;
+            Width = height;
             Left = left;
             Top = top;
             Filled = filled;

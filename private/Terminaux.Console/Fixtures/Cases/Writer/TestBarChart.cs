@@ -22,6 +22,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -35,7 +36,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             TextWriterColor.WriteColor("Here's the market share for Android 11 (2020) to 14 (2023) as of September 2024 according to Statcounter:", true, new Color(ConsoleColors.Green));
             var chart = new BarChart()
             {
-                InteriorWidth = ConsoleWrapper.WindowWidth - 4,
+                Width = ConsoleWrapper.WindowWidth - 4,
                 Left = 2,
                 Top = 4,
                 Showcase = true,

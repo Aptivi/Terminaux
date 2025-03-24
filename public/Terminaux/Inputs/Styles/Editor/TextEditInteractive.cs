@@ -34,6 +34,8 @@ using Textify.General;
 using Textify.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -192,8 +194,8 @@ namespace Terminaux.Inputs.Styles.Editor
                 {
                     Left = 0,
                     Top = SeparatorMinimumHeight,
-                    InteriorWidth = SeparatorConsoleWidthInterior,
-                    InteriorHeight = SeparatorMaximumHeightInterior,
+                    Width = SeparatorConsoleWidthInterior,
+                    Height = SeparatorMaximumHeightInterior,
                 };
                 builder.Append(
                     ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +

@@ -35,10 +35,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class BoxFrame : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
         private string text = "";
         private Color boxFrameColor = ColorTools.CurrentForegroundColor;
         private Color titleColor = ColorTools.CurrentForegroundColor;
@@ -48,48 +44,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private bool useColors = true;
 
         /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
         /// Top position
         /// </summary>
         public string Text
         {
             get => text;
             set => text = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
         }
 
         /// <summary>
@@ -163,7 +123,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public override string Render()
         {
             return RenderBoxFrame(
-                Text, Left, Top, InteriorWidth, InteriorHeight, Settings, TitleSettings, FrameColor, BackgroundColor, TitleColor, UseColors, DropShadow, ShadowColor);
+                Text, Left, Top, Width, Height, Settings, TitleSettings, FrameColor, BackgroundColor, TitleColor, UseColors, DropShadow, ShadowColor);
         }
 
         internal static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, Color BackgroundColor, Color TextColor, bool useColor, bool dropShadow, Color shadowColor, params object[] vars)

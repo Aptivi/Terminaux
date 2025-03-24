@@ -24,6 +24,7 @@ using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors
 {
@@ -54,8 +55,8 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
                 Text = "100% green, 0% red",
                 Left = 2,
                 Top = 1,
-                InteriorWidth = "100% green, 0% red".Length,
-                InteriorHeight = 1,
+                Width = "100% green, 0% red".Length,
+                Height = 1,
                 Color = opaque,
                 BackgroundColor = TransformationTools.GetDarkBackground(opaque),
             };
@@ -69,8 +70,8 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
                 Text = "75% green, 25% red",
                 Left = 2,
                 Top = 1,
-                InteriorWidth = "75% green, 25% red".Length,
-                InteriorHeight = 1,
+                Width = "75% green, 25% red".Length,
+                Height = 1,
                 Color = greenQuarterTransparent,
                 BackgroundColor = TransformationTools.GetDarkBackground(greenQuarterTransparent),
             };
@@ -84,8 +85,8 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
                 Text = "50% green, 50% red",
                 Left = 2,
                 Top = 1,
-                InteriorWidth = "50% green, 50% red".Length,
-                InteriorHeight = 1,
+                Width = "50% green, 50% red".Length,
+                Height = 1,
                 Color = greenHalfTransparent,
                 BackgroundColor = TransformationTools.GetDarkBackground(greenHalfTransparent),
             };
@@ -99,8 +100,8 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
                 Text = "25% green, 75% red",
                 Left = 2,
                 Top = 1,
-                InteriorWidth = "25% green, 75% red".Length,
-                InteriorHeight = 1,
+                Width = "25% green, 75% red".Length,
+                Height = 1,
                 Color = greenThirdQuarterTransparent,
                 BackgroundColor = TransformationTools.GetDarkBackground(greenThirdQuarterTransparent),
             };
@@ -114,8 +115,8 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
                 Text = "0% green, 100% red",
                 Left = 2,
                 Top = 1,
-                InteriorWidth = "0% green, 100% red".Length,
-                InteriorHeight = 1,
+                Width = "0% green, 100% red".Length,
+                Height = 1,
                 Color = greenTransparent,
                 BackgroundColor = TransformationTools.GetDarkBackground(greenTransparent),
             };

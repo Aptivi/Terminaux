@@ -27,6 +27,7 @@ using Terminaux.Writer.CyclicWriters;
 using System.Threading;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {

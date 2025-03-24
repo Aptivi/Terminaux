@@ -31,6 +31,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -169,8 +171,8 @@ namespace Terminaux.Inputs.Styles.Editor
                 {
                     Left = 0,
                     Top = SeparatorMinimumHeight,
-                    InteriorWidth = SeparatorConsoleWidthInterior,
-                    InteriorHeight = SeparatorMaximumHeightInterior,
+                    Width = SeparatorConsoleWidthInterior,
+                    Height = SeparatorMaximumHeightInterior,
                 };
                 builder.Append(
                     ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +

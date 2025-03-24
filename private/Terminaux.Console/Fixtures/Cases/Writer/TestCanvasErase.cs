@@ -20,6 +20,8 @@
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -35,8 +37,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Left = 2,
                 Top = 2,
                 Color = ConsoleColors.Green,
-                InteriorWidth = 20,
-                InteriorHeight = 20,
+                Width = 20,
+                Height = 20,
                 Pixels =
                 [
                     // Draw the top part of the "T" letter
@@ -133,29 +135,29 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             {
                 Left = 2,
                 Top = 2,
-                InteriorWidth = 40,
-                InteriorHeight = 1,
+                Width = 40,
+                Height = 1,
             };
             var eraser2 = new Eraser()
             {
                 Left = 2,
                 Top = 3,
-                InteriorWidth = 2,
-                InteriorHeight = 19,
+                Width = 2,
+                Height = 19,
             };
             var eraser3 = new Eraser()
             {
                 Left = 2,
                 Top = 21,
-                InteriorWidth = 40,
-                InteriorHeight = 1,
+                Width = 40,
+                Height = 1,
             };
             var eraser4 = new Eraser()
             {
                 Left = 38,
                 Top = 3,
-                InteriorWidth = 4,
-                InteriorHeight = 19,
+                Width = 4,
+                Height = 19,
             };
             TextWriterRaw.WriteRaw(canvas.Render());
             TextWriterRaw.WriteRaw(eraser1.Render());

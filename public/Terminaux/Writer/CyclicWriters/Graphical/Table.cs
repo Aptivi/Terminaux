@@ -34,10 +34,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     public class Table : GraphicalCyclicWriter, IStaticRenderable
     {
         private string[,]? rows;
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
         private bool header = false;
         private Color separatorColor = ColorTools.CurrentForegroundColor;
         private Color headerColor = ColorTools.CurrentForegroundColor;
@@ -48,25 +44,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private bool useColors = true;
 
         /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Top position
+        /// List of rows and columns
         /// </summary>
         public string[,] Rows
         {
@@ -81,24 +59,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             get => header;
             set => header = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
         }
 
         /// <summary>
@@ -176,7 +136,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public override string Render()
         {
             return RenderTable(
-                Rows, Left, Top, InteriorWidth, InteriorHeight, Header, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, UseColors, Settings, BorderSettings, Title);
+                Rows, Left, Top, Width, Height, Header, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, UseColors, Settings, BorderSettings, Title);
         }
 
         internal static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null, string title = "")
@@ -219,8 +179,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 Left = left,
                 Top = top,
-                InteriorWidth = maxCellWidth * columnsCount - 1,
-                InteriorHeight = height,
+                Width = maxCellWidth * columnsCount - 1,
+                Height = height,
                 Settings = tableBorderSettings,
                 UseColors = useColor,
             };

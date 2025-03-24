@@ -23,5 +23,46 @@ namespace Terminaux.Writer.CyclicWriters
     /// Graphical cyclic writer (for GUI implementations to the CLI, such as charts)
     /// </summary>
     public abstract class GraphicalCyclicWriter : CyclicWriter, IStaticRenderable
-    { }
+    {
+        private int left = 0;
+        private int top = 0;
+        private int width = 0;
+        private int height = 0;
+
+        /// <summary>
+        /// Left position
+        /// </summary>
+        public virtual int Left
+        {
+            get => left;
+            set => left = value;
+        }
+
+        /// <summary>
+        /// Top position
+        /// </summary>
+        public virtual int Top
+        {
+            get => top;
+            set => top = value;
+        }
+
+        /// <summary>
+        /// Element width
+        /// </summary>
+        public virtual int Width
+        {
+            get => width;
+            set => width = value;
+        }
+
+        /// <summary>
+        /// Element height
+        /// </summary>
+        public virtual int Height
+        {
+            get => height;
+            set => height = value;
+        }
+    }
 }

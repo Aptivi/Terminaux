@@ -33,7 +33,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class SyntaxText : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int top = 0;
         private string syntax = "csharp";
         private string text = "";
         private string pathToHighlight = "";
@@ -42,15 +41,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private bool useColors = true;
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
 
         /// <summary>
         /// Language type

@@ -25,6 +25,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Screens
 {
@@ -58,8 +59,8 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                     {
                         Left = startX,
                         Top = y,
-                        InteriorWidth = width,
-                        InteriorHeight = height,
+                        Width = width,
+                        Height = height,
                         Color = ConsoleColors.Red,
                     };
                     return box.Render();
@@ -76,8 +77,8 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                     {
                         Left = startX,
                         Top = y,
-                        InteriorWidth = width,
-                        InteriorHeight = height,
+                        Width = width,
+                        Height = height,
                         Color = ConsoleColors.Lime,
                     };
                     return box.Render();
@@ -94,8 +95,8 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                     {
                         Left = startX,
                         Top = y,
-                        InteriorWidth = width,
-                        InteriorHeight = height,
+                        Width = width,
+                        Height = height,
                         Color = ConsoleColors.Blue,
                     };
                     return box.Render();

@@ -32,6 +32,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Keybindings renderable
     /// </summary>
+    // TODO: Make it actually work as a simple renderable!
     public class Keybindings : SimpleCyclicWriter, IStaticRenderable
     {
         private Keybinding[] keybindings = [];

@@ -29,6 +29,7 @@ using Terminaux.Colors.Data;
 using Textify.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Shell.Shells;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Shell.Commands
 {

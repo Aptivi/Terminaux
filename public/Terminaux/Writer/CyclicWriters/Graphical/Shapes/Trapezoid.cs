@@ -23,20 +23,15 @@ using System;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Terminaux.Writer.CyclicWriters.Shapes
+namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
     /// <summary>
     /// A trapezoid
     /// </summary>
-    public class Trapezoid : IStaticRenderable, IGeometricShape
+    public class Trapezoid : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
     {
-        /// <summary>
-        /// Trapezoid width
-        /// </summary>
-        public int Width =>
-            TopWidth;
-
         /// <summary>
         /// Trapezoid top width
         /// </summary>
@@ -46,21 +41,6 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Trapezoid bottom width
         /// </summary>
         public int BottomWidth { get; }
-
-        /// <summary>
-        /// Trapezoid height
-        /// </summary>
-        public int Height { get; }
-
-        /// <summary>
-        /// Zero-based left position of the terminal to write this trapezoid to
-        /// </summary>
-        public int Left { get; }
-
-        /// <summary>
-        /// Zero-based top position of the terminal to write this trapezoid to
-        /// </summary>
-        public int Top { get; }
 
         /// <summary>
         /// Whether to print this filled trapezoid or just the outline
@@ -74,14 +54,14 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders a trapezoid
         /// </summary>
         /// <returns>A rendered trapezoid using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render()
+        public override string Render()
         {
             int width = Math.Max(TopWidth, BottomWidth);
             var canvas = new Canvas()
             {
                 Transparent = true,
-                InteriorHeight = Height,
-                InteriorWidth = width,
+                Height = Height,
+                Width = width,
                 Left = Left,
                 Top = Top,
             };
@@ -123,6 +103,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
             TopWidth = topWidth;
             BottomWidth = bottomWidth;
             Height = height;
+            Width = TopWidth;
             Left = left;
             Top = top;
             Filled = filled;

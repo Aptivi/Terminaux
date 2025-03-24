@@ -29,47 +29,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Canvas : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
         private Color canvasColor = ColorTools.CurrentBackgroundColor;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
-        }
 
         /// <summary>
         /// Canvas color
@@ -102,7 +62,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public override string Render()
         {
             return RenderCanvas(
-                Pixels, Left, Top, InteriorWidth, InteriorHeight, Color, DoubleWidth, Transparent);
+                Pixels, Left, Top, Width, Height, Color, DoubleWidth, Transparent);
         }
 
         internal static string RenderCanvas(CellOptions[] pixels, int Left, int Top, int InteriorWidth, int InteriorHeight, Color CanvasColor, bool doubleWidth = true, bool transparent = false)

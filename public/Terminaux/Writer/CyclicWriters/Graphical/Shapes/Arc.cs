@@ -22,35 +22,15 @@ using Terminaux.Colors;
 using System;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Terminaux.Writer.CyclicWriters.Shapes
+namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
     /// <summary>
     /// An arc
     /// </summary>
-    public class Arc : IStaticRenderable, IGeometricShape
+    public class Arc : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
     {
-        /// <summary>
-        /// Arc width
-        /// </summary>
-        public int Width =>
-            Height;
-
-        /// <summary>
-        /// Arc height
-        /// </summary>
-        public int Height { get; }
-
-        /// <summary>
-        /// Zero-based left position of the terminal to write this arc to
-        /// </summary>
-        public int Left { get; }
-
-        /// <summary>
-        /// Zero-based top position of the terminal to write this arc to
-        /// </summary>
-        public int Top { get; }
-
         /// <summary>
         /// Specifies the inner radius
         /// </summary>
@@ -78,7 +58,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders an arc
         /// </summary>
         /// <returns>A rendered arc using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render()
+        public override string Render()
         {
             double halfPi = Math.PI / 2;
             double quarterPi = Math.PI / 4;
@@ -98,8 +78,8 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
             var canvas = new Canvas()
             {
                 Transparent = true,
-                InteriorHeight = Height,
-                InteriorWidth = Width,
+                Height = Height,
+                Width = Width,
                 Left = Left,
                 Top = Top,
             };
@@ -117,19 +97,19 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
                     // Fill the pixels
                     if (full || (ratio >= angle1 && ratio < angle2) ^ inverted)
                         pixels.Add(new(centerX + y, centerY - x) { CellColor = ShapeColor });
-                    if (full || (ratio > (63 - angle2) && ratio <= (63 - angle1)) ^ inverted)
+                    if (full || (ratio > 63 - angle2 && ratio <= 63 - angle1) ^ inverted)
                         pixels.Add(new(centerX + x, centerY - y) { CellColor = ShapeColor });
-                    if (full || (ratio >= (angle1 - 64) && ratio < (angle2 - 64)) ^ inverted)
+                    if (full || (ratio >= angle1 - 64 && ratio < angle2 - 64) ^ inverted)
                         pixels.Add(new(centerX - x, centerY - y) { CellColor = ShapeColor });
-                    if (full || (ratio > (127 - angle2) && ratio <= (127 - angle1)) ^ inverted)
+                    if (full || (ratio > 127 - angle2 && ratio <= 127 - angle1) ^ inverted)
                         pixels.Add(new(centerX - y, centerY - x) { CellColor = ShapeColor });
-                    if (full || (ratio >= (angle1 - 128) && ratio < (angle2 - 128)) ^ inverted)
+                    if (full || (ratio >= angle1 - 128 && ratio < angle2 - 128) ^ inverted)
                         pixels.Add(new(centerX - y, centerY + x) { CellColor = ShapeColor });
-                    if (full || (ratio > (191 - angle2) && ratio <= (191 - angle1)) ^ inverted)
+                    if (full || (ratio > 191 - angle2 && ratio <= 191 - angle1) ^ inverted)
                         pixels.Add(new(centerX - x, centerY + y) { CellColor = ShapeColor });
-                    if (full || (ratio >= (angle1 - 192) && ratio < (angle2 - 192)) ^ inverted)
+                    if (full || (ratio >= angle1 - 192 && ratio < angle2 - 192) ^ inverted)
                         pixels.Add(new(centerX + x, centerY + y) { CellColor = ShapeColor });
-                    if (full || (ratio > (255 - angle2) && ratio <= (255 - angle1)) ^ inverted)
+                    if (full || (ratio > 255 - angle2 && ratio <= 255 - angle1) ^ inverted)
                         pixels.Add(new(centerX + y, centerY + x) { CellColor = ShapeColor });
 
                     // Now, go to the next pixel
@@ -165,6 +145,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         public Arc(int height, int left, int top, Color? shapeColor = null)
         {
             Height = height;
+            Width = height;
             Left = left;
             Top = top;
             ShapeColor = shapeColor ?? ColorTools.CurrentForegroundColor;

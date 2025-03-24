@@ -22,6 +22,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -34,8 +35,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             TextWriterColor.WriteColor("This chart describes a list of languages in an example project:", true, new Color(ConsoleColors.Green));
             var chart = new BreakdownChart()
             {
-                InteriorWidth = ConsoleWrapper.WindowWidth - 4,
-                InteriorHeight = ConsoleWrapper.WindowHeight - 8,
+                Width = ConsoleWrapper.WindowWidth - 4,
+                Height = ConsoleWrapper.WindowHeight - 8,
                 Left = 2,
                 Top = 4,
                 Showcase = true,

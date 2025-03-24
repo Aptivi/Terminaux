@@ -54,7 +54,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Top position
         /// </summary>
-        public int Top
+        public override int Top
         {
             get => top;
             set

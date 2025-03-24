@@ -34,6 +34,7 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -325,8 +326,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                         {
                             Left = buttonX,
                             Top = buttonPanelPosY,
-                            InteriorWidth = finalWidth,
-                            InteriorHeight = 1,
+                            Width = finalWidth,
+                            Height = 1,
                             Text = buttonText,
                         };
                         if (useColor)

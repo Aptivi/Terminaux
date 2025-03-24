@@ -23,7 +23,9 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -62,8 +64,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 {
                     Left = startX,
                     Top = y,
-                    InteriorWidth = width,
-                    InteriorHeight = height,
+                    Width = width,
+                    Height = height,
                     Color = ConsoleColors.Red,
                 };
                 builder.Append(box.Render());
@@ -82,8 +84,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 {
                     Left = startX,
                     Top = y,
-                    InteriorWidth = width,
-                    InteriorHeight = height,
+                    Width = width,
+                    Height = height,
                     Color = ConsoleColors.Lime,
                 };
                 builder.Append(box.Render());
@@ -102,8 +104,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 {
                     Left = startX,
                     Top = y,
-                    InteriorWidth = width,
-                    InteriorHeight = height,
+                    Width = width,
+                    Height = height,
                     Color = new($"hsl:{renders % 360};50;50"),
                 };
                 builder.Append(box.Render());

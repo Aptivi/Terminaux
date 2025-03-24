@@ -21,34 +21,13 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 
-namespace Terminaux.Writer.CyclicWriters.Shapes
+namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
     /// <summary>
     /// A circle
     /// </summary>
-    public class Circle : IStaticRenderable, IGeometricShape
+    public class Circle : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
     {
-        /// <summary>
-        /// Circle width
-        /// </summary>
-        public int Width =>
-            Height;
-
-        /// <summary>
-        /// Circle height
-        /// </summary>
-        public int Height { get; }
-
-        /// <summary>
-        /// Zero-based left position of the terminal to write this circle to
-        /// </summary>
-        public int Left { get; }
-
-        /// <summary>
-        /// Zero-based top position of the terminal to write this circle to
-        /// </summary>
-        public int Top { get; }
-
         /// <summary>
         /// Whether to print this filled circle or just the outline
         /// </summary>
@@ -61,7 +40,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders a circle
         /// </summary>
         /// <returns>A rendered circle using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render()
+        public override string Render()
         {
             StringBuilder buffer = new();
             buffer.Append(new Ellipsis(Width, Height, Left, Top, Filled, ShapeColor).Render());
@@ -79,6 +58,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         public Circle(int height, int left, int top, bool filled = false, Color? shapeColor = null)
         {
             Height = height;
+            Width = height;
             Left = left;
             Top = top;
             Filled = filled;

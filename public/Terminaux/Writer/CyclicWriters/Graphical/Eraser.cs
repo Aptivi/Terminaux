@@ -19,54 +19,13 @@
 
 using Terminaux.Colors;
 
-namespace Terminaux.Writer.CyclicWriters.Simple
+namespace Terminaux.Writer.CyclicWriters.Graphical
 {
     /// <summary>
     /// Eraser renderable
     /// </summary>
-    public class Eraser : SimpleCyclicWriter, IStaticRenderable
+    public class Eraser : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
-        }
-
         /// <summary>
         /// Renders an aligned figlet text
         /// </summary>
@@ -77,8 +36,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             {
                 Left = Left,
                 Top = Top,
-                InteriorWidth = InteriorWidth,
-                InteriorHeight = InteriorHeight,
+                Width = Width,
+                Height = Height,
                 Color = ColorTools.CurrentBackgroundColor,
             };
             return box.Render();

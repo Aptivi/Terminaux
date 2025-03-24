@@ -28,48 +28,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Box : GraphicalCyclicWriter, IStaticRenderable
     {
-        private int left = 0;
-        private int top = 0;
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
         private Color boxColor = ColorTools.CurrentForegroundColor;
         private bool useColors = true;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
-
-        /// <summary>
-        /// Interior width
-        /// </summary>
-        public int InteriorWidth
-        {
-            get => interiorWidth;
-            set => interiorWidth = value;
-        }
-
-        /// <summary>
-        /// Interior height
-        /// </summary>
-        public int InteriorHeight
-        {
-            get => interiorHeight;
-            set => interiorHeight = value;
-        }
 
         /// <summary>
         /// Box color
@@ -96,7 +56,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public override string Render()
         {
             return RenderBox(
-                Left, Top, InteriorWidth, InteriorHeight, Color, UseColors);
+                Left, Top, Width, Height, Color, UseColors);
         }
 
         internal static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BoxColor, bool useColor)

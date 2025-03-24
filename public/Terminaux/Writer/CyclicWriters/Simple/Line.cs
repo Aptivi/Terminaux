@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
@@ -97,8 +98,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             var canvas = new Canvas()
             {
                 Transparent = true,
-                InteriorHeight = ConsoleWrapper.WindowHeight,
-                InteriorWidth = ConsoleWrapper.WindowWidth,
+                Height = ConsoleWrapper.WindowHeight,
+                Width = ConsoleWrapper.WindowWidth,
                 Pixels = parameters,
                 DoubleWidth = DoubleWidth,
             };

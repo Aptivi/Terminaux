@@ -20,7 +20,7 @@
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Writer.CyclicWriters.Shapes
+namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
     /// <summary>
     /// Geometric shape interface

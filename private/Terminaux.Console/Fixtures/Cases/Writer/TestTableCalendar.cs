@@ -21,6 +21,7 @@ using System;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -36,8 +37,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Month = DateTime.Now.Month,
                 Left = 4,
                 Top = 2,
-                InteriorWidth = ConsoleWrapper.WindowWidth - 8,
-                InteriorHeight = ConsoleWrapper.WindowHeight - 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
+                Height = ConsoleWrapper.WindowHeight - 4,
             };
             TextWriterRaw.WriteRaw(calendar.Render());
         }

@@ -35,7 +35,8 @@ using System.Text.RegularExpressions;
 using Textify.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
-using Selections = Terminaux.Writer.CyclicWriters.Simple.Selection;
+using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -294,8 +295,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     {
                         Left = selectionBoxPosX,
                         Top = selectionBoxPosY - 1,
-                        InteriorWidth = maxSelectionWidth,
-                        InteriorHeight = selectionChoices,
+                        Width = maxSelectionWidth,
+                        Height = selectionChoices,
                         Settings = settings,
                         Color = InfoBoxTitledSelectionColor,
                     };

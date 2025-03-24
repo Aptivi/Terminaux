@@ -24,6 +24,7 @@ using Terminaux.Inputs;
 using Terminaux.Base.Structures;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Graphics
 {

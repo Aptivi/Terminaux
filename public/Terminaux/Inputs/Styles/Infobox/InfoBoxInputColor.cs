@@ -31,6 +31,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -239,8 +240,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     {
                         Left = inputPosX,
                         Top = inputPosY,
-                        InteriorWidth = maxInputWidth,
-                        InteriorHeight = 1,
+                        Width = maxInputWidth,
+                        Height = 1,
                     };
                     if (useColor)
                     {

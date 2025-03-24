@@ -23,34 +23,15 @@ using Terminaux.Colors;
 using System;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Terminaux.Writer.CyclicWriters.Shapes
+namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
     /// <summary>
     /// An ellipsis
     /// </summary>
-    public class Ellipsis : IStaticRenderable, IGeometricShape
+    public class Ellipsis : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
     {
-        /// <summary>
-        /// Ellipsis width
-        /// </summary>
-        public int Width { get; }
-
-        /// <summary>
-        /// Ellipsis height
-        /// </summary>
-        public int Height { get; }
-
-        /// <summary>
-        /// Zero-based left position of the terminal to write this ellipsis to
-        /// </summary>
-        public int Left { get; }
-
-        /// <summary>
-        /// Zero-based top position of the terminal to write this ellipsis to
-        /// </summary>
-        public int Top { get; }
-
         /// <summary>
         /// Whether to print this filled ellipsis or just the outline
         /// </summary>
@@ -63,7 +44,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders an ellipsis
         /// </summary>
         /// <returns>A rendered ellipsis using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render()
+        public override string Render()
         {
             StringBuilder buffer = new();
             buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
@@ -77,8 +58,8 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
             var canvas = new Canvas()
             {
                 Transparent = true,
-                InteriorHeight = Height,
-                InteriorWidth = Width,
+                Height = Height,
+                Width = Width,
                 Left = Left,
                 Top = Top,
             };

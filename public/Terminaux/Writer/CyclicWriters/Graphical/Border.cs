@@ -41,8 +41,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private int top = 0;
         private string title = "";
         private string text = "";
-        private int interiorWidth = 0;
-        private int interiorHeight = 0;
+        private int width = 0;
+        private int height = 0;
         private Color borderColor = ColorTools.CurrentForegroundColor;
         private Color textColor = ColorTools.CurrentForegroundColor;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
@@ -54,7 +54,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Left position
         /// </summary>
-        public int Left
+        public override int Left
         {
             get => left;
             set
@@ -67,7 +67,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Top position
         /// </summary>
-        public int Top
+        public override int Top
         {
             get => top;
             set
@@ -98,12 +98,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Interior width
         /// </summary>
-        public int InteriorWidth
+        public override int Width
         {
-            get => interiorWidth;
+            get => width;
             set
             {
-                interiorWidth = value;
+                width = value;
                 if (!customPos)
                     UpdateInternalTop();
             }
@@ -112,12 +112,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Interior height
         /// </summary>
-        public int InteriorHeight
+        public override int Height
         {
-            get => interiorHeight;
+            get => height;
             set
             {
-                interiorHeight = value;
+                height = value;
                 if (!customPos)
                     UpdateInternalTop();
             }
@@ -196,20 +196,20 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (!customPos)
                 UpdateInternalTop();
             return RenderBorder(
-                Title, text, Left, Top, InteriorWidth, InteriorHeight, Settings, TextSettings, Color, BackgroundColor, TextColor, UseColors, DropShadow, ShadowColor);
+                Title, text, Left, Top, Width, Height, Settings, TextSettings, Color, BackgroundColor, TextColor, UseColors, DropShadow, ShadowColor);
         }
 
         internal void UpdateInternalTop()
         {
             var splitLines = text.SplitNewLines();
-            interiorWidth = splitLines.Max((str) => str.Length);
-            interiorHeight = splitLines.Length;
-            if (interiorWidth >= ConsoleWrapper.WindowWidth)
-                interiorWidth = ConsoleWrapper.WindowWidth - 4;
-            if (interiorHeight >= ConsoleWrapper.WindowHeight)
-                interiorHeight = ConsoleWrapper.WindowHeight - 4;
-            left = ConsoleWrapper.WindowWidth / 2 - interiorWidth / 2 - 1;
-            top = ConsoleWrapper.WindowHeight / 2 - interiorHeight / 2 - 1;
+            width = splitLines.Max((str) => str.Length);
+            height = splitLines.Length;
+            if (width >= ConsoleWrapper.WindowWidth)
+                width = ConsoleWrapper.WindowWidth - 4;
+            if (height >= ConsoleWrapper.WindowHeight)
+                height = ConsoleWrapper.WindowHeight - 4;
+            left = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+            top = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
         }
 
         internal static string RenderBorder(string title, Mark text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, bool dropShadow, Color shadowColor, params object[] vars)
@@ -223,8 +223,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     Text = title.FormatString(vars),
                     Left = Left,
                     Top = Top,
-                    InteriorWidth = InteriorWidth,
-                    InteriorHeight = InteriorHeight,
+                    Width = InteriorWidth,
+                    Height = InteriorHeight,
                     Settings = settings,
                     TitleSettings = textSettings,
                     UseColors = useColor,
@@ -235,8 +235,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     Left = Left + 1,
                     Top = Top,
-                    InteriorWidth = InteriorWidth,
-                    InteriorHeight = InteriorHeight,
+                    Width = InteriorWidth,
+                    Height = InteriorHeight,
                     UseColors = useColor,
                 };
                 if (useColor)

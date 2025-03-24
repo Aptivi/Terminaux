@@ -21,34 +21,15 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Terminaux.Writer.CyclicWriters.Shapes
+namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
     /// <summary>
     /// A parallelogram
     /// </summary>
-    public class Parallelogram : IStaticRenderable, IGeometricShape
+    public class Parallelogram : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
     {
-        /// <summary>
-        /// Parallelogram width
-        /// </summary>
-        public int Width { get; }
-
-        /// <summary>
-        /// Parallelogram height
-        /// </summary>
-        public int Height { get; }
-
-        /// <summary>
-        /// Zero-based left position of the terminal to write this parallelogram to
-        /// </summary>
-        public int Left { get; }
-
-        /// <summary>
-        /// Zero-based top position of the terminal to write this parallelogram to
-        /// </summary>
-        public int Top { get; }
-
         /// <summary>
         /// Whether to print this filled parallelogram or just the outline
         /// </summary>
@@ -61,13 +42,13 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders a parallelogram
         /// </summary>
         /// <returns>A rendered parallelogram using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render()
+        public override string Render()
         {
             var canvas = new Canvas()
             {
                 Transparent = true,
-                InteriorHeight = Height,
-                InteriorWidth = Width * 2,
+                Height = Height,
+                Width = Width * 2,
                 Left = Left,
                 Top = Top,
             };
