@@ -36,7 +36,7 @@ using System.Text.RegularExpressions;
 using Textify.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
-using Selections = Terminaux.Writer.CyclicWriters.Selection;
+using Selections = Terminaux.Writer.CyclicWriters.Simple.Selection;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {

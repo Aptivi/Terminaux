@@ -22,11 +22,11 @@ using System.Linq;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Builtins;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Interactive.Selectors;
 using Terminaux.Inputs.Interactive;
 using System.Reflection;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Inputs.Styles
 {

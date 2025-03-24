@@ -22,7 +22,7 @@ using System.Diagnostics;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Writer.ConsoleWriters
 {

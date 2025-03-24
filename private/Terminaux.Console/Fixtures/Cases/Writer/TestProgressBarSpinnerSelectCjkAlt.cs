@@ -22,12 +22,12 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.CyclicWriters;
 using System.Threading;
 using Terminaux.Writer.CyclicWriters.Builtins;
 using Terminaux.Inputs.Styles;
 using System.Linq;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {

@@ -28,6 +28,7 @@ using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
