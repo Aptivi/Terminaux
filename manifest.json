@@ -4061,146 +4061,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedFigletText.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedFigletText.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.AlignedFigletText",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.AlignedFigletText.yml\" sourcestartlinenumber=\"1\">Aligned figlet text renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedText.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedText.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.AlignedText",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.AlignedText.yml\" sourcestartlinenumber=\"1\">Aligned text renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedCanvas.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedCanvas.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.AnimatedCanvas",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.AnimatedCanvas.yml\" sourcestartlinenumber=\"1\">Animated canvas renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedText.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.AnimatedText.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.AnimatedText",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.AnimatedText.yml\" sourcestartlinenumber=\"1\">Animated text renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BarChart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.BarChart.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.BarChart",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.BarChart.yml\" sourcestartlinenumber=\"1\">Bar chart renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Border.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Border.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Border",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Border.yml\" sourcestartlinenumber=\"1\">Aligned text renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BoundedText.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.BoundedText.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.BoundedText",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.BoundedText.yml\" sourcestartlinenumber=\"1\">Bounded text renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Box.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Box.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Box",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Box.yml\" sourcestartlinenumber=\"1\">Box renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BoxFrame.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.BoxFrame.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.BoxFrame",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.BoxFrame.yml\" sourcestartlinenumber=\"1\">Box frame renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BreakdownChart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.BreakdownChart.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.BreakdownChart",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.BreakdownChart.yml\" sourcestartlinenumber=\"1\">Breakdown chart renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.BuiltinSpinners.yml",
       "output": {
         ".html": {
@@ -4229,255 +4089,465 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Calendars.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.CyclicWriter.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Calendars.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.CyclicWriter.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Calendars",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Calendars.yml\" sourcestartlinenumber=\"1\">Calendars renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.CyclicWriter",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.CyclicWriter.yml\" sourcestartlinenumber=\"1\">Base cyclic writer (for simple writing with scrolling lines on overflow, such as listing)</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Canvas.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.AlignedFigletText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Canvas.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.AlignedFigletText.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Canvas",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Canvas.yml\" sourcestartlinenumber=\"1\">Canvas renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.AlignedFigletText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.AlignedFigletText.yml\" sourcestartlinenumber=\"1\">Aligned figlet text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Decoration.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.AlignedText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Decoration.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.AlignedText.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Decoration",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Decoration.yml\" sourcestartlinenumber=\"1\">Decoration renderer</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.AlignedText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.AlignedText.yml\" sourcestartlinenumber=\"1\">Aligned text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Emoji.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.AnimatedCanvas.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Emoji.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.AnimatedCanvas.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Emoji",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Emoji.yml\" sourcestartlinenumber=\"1\">Emoji renderer</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.AnimatedCanvas",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.AnimatedCanvas.yml\" sourcestartlinenumber=\"1\">Animated canvas renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Eraser.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.AnimatedText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Eraser.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.AnimatedText.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Eraser",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Eraser.yml\" sourcestartlinenumber=\"1\">Eraser renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.AnimatedText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.AnimatedText.yml\" sourcestartlinenumber=\"1\">Animated text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.FigletText.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.BarChart.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.FigletText.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.BarChart.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.FigletText",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.FigletText.yml\" sourcestartlinenumber=\"1\">Figlet text renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.BarChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.BarChart.yml\" sourcestartlinenumber=\"1\">Bar chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Kaomoji.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Border.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Kaomoji.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Border.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Kaomoji",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Kaomoji.yml\" sourcestartlinenumber=\"1\">Kaomoji renderer</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Border",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Border.yml\" sourcestartlinenumber=\"1\">Aligned text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.KeyShortcut.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.BoundedText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.KeyShortcut.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.BoundedText.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.KeyShortcut",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.KeyShortcut.yml\" sourcestartlinenumber=\"1\">KeyShortcut renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.BoundedText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.BoundedText.yml\" sourcestartlinenumber=\"1\">Bounded text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Keybindings.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Box.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Keybindings.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Box.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Keybindings",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Keybindings.yml\" sourcestartlinenumber=\"1\">Keybindings renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Box",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Box.yml\" sourcestartlinenumber=\"1\">Box renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Line.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.BoxFrame.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Line.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.BoxFrame.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Line",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Line.yml\" sourcestartlinenumber=\"1\">Line renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.BoxFrame",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.BoxFrame.yml\" sourcestartlinenumber=\"1\">Box frame renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.LineChart.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.BreakdownChart.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.LineChart.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.BreakdownChart.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.LineChart",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.LineChart.yml\" sourcestartlinenumber=\"1\">Line chart renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.BreakdownChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.BreakdownChart.yml\" sourcestartlinenumber=\"1\">Breakdown chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.LineHandle.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendars.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.LineHandle.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendars.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.LineHandle",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.LineHandle.yml\" sourcestartlinenumber=\"1\">Line handle renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendars",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendars.yml\" sourcestartlinenumber=\"1\">Calendars renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ListEntry.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Canvas.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.ListEntry.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Canvas.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.ListEntry",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.ListEntry.yml\" sourcestartlinenumber=\"1\">ListEntry renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Canvas",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Canvas.yml\" sourcestartlinenumber=\"1\">Canvas renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Listing.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Eraser.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Listing.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Eraser.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Listing",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Listing.yml\" sourcestartlinenumber=\"1\">Listing renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Eraser",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Eraser.yml\" sourcestartlinenumber=\"1\">Eraser renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.NerdFonts.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.LineChart.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.NerdFonts.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.LineChart.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.NerdFonts",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.NerdFonts.yml\" sourcestartlinenumber=\"1\">Nerd Fonts renderer</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.LineChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.LineChart.yml\" sourcestartlinenumber=\"1\">Line chart renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.PowerLine.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Selection.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.PowerLine.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Selection.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.PowerLine",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.PowerLine.yml\" sourcestartlinenumber=\"1\">PowerLine renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Selection",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Selection.yml\" sourcestartlinenumber=\"1\">Selection cyclic renderer</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBar.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Arc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBar.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Arc.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.ProgressBar",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.ProgressBar.yml\" sourcestartlinenumber=\"1\">Progress bar with text</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.Arc",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Arc.yml\" sourcestartlinenumber=\"1\">An arc</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBarNoText.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Circle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBarNoText.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Circle.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.ProgressBarNoText",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.ProgressBarNoText.yml\" sourcestartlinenumber=\"1\">Progress bar without text</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.Circle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Circle.yml\" sourcestartlinenumber=\"1\">A circle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Ellipsis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Ellipsis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.Ellipsis",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Ellipsis.yml\" sourcestartlinenumber=\"1\">An ellipsis</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.IGeometricShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.IGeometricShape.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.IGeometricShape",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.IGeometricShape.yml\" sourcestartlinenumber=\"1\">Geometric shape interface</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Parallelogram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Parallelogram.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.Parallelogram",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Parallelogram.yml\" sourcestartlinenumber=\"1\">A parallelogram</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Rectangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Rectangle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.Rectangle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Rectangle.yml\" sourcestartlinenumber=\"1\">A rectangle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Square.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Square.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.Square",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Square.yml\" sourcestartlinenumber=\"1\">A square</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Trapezoid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Trapezoid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.Trapezoid",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Trapezoid.yml\" sourcestartlinenumber=\"1\">A trapezoid</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Triangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Triangle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.Triangle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Triangle.yml\" sourcestartlinenumber=\"1\">A triangle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.StickChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.StickChart.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.StickChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.StickChart.yml\" sourcestartlinenumber=\"1\">Stick chart renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.SyntaxText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.SyntaxText.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.SyntaxText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.SyntaxText.yml\" sourcestartlinenumber=\"1\">Syntax text renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Table.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Table.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Table",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Table.yml\" sourcestartlinenumber=\"1\">Table renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.TextPath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.TextPath.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.TextPath",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.TextPath.yml\" sourcestartlinenumber=\"1\">Path text renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.WinsLosses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.WinsLosses.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.WinsLosses",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.WinsLosses.yml\" sourcestartlinenumber=\"1\">Wins and losses chart renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter.yml\" sourcestartlinenumber=\"1\">Graphical cyclic writer (for GUI implementations to the CLI, such as charts)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5167,311 +5237,311 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Selection.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Decoration.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Selection.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Decoration.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Selection",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Selection.yml\" sourcestartlinenumber=\"1\">Selection cyclic renderer</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Decoration",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Decoration.yml\" sourcestartlinenumber=\"1\">Decoration renderer</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Arc.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Emoji.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Arc.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Emoji.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Arc",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Arc.yml\" sourcestartlinenumber=\"1\">An arc</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Emoji",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Emoji.yml\" sourcestartlinenumber=\"1\">Emoji renderer</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Circle.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.FigletText.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Circle.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.FigletText.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Circle",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Circle.yml\" sourcestartlinenumber=\"1\">A circle</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.FigletText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.FigletText.yml\" sourcestartlinenumber=\"1\">Figlet text renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Kaomoji.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Kaomoji.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Ellipsis",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.yml\" sourcestartlinenumber=\"1\">An ellipsis</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Kaomoji",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Kaomoji.yml\" sourcestartlinenumber=\"1\">Kaomoji renderer</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.KeyShortcut.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.KeyShortcut.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.yml\" sourcestartlinenumber=\"1\">Geometric shape interface</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.KeyShortcut",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.KeyShortcut.yml\" sourcestartlinenumber=\"1\">KeyShortcut renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Keybindings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Keybindings.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Parallelogram",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.yml\" sourcestartlinenumber=\"1\">A parallelogram</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Keybindings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Keybindings.yml\" sourcestartlinenumber=\"1\">Keybindings renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Line.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Line.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Rectangle",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.yml\" sourcestartlinenumber=\"1\">A rectangle</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Line",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Line.yml\" sourcestartlinenumber=\"1\">Line renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Square.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.LineHandle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Square.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.LineHandle.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Square",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Square.yml\" sourcestartlinenumber=\"1\">A square</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.LineHandle",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.LineHandle.yml\" sourcestartlinenumber=\"1\">Line handle renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.ListEntry.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.ListEntry.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Trapezoid",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.yml\" sourcestartlinenumber=\"1\">A trapezoid</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.ListEntry",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.ListEntry.yml\" sourcestartlinenumber=\"1\">ListEntry renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Listing.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Listing.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes.Triangle",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.yml\" sourcestartlinenumber=\"1\">A triangle</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Listing",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Listing.yml\" sourcestartlinenumber=\"1\">Listing renderable</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.NerdFonts.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.NerdFonts.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Shapes",
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.NerdFonts",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.NerdFonts.yml\" sourcestartlinenumber=\"1\">Nerd Fonts renderer</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.PowerLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.PowerLine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.PowerLine",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.PowerLine.yml\" sourcestartlinenumber=\"1\">PowerLine renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.ProgressBar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.ProgressBar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.ProgressBar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.ProgressBar.yml\" sourcestartlinenumber=\"1\">Progress bar with text</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.ProgressBarNoText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.ProgressBarNoText.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.ProgressBarNoText",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.ProgressBarNoText.yml\" sourcestartlinenumber=\"1\">Progress bar without text</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.SimpleProgress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.SimpleProgress.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.SimpleProgress",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.SimpleProgress.yml\" sourcestartlinenumber=\"1\">Simple progress bar with and without percentage support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Slider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Slider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Slider",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Slider.yml\" sourcestartlinenumber=\"1\">Simple slider with and without percentage support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Spinner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Spinner.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Spinner",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Spinner.yml\" sourcestartlinenumber=\"1\">Spinner cyclic renderer</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.StemLeafChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.StemLeafChart.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.StemLeafChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.StemLeafChart.yml\" sourcestartlinenumber=\"1\">Stem and leaf chart renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.TextException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.TextException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.TextException",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.TextException.yml\" sourcestartlinenumber=\"1\">Exception text renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.TextMarquee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.TextMarquee.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.TextMarquee",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.TextMarquee.yml\" sourcestartlinenumber=\"1\">Text marquee that scrolls for long text similar to how music players work</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.SimpleProgress.yml",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.SimpleCyclicWriter.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.SimpleProgress.html"
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.SimpleCyclicWriter.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.SimpleProgress",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.SimpleProgress.yml\" sourcestartlinenumber=\"1\">Simple progress bar with and without percentage support</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Slider.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Slider.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Slider",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Slider.yml\" sourcestartlinenumber=\"1\">Simple slider with and without percentage support</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Spinner.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Spinner.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Spinner",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Spinner.yml\" sourcestartlinenumber=\"1\">Spinner cyclic renderer</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.StemLeafChart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.StemLeafChart.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.StemLeafChart",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.StemLeafChart.yml\" sourcestartlinenumber=\"1\">Stem and leaf chart renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.StickChart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.StickChart.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.StickChart",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.StickChart.yml\" sourcestartlinenumber=\"1\">Stick chart renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.SyntaxText.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.SyntaxText.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.SyntaxText",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.SyntaxText.yml\" sourcestartlinenumber=\"1\">Syntax text renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Table.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Table.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Table",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Table.yml\" sourcestartlinenumber=\"1\">Table renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.TextException.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.TextException.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.TextException",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.TextException.yml\" sourcestartlinenumber=\"1\">Exception text renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.TextMarquee.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.TextMarquee.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.TextMarquee",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.TextMarquee.yml\" sourcestartlinenumber=\"1\">Text marquee that scrolls for long text similar to how music players work</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.TextPath.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.TextPath.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.TextPath",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.TextPath.yml\" sourcestartlinenumber=\"1\">Path text renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.WinsLosses.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.WinsLosses.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.WinsLosses",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.WinsLosses.yml\" sourcestartlinenumber=\"1\">Wins and losses chart renderable</p>\n"
+      "Title": "Terminaux.Writer.CyclicWriters.SimpleCyclicWriter",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.SimpleCyclicWriter.yml\" sourcestartlinenumber=\"1\">Simple cyclic writer (for simple writing with scrolling lines on overflow, such as listing)</p>\n"
     },
     {
       "type": "ManagedReference",
