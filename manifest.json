@@ -4831,6 +4831,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.RendererTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.RendererTools.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.RendererTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.RendererTools.yml\" sourcestartlinenumber=\"1\">Renderer tools for renderables</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AllIcons.yml",
       "output": {
         ".html": {
