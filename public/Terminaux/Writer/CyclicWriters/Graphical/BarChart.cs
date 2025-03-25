@@ -65,6 +65,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
+        /// Whether to render the bars backwards (right to left) or not (left to right)
+        /// </summary>
+        public bool Backwards { get; set; }
+
+        /// <summary>
         /// Renders a bar chart
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
@@ -119,8 +124,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 // Render the element and its value
                 Coordinate coord = new(Left + showcaseLength, Top + e);
                 int length = (int)(value * wholeLength / maxValue);
+                int diff = Backwards ? wholeLength - length : 0;
                 barChart.Append(
-                    ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
+                    ConsolePositioning.RenderChangePosition(coord.X + diff, coord.Y) +
                     (UseColors ? ColorTools.RenderSetConsoleColor(color, true) : "") +
                     new string(' ', length) +
                     (UseColors ? ColorTools.RenderResetBackground() : "") +
