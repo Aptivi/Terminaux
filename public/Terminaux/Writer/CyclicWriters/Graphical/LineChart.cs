@@ -21,6 +21,7 @@ using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
@@ -31,7 +32,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Line chart renderable
     /// </summary>
-    // TODO: Make it actually work as a graphical renderable!
     public class LineChart : GraphicalCyclicWriter
     {
         private ChartElement[] elements = [];
@@ -86,105 +86,94 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            return TextWriterWhereColor.RenderWhere(
-                RenderLineChart(
-                    elements, Width, Height, Showcase, RunChart, UseColors, UpsideDown), Left, Top);
-        }
-
-        internal static string RenderLineChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool run = false, bool useColor = true, bool upsideDown = false)
-        {
             // Some variables
-            int maxNameLength = InteriorWidth / 4;
-            int wholeLength = InteriorHeight - 1;
+            int maxNameLength = Width / 4;
             var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
             double maxValue = shownElements.Max((element) => element.Value);
             int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
             nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-            var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * wholeLength / maxValue))).ToArray();
+            var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * Height / maxValue))).ToArray();
             int showcaseLength = showcase ? nameLength + 3 : 0;
-            double lineWidth = (double)(InteriorWidth - (showcaseLength + 3)) / shownElements.Length / 2;
+            double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
             int median = (int)shownElements.Average((element) => element.Value);
-            int medianPosition = (int)(median * wholeLength / maxValue);
+            int medianPosition = (int)(median * Height / maxValue);
 
             // Fill the line chart with the showcase first
             StringBuilder lineChart = new();
-            for (int i = 0; i < InteriorHeight; i++)
+            if (Showcase)
             {
-                // If showcase is on, show names and values.
-                int processedWidth = 0;
-                if (showcase && i < shownElements.Length)
+                for (int i = 0; i < shownElements.Length; i++)
                 {
+                    // Get the element showcase position and write it there
+                    bool canShow = Height > i;
+                    if (!canShow)
+                        break;
+                    Coordinate coord = new(Left, Top + i);
                     var element = shownElements[i];
-                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length));
-                    int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
-                    spaces = spaces < 0 ? 0 : spaces;
+
+                    // Now, write it at the selected position
                     lineChart.Append(
-                        (useColor ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
+                        ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
                         " ■ " +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                         element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        element.Value +
-                        new string(' ', spaces) +
-                        " ┃ "
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        element.Value
                     );
-                    processedWidth += showcaseLength;
-                }
-                else if (showcase)
-                {
-                    lineChart.Append(
-                        new string(' ', showcaseLength) +
-                        " ┃ "
-                    );
-                    processedWidth += showcaseLength;
-                }
-                else
-                {
-                    lineChart.Append(
-                        " ┃ "
-                    );
-                    processedWidth += 3;
                 }
 
-                // Render all elements
-                int inverse = upsideDown ? i : InteriorHeight - i;
-                int e = 0;
-                while (processedWidth < InteriorWidth)
+                // Show the separator
+                for (int h = 0; h < Height; h++)
                 {
-                    var elementTuple = shownElementHeights[e];
-                    var nextElementTuple = e + 1 < shownElementHeights.Length ? shownElementHeights[e + 1] : default;
-                    ChartElement? element = elementTuple.ce;
-                    int height = elementTuple.Item2;
-                    ChartElement? nextElement = nextElementTuple.ce;
-                    int nextHeight = nextElementTuple.Item2;
+                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
+                    lineChart.Append(
+                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
+                        " ┃ "
+                    );
+                }
+            }
 
+            // Show the actual chart
+            for (int e = 0; e < shownElementHeights.Length; e++)
+            {
+                // Get the element and the height
+                var elementTuple = shownElementHeights[e];
+                ChartElement element = elementTuple.ce;
+                int height = elementTuple.Item2;
+
+                // Get the next element and the next height
+                var nextElementTuple = e + 1 < shownElementHeights.Length ? shownElementHeights[e + 1] : default;
+                ChartElement? nextElement = nextElementTuple.ce;
+                int nextHeight = nextElementTuple.Item2;
+
+                // Use the chart height to draw the stick
+                for (int h = 0; h < Height; h++)
+                {
+                    // Decide whether to draw this area or not
+                    int lineWidthInt = (int)lineWidth * 2;
                     double threshold = nextElement is null ? 0 : (nextHeight - height) / lineWidth;
+                    int inverse = UpsideDown ? h : Height - h;
+                    Coordinate lineCoord = new(Left + showcaseLength + (lineWidthInt * e), Top + h);
                     for (int w = 0; w < (int)lineWidth; w++)
                     {
                         int finalHeight = (int)Math.Round(height + threshold * w);
-                        var color =
-                            inverse == finalHeight ? element.Color :
-                            inverse == medianPosition && run ? ConsoleColors.Fuchsia :
-                            useColor ? ColorTools.CurrentBackgroundColor : "";
-                        double value = element.Value;
+                        bool shouldDraw = inverse == finalHeight || inverse == medianPosition && run;
+                        if (shouldDraw)
+                        {
+                            var color = inverse == finalHeight ? element.Color : ConsoleColors.Fuchsia;
+                            double value = element.Value;
 
-                        // Render the element and its value
-                        lineChart.Append(
-                            (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
-                            "  " +
-                            (useColor ? ColorTools.RenderResetBackground() : "")
-                        );
-                        processedWidth += 2;
-                        if (nextElement is null)
-                            break;
+                            // Render the element and its value
+                            lineChart.Append(
+                                ConsolePositioning.RenderChangePosition(lineCoord.X + w, lineCoord.Y) +
+                                (UseColors ? ColorTools.RenderSetConsoleColor(color, true) : "") +
+                                new string(' ', lineWidthInt) +
+                                (UseColors ? ColorTools.RenderResetBackground() : "")
+                            );
+                        }
                     }
-                    e++;
-                    if (e >= shownElements.Length)
-                        break;
                 }
-
-                if (i < InteriorHeight - 1)
-                    lineChart.AppendLine();
             }
 
             // Return the result
