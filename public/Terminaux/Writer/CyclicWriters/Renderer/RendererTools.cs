@@ -33,8 +33,13 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// Writes the renderable to the console
         /// </summary>
         /// <param name="renderable">Renderable instance to write</param>
-        public static void WriteRenderable(CyclicWriter renderable) =>
-            WriteRenderable(renderable, new(0, 0), new(ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight));
+        public static void WriteRenderable(CyclicWriter renderable)
+        {
+            if (renderable is SimpleCyclicWriter simpleRenderable)
+                WriteRenderable(simpleRenderable);
+            else if (renderable is GraphicalCyclicWriter graphicalRenderable)
+                WriteRenderable(graphicalRenderable, new(0, 0));
+        }
 
         /// <summary>
         /// Writes the renderable to the console
@@ -50,15 +55,20 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// <param name="renderable">Renderable instance to write</param>
         /// <param name="pos">Position to write to</param>
         /// <param name="size">Size of the renderable for width and height</param>
-        public static void WriteRenderable(CyclicWriter renderable, Coordinate pos, Size size) =>
-            TextWriterRaw.WriteRaw(RenderRenderable(renderable, pos, size));
+        public static void WriteRenderable(CyclicWriter renderable, Coordinate pos, Size size)
+        {
+            if (renderable is SimpleCyclicWriter simpleRenderable)
+                WriteRenderable(simpleRenderable, pos);
+            else if (renderable is GraphicalCyclicWriter graphicalRenderable)
+                WriteRenderable(graphicalRenderable, pos, size);
+        }
 
         /// <summary>
         /// Writes the renderable to the console
         /// </summary>
         /// <param name="renderable">Renderable instance to write</param>
         public static void WriteRenderable(SimpleCyclicWriter renderable) =>
-            WriteRenderable(renderable, new(0, 0));
+            TextWriterRaw.WriteRaw(RenderRenderable(renderable));
 
         /// <summary>
         /// Writes the renderable to the console
@@ -97,8 +107,14 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// </summary>
         /// <param name="renderable">Renderable instance to render</param>
         /// <returns>A container representation that you can render with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderRenderable(CyclicWriter renderable) =>
-            RenderRenderable(renderable, new(0, 0));
+        public static string RenderRenderable(CyclicWriter renderable)
+        {
+            if (renderable is SimpleCyclicWriter simpleRenderable)
+                return RenderRenderable(simpleRenderable);
+            else if (renderable is GraphicalCyclicWriter graphicalRenderable)
+                return RenderRenderable(graphicalRenderable, new(0, 0));
+            return "";
+        }
 
         /// <summary>
         /// Renders the renderable
@@ -107,7 +123,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// <param name="pos">Position to write to</param>
         /// <returns>A container representation that you can render with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderRenderable(CyclicWriter renderable, Coordinate pos) =>
-            TextWriterWhereColor.RenderWhere(renderable.Render(), pos.X, pos.Y);
+            RenderRenderable(renderable, pos, new(ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight));
 
         /// <summary>
         /// Renders the renderable
@@ -131,7 +147,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// <param name="renderable">Renderable instance to render</param>
         /// <returns>A container representation that you can render with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderRenderable(SimpleCyclicWriter renderable) =>
-            RenderRenderable(renderable, new(0, 0));
+            renderable.Render();
 
         /// <summary>
         /// Renders the renderable

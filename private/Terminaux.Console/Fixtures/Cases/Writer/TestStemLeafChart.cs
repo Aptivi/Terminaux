@@ -20,6 +20,7 @@
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -49,7 +50,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     18.345,
                 ],
             };
-            TextWriterRaw.WriteRaw(chart.Render());
+            RendererTools.WriteRenderable(chart);
         }
     }
 }
