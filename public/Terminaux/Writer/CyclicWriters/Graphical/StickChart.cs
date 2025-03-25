@@ -30,6 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Stick chart renderable
     /// </summary>
+    // TODO: Make it actually work as a graphical renderable!
     public class StickChart : GraphicalCyclicWriter
     {
         private ChartElement[] elements = [];
