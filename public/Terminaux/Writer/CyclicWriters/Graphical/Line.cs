@@ -23,10 +23,9 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
-using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
-namespace Terminaux.Writer.CyclicWriters.Simple
+namespace Terminaux.Writer.CyclicWriters.Graphical
 {
     /// <summary>
     /// Line renderable
