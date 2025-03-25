@@ -24,7 +24,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Emoji renderer
     /// </summary>
-    public class Emoji : SimpleCyclicWriter, IStaticRenderable
+    public class Emoji : SimpleCyclicWriter
     {
         private readonly string emoji = "";
 

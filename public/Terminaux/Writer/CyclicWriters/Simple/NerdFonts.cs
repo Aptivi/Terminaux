@@ -25,7 +25,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Nerd Fonts renderer
     /// </summary>
-    public class NerdFonts : SimpleCyclicWriter, IStaticRenderable
+    public class NerdFonts : SimpleCyclicWriter
     {
         private readonly string nerdfonts = "";
         private bool useColors = true;

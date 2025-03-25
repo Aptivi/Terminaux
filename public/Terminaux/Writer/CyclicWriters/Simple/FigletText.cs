@@ -32,7 +32,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Figlet text renderable
     /// </summary>
-    public class FigletText : SimpleCyclicWriter, IStaticRenderable
+    public class FigletText : SimpleCyclicWriter
     {
         private FigletFont figletFont = FigletFonts.GetByName("small");
         private string text = "";

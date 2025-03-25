@@ -24,7 +24,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Eraser renderable
     /// </summary>
-    public class Eraser : GraphicalCyclicWriter, IStaticRenderable
+    public class Eraser : GraphicalCyclicWriter
     {
         /// <summary>
         /// Renders an aligned figlet text

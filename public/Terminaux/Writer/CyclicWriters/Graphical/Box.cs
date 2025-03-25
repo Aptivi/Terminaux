@@ -26,7 +26,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Box renderable
     /// </summary>
-    public class Box : GraphicalCyclicWriter, IStaticRenderable
+    public class Box : GraphicalCyclicWriter
     {
         private Color boxColor = ColorTools.CurrentForegroundColor;
         private bool useColors = true;

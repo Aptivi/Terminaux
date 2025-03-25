@@ -33,7 +33,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Box frame renderable
     /// </summary>
-    public class BoxFrame : GraphicalCyclicWriter, IStaticRenderable
+    public class BoxFrame : GraphicalCyclicWriter
     {
         private string text = "";
         private Color boxFrameColor = ColorTools.CurrentForegroundColor;

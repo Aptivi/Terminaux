@@ -28,7 +28,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Simple slider with and without percentage support
     /// </summary>
-    public class Slider : SimpleCyclicWriter, IStaticRenderable
+    public class Slider : SimpleCyclicWriter
     {
         private int position = 0;
         private int minPosition = 0;

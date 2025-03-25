@@ -35,7 +35,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Aligned text renderable
     /// </summary>
-    public class AlignedText : GraphicalCyclicWriter, IStaticRenderable
+    public class AlignedText : GraphicalCyclicWriter
     {
         private int top = 0;
         private string text = "";

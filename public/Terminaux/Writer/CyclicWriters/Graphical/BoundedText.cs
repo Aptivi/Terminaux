@@ -34,7 +34,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Bounded text renderable
     /// </summary>
-    public class BoundedText : GraphicalCyclicWriter, IStaticRenderable
+    public class BoundedText : GraphicalCyclicWriter
     {
         private string text = "";
         private bool positionWise = false;

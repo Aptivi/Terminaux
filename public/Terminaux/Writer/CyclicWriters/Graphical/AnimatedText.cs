@@ -31,7 +31,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Animated text renderable
     /// </summary>
-    public class AnimatedText : GraphicalCyclicWriter, IStaticRenderable
+    public class AnimatedText : GraphicalCyclicWriter
     {
         private int frame = 0;
         private string[] frames = [];

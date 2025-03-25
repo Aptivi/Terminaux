@@ -28,7 +28,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// <summary>
     /// A rectangle
     /// </summary>
-    public class Rectangle : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
+    public class Rectangle : GraphicalCyclicWriter, IGeometricShape
     {
         /// <summary>
         /// Whether to print this filled rectangle or just the outline

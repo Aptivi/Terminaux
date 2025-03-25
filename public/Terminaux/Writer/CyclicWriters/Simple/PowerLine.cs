@@ -26,7 +26,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// PowerLine renderable
     /// </summary>
-    public class PowerLine : SimpleCyclicWriter, IStaticRenderable
+    public class PowerLine : SimpleCyclicWriter
     {
         private List<PowerLineSegment> segments = [];
         private Color endingColor = ColorTools.CurrentBackgroundColor;

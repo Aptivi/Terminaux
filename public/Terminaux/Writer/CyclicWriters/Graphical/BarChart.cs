@@ -31,7 +31,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// Bar chart renderable
     /// </summary>
     // TODO: Make it actually work as a graphical renderable!
-    public class BarChart : GraphicalCyclicWriter, IStaticRenderable
+    public class BarChart : GraphicalCyclicWriter
     {
         private ChartElement[] elements = [];
         private bool showcase = false;

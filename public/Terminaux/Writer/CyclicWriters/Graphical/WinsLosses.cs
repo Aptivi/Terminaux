@@ -30,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Wins and losses chart renderable
     /// </summary>
-    public class WinsLosses : GraphicalCyclicWriter, IStaticRenderable
+    public class WinsLosses : GraphicalCyclicWriter
     {
         private (string, ChartElement win, ChartElement loss)[] elements = [];
         private bool showcase = false;

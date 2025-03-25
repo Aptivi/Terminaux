@@ -30,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// <summary>
     /// An ellipsis
     /// </summary>
-    public class Ellipsis : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
+    public class Ellipsis : GraphicalCyclicWriter, IGeometricShape
     {
         /// <summary>
         /// Whether to print this filled ellipsis or just the outline

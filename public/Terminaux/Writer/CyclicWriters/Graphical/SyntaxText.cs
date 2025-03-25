@@ -31,7 +31,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Syntax text renderable
     /// </summary>
-    public class SyntaxText : GraphicalCyclicWriter, IStaticRenderable
+    public class SyntaxText : GraphicalCyclicWriter
     {
         private string syntax = "csharp";
         private string text = "";

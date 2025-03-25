@@ -24,7 +24,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Decoration renderer
     /// </summary>
-    public class Decoration : SimpleCyclicWriter, IStaticRenderable
+    public class Decoration : SimpleCyclicWriter
     {
         private string decorationStart = "";
         private string decorationEnd = "";

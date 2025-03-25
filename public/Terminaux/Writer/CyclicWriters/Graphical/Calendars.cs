@@ -29,7 +29,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Calendars renderable
     /// </summary>
-    public class Calendars : GraphicalCyclicWriter, IStaticRenderable
+    public class Calendars : GraphicalCyclicWriter
     {
         private int year = 0;
         private int month = 0;

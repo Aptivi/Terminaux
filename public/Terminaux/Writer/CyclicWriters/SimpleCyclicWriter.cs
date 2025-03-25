@@ -22,6 +22,6 @@ namespace Terminaux.Writer.CyclicWriters
     /// <summary>
     /// Simple cyclic writer (for simple writing with scrolling lines on overflow, such as listing)
     /// </summary>
-    public abstract class SimpleCyclicWriter : CyclicWriter, IStaticRenderable
+    public abstract class SimpleCyclicWriter : CyclicWriter
     { }
 }

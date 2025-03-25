@@ -22,7 +22,7 @@ namespace Terminaux.Writer.CyclicWriters
     /// <summary>
     /// Graphical cyclic writer (for GUI implementations to the CLI, such as charts)
     /// </summary>
-    public abstract class GraphicalCyclicWriter : CyclicWriter, IStaticRenderable
+    public abstract class GraphicalCyclicWriter : CyclicWriter
     {
         private int left = 0;
         private int top = 0;

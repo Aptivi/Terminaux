@@ -32,7 +32,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// Line chart renderable
     /// </summary>
     // TODO: Make it actually work as a graphical renderable!
-    public class LineChart : GraphicalCyclicWriter, IStaticRenderable
+    public class LineChart : GraphicalCyclicWriter
     {
         private ChartElement[] elements = [];
         private bool showcase = false;

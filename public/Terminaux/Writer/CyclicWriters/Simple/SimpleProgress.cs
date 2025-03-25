@@ -29,7 +29,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Simple progress bar with and without percentage support
     /// </summary>
-    public class SimpleProgress : SimpleCyclicWriter, IStaticRenderable
+    public class SimpleProgress : SimpleCyclicWriter
     {
         internal int indeterminateStep = 0;
         internal ColorGradients indeterminateGradient = ColorGradients.GetGradients(ConsoleColors.DarkGreen, ConsoleColors.Lime, 50);

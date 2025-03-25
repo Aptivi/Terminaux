@@ -32,7 +32,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Progress bar with text
     /// </summary>
-    public class ProgressBar : SimpleCyclicWriter, IStaticRenderable
+    public class ProgressBar : SimpleCyclicWriter
     {
         private string text = "";
         private int position = 0;

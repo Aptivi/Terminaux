@@ -33,7 +33,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Aligned figlet text renderable
     /// </summary>
-    public class AlignedFigletText : GraphicalCyclicWriter, IStaticRenderable
+    public class AlignedFigletText : GraphicalCyclicWriter
     {
         private FigletFont figletFont = FigletFonts.GetByName("small");
         private int top = 0;

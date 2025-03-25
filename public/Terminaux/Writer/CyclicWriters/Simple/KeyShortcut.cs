@@ -29,7 +29,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// KeyShortcut renderable
     /// </summary>
-    public class KeyShortcut : SimpleCyclicWriter, IStaticRenderable
+    public class KeyShortcut : SimpleCyclicWriter
     {
         private Keybinding? shortcut;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;

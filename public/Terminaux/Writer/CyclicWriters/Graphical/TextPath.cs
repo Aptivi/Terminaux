@@ -31,7 +31,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Path text renderable
     /// </summary>
-    public class TextPath : GraphicalCyclicWriter, IStaticRenderable
+    public class TextPath : GraphicalCyclicWriter
     {
         private string pathText = "";
         private bool oneLine = false;

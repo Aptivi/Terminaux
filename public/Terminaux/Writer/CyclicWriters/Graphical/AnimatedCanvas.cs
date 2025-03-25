@@ -25,7 +25,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Animated canvas renderable
     /// </summary>
-    public class AnimatedCanvas : GraphicalCyclicWriter, IStaticRenderable
+    public class AnimatedCanvas : GraphicalCyclicWriter
     {
         private int frame = 0;
         private Color canvasColor = ColorTools.CurrentBackgroundColor;

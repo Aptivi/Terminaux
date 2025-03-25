@@ -31,7 +31,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Table renderable
     /// </summary>
-    public class Table : GraphicalCyclicWriter, IStaticRenderable
+    public class Table : GraphicalCyclicWriter
     {
         private string[,]? rows;
         private bool header = false;

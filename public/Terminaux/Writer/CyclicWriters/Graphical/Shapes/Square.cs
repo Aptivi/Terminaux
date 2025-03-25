@@ -25,7 +25,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// <summary>
     /// A square
     /// </summary>
-    public class Square : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
+    public class Square : GraphicalCyclicWriter, IGeometricShape
     {
         /// <summary>
         /// Whether to print this filled square or just the outline

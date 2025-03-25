@@ -29,7 +29,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// <summary>
     /// An arc
     /// </summary>
-    public class Arc : GraphicalCyclicWriter, IStaticRenderable, IGeometricShape
+    public class Arc : GraphicalCyclicWriter, IGeometricShape
     {
         /// <summary>
         /// Specifies the inner radius

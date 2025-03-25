@@ -24,7 +24,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Kaomoji renderer
     /// </summary>
-    public class Kaomoji : SimpleCyclicWriter, IStaticRenderable
+    public class Kaomoji : SimpleCyclicWriter
     {
         private readonly string kaomoji = "";
 

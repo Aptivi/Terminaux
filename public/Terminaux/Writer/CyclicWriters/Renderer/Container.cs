@@ -29,7 +29,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
     /// </summary>
     public class Container
     {
-        private readonly Dictionary<string, (IStaticRenderable, Coordinate)> renderables = [];
+        private readonly Dictionary<string, (CyclicWriter, Coordinate)> renderables = [];
 
         /// <summary>
         /// Whether this renderable is registered or not
@@ -45,7 +45,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// <param name="name">Renderable name</param>
         /// <param name="renderable">Renderable instance</param>
         /// <exception cref="TerminauxException"></exception>
-        public void AddRenderable(string name, IStaticRenderable renderable)
+        public void AddRenderable(string name, CyclicWriter renderable)
         {
             if (IsRegistered(name))
                 throw new TerminauxException("Renderable is already registered");
@@ -70,7 +70,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// <param name="name">Renderable name</param>
         /// <returns>Renderable instance</returns>
         /// <exception cref="TerminauxException"></exception>
-        public IStaticRenderable GetRenderable(string name)
+        public CyclicWriter GetRenderable(string name)
         {
             if (!renderables.TryGetValue(name, out var renderable))
                 throw new TerminauxException("Renderable is not registered");

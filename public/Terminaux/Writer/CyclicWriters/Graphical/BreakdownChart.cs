@@ -32,7 +32,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// Breakdown chart renderable
     /// </summary>
     // TODO: Make it actually work as a graphical renderable!
-    public class BreakdownChart : GraphicalCyclicWriter, IStaticRenderable
+    public class BreakdownChart : GraphicalCyclicWriter
     {
         private ChartElement[] elements = [];
         private bool showcase = false;

@@ -27,7 +27,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Line handle renderable
     /// </summary>
-    public class LineHandle : SimpleCyclicWriter, IStaticRenderable
+    public class LineHandle : SimpleCyclicWriter
     {
         private string[] fileLines = [];
         private Color color = ColorTools.CurrentForegroundColor;

@@ -30,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Progress bar without text
     /// </summary>
-    public class ProgressBarNoText : SimpleCyclicWriter, IStaticRenderable
+    public class ProgressBarNoText : SimpleCyclicWriter
     {
         private int position = 0;
         private int maxPosition = 0;

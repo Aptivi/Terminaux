@@ -31,7 +31,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Line renderable
     /// </summary>
-    public class Line : SimpleCyclicWriter, IStaticRenderable
+    public class Line : SimpleCyclicWriter
     {
         private Coordinate startPos = new();
         private Coordinate endPos = new();

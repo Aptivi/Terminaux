@@ -30,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Stick chart renderable
     /// </summary>
-    public class StickChart : GraphicalCyclicWriter, IStaticRenderable
+    public class StickChart : GraphicalCyclicWriter
     {
         private ChartElement[] elements = [];
         private bool showcase = false;

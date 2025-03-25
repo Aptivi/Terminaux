@@ -39,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Selection cyclic renderer
     /// </summary>
-    public class Selection : GraphicalCyclicWriter, IStaticRenderable
+    public class Selection : GraphicalCyclicWriter
     {
         /// <summary>
         /// List of selection categories

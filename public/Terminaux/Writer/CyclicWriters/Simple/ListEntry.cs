@@ -26,7 +26,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// ListEntry renderable
     /// </summary>
-    public class ListEntry : SimpleCyclicWriter, IStaticRenderable
+    public class ListEntry : SimpleCyclicWriter
     {
         private Color keyColor = ConsoleColors.Yellow;
         private Color valueColor = ConsoleColors.Olive;

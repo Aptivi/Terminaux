@@ -30,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// Stem and leaf chart renderable
     /// </summary>
     // TODO: Make it actually work as a simple renderable!
-    public class StemLeafChart : SimpleCyclicWriter, IStaticRenderable
+    public class StemLeafChart : SimpleCyclicWriter
     {
         private double[] elements = [];
         private int left = 0;

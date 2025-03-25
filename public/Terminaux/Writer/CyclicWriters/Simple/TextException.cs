@@ -27,7 +27,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Exception text renderable
     /// </summary>
-    public class TextException : SimpleCyclicWriter, IStaticRenderable
+    public class TextException : SimpleCyclicWriter
     {
         private Exception exception;
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
