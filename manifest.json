@@ -4299,6 +4299,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Line.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Line.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Line",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Line.yml\" sourcestartlinenumber=\"1\">Line renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.LineChart.yml",
       "output": {
         ".html": {
@@ -5332,20 +5346,6 @@
       "IsMRef": true,
       "Title": "Terminaux.Writer.CyclicWriters.Simple.Keybindings",
       "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Keybindings.yml\" sourcestartlinenumber=\"1\">Keybindings renderable</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Line.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Line.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Simple.Line",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Line.yml\" sourcestartlinenumber=\"1\">Line renderable</p>\n"
     },
     {
       "type": "ManagedReference",
