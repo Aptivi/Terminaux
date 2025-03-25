@@ -182,13 +182,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     };
                     selector.Append(
                         hslIndicator.Render() +
-                        ContainerTools.RenderRenderable(hueSlider, new(hslBarX + 1, hslBarY + 2)) +
+                        RendererTools.RenderRenderable(hueSlider, new(hslBarX + 1, hslBarY + 2)) +
                         CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 2) +
                         hueRamp.ToString() +
-                        ContainerTools.RenderRenderable(satSlider, new(hslBarX + 1, hslBarY + 4)) +
+                        RendererTools.RenderRenderable(satSlider, new(hslBarX + 1, hslBarY + 4)) +
                         CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 4) +
                         satRamp.ToString() +
-                        ContainerTools.RenderRenderable(ligSlider, new(hslBarX + 1, hslBarY + 6)) +
+                        RendererTools.RenderRenderable(ligSlider, new(hslBarX + 1, hslBarY + 6)) +
                         CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 6) +
                         ligRamp.ToString()
                     );
@@ -380,7 +380,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 KeybindingList = ColorSelector.bindings,
                 WriteHelpKeyInfo = false,
             };
-            selector.Append(ContainerTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
+            selector.Append(RendererTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
             return selector.ToString();
         }
 

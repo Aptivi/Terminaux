@@ -50,7 +50,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
                 // Then, show the progress bar
                 var stickScreenPart = new ScreenPart();
-                stickScreenPart.AddDynamicText(() => ContainerTools.RenderRenderable(progressBar, new(4, ConsoleWrapper.WindowHeight - 1)));
+                stickScreenPart.AddDynamicText(() => RendererTools.RenderRenderable(progressBar, new(4, ConsoleWrapper.WindowHeight - 1)));
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.SetCurrentCyclic(stickScreen);

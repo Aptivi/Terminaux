@@ -123,7 +123,7 @@ namespace Terminaux.Images.Icons
                     };
                     buffer.Append(
                         iconAlignedText.Render() +
-                        ContainerTools.RenderRenderable(iconKeybindings, new(0, ConsoleWrapper.WindowHeight - 1))
+                        RendererTools.RenderRenderable(iconKeybindings, new(0, ConsoleWrapper.WindowHeight - 1))
                     );
                     return buffer.ToString();
                 });

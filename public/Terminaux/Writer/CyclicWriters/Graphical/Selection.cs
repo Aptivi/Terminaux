@@ -321,7 +321,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     );
                 }
                 buffer.Append(
-                    ContainerTools.RenderRenderable(slider, new(finalWidth, Top + 1))
+                    RendererTools.RenderRenderable(slider, new(finalWidth, Top + 1))
                 );
             }
 

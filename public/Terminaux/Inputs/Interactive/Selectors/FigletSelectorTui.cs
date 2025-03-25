@@ -88,7 +88,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     WriteHelpKeyInfo = false,
                 };
                 buffer.Append(figletInfo.Render());
-                buffer.Append(ContainerTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
+                buffer.Append(RendererTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
                 return buffer.ToString();
             }
             else if (screenNum == 1)
@@ -122,7 +122,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     KeybindingList = FigletSelector.charSelectBindings,
                 };
                 buffer.Append(figletInfo.Render());
-                buffer.Append(ContainerTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
+                buffer.Append(RendererTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
                 return buffer.ToString();
             }
             return "";

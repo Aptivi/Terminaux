@@ -312,7 +312,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         SliderVerticalInactiveTrackChar = settings.BorderRightFrameChar,
                     };
                     boxBuffer.Append(
-                        ContainerTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 3)) +
+                        RendererTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 3)) +
                         TextWriterWhereColor.RenderWhereColorBack($"{settings.BorderRightHorizontalIntersectionChar} {selected} / {maxPos} {settings.BorderLeftHorizontalIntersectionChar}", sliderPosX - 1, sliderPosY + 4, InfoBoxTitledSliderColor, BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor)

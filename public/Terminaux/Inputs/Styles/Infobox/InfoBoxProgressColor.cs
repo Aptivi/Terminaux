@@ -247,7 +247,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledProgressColor),
                         ProgressBackgroundColor = BackgroundColor,
                     };
-                    boxBuffer.Append(ContainerTools.RenderRenderable(progressBar, new(progressPosX + 1, progressPosY + 3)));
+                    boxBuffer.Append(RendererTools.RenderRenderable(progressBar, new(progressPosX + 1, progressPosY + 3)));
                     return boxBuffer.ToString();
                 });
 

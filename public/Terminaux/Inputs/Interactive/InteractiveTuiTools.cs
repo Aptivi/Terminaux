@@ -206,7 +206,7 @@ namespace Terminaux.Inputs.Interactive
                 Width = ConsoleWrapper.WindowWidth - 1,
                 WriteHelpKeyInfo = false,
             };
-            elements.Append(ContainerTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
+            elements.Append(RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
 
             // Return the result
             return elements.ToString();
@@ -290,7 +290,7 @@ namespace Terminaux.Inputs.Interactive
                 };
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalColor, interactiveTui.Settings.PaneBackgroundColor));
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalColor, interactiveTui.Settings.PaneBackgroundColor));
-                builder.Append(ContainerTools.RenderRenderable(dataSlider, new(left + 1, 3)));
+                builder.Append(RendererTools.RenderRenderable(dataSlider, new(left + 1, 3)));
             }
             return builder.ToString();
         }
@@ -361,7 +361,7 @@ namespace Terminaux.Inputs.Interactive
                 };
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
-                builder.Append(ContainerTools.RenderRenderable(dataSlider, new(left + 1, 3)));
+                builder.Append(RendererTools.RenderRenderable(dataSlider, new(left + 1, 3)));
             }
             return builder.ToString();
         }

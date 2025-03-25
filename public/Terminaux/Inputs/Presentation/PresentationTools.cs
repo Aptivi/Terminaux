@@ -137,7 +137,7 @@ namespace Terminaux.Inputs.Presentation
                         BackgroundColor = presentation.BackgroundColor,
                         Width = ConsoleWrapper.WindowWidth - 1,
                     };
-                    builder.Append(ContainerTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
+                    builder.Append(RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
 
                     // Clear the presentation screen
                     for (int y = presentationUpperInnerBorderTop; y <= presentationLowerInnerBorderTop + 1; y++)
@@ -227,7 +227,7 @@ namespace Terminaux.Inputs.Presentation
                         };
                         boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, 2, presentation.FrameColor, presentation.BackgroundColor));
                         boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, presentationLowerInnerBorderTop + 1, presentation.FrameColor, presentation.BackgroundColor));
-                        boxBuffer.Append(ContainerTools.RenderRenderable(dataSlider, new(left, 3)));
+                        boxBuffer.Append(RendererTools.RenderRenderable(dataSlider, new(left, 3)));
                     }
                     return boxBuffer.ToString();
                 });

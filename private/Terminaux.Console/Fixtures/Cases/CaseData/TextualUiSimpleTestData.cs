@@ -112,7 +112,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 KeybindingList = bindings,
                 Width = ConsoleWrapper.WindowWidth - 1,
             };
-            builder.Append(ContainerTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
+            builder.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
             // Return the result
             return builder.ToString();

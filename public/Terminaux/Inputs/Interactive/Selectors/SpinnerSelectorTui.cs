@@ -77,7 +77,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 WriteHelpKeyInfo = false,
             };
             buffer.Append(spinnerInfo.Render());
-            buffer.Append(ContainerTools.RenderRenderable(spinnerKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
+            buffer.Append(RendererTools.RenderRenderable(spinnerKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
             // Write the rendered content using the selected spinner
             if (spinnerObject is Spinner spinnerRenderable)

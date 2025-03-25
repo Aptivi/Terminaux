@@ -184,7 +184,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     selectionBuilder.Append(
                         TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
                         TextWriterWhereColor.RenderWhere("▼", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
-                        ContainerTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, listStartPosition + 3))
+                        RendererTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, listStartPosition + 3))
                     );
                 }
             }
@@ -197,7 +197,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 BackgroundColor = settings.BackgroundColor,
                 WriteHelpKeyInfo = false,
             };
-            selectionBuilder.Append(ContainerTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
+            selectionBuilder.Append(RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
             return selectionBuilder.ToString();
         }
 

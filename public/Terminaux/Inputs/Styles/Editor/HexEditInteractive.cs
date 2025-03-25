@@ -135,7 +135,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     BackgroundColor = settings.BackgroundColor,
                     Width = ConsoleWrapper.WindowWidth - 1,
                 };
-                return ContainerTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
+                return RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
             });
             screen.AddBufferedPart("Hex editor interactive - Keybindings", part);
         }

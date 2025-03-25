@@ -160,7 +160,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             {
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, 2, InfoBoxColor, BackgroundColor));
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));
-                boxBuffer.Append(ContainerTools.RenderRenderable(slider, new(left, 3)));
+                boxBuffer.Append(RendererTools.RenderRenderable(slider, new(left, 3)));
             }
 
             // Render a keybinding that points to the help page
