@@ -27,7 +27,6 @@ using Terminaux.Shell.Shells;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Aliases;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Shell.Help

@@ -22,7 +22,6 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs

@@ -23,7 +23,6 @@ using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors

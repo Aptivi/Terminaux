@@ -36,7 +36,6 @@ using Textify.General;
 using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Graphical;

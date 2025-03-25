@@ -33,7 +33,6 @@ using Terminaux.Inputs.Interactive;
 using Textify.General;
 using Textify.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

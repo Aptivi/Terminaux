@@ -32,7 +32,6 @@ using System.Threading;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

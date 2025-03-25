@@ -17,10 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer

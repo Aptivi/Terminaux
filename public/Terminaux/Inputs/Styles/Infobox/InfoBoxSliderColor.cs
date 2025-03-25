@@ -31,7 +31,6 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Simple;

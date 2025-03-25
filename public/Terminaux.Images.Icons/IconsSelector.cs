@@ -30,7 +30,6 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 

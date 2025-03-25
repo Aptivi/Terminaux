@@ -18,7 +18,6 @@
 //
 
 using System;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Simple;

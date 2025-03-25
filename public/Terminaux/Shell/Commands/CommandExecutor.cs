@@ -26,8 +26,6 @@ using Terminaux.Shell.Arguments;
 using Terminaux.Base.Checks;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Textify.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.CyclicWriters.Simple;
 

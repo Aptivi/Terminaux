@@ -19,7 +19,6 @@
 
 using Terminaux.Base.TermInfo;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles

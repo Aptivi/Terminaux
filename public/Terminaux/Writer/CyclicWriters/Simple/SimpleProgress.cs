@@ -19,7 +19,6 @@
 
 using System;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;

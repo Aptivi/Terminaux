@@ -25,7 +25,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

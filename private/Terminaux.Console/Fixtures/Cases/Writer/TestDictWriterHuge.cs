@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.Data.NameGen;
 

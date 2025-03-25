@@ -24,7 +24,6 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Graphical;

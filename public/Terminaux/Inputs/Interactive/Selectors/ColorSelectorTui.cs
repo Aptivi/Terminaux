@@ -35,7 +35,6 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

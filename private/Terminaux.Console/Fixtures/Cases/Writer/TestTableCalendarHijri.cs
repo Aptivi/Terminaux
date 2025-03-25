@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
 using System.Globalization;
 using Terminaux.Writer.CyclicWriters.Graphical;

@@ -28,7 +28,6 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Simple;

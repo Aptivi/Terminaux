@@ -23,7 +23,6 @@ using Terminaux.Colors;
 using System;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {

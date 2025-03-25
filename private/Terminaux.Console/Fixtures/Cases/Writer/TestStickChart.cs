@@ -21,7 +21,6 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer

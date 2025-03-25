@@ -24,7 +24,6 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Screens

@@ -22,8 +22,6 @@ using Terminaux.Colors;
 using System;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using System.Collections.Generic;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {

@@ -31,7 +31,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Interactive;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

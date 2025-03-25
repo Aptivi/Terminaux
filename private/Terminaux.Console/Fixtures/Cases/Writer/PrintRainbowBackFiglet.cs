@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.Data.Figlet;
 

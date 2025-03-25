@@ -21,7 +21,6 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer

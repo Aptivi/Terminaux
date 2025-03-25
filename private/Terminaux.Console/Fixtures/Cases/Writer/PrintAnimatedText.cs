@@ -19,7 +19,6 @@
 
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer

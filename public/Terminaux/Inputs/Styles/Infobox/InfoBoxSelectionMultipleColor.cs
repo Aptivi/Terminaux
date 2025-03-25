@@ -35,7 +35,6 @@ using Terminaux.Base.Extensions;
 using System.Text.RegularExpressions;
 using Textify.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
 using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
