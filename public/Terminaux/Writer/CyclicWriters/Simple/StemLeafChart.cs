@@ -29,34 +29,13 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Stem and leaf chart renderable
     /// </summary>
-    // TODO: Make it actually work as a simple renderable!
     public class StemLeafChart : SimpleCyclicWriter
     {
         private double[] elements = [];
-        private int left = 0;
-        private int top = 0;
         private Color stemColor = ColorTools.CurrentForegroundColor;
         private Color leafColor = ColorTools.CurrentForegroundColor;
         private Color separatorColor = ColorTools.CurrentForegroundColor;
         private bool useColors = true;
-
-        /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left
-        {
-            get => left;
-            set => left = value;
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top
-        {
-            get => top;
-            set => top = value;
-        }
 
         /// <summary>
         /// Whether to use colors or not
@@ -171,7 +150,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             }
 
             // Return the result
-            return TextWriterWhereColor.RenderWhere(stemLeafChart.ToString(), Left, Top);
+            return stemLeafChart.ToString();
         }
 
         /// <summary>

@@ -30,11 +30,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            TextWriterColor.WriteColor("This chart describes a few random numbers in an ascending order:", true, new Color(ConsoleColors.Green));
+            TextWriterColor.WriteColor("This chart describes a few random numbers in an ascending order:\n", true, new Color(ConsoleColors.Green));
             var chart = new StemLeafChart()
             {
-                Left = 2,
-                Top = 4,
                 Elements =
                 [
                     789,
