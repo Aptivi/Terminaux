@@ -42,8 +42,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             };
             var progressBar = new ProgressBarNoText(0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 Indeterminate = true,
             };
             try

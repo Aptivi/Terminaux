@@ -48,39 +48,34 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var progressBar1 = new ProgressBar(
                 "This is the test progress bar that contains a scrolling marquee.", 0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 ProgressActiveForegroundColor = ConsoleColors.Red,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Red),
             };
             var progressBar2 = new ProgressBarNoText(0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 ProgressActiveForegroundColor = ConsoleColors.Lime,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Lime),
             };
             var progressBar3 = new ProgressBar(
                 "這是包含滾動選取框的測試進度條。", 0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 ProgressActiveForegroundColor = ConsoleColors.Blue,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Blue),
             };
             var progressBar4 = new ProgressBar(
                 "This is the test progress bar that contains a scrolling marquee.", 0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 Indeterminate = true,
                 ProgressActiveForegroundColor = ConsoleColors.Fuchsia,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Fuchsia),
             };
             var progressBar5 = new ProgressBarNoText(0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 Indeterminate = true,
                 ProgressActiveForegroundColor = ConsoleColors.Yellow,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Yellow),
@@ -88,31 +83,27 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var progressBar6 = new ProgressBar(
                 "這是包含滾動選取框的測試進度條。", 0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 Indeterminate = true,
                 ProgressActiveForegroundColor = ConsoleColors.Aqua,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Aqua),
             };
             var progressBar7 = new SimpleProgress(0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 ProgressActiveForegroundColor = ConsoleColors.White,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.White),
             };
             var progressBar8 = new SimpleProgress(0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 ShowPercentage = false,
                 ProgressActiveForegroundColor = ConsoleColors.Silver,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Silver),
             };
             var progressBar9 = new SimpleProgress(0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 Indeterminate = true,
                 ProgressActiveForegroundColor = ConsoleColors.Grey,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Grey),

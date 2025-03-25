@@ -41,14 +41,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private Color progressForegroundColor = ConsoleColors.DarkGreen;
 
         /// <summary>
-        /// Left margin of the progress bar
+        /// Width of the progress bar
         /// </summary>
-        public int LeftMargin { get; set; }
-
-        /// <summary>
-        /// Right margin of the progress bar
-        /// </summary>
-        public int RightMargin { get; set; }
+        public int Width { get; set; }
 
         /// <summary>
         /// Height of the vertical progress bar
@@ -206,10 +201,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             else
             {
                 // Check the width
-                int finalWidth = ConsoleWrapper.WindowWidth - LeftMargin - RightMargin;
                 int percentageWidth = ShowPercentage ? 6 : 1;
-                int progressWidth = finalWidth - percentageWidth + 1;
-                if (finalWidth < progressWidth)
+                int progressWidth = Width - percentageWidth + 1;
+                if (Width < progressWidth)
                     return "";
 
                 // Estimate how many cells the progress bar takes

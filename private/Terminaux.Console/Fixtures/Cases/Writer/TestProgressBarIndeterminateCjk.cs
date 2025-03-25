@@ -43,8 +43,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var progressBar = new ProgressBar(
                 "這是包含滾動選取框的測試進度條。", 0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 Indeterminate = true,
             };
             try

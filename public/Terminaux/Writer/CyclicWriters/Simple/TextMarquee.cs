@@ -49,14 +49,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             text;
 
         /// <summary>
-        /// Left margin of the marquee
+        /// Width of the marquee
         /// </summary>
-        public int LeftMargin { get; set; }
-
-        /// <summary>
-        /// Right margin of the marquee
-        /// </summary>
-        public int RightMargin { get; set; }
+        public int Width { get; set; }
 
         /// <summary>
         /// Delay interval. The default is 30 ticks for 100 milliseconds, but you can adjust it, depending on the speed of the loop.
@@ -96,19 +91,18 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <returns>The result</returns>
         public override string Render()
         {
-            int finalWidth = ConsoleWrapper.WindowWidth - LeftMargin - RightMargin;
             var builder = new StringBuilder();
             builder.Append(
                 (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
                 (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")
             );
-            if (textWidth > finalWidth)
+            if (textWidth > Width)
             {
                 // Process the width
                 int processedWidth = 0;
                 int processedChars = 0;
                 var renderedBuilder = new StringBuilder();
-                for (int i = leftIdx; i <= leftIdx + finalWidth && processedWidth < finalWidth; i++)
+                for (int i = leftIdx; i <= leftIdx + Width && processedWidth < Width; i++)
                 {
                     char c = i >= Text.Length || i < 0 ? ' ' : Text[i];
                     int charWidth = TextTools.GetCharWidth(c);
@@ -116,7 +110,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     processedChars++;
                     renderedBuilder.Append(c);
                 }
-                while (processedWidth > finalWidth)
+                while (processedWidth > Width)
                 {
                     if (leftIdx >= 0)
                         break;
@@ -157,6 +151,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 }
                 builder.Append(renderedBuilder.ToString());
             }
+            else
+                builder.Append(Text);
             builder.Append(
                 (UseColors ? ColorTools.RenderResetBackground() : "") +
                 (UseColors ? ColorTools.RenderResetForeground() : "")

@@ -47,8 +47,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var progressBar = new ProgressBar(
                 "這是測試進度欄，其中包含滾動選取框和您選擇的旋轉器。您可以透過查看最左邊的區域來觀察您選擇的旋轉器。", 0, 500, spinner)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
             };
             try
             {

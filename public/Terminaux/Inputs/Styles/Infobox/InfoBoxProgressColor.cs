@@ -242,8 +242,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int maxProgressWidth = maxWidth - 6;
                     var progressBar = new SimpleProgress((int)progress, 100)
                     {
-                        LeftMargin = progressPosX,
-                        RightMargin = ConsoleWrapper.WindowWidth - (progressPosX + maxProgressWidth),
+                        Width = maxProgressWidth,
                         ProgressPercentageTextColor = InfoBoxTitledProgressColor,
                         ProgressActiveForegroundColor = InfoBoxTitledProgressColor,
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledProgressColor),

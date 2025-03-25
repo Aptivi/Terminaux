@@ -45,8 +45,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 "left and the right side, and is intentionally long to make the text scroll just like how music players " +
                 "work.")
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
             };
             try
             {

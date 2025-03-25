@@ -36,8 +36,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     {
         private FigletFont figletFont = FigletFonts.GetByName("small");
         private string text = "";
-        private int leftMargin = 0;
-        private int rightMargin = 0;
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private bool useColors = true;
@@ -52,22 +50,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         }
 
         /// <summary>
-        /// Left margin of the aligned figlet text
+        /// Width of the aligned figlet text
         /// </summary>
-        public int LeftMargin
-        {
-            get => leftMargin;
-            set => leftMargin = value;
-        }
-
-        /// <summary>
-        /// Right margin of the aligned figlet text
-        /// </summary>
-        public int RightMargin
-        {
-            get => rightMargin;
-            set => rightMargin = value;
-        }
+        public int Width { get; set; }
 
         /// <summary>
         /// Foreground color of the text
@@ -112,16 +97,16 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public override string Render()
         {
             return RenderFiglet(
-                Text, Font, ForegroundColor, BackgroundColor, UseColors, LeftMargin, RightMargin);
+                Text, Font, ForegroundColor, BackgroundColor, UseColors, Width);
         }
 
-        internal static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        internal static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, int width = 0, params object[] Vars)
         {
             var builder = new StringBuilder();
             builder.Append(
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                FigletTools.RenderFiglet(Text, FigletFont, ConsoleWrapper.WindowWidth - (leftMargin + rightMargin), Vars) +
+                FigletTools.RenderFiglet(Text, FigletFont, width, Vars) +
                 $"{(useColor ? ColorTools.RenderRevertForeground() : "")}" +
                 $"{(useColor ? ColorTools.RenderRevertBackground() : "")}"
             );

@@ -53,14 +53,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             text;
 
         /// <summary>
-        /// Left margin of the progress bar
+        /// Width of the progress bar
         /// </summary>
-        public int LeftMargin { get; set; }
-
-        /// <summary>
-        /// Right margin of the progress bar
-        /// </summary>
-        public int RightMargin { get; set; }
+        public int Width { get; set; }
 
         /// <summary>
         /// Delay interval for marquee. The default is 30 ticks for 100 milliseconds, but you can adjust it, depending on the speed of the loop.
@@ -175,17 +170,16 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public override string Render()
         {
             // Check the width
-            int finalWidth = ConsoleWrapper.WindowWidth - LeftMargin - RightMargin;
             int spinnerWidth = 2 + ConsoleChar.EstimateCellWidth(progressSpinner.Peek());
             int percentageWidth = 6;
             int progressWidth = 20;
-            if (finalWidth < spinnerWidth)
+            if (Width < spinnerWidth)
                 return "";
-            if (finalWidth < spinnerWidth + progressWidth + percentageWidth)
+            if (Width < spinnerWidth + progressWidth + percentageWidth)
                 return $" {progressSpinner.Render()}";
 
             // Check to see if we can print a marquee
-            bool needsMarquee = finalWidth > spinnerWidth + progressWidth + percentageWidth + 3;
+            bool needsMarquee = Width > spinnerWidth + progressWidth + percentageWidth + 3;
 
             // Render the spinner
             var rendered = new StringBuilder();
@@ -198,15 +192,14 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             int finalMarqueeWidth = 0;
             if (needsMarquee)
             {
-                progressMarquee.LeftMargin = LeftMargin + spinnerWidth;
-                progressMarquee.RightMargin = RightMargin + percentageWidth + progressWidth + 1;
+                progressMarquee.Width = Width - (spinnerWidth + percentageWidth + progressWidth + 1);
                 progressMarquee.Delay = Delay;
                 progressMarquee.UseColors = UseColors;
                 progressMarquee.ForegroundColor = ProgressTextColor;
                 progressMarquee.BackgroundColor = ProgressBackgroundColor;
                 string marqueeText = progressMarquee.Render();
                 int marqueeWidth = ConsoleChar.EstimateCellWidth(marqueeText);
-                int spaces = finalWidth - (spinnerWidth + progressWidth + percentageWidth + marqueeWidth);
+                int spaces = Width - (spinnerWidth + progressWidth + percentageWidth + marqueeWidth);
                 spaces = spaces < 0 ? 0 : spaces;
                 finalMarqueeWidth = marqueeWidth + spaces;
                 rendered.Append(
@@ -219,8 +212,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             var bar = new SimpleProgress(Position, maxPosition)
             {
                 Indeterminate = Indeterminate,
-                LeftMargin = LeftMargin + spinnerWidth + finalMarqueeWidth + 1,
-                RightMargin = RightMargin,
+                Width = Width - (spinnerWidth + finalMarqueeWidth + 1),
                 ShowPercentage = ShowPercentage,
                 ProgressPercentageTextColor = ProgressPercentageTextColor,
                 ProgressActiveForegroundColor = ProgressActiveForegroundColor,

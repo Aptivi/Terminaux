@@ -43,14 +43,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private Color progressActiveForegroundColor = ConsoleColors.Lime;
 
         /// <summary>
-        /// Left margin of the progress bar
+        /// Width of the progress bar
         /// </summary>
-        public int LeftMargin { get; set; }
-
-        /// <summary>
-        /// Right margin of the progress bar
-        /// </summary>
-        public int RightMargin { get; set; }
+        public int Width { get; set; }
 
         /// <summary>
         /// Position of the progress bar
@@ -155,13 +150,12 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public override string Render()
         {
             // Check the width
-            int finalWidth = ConsoleWrapper.WindowWidth - LeftMargin - RightMargin;
             int spinnerWidth = 2 + ConsoleChar.EstimateCellWidth(progressSpinner.Peek());
             int percentageWidth = 6;
-            int progressWidth = finalWidth - spinnerWidth - percentageWidth + 1;
-            if (finalWidth < spinnerWidth)
+            int progressWidth = Width - spinnerWidth - percentageWidth + 1;
+            if (Width < spinnerWidth)
                 return "";
-            if (finalWidth < spinnerWidth + percentageWidth)
+            if (Width < spinnerWidth + percentageWidth)
                 return $" {progressSpinner.Render()}";
 
             // Render the spinner
@@ -175,8 +169,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             var bar = new SimpleProgress(Position, maxPosition)
             {
                 Indeterminate = Indeterminate,
-                LeftMargin = LeftMargin + spinnerWidth,
-                RightMargin = RightMargin,
+                Width = Width - spinnerWidth,
                 ShowPercentage = ShowPercentage,
                 ProgressPercentageTextColor = ProgressPercentageTextColor,
                 ProgressActiveForegroundColor = ProgressActiveForegroundColor,

@@ -47,8 +47,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var progressBar = new ProgressBar(
                 "This is the test progress bar that contains a scrolling marquee and a spinner of your choice. You can observe the spinner that you've selected by looking at the leftmost area.", 0, 500, spinner)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
             };
             try
             {

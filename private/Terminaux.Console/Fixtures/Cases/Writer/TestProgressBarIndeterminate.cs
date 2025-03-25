@@ -43,8 +43,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var progressBar = new ProgressBar(
                 "This is the test progress bar that contains a scrolling marquee.", 0, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 Indeterminate = true,
             };
             try

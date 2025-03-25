@@ -44,8 +44,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 "這是測試文字選取框，根據您的控制台寬度進行調整，左側和右側的邊距均為 4，並且故意較長以使文字滾動，就像音" +
                 "樂播放器的工作方式一樣。")
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
             };
             try
             {
