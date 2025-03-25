@@ -29,6 +29,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -72,12 +73,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var spinnerKeybindings = new Keybindings()
             {
                 Width = ConsoleWrapper.WindowWidth - 1,
-                Top = ConsoleWrapper.WindowHeight - 1,
                 KeybindingList = SpinnerSelector.bindings,
                 WriteHelpKeyInfo = false,
             };
             buffer.Append(spinnerInfo.Render());
-            buffer.Append(spinnerKeybindings.Render());
+            buffer.Append(ContainerTools.RenderRenderable(spinnerKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
             // Write the rendered content using the selected spinner
             if (spinnerObject is Spinner spinnerRenderable)

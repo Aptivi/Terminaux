@@ -203,12 +203,10 @@ namespace Terminaux.Inputs.Interactive
                 OptionForegroundColor = interactiveTui.Settings.OptionForegroundColor,
                 OptionBackgroundColor = interactiveTui.Settings.OptionBackgroundColor,
                 BackgroundColor = interactiveTui.Settings.BackgroundColor,
-                Left = 0,
-                Top = ConsoleWrapper.WindowHeight - 1,
                 Width = ConsoleWrapper.WindowWidth - 1,
                 WriteHelpKeyInfo = false,
             };
-            elements.Append(keybindingsRenderable.Render());
+            elements.Append(ContainerTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
 
             // Return the result
             return elements.ToString();

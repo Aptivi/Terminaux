@@ -28,6 +28,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -83,12 +84,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var figletKeybindings = new Keybindings()
                 {
                     Width = ConsoleWrapper.WindowWidth - 1,
-                    Top = ConsoleWrapper.WindowHeight - 1,
                     KeybindingList = FigletSelector.bindings,
                     WriteHelpKeyInfo = false,
                 };
                 buffer.Append(figletInfo.Render());
-                buffer.Append(figletKeybindings.Render());
+                buffer.Append(ContainerTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
                 return buffer.ToString();
             }
             else if (screenNum == 1)
@@ -119,11 +119,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var figletKeybindings = new Keybindings()
                 {
                     Width = ConsoleWrapper.WindowWidth - 1,
-                    Top = ConsoleWrapper.WindowHeight - 1,
                     KeybindingList = FigletSelector.charSelectBindings,
                 };
                 buffer.Append(figletInfo.Render());
-                buffer.Append(figletKeybindings.Render());
+                buffer.Append(ContainerTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
                 return buffer.ToString();
             }
             return "";

@@ -193,15 +193,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var keybindingsRenderable = new Keybindings()
             {
                 KeybindingList = multiple ? SelectionStyleBase.showBindingsMultiple : SelectionStyleBase.showBindings,
-                Left = 0,
-                Top = ConsoleWrapper.WindowHeight - 1,
                 Width = ConsoleWrapper.WindowWidth - 1,
                 BackgroundColor = settings.BackgroundColor,
                 WriteHelpKeyInfo = false,
             };
-            selectionBuilder.Append(
-                keybindingsRenderable.Render()
-            );
+            selectionBuilder.Append(ContainerTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
             return selectionBuilder.ToString();
         }
 

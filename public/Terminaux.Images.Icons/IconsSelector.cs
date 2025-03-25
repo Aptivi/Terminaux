@@ -32,6 +32,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Images.Icons
 {
@@ -108,21 +109,22 @@ namespace Terminaux.Images.Icons
                     buffer.Append(IconsManager.RenderIcon(iconName, width, height, left, top));
 
                     // Write the selected icon name and the keybindings
+                    var iconAlignedText = new AlignedText()
+                    {
+                        Text = $"{iconName} - [{selectedIcon + 1}/{icons.Length}]",
+                        Settings = new() { Alignment = TextAlignment.Middle },
+                        Top = 1
+                    };
+                    var iconKeybindings = new Keybindings()
+                    {
+                        KeybindingList = bindings,
+                        Width = ConsoleWrapper.WindowWidth - 1,
+                        WriteHelpKeyInfo = false,
+                    };
                     buffer.Append(
-                        new AlignedText()
-                        {
-                            Text = $"{iconName} - [{selectedIcon + 1}/{icons.Length}]",
-                            Settings = new() { Alignment = TextAlignment.Middle },
-                            Top = 1
-                        }.Render() +
-                        new Keybindings()
-                        {
-                            KeybindingList = bindings,
-                            Left = 0,
-                            Top = ConsoleWrapper.WindowHeight - 1,
-                            Width = ConsoleWrapper.WindowWidth - 1,
-                            WriteHelpKeyInfo = false,
-                        }.Render());
+                        iconAlignedText.Render() +
+                        ContainerTools.RenderRenderable(iconKeybindings, new(0, ConsoleWrapper.WindowHeight - 1))
+                    );
                     return buffer.ToString();
                 });
 

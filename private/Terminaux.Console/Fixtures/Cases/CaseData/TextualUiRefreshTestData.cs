@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 
@@ -111,12 +112,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             }
 
             // Keybindings
-            builder.Append(new Keybindings()
+            var keybindings = new Keybindings()
             {
                 KeybindingList = bindings,
-                Top = ConsoleWrapper.WindowHeight - 1,
                 Width = ConsoleWrapper.WindowWidth - 1,
-            }.Render());
+            };
+            builder.Append(ContainerTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
             // Refresh rate and frame number count
             builder.Append(new AlignedText($"Delay: [Lime]{RefreshDelay}[/] ms, frame [Lime]{renders}[/]")

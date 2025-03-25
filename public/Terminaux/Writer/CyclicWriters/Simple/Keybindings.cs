@@ -32,7 +32,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// <summary>
     /// Keybindings renderable
     /// </summary>
-    // TODO: Make it actually work as a simple renderable!
     public class Keybindings : SimpleCyclicWriter
     {
         private Keybinding[] keybindings = [];
@@ -139,16 +138,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         }
 
         /// <summary>
-        /// Left position
-        /// </summary>
-        public int Left { get; set; }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public int Top { get; set; }
-
-        /// <summary>
         /// Width of the keybinding bar
         /// </summary>
         public int Width { get; set; }
@@ -180,15 +169,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// Renders a Keybindings segment group
         /// </summary>
         /// <returns>Rendered Keybindings text that will be used by the renderer</returns>
-        public override string Render() =>
-            TextWriterWhereColor.RenderWhere(
-                RenderKeybindings(KeybindingList, BuiltinKeybindings, BuiltinColor, BuiltinForegroundColor, BuiltinBackgroundColor, OptionColor, OptionForegroundColor, OptionBackgroundColor, BackgroundColor, Width, HelpKeyInfo, UseColors, WriteLabels, WriteHelpKeyInfo), Left, Top);
-
-        internal static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int width, ConsoleKeyInfo? helpKeyInfo, bool useColor = true, bool writeLabels = true, bool writeHelpKeyInfo = true)
+        public override string Render()
         {
             var bindingsBuilder = new StringBuilder();
-            helpKeyInfo ??= new('K', ConsoleKey.K, false, false, false);
-            Keybinding[] finalBindings = [.. builtinKeybindings, .. bindings];
+            var helpKeyInfo = HelpKeyInfo ?? new('K', ConsoleKey.K, false, false, false);
+            Keybinding[] finalBindings = [.. builtinKeybindings, .. keybindings];
             foreach (Keybinding binding in finalBindings)
             {
                 // Check the binding mode
@@ -201,7 +186,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 int bindingLength = ConsoleChar.EstimateCellWidth(renderedBinding);
                 int bindingExtraLength = ConsoleChar.EstimateCellWidth(renderedExtraBinding);
                 int actualLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()));
-                int maxLength = width - bindingExtraLength;
+                int maxLength = Width - bindingExtraLength;
                 bool canDraw = bindingLength + actualLength < maxLength;
                 bool isBuiltin = builtinKeybindings.Contains(binding);
                 if (canDraw)
@@ -214,7 +199,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                             OptionColor = isBuiltin ? builtinColor : optionColor,
                             OptionBackgroundColor = isBuiltin ? builtinBackgroundColor : optionBackgroundColor,
                             OptionForegroundColor = isBuiltin ? builtinForegroundColor : optionForegroundColor,
-                            UseColors = useColor,
+                            UseColors = UseColors,
                             Width = maxLength,
                             WriteLabel = writeLabels,
                         }.Render()
@@ -223,19 +208,19 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 else if (writeHelpKeyInfo)
                 {
                     // We can't render anymore, so just break and write a binding to show more if it's provided
-                    int spaces = width - actualLength - bindingExtraLength + 1;
+                    int spaces = Width - actualLength - bindingExtraLength + 1;
                     if (spaces <= 0)
                         break;
                     bindingsBuilder.Append(
                         new string(' ', spaces) +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(builtinColor, false, true) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(builtinBackgroundColor, true) : "")}" +
+                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(builtinColor, false, true) : "")}" +
+                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(builtinBackgroundColor, true) : "")}" +
                         renderedExtraBinding
                     );
                     break;
                 }
             }
-            if (useColor)
+            if (UseColors)
             {
                 bindingsBuilder.Append(
                     ColorTools.RenderRevertForeground() +

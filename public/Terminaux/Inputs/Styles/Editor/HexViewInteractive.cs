@@ -32,6 +32,7 @@ using System.Globalization;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -126,11 +127,9 @@ namespace Terminaux.Inputs.Styles.Editor
                     OptionForegroundColor = settings.OptionForegroundColor,
                     OptionBackgroundColor = settings.OptionBackgroundColor,
                     BackgroundColor = settings.BackgroundColor,
-                    Left = 0,
-                    Top = ConsoleWrapper.WindowHeight - 1,
                     Width = ConsoleWrapper.WindowWidth - 1,
                 };
-                return keybindingsRenderable.Render();
+                return ContainerTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
             });
             screen.AddBufferedPart("Hex viewer interactive - Keybindings", part);
         }

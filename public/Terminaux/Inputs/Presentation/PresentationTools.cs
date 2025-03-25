@@ -135,13 +135,9 @@ namespace Terminaux.Inputs.Presentation
                     {
                         KeybindingList = !kiosk && !required ? nonKioskBindings : bindings,
                         BackgroundColor = presentation.BackgroundColor,
-                        Left = 0,
-                        Top = ConsoleWrapper.WindowHeight - 1,
                         Width = ConsoleWrapper.WindowWidth - 1,
                     };
-                    builder.Append(
-                        keybindingsRenderable.Render()
-                    );
+                    builder.Append(ContainerTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
 
                     // Clear the presentation screen
                     for (int y = presentationUpperInnerBorderTop; y <= presentationLowerInnerBorderTop + 1; y++)

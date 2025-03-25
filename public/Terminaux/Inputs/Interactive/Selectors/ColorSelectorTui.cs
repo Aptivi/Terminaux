@@ -377,11 +377,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var figletKeybindings = new Keybindings()
             {
                 Width = ConsoleWrapper.WindowWidth - 1,
-                Top = ConsoleWrapper.WindowHeight - 1,
                 KeybindingList = ColorSelector.bindings,
                 WriteHelpKeyInfo = false,
             };
-            selector.Append(figletKeybindings.Render());
+            selector.Append(ContainerTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
             return selector.ToString();
         }
 
