@@ -20,6 +20,7 @@
 using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
@@ -30,7 +31,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// <summary>
     /// Stick chart renderable
     /// </summary>
-    // TODO: Make it actually work as a graphical renderable!
     public class StickChart : GraphicalCyclicWriter
     {
         private ChartElement[] elements = [];
@@ -75,95 +75,77 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            return TextWriterWhereColor.RenderWhere(
-                RenderStickChart(
-                    elements, Width, Height, Showcase, UseColors, UpsideDown), Left, Top);
-        }
-
-        internal static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool useColor = true, bool upsideDown = false)
-        {
             // Some variables
-            int maxNameLength = InteriorWidth / 4;
-            int wholeLength = InteriorHeight - 1;
+            int maxNameLength = Width / 4;
             var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
             double maxValue = shownElements.Max((element) => element.Value);
             int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
             nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-            var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * wholeLength / maxValue))).ToArray();
+            var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * Height / maxValue))).ToArray();
             int showcaseLength = showcase ? nameLength + 3 : 0;
-            double stickWidth = (double)(InteriorWidth - (showcaseLength + 3)) / shownElements.Length / 2;
+            double stickWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
 
             // Fill the stick chart with the showcase first
             StringBuilder stickChart = new();
-            for (int i = 0; i < InteriorHeight; i++)
+            if (Showcase)
             {
-                // If showcase is on, show names and values.
-                int processedWidth = 0;
-                if (showcase && i < shownElements.Length)
+                for (int i = 0; i < shownElements.Length; i++)
                 {
-                    var element = shownElements[i];
-                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length));
-                    int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
-                    spaces = spaces < 0 ? 0 : spaces;
-                    stickChart.Append(
-                        (useColor ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
-                        " ■ " +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        element.Value +
-                        new string(' ', spaces) +
-                        " ┃ "
-                    );
-                    processedWidth += showcaseLength;
-                }
-                else if (showcase)
-                {
-                    stickChart.Append(
-                        new string(' ', showcaseLength) +
-                        " ┃ "
-                    );
-                    processedWidth += showcaseLength;
-                }
-                else
-                {
-                    stickChart.Append(
-                        " ┃ "
-                    );
-                    processedWidth += 3;
-                }
-
-                // Render all elements
-                int inverse = upsideDown ? i : InteriorHeight - i;
-                int e = 0;
-                while (processedWidth < InteriorWidth)
-                {
-                    var elementTuple = shownElementHeights[e];
-                    ChartElement? element = elementTuple.ce;
-                    int height = elementTuple.Item2;
-
-                    for (int w = 0; w < (int)stickWidth; w++)
-                    {
-                        var color =
-                            inverse <= height ? element.Color :
-                            useColor ? ColorTools.CurrentBackgroundColor : "";
-                        double value = element.Value;
-
-                        // Render the element and its value
-                        stickChart.Append(
-                            (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
-                            "  " +
-                            (useColor ? ColorTools.RenderResetBackground() : "")
-                        );
-                        processedWidth += 2;
-                    }
-                    e++;
-                    if (e >= shownElements.Length)
+                    // Get the element showcase position and write it there
+                    bool canShow = Height > i;
+                    if (!canShow)
                         break;
+                    Coordinate coord = new(Left, Top + i);
+                    var element = shownElements[i];
+
+                    // Now, write it at the selected position
+                    stickChart.Append(
+                        ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
+                        " ■ " +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        element.Value
+                    );
                 }
 
-                if (i < InteriorHeight - 1)
-                    stickChart.AppendLine();
+                // Show the separator
+                for (int h = 0; h < Height; h++)
+                {
+                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
+                    stickChart.Append(
+                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
+                        " ┃ "
+                    );
+                }
+            }
+
+            // Show the actual bar
+            for (int e = 0; e < shownElementHeights.Length; e++)
+            {
+                // Get the element and the height
+                var elementTuple = shownElementHeights[e];
+                ChartElement element = elementTuple.ce;
+                int height = elementTuple.Item2;
+
+                // Use the chart height to draw the stick
+                for (int h = 0; h < Height; h++)
+                {
+                    // Decide whether to draw this area or not
+                    int stickWidthInt = (int)stickWidth * 2;
+                    int inverse = UpsideDown ? h : Height - h;
+                    Coordinate stickCoord = new(Left + showcaseLength + (stickWidthInt * e), Top + h);
+                    if (inverse <= height)
+                    {
+                        stickChart.Append(
+                            ConsolePositioning.RenderChangePosition(stickCoord.X, stickCoord.Y) +
+                            (UseColors ? ColorTools.RenderSetConsoleColor(element.Color, true) : "") +
+                            new string(' ', stickWidthInt) +
+                            (UseColors ? ColorTools.RenderResetBackground() : "")
+                        );
+                    }
+                }
             }
 
             // Return the result
