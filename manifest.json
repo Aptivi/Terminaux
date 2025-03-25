@@ -477,6 +477,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.Size.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.Size.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures.Size",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.Size.yml\" sourcestartlinenumber=\"1\">Size struct</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Structures.yml",
       "output": {
         ".html": {
@@ -5555,34 +5569,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Writer.CyclicWriters",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.IStaticRenderable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.IStaticRenderable.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.IStaticRenderable",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.IStaticRenderable.yml\" sourcestartlinenumber=\"1\">Static renderable writer</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer",
       "Summary": null
     },
     {
