@@ -87,7 +87,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         {
             if (!renderables.TryGetValue(name, out var renderable))
                 throw new TerminauxException("Renderable is not registered");
-            return renderable.Item2;
+            return renderable.Item1 is GraphicalCyclicWriter graphical ? new(graphical.Left, graphical.Top) : renderable.Item2;
         }
 
         /// <summary>
