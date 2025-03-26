@@ -96,7 +96,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 double maxValueDisplay = shownElements.Max((element) => element.Value);
                 int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
                 nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                var shownElementHeights = shownElements.Select((ce) => (ce, (int)Math.Round(ce.Value * Height / maxValue) * 2)).OrderByDescending((ce) => ce.Item2).ToArray();
+                var shownElementHeightsSelect = shownElements.Select((ce) => (ce, (int)Math.Round(ce.Value * Height / maxValue)));
+                var shownElementHeights = (UpsideDown ? shownElementHeightsSelect.OrderBy((ce) => ce.Item2) : shownElementHeightsSelect.OrderByDescending((ce) => ce.Item2)).ToArray();
                 int showcaseLength = showcase ? nameLength + 3 : 0;
 
                 // Fill the breakdown chart with the showcase first
@@ -135,6 +136,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
 
                 // Show the actual bar
+                int processedY = 0;
                 for (int e = 0; e < shownElementHeights.Length; e++)
                 {
                     // Get the element and the height
@@ -143,20 +145,17 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     int height = elementTuple.Item2;
 
                     // Use the chart height to draw the stick
-                    for (int h = 0; h < Height; h++)
+                    for (int h = 0; h < height; h++)
                     {
                         // Decide whether to draw this area or not
-                        int inverse = UpsideDown ? h : Height - h;
-                        Coordinate stickCoord = new(Left + showcaseLength, Top + h);
-                        if (inverse <= height)
-                        {
-                            breakdownChart.Append(
-                                ConsolePositioning.RenderChangePosition(stickCoord.X, stickCoord.Y) +
-                                (UseColors ? ColorTools.RenderSetConsoleColor(element.Color, true) : "") +
-                                "  " +
-                                (UseColors ? ColorTools.RenderResetBackground() : "")
-                            );
-                        }
+                        Coordinate stickCoord = new(Left + showcaseLength, Top + processedY);
+                        breakdownChart.Append(
+                            ConsolePositioning.RenderChangePosition(stickCoord.X, stickCoord.Y) +
+                            (UseColors ? ColorTools.RenderSetConsoleColor(element.Color, true) : "") +
+                            "  " +
+                            (UseColors ? ColorTools.RenderResetBackground() : "")
+                        );
+                        processedY += 1;
                     }
                 }
             }
@@ -187,7 +186,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     // Render the showcase elements
                     int maxElementLength = Width / 4;
-                    var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
+                    var shownElements = elements.Where((ce) => !ce.Hidden).OrderByDescending((ce) => ce.Value).ToArray();
                     int totalWidth = 0;
                     int height = Top + 1;
                     for (int i = 0; i < shownElements.Length; i++)
