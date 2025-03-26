@@ -164,6 +164,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 // Fill the breakdown chart with the element bars first
                 double maxValue = elements.Sum((element) => element.Value);
+                breakdownChart.Append(ConsolePositioning.RenderChangePosition(Left, Top));
                 foreach (var element in elements)
                 {
                     var color = element.Color;
@@ -188,6 +189,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     int maxElementLength = Width / 4;
                     var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
                     int totalWidth = 0;
+                    int height = Top + 1;
                     for (int i = 0; i < shownElements.Length; i++)
                     {
                         var element = elements[i];
@@ -201,7 +203,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         // If the element would overflow, make a new line
                         if (totalWidth > Width || i == 0)
                         {
-                            breakdownChart.AppendLine();
+                            breakdownChart.Append(ConsolePositioning.RenderChangePosition(Left, height));
+                            height++;
                             totalWidth = width + spaces.Length;
                         }
 
