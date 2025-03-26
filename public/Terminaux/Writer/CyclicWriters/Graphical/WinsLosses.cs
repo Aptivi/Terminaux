@@ -20,6 +20,7 @@
 using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
@@ -69,119 +70,109 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            return TextWriterWhereColor.RenderWhere(
-                RenderWinsLosses(
-                    elements, Width, Height, Showcase, UseColors), Left, Top);
-        }
-
-        internal static string RenderWinsLosses((string, ChartElement win, ChartElement loss)[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool useColor = true)
-        {
             // Some variables
-            int maxNameLength = InteriorWidth / 4;
-            int wholeLength = InteriorHeight - 1;
+            int maxNameLength = Width / 4;
+            int wholeLength = Height - 1;
             double maxWinValue = elements.Max((element) => element.win.Value);
             double maxLossValue = elements.Max((element) => element.loss.Value);
             int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.win.Value}/{element.loss.Value}".Length);
             nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
             var shownWinElementHeights = elements.Select((ce) => (ce.win, (int)(ce.win.Value * wholeLength / 2 / maxWinValue))).ToArray();
-            var shownLossElementHeights = elements.Select((ce) => (ce.loss, (int)(ce.loss.Value * wholeLength / 2 / maxWinValue))).ToArray();
+            var shownLossElementHeights = elements.Select((ce) => (ce.loss, (int)(ce.loss.Value * wholeLength / 2 / maxLossValue))).ToArray();
             int showcaseLength = showcase ? nameLength + 3 : 0;
-            double stickWidth = (double)(InteriorWidth - (showcaseLength + 3)) / elements.Length / 2;
+            double stickWidth = (double)(Width - (showcaseLength + 3)) / elements.Length / 2;
 
             // Fill the stick chart with the showcase first
             StringBuilder winsLosses = new();
-            for (int i = 0; i < InteriorHeight; i++)
+            if (Showcase)
             {
-                // If showcase is on, show names and values.
-                int processedWidth = 0;
-                if (showcase && i < elements.Length)
+                for (int i = 0; i < elements.Length; i++)
                 {
+                    // Get the element showcase position and write it there
+                    bool canShow = Height > i;
+                    if (!canShow)
+                        break;
+                    Coordinate coord = new(Left, Top + i);
                     var element = elements[i];
-                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Item1);
-                    int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.win.Value}/{element.loss.Value}".Length);
-                    spaces = spaces < 0 ? 0 : spaces;
+
+                    // Now, write it at the selected position
                     winsLosses.Append(
-                        (useColor ? ColorTools.RenderSetConsoleColor(element.win.Color) : "") +
+                        ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(element.win.Color) : "") +
                         " ■ " +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                         element.Item1.Truncate(nameLength - 4 - $"{maxWinValue}/{maxLossValue}".Length) + "  " +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
                         $"{element.win.Value}" +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                         "/" +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red) : "") +
                         $"{element.loss.Value}" +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        new string(' ', spaces) +
-                        " ┃ "
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "")
                     );
-                    processedWidth += showcaseLength;
-                }
-                else if (showcase)
-                {
-                    winsLosses.Append(
-                        new string(' ', showcaseLength) +
-                        " ┃ "
-                    );
-                    processedWidth += showcaseLength;
-                }
-                else
-                {
-                    winsLosses.Append(
-                        " ┃ "
-                    );
-                    processedWidth += 3;
                 }
 
-                // Render all elements
-                int inverse = InteriorHeight / 2 - i;
-                bool lossMode = inverse < 0;
-                int e = 0;
-                if (inverse == 0)
+                // Show the separator
+                for (int h = 0; h < Height; h++)
                 {
-                    // Write a separator between wins and losses
-                    while (processedWidth < InteriorWidth - 2)
+                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
+                    winsLosses.Append(
+                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
+                        " ┃ "
+                    );
+                }
+            }
+
+            // Write a separator between wins and losses
+            Coordinate winLossSeparatorCoord = new(Left + nameLength, Top + (Height / 2));
+            winsLosses.Append(
+                ConsolePositioning.RenderChangePosition(winLossSeparatorCoord.X, winLossSeparatorCoord.Y) +
+                (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                " ┣━" +
+                new string('━', Width - showcaseLength - 1)
+            );
+
+            // Show the actual win-loss chart
+            for (int e = 0; e < elements.Length; e++)
+            {
+                // Win element
+                var elementWinTuple = shownWinElementHeights[e];
+                ChartElement? elementWin = elementWinTuple.win;
+                int heightWin = elementWinTuple.Item2;
+                
+                // Loss element
+                var elementLossTuple = shownLossElementHeights[e];
+                ChartElement? elementLoss = elementLossTuple.loss;
+                int heightLoss = elementLossTuple.Item2;
+
+                // Decide whether to draw this area or not
+                for (int h = 0; h < Height / 2; h++)
+                {
+                    // Decide whether to draw this area or not (for wins)
+                    int stickWidthInt = (int)stickWidth * 2;
+                    Coordinate winCoord = new(Left + showcaseLength + (stickWidthInt * e), Top + h);
+                    if ((Height / 2) - h < heightWin)
                     {
                         winsLosses.Append(
-                            (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver, true) : "") +
-                            "  " +
-                            (useColor ? ColorTools.RenderResetBackground() : "")
+                            ConsolePositioning.RenderChangePosition(winCoord.X, winCoord.Y) +
+                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime, true) : "") +
+                            new string(' ', stickWidthInt) +
+                            (UseColors ? ColorTools.RenderResetBackground() : "")
                         );
-                        processedWidth += 2;
                     }
-                }
-                else
-                {
-                    while (processedWidth < InteriorWidth)
+
+                    // Decide whether to draw this area or not (for losses)
+                    Coordinate lossCoord = new(Left + showcaseLength + (stickWidthInt * e), Top + (Height / 2) + h + 1);
+                    if (h < heightLoss)
                     {
-                        var elementTuple = lossMode ? shownLossElementHeights[e] : shownWinElementHeights[e];
-                        ChartElement? element = elementTuple.Item1;
-                        int height = elementTuple.Item2;
-
-                        for (int w = 0; w < (int)stickWidth; w++)
-                        {
-                            bool colorElement = lossMode ? -inverse <= height : inverse <= height;
-                            var color =
-                                colorElement ? lossMode ? ConsoleColors.Red : ConsoleColors.Lime :
-                                useColor ? ColorTools.CurrentBackgroundColor : "";
-                            double value = element.Value;
-
-                            // Render the element and its value
-                            winsLosses.Append(
-                                (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
-                                "  " +
-                                (useColor ? ColorTools.RenderResetBackground() : "")
-                            );
-                            processedWidth += 2;
-                        }
-                        e++;
-                        if (e >= elements.Length)
-                            break;
+                        winsLosses.Append(
+                            ConsolePositioning.RenderChangePosition(lossCoord.X, lossCoord.Y) +
+                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red, true) : "") +
+                            new string(' ', stickWidthInt) +
+                            (UseColors ? ColorTools.RenderResetBackground() : "")
+                        );
                     }
                 }
-
-                if (i < InteriorHeight - 1)
-                    winsLosses.AppendLine();
             }
 
             // Return the result
