@@ -29,7 +29,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
     /// </summary>
     public class Container
     {
-        private readonly Dictionary<string, (CyclicWriter, Coordinate)> renderables = [];
+        private readonly Dictionary<string, (CyclicWriter, Coordinate, Size)> renderables = [];
 
         /// <summary>
         /// Whether this renderable is registered or not
@@ -49,7 +49,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         {
             if (IsRegistered(name))
                 throw new TerminauxException("Renderable is already registered");
-            renderables.Add(name, (renderable, new()));
+            renderables.Add(name, (renderable, new(), new()));
         }
 
         /// <summary>
@@ -100,7 +100,33 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         {
             if (!IsRegistered(name))
                 throw new TerminauxException("Renderable is not registered");
-            renderables[name] = (renderables[name].Item1, position);
+            renderables[name] = (renderables[name].Item1, position, renderables[name].Item3);
+        }
+
+        /// <summary>
+        /// Gets the size of a renderable
+        /// </summary>
+        /// <param name="name">Renderable name</param>
+        /// <returns>Size of a renderable</returns>
+        /// <exception cref="TerminauxException"></exception>
+        public Size GetRenderableSize(string name)
+        {
+            if (!renderables.TryGetValue(name, out var renderable))
+                throw new TerminauxException("Renderable is not registered");
+            return renderable.Item1 is GraphicalCyclicWriter graphical ? new(graphical.Width, graphical.Height) : renderable.Item3;
+        }
+
+        /// <summary>
+        /// Sets the size of a renderable
+        /// </summary>
+        /// <param name="name">Renderable name</param>
+        /// <param name="size">Size to set</param>
+        /// <exception cref="TerminauxException"></exception>
+        public void SetRenderableSize(string name, Size size)
+        {
+            if (!IsRegistered(name))
+                throw new TerminauxException("Renderable is not registered");
+            renderables[name] = (renderables[name].Item1, renderables[name].Item2, size);
         }
 
         /// <summary>

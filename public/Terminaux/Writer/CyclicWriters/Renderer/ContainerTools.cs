@@ -49,7 +49,8 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
             {
                 var instance = container.GetRenderable(renderable);
                 var pos = container.GetRenderablePosition(renderable);
-                containerBuffer.Append(RendererTools.RenderRenderable(instance, pos));
+                var size = container.GetRenderableSize(renderable);
+                containerBuffer.Append(RendererTools.RenderRenderable(instance, pos, size));
             }
             return containerBuffer.ToString();
         }
