@@ -4327,6 +4327,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.PieChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.PieChart.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.PieChart",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.PieChart.yml\" sourcestartlinenumber=\"1\">Pie chart renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Selection.yml",
       "output": {
         ".html": {
