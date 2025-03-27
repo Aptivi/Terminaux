@@ -97,6 +97,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
             int median = (int)shownElements.Average((element) => element.Value);
             int medianPosition = (int)(median * Height / maxValue);
+            int inverseMedianPosition = Height - medianPosition;
 
             // Fill the line chart with the showcase first
             StringBuilder lineChart = new();
@@ -141,39 +142,36 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 var elementTuple = shownElementHeights[e];
                 ChartElement element = elementTuple.ce;
                 int height = elementTuple.Item2;
+                int inverseHeight = Height - height;
 
                 // Get the next element and the next height
-                var nextElementTuple = e + 1 < shownElementHeights.Length ? shownElementHeights[e + 1] : default;
-                ChartElement? nextElement = nextElementTuple.ce;
+                var nextElementTuple = e + 1 < shownElementHeights.Length ? shownElementHeights[e + 1] : (null, shownElementHeights[shownElementHeights.Length - 1].Item2);
                 int nextHeight = nextElementTuple.Item2;
+                int inverseNextHeight = Height - nextHeight;
 
-                // Use the chart height to draw the stick
-                for (int h = 0; h < Height; h++)
+                // Build the line renderer
+                int lineWidthInt = (int)lineWidth * 2;
+                var line = new Line()
                 {
-                    // Decide whether to draw this area or not
-                    int lineWidthInt = (int)lineWidth * 2;
-                    double threshold = nextElement is null ? 0 : (nextHeight - height) / lineWidth;
-                    int inverse = UpsideDown ? h : Height - h;
-                    Coordinate lineCoord = new(Left + showcaseLength + (lineWidthInt * e), Top + h);
-                    for (int w = 0; w < (int)lineWidth; w++)
-                    {
-                        int finalHeight = (int)Math.Round(height + threshold * w);
-                        bool shouldDraw = inverse == finalHeight || inverse == medianPosition && run;
-                        if (shouldDraw)
-                        {
-                            var color = inverse == finalHeight ? element.Color : ConsoleColors.Fuchsia;
-                            double value = element.Value;
+                    Color = element.Color,
+                    DoubleWidth = false,
+                    StartPos = new(Left + showcaseLength + (lineWidthInt * e), Top + (UpsideDown ? height : inverseHeight)),
+                    EndPos = new(Left + showcaseLength + (lineWidthInt * (e + 1)), Top + (UpsideDown ? nextHeight : inverseNextHeight)),
+                };
+                lineChart.Append(line.Render());
+            }
 
-                            // Render the element and its value
-                            lineChart.Append(
-                                ConsolePositioning.RenderChangePosition(lineCoord.X + w, lineCoord.Y) +
-                                (UseColors ? ColorTools.RenderSetConsoleColor(color, true) : "") +
-                                new string(' ', lineWidthInt) +
-                                (UseColors ? ColorTools.RenderResetBackground() : "")
-                            );
-                        }
-                    }
-                }
+            // If we need to draw the run, print it
+            if (run)
+            {
+                var runLine = new Line()
+                {
+                    Color = ConsoleColors.Fuchsia,
+                    DoubleWidth = false,
+                    StartPos = new(Left + showcaseLength, Top + (UpsideDown ? medianPosition : inverseMedianPosition)),
+                    EndPos = new(Left + showcaseLength + Width, Top + (UpsideDown ? medianPosition : inverseMedianPosition)),
+                };
+                lineChart.Append(runLine.Render());
             }
 
             // Return the result
