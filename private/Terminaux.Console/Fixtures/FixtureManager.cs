@@ -180,6 +180,7 @@ namespace Terminaux.Console.Fixtures
             new TestLineChart(),
             new TestWinsLosses(),
             new TestPieChart(),
+            new TestLinesChart(),
 
             // Input
             new TestInputSelection(),
