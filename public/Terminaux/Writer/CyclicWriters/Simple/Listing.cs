@@ -92,47 +92,44 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// Renders a Listing segment group
         /// </summary>
         /// <returns>Rendered Listing text that will be used by the renderer</returns>
-        public override string Render() =>
-            RenderList(Objects, KeyColor, ValueColor, UseColors, Stringifier, KeyStringifier, ValueStringifier, RecursiveStringifier);
-
-        internal static string RenderList(IEnumerable? List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<object, string>? stringifier = null, Func<object, string>? keyStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
+        public override string Render()
         {
-            if (List is null)
+            if (Objects is null)
                 return "";
 
             var listBuilder = new StringBuilder();
             int EntryNumber = 1;
-            foreach (var ListEntry in List)
+            foreach (var ListEntry in Objects)
             {
                 if (ListEntry is IEnumerable enums && ListEntry is not string)
                 {
                     var strings = new List<object>();
                     foreach (var Value in enums)
-                        strings.Add(recursiveStringifier is not null ? recursiveStringifier(Value) : Value);
+                        strings.Add(RecursiveStringifier is not null ? RecursiveStringifier(Value) : Value);
                     string valuesString = string.Join(", ", strings);
                     listBuilder.AppendLine(
                         new ListEntry()
                         {
                             Entry = $"{EntryNumber}",
                             Value = valuesString,
-                            KeyColor = ListKeyColor,
-                            ValueColor = ListValueColor,
-                            UseColors = useColor,
+                            KeyColor = KeyColor,
+                            ValueColor = ValueColor,
+                            UseColors = UseColors,
                         }.Render()
                     );
                 }
-                else if (List is IDictionary dict)
+                else if (Objects is IDictionary dict)
                 {
                     var key = dict.Keys.GetElementFromIndex(EntryNumber - 1);
                     var value = dict.Values.GetElementFromIndex(EntryNumber - 1);
                     listBuilder.AppendLine(
                         new ListEntry()
                         {
-                            Entry = keyStringifier is not null && key is not null ? new Func<object, string>((obj) => keyStringifier(obj)).Invoke(key) : key?.ToString() ?? "<<null>>",
-                            Value = valueStringifier is not null && value is not null ? new Func<object, string>((obj) => valueStringifier(obj)).Invoke(value) : value?.ToString() ?? "<<null>>",
-                            KeyColor = ListKeyColor,
-                            ValueColor = ListValueColor,
-                            UseColors = useColor,
+                            Entry = KeyStringifier is not null && key is not null ? new Func<object, string>((obj) => KeyStringifier(obj)).Invoke(key) : key?.ToString() ?? "<<null>>",
+                            Value = ValueStringifier is not null && value is not null ? new Func<object, string>((obj) => ValueStringifier(obj)).Invoke(value) : value?.ToString() ?? "<<null>>",
+                            KeyColor = KeyColor,
+                            ValueColor = ValueColor,
+                            UseColors = UseColors,
                         }.Render()
                     );
                 }
@@ -141,15 +138,15 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         new ListEntry()
                         {
                             Entry = $"{EntryNumber}",
-                            Value = (stringifier is not null ? stringifier(ListEntry) : ListEntry).ToString(),
-                            KeyColor = ListKeyColor,
-                            ValueColor = ListValueColor,
-                            UseColors = useColor,
+                            Value = (Stringifier is not null ? Stringifier(ListEntry) : ListEntry).ToString(),
+                            KeyColor = KeyColor,
+                            ValueColor = ValueColor,
+                            UseColors = UseColors,
                         }.Render()
                     );
                 EntryNumber += 1;
             }
-            if (useColor)
+            if (UseColors)
                 listBuilder.Append(ColorTools.RenderRevertForeground());
             return listBuilder.ToString();
         }

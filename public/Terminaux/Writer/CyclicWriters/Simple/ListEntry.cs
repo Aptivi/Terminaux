@@ -83,24 +83,21 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// Renders a ListEntry segment group
         /// </summary>
         /// <returns>Rendered ListEntry text that will be used by the renderer</returns>
-        public override string Render() =>
-            RenderListEntry(Entry, Value, KeyColor, ValueColor, Indentation, UseColors, Indicator);
-
-        internal static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0, bool useColor = true, bool writeIndicator = true)
+        public override string Render()
         {
             // First, get the spaces count to indent
-            if (indent < 0)
-                indent = 0;
-            string spaces = new(' ', indent * 2);
+            if (Indentation < 0)
+                Indentation = 0;
+            string spaces = new(' ', Indentation * 2);
 
             // Then, write the list entry
             var listBuilder = new StringBuilder();
             listBuilder.Append(
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
-                $"{spaces}{(writeIndicator ? "- " : "")}{entry}: " +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
-                value +
-                $"{(useColor ? ColorTools.RenderRevertForeground() : "")}"
+                $"{(UseColors ? ColorTools.RenderSetConsoleColor(KeyColor) : "")}" +
+                $"{spaces}{(Indicator ? "- " : "")}{Entry}: " +
+                $"{(UseColors ? ColorTools.RenderSetConsoleColor(ValueColor) : "")}" +
+                Value +
+                $"{(UseColors ? ColorTools.RenderRevertForeground() : "")}"
             );
             return listBuilder.ToString();
         }

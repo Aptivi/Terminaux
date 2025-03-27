@@ -195,55 +195,37 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             if (!customPos)
                 UpdateInternalTop();
-            return RenderBorder(
-                Title, text, Left, Top, Width, Height, Settings, TextSettings, Color, BackgroundColor, TextColor, UseColors, DropShadow, ShadowColor);
-        }
 
-        internal void UpdateInternalTop()
-        {
-            var splitLines = text.SplitNewLines();
-            width = splitLines.Max((str) => str.Length);
-            height = splitLines.Length;
-            if (width >= ConsoleWrapper.WindowWidth)
-                width = ConsoleWrapper.WindowWidth - 4;
-            if (height >= ConsoleWrapper.WindowHeight)
-                height = ConsoleWrapper.WindowHeight - 4;
-            left = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
-            top = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-        }
-
-        internal static string RenderBorder(string title, Mark text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, bool dropShadow, Color shadowColor, params object[] vars)
-        {
             StringBuilder border = new();
             try
             {
                 // StringBuilder to put out the final rendering text
                 var boxFrame = new BoxFrame()
                 {
-                    Text = title.FormatString(vars),
+                    Text = title,
                     Left = Left,
                     Top = Top,
-                    Width = InteriorWidth,
-                    Height = InteriorHeight,
+                    Width = Width,
+                    Height = Height,
                     Settings = settings,
                     TitleSettings = textSettings,
-                    UseColors = useColor,
-                    DropShadow = dropShadow,
-                    ShadowColor = shadowColor,
+                    UseColors = UseColors,
+                    DropShadow = DropShadow,
+                    ShadowColor = ShadowColor,
                 };
                 var box = new Box()
                 {
                     Left = Left + 1,
                     Top = Top,
-                    Width = InteriorWidth,
-                    Height = InteriorHeight,
-                    UseColors = useColor,
+                    Width = Width,
+                    Height = Height,
+                    UseColors = UseColors,
                 };
-                if (useColor)
+                if (UseColors)
                 {
                     box.Color = BackgroundColor;
                     boxFrame.BackgroundColor = BackgroundColor;
-                    boxFrame.FrameColor = BorderColor;
+                    boxFrame.FrameColor = Color;
                     boxFrame.TitleColor = TextColor;
                 }
                 border.Append(
@@ -255,7 +237,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (!string.IsNullOrWhiteSpace(text))
                 {
                     // Get the current foreground color
-                    if (useColor)
+                    if (UseColors)
                     {
                         border.Append(
                             ColorTools.RenderSetConsoleColor(TextColor) +
@@ -264,13 +246,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     }
 
                     // Now, split the sentences and count them to fit the box
-                    string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, InteriorWidth + 1);
+                    string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, Width + 1);
                     for (int i = 0; i < sentences.Length; i++)
                     {
                         string sentence = sentences[i];
-                        if (Top + 1 + i > Top + InteriorHeight)
+                        if (Top + 1 + i > Top + Height)
                             break;
-                        int leftPos = TextWriterTools.DetermineTextAlignment(sentence, InteriorWidth, textSettings.Alignment, Left);
+                        int leftPos = TextWriterTools.DetermineTextAlignment(sentence, Width, textSettings.Alignment, Left);
                         border.Append(
                             TextWriterWhereColor.RenderWhere(sentence, leftPos + 1, Top + 1 + i)
                         );
@@ -278,7 +260,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
 
                 // Write the resulting buffer
-                if (useColor)
+                if (UseColors)
                 {
                     border.Append(
                         ColorTools.RenderRevertForeground() +
@@ -292,6 +274,19 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
             return border.ToString();
+        }
+
+        internal void UpdateInternalTop()
+        {
+            var splitLines = text.SplitNewLines();
+            width = splitLines.Max((str) => str.Length);
+            height = splitLines.Length;
+            if (width >= ConsoleWrapper.WindowWidth)
+                width = ConsoleWrapper.WindowWidth - 4;
+            if (height >= ConsoleWrapper.WindowHeight)
+                height = ConsoleWrapper.WindowHeight - 4;
+            left = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+            top = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
         }
 
         /// <summary>

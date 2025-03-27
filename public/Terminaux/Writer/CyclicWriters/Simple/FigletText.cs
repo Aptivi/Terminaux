@@ -93,19 +93,13 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            return RenderFiglet(
-                Text, Font, ForegroundColor, BackgroundColor, UseColors, Width);
-        }
-
-        internal static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, int width = 0, params object[] Vars)
-        {
             var builder = new StringBuilder();
             builder.Append(
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                FigletTools.RenderFiglet(Text, FigletFont, width, Vars) +
-                $"{(useColor ? ColorTools.RenderRevertForeground() : "")}" +
-                $"{(useColor ? ColorTools.RenderRevertBackground() : "")}"
+                $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                $"{(UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
+                FigletTools.RenderFiglet(Text, Font, Width) +
+                $"{(UseColors ? ColorTools.RenderRevertForeground() : "")}" +
+                $"{(UseColors ? ColorTools.RenderRevertBackground() : "")}"
             );
             return builder.ToString();
         }

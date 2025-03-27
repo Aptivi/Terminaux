@@ -98,7 +98,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="indent">Indentation level</param>
         /// <returns>A list entry without the new line at the end</returns>
         public static string RenderListEntry(string entry, string value, int indent = 0) =>
-            ListEntry.RenderListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Silver, indent, false);
+            RenderListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Silver, indent, false);
 
         /// <summary>
         /// Renders a list entry and value.
@@ -110,7 +110,21 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListValueColor">A value color.</param>
         /// <returns>A list entry without the new line at the end</returns>
         public static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0) =>
-            ListEntry.RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent, true);
+            RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent, true);
+
+        internal static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent, bool needsIndent)
+        {
+            var listEntry = new ListEntry()
+            {
+                Entry = entry,
+                Value = value,
+                KeyColor = ListKeyColor,
+                ValueColor = ListValueColor,
+                Indentation = indent,
+                Indicator = needsIndent,
+            };
+            return listEntry.Render();
+        }
 
         static ListEntryWriterColor()
         {

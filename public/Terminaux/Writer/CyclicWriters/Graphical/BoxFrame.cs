@@ -122,22 +122,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            return RenderBoxFrame(
-                Text, Left, Top, Width, Height, Settings, TitleSettings, FrameColor, BackgroundColor, TitleColor, UseColors, DropShadow, ShadowColor);
-        }
-
-        internal static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, Color BackgroundColor, Color TextColor, bool useColor, bool dropShadow, Color shadowColor, params object[] vars)
-        {
             try
             {
                 // StringBuilder is here to formulate the whole string consisting of box frame
                 StringBuilder frameBuilder = new();
 
                 // Colors
-                if (useColor)
+                if (UseColors)
                 {
                     frameBuilder.Append(
-                        ColorTools.RenderSetConsoleColor(BoxFrameColor) +
+                        ColorTools.RenderSetConsoleColor(FrameColor) +
                         ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
@@ -153,21 +147,21 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (settings.BorderUpperRightCornerEnabled)
                 {
                     frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + 1)}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + Width + 2, Top + 1)}" +
                         $"{settings.BorderUpperRightCornerChar}"
                     );
                 }
                 if (settings.BorderLowerLeftCornerEnabled)
                 {
                     frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + InteriorHeight + 2)}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + Height + 2)}" +
                         $"{settings.BorderLowerLeftCornerChar}"
                     );
                 }
                 if (settings.BorderLowerRightCornerEnabled)
                 {
                     frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + InteriorHeight + 2)}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + Width + 2, Top + Height + 2)}" +
                         $"{settings.BorderLowerRightCornerChar}"
                     );
                 }
@@ -177,19 +171,19 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     frameBuilder.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 1)}" +
-                        $"{new string(settings.BorderUpperFrameChar, InteriorWidth)}"
+                        $"{new string(settings.BorderUpperFrameChar, Width)}"
                     );
                 }
                 if (settings.BorderLowerFrameEnabled)
                 {
                     frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + InteriorHeight + 2)}" +
-                        $"{new string(settings.BorderLowerFrameChar, InteriorWidth)}"
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + Height + 2)}" +
+                        $"{new string(settings.BorderLowerFrameChar, Width)}"
                     );
                 }
 
                 // Left and right edges
-                for (int i = 1; i <= InteriorHeight; i++)
+                for (int i = 1; i <= Height; i++)
                 {
                     if (settings.BorderLeftFrameEnabled)
                     {
@@ -201,22 +195,22 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     if (settings.BorderRightFrameEnabled)
                     {
                         frameBuilder.Append(
-                            $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
+                            $"{CsiSequences.GenerateCsiCursorPosition(Left + Width + 2, Top + i + 1)}" +
                             $"{settings.BorderRightFrameChar}"
                         );
                     }
                 }
 
                 // Drop shadow (if any)
-                if (dropShadow)
+                if (DropShadow)
                 {
-                    for (int i = 1; i <= InteriorHeight + 1; i++)
+                    for (int i = 1; i <= Height + 1; i++)
                     {
                         if (settings.BorderRightFrameEnabled)
                         {
                             frameBuilder.Append(
-                                (useColor ? ColorTools.RenderSetConsoleColor(shadowColor, true) : "") +
-                                $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 3, Top + i + 1)}" +
+                                (UseColors ? ColorTools.RenderSetConsoleColor(ShadowColor, true) : "") +
+                                $"{CsiSequences.GenerateCsiCursorPosition(Left + Width + 3, Top + i + 1)}" +
                                 " "
                             );
                         }
@@ -224,30 +218,30 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     if (settings.BorderLowerFrameEnabled)
                     {
                         frameBuilder.Append(
-                            (useColor ? ColorTools.RenderSetConsoleColor(shadowColor, true) : "") +
-                            $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + InteriorHeight + 3)}" +
-                            $"{new string(' ', InteriorWidth + 2)}"
+                            (UseColors ? ColorTools.RenderSetConsoleColor(ShadowColor, true) : "") +
+                            $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + Height + 3)}" +
+                            $"{new string(' ', Width + 2)}"
                         );
                     }
                 }
 
                 // Colors
-                if (useColor)
+                if (UseColors)
                 {
                     frameBuilder.Append(
-                        ColorTools.RenderSetConsoleColor(TextColor) +
+                        ColorTools.RenderSetConsoleColor(TitleColor) +
                         ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
 
                 // Text title
-                if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0 && ConsoleChar.EstimateCellWidth(text) <= InteriorWidth - 8)
+                if (!string.IsNullOrEmpty(text) && Width - 8 > 0 && ConsoleChar.EstimateCellWidth(text) <= Width - 8)
                 {
                     string finalText =
                         $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
-                        $"{TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)}" +
+                        text.Truncate(Width - 8) +
                         $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "")}";
-                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.TitleAlignment, Left + 2);
+                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, Width - 8, TitleSettings.TitleAlignment, Left + 2);
                     frameBuilder.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
                         $"{finalText}"
@@ -255,7 +249,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
 
                 // Write the resulting buffer
-                if (useColor)
+                if (UseColors)
                 {
                     frameBuilder.Append(
                         ColorTools.RenderRevertForeground() +

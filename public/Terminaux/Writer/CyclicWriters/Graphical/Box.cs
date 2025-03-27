@@ -55,24 +55,18 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            return RenderBox(
-                Left, Top, Width, Height, Color, UseColors);
-        }
-
-        internal static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BoxColor, bool useColor)
-        {
             // Fill the box with spaces inside it
             StringBuilder box = new();
             box.Append(
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(BoxColor, true) : "")}" +
+                $"{(UseColors ? ColorTools.RenderSetConsoleColor(Color, true) : "")}" +
                 CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)
             );
-            for (int y = 1; y <= InteriorHeight; y++)
+            for (int y = 1; y <= Height; y++)
                 box.Append(
-                    new string(' ', InteriorWidth) +
+                    new string(' ', Width) +
                     CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2)
                 );
-            if (useColor)
+            if (UseColors)
                 box.Append(ColorTools.RenderRevertBackground());
             return box.ToString();
         }

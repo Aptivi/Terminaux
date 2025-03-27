@@ -61,33 +61,35 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            return RenderCanvas(
-                Pixels, Left, Top, Width, Height, Color, DoubleWidth, Transparent);
-        }
-
-        internal static string RenderCanvas(CellOptions[] pixels, int Left, int Top, int InteriorWidth, int InteriorHeight, Color CanvasColor, bool doubleWidth = true, bool transparent = false)
-        {
             // Fill the canvas with spaces inside it
+            int widthFactor = DoubleWidth ? 2 : 1;
             StringBuilder canvas = new();
-            if (!transparent)
+            if (!Transparent)
             {
-                canvas.Append(
-                    Box.RenderBox(Left, Top, doubleWidth ? InteriorWidth * 2 : InteriorWidth, InteriorHeight, CanvasColor, true)
-                );
+                var canvasBackground = new Box()
+                {
+                    Left = Left,
+                    Top = Top,
+                    Width = Width * widthFactor,
+                    Height = Height,
+                    Color = Color,
+                    UseColors = true,
+                };
+                canvas.Append(canvasBackground.Render());
             }
-            foreach (var pixel in pixels)
+            foreach (var pixel in Pixels)
             {
                 // Check the pixel locations
                 int left = pixel.ColumnIndex;
                 int top = pixel.RowIndex;
-                if (left < 0 || left > InteriorWidth)
+                if (left < 0 || left > Width)
                     continue;
-                if (top < 0 || top > InteriorHeight)
+                if (top < 0 || top > Height)
                     continue;
 
                 // Print this individual pixel
                 canvas.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(doubleWidth ? "  " : " ", Left + (left * (doubleWidth ? 2 : 1)), Top + 1 + top, ColorTools.CurrentForegroundColor, pixel.CellColor)
+                    TextWriterWhereColor.RenderWhereColorBack(new(' ', widthFactor), Left + (left * widthFactor), Top + 1 + top, ColorTools.CurrentForegroundColor, pixel.CellColor)
                 );
             }
             canvas.Append(ColorTools.RenderRevertBackground());

@@ -135,40 +135,36 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            return RenderTable(
-                Rows, Left, Top, Width, Height, Header, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, UseColors, Settings, BorderSettings, Title);
-        }
-
-        internal static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null, string title = "")
-        {
             // Create a border which the table will be drawn on
             var tableBuilder = new StringBuilder();
-            tableBorderSettings ??= new();
+            var tableBorderSettings = BorderSettings ?? new();
 
             // Check to see if we need a title
-            bool needsTitle = !string.IsNullOrEmpty(title);
+            bool needsTitle = !string.IsNullOrEmpty(Title);
+            int processedHeight = Height;
+            int processedTop = Top;
             if (needsTitle)
             {
-                height -= 2;
-                int titleWidth = ConsoleChar.EstimateCellWidth(title);
+                processedHeight -= 2;
+                int titleWidth = ConsoleChar.EstimateCellWidth(Title);
                 tableBuilder.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(title, left + (width / 2) - (titleWidth / 2), top, HeaderForegroundColor, BackgroundColor)
+                    TextWriterWhereColor.RenderWhereColorBack(Title, Left + (Width / 2) - (titleWidth / 2), processedTop, HeaderColor, BackgroundColor)
                 );
-                top += 2;
+                processedTop += 2;
             }
 
             // Determine the positions
             int columnsCount = Rows.GetLength(1);
             int rowsCount = Rows.GetLength(0);
             (int, int)[,] positions = new (int, int)[columnsCount, rowsCount];
-            int maxCellWidth = (width + 2) / columnsCount;
+            int maxCellWidth = (Width + 2) / columnsCount;
             for (int x = 0; x < columnsCount; x++)
             {
                 for (int y = 0; y < rowsCount; y++)
                 {
-                    int finalPosX = left + maxCellWidth * x + 1;
-                    int finalPosY = top + y + 1;
-                    if (enableHeader && y > 0)
+                    int finalPosX = Left + maxCellWidth * x + 1;
+                    int finalPosY = processedTop + y + 1;
+                    if (Header && y > 0)
                         finalPosY++;
                     positions[x, y] = (finalPosX, finalPosY);
                 }
@@ -177,20 +173,20 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Use the final width to create the actual table
             var border = new Border()
             {
-                Left = left,
-                Top = top,
+                Left = Left,
+                Top = processedTop,
                 Width = maxCellWidth * columnsCount - 1,
-                Height = height,
+                Height = processedHeight,
                 Settings = tableBorderSettings,
-                UseColors = useColor,
+                UseColors = UseColors,
             };
-            if (useColor)
+            if (UseColors)
             {
-                border.Color = SeparatorForegroundColor;
+                border.Color = SeparatorColor;
                 border.BackgroundColor = BackgroundColor;
                 tableBuilder.Append(
                     border.Render() +
-                    ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
+                    ColorTools.RenderSetConsoleColor(SeparatorColor) +
                     ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                 );
             }
@@ -202,13 +198,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             }
 
             // Create a header separator if we need a header
-            if (enableHeader)
+            if (Header)
             {
                 char begin = tableBorderSettings.BorderLeftHorizontalIntersectionChar;
                 char middle = tableBorderSettings.BorderHorizontalIntersectionChar;
                 char end = tableBorderSettings.BorderRightHorizontalIntersectionChar;
-                int headerBorderPosX = left;
-                int headerBorderPosY = top + 2;
+                int headerBorderPosX = Left;
+                int headerBorderPosY = processedTop + 2;
                 tableBuilder.Append(
                     CsiSequences.GenerateCsiCursorPosition(headerBorderPosX + 1, headerBorderPosY + 1) +
                     begin + new string(middle, maxCellWidth * columnsCount - 1) + end
@@ -227,12 +223,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 var positionsSeparator = ((int, int))positions.GetValue(x, 0);
 
                 // Build the separator
-                for (int y = 0; y < height + 2; y++)
+                for (int y = 0; y < processedHeight + 2; y++)
                 {
                     mode =
                         y == 0 ? 1 :
-                        y == height + 1 ? 2 :
-                        y == 2 && enableHeader ? 3 :
+                        y == processedHeight + 1 ? 2 :
+                        y == 2 && Header ? 3 :
                         0;
                     char finalChar =
                         mode == 1 ? beginVertical :
@@ -245,7 +241,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         (mode == 3 && tableBorderSettings.BorderWholeIntersectionEnabled))
                     {
                         tableBuilder.Append(
-                            CsiSequences.GenerateCsiCursorPosition(positionsSeparator.Item1, y + top + 1) +
+                            CsiSequences.GenerateCsiCursorPosition(positionsSeparator.Item1, y + processedTop + 1) +
                             finalChar
                         );
                     }
@@ -259,21 +255,19 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     // Get the initial values
                     var positionsValues = ((int, int))positions.GetValue(x, y);
-                    if (positionsValues.Item2 > height + top)
+                    if (positionsValues.Item2 > processedHeight + processedTop)
                         break;
                     string text = (string)Rows.GetValue(y, x) ?? "";
-                    Color finalColor =
-                        y == 0 && enableHeader ? HeaderForegroundColor :
-                        ValueForegroundColor;
+                    Color finalColor = y == 0 && Header ? HeaderColor : ValueColor;
                     Color finalBackgroundColor = BackgroundColor;
 
                     // Process them according to both the cell width and the cell options
                     string spaces = new(' ', maxCellWidth - 1);
                     text = text.Truncate(maxCellWidth - 4);
                     var alignment = TextAlignment.Left;
-                    if (CellOptions is not null && CellOptions.Count > 0)
+                    if (Settings is not null && Settings.Count > 0)
                     {
-                        var options = CellOptions.FirstOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
+                        var options = Settings.FirstOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
                         if (options is not null)
                         {
                             if (options.ColoredCell)
@@ -289,7 +283,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     int alignmentPosX = TextWriterTools.DetermineTextAlignment(text, maxCellWidth - 1, alignment, positionsValues.Item1);
 
                     // Write them
-                    if (useColor)
+                    if (UseColors)
                     {
                         tableBuilder.Append(
                             TextWriterWhereColor.RenderWhereColorBack(spaces, positionsValues.Item1, positionsValues.Item2, finalColor, finalBackgroundColor) +

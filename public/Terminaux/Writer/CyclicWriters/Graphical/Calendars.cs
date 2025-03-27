@@ -137,20 +137,17 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// Renders a calendar
         /// </summary>
         /// <returns>Rendered calendar that will be used by the renderer</returns>
-        public override string Render() =>
-            RenderCalendar(Left, Top, Width, Height, Year, Month, Culture, Calendar, CellOptions, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, BorderSettings, UseColors);
-
-        internal static string RenderCalendar(int left, int top, int width, int height, int year, int month, CultureInfo culture, Calendar calendar, List<CellOptions> cellOptions, Color separatorColor, Color headerColor, Color valueColor, Color backgroundColor, BorderSettings borderSettings, bool useColor = true)
+        public override string Render()
         {
             var calendarRendered = new StringBuilder();
             var calendarDays = culture.DateTimeFormat.DayNames;
             var calendarMonths = culture.DateTimeFormat.MonthNames;
             var calendarWeek = culture.DateTimeFormat.FirstDayOfWeek;
             var calendarData = new string[7, calendarDays.Length];
-            var maxDate = calendar.GetDaysInMonth(year, month);
+            var maxDate = Calendar.GetDaysInMonth(year, month);
             var selectedDate = new DateTime(year, month, DateTime.Now.Day > maxDate ? 1 : DateTime.Now.Day);
             var (calYear, calMonth, _, _) = GetDateFromCalendar(selectedDate, culture);
-            var DateTo = new DateTime(calYear, calMonth, calendar.GetDaysInMonth(calYear, calMonth));
+            var DateTo = new DateTime(calYear, calMonth, Calendar.GetDaysInMonth(calYear, calMonth));
             int CurrentWeek = 1;
             string CalendarTitle = calendarMonths[month - 1] + " " + calYear;
 
@@ -181,12 +178,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Render the calendar
             var calendarTable = new Table()
             {
-                Left = left,
-                Top = top,
-                Width = width,
-                Height = height,
+                Left = Left,
+                Top = Top,
+                Width = Width,
+                Height = Height,
                 Header = true,
-                Settings = cellOptions,
+                Settings = CellOptions,
                 BorderSettings = borderSettings,
                 BackgroundColor = backgroundColor,
                 ValueColor = valueColor,
@@ -194,7 +191,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 SeparatorColor = separatorColor,
                 Rows = calendarData,
                 Title = CalendarTitle,
-                UseColors = useColor,
+                UseColors = UseColors,
             };
             calendarRendered.Append(calendarTable.Render());
             return calendarRendered.ToString();
