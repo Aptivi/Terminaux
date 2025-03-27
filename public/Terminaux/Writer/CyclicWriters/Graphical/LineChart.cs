@@ -151,12 +151,18 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Build the line renderer
                 int lineWidthInt = (int)lineWidth * 2;
+                int startPosY = Top + (UpsideDown ? height : inverseHeight);
+                int endPosY = Top + (UpsideDown ? nextHeight : inverseNextHeight);
+                if (startPosY == Top + Height)
+                    startPosY--;
+                if (endPosY == Top + Height)
+                    endPosY--;
                 var line = new Line()
                 {
                     Color = element.Color,
                     DoubleWidth = false,
-                    StartPos = new(Left + showcaseLength + (lineWidthInt * e), Top + (UpsideDown ? height : inverseHeight)),
-                    EndPos = new(Left + showcaseLength + (lineWidthInt * (e + 1)), Top + (UpsideDown ? nextHeight : inverseNextHeight)),
+                    StartPos = new(Left + showcaseLength + (lineWidthInt * e), startPosY),
+                    EndPos = new(Left + showcaseLength + (lineWidthInt * (e + 1)), endPosY),
                 };
                 lineChart.Append(line.Render());
             }
