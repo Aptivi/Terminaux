@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Structures;
+
 namespace Terminaux.Writer.CyclicWriters
 {
     /// <summary>
@@ -34,7 +36,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         public virtual int Left
         {
-            get => left;
+            get => left + SetMargins.Margins.Left + Padding.Left;
             set => left = value;
         }
 
@@ -43,7 +45,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         public virtual int Top
         {
-            get => top;
+            get => top + SetMargins.Margins.Top + Padding.Top;
             set => top = value;
         }
 
@@ -52,7 +54,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         public virtual int Width
         {
-            get => width;
+            get => SetMargins.Width;
             set => width = value;
         }
 
@@ -61,8 +63,24 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         public virtual int Height
         {
-            get => height;
+            get => SetMargins.Height;
             set => height = value;
         }
+
+        /// <summary>
+        /// Renderable padding
+        /// </summary>
+        public Padding Padding { get; set; }
+
+        /// <summary>
+        /// Renderable margins
+        /// </summary>
+        public Padding Margins { get; set; }
+
+        /// <summary>
+        /// Final margins to use (set <see cref="Margins"/> to set this property to adjust to the required width and height)
+        /// </summary>
+        public Margin SetMargins =>
+            new(Margins, width, height);
     }
 }
