@@ -89,7 +89,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Print this individual pixel
                 canvas.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(new(' ', widthFactor), Left + (left * widthFactor), Top + 1 + top, ColorTools.CurrentForegroundColor, pixel.CellColor)
+                    TextWriterWhereColor.RenderWhereColorBack(new(' ', widthFactor), Left + (left * widthFactor), Top + top, ColorTools.CurrentForegroundColor, pixel.CellColor)
                 );
             }
             canvas.Append(ColorTools.RenderRevertBackground());
