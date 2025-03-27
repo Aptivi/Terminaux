@@ -27,7 +27,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// <summary>
     /// A parallelogram
     /// </summary>
-    public class Parallelogram : GraphicalCyclicWriter, IGeometricShape
+    public class Parallelogram : GraphicalCyclicWriter
     {
         /// <summary>
         /// Whether to print this filled parallelogram or just the outline

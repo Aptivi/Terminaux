@@ -26,7 +26,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// <summary>
     /// A circle
     /// </summary>
-    public class Circle : GraphicalCyclicWriter, IGeometricShape
+    public class Circle : GraphicalCyclicWriter
     {
         /// <summary>
         /// Whether to print this filled circle or just the outline

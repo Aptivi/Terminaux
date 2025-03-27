@@ -25,7 +25,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// <summary>
     /// A triangle
     /// </summary>
-    public class Triangle : GraphicalCyclicWriter, IGeometricShape
+    public class Triangle : GraphicalCyclicWriter
     {
         /// <summary>
         /// Whether to print this filled triangle or just the outline

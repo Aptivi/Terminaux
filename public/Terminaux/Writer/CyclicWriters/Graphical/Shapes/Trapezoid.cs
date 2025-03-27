@@ -28,7 +28,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
     /// <summary>
     /// A trapezoid
     /// </summary>
-    public class Trapezoid : GraphicalCyclicWriter, IGeometricShape
+    public class Trapezoid : GraphicalCyclicWriter
     {
         /// <summary>
         /// Trapezoid top width
