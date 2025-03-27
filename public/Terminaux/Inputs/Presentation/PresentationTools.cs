@@ -107,8 +107,9 @@ namespace Terminaux.Inputs.Presentation
                     int presentationInformationalTop = ConsoleWrapper.WindowHeight - 2;
 
                     // Make a border
-                    var frame = new BoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}")
+                    var frame = new BoxFrame()
                     {
+                        Text = $"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}",
                         Left = presentationUpperBorderLeft,
                         Top = presentationUpperBorderTop,
                         Width = presentationLowerInnerBorderLeft,
@@ -120,7 +121,7 @@ namespace Terminaux.Inputs.Presentation
                     var box = new Box()
                     {
                         Left = presentationUpperInnerBorderLeft,
-                        Top = presentationUpperBorderTop,
+                        Top = presentationUpperInnerBorderTop,
                         Width = presentationLowerInnerBorderLeft,
                         Height = presentationLowerInnerBorderTop,
                         Color = presentation.BackgroundColor
