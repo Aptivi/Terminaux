@@ -4397,20 +4397,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.IGeometricShape.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.IGeometricShape.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Shapes.IGeometricShape",
-      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.IGeometricShape.yml\" sourcestartlinenumber=\"1\">Geometric shape interface</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Shapes.Parallelogram.yml",
       "output": {
         ".html": {
