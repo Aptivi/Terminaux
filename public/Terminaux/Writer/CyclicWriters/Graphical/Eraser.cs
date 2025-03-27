@@ -27,7 +27,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     public class Eraser : GraphicalCyclicWriter
     {
         /// <summary>
-        /// Renders an aligned figlet text
+        /// Renders a box that will erase parts of the screen
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()

@@ -145,7 +145,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
-        /// Renders an path figlet text
+        /// Renders a path text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()

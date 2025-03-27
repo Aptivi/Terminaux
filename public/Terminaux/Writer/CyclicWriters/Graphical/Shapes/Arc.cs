@@ -50,7 +50,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         /// </summary>
         public int AngleEnd { get; set; }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Shape color
+        /// </summary>
         public Color ShapeColor { get; }
 
         /// <summary>

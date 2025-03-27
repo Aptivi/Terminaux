@@ -188,9 +188,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public Color ShadowColor { get; set; } = ConsoleColors.Grey;
 
         /// <summary>
-        /// Renders an aligned figlet text
+        /// Renders a border
         /// </summary>
-        /// <returns>Rendered text that will be used by the renderer</returns>
+        /// <returns>Rendered border that will be used by the renderer</returns>
         public override string Render()
         {
             if (!customPos)

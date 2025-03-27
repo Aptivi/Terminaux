@@ -130,7 +130,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public string Title { get; set; } = "";
 
         /// <summary>
-        /// Renders an table text
+        /// Renders a table
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()

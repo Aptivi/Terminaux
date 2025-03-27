@@ -45,7 +45,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         /// </summary>
         public bool Filled { get; }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Shape color
+        /// </summary>
         public Color ShapeColor { get; }
 
         /// <summary>

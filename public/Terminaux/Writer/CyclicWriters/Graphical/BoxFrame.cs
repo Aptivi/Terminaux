@@ -117,9 +117,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public Color ShadowColor { get; set; } = ConsoleColors.Grey;
 
         /// <summary>
-        /// Renders an aligned figlet text
+        /// Renders a box frame
         /// </summary>
-        /// <returns>Rendered text that will be used by the renderer</returns>
+        /// <returns>Rendered box frame that will be used by the renderer</returns>
         public override string Render()
         {
             try
@@ -267,7 +267,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
-        /// Makes a new instance of the box renderer
+        /// Makes a new instance of the box frame renderer
         /// </summary>
         /// <param name="text">Text to use</param>
         /// <param name="vars">Variables to format the text with</param>

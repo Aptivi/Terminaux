@@ -164,7 +164,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             incrementRate;
 
         /// <summary>
-        /// Renders an aligned figlet text
+        /// Renders a bounded text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()

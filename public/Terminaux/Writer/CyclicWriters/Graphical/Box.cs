@@ -50,9 +50,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
-        /// Renders an aligned figlet text
+        /// Renders a box
         /// </summary>
-        /// <returns>Rendered text that will be used by the renderer</returns>
+        /// <returns>Rendered box that will be used by the renderer</returns>
         public override string Render()
         {
             // Fill the box with spaces inside it

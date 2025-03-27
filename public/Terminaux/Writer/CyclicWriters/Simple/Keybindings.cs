@@ -166,9 +166,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public ConsoleKeyInfo? HelpKeyInfo { get; set; }
 
         /// <summary>
-        /// Renders a Keybindings segment group
+        /// Renders the keybindings
         /// </summary>
-        /// <returns>Rendered Keybindings text that will be used by the renderer</returns>
+        /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
             var bindingsBuilder = new StringBuilder();
@@ -231,7 +231,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         }
 
         /// <summary>
-        /// Makes a new instance of the Keybindings renderer
+        /// Makes a new instance of the keybindings renderer
         /// </summary>
         public Keybindings()
         { }

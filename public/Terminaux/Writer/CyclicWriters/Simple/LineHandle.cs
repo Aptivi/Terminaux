@@ -72,9 +72,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         }
 
         /// <summary>
-        /// Renders a LineHandle segment group
+        /// Renders a line handle
         /// </summary>
-        /// <returns>Rendered LineHandle text that will be used by the renderer</returns>
+        /// <returns>Rendered line handle text that will be used by the renderer</returns>
         public override string Render()
         {
             if (Ranged)
@@ -133,7 +133,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
 
         /// <summary>
-        /// Makes a new instance of the LineHandle renderer
+        /// Makes a new instance of the line handle renderer
         /// </summary>
         /// <param name="filePath">Path to file to render</param>
         public LineHandle(string filePath)
@@ -142,7 +142,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         }
 
         /// <summary>
-        /// Makes a new instance of the LineHandle renderer
+        /// Makes a new instance of the line handle renderer
         /// </summary>
         /// <param name="fileLines">File lines to render</param>
         public LineHandle(string[] fileLines)
