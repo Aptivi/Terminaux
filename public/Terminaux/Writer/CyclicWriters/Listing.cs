@@ -89,9 +89,9 @@ namespace Terminaux.Writer.CyclicWriters
         public Func<object, string>? RecursiveStringifier { get; set; }
 
         /// <summary>
-        /// Renders a Listing segment group
+        /// Renders a list of elements from an array of objects
         /// </summary>
-        /// <returns>Rendered Listing text that will be used by the renderer</returns>
+        /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render() =>
             RenderList(Objects, KeyColor, ValueColor, UseColors, Stringifier, KeyStringifier, ValueStringifier, RecursiveStringifier);
 
@@ -155,7 +155,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Makes a new instance of the Listing renderer
+        /// Makes a new instance of the array element list renderer
         /// </summary>
         public Listing()
         { }

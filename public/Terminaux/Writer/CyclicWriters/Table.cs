@@ -66,7 +66,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Top position
+        /// List of rows and columns
         /// </summary>
         public string[,] Rows
         {
@@ -170,7 +170,7 @@ namespace Terminaux.Writer.CyclicWriters
         public string Title { get; set; } = "";
 
         /// <summary>
-        /// Renders an table text
+        /// Renders a table
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()

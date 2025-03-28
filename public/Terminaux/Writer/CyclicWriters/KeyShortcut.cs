@@ -108,9 +108,9 @@ namespace Terminaux.Writer.CyclicWriters
         public int Width { get; set; }
 
         /// <summary>
-        /// Renders a KeyShortcut segment group
+        /// Renders a key shortcut
         /// </summary>
-        /// <returns>Rendered KeyShortcut text that will be used by the renderer</returns>
+        /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
             var bindingBuilder = new StringBuilder();
@@ -157,7 +157,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Makes a new instance of the KeyShortcut renderer
+        /// Makes a new instance of the key shortcut renderer
         /// </summary>
         public KeyShortcut()
         { }

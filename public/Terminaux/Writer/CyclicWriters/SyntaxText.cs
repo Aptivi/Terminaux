@@ -125,7 +125,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Renders an syntax figlet text
+        /// Renders a syntax text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()

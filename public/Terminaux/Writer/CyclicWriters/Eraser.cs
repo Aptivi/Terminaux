@@ -68,7 +68,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Renders an aligned figlet text
+        /// Renders a box that will erase parts of the screen
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()

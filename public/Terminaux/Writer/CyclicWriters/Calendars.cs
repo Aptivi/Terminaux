@@ -250,7 +250,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Makes a new instance of the calendars renderer
+        /// Makes a new instance of the calendar renderer
         /// </summary>
         public Calendars()
         { }

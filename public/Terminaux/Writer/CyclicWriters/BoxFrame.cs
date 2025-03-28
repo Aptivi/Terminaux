@@ -157,9 +157,9 @@ namespace Terminaux.Writer.CyclicWriters
         public Color ShadowColor { get; set; } = ConsoleColors.Grey;
 
         /// <summary>
-        /// Renders an aligned figlet text
+        /// Renders a box frame
         /// </summary>
-        /// <returns>Rendered text that will be used by the renderer</returns>
+        /// <returns>Rendered box frame that will be used by the renderer</returns>
         public string Render()
         {
             return RenderBoxFrame(

@@ -176,9 +176,9 @@ namespace Terminaux.Writer.CyclicWriters
         public ConsoleKeyInfo? HelpKeyInfo { get; set; }
 
         /// <summary>
-        /// Renders a Keybindings segment group
+        /// Renders the keybindings
         /// </summary>
-        /// <returns>Rendered Keybindings text that will be used by the renderer</returns>
+        /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render() =>
             TextWriterWhereColor.RenderWhere(
                 RenderKeybindings(KeybindingList, BuiltinKeybindings, BuiltinColor, BuiltinForegroundColor, BuiltinBackgroundColor, OptionColor, OptionForegroundColor, OptionBackgroundColor, BackgroundColor, Width, HelpKeyInfo, UseColors, WriteLabels, WriteHelpKeyInfo), Left, Top);
@@ -245,7 +245,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Makes a new instance of the Keybindings renderer
+        /// Makes a new instance of the keybindings renderer
         /// </summary>
         public Keybindings()
         { }

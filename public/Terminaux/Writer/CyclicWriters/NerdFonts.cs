@@ -71,7 +71,7 @@ namespace Terminaux.Writer.CyclicWriters
             (UseColors ? ColorTools.RenderResetForeground() : "");
 
         /// <summary>
-        /// Makes a new nerdfonts instance
+        /// Makes a new Nerd Fonts instance
         /// </summary>
         /// <param name="type">Nerd Fonts type</param>
         /// <param name="charName">Character name</param>

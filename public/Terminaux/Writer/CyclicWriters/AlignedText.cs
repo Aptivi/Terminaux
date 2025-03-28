@@ -78,7 +78,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Left margin of the aligned figlet text
+        /// Left margin of the aligned text
         /// </summary>
         public int LeftMargin
         {
@@ -92,7 +92,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Right margin of the aligned figlet text
+        /// Right margin of the aligned text
         /// </summary>
         public int RightMargin
         {
@@ -178,7 +178,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Renders an aligned figlet text
+        /// Renders an aligned text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()

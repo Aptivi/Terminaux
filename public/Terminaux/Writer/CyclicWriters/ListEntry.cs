@@ -80,9 +80,9 @@ namespace Terminaux.Writer.CyclicWriters
         public int Indentation { get; set; }
 
         /// <summary>
-        /// Renders a ListEntry segment group
+        /// Renders a list entry
         /// </summary>
-        /// <returns>Rendered ListEntry text that will be used by the renderer</returns>
+        /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render() =>
             RenderListEntry(Entry, Value, KeyColor, ValueColor, Indentation, UseColors, Indicator);
 
@@ -106,7 +106,7 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Makes a new instance of the ListEntry renderer
+        /// Makes a new instance of the list entry renderer
         /// </summary>
         public ListEntry()
         { }
