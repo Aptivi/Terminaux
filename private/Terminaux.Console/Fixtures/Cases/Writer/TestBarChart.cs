@@ -36,6 +36,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var chart = new BarChart()
             {
                 InteriorWidth = ConsoleWrapper.WindowWidth - 4,
+                InteriorHeight = 4,
                 Left = 2,
                 Top = 4,
                 Showcase = true,

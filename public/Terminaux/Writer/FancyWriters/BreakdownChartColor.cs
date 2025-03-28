@@ -63,8 +63,18 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="showcase">Show the element list</param>
         /// <param name="vertical">Whether to render this chart vertically or horizontally</param>
         /// <returns>The rendered breakdown chart</returns>
-        public static string RenderBreakdownChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool vertical = false) =>
-            BreakdownChart.RenderBreakdownChart(elements, InteriorWidth, InteriorHeight, showcase, vertical);
+        public static string RenderBreakdownChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false, bool vertical = false)
+        {
+            var breakdownChart = new BreakdownChart()
+            {
+                Elements = elements,
+                InteriorWidth = InteriorWidth,
+                InteriorHeight = InteriorHeight,
+                Showcase = showcase,
+                Vertical = vertical,
+            };
+            return breakdownChart.Render();
+        }
 
         static BreakdownChartColor()
         {

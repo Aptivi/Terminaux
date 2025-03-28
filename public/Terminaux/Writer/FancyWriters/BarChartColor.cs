@@ -59,8 +59,16 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="showcase">Show the element list</param>
         /// <returns>The rendered bar chart</returns>
-        public static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false) =>
-            BarChart.RenderBarChart(elements, InteriorWidth, showcase);
+        public static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false)
+        {
+            var barChart = new BarChart()
+            {
+                Elements = elements,
+                InteriorWidth = InteriorWidth,
+                Showcase = showcase,
+            };
+            return barChart.Render();
+        }
 
         static BarChartColor()
         {

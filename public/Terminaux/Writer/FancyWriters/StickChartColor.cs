@@ -61,8 +61,17 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window</param>
         /// <param name="showcase">Show the element list</param>
         /// <returns>The rendered stick chart</returns>
-        public static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false) =>
-            StickChart.RenderStickChart(elements, InteriorWidth, InteriorHeight, showcase);
+        public static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false)
+        {
+            var stickChart = new StickChart()
+            {
+                Elements = elements,
+                InteriorWidth = InteriorWidth,
+                InteriorHeight = InteriorHeight,
+                Showcase = showcase
+            };
+            return stickChart.Render();
+        }
 
         static StickChartColor()
         {

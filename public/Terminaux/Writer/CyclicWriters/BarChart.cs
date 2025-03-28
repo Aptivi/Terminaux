@@ -20,6 +20,7 @@
 using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
@@ -36,6 +37,7 @@ namespace Terminaux.Writer.CyclicWriters
         private int left = 0;
         private int top = 0;
         private int interiorWidth = 0;
+        private int interiorHeight = 0;
         private bool showcase = false;
         private bool useColors = true;
 
@@ -67,6 +69,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Interior width
+        /// </summary>
+        public int InteriorHeight
+        {
+            get => interiorHeight;
+            set => interiorHeight = value;
+        }
+
+        /// <summary>
         /// Show the element list
         /// </summary>
         public bool Showcase
@@ -94,17 +105,15 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to render the bars backwards (right to left) or not (left to right)
+        /// </summary>
+        public bool Backwards { get; set; }
+
+        /// <summary>
         /// Renders a bar chart
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
-        {
-            return TextWriterWhereColor.RenderWhere(
-                RenderBarChart(
-                    elements, InteriorWidth, Showcase, UseColors), Left, Top);
-        }
-
-        internal static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false, bool useColor = true)
         {
             // Some variables
             int maxNameLength = InteriorWidth / 4;
@@ -113,44 +122,55 @@ namespace Terminaux.Writer.CyclicWriters
             int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
             nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
             int showcaseLength = showcase ? nameLength + 3 : 0;
-            int wholeLength = InteriorWidth - showcaseLength - (showcase ? 3 : 0);
+            int wholeLength = InteriorWidth - showcaseLength;
 
             // Fill the bar chart with the elements first
             StringBuilder barChart = new();
-            foreach (var element in elements)
+            if (Showcase)
             {
-                var color = element.Color;
-                string name = element.Name;
-                bool hidden = element.Hidden;
-                double value = element.Value;
-                if (hidden)
-                    continue;
-
-                // Render the showcase
-                if (showcase)
+                for (int i = 0; i < shownElements.Length; i++)
                 {
-                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length));
-                    int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
-                    spaces = spaces < 0 ? 0 : spaces;
+                    // Get the element showcase position and write it there
+                    bool canShow = InteriorHeight > i;
+                    if (!canShow)
+                        break;
+                    Coordinate coord = new(Left, Top + i);
+                    var element = shownElements[i];
+
+                    // Now, write it at the selected position
                     barChart.Append(
-                        (useColor ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
+                        ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
                         " ■ " +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                         element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
-                        (useColor ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                         element.Value +
-                        new string(' ', spaces) +
                         " ┃ "
                     );
                 }
+            }
+
+            // Show the actual bar
+            for (int e = 0; e < shownElements.Length; e++)
+            {
+                bool canShow = InteriorHeight > e;
+                if (!canShow)
+                    break;
+                var element = shownElements[e];
+                var color = element.Color;
+                double value = element.Value;
 
                 // Render the element and its value
+                Coordinate coord = new(Left + showcaseLength, Top + e);
                 int length = (int)(value * wholeLength / maxValue);
-                barChart.AppendLine(
-                    (useColor ? ColorTools.RenderSetConsoleColor(color, true) : "") +
+                int diff = Backwards ? wholeLength - length : 0;
+                barChart.Append(
+                    ConsolePositioning.RenderChangePosition(coord.X + diff, coord.Y) +
+                    (UseColors ? ColorTools.RenderSetConsoleColor(color, true) : "") +
                     new string(' ', length) +
-                    (useColor ? ColorTools.RenderResetBackground() : "") +
-                    (useColor ? ColorTools.RenderResetForeground() : "")
+                    (UseColors ? ColorTools.RenderResetBackground() : "") +
+                    (UseColors ? ColorTools.RenderResetForeground() : "")
                 );
             }
 
