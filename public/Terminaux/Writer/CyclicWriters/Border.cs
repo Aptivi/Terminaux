@@ -234,7 +234,7 @@ namespace Terminaux.Writer.CyclicWriters
                 var box = new Box()
                 {
                     Left = Left + 1,
-                    Top = Top,
+                    Top = Top + 1,
                     InteriorWidth = InteriorWidth,
                     InteriorHeight = InteriorHeight,
                     UseColors = useColor,

@@ -105,12 +105,12 @@ namespace Terminaux.Writer.CyclicWriters
             StringBuilder box = new();
             box.Append(
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(BoxColor, true) : "")}" +
-                CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)
+                CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)
             );
             for (int y = 1; y <= InteriorHeight; y++)
                 box.Append(
                     new string(' ', InteriorWidth) +
-                    CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2)
+                    CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 1)
                 );
             if (useColor)
                 box.Append(ColorTools.RenderRevertBackground());
