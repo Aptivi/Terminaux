@@ -31,8 +31,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            var aligned = new AlignedText($"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台右側{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}。")
+            var aligned = new AlignedText()
             {
+                Text = $"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台右側{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}。",
                 ForegroundColor = ConsoleColors.Green,
                 Settings = new() { Alignment = TextAlignment.Right }
             };

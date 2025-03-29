@@ -31,8 +31,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            var aligned = new AlignedText($"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}left of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))} and is intentionally very long to demonstrate the off-centering with right margin offset and left margin offset.")
+            var aligned = new AlignedText()
             {
+                Text = $"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}left of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))} and is intentionally very long to demonstrate the off-centering with right margin offset and left margin offset.",
                 ForegroundColor = ConsoleColors.Green,
                 Settings = new()
                 {
