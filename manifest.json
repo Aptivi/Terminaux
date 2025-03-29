@@ -4873,6 +4873,76 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Asciicast.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Asciicast.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.Asciicast",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Asciicast.yml\" sourcestartlinenumber=\"1\">Asciicast v1 class containing info for recorded terminal screencast</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciicastV1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciicastV1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciicastV1",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciicastV1.yml\" sourcestartlinenumber=\"1\">Asciicast v1 class containing info for recorded terminal screencast</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciicastV2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciicastV2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciicastV2",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciicastV2.yml\" sourcestartlinenumber=\"1\">Asciicast v2 class containing info for recorded terminal screencast</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.EnvironmentInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.EnvironmentInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.EnvironmentInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.EnvironmentInfo.yml\" sourcestartlinenumber=\"1\">Environment information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.ThemeInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.ThemeInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.ThemeInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.ThemeInfo.yml\" sourcestartlinenumber=\"1\">Theme information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer.yml",
       "output": {
         ".html": {
