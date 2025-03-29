@@ -166,12 +166,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int processedChoices = 0;
             int startIndexTristates = 0;
             int startIndexGroupTristates = 0;
-            var tristates = SelectionInputTools.GetCategoryTristates(Selections, choices, CurrentSelections, ref startIndexTristates);
+            var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, choices, CurrentSelections, ref startIndexTristates) : [];
             int relatedIdx = -1;
             for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
             {
                 InputChoiceCategoryInfo? category = Selections[categoryIdx];
-                var tristate = tristates[categoryIdx];
+                var tristate = isMultiple ? tristates[categoryIdx] : SelectionTristate.Unselected;
                 if (Selections.Length > 1)
                 {
                     string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
@@ -180,11 +180,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     processedHeight++;
                 }
 
-                var groupTristates = SelectionInputTools.GetGroupTristates(category.Groups, choices, CurrentSelections, ref startIndexGroupTristates);
+                var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, choices, CurrentSelections, ref startIndexGroupTristates) : [];
                 for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
                 {
                     InputChoiceGroupInfo? group = category.Groups[groupIdx];
-                    var groupTristate = groupTristates[groupIdx];
+                    var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
                     if (category.Groups.Length > 1)
                     {
                         string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
