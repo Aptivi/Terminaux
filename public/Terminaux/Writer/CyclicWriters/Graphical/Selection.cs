@@ -157,7 +157,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Now, render the choices
             StringBuilder buffer = new();
-            StringBuilder choiceText = new();
+            List<(string text, Color fore, Color back, bool force, int truncate)> choiceText = [];
             string prefix = isMultiple ? "  [ ] " : "  ";
             int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
             int leftPos = Left + (SliderInside ? 1 : 0);
@@ -175,12 +175,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (Selections.Length > 1)
                 {
                     string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
-                    string finalRendered = $"{modifiers}{category.Name}".Truncate(Width);
-                    choiceText.AppendLine(
-                        ColorTools.RenderSetConsoleColor(ConsoleColorData.Silver.Color) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true) +
-                        finalRendered + new string(' ', Width - ConsoleChar.EstimateCellWidth(finalRendered))
-                    );
+                    string finalRendered = $"{modifiers}{category.Name}";
+                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true, Width));
                     processedHeight++;
                 }
 
@@ -192,12 +188,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     if (category.Groups.Length > 1)
                     {
                         string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
-                        string finalRendered = $"  {modifiers}{group.Name}".Truncate(Width);
-                        choiceText.AppendLine(
-                            ColorTools.RenderSetConsoleColor(ConsoleColorData.Grey.Color) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true) +
-                            finalRendered + new string(' ', Width - ConsoleChar.EstimateCellWidth(finalRendered))
-                        );
+                        string finalRendered = $"  {modifiers}{group.Name}";
+                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true, Width - 2));
                         processedHeight++;
                     }
                     for (int i = 0; i < group.Choices.Length; i++)
@@ -217,7 +209,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                         }
-                        AnswerOption = AnswerOption.Truncate(Width - 4);
 
                         // Render an entry
                         bool isAlt = i > AltChoicePos;
@@ -237,20 +228,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                     SwapSelectedColors ? SelectedForegroundColor : SelectedBackgroundColor
                                  :
                                 isAlt ? AltBackgroundColor : BackgroundColor;
-                        if (UseColors)
-                        {
-                            choiceText.AppendLine(
-                                ColorTools.RenderSetConsoleColor(finalForeColor) +
-                                ColorTools.RenderSetConsoleColor(finalBackColor, true) +
-                                AnswerOption + new string(' ', Width - ConsoleChar.EstimateCellWidth(AnswerOption))
-                            );
-                        }
-                        else
-                        {
-                            choiceText.AppendLine(
-                                AnswerOption + new string(' ', Width - ConsoleChar.EstimateCellWidth(AnswerOption))
-                            );
-                        }
+                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false, Width - 4));
                         processedHeight++;
                         processedChoices++;
                         selectionHeights.Add(processedHeight);
@@ -262,7 +240,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int selectionHeight = selectionHeights[CurrentSelection];
             int currentPage = (selectionHeight - 1) / Height;
             int startIndex = Height * currentPage;
-            var choiceTextLines = choiceText.ToString().SplitNewLines();
             bool wiped = false;
             for (int i = 0; i <= Height - 1; i++)
             {
@@ -286,10 +263,18 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
                 else
                 {
-                    string line = choiceTextLines[finalIndex];
+                    var (text, fore, back, force, truncate) = choiceText[finalIndex];
+                    if (UseColors || force)
+                    {
+                        buffer.Append(
+                            ColorTools.RenderSetConsoleColor(fore) +
+                            ColorTools.RenderSetConsoleColor(back, true)
+                        );
+                    }
+                    string truncated = text.Truncate(truncate);
                     buffer.Append(
                         CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
-                        line
+                        truncated + new string(' ', Width - ConsoleChar.EstimateCellWidth(truncated))
                     );
                 }
             }
