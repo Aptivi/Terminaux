@@ -17,6 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Newtonsoft.Json;
+using Terminaux.Colors;
+
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
@@ -24,6 +27,79 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
     /// </summary>
     public static class AsciinemaPlayer
     {
+        /// <summary>
+        /// Environment information
+        /// </summary>
+        public class EnvironmentInfo
+        {
+            [JsonProperty("TERM")]
+            private readonly string terminal = "";
+            [JsonProperty("SHELL")]
+            private readonly string shell = "";
+
+            /// <summary>
+            /// Terminal emulator name
+            /// </summary>
+            [JsonIgnore]
+            public string Terminal =>
+                terminal;
+
+            /// <summary>
+            /// Path to shell used
+            /// </summary>
+            [JsonIgnore]
+            public string Shell =>
+                shell;
+        }
+        
+        /// <summary>
+        /// Theme information
+        /// </summary>
+        public class ThemeInfo
+        {
+            [JsonProperty("fg")]
+            private readonly string foregroundString = "";
+            [JsonProperty("bg")]
+            private readonly string backgroundString = "";
+            [JsonProperty("palette")]
+            private readonly string palette = "";
+
+            /// <summary>
+            /// Foreground color as string
+            /// </summary>
+            [JsonIgnore]
+            public string ForegroundString =>
+                foregroundString;
+
+            /// <summary>
+            /// Foreground color
+            /// </summary>
+            [JsonIgnore]
+            public Color Foreground =>
+                new(ForegroundString);
+
+            /// <summary>
+            /// Background color as string
+            /// </summary>
+            [JsonIgnore]
+            public string BackgroundString =>
+                backgroundString;
+
+            /// <summary>
+            /// Background color
+            /// </summary>
+            [JsonIgnore]
+            public Color Background =>
+                new(BackgroundString);
+
+            /// <summary>
+            /// Palette representation
+            /// </summary>
+            [JsonIgnore]
+            public string Palette =>
+                palette;
+        }
+
         // TODO: Populate AsciiCast player code
     }
 }
