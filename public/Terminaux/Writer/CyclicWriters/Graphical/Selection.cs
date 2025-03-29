@@ -164,7 +164,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             List<int> selectionHeights = [];
             int processedHeight = 0;
             int processedChoices = 0;
-            var tristates = SelectionInputTools.GetCategoryTristates(Selections, choices, CurrentSelections);
+            int startIndexTristates = 0;
+            int startIndexGroupTristates = 0;
+            var tristates = SelectionInputTools.GetCategoryTristates(Selections, choices, CurrentSelections, ref startIndexTristates);
             int relatedIdx = -1;
             for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
             {
@@ -182,7 +184,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     processedHeight++;
                 }
 
-                var groupTristates = SelectionInputTools.GetGroupTristates(category.Groups, choices, CurrentSelections);
+                var groupTristates = SelectionInputTools.GetGroupTristates(category.Groups, choices, CurrentSelections, ref startIndexGroupTristates);
                 for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
                 {
                     InputChoiceGroupInfo? group = category.Groups[groupIdx];

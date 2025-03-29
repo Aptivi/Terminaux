@@ -35,13 +35,13 @@ namespace Terminaux.Inputs.Styles.Selection
             return choices;
         }
 
-        internal static List<SelectionTristate> GetCategoryTristates(InputChoiceCategoryInfo[] categories, List<InputChoiceInfo> choices, int[]? currentSelections)
+        internal static List<SelectionTristate> GetCategoryTristates(InputChoiceCategoryInfo[] categories, List<InputChoiceInfo> choices, int[]? currentSelections, ref int startIndex)
         {
             List<SelectionTristate> categoryTristates = [];
             foreach (var category in categories)
             {
                 SelectionTristate tristate = SelectionTristate.Unselected;
-                var tristates = GetGroupTristates(category.Groups, choices, currentSelections);
+                var tristates = GetGroupTristates(category.Groups, choices, currentSelections, ref startIndex);
                 tristate =
                     tristates.All((ts) => ts == SelectionTristate.Selected) ? SelectionTristate.Selected :
                     tristates.All((ts) => ts == SelectionTristate.Unselected) ? SelectionTristate.Unselected :
@@ -51,13 +51,13 @@ namespace Terminaux.Inputs.Styles.Selection
             return categoryTristates;
         }
 
-        internal static List<SelectionTristate> GetGroupTristates(InputChoiceGroupInfo[] groups, List<InputChoiceInfo> choices, int[]? currentSelections)
+        internal static List<SelectionTristate> GetGroupTristates(InputChoiceGroupInfo[] groups, List<InputChoiceInfo> choices, int[]? currentSelections, ref int startIndex)
         {
             List<SelectionTristate> groupTristates = [];
             foreach (var group in groups)
             {
                 SelectionTristate tristate = SelectionTristate.Unselected;
-                var tristates = GetChoiceTristates(group.Choices, choices, currentSelections);
+                var tristates = GetChoiceTristates(group.Choices, choices, currentSelections, ref startIndex);
                 tristate =
                     tristates.All((ts) => ts == SelectionTristate.Selected) ? SelectionTristate.Selected :
                     tristates.All((ts) => ts == SelectionTristate.Unselected) ? SelectionTristate.Unselected :
@@ -67,16 +67,17 @@ namespace Terminaux.Inputs.Styles.Selection
             return groupTristates;
         }
 
-        internal static List<SelectionTristate> GetChoiceTristates(InputChoiceInfo[] groupChoices, List<InputChoiceInfo> choices, int[]? currentSelections)
+        internal static List<SelectionTristate> GetChoiceTristates(InputChoiceInfo[] groupChoices, List<InputChoiceInfo> choices, int[]? currentSelections, ref int startIndex)
         {
             List<SelectionTristate> choiceTristates = [];
             currentSelections ??= [];
-            var indexes = choices.Select((ici, idx) => (ici, idx)).Where((tuple) => groupChoices.Contains(tuple.ici)).Select((tuple) => tuple.idx);
-            foreach (var index in indexes)
+            int endIndex = startIndex + groupChoices.Length;
+            for (int i = startIndex; i < endIndex; i++)
             {
-                SelectionTristate tristate = currentSelections.Contains(index) ? SelectionTristate.Selected : SelectionTristate.Unselected;
+                SelectionTristate tristate = currentSelections.Contains(i) ? SelectionTristate.Selected : SelectionTristate.Unselected;
                 choiceTristates.Add(tristate);
             }
+            startIndex = endIndex;
             return choiceTristates;
         }
 
