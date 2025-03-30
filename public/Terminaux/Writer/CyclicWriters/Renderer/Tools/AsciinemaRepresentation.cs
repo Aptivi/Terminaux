@@ -18,6 +18,7 @@
 //
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 using System.Text;
@@ -98,6 +99,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         {
             // Check to see if this is an Asciinema v2 file
             using var contentStreamReader = new StreamReader(asciiCastStream);
+            using var contentReaderVerify = new JsonTextReader(contentStreamReader);
             using var contentReader = new JsonTextReader(contentStreamReader);
             contentReader.SupportMultipleContent = true;
 
@@ -110,25 +112,27 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 if (!addingData)
                 {
                     // Try to serialize at least the version
-                    var deserializedBaseData = serializer.Deserialize<Asciicast>(contentReader) ??
+                    var asciiCastToken = JToken.ReadFrom(contentReader);
+                    var asciicastGeneric = asciiCastToken.ToObject<Asciicast>() ??
                         throw new TerminauxException("Can't deserialize base Asciicast representation");
+                    int version = asciicastGeneric.Version;
 
                     // Verify the version
-                    if (deserializedBaseData.Version != 1 && deserializedBaseData.Version != 2)
-                        throw new TerminauxException($"Version {deserializedBaseData.Version} is invalid");
+                    if (version != 1 && version != 2)
+                        throw new TerminauxException($"Version {version} is invalid");
 
                     // Now, determine whether to use the v1 or the v2 class
-                    if (deserializedBaseData.Version == 1)
+                    if (version == 1)
                     {
                         // We are on version 1. Use its class and deserialize it
-                        var deserializedAsciicast = serializer.Deserialize<AsciicastV1>(contentReader) ??
+                        var deserializedAsciicast = asciiCastToken.ToObject<AsciicastV1>() ??
                             throw new TerminauxException("Can't deserialize Asciicast v1 representation");
                         asciicast = deserializedAsciicast;
                     }
                     else
                     {
                         // We are on version 2. Use its class and deserialize it
-                        var deserializedAsciicast = serializer.Deserialize<AsciicastV2>(contentReader) ??
+                        var deserializedAsciicast = asciiCastToken.ToObject<AsciicastV2>() ??
                             throw new TerminauxException("Can't deserialize Asciicast v2 representation");
                         asciicast = deserializedAsciicast;
                         addingData = true;
@@ -141,7 +145,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                         throw new TerminauxException("Can't obtain event information");
 
                     // Get items from this array and install their values
-                    float delay = (float)readArray[0];
+                    double delay = (double)readArray[0];
                     string eventType = (string)readArray[1];
                     string data = (string)readArray[2];
                     asciicastV2.stdOutData.Add((delay, eventType, data));

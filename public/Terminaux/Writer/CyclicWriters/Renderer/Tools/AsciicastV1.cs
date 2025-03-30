@@ -71,17 +71,17 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// Delay and Data
         /// </summary>
         [JsonIgnore]
-        public List<(float, string, string)> StdOutData
+        public List<(double, string, string)> StdOutData
         {
             get
             {
-                var dataList = new List<(float, string, string)>();
+                var dataList = new List<(double, string, string)>();
                 if (stdOutData.Length == 0)
                     return [];
                 foreach (var dataArray in stdOutData)
                 {
                     // Get the delay and the printed data
-                    float delay = (float)dataArray[0];
+                    double delay = (double)dataArray[0];
                     string printed = (string)dataArray[1];
 
                     // Add them to the data list

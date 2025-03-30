@@ -43,7 +43,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         [JsonProperty("theme")]
         private readonly ThemeInfo? theme;
         [JsonIgnore]
-        internal List<(float, string, string)> stdOutData = [];
+        internal List<(double, string, string)> stdOutData = [];
 
         /// <summary>
         /// Duration of the Asciicast recording
@@ -98,7 +98,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// Delay and Data
         /// </summary>
         [JsonIgnore]
-        public List<(float, string, string)> StdOutData =>
-            stdOutData;
+        public List<(double, string, string)> StdOutData =>
+            [.. stdOutData];
     }
 }
