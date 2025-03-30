@@ -181,6 +181,10 @@ namespace Terminaux.Console.Fixtures
             new TestWinsLosses(),
             new TestPieChart(),
             new TestLinesChart(),
+            new TestAsciinemaV1(),
+            new TestAsciinemaV1NoResize(),
+            new TestAsciinemaV2(),
+            new TestAsciinemaV2NoResize(),
 
             // Input
             new TestInputSelection(),

@@ -18,6 +18,7 @@
 //
 
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
@@ -53,5 +54,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         [JsonIgnore]
         public int Height =>
             height;
+
+        /// <summary>
+        /// Delay and Data
+        /// </summary>
+        [JsonIgnore]
+        public virtual List<(double, string, string)> StdOutData =>
+            [];
     }
 }

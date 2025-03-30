@@ -18,7 +18,11 @@
 //
 
 using Newtonsoft.Json;
+using System;
+using System.Threading;
+using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
@@ -100,6 +104,72 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 palette;
         }
 
-        // TODO: Populate AsciiCast player code
+        /// <summary>
+        /// Plays the Asciinema recording in full-screen mode
+        /// </summary>
+        /// <param name="representation">Asciinema representation containing a valid instance of <see cref="Asciicast"/></param>
+        /// <param name="resizeWindow">Whether to resize the window when playing</param>
+        public static void PlayAsciinema(AsciinemaRepresentation representation, bool resizeWindow = true)
+        {
+            var asciicast = representation.Asciicast;
+            PlayAsciinema(asciicast, resizeWindow);
+        }
+
+        /// <summary>
+        /// Plays the Asciinema recording in full-screen mode
+        /// </summary>
+        /// <param name="asciicast">Asciicast instance containing recorded data</param>
+        /// <param name="resizeWindow">Whether to resize the window when playing</param>
+        public static void PlayAsciinema(Asciicast asciicast, bool resizeWindow = true)
+        {
+            // Get the initial window size
+            int oldWidth = ConsoleWrapper.WindowWidth;
+            int oldHeight = ConsoleWrapper.WindowHeight;
+
+            // Try to set the window size
+            if (resizeWindow)
+                ConsoleWrapper.SetWindowDimensions(asciicast.Width, asciicast.Height);
+
+            // Clear the screen
+            ColorTools.LoadBack();
+
+            // Process the stdout data
+            for (int i = 0; i < asciicast.StdOutData.Count; i++)
+            {
+                // Get the standard output data
+                (double timePoint, string eventType, string data) = asciicast.StdOutData[i];
+                (double nextTimePoint, _, _) = i + 1 < asciicast.StdOutData.Count ? asciicast.StdOutData[i + 1] : (timePoint, "", "");
+
+                // Get the time point difference in time span
+                double timePointDiff = nextTimePoint - timePoint;
+                if (asciicast is AsciicastV2 asciicastV2 && timePointDiff > asciicastV2.IdleTimeLimit && asciicastV2.IdleTimeLimit > 0)
+                    timePointDiff = asciicastV2.IdleTimeLimit;
+                var timePointSpan = TimeSpan.FromSeconds(timePointDiff);
+
+                // Determine the event type
+                switch (eventType)
+                {
+                    case "i":
+                    case "o":
+                        // Output or input event
+                        TextWriterRaw.WriteRaw(data);
+                        break;
+                    case "r":
+                        // Resize events in this format: {Columns}x{Rows}
+                        int newWidth = int.Parse(data.Substring(0, data.IndexOf('x')));
+                        int newHeight = int.Parse(data.Substring(data.IndexOf('x') + 1));
+                        if (resizeWindow)
+                            ConsoleWrapper.SetWindowDimensions(newWidth, newHeight);
+                        break;
+                }
+
+                // Now, wait between two events
+                Thread.Sleep((int)timePointSpan.TotalMilliseconds);
+            }
+
+            // Try to restore the window size
+            if (resizeWindow)
+                ConsoleWrapper.SetWindowDimensions(oldWidth, oldHeight);
+        }
     }
 }

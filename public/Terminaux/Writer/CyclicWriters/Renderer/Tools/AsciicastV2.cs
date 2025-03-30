@@ -98,7 +98,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// Delay and Data
         /// </summary>
         [JsonIgnore]
-        public List<(double, string, string)> StdOutData =>
+        public override List<(double, string, string)> StdOutData =>
             [.. stdOutData];
     }
 }
