@@ -1723,6 +1723,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.InputModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.InputModule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.InputModule",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.InputModule.yml\" sourcestartlinenumber=\"1\">Abstract input module class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.yml",
       "output": {
         ".html": {
