@@ -2493,6 +2493,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.yml\" sourcestartlinenumber=\"1\">Info box writer with input and color support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxNonModalColor.yml",
       "output": {
         ".html": {
