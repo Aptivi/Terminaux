@@ -21,6 +21,8 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using static Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaPlayer;
 
+#pragma warning disable CS0649
+
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
