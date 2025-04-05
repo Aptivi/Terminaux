@@ -25,7 +25,11 @@
         ],
         "resource": [
             {
-                "files": [ "images/**" ]
+                "files": [ 
+                    "images/**",
+                    "logo.svg",
+                    "favicon.ico"
+                ]
             }
         ],
         "dest": "../docs",
@@ -35,7 +39,7 @@
         },
         "globalMetadataFiles": [],
         "fileMetadataFiles": [],
-        "template": [ "default" ],
+        "template": [ "default", "theme" ],
         "postProcessors": [],
         "markdownEngineName": "markdig",
         "noLangKeyword": false,
