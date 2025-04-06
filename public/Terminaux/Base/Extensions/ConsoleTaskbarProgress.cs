@@ -75,6 +75,7 @@ namespace Terminaux.Base.Extensions
             // Now, try to write a VT sequence for Windows Terminal
             uint hundredths = (uint)((double)progressValue * 100 / maximum);
             string sequence = GenerateVtSequence(state, hundredths);
+            ConsoleLogger.Debug("Progress state is {0}, {1} (determined from {2}, {3})", state, hundredths, maximum, progressValue);
             TextWriterRaw.WriteRaw(sequence);
         }
 

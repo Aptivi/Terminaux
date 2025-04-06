@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
 using DrawingColor = System.Drawing.Color;
 using OurColor = Terminaux.Colors.Color;
 
@@ -49,6 +50,7 @@ namespace Terminaux.Colors.Interop
             int a = drawingColor.A;
             finalSettings.Opacity = a;
             var color = new OurColor(r, g, b, finalSettings);
+            ConsoleLogger.Debug("Converted color RGBA {0}, {1}, {2}, {3} from System.Drawing to Terminaux.", r, g, b, a);
             return color;
         }
 
@@ -69,6 +71,7 @@ namespace Terminaux.Colors.Interop
             int b = ourColor.RGB.originalBlue;
             int a = ourColor.RGB.originalAlpha;
             var color = DrawingColor.FromArgb(a, r, g, b);
+            ConsoleLogger.Debug("Converted color RGBA {0}, {1}, {2}, {3} from Terminaux to System.Drawing.", r, g, b, a);
             return color;
         }
     }

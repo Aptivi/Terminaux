@@ -85,6 +85,7 @@ namespace Terminaux.Colors.Templates
                 throw new TerminauxException($"Component {componentName} already exists.");
 
             // Now, add a component
+            ConsoleLogger.Debug("Adding component {0} with color {1}", componentName, color.RGB.ToString());
             components.Add(componentName, color);
         }
 
@@ -102,6 +103,7 @@ namespace Terminaux.Colors.Templates
                 throw new TerminauxException($"Component {componentName} is predefined and thus cannot be removed.");
 
             // Now, add a component
+            ConsoleLogger.Debug("Removing component {0}", componentName);
             components.Remove(componentName);
         }
 
@@ -120,6 +122,7 @@ namespace Terminaux.Colors.Templates
                 throw new TerminauxException($"Component {componentName} doesn't exist.");
 
             // Now, add a component
+            ConsoleLogger.Debug("Modifying component {0} with color {1}", componentName, color.RGB.ToString());
             components[componentName] = color;
         }
 
@@ -148,12 +151,15 @@ namespace Terminaux.Colors.Templates
             {
                 string name = kvp.Key;
                 Color? color = kvp.Value;
+                ConsoleLogger.Debug("Processing component {0}...", name);
                 if (string.IsNullOrEmpty(name))
                     throw new TerminauxException("No component name specified.");
                 if (color is null)
                     throw new TerminauxException($"No color specified for component {name}.");
+                ConsoleLogger.Debug("With color {0}, checking component count of {1}", color.RGB.ToString(), components.Count);
                 if (components.Count == 0)
                     throw new TerminauxException("Template has no components.");
+                ConsoleLogger.Debug("Adding component {0} to valid components...", name);
                 finalComponents.Add(name, color);
             }
             if (!TemplateComponentValidation(finalComponents))

@@ -22,6 +22,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
@@ -174,8 +175,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine("Failed to render syntax text: " + ex.Message);
-                        Debug.WriteLine(ex);
+                        ConsoleLogger.Error(ex, "Failed to render syntax text: " + ex.Message);
                     }
                 }
 
@@ -203,8 +203,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
             }
             return "";
         }

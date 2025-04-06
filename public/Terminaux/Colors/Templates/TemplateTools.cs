@@ -62,6 +62,7 @@ namespace Terminaux.Colors.Templates
         {
             if (string.IsNullOrWhiteSpace(template))
                 throw new TerminauxException("No name of the template provided.");
+            ConsoleLogger.Debug("Template {0} is being checked...", template);
             return TemplateNames.Contains(template);
         }
 
@@ -74,6 +75,7 @@ namespace Terminaux.Colors.Templates
         {
             if (string.IsNullOrWhiteSpace(template))
                 throw new TerminauxException("No name of the template provided.");
+            ConsoleLogger.Debug("Built-in template {0} is being checked...", template);
             return baseTemplates.Any((templateInfo) => templateInfo.Name == template);
         }
 
@@ -89,6 +91,7 @@ namespace Terminaux.Colors.Templates
                 throw new TerminauxException("Can't find template {0}", template);
 
             // Now, set the default template
+            ConsoleLogger.Debug("Setting default template from {0} to {1}...", defaultTemplate, template);
             defaultTemplate = template;
         }
 
@@ -119,6 +122,7 @@ namespace Terminaux.Colors.Templates
 
             // Now, get the template
             int idx = GetTemplateIndexFrom(template);
+            ConsoleLogger.Debug("Returning template instance from {0} using index {1}...", template, idx);
             return Templates[idx];
         }
 
@@ -163,6 +167,7 @@ namespace Terminaux.Colors.Templates
             var templateInfo = GetTemplate(template);
             if (!templateInfo.Components.TryGetValue(componentName, out Color componentColor))
                 throw new TerminauxException("Can't find component {0} in template {1}", componentName, template);
+            ConsoleLogger.Debug("Returning color {0} [{1}] from template instance {2}...", componentName, componentColor.RGB.ToString(), template);
             return componentColor;
         }
 
@@ -231,6 +236,7 @@ namespace Terminaux.Colors.Templates
                 throw new TerminauxException("Template has no pre-defined components that must be defined ({0}).", string.Join(", ", Enum.GetNames(typeof(PredefinedComponentType))));
 
             // Now, actually register the template
+            ConsoleLogger.Debug("Adding valid custom template...");
             customTemplates.Add(template);
         }
 
@@ -248,6 +254,7 @@ namespace Terminaux.Colors.Templates
 
             // Now, remove the template
             var templateInfo = GetTemplate(template);
+            ConsoleLogger.Debug("Removing valid custom template {0}...", template);
             customTemplates.Remove(templateInfo);
         }
 
@@ -273,6 +280,7 @@ namespace Terminaux.Colors.Templates
 
             // Now, get the template JSON
             var templateInfo = GetTemplate(template);
+            ConsoleLogger.Debug("Serializing template {0}...", template);
             return JsonConvert.SerializeObject(templateInfo, Formatting.Indented);
         }
 

@@ -70,6 +70,7 @@ namespace Terminaux.Base.TermInfo
             // Check all directories
             foreach (var directory in directories)
             {
+                ConsoleLogger.Info("Loading from {0}, {1}", directory, name);
                 var desc = Load(directory, name);
                 if (desc != null)
                     return desc;
@@ -77,16 +78,19 @@ namespace Terminaux.Base.TermInfo
 
             // Last resort (builtins tracked from Debian's NCurses: https://packages.debian.org/sid/all/ncurses-base/download
             // and https://packages.debian.org/sid/all/ncurses-term/download)
+            ConsoleLogger.Warning("All {0} directories led to nonexistent terminfo file when finding {1}", directories.Count, name);
             var builtins = TermInfoDesc.GetBuiltinPaths();
             foreach (string builtin in builtins)
             {
                 string termNamePath = builtin.RemovePrefix("Terminaux.Resources.TermFiles.");
                 string termName = termNamePath.Substring(termNamePath.IndexOf('.') + 1);
+                ConsoleLogger.Debug("Checking builtin terminfo: {0} (path: {1}, {2})", termName, termNamePath, builtin);
                 if (termName.Equals(name, StringComparison.OrdinalIgnoreCase))
                     return Load(typeof(TermInfoDesc).Assembly.GetManifestResourceStream(builtin));
             }
 
             // We're totally screwed
+            ConsoleLogger.Error("Finding {0} to be loaded failed.", name);
             throw new TerminauxException($"Can't load {name}");
         }
 
@@ -108,8 +112,12 @@ namespace Terminaux.Base.TermInfo
 
             foreach (var file in files)
             {
+                ConsoleLogger.Debug("Trying {0} for {1}...", file, name);
                 if (File.Exists(file))
+                {
+                    ConsoleLogger.Debug("Loading {0} for {1}...", file, name);
                     return Load(File.OpenRead(file));
+                }
             }
 
             return null;

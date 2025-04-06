@@ -50,7 +50,9 @@ namespace Terminaux.Colors.Transformation.Contrast
             int r = color.RGB.R;
             int g = color.RGB.G;
             int b = color.RGB.B;
+            ConsoleLogger.Debug("Calculating luma info from RGB {0}...", color.RGB.ToString());
             double lumaInfo = (r * (0.299d * 1000) + g * (0.587d * 1000) + b * (0.114d * 1000)) / 1000;
+            ConsoleLogger.Debug("Luma: {0} (>= 128 ? black : gray)", lumaInfo);
             return lumaInfo >= 128 ? black : gray;
         }
 
@@ -65,6 +67,7 @@ namespace Terminaux.Colors.Transformation.Contrast
             var gray = new Color(ConsoleColors.Silver);
             int rgbDecimal = Convert.ToInt32(color.Hex.Substring(1), 16);
             int rgbDecimalHalfWhite = 0xffffff / 2;
+            ConsoleLogger.Debug("Decimal: {0} (>= {1} ? black : gray)", rgbDecimal, rgbDecimalHalfWhite);
             return rgbDecimal > rgbDecimalHalfWhite ? black : gray;
         }
 
@@ -98,18 +101,26 @@ namespace Terminaux.Colors.Transformation.Contrast
 
             // Forbid setting these colors as they're considered too dark
             bool seeable = true;
+            ConsoleLogger.Debug("Checking {0}, {1}, {2}, {3}, and {4} for visibility", type, colorLevel, colorR, colorG, colorB);
             if (type == ColorType.TrueColor)
             {
                 // Consider any color with all of the color levels less than 30 unseeable
                 if (colorR < 30 && colorG < 30 && colorB < 30)
+                {
+                    ConsoleLogger.Warning("Color levels are below the threshold (30).");
                     seeable = false;
+                }
             }
             else
             {
                 // Consider any blacklisted color as unseeable
                 if (unseeables.Contains(colorLevel))
+                {
+                    ConsoleLogger.Warning("Color level is unseeable.");
                     seeable = false;
+                }
             }
+            ConsoleLogger.Debug("Result is {0}", seeable);
             return seeable;
         }
     }

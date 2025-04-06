@@ -74,9 +74,13 @@ namespace Terminaux.Base.Buffered
             if (string.IsNullOrEmpty(name))
                 throw new TerminauxException("You must specify the screen name.");
             while (screenParts.ContainsKey(name))
+            {
                 name += $" [{screenParts.Count}]";
+                ConsoleLogger.Debug("Changed screen part name to {0} due to conflict", name);
+            }
 
             // Now, add the buffered part
+            ConsoleLogger.Info("Adding screen part {0}...", name);
             screenParts.Add(name, part);
         }
 
@@ -94,7 +98,9 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("You must specify the screen part.");
 
             // Now, edit the buffered part
+            ConsoleLogger.Debug("Getting screen part from idx {0} / {1}", idx, screenParts.Count);
             var kvp = screenParts.ElementAt(idx);
+            ConsoleLogger.Info("Editing screen part {0} from idx {1}...", kvp.Key, idx);
             EditBufferedPart(kvp.Key, part);
         }
 
@@ -112,6 +118,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("You must specify the screen part.");
 
             // Now, edit the buffered part
+            ConsoleLogger.Info("Editing screen part {0} from id...", name);
             screenParts[name] = part;
         }
 
@@ -123,6 +130,7 @@ namespace Terminaux.Base.Buffered
         /// <exception cref="TerminauxException"></exception>
         public void EditBufferedPart(Guid id, ScreenPart part)
         {
+            ConsoleLogger.Debug("Screen part GUID is {0}.", id.ToString());
             var partSource = screenParts.FirstOrDefault((part) => part.Value.Id == id);
             if (partSource.Value is null)
                 throw new TerminauxException("The specified part is not found.");
@@ -130,6 +138,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("You must specify the screen part.");
 
             // Now, edit the buffered part
+            ConsoleLogger.Info("Editing screen part {0} from id...", partSource.Key);
             screenParts[partSource.Key] = part;
         }
 
@@ -144,7 +153,9 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("The specified part index is out of range.");
 
             // Now, remove the buffered part
+            ConsoleLogger.Debug("Getting screen part from idx {0} / {1}", idx, screenParts.Count);
             var kvp = screenParts.ElementAt(idx);
+            ConsoleLogger.Info("Removing screen part {0} from idx {1}...", kvp.Key, idx);
             RemoveBufferedPart(kvp.Key);
         }
 
@@ -159,6 +170,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("The specified part name is not found.");
 
             // Now, remove the buffered part
+            ConsoleLogger.Info("Removing screen part {0} from id...", name);
             screenParts.Remove(name);
         }
 
@@ -169,9 +181,11 @@ namespace Terminaux.Base.Buffered
         /// <exception cref="TerminauxException"></exception>
         public void RemoveBufferedPart(Guid id)
         {
+            ConsoleLogger.Debug("Screen part GUID is {0}.", id.ToString());
             var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
             if (part.Value is null)
                 throw new TerminauxException("The specified part is not found.");
+            ConsoleLogger.Info("Removing screen part {0} from id...", part.Key);
             RemoveBufferedPart(part.Key);
         }
 
@@ -186,6 +200,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("The specified part index is out of range.");
 
             // Now, get the buffered part
+            ConsoleLogger.Debug("Getting screen part from idx {0} / {1}", idx, screenParts.Count);
             var kvp = screenParts.ElementAt(idx);
             return GetBufferedPart(kvp.Key);
         }
@@ -201,6 +216,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("The specified part name is not found.");
 
             // Now, get the buffered part
+            ConsoleLogger.Info("Returning screen part {0}...", name);
             return part;
         }
 
@@ -211,11 +227,13 @@ namespace Terminaux.Base.Buffered
         /// <exception cref="TerminauxException"></exception>
         public ScreenPart GetBufferedPart(Guid id)
         {
+            ConsoleLogger.Debug("Screen part GUID is {0}.", id.ToString());
             var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
             if (part.Value is null)
                 throw new TerminauxException("The specified part is not found.");
 
             // Now, get the buffered part
+            ConsoleLogger.Info("Returning screen part {0} from id...", part.Key);
             return part.Value;
         }
 
@@ -230,7 +248,9 @@ namespace Terminaux.Base.Buffered
                 return false;
 
             // Now, check the buffered part
+            ConsoleLogger.Debug("Getting screen part from idx {0} / {1}", idx, screenParts.Count);
             var kvp = screenParts.ElementAt(idx);
+            ConsoleLogger.Info("Checking screen part {0} from idx {1}...", kvp.Key, idx);
             return CheckBufferedPart(kvp.Key);
         }
 
@@ -241,9 +261,10 @@ namespace Terminaux.Base.Buffered
         /// <exception cref="TerminauxException"></exception>
         public bool CheckBufferedPart(string name)
         {
-            if (!screenParts.ContainsKey(name))
-                return false;
-            return true;
+            ConsoleLogger.Info("Checking screen part {0} from id...", name);
+            bool exists = screenParts.ContainsKey(name);
+            ConsoleLogger.Debug("{0} exists: {1}", name, exists);
+            return exists;
         }
 
         /// <summary>
@@ -253,10 +274,11 @@ namespace Terminaux.Base.Buffered
         /// <exception cref="TerminauxException"></exception>
         public bool CheckBufferedPart(Guid id)
         {
+            ConsoleLogger.Debug("Screen part GUID is {0}.", id.ToString());
             var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
-            if (part.Value is null)
-                return false;
-            return true;
+            bool exists = part.Value is not null;
+            ConsoleLogger.Debug("{0} exists: {1}", id.ToString(), exists);
+            return exists;
         }
 
         /// <summary>
@@ -274,6 +296,7 @@ namespace Terminaux.Base.Buffered
             var builder = new StringBuilder();
             builder.Append(clearPart.GetBuffer());
             var sortedParts = ScreenParts.OrderBy((part) => part.Order).ToList();
+            ConsoleLogger.Info("Getting buffer from {0} parts...", sortedParts.Count);
             foreach (var part in sortedParts)
                 builder.Append(part.GetBuffer());
             return builder.ToString();
@@ -302,6 +325,7 @@ namespace Terminaux.Base.Buffered
                 builder.Append(ColorTools.RenderRevertBackground());
                 if (needsRefresh || ConsoleResizeHandler.WasResized(ResetResize))
                 {
+                    ConsoleLogger.Info("Screen requires refresh due to refresh request ({0}) or resize.", needsRefresh);
                     needsRefresh = false;
                     builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
                 }

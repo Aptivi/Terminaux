@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
@@ -42,6 +43,7 @@ namespace Terminaux.Colors.Transformation.Formulas
             int invG = 255 - g;
             int invB = 255 - b;
             var final = TransformationTools.BlendColor((r, g, b), (invR, invG, invB), Frequency);
+            ConsoleLogger.Debug("Transformed to {0} using parameters: freq: {1}, blend: {2}", (final.RGB.R, final.RGB.G, final.RGB.B), Frequency, (invR, invG, invB));
             return (final.RGB.R, final.RGB.G, final.RGB.B);
         }
     }

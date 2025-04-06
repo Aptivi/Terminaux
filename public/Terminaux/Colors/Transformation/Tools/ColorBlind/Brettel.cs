@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 
 namespace Terminaux.Colors.Transformation.Tools.ColorBlind
 {
@@ -181,6 +182,7 @@ namespace Terminaux.Colors.Transformation.Tools.ColorBlind
             int sRGB_R = TransformationTools.LinearRGBTosRGB(rgbMatrix[0]);
             int sRGB_G = TransformationTools.LinearRGBTosRGB(rgbMatrix[1]);
             int sRGB_B = TransformationTools.LinearRGBTosRGB(rgbMatrix[2]);
+            ConsoleLogger.Debug("Transformed to {0} using parameters: def: {1}, severity: {2}", (sRGB_R, sRGB_G, sRGB_B), def, severity);
             return (sRGB_R, sRGB_G, sRGB_B);
         }
     }

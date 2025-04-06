@@ -91,12 +91,14 @@ namespace Terminaux.Base.Extensions
             {
                 if (types.HasFlag(type))
                 {
+                    ConsoleLogger.Debug("Parsing type {0} to get formatting sequence...", type);
                     var sequenceTuple = TypeSequenceNumbers[type];
 
                     // First, check for TermInfo value
                     string finalValue = sequenceTuple.Item2 is not null ? sequenceTuple.Item2.ProcessSequence() ?? "" : "";
                     if (string.IsNullOrWhiteSpace(finalValue))
                         finalValue = VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, sequenceTuple.Item1);
+                    ConsoleLogger.Debug("Adding {0} bytes representing {1} ({2})...", finalValue.Length, type, sequenceTuple.Item1);
                     builder.Append(finalValue);
                 }
             }
@@ -122,6 +124,7 @@ namespace Terminaux.Base.Extensions
         {
             TextWriterRaw.WriteRaw(GetFormattingSequences(ConsoleFormattingType.Default));
             formatting = ConsoleFormattingType.Default;
+            ConsoleLogger.Debug("Formatting reset");
         }
 
         static ConsoleFormatting()

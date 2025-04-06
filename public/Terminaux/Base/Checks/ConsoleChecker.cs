@@ -70,6 +70,7 @@ namespace Terminaux.Base.Checks
                     }
                 }
                 catch { }
+                ConsoleLogger.Debug("Dumb is {0}", _dumb);
                 return _dumb;
             }
         }
@@ -102,6 +103,7 @@ namespace Terminaux.Base.Checks
             var asm = Assembly.GetEntryAssembly();
             if (asm is null || asm.FullName.ContainsAnyOf(whitelist) || asm.FullName.ContainsAnyOf([.. customWhitelist]))
             {
+                ConsoleLogger.Debug("Not going to check console due to assembly being whitelisted (B: {0}, C: {1}) or null", whitelist.Length, customWhitelist.Count);
                 busy = false;
                 acknowledged = true;
                 return;
@@ -110,10 +112,12 @@ namespace Terminaux.Base.Checks
             // Now, check the type
             string TerminalType = PlatformHelper.GetTerminalType();
             string TerminalEmulator = PlatformHelper.GetTerminalEmulator();
+            ConsoleLogger.Debug("Checking against terminal {0} on {1}", TerminalType, TerminalEmulator);
 
             // Check if the terminal type is "dumb".
             if (IsDumb)
             {
+                ConsoleLogger.Fatal("Terminal {0} on {1} is dumb!", TerminalType, TerminalEmulator);
                 FastFail(
                     "User tried to run a Terminaux application using a dumb terminal.",
                     "This application makes use of extended console features provided by Terminaux that require features not supported by \"dumb\" terminals." + Environment.NewLine +
@@ -125,28 +129,40 @@ namespace Terminaux.Base.Checks
             // Check the blacklist and the graylist for the console type
             var (blacklisted, justification) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
             var (graylisted, justification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist);
+            ConsoleLogger.Debug("Terminal {0} on {1} blacklisted: {2}: {3}", TerminalType, TerminalEmulator, blacklisted, justification);
+            ConsoleLogger.Debug("Terminal {0} on {1} graylisted: {2}: {3}", TerminalType, TerminalEmulator, graylisted, justification2);
             if (blacklisted)
             {
+                ConsoleLogger.Fatal("Terminal {0} on {1} is blacklisted!", TerminalType, TerminalEmulator);
                 FastFail(
                     "User tried to run a Terminaux application on a blacklisted terminal type.",
                     $"The console type you're currently using, {TerminalType}, is blacklisted: {justification}"
                 );
             }
             if (graylisted)
+            {
+                ConsoleLogger.Warning("Terminal {0} on {1} is graylisted!", TerminalType, TerminalEmulator);
                 TextWriterRaw.WritePlain($"The console type you're currently using, {TerminalType}, is graylisted: {justification2}");
+            }
 
             // Check the blacklist and the graylist for the terminal emulator
             var (emuBlacklisted, emuJustification) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist);
             var (emuGraylisted, emuJustification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Emulator, ConsoleFilterSeverity.Graylist);
+            ConsoleLogger.Debug("Emulator {0} blacklisted: {1}: {2}", TerminalEmulator, emuBlacklisted, emuJustification);
+            ConsoleLogger.Debug("Emulator {0} graylisted: {1}: {2}", TerminalEmulator, emuGraylisted, emuJustification2);
             if (emuBlacklisted)
             {
+                ConsoleLogger.Fatal("Emulator {0} is blacklisted!", TerminalEmulator);
                 FastFail(
                     "User tried to run a Terminaux application on a blacklisted terminal emulator.",
                     $"The terminal emulator you're currently using, {TerminalEmulator}, is blacklisted: {emuJustification}"
                 );
             }
             if (emuGraylisted)
+            {
+                ConsoleLogger.Warning("Emulator {0} is graylisted!", TerminalEmulator);
                 TextWriterRaw.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is graylisted: {emuJustification2}");
+            }
 
             // Check for 256 colors
             if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
@@ -159,8 +175,10 @@ namespace Terminaux.Base.Checks
             }
             catch (IOException ex)
             {
+                ConsoleLogger.Error(ex, "Checking against terminal {0} on {1} for positioning failed with an I/O error", TerminalType, TerminalEmulator);
                 if (PlatformHelper.IsOnWindows())
                 {
+                    ConsoleLogger.Fatal("It may be running in Git Bash's MinTTY!");
                     FastFail(
                         "User tried to run a Terminaux application on Git Bash's MinTTY without winpty.",
                         "You'll need to use winpty to be able to use this program. If you are sure that you're not running Git Bash, ensure that you're using a proper Windows terminal.",
@@ -170,14 +188,16 @@ namespace Terminaux.Base.Checks
                 else
                     TextWriterColor.WriteColor("Console positioning is not working due to an I/O error, so this application might behave erratically.", ConsoleColors.Yellow);
             }
-            catch
+            catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Checking against terminal {0} on {1} for positioning failed", TerminalType, TerminalEmulator);
                 TextWriterColor.WriteColor("Console positioning is not working properly, so this application might behave erratically.", ConsoleColors.Yellow);
             }
 
             // Set the encoding
             if (PlatformHelper.IsOnWindows())
             {
+                ConsoleLogger.Debug("Setting codepage...");
                 Console.InputEncoding = Encoding.Unicode;
                 Console.OutputEncoding = Encoding.Unicode;
             }
@@ -185,6 +205,7 @@ namespace Terminaux.Base.Checks
             // Don't check again.
             busy = false;
             acknowledged = true;
+            ConsoleLogger.Info("This Terminaux application can now run!");
         }
 
         /// <summary>
@@ -200,12 +221,16 @@ namespace Terminaux.Base.Checks
                     return true;
                 if (termInfo.MaxColors is null)
                     return false;
+                ConsoleLogger.Debug("Max colors is {0}", termInfo.MaxColors);
+                ConsoleLogger.Info("Max color requirement met: {0}", termInfo.MaxColors.Value >= 256);
                 return termInfo.MaxColors.Value >= 256;
             }
             else
             {
                 IntPtr stdHandle = NativeMethods.GetStdHandle(-11);
                 uint mode = ConsoleMisc.GetMode(stdHandle);
+                ConsoleLogger.Debug("Mode is {0}", mode);
+                ConsoleLogger.Info("Max color requirement met: {0}", (mode & 4) == 0);
                 return (mode & 4) == 0;
             }
         }
@@ -220,6 +245,7 @@ namespace Terminaux.Base.Checks
             // If we're being run on TMUX, the status bar might mess up our interpretation of the window height.
             if (PlatformHelper.IsRunningFromTmux())
             {
+                ConsoleLogger.Info("Running from TMUX. Total size may be affected.");
                 try
                 {
                     // Try to get the status variable from the global TMUX "status" variable. Additionally, we need to replace
@@ -232,13 +258,17 @@ namespace Terminaux.Base.Checks
                     int exitCode = -1;
                     FileExistsInPath("sh", ref shellPath);
                     string output = ExecuteProcessToString(shellPath, "-c \"tmux show-options -v -g status | sed 's/on/1/g' | sed 's/off/0/g'\"", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exitCode, false);
+                    ConsoleLogger.Debug("tmux show-options... exited with status {0} and with output {1}", exitCode, output);
 
                     // If we couldn't get this variable, assume that the status height is 1.
                     if (exitCode == 0)
                     {
                         // We got it! Now, let's parse it.
                         if (int.TryParse(output, out int numStatusBars))
+                        {
                             minimumHeight -= numStatusBars;
+                            ConsoleLogger.Debug("Status bar height is {0}", numStatusBars);
+                        }
                     }
                     else
                     {
@@ -247,9 +277,10 @@ namespace Terminaux.Base.Checks
                         minimumHeight--;
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     // We couldn't get the status variable from the global TMUX "status" variable. Assume that it's 1.
+                    ConsoleLogger.Error(ex, "Failed to try to get \"status\" variable");
                     minimumHeight--;
                 }
             }
@@ -263,6 +294,7 @@ namespace Terminaux.Base.Checks
                 {
                     if (line.StartsWith(statusKey) && line != "hardstatus off")
                     {
+                        ConsoleLogger.Debug("Found hardstatus being on [{0}]", line);
                         minimumHeight--;
                         break;
                     }
@@ -270,6 +302,7 @@ namespace Terminaux.Base.Checks
             }
 
             // Check for the minimum console window requirements (80x24)
+            ConsoleLogger.Info("Minimum width is {0}, and height is {1}", minimumWidth, minimumHeight);
             return
                 !(ConsoleWrapper.WindowWidth < minimumWidth |
                   ConsoleWrapper.WindowHeight < minimumHeight);
@@ -311,10 +344,11 @@ namespace Terminaux.Base.Checks
                 var consolePtr = NativeMethods.GetConsoleWindow();
                 var result = NativeMethods.SendMessage(consolePtr, NativeMethods.WM_GETICON, IntPtr.Zero, IntPtr.Zero);
                 conHost = result != IntPtr.Zero;
+                ConsoleLogger.Debug("Conhost detection returned {0}", conHost);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Debug.WriteLine($"IsConHost(): {e}");
+                ConsoleLogger.Error(ex, $"Error while detecting conhost: {ex.Message}");
             }
 
             // Return the result
@@ -332,7 +366,10 @@ namespace Terminaux.Base.Checks
 
             // Add the partial name for the assembly to the whitelist
             if (!customWhitelist.Contains(asm.FullName))
+            {
                 customWhitelist.Add(asm.FullName);
+                ConsoleLogger.Debug("Added assembly {0} to check whitelist", asm.FullName);
+            }
         }
 
         /// <summary>
@@ -346,12 +383,17 @@ namespace Terminaux.Base.Checks
 
             // Add the partial name for the assembly to the whitelist
             if (customWhitelist.Contains(asm.FullName))
+            {
                 customWhitelist.Remove(asm.FullName);
+                ConsoleLogger.Debug("Removed assembly {0} from check whitelist", asm.FullName);
+            }
         }
 
         internal static void FastFail(string eventMessage, string description, Exception? ex = null)
         {
             TextWriterColor.WriteColor($"{description} Can't continue.", ConsoleColors.Red);
+            ConsoleLogger.Fatal("Event: {0}, desc: {1}", eventMessage, description);
+            ConsoleLogger.Fatal("Rude exit");
             if (ex is null)
                 Environment.FailFast(eventMessage);
             else
@@ -439,8 +481,7 @@ namespace Terminaux.Base.Checks
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Error trying to execute command {File}. Error {ex.GetType().FullName}: {ex.Message}");
-                Debug.WriteLine(ex.StackTrace);
+                ConsoleLogger.Error(ex, $"Error trying to execute command {File}. Error {ex.GetType().FullName}: {ex.Message}");
                 exitCode = -1;
             }
             return commandOutputBuilder.ToString();

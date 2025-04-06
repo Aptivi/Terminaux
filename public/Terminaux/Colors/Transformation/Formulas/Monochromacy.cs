@@ -58,6 +58,7 @@ namespace Terminaux.Colors.Transformation.Formulas
                 _ => throw new TerminauxException("Invalid monochromacy type"),
             };
             var final = TransformationTools.BlendColor((r, g, b), (mono.r, mono.g, mono.b), Frequency);
+            ConsoleLogger.Debug("Transformed to {0} using parameters: freq: {1}, blend: {2}", (final.RGB.R, final.RGB.G, final.RGB.B), Frequency, (mono.r, mono.g, mono.b));
             return (final.RGB.R, final.RGB.G, final.RGB.B);
         }
     }

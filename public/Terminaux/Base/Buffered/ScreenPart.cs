@@ -103,9 +103,13 @@ namespace Terminaux.Base.Buffered
             if (!visible)
                 return "";
             var finalBuffer = new StringBuilder();
-            foreach (var dynamicBuffer in dynamicBuffers)
+            for (int i = 0; i < dynamicBuffers.Count; i++)
+            {
+                (bool visible, Func<string> buffer) dynamicBuffer = dynamicBuffers[i];
+                ConsoleLogger.Debug("Dynamic buffer {0} visibility ({1}).", i, dynamicBuffer.visible);
                 if (dynamicBuffer.visible)
                     finalBuffer.Append(dynamicBuffer.buffer());
+            }
             return finalBuffer.ToString();
         }
 

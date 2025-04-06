@@ -56,6 +56,7 @@ namespace Terminaux.Colors.Gradients
                 steps = 1;
             if (steps == 1)
             {
+                ConsoleLogger.Warning("Gradients in one step is not possible.");
                 var source = new ColorGradient(1, sourceColor);
                 var target = new ColorGradient(2, targetColor);
                 gradients.enumerator.gradients.Add(source);
@@ -73,12 +74,14 @@ namespace Terminaux.Colors.Gradients
             double currentColorRed = sourceColor.RGB.R;
             double currentColorGreen = sourceColor.RGB.G;
             double currentColorBlue = sourceColor.RGB.B;
+            ConsoleLogger.Debug("{0} steps: {1}, {2}, {3}", steps, colorRedSteps, colorGreenSteps, colorBlueSteps);
             for (int x = 0; x <= steps; x++)
             {
                 // Make a new instance of Color to indicate the intermediate gradient color
                 var currentColorInstance = new Color($"{Convert.ToInt32(currentColorRed)};{Convert.ToInt32(currentColorGreen)};{Convert.ToInt32(currentColorBlue)}");
                 var gradient = new ColorGradient(x + 1, currentColorInstance);
                 gradients.enumerator.gradients.Add(gradient);
+                ConsoleLogger.Info("Adding gradient with levels {0}, {1}, {2}...", currentColorRed, currentColorGreen, currentColorBlue);
 
                 // Change the colors
                 currentColorRed -= colorRedSteps;
@@ -109,6 +112,7 @@ namespace Terminaux.Colors.Gradients
             // Check the values
             if (colors.Length == 1)
             {
+                ConsoleLogger.Warning("Gradients in one color is not possible.");
                 var gradient = new ColorGradient(1, colors[0].Item2);
                 gradients.enumerator.gradients.Add(gradient);
                 return gradients;
@@ -117,6 +121,7 @@ namespace Terminaux.Colors.Gradients
                 steps = 1;
             if (steps == 1)
             {
+                ConsoleLogger.Warning("Gradients in one step is not possible.");
                 var source = new ColorGradient(1, colors[0].Item2);
                 var target = new ColorGradient(2, colors[colors.Length - 1].Item2);
                 gradients.enumerator.gradients.Add(source);
@@ -204,10 +209,12 @@ namespace Terminaux.Colors.Gradients
                 // Get the color according to the step that represents the level
                 int levelIdx = (int)(currentLevel * 100 / finalMaxLevel);
                 level = gradients[levelIdx].IntermediateColor;
+                ConsoleLogger.Debug("Got color {0} from level index {1} / {2}.", level.RGB.ToString(), levelIdx, finalMaxLevel);
             }
             else
             {
                 // Get the color according to the current level
+                ConsoleLogger.Debug("Level: {0} (comparing against low {1} and mid {2})", currentLevel, lowLevel, midLevel);
                 if (currentLevel >= midLevel)
                     level = high;
                 else if (currentLevel >= lowLevel)

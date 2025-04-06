@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 using Terminaux.Colors.Transformation.Tools.ColorBlind;
 
 namespace Terminaux.Colors.Transformation.Formulas
@@ -54,6 +55,7 @@ namespace Terminaux.Colors.Transformation.Formulas
             var transformed = Simple ?
                 Vienot.Transform(r, g, b, Deficiency, Frequency) :
                 Brettel.Transform(r, g, b, Deficiency, Frequency);
+            ConsoleLogger.Debug("Transformed to {0} using parameters: def: {1}, freq: {2}", transformed, Deficiency, Frequency);
             return transformed;
         }
     }

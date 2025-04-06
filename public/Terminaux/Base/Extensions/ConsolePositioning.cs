@@ -149,6 +149,7 @@ namespace Terminaux.Base.Extensions
             }
 
             // Return the filtered positions
+            ConsoleLogger.Debug("Got seek positions {0}, {1}", LeftSeekPosition, TopSeekPosition);
             return (LeftSeekPosition, TopSeekPosition);
         }
 

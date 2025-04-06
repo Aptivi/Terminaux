@@ -40,6 +40,7 @@ namespace Terminaux.Base.Extensions
         {
             var synthInfo = JsonConvert.DeserializeObject<SynthInfo>(synthJson) ??
                 throw new TerminauxException("Can't get synth info from the provided representation.");
+            ConsoleLogger.Debug("Synth: {0} (JSON {1} bytes)", synthInfo.Name, synthJson.Length);
             return synthInfo;
         }
 
@@ -55,20 +56,30 @@ namespace Terminaux.Base.Extensions
                 for (int i = 0; i < synthInfo.Chapters.Length; i++)
                 {
                     SynthInfo.Chapter chapter = synthInfo.Chapters[i];
+                    ConsoleLogger.Debug("Chapter index {0}: {1}", i, chapter.Name);
                     for (int j = 0; j < chapter.Synths.Length; j++)
                     {
                         string synth = chapter.Synths[j];
                         var split = synth.Split(' ');
+                        ConsoleLogger.Debug("Synth split to {0} elements", split.Length);
                         if (split.Length != 2)
                             throw new TerminauxException($"Synth representation is invalid at [{i + 1}.{j + 1}]");
+                        ConsoleLogger.Debug("Frequency is {0} (unparsed)", split[0]);
                         if (!int.TryParse(split[0], out int freq))
                             throw new TerminauxException($"Frequency is invalid at [{i + 1}.{j + 1}]");
+                        ConsoleLogger.Debug("Delay is {0} (unparsed)", split[1]);
                         if (!int.TryParse(split[1], out int ms))
                             throw new TerminauxException($"Duration is invalid at [{i + 1}.{j + 1}]");
                         if (freq == 0)
+                        {
+                            ConsoleLogger.Debug("Sleeping for {0} ms...", ms);
                             Thread.Sleep(ms);
+                        }
                         else
+                        {
+                            ConsoleLogger.Debug("Playing at {0} Hz for {1} ms...", freq, ms);
                             ConsoleWrapper.Beep(freq, ms);
+                        }
                     }
                 }
             }

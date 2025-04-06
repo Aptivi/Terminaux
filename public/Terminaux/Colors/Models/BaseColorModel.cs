@@ -36,7 +36,7 @@ namespace Terminaux.Colors.Models
         /// <returns>True if the specifier is valid; false otherwise.</returns>
         public static bool IsSpecifierValid(string specifier, bool checkParts = false)
         {
-            Debug.WriteLine($"{specifier}, {checkParts}");
+            ConsoleLogger.Debug($"{specifier}, {checkParts}");
             return specifier.Contains(";");
         }
 

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Terminaux.Console": {
+      "commandName": "Project"
+    },
+    "Terminaux.Console - Verbose": {
+      "commandName": "Project",
+      "commandLineArgs": "-verbose"
+    }
+  }
+}

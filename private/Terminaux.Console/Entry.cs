@@ -17,6 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Aptivestigate.Logging;
+using Aptivestigate.Serilog;
+using Serilog;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
@@ -31,9 +34,11 @@ namespace Terminaux.Console
 {
     internal class Entry
     {
-        static void Main()
+        static void Main(string[] args)
         {
             // Initialize logging
+            if (args.Contains("-verbose"))
+                ConsoleLogger.AbstractLogger = new SerilogLogger(new LoggerConfiguration().MinimumLevel.Debug().WriteTo.File(LogTools.GenerateLogFilePath(out _)));
             ConsoleLogger.EnableLogging = true;
 
             // Run the resize listener

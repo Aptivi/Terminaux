@@ -80,8 +80,9 @@ namespace Terminaux.Base.Extensions.Native
                     com.SetState(initialTaskbarState);
                     return com;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ConsoleLogger.Error(ex, "While trying to interop with COM for taskbar interface, an error occurred. If you're running this on Linux, it's safe to continue.");
                     return null;
                 }
             }

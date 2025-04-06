@@ -91,6 +91,7 @@ namespace Terminaux.Colors.Models.Parsing
                 char second = finalSpecifier[1];
                 char third = finalSpecifier[2];
                 finalSpecifier = $"{first}{first}{second}{second}{third}{third}";
+                ConsoleLogger.Debug("From {0} -> {1}", specifier, finalSpecifier);
             }
             else if (finalSpecifier.Length != 6)
                 return false;
@@ -166,10 +167,12 @@ namespace Terminaux.Colors.Models.Parsing
                 throw new TerminauxException($"The blue color level is out of range (0 -> 255). {b}");
 
             // Now, transform
+            ConsoleLogger.Debug("From {0}, {1}, {2}...", r, g, b);
             settings ??= new(ColorTools.GlobalSettings);
             var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
             // Make a new RGB class
+            ConsoleLogger.Debug("...to {0}, {1}, {2}", finalRgb.r, finalRgb.g, finalRgb.b);
             return new(finalRgb.r, finalRgb.g, finalRgb.b);
         }
 
@@ -193,6 +196,7 @@ namespace Terminaux.Colors.Models.Parsing
                 char second = finalSpecifier[1];
                 char third = finalSpecifier[2];
                 finalSpecifier = $"{first}{first}{second}{second}{third}{third}";
+                ConsoleLogger.Debug("From {0} -> {1}", specifier, finalSpecifier);
             }
             else if (finalSpecifier.Length != 6)
                 throw new TerminauxException($"Invalid color hex length \"{specifier}\". Ensure that it's on the correct format: #RRGGBB");
@@ -207,10 +211,12 @@ namespace Terminaux.Colors.Models.Parsing
             int b = (byte)(ColorDecimal & 0xFF);
 
             // Now, transform
+            ConsoleLogger.Debug("From {0}, {1}, {2}...", r, g, b);
             settings ??= new(ColorTools.GlobalSettings);
             var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
             // Make a new RGB class
+            ConsoleLogger.Debug("...to {0}, {1}, {2}", finalRgb.r, finalRgb.g, finalRgb.b);
             return new(finalRgb.r, finalRgb.g, finalRgb.b);
         }
 

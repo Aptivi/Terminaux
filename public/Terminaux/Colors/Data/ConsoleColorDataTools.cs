@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using Terminaux.Base;
 using Terminaux.Colors.Models;
 
 namespace Terminaux.Colors.Data
@@ -83,6 +84,7 @@ namespace Terminaux.Colors.Data
             else if (cachedOrderedColorDataDescending.Length > 0 && !descending)
                 return cachedOrderedColorDataDescending;
             var data = GetColorData();
+            ConsoleLogger.Debug("Sorting {0} colors (desc: {1})", data.Length, descending);
             if (descending)
             {
                 data = [.. data.OrderByDescending((cp) => cp.GetOrderCode())];
@@ -144,6 +146,7 @@ namespace Terminaux.Colors.Data
                 if (distance < minimum)
                 {
                     // Keep getting distance until we find the correct color.
+                    ConsoleLogger.Debug("Possible found color: {0} ({1}) (min: {2}, dist: {3})", colorData.name, colorData.RGB.ToString(), minimum, distance);
                     minimum = distance;
                     result = colorData;
                 }

@@ -37,11 +37,13 @@ namespace Terminaux.Sequences.Builder
         public static string BuildVtSequence(VtSequenceSpecificTypes specificType, params object[] arguments)
         {
             // Check the type
+            ConsoleLogger.Debug("Type is {0}", specificType);
             if (!Enum.IsDefined(typeof(VtSequenceSpecificTypes), specificType))
                 throw new TerminauxException($"Cannot build VT sequence for nonexistent type {Convert.ToInt32(specificType)}");
 
             // Now, check the argument count
             int argCount = sequenceBuilders[specificType].argumentsRequired;
+            ConsoleLogger.Debug("Passed {0} arguments, expected {1} arguments", arguments.Length, argCount);
             if (argCount < arguments.Length)
                 throw new TerminauxException($"Cannot build VT sequence with missing arguments. Expected {argCount} arguments, got {arguments.Length} arguments. {Convert.ToInt32(specificType)}");
 
@@ -59,6 +61,7 @@ namespace Terminaux.Sequences.Builder
         public static (VtSequenceType, VtSequenceSpecificTypes) DetermineTypeFromSequence(string sequence)
         {
             // First, get all the VT sequence types
+            ConsoleLogger.Debug("Sequence is {0} bytes", sequence.Length);
             var seqTypeEnumNames = sequenceBuilders.Keys;
 
             // Then, iterate through all the sequence types until we find an appropriate one that matches the sequence
@@ -71,6 +74,7 @@ namespace Terminaux.Sequences.Builder
                 if (regex.IsMatch(sequence))
                 {
                     // It's a match!
+                    ConsoleLogger.Debug("Found match: {0}, {1}", sequenceType, seqType);
                     return (sequenceType, seqType);
                 }
             }

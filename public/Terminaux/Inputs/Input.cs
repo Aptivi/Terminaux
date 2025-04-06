@@ -230,7 +230,7 @@ namespace Terminaux.Inputs
                             isMouse = true;
                             var @event = record[0].MouseEvent;
                             var coord = @event.dwMousePosition;
-                            Debug.WriteLine($"Coord: {coord.X}, {coord.Y}, {@event.dwButtonState}, {@event.dwControlKeyState}, {@event.dwEventFlags}");
+                            ConsoleLogger.Debug($"Coord: {coord.X}, {coord.Y}, {@event.dwButtonState}, {@event.dwControlKeyState}, {@event.dwEventFlags}");
 
                             // Now, translate them to something Terminaux understands
                             (PointerButton button, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventWin(@event);
@@ -311,7 +311,7 @@ namespace Terminaux.Inputs
                     state = PosixButtonState.WheelUp;
                 else if (button >= 97)
                     state = PosixButtonState.WheelDown;
-                Debug.WriteLine($"[{button}: {state} {modState}] X={x} Y={y}");
+                ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
 
                 // Now, translate them to something Terminaux understands
                 (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);

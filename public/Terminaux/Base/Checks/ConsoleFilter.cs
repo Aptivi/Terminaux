@@ -66,7 +66,10 @@ namespace Terminaux.Base.Checks
 
             // Now, add the query and the justification to the list
             if (!IsInFilter(query, type, severity, out _))
+            {
                 customFilters.Add(new ConsoleFilterInfo(query, type, severity, justification));
+                ConsoleLogger.Debug("Adding to filter...");
+            }
         }
 
         /// <summary>
@@ -94,7 +97,10 @@ namespace Terminaux.Base.Checks
 
             // Now, remove the query from the list
             if (IsInFilter(query, type, severity, out var queryInfo))
+            {
                 customFilters.Remove(queryInfo!);
+                ConsoleLogger.Debug("Removing from filter...");
+            }
         }
 
         /// <summary>
@@ -132,6 +138,7 @@ namespace Terminaux.Base.Checks
             {
                 if (filtered.Expression == query && filtered.Type == type && filtered.Severity == severity)
                 {
+                    ConsoleLogger.Debug("Found this filter with type {0}, {1}, {2}...", filtered.Type, filtered.Severity, filtered.Expression.ToString());
                     queryInfo = filtered;
                     return true;
                 }
@@ -163,7 +170,10 @@ namespace Terminaux.Base.Checks
             foreach (var filtered in queries)
             {
                 if (filtered.Expression is not null && filtered.Expression.IsMatch(console) && filtered.Type == type && filtered.Severity == severity)
+                {
+                    ConsoleLogger.Debug("Found console {0} while matching this filter with {1}, {2}, {3}...", console, filtered.Type, filtered.Severity, filtered.Expression.ToString());
                     return (true, filtered.Justification);
+                }
             }
             return (false, "");
         }

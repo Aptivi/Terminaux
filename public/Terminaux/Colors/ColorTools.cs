@@ -290,8 +290,9 @@ namespace Terminaux.Colors
                 var ColorInstance = new Color(ColorSpecifier, finalSettings);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Failed to parse color specifier {0}", ColorSpecifier);
                 return false;
             }
         }
@@ -312,8 +313,9 @@ namespace Terminaux.Colors
                 var ColorInstance = new Color(ColorNum, finalSettings);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Failed to parse color number {0}", ColorNum);
                 return false;
             }
         }
@@ -336,8 +338,9 @@ namespace Terminaux.Colors
                 var ColorInstance = new Color(R, G, B, finalSettings);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Failed to parse color RGB {0}, {1}, {2}", R, G, B);
                 return false;
             }
         }

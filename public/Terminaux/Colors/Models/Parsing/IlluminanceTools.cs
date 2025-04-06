@@ -91,6 +91,7 @@ namespace Terminaux.Colors.Models.Parsing
             // Now, get the references from the table
             if (!illuminanceTable.TryGetValue((observer, illuminant), out var references))
                 throw new TerminauxException($"Can't get references from the table: {observer} degs, {(int)illuminant}");
+            ConsoleLogger.Debug("Illuminant {0}, {1}: {2}, {3}, {4}", illuminant, observer, references.refX, references.refY, references.refZ);
             return references;
         }
     }

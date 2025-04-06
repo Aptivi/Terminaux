@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Textify.General;
@@ -48,7 +49,7 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="result">
         /// When this method returns, contains the terminfo description,
-        /// if the loading succeeded, or <c>null</c> if the loading  failed.
+        /// if the loading succeeded, or <c>null</c> if the loading failed.
         /// </param>
         /// <returns><c>true</c> if the terminfo description was loaded successfully; otherwise, <c>false</c>.</returns>
         public static bool TryLoad(out TermInfoDesc? result)
@@ -56,10 +57,12 @@ namespace Terminaux.Base.TermInfo
             try
             {
                 result = Load();
+                ConsoleLogger.Debug("Loaded terminfo instance is not null: {0}", result is not null);
                 return result != null;
             }
-            catch
+            catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Can't load terminfo instance.");
                 result = null;
                 return false;
             }
@@ -99,10 +102,12 @@ namespace Terminaux.Base.TermInfo
             try
             {
                 result = Load(name);
+                ConsoleLogger.Debug("Loaded terminfo instance for {0} is not null: {1}", name, result is not null);
                 return result != null;
             }
-            catch
+            catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Can't load terminfo instance {0}.", name);
                 result = null;
                 return false;
             }
@@ -144,10 +149,12 @@ namespace Terminaux.Base.TermInfo
             try
             {
                 result = Load(stream);
+                ConsoleLogger.Debug("Loaded terminfo instance in {0} bytes is not null: {1}", stream.Length, result is not null);
                 return result != null;
             }
-            catch
+            catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Can't load terminfo instance in {0} bytes.", stream.Length);
                 result = null;
                 return false;
             }
@@ -190,8 +197,10 @@ namespace Terminaux.Base.TermInfo
                     continue;
                 string termNamePath = builtin.RemovePrefix("Terminaux.Resources.TermFiles.");
                 string termName = termNamePath.Substring(termNamePath.IndexOf('.') + 1);
+                ConsoleLogger.Debug("Adding builtin terminfo: {0} (path: {1}, {2})", termName, termNamePath, builtin);
                 names.Add(termName);
             }
+            ConsoleLogger.Info("{0} terminfo names", names.Count);
             return [.. names];
         }
 

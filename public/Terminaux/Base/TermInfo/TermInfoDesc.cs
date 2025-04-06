@@ -52,7 +52,9 @@ namespace Terminaux.Base.TermInfo
             if (index >= _booleans.Length)
                 return null;
 
-            return _booleans[index];
+            var boolean = _booleans[index];
+            ConsoleLogger.Debug("B [{0}]: Value: {1}, index: {2}", value, boolean.Value, index);
+            return boolean;
         }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Terminaux.Base.TermInfo
             if (result.Value == null || result.Value == -1)
                 return null;
 
+            ConsoleLogger.Debug("N [{0}]: Value: {1}, index: {2}", value, result.Value, index);
             return result;
         }
 
@@ -85,6 +88,7 @@ namespace Terminaux.Base.TermInfo
                 return null;
 
             var result = _strings[index];
+            ConsoleLogger.Debug("S [{0}]: Value: {1}, index: {2}", value, result.Value, index);
             return result;
         }
 

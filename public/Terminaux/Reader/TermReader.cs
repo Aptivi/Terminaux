@@ -546,8 +546,7 @@ namespace Terminaux.Reader
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"Handling cue failed. {ex.Message}");
+                    ConsoleLogger.Error(ex, $"Handling cue failed. {ex.Message}");
                     cueSupported = false;
                 }
             }

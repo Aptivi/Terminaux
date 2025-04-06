@@ -54,6 +54,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
             this.representation = representation;
             this.index = index;
             this.type = type;
+            ConsoleLogger.Debug("Parameter: {0}, index: {1}, type: {2}", representation, index, type);
         }
     }
 }

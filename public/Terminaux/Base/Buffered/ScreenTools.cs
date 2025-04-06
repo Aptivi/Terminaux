@@ -63,6 +63,7 @@ namespace Terminaux.Base.Buffered
             if (string.IsNullOrEmpty(buffer))
                 return;
             ConsoleWrapper.CursorVisible = false;
+            ConsoleLogger.Debug("Writing {0} bytes from screen buffer...", buffer.Length);
             TextWriterRaw.WriteRaw(buffer);
         }
 
@@ -110,6 +111,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("Screen is not cyclic.");
 
             // Add the screen to the cyclic screen variable
+            ConsoleLogger.Debug("Adding cyclic screen with frequency {0} ms...", screen.CycleFrequency);
             cyclicScreen = screen;
         }
 
@@ -140,6 +142,7 @@ namespace Terminaux.Base.Buffered
             StopCyclicScreen();
             cyclicScreenThread = new(() => CycleScreen(screen));
             cyclicScreenThread.Start();
+            ConsoleLogger.Debug("Cyclic screen with frequency {0} ms has started...", screen.CycleFrequency);
         }
 
         /// <summary>
@@ -170,12 +173,11 @@ namespace Terminaux.Base.Buffered
             }
             catch (ThreadInterruptedException)
             {
-                Debug.WriteLine("Thread is interrupted");
+                ConsoleLogger.Warning("Thread is interrupted");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Failed to render cyclic screen: {ex.Message}");
-                Debug.WriteLine(ex);
+                ConsoleLogger.Error(ex, $"Failed to render cyclic screen: {ex.Message}");
             }
         }
 
