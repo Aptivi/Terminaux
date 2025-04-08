@@ -101,6 +101,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                 // Check to see if we are escaping or not
                 if (((markupChar == '[' && nextChar == '[') || (markupChar == ']' && nextChar == ']')) && queuedSequences.Count == 0)
                 {
+                    ConsoleLogger.Debug("Adding escape markup {0}, {1}", markupChar, nextChar);
                     sequences.Add(new()
                     {
                         entranceIndex = i,
@@ -115,6 +116,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
 
                 // Now, parse the markups by checking for them while seeking characters to get properties inside them and to apply
                 // the changes.
+                ConsoleLogger.Debug("Processing characters {0}, {1}", markupChar, nextChar);
                 if (markupChar == '[' && nextChar != '/')
                 {
                     nestLevel++;
@@ -146,7 +148,10 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                     continue;
                 }
                 if (queuedSequences.Count > 0 && i == markup.Length - 1)
+                {
+                    ConsoleLogger.Warning("When reaching end of sequence, queued sequences: {0}", queuedSequences.Count);
                     throw new TerminauxException($"There are {queuedSequences.Count} missing end tags.");
+                }
 
                 // Add a character
                 if (append)
@@ -166,7 +171,10 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             Dictionary<string, IEffect> effectNames = effects.ToDictionary((effect) => effect.MarkupTag, (effect) => effect);
             bool useInitialFormat = !string.IsNullOrEmpty(initialFormat);
             if (useInitialFormat && VtSequenceTools.FilterVTSequences(initialFormat).Length != 0)
+            {
+                ConsoleLogger.Warning("Formatting should not have anything other than VT sequences");
                 throw new TerminauxException("Initial format must not print any text; it must contain only formatting VT sequences.");
+            }
             string finalFormat =
                 useInitialFormat ? initialFormat :
                 $"{(foregroundColor is not null ? ColorTools.RenderSetConsoleColor(foregroundColor) : "")}" +
@@ -207,6 +215,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                             {
                                 if (string.IsNullOrWhiteSpace(part))
                                     continue;
+                                ConsoleLogger.Warning("Adding part {0}", part);
                                 if (effectNames.TryGetValue(part, out var effect))
                                     representationBuilder.Append(effect.EffectStart);
                                 else if (ColorTools.TryParseColor(part))

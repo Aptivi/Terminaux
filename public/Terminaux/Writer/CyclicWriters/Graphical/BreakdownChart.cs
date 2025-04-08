@@ -20,6 +20,7 @@
 using System;
 using System.Linq;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
@@ -149,6 +150,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         // Decide whether to draw this area or not
                         Coordinate stickCoord = new(Left + showcaseLength, Top + processedY);
+                        ConsoleLogger.Debug("Rendering breakdown chart element {0}: ({1} + {2}, {3} + {4})", e, Left, showcaseLength, Top, processedY);
                         breakdownChart.Append(
                             ConsolePositioning.RenderChangePosition(stickCoord.X, stickCoord.Y) +
                             (UseColors ? ColorTools.RenderSetConsoleColor(element.Color, true) : "") +

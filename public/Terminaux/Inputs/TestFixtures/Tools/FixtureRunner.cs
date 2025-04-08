@@ -52,10 +52,12 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             bool success = true;
             try
             {
+                ConsoleLogger.Debug("Running fixture (unconditional)...");
                 fixture.fixtureDelegate.DynamicInvoke(args);
             }
             catch (Exception exc)
             {
+                ConsoleLogger.Error(exc, "Can't run fixture");
                 ex = exc;
                 success = false;
             }
@@ -85,10 +87,12 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             bool success = true;
             try
             {
+                ConsoleLogger.Debug("Running fixture (unconditional)...");
                 fixture.fixtureDelegate.DynamicInvoke(args);
             }
             catch (Exception exc)
             {
+                ConsoleLogger.Error(exc, "Can't run fixture");
                 ex = exc;
                 success = false;
             }
@@ -121,13 +125,18 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             bool success = true;
             try
             {
+                ConsoleLogger.Debug("Running fixture (conditional)...");
                 var returned = (TValue)fixture.fixtureDelegate.DynamicInvoke(args);
                 var expected = (TValue?)fixture.expectedValue;
                 if (!returned.Equals(expected))
+                {
+                    ConsoleLogger.Error("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue);
                     throw new TerminauxException($"Returned value {returned} doesn't match expected value {fixture.expectedValue}");
+                }
             }
             catch (Exception exc)
             {
+                ConsoleLogger.Error(exc, "Can't run fixture");
                 ex = exc;
                 success = false;
             }
@@ -158,13 +167,18 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             bool success = true;
             try
             {
+                ConsoleLogger.Debug("Running fixture (conditional)...");
                 var returned = (TValue)fixture.fixtureDelegate.DynamicInvoke(args);
                 var expected = (TValue?)fixture.expectedValue;
                 if (!returned.Equals(expected))
+                {
+                    ConsoleLogger.Error("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue);
                     throw new TerminauxException($"Returned value {returned} doesn't match expected value {fixture.expectedValue}");
+                }
             }
             catch (Exception exc)
             {
+                ConsoleLogger.Error(exc, "Can't run fixture");
                 ex = exc;
                 success = false;
             }

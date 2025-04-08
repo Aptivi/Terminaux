@@ -66,6 +66,8 @@ namespace Terminaux.Shell.Arguments
             var wordsOrig = CommandText.SplitEncloseDoubleQuotesNoRelease();
             string arguments = string.Join(" ", words.Skip(1));
             string argumentsOrig = string.Join(" ", wordsOrig.Skip(1));
+            for (int i = 0; i <= words.Length - 1; i++)
+                ConsoleLogger.Debug("Word {0}: {1}", i + 1, words[i]);
             Command = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
@@ -108,6 +110,8 @@ namespace Terminaux.Shell.Arguments
             var wordsOrig = ArgumentText.SplitEncloseDoubleQuotesNoRelease();
             string arguments = string.Join(" ", words.Skip(1));
             string argumentsOrig = string.Join(" ", wordsOrig.Skip(1));
+            for (int i = 0; i <= words.Length - 1; i++)
+                ConsoleLogger.Debug("Word {0}: {1}", i + 1, words[i]);
             Argument = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
@@ -143,10 +147,13 @@ namespace Terminaux.Shell.Arguments
             var EnclosedArgMatchesOrig = wordsOrig.Skip(1);
             var EnclosedArgs = EnclosedArgMatches.ToArray();
             var EnclosedArgsOrig = EnclosedArgMatches.ToArray();
+            ConsoleLogger.Debug("{0} arguments parsed: {1}", EnclosedArgs.Length, string.Join(", ", EnclosedArgs));
 
             // Get the string of arguments
             string strArgs = words.Length > 0 ? string.Join(" ", EnclosedArgMatches) : "";
             string strArgsOrig = words.Length > 0 ? string.Join(" ", EnclosedArgMatchesOrig) : "";
+            ConsoleLogger.Debug("Finished strArgs: {0}", strArgs);
+            ConsoleLogger.Debug("Finished strArgsOrig: {0}", strArgsOrig);
 
             // Split the switches to their key-value counterparts
             var EnclosedSwitchKeyValuePairs = SwitchManager.GetSwitchValues(enclosedSwitches, true);
@@ -170,19 +177,23 @@ namespace Terminaux.Shell.Arguments
                 bool exactWordingProvided = true;
 
                 // Optionalize some of the arguments if there are switches that optionalize them
+                ConsoleLogger.Debug("Argument info is full? {0}", argInfo is not null);
                 if (argInfo is not null)
                 {
                     foreach (string enclosedSwitch in enclosedSwitches)
                     {
+                        ConsoleLogger.Debug("Optionalizer is processing switch {0}...", enclosedSwitch);
                         var switches = argInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch.Substring(1));
                         if (switches.Any())
                             foreach (var switchInfo in switches.Where(switchInfo => minimumArgumentsOffset < switchInfo.OptionalizeLastRequiredArguments))
                                 minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
+                        ConsoleLogger.Debug("Minimum arguments offset is now {0}", minimumArgumentsOffset);
                     }
                 }
                 int finalRequiredArgs = argInfo is not null ? argInfo.MinimumArguments - minimumArgumentsOffset : 0;
                 if (finalRequiredArgs < 0)
                     finalRequiredArgs = 0;
+                ConsoleLogger.Debug("Required arguments count is now {0}", finalRequiredArgs);
 
                 // Check to see if the caller has provided required number of arguments
                 if (argInfo is not null)
@@ -191,6 +202,7 @@ namespace Terminaux.Shell.Arguments
                         !argInfo.ArgumentsRequired;
                 else
                     RequiredArgumentsProvided = true;
+                ConsoleLogger.Debug("RequiredArgumentsProvided is {0}. Refer to the value of argument info.", RequiredArgumentsProvided);
 
                 // Check to see if the caller has provided required number of switches
                 if (argInfo is not null)
@@ -200,6 +212,7 @@ namespace Terminaux.Shell.Arguments
                         !argInfo.Switches.Any((@switch) => @switch.IsRequired);
                 else
                     RequiredSwitchesProvided = true;
+                ConsoleLogger.Debug("RequiredSwitchesProvided is {0}. Refer to the value of argument info.", RequiredSwitchesProvided);
 
                 // Check to see if the caller has provided required number of switches that require arguments
                 if (argInfo is not null)
@@ -220,6 +233,7 @@ namespace Terminaux.Shell.Arguments
                 }
                 else
                     RequiredSwitchArgumentsProvided = true;
+                ConsoleLogger.Debug("RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
                 // Check to see if the caller has provided switches that don't accept values with the values
                 if (argInfo is not null)
@@ -238,6 +252,7 @@ namespace Terminaux.Shell.Arguments
                     }
                     noValueSwitchesList = [.. rejected];
                 }
+                ConsoleLogger.Debug("RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
                 // Check to see if the caller has provided non-existent switches
                 if (argInfo is not null)
@@ -245,6 +260,7 @@ namespace Terminaux.Shell.Arguments
                         .Select((kvp) => kvp.Item1)
                         .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key.Substring(1)))
                         .ToArray();
+                ConsoleLogger.Debug("Unknown switches: {0}", unknownSwitchesList.Length);
 
                 // Check to see if the caller has provided conflicting switches
                 if (argInfo is not null)
@@ -257,6 +273,7 @@ namespace Terminaux.Shell.Arguments
                         string @switch = kvp.Item1;
                         if (unknownSwitchesList.Contains(@switch))
                             continue;
+                        ConsoleLogger.Debug("Processing switch: {0}", @switch);
 
                         // Get the switch and its conflicts list
                         var switchEnumerator = argInfo.Switches
@@ -268,12 +285,18 @@ namespace Terminaux.Shell.Arguments
                             string[] switchConflicts = initialConflicts
                                 .Select((conflicting) => $"-{conflicting}")
                                 .ToArray();
+                            ConsoleLogger.Debug("Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
 
                             // Now, get the last switch and check to see if it's provided with the conflicting switch
                             string lastSwitch = processed.Count > 0 ? processed[processed.Count - 1] : "";
                             if (switchConflicts.Contains(lastSwitch))
+                            {
+                                ConsoleLogger.Debug("Conflict! {0} and {1} conflict with each other.", @switch, lastSwitch);
                                 conflicts.Add($"{@switch} vs. {lastSwitch}");
+                            }
                             processed.Add(@switch);
+                            ConsoleLogger.Debug("Marked conflicts: {0} [{1}]", conflicts.Count, string.Join(", ", conflicts));
+                            ConsoleLogger.Debug("Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
                         }
                     }
                     conflictingSwitchesList = [.. conflicts];

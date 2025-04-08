@@ -19,6 +19,7 @@
 
 using System.Linq;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
@@ -151,8 +152,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     // Decide whether to draw this area or not (for wins)
                     int stickWidthInt = (int)stickWidth * 2;
                     Coordinate winCoord = new(Left + showcaseLength + (stickWidthInt * e), Top + h);
+                    ConsoleLogger.Debug("Win: rendering win-loss chart element {0}: ({1}, {2})", e, winCoord.X, winCoord.Y);
                     if ((Height / 2) - h < heightWin)
                     {
+                        ConsoleLogger.Debug("Win: rendering this element with width {0}", stickWidthInt);
                         winsLosses.Append(
                             ConsolePositioning.RenderChangePosition(winCoord.X, winCoord.Y) +
                             (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime, true) : "") +
@@ -163,8 +166,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                     // Decide whether to draw this area or not (for losses)
                     Coordinate lossCoord = new(Left + showcaseLength + (stickWidthInt * e), Top + (Height / 2) + h + 1);
+                    ConsoleLogger.Debug("Loss: rendering win-loss chart element {0}: ({1}, {2})", e, winCoord.X, winCoord.Y);
                     if (h < heightLoss)
                     {
+                        ConsoleLogger.Debug("Loss: rendering this element with width {0}", stickWidthInt);
                         winsLosses.Append(
                             ConsolePositioning.RenderChangePosition(lossCoord.X, lossCoord.Y) +
                             (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red, true) : "") +

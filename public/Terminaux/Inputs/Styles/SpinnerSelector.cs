@@ -27,6 +27,7 @@ using Terminaux.Inputs.Interactive.Selectors;
 using Terminaux.Inputs.Interactive;
 using System.Reflection;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -67,8 +68,11 @@ namespace Terminaux.Inputs.Styles
         /// <returns>Selected spinner spinner</returns>
         public static Spinner PromptForSpinner(string spinner)
         {
+            ConsoleLogger.Debug("Initial spinner: {0}", spinner);
             var spinnerSelectorTui = new SpinnerSelectorTui(spinner);
             TextualUITools.RunTui(spinnerSelectorTui);
+            var result = spinnerSelectorTui.GetResultingSpinner();
+            ConsoleLogger.Debug("Result spinner: {0}", result);
             return spinnerSelectorTui.GetResultingSpinner();
         }
 

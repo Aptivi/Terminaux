@@ -39,8 +39,11 @@ namespace Terminaux.Shell.Commands
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static bool IsCommandFound(string Command, string ShellType) =>
-            GetCommands(ShellType).Any((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
+        public static bool IsCommandFound(string Command, string ShellType)
+        {
+            ConsoleLogger.Debug("Command: {0}, ShellType: {1}", Command, ShellType);
+            return GetCommands(ShellType).Any((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
+        }
 
         /// <summary>
         /// Checks to see if the command is found in all the shells
@@ -49,6 +52,7 @@ namespace Terminaux.Shell.Commands
         /// <returns>True if found; False if not found.</returns>
         public static bool IsCommandFound(string Command)
         {
+            ConsoleLogger.Debug("Checking command: {0}", Command);
             bool found = false;
             foreach (var ShellType in ShellManager.AvailableShells.Keys)
             {
@@ -127,6 +131,7 @@ namespace Terminaux.Shell.Commands
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static CommandInfo GetCommand(string Command, string ShellType)
         {
+            ConsoleLogger.Debug("Command: {0}, ShellType: {1}", Command, ShellType);
             var commandList = GetCommands(ShellType);
             if (!IsCommandFound(Command, ShellType))
                 throw new TerminauxException("Command not found.");
@@ -146,6 +151,7 @@ namespace Terminaux.Shell.Commands
             if (commandBase is null)
                 throw new TerminauxException("You must provide the command base.");
             string command = commandBase.Command;
+            ConsoleLogger.Debug("Trying to register {0}, ShellType: {1}", command, ShellType);
 
             // Check the command name
             if (string.IsNullOrEmpty(command))
@@ -153,16 +159,24 @@ namespace Terminaux.Shell.Commands
 
             // Check to see if the command conflicts with pre-existing shell commands
             if (IsCommandFound(command, ShellType))
+            {
+                ConsoleLogger.Error("Command {0} conflicts with available shell commands.", command);
                 throw new TerminauxException("The command specified is already added.");
+            }
 
             // Check to see if the help definition is full
             if (string.IsNullOrEmpty(commandBase.HelpDefinition))
+            {
+                ConsoleLogger.Warning("No definition, {0}.Def = \"Command not defined\"", command);
                 commandBase.HelpDefinition = "Command not defined";
+            }
 
             // Now, add the command to the extra list
+            ConsoleLogger.Debug("Adding command {0} for {1}...", command, ShellType);
             var info = ShellManager.GetShellInfo(ShellType);
             if (!info.extraCommands.Contains(commandBase))
                 info.extraCommands.Add(commandBase);
+            ConsoleLogger.Debug("Registered {0}, ShellType: {1}", command, ShellType);
         }
 
         /// <summary>
@@ -181,6 +195,7 @@ namespace Terminaux.Shell.Commands
                 }
                 catch (Exception ex)
                 {
+                    ConsoleLogger.Error(ex, $"Can't register custom command: {ex.Message}");
                     failedCommands.Add($"  - {(commandBase is not null ? commandBase.Command : "???")}: {ex.Message}");
                 }
             }
@@ -229,6 +244,7 @@ namespace Terminaux.Shell.Commands
                 }
                 catch (Exception ex)
                 {
+                    ConsoleLogger.Error(ex, $"Can't unregister custom command: {ex.Message}");
                     failedCommands.Add($"  - {(!string.IsNullOrEmpty(commandBase) ? commandBase : "???")}: {ex.Message}");
                 }
             }

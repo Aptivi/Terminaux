@@ -18,6 +18,7 @@
 //
 
 using System.Linq;
+using Terminaux.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Textify.General;
@@ -34,14 +35,17 @@ namespace Terminaux.Shell.Arguments
         {
             // First, cut the text to index
             text = text.Substring(0, index);
+            ConsoleLogger.Debug("Text to auto complete: {0} (idx: {1})", text, index);
 
-            // Then, check to see is we have shells
+            // Then, check to see if we have shells
+            ConsoleLogger.Debug("Shell count: {0}", ShellManager.ShellStack.Count);
             if (ShellManager.ShellStack.Count <= 0)
                 return [];
 
             // Get the commands based on the current shell type
             var shellType = ShellManager.CurrentShellType;
             var ShellCommandNames = CommandManager.GetCommandNames(shellType);
+            ConsoleLogger.Debug("Commands count for type {0}: {1}", shellType, ShellCommandNames.Length);
 
             // If text is not provided, return the command list without filtering
             if (string.IsNullOrEmpty(text))
@@ -56,18 +60,24 @@ namespace Terminaux.Shell.Arguments
             string[] finalCommandArgsEnclosed = finalCommandArgs.SplitEncloseDoubleQuotes();
             int LastArgumentIndex = finalCommandArgsEnclosed.Length - 1;
             string LastArgument = finalCommandArgsEnclosed.Length > 0 ? finalCommandArgsEnclosed[LastArgumentIndex] : "";
+            ConsoleLogger.Debug("Command name: {0}", CommandName);
+            ConsoleLogger.Debug("Command arguments [{0}]: {1}", finalCommandArgsEnclosed.Length, finalCommandArgs);
+            ConsoleLogger.Debug("last argument: {0}", LastArgument);
 
             // Make a list
             string[] finalCompletions = [];
             if (string.IsNullOrEmpty(finalCommandArgs))
             {
+                ConsoleLogger.Debug("Creating list of commands starting with command {0} [{1}]...", CommandName, CommandName.Length);
                 finalCompletions = ShellCommandNames
                     .Where(x => x.StartsWith(CommandName))
                     .Select(x => x.Substring(CommandName.Length))
                     .ToArray();
+                ConsoleLogger.Debug("Initially invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
             }
 
             // Check to see if there is such command
+            ConsoleLogger.Debug("Command {0} exists? {1}", CommandName, ShellCommandNames.Contains(CommandName));
             if (!ShellCommandNames.Contains(CommandName))
                 return finalCompletions;
 
@@ -76,6 +86,7 @@ namespace Terminaux.Shell.Arguments
             var CommandArgumentInfos = cmdInfo.CommandArgumentInfo;
             foreach (var CommandArgumentInfo in CommandArgumentInfos)
             {
+                ConsoleLogger.Debug("Command {0} has argument info? {1}", CommandName, CommandArgumentInfo is not null);
                 if (CommandArgumentInfo is null)
                     // No arguments. Return nothing
                     return finalCompletions;
@@ -85,15 +96,18 @@ namespace Terminaux.Shell.Arguments
                     LastArgumentIndex < CommandArgumentInfo.Arguments.Length && LastArgumentIndex >= 0 ?
                     CommandArgumentInfo.Arguments[LastArgumentIndex].Options.AutoCompleter :
                     null;
+                ConsoleLogger.Debug("Command {0} has auto complete info? {1}", CommandName, AutoCompleter is not null);
                 if (AutoCompleter is null)
                     // No delegate. Return nothing
                     return finalCompletions;
 
                 // We have the delegate! Invoke it.
+                ConsoleLogger.Debug("If we reach here, it means we have a delegate! Executing delegate with {0} [{1}]...", LastArgument, LastArgument.Length);
                 finalCompletions = AutoCompleter.Invoke(finalCommandArgsEnclosed)
                     .Where(x => x.StartsWith(LastArgument))
                     .Select(x => x.Substring(LastArgument.Length))
                     .ToArray();
+                ConsoleLogger.Debug("Invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
                 return finalCompletions;
             }
             return finalCompletions;

@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
@@ -69,6 +70,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 }
             }
             canvas.Pixels = [.. pixels];
+            ConsoleLogger.Debug("{0} pixels of rectangle", pixels.Count);
             return canvas.Render();
         }
 

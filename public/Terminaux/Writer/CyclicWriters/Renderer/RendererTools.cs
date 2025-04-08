@@ -134,6 +134,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// <returns>A container representation that you can render with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderRenderable(CyclicWriter renderable, Coordinate pos, Size size)
         {
+            ConsoleLogger.Debug("Position: {0}, size: {1}", pos, size);
             if (renderable is SimpleCyclicWriter simpleRenderable)
                 return RenderRenderable(simpleRenderable, pos);
             else if (renderable is GraphicalCyclicWriter graphicalRenderable)

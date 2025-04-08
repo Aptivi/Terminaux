@@ -379,7 +379,9 @@ namespace Terminaux.Reader
             lock (readLock)
             {
                 // Wait until the previous input is complete
+                ConsoleLogger.Info("Waiting for input to complete...");
                 TermReaderTools.WaitForInput();
+                ConsoleLogger.Info("Input complete. Initializing reader...");
 
                 // Initialize everything
                 string input = defaultValue;
@@ -411,6 +413,7 @@ namespace Terminaux.Reader
                     readState.writingPrompt = true;
                     string finalInputPrompt = !string.IsNullOrEmpty(readState.InputPromptText) ? readState.InputPromptText + (settings.PrintDefaultValue ? settings.DefaultValueFormat : "") : "";
                     object[] finalInputArguments = settings.PrintDefaultValue && settings.DefaultValueFormat.Contains("{0}") ? [defaultValue] : [];
+                    ConsoleLogger.Debug("Writing prompt in {0} bytes with {1} arguments (def: {2})", finalInputPrompt, finalInputArguments.Length, settings.PrintDefaultValue);
                     TextWriterColor.WriteForReaderColor(finalInputPrompt, settings, false, settings.InputPromptForegroundColor, finalInputArguments);
                     readState.writingPrompt = false;
 
@@ -432,6 +435,7 @@ namespace Terminaux.Reader
                     ConsoleWrapper.CursorVisible = true;
                     if (!string.IsNullOrEmpty(defaultValue) && readState.Settings.WriteDefaultValue)
                     {
+                        ConsoleLogger.Debug("Inserting default value {0} and seeking to initial position {1}...", defaultValue, readState.Settings.InitialPosition);
                         TermReaderTools.InsertNewText(defaultValue);
                         PositioningTools.SeekTo(readState.Settings.InitialPosition, ref readState);
                     }
@@ -441,12 +445,14 @@ namespace Terminaux.Reader
                         if (readState.CurrentText.Length == 0 && finalPlaceholder.Length != 0)
                         {
                             cleared = false;
+                            ConsoleLogger.Debug("Writing placeholder to {0}, {1}...", readState.inputPromptLeft, readState.inputPromptTop);
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
                             TextWriterColor.WriteForReaderColor(finalPlaceholder, settings, false, settings.InputPlaceholderForegroundColor);
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
                         }
                         else if (!cleared)
                         {
+                            ConsoleLogger.Debug("Clearing {0} characters in {1}, {2}...", width, readState.inputPromptLeft, readState.inputPromptTop);
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
                             TextWriterColor.WriteForReaderColor(new(' ', width), settings, false, settings.InputPlaceholderForegroundColor);
                             readState.RefreshRequired = true;
@@ -456,7 +462,9 @@ namespace Terminaux.Reader
 
                         // Get a key
                         TermReaderTools.isWaitingForInput = true;
+                        ConsoleLogger.Info("Reader is waiting for input...");
                         struckKey = TermReaderTools.GetInput(interruptible);
+                        ConsoleLogger.Info("Reader is no longer waiting for input...");
                         ConsoleWrapper.CursorVisible = false;
                         TermReaderTools.isWaitingForInput = false;
 
@@ -464,7 +472,8 @@ namespace Terminaux.Reader
                         readState.pressedKey = struckKey;
 
                         // Play keyboard cue if enabled
-                        HandleCue(settings, struckKey);
+                        if (settings.KeyboardCues && cueSupported)
+                            HandleCue(settings, struckKey);
 
                         // Handle it
                         BindingsTools.Execute(readState);
@@ -473,7 +482,10 @@ namespace Terminaux.Reader
 
                         // Write the bell character if invalid
                         if (readState.OperationWasInvalid)
+                        {
+                            ConsoleLogger.Warning("Bell sound is playing with type {0} due to invalid operation", settings.Bell);
                             ConsoleMisc.Bell(settings.Bell);
+                        }
                         readState.operationWasInvalid = false;
 
                         // Cursor is visible
@@ -483,6 +495,7 @@ namespace Terminaux.Reader
                     // Seek to the end of the text and write a new line
                     if (!readState.OneLineWrap)
                     {
+                        ConsoleLogger.Warning("Seeking to the end of text {0} cells...", readState.CurrentText.Length);
                         PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
                         PositioningTools.Commit(readState);
                     }
@@ -505,6 +518,7 @@ namespace Terminaux.Reader
                 }
                 catch (Exception ex)
                 {
+                    ConsoleLogger.Error(ex, "Input reader has failed");
                     TextWriterColor.WriteColor($"Input reader has failed: {ex.Message}", ConsoleColors.Red);
                     TextWriterColor.WriteColor(ex.StackTrace, ConsoleColors.Red);
                 }
@@ -518,6 +532,7 @@ namespace Terminaux.Reader
                     ConsoleWrapper.CursorVisible = initialVisible;
                 }
                 state = null;
+                ConsoleLogger.Debug("Attempting to transform input string of {0} bytes to {1}...", input.Length, typeof(T).FullName);
                 object changed = Convert.ChangeType(input, typeof(T));
                 cueSupported = true;
                 return (T)changed;
@@ -537,6 +552,7 @@ namespace Terminaux.Reader
                     if (cueStream is not null)
                     {
                         // Copy the stream prior to playing
+                        ConsoleLogger.Debug("Calling BassBoom to play cue stream of {0} bytes (vol: {1}, boost: {2}, libpath: {3})...", cueStream.Length, settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
                         var copiedStream = new MemoryStream();
                         var cueSettings = new PlayForgetSettings(settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
                         cueStream.CopyTo(copiedStream);

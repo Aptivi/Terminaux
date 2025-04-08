@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Arguments.Base.Help
 {
@@ -56,21 +57,16 @@ namespace Terminaux.Shell.Arguments.Base.Help
             // Now, populate usages for each argument
             string HelpDefinition = argInfo.HelpDefinition;
             var argumentInfos = argInfo.ArgArgumentInfo;
+            ConsoleLogger.Debug("Showing usage of {0} with {1} argument info instances", argument, argumentInfos.Length);
             foreach (var argumentInfo in argumentInfos)
             {
-                var Arguments = Array.Empty<CommandArgumentPart>();
-                var Switches = Array.Empty<SwitchInfo>();
-
-                // Populate help usages
-                if (argumentInfo is not null)
-                {
-                    Arguments = argumentInfo.Arguments;
-                    Switches = argumentInfo.Switches;
-                }
-                else
+                if (argumentInfo is null)
                     continue;
+                CommandArgumentPart[] Arguments = argumentInfo.Arguments;
+                SwitchInfo[] Switches = argumentInfo.Switches;
 
                 // Print usage information
+                ConsoleLogger.Debug("Found {0} arguments and {1} switches", Arguments.Length, Switches.Length);
                 if (Arguments.Length != 0 || Switches.Length != 0)
                 {
                     // Print the usage information holder
@@ -82,6 +78,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                         bool required = Switch.IsRequired;
                         string switchName = Switch.SwitchName;
                         string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
+                        ConsoleLogger.Debug("Switch {0} ({1}) rendered as {2}", switchName, required, renderedSwitch);
                         TextWriterColor.WriteColor(renderedSwitch, false, ConsoleColors.Yellow);
                     }
 
@@ -92,6 +89,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                     {
                         bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
                         string renderedArgument = required ? $" <{argumentPart.ArgumentExpression}>" : $" [{argumentPart.ArgumentExpression}]";
+                        ConsoleLogger.Debug("Argument {0} ({1}) rendered as {2}", argumentPart.ArgumentExpression, required, renderedArgument);
                         TextWriterColor.WriteColor(renderedArgument, false, ConsoleColors.Yellow);
                     }
                     TextWriterRaw.Write();
@@ -102,7 +100,10 @@ namespace Terminaux.Shell.Arguments.Base.Help
 
             // Write the description now
             if (string.IsNullOrEmpty(HelpDefinition))
+            {
+                ConsoleLogger.Warning("No argument help description for {0}", argument);
                 HelpDefinition = "No argument help description";
+            }
             TextWriterColor.WriteColor($"Description: {HelpDefinition}", true, ConsoleColors.Olive);
             argInfo.ArgumentBase.HelpHelper();
         }

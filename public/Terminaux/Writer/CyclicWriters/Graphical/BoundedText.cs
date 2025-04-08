@@ -172,6 +172,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (!customSize)
                 UpdateInternalSize();
             string[] lines = TextWriterTools.GetFinalLines(Text, width);
+            ConsoleLogger.Debug("Bounded text width x height (poswise: {0}): {1}, {2}", PositionWise, Width, Height);
             if (PositionWise)
                 return RenderTextPoswise(
                     lines, Settings, ForegroundColor, BackgroundColor, Width, Height, Left, Top, UseColors, Row, Column);

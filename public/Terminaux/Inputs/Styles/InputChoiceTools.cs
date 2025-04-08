@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -48,6 +49,7 @@ namespace Terminaux.Inputs.Styles
             {
                 string answer = string.IsNullOrEmpty(Answers[i].Item1) ? $"[{i + 1}]" : Answers[i].Item1;
                 string title = string.IsNullOrEmpty(Answers[i].Item2) ? $"Untitled answer #{i + 1}" : Answers[i].Item2;
+                ConsoleLogger.Debug("Adding choice \"{0}\": \"{1}\"", answer, title);
                 finalChoices.Add(new InputChoiceInfo(answer, title));
             }
             return [.. finalChoices];

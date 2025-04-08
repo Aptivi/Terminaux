@@ -131,17 +131,20 @@ namespace Terminaux.Shell.Shells
                 if (ShellStack.Count == 0)
                 {
                     // We don't have any shell. Return Shell.
+                    ConsoleLogger.Warning("Trying to call LastShellType on empty shell stack. Assuming UESH...");
                     return "Shell";
                 }
                 else if (ShellStack.Count == 1)
                 {
                     // We only have one shell. Consider current as last.
+                    ConsoleLogger.Warning("Trying to call LastShellType on shell stack containing only one shell. Assuming current...");
                     return CurrentShellType;
                 }
                 else
                 {
                     // We have more than one shell. Return the shell type for a shell before the last one.
                     var type = ShellStack[ShellStack.Count - 2].ShellType;
+                    ConsoleLogger.Debug("Returning shell type {0} for last shell from the stack...", type);
                     return type;
                 }
             }
@@ -207,7 +210,9 @@ namespace Terminaux.Shell.Shells
                     prompt = preset.PresetPrompt;
 
                 // Wait for command
+                ConsoleLogger.Debug("Waiting for command");
                 string strcommand = TermReader.Read(prompt, "", settings, oneLineWrap: shellInfo.OneLineWrap);
+                ConsoleLogger.Debug("Waited for command [{0}]", strcommand);
                 if (strcommand == ";")
                     strcommand = "";
 
@@ -244,6 +249,7 @@ namespace Terminaux.Shell.Shells
                     {
                         // Not a slash command. Do things differently
                         var ShellInstance = ShellStack[ShellStack.Count - 1];
+                        ConsoleLogger.Debug("Non-slash cmd exec succeeded. Running with {0}", Command);
                         var Params = new CommandExecutorParameters(Command, shellInfo.NonSlashCommandInfo ?? BaseShellInfo.fallbackNonSlashCommand, ShellType, ShellInstance);
                         CommandExecutor.StartCommandThread(Params);
                         continue;
@@ -274,21 +280,27 @@ namespace Terminaux.Shell.Shells
                         if (exists)
                         {
                             // Execute the command
+                            ConsoleLogger.Debug("Executing command {0}", commandName);
                             var cmdInfo = Commands.Single((ci) => ci.Command == commandName || ci.Aliases.Any((ai) => ai.Alias == commandName));
 
                             if (!string.IsNullOrEmpty(commandName) || !commandName.StartsWithAnyOf([" ", "#"]))
                             {
                                 // Check the command before starting
                                 var ShellInstance = ShellStack[ShellStack.Count - 1];
+                                ConsoleLogger.Debug("Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                 var Params = new CommandExecutorParameters(Command, cmdInfo, ShellType, ShellInstance);
                                 CommandExecutor.StartCommandThread(Params);
                             }
                         }
                         else
+                        {
+                            ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found", commandName);
                             TextWriterColor.WriteColor("Shell message: The requested command {0} is not found. See 'help' for available commands.", ConsoleColors.Red, commandName);
+                        }
                     }
                     catch (Exception ex)
                     {
+                        ConsoleLogger.Error(ex, "Cmd exec {0} failed: an error occurred", commandName);
                         TextWriterColor.WriteColor("Error trying to execute command." + CharManager.NewLine + "Error {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
                     }
                 }
@@ -332,7 +344,10 @@ namespace Terminaux.Shell.Shells
             }
             catch (Exception ex)
             {
-                // There is an exception trying to run the shell. Throw the message to the caller.
+                // There is an exception trying to run the shell. Throw the message to the debugger and to the caller.
+                ConsoleLogger.Error("Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
+                ConsoleLogger.Error("Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
+                ConsoleLogger.Error(ex, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
                 throw new TerminauxException("Failed trying to initialize shell", ex);
             }
             finally
@@ -343,6 +358,7 @@ namespace Terminaux.Shell.Shells
                 // occur until the ghost shell has exited either automatically or manually, so check to see if we have added the newly created shell to the shell
                 // stack and kill that faulted shell so that we can have the correct shell in the most recent shell, ^1, from the stack.
                 int newShellCount = ShellStack.Count;
+                ConsoleLogger.Debug("Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
                 if (newShellCount > shellCount)
                     KillShell();
             }
@@ -397,6 +413,7 @@ namespace Terminaux.Shell.Shells
                     return;
 
                 // Rare state.
+                ConsoleLogger.Debug("Reached rare state or unconfigurable shell.");
                 var presets = ShellTypeInfo.ShellPresets;
                 var basePreset = new PromptPresetBase();
                 if (presets is not null)

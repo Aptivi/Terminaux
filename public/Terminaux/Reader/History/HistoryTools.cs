@@ -91,6 +91,7 @@ namespace Terminaux.Reader.History
                 throw new TerminauxException("History name is not provided. Are you sure that you have specified the name in your JSON representation?");
             if (info.HistoryEntries is null)
                 throw new TerminauxException("History entries are not provided. Are you sure that you have specified the entries in your JSON representation?");
+            ConsoleLogger.Debug("Adding history {0} with {1} entries", info.HistoryName, info.HistoryEntries.Count);
             histories.Add(info);
         }
 
@@ -123,6 +124,7 @@ namespace Terminaux.Reader.History
                 throw new TerminauxException("History is not part of the registered histories.");
             if (info.HistoryName == generalHistory)
                 throw new TerminauxException("General history can't be removed, but can be cleared.");
+            ConsoleLogger.Debug("Removing history {0} with {1} entries", info.HistoryName, info.HistoryEntries.Count);
             if (!histories.Remove(info))
                 throw new TerminauxException("Failed to delete history.");
         }
@@ -139,6 +141,7 @@ namespace Terminaux.Reader.History
                 throw new TerminauxException($"History {historyName} not found.");
             int idx = GetHistoryIndexFrom(historyName);
             HistoryInfo info = histories[idx];
+            ConsoleLogger.Debug("Returning {0} entries", info.HistoryEntries.Count);
             return [.. info.HistoryEntries];
         }
 
@@ -152,6 +155,7 @@ namespace Terminaux.Reader.History
             if (!IsHistoryRegistered(historyName))
                 throw new TerminauxException($"History {historyName} not found.");
             int idx = GetHistoryIndexFrom(historyName);
+            ConsoleLogger.Debug("Clearing {0} entries from {1}", histories[idx].HistoryEntries.Count, historyName);
             histories[idx].HistoryEntries.Clear();
         }
 
@@ -168,6 +172,7 @@ namespace Terminaux.Reader.History
             if (entry is null)
                 throw new TerminauxException("History entry is not provided.");
             int idx = GetHistoryIndexFrom(historyName);
+            ConsoleLogger.Debug("Adding {0} to {1}", entry, historyName);
             histories[idx].HistoryEntries.Add(entry);
         }
 
@@ -184,6 +189,7 @@ namespace Terminaux.Reader.History
             if (entries is null)
                 throw new TerminauxException("History entry list is not provided.");
             int idx = GetHistoryIndexFrom(historyName);
+            ConsoleLogger.Debug("Switching {0} entries in {1}", histories[idx].HistoryEntries.Count, historyName);
             histories[idx].HistoryEntries.Clear();
             histories[idx].HistoryEntries.AddRange(entries);
         }

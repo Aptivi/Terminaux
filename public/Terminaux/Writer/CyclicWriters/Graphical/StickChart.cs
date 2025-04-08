@@ -19,6 +19,7 @@
 
 using System.Linq;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
@@ -136,6 +137,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     int stickWidthInt = (int)stickWidth * 2;
                     int inverse = UpsideDown ? h : Height - h;
                     Coordinate stickCoord = new(Left + showcaseLength + (stickWidthInt * e), Top + h);
+                    ConsoleLogger.Debug("Rendering stick chart element {0}: ({1}, {2})", e, stickCoord.X, stickCoord.Y);
                     if (inverse <= height)
                     {
                         stickChart.Append(

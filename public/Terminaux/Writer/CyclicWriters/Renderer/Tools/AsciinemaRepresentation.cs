@@ -116,6 +116,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                     var asciicastGeneric = asciiCastToken.ToObject<Asciicast>() ??
                         throw new TerminauxException("Can't deserialize base Asciicast representation");
                     int version = asciicastGeneric.Version;
+                    ConsoleLogger.Debug("Got asciicast version {0}", version);
 
                     // Verify the version
                     if (version != 1 && version != 2)
@@ -128,6 +129,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                         var deserializedAsciicast = asciiCastToken.ToObject<AsciicastV1>() ??
                             throw new TerminauxException("Can't deserialize Asciicast v1 representation");
                         asciicast = deserializedAsciicast;
+                        ConsoleLogger.Debug("Finalized asciicast v1 implementation");
                     }
                     else
                     {
@@ -136,6 +138,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                             throw new TerminauxException("Can't deserialize Asciicast v2 representation");
                         asciicast = deserializedAsciicast;
                         addingData = true;
+                        ConsoleLogger.Debug("Finalized asciicast v2 implementation; adding data...");
                     }
                 }
                 else if (asciicast is AsciicastV2 asciicastV2)
@@ -148,6 +151,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                     double delay = (double)readArray[0];
                     string eventType = (string)readArray[1];
                     string data = (string)readArray[2];
+                    ConsoleLogger.Debug("Adding {0}, {1}... data is {2} bytes.", delay, eventType, data.Length);
                     asciicastV2.stdOutData.Add((delay, eventType, data));
                 }
             }

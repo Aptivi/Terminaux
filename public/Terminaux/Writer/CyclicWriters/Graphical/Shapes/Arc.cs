@@ -22,6 +22,7 @@ using Terminaux.Colors;
 using System;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using System.Collections.Generic;
+using Terminaux.Base;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
@@ -69,11 +70,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             bool full = AngleStart == AngleEnd;
             int angle1 = inverted ? AngleEnd : AngleStart;
             int angle2 = inverted ? AngleStart : AngleEnd;
+            ConsoleLogger.Debug("Arc angles: {0} -> {1}", angle1, angle2);
 
             // Get the center X and Y positions, since we're dealing with the upper left corner positions, so that we know
             // the radius of the circle
             int centerX = Width / 2;
             int centerY = Height / 2;
+            ConsoleLogger.Debug("Center position: {0}, {1}", centerX, centerY);
 
             // Trace the arc radius
             var canvas = new Canvas()

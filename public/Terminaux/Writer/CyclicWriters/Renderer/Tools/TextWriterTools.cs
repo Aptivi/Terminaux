@@ -56,6 +56,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 
             // Then, process the positions depending on the alignment
             int x = leftMargin;
+            ConsoleLogger.Debug("Initial x position: {0}, alignment {1}.", x, alignment);
             switch (alignment)
             {
                 case TextAlignment.Right:
@@ -65,6 +66,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                     x = leftMargin + width / 2 - maxWidth / 2;
                     break;
             }
+            ConsoleLogger.Debug("Final x position: {0}", x);
             if (x < 0)
                 x = 0;
             return x;
@@ -93,6 +95,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 if (!string.IsNullOrWhiteSpace(line))
                     break;
                 splitFinalLines.RemoveAt(i);
+                ConsoleLogger.Debug("Trimmed away {0}", i);
             }
             return [.. splitFinalLines];
         }

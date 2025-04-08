@@ -18,6 +18,7 @@
 //
 
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -77,6 +78,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 };
                 canvas.Append(canvasBackground.Render());
             }
+            ConsoleLogger.Debug("Canvas width: {0} * {1} ({2})", Width, widthFactor, Width * widthFactor);
+            ConsoleLogger.Debug("Canvas position: {0}, {1}", Left, Top);
             foreach (var pixel in Pixels)
             {
                 // Check the pixel locations

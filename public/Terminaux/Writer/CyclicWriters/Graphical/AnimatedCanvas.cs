@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -65,6 +66,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Advance a frame while getting the current frame for the canvas
             var pixelOptionArray = Frames[frame];
+            ConsoleLogger.Debug("Rendering animated canvas frame {0} / {1}", frame, Frames.Length);
             frame++;
             if (frame == Frames.Length)
                 frame = 0;

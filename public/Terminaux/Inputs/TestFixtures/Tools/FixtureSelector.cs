@@ -54,6 +54,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
 
                 // Determine what fixture we're going to run, and run it
                 var fixture = fixtures[selectedIndex - 1];
+                ConsoleLogger.Debug("Running fixture {0}...", selectedIndex);
                 bool result = FixtureRunner.RunGeneralTest(fixture, out var exc, fixture.initialParameters);
                 if (result)
                 {

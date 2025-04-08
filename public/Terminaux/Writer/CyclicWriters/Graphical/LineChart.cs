@@ -20,6 +20,7 @@
 using System;
 using System.Linq;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;

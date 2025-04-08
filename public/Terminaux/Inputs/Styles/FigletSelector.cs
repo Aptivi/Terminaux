@@ -24,6 +24,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Interactive.Selectors;
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -70,9 +71,12 @@ namespace Terminaux.Inputs.Styles
         /// <returns>Selected figlet font</returns>
         public static string PromptForFiglet(string font)
         {
+            ConsoleLogger.Debug("Initial font: {0}", font);
             var figletSelectorTui = new FigletSelectorTui(font);
             TextualUITools.RunTui(figletSelectorTui);
-            return figletSelectorTui.GetResultingFigletName();
+            var result = figletSelectorTui.GetResultingFigletName();
+            ConsoleLogger.Debug("Result font: {0}", font);
+            return result;
         }
 
         internal static int DetermineFigletIndex(string name)

@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+
 namespace Terminaux.Shell.Commands
 {
     /// <summary>
@@ -41,8 +43,8 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// The help helper
         /// </summary>
-        public virtual void HelpHelper()
-        { }
+        public virtual void HelpHelper() =>
+            ConsoleLogger.Debug("No additional information found.");
 
     }
 }

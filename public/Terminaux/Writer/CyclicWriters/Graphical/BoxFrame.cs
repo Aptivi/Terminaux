@@ -127,6 +127,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 // StringBuilder is here to formulate the whole string consisting of box frame
                 StringBuilder frameBuilder = new();
+                ConsoleLogger.Debug("Box width: {0}, height: {1}", Width, Height);
 
                 // Colors
                 if (UseColors)

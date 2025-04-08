@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -59,14 +60,17 @@ namespace Terminaux.Shell.Arguments.Base
                 ArgumentsInput ??= [];
 
                 // Parse them now
+                ConsoleLogger.Debug("{0} argument input strings [{1}]", ArgumentsInput.Length, string.Join(", ", ArgumentsInput));
                 for (int i = 0; i <= ArgumentsInput.Length - 1; i++)
                 {
                     string Argument = ArgumentsInput[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
+                    ConsoleLogger.Debug("Checking {0} from [{1}]", ArgumentName, string.Join(", ", arguments.Keys));
                     if (arguments.TryGetValue(ArgumentName, out ArgumentInfo? argInfoVal))
                     {
                         // Variables
                         var (satisfied, total) = ArgumentsParser.ParseArgumentArguments(Argument, arguments);
+                        ConsoleLogger.Debug("Parsed argument {0} and found {1} total arguments.", Argument, total.Length);
                         for (int j = 0; j < total.Length; j++)
                         {
                             var ArgumentInfo = total[j];
@@ -79,10 +83,12 @@ namespace Terminaux.Shell.Arguments.Base
                             bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
 
                             // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
+                            ConsoleLogger.Debug("Argument {0} [P: {1}] [S: {2}], {3} info instances.", ArgumentInfo.Command, string.Join(", ", Args), string.Join(", ", Switches), Arg.ArgArgumentInfo.Length);
                             for (int idx = 0; idx < Arg.ArgArgumentInfo.Length; idx++)
                             {
                                 var argInfo = Arg.ArgArgumentInfo[idx];
                                 bool isLast = idx == Arg.ArgArgumentInfo.Length - 1 && j == total.Length - 1;
+                                ConsoleLogger.Debug("Info {0} / {1}: req: {2}, provided: {3}, last: {4}", idx + 1, Arg.ArgArgumentInfo.Length, argInfo.ArgumentsRequired, RequiredArgumentsProvided, isLast);
                                 if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
                                 {
                                     // Prepare the argument parameter instance
@@ -90,19 +96,27 @@ namespace Terminaux.Shell.Arguments.Base
 
                                     // Now, get the base command and execute it
                                     var ArgumentBase = Arg.ArgumentBase;
+                                    ConsoleLogger.Debug("Got argument base resolving to {0}, executing...", ArgumentName);
                                     ArgumentBase.Execute(parameters);
                                 }
                                 else if (isLast)
+                                {
+                                    ConsoleLogger.Error("Not enough arguments {0}", ArgumentName);
                                     TextWriterColor.WriteColor("There were not enough arguments.", ConsoleColors.Red);
+                                }
                             }
                         }
                     }
                     else
+                    {
+                        ConsoleLogger.Error("No such argument {0}", ArgumentName);
                         TextWriterColor.WriteColor("Unknown argument" + $" {Argument}", ConsoleColors.Red);
+                    }
                 }
             }
             catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Argument execution failed");
                 TextWriterColor.WriteColor("Unrecoverable error in argument: " + ex.Message, ConsoleColors.Red);
             }
         }
@@ -146,12 +160,16 @@ namespace Terminaux.Shell.Arguments.Base
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
                     found = ArgumentName == argumentName && arguments.ContainsKey(ArgumentName);
                     if (found)
+                    {
+                        ConsoleLogger.Debug("Argument passed {0}", argumentName);
                         break;
+                    }
                 }
                 return found;
             }
-            catch
+            catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Argument passed {0}", argumentName);
                 return false;
             }
         }
@@ -168,16 +186,22 @@ namespace Terminaux.Shell.Arguments.Base
                     // If we came across a valid argument, add the result and clear the builder
                     if (builder.Length > 0)
                     {
+                        ConsoleLogger.Debug("Adding result \"{0}\" to final arguments list", builder.ToString());
                         finalArguments.Add(builder.ToString().Trim());
                         builder.Clear();
                     }
                 }
 
                 // Add the argument name
+                ConsoleLogger.Debug("Adding argument name {0}", argInput);
                 builder.Append(argInput + " ");
             }
             if (builder.Length > 0)
+            {
+                ConsoleLogger.Debug("Adding final argument name {0}", builder.ToString());
                 finalArguments.Add(builder.ToString().Trim());
+            }
+            ConsoleLogger.Debug("Final argument count: {0}", finalArguments.Count);
             return [.. finalArguments];
         }
     }

@@ -131,18 +131,23 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     if (!File.Exists(finalHighlightProcess))
                     {
+                        ConsoleLogger.Warning("Can't use highlight because {0} doesn't exist", finalHighlightProcess);
                         if (PlatformHelper.IsOnWindows())
                         {
                             // It doesn't exist. It's possible that Windows users might have installed highlight using the
                             // Windows installer. Look at "%SYSTEMDRIVE%/Program Files/Highlight/highlight.exe".
                             finalHighlightProcess = Path.GetFullPath($"{Environment.GetEnvironmentVariable("SYSTEMDRIVE")}/Program Files/Highlight/highlight.exe");
                             if (!File.Exists(finalHighlightProcess))
+                            {
+                                ConsoleLogger.Warning("Can't use systemwide highlight because {0} doesn't exist", finalHighlightProcess);
                                 canHighlight = false;
+                            }
                         }
                         else
                             canHighlight = false;
                     }
                 }
+                ConsoleLogger.Debug("Can highlight: {0}", canHighlight);
 
                 // Now, determine whether we can highlight.
                 string output = Text;
@@ -166,6 +171,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         {
                             RedirectStandardOutput = true,
                         };
+                        ConsoleLogger.Debug("Starting highlight process: {0} {1}", command, arguments);
                         var highlightProcess = Process.Start(highlightProcessInfo);
                         highlightProcess.WaitForExit();
                         output = highlightProcess.StandardOutput.ReadToEnd();

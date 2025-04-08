@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+
 namespace Terminaux.Shell.Prompts
 {
     /// <summary>
@@ -47,26 +49,38 @@ namespace Terminaux.Shell.Prompts
         /// <inheritdoc/>
         public virtual string PresetShellType { get; } = "Shell";
 
-        internal virtual string PresetPromptBuilder() =>
-            "> ";
+        internal virtual string PresetPromptBuilder()
+        {
+            ConsoleLogger.Warning("Tried to call prompt builder on base.");
+            return "> ";
+        }
 
         string IPromptPreset.PresetPromptBuilder() =>
             PresetPromptBuilder();
 
-        internal virtual string PresetPromptCompletionBuilder() =>
-            "[+] > ";
+        internal virtual string PresetPromptCompletionBuilder()
+        {
+            ConsoleLogger.Warning("Tried to call prompt builder on base.");
+            return "[+] > ";
+        }
 
         string IPromptPreset.PresetPromptCompletionBuilder() =>
             PresetPromptCompletionBuilder();
 
-        internal virtual string PresetPromptBuilderShowcase() =>
-            "> ";
+        internal virtual string PresetPromptBuilderShowcase()
+        {
+            ConsoleLogger.Warning("Tried to call prompt builder on base.");
+            return "> ";
+        }
 
         string IPromptPreset.PresetPromptBuilderShowcase() =>
             PresetPromptBuilderShowcase();
 
-        internal virtual string PresetPromptCompletionBuilderShowcase() =>
-            "[+] > ";
+        internal virtual string PresetPromptCompletionBuilderShowcase()
+        {
+            ConsoleLogger.Warning("Tried to call prompt builder on base.");
+            return "[+] > ";
+        }
 
         string IPromptPreset.PresetPromptCompletionBuilderShowcase() =>
             PresetPromptCompletionBuilderShowcase();

@@ -80,17 +80,20 @@ namespace Terminaux.Reader
             {
                 // It's been resized. Now, get the current text position
                 int textPos = state.CurrentTextPos;
+                ConsoleLogger.Debug("Resize detected. Fixing up values to represent pos {0} correctly...", textPos);
 
                 // Go to the leftmost position
                 PositioningTools.GoLeftmost(ref state);
 
                 // Fix the values up
+                ConsoleLogger.Debug("Initial values: (i: {0}, {1}) (c: {2}, {3})", state.inputPromptLeft, state.inputPromptTop, state.currentCursorPosLeft, state.currentCursorPosTop);
                 state.inputPromptLeft = ConsoleChar.EstimateCellWidth(state.InputPromptLastLine);
                 state.inputPromptTop = state.InputPromptTopBegin + state.InputPromptHeight - 1;
                 if (state.inputPromptTop >= ConsoleWrapper.WindowHeight)
                     state.inputPromptTop = ConsoleWrapper.WindowHeight - 1;
                 state.currentCursorPosLeft = state.InputPromptLeft;
                 state.currentCursorPosTop = state.InputPromptTop;
+                ConsoleLogger.Debug("Final values: (i: {0}, {1}) (c: {2}, {3})", state.inputPromptLeft, state.inputPromptTop, state.currentCursorPosLeft, state.currentCursorPosTop);
 
                 // Go to the old position
                 PositioningTools.SeekTo(textPos, ref state);
@@ -237,7 +240,10 @@ namespace Terminaux.Reader
 
             // Take the unoccupied characters
             if (!hasFullWidths)
+            {
+                ConsoleLogger.Debug("Max input length (has no full widths): {0}", length);
                 return length;
+            }
             length -= fullWidths;
             var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < sentences.Length; i++)
@@ -249,6 +255,7 @@ namespace Terminaux.Reader
             }
 
             // Return the number of length available
+            ConsoleLogger.Debug("Max input length (has full widths of {0}): {1}", length, fullWidths);
             return length;
         }
 
@@ -472,7 +479,10 @@ namespace Terminaux.Reader
                 // Now, match the original string
                 Match[] matches = match.Matches(renderedText).OfType<Match>().ToArray();
                 foreach (var finalMatch in matches)
+                {
+                    ConsoleLogger.Debug("Highlighting match {0} with {1}, {2}, {3}, {4} [idx: {5}]", finalMatch.Value, fgColor, bgColor, fgEnabled, bgEnabled, finalMatch.Index);
                     finalMatches.Add((finalMatch, fgColor, bgColor, fgEnabled, bgEnabled));
+                }
             }
 
             // Sort the matches and apply

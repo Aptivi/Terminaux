@@ -23,6 +23,7 @@ using Terminaux.Colors;
 using System;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
@@ -54,6 +55,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             // the radius of the circle
             int centerX = Width / 2;
             int centerY = Height / 2;
+            ConsoleLogger.Debug("Center position: {0}, {1}", centerX, centerY);
 
             // Now, draw the ellipsis
             var canvas = new Canvas()

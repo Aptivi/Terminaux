@@ -165,7 +165,10 @@ namespace Terminaux.Reader.Tools
         public static void Commit(TermReaderState state)
         {
             if (needsCommit)
+            {
+                ConsoleLogger.Debug("Setting caret position to {0}, {1}...", state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
                 ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            }
             needsCommit = false;
         }
 

@@ -43,12 +43,14 @@ namespace Terminaux.Shell.Aliases
         {
             if (ShellManager.ShellTypeExists(Type))
             {
+                ConsoleLogger.Debug("Checking alias {0} pointing to {1} under type {2}...", SourceAlias, Destination, Type);
                 if (SourceAlias == Destination)
                     throw new TerminauxException("Alias can't be the same name as a command.");
                 else if (!CommandManager.IsCommandFound(SourceAlias, Type))
                     throw new TerminauxException("Command not found to alias to {0}.", Destination);
                 else if (DoesAliasExist(Destination, Type))
                     throw new TerminauxException("Alias already found: {0}", SourceAlias);
+                ConsoleLogger.Info("Adding alias {0} pointing to {1} under type {2}...", SourceAlias, Destination, Type);
                 var aliasInstance = new AliasInfo(Destination, SourceAlias, Type);
                 aliases.Add(aliasInstance);
                 return true;
@@ -69,6 +71,7 @@ namespace Terminaux.Shell.Aliases
             if (DoesAliasExist(TargetAlias, Type))
             {
                 var AliasInfo = GetAlias(TargetAlias, Type);
+                ConsoleLogger.Info("Removing alias {0} pointing to {1} under type {2}...", TargetAlias, AliasInfo.Command, Type);
                 return aliases.Remove(AliasInfo);
             }
             else
@@ -104,6 +107,7 @@ namespace Terminaux.Shell.Aliases
 
             // Get the list of available aliases and get an alias matching the target alias
             var aliases = GetAliasListFromType(Type);
+            ConsoleLogger.Info("Finding alias {0} under type {1} in {2} aliases...", TargetAlias, Type, aliases.Count);
             return aliases.Single((info) => info.Alias == TargetAlias);
         }
     }

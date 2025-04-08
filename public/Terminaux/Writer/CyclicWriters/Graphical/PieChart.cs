@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
@@ -162,6 +163,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 };
 
                 // Render the element using a pie
+                ConsoleLogger.Debug("Rendering pie chart element {0}: (start angle: {1}, sweep angle: {2})", i, start, sweep);
                 var pie = new Arc(Height, Left + showcaseLength, Top, element.Color)
                 {
                     InnerRadius = 0,

@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
+
 namespace Terminaux.Reader.Tools
 {
     /// <summary>
@@ -34,6 +36,7 @@ namespace Terminaux.Reader.Tools
         {
             if (condition)
                 state.operationWasInvalid = true;
+            ConsoleLogger.Debug("Condition resulted in state.operationWasInvalid being {0}", state.operationWasInvalid);
             return !condition;
         }
 
@@ -47,6 +50,7 @@ namespace Terminaux.Reader.Tools
         {
             if (!condition)
                 state.operationWasInvalid = true;
+            ConsoleLogger.Debug("Condition resulted in state.operationWasInvalid being {0}", state.operationWasInvalid);
             return condition;
         }
     }

@@ -22,6 +22,7 @@ using Terminaux.Colors;
 using System;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using System.Collections.Generic;
+using Terminaux.Base;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
@@ -57,6 +58,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         public override string Render()
         {
             int width = Math.Max(TopWidth, BottomWidth);
+            ConsoleLogger.Debug("{0} is the maximum width ({1}, {2})", width, TopWidth, BottomWidth);
             var canvas = new Canvas()
             {
                 Transparent = true,
@@ -85,6 +87,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 }
             }
             canvas.Pixels = [.. pixels];
+            ConsoleLogger.Debug("{0} pixels of trapezoid", pixels.Count);
             return canvas.Render();
         }
 

@@ -54,6 +54,7 @@ namespace Terminaux.Inputs.Pointer
                 throw new TerminauxException("Start X position may not be greater than the end X position");
             if (start.y > end.y)
                 throw new TerminauxException("Start Y position may not be greater than the end Y position");
+            ConsoleLogger.Debug("Mouse pos: {0} | Start: {1}, End: {2}", context.Coordinates, start, end);
             return
                 context.Coordinates.x >= start.x && context.Coordinates.x <= end.x &&
                 context.Coordinates.y >= start.y && context.Coordinates.y <= end.y;

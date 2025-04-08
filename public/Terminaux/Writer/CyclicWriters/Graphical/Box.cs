@@ -18,6 +18,7 @@
 //
 
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 
@@ -61,6 +62,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 $"{(UseColors ? ColorTools.RenderSetConsoleColor(Color, true) : "")}" +
                 CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)
             );
+            ConsoleLogger.Debug("Box width: {0}, height: {1}", Width, Height);
             for (int y = 1; y <= Height; y++)
                 box.Append(
                     new string(' ', Width) +

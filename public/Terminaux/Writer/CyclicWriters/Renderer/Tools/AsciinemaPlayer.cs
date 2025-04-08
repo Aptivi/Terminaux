@@ -134,6 +134,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             ColorTools.LoadBack();
 
             // Process the stdout data
+            ConsoleLogger.Info("Playing {0} frames", asciicast.StdOutData.Count);
             for (int i = 0; i < asciicast.StdOutData.Count; i++)
             {
                 // Get the standard output data
@@ -145,6 +146,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 if (asciicast is AsciicastV2 asciicastV2 && timePointDiff > asciicastV2.IdleTimeLimit && asciicastV2.IdleTimeLimit > 0)
                     timePointDiff = asciicastV2.IdleTimeLimit;
                 var timePointSpan = TimeSpan.FromSeconds(timePointDiff);
+                ConsoleLogger.Debug("Playing from {0} to {1} in {2} ms with event {3}", i, i + 1, timePointSpan.TotalMilliseconds, eventType);
 
                 // Determine the event type
                 switch (eventType)
@@ -156,10 +158,13 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                         break;
                     case "r":
                         // Resize events in this format: {Columns}x{Rows}
-                        int newWidth = int.Parse(data.Substring(0, data.IndexOf('x')));
-                        int newHeight = int.Parse(data.Substring(data.IndexOf('x') + 1));
                         if (resizeWindow)
+                        {
+                            int newWidth = int.Parse(data.Substring(0, data.IndexOf('x')));
+                            int newHeight = int.Parse(data.Substring(data.IndexOf('x') + 1));
+                            ConsoleLogger.Debug("Resizing to {0}, {1}", newWidth, newHeight);
                             ConsoleWrapper.SetWindowDimensions(newWidth, newHeight);
+                        }
                         break;
                 }
 
@@ -169,7 +174,10 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 
             // Try to restore the window size
             if (resizeWindow)
+            {
+                ConsoleLogger.Debug("Resizing to initial size {0}, {1}", oldWidth, oldHeight);
                 ConsoleWrapper.SetWindowDimensions(oldWidth, oldHeight);
+            }
         }
     }
 }

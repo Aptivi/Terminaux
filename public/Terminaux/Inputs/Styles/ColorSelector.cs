@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -121,10 +122,14 @@ namespace Terminaux.Inputs.Styles
             var finalSettings = settings ?? new(ColorTools.GlobalSettings);
 
             // Initial color is selected
+            ConsoleLogger.Debug("Initial color: {0}", initialColor);
             Color selectedColor = new(initialColor.RGB.R, initialColor.RGB.G, initialColor.RGB.B, finalSettings);
+            ConsoleLogger.Debug("Final initial color: {0}", selectedColor);
             var colorSelectorTui = new ColorSelectorTui(selectedColor, finalSettings, readOnly);
             TextualUITools.RunTui(colorSelectorTui);
-            return colorSelectorTui.GetResultingColor();
+            var result = colorSelectorTui.GetResultingColor();
+            ConsoleLogger.Debug("Result color: {0}", result);
+            return result;
         }
 
         static ColorSelector()

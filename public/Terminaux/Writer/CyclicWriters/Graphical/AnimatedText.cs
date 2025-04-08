@@ -117,6 +117,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 var animated = new StringBuilder();
                 string text = frames[frame];
+                ConsoleLogger.Debug("Rendering animated text frame {0} / {1}", frame, frames.Length);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, Width);
                 for (int i = 0; i < sentences.Length; i++)
                 {

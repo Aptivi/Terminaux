@@ -43,6 +43,7 @@ namespace Terminaux.Shell.Commands
             var StartCommandThread = ShellInstance.ShellCommandThread;
             if (!StartCommandThread.IsAlive)
             {
+                ConsoleLogger.Info("Starting command thread...");
                 StartCommandThread.Start(ThreadParams);
                 StartCommandThread.Join();
                 ShellInstance.shellCommandThread = ShellManager.RegenerateCommandThread(ShellInstance.ShellType);
@@ -67,6 +68,7 @@ namespace Terminaux.Shell.Commands
                 argSatisfied = satisfied is not null;
                 if (satisfied is null)
                 {
+                    ConsoleLogger.Warning("Arguments not satisfied.");
                     TextWriterColor.WriteColor("Required arguments are not provided for all usages below:", ConsoleColors.Red);
                     for (int i = 0; i < total.Length; i++)
                     {
@@ -89,19 +91,29 @@ namespace Terminaux.Shell.Commands
 
                         // Check for required arguments
                         if (!unsatisfied.RequiredArgumentsProvided)
+                        {
+                            ConsoleLogger.Warning("User hasn't provided enough arguments for {0}", command);
                             TextWriterColor.WriteColor("Required arguments are not provided.", ConsoleColors.Olive);
+                        }
 
                         // Check for required switches
                         if (!unsatisfied.RequiredSwitchesProvided)
+                        {
+                            ConsoleLogger.Warning("User hasn't provided enough switches for {0}", command);
                             TextWriterColor.WriteColor("Required switches are not provided.", ConsoleColors.Olive);
+                        }
 
                         // Check for required switch arguments
                         if (!unsatisfied.RequiredSwitchArgumentsProvided)
+                        {
+                            ConsoleLogger.Warning("User hasn't provided a value for one of the switches for {0}", command);
                             TextWriterColor.WriteColor("One of the switches requires a value that is not provided.", ConsoleColors.Olive);
+                        }
 
                         // Check for unknown switches
                         if (unsatisfied.UnknownSwitchesList.Length > 0)
                         {
+                            ConsoleLogger.Warning("User has provided unknown switches {0}", command);
                             TextWriterColor.WriteColor("Switches that are listed below are unknown.", ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
@@ -112,6 +124,7 @@ namespace Terminaux.Shell.Commands
                         // Check for conflicting switches
                         if (unsatisfied.ConflictingSwitchesList.Length > 0)
                         {
+                            ConsoleLogger.Warning("User has provided conflicting switches for {0}", command);
                             TextWriterColor.WriteColor("Switches that are listed below conflict with each other.", ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
@@ -122,6 +135,7 @@ namespace Terminaux.Shell.Commands
                         // Check for switches that don't accept values
                         if (unsatisfied.NoValueSwitchesList.Length > 0)
                         {
+                            ConsoleLogger.Warning("User has provided switches that don't accept values for {0}", command);
                             TextWriterColor.WriteColor("The below switches don't accept values.", ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
@@ -131,15 +145,24 @@ namespace Terminaux.Shell.Commands
 
                         // Check for invalid number in numeric arguments
                         if (!unsatisfied.NumberProvided)
+                        {
+                            ConsoleLogger.Warning("User has provided invalid number for one or more of the arguments for {0}", command);
                             TextWriterColor.WriteColor("One or more of the arguments expect a numeric value, but you provided an invalid number.", ConsoleColors.Olive);
+                        }
 
                         // Check for invalid exact wording
                         if (!unsatisfied.ExactWordingProvided)
+                        {
+                            ConsoleLogger.Warning("User has provided non-exact wording for {0}", command);
                             TextWriterColor.WriteColor("One or more of the arguments expect an exact wording, but you provided an invalid word.", ConsoleColors.Olive);
+                        }
 
                         // Check for invalid number in numeric switches
                         if (!unsatisfied.SwitchNumberProvided)
+                        {
+                            ConsoleLogger.Warning("User has provided invalid number for one or more of the switches for {0}", command);
                             TextWriterColor.WriteColor("One or more of the switches expect a numeric value, but you provided an invalid number.", ConsoleColors.Olive);
+                        }
                     }
                     TextWriterColor.WriteColor("Consult the help entry for this command for more info", ConsoleColors.Red);
                     return;
@@ -160,6 +183,7 @@ namespace Terminaux.Shell.Commands
                 if (argSatisfied)
                 {
                     argCheckerReturnCode = satisfied.ArgumentInfo?.ArgChecker.Invoke(parameters) ?? 0;
+                    ConsoleLogger.Debug("Command {0} with args {1} argument checker returned {2}", Command, StrArgs, argCheckerReturnCode);
                     argSatisfied = argCheckerReturnCode == 0;
                 }
 
@@ -167,16 +191,19 @@ namespace Terminaux.Shell.Commands
                 if (argSatisfied)
                 {
                     // Now, get the base command and execute it
+                    ConsoleLogger.Debug("Really executing command {0} with args {1}", Command, StrArgs);
                     var CommandBase = RequestedCommandInfo.CommandBase;
                     CommandDelegate(CommandBase, parameters);
                 }
             }
             catch (ThreadInterruptedException)
             {
+                ConsoleLogger.Warning("Command {0} is being interrupted...", RequestedCommand);
                 TextWriterColor.WriteColor("Command is being interrupted...", ConsoleColors.Red);
             }
             catch (Exception ex)
             {
+                ConsoleLogger.Error(ex, "Failed to execute command {0}", RequestedCommand);
                 TextWriterColor.WriteColor("Error trying to execute command {2}." + CharManager.NewLine + "Error {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
             }
         }

@@ -94,6 +94,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 antiAlias ?
                 GetCellParamsAntiAlias(StartPos, EndPos, lineColor) :
                 GetCellParamsNoAntiAlias(StartPos, EndPos, lineColor);
+            ConsoleLogger.Debug("{0} pixels of a line ({1})", parameters.Length, antiAlias);
+            ConsoleLogger.Debug("Start: ({0})", StartPos);
+            ConsoleLogger.Debug("End: ({0})", EndPos);
             var canvas = new Canvas()
             {
                 Transparent = true,

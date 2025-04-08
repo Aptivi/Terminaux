@@ -19,6 +19,7 @@
 
 using System.Linq;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
@@ -125,6 +126,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 Coordinate coord = new(Left + showcaseLength, Top + e);
                 int length = (int)(value * wholeLength / maxValue);
                 int diff = Backwards ? wholeLength - length : 0;
+                ConsoleLogger.Debug("Rendering bar chart: ({0} + {1}, {2}) len: {3}", coord.X, diff, coord.Y, length);
                 barChart.Append(
                     ConsolePositioning.RenderChangePosition(coord.X + diff, coord.Y) +
                     (UseColors ? ColorTools.RenderSetConsoleColor(color, true) : "") +

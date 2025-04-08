@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Arguments.Base.Help
 {
@@ -46,11 +47,16 @@ namespace Terminaux.Shell.Arguments.Base.Help
             acknowledged = true;
 
             // Check to see if argument exists
+            ConsoleLogger.Debug("{0} arguments [{1}]", arguments.Count, string.Join(", ", arguments));
             if (!string.IsNullOrWhiteSpace(Argument))
+            {
+                ConsoleLogger.Debug("Printing argument help for {0}...", Argument);
                 ArgumentHelpPrintTools.ShowHelpUsage(Argument, arguments);
+            }
             else
             {
                 // List the available arguments
+                ConsoleLogger.Debug("Printing argument list (simple: {0})...", simple);
                 if (!simple)
                     ArgumentHelpPrintTools.ShowArgumentList(arguments);
                 else
