@@ -72,6 +72,26 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, left, selectionReservedHeight);
         }
 
+        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputModule[] modules, string[] splitFinalLines)
+        {
+            int selectionChoices = modules.Length > 10 ? 10 : modules.Length;
+            int selectionReservedHeight = 4 + selectionChoices;
+            (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
+
+            // Fill in some selection properties
+            int selectionBoxPosX = borderX + 2;
+            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
+            int leftPos = selectionBoxPosX + 1;
+            int maxSelectionWidth = maxRenderWidth;
+            int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;
+            maxWidth = maxSelectionWidth;
+            maxSelectionWidth -= 4;
+            borderX -= (int)Math.Round(diff / 2d);
+            selectionBoxPosX -= (int)Math.Round(diff / 2d);
+            int left = maxWidth - 2;
+            return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, left, selectionReservedHeight);
+        }
+
         internal static string RenderText(
             int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, bool writeBinding, params object[] vars
         )
@@ -89,6 +109,16 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensions(choices, splitFinalLines);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, true, vars);
+        }
+
+        internal static string RenderText(
+            InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, params object[] vars
+        )
+        {
+            // Deal with the lines to actually fit text in the infobox
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensions(modules, splitFinalLines);
             return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, true, vars);
         }
 

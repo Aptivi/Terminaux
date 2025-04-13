@@ -220,6 +220,8 @@ namespace Terminaux.Console.Fixtures
             new TestInputInfoBoxProgress(),
             new TestInputInfoBoxSlider(),
             new TestInputInfoBoxSliderMin(),
+            new TestInputInfoBoxMultiInput(),
+            new TestInputInfoBoxMultiInputLong(),
             new ColorSelectorTest(),
             new ColorSelectorNoPaletteTest(),
             new ColorSelectorNoWriteTest(),
