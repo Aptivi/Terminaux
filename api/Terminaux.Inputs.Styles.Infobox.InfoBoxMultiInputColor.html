@@ -101,19 +101,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_Terminaux_Inputs_InputModule___System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L64">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L94">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(System.String,System.Object[])">WriteInfoBoxMultiInput(string, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_Terminaux_Inputs_InputModule___System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(Terminaux.Inputs.InputModule[],System.String,System.Object[])">WriteInfoBoxMultiInput(InputModule[], string, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInput(string text, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInput(InputModule[] modules, string text, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -125,6 +125,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">text</span></td>
@@ -139,36 +145,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_System_String_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(System.String%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_Terminaux_Inputs_InputModule___System_String_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L141">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L179">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_System_String_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(System.String,System.String,System.Object[])">WriteInfoBoxMultiInput(string, string, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_Terminaux_Inputs_InputModule___System_String_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(Terminaux.Inputs.InputModule[],System.String,System.String,System.Object[])">WriteInfoBoxMultiInput(InputModule[], string, string, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInput(string title, string text, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInput(InputModule[] modules, string title, string text, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -180,6 +171,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">title</span></td>
@@ -200,36 +197,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(System.String%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L172">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L213">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(System.String,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxMultiInput(string, string, BorderSettings, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(Terminaux.Inputs.InputModule[],System.String,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxMultiInput(InputModule[], string, string, BorderSettings, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInput(string title, string text, BorderSettings settings, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInput(InputModule[] modules, string title, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -241,6 +223,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">title</span></td>
@@ -267,36 +255,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(System.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_Terminaux_Inputs_InputModule___System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L92">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L125">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxMultiInput(string, BorderSettings, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInput_Terminaux_Inputs_InputModule___System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInput(Terminaux.Inputs.InputModule[],System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxMultiInput(InputModule[], string, BorderSettings, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInput(string text, BorderSettings settings, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInput(InputModule[] modules, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -308,6 +281,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">text</span></td>
@@ -328,36 +307,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_System_String_System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(System.String%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L151">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L190">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_System_String_System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(System.String,System.String,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColor(string, string, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(Terminaux.Inputs.InputModule[],System.String,System.String,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColor(InputModule[], string, string, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInputColor(string title, string text, Color InfoBoxTitledColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInputColor(InputModule[] modules, string title, string text, Color InfoBoxTitledColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -369,6 +333,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">title</span></td>
@@ -395,36 +365,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(System.String%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L183">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L225">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(System.String,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColor(string, string, BorderSettings, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(Terminaux.Inputs.InputModule[],System.String,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColor(InputModule[], string, string, BorderSettings, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInputColor(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInputColor(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -436,6 +391,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">title</span></td>
@@ -468,36 +429,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(System.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_Terminaux_Inputs_InputModule___System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L73">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L104">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(System.String,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColor(string, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_Terminaux_Inputs_InputModule___System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(Terminaux.Inputs.InputModule[],System.String,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColor(InputModule[], string, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInputColor(string text, Color InfoBoxColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInputColor(InputModule[] modules, string text, Color InfoBoxColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -509,6 +455,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">text</span></td>
@@ -529,36 +481,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(System.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_Terminaux_Inputs_InputModule___System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L102">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L136">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColor(string, BorderSettings, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColor_Terminaux_Inputs_InputModule___System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColor(Terminaux.Inputs.InputModule[],System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColor(InputModule[], string, BorderSettings, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInputColor(string text, BorderSettings settings, Color InfoBoxColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInputColor(InputModule[] modules, string text, BorderSettings settings, Color InfoBoxColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -570,6 +507,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">text</span></td>
@@ -596,36 +539,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(System.String%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L162">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L202">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColorBack(string, string, Color, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(Terminaux.Inputs.InputModule[],System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColorBack(InputModule[], string, string, Color, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInputColorBack(string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -637,6 +565,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">title</span></td>
@@ -669,36 +603,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(System.String%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L195">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L238">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(System.String,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColorBack(string, string, BorderSettings, Color, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(Terminaux.Inputs.InputModule[],System.String,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColorBack(InputModule[], string, string, BorderSettings, Color, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInputColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -710,6 +629,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">title</span></td>
@@ -748,36 +673,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(System.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_Terminaux_Inputs_InputModule___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L83">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L115">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColorBack(string, Color, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_Terminaux_Inputs_InputModule___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(Terminaux.Inputs.InputModule[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColorBack(InputModule[], string, Color, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInputColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -789,6 +699,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">text</span></td>
@@ -815,36 +731,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(System.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_Terminaux_Inputs_InputModule___System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L113">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L148">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColorBack(string, BorderSettings, Color, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxMultiInputColorBack_Terminaux_Inputs_InputModule___System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxMultiInputColorBack(Terminaux.Inputs.InputModule[],System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxMultiInputColorBack(InputModule[], string, BorderSettings, Color, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxMultiInputColorBack(string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -856,6 +757,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">text</span></td>
@@ -888,36 +795,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_Terminaux_Inputs_InputModule___System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L47">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L75">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(System.String,System.Object[])">WriteInfoBoxPlainMultiInput(string, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_Terminaux_Inputs_InputModule___System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(Terminaux.Inputs.InputModule[],System.String,System.Object[])">WriteInfoBoxPlainMultiInput(InputModule[], string, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxPlainMultiInput(string text, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxPlainMultiInput(InputModule[] modules, string text, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -929,6 +821,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">text</span></td>
@@ -943,36 +841,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_System_String_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(System.String%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_Terminaux_Inputs_InputModule___System_String_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L122">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L158">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_System_String_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(System.String,System.String,System.Object[])">WriteInfoBoxPlainMultiInput(string, string, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_Terminaux_Inputs_InputModule___System_String_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(Terminaux.Inputs.InputModule[],System.String,System.String,System.Object[])">WriteInfoBoxPlainMultiInput(InputModule[], string, string, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxPlainMultiInput(string title, string text, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxPlainMultiInput(InputModule[] modules, string title, string text, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -984,6 +867,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">title</span></td>
@@ -1004,36 +893,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(System.String%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L132">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L169">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(System.String,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxPlainMultiInput(string, string, BorderSettings, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_Terminaux_Inputs_InputModule___System_String_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(Terminaux.Inputs.InputModule[],System.String,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxPlainMultiInput(InputModule[], string, string, BorderSettings, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxPlainMultiInput(string title, string text, BorderSettings settings, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxPlainMultiInput(InputModule[] modules, string title, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1045,6 +919,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">title</span></td>
@@ -1071,36 +951,21 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(System.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_Terminaux_Inputs_InputModule___System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(Terminaux.Inputs.InputModule%5B%5D%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L56">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L85">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxPlainMultiInput(string, BorderSettings, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor_WriteInfoBoxPlainMultiInput_Terminaux_Inputs_InputModule___System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor.WriteInfoBoxPlainMultiInput(Terminaux.Inputs.InputModule[],System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxPlainMultiInput(InputModule[], string, BorderSettings, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string WriteInfoBoxPlainMultiInput(string text, BorderSettings settings, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxPlainMultiInput(InputModule[] modules, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1112,6 +977,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputModule.html">InputModule</a>[]</td>
+        <td><span class="parametername">modules</span></td>
+        <td><p>Input modules to represent their values.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">string</span></td>
         <td><span class="parametername">text</span></td>
@@ -1129,21 +1000,6 @@
         <td><span class="parametername">vars</span></td>
         <td><p>Variables to format the message before it's written.</p>
 </td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
       </tr>
     </tbody>
   </table>
@@ -1159,7 +1015,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxMultiInputColor.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxMultiInputColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L40" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxMultiInputColor.cs/#L48" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
