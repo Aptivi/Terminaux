@@ -51,6 +51,14 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Name = "Text Box Password",
                     Description = "Type any password to continue",
                 },
+                new SliderBoxModule()
+                {
+                    Name = "Choose a Number",
+                    Description = "Choose a number between 75 and 250. You'll start from 100.",
+                    MinPos = 75,
+                    MaxPos = 250,
+                    Value = 100,
+                },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInput), "Select an input module to test...");
             string[] rendered = [.. modules.Select((im) => im.Value?.ToString() ?? "")];

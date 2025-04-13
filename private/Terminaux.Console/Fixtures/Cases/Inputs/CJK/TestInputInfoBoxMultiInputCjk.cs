@@ -51,6 +51,14 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
                     Name = "文本框密码",
                     Description = "输入任意密码继续",
                 },
+                new SliderBoxModule()
+                {
+                    Name = "选择一个号码",
+                    Description = "选择一个介于 75 和 250 之间的数字。从 100 开始。",
+                    MinPos = 75,
+                    MaxPos = 250,
+                    Value = 100,
+                },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInput), "选择要测试的输入模块...");
             string[] rendered = [.. modules.Select((im) => im.Value?.ToString() ?? "")];
