@@ -269,6 +269,8 @@ namespace Terminaux.Console.Fixtures
             new TestInputInfoBoxColoredInputCjk(),
             new TestInputInfoBoxInputPasswordCjk(),
             new TestInputInfoBoxProgressCjk(),
+            new TestInputInfoBoxMultiInputCjk(),
+            new TestInputInfoBoxMultiInputLongCjk(),
             new TestHexEditorInteractiveCjk(),
             new TestHexEditorFullscreenInteractiveCjk(),
             new TestHexViewerInteractiveCjk(),
