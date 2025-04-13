@@ -1961,6 +1961,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Modules.ComboBoxModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Modules.ComboBoxModule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Modules.ComboBoxModule",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.ComboBoxModule.yml\" sourcestartlinenumber=\"1\">Combo box (selection) module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Modules.MaskedTextBoxModule.yml",
       "output": {
         ".html": {
@@ -1972,6 +1986,34 @@
       "IsMRef": true,
       "Title": "Terminaux.Inputs.Modules.MaskedTextBoxModule",
       "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.MaskedTextBoxModule.yml\" sourcestartlinenumber=\"1\">Masked text box module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Modules.MultiComboBoxModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Modules.MultiComboBoxModule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Modules.MultiComboBoxModule",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.MultiComboBoxModule.yml\" sourcestartlinenumber=\"1\">Multi combo box module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Modules.SliderBoxModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Modules.SliderBoxModule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Modules.SliderBoxModule",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.SliderBoxModule.yml\" sourcestartlinenumber=\"1\">Slider box module</p>\n"
     },
     {
       "type": "ManagedReference",
