@@ -46,6 +46,11 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
                     Name = "文本框字符串",
                     Description = "输入任意字符串以继续",
                 },
+                new MaskedTextBoxModule()
+                {
+                    Name = "文本框密码",
+                    Description = "输入任意密码继续",
+                },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInput), "选择要测试的输入模块...");
             string[] rendered = [.. modules.Select((im) => im.Value?.ToString() ?? "")];

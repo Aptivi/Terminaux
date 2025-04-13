@@ -46,6 +46,11 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Name = "Text Box String",
                     Description = "Type any string to continue",
                 },
+                new MaskedTextBoxModule()
+                {
+                    Name = "Text Box Password",
+                    Description = "Type any password to continue",
+                },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInput), "Select an input module to test...");
             string[] rendered = [.. modules.Select((im) => im.Value?.ToString() ?? "")];
