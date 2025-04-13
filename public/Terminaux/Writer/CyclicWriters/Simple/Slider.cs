@@ -110,9 +110,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             if (Vertical)
             {
                 // Estimate how many cells the slider takes
-                int one = ConsoleMisc.PercentRepeatTargeted(1, maxPosition, Height);
+                int one = ConsoleMisc.PercentRepeatTargeted(minPosition > 0 ? minPosition : 1, maxPosition, Height);
                 one = one == 0 ? 1 : one;
-                int times = ConsoleMisc.PercentRepeatTargeted(position, maxPosition, Height);
+                int times = ConsoleMisc.PercentRepeatTargeted(position - minPosition, maxPosition, Height);
                 times = times >= Height ? Height - one : times;
                 int rest = Height - (one + times);
                 rest = rest < 0 ? 0 : rest;
@@ -135,9 +135,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             else
             {
                 // Estimate how many cells the slider takes
-                int one = ConsoleMisc.PercentRepeatTargeted(1, maxPosition, Width);
+                int one = ConsoleMisc.PercentRepeatTargeted(minPosition > 0 ? minPosition : 1, maxPosition, Width);
                 one = one == 0 ? 1 : one;
-                int times = ConsoleMisc.PercentRepeatTargeted(position, maxPosition, Width);
+                int times = ConsoleMisc.PercentRepeatTargeted(position - minPosition, maxPosition, Width);
                 times = times >= Width ? Width - one : times;
                 int rest = Width - (one + times);
                 rest = rest < 0 ? 0 : rest;

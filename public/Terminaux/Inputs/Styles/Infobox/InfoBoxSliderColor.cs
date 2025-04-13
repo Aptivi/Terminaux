@@ -302,7 +302,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int sliderPosX = borderX + 3;
                     int sliderPosY = borderY + maxHeight - 3;
                     int maxSliderWidth = maxWidth - 6;
-                    var slider = new Slider(selected, 0, maxPos)
+                    var slider = new Slider(selected, minPos, maxPos)
                     {
                         Width = maxSliderWidth,
                         SliderActiveForegroundColor = InfoBoxTitledSliderColor,
