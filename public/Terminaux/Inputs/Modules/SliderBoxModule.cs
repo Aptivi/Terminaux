@@ -36,7 +36,7 @@ namespace Terminaux.Inputs.Modules
         public int MinPos { get; set; }
 
         /// <summary>
-        /// Maximum postion
+        /// Maximum position
         /// </summary>
         public int MaxPos { get; set; }
 
