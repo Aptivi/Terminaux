@@ -31,7 +31,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     public class SimpleProgress : SimpleCyclicWriter
     {
         internal int indeterminateStep = 0;
-        internal ColorGradients indeterminateGradient = ColorGradients.GetGradients(ConsoleColors.DarkGreen, ConsoleColors.Lime, 50);
         internal bool indeterminateBackwards = false;
         private bool useColors = true;
         private int position = 0;
@@ -86,11 +85,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public Color ProgressForegroundColor
         {
             get => progressForegroundColor;
-            set
-            {
-                progressForegroundColor = value;
-                indeterminateGradient = ColorGradients.GetGradients(progressForegroundColor, progressActiveForegroundColor, 50);
-            }
+            set => progressForegroundColor = value;
         }
 
         /// <summary>
@@ -99,11 +94,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public Color ProgressActiveForegroundColor
         {
             get => progressActiveForegroundColor;
-            set
-            {
-                progressActiveForegroundColor = value;
-                indeterminateGradient = ColorGradients.GetGradients(progressForegroundColor, progressActiveForegroundColor, 50);
-            }
+            set => progressActiveForegroundColor = value;
         }
 
         /// <summary>
@@ -152,12 +143,18 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public override string Render()
         {
             var rendered = new StringBuilder();
+            var indeterminateSlider = new Slider(0, 0, 50)
+            {
+                SliderActiveForegroundColor = ProgressActiveForegroundColor,
+                SliderForegroundColor = ProgressForegroundColor,
+                SliderBackgroundColor = ProgressBackgroundColor,
+                Vertical = Vertical,
+                Height = Height,
+                Width = Width,
+            };
             if (Vertical)
             {
                 // Estimate how many cells the progress bar takes
-                int cells = (int)Math.Round(position * Height / (double)maxPosition);
-                cells = cells > Height ? Height : cells;
-                cells = Indeterminate ? Height : cells;
                 if (Indeterminate)
                 {
                     // Step the indeterminate steps
@@ -174,16 +171,14 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                             indeterminateBackwards = true;
                     }
 
-                    // Get the gradient and render it
-                    var gradientColor = indeterminateGradient[indeterminateStep - 1 < 0 ? 0 : indeterminateStep - 1];
-                    rendered.Append(
-                        UseColors ? ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor) : ""
-                    );
-                    for (int i = 0; i < Height; i++)
-                        rendered.AppendLine($"{ProgressVerticalInactiveTrackChar}");
+                    // Render the slider that indicates indeterminate progress
+                    indeterminateSlider.Position = indeterminateStep;
+                    rendered.Append(indeterminateSlider.Render());
                 }
                 else
                 {
+                    int cells = (int)Math.Round(position * Height / (double)maxPosition);
+                    cells = cells > Height ? Height : cells;
                     int remaining = Height - cells;
                     rendered.Append(
                         UseColors ? ColorTools.RenderSetConsoleColor(ProgressActiveForegroundColor) : ""
@@ -206,9 +201,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     return "";
 
                 // Estimate how many cells the progress bar takes
-                int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
-                cells = cells > progressWidth ? progressWidth : cells;
-                cells = Indeterminate ? progressWidth : cells;
                 if (Indeterminate)
                 {
                     // Step the indeterminate steps
@@ -225,15 +217,14 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                             indeterminateBackwards = true;
                     }
 
-                    // Get the gradient and render it
-                    var gradientColor = indeterminateGradient[indeterminateStep - 1 < 0 ? 0 : indeterminateStep - 1];
-                    rendered.Append(
-                        (UseColors ? ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor) : "") +
-                        new string(ProgressHorizontalInactiveTrackChar, cells + percentageWidth - 1)
-                    );
+                    // Render the slider that indicates indeterminate progress
+                    indeterminateSlider.Position = indeterminateStep;
+                    rendered.Append(indeterminateSlider.Render());
                 }
                 else
                 {
+                    int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
+                    cells = cells > progressWidth ? progressWidth : cells;
                     rendered.Append(
                         (UseColors ? ColorTools.RenderSetConsoleColor(ProgressActiveForegroundColor) : "") +
                         new string(ProgressHorizontalActiveTrackChar, cells) +

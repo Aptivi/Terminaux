@@ -39,7 +39,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private int indeterminateStep = 0;
         private bool indeterminateBackwards = false;
         private bool useColors = true;
-        private ColorGradients indeterminateGradient = ColorGradients.GetGradients(ConsoleColors.DarkGreen, ConsoleColors.Lime, 50);
         private Spinner progressSpinner = BuiltinSpinners.Dots;
         private TextMarquee progressMarquee = new("");
         private Color progressForegroundColor = ConsoleColors.DarkGreen;
@@ -93,11 +92,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public Color ProgressForegroundColor
         {
             get => progressForegroundColor;
-            set
-            {
-                progressForegroundColor = value;
-                indeterminateGradient = ColorGradients.GetGradients(progressForegroundColor, progressActiveForegroundColor, 50);
-            }
+            set => progressForegroundColor = value;
         }
 
         /// <summary>
@@ -106,11 +101,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public Color ProgressActiveForegroundColor
         {
             get => progressActiveForegroundColor;
-            set
-            {
-                progressActiveForegroundColor = value;
-                indeterminateGradient = ColorGradients.GetGradients(progressForegroundColor, progressActiveForegroundColor, 50);
-            }
+            set => progressActiveForegroundColor = value;
         }
 
         /// <summary>
@@ -222,13 +213,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 ProgressVerticalActiveTrackChar = ProgressVerticalActiveTrackChar,
                 ProgressVerticalInactiveTrackChar = ProgressVerticalInactiveTrackChar,
                 indeterminateStep = indeterminateStep,
-                indeterminateGradient = indeterminateGradient,
                 indeterminateBackwards = indeterminateBackwards,
                 UseColors = UseColors,
             };
             rendered.Append(bar.Render());
             indeterminateStep = bar.indeterminateStep;
-            indeterminateGradient = bar.indeterminateGradient;
             indeterminateBackwards = bar.indeterminateBackwards;
 
             // Return the result
