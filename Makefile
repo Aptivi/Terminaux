@@ -6,7 +6,8 @@ DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $(DOTNET_HEAP_LIMIT_INT))
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
 OUTPUTS  := \
 	-name "bin" -or \
-	-name "obj"
+	-name "obj" -or \
+	-name "docs"
 
 .PHONY: all
 
