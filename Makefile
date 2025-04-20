@@ -31,7 +31,7 @@ clean:
 # Below targets specify functions for full build
 
 invoke-build:
-	bash tools/build.sh "$(ENVIRONMENT)"
+	bash tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS)
 
 invoke-doc-build:
 	bash tools/docgen.sh
