@@ -32,6 +32,7 @@ using System.Text;
 using System.Threading;
 using Terminaux.Inputs;
 using Terminaux.Base.Extensions.Native;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Base.Checks
 {
@@ -206,6 +207,22 @@ namespace Terminaux.Base.Checks
             busy = false;
             acknowledged = true;
             ConsoleLogger.Info("This Terminaux application can now run!");
+
+#if DEBUG
+            var version = typeof(ConsoleChecker).Assembly.GetName().Version;
+            InfoBoxModalColor.WriteInfoBoxModalColor(
+                $"Terminaux {version.Major}.{version.Minor} Beta Program",
+                "Welcome to the Terminaux Beta Program!\n\n" +
+                $"Terminaux {version.Major}.{version.Minor} (Beta 1 - May 8th, 2025)\n\n" +
+                "We are introducing you to this beta program to get an early taste of the upcoming " +
+                "version of Terminaux with its new features and improved existing features. You can " +
+                "report bugs or feature suggestions to the Terminaux project via GitHub. However, we " +
+                "can't guarantee that everything works flawlessly, and there may be some features that " +
+                "might not make it to the final version.\n\n" +
+                "To get started, please press any key.",
+                ConsoleColors.Yellow
+            );
+#endif
         }
 
         /// <summary>
