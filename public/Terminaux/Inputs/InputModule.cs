@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -41,6 +42,11 @@ namespace Terminaux.Inputs
         /// Gets the processed value
         /// </summary>
         public object? Value { get; set; }
+
+        /// <summary>
+        /// Whether to use the colors or not
+        /// </summary>
+        public bool UseColor { get; set; } = true;
 
         /// <summary>
         /// Foreground color
@@ -75,6 +81,8 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Processes the input by prompting user
         /// </summary>
-        public abstract void ProcessInput();
+        /// <param name="inputPopoverPos">Input popover position. If there is no popover, it can be the same as the beginning of the input</param>
+        /// <param name="inputPopoverSize">Input popover size. If there is no popover, it can be the same as the input height and/or width</param>
+        public abstract void ProcessInput(Coordinate inputPopoverPos = default, Size inputPopoverSize = default);
     }
 }

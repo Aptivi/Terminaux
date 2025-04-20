@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -62,7 +63,7 @@ namespace Terminaux.Inputs.Modules
         }
 
         /// <inheritdoc/>
-        public override void ProcessInput()
+        public override void ProcessInput(Coordinate inputPopoverPos = default, Size inputPopoverSize = default)
         {
             // TODO: Temporarily use the infobox until reliability is proven.
             int[] choiceIndexes = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(Name, Choices, Description);

@@ -17,10 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Reader;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Inputs.Modules
 {
@@ -55,11 +59,35 @@ namespace Terminaux.Inputs.Modules
         }
 
         /// <inheritdoc/>
-        public override void ProcessInput()
+        public override void ProcessInput(Coordinate inputPopoverPos = default, Size inputPopoverSize = default)
         {
-            // TODO: Temporarily use the infobox until reliability is proven.
-            string valueText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Name, Description, Foreground, Background);
-            Value = valueText;
+            if (inputPopoverPos == default || inputPopoverSize == default)
+            {
+                // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
+                Value = InfoBoxInputColor.WriteInfoBoxInputColorBack(Name, Description, Foreground, Background);
+            }
+            else
+            {
+                // Render the popover. In this case, the whole input will be replaced with the text box that users can enter
+                // input on
+                TextWriterRaw.WriteRaw(
+                    CsiSequences.GenerateCsiCursorPosition(inputPopoverPos.X + 1, inputPopoverPos.Y + 1) +
+                    (UseColor ? ColorTools.RenderSetConsoleColor(Foreground) : "") +
+                    (UseColor ? ColorTools.RenderSetConsoleColor(Background, true) : "")
+                );
+
+                // Wait until the user presses any key to close the box
+                var readerSettings = new TermReaderSettings()
+                {
+                    RightMargin = ConsoleWrapper.WindowWidth - (inputPopoverPos.X + inputPopoverSize.Width) - 1,
+                };
+                if (UseColor)
+                {
+                    readerSettings.InputForegroundColor = Foreground;
+                    readerSettings.InputBackgroundColor = Background;
+                }
+                Value = TermReader.Read("", "", readerSettings, false, true);
+            }
         }
     }
 }

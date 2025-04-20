@@ -23,6 +23,7 @@ using Terminaux.Console.Fixtures.Cases.Graphics;
 using Terminaux.Console.Fixtures.Cases.Images;
 using Terminaux.Console.Fixtures.Cases.Inputs;
 using Terminaux.Console.Fixtures.Cases.Inputs.CJK;
+using Terminaux.Console.Fixtures.Cases.Inputs.Modules;
 using Terminaux.Console.Fixtures.Cases.Presentations;
 using Terminaux.Console.Fixtures.Cases.Reader;
 using Terminaux.Console.Fixtures.Cases.Screens;
@@ -281,6 +282,12 @@ namespace Terminaux.Console.Fixtures
             new TestTextEditorFullscreenInteractiveCjk(),
             new TestTextViewerInteractiveCjk(),
             new TestTextViewerFullscreenInteractiveCjk(),
+
+            // Input (Modules)
+            new TestTextBoxModule(),
+            new TestTextBoxModulePopover(),
+            new TestMaskedTextBoxModule(),
+            new TestMaskedTextBoxModulePopover(),
 
             // Color
             new ColorTest(),
