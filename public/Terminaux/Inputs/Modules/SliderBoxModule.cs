@@ -18,11 +18,17 @@
 //
 
 using System;
+using System.Threading;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
+using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Inputs.Modules
 {
@@ -70,10 +76,70 @@ namespace Terminaux.Inputs.Modules
         /// <inheritdoc/>
         public override void ProcessInput(Coordinate inputPopoverPos = default, Size inputPopoverSize = default)
         {
-            // TODO: Temporarily use the infobox until reliability is proven.
-            int value = Value is int valueInt ? valueInt : MinPos;
-            int choiceIndex = InfoBoxSliderColor.WriteInfoBoxSlider(Name, value, MaxPos, Description, MinPos);
-            Value = choiceIndex;
+            if (inputPopoverPos == default || inputPopoverSize == default)
+            {
+                // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
+                int value = Value is int valueInt ? valueInt : MinPos;
+                int choiceIndex = InfoBoxSliderColor.WriteInfoBoxSlider(Name, value, MaxPos, Description, MinPos);
+                Value = choiceIndex;
+            }
+            else
+            {
+                bool bail = false;
+                bool cancel = false;
+                int value = Value is int valueInt ? valueInt : MinPos;
+                while (!bail)
+                {
+                    // Render the popover. A slider will appear on the input.
+                    var slider = new Slider(value, MinPos, MaxPos)
+                    {
+                        Width = inputPopoverSize.Width - 1,
+                        SliderActiveForegroundColor = Foreground,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(Foreground),
+                        SliderBackgroundColor = Background,
+                    };
+                    TextWriterRaw.WriteRaw(
+                        RendererTools.RenderRenderable(slider, new(inputPopoverPos.X + 1, inputPopoverPos.Y)) +
+                        TextWriterWhereColor.RenderWhereColorBack("◀", inputPopoverPos.X, inputPopoverPos.Y, Foreground, Background) +
+                        TextWriterWhereColor.RenderWhereColorBack("▶", inputPopoverPos.X + inputPopoverSize.Width - 1, inputPopoverPos.Y, Foreground, Background)
+                    );
+
+                    // Handle keypress
+                    SpinWait.SpinUntil(() => Input.InputAvailable);
+                    if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    {
+                        var key = Input.ReadKey();
+                        switch (key.Key)
+                        {
+                            case ConsoleKey.LeftArrow:
+                                value--;
+                                if (value < MinPos)
+                                    value = MaxPos;
+                                break;
+                            case ConsoleKey.RightArrow:
+                                value++;
+                                if (value > MaxPos)
+                                    value = MinPos;
+                                break;
+                            case ConsoleKey.Home:
+                                value = MinPos;
+                                break;
+                            case ConsoleKey.End:
+                                value = MaxPos;
+                                break;
+                            case ConsoleKey.Enter:
+                                bail = true;
+                                break;
+                            case ConsoleKey.Escape:
+                                bail = true;
+                                cancel = true;
+                                break;
+                        }
+                    }
+                }
+                if (!cancel)
+                    Value = value;
+            }
         }
     }
 }

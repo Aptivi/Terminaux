@@ -288,6 +288,12 @@ namespace Terminaux.Console.Fixtures
             new TestTextBoxModulePopover(),
             new TestMaskedTextBoxModule(),
             new TestMaskedTextBoxModulePopover(),
+            new TestComboBoxModule(),
+            new TestComboBoxModulePopover(),
+            new TestMultiComboBoxModule(),
+            new TestMultiComboBoxModulePopover(),
+            new TestSliderBoxModule(),
+            new TestSliderBoxModulePopover(),
 
             // Color
             new ColorTest(),
