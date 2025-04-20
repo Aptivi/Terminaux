@@ -8,18 +8,20 @@ OUTPUTS  := \
 
 # General use
 
-all: all-online
+all:
+	$(MAKE) all-online BUILDARGS="$(BUILDARGS)"
 
-all-online: invoke-build
+all-online:
+	$(MAKE) invoke-build ENVIRONMENT=Release BUILDARGS="$(BUILDARGS)"
 
 dbg:
-	$(MAKE) invoke-build ENVIRONMENT=Debug
+	$(MAKE) invoke-build ENVIRONMENT=Debug BUILDARGS="$(BUILDARGS)"
 
 dbg-ci:
-	$(MAKE) invoke-build-ci ENVIRONMENT=Debug
+	$(MAKE) invoke-build ENVIRONMENT=Debug BUILDARGS="-p:ContinuousIntegrationBuild=true $(BUILDARGS)"
 
 rel-ci:
-	$(MAKE) invoke-build-ci ENVIRONMENT=Release
+	$(MAKE) invoke-build ENVIRONMENT=Release BUILDARGS="-p:ContinuousIntegrationBuild=true $(BUILDARGS)"
 
 doc: invoke-doc-build
 
@@ -29,10 +31,7 @@ clean:
 # Below targets specify functions for full build
 
 invoke-build:
-	bash tools/build.sh "$(ENVIRONMENT)"
-
-invoke-build-ci:
-	bash tools/build.sh "$(ENVIRONMENT)" -p:ContinuousIntegrationBuild=true
+	bash tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS)
 
 invoke-doc-build:
 	bash tools/docgen.sh
