@@ -61,6 +61,7 @@ namespace Terminaux.Inputs.Modules
         /// <inheritdoc/>
         public override void ProcessInput(Coordinate inputPopoverPos = default, Size inputPopoverSize = default)
         {
+            string value = Value is string valueStr ? valueStr : "";
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
@@ -80,13 +81,14 @@ namespace Terminaux.Inputs.Modules
                 var readerSettings = new TermReaderSettings()
                 {
                     RightMargin = ConsoleWrapper.WindowWidth - (inputPopoverPos.X + inputPopoverSize.Width) - 1,
+                    WriteDefaultValue = true
                 };
                 if (UseColor)
                 {
                     readerSettings.InputForegroundColor = Foreground;
                     readerSettings.InputBackgroundColor = Background;
                 }
-                Value = TermReader.Read("", "", readerSettings, false, true);
+                Value = TermReader.Read("", value, readerSettings, false, true);
             }
         }
     }
