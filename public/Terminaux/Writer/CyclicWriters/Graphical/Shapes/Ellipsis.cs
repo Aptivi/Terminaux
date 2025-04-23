@@ -62,7 +62,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             {
                 var arc = new Arc(Height, Left, Top, ShapeColor)
                 {
-                    InnerRadius = Filled ? Height / 2 : 0,
+                    InnerRadius = Filled ? 0 : Height / 2,
                     OuterRadius = Height / 2,
                     AngleStart = 0,
                     AngleEnd = 360,
