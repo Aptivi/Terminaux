@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Arguments.Base.Help
 {
@@ -102,7 +103,10 @@ namespace Terminaux.Shell.Arguments.Base.Help
 
             // Write the description now
             if (string.IsNullOrEmpty(HelpDefinition))
+            {
+                ConsoleLogger.Warning("No argument help description for {0}", argument);
                 HelpDefinition = "No argument help description";
+            }
             TextWriterColor.WriteColor($"Description: {HelpDefinition}", true, ConsoleColors.Olive);
             argInfo.ArgumentBase.HelpHelper();
         }

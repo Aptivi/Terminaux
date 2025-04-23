@@ -192,6 +192,7 @@ namespace Terminaux.Base.TermInfo
                 string termName = termNamePath.Substring(termNamePath.IndexOf('.') + 1);
                 names.Add(termName);
             }
+            ConsoleLogger.Info("{0} terminfo names", names.Count);
             return [.. names];
         }
 

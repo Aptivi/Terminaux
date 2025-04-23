@@ -379,7 +379,9 @@ namespace Terminaux.Reader
             lock (readLock)
             {
                 // Wait until the previous input is complete
+                ConsoleLogger.Info("Waiting for input to complete...");
                 TermReaderTools.WaitForInput();
+                ConsoleLogger.Info("Input complete. Initializing reader...");
 
                 // Initialize everything
                 string input = defaultValue;
@@ -456,7 +458,9 @@ namespace Terminaux.Reader
 
                         // Get a key
                         TermReaderTools.isWaitingForInput = true;
+                        ConsoleLogger.Info("Reader is waiting for input...");
                         struckKey = TermReaderTools.GetInput(interruptible);
+                        ConsoleLogger.Info("Reader is no longer waiting for input...");
                         ConsoleWrapper.CursorVisible = false;
                         TermReaderTools.isWaitingForInput = false;
 
@@ -474,7 +478,10 @@ namespace Terminaux.Reader
 
                         // Write the bell character if invalid
                         if (readState.OperationWasInvalid)
+                        {
+                            ConsoleLogger.Warning("Bell sound is playing with type {0} due to invalid operation", settings.Bell);
                             ConsoleMisc.Bell(settings.Bell);
+                        }
                         readState.operationWasInvalid = false;
 
                         // Cursor is visible
@@ -484,6 +491,7 @@ namespace Terminaux.Reader
                     // Seek to the end of the text and write a new line
                     if (!readState.OneLineWrap)
                     {
+                        ConsoleLogger.Warning("Seeking to the end of text {0} cells...", readState.CurrentText.Length);
                         PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
                         PositioningTools.Commit(readState);
                     }
@@ -547,8 +555,7 @@ namespace Terminaux.Reader
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"Handling cue failed. {ex.Message}");
+                    ConsoleLogger.Error(ex, $"Handling cue failed. {ex.Message}");
                     cueSupported = false;
                 }
             }

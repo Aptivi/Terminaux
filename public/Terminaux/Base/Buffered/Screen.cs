@@ -77,6 +77,7 @@ namespace Terminaux.Base.Buffered
                 name += $" [{screenParts.Count}]";
 
             // Now, add the buffered part
+            ConsoleLogger.Info("Adding screen part {0}...", name);
             screenParts.Add(name, part);
         }
 
@@ -95,6 +96,7 @@ namespace Terminaux.Base.Buffered
 
             // Now, edit the buffered part
             var kvp = screenParts.ElementAt(idx);
+            ConsoleLogger.Info("Editing screen part {0} from idx {1}...", kvp.Key, idx);
             EditBufferedPart(kvp.Key, part);
         }
 
@@ -112,6 +114,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("You must specify the screen part.");
 
             // Now, edit the buffered part
+            ConsoleLogger.Info("Editing screen part {0} from id...", name);
             screenParts[name] = part;
         }
 
@@ -130,6 +133,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("You must specify the screen part.");
 
             // Now, edit the buffered part
+            ConsoleLogger.Info("Editing screen part {0} from id...", partSource.Key);
             screenParts[partSource.Key] = part;
         }
 
@@ -145,6 +149,7 @@ namespace Terminaux.Base.Buffered
 
             // Now, remove the buffered part
             var kvp = screenParts.ElementAt(idx);
+            ConsoleLogger.Info("Removing screen part {0} from idx {1}...", kvp.Key, idx);
             RemoveBufferedPart(kvp.Key);
         }
 
@@ -159,6 +164,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("The specified part name is not found.");
 
             // Now, remove the buffered part
+            ConsoleLogger.Info("Removing screen part {0} from id...", name);
             screenParts.Remove(name);
         }
 
@@ -172,6 +178,7 @@ namespace Terminaux.Base.Buffered
             var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
             if (part.Value is null)
                 throw new TerminauxException("The specified part is not found.");
+            ConsoleLogger.Info("Removing screen part {0} from id...", part.Key);
             RemoveBufferedPart(part.Key);
         }
 
@@ -201,6 +208,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("The specified part name is not found.");
 
             // Now, get the buffered part
+            ConsoleLogger.Info("Returning screen part {0}...", name);
             return part;
         }
 
@@ -216,6 +224,7 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException("The specified part is not found.");
 
             // Now, get the buffered part
+            ConsoleLogger.Info("Returning screen part {0} from id...", part.Key);
             return part.Value;
         }
 
@@ -231,6 +240,7 @@ namespace Terminaux.Base.Buffered
 
             // Now, check the buffered part
             var kvp = screenParts.ElementAt(idx);
+            ConsoleLogger.Info("Checking screen part {0} from idx {1}...", kvp.Key, idx);
             return CheckBufferedPart(kvp.Key);
         }
 
@@ -241,6 +251,7 @@ namespace Terminaux.Base.Buffered
         /// <exception cref="TerminauxException"></exception>
         public bool CheckBufferedPart(string name)
         {
+            ConsoleLogger.Info("Checking screen part {0} from id...", name);
             if (!screenParts.ContainsKey(name))
                 return false;
             return true;
@@ -274,6 +285,7 @@ namespace Terminaux.Base.Buffered
             var builder = new StringBuilder();
             builder.Append(clearPart.GetBuffer());
             var sortedParts = ScreenParts.OrderBy((part) => part.Order).ToList();
+            ConsoleLogger.Info("Getting buffer from {0} parts...", sortedParts.Count);
             foreach (var part in sortedParts)
                 builder.Append(part.GetBuffer());
             return builder.ToString();
@@ -302,6 +314,7 @@ namespace Terminaux.Base.Buffered
                 builder.Append(ColorTools.RenderRevertBackground());
                 if (needsRefresh || ConsoleResizeHandler.WasResized(ResetResize))
                 {
+                    ConsoleLogger.Info("Screen requires refresh due to refresh request ({0}) or resize.", needsRefresh);
                     needsRefresh = false;
                     builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
                 }

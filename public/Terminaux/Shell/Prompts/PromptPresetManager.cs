@@ -53,9 +53,15 @@ namespace Terminaux.Shell.Prompts
             if (Presets.ContainsKey(PresetName) || CustomPresets.ContainsKey(PresetName))
                 CurrentPresets[ShellType] = PresetName;
             else if (ThrowOnNotFound)
+            {
+                ConsoleLogger.Error("Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
                 throw new TerminauxException("The specified preset {0} is not found.", PresetName);
+            }
             else
+            {
+                ConsoleLogger.Warning("Preset {0} for {1} doesn't exist. Setting dryly to default...", PresetName, ShellType.ToString());
                 CurrentPresets[ShellType] = "Default";
+            }
         }
 
         /// <summary>

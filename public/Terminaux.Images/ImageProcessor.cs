@@ -52,6 +52,7 @@ namespace Terminaux.Images
             if (string.IsNullOrWhiteSpace(imagePath))
                 throw new TerminauxException("Image path is not provided.");
 
+            ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
             return OpenImage(imageStream);
         }
@@ -111,6 +112,7 @@ namespace Terminaux.Images
             if (string.IsNullOrWhiteSpace(imagePath))
                 throw new TerminauxException("Image path is not provided.");
 
+            ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
             return GetColorsFromImage(imageStream);
         }

@@ -25,6 +25,7 @@ using System.Diagnostics;
 using Terminaux.Base.Checks;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -62,8 +63,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
             }
         }
 
@@ -97,8 +97,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
             }
         }
 
@@ -134,8 +133,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
             }
         }
 

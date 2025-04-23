@@ -170,12 +170,11 @@ namespace Terminaux.Base.Buffered
             }
             catch (ThreadInterruptedException)
             {
-                Debug.WriteLine("Thread is interrupted");
+                ConsoleLogger.Warning("Thread is interrupted");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Failed to render cyclic screen: {ex.Message}");
-                Debug.WriteLine(ex);
+                ConsoleLogger.Error(ex, $"Failed to render cyclic screen: {ex.Message}");
             }
         }
 

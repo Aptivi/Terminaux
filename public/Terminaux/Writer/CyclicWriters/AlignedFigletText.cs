@@ -225,11 +225,13 @@ namespace Terminaux.Writer.CyclicWriters
                     if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                     {
                         // The fallback figlet also won't fit, so use smaller text
+                        ConsoleLogger.Warning("Fallback figlet exceeds ({0}, {1}) (max: {2}) (window: {3})", consoleX, consoleY, consoleMaxY, ConsoleWrapper.WindowHeight);
                         return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, rainbowState);
                     }
                     else
                     {
                         // Write the figlet.
+                        ConsoleLogger.Warning("Figlet exceeds ({0}, {1}) (max: {2}) (window: {3})", consoleX, consoleY, consoleMaxY, ConsoleWrapper.WindowHeight);
                         string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, textMaxWidth);
                         return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, rainbowState);
                     }
@@ -243,8 +245,7 @@ namespace Terminaux.Writer.CyclicWriters
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
             }
             return "";
         }

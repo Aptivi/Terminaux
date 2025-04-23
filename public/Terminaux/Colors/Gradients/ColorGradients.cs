@@ -56,6 +56,7 @@ namespace Terminaux.Colors.Gradients
                 steps = 1;
             if (steps == 1)
             {
+                ConsoleLogger.Warning("Gradients in one step is not possible.");
                 var source = new ColorGradient(1, sourceColor);
                 var target = new ColorGradient(2, targetColor);
                 gradients.enumerator.gradients.Add(source);
@@ -79,6 +80,7 @@ namespace Terminaux.Colors.Gradients
                 var currentColorInstance = new Color($"{Convert.ToInt32(currentColorRed)};{Convert.ToInt32(currentColorGreen)};{Convert.ToInt32(currentColorBlue)}");
                 var gradient = new ColorGradient(x + 1, currentColorInstance);
                 gradients.enumerator.gradients.Add(gradient);
+                ConsoleLogger.Info("Adding gradient with levels {0}, {1}, {2}...", currentColorRed, currentColorGreen, currentColorBlue);
 
                 // Change the colors
                 currentColorRed -= colorRedSteps;
@@ -109,6 +111,7 @@ namespace Terminaux.Colors.Gradients
             // Check the values
             if (colors.Length == 1)
             {
+                ConsoleLogger.Warning("Gradients in one color is not possible.");
                 var gradient = new ColorGradient(1, colors[0].Item2);
                 gradients.enumerator.gradients.Add(gradient);
                 return gradients;
@@ -117,6 +120,7 @@ namespace Terminaux.Colors.Gradients
                 steps = 1;
             if (steps == 1)
             {
+                ConsoleLogger.Warning("Gradients in one step is not possible.");
                 var source = new ColorGradient(1, colors[0].Item2);
                 var target = new ColorGradient(2, colors[colors.Length - 1].Item2);
                 gradients.enumerator.gradients.Add(source);

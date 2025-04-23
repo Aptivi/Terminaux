@@ -22,6 +22,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
@@ -140,13 +141,17 @@ namespace Terminaux.Writer.CyclicWriters
                 {
                     if (!File.Exists(finalHighlightProcess))
                     {
+                        ConsoleLogger.Warning("Can't use highlight because {0} doesn't exist", finalHighlightProcess);
                         if (PlatformHelper.IsOnWindows())
                         {
                             // It doesn't exist. It's possible that Windows users might have installed highlight using the
                             // Windows installer. Look at "%SYSTEMDRIVE%/Program Files/Highlight/highlight.exe".
                             finalHighlightProcess = Path.GetFullPath($"{Environment.GetEnvironmentVariable("SYSTEMDRIVE")}/Program Files/Highlight/highlight.exe");
                             if (!File.Exists(finalHighlightProcess))
+                            {
+                                ConsoleLogger.Warning("Can't use systemwide highlight because {0} doesn't exist", finalHighlightProcess);
                                 canHighlight = false;
+                            }
                         }
                         else
                             canHighlight = false;
@@ -184,8 +189,7 @@ namespace Terminaux.Writer.CyclicWriters
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine("Failed to render syntax text: " + ex.Message);
-                        Debug.WriteLine(ex);
+                        ConsoleLogger.Error(ex, $"Failed to render syntax text: {ex.Message}");
                     }
                 }
 
@@ -213,8 +217,7 @@ namespace Terminaux.Writer.CyclicWriters
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
             }
             return "";
         }

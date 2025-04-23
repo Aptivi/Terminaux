@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
@@ -294,8 +295,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
                 }
             }
         }
@@ -388,8 +388,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
                 }
                 return "";
             }

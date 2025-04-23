@@ -55,6 +55,7 @@ namespace Terminaux.Images.Icons
 
             // Now, get the fully qualified name of the icon and render it
             string iconFullyQualifiedName = BuildFullyQualifiedIconName(iconName, color, quality);
+            ConsoleLogger.Info("Got icon fully qualified name {0} from {1}, {2}, {3}", iconFullyQualifiedName, iconName, color, quality);
             var stream = typeof(IconsManager).Assembly.GetManifestResourceStream(iconFullyQualifiedName) ??
                 throw new TerminauxException($"Icon {iconName} exists, but failed to load.");
             return ImageProcessor.RenderImage(stream, width, height, left, top, background);
@@ -73,6 +74,7 @@ namespace Terminaux.Images.Icons
             string prefix = GetPrefix(color, quality);
             string[] icons = GetIconGroup(color, quality);
             string extension = quality == IconsQuality.Scalable ? ".svg" : ".png";
+            ConsoleLogger.Info("Prefix is {0} from color {1} and quality {2}, which has an extension of {3}", prefix, color, quality, extension);
             foreach (string icon in icons)
                 names.Add(icon.RemovePrefix(prefix).RemoveSuffix(extension));
 
@@ -89,6 +91,7 @@ namespace Terminaux.Images.Icons
 
             // We're done here.
             string extension = quality == IconsQuality.Scalable ? ".svg" : ".png";
+            ConsoleLogger.Info("Prefix is {0} from color {1} and quality {2}, which has an extension of {3}. Icon name is {4}", prefix, color, quality, extension, iconName);
             return prefix + iconName + extension;
         }
 

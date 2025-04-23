@@ -161,8 +161,7 @@ namespace Terminaux.Base
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Failed to detect console resize: {ex.Message}");
-                Debug.WriteLine(ex.StackTrace);
+                ConsoleLogger.Error(ex, $"Failed to detect console resize: {ex.Message}");
             }
         }
 

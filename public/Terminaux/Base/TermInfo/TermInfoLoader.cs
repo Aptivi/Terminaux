@@ -70,6 +70,7 @@ namespace Terminaux.Base.TermInfo
             // Check all directories
             foreach (var directory in directories)
             {
+                ConsoleLogger.Info("Loading from {0}, {1}", directory, name);
                 var desc = Load(directory, name);
                 if (desc != null)
                     return desc;
@@ -77,6 +78,7 @@ namespace Terminaux.Base.TermInfo
 
             // Last resort (builtins tracked from Debian's NCurses: https://packages.debian.org/sid/all/ncurses-base/download
             // and https://packages.debian.org/sid/all/ncurses-term/download)
+            ConsoleLogger.Warning("All {0} directories led to nonexistent terminfo file when finding {1}", directories.Count, name);
             var builtins = TermInfoDesc.GetBuiltinPaths();
             foreach (string builtin in builtins)
             {

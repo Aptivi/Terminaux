@@ -137,11 +137,13 @@ namespace Terminaux.Shell.Shells
                 if (ShellStack.Count == 0)
                 {
                     // We don't have any shell. Return Shell.
+                    ConsoleLogger.Warning("Trying to call LastShellType on empty shell stack. Assuming UESH...");
                     return "Shell";
                 }
                 else if (ShellStack.Count == 1)
                 {
                     // We only have one shell. Consider current as last.
+                    ConsoleLogger.Warning("Trying to call LastShellType on shell stack containing only one shell. Assuming current...");
                     return CurrentShellType;
                 }
                 else
@@ -290,11 +292,14 @@ namespace Terminaux.Shell.Shells
                                 CommandExecutor.StartCommandThread(Params);
                             }
                         }
-                        else
+                        {
+                            ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found", commandName);
                             TextWriterColor.WriteColor("Shell message: The requested command {0} is not found. See 'help' for available commands.", ConsoleColors.Red, commandName);
+                        }
                     }
                     catch (Exception ex)
                     {
+                        ConsoleLogger.Error(ex, "Cmd exec {0} failed: an error occurred", commandName);
                         TextWriterColor.WriteColor("Error trying to execute command." + CharManager.NewLine + "Error {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
                     }
                 }
@@ -339,6 +344,9 @@ namespace Terminaux.Shell.Shells
             catch (Exception ex)
             {
                 // There is an exception trying to run the shell. Throw the message to the caller.
+                ConsoleLogger.Error("Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
+                ConsoleLogger.Error("Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
+                ConsoleLogger.Error(ex, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
                 throw new TerminauxException("Failed trying to initialize shell", ex);
             }
             finally

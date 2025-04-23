@@ -102,13 +102,19 @@ namespace Terminaux.Colors.Transformation.Contrast
             {
                 // Consider any color with all of the color levels less than 30 unseeable
                 if (colorR < 30 && colorG < 30 && colorB < 30)
+                {
+                    ConsoleLogger.Warning("Color levels are below the threshold (30).");
                     seeable = false;
+                }
             }
             else
             {
                 // Consider any blacklisted color as unseeable
                 if (unseeables.Contains(colorLevel))
+                {
+                    ConsoleLogger.Warning("Color level is unseeable.");
                     seeable = false;
+                }
             }
             return seeable;
         }

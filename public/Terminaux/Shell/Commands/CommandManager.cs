@@ -153,11 +153,17 @@ namespace Terminaux.Shell.Commands
 
             // Check to see if the command conflicts with pre-existing shell commands
             if (IsCommandFound(command, ShellType))
+            {
+                ConsoleLogger.Error("Command {0} conflicts with available shell commands.", command);
                 throw new TerminauxException("The command specified is already added.");
+            }
 
             // Check to see if the help definition is full
             if (string.IsNullOrEmpty(commandBase.HelpDefinition))
+            {
+                ConsoleLogger.Warning("No definition, {0}.Def = \"Command not defined\"", command);
                 commandBase.HelpDefinition = "Command not defined";
+            }
 
             // Now, add the command to the extra list
             var info = ShellManager.GetShellInfo(ShellType);
