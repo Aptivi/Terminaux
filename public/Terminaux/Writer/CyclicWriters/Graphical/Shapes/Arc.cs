@@ -100,21 +100,21 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 
                     // Fill the pixels
                     if (full || (ratio >= angle1 && ratio < angle2) ^ inverted)
-                        pixels.Add(new(centerX + y, centerY - x) { CellColor = ShapeColor });
+                        pixels.Add(new(centerX + y + 1, centerY - x + 1) { CellColor = ShapeColor });
                     if (full || (ratio > 63 - angle2 && ratio <= 63 - angle1) ^ inverted)
-                        pixels.Add(new(centerX + x, centerY - y) { CellColor = ShapeColor });
+                        pixels.Add(new(centerX + x + 1, centerY - y + 1) { CellColor = ShapeColor });
                     if (full || (ratio >= angle1 - 64 && ratio < angle2 - 64) ^ inverted)
-                        pixels.Add(new(centerX - x, centerY - y) { CellColor = ShapeColor });
+                        pixels.Add(new(centerX - x + 1, centerY - y + 1) { CellColor = ShapeColor });
                     if (full || (ratio > 127 - angle2 && ratio <= 127 - angle1) ^ inverted)
-                        pixels.Add(new(centerX - y, centerY - x) { CellColor = ShapeColor });
+                        pixels.Add(new(centerX - y + 1, centerY - x + 1) { CellColor = ShapeColor });
                     if (full || (ratio >= angle1 - 128 && ratio < angle2 - 128) ^ inverted)
-                        pixels.Add(new(centerX - y, centerY + x) { CellColor = ShapeColor });
+                        pixels.Add(new(centerX - y + 1, centerY + x + 1) { CellColor = ShapeColor });
                     if (full || (ratio > 191 - angle2 && ratio <= 191 - angle1) ^ inverted)
-                        pixels.Add(new(centerX - x, centerY + y) { CellColor = ShapeColor });
+                        pixels.Add(new(centerX - x + 1, centerY + y + 1) { CellColor = ShapeColor });
                     if (full || (ratio >= angle1 - 192 && ratio < angle2 - 192) ^ inverted)
-                        pixels.Add(new(centerX + x, centerY + y) { CellColor = ShapeColor });
+                        pixels.Add(new(centerX + x + 1, centerY + y + 1) { CellColor = ShapeColor });
                     if (full || (ratio > 255 - angle2 && ratio <= 255 - angle1) ^ inverted)
-                        pixels.Add(new(centerX + y, centerY + x) { CellColor = ShapeColor });
+                        pixels.Add(new(centerX + y + 1, centerY + x + 1) { CellColor = ShapeColor });
 
                     // Now, go to the next pixel
                     if (d >= 2 * x)
