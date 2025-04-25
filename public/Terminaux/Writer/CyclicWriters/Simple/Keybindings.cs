@@ -174,6 +174,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             var bindingsBuilder = new StringBuilder();
             var helpKeyInfo = HelpKeyInfo ?? new('K', ConsoleKey.K, false, false, false);
             Keybinding[] finalBindings = [.. builtinKeybindings, .. keybindings];
+            finalBindings = [.. finalBindings.Where((kb) => !kb.BindingHidden)];
             foreach (Keybinding binding in finalBindings)
             {
                 // Check the binding mode

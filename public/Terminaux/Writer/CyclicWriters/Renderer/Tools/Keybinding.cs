@@ -26,11 +26,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
     /// <summary>
     /// Keybinding class
     /// </summary>
-    [DebuggerDisplay("{BindingName} ({BindingUsesMouse}) [K: {BindingKeyModifiers} + {BindingKeyName}] [M: {BindingPointerModifiers} + {BindingPointerButton} {BindingPointerButtonPress}]")]
+    [DebuggerDisplay("{BindingName} (M: {BindingUsesMouse} | H: {BindingHidden}) [K: {BindingKeyModifiers} + {BindingKeyName}] [M: {BindingPointerModifiers} + {BindingPointerButton} {BindingPointerButtonPress}]")]
     public class Keybinding
     {
         private readonly string _bindingName;
         private readonly bool _bindingUsesMouse;
+        private readonly bool _bindingHidden;
         private readonly ConsoleKey _bindingKeyName = (ConsoleKey)(-1);
         private readonly ConsoleModifiers _bindingKeyModifiers = (ConsoleModifiers)(-1);
         private readonly PointerButton _bindingPointerButton = (PointerButton)(-1);
@@ -48,6 +49,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// </summary>
         public bool BindingUsesMouse =>
             _bindingUsesMouse;
+
+        /// <summary>
+        /// Whether the key binding is hidden or not
+        /// </summary>
+        public bool BindingHidden =>
+            _bindingHidden;
 
         /// <summary>
         /// Which key is bound to the action?
@@ -84,8 +91,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// </summary>
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
-        public Keybinding(string bindingName, ConsoleKey bindingKeyName) :
-            this(bindingName, bindingKeyName, default)
+        /// <param name="hidden">Whether the key binding is hidden or not</param>
+        public Keybinding(string bindingName, ConsoleKey bindingKeyName, bool hidden = false) :
+            this(bindingName, bindingKeyName, default, hidden)
         { }
 
         /// <summary>
@@ -94,9 +102,11 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
         /// <param name="bindingKeyModifiers">Which modifiers of the key are bound to the action?</param>
-        public Keybinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers)
+        /// <param name="hidden">Whether the key binding is hidden or not</param>
+        public Keybinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, bool hidden = false)
         {
             _bindingName = bindingName;
+            _bindingHidden = hidden;
             _bindingKeyName = bindingKeyName;
             _bindingKeyModifiers = bindingKeyModifiers;
         }
@@ -106,8 +116,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// </summary>
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingPointerButton">Which key is bound to the action?</param>
-        public Keybinding(string bindingName, PointerButton bindingPointerButton) :
-            this(bindingName, bindingPointerButton, PointerButtonPress.Moved, PointerModifiers.None)
+        /// <param name="hidden">Whether the key binding is hidden or not</param>
+        public Keybinding(string bindingName, PointerButton bindingPointerButton, bool hidden = false) :
+            this(bindingName, bindingPointerButton, PointerButtonPress.Moved, PointerModifiers.None, hidden)
         { }
 
         /// <summary>
@@ -116,8 +127,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingPointerButton">Which button is bound to the action?</param>
         /// <param name="bindingPointerButtonPress">Which press mode of the button is bound to the action?</param>
-        public Keybinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress) :
-            this(bindingName, bindingPointerButton, bindingPointerButtonPress, PointerModifiers.None)
+        /// <param name="hidden">Whether the key binding is hidden or not</param>
+        public Keybinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, bool hidden = false) :
+            this(bindingName, bindingPointerButton, bindingPointerButtonPress, PointerModifiers.None, hidden)
         { }
 
         /// <summary>
@@ -127,10 +139,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="bindingPointerButton">Which button is bound to the action?</param>
         /// <param name="bindingPointerButtonPress">Which press mode of the button is bound to the action?</param>
         /// <param name="bindingButtonModifiers">Which modifiers of the button are bound to the action?</param>
-        public Keybinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, PointerModifiers bindingButtonModifiers)
+        /// <param name="hidden">Whether the key binding is hidden or not</param>
+        public Keybinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, PointerModifiers bindingButtonModifiers, bool hidden = false)
         {
             _bindingName = bindingName;
             _bindingUsesMouse = true;
+            _bindingHidden = hidden;
             _bindingPointerButton = bindingPointerButton;
             _bindingPointerButtonPress = bindingPointerButtonPress;
             _bindingPointerModifiers = bindingButtonModifiers;

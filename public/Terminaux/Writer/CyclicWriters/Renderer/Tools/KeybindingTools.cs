@@ -211,9 +211,10 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         public static string RenderKeybindingHelpText(Keybinding[] keybindings)
         {
             // First, check the bindings length
-            var nonMouseBindings = keybindings.Where((bind) => !bind.BindingUsesMouse).ToArray();
-            var mouseBindings = keybindings.Where((bind) => bind.BindingUsesMouse).ToArray();
-            if (keybindings is null || keybindings.Length == 0)
+            Keybinding[] finalBindings = [.. keybindings.Where((kb) => !kb.BindingHidden)];
+            var nonMouseBindings = finalBindings.Where((bind) => !bind.BindingUsesMouse).ToArray();
+            var mouseBindings = finalBindings.Where((bind) => bind.BindingUsesMouse).ToArray();
+            if (finalBindings is null || finalBindings.Length == 0)
                 return "No keybindings available";
 
             // User needs an infobox that shows all available keys
