@@ -142,10 +142,24 @@ namespace Terminaux.Tests.Base
         [Description("Querying")]
         public void TestTruncate()
         {
-            string expected = "Nitrocid is awesome...";
+            string expected = "Nitrocid is aweso...";
             string Source = "Nitrocid is awesome and is great!";
             int Target = 20;
             Source = Source.Truncate(Target);
+            Source.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests truncating...
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestTruncateNoEllipsis()
+        {
+            string expected = "Nitrocid is awesome ";
+            string Source = "Nitrocid is awesome and is great!";
+            int Target = 20;
+            Source = Source.Truncate(Target, false);
             Source.ShouldBe(expected);
         }
 
