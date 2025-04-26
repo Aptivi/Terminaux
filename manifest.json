@@ -2087,6 +2087,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerHitbox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.PointerHitbox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Pointer.PointerHitbox",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Pointer.PointerHitbox.yml\" sourcestartlinenumber=\"1\">Pointer hitbox class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerModifiers.yml",
       "output": {
         ".html": {
