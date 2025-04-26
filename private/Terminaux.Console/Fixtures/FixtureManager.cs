@@ -295,6 +295,9 @@ namespace Terminaux.Console.Fixtures
             new TestSliderBoxModule(),
             new TestSliderBoxModulePopover(),
 
+            // Input (Misc)
+            new TestPointerHitboxes(),
+
             // Color
             new ColorTest(),
             new ColorTrueTest(),
