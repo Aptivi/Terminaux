@@ -314,6 +314,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         SliderInside = true,
                         AltChoicePos = choicesArray.Length,
                         SwapSelectedColors = true,
+                        Ellipsis = false,
                         Settings = new()
                         {
                             OptionColor = InfoBoxTitledColor,

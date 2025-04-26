@@ -142,6 +142,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool UseColors { get; set; } = true;
 
         /// <summary>
+        /// Whether to use ellipsis for selection entries or not
+        /// </summary>
+        public bool Ellipsis { get; set; } = true;
+
+        /// <summary>
         /// Renders a selection
         /// </summary>
         /// <returns>A string representation of the selection</returns>
@@ -271,7 +276,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             ColorTools.RenderSetConsoleColor(back, true)
                         );
                     }
-                    string truncated = text.Truncate(Width);
+                    string truncated = text.Truncate(Width, Ellipsis);
                     buffer.Append(
                         CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
                         truncated + new string(' ', Width - ConsoleChar.EstimateCellWidth(truncated))
