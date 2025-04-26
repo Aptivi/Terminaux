@@ -157,7 +157,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Now, render the choices
             StringBuilder buffer = new();
-            List<(string text, Color fore, Color back, bool force, int truncate)> choiceText = [];
+            List<(string text, Color fore, Color back, bool force)> choiceText = [];
             string prefix = isMultiple ? "  [ ] " : "  ";
             int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
             int leftPos = Left + (SliderInside ? 1 : 0);
@@ -176,7 +176,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
                     string finalRendered = $"{modifiers}{category.Name}";
-                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true, Width));
+                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true));
                     processedHeight++;
                 }
 
@@ -189,7 +189,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
                         string finalRendered = $"  {modifiers}{group.Name}";
-                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true, Width - 2));
+                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true));
                         processedHeight++;
                     }
                     for (int i = 0; i < group.Choices.Length; i++)
@@ -228,7 +228,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                     SwapSelectedColors ? SelectedForegroundColor : SelectedBackgroundColor
                                  :
                                 isAlt ? AltBackgroundColor : BackgroundColor;
-                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false, Width - 4));
+                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false));
                         processedHeight++;
                         processedChoices++;
                         selectionHeights.Add(processedHeight);
@@ -263,7 +263,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
                 else
                 {
-                    var (text, fore, back, force, truncate) = choiceText[finalIndex];
+                    var (text, fore, back, force) = choiceText[finalIndex];
                     if (UseColors || force)
                     {
                         buffer.Append(
@@ -271,7 +271,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             ColorTools.RenderSetConsoleColor(back, true)
                         );
                     }
-                    string truncated = text.Truncate(truncate);
+                    string truncated = text.Truncate(Width);
                     buffer.Append(
                         CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
                         truncated + new string(' ', Width - ConsoleChar.EstimateCellWidth(truncated))
