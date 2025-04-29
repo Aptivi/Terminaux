@@ -569,8 +569,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse)
+        private bool UpdateSelectedIndexWithMousePos(PointerEventContext? mouse)
         {
+            if (mouse is null)
+                return false;
             if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
                 return false;
 
@@ -582,9 +584,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int startIndex = answersPerPage * currentPage;
 
             // Now, translate coordinates to the selected index
-            if (mouse.Coordinates.y <= listStartPosition + 1 || mouse.Coordinates.y >= listEndPosition - 4)
+            if (mouse.Coordinates.y <= listStartPosition + 4 || mouse.Coordinates.y >= listEndPosition - 4)
                 return false;
-            int listIndex = mouse.Coordinates.y - (listStartPosition + 1);
+            int listIndex = mouse.Coordinates.y - (listStartPosition + 4);
             listIndex = startIndex + listIndex;
             listIndex = listIndex > allAnswers.Count ? allAnswers.Count : listIndex;
             highlightedAnswer = listIndex;
@@ -636,7 +638,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, _) => GoDown()));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[3], ShowItemInfo));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[4], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[4], (_, _, mouse) => UpdateSelectedIndexWithMousePos(mouse)));
 
             // Install mode-dependent keybindings
             if (multiple)
