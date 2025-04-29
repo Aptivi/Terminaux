@@ -696,15 +696,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 }
                 else
                 {
-                    boxHeight = 2;
-                    int hslBarY = 1;
-                    int grayRampBarY = hslBarY + (boxHeight * 3) + 3;
+                    int grayRampBarY = colorBoxY + 9;
 
                     // Detect boundaries
-                    bool withinHueBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 1), (generalX + boxWidth, hslBarY + 2));
-                    bool withinSaturationBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 3), (generalX + boxWidth, hslBarY + 4));
-                    bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 5), (generalX + boxWidth, hslBarY + 6));
-                    bool withinTransparencyBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, grayRampBarY + 1), (generalX + boxWidth - 7, grayRampBarY + 2));
+                    bool withinHueBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, colorBoxY + 1), (generalX + boxWidth, colorBoxY + 2));
+                    bool withinSaturationBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, colorBoxY + 3), (generalX + boxWidth, colorBoxY + 4));
+                    bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, grayRampBarY + 1), (generalX + boxWidth - 6, grayRampBarY + 1));
+                    bool withinTransparencyBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, grayRampBarY + 2), (generalX + boxWidth - 6, grayRampBarY + 2));
 
                     // Do the action!
                     if (goBack)
