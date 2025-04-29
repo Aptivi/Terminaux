@@ -232,7 +232,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private bool DetermineArrowPressed(PointerEventContext mouse)
         {
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-            if (dataCount <= SeparatorMaximumHeightInterior && selectorTui.SecondPaneInteractable)
+            if (dataCount <= SeparatorMaximumHeightInterior)
                 return false;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
@@ -249,7 +249,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
         {
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-            if (dataCount <= SeparatorMaximumHeightInterior && selectorTui.SecondPaneInteractable)
+            if (dataCount <= SeparatorMaximumHeightInterior)
                 return;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
