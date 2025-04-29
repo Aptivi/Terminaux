@@ -214,12 +214,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private object? UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+        private void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
         {
             int dataCount = GetDataCount();
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             if (dataCount <= SeparatorMaximumHeightInterior)
-                return null;
+                return;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
             int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
@@ -261,7 +261,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         InteractiveTuiTools.InfoScrollDown(selectorTui);
                 }
             }
-            return null;
         }
 
         private void Act(ConsoleKeyInfo key, PointerEventContext? mouse)
