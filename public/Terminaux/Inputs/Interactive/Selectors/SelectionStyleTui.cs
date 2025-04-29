@@ -566,9 +566,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int startIndex = answersPerPage * currentPage;
 
             // Now, translate coordinates to the selected index
-            if (mouse.Coordinates.y <= listStartPosition + 1 || mouse.Coordinates.y >= listEndPosition - 4)
+            if (mouse.Coordinates.y <= listStartPosition + 4 || mouse.Coordinates.y >= listEndPosition - 4)
                 return false;
-            int listIndex = mouse.Coordinates.y - (listStartPosition + 1);
+            int listIndex = mouse.Coordinates.y - (listStartPosition + 4);
             listIndex = startIndex + listIndex;
             listIndex = listIndex > allAnswers.Count ? allAnswers.Count : listIndex;
             highlightedAnswer = listIndex;
@@ -586,7 +586,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return false;
             return
                 PointerTools.PointerWithinRange(mouse,
-                    (interiorWidth + 3, listStartPosition + 2),
+                    (interiorWidth + 3, listStartPosition + 4),
                     (interiorWidth + 3, listStartPosition + 1 + answersPerPage));
         }
 
@@ -601,7 +601,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return false;
             return
                 PointerTools.PointerWithinRange(mouse,
-                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 2),
+                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 4),
                     (ConsoleWrapper.WindowWidth - 3, listStartPosition + 1 + answersPerPage));
         }
 
@@ -616,7 +616,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return;
             if (mouse.Coordinates.x == interiorWidth + 3)
             {
-                if (mouse.Coordinates.y == listStartPosition + 2)
+                if (mouse.Coordinates.y == listStartPosition + 4)
                 {
                     highlightedAnswer--;
                     if (highlightedAnswer < 1)
@@ -642,7 +642,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return;
             if (mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 3)
             {
-                if (mouse.Coordinates.y == listStartPosition + 2)
+                if (mouse.Coordinates.y == listStartPosition + 4)
                 {
                     showcaseLine--;
                     if (showcaseLine < 0)
