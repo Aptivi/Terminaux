@@ -1,8 +1,4 @@
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
-OUTPUTS  := \
-	-name "bin" -or \
-	-name "obj" -or \
-	-name "docs"
 
 .PHONY: all
 
@@ -26,7 +22,7 @@ rel-ci:
 doc: invoke-doc-build
 
 clean:
-	find "$(ROOT_DIR)" -type d \( $(OUTPUTS) \) -print -exec rm -rf "{}" +
+	bash tools/clean.sh
 
 # Below targets specify functions for full build
 
