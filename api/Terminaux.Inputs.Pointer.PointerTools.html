@@ -104,7 +104,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Pointer_PointerTools_PointerWithinPoint_Terminaux_Inputs_Pointer_PointerEventContext_System_ValueTuple_System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Pointer.PointerTools.PointerWithinPoint(Terminaux.Inputs.Pointer.PointerEventContext%2CSystem.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Pointer/PointerTools.cs/#L35">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Pointer/PointerTools.cs/#L45">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Pointer_PointerTools_PointerWithinPoint_" data-uid="Terminaux.Inputs.Pointer.PointerTools.PointerWithinPoint*"></a>
   <h4 id="Terminaux_Inputs_Pointer_PointerTools_PointerWithinPoint_Terminaux_Inputs_Pointer_PointerEventContext_System_ValueTuple_System_Int32_System_Int32__" data-uid="Terminaux.Inputs.Pointer.PointerTools.PointerWithinPoint(Terminaux.Inputs.Pointer.PointerEventContext,System.ValueTuple{System.Int32,System.Int32})">PointerWithinPoint(PointerEventContext, (int x, int y))</h4>
@@ -157,10 +157,66 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Pointer_PointerTools_PointerWithinPoint_Terminaux_Inputs_Pointer_PointerEventContext_Terminaux_Base_Structures_Coordinate_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Pointer.PointerTools.PointerWithinPoint(Terminaux.Inputs.Pointer.PointerEventContext%2CTerminaux.Base.Structures.Coordinate)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Pointer/PointerTools.cs/#L36">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Pointer_PointerTools_PointerWithinPoint_" data-uid="Terminaux.Inputs.Pointer.PointerTools.PointerWithinPoint*"></a>
+  <h4 id="Terminaux_Inputs_Pointer_PointerTools_PointerWithinPoint_Terminaux_Inputs_Pointer_PointerEventContext_Terminaux_Base_Structures_Coordinate_" data-uid="Terminaux.Inputs.Pointer.PointerTools.PointerWithinPoint(Terminaux.Inputs.Pointer.PointerEventContext,Terminaux.Base.Structures.Coordinate)">PointerWithinPoint(PointerEventContext, Coordinate)</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the returned pointer event context is in the range of the two dimensions (if the mouse pointer is within the boundaries)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool PointerWithinPoint(PointerEventContext context, Coordinate point)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Pointer.PointerEventContext.html">PointerEventContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Pointer event context (You can easily obtain it using the <a class="xref" href="Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadPointer">ReadPointer()</a> or the <a class="xref" href="Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadPointerOrKey">ReadPointerOrKey()</a> functions)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.Structures.Coordinate.html">Coordinate</a></td>
+        <td><span class="parametername">point</span></td>
+        <td><p>Point position</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><p>True if the pointer is within the specified point position; false otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Pointer_PointerTools_PointerWithinRange_Terminaux_Inputs_Pointer_PointerEventContext_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Pointer.PointerTools.PointerWithinRange(Terminaux.Inputs.Pointer.PointerEventContext%2CSystem.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D%2CSystem.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Pointer/PointerTools.cs/#L45">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Pointer/PointerTools.cs/#L65">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Pointer_PointerTools_PointerWithinRange_" data-uid="Terminaux.Inputs.Pointer.PointerTools.PointerWithinRange*"></a>
   <h4 id="Terminaux_Inputs_Pointer_PointerTools_PointerWithinRange_Terminaux_Inputs_Pointer_PointerEventContext_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__" data-uid="Terminaux.Inputs.Pointer.PointerTools.PointerWithinRange(Terminaux.Inputs.Pointer.PointerEventContext,System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})">PointerWithinRange(PointerEventContext, (int x, int y), (int x, int y))</h4>
@@ -217,6 +273,68 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Pointer_PointerTools_PointerWithinRange_Terminaux_Inputs_Pointer_PointerEventContext_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Coordinate_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Pointer.PointerTools.PointerWithinRange(Terminaux.Inputs.Pointer.PointerEventContext%2CTerminaux.Base.Structures.Coordinate%2CTerminaux.Base.Structures.Coordinate)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Pointer/PointerTools.cs/#L55">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Pointer_PointerTools_PointerWithinRange_" data-uid="Terminaux.Inputs.Pointer.PointerTools.PointerWithinRange*"></a>
+  <h4 id="Terminaux_Inputs_Pointer_PointerTools_PointerWithinRange_Terminaux_Inputs_Pointer_PointerEventContext_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Coordinate_" data-uid="Terminaux.Inputs.Pointer.PointerTools.PointerWithinRange(Terminaux.Inputs.Pointer.PointerEventContext,Terminaux.Base.Structures.Coordinate,Terminaux.Base.Structures.Coordinate)">PointerWithinRange(PointerEventContext, Coordinate, Coordinate)</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the returned pointer event context is in the range of the two dimensions (if the mouse pointer is within the boundaries)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool PointerWithinRange(PointerEventContext context, Coordinate start, Coordinate end)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Pointer.PointerEventContext.html">PointerEventContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Pointer event context (You can easily obtain it using the <a class="xref" href="Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadPointer">ReadPointer()</a> or the <a class="xref" href="Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadPointerOrKey">ReadPointerOrKey()</a> functions)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.Structures.Coordinate.html">Coordinate</a></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>Starting position representing an upper left corner of the rectangle</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.Structures.Coordinate.html">Coordinate</a></td>
+        <td><span class="parametername">end</span></td>
+        <td><p>Ending position representing a lower right corner of the rectangle</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><p>True if the pointer is within the range; false otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -229,7 +347,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Pointer_PointerTools.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Pointer.PointerTools%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Pointer/PointerTools.cs/#L27" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Pointer/PointerTools.cs/#L28" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
