@@ -35,9 +35,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
     internal class InteractiveSelectorTui<TPrimary, TSecondary> : TextualUI
     {
         private readonly BaseInteractiveTui<TPrimary, TSecondary> selectorTui;
-        private IEnumerable<TPrimary> dataPrimary;
-        private IEnumerable<TSecondary> dataSecondary;
-        private int dataCount;
         private int paneCurrentSelection;
 
         public override string Render()
@@ -172,25 +169,18 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return;
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            bool refresh = false;
             int oldPane = selectorTui.CurrentPane;
             if (selectorTui.SecondPaneInteractable)
             {
                 if (mouse.Coordinates.x >= 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior - 1)
                 {
                     if (selectorTui.CurrentPane != 1)
-                    {
                         selectorTui.CurrentPane = 1;
-                        refresh = true;
-                    }
                 }
                 else if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth + 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior)
                 {
                     if (selectorTui.CurrentPane != 2)
-                    {
                         selectorTui.CurrentPane = 2;
-                        refresh = true;
-                    }
                 }
                 else
                     return;
@@ -201,12 +191,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     return;
                 if (mouse.Coordinates.x < 1)
                     return;
-            }
-            if (refresh)
-            {
-                dataPrimary = selectorTui.PrimaryDataSource;
-                dataSecondary = selectorTui.SecondaryDataSource;
-                dataCount = selectorTui.CurrentPane == 2 ? dataSecondary.Length() : dataPrimary.Length();
             }
 
             // Now, update the selection relative to the mouse pointer location
@@ -219,6 +203,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return;
             int listIndex = mouse.Coordinates.y - SeparatorMinimumHeightInterior;
             listIndex = startIndex + listIndex;
+            int dataCount = GetDataCount();
             if (listIndex + 1 > dataCount)
                 return;
             listIndex = listIndex > dataCount ? dataCount : listIndex;
@@ -231,8 +216,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private bool DetermineArrowPressed(PointerEventContext mouse)
         {
+            int dataCount = GetDataCount();
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             if (dataCount <= SeparatorMaximumHeightInterior)
+                return false;
+            if (mouse.ButtonPress == PointerButtonPress.Clicked)
                 return false;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
@@ -248,6 +236,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
         {
+            int dataCount = GetDataCount();
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             if (dataCount <= SeparatorMaximumHeightInterior)
                 return;
@@ -331,14 +320,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void LaunchFinder(TextualUI ui)
         {
-            if (selectorTui.CurrentPane == 2 && !dataSecondary.Any())
+            if (selectorTui.CurrentPane == 2 && !selectorTui.SecondaryDataSource.Any())
                 return;
-            if (selectorTui.CurrentPane == 1 && !dataPrimary.Any())
+            if (selectorTui.CurrentPane == 1 && !selectorTui.PrimaryDataSource.Any())
                 return;
             var entriesString =
                 (selectorTui.CurrentPane == 2 ?
-                 dataSecondary.Select(selectorTui.GetEntryFromItemSecondary) :
-                 dataPrimary.Select(selectorTui.GetEntryFromItem)).ToArray();
+                 selectorTui.SecondaryDataSource.Select(selectorTui.GetEntryFromItemSecondary) :
+                 selectorTui.PrimaryDataSource.Select(selectorTui.GetEntryFromItem)).ToArray();
             string keyword = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a search term (supports regular expressions)", selectorTui.Settings.BorderSettings, selectorTui.Settings.BoxForegroundColor, selectorTui.Settings.BoxBackgroundColor);
             if (!RegexTools.IsValidRegex(keyword))
             {
@@ -369,12 +358,17 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
+        private int GetDataCount()
+        {
+            var dataPrimary = selectorTui.PrimaryDataSource;
+            var dataSecondary = selectorTui.SecondaryDataSource;
+            return selectorTui.CurrentPane == 2 ? dataSecondary.Length() : dataPrimary.Length();
+        }
+
         internal InteractiveSelectorTui(BaseInteractiveTui<TPrimary, TSecondary>? selectorTui)
         {
             this.selectorTui = selectorTui ??
                 throw new TerminauxException("Selector is not specified");
-            dataPrimary = selectorTui.PrimaryDataSource;
-            dataSecondary = selectorTui.SecondaryDataSource;
 
             // Base bindings
             Keybindings.Add((new Keybinding("Go one element up", ConsoleKey.UpArrow), (_, _, _) => GoUp()));
