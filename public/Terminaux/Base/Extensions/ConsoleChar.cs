@@ -29,6 +29,8 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleChar
     {
+        private static readonly object consoleCharLock = new();
+
         /// <summary>
         /// Estimates the cell width (how many cells a string takes up)
         /// </summary>
@@ -66,32 +68,35 @@ namespace Terminaux.Base.Extensions
         /// <returns>Length of a character by character widths (a.k.a. how many cells this sentence takes up), or -1 if empty</returns>
         public static int EstimateCellWidth(string sentence, int index, bool processed = false)
         {
-            // We don't need to perform operations on null or empty strings
-            if (string.IsNullOrEmpty(sentence))
-                return -1;
-
-            // We need to filter VT sequences if we suspect that we can find one of them
-            if (processed && VtSequenceTools.IsMatchVTSequences(sentence))
-                sentence = VtSequenceTools.FilterVTSequences(sentence);
-
-            // Process index
-            if (index > sentence.Length - 1)
-                index = sentence.Length - 1;
-
-            // Iterate through every character inside this string to get their widths according to the Unicode
-            // standards to ensure that we have the correct cell width count that the string takes up.
-            int cells = 0;
-            char c = sentence[index];
-
-            // Emojis and other characters use surrogate pairs, so we need to check them.
-            if (!char.IsSurrogate(c))
-                cells += TextTools.GetCharWidth(c);
-            else if (index + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[index + 1]))
+            lock (consoleCharLock)
             {
-                int codePoint = char.ConvertToUtf32(c, sentence[index + 1]);
-                cells += TextTools.GetCharWidth(codePoint);
+                // We don't need to perform operations on null or empty strings
+                if (string.IsNullOrEmpty(sentence))
+                    return -1;
+
+                // We need to filter VT sequences if we suspect that we can find one of them
+                if (processed && VtSequenceTools.IsMatchVTSequences(sentence))
+                    sentence = VtSequenceTools.FilterVTSequences(sentence);
+
+                // Process index
+                if (index > sentence.Length - 1)
+                    index = sentence.Length - 1;
+
+                // Iterate through every character inside this string to get their widths according to the Unicode
+                // standards to ensure that we have the correct cell width count that the string takes up.
+                int cells = 0;
+                char c = sentence[index];
+
+                // Emojis and other characters use surrogate pairs, so we need to check them.
+                if (!char.IsSurrogate(c))
+                    cells += TextTools.GetCharWidth(c);
+                else if (index + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[index + 1]))
+                {
+                    int codePoint = char.ConvertToUtf32(c, sentence[index + 1]);
+                    cells += TextTools.GetCharWidth(codePoint);
+                }
+                return cells;
             }
-            return cells;
         }
 
         /// <summary>
@@ -101,36 +106,39 @@ namespace Terminaux.Base.Extensions
         /// <returns>The amount of zero-width characters that this sentence contains</returns>
         public static int EstimateZeroWidths(string sentence)
         {
-            // We don't need to perform operations on null or empty strings
-            if (string.IsNullOrEmpty(sentence))
-                return 0;
-
-            // We need to filter VT sequences if we suspect that we can find one of them
-            if (VtSequenceTools.IsMatchVTSequences(sentence))
-                sentence = VtSequenceTools.FilterVTSequences(sentence);
-
-            // Iterate through every character inside this string to get their widths according to the Unicode
-            // standards to ensure that we calculate all the zero widths.
-            int zeroWidths = 0;
-            for (int i = 0; i < sentence.Length; i++)
+            lock (consoleCharLock)
             {
-                char c = sentence[i];
+                // We don't need to perform operations on null or empty strings
+                if (string.IsNullOrEmpty(sentence))
+                    return 0;
 
-                // Emojis and other characters use surrogate pairs, so we need to check them.
-                if (!char.IsSurrogate(c))
+                // We need to filter VT sequences if we suspect that we can find one of them
+                if (VtSequenceTools.IsMatchVTSequences(sentence))
+                    sentence = VtSequenceTools.FilterVTSequences(sentence);
+
+                // Iterate through every character inside this string to get their widths according to the Unicode
+                // standards to ensure that we calculate all the zero widths.
+                int zeroWidths = 0;
+                for (int i = 0; i < sentence.Length; i++)
                 {
-                    if (TextTools.GetCharWidth(c) == 0)
-                        zeroWidths++;
+                    char c = sentence[i];
+
+                    // Emojis and other characters use surrogate pairs, so we need to check them.
+                    if (!char.IsSurrogate(c))
+                    {
+                        if (TextTools.GetCharWidth(c) == 0)
+                            zeroWidths++;
+                    }
+                    else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
+                    {
+                        int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
+                        if (TextTools.GetCharWidth(codePoint) == 0)
+                            zeroWidths++;
+                        i++;
+                    }
                 }
-                else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
-                {
-                    int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
-                    if (TextTools.GetCharWidth(codePoint) == 0)
-                        zeroWidths++;
-                    i++;
-                }
+                return zeroWidths;
             }
-            return zeroWidths;
         }
 
         /// <summary>
@@ -140,36 +148,39 @@ namespace Terminaux.Base.Extensions
         /// <returns>The amount of zero-width characters that this sentence contains</returns>
         public static int EstimateFullWidths(string sentence)
         {
-            // We don't need to perform operations on null or empty strings
-            if (string.IsNullOrEmpty(sentence))
-                return 0;
-
-            // We need to filter VT sequences if we suspect that we can find one of them
-            if (VtSequenceTools.IsMatchVTSequences(sentence))
-                sentence = VtSequenceTools.FilterVTSequences(sentence);
-
-            // Iterate through every character inside this string to get their widths according to the Unicode
-            // standards to ensure that we calculate all the full widths.
-            int fullWidths = 0;
-            for (int i = 0; i < sentence.Length; i++)
+            lock (consoleCharLock)
             {
-                char c = sentence[i];
+                // We don't need to perform operations on null or empty strings
+                if (string.IsNullOrEmpty(sentence))
+                    return 0;
 
-                // Emojis and other characters use surrogate pairs, so we need to check them.
-                if (!char.IsSurrogate(c))
+                // We need to filter VT sequences if we suspect that we can find one of them
+                if (VtSequenceTools.IsMatchVTSequences(sentence))
+                    sentence = VtSequenceTools.FilterVTSequences(sentence);
+
+                // Iterate through every character inside this string to get their widths according to the Unicode
+                // standards to ensure that we calculate all the full widths.
+                int fullWidths = 0;
+                for (int i = 0; i < sentence.Length; i++)
                 {
-                    if (TextTools.GetCharWidth(c) == 2)
-                        fullWidths++;
+                    char c = sentence[i];
+
+                    // Emojis and other characters use surrogate pairs, so we need to check them.
+                    if (!char.IsSurrogate(c))
+                    {
+                        if (TextTools.GetCharWidth(c) == 2)
+                            fullWidths++;
+                    }
+                    else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
+                    {
+                        int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
+                        if (TextTools.GetCharWidth(codePoint) == 2)
+                            fullWidths++;
+                        i++;
+                    }
                 }
-                else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
-                {
-                    int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
-                    if (TextTools.GetCharWidth(codePoint) == 2)
-                        fullWidths++;
-                    i++;
-                }
+                return fullWidths;
             }
-            return fullWidths;
         }
 
         /// <summary>
