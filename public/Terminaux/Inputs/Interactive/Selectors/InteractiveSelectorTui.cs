@@ -229,28 +229,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private bool DetermineArrowPressed(PointerEventContext mouse)
+        private object? UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
         {
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-            if (dataCount <= SeparatorMaximumHeightInterior && selectorTui.SecondPaneInteractable)
-                return false;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
-            int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
-            int paneArrowTop = 2;
-            int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
-            return
-                PointerTools.PointerWithinPoint(mouse, (leftPaneArrowLeft, paneArrowTop)) ||
-                PointerTools.PointerWithinPoint(mouse, (leftPaneArrowLeft, paneArrowBottom)) ||
-                PointerTools.PointerWithinPoint(mouse, (rightPaneArrowLeft, paneArrowTop)) ||
-                PointerTools.PointerWithinPoint(mouse, (rightPaneArrowLeft, paneArrowBottom));
-        }
-
-        private void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
-        {
-            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-            if (dataCount <= SeparatorMaximumHeightInterior && selectorTui.SecondPaneInteractable)
-                return;
+            if (dataCount <= SeparatorMaximumHeightInterior)
+                return null;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
             int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
@@ -292,16 +275,37 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         InteractiveTuiTools.InfoScrollDown(selectorTui);
                 }
             }
+            return null;
         }
 
         private void Act(ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             if (mouse is not null)
             {
-                if (DetermineArrowPressed(mouse))
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                if (dataCount > SeparatorMaximumHeightInterior)
                 {
-                    UpdatePositionBasedOnArrowPress(mouse);
-                    return;
+                    int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                    int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
+                    int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
+                    int paneArrowTop = 2;
+                    int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
+                    var leftArrowUpHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowTop), UpdatePositionBasedOnArrowPress);
+                    var leftArrowDownHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowBottom), UpdatePositionBasedOnArrowPress);
+                    var rightArrowUpHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowTop), UpdatePositionBasedOnArrowPress);
+                    var rightArrowDownHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowBottom), UpdatePositionBasedOnArrowPress);
+                    leftArrowUpHitbox.ProcessPointer(mouse, out bool done);
+                    if (done)
+                        return;
+                    leftArrowDownHitbox.ProcessPointer(mouse, out done);
+                    if (done)
+                        return;
+                    rightArrowUpHitbox.ProcessPointer(mouse, out done);
+                    if (done)
+                        return;
+                    rightArrowDownHitbox.ProcessPointer(mouse, out done);
+                    if (done)
+                        return;
                 }
                 UpdateSelectionBasedOnMouse(mouse);
             }

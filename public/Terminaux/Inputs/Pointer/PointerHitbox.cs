@@ -77,11 +77,20 @@ namespace Terminaux.Inputs.Pointer
         /// <summary>
         /// Makes a new instance of the pointer hitbox
         /// </summary>
+        /// <param name="point">Pointer hitbox to process at this point</param>
+        /// <param name="callback">Callback function to run when a mouse event around it is processed</param>
+        public PointerHitbox(Coordinate point, Func<PointerEventContext, object?>? callback) :
+            this(point, point, callback)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of the pointer hitbox
+        /// </summary>
         /// <param name="start">Starting position of the pointer hitbox</param>
         /// <param name="end">Ending position of the pointer hitbox</param>
         /// <param name="callback">Callback function to run when a mouse event around it is processed</param>
         public PointerHitbox(Coordinate start, Coordinate end, Func<PointerEventContext, object?>? callback) :
-            this(start, new Size(end.X, end.Y), callback)
+            this(start, new Size(end.X - start.X, end.Y - start.Y), callback)
         { }
 
         /// <summary>
