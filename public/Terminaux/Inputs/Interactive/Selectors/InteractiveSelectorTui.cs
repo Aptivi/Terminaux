@@ -277,10 +277,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
                     int paneArrowTop = 2;
                     int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
-                    var leftArrowUpHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowTop), UpdatePositionBasedOnArrowPress);
-                    var leftArrowDownHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowBottom), UpdatePositionBasedOnArrowPress);
-                    var rightArrowUpHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowTop), UpdatePositionBasedOnArrowPress);
-                    var rightArrowDownHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowBottom), UpdatePositionBasedOnArrowPress);
+                    var leftArrowUpHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowTop), UpdatePositionBasedOnArrowPress) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var leftArrowDownHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowBottom), UpdatePositionBasedOnArrowPress) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var rightArrowUpHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowTop), UpdatePositionBasedOnArrowPress) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var rightArrowDownHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowBottom), UpdatePositionBasedOnArrowPress) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     leftArrowUpHitbox.ProcessPointer(mouse, out bool done);
                     if (done)
                         return;

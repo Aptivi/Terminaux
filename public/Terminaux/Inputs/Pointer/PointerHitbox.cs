@@ -50,6 +50,36 @@ namespace Terminaux.Inputs.Pointer
             size;
 
         /// <summary>
+        /// Gets the button or the scrolling direction
+        /// </summary>
+        public PointerButton Button { get; set; }
+
+        /// <summary>
+        /// Gets the button press state
+        /// </summary>
+        public PointerButtonPress ButtonPress { get; set; }
+
+        /// <summary>
+        /// Gets the modifiers pressed at the time of the event
+        /// </summary>
+        public PointerModifiers Modifiers { get; set; }
+
+        /// <summary>
+        /// Whether the pointer is being dragged or not
+        /// </summary>
+        public bool Dragging { get; set; }
+
+        /// <summary>
+        /// Whether to process the click tier or not
+        /// </summary>
+        public bool ProcessTier { get; set; }
+
+        /// <summary>
+        /// Specifies whether this is a single-click (1), double-click (2), or more. Only populated in the <see cref="PointerButtonPress.Released"/> event, and you'll need to populate it when listening to this event via the hitbox instance if <see cref="ProcessTier"/> is on.
+        /// </summary>
+        public int ClickTier { get; set; }
+
+        /// <summary>
         /// Checks to see whether the pointer is within this hitbox
         /// </summary>
         /// <param name="context">Pointer event context to use in comparison</param>
@@ -58,16 +88,33 @@ namespace Terminaux.Inputs.Pointer
             PointerTools.PointerWithinRange(context, (Start.X, Start.Y), (End.X, End.Y));
 
         /// <summary>
+        /// Checks to see whether the pointer matches the modifier conditions specified
+        /// </summary>
+        /// <param name="context">Pointer event context to use in comparison</param>
+        /// <returns>True if the pointer meets all modifier conditions; otherwise, false.</returns>
+        public bool IsPointerModifierMatch(PointerEventContext context) =>
+            context.Button == Button &&
+            context.ButtonPress == ButtonPress &&
+            context.Modifiers == Modifiers &&
+            context.Dragging == Dragging &&
+            ((ProcessTier && context.ClickTier == ClickTier) || !ProcessTier);
+
+        /// <summary>
         /// Processes the pointer with a callback function
         /// </summary>
         /// <param name="context">Pointer event context to use when processing the pointer</param>
-        /// <param name="inRange">True if the pointer is within the hitbox; otherwise, false.</param>
-        /// <returns>null if <paramref name="inRange"/> is false or if there is no callback function; otherwise, the callback function return value</returns>
-        public object? ProcessPointer(PointerEventContext context, out bool inRange)
+        /// <param name="status">True if the pointer is within the hitbox and meets all modifier conditions; otherwise, false.</param>
+        /// <returns>null if <paramref name="status"/> is false or if there is no callback function; otherwise, the callback function return value</returns>
+        public object? ProcessPointer(PointerEventContext context, out bool status)
         {
             // Check to see whether the pointer is within this hitbox
-            inRange = IsPointerWithin(context);
-            if (!inRange)
+            status = IsPointerWithin(context);
+            if (!status)
+                return null;
+            
+            // Check to see whether the pointer meets all modifier conditions
+            status = IsPointerModifierMatch(context);
+            if (!status)
                 return null;
 
             // Now, process the pointer by calling the callback function with this context
