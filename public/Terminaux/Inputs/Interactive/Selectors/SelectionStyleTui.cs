@@ -241,16 +241,54 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void GoUp()
+        private void GoUp(PointerEventContext? mouse = null)
         {
+            // Check the mouse first
+            if (mouse is not null)
+            {
+                int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+                int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
+                int interiorWidth = wholeWidth - sidebarWidth;
+                int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+                int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
+                int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                int answersPerPage = listEndPosition - 5;
+
+                // Check to see if we're scrolling the mouse wheel or not
+                if (mouse.ButtonPress == PointerButtonPress.Scrolled &&
+                    (mouse.Coordinates.x < 3 || mouse.Coordinates.x >= interiorWidth + 3 ||
+                     mouse.Coordinates.y < listStartPosition + 2 || mouse.Coordinates.y >= listStartPosition + 2 + answersPerPage))
+                    return;
+            }
+
+            // Now, we can go up
             highlightedAnswer--;
             if (highlightedAnswer < 1)
                 highlightedAnswer = 1;
             Update(true);
         }
 
-        private void GoDown()
+        private void GoDown(PointerEventContext? mouse = null)
         {
+            // Check the mouse first
+            if (mouse is not null)
+            {
+                int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+                int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
+                int interiorWidth = wholeWidth - sidebarWidth;
+                int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+                int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
+                int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                int answersPerPage = listEndPosition - 5;
+
+                // Check to see if we're scrolling the mouse wheel or not
+                if (mouse.ButtonPress == PointerButtonPress.Scrolled &&
+                    (mouse.Coordinates.x < 3 || mouse.Coordinates.x >= interiorWidth + 3 ||
+                     mouse.Coordinates.y < listStartPosition + 2 || mouse.Coordinates.y >= listStartPosition + 2 + answersPerPage))
+                    return;
+            }
+
+            // Now, we can go down
             highlightedAnswer++;
             if (highlightedAnswer > allAnswers.Count)
                 highlightedAnswer = allAnswers.Count;
@@ -634,8 +672,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.bindings[14], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.showBindings[2], Help));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, _) => GoUp()));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, _) => GoDown()));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, mouse) => GoUp(mouse)));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, mouse) => GoDown(mouse)));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[3], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[4], (_, _, mouse) => UpdateSelectedIndexWithMousePos(mouse)));
