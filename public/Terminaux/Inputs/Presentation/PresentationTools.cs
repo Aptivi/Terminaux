@@ -40,6 +40,7 @@ using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Base.Structures;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -161,25 +162,7 @@ namespace Terminaux.Inputs.Presentation
                     if (elementIdx < pageElements.Length - 1)
                         renderedElements.Append("\n\n");
                 }
-
-                // Helper function
                 string rendered = renderedElements.ToString();
-                string[] GetFinalLines()
-                {
-                    // Deal with the lines to actually fit text in the infobox
-                    int presentationUpperBorderLeft = 2;
-                    int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
-                    int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
-                    string[] splitLines = rendered.SplitNewLines();
-                    List<string> splitFinalLines = [];
-                    foreach (var line in splitLines)
-                    {
-                        var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, presentationLowerInnerBorderLeft);
-                        foreach (var lineSentence in lineSentences)
-                            splitFinalLines.Add(lineSentence);
-                    }
-                    return [.. splitFinalLines];
-                }
 
                 // Then, the text
                 int currIdx = 0;
@@ -187,7 +170,7 @@ namespace Terminaux.Inputs.Presentation
                 gridBuffer.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = GetFinalLines();
+                    string[] splitFinalLines = GetFinalLines(rendered);
 
                     // Populate some variables
                     int presentationUpperBorderLeft = 2;
@@ -243,55 +226,26 @@ namespace Terminaux.Inputs.Presentation
                     SpinWait.SpinUntil(() => Input.InputAvailable);
 
                     // Get the lines and the positions
-                    string[] splitFinalLines = GetFinalLines();
+                    string[] splitFinalLines = GetFinalLines(rendered);
                     int presentationUpperBorderLeft = 2;
                     int presentationUpperBorderTop = 1;
                     int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
                     int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
                     int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
                     int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
+                    int arrowLeft = presentationLowerInnerBorderLeft + 3;
+                    int arrowTop = 2;
+                    int arrowBottom = presentationLowerInnerBorderTop + 1;
 
                     // Then, determine if the pointer or the keypress is available
                     if (Input.MouseInputAvailable)
                     {
-                        bool DetermineArrowPressed(PointerEventContext mouse)
-                        {
-                            if (splitFinalLines.Length <= presentationLowerInnerBorderTop)
-                                return false;
-                            int arrowLeft = presentationLowerInnerBorderLeft + 3;
-                            int arrowTop = 2;
-                            int arrowBottom = presentationLowerInnerBorderTop + 1;
-                            return
-                                PointerTools.PointerWithinRange(mouse,
-                                    (arrowLeft, arrowTop),
-                                    (arrowLeft, arrowBottom));
-                        }
-
-                        void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
-                        {
-                            if (splitFinalLines.Length <= presentationLowerInnerBorderTop)
-                                return;
-                            int arrowLeft = presentationLowerInnerBorderLeft + 3;
-                            int arrowTop = 2;
-                            int arrowBottom = presentationLowerInnerBorderTop + 1;
-                            if (mouse.Coordinates.x == arrowLeft)
-                            {
-                                if (mouse.Coordinates.y == arrowTop)
-                                {
-                                    currIdx -= 1;
-                                    if (currIdx < 0)
-                                        currIdx = 0;
-                                }
-                                else if (mouse.Coordinates.y == arrowBottom)
-                                {
-                                    currIdx += 1;
-                                    if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
-                                        currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
-                                    if (currIdx < 0)
-                                        currIdx = 0;
-                                }
-                            }
-                        }
+                        // Some hitboxes
+                        var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), (_) => GoUp(ref currIdx)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), (_) => GoDown(rendered, ref currIdx)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var scrollUpHitbox = new PointerHitbox(new(presentationUpperInnerBorderLeft, presentationUpperInnerBorderTop), new Coordinate(presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop), (_) => GoUp(ref currIdx, 3)) { Button = PointerButton.WheelUp, ButtonPress = PointerButtonPress.Scrolled };
+                        var scrollDownHitbox = new PointerHitbox(new(presentationUpperInnerBorderLeft, presentationUpperInnerBorderTop), new Coordinate(presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop), (_) => GoDown(rendered, ref currIdx, 3)) { Button = PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+                        var inputHitbox = new PointerHitbox(new(presentationUpperInnerBorderLeft, presentationUpperInnerBorderTop), new Coordinate(presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop), (_) => ProcessInput(page, screen)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                         // Mouse input received.
                         var mouse = Input.ReadPointer();
@@ -302,23 +256,18 @@ namespace Terminaux.Inputs.Presentation
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if (DetermineArrowPressed(mouse))
-                                    UpdatePositionBasedOnArrowPress(mouse);
-                                else
-                                    pageExit = ProcessInput(page, screen);
+                                arrowUpHitbox.ProcessPointer(mouse, out bool done);
+                                if (!done)
+                                    arrowDownHitbox.ProcessPointer(mouse, out done);
+                                if (!done)
+                                    inputHitbox.ProcessPointer(mouse, out _);
                                 screen.RequireRefresh();
                                 break;
                             case PointerButton.WheelUp:
-                                currIdx -= 3;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                scrollUpHitbox.ProcessPointer(mouse, out done);
                                 break;
                             case PointerButton.WheelDown:
-                                currIdx += 3;
-                                if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
-                                    currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                scrollDownHitbox.ProcessPointer(mouse, out done);
                                 break;
                         }
                     }
@@ -341,36 +290,22 @@ namespace Terminaux.Inputs.Presentation
                                 screen.RequireRefresh();
                                 break;
                             case ConsoleKey.PageUp:
-                                currIdx -= presentationLowerInnerBorderTop * 2 - 1;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                GoUp(ref currIdx, presentationLowerInnerBorderTop * 2 - 1);
                                 break;
                             case ConsoleKey.PageDown:
-                                currIdx += increment;
-                                if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
-                                    currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                GoDown(rendered, ref currIdx, increment);
                                 break;
                             case ConsoleKey.UpArrow:
-                                currIdx -= 1;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.DownArrow:
-                                currIdx += 1;
-                                if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
-                                    currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                GoDown(rendered, ref currIdx);
                                 break;
                             case ConsoleKey.Home:
-                                currIdx = 0;
+                                GoFirst(ref currIdx);
                                 break;
                             case ConsoleKey.End:
-                                currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                GoLast(rendered, ref currIdx);
                                 break;
                         }
                     }
@@ -383,6 +318,55 @@ namespace Terminaux.Inputs.Presentation
             ScreenTools.UnsetCurrent(screen);
             ColorTools.LoadBack();
             ConsoleWrapper.CursorVisible = true;
+        }
+
+        private static string[] GetFinalLines(string rendered)
+        {
+            // Deal with the lines to actually fit text in the infobox
+            int presentationUpperBorderLeft = 2;
+            int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
+            int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
+            string[] splitLines = rendered.SplitNewLines();
+            List<string> splitFinalLines = [];
+            foreach (var line in splitLines)
+            {
+                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, presentationLowerInnerBorderLeft);
+                foreach (var lineSentence in lineSentences)
+                    splitFinalLines.Add(lineSentence);
+            }
+            return [.. splitFinalLines];
+        }
+
+        private static void GoUp(ref int currIdx, int level = 1)
+        {
+            currIdx -= level;
+            if (currIdx < 0)
+                currIdx = 0;
+        }
+
+        private static void GoDown(string rendered, ref int currIdx, int level = 1)
+        {
+            int presentationUpperBorderTop = 1;
+            int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
+            string[] splitFinalLines = GetFinalLines(rendered);
+            currIdx += level;
+            if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
+                currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
+            if (currIdx < 0)
+                currIdx = 0;
+        }
+
+        private static void GoFirst(ref int currIdx) =>
+            currIdx = 0;
+
+        private static void GoLast(string rendered, ref int currIdx)
+        {
+            int presentationUpperBorderTop = 1;
+            int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
+            string[] splitFinalLines = GetFinalLines(rendered);
+            currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
+            if (currIdx < 0)
+                currIdx = 0;
         }
 
         private static bool ProcessInput(PresentationPage page, Screen screen)
