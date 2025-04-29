@@ -30,6 +30,7 @@ namespace Terminaux.Inputs.Pointer
         private readonly Coordinate start;
         private readonly Size size;
         private readonly Func<PointerEventContext, object?> callback = (_) => null;
+        private readonly Action<PointerEventContext> voidCallback = (_) => { };
 
         /// <summary>
         /// Gets the position of where the mouse hitbox starts (usually upper left corner of a rectangle)
@@ -93,7 +94,7 @@ namespace Terminaux.Inputs.Pointer
         /// <param name="context">Pointer event context to use in comparison</param>
         /// <returns>True if the pointer meets all modifier conditions; otherwise, false.</returns>
         public bool IsPointerModifierMatch(PointerEventContext context) =>
-            context.Button == Button &&
+            Button.HasFlag(context.Button) &&
             context.ButtonPress == ButtonPress &&
             context.Modifiers == Modifiers &&
             context.Dragging == Dragging &&
@@ -118,6 +119,11 @@ namespace Terminaux.Inputs.Pointer
                 return null;
 
             // Now, process the pointer by calling the callback function with this context
+            if (voidCallback is not null)
+            {
+                voidCallback.Invoke(context);
+                return null;
+            }
             return callback.Invoke(context);
         }
 
@@ -151,6 +157,38 @@ namespace Terminaux.Inputs.Pointer
             this.start = start;
             this.size = size;
             this.callback = callback ?? new((_) => null);
+        }
+
+        /// <summary>
+        /// Makes a new instance of the pointer hitbox
+        /// </summary>
+        /// <param name="point">Pointer hitbox to process at this point</param>
+        /// <param name="callback">Callback function to run when a mouse event around it is processed</param>
+        public PointerHitbox(Coordinate point, Action<PointerEventContext>? callback) :
+            this(point, point, callback)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of the pointer hitbox
+        /// </summary>
+        /// <param name="start">Starting position of the pointer hitbox</param>
+        /// <param name="end">Ending position of the pointer hitbox</param>
+        /// <param name="callback">Callback function to run when a mouse event around it is processed</param>
+        public PointerHitbox(Coordinate start, Coordinate end, Action<PointerEventContext>? callback) :
+            this(start, new Size(end.X - start.X, end.Y - start.Y), callback)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of the pointer hitbox
+        /// </summary>
+        /// <param name="start">Starting position of the pointer hitbox</param>
+        /// <param name="size">Size of the pointer hitbox</param>
+        /// <param name="callback">Callback function to run when a mouse event around it is processed</param>
+        public PointerHitbox(Coordinate start, Size size, Action<PointerEventContext>? callback)
+        {
+            this.start = start;
+            this.size = size;
+            voidCallback = callback ?? new((_) => { });
         }
     }
 }

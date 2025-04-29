@@ -22,6 +22,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
@@ -487,8 +488,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Keybindings.Add((ColorSelector.additionalBindingsReadWrite[9], (ui, _, _) => ChangeMode(ui, true)));
 
                 // Mouse bindings
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[10], (_, _, mouse) => ChangeValue(mouse, false)));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[11], (_, _, mouse) => ChangeValue(mouse, true)));
+                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[10], (ui, _, mouse) => ChangeValue(ui, mouse, false)));
+                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[11], (ui, _, mouse) => ChangeValue(ui, mouse, true)));
 
                 // Type-specific bindings
                 switch (type)
@@ -659,7 +660,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.RequireRefresh();
         }
 
-        private void ChangeValue(PointerEventContext? mouse, bool goBack)
+        private void ChangeValue(TextualUI ui, PointerEventContext? mouse, bool goBack)
         {
             if (mouse is null)
                 return;
@@ -669,67 +670,31 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int generalX = ConsoleWrapper.WindowWidth / 2 + 2;
             int colorBoxX = 2, colorBoxY = 1;
             int colorBoxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+            int grayRampBarY = colorBoxY + 9;
 
-            // Detect boundaries
-            bool withinColorBoxBoundaries = PointerTools.PointerWithinRange(mouse, (colorBoxX + 1, colorBoxY + 1), (colorBoxWidth + colorBoxX, boxHeight + colorBoxY));
+            // Make pointer hitboxes to detect boundaries
+            var colorBoxHitbox = new PointerHitbox(new(colorBoxX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + colorBoxX, boxHeight + colorBoxY), (pec) => ChangeColor(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorListHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + generalX, boxHeight + colorBoxY), (pec) => ChangeColor(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorHueBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(generalX + boxWidth, colorBoxY + 2), (pec) => ChangeHue(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorSaturationBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 3), new Coordinate(generalX + boxWidth, colorBoxY + 4), (pec) => ChangeSaturation(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorLightnessBarHitbox = new PointerHitbox(new(generalX + 1, grayRampBarY + 1), new Coordinate(generalX + boxWidth - 6, grayRampBarY + 1), (pec) => ChangeLightness(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorTransparencyBarHitbox = new PointerHitbox(new(generalX + 1, grayRampBarY + 2), new Coordinate(generalX + boxWidth - 6, grayRampBarY + 2), (pec) => ChangeTransparency(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
 
-            // Do the action!
-            if (withinColorBoxBoundaries)
-            {
-                if (goBack)
-                    DecrementColor(type);
-                else
-                    IncrementColor(type);
-            }
+            // Detect the boundaries and do the action!
+            if (colorBoxHitbox.IsPointerWithin(mouse))
+                colorBoxHitbox.ProcessPointer(mouse, out _);
             else
             {
                 if (type != ColorType.TrueColor && showColorList)
-                {
-                    bool withinColorListBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, colorBoxY + 1), (colorBoxWidth + generalX, boxHeight + colorBoxY));
-                    if (withinColorListBoundaries)
-                    {
-                        if (goBack)
-                            DecrementColor(type);
-                        else
-                            IncrementColor(type);
-                    }
-                }
-                else
-                {
-                    boxHeight = 2;
-                    int hslBarY = 1;
-                    int grayRampBarY = hslBarY + (boxHeight * 3) + 3;
-
-                    // Detect boundaries
-                    bool withinHueBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 1), (generalX + boxWidth, hslBarY + 2));
-                    bool withinSaturationBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 3), (generalX + boxWidth, hslBarY + 4));
-                    bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, hslBarY + 5), (generalX + boxWidth, hslBarY + 6));
-                    bool withinTransparencyBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, grayRampBarY + 1), (generalX + boxWidth - 7, grayRampBarY + 2));
-
-                    // Do the action!
-                    if (goBack)
-                    {
-                        if (withinHueBarBoundaries)
-                            DecrementHue(type);
-                        else if (withinSaturationBarBoundaries)
-                            DecrementSaturation(type);
-                        else if (withinLightnessBarBoundaries)
-                            DecrementLightness(type);
-                        else if (withinTransparencyBarBoundaries)
-                            finalSettings.Opacity--;
-                    }
-                    else
-                    {
-                        if (withinHueBarBoundaries)
-                            IncrementHue(type);
-                        else if (withinSaturationBarBoundaries)
-                            IncrementSaturation(type);
-                        else if (withinLightnessBarBoundaries)
-                            IncrementLightness(type);
-                        else if (withinTransparencyBarBoundaries)
-                            finalSettings.Opacity++;
-                    }
-                }
+                    colorListHitbox.ProcessPointer(mouse, out _);
+                else if (colorHueBarHitbox.IsPointerWithin(mouse))
+                    colorHueBarHitbox.ProcessPointer(mouse, out _);
+                else if (colorSaturationBarHitbox.IsPointerWithin(mouse))
+                    colorSaturationBarHitbox.ProcessPointer(mouse, out _);
+                else if (colorLightnessBarHitbox.IsPointerWithin(mouse))
+                    colorLightnessBarHitbox.ProcessPointer(mouse, out _);
+                else if (colorTransparencyBarHitbox.IsPointerWithin(mouse))
+                    colorTransparencyBarHitbox.ProcessPointer(mouse, out _);
             }
             UpdateColor(ref selectedColor, type, finalSettings);
         }
@@ -758,6 +723,15 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementSaturation(type);
             else
                 IncrementSaturation(type);
+            ui.RequireRefresh();
+        }
+
+        private void ChangeTransparency(TextualUI ui, bool goBack)
+        {
+            if (goBack)
+                finalSettings.Opacity--;
+            else
+                finalSettings.Opacity++;
             ui.RequireRefresh();
         }
 

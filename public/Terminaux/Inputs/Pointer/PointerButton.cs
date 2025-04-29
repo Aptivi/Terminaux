@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+
 namespace Terminaux.Inputs.Pointer
 {
     /// <summary>
     /// Pointer button
     /// </summary>
+    [Flags]
     public enum PointerButton
     {
         /// <summary>
