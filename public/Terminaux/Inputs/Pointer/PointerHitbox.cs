@@ -52,12 +52,12 @@ namespace Terminaux.Inputs.Pointer
         /// <summary>
         /// Gets the button or the scrolling direction
         /// </summary>
-        public PointerButton Button { get; set; }
+        public PointerButton Button { get; set; } = PointerButton.Left;
 
         /// <summary>
         /// Gets the button press state
         /// </summary>
-        public PointerButtonPress ButtonPress { get; set; }
+        public PointerButtonPress ButtonPress { get; set; } = PointerButtonPress.Released;
 
         /// <summary>
         /// Gets the modifiers pressed at the time of the event
