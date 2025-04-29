@@ -418,7 +418,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var normalBox = new Box()
             {
                 Left = boxX + 1,
-                Top = boxY,
+                Top = boxY + 1,
                 Width = boxWidth,
                 Height = boxHeight / 2,
                 Color = selectedColor,
@@ -426,7 +426,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var transformedBox = new Box()
             {
                 Left = boxX + 1,
-                Top = boxY + boxHeight / 2,
+                Top = boxY + 1 + boxHeight / 2,
                 Width = boxWidth,
                 Height = boxHeight / 2 + (ConsoleWrapper.WindowHeight % 2 == 0 ? 1 : 0),
                 Color = finalColor,
