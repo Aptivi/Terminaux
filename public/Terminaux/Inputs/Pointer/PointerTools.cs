@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Base.Structures;
 
 namespace Terminaux.Inputs.Pointer
 {
@@ -32,8 +33,27 @@ namespace Terminaux.Inputs.Pointer
         /// <param name="context">Pointer event context (You can easily obtain it using the <see cref="Input.ReadPointer"/> or the <see cref="Input.ReadPointerOrKey"/> functions)</param>
         /// <param name="point">Point position</param>
         /// <returns>True if the pointer is within the specified point position; false otherwise</returns>
+        public static bool PointerWithinPoint(PointerEventContext context, Coordinate point) =>
+            PointerWithinPoint(context, (point.X, point.Y));
+
+        /// <summary>
+        /// Checks to see if the returned pointer event context is in the range of the two dimensions (if the mouse pointer is within the boundaries)
+        /// </summary>
+        /// <param name="context">Pointer event context (You can easily obtain it using the <see cref="Input.ReadPointer"/> or the <see cref="Input.ReadPointerOrKey"/> functions)</param>
+        /// <param name="point">Point position</param>
+        /// <returns>True if the pointer is within the specified point position; false otherwise</returns>
         public static bool PointerWithinPoint(PointerEventContext context, (int x, int y) point) =>
             PointerWithinRange(context, point, point);
+
+        /// <summary>
+        /// Checks to see if the returned pointer event context is in the range of the two dimensions (if the mouse pointer is within the boundaries)
+        /// </summary>
+        /// <param name="context">Pointer event context (You can easily obtain it using the <see cref="Input.ReadPointer"/> or the <see cref="Input.ReadPointerOrKey"/> functions)</param>
+        /// <param name="start">Starting position representing an upper left corner of the rectangle</param>
+        /// <param name="end">Ending position representing a lower right corner of the rectangle</param>
+        /// <returns>True if the pointer is within the range; false otherwise</returns>
+        public static bool PointerWithinRange(PointerEventContext context, Coordinate start, Coordinate end) =>
+            PointerWithinRange(context, (start.X, start.Y), (end.X, end.Y));
 
         /// <summary>
         /// Checks to see if the returned pointer event context is in the range of the two dimensions (if the mouse pointer is within the boundaries)
