@@ -701,7 +701,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     // Detect boundaries
                     bool withinHueBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, colorBoxY + 1), (generalX + boxWidth, colorBoxY + 2));
                     bool withinSaturationBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, colorBoxY + 3), (generalX + boxWidth, colorBoxY + 4));
-                    bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, colorBoxY + 5), (generalX + boxWidth - 6, colorBoxY + 6));
+                    bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, colorBoxY + 5), (generalX + boxWidth, colorBoxY + 6));
                     bool withinTransparencyBarBoundaries = PointerTools.PointerWithinRange(mouse, (generalX + 1, grayRampBarY + 1), (generalX + boxWidth - 6, grayRampBarY + 2));
 
                     // Do the action!
