@@ -143,7 +143,7 @@ namespace Terminaux.Inputs.Pointer
         /// <param name="end">Ending position of the pointer hitbox</param>
         /// <param name="callback">Callback function to run when a mouse event around it is processed</param>
         public PointerHitbox(Coordinate start, Coordinate end, Func<PointerEventContext, object?>? callback) :
-            this(start, new Size(end.X - start.X, end.Y - start.Y), callback)
+            this(start, new Size(end.X - start.X + 1, end.Y - start.Y + 1), callback)
         { }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Terminaux.Inputs.Pointer
         /// <param name="end">Ending position of the pointer hitbox</param>
         /// <param name="callback">Callback function to run when a mouse event around it is processed</param>
         public PointerHitbox(Coordinate start, Coordinate end, Action<PointerEventContext>? callback) :
-            this(start, new Size(end.X - start.X, end.Y - start.Y), callback)
+            this(start, new Size(end.X - start.X + 1, end.Y - start.Y + 1), callback)
         { }
 
         /// <summary>
