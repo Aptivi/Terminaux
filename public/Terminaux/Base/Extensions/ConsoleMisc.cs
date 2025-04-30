@@ -300,8 +300,9 @@ namespace Terminaux.Base.Extensions
         /// </summary>
         /// <param name="target">Source string to truncate</param>
         /// <param name="threshold">Max number of string characters</param>
+        /// <param name="ellipsis">Whether to insert ellipsis or not</param>
         /// <returns>Truncated string</returns>
-        public static string Truncate(this string target, int threshold)
+        public static string Truncate(this string target, int threshold, bool ellipsis = true)
         {
             if (target is null)
                 throw new TerminauxException("The target may not be null");
@@ -324,9 +325,10 @@ namespace Terminaux.Base.Extensions
             if (newLength > threshold)
             {
                 var targetBuilder = new StringBuilder(target);
-                while (ConsoleChar.EstimateCellWidth(targetBuilder.ToString()) >= threshold)
+                string ellipsisMark = ellipsis ? "..." : "";
+                while (ConsoleChar.EstimateCellWidth(targetBuilder.ToString()) > threshold - ellipsisMark.Length)
                     targetBuilder.Remove(targetBuilder.Length - 1, 1);
-                return $"{targetBuilder}...";
+                return $"{targetBuilder}{ellipsisMark}";
             }
             else
                 return target;

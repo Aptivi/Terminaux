@@ -187,7 +187,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
                     AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                 }
-                AnswerOption = AnswerOption.Truncate(width - 4);
+                AnswerOption = AnswerOption.Truncate(width);
 
                 // Render an entry
                 bool isAlt = i > altChoicePos;
