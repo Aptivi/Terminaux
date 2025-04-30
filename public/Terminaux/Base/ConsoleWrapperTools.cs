@@ -666,11 +666,21 @@ namespace Terminaux.Base
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
             Console.ReadKey(intercept);
 
-        private static void Write(char value) =>
-            Console.Write(value);
+        private static void Write(char value)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                Console.Write(value);
+            }
+        }
 
-        private static void Write(string text) =>
-            Console.Write(text);
+        private static void Write(string text)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                Console.Write(text);
+            }
+        }
 
         private static void Write(string text, params object[] args)
         {
@@ -690,14 +700,29 @@ namespace Terminaux.Base
             WriteLine();
         }
 
-        private static void WriteLine() =>
-            Console.WriteLine();
+        private static void WriteLine()
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                Console.WriteLine();
+            }
+        }
 
-        private static void WriteError(char value) =>
-            Console.Error.Write(value);
+        private static void WriteError(char value)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                Console.Error.Write(value);
+            }
+        }
 
-        private static void WriteError(string text) =>
-            Console.Error.Write(text);
+        private static void WriteError(string text)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                Console.Error.Write(text);
+            }
+        }
 
         private static void WriteError(string text, params object[] args)
         {
@@ -717,7 +742,12 @@ namespace Terminaux.Base
             WriteErrorLine();
         }
 
-        private static void WriteErrorLine() =>
-            Console.Error.WriteLine();
+        private static void WriteErrorLine()
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                Console.Error.WriteLine();
+            }
+        }
     }
 }
