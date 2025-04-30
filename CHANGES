@@ -1,10 +1,10 @@
-To celebrate the first public release of Ghostty, we've decided to release this version of Terminaux to add support for Ghostty.
+This version incorporates general improvements
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added Ghostty support
+- `[*]` General improvements
 
 Review the commit history if you want to get a deep insight about the changes.
 
