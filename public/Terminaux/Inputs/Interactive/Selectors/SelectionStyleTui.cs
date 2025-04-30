@@ -128,11 +128,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Write description hint
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
-            bool showHint = !string.IsNullOrWhiteSpace(highlightedAnswerChoiceInfo.ChoiceDescription);
-            if (showHint || showCount)
+            if (showCount)
             {
                 int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer);
-                string renderedHint = (showCount ? $"[{(multiple ? $"{selectedAnswers.Count} | " : "")}{currentPage + 1}/{choiceNums.Count} | {highlightedAnswer}/{allAnswers.Count}]" : "") + (showHint ? "[TAB]" : "");
+                string renderedHint = (showCount ? $"[{(multiple ? $"{selectedAnswers.Count} | " : "")}{currentPage + 1}/{choiceNums.Count} | {highlightedAnswer}/{allAnswers.Count}]" : "");
                 int descHintAreaX = interiorWidth - ConsoleChar.EstimateCellWidth(renderedHint) + 2;
                 int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                 selectionBuilder.Append(
@@ -671,7 +670,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.bindings[13], ShowCount));
             Keybindings.Add((SelectionStyleBase.bindings[14], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
-            Keybindings.Add((SelectionStyleBase.showBindings[2], Help));
+            Keybindings.Add((SelectionStyleBase.showBindings[3], Help));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, mouse) => GoUp(mouse)));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, mouse) => GoDown(mouse)));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));

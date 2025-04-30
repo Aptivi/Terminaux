@@ -33,12 +33,14 @@ namespace Terminaux.Inputs.Styles.Selection
             new("Confirm", ConsoleKey.Enter),
             new("Select", ConsoleKey.Spacebar),
             new("Sidebar", ConsoleKey.S),
+            new("More", ConsoleKey.Tab),
             new("Help", ConsoleKey.K),
         ];
         internal static Keybinding[] showBindings =
         [
             new("Select", ConsoleKey.Enter),
             new("Sidebar", ConsoleKey.S),
+            new("More", ConsoleKey.Tab),
             new("Help", ConsoleKey.K),
         ];
         internal static Keybinding[] bindings =
