@@ -30,7 +30,7 @@ namespace Terminaux.Inputs.Pointer
         private readonly Coordinate start;
         private readonly Size size;
         private readonly Func<PointerEventContext, object?> callback = (_) => null;
-        private readonly Action<PointerEventContext> voidCallback = (_) => { };
+        private readonly Action<PointerEventContext>? voidCallback = null;
 
         /// <summary>
         /// Gets the position of where the mouse hitbox starts (usually upper left corner of a rectangle)
@@ -188,7 +188,7 @@ namespace Terminaux.Inputs.Pointer
         {
             this.start = start;
             this.size = size;
-            voidCallback = callback ?? new((_) => { });
+            voidCallback = callback;
         }
     }
 }

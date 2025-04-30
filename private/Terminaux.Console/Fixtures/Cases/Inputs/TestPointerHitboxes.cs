@@ -47,55 +47,31 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 ColorTools.LoadBack();
 
                 // Then, show the resizable red, green, and blue boxes
-                var redBox = new ScreenPart();
-                var greenBox = new ScreenPart();
-                var blueBox = new ScreenPart();
+                var redBoxPart = new ScreenPart();
+                var greenBoxPart = new ScreenPart();
+                var blueBoxPart = new ScreenPart();
                 bool redState = true;
                 bool greenState = true;
                 bool blueState = true;
                 bool bail = false;
-                redBox.AddDynamicText(() =>
+                redBoxPart.AddDynamicText(() =>
                 {
-                    var redPos = GetBoxPos(1);
-                    var box = new Box()
-                    {
-                        Left = redPos.start.X,
-                        Top = redPos.start.Y,
-                        Width = redPos.size.Width,
-                        Height = redPos.size.Height,
-                        Color = ConsoleColors.Red,
-                    };
-                    return box.Render();
+                    var redBox = GenBox(1, ConsoleColors.Red);
+                    return redBox.Render();
                 });
-                stickScreen.AddBufferedPart("Red Box", redBox);
-                greenBox.AddDynamicText(() =>
+                stickScreen.AddBufferedPart("Red Box", redBoxPart);
+                greenBoxPart.AddDynamicText(() =>
                 {
-                    var greenPos = GetBoxPos(2);
-                    var box = new Box()
-                    {
-                        Left = greenPos.start.X,
-                        Top = greenPos.start.Y,
-                        Width = greenPos.size.Width,
-                        Height = greenPos.size.Height,
-                        Color = ConsoleColors.Lime,
-                    };
-                    return box.Render();
+                    var greenBox = GenBox(2, ConsoleColors.Lime);
+                    return greenBox.Render();
                 });
-                stickScreen.AddBufferedPart("Green Box", greenBox);
-                blueBox.AddDynamicText(() =>
+                stickScreen.AddBufferedPart("Green Box", greenBoxPart);
+                blueBoxPart.AddDynamicText(() =>
                 {
-                    var bluePos = GetBoxPos(3);
-                    var box = new Box()
-                    {
-                        Left = bluePos.start.X,
-                        Top = bluePos.start.Y,
-                        Width = bluePos.size.Width,
-                        Height = bluePos.size.Height,
-                        Color = ConsoleColors.Blue,
-                    };
-                    return box.Render();
+                    var blueBox = GenBox(3, ConsoleColors.Blue);
+                    return blueBox.Render();
                 });
-                stickScreen.AddBufferedPart("Blue Box", blueBox);
+                stickScreen.AddBufferedPart("Blue Box", blueBoxPart);
 
                 // Press info screen part
                 var pressInfo = new ScreenPart();
@@ -106,9 +82,9 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 while (!bail)
                 {
                     // Get the box visibility
-                    redBox.Visible = redState;
-                    greenBox.Visible = greenState;
-                    blueBox.Visible = blueState;
+                    redBoxPart.Visible = redState;
+                    greenBoxPart.Visible = greenState;
+                    blueBoxPart.Visible = blueState;
 
                     // Render them
                     ScreenTools.Render();
@@ -124,12 +100,14 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     }
                     else
                     {
-                        var redPos = GetBoxPos(1);
-                        var greenPos = GetBoxPos(2);
-                        var bluePos = GetBoxPos(3);
-                        var redHitbox = new PointerHitbox(redPos.start, redPos.size, (pec) => RenderHitboxPos(pec, ConsoleColors.Red, 3));
-                        var greenHitbox = new PointerHitbox(greenPos.start, greenPos.size, (pec) => RenderHitboxPos(pec, ConsoleColors.Lime, 2));
-                        var blueHitbox = new PointerHitbox(bluePos.start, bluePos.size, (pec) => RenderHitboxPos(pec, ConsoleColors.Blue));
+                        var redBox = GenBox(1, ConsoleColors.Red);
+                        var greenBox = GenBox(2, ConsoleColors.Lime);
+                        var blueBox = GenBox(3, ConsoleColors.Blue);
+                        var redHitbox = redBox.GenerateHitbox((pec) => RenderHitboxPos(pec, ConsoleColors.Red, 3));
+                        var greenHitbox = greenBox.GenerateHitbox((pec) => RenderHitboxPos(pec, ConsoleColors.Lime, 2));
+                        var blueHitbox = blueBox.GenerateHitbox((pec) => RenderHitboxPos(pec, ConsoleColors.Blue));
+                        redHitbox.Button = greenHitbox.Button = blueHitbox.Button = PointerButton.Left;
+                        redHitbox.ButtonPress = greenHitbox.ButtonPress = blueHitbox.ButtonPress = PointerButtonPress.Released;
                         pressInfo.Clear();
                         pressInfo.AddDynamicText(() =>
                         {
@@ -167,7 +145,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             Input.EnableMouse = false;
         }
 
-        private (Coordinate start, Size size) GetBoxPos(int factor)
+        private Box GenBox(int factor, Color color)
         {
             factor -= 1;
             int consoleHalf = ConsoleWrapper.WindowWidth / 2;
@@ -176,7 +154,15 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             int y = factor * 2;
             int height = ConsoleWrapper.WindowHeight - y - (7 - (factor * 2));
             int width = endX - startX;
-            return (new(startX, y), new(width, height));
+            var box = new Box()
+            {
+                Left = startX,
+                Top = y,
+                Width = width,
+                Height = height,
+                Color = color
+            };
+            return box;
         }
 
         private string? RenderHitboxPos(PointerEventContext context, Color color, int offset = 1)

@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using Terminaux.Base.Structures;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Writer.CyclicWriters
 {
@@ -82,5 +84,33 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         public Margin SetMargins =>
             new(Margins, width, height);
+
+        /// <summary>
+        /// Hitbox start position
+        /// </summary>
+        public Coordinate HitboxStartPos =>
+            new(left + SetMargins.Margins.Left, top + SetMargins.Margins.Top);
+
+        /// <summary>
+        /// Hitbox end position
+        /// </summary>
+        public Coordinate HitboxEndPos =>
+            new(left + SetMargins.Margins.Left + width + Padding.Left + Padding.Right - 1, top + SetMargins.Margins.Top + height + Padding.Top + Padding.Bottom - 1);
+
+        /// <summary>
+        /// Generates the hitbox for this cyclic writer
+        /// </summary>
+        /// <param name="callback">Callback for this hitbox (returns an object)</param>
+        /// <returns>Pointer hitbox instance</returns>
+        public PointerHitbox GenerateHitbox(Func<PointerEventContext, object?>? callback) =>
+            new(HitboxStartPos, HitboxEndPos, callback ?? new((_) => null));
+
+        /// <summary>
+        /// Generates the hitbox for this cyclic writer
+        /// </summary>
+        /// <param name="callback">Callback for this hitbox (returns an object)</param>
+        /// <returns>Pointer hitbox instance</returns>
+        public PointerHitbox GenerateHitbox(Action<PointerEventContext>? callback) =>
+            new(HitboxStartPos, HitboxEndPos, callback ?? new((_) => { }));
     }
 }
