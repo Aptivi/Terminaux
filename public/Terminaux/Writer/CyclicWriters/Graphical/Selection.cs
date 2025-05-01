@@ -75,6 +75,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool SwapSelectedColors { get; set; }
 
         /// <summary>
+        /// Whether to show the radio buttons or not (ignored when <see cref="CurrentSelections"/> is not null)
+        /// </summary>
+        public bool ShowRadioButtons { get; set; } = true;
+
+        /// <summary>
         /// Selection style settings
         /// </summary>
         public SelectionStyleSettings Settings { get; set; } = new();
@@ -329,7 +334,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int startIndexGroupTristates = 0;
             int relatedIdx = -1;
             var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, choices, CurrentSelections, ref startIndexTristates) : [];
-            string prefix = isMultiple ? "  [ ] " : "  ";
+            string prefix = isMultiple ? "  [ ] " : ShowRadioButtons ? "  ( ) " : "  ";
             int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
             for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
             {
@@ -364,7 +369,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         bool disabled = choice.ChoiceDisabled;
 
                         // Get the option
-                        string modifiers = $"{(selected ? ">" : disabled ? "X" : " ")}{(isMultiple ? $" [{(CurrentSelections.Contains(relatedIdx) ? "*" : " ")}]" : "")}";
+                        string selectionIndicator = selected ? ">" : disabled ? "X" : " ";
+                        string selectedIndicator =
+                            isMultiple ? $" [{(CurrentSelections.Contains(relatedIdx) ? "*" : " ")}]" :
+                            ShowRadioButtons ? $" ({(selected ? "*" : " ")})" : "";
+                        string modifiers = $"{selectionIndicator}{selectedIndicator}";
                         string AnswerOption = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
                         if (AnswerTitleLeft < Width)
                         {
