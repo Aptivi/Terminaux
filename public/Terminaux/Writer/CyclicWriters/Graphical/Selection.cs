@@ -152,22 +152,40 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Generates the selection hitboxes
         /// </summary>
+        /// <param name="hitboxIdx">Hitbox index</param>
         /// <returns>Pointer hitbox instances that are built for each selection</returns>
-        public (PointerHitbox hitbox, ChoiceHitboxType type) GenerateSelectionHitbox(int idx) =>
-            GenerateSelectionHitboxes()[idx];
+        public (PointerHitbox hitbox, ChoiceHitboxType type, int related) GenerateSelectionHitbox(int hitboxIdx) =>
+            GenerateSelectionHitbox(CurrentSelection, hitboxIdx);
+
+        /// <summary>
+        /// Generates the selection hitboxes
+        /// </summary>
+        /// <param name="selectionIdx">Selection index from all choices</param>
+        /// <param name="hitboxIdx">Hitbox index</param>
+        /// <returns>Pointer hitbox instances that are built for each selection</returns>
+        public (PointerHitbox hitbox, ChoiceHitboxType type, int related) GenerateSelectionHitbox(int selectionIdx, int hitboxIdx) =>
+            GenerateSelectionHitboxes(selectionIdx)[hitboxIdx];
 
         /// <summary>
         /// Generates the selection hitboxes
         /// </summary>
         /// <returns>Pointer hitbox instances that are built for each selection</returns>
-        public (PointerHitbox hitbox, ChoiceHitboxType type)[] GenerateSelectionHitboxes()
+        public (PointerHitbox hitbox, ChoiceHitboxType type, int related)[] GenerateSelectionHitboxes() =>
+            GenerateSelectionHitboxes(CurrentSelection);
+
+        /// <summary>
+        /// Generates the selection hitboxes
+        /// </summary>
+        /// <param name="selectionIdx">Selection index from all choices</param>
+        /// <returns>Pointer hitbox instances that are built for each selection</returns>
+        public (PointerHitbox hitbox, ChoiceHitboxType type, int related)[] GenerateSelectionHitboxes(int selectionIdx)
         {
             // Get the choice parameters
-            (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type)> choiceText, List<int> selectionHeights) = GetChoiceParameters();
+            (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText, List<int> selectionHeights) = GetChoiceParameters();
 
             // Get the choice hitboxes
-            List<(PointerHitbox hitbox, ChoiceHitboxType type)> hitboxes = [];
-            int selectionHeight = selectionHeights[CurrentSelection];
+            List<(PointerHitbox hitbox, ChoiceHitboxType type, int related)> hitboxes = [];
+            int selectionHeight = selectionHeights[selectionIdx];
             int currentPage = (selectionHeight - 1) / Height;
             int startIndex = Height * currentPage;
             int leftPos = Left + (SliderInside ? 1 : 0);
@@ -180,8 +198,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int optionTop = Top + finalIndex - startIndex;
                 Coordinate start = new(leftPos, optionTop);
                 Coordinate end = new(leftPos + Width, optionTop);
-                (_, _, _, _, var type) = choiceText[finalIndex];
-                hitboxes.Add((new(start, end, null), type));
+                (_, _, _, _, var type, int related) = choiceText[finalIndex];
+                hitboxes.Add((new(start, end, null), type, related));
             }
             return [.. hitboxes];
         }
@@ -201,7 +219,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 AltChoicePos = choices.Count;
 
             // Get the choice parameters
-            (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type)> choiceText, List<int> selectionHeights) = GetChoiceParameters();
+            (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText, List<int> selectionHeights) = GetChoiceParameters();
 
             // Render the choices
             int selectionHeight = selectionHeights[CurrentSelection];
@@ -232,7 +250,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
                 else
                 {
-                    var (text, fore, back, force, _) = choiceText[finalIndex];
+                    var (text, fore, back, force, _, _) = choiceText[finalIndex];
                     if (UseColors || force)
                     {
                         buffer.Append(
@@ -292,7 +310,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             return buffer.ToString();
         }
 
-        private (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type)> choiceText, List<int> selectionHeights) GetChoiceParameters()
+        private (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText, List<int> selectionHeights) GetChoiceParameters()
         {
             // Determine if multiple or single
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
@@ -303,7 +321,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 AltChoicePos = choices.Count;
 
             // Now, get the choice parameters
-            List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type)> choiceText = [];
+            List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText = [];
             List<int> selectionHeights = [];
             int processedHeight = 0;
             int processedChoices = 0;
@@ -321,7 +339,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
                     string finalRendered = $"{modifiers}{category.Name}";
-                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true, ChoiceHitboxType.Category));
+                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true, ChoiceHitboxType.Category, relatedIdx == -1 ? 1 : relatedIdx + 2));
                     processedHeight++;
                 }
 
@@ -334,7 +352,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
                         string finalRendered = $"  {modifiers}{group.Name}";
-                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true, ChoiceHitboxType.Group));
+                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true, ChoiceHitboxType.Group, relatedIdx == -1 ? 1 : relatedIdx + 2));
                         processedHeight++;
                     }
                     for (int i = 0; i < group.Choices.Length; i++)
@@ -373,7 +391,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                     SwapSelectedColors ? SelectedForegroundColor : SelectedBackgroundColor
                                  :
                                 isAlt ? AltBackgroundColor : BackgroundColor;
-                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false, ChoiceHitboxType.Choice));
+                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false, ChoiceHitboxType.Choice, relatedIdx + 1));
                         processedHeight++;
                         processedChoices++;
                         selectionHeights.Add(processedHeight);

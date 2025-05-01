@@ -596,37 +596,68 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else
             {
                 showcaseLine = 0;
-                if (UpdateSelectedIndexWithMousePos(mouse))
+                if (UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType))
                 {
                     if (!multiple)
                         Exit(ui, false);
                     else
-                        ModifyChoice(ui, key, mouse);
+                    {
+                        switch (hitboxType)
+                        {
+                            case ChoiceHitboxType.Category:
+                                ProcessSelectAll(2);
+                                break;
+                            case ChoiceHitboxType.Group:
+                                ProcessSelectAll(1);
+                                break;
+                            case ChoiceHitboxType.Choice:
+                                ModifyChoice(ui, key, mouse);
+                                break;
+                        }
+                    }
                 }
             }
         }
 
-        private bool UpdateSelectedIndexWithMousePos(PointerEventContext? mouse)
+        private bool UpdateSelectedIndexWithMousePos(PointerEventContext? mouse, out ChoiceHitboxType hitboxType)
         {
+            hitboxType = ChoiceHitboxType.Choice;
             if (mouse is null)
                 return false;
             if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
                 return false;
 
             // Make pages based on console window height
-            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-            int answersPerPage = listEndPosition - 7;
-            int currentPage = (highlightedAnswer - 1) / answersPerPage;
-            int startIndex = answersPerPage * currentPage;
+            int answersPerPage = listEndPosition - 5;
+            int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
+            int interiorWidth = ConsoleWrapper.WindowWidth - 6 - sidebarWidth;
 
-            // Now, translate coordinates to the selected index
-            if (mouse.Coordinates.y <= listStartPosition + 4 || mouse.Coordinates.y >= listEndPosition - 4)
+            // Determine the hitbox types
+            var selections = new Selection(categories)
+            {
+                Left = 3,
+                Top = listStartPosition + 2,
+                CurrentSelection = highlightedAnswer - 1,
+                CurrentSelections = multiple ? [.. selectedAnswers] : null,
+                Height = answersPerPage,
+                Width = interiorWidth,
+                AltChoicePos = SelectionInputTools.GetChoicesFromCategories(answers).Count,
+                Settings = settings,
+            };
+
+            // Now, translate coordinates to the selected index and get its hitbox
+            if (mouse.Coordinates.y < listStartPosition + 2 || mouse.Coordinates.y > listEndPosition - 1)
                 return false;
-            int listIndex = mouse.Coordinates.y - (listStartPosition + 4);
-            listIndex = startIndex + listIndex;
-            listIndex = listIndex > allAnswers.Count ? allAnswers.Count : listIndex;
-            highlightedAnswer = listIndex;
+            int listIndex = mouse.Coordinates.y - listStartPosition - 2;
+            var hitbox = selections.GenerateSelectionHitbox(listIndex);
+
+            // Depending on the hitbox parameter, we need to act accordingly
+            highlightedAnswer = hitbox.related;
+            hitboxType = hitbox.type;
             return true;
         }
 
@@ -675,7 +706,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, mouse) => GoDown(mouse)));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[3], ShowItemInfo));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[4], (_, _, mouse) => UpdateSelectedIndexWithMousePos(mouse)));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[4], (_, _, mouse) => UpdateSelectedIndexWithMousePos(mouse, out _)));
 
             // Install mode-dependent keybindings
             if (multiple)
