@@ -17,14 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Sequences.Builder.Types;
@@ -147,6 +150,43 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool Ellipsis { get; set; } = true;
 
         /// <summary>
+        /// Generates the selection hitboxes
+        /// </summary>
+        /// <returns>Pointer hitbox instances that are built for each selection</returns>
+        public (PointerHitbox hitbox, ChoiceHitboxType type) GenerateSelectionHitbox(int idx) =>
+            GenerateSelectionHitboxes()[idx];
+
+        /// <summary>
+        /// Generates the selection hitboxes
+        /// </summary>
+        /// <returns>Pointer hitbox instances that are built for each selection</returns>
+        public (PointerHitbox hitbox, ChoiceHitboxType type)[] GenerateSelectionHitboxes()
+        {
+            // Get the choice parameters
+            (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type)> choiceText, List<int> selectionHeights) = GetChoiceParameters();
+
+            // Get the choice hitboxes
+            List<(PointerHitbox hitbox, ChoiceHitboxType type)> hitboxes = [];
+            int selectionHeight = selectionHeights[CurrentSelection];
+            int currentPage = (selectionHeight - 1) / Height;
+            int startIndex = Height * currentPage;
+            int leftPos = Left + (SliderInside ? 1 : 0);
+            for (int i = 0; i <= Height - 1; i++)
+            {
+                // Populate the selection box
+                int finalIndex = i + startIndex;
+                if (finalIndex >= choiceText.Count)
+                    break;
+                int optionTop = Top + finalIndex - startIndex;
+                Coordinate start = new(leftPos, optionTop);
+                Coordinate end = new(leftPos + Width, optionTop);
+                (_, _, _, _, var type) = choiceText[finalIndex];
+                hitboxes.Add((new(start, end, null), type));
+            }
+            return [.. hitboxes];
+        }
+
+        /// <summary>
         /// Renders a selection
         /// </summary>
         /// <returns>A string representation of the selection</returns>
@@ -160,92 +200,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (AltChoicePos < 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
-            // Now, render the choices
-            StringBuilder buffer = new();
-            List<(string text, Color fore, Color back, bool force)> choiceText = [];
-            string prefix = isMultiple ? "  [ ] " : "  ";
-            int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
-            int leftPos = Left + (SliderInside ? 1 : 0);
-            List<int> selectionHeights = [];
-            int processedHeight = 0;
-            int processedChoices = 0;
-            int startIndexTristates = 0;
-            int startIndexGroupTristates = 0;
-            var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, choices, CurrentSelections, ref startIndexTristates) : [];
-            int relatedIdx = -1;
-            for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
-            {
-                InputChoiceCategoryInfo? category = Selections[categoryIdx];
-                var tristate = isMultiple ? tristates[categoryIdx] : SelectionTristate.Unselected;
-                if (Selections.Length > 1)
-                {
-                    string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
-                    string finalRendered = $"{modifiers}{category.Name}";
-                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true));
-                    processedHeight++;
-                }
-
-                var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, choices, CurrentSelections, ref startIndexGroupTristates) : [];
-                for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
-                {
-                    InputChoiceGroupInfo? group = category.Groups[groupIdx];
-                    var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
-                    if (category.Groups.Length > 1)
-                    {
-                        string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
-                        string finalRendered = $"  {modifiers}{group.Name}";
-                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true));
-                        processedHeight++;
-                    }
-                    for (int i = 0; i < group.Choices.Length; i++)
-                    {
-                        relatedIdx++;
-                        bool selected = processedChoices == CurrentSelection;
-                        var choice = group.Choices[i];
-                        string AnswerTitle = choice.ChoiceTitle ?? "";
-                        bool disabled = choice.ChoiceDisabled;
-
-                        // Get the option
-                        string modifiers = $"{(selected ? ">" : disabled ? "X" : " ")}{(isMultiple ? $" [{(CurrentSelections.Contains(relatedIdx) ? "*" : " ")}]" : "")}";
-                        string AnswerOption = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
-                        if (AnswerTitleLeft < Width)
-                        {
-                            string renderedChoice = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
-                            int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
-                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
-                        }
-
-                        // Render an entry
-                        bool isAlt = i > AltChoicePos;
-                        var finalForeColor =
-                            choice.ChoiceDisabled ? DisabledForegroundColor :
-                            selected ?
-                                isAlt ?
-                                    SwapSelectedColors ? AltSelectedBackgroundColor : AltSelectedForegroundColor :
-                                    SwapSelectedColors ? SelectedBackgroundColor : SelectedForegroundColor
-                                 :
-                                isAlt ? AltForegroundColor : ForegroundColor;
-                        var finalBackColor =
-                            choice.ChoiceDisabled ? DisabledBackgroundColor :
-                            selected ?
-                                isAlt ?
-                                    SwapSelectedColors ? AltSelectedForegroundColor : AltSelectedBackgroundColor :
-                                    SwapSelectedColors ? SelectedForegroundColor : SelectedBackgroundColor
-                                 :
-                                isAlt ? AltBackgroundColor : BackgroundColor;
-                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false));
-                        processedHeight++;
-                        processedChoices++;
-                        selectionHeights.Add(processedHeight);
-                    }
-                }
-            }
+            // Get the choice parameters
+            (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type)> choiceText, List<int> selectionHeights) = GetChoiceParameters();
 
             // Render the choices
             int selectionHeight = selectionHeights[CurrentSelection];
             int currentPage = (selectionHeight - 1) / Height;
             int startIndex = Height * currentPage;
             bool wiped = false;
+            int leftPos = Left + (SliderInside ? 1 : 0);
+            StringBuilder buffer = new();
             for (int i = 0; i <= Height - 1; i++)
             {
                 // Populate the selection box
@@ -268,7 +232,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
                 else
                 {
-                    var (text, fore, back, force) = choiceText[finalIndex];
+                    var (text, fore, back, force, _) = choiceText[finalIndex];
                     if (UseColors || force)
                     {
                         buffer.Append(
@@ -326,6 +290,99 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 );
             }
             return buffer.ToString();
+        }
+
+        private (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type)> choiceText, List<int> selectionHeights) GetChoiceParameters()
+        {
+            // Determine if multiple or single
+            List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
+            bool isMultiple = CurrentSelections is not null;
+            if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
+                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+            if (AltChoicePos < 0 || AltChoicePos > choices.Count)
+                AltChoicePos = choices.Count;
+
+            // Now, get the choice parameters
+            List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type)> choiceText = [];
+            List<int> selectionHeights = [];
+            int processedHeight = 0;
+            int processedChoices = 0;
+            int startIndexTristates = 0;
+            int startIndexGroupTristates = 0;
+            int relatedIdx = -1;
+            var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, choices, CurrentSelections, ref startIndexTristates) : [];
+            string prefix = isMultiple ? "  [ ] " : "  ";
+            int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
+            for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
+            {
+                InputChoiceCategoryInfo? category = Selections[categoryIdx];
+                var tristate = isMultiple ? tristates[categoryIdx] : SelectionTristate.Unselected;
+                if (Selections.Length > 1)
+                {
+                    string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
+                    string finalRendered = $"{modifiers}{category.Name}";
+                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true, ChoiceHitboxType.Category));
+                    processedHeight++;
+                }
+
+                var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, choices, CurrentSelections, ref startIndexGroupTristates) : [];
+                for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
+                {
+                    InputChoiceGroupInfo? group = category.Groups[groupIdx];
+                    var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
+                    if (category.Groups.Length > 1)
+                    {
+                        string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
+                        string finalRendered = $"  {modifiers}{group.Name}";
+                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true, ChoiceHitboxType.Group));
+                        processedHeight++;
+                    }
+                    for (int i = 0; i < group.Choices.Length; i++)
+                    {
+                        relatedIdx++;
+                        bool selected = processedChoices == CurrentSelection;
+                        var choice = group.Choices[i];
+                        string AnswerTitle = choice.ChoiceTitle ?? "";
+                        bool disabled = choice.ChoiceDisabled;
+
+                        // Get the option
+                        string modifiers = $"{(selected ? ">" : disabled ? "X" : " ")}{(isMultiple ? $" [{(CurrentSelections.Contains(relatedIdx) ? "*" : " ")}]" : "")}";
+                        string AnswerOption = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
+                        if (AnswerTitleLeft < Width)
+                        {
+                            string renderedChoice = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
+                            int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
+                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
+                        }
+
+                        // Render an entry
+                        bool isAlt = i > AltChoicePos;
+                        var finalForeColor =
+                            choice.ChoiceDisabled ? DisabledForegroundColor :
+                            selected ?
+                                isAlt ?
+                                    SwapSelectedColors ? AltSelectedBackgroundColor : AltSelectedForegroundColor :
+                                    SwapSelectedColors ? SelectedBackgroundColor : SelectedForegroundColor
+                                 :
+                                isAlt ? AltForegroundColor : ForegroundColor;
+                        var finalBackColor =
+                            choice.ChoiceDisabled ? DisabledBackgroundColor :
+                            selected ?
+                                isAlt ?
+                                    SwapSelectedColors ? AltSelectedForegroundColor : AltSelectedBackgroundColor :
+                                    SwapSelectedColors ? SelectedForegroundColor : SelectedBackgroundColor
+                                 :
+                                isAlt ? AltBackgroundColor : BackgroundColor;
+                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false, ChoiceHitboxType.Choice));
+                        processedHeight++;
+                        processedChoices++;
+                        selectionHeights.Add(processedHeight);
+                    }
+                }
+            }
+
+            // Return the parameters
+            return (choiceText, selectionHeights);
         }
 
         /// <summary>
