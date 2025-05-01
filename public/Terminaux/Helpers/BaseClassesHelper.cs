@@ -24,6 +24,7 @@ namespace Terminaux.Helpers
 {
     internal static class BaseClassesHelper
     {
+        // TODO: Move this to Magico
         internal static Type[] GetBaseTypes(Type sourceType)
         {
             List<Type> types = [];

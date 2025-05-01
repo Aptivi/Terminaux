@@ -19,6 +19,7 @@
 
 using System;
 using System.Linq;
+using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -214,28 +215,27 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             Keybinding[] finalBindings = [.. keybindings.Where((kb) => !kb.BindingHidden)];
             var nonMouseBindings = finalBindings.Where((bind) => !bind.BindingUsesMouse).ToArray();
             var mouseBindings = finalBindings.Where((bind) => bind.BindingUsesMouse).ToArray();
-            if (finalBindings is null || finalBindings.Length == 0)
-                return "No keybindings available";
+
+            // Get the maximum length for keyboard and for mouse
+            int maxKeyboardBindingLength = nonMouseBindings.Length > 0 ?
+                nonMouseBindings.Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) : 0;
+            int maxMouseBindingLength = mouseBindings.Length > 0 ?
+                mouseBindings.Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) : 0;
+            int maxBindingLength = Math.Max(maxKeyboardBindingLength, maxMouseBindingLength);
 
             // User needs an infobox that shows all available keys
-            int maxBindingLength = nonMouseBindings
-                .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb)));
-            string[] bindingRepresentations = nonMouseBindings
-                .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")
-                .ToArray();
-            string[] bindingMouseRepresentations = [];
-            if (mouseBindings is not null && mouseBindings.Length > 0)
-            {
-                int maxMouseBindingLength = mouseBindings
-                    .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb)));
-                bindingMouseRepresentations = mouseBindings
-                    .Select((itb) => $"{GetBindingMouseShortcut(itb) + new string(' ', maxMouseBindingLength - ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) + $" | {itb.BindingName}"}")
-                    .ToArray();
-            }
-            return
-                $"{string.Join("\n", bindingRepresentations)}" +
-                "\n\nMouse bindings:\n\n" +
-                $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}";
+            string[] bindingRepresentations = [.. nonMouseBindings.Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")];
+            string[] bindingMouseRepresentations = [.. mouseBindings.Select((itb) => $"{GetBindingMouseShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) + $" | {itb.BindingName}"}")];
+
+            // Build the final help text
+            if (bindingRepresentations.Length == 0 && bindingMouseRepresentations.Length == 0)
+                return "No bindings defined in this context.";
+            var helpTextBuilder = new StringBuilder();
+            if (bindingRepresentations.Length > 0)
+                helpTextBuilder.Append($"Keyboard bindings:\n\n{string.Join("\n", bindingRepresentations)}");
+            if (bindingMouseRepresentations.Length > 0)
+                helpTextBuilder.Append($"\n\nMouse bindings:\n\n{string.Join("\n", bindingMouseRepresentations)}");
+            return helpTextBuilder.ToString();
         }
 
         internal static string GetBindingKeyShortcut(Keybinding bind, bool mark = true) =>
