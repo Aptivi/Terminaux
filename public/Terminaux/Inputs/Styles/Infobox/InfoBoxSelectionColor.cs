@@ -536,7 +536,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Make hitboxes for arrow and button presses
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => cancel = bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
@@ -557,7 +557,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 else
                                 {
                                     goingUp = true;
-                                    SelectionGoUp(ref currentSelection);
+                                    SelectionGoUp(ref currentSelection, choices);
                                 }
                                 break;
                             case PointerButton.WheelDown:
@@ -618,7 +618,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         {
                             case ConsoleKey.UpArrow:
                                 goingUp = true;
-                                SelectionGoUp(ref currentSelection);
+                                SelectionGoUp(ref currentSelection, choices);
                                 break;
                             case ConsoleKey.DownArrow:
                                 SelectionGoDown(ref currentSelection, choices);
@@ -758,18 +758,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                 currIdx = 0;
         }
 
-        private static void SelectionGoUp(ref int currentSelection)
+        private static void SelectionGoUp(ref int currentSelection, InputChoiceInfo[] selections)
         {
             currentSelection--;
             if (currentSelection < 0)
-                currentSelection = 0;
+                currentSelection = selections.Length - 1;
         }
 
         private static void SelectionGoDown(ref int currentSelection, InputChoiceInfo[] selections)
         {
             currentSelection++;
             if (currentSelection > selections.Length - 1)
-                currentSelection = selections.Length - 1;
+                currentSelection = 0;
         }
 
         private static void SelectionSet(ref int currentSelection, InputChoiceInfo[] selections, int value)
