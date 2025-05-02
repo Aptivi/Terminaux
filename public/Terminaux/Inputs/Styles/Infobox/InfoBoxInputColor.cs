@@ -377,10 +377,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
 
                     // Write the input bar and set the cursor position
-                    int inputPosX = borderX + 3;
-                    rightMargin = inputPosX;
-                    int inputPosY = borderY + maxHeight - 3;
                     int maxInputWidth = maxWidth - 6;
+                    int inputPosX = borderX + 3;
+                    int inputEndPosX = inputPosX + maxInputWidth;
+                    int inputPosY = borderY + maxHeight - 3;
+                    rightMargin = Console.WindowWidth - inputEndPosX - 2;
                     var border = new Border()
                     {
                         Left = inputPosX,
