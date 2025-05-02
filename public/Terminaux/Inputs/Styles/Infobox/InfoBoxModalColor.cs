@@ -292,14 +292,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 break;
                             case PointerButton.WheelUp:
-                                currIdx -= 3;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                GoUp(ref currIdx, 3);
                                 break;
                             case PointerButton.WheelDown:
-                                currIdx += 3;
-                                if (currIdx > splitFinalLines.Length - maxHeight)
-                                    currIdx = splitFinalLines.Length - maxHeight;
+                                GoDown(ref currIdx, text, vars, 3);
                                 break;
                         }
                     }
