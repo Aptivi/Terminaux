@@ -30,6 +30,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base.Structures;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -246,78 +247,30 @@ namespace Terminaux.Inputs.Styles.Infobox
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+
+                    // Get positions for arrows
+                    int arrowLeft = maxWidth + borderX + 1;
+                    int arrowTop = 2;
+                    int arrowBottom = maxHeight + 1;
+
+                    // Get positions for infobox buttons
+                    string infoboxButtons = InfoBoxTools.GetButtons(settings);
+                    int infoboxButtonsWidth = ConsoleChar.EstimateCellWidth(infoboxButtons);
+                    int infoboxButtonLeftHelpMin = maxWidth + borderX - infoboxButtonsWidth;
+                    int infoboxButtonLeftHelpMax = infoboxButtonLeftHelpMin + 2;
+                    int infoboxButtonLeftCloseMin = infoboxButtonLeftHelpMin + 3;
+                    int infoboxButtonLeftCloseMax = infoboxButtonLeftHelpMin + infoboxButtonsWidth;
+                    int infoboxButtonsTop = borderY;
+
+                    // Make hitboxes for arrow and button presses
+                    var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+
+                    // Handle input
                     if (Input.MouseInputAvailable)
                     {
-                        bool DetermineArrowPressed(PointerEventContext mouse)
-                        {
-                            if (splitFinalLines.Length <= maxHeight)
-                                return false;
-                            int arrowLeft = maxWidth + borderX + 1;
-                            int arrowTop = 2;
-                            int arrowBottom = maxHeight + 1;
-                            return
-                                PointerTools.PointerWithinRange(mouse,
-                                    (arrowLeft, arrowTop),
-                                    (arrowLeft, arrowBottom));
-                        }
-
-                        void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
-                        {
-                            if (splitFinalLines.Length <= maxHeight)
-                                return;
-                            int arrowLeft = maxWidth + borderX + 1;
-                            int arrowTop = 2;
-                            int arrowBottom = maxHeight + 1;
-                            if (mouse.Coordinates.x == arrowLeft)
-                            {
-                                if (mouse.Coordinates.y == arrowTop)
-                                {
-                                    currIdx -= 1;
-                                    if (currIdx < 0)
-                                        currIdx = 0;
-                                }
-                                else if (mouse.Coordinates.y == arrowBottom)
-                                {
-                                    currIdx += 1;
-                                    if (currIdx > splitFinalLines.Length - maxHeight)
-                                        currIdx = splitFinalLines.Length - maxHeight;
-                                    if (currIdx < 0)
-                                        currIdx = 0;
-                                }
-                            }
-                        }
-
-                        bool DetermineButtonsPressed(PointerEventContext mouse)
-                        {
-                            string buttons = InfoBoxTools.GetButtons(settings);
-                            int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
-                            int buttonsLeftMin = maxWidth + borderX - buttonsWidth;
-                            int buttonsLeftMax = buttonsLeftMin + buttonsWidth;
-                            int buttonsTop = borderY;
-                            return
-                                PointerTools.PointerWithinRange(mouse,
-                                    (buttonsLeftMin, buttonsTop),
-                                    (buttonsLeftMax, buttonsTop));
-                        }
-
-                        void DoActionBasedOnButtonPress(PointerEventContext mouse)
-                        {
-                            string buttons = InfoBoxTools.GetButtons(settings);
-                            int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
-                            int buttonLeftHelpMin = maxWidth + borderX - buttonsWidth;
-                            int buttonLeftHelpMax = buttonLeftHelpMin + 2;
-                            int buttonLeftCloseMin = buttonLeftHelpMin + 3;
-                            int buttonLeftCloseMax = buttonLeftHelpMin + buttonsWidth;
-                            int buttonsTop = borderY;
-                            if (mouse.Coordinates.y == buttonsTop)
-                            {
-                                if (PointerTools.PointerWithinRange(mouse, (buttonLeftHelpMin, buttonsTop), (buttonLeftHelpMax, buttonsTop)))
-                                    KeybindingTools.ShowKeybindingInfobox(keybindings);
-                                else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
-                                    bail = true;
-                            }
-                        }
-
                         // Mouse input received.
                         var mouse = Input.ReadPointer();
                         if (mouse is null)
@@ -327,10 +280,16 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if (DetermineArrowPressed(mouse))
-                                    UpdatePositionBasedOnArrowPress(mouse);
-                                else if (DetermineButtonsPressed(mouse))
-                                    DoActionBasedOnButtonPress(mouse);
+                                if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && splitFinalLines.Length > maxHeight)
+                                {
+                                    arrowUpHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowDownHitbox.ProcessPointer(mouse, out done);
+                                }
+                                else if (infoboxButtonHelpHitbox.IsPointerWithin(mouse))
+                                    infoboxButtonHelpHitbox.ProcessPointer(mouse, out _);
+                                else if (infoboxButtonCloseHitbox.IsPointerWithin(mouse))
+                                    infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 break;
                             case PointerButton.WheelUp:
                                 currIdx -= 3;
@@ -353,26 +312,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 bail = true;
                                 break;
                             case ConsoleKey.PageUp:
-                                currIdx -= maxHeight;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.PageDown:
                             case ConsoleKey.Enter:
                                 bail = key.Key == ConsoleKey.Enter && currIdx == splitFinalLines.Length - maxHeight;
-                                currIdx += increment;
-                                if (currIdx > splitFinalLines.Length - maxHeight)
-                                    currIdx = splitFinalLines.Length - maxHeight;
+                                GoDown(ref currIdx, text, vars, increment);
                                 break;
                             case ConsoleKey.UpArrow:
-                                currIdx -= 1;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.DownArrow:
-                                currIdx += 1;
-                                if (currIdx > splitFinalLines.Length - maxHeight)
-                                    currIdx = splitFinalLines.Length - maxHeight;
+                                GoDown(ref currIdx, text, vars);
                                 break;
                             case ConsoleKey.Home:
                                 currIdx = 0;
@@ -408,6 +359,24 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
+        }
+
+        private static void GoUp(ref int currIdx, int level = 1)
+        {
+            currIdx -= level;
+            if (currIdx < 0)
+                currIdx = 0;
+        }
+
+        private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+            currIdx += level;
+            if (currIdx > splitFinalLines.Length - maxHeight)
+                currIdx = splitFinalLines.Length - maxHeight;
+            if (currIdx < 0)
+                currIdx = 0;
         }
 
         static InfoBoxModalColor()

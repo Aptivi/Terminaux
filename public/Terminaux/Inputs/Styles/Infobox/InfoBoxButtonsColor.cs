@@ -543,6 +543,8 @@ namespace Terminaux.Inputs.Styles.Infobox
             currIdx += level;
             if (currIdx > splitFinalLines.Length - maxHeight)
                 currIdx = splitFinalLines.Length - maxHeight;
+            if (currIdx < 0)
+                currIdx = 0;
         }
 
         private static PointerHitbox[] GetButtonHitboxes(string text, object[] vars, InputChoiceInfo[] buttons)
