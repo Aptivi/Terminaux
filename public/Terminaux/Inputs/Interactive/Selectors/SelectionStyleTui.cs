@@ -584,9 +584,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int answersPerPage = listEndPosition - 5;
 
             // Make hitboxes for arrow presses
-            var arrowUpHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + 4), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            var arrowUpHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + 2), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
             var arrowDownHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + 1 + answersPerPage), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-            var sidebarArrowUpHitbox = new PointerHitbox(new(ConsoleWrapper.WindowWidth - 3, listStartPosition + 4), new Action<PointerEventContext>((_) => ShowcaseGoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            var sidebarArrowUpHitbox = new PointerHitbox(new(ConsoleWrapper.WindowWidth - 3, listStartPosition + 2), new Action<PointerEventContext>((_) => ShowcaseGoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
             var sidebarArrowDownHitbox = new PointerHitbox(new(ConsoleWrapper.WindowWidth - 3, listStartPosition + 1 + answersPerPage), new Action<PointerEventContext>((_) => ShowcaseGoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
             if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && allAnswers.Count > answersPerPage)
             {
