@@ -29,7 +29,9 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using Textify.General;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
@@ -221,6 +223,43 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                     }
                 }
             }
+        }
+
+        internal static bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse, InputChoiceInfo[] selections, string text, object[] vars, out ChoiceHitboxType hitboxType, ref int currentSelection)
+        {
+            hitboxType = ChoiceHitboxType.Choice;
+            if (mouse is null)
+                return false;
+
+            // Get necessary variables
+            int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (_, _, _, _, _, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = GetDimensions(selections, splitFinalLines);
+
+            // Determine the selection renderer
+            var selectionsRendered = new Selections(selections)
+            {
+                Left = selectionBoxPosX,
+                Top = selectionBoxPosY,
+                CurrentSelection = currentSelection,
+                Height = selectionChoices,
+                Width = maxSelectionWidth,
+                SliderInside = true,
+                AltChoicePos = selections.Length,
+            };
+
+            // Now, translate coordinates to the selected index
+            if (mouse.Coordinates.x <= selectionBoxPosX || mouse.Coordinates.x > selectionBoxPosX + maxSelectionWidth)
+                return false;
+            if (mouse.Coordinates.y < selectionBoxPosY || mouse.Coordinates.y > selectionBoxPosY + selectionChoices - 1)
+                return false;
+            int listIndex = mouse.Coordinates.y - selectionBoxPosY;
+            var hitbox = selectionsRendered.GenerateSelectionHitbox(listIndex);
+
+            // Depending on the hitbox parameter, we need to act accordingly
+            currentSelection = hitbox.related - 1;
+            hitboxType = hitbox.type;
+            return true;
         }
     }
 }

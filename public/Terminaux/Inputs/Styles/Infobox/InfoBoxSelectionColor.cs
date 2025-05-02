@@ -363,28 +363,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Handle input
                     if (Input.MouseInputAvailable)
                     {
-                        bool UpdatePositionBasedOnMouse(PointerEventContext mouse)
-                        {
-                            // Make pages based on console window height
-                            int currentPage = currentSelection / selectionChoices;
-                            int startIndex = selectionChoices * currentPage;
-
-                            // Now, translate coordinates to the selected index
-                            if (!PointerTools.PointerWithinRange(mouse,
-                                    (leftPos, selectionBoxPosY),
-                                    (maxSelectionWidth, selectionBoxPosY + selectionChoices)))
-                                return false;
-                            int listIndex = mouse.Coordinates.y - selectionBoxPosY;
-                            listIndex = startIndex + listIndex;
-                            listIndex = listIndex >= selections.Length ? selections.Length - 1 : listIndex;
-                            currentSelection = listIndex;
-                            return true;
-                        }
-
                         // Mouse input received.
                         var mouse = Input.ReadPointer();
                         if (mouse is null)
                             continue;
+                        ChoiceHitboxType hitboxType = ChoiceHitboxType.Choice;
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
@@ -422,15 +405,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 else if (infoboxButtonCloseHitbox.IsPointerWithin(mouse))
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 else
-                                {
-                                    UpdatePositionBasedOnMouse(mouse);
-                                    bail = true;
-                                }
+                                    bail = InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection) && hitboxType == ChoiceHitboxType.Choice;
                                 break;
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                UpdatePositionBasedOnMouse(mouse);
+                                InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection);
+                                if (hitboxType != ChoiceHitboxType.Choice)
+                                    break;
                                 var selectedInstance = selections[currentSelection];
                                 string choiceName = selectedInstance.ChoiceName;
                                 string choiceTitle = selectedInstance.ChoiceTitle;
@@ -444,7 +426,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.None:
                                 if (mouse.ButtonPress != PointerButtonPress.Moved)
                                     break;
-                                UpdatePositionBasedOnMouse(mouse);
+                                InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection);
                                 break;
                         }
                     }
