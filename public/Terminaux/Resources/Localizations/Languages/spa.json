@@ -1,0 +1,15 @@
+﻿{
+    "lang": "spa",
+    "name": "Spanish (Español)",
+    "cultures": [ "es-ES", "es-AR", "..." ],
+    "locs": [
+        {
+            "loc": "TEXT_HELLO_WORLD",
+            "text": "¡Hola Mundo!"
+        },
+        {
+            "loc": "TEXT_HI",
+            "text": "¡Hola!"
+        }
+    ]
+}

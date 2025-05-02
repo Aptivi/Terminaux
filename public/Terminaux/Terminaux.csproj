@@ -64,6 +64,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\TermFiles\**\*" />
     <EmbeddedResource Include="Resources\Cues\*.mp3" />
+    <EmbeddedResource Include="Resources\TermTabsets\*" />
+    <EmbeddedResource Include="Resources\Localizations\LocalizationMetadata.json" />
+    <EmbeddedResource Include="Resources\Localizations\Languages\*.json" />
   </ItemGroup>
 
 </Project>

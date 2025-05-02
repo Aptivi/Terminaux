@@ -1,0 +1,15 @@
+﻿{
+    "lang": "eng",
+    "name": "English",
+    "cultures": [ "en-US", "en-GB", "..." ],
+    "locs": [
+        {
+            "loc": "TEXT_HELLO_WORLD",
+            "text": "Hello world!"
+        },
+        {
+            "loc": "TEXT_HI",
+            "text": "Hi!"
+        }
+    ]
+}
