@@ -47,7 +47,7 @@ namespace Terminaux.Inputs.Presentation.Inputs
                 throw new TerminauxException("The question has not been provided.");
 
             // Now, open the infobox
-            _value = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(Question);
+            _value = InfoBoxInputColor.WriteInfoBoxInputPassword(Question);
             Provided = true;
         }
 

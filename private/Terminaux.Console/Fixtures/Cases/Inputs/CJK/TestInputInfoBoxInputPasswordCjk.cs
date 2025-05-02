@@ -28,7 +28,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 
         public void RunFixture()
         {
-            string answer = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(nameof(TestInputInfoBoxInputPasswordCjk), "写下您的密码。");
+            string answer = InfoBoxInputColor.WriteInfoBoxInputPassword(nameof(TestInputInfoBoxInputPasswordCjk), "写下您的密码。");
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

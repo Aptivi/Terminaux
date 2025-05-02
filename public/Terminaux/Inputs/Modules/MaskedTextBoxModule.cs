@@ -72,7 +72,7 @@ namespace Terminaux.Inputs.Modules
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                Value = InfoBoxInputPasswordColor.WriteInfoBoxInputPasswordColorBack(Name, Description, Foreground, Background);
+                Value = InfoBoxInputColor.WriteInfoBoxInputPasswordColorBack(Name, Description, Foreground, Background);
             }
             else
             {

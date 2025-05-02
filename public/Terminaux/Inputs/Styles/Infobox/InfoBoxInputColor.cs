@@ -193,7 +193,151 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, vars);
+            WriteInfoBoxInputColorBack(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, false, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxPlainInputPassword(string text, params object[] vars) =>
+            WriteInfoBoxPlainInputPassword(text, BorderSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxPlainInputPassword(string text, BorderSettings settings, params object[] vars) =>
+            WriteInfoBoxPlainInputPassword("", text, settings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPassword(string text, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPasswordColor(string text, Color InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="BackgroundColor">InfoBox background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPasswordColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPassword(string text, BorderSettings settings, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPasswordColor(string text, BorderSettings settings, Color InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(text, settings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="BackgroundColor">InfoBox background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPasswordColorBack(string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack("", text, settings, InfoBoxColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxPlainInputPassword(string title, string text, params object[] vars) =>
+            WriteInfoBoxPlainInputPassword(title, text, BorderSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxPlainInputPassword(string title, string text, BorderSettings settings, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(title, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPassword(string title, string text, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPasswordColor(string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
+        /// <param name="BackgroundColor">InfoBoxTitled background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPasswordColorBack(string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPassword(string title, string text, BorderSettings settings, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(title, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPasswordColor(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars) =>
+            WriteInfoBoxInputPasswordColorBack(title, text, settings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -203,9 +347,11 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
         /// <param name="BackgroundColor">InfoBoxTitled background color</param>
         /// <param name="text">Text to be written.</param>
-        /// <param name="useColor">Whether to use color or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        internal static string WriteInfoBoxInputColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
+        public static string WriteInfoBoxInputPasswordColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxInputColorBack(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, true, vars);
+
+        internal static string WriteInfoBoxInputColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, bool password, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -269,7 +415,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     readerSettings.InputForegroundColor = InfoBoxTitledColor;
                     readerSettings.InputBackgroundColor = BackgroundColor;
                 }
-                string input = TermReader.Read("", "", readerSettings, false, true);
+                string input = TermReader.Read("", "", readerSettings, password, true);
                 return input;
             }
             catch (Exception ex)
