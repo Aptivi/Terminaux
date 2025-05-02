@@ -308,7 +308,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void PreviousPage(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 5;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
@@ -321,7 +323,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void NextPage(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 5;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
@@ -389,8 +393,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (!sidebar)
                 return;
-            int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
-            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 5;
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
@@ -569,11 +575,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return;
 
             // Get some essential variables
-            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(question, ConsoleWrapper.WindowWidth).Length;
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
+            int interiorWidth = wholeWidth - sidebarWidth;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 5;
-            int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
-            int interiorWidth = ConsoleWrapper.WindowWidth - 6 - sidebarWidth;
 
             // Make hitboxes for arrow presses
             var arrowUpHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + 4), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };

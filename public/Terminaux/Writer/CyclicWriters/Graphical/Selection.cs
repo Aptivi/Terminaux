@@ -77,7 +77,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Whether to show the radio buttons or not (ignored when <see cref="CurrentSelections"/> is not null)
         /// </summary>
-        public bool ShowRadioButtons { get; set; } = true;
+        public bool ShowRadioButtons { get; set; }
 
         /// <summary>
         /// Selection style settings
