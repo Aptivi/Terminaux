@@ -37,6 +37,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Structures;
+using Terminaux.Inputs.Styles.Selection;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -225,7 +226,179 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxSelectionColorBack(string title, InputChoiceInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, params object[] vars) =>
+        public static int WriteInfoBoxSelectionColorBack(string title, InputChoiceInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, params object[] vars)
+        {
+            var category = new InputChoiceCategoryInfo[]
+            {
+                new("Selection infobox", [new("Available options", selections)])
+            };
+            return WriteInfoBoxSelectionColorBack(
+                title, category, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, true, vars);
+        }
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionPlain(InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelectionPlain(selections, text, BorderSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionPlain(InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
+            WriteInfoBoxSelectionPlain("", selections, text, settings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="InfoBoxSelectionColor">InfoBoxSelection color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionColor(InputChoiceCategoryInfo[] selections, string text, Color InfoBoxSelectionColor, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, InfoBoxSelectionColor, ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="InfoBoxSelectionColor">InfoBoxSelection color</param>
+        /// <param name="BackgroundColor">InfoBoxSelection background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionColorBack(InputChoiceCategoryInfo[] selections, string text, Color InfoBoxSelectionColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, InfoBoxSelectionColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(selections, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="InfoBoxSelectionColor">InfoBoxSelection color</param>
+        /// <param name="BackgroundColor">InfoBoxSelection background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionColorBack(InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, Color InfoBoxSelectionColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(
+                "", selections, text, settings, InfoBoxSelectionColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionPlain(string title, InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelectionPlain(title, selections, text, BorderSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionPlain(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(
+                title, selections, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(string title, InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="InfoBoxTitledSelectionColor">InfoBoxTitledSelection color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionColor(string title, InputChoiceCategoryInfo[] selections, string text, Color InfoBoxTitledSelectionColor, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, InfoBoxTitledSelectionColor, ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="InfoBoxTitledSelectionColor">InfoBoxTitledSelection color</param>
+        /// <param name="BackgroundColor">InfoBoxTitledSelection background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionColorBack(string title, InputChoiceCategoryInfo[] selections, string text, Color InfoBoxTitledSelectionColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, InfoBoxTitledSelectionColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
+            WriteInfoBoxSelectionColorBack(title, selections, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="InfoBoxTitledSelectionColor">InfoBoxTitledSelection color</param>
+        /// <param name="BackgroundColor">InfoBoxTitledSelection background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelectionColorBack(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(
                 title, selections, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, true, vars);
 
@@ -241,17 +414,18 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="useColor">Whether to use color or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        internal static int WriteInfoBoxSelectionColorBack(string title, InputChoiceInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, bool useColor, params object[] vars)
+        internal static int WriteInfoBoxSelectionColorBack(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
             int selectedChoice = -1;
-            int AnswerTitleLeft = selections.Max(x => $"  {x.ChoiceName}) ".Length);
+            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
+            int AnswerTitleLeft = choices.Max(x => $"  {x.ChoiceName}) ".Length);
 
             // First, verify that we have selections
-            if (selections is null || selections.Length == 0)
+            if (choices is null || choices.Length == 0)
                 return selectedChoice;
 
             // We need not to run the selection style when everything is disabled
-            bool allDisabled = selections.All((ici) => ici.ChoiceDisabled);
+            bool allDisabled = choices.All((ici) => ici.ChoiceDisabled);
             if (allDisabled)
                 throw new TerminauxException("The infobox selection style requires that there is at least one choice enabled.");
 
@@ -266,11 +440,18 @@ namespace Terminaux.Inputs.Styles.Infobox
             try
             {
                 // Modify the current selection according to the default
-                int currentSelection = selections.Any((ici) => ici.ChoiceDefault) ? selections.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
-                int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
+                int currentSelection = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
+                var selectionsRendered = new Selections(selections)
+                {
+                    CurrentSelection = currentSelection,
+                    Width = 42,
+                    SliderInside = true,
+                };
+                var (choiceText, _) = selectionsRendered.GetChoiceParameters();
+                int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
 
                 // Edge case: We need to check to see if the current highlight is disabled
-                InfoBoxTools.VerifyDisabled(ref currentSelection, selections);
+                InfoBoxTools.VerifyDisabled(ref currentSelection, choices);
 
                 int currIdx = 0;
                 int increment = 0;
@@ -306,7 +487,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Height = selectionChoices,
                         Width = maxSelectionWidth,
                         SliderInside = true,
-                        AltChoicePos = selections.Length,
+                        AltChoicePos = choices.Length,
                         SwapSelectedColors = true,
                         Settings = new()
                         {
@@ -356,7 +537,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, selections))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => cancel = bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
@@ -383,7 +564,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (mouse.Modifiers == PointerModifiers.Shift)
                                     GoDown(ref currIdx, text, vars, 3);
                                 else
-                                    SelectionGoDown(ref currentSelection, selections);
+                                    SelectionGoDown(ref currentSelection, choices);
                                 break;
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
@@ -394,7 +575,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     if (!done)
                                         arrowDownHitbox.ProcessPointer(mouse, out done);
                                 }
-                                else if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && selections.Length > selectionChoices)
+                                else if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && choices.Length > selectionChoices)
                                 {
                                     arrowSelectUpHitbox.ProcessPointer(mouse, out bool done);
                                     if (!done)
@@ -413,7 +594,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection);
                                 if (hitboxType != ChoiceHitboxType.Choice)
                                     break;
-                                var selectedInstance = selections[currentSelection];
+                                var selectedInstance = choices[currentSelection];
                                 string choiceName = selectedInstance.ChoiceName;
                                 string choiceTitle = selectedInstance.ChoiceTitle;
                                 string choiceDesc = selectedInstance.ChoiceDescription;
@@ -440,32 +621,32 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 SelectionGoUp(ref currentSelection);
                                 break;
                             case ConsoleKey.DownArrow:
-                                SelectionGoDown(ref currentSelection, selections);
+                                SelectionGoDown(ref currentSelection, choices);
                                 break;
                             case ConsoleKey.Home:
                                 goingUp = true;
-                                SelectionSet(ref currentSelection, selections, 0);
+                                SelectionSet(ref currentSelection, choices, 0);
                                 break;
                             case ConsoleKey.End:
-                                SelectionSet(ref currentSelection, selections, selections.Length - 1);
+                                SelectionSet(ref currentSelection, choices, choices.Length - 1);
                                 break;
                             case ConsoleKey.PageUp:
                                 goingUp = true;
                                 {
                                     int currentPageMove = (currentSelection - 1) / selectionChoices;
                                     int startIndexMove = selectionChoices * currentPageMove;
-                                    SelectionSet(ref currentSelection, selections, startIndexMove);
+                                    SelectionSet(ref currentSelection, choices, startIndexMove);
                                 }
                                 break;
                             case ConsoleKey.PageDown:
                                 {
                                     int currentPageMove = currentSelection / selectionChoices;
                                     int startIndexMove = selectionChoices * (currentPageMove + 1);
-                                    SelectionSet(ref currentSelection, selections, startIndexMove);
+                                    SelectionSet(ref currentSelection, choices, startIndexMove);
                                 }
                                 break;
                             case ConsoleKey.Tab:
-                                var selectedInstance = selections[currentSelection];
+                                var selectedInstance = choices[currentSelection];
                                 string choiceName = selectedInstance.ChoiceName;
                                 string choiceTitle = selectedInstance.ChoiceTitle;
                                 string choiceDesc = selectedInstance.ChoiceDescription;
@@ -479,7 +660,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 // Search function
                                 if (selectionChoices <= 0)
                                     break;
-                                var entriesString = selections.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
+                                var entriesString = choices.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
                                 string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)");
                                 if (!RegexTools.IsValidRegex(keyword))
                                 {
@@ -493,8 +674,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     .Where((entry) => regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)).ToArray();
                                 if (resultEntries.Length > 0)
                                 {
-                                    var choices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
-                                    int answer = WriteInfoBoxSelection(choices, "Select one of the entries:");
+                                    var resultChoices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
+                                    int answer = WriteInfoBoxSelection(resultChoices, "Select one of the entries:");
                                     if (answer < 0)
                                         break;
                                     currentSelection = resultEntries[answer].idx;
@@ -531,7 +712,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
 
                     // Verify that the current position is not a disabled choice
-                    InfoBoxTools.VerifyDisabled(ref currentSelection, selections, goingUp);
+                    InfoBoxTools.VerifyDisabled(ref currentSelection, choices, goingUp);
                 }
                 if (!cancel)
                     selectedChoice = currentSelection;

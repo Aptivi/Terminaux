@@ -42,13 +42,16 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Description = "选择一种 EDM 音乐类型继续",
                     Choices =
                     [
-                        new("酸浩室", ""),
-                        new("大房间", ""),
-                        new("深宅", ""),
-                        new("鼓打贝斯", ""),
-                        new("房子", ""),
-                        new("科技", ""),
-                        new("迷幻音乐", ""),
+                        new("Selection infobox", [new("Available options",
+                        [
+                            new("酸浩室", ""),
+                            new("大房间", ""),
+                            new("深宅", ""),
+                            new("鼓打贝斯", ""),
+                            new("房子", ""),
+                            new("科技", ""),
+                            new("迷幻音乐", ""),
+                        ])])
                     ],
                     Value = 6,
                 },
@@ -58,9 +61,12 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Description = "选择您喜欢的操作系统以继续",
                     Choices =
                     [
-                        new("Windows", ""),
-                        new("macOS", ""),
-                        new("Linux", ""),
+                        new("Selection infobox", [new("Available options",
+                        [
+                            new("Windows", ""),
+                            new("macOS", ""),
+                            new("Linux", ""),
+                        ])])
                     ],
                 },
                 new MultiComboBoxModule()
@@ -69,19 +75,22 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Description = "选择您喜欢的颜色",
                     Choices =
                     [
-                        new("绿色的", ""),
-                        new("蓝色的", ""),
-                        new("红色的", ""),
-                        new("紫红色", ""),
-                        new("水蓝色", ""),
-                        new("橙子", ""),
-                        new("黑色的", ""),
-                        new("白色的", ""),
+                        new("Selection infobox", [new("Available options",
+                        [
+                            new("绿色的", ""),
+                            new("蓝色的", ""),
+                            new("红色的", ""),
+                            new("紫红色", ""),
+                            new("水蓝色", ""),
+                            new("橙子", ""),
+                            new("黑色的", ""),
+                            new("白色的", ""),
+                        ])])
                     ],
                 },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInput), "选择要测试的输入模块...");
-            string[] rendered = [.. modules.Select((im) => im.Value is int[] indexes ? string.Join(", ", indexes.Select((idx) => ((MultiComboBoxModule)modules[2]).Choices[idx].ChoiceName)) : im.Value?.ToString() ?? "")];
+            string[] rendered = [.. modules.Select((im) => im.Value is int[] indexes ? string.Join(", ", indexes.Select((idx) => ((MultiComboBoxModule)modules[2]).Choices[0].Groups[0].Choices[idx].ChoiceName)) : im.Value?.ToString() ?? "")];
             TextWriterWhereColor.WriteWhere("  - " + string.Join("\n  - ", rendered), 0, 0);
             Input.EnableMouse = false;
         }

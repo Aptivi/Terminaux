@@ -55,7 +55,7 @@ namespace Terminaux.Inputs.Presentation.Inputs
         /// <summary>
         /// The choices
         /// </summary>
-        InputChoiceInfo[]? Choices { get; }
+        InputChoiceCategoryInfo[]? Choices { get; }
 
         /// <summary>
         /// Prompts the user to enter the input

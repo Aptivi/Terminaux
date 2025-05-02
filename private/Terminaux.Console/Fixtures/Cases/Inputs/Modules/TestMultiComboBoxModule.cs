@@ -45,11 +45,13 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.Modules
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
+            var category = new InputChoiceCategoryInfo[]
+            {
+                new("Selection infobox", [new("Available options", [.. choices])])
+            };
             var boxModule = new MultiComboBoxModule()
             {
-                Choices = [
-                    .. choices
-                ],
+                Choices = category,
             };
 
             // Render the input placeholder

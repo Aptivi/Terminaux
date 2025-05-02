@@ -19,7 +19,9 @@
 
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
 
 namespace Terminaux.Inputs.Presentation.Inputs
 {
@@ -31,8 +33,18 @@ namespace Terminaux.Inputs.Presentation.Inputs
         private int[] _value = [];
 
         /// <inheritdoc/>
-        public override string DisplayInput =>
-            Input.Length > 0 && Choices is not null ? string.Join(", ", Choices.Select((ici) => ici.ChoiceName).Where((_, idx) => Input.Contains(idx))) : "   ";
+        public override string DisplayInput
+        {
+            get
+            {
+                if (Choices is null)
+                    return "   ";
+                if (Input.Length == 0)
+                    return "   ";
+                InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
+                return string.Join(", ", choices.Select((ici) => ici.ChoiceName).Where((_, idx) => Input.Contains(idx)));
+            }
+        }
 
         /// <inheritdoc/>
         public override int[] Input =>

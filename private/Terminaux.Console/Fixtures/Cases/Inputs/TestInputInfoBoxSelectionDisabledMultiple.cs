@@ -33,12 +33,28 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             Input.EnableMouse = true;
 
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
-            var choices = new InputChoiceInfo[]
+            var choices = new InputChoiceCategoryInfo[]
             {
-                new("eoan", "19.10 (Eoan Ermine)", "Ubuntu 19.10 Eoan Ermine is an interim release, released 17 October 2019.", false, false, true),
-                new("focal", "20.04 (Focal Fossa)", "Ubuntu 20.04 LTS, codenamed Focal Fossa, is a long-term support release and was released on 23 April 2020."),
-                new("jammy", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04 LTS, codenamed Jammy Jellyfish, was released on 21 April 2022, and is a long-term support release, supported for five years, until April 2027."),
-                new("noble", "24.04 (Noble Numbat)", "Ubuntu 24.04 LTS, codenamed Noble Numbat, is planned to be released on April 2024, and is a long-term support release, supported for five years, until April 2029.", true),
+                new("End of life", [
+                    new("Versions", [
+                        new("eoan", "19.10 (Eoan Ermine)", "Ubuntu 19.10 Eoan Ermine is an interim release, released 17 October 2019.", false, false, true),
+                        new("groovy", "20.10 (Groovy Gorilla)", "", false, false, true),
+                        new("hirsute", "21.04 (Hirsute Hippo)", "", false, false, true),
+                    ])
+                ]),
+                new("Under support", [
+                    new("Old releases", [
+                        new("focal", "20.04 (Focal Fossa)", "Ubuntu 20.04 LTS, codenamed Focal Fossa, is a long-term support release and was released on 23 April 2020."),
+                        new("jammy", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04 LTS, codenamed Jammy Jellyfish, was released on 21 April 2022, and is a long-term support release, supported for five years, until April 2027."),
+                    ]),
+                    new("Latest release", [
+                        new("noble", "24.04 (Noble Numbat)", "Ubuntu 24.04 LTS, codenamed Noble Numbat, is planned to be released on April 2024, and is a long-term support release, supported for five years, until April 2029.", true),
+                    ]),
+                    new("Latest interim releases", [
+                        new("oracular", "24.10 (Oracular Oriole)"),
+                        new("plucky", "25.04 (Plucky Puffin)"),
+                    ])
+                ]),
             };
             var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(nameof(TestInputInfoBoxSelectionDisabledMultiple), choices, "Which Ubuntu version would you like to run?");
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);

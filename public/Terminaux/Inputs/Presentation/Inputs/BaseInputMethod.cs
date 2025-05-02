@@ -31,7 +31,7 @@ namespace Terminaux.Inputs.Presentation.Inputs
         private string? question;
 
         /// <inheritdoc/>
-        public virtual InputChoiceInfo[]? Choices { get; set; }
+        public virtual InputChoiceCategoryInfo[]? Choices { get; set; }
 
         /// <summary>
         /// The display name for the input 

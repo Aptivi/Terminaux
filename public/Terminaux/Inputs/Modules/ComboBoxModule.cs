@@ -28,6 +28,8 @@ using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
@@ -41,13 +43,14 @@ namespace Terminaux.Inputs.Modules
         /// <summary>
         /// Choices to render
         /// </summary>
-        public InputChoiceInfo[] Choices { get; set; } = [];
+        public InputChoiceCategoryInfo[] Choices { get; set; } = [];
 
         /// <inheritdoc/>
         public override string RenderInput(int width)
         {
             // Render an input text box with selected value and blanks as underscores.
-            InputChoiceInfo? choice = Value is not null ? Choices[(int)Value] : null;
+            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
+            InputChoiceInfo? choice = Value is not null ? choices[(int)Value] : null;
             string valueString = choice?.ChoiceName ?? "";
             string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($" ▼ {valueString}", width);
             valueString = wrappedValue[0];
@@ -79,8 +82,10 @@ namespace Terminaux.Inputs.Modules
             }
             else
             {
-                int currentSelection = Choices.Any((ici) => ici.ChoiceDefault) ? Choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : Value is not null ? (int)Value : 0;
+                InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
+                int currentSelection = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : Value is not null ? (int)Value : 0;
                 int finalPopoverHeight = inputPopoverSize.Height > ConsoleWrapper.WindowHeight - inputPopoverPos.Y - 2 ? ConsoleWrapper.WindowHeight - inputPopoverPos.Y - 2 : inputPopoverSize.Height;
+                InfoBoxTools.VerifyDisabled(ref currentSelection, choices);
                 bool goingUp = false;
                 bool bail = false;
                 bool cancel = false;
@@ -96,7 +101,7 @@ namespace Terminaux.Inputs.Modules
                         FrameColor = Foreground,
                         BackgroundColor = Background,
                     };
-                    var comboSelections = new Selection()
+                    var comboSelections = new Selection(Choices)
                     {
                         Left = inputPopoverPos.X + 1,
                         Top = inputPopoverPos.Y + 1,
@@ -104,11 +109,6 @@ namespace Terminaux.Inputs.Modules
                         Height = finalPopoverHeight,
                         CurrentSelection = currentSelection,
                         AltChoicePos = Choices.Length,
-                        Selections = [
-                            new InputChoiceCategoryInfo("Main category", [
-                                new InputChoiceGroupInfo("Main group", Choices)
-                            ])
-                        ],
                         Settings = new()
                         {
                             OptionColor = TransformationTools.GetDarkBackground(Foreground),
@@ -132,18 +132,18 @@ namespace Terminaux.Inputs.Modules
                                 goingUp = true;
                                 currentSelection--;
                                 if (currentSelection < 0)
-                                    currentSelection = Choices.Length - 1;
+                                    currentSelection = choices.Length - 1;
                                 break;
                             case ConsoleKey.DownArrow:
                                 currentSelection++;
-                                if (currentSelection > Choices.Length - 1)
+                                if (currentSelection > choices.Length - 1)
                                     currentSelection = 0;
                                 break;
                             case ConsoleKey.Home:
                                 currentSelection = 0;
                                 break;
                             case ConsoleKey.End:
-                                currentSelection = Choices.Length - 1;
+                                currentSelection = choices.Length - 1;
                                 break;
                             case ConsoleKey.PageUp:
                                 goingUp = true;
@@ -160,12 +160,12 @@ namespace Terminaux.Inputs.Modules
                                     int currentPageMove = currentSelection / finalPopoverHeight;
                                     int startIndexMove = finalPopoverHeight * (currentPageMove + 1);
                                     currentSelection = startIndexMove;
-                                    if (currentSelection > Choices.Length - 1)
-                                        currentSelection = Choices.Length - 1;
+                                    if (currentSelection > choices.Length - 1)
+                                        currentSelection = choices.Length - 1;
                                 }
                                 break;
                             case ConsoleKey.Tab:
-                                var selectedInstance = Choices[currentSelection];
+                                var selectedInstance = choices[currentSelection];
                                 string choiceName = selectedInstance.ChoiceName;
                                 string choiceTitle = selectedInstance.ChoiceTitle;
                                 string choiceDesc = selectedInstance.ChoiceDescription;
@@ -186,24 +186,7 @@ namespace Terminaux.Inputs.Modules
                     }
 
                     // Verify that the current position is not a disabled choice
-                    if (currentSelection >= 0)
-                    {
-                        while (Choices[currentSelection].ChoiceDisabled)
-                        {
-                            if (goingUp)
-                            {
-                                currentSelection--;
-                                if (currentSelection < 0)
-                                    currentSelection = Choices.Length - 1;
-                            }
-                            else
-                            {
-                                currentSelection++;
-                                if (currentSelection > Choices.Length - 1)
-                                    currentSelection = 0;
-                            }
-                        }
-                    }
+                    InfoBoxTools.VerifyDisabled(ref currentSelection, choices, goingUp);
                 }
                 if (!cancel)
                     Value = currentSelection;

@@ -315,7 +315,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             return buffer.ToString();
         }
 
-        private (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText, List<int> selectionHeights) GetChoiceParameters()
+        internal (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText, List<int> selectionHeights) GetChoiceParameters()
         {
             // Determine if multiple or single
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);

@@ -32,6 +32,7 @@ using Terminaux.Writer.CyclicWriters.Simple;
 using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using Textify.General;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs.Styles.Selection;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
@@ -53,9 +54,16 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY);
         }
 
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputChoiceInfo[] selections, string[] splitFinalLines)
+        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputChoiceCategoryInfo[] selections, string[] splitFinalLines)
         {
-            int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
+            var selectionsRendered = new Selections(selections)
+            {
+                Width = 42,
+                SliderInside = true,
+            };
+            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
+            var (choiceText, _) = selectionsRendered.GetChoiceParameters();
+            int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
             int selectionReservedHeight = 4 + selectionChoices;
             (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
 
@@ -63,7 +71,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int selectionBoxPosX = borderX + 2;
             int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
             int leftPos = selectionBoxPosX + 1;
-            int maxSelectionWidth = selections.Max((ici) => ConsoleChar.EstimateCellWidth($"  {ici.ChoiceName})  {ici.ChoiceTitle}")) + 4;
+            int maxSelectionWidth = choices.Max((ici) => ConsoleChar.EstimateCellWidth($"  {ici.ChoiceName})  {ici.ChoiceTitle}")) + 4;
             maxSelectionWidth = maxSelectionWidth > maxWidth - 4 ? maxSelectionWidth : maxWidth - 4;
             maxSelectionWidth = maxSelectionWidth >= ConsoleWrapper.WindowWidth - 8 ? ConsoleWrapper.WindowWidth - 8 : maxSelectionWidth;
             int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;
@@ -105,7 +113,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         }
 
         internal static string RenderText(
-            InputChoiceInfo[] choices, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, params object[] vars
+            InputChoiceCategoryInfo[] choices, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
@@ -225,19 +233,26 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             }
         }
 
-        internal static bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse, InputChoiceInfo[] selections, string text, object[] vars, out ChoiceHitboxType hitboxType, ref int currentSelection)
+        internal static bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse, InputChoiceCategoryInfo[] selections, string text, object[] vars, out ChoiceHitboxType hitboxType, ref int currentSelection)
         {
             hitboxType = ChoiceHitboxType.Choice;
             if (mouse is null)
                 return false;
 
             // Get necessary variables
-            int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
+            var selectionsRendered = new Selections(selections)
+            {
+                CurrentSelection = currentSelection,
+                Width = 42,
+                SliderInside = true,
+            };
+            var (choiceText, _) = selectionsRendered.GetChoiceParameters();
+            int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (_, _, _, _, _, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = GetDimensions(selections, splitFinalLines);
 
             // Determine the selection renderer
-            var selectionsRendered = new Selections(selections)
+            selectionsRendered = new Selections(selections)
             {
                 Left = selectionBoxPosX,
                 Top = selectionBoxPosY,

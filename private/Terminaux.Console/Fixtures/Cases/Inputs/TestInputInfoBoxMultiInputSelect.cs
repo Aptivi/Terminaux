@@ -42,13 +42,16 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Description = "Choose one of the EDM music genres to continue",
                     Choices =
                     [
-                        new("Acid House", ""),
-                        new("Big Room", ""),
-                        new("Deep House", ""),
-                        new("Drum-n-Bass", ""),
-                        new("House", ""),
-                        new("Techno", ""),
-                        new("Trance", ""),
+                        new("Selection infobox", [new("Available options",
+                        [
+                            new("Acid House", ""),
+                            new("Big Room", ""),
+                            new("Deep House", ""),
+                            new("Drum-n-Bass", ""),
+                            new("House", ""),
+                            new("Techno", ""),
+                            new("Trance", ""),
+                        ])])
                     ],
                     Value = 6,
                 },
@@ -58,9 +61,12 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Description = "Choose your preferred operating system to continue",
                     Choices =
                     [
-                        new("Windows", ""),
-                        new("macOS", ""),
-                        new("Linux", ""),
+                        new("Selection infobox", [new("Available options",
+                        [
+                            new("Windows", ""),
+                            new("macOS", ""),
+                            new("Linux", ""),
+                        ])])
                     ],
                 },
                 new MultiComboBoxModule()
@@ -69,19 +75,22 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Description = "Choose your favorite colors",
                     Choices =
                     [
-                        new("Green", ""),
-                        new("Blue", ""),
-                        new("Red", ""),
-                        new("Fuchsia", ""),
-                        new("Aqua", ""),
-                        new("Orange", ""),
-                        new("Black", ""),
-                        new("White", ""),
+                        new("Selection infobox", [new("Available options",
+                        [
+                            new("Green", ""),
+                            new("Blue", ""),
+                            new("Red", ""),
+                            new("Fuchsia", ""),
+                            new("Aqua", ""),
+                            new("Orange", ""),
+                            new("Black", ""),
+                            new("White", ""),
+                        ])])
                     ],
                 },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInput), "Select an input module to test...");
-            string[] rendered = [.. modules.Select((im) => im.Value is int[] indexes ? string.Join(", ", indexes.Select((idx) => ((MultiComboBoxModule)modules[2]).Choices[idx].ChoiceName)) : im.Value?.ToString() ?? "")];
+            string[] rendered = [.. modules.Select((im) => im.Value is int[] indexes ? string.Join(", ", indexes.Select((idx) => ((MultiComboBoxModule)modules[2]).Choices[0].Groups[0].Choices[idx].ChoiceName)) : im.Value?.ToString() ?? "")];
             TextWriterWhereColor.WriteWhere("  - " + string.Join("\n  - ", rendered), 0, 0);
             Input.EnableMouse = false;
         }

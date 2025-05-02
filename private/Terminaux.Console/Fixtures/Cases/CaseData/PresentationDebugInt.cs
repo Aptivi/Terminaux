@@ -87,7 +87,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 new SelectionInputMethod()
                 {
                     Question = "Ultricies mi eget mauris pharetra:",
-                    Choices = data1.Select((data) => new InputChoiceInfo(data, data)).ToArray()
+                    Choices = GetCategories(data1)
                 }, true
             );
 
@@ -96,7 +96,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 new SelectionInputMethod()
                 {
                     Question = "Ultricies mi eget mauris pharetra sapien et ligula:",
-                    Choices = data2.Select((data) => new InputChoiceInfo(data, data)).ToArray()
+                    Choices = GetCategories(data2)
                 }, true
             );
 
@@ -105,7 +105,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 new SelectionMultipleInputMethod()
                 {
                     Question = "Ultricies mi eget mauris pharetra:",
-                    Choices = data1.Select((data) => new InputChoiceInfo(data, data)).ToArray()
+                    Choices = GetCategories(data1)
                 }, true
             );
 
@@ -114,7 +114,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 new SelectionMultipleInputMethod()
                 {
                     Question = "Ultricies mi eget mauris pharetra sapien et ligula:",
-                    Choices = data2.Select((data) => new InputChoiceInfo(data, data)).ToArray()
+                    Choices = GetCategories(data2)
                 }, true
             );
 
@@ -324,12 +324,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                                 method1.Input,
 
                                                 // Fifth page
-                                                method2.Choices[method2.Input].ChoiceName,
-                                                method3.Choices[method3.Input].ChoiceName,
+                                                method2.Choices[0].Groups[0].Choices[method2.Input].ChoiceName,
+                                                method3.Choices[0].Groups[0].Choices[method3.Input].ChoiceName,
 
                                                 // Sixth page
-                                                string.Join(", ", method4.Input.Select((idx) => method4.Choices[idx].ChoiceName)),
-                                                string.Join(", ", method5.Input.Select((idx) => method5.Choices[idx].ChoiceName))
+                                                string.Join(", ", method4.Input.Select((idx) => method4.Choices[0].Groups[0].Choices[idx].ChoiceName)),
+                                                string.Join(", ", method5.Input.Select((idx) => method5.Choices[0].Groups[0].Choices[idx].ChoiceName))
                                             );
                                             return results;
                                         }
@@ -342,5 +342,14 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                     #endregion
                 ]
             );
+
+        private static InputChoiceCategoryInfo[] GetCategories(string[] data)
+        {
+            var category = new InputChoiceCategoryInfo[]
+            {
+                new("Presentation debug", [new("Available options", [.. data.Select((data) => new InputChoiceInfo(data, data))])])
+            };
+            return category;
+        }
     }
 }

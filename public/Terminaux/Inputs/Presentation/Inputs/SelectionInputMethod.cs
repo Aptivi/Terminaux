@@ -18,7 +18,9 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
 
 namespace Terminaux.Inputs.Presentation.Inputs
 {
@@ -30,8 +32,18 @@ namespace Terminaux.Inputs.Presentation.Inputs
         private int _value = -1;
 
         /// <inheritdoc/>
-        public override string DisplayInput =>
-            Input > -1 && Choices is not null ? Choices[Input].ChoiceName : "   ";
+        public override string DisplayInput
+        {
+            get
+            {
+                if (Choices is null)
+                    return "   ";
+                if (Input <= -1)
+                    return "   ";
+                InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
+                return choices[Input].ChoiceName;
+            }
+        }
 
         /// <inheritdoc/>
         public override int Input =>
