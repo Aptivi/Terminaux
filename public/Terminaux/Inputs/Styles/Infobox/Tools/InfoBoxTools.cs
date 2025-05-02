@@ -198,5 +198,29 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(buttons, left - buttonsWidth - 1, borderY, InfoBoxColor, BackgroundColor));
             return boxBuffer.ToString();
         }
+
+        internal static void VerifyDisabled(ref int currentSelection, InputChoiceInfo[] selections, bool goingUp = false)
+        {
+            if (currentSelection < 0 || currentSelection > selections.Length - 1)
+                currentSelection = 0;
+            if (currentSelection >= 0)
+            {
+                while (selections[currentSelection].ChoiceDisabled)
+                {
+                    if (goingUp)
+                    {
+                        currentSelection--;
+                        if (currentSelection < 0)
+                            currentSelection = selections.Length - 1;
+                    }
+                    else
+                    {
+                        currentSelection++;
+                        if (currentSelection > selections.Length - 1)
+                            currentSelection = 0;
+                    }
+                }
+            }
+        }
     }
 }

@@ -269,12 +269,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
 
                 // Edge case: We need to check to see if the current highlight is disabled
-                while (selections[currentSelection].ChoiceDisabled)
-                {
-                    currentSelection++;
-                    if (currentSelection > selections.Length - 1)
-                        currentSelection = 0;
-                }
+                InfoBoxTools.VerifyDisabled(ref currentSelection, selections);
 
                 int currIdx = 0;
                 int increment = 0;
@@ -665,24 +660,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
 
                     // Verify that the current position is not a disabled choice
-                    if (currentSelection >= 0)
-                    {
-                        while (selections[currentSelection].ChoiceDisabled)
-                        {
-                            if (goingUp)
-                            {
-                                currentSelection--;
-                                if (currentSelection < 0)
-                                    currentSelection = selections.Length - 1;
-                            }
-                            else
-                            {
-                                currentSelection++;
-                                if (currentSelection > selections.Length - 1)
-                                    currentSelection = 0;
-                            }
-                        }
-                    }
+                    InfoBoxTools.VerifyDisabled(ref currentSelection, selections, goingUp);
                 }
                 if (!cancel)
                     selectedChoice = currentSelection;
