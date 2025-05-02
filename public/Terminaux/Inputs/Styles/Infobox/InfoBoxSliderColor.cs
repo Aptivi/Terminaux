@@ -34,6 +34,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Base.Structures;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -331,120 +332,39 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Handle keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
-                    maxHeight -= 5;
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+
+                    // Get positions for arrows
+                    int arrowLeft = maxWidth + borderX + 1;
+                    int arrowTop = 2;
+                    int arrowBottom = maxHeight + 1;
+
+                    // Get positions for slider buttons
+                    int maxSliderWidth = maxWidth - 6;
+                    int sliderArrowTop = borderY + maxHeight;
+                    int sliderArrowLeft = borderX + 3;
+                    int sliderArrowRight = sliderArrowLeft + maxSliderWidth + 1;
+
+                    // Get positions for infobox buttons
+                    string infoboxButtons = InfoBoxTools.GetButtons(settings);
+                    int infoboxButtonsWidth = ConsoleChar.EstimateCellWidth(infoboxButtons);
+                    int infoboxButtonLeftHelpMin = maxWidth + borderX - infoboxButtonsWidth;
+                    int infoboxButtonLeftHelpMax = infoboxButtonLeftHelpMin + 2;
+                    int infoboxButtonLeftCloseMin = infoboxButtonLeftHelpMin + 3;
+                    int infoboxButtonLeftCloseMax = infoboxButtonLeftHelpMin + infoboxButtonsWidth;
+                    int infoboxButtonsTop = borderY;
+
+                    // Make hitboxes for arrow and button presses
+                    var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowSliderDecreaseHitbox = new PointerHitbox(new(sliderArrowLeft, sliderArrowTop), new Action<PointerEventContext>((_) => ValueGoUp(ref selected, minPos, maxPos))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowSliderIncreaseHitbox = new PointerHitbox(new(sliderArrowRight, sliderArrowTop), new Action<PointerEventContext>((_) => ValueGoDown(ref selected, minPos, maxPos))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => cancel = bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+
+                    // Handle input
                     if (Input.MouseInputAvailable)
                     {
-                        bool DetermineArrowPressed(PointerEventContext mouse)
-                        {
-                            if (splitFinalLines.Length <= maxHeight)
-                                return false;
-                            int arrowLeft = maxWidth + borderX + 1;
-                            int arrowTop = 2;
-                            int arrowBottom = maxHeight + 1;
-                            return
-                                PointerTools.PointerWithinRange(mouse,
-                                    (arrowLeft, arrowTop),
-                                    (arrowLeft, arrowBottom));
-                        }
-
-                        void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
-                        {
-                            if (splitFinalLines.Length <= maxHeight)
-                                return;
-                            int arrowLeft = maxWidth + borderX + 1;
-                            int arrowTop = 2;
-                            int arrowBottom = maxHeight + 1;
-                            if (mouse.Coordinates.x == arrowLeft)
-                            {
-                                if (mouse.Coordinates.y == arrowTop)
-                                {
-                                    currIdx -= 1;
-                                    if (currIdx < minPos)
-                                        currIdx = minPos;
-                                }
-                                else if (mouse.Coordinates.y == arrowBottom)
-                                {
-                                    currIdx += 1;
-                                    if (currIdx > splitFinalLines.Length - maxHeight)
-                                        currIdx = splitFinalLines.Length - maxHeight;
-                                    if (currIdx < minPos)
-                                        currIdx = minPos;
-                                }
-                            }
-                        }
-
-                        bool DetermineSliderArrowPressed(PointerEventContext mouse)
-                        {
-                            int sliderPosX = borderX + 3;
-                            int maxSliderWidth = maxWidth - 6;
-                            int arrowLeft = sliderPosX;
-                            int arrowRight = sliderPosX + maxSliderWidth + 1;
-                            int arrowTop = borderY + 4;
-                            return
-                                PointerTools.PointerWithinRange(mouse,
-                                    (arrowLeft, arrowTop),
-                                    (arrowRight, arrowTop));
-                        }
-
-                        void UpdateValueBasedOnSliderPress(PointerEventContext mouse)
-                        {
-                            int sliderPosX = borderX + 3;
-                            int maxSliderWidth = maxWidth - 6;
-                            int arrowLeft = sliderPosX;
-                            int arrowRight = sliderPosX + maxSliderWidth + 1;
-                            int arrowTop = borderY + 4;
-                            if (mouse.Coordinates.y == arrowTop)
-                            {
-                                if (mouse.Coordinates.x == arrowLeft)
-                                {
-                                    selected--;
-                                    if (selected < minPos)
-                                        selected = maxPos;
-                                }
-                                else if (mouse.Coordinates.x == arrowRight)
-                                {
-                                    selected++;
-                                    if (selected > maxPos)
-                                        selected = minPos;
-                                }
-                            }
-                        }
-
-                        bool DetermineButtonsPressed(PointerEventContext mouse)
-                        {
-                            string buttons = InfoBoxTools.GetButtons(settings);
-                            int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
-                            int buttonsLeftMin = maxWidth + borderX - buttonsWidth;
-                            int buttonsLeftMax = buttonsLeftMin + buttonsWidth;
-                            int buttonsTop = borderY;
-                            return
-                                PointerTools.PointerWithinRange(mouse,
-                                    (buttonsLeftMin, buttonsTop),
-                                    (buttonsLeftMax, buttonsTop));
-                        }
-
-                        void DoActionBasedOnButtonPress(PointerEventContext mouse)
-                        {
-                            string buttons = InfoBoxTools.GetButtons(settings);
-                            int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
-                            int buttonLeftHelpMin = maxWidth + borderX - buttonsWidth;
-                            int buttonLeftHelpMax = buttonLeftHelpMin + 2;
-                            int buttonLeftCloseMin = buttonLeftHelpMin + 3;
-                            int buttonLeftCloseMax = buttonLeftHelpMin + buttonsWidth;
-                            int buttonsTop = borderY;
-                            if (mouse.Coordinates.y == buttonsTop)
-                            {
-                                if (PointerTools.PointerWithinRange(mouse, (buttonLeftHelpMin, buttonsTop), (buttonLeftHelpMax, buttonsTop)))
-                                    KeybindingTools.ShowKeybindingInfobox(keybindings);
-                                else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
-                                {
-                                    bail = true;
-                                    cancel = true;
-                                }
-                            }
-                        }
-
                         // Mouse input received.
                         var mouse = Input.ReadPointer();
                         if (mouse is null)
@@ -453,41 +373,35 @@ namespace Terminaux.Inputs.Styles.Infobox
                         {
                             case PointerButton.WheelUp:
                                 if (mouse.Modifiers == PointerModifiers.Shift)
-                                {
-                                    currIdx -= 3;
-                                    if (currIdx < minPos)
-                                        currIdx = minPos;
-                                }
+                                    GoUp(ref currIdx, 3);
                                 else
-                                {
-                                    selected--;
-                                    if (selected < minPos)
-                                        selected = maxPos;
-                                }
+                                    ValueGoUp(ref selected, minPos, maxPos);
                                 break;
                             case PointerButton.WheelDown:
                                 if (mouse.Modifiers == PointerModifiers.Shift)
-                                {
-                                    currIdx += 3;
-                                    if (currIdx > splitFinalLines.Length - maxHeight)
-                                        currIdx = splitFinalLines.Length - maxHeight;
-                                }
+                                    GoDown(ref currIdx, text, vars, 3);
                                 else
-                                {
-                                    selected++;
-                                    if (selected > maxPos)
-                                        selected = minPos;
-                                }
+                                    ValueGoDown(ref selected, minPos, maxPos);
                                 break;
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if (DetermineArrowPressed(mouse))
-                                    UpdatePositionBasedOnArrowPress(mouse);
-                                else if (DetermineSliderArrowPressed(mouse))
-                                    UpdateValueBasedOnSliderPress(mouse);
-                                else if (DetermineButtonsPressed(mouse))
-                                    DoActionBasedOnButtonPress(mouse);
+                                if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && splitFinalLines.Length > maxHeight)
+                                {
+                                    arrowUpHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowDownHitbox.ProcessPointer(mouse, out done);
+                                }
+                                else if ((arrowSliderIncreaseHitbox.IsPointerWithin(mouse) || arrowSliderDecreaseHitbox.IsPointerWithin(mouse)))
+                                {
+                                    arrowSliderIncreaseHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowSliderDecreaseHitbox.ProcessPointer(mouse, out done);
+                                }
+                                else if (infoboxButtonHelpHitbox.IsPointerWithin(mouse))
+                                    infoboxButtonHelpHitbox.ProcessPointer(mouse, out _);
+                                else if (infoboxButtonCloseHitbox.IsPointerWithin(mouse))
+                                    infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 break;
                         }
                     }
@@ -497,40 +411,28 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (key.Key)
                         {
                             case ConsoleKey.LeftArrow:
-                                selected--;
-                                if (selected < minPos)
-                                    selected = maxPos;
+                                ValueGoUp(ref selected, minPos, maxPos);
                                 break;
                             case ConsoleKey.RightArrow:
-                                selected++;
-                                if (selected > maxPos)
-                                    selected = minPos;
+                                ValueGoDown(ref selected, minPos, maxPos);
                                 break;
                             case ConsoleKey.Home:
-                                selected = minPos;
+                                SelectionSet(ref selected, minPos);
                                 break;
                             case ConsoleKey.End:
-                                selected = maxPos;
+                                SelectionSet(ref selected, maxPos);
                                 break;
                             case ConsoleKey.E:
-                                currIdx -= maxHeight;
-                                if (currIdx < minPos)
-                                    currIdx = minPos;
+                                GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.D:
-                                currIdx += increment;
-                                if (currIdx > splitFinalLines.Length - maxHeight)
-                                    currIdx = splitFinalLines.Length - maxHeight;
+                                GoDown(ref currIdx, text, vars, increment);
                                 break;
                             case ConsoleKey.W:
-                                currIdx -= 1;
-                                if (currIdx < minPos)
-                                    currIdx = minPos;
+                                GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.S:
-                                currIdx += 1;
-                                if (currIdx > splitFinalLines.Length - maxHeight)
-                                    currIdx = splitFinalLines.Length - maxHeight;
+                                GoDown(ref currIdx, text, vars);
                                 break;
                             case ConsoleKey.Enter:
                                 bail = true;
@@ -569,6 +471,41 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             return selected;
         }
+
+        private static void GoUp(ref int currIdx, int level = 1)
+        {
+            currIdx -= level;
+            if (currIdx < 0)
+                currIdx = 0;
+        }
+
+        private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+            currIdx += level;
+            if (currIdx > splitFinalLines.Length - maxHeight)
+                currIdx = splitFinalLines.Length - maxHeight;
+            if (currIdx < 0)
+                currIdx = 0;
+        }
+
+        private static void ValueGoUp(ref int selected, int minPos, int maxPos)
+        {
+            selected--;
+            if (selected < minPos)
+                selected = maxPos;
+        }
+
+        private static void ValueGoDown(ref int selected, int minPos, int maxPos)
+        {
+            selected++;
+            if (selected > maxPos)
+                selected = minPos;
+        }
+
+        private static void SelectionSet(ref int selected, int value) =>
+            selected = value;
 
         static InfoBoxSliderColor()
         {
