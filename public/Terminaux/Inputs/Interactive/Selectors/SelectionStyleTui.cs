@@ -118,7 +118,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Height = answersPerPage,
                 Width = interiorWidth,
-                AltChoicePos = SelectionInputTools.GetChoicesFromCategories(answers).Count,
                 Settings = settings,
             };
             selectionBuilder.Append(
@@ -653,7 +652,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Height = answersPerPage,
                 Width = interiorWidth,
-                AltChoicePos = SelectionInputTools.GetChoicesFromCategories(answers).Count,
                 Settings = settings,
             };
 

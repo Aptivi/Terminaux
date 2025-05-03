@@ -113,7 +113,6 @@ namespace Terminaux.Inputs.Modules
                         Height = finalPopoverHeight,
                         CurrentSelections = [.. selectedChoices],
                         CurrentSelection = currentSelection,
-                        AltChoicePos = choices.Length,
                         Settings = new()
                         {
                             OptionColor = TransformationTools.GetDarkBackground(Foreground),

@@ -485,7 +485,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                         CurrentSelection = currentSelection,
                         Height = selectionChoices,
                         Width = maxSelectionWidth,
-                        AltChoicePos = choices.Length,
                         SwapSelectedColors = true,
                         Settings = new()
                         {

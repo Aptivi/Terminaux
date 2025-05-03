@@ -257,7 +257,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 CurrentSelection = currentSelection,
                 Height = selectionChoices,
                 Width = maxSelectionWidth,
-                AltChoicePos = selections.Length,
             };
 
             // Now, translate coordinates to the selected index
