@@ -307,12 +307,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                     InputChoiceInfo[] choicesArray = [.. choices];
                     var selectionsRendered = new Selections(choicesArray)
                     {
-                        Left = selectionBoxPosX,
+                        Left = selectionBoxPosX + 1,
                         Top = selectionBoxPosY,
                         CurrentSelection = currentSelection,
                         Height = selectionChoices,
                         Width = maxSelectionWidth,
-                        SliderInside = true,
                         AltChoicePos = choicesArray.Length,
                         SwapSelectedColors = true,
                         Ellipsis = false,

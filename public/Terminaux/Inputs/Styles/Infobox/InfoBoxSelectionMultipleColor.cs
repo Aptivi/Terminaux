@@ -451,7 +451,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     CurrentSelection = currentSelection,
                     Width = 42,
-                    SliderInside = true,
                 };
                 var (choiceText, _) = selectionsRendered.GetChoiceParameters();
                 int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
@@ -487,13 +486,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Now, render the selections
                     var selectionsRendered = new Selections(selections)
                     {
-                        Left = selectionBoxPosX,
+                        Left = selectionBoxPosX + 1,
                         Top = selectionBoxPosY,
                         CurrentSelection = currentSelection,
                         CurrentSelections = [.. selectedChoices],
                         Height = selectionChoices,
                         Width = maxSelectionWidth,
-                        SliderInside = true,
                         AltChoicePos = choices.Length,
                         SwapSelectedColors = true,
                         Settings = new()

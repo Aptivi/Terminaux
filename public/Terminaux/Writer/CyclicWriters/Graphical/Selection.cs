@@ -65,11 +65,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public int[]? CurrentSelections { get; set; }
 
         /// <summary>
-        /// Whether to render the slider inside or outside the selection boundaries
-        /// </summary>
-        public bool SliderInside { get; set; }
-
-        /// <summary>
         /// Whether to swap the selected colors or not
         /// </summary>
         public bool SwapSelectedColors { get; set; }
@@ -193,7 +188,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int selectionHeight = selectionHeights[selectionIdx];
             int currentPage = (selectionHeight - 1) / Height;
             int startIndex = Height * currentPage;
-            int leftPos = Left + (SliderInside ? 1 : 0);
             for (int i = 0; i <= Height - 1; i++)
             {
                 // Populate the selection box
@@ -201,8 +195,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (finalIndex >= choiceText.Count)
                     break;
                 int optionTop = Top + finalIndex - startIndex;
-                Coordinate start = new(leftPos, optionTop);
-                Coordinate end = new(leftPos + Width, optionTop);
+                Coordinate start = new(Left, optionTop);
+                Coordinate end = new(Left + Width, optionTop);
                 (_, _, _, _, var type, int related) = choiceText[finalIndex];
                 hitboxes.Add((new(start, end, null), type, related));
             }
@@ -231,7 +225,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int currentPage = (selectionHeight - 1) / Height;
             int startIndex = Height * currentPage;
             bool wiped = false;
-            int leftPos = Left + (SliderInside ? 1 : 0);
             StringBuilder buffer = new();
             for (int i = 0; i <= Height - 1; i++)
             {
@@ -249,7 +242,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         );
                     }
                     buffer.Append(
-                        CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
+                        CsiSequences.GenerateCsiCursorPosition(Left + 1, optionTop + 1) +
                         new string(' ', Width)
                     );
                 }
@@ -265,7 +258,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     }
                     string truncated = text.Truncate(Width, Ellipsis);
                     buffer.Append(
-                        CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
+                        CsiSequences.GenerateCsiCursorPosition(Left + 1, optionTop + 1) +
                         truncated + new string(' ', Width - ConsoleChar.EstimateCellWidth(truncated))
                     );
                 }
@@ -274,7 +267,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Render the vertical bar
             if (choices.Count > Height && Height >= 4)
             {
-                int finalWidth = SliderInside ? Left + Width + 1 : Left + Width;
+                int finalWidth = Left + Width;
                 var slider = new Slider(CurrentSelection + 1, 0, choices.Count)
                 {
                     Vertical = true,

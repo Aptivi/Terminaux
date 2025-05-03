@@ -59,7 +59,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             var selectionsRendered = new Selections(selections)
             {
                 Width = 42,
-                SliderInside = true,
             };
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
             var (choiceText, _) = selectionsRendered.GetChoiceParameters();
@@ -78,7 +77,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             maxWidth = maxSelectionWidth + 4;
             borderX -= (int)Math.Round(diff / 2d);
             selectionBoxPosX -= (int)Math.Round(diff / 2d);
-            int left = maxWidth - 2;
+            int left = selectionBoxPosX + maxWidth - 3;
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, left, selectionReservedHeight);
         }
 
@@ -98,7 +97,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             maxSelectionWidth -= 4;
             borderX -= (int)Math.Round(diff / 2d);
             selectionBoxPosX -= (int)Math.Round(diff / 2d);
-            int left = maxWidth - 2;
+            int left = selectionBoxPosX + maxWidth - 3;
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, left, selectionReservedHeight);
         }
 
@@ -244,7 +243,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             {
                 CurrentSelection = currentSelection,
                 Width = 42,
-                SliderInside = true,
             };
             var (choiceText, _) = selectionsRendered.GetChoiceParameters();
             int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
@@ -259,7 +257,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 CurrentSelection = currentSelection,
                 Height = selectionChoices,
                 Width = maxSelectionWidth,
-                SliderInside = true,
                 AltChoicePos = selections.Length,
             };
 
