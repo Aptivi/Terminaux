@@ -188,6 +188,9 @@ namespace Terminaux.Writer.CyclicWriters
         {
             // Populate the message
             var stackTraceBuilder = new StringBuilder();
+            stackTraceBuilder.Append(ProcessException(0, Exception));
+
+            // Populate inner exceptions
             int innerExceptions = 0;
             var inner = Exception.InnerException;
             while (inner is not null)
@@ -195,7 +198,6 @@ namespace Terminaux.Writer.CyclicWriters
                 stackTraceBuilder.Append(ProcessException(++innerExceptions, inner));
                 inner = inner.InnerException;
             }
-            stackTraceBuilder.Append(ProcessException(0, Exception));
             return stackTraceBuilder.ToString();
         }
 
