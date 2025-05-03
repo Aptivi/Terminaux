@@ -149,7 +149,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             var (calYear, calMonth, _, _) = GetDateFromCalendar(selectedDate, culture);
             var DateTo = new DateTime(calYear, calMonth, Calendar.GetDaysInMonth(calYear, calMonth));
             int CurrentWeek = 1;
-            string CalendarTitle = calendarMonths[month - 1] + " " + calYear;
+            string CalendarTitle = calendarMonths[calMonth - 1] + " " + calYear;
 
             // Re-arrange the days according to the first day of week
             Dictionary<DayOfWeek, int> mappedDays = [];
@@ -167,7 +167,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Populate the calendar data
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
-                var CurrentDate = new DateTime(year, month, CurrentDay);
+                var CurrentDate = new DateTime(calYear, calMonth, CurrentDay, Calendar);
                 if (CurrentDate.DayOfWeek == calendarWeek)
                     CurrentWeek += 1;
                 int CurrentWeekIndex = CurrentWeek - 1;
