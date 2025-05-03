@@ -154,25 +154,10 @@ namespace Terminaux.Sequences
         /// Splits all of the VT sequences
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
-        /// <param name="type">VT sequence type</param>
-        /// <returns>The group of texts that don't contain the VT sequences</returns>
-        public static string[] SplitVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
-        {
-            // Here, we don't support multiple types.
-            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
-            return sequenceFilterRegex.Split(Text);
-        }
-
-        /// <summary>
-        /// Splits all of the VT sequences
-        /// </summary>
-        /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="types">VT sequence types</param>
         /// <returns>The group of texts that don't contain the VT sequences</returns>
-        public static string[] SplitVTSequencesMultiple(string Text, VtSequenceType types = VtSequenceType.All)
+        public static string[] SplitVTSequences(string Text, VtSequenceType types = VtSequenceType.All)
         {
-            if (types == VtSequenceType.All)
-                return SplitVTSequences(Text);
             var regex = GetSequenceFilterRegexFromTypes(types);
             return regex.Split(Text);
         }

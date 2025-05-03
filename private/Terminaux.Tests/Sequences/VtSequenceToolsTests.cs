@@ -42,7 +42,7 @@ namespace Terminaux.Tests.Sequences
             VtSequenceTools.SplitVTSequences($"Hello!{vtSequence1}").ShouldNotBeEmpty();
             VtSequenceTools.SplitVTSequences($"Hel{vtSequence2}lo!").ShouldNotBeEmpty();
             VtSequenceTools.SplitVTSequences($"{vtSequence3}Hello!").ShouldNotBeEmpty();
-            VtSequenceTools.SplitVTSequencesMultiple($"{vtSequence3}Hel{vtSequence2}lo!{vtSequence1}", VtSequenceType.Csi | VtSequenceType.Osc).ShouldNotBeEmpty();
+            VtSequenceTools.SplitVTSequences($"{vtSequence3}Hel{vtSequence2}lo!{vtSequence1}", VtSequenceType.Csi | VtSequenceType.Osc).ShouldNotBeEmpty();
         }
 
         /// <summary>
