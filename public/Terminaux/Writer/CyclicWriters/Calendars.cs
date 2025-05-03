@@ -210,7 +210,7 @@ namespace Terminaux.Writer.CyclicWriters
             // Populate the calendar data
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
-                var CurrentDate = new DateTime(calYear, calMonth, CurrentDay, Calendar);
+                var CurrentDate = new DateTime(calYear, calMonth, CurrentDay, calendar);
                 if (CurrentDate.DayOfWeek == calendarWeek)
                     CurrentWeek += 1;
                 int CurrentWeekIndex = CurrentWeek - 1;

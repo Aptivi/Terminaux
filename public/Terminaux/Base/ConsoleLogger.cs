@@ -21,6 +21,9 @@ using Aptivestigate.Logging;
 using Aptivestigate.Serilog;
 using Serilog;
 using System;
+using System.Linq;
+using System.Text;
+using Textify.General;
 
 namespace Terminaux.Base
 {
@@ -46,33 +49,50 @@ namespace Terminaux.Base
         }
 
         internal static void Debug(string message, params object?[]? args) =>
-            abstractLogger?.Debug(message, args);
+            abstractLogger?.Debug(message.FilterMessage(args), args);
 
         internal static void Debug(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Debug(ex, message, args);
+            abstractLogger?.Debug(ex, message.FilterMessage(args), args);
 
         internal static void Error(string message, params object?[]? args) =>
-            abstractLogger?.Error(message, args);
+            abstractLogger?.Error(message.FilterMessage(args), args);
 
         internal static void Error(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Error(ex, message, args);
+            abstractLogger?.Error(ex, message.FilterMessage(args), args);
 
         internal static void Fatal(string message, params object?[]? args) =>
-            abstractLogger?.Fatal(message, args);
+            abstractLogger?.Fatal(message.FilterMessage(args), args);
 
         internal static void Fatal(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Fatal(ex, message, args);
+            abstractLogger?.Fatal(ex, message.FilterMessage(args), args);
 
         internal static void Info(string message, params object?[]? args) =>
-            abstractLogger?.Info(message, args);
+            abstractLogger?.Info(message.FilterMessage(args), args);
 
         internal static void Info(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Info(ex, message, args);
+            abstractLogger?.Info(ex, message.FilterMessage(args), args);
 
         internal static void Warning(string message, params object?[]? args) =>
-            abstractLogger?.Warning(message, args);
+            abstractLogger?.Warning(message.FilterMessage(args), args);
 
         internal static void Warning(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Warning(ex, message, args);
+            abstractLogger?.Warning(ex, message.FilterMessage(args), args);
+
+        private static string FilterMessage(this string message, params object?[]? args)
+        {
+            if (!EnableLogging)
+                return message;
+            StringBuilder messageBuilder = new();
+            char[] controlChars = CharManager.GetAllControlChars();
+            message = message.FormatString(args);
+            foreach (char messageChar in message)
+            {
+                string charString = $"{messageChar}";
+                if (controlChars.Contains(messageChar))
+                    charString = $"[C:{(int)messageChar}]";
+                messageBuilder.Append(charString);
+            }
+            return messageBuilder.ToString();
+        }
     }
 }

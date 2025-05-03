@@ -96,24 +96,42 @@ namespace Terminaux.ColorDataGen
             // Read all the console color data
             var list = JsonConvert.DeserializeObject<ConsoleColorData[]>(colorContent);
             var names = list.Select((data) => data.Name).ToArray();
+            var fieldNames = list.Select((data) => char.ToLower(data.Name[0]) + data.Name.Substring(1)).ToArray();
             if (list is null)
                 return;
 
-            // First, populate all the color data properties
+            // First, populate all the color data fields
             foreach (var colorData in list)
             {
                 string colorHex = colorData.HexString;
-                var colorRgb = colorData.RGB;
+                var (r, g, b) = colorData.RGB;
+                string colorName = colorData.Name;
+                int colorId = colorData.ColorId;
+                string fieldName = fieldNames[colorId];
+                builder.AppendLine(
+                    $$"""
+                            private static ConsoleColorData {{fieldName}} = new("{{colorHex}}", {{r}}, {{g}}, {{b}}, "{{colorName}}", {{colorId}});
+                    """
+                );
+            }
+            builder.AppendLine();
+
+            // Second, populate all the color data properties
+            foreach (var colorData in list)
+            {
+                string colorHex = colorData.HexString;
+                var (r, g, b) = colorData.RGB;
                 string colorName = colorData.Name;
                 int colorId = colorData.ColorId;
                 string propName = names[colorId];
+                string fieldName = fieldNames[colorId];
                 builder.AppendLine(
                     $$"""
                             /// <summary>
                             /// [{{colorHex}}] Gets the console colors data for the {{propName}} color
                             /// </summary>
                             public static ConsoleColorData {{propName}} =>
-                                new("{{colorHex}}", {{colorRgb.r}}, {{colorRgb.g}}, {{colorRgb.b}}, "{{colorName}}", {{colorId}});
+                                {{fieldName}};
                     """
                 );
             }
