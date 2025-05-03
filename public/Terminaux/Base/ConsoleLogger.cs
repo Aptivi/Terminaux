@@ -80,6 +80,8 @@ namespace Terminaux.Base
 
         private static string FilterMessage(this string message, params object?[]? args)
         {
+            if (!EnableLogging)
+                return message;
             StringBuilder messageBuilder = new();
             char[] controlChars = CharManager.GetAllControlChars();
             message = message.FormatString(args);

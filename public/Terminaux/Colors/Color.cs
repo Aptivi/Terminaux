@@ -42,6 +42,12 @@ namespace Terminaux.Colors
     [JsonConverter(typeof(ColorSerializer))]
     public class Color : IEquatable<Color>
     {
+        private readonly string hex = "";
+        private readonly string seqTrueColor = "";
+        private readonly string vtSeqForegroundTrue = "";
+        private readonly string vtSeqBackgroundTrue = "";
+        private readonly string vtSeqForeground = "";
+        private readonly string vtSeqBackground = "";
         private readonly ColorSettings settings;
 
         /// <summary>
@@ -82,10 +88,7 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Foreground, original)
         /// </summary>
         public string VTSequenceForegroundOriginal =>
-            Type == ColorType.TrueColor ?
-            $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequence}m" :
-            TermInfoDesc.Current.SetAForeground?.ProcessSequence(PlainSequence) ??
-            $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
+            Type == ColorType.TrueColor ? VTSequenceForegroundTrueColor : vtSeqForeground;
 
         /// <summary>
         /// Parsable VT sequence (Background)
@@ -97,34 +100,31 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Background, original)
         /// </summary>
         public string VTSequenceBackgroundOriginal =>
-            Type == ColorType.TrueColor ?
-            $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequence}m" :
-            TermInfoDesc.Current.SetABackground?.ProcessSequence(PlainSequence) ??
-            $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
+            Type == ColorType.TrueColor ? VTSequenceBackgroundTrueColor : vtSeqBackground;
 
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
         public string PlainSequenceTrueColor =>
-            $"{RGB?.R};{RGB?.G};{RGB?.B}";
+            seqTrueColor;
 
         /// <summary>
         /// Parsable VT sequence (Foreground, true color)
         /// </summary>
         public string VTSequenceForegroundTrueColor =>
-            $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequenceTrueColor}m";
+            vtSeqForegroundTrue;
 
         /// <summary>
         /// Parsable VT sequence (Background, true color)
         /// </summary>
         public string VTSequenceBackgroundTrueColor =>
-            $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequenceTrueColor}m";
+            vtSeqBackgroundTrue;
 
         /// <summary>
         /// Hexadecimal representation of the color
         /// </summary>
         public string Hex =>
-            $"#{RGB?.R:X2}{RGB?.G:X2}{RGB?.B:X2}";
+            hex;
 
         /// <summary>
         /// Color name representation
@@ -275,6 +275,19 @@ namespace Terminaux.Colors
             // Now, parse the output
             RGB = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
             ColorId = ConsoleColorData.GetNearestColor(RGB);
+            hex = $"#{RGB.R:X2}{RGB.G:X2}{RGB.B:X2}";
+            seqTrueColor = $"{RGB.R};{RGB.G};{RGB.B}";
+            vtSeqForegroundTrue = $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequenceTrueColor}m";
+            vtSeqBackgroundTrue = $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequenceTrueColor}m";
+            if (Type != ColorType.TrueColor)
+            {
+                vtSeqForeground =
+                    TermInfoDesc.Current.SetAForeground?.ProcessSequence(PlainSequence) ??
+                    $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
+                vtSeqBackground =
+                    TermInfoDesc.Current.SetABackground?.ProcessSequence(PlainSequence) ??
+                    $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
+            }
         }
 
         /// <summary>
@@ -288,6 +301,19 @@ namespace Terminaux.Colors
             settings = result.settings;
             ColorId = result.ColorId;
             RGB = result.RGB;
+            hex = $"#{RGB.R:X2}{RGB.G:X2}{RGB.B:X2}";
+            seqTrueColor = $"{RGB.R};{RGB.G};{RGB.B}";
+            vtSeqForegroundTrue = $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequenceTrueColor}m";
+            vtSeqBackgroundTrue = $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequenceTrueColor}m";
+            if (Type != ColorType.TrueColor)
+            {
+                vtSeqForeground =
+                    TermInfoDesc.Current.SetAForeground?.ProcessSequence(PlainSequence) ??
+                    $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
+                vtSeqBackground =
+                    TermInfoDesc.Current.SetABackground?.ProcessSequence(PlainSequence) ??
+                    $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
+            }
         }
 
         /// <summary>

@@ -39,8 +39,10 @@ namespace Terminaux.Console
         {
             // Initialize logging and crash logging
             if (args.Contains("-verbose"))
+            {
                 ConsoleLogger.AbstractLogger = new SerilogLogger(new LoggerConfiguration().MinimumLevel.Debug().WriteTo.File(LogTools.GenerateLogFilePath(out _)));
-            ConsoleLogger.EnableLogging = true;
+                ConsoleLogger.EnableLogging = true;
+            }
             CrashTools.InstallCrashHandler();
 
             // Run the resize listener
