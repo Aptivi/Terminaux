@@ -563,6 +563,20 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests trying to get a colorized light background
+        /// </summary>
+        [TestMethod]
+        [DataRow("255;255;255", "255;255;255")]
+        [DataRow("255;127;63", "255;254;126")]
+        [DataRow("63;63;63", "126;126;126")]
+        [Description("Querying")]
+        public void GetLightBackground(string specifier, string expected)
+        {
+            var actual = TransformationTools.GetLightBackground(specifier);
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
         /// Tests desaturating the color
         /// </summary>
         [TestMethod]

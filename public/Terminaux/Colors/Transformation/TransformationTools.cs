@@ -180,6 +180,22 @@ namespace Terminaux.Colors.Transformation
         }
 
         /// <summary>
+        /// Gets the colorized light background from the source color
+        /// </summary>
+        /// <param name="source">Source color to lighten</param>
+        /// <returns>A copy of the source color with lightness applied that suits the background</returns>
+        public static Color GetLightBackground(Color source)
+        {
+            int targetR = (int)(source.RGB.R * 2d);
+            targetR = targetR > 255 ? 255 : targetR;
+            int targetG = (int)(source.RGB.G * 2d);
+            targetG = targetG > 255 ? 255 : targetG;
+            int targetB = (int)(source.RGB.B * 2d);
+            targetB = targetB > 255 ? 255 : targetB;
+            return new(targetR, targetG, targetB);
+        }
+
+        /// <summary>
         /// Desaturates the color using the desaturation factor
         /// </summary>
         /// <param name="source">Source color to desaturate</param>
