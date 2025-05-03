@@ -171,7 +171,7 @@ namespace Terminaux.Writer.CyclicWriters
             bool isMultiple = CurrentSelections is not null;
             if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
                 throw new TerminauxException("Can't determine if the selection input is single or multiple");
-            if (AltChoicePos < 0 || AltChoicePos > choices.Count)
+            if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
             // Now, render the choices
@@ -229,7 +229,7 @@ namespace Terminaux.Writer.CyclicWriters
                         AnswerOption = AnswerOption.Truncate(Width);
 
                         // Render an entry
-                        bool isAlt = i > AltChoicePos;
+                        bool isAlt = processedChoices + 1 > AltChoicePos;
                         var finalForeColor =
                             choice.ChoiceDisabled ? DisabledForegroundColor :
                             selected ?
