@@ -344,7 +344,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Handle keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, arrowSelectLeft, selectionReservedHeight) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, arrowSelectLeft, selectionReservedHeight) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
                     maxHeight -= selectionReservedHeight;
 
                     // Get positions for arrows
@@ -380,8 +380,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                             // Now, translate coordinates to the selected index
                             if (!PointerTools.PointerWithinRange(mouse,
-                                    (leftPos, selectionBoxPosY),
-                                    (maxSelectionWidth, selectionBoxPosY + selectionChoices)))
+                                    (selectionBoxPosX + 1, selectionBoxPosY),
+                                    (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + selectionChoices)))
                                 return false;
                             int listIndex = mouse.Coordinates.y - selectionBoxPosY;
                             listIndex = startIndex + listIndex;
