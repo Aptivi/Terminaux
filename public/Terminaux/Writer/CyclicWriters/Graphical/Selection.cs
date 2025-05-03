@@ -214,7 +214,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             bool isMultiple = CurrentSelections is not null;
             if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
                 throw new TerminauxException("Can't determine if the selection input is single or multiple");
-            if (AltChoicePos < 0 || AltChoicePos > choices.Count)
+            if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
             // Get the choice parameters
@@ -315,7 +315,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             bool isMultiple = CurrentSelections is not null;
             if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
                 throw new TerminauxException("Can't determine if the selection input is single or multiple");
-            if (AltChoicePos < 0 || AltChoicePos > choices.Count)
+            if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
             // Now, get the choice parameters
@@ -376,7 +376,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         }
 
                         // Render an entry
-                        bool isAlt = i > AltChoicePos;
+                        bool isAlt = processedChoices + 1 > AltChoicePos;
                         var finalForeColor =
                             choice.ChoiceDisabled ? DisabledForegroundColor :
                             selected ?
@@ -418,7 +418,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public Selection(InputChoiceCategoryInfo[] categories)
         {
             Selections = categories;
-            AltChoicePos = Selections.Length;
+            List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
+            AltChoicePos = choices.Count;
         }
 
         /// <summary>
