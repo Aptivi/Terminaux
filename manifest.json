@@ -2199,129 +2199,17 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.BaseInputMethod-1.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.PresentationInputInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.BaseInputMethod-1.html"
+          "relative_path": "api/Terminaux.Inputs.Presentation.PresentationInputInfo.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs.BaseInputMethod<T>",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.BaseInputMethod-1.yml\" sourcestartlinenumber=\"1\">Base input method</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs.IInputMethod<TInput>",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.IInputMethod-1.yml\" sourcestartlinenumber=\"1\">Presentation input method element</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs.IInputMethod",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.IInputMethod.yml\" sourcestartlinenumber=\"1\">Presentation input method element</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.InputInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.InputInfo.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs.InputInfo",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.InputInfo.yml\" sourcestartlinenumber=\"1\">Input information for the presentation</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod.yml\" sourcestartlinenumber=\"1\">Masked text input method</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod.yml\" sourcestartlinenumber=\"1\">Selection input method (single selection, uses informational box)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod.yml\" sourcestartlinenumber=\"1\">Selection multiple input method (multiple selection, uses informational box)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.TextInputMethod.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.TextInputMethod.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs.TextInputMethod",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.Inputs.TextInputMethod.yml\" sourcestartlinenumber=\"1\">Text input method</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Presentation.Inputs",
-      "Summary": null
+      "Title": "Terminaux.Inputs.Presentation.PresentationInputInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Presentation.PresentationInputInfo.yml\" sourcestartlinenumber=\"1\">Input information for the presentation</p>\n"
     },
     {
       "type": "ManagedReference",
