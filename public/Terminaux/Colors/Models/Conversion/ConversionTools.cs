@@ -19,10 +19,10 @@
 
 using System;
 using System.Linq;
+using Magico.Reflection;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Parsing;
-using Terminaux.Helpers;
 
 namespace Terminaux.Colors.Models.Conversion
 {
@@ -177,11 +177,11 @@ namespace Terminaux.Colors.Models.Conversion
             // Check for type
             if (sourceType == typeof(BaseColorModel))
                 throw new TerminauxException("You should specify a specific source color model, not the base one.");
-            if (!BaseClassesHelper.GetBaseTypes(sourceType).Contains(typeof(BaseColorModel)))
+            if (!BaseClassTools.GetBaseTypes(sourceType).Contains(typeof(BaseColorModel)))
                 throw new TerminauxException("Not a color model.");
             if (targetType == typeof(BaseColorModel))
                 throw new TerminauxException("You should specify a specific target color model, not the base one.");
-            if (!BaseClassesHelper.GetBaseTypes(targetType).Contains(typeof(BaseColorModel)))
+            if (!BaseClassTools.GetBaseTypes(targetType).Contains(typeof(BaseColorModel)))
                 throw new TerminauxException("Not a target color model.");
 
             // Determine whether the conversion is needed or not
