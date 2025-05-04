@@ -49,7 +49,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// </summary>
         public InputChoiceCategoryInfo[] Selections { get; set; } = [];
 
-        // TODO: Remove this once Beta 1 starts, because we now have categories!
         /// <summary>
         /// Alternative choice position (one-based)
         /// </summary>

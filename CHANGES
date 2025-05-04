@@ -8,7 +8,14 @@ You are testing the first beta version of Terminaux 7.0, which was released on T
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` To be populated...
+- `[+]` Added categorized cyclic writers
+- `[+]` Added support for Asciinema
+- `[+]` Added multi-input infoboxes with input modules
+- `[+]` Added padding and margins
+- `[*]` Improved logging
+- `[*]` Improved mouse handling in several interactives
+- `[*]` General improvements and bug fixes
+- `[-]` Removed obsolete features
 
 Review the commit history if you want to get a deep insight about the changes.
 
