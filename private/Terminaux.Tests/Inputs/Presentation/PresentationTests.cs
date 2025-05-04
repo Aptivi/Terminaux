@@ -21,7 +21,7 @@ using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Inputs.Presentation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.Inputs.Presentation.Inputs;
+using Terminaux.Inputs.Modules;
 
 namespace Terminaux.Tests.Inputs.Presentation
 {
@@ -49,7 +49,7 @@ namespace Terminaux.Tests.Inputs.Presentation
                 ]),
                 new PresentationPage("Page two", [],
                 [
-                    new InputInfo("Input test", "The description of the input test", new TextInputMethod(){ Question = "Hello, world!" })
+                    new PresentationInputInfo("Input test", "The description of the input test", new TextBoxModule(){ Name = "Hello, world!", Description = "Hello, world!" })
                 ]),
             ]);
 
@@ -94,9 +94,11 @@ namespace Terminaux.Tests.Inputs.Presentation
             inputForPageTwo.InputDescription.ShouldNotBeNullOrEmpty();
             inputForPageTwo.InputDescription.ShouldBe("The description of the input test");
             inputForPageTwo.InputMethod.ShouldNotBeNull();
-            inputForPageTwo.InputMethod.ShouldBeOfType<TextInputMethod>();
-            inputForPageTwo.InputMethod.Question.ShouldNotBeNullOrEmpty();
-            inputForPageTwo.InputMethod.Question.ShouldBe("Hello, world!");
+            inputForPageTwo.InputMethod.ShouldBeOfType<TextBoxModule>();
+            inputForPageTwo.InputMethod.Name.ShouldNotBeNullOrEmpty();
+            inputForPageTwo.InputMethod.Name.ShouldBe("Hello, world!");
+            inputForPageTwo.InputMethod.Description.ShouldNotBeNullOrEmpty();
+            inputForPageTwo.InputMethod.Description.ShouldBe("Hello, world!");
         }
 
     }

@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using Terminaux.Base;
 
-namespace Terminaux.Inputs.Presentation.Inputs
+namespace Terminaux.Inputs.Presentation
 {
     /// <summary>
     /// Input information for the presentation
     /// </summary>
-    public class InputInfo
+    public class PresentationInputInfo
     {
         /// <summary>
         /// Input name for the input list
@@ -44,20 +45,18 @@ namespace Terminaux.Inputs.Presentation.Inputs
         /// <summary>
         /// Input method for the resulting input
         /// </summary>
-        public IInputMethod InputMethod { get; }
+        public InputModule InputMethod { get; }
 
         /// <summary>
-        /// Input method for the resulting input (interface)
+        /// Value processing function
         /// </summary>
-        /// <typeparam name="T">Target type for this input method</typeparam>
-        public IInputMethod<T> GetInputMethodInterface<T>() =>
-            (IInputMethod<T>)InputMethod;
+        public Func<object?, bool> ProcessFunction { get; set; } = (value) => value is not null;
 
         /// <summary>
-        /// Input method for the resulting input (generic)
+        /// Input method for the resulting input
         /// </summary>
         /// <typeparam name="T">Type of the available input methods</typeparam>
-        public T GetInputMethod<T>() where T : IInputMethod =>
+        public T GetInputMethod<T>() where T : InputModule =>
             (T)InputMethod;
 
         /// <summary>
@@ -68,7 +67,7 @@ namespace Terminaux.Inputs.Presentation.Inputs
         /// <param name="inputMethod">Input method for the resulting input</param>
         /// <param name="required">Whether this input is required or not</param>
         /// <exception cref="TerminauxException"></exception>
-        public InputInfo(string inputName, string inputDescription, IInputMethod inputMethod, bool required = false)
+        public PresentationInputInfo(string inputName, string inputDescription, InputModule inputMethod, bool required = false)
         {
             InputName = !string.IsNullOrEmpty(inputName) ? inputName :
                 throw new TerminauxException("Input name is not specified");

@@ -23,9 +23,9 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using System;
-using Terminaux.Inputs.Presentation.Inputs;
 using Textify.General;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Modules;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -74,46 +74,54 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             "Vincent"
         ];
 
-        internal static InputInfo input1 =
+        internal static PresentationInputInfo input1 =
             new("Test enjoyment", "Asks the user if they have enjoyed testing",
-                new TextInputMethod()
+                new TextBoxModule()
                 {
-                    Question = $"Did you enjoy {new Color(ConsoleColors.Green1).VTSequenceForeground}testing?"
+                    Name = "Test enjoyment",
+                    Description = $"Did you enjoy {new Color(ConsoleColors.Green1).VTSequenceForeground}testing?"
                 }, true
-            );
+            )
+            {
+                ProcessFunction = (value) => value is string input && input == "yes"
+            };
 
-        internal static InputInfo input2 =
+        internal static PresentationInputInfo input2 =
             new("First choice", "Asks the user to select one of the names (small)",
-                new SelectionInputMethod()
+                new ComboBoxModule()
                 {
-                    Question = "Ultricies mi eget mauris pharetra:",
+                    Name = "First choice",
+                    Description = "Ultricies mi eget mauris pharetra:",
                     Choices = GetCategories(data1)
                 }, true
             );
 
-        internal static InputInfo input3 =
+        internal static PresentationInputInfo input3 =
             new("Second choice", "Asks the user to select one of the names (larger)",
-                new SelectionInputMethod()
+                new ComboBoxModule()
                 {
-                    Question = "Ultricies mi eget mauris pharetra sapien et ligula:",
+                    Name = "Second choice",
+                    Description = "Ultricies mi eget mauris pharetra sapien et ligula:",
                     Choices = GetCategories(data2)
                 }, true
             );
 
-        internal static InputInfo input4 =
+        internal static PresentationInputInfo input4 =
             new("First multiple choice", "Asks the user to select one or more of the names (small)",
-                new SelectionMultipleInputMethod()
+                new MultiComboBoxModule()
                 {
-                    Question = "Ultricies mi eget mauris pharetra:",
+                    Name = "First multiple choice",
+                    Description = "Ultricies mi eget mauris pharetra:",
                     Choices = GetCategories(data1)
                 }, true
             );
 
-        internal static InputInfo input5 =
+        internal static PresentationInputInfo input5 =
             new("Second multiple choice", "Asks the user to select one or more of the names (larger)",
-                new SelectionMultipleInputMethod()
+                new MultiComboBoxModule()
                 {
-                    Question = "Ultricies mi eget mauris pharetra sapien et ligula:",
+                    Name = "Second multiple choice",
+                    Description = "Ultricies mi eget mauris pharetra sapien et ligula:",
                     Choices = GetCategories(data2)
                 }, true
             );
@@ -305,14 +313,15 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     new Func<string>(() =>
                                     {
                                         // Get the input methods
-                                        var method1 = input1.GetInputMethod<TextInputMethod>();
-                                        var method2 = input2.GetInputMethod<SelectionInputMethod>();
-                                        var method3 = input3.GetInputMethod<SelectionInputMethod>();
-                                        var method4 = input4.GetInputMethod<SelectionMultipleInputMethod>();
-                                        var method5 = input5.GetInputMethod<SelectionMultipleInputMethod>();
+                                        var method1 = input1.GetInputMethod<TextBoxModule>();
+                                        var method2 = input2.GetInputMethod<ComboBoxModule>();
+                                        var method3 = input3.GetInputMethod<ComboBoxModule>();
+                                        var method4 = input4.GetInputMethod<MultiComboBoxModule>();
+                                        var method5 = input5.GetInputMethod<MultiComboBoxModule>();
 
                                         // Now, form the resulting string
-                                        if (method2.Choices is not null && method3.Choices is not null && method4.Choices is not null && method5.Choices is not null){
+                                        if (method2.Choices is not null && method3.Choices is not null && method4.Choices is not null && method5.Choices is not null)
+                                        {
                                             string results = ("Input 1: {0}\n" +
                                                               "Input 2: {1}\n" +
                                                               "Input 3: {2}\n" +
@@ -321,15 +330,15 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                             .FormatString
                                             (
                                                 // Second page
-                                                method1.Input,
+                                                method1.GetValue<string>(),
 
                                                 // Fifth page
-                                                method2.Choices[0].Groups[0].Choices[method2.Input].ChoiceName,
-                                                method3.Choices[0].Groups[0].Choices[method3.Input].ChoiceName,
+                                                method2.Choices[0].Groups[0].Choices[method2.GetValue<int>()].ChoiceName,
+                                                method3.Choices[0].Groups[0].Choices[method3.GetValue<int>()].ChoiceName,
 
                                                 // Sixth page
-                                                string.Join(", ", method4.Input.Select((idx) => method4.Choices[0].Groups[0].Choices[idx].ChoiceName)),
-                                                string.Join(", ", method5.Input.Select((idx) => method5.Choices[0].Groups[0].Choices[idx].ChoiceName))
+                                                string.Join(", ", (method4.GetValue<int[]>() ?? []).Select((idx) => method4.Choices[0].Groups[0].Choices[idx].ChoiceName)),
+                                                string.Join(", ", (method5.GetValue<int[]>() ?? []).Select((idx) => method5.Choices[0].Groups[0].Choices[idx].ChoiceName))
                                             );
                                             return results;
                                         }

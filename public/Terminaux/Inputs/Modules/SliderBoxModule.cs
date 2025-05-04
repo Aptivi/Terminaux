@@ -140,6 +140,7 @@ namespace Terminaux.Inputs.Modules
                 if (!cancel)
                     Value = value;
             }
+            Provided = true;
         }
     }
 }

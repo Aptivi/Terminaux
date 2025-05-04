@@ -199,6 +199,7 @@ namespace Terminaux.Inputs.Modules
                 if (!cancel)
                     Value = selectedChoices.ToArray();
             }
+            Provided = true;
         }
     }
 }

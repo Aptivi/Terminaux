@@ -64,6 +64,11 @@ namespace Terminaux.Inputs
         public Color Background { get; set; } = ColorTools.CurrentBackgroundColor;
 
         /// <summary>
+        /// If the input is provided or not
+        /// </summary>
+        public bool Provided { get; protected set; }
+
+        /// <summary>
         /// Gets a strongly-typed value
         /// </summary>
         /// <typeparam name="T">Target value type</typeparam>

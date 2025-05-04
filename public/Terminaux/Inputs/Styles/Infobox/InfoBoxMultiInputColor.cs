@@ -73,7 +73,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxPlainMultiInput(InputModule[] modules, string text, params object[] vars) =>
+        public static bool WriteInfoBoxPlainMultiInput(InputModule[] modules, string text, params object[] vars) =>
             WriteInfoBoxPlainMultiInput(modules, text, BorderSettings.GlobalSettings, vars);
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxPlainMultiInput(InputModule[] modules, string text, BorderSettings settings, params object[] vars) =>
+        public static bool WriteInfoBoxPlainMultiInput(InputModule[] modules, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxPlainMultiInput(modules, "", text, settings, vars);
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInput(InputModule[] modules, string text, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string text, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInputColor(InputModule[] modules, string text, Color InfoBoxColor, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInputColor(InputModule[] modules, string text, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInput(InputModule[] modules, string text, BorderSettings settings, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInputColor(InputModule[] modules, string text, BorderSettings settings, Color InfoBoxColor, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInputColor(InputModule[] modules, string text, BorderSettings settings, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, settings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, "", text, settings, InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxPlainMultiInput(InputModule[] modules, string title, string text, params object[] vars) =>
+        public static bool WriteInfoBoxPlainMultiInput(InputModule[] modules, string title, string text, params object[] vars) =>
             WriteInfoBoxPlainMultiInput(modules, title, text, BorderSettings.GlobalSettings, vars);
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxPlainMultiInput(InputModule[] modules, string title, string text, BorderSettings settings, params object[] vars) =>
+        public static bool WriteInfoBoxPlainMultiInput(InputModule[] modules, string title, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInput(InputModule[] modules, string title, string text, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string title, string text, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInputColor(InputModule[] modules, string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInputColor(InputModule[] modules, string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInput(InputModule[] modules, string title, string text, BorderSettings settings, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string title, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInputColor(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInputColor(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, settings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
+        public static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, settings, InfoBoxTitledColor, BackgroundColor, true, vars);
 
         /// <summary>
@@ -250,12 +250,13 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="useColor">Whether to use color or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        internal static void WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
+        internal static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
             var screen = new Screen();
+            bool cancel = false;
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxInputColor), infoBoxScreenPart);
@@ -365,7 +366,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, modules))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => cancel = bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                     // Handle input
                     if (Input.MouseInputAvailable)
@@ -536,8 +537,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 selectedInstance.ProcessInput();
                                 break;
                             case ConsoleKey.Enter:
+                                bail = true;
+                                break;
                             case ConsoleKey.Escape:
                                 bail = true;
+                                cancel = true;
                                 break;
                             case ConsoleKey.K:
                                 // Keys function
@@ -566,6 +570,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
+            return !cancel;
         }
 
         private static void GoUp(ref int currIdx, int level = 1)

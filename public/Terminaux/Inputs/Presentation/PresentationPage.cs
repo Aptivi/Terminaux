@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Inputs.Presentation.Elements;
-using Terminaux.Inputs.Presentation.Inputs;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -40,7 +39,7 @@ namespace Terminaux.Inputs.Presentation
         /// <summary>
         /// Presentation page inputs
         /// </summary>
-        public InputInfo[] Inputs { get; }
+        public PresentationInputInfo[] Inputs { get; }
 
         /// <summary>
         /// Makes a new presentation page
@@ -48,7 +47,7 @@ namespace Terminaux.Inputs.Presentation
         /// <param name="name">Page name</param>
         /// <param name="elements">List of elements</param>
         /// <param name="inputs">List of inputs</param>
-        public PresentationPage(string name, IElement[] elements, InputInfo[]? inputs = null)
+        public PresentationPage(string name, IElement[] elements, PresentationInputInfo[]? inputs = null)
         {
             Name = name;
             Elements = elements;

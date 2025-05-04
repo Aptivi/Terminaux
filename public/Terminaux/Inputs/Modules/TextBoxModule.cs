@@ -90,6 +90,7 @@ namespace Terminaux.Inputs.Modules
                 }
                 Value = TermReader.Read("", value, readerSettings, false, true);
             }
+            Provided = true;
         }
     }
 }

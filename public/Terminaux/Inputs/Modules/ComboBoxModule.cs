@@ -79,6 +79,7 @@ namespace Terminaux.Inputs.Modules
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
                 Value = InfoBoxSelectionColor.WriteInfoBoxSelection(Name, Choices, Description);
+                Provided = (int)Value != -1;
             }
             else
             {
@@ -189,6 +190,7 @@ namespace Terminaux.Inputs.Modules
                 }
                 if (!cancel)
                     Value = currentSelection;
+                Provided = !cancel;
             }
         }
     }

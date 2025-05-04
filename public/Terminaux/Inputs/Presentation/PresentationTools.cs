@@ -30,7 +30,6 @@ using System.Threading;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using System.Collections.Generic;
-using Terminaux.Inputs.Presentation.Inputs;
 using System.Linq;
 using Textify.General;
 using Terminaux.Inputs.Presentation.Elements;
@@ -375,62 +374,36 @@ namespace Terminaux.Inputs.Presentation
             {
                 // Make a selection infobox that lets the user select the inputs
                 bool inputBail = false;
-                bool processed = false;
                 while (!inputBail)
                 {
                     // Populate the choices
-                    List<InputChoiceInfo> choices = [];
-                    for (int inputIdx = 0; inputIdx < page.Inputs.Length; inputIdx++)
-                    {
-                        InputInfo? input = page.Inputs[inputIdx];
-                        choices.Add(new InputChoiceInfo($"[{(input.InputRequired ? "*" : " ")}] {inputIdx + 1}", $"{input.InputName} [{input.InputMethod.DisplayInput}]", input.InputDescription));
-                    }
-                    choices.Add(new InputChoiceInfo($"    {page.Inputs.Length + 1}", "Submit", "Submits the required fields to the presentation"));
-                    choices.Add(new InputChoiceInfo($"    {page.Inputs.Length + 2}", "Exit", "Goes back to this presentation"));
+                    var modules = page.Inputs.Select((pii) => pii.InputMethod).ToArray();
 
                     // Let the user select an option, then process the input
                     screen.RequireRefresh();
-                    int selected = InfoBoxSelectionColor.WriteInfoBoxSelection("Input required", [.. choices], "This presentation page requires the following inputs to be fulfilled before being able to advance to the next page. The asterisk next to each step indicates a required input that should be filled before being able to proceed.");
-                    if (selected >= page.Inputs.Length)
+                    inputBail = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "Input required", "This presentation page requires the following inputs to be fulfilled before being able to advance to the next page.");
+                    if (inputBail)
                     {
-                        // Either submit or exit has been selected.
-                        if (selected == page.Inputs.Length)
+                        // Check the required inputs if they have been filled
+                        var requiredInputs = page.Inputs.Where((ii) => ii.InputRequired).ToArray();
+                        var filledRequiredInputs = requiredInputs.Where((ii) => ii.InputMethod.Provided).ToArray();
+                        inputBail = filledRequiredInputs.Length == requiredInputs.Length;
+                        if (inputBail)
                         {
-                            // Check the required inputs if they have been filled
-                            var requiredInputs = page.Inputs.Where((ii) => ii.InputRequired).ToArray();
-                            var filledRequiredInputs = requiredInputs.Where((ii) => ii.InputMethod.Provided).ToArray();
-                            if (filledRequiredInputs.Length == requiredInputs.Length)
-                            {
-                                // All required inputs have been provided. Submit the inputs to the presentation page after processing them.
-                                var processedRequiredInputs = filledRequiredInputs.Where((ii) => ii.InputMethod.Process()).ToArray();
-                                inputBail = processedRequiredInputs.Length == filledRequiredInputs.Length;
-                                if (!inputBail)
-                                {
-                                    InfoBoxModalColor.WriteInfoBoxModal("Incorrect Input", $"One or more of the following inputs have not been filled correctly:\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
-                                }
-                            }
-                            else
-                            {
-                                screen.RequireRefresh();
-                                InfoBoxModalColor.WriteInfoBoxModal("Input not provided", $"Required inputs have not been provided. You'll need to fill in the values of the following inputs:\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
-                            }
+                            // All required inputs have been provided. Submit the inputs to the presentation page after processing them.
+                            var processedRequiredInputs = filledRequiredInputs.Where((ii) => ii.ProcessFunction(ii.InputMethod.Value)).ToArray();
+                            inputBail = processedRequiredInputs.Length == filledRequiredInputs.Length;
+                            if (!inputBail)
+                                InfoBoxModalColor.WriteInfoBoxModal("Incorrect Input", $"One or more of the following inputs have not been filled correctly:\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
                         }
                         else
-                            inputBail = true;
+                        {
+                            screen.RequireRefresh();
+                            InfoBoxModalColor.WriteInfoBoxModal("Input not provided", $"Required inputs have not been provided. You'll need to fill in the values of the following inputs:\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                        }
                     }
-                    else if (selected >= 0 && selected < page.Inputs.Length)
-                    {
-                        // User has selected one of the inputs. In this case, fetch the input instance and display it.
-                        var input = page.Inputs[selected];
-                        screen.RequireRefresh();
-                        input.InputMethod.PromptInput();
-                        processed = input.InputMethod.Process();
-                    }
-                    else
-                        // User has exited the infobox
-                        inputBail = true;
                 }
-                return processed;
+                return inputBail;
             }
             else
                 return true;
