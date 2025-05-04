@@ -621,7 +621,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
             UpdateKeybindings();
             UpdateColor(ref selectedColor, type, finalSettings);
-            ui.RequireRefresh();
         }
 
         private void ChangeSimulation(TextualUI ui, bool goBack)
@@ -639,7 +638,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     colorBlindnessSimulationIdx--;
             }
             UpdateColor(ref selectedColor, type, finalSettings);
-            ui.RequireRefresh();
         }
 
         private void ChangeSimulationSeverity(TextualUI ui, bool goBack)
@@ -657,7 +655,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     colorBlindnessSeverity = 1.0;
             }
             UpdateColor(ref selectedColor, type, finalSettings);
-            ui.RequireRefresh();
         }
 
         private void ChangeValue(TextualUI ui, PointerEventContext? mouse, bool goBack)
@@ -705,7 +702,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementHue(type);
             else
                 IncrementHue(type);
-            ui.RequireRefresh();
         }
 
         private void ChangeLightness(TextualUI ui, bool goBack)
@@ -714,7 +710,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementLightness(type);
             else
                 IncrementLightness(type);
-            ui.RequireRefresh();
         }
 
         private void ChangeSaturation(TextualUI ui, bool goBack)
@@ -723,7 +718,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementSaturation(type);
             else
                 IncrementSaturation(type);
-            ui.RequireRefresh();
         }
 
         private void ChangeTransparency(TextualUI ui, bool goBack)
@@ -732,7 +726,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 finalSettings.Opacity--;
             else
                 finalSettings.Opacity++;
-            ui.RequireRefresh();
         }
 
         private void ChangeColor(TextualUI ui, bool goBack)
@@ -741,13 +734,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 DecrementColor(type);
             else
                 IncrementColor(type);
-            ui.RequireRefresh();
         }
 
         private void ShowColorList(TextualUI ui)
         {
             showColorList = !showColorList;
-            ui.RequireRefresh();
         }
 
         private void DecrementColor(ColorType type)
