@@ -508,7 +508,8 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Print the number information
             InfoBoxModalColor.WriteInfoBoxModalColorBack("Number information",
-                $"Hexadecimal:  {byteNumHex}" + CharManager.NewLine +
+                $"Position:     0x{byteIdx:X8}" + CharManager.NewLine +
+                $"Hexadecimal:  0x{byteNumHex}" + CharManager.NewLine +
                 $"Octal:        {byteNumOctal}" + CharManager.NewLine +
                 $"Number:       {byteNumNumber}" + CharManager.NewLine +
                 $"Binary:       {byteNumBinary}"
@@ -526,7 +527,8 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Change the status to the number information
             status =
-                $"Hexadecimal: {byteNumHex} | " +
+                $"Position: 0x{byteIdx:X8} | " +
+                $"Hexadecimal: 0x{byteNumHex} | " +
                 $"Octal: {byteNumOctal} | " +
                 $"Number: {byteNumNumber} | " +
                 $"Binary: {byteNumBinary}";
