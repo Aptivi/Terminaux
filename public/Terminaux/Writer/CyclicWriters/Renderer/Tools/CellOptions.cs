@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Diagnostics;
 using Terminaux.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
@@ -24,6 +25,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
     /// <summary>
     /// Table and canvas cell options
     /// </summary>
+    [DebuggerDisplay("Pos: {ColumnNumber},{RowNumber}, Color: {ColoredCell} [FG: {CellColor}, BG: {CellBackgroundColor}]")]
     public class CellOptions
     {
 
