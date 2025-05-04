@@ -1,21 +1,12 @@
-Welcome to the Terminaux 7.0 Beta Program!
+Describe what happened since Beta 1
 
-We are introducing you into a revolutional version of Terminaux that transforms your experience as a developer and as an end user and changes how your terminal application looks.
-
-You are testing the first beta version of Terminaux 7.0, which was released on Thursday, May 8th, 2025.
+You are testing the second beta version of Terminaux 7.0, which was released on TBD.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added categorized cyclic writers
-- `[+]` Added support for Asciinema
-- `[+]` Added multi-input infoboxes with input modules
-- `[+]` Added padding and margins
-- `[*]` Improved logging
-- `[*]` Improved mouse handling in several interactives
-- `[*]` General improvements and bug fixes
-- `[-]` Removed obsolete features
+- `[*]` To be populated
 
 Review the commit history if you want to get a deep insight about the changes.
 
