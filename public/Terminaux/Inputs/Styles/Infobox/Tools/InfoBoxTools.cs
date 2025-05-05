@@ -33,6 +33,7 @@ using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using Textify.General;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
+using System.Collections.Generic;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
@@ -268,6 +269,10 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             var hitbox = selectionsRendered.GenerateSelectionHitbox(listIndex);
 
             // Depending on the hitbox parameter, we need to act accordingly
+            List<InputChoiceInfo> allAnswers = SelectionInputTools.GetChoicesFromCategories(selections);
+            var highlightedAnswerChoiceInfo = allAnswers[hitbox.related - 1];
+            if (highlightedAnswerChoiceInfo.ChoiceDisabled)
+                return false;
             currentSelection = hitbox.related - 1;
             hitboxType = hitbox.type;
             return true;

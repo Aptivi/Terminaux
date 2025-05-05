@@ -672,6 +672,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var hitbox = selections.GenerateSelectionHitbox(listIndex);
 
             // Depending on the hitbox parameter, we need to act accordingly
+            var highlightedAnswerChoiceInfo = allAnswers[hitbox.related - 1];
+            if (highlightedAnswerChoiceInfo.ChoiceDisabled)
+                return false;
             highlightedAnswer = hitbox.related;
             hitboxType = hitbox.type;
             return true;
