@@ -29,7 +29,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 
         public void RunFixture()
         {
-            string input = TermReader.Read(() => $"{DateTime.Now} [{TermReaderState.CurrentState?.CurrentTextPos}]\n> ", "Hello World!", false, false, false);
+            string input = TermReader.Read(() => $"{DateTime.Now} [{TermReaderState.CurrentState?.CurrentTextPos}]\n> ", "Hello World!");
             TextWriterColor.Write("You said: " + input);
         }
     }
