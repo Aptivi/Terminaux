@@ -450,9 +450,12 @@ namespace Terminaux.Inputs
                 eventRecord.dwButtonState == ButtonState.Left ? (SwapLeftRightButtons ? PointerButton.Right : PointerButton.Left) :
                 eventRecord.dwButtonState == ButtonState.Middle ? PointerButton.Middle :
                 eventRecord.dwButtonState == ButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
-                (uint)eventRecord.dwButtonState >= 4000000000 ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
-                (uint)eventRecord.dwButtonState >= 7000000 ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
                 PointerButton.None;
+            button = (eventRecord.dwEventFlags == EventFlags.WheelScrolled || eventRecord.dwEventFlags == EventFlags.HorizontalWheelScrolled) ?
+                ((int)eventRecord.dwButtonState >> 16 < 0 ?
+                    (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
+                    (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp)) :
+                button;
 
             // Determine the button press
             PointerButtonPress press =
