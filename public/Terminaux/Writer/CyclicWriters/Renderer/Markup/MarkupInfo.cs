@@ -19,12 +19,45 @@
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
 {
-    internal class MarkupInfo
+    /// <summary>
+    /// Markup parsing information
+    /// </summary>
+    public class MarkupInfo
     {
         internal int entranceIndex = -1;
         internal int exitIndex = -1;
         internal int nestLevel = -1;
         internal string represent = "";
         internal bool isEscape = false;
+
+        /// <summary>
+        /// Entrance index in the whole string
+        /// </summary>
+        public int EntranceIndex =>
+            entranceIndex;
+
+        /// <summary>
+        /// Exit index in the whole string
+        /// </summary>
+        public int ExitIndex =>
+            exitIndex;
+
+        /// <summary>
+        /// Nesting level
+        /// </summary>
+        public int NestLevel =>
+            nestLevel;
+
+        /// <summary>
+        /// Representation delimited by spaces
+        /// </summary>
+        public string Representation =>
+            represent;
+
+        /// <summary>
+        /// Whether this is an escape markup indicator or not
+        /// </summary>
+        public bool Escape =>
+            isEscape;
     }
 }
