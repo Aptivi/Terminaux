@@ -208,7 +208,6 @@ namespace Terminaux.Base.Checks
             acknowledged = true;
             ConsoleLogger.Info("This Terminaux application can now run!");
 
-#if DEBUG
             var version = typeof(ConsoleChecker).Assembly.GetName().Version;
             InfoBoxModalColor.WriteInfoBoxModalColor(
                 $"Terminaux {version.Major}.{version.Minor} Beta Program",
@@ -222,7 +221,6 @@ namespace Terminaux.Base.Checks
                 "To get started, please press any key.",
                 ConsoleColors.Yellow
             );
-#endif
         }
 
         /// <summary>
