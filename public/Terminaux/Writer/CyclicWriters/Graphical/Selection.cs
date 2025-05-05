@@ -150,6 +150,40 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool Ellipsis { get; set; } = true;
 
         /// <summary>
+        /// Checks to see whether the generation of the selection hitboxes is possible
+        /// </summary>
+        /// <param name="hitboxIdx">Hitbox index</param>
+        /// <param name="hitbox">Pointer hitbox instances that are built for each selection</param>
+        /// <returns>True if generation is possible; false otherwise</returns>
+        public bool CanGenerateSelectionHitbox(int hitboxIdx, out (PointerHitbox hitbox, ChoiceHitboxType type, int related) hitbox) =>
+            CanGenerateSelectionHitbox(CurrentSelection, hitboxIdx, out hitbox);
+
+        /// <summary>
+        /// Checks to see whether the generation of the selection hitboxes is possible
+        /// </summary>
+        /// <param name="selectionIdx">Selection index from all choices</param>
+        /// <param name="hitboxIdx">Hitbox index</param>
+        /// <param name="hitbox">Pointer hitbox instances that are built for each selection</param>
+        /// <returns>True if generation is possible; false otherwise</returns>
+        public bool CanGenerateSelectionHitbox(int selectionIdx, int hitboxIdx, out (PointerHitbox hitbox, ChoiceHitboxType type, int related) hitbox)
+        {
+            // Get the choice parameters
+            (_, List<int> selectionHeights) = GetChoiceParameters();
+            hitbox = default;
+            if (selectionHeights.Count == 0 || selectionIdx < 0 || selectionIdx >= selectionHeights.Count)
+                return false;
+
+            // Generate the hitboxes and verify the values
+            var hitboxes = GenerateSelectionHitboxes(selectionIdx);
+            if (hitboxes.Length == 0 || hitboxIdx < 0 || hitboxIdx >= hitboxes.Length)
+                return false;
+
+            // Return true once we get the hitbox
+            hitbox = hitboxes[hitboxIdx];
+            return true;
+        }
+
+        /// <summary>
         /// Generates the selection hitboxes
         /// </summary>
         /// <param name="hitboxIdx">Hitbox index</param>

@@ -669,7 +669,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (mouse.Coordinates.y < listStartPosition + 1 || mouse.Coordinates.y > listStartPosition + answersPerPage)
                 return false;
             int listIndex = mouse.Coordinates.y - listStartPosition - 1;
-            var hitbox = selections.GenerateSelectionHitbox(listIndex);
+            if (!selections.CanGenerateSelectionHitbox(listIndex, out var hitbox))
+                return false;
 
             // Depending on the hitbox parameter, we need to act accordingly
             var highlightedAnswerChoiceInfo = allAnswers[hitbox.related - 1];

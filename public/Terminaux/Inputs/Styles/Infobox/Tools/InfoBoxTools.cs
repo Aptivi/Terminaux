@@ -266,7 +266,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             if (mouse.Coordinates.y < selectionBoxPosY || mouse.Coordinates.y > selectionBoxPosY + selectionChoices - 1)
                 return false;
             int listIndex = mouse.Coordinates.y - selectionBoxPosY;
-            var hitbox = selectionsRendered.GenerateSelectionHitbox(listIndex);
+            if (!selectionsRendered.CanGenerateSelectionHitbox(listIndex, out var hitbox))
+                return false;
 
             // Depending on the hitbox parameter, we need to act accordingly
             List<InputChoiceInfo> allAnswers = SelectionInputTools.GetChoicesFromCategories(selections);
