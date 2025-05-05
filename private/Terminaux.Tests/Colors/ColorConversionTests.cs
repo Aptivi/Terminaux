@@ -844,6 +844,49 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to HWB
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToHwb()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 0, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;0;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to HWB
+            var hwb = ConversionTools.ToHwb(ColorInstance.RGB);
+
+            // Check for property correctness
+            hwb.HueWhole.ShouldBe(350);
+            hwb.ReverseHueWhole.ShouldBe(170);
+            hwb.WhitenessWhole.ShouldBe(0);
+            hwb.BlacknessWhole.ShouldBe(45);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(hwb);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(139);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(21);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -1351,6 +1394,49 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to HWB
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToHwb()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 0, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;0;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to HWB
+            var hwb = ConversionTools.ConvertFromRgb<HueWhiteBlack>(ColorInstance.RGB);
+
+            // Check for property correctness
+            hwb.HueWhole.ShouldBe(350);
+            hwb.ReverseHueWhole.ShouldBe(170);
+            hwb.WhitenessWhole.ShouldBe(0);
+            hwb.BlacknessWhole.ShouldBe(45);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(hwb);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(139);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(21);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -1855,6 +1941,49 @@ namespace Terminaux.Tests.Colors
             rgb.R.ShouldBe(133);
             rgb.G.ShouldBe(80);
             rgb.B.ShouldBe(66);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to HWB
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToHwb()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 0, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;0;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to HWB
+            var hwb = ConversionTools.GetConvertedColorModel<RedGreenBlue, HueWhiteBlack>(ColorInstance.RGB);
+
+            // Check for property correctness
+            hwb.HueWhole.ShouldBe(350);
+            hwb.ReverseHueWhole.ShouldBe(170);
+            hwb.WhitenessWhole.ShouldBe(0);
+            hwb.BlacknessWhole.ShouldBe(45);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<HueWhiteBlack, RedGreenBlue>(hwb);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(139);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(21);
         }
     }
 }

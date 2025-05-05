@@ -253,6 +253,8 @@ namespace Terminaux.Colors.Models.Conversion
                     rgb = ToRgb(cieLuvFull);
                 else if (source is CieLchFull cieLchFull)
                     rgb = ToRgb(cieLchFull);
+                else if (source is HueWhiteBlack hwb)
+                    rgb = ToRgb(hwb);
                 else
                     throw new TerminauxException("Can't convert to RGB.");
                 return rgb;
@@ -334,6 +336,9 @@ namespace Terminaux.Colors.Models.Conversion
                 else if (targetType == typeof(CieLchFull))
                     return ToCieLchFull(source) ??
                         throw new TerminauxException("Can't convert to CieLchFull.");
+                else if (targetType == typeof(HueWhiteBlack))
+                    return ToHwb(source) ??
+                        throw new TerminauxException("Can't convert to HWB.");
                 else
                     throw new TerminauxException("Can't convert from RGB.");
             }
@@ -916,6 +921,58 @@ namespace Terminaux.Colors.Models.Conversion
             // Return the resulting values
             return new(l, c, h, observer, illuminant);
         }
+
+        /// <summary>
+        /// Converts the RGB color model to HWB
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static HueWhiteBlack ToHwb(RedGreenBlue rgb)
+        {
+            if (rgb is null)
+                throw new TerminauxException("Can't convert a null RGB instance to HWB!");
+
+            double levelR = (double)rgb.R / 255;
+            double levelG = (double)rgb.G / 255;
+            double levelB = (double)rgb.B / 255;
+
+            // Get the minimum and maximum color level. .NET's Math.Max doesn't support three variables, so this workaround is added
+            double minRgLevel = Math.Min(levelR, levelG);
+            double minLevel = Math.Min(minRgLevel, levelB);
+            double maxRgLevel = Math.Max(levelR, levelG);
+            double maxLevel = Math.Max(maxRgLevel, levelB);
+
+            // Store the initial value of the hue and the delta color level
+            double hue = 0.0d;
+            double deltaLevel = maxLevel - minLevel;
+
+            // Get the hue
+            if (deltaLevel != 0)
+            {
+                if (maxLevel == levelR)
+                    hue = (levelG - levelB) / deltaLevel + (levelG < levelB ? 6 : 0);
+                else if (maxLevel == levelG)
+                    hue = (levelB - levelR) / deltaLevel + 2;
+                else
+                    hue = (levelR - levelG) / deltaLevel + 4;
+                hue *= 60;
+            }
+
+            // Check the hue value
+            if (hue >= 360)
+                hue -= 360;
+
+            // Get the whiteness and the blackness
+            double epsilon = 1 / 100000d;
+            double white = minLevel;
+            double black = 1 - maxLevel;
+            if (white + black >= 1 - epsilon)
+                hue = 0;
+
+            // Return the resulting values
+            hue /= 360;
+            return new(hue, white, black);
+        }
         #endregion
         #region Translate to RGB from...
         /// <summary>
@@ -1487,6 +1544,38 @@ namespace Terminaux.Colors.Models.Conversion
 
             // Return RGB from parsed CIE-L*ab value
             return ToRgb(lab);
+        }
+
+        /// <summary>
+        /// Converts the HWB color model to RGB
+        /// </summary>
+        /// <param name="hwb">Instance of HWB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(HueWhiteBlack hwb)
+        {
+            if (hwb is null)
+                throw new TerminauxException("Can't convert a null HWB instance to RGB!");
+
+            // Grayscale if both the whiteness and the blackness exceed a threshold
+            double whiteBlack = hwb.Whiteness + hwb.Blackness;
+            if (whiteBlack >= 1)
+            {
+                var grayscale = hwb.Whiteness / (whiteBlack);
+                int grayscaleWhole = (int)(grayscale * 255);
+                return new(grayscaleWhole, grayscaleWhole, grayscaleWhole);
+            }
+
+            // Convert HSL to RGB
+            var hsl = new HueSaturationLightness(hwb.Hue, 1, 0.5);
+            var rgbFromHsl = ToRgb(hsl);
+
+            // Perform final calculations
+            int r = (int)((rgbFromHsl.RNormalized * (1 - whiteBlack) + hwb.Whiteness) * 255);
+            int g = (int)((rgbFromHsl.GNormalized * (1 - whiteBlack) + hwb.Whiteness) * 255);
+            int b = (int)((rgbFromHsl.BNormalized * (1 - whiteBlack) + hwb.Whiteness) * 255);
+
+            // Install the values
+            return new(r, g, b);
         }
 
         private static double GetRgbValueFromHue(double variable1, double variable2, double variableHue)

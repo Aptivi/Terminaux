@@ -59,11 +59,20 @@ namespace Terminaux.Colors.Models
                 CyanMagentaYellow.IsSpecifierAndValueValid(specifier) ||
                 HueSaturationLightness.IsSpecifierAndValueValid(specifier) ||
                 HueSaturationValue.IsSpecifierAndValueValid(specifier) ||
+                HueWhiteBlack.IsSpecifierAndValueValid(specifier) ||
                 RedGreenBlue.IsSpecifierAndValueValid(specifier) ||
                 RedYellowBlue.IsSpecifierAndValueValid(specifier) ||
                 LumaInPhaseQuadrature.IsSpecifierAndValueValid(specifier) ||
                 LumaChromaUv.IsSpecifierAndValueValid(specifier) ||
-                Xyz.IsSpecifierAndValueValid(specifier);
+                Xyz.IsSpecifierAndValueValid(specifier) ||
+                Yxy.IsSpecifierAndValueValid(specifier) ||
+                HunterLab.IsSpecifierAndValueValid(specifier) ||
+                CieLab.IsSpecifierAndValueValid(specifier) ||
+                CieLabFull.IsSpecifierAndValueValid(specifier) ||
+                CieLch.IsSpecifierAndValueValid(specifier) ||
+                CieLchFull.IsSpecifierAndValueValid(specifier) ||
+                CieLuv.IsSpecifierAndValueValid(specifier) ||
+                CieLuvFull.IsSpecifierAndValueValid(specifier);
         }
 
         /// <summary>
@@ -97,6 +106,7 @@ namespace Terminaux.Colors.Models
                 CieLchFull.IsSpecifierValid(specifier, true) ? CieLchFull.ParseSpecifierToRgb(specifier, settings) :
                 CieLuv.IsSpecifierValid(specifier, true) ? CieLuv.ParseSpecifierToRgb(specifier, settings) :
                 CieLuvFull.IsSpecifierValid(specifier, true) ? CieLuvFull.ParseSpecifierToRgb(specifier, settings) :
+                HueWhiteBlack.IsSpecifierValid(specifier, true) ? HueWhiteBlack.ParseSpecifierToRgb(specifier, settings) :
 
                 // Colors and hash
                 usesColorId ? ParsingTools.ParseSpecifierRgbName(specifier, settings) :
