@@ -380,11 +380,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                             // Now, translate coordinates to the selected index
                             if (!PointerTools.PointerWithinRange(mouse,
                                     (selectionBoxPosX + 1, selectionBoxPosY),
-                                    (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + selectionChoices)))
+                                    (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + selectionChoices - 1)))
                                 return false;
                             int listIndex = mouse.Coordinates.y - selectionBoxPosY;
                             listIndex = startIndex + listIndex;
-                            listIndex = listIndex >= modules.Length ? modules.Length - 1 : listIndex;
+                            if (listIndex >= modules.Length)
+                                return false;
                             currentSelection = listIndex;
                             return true;
                         }
@@ -393,7 +394,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                         var mouse = Input.ReadPointer();
                         if (mouse is null)
                             continue;
-                        var selectedInstance = modules[currentSelection];
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
@@ -436,7 +436,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                UpdatePositionBasedOnMouse(mouse);
+                                if (!UpdatePositionBasedOnMouse(mouse))
+                                    break;
+                                var selectedInstance = modules[currentSelection];
                                 string name = selectedInstance.Name;
                                 string desc = selectedInstance.Description;
                                 if (!string.IsNullOrWhiteSpace(desc))

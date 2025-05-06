@@ -588,7 +588,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection);
+                                if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection))
+                                    break;
                                 if (hitboxType != ChoiceHitboxType.Choice)
                                     break;
                                 var selectedInstance = choices[currentSelection];
