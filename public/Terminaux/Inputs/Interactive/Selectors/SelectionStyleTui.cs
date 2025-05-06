@@ -537,8 +537,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             hitboxType = ChoiceHitboxType.Choice;
             if (mouse is null)
                 return false;
-            if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
-                return false;
 
             // Make pages based on console window height
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
@@ -563,6 +561,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             };
 
             // Now, translate coordinates to the selected index and get its hitbox
+            if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x > interiorWidth + 2)
+                return false;
             if (mouse.Coordinates.y < listStartPosition + 1 || mouse.Coordinates.y > listStartPosition + answersPerPage)
                 return false;
             int listIndex = mouse.Coordinates.y - listStartPosition - 1;
