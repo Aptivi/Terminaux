@@ -161,7 +161,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 );
                 if (lines.Length > answersPerPage + totalHeight + 1)
                 {
-                    var dataSlider = new Slider(showcaseLine, 0, lines.Length - answersPerPage + totalHeight - 1)
+                    var dataSlider = new Slider(showcaseLine, 0, lines.Length - answersPerPage + totalHeight - 2)
                     {
                         Vertical = true,
                         Height = answersPerPage + totalHeight - 1,
@@ -361,8 +361,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (lines.Length <= answersPerPage)
                 return;
             showcaseLine++;
-            if (showcaseLine > lines.Length - answersPerPage)
-                showcaseLine = lines.Length - answersPerPage;
+            if (showcaseLine > lines.Length - answersPerPage - totalHeight - 1)
+                showcaseLine = lines.Length - answersPerPage - totalHeight - 1;
         }
 
         private void QuestionGoUp(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
