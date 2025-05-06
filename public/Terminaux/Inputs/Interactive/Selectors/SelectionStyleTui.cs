@@ -31,6 +31,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
@@ -62,14 +63,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Get choice numbers and some positions
             int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? (sentenceLineCount > 5 ? 7 : sentenceLineCount + 2) : 1;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
             var selectionBuilder = new StringBuilder();
 
             // Prepare the border
-            List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(categories);
             var border = new BoxFrame()
             {
                 Left = 2,
@@ -78,17 +79,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Height = answersPerPage + listStartPosition - 1,
                 FrameColor = settings.SeparatorColor,
                 BackgroundColor = settings.BackgroundColor,
-                Settings = new()
-                {
-                    BorderRightFrameEnabled = choices.Count <= answersPerPage,
-                }
+                Rulers = sentenceLineCount > 0 ? [new(totalHeight, RulerOrientation.Horizontal)] : [],
             };
             selectionBuilder.Append(border.Render());
 
             // Write the question in a bordered box.
             if (sentenceLineCount > 0)
             {
-                int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
                 var boundedQuestion = new BoundedText()
                 {
                     Left = 3,
@@ -100,26 +97,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Line = questionLine,
                     Text = question,
                 };
-                var questionText = new Border()
-                {
-                    Color = settings.SeparatorColor,
-                    BackgroundColor = settings.BackgroundColor,
-                    Left = 2,
-                    Top = 1,
-                    Width = wholeWidth,
-                    Height = totalHeight
-                };
-                selectionBuilder.Append(questionText.Render());
                 selectionBuilder.Append(boundedQuestion.Render());
-
-                // Make a separator so that it makes the selection style look nicer
-                var leftIntersect = questionText.Settings.BorderLeftHorizontalIntersectionChar;
-                var rightIntersect = questionText.Settings.BorderRightHorizontalIntersectionChar;
-                var horizontalBar = questionText.Settings.BorderUpperFrameChar;
-                selectionBuilder.Append(
-                    ConsolePositioning.RenderChangePosition(2, 1 + totalHeight + 1) +
-                    leftIntersect + new string(horizontalBar, wholeWidth) + rightIntersect
-                );
             }
 
             // Populate the answers
