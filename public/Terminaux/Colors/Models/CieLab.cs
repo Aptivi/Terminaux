@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
@@ -28,16 +29,45 @@ using Terminaux.Colors.Transformation;
 namespace Terminaux.Colors.Models
 {
     /// <summary>
-    /// The CieLab class instance (Observer = 2 degs, Illuminant = D65)
+    /// The CieLab class instance
     /// </summary>
-    [DebuggerDisplay("CieLab = {L};{A};{B}")]
-    public class CieLab : CieLabFull, IEquatable<CieLab>
+    [DebuggerDisplay("CieLab = {L};{A};{B};{Observer};{(int)Illuminant}")]
+    public class CieLab : BaseColorModel, IEquatable<CieLab>
     {
+        private bool implicitlySpecced = false;
+
         /// <summary>
-        /// cielab:&lt;L&gt;;&lt;A&gt;;&lt;B&gt;
+        /// The L value [0.0 -> 100.0]
         /// </summary>
-        public override string ToString() =>
-            $"cielab:{L:0.##};{A:0.##};{B:0.##}";
+        public double L { get; private set; }
+        /// <summary>
+        /// The A value [-128.0 -> 128.0]
+        /// </summary>
+        public double A { get; private set; }
+        /// <summary>
+        /// The B value [-128.0 -> 128.0]
+        /// </summary>
+        public double B { get; private set; }
+        /// <summary>
+        /// The observer [either 2 degs or 10 degs]
+        /// </summary>
+        public int Observer { get; private set; } = 2;
+        /// <summary>
+        /// The illuminant
+        /// </summary>
+        public IlluminantType Illuminant { get; private set; } = IlluminantType.D65;
+
+        /// <summary>
+        /// cielab:&lt;L&gt;;&lt;A&gt;;&lt;B&gt;;&lt;Observer&gt;;&lt;Illuminant&gt;
+        /// </summary>
+        /// <remarks>If the observer and the illuminant values were omitted when parsing this model, they are omitted in the resulting string.</remarks>
+        public override string ToString()
+        {
+            var modelBuilder = new StringBuilder($"cielab:{L:0.##};{A:0.##};{B:0.##}");
+            if (!implicitlySpecced)
+                modelBuilder.Append($";{Observer};{(int)Illuminant}");
+            return modelBuilder.ToString();
+        }
 
         /// <summary>
         /// Does the string specifier represent a valid CieLab specifier?
@@ -45,10 +75,17 @@ namespace Terminaux.Colors.Models
         /// <param name="specifier">Specifier that represents a valid CieLab specifier</param>
         /// <param name="checkParts">Whether to check the parts count or not</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
-        public static new bool IsSpecifierValid(string specifier, bool checkParts = false) =>
-            specifier.Contains(";") &&
-            specifier.StartsWith("cielab:") &&
-            (!checkParts || (checkParts && specifier.Substring(7).Split(';').Length == 3));
+        public static new bool IsSpecifierValid(string specifier, bool checkParts = false)
+        {
+            if (!specifier.Contains(";") || !specifier.StartsWith("cielab:"))
+                return false;
+            if (!checkParts)
+                return true;
+
+            // Check the part count now
+            int partLength = specifier.Substring(7).Split(';').Length;
+            return partLength == 5 || partLength == 3;
+        }
 
         /// <summary>
         /// Does the string specifier represent a valid CieLab specifier?
@@ -70,6 +107,15 @@ namespace Terminaux.Colors.Models
             double b = Convert.ToDouble(specifierArray[2]);
             if (b < -128 || b > 128)
                 return false;
+            if (specifierArray.Length == 5)
+            {
+                int observer = Convert.ToInt32(specifierArray[3]);
+                if (observer != 2 && observer != 10)
+                    return false;
+                IlluminantType illuminant = (IlluminantType)Convert.ToInt32(specifierArray[4]);
+                if (illuminant < IlluminantType.A || illuminant > IlluminantType.F12)
+                    return false;
+            }
             return true;
         }
 
@@ -102,14 +148,15 @@ namespace Terminaux.Colors.Models
         /// <param name="specifier">Specifier of CieLab</param>
         /// <returns>An instance of <see cref="CieLab"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public new static CieLab ParseSpecifier(string specifier)
+        public static CieLab ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". Ensure that it's on the correct format: cielab:<red>;<yellow>;<blue>");
+                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". Ensure that it's on the correct format: cielab:<red>;<yellow>;<blue>;<observer>;<illuminant>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(7).Split(';');
-            if (specifierArray.Length == 3)
+            bool implicitlySpecced = specifierArray.Length == 3;
+            if (specifierArray.Length == 5 || implicitlySpecced)
             {
                 // We got the CieLab whole values! First, check to see if we need to filter the color for the color-blind
                 double l = Convert.ToDouble(specifierArray[0]);
@@ -122,12 +169,26 @@ namespace Terminaux.Colors.Models
                 if (b < -128 || b > 128)
                     throw new TerminauxException($"The B value is out of range (-128.0 -> 128.0). {b}");
 
-                // First, we need to convert from CieLab to RGB
-                var CieLab = new CieLab(l, a, b);
+                // Get the observer and the illuminant when needed
+                int observer = 2;
+                IlluminantType illuminant = IlluminantType.D65;
+                if (!implicitlySpecced)
+                {
+                    // We've explicitly specified the observer and the illuminant
+                    observer = Convert.ToInt32(specifierArray[3]);
+                    if (observer != 2 && observer != 10)
+                        throw new TerminauxException($"Observer must be either 2 or 10. {observer}");
+                    illuminant = (IlluminantType)Convert.ToInt32(specifierArray[4]);
+                    if (illuminant < IlluminantType.A || illuminant > IlluminantType.F12)
+                        throw new TerminauxException($"Illuminant is invalid. {(int)illuminant}");
+                }
+
+                // Finally, return the CieLab instance
+                var CieLab = new CieLab(l, a, b, observer, illuminant) { implicitlySpecced = implicitlySpecced };
                 return CieLab;
             }
             else
-                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cielab:<red>;<yellow>;<blue>");
+                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cielab:<red>;<yellow>;<blue>;<observer>;<illuminant>");
         }
 
         /// <inheritdoc/>
@@ -139,15 +200,19 @@ namespace Terminaux.Colors.Models
             other is not null &&
             L == other.L &&
             A == other.A &&
-            B == other.B;
+            B == other.B &&
+            Observer == other.Observer &&
+            Illuminant == other.Illuminant;
 
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = 921976076;
+            int hashCode = -1929569655;
             hashCode = hashCode * -1521134295 + L.GetHashCode();
             hashCode = hashCode * -1521134295 + A.GetHashCode();
             hashCode = hashCode * -1521134295 + B.GetHashCode();
+            hashCode = hashCode * -1521134295 + Observer.GetHashCode();
+            hashCode = hashCode * -1521134295 + Illuminant.GetHashCode();
             return hashCode;
         }
 
@@ -159,8 +224,13 @@ namespace Terminaux.Colors.Models
         public static bool operator !=(CieLab left, CieLab right) =>
             !(left == right);
 
-        internal CieLab(double l, double a, double b) :
-            base(l, a, b, 2, IlluminantType.D65)
-        { }
+        internal CieLab(double l, double a, double b, int observer, IlluminantType illuminant)
+        {
+            L = l;
+            A = a;
+            B = b;
+            Observer = observer;
+            Illuminant = illuminant;
+        }
     }
 }
