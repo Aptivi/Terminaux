@@ -572,7 +572,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     if (!done)
                                         arrowDownHitbox.ProcessPointer(mouse, out done);
                                 }
-                                else if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && choices.Length > selectionChoices)
+                                else if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && choiceText.Count > selectionChoices)
                                 {
                                     arrowSelectUpHitbox.ProcessPointer(mouse, out bool done);
                                     if (!done)

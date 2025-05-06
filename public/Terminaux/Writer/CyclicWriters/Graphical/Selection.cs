@@ -299,7 +299,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             }
 
             // Render the vertical bar
-            if (choices.Count > Height && Height >= 4)
+            if (choiceText.Count > Height && Height >= 4)
             {
                 int finalWidth = Left + Width;
                 var slider = new Slider(CurrentSelection + 1, 0, choices.Count)
