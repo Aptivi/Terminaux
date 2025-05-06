@@ -138,9 +138,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var boundedSidebar = new BoundedText()
                 {
                     Left = interiorWidth + 6,
-                    Top = listStartPosition + 1,
+                    Top = 1,
                     Width = sidebarWidth - 3,
-                    Height = answersPerPage,
+                    Height = answersPerPage + totalHeight + 1,
                     ForegroundColor = settings.TextColor,
                     BackgroundColor = settings.BackgroundColor,
                     Line = showcaseLine,
@@ -149,9 +149,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var sidebarBorder = new Border()
                 {
                     Left = interiorWidth + 5,
-                    Top = listStartPosition + 1,
+                    Top = 1,
                     Width = sidebarWidth - 3,
-                    Height = answersPerPage,
+                    Height = answersPerPage + totalHeight + 1,
                     Color = settings.SeparatorColor,
                     BackgroundColor = settings.BackgroundColor,
                 };
@@ -159,12 +159,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     sidebarBorder.Render() +
                     boundedSidebar.Render()
                 );
-                if (lines.Length > answersPerPage)
+                if (lines.Length > answersPerPage + totalHeight + 1)
                 {
-                    var dataSlider = new Slider(showcaseLine, 0, lines.Length)
+                    var dataSlider = new Slider(showcaseLine, 0, lines.Length - answersPerPage + totalHeight - 1)
                     {
                         Vertical = true,
-                        Height = answersPerPage - 2,
+                        Height = answersPerPage + totalHeight - 1,
                         SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                         SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                         SliderActiveForegroundColor = settings.SeparatorColor,
@@ -172,9 +172,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         SliderBackgroundColor = settings.BackgroundColor,
                     };
                     selectionBuilder.Append(
-                        TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, listStartPosition + 1) +
-                        TextWriterWhereColor.RenderWhere("▼", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
-                        RendererTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, listStartPosition + 3))
+                        TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, 2) +
+                        TextWriterWhereColor.RenderWhere("▼", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage) +
+                        RendererTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, 3))
                     );
                 }
             }
@@ -483,12 +483,15 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
+            string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
 
             // Make hitboxes for arrow presses
             var arrowUpHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + 1), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
             var arrowDownHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + answersPerPage), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-            var sidebarArrowUpHitbox = new PointerHitbox(new(ConsoleWrapper.WindowWidth - 3, listStartPosition + 1), new Action<PointerEventContext>((_) => ShowcaseGoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-            var sidebarArrowDownHitbox = new PointerHitbox(new(ConsoleWrapper.WindowWidth - 3, listStartPosition + answersPerPage), new Action<PointerEventContext>((_) => ShowcaseGoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            var sidebarArrowUpHitbox = new PointerHitbox(new(interiorWidth + 3 + sidebarWidth, 2), new Action<PointerEventContext>((_) => ShowcaseGoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            var sidebarArrowDownHitbox = new PointerHitbox(new(interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage), new Action<PointerEventContext>((_) => ShowcaseGoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
             if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && choiceText.Count > answersPerPage)
             {
                 arrowUpHitbox.ProcessPointer(mouse, out bool done);
@@ -496,7 +499,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     arrowDownHitbox.ProcessPointer(mouse, out done);
                 showcaseLine = 0;
             }
-            else if ((sidebarArrowUpHitbox.IsPointerWithin(mouse) || sidebarArrowDownHitbox.IsPointerWithin(mouse)) && sentenceLineCount > totalHeight && sidebar)
+            else if ((sidebarArrowUpHitbox.IsPointerWithin(mouse) || sidebarArrowDownHitbox.IsPointerWithin(mouse)) && lines.Length > answersPerPage + totalHeight + 1 && sidebar)
             {
                 sidebarArrowUpHitbox.ProcessPointer(mouse, out bool done);
                 if (!done)
