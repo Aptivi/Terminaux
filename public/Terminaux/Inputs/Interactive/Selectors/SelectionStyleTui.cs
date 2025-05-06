@@ -431,6 +431,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void ShowItemInfo(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
+            if (mouse is not null)
+            {
+                if (!UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType) || hitboxType != ChoiceHitboxType.Choice)
+                    return;
+            }
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
             string choiceDesc = highlightedAnswerChoiceInfo.ChoiceDescription;
             if (!string.IsNullOrWhiteSpace(choiceDesc))
