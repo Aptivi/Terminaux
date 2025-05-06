@@ -48,6 +48,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             if (maxWidth > ConsoleWrapper.WindowWidth - 4)
                 maxWidth = ConsoleWrapper.WindowWidth - 4;
             int maxHeight = splitFinalLines.Length + extraHeight;
+            if (extraHeight > 0)
+                maxHeight++;
             if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -65,12 +67,12 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
             var (choiceText, _) = selectionsRendered.GetChoiceParameters();
             int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
-            int selectionReservedHeight = 4 + selectionChoices;
+            int selectionReservedHeight = 2 + selectionChoices;
             (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
 
             // Fill in some selection properties
             int selectionBoxPosX = borderX + 2;
-            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
+            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
             int leftPos = selectionBoxPosX + 1;
             int maxSelectionWidth = choices.Max((ici) => ConsoleChar.EstimateCellWidth($"   {ici.ChoiceName})  {ici.ChoiceTitle}")) + 4;
             maxSelectionWidth = maxSelectionWidth > maxWidth - 4 ? maxSelectionWidth : maxWidth - 4;
@@ -86,12 +88,12 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputModule[] modules, string[] splitFinalLines)
         {
             int selectionChoices = modules.Length > 10 ? 10 : modules.Length;
-            int selectionReservedHeight = 4 + selectionChoices;
+            int selectionReservedHeight = 2 + selectionChoices;
             (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
 
             // Fill in some selection properties
             int selectionBoxPosX = borderX + 2;
-            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
+            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
             int leftPos = selectionBoxPosX + 1;
             int maxSelectionWidth = maxRenderWidth;
             int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;
@@ -158,7 +160,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 TextColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,
                 Settings = settings,
-                Rulers = maxHeightOffset > 0 ? [new RulerInfo(maxHeight - maxHeightOffset, RulerOrientation.Horizontal)] : [],
+                Rulers = maxHeightOffset > 0 ? [new RulerInfo(maxHeight - maxHeightOffset - 1, RulerOrientation.Horizontal)] : [],
             };
             if (!string.IsNullOrEmpty(title))
                 border.Title = (writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth - 9) : title).FormatString(vars);

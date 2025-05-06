@@ -292,17 +292,17 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(2, title, text, settings, InfoBoxTitledSliderColor, BackgroundColor, useColor, ref increment, currIdx, false, true, vars)
+                        InfoBoxTools.RenderText(1, title, text, settings, InfoBoxTitledSliderColor, BackgroundColor, useColor, ref increment, currIdx, false, true, vars)
                     );
 
                     // Now, write the current position on the border of the slider bar and the arrows
-                    int sliderPosX = borderX + 3;
+                    int sliderPosX = borderX + 2;
                     int sliderPosY = borderY + maxHeight - 3;
-                    int maxSliderWidth = maxWidth - 6;
+                    int maxSliderWidth = maxWidth - 4;
                     var slider = new Slider(selected, minPos, maxPos)
                     {
                         Width = maxSliderWidth,
@@ -332,7 +332,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Handle keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
 
                     // Get positions for arrows
                     int arrowLeft = maxWidth + borderX + 1;
@@ -340,9 +340,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int arrowBottom = maxHeight + 1;
 
                     // Get positions for slider buttons
-                    int maxSliderWidth = maxWidth - 6;
+                    int maxSliderWidth = maxWidth - 4;
                     int sliderArrowTop = borderY + maxHeight;
-                    int sliderArrowLeft = borderX + 3;
+                    int sliderArrowLeft = borderX + 2;
                     int sliderArrowRight = sliderArrowLeft + maxSliderWidth + 1;
 
                     // Get positions for infobox buttons

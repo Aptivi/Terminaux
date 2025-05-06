@@ -228,17 +228,17 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(2, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
+                        InfoBoxTools.RenderText(1, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
                     );
 
                     // Render the final result and write the progress bar
-                    int progressPosX = borderX + 3;
+                    int progressPosX = borderX + 1;
                     int progressPosY = borderY + maxHeight - 3;
-                    int maxProgressWidth = maxWidth - 6;
+                    int maxProgressWidth = maxWidth - 2;
                     var progressBar = new SimpleProgress((int)progress, 100)
                     {
                         Width = maxProgressWidth,
