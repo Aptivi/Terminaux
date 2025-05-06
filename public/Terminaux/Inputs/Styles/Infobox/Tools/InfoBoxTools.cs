@@ -34,6 +34,7 @@ using Textify.General;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
@@ -157,6 +158,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 TextColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,
                 Settings = settings,
+                Rulers = maxHeightOffset > 0 ? [new RulerInfo(maxHeight - maxHeightOffset, RulerOrientation.Horizontal)] : [],
             };
             if (!string.IsNullOrEmpty(title))
                 border.Title = (writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth - 9) : title).FormatString(vars);
