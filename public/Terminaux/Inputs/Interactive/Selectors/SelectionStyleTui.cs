@@ -231,56 +231,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void GoUp(PointerEventContext? mouse = null)
+        private void GoUp()
         {
-            // Check the mouse first
-            if (mouse is not null)
-            {
-                int wholeWidth = ConsoleWrapper.WindowWidth - 6;
-                int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
-                int interiorWidth = wholeWidth - sidebarWidth;
-                int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-                int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-                int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
-                int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                int answersPerPage = listEndPosition - 4;
-
-                // Check to see if we're scrolling the mouse wheel or not
-                if (mouse.ButtonPress == PointerButtonPress.Scrolled &&
-                    (mouse.Coordinates.x < 3 || mouse.Coordinates.x >= interiorWidth + 3 ||
-                     mouse.Coordinates.y < listStartPosition + 1 || mouse.Coordinates.y >= listStartPosition + answersPerPage))
-                    return;
-            }
-
-            // Now, we can go up
             highlightedAnswer--;
             if (highlightedAnswer < 1)
                 highlightedAnswer = 1;
             Update(true);
         }
 
-        private void GoDown(PointerEventContext? mouse = null)
+        private void GoDown()
         {
-            // Check the mouse first
-            if (mouse is not null)
-            {
-                int wholeWidth = ConsoleWrapper.WindowWidth - 6;
-                int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
-                int interiorWidth = wholeWidth - sidebarWidth;
-                int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-                int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-                int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
-                int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                int answersPerPage = listEndPosition - 4;
-
-                // Check to see if we're scrolling the mouse wheel or not
-                if (mouse.ButtonPress == PointerButtonPress.Scrolled &&
-                    (mouse.Coordinates.x < 3 || mouse.Coordinates.x >= interiorWidth + 3 ||
-                     mouse.Coordinates.y < listStartPosition + 1 || mouse.Coordinates.y >= listStartPosition + answersPerPage))
-                    return;
-            }
-
-            // Now, we can go down
             highlightedAnswer++;
             if (highlightedAnswer > allAnswers.Count)
                 highlightedAnswer = allAnswers.Count;
@@ -535,6 +495,56 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
+        private void ProcessMouseWheel(PointerEventContext? mouse, bool goingUp = false)
+        {
+            if (mouse is null)
+                return;
+            if (mouse.ButtonPress != PointerButtonPress.Scrolled)
+                return;
+
+            // Get some essential variables
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
+            int interiorWidth = wholeWidth - sidebarWidth;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+            int answersPerPage = listEndPosition - 4;
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
+            string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
+
+            // Check to see if we're scrolling the mouse wheel or not
+            if (mouse.Coordinates.x < 3 || mouse.Coordinates.x >= interiorWidth + 3 ||
+                mouse.Coordinates.y < listStartPosition + 1 || mouse.Coordinates.y >= listStartPosition + answersPerPage)
+            {
+                // It's possible that the user may be scrolling in the sidebar, but check the coordinates
+                if (!sidebar)
+                    return;
+                if (mouse.Coordinates.x < interiorWidth + 6 || mouse.Coordinates.x >= interiorWidth + sidebarWidth + 3 ||
+                    mouse.Coordinates.y < 2 || mouse.Coordinates.y >= listStartPosition + answersPerPage)
+                    return;
+
+                // Check the lines
+                if (lines.Length <= answersPerPage)
+                    return;
+
+                // Now, scroll the showcase if possible
+                if (goingUp)
+                    ShowcaseGoUp();
+                else
+                    ShowcaseGoDown();
+            }
+            else
+            {
+                if (goingUp)
+                    GoUp();
+                else
+                    GoDown();
+            }
+        }
+
         private bool UpdateSelectedIndexWithMousePos(PointerEventContext? mouse, out ChoiceHitboxType hitboxType)
         {
             hitboxType = ChoiceHitboxType.Choice;
@@ -623,8 +633,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.bindings[14], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.showBindings[3], Help));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, mouse) => GoUp(mouse)));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, mouse) => GoDown(mouse)));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, mouse) => ProcessMouseWheel(mouse, true)));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, mouse) => ProcessMouseWheel(mouse)));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[3], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[4], (_, _, mouse) => UpdateSelectedIndexWithMousePos(mouse, out _)));
