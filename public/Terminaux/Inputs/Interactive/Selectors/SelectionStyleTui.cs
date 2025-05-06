@@ -504,7 +504,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
             else
             {
-                showcaseLine = 0;
                 int oldIndex = highlightedAnswer;
                 if (UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType))
                 {
@@ -524,6 +523,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                                 break;
                             case ChoiceHitboxType.Choice:
                                 ModifyChoice(ui, key, mouse);
+                                if (highlightedAnswer != oldIndex)
+                                    showcaseLine = 0;
                                 break;
                         }
                     }
