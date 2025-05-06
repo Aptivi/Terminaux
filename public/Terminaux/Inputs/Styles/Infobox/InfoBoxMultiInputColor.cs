@@ -430,7 +430,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 else
                                 {
                                     UpdatePositionBasedOnMouse(mouse);
-                                    bail = true;
+                                    modules[currentSelection].ProcessInput();
                                 }
                                 break;
                             case PointerButton.Right:
