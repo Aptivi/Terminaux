@@ -29,6 +29,7 @@ using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
@@ -466,108 +467,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         }
 
         private void ProcessSelectAll(int selectionMode) =>
-            ProcessSelectionRequest(selectionMode, highlightedAnswer, categories, ref selectedAnswers);
-
-        private static void ProcessSelectionRequest(int mode, int choiceNum, InputChoiceCategoryInfo[] categories, ref List<int> SelectedAnswers)
-        {
-            List<InputChoiceInfo> allAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
-            var choiceGroup = SelectionInputTools.GetCategoryGroupFrom(choiceNum, categories);
-            var enabledAnswers = allAnswers.Select((ici, idx) => (ici, idx)).Where((ici) => !ici.ici.ChoiceDisabled).Select((tuple) => tuple.idx).ToArray();
-            switch (mode)
-            {
-                case 1:
-                    {
-                        var category = choiceGroup.Item1;
-                        var group = choiceGroup.Item2;
-                        var choices = group.Choices;
-                        List<int> indexes = [];
-                        for (int i = 0; i < allAnswers.Count; i++)
-                        {
-                            var answer = allAnswers[i];
-                            foreach (var choice in choices)
-                            {
-                                if (choice == answer && !choice.ChoiceDisabled)
-                                    indexes.Add(i);
-                            }
-                        }
-
-                        bool clear = DetermineClear(indexes, SelectedAnswers);
-                        if (clear)
-                        {
-                            foreach (int index in indexes)
-                                SelectedAnswers.Remove(index);
-                        }
-                        else
-                        {
-                            foreach (int index in indexes)
-                            {
-                                if (!SelectedAnswers.Contains(index))
-                                    SelectedAnswers.Add(index);
-                            }
-                        }
-                    }
-                    break;
-                case 2:
-                    {
-                        var category = choiceGroup.Item1;
-                        var groups = category.Groups;
-                        List<int> indexes = [];
-                        foreach (var group in groups)
-                        {
-                            var choices = group.Choices;
-                            for (int i = 0; i < allAnswers.Count; i++)
-                            {
-                                var answer = allAnswers[i];
-                                foreach (var choice in choices)
-                                {
-                                    if (choice == answer && !choice.ChoiceDisabled)
-                                        indexes.Add(i);
-                                }
-                            }
-                        }
-
-                        bool clear = DetermineClear(indexes, SelectedAnswers);
-                        if (clear)
-                        {
-                            foreach (int index in indexes)
-                                SelectedAnswers.Remove(index);
-                        }
-                        else
-                        {
-                            foreach (int index in indexes)
-                            {
-                                if (!SelectedAnswers.Contains(index))
-                                    SelectedAnswers.Add(index);
-                            }
-                        }
-                    }
-                    break;
-                case 3:
-                    bool unselect = SelectedAnswers.Count == enabledAnswers.Count();
-                    if (unselect)
-                        SelectedAnswers.Clear();
-                    else if (SelectedAnswers.Count == 0)
-                        SelectedAnswers.AddRange(enabledAnswers);
-                    else
-                    {
-                        // We need to use Except here to avoid wasting CPU cycles, since we could be dealing with huge data.
-                        var unselected = enabledAnswers.Except(SelectedAnswers);
-                        SelectedAnswers.AddRange(unselected);
-                    }
-                    break;
-            }
-        }
-
-        private static bool DetermineClear(List<int> indexes, List<int> selectedAnswers)
-        {
-            int found = 0;
-            foreach (int selectedAnswer in selectedAnswers)
-            {
-                if (indexes.Contains(selectedAnswer))
-                    found++;
-            }
-            return found == indexes.Count;
-        }
+            InfoBoxTools.ProcessSelectionRequest(selectionMode, highlightedAnswer, categories, ref selectedAnswers);
 
         private void ProcessLeftClick(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
@@ -605,6 +505,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else
             {
                 showcaseLine = 0;
+                int oldIndex = highlightedAnswer;
                 if (UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType))
                 {
                     if (!multiple)
@@ -615,9 +516,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         {
                             case ChoiceHitboxType.Category:
                                 ProcessSelectAll(2);
+                                highlightedAnswer = oldIndex;
                                 break;
                             case ChoiceHitboxType.Group:
                                 ProcessSelectAll(1);
+                                highlightedAnswer = oldIndex;
                                 break;
                             case ChoiceHitboxType.Choice:
                                 ModifyChoice(ui, key, mouse);
@@ -667,9 +570,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Depending on the hitbox parameter, we need to act accordingly
             var highlightedAnswerChoiceInfo = allAnswers[hitbox.related - 1];
-            if (highlightedAnswerChoiceInfo.ChoiceDisabled)
+            if (highlightedAnswerChoiceInfo.ChoiceDisabled && hitbox.type == ChoiceHitboxType.Choice)
                 return false;
-            highlightedAnswer = hitbox.related;
+            if (!highlightedAnswerChoiceInfo.ChoiceDisabled || hitbox.type != ChoiceHitboxType.Choice)
+                highlightedAnswer = hitbox.related;
             hitboxType = hitbox.type;
             return true;
         }

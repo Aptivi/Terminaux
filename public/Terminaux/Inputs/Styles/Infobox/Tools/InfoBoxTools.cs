@@ -276,11 +276,113 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             // Depending on the hitbox parameter, we need to act accordingly
             List<InputChoiceInfo> allAnswers = SelectionInputTools.GetChoicesFromCategories(selections);
             var highlightedAnswerChoiceInfo = allAnswers[hitbox.related - 1];
-            if (highlightedAnswerChoiceInfo.ChoiceDisabled)
+            if (highlightedAnswerChoiceInfo.ChoiceDisabled && hitbox.type == ChoiceHitboxType.Choice)
                 return false;
-            currentSelection = hitbox.related - 1;
+            if (!highlightedAnswerChoiceInfo.ChoiceDisabled || hitbox.type != ChoiceHitboxType.Choice)
+                currentSelection = hitbox.related - 1;
             hitboxType = hitbox.type;
             return true;
+        }
+
+        internal static void ProcessSelectionRequest(int mode, int choiceNum, InputChoiceCategoryInfo[] categories, ref List<int> SelectedAnswers)
+        {
+            List<InputChoiceInfo> allAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
+            var choiceGroup = SelectionInputTools.GetCategoryGroupFrom(choiceNum, categories);
+            var enabledAnswers = allAnswers.Select((ici, idx) => (ici, idx)).Where((ici) => !ici.ici.ChoiceDisabled).Select((tuple) => tuple.idx).ToArray();
+            switch (mode)
+            {
+                case 1:
+                    {
+                        var category = choiceGroup.Item1;
+                        var group = choiceGroup.Item2;
+                        var choices = group.Choices;
+                        List<int> indexes = [];
+                        for (int i = 0; i < allAnswers.Count; i++)
+                        {
+                            var answer = allAnswers[i];
+                            foreach (var choice in choices)
+                            {
+                                if (choice == answer && !choice.ChoiceDisabled)
+                                    indexes.Add(i);
+                            }
+                        }
+
+                        bool clear = DetermineClear(indexes, SelectedAnswers);
+                        if (clear)
+                        {
+                            foreach (int index in indexes)
+                                SelectedAnswers.Remove(index);
+                        }
+                        else
+                        {
+                            foreach (int index in indexes)
+                            {
+                                if (!SelectedAnswers.Contains(index))
+                                    SelectedAnswers.Add(index);
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    {
+                        var category = choiceGroup.Item1;
+                        var groups = category.Groups;
+                        List<int> indexes = [];
+                        foreach (var group in groups)
+                        {
+                            var choices = group.Choices;
+                            for (int i = 0; i < allAnswers.Count; i++)
+                            {
+                                var answer = allAnswers[i];
+                                foreach (var choice in choices)
+                                {
+                                    if (choice == answer && !choice.ChoiceDisabled)
+                                        indexes.Add(i);
+                                }
+                            }
+                        }
+
+                        bool clear = DetermineClear(indexes, SelectedAnswers);
+                        if (clear)
+                        {
+                            foreach (int index in indexes)
+                                SelectedAnswers.Remove(index);
+                        }
+                        else
+                        {
+                            foreach (int index in indexes)
+                            {
+                                if (!SelectedAnswers.Contains(index))
+                                    SelectedAnswers.Add(index);
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    bool unselect = SelectedAnswers.Count == enabledAnswers.Count();
+                    if (unselect)
+                        SelectedAnswers.Clear();
+                    else if (SelectedAnswers.Count == 0)
+                        SelectedAnswers.AddRange(enabledAnswers);
+                    else
+                    {
+                        // We need to use Except here to avoid wasting CPU cycles, since we could be dealing with huge data.
+                        var unselected = enabledAnswers.Except(SelectedAnswers);
+                        SelectedAnswers.AddRange(unselected);
+                    }
+                    break;
+            }
+        }
+
+        private static bool DetermineClear(List<int> indexes, List<int> selectedAnswers)
+        {
+            int found = 0;
+            foreach (int selectedAnswer in selectedAnswers)
+            {
+                if (indexes.Contains(selectedAnswer))
+                    found++;
+            }
+            return found == indexes.Count;
         }
     }
 }

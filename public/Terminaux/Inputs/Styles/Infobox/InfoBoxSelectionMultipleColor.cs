@@ -594,15 +594,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 else
                                 {
+                                    int oldIndex = currentSelection;
                                     if (InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection))
                                     {
                                         switch (hitboxType)
                                         {
                                             case ChoiceHitboxType.Category:
-                                                //ProcessSelectAll(2);
+                                                InfoBoxTools.ProcessSelectionRequest(2, currentSelection + 1, selections, ref selectedChoices);
+                                                currentSelection = oldIndex;
                                                 break;
                                             case ChoiceHitboxType.Group:
-                                                //ProcessSelectAll(1);
+                                                InfoBoxTools.ProcessSelectionRequest(1, currentSelection + 1, selections, ref selectedChoices);
+                                                currentSelection = oldIndex;
                                                 break;
                                             case ChoiceHitboxType.Choice:
                                                 if (!selectedChoices.Remove(currentSelection))
