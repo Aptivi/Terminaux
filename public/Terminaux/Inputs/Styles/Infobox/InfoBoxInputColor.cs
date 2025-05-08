@@ -369,18 +369,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(5, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
+                        InfoBoxTools.RenderText(3, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
                     );
 
                     // Write the input bar and set the cursor position
-                    int maxInputWidth = maxWidth - 6;
-                    int inputPosX = borderX + 3;
+                    int maxInputWidth = maxWidth - 4;
+                    int inputPosX = borderX + 2;
                     int inputEndPosX = inputPosX + maxInputWidth;
-                    int inputPosY = borderY + maxHeight - 3;
+                    int inputPosY = borderY + maxHeight - 2;
                     rightMargin = Console.WindowWidth - inputEndPosX - 2;
                     var border = new Border()
                     {

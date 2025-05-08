@@ -26,6 +26,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
@@ -188,6 +189,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public Color ShadowColor { get; set; } = ConsoleColors.Grey;
 
         /// <summary>
+        /// Rulers that divide the box frame
+        /// </summary>
+        public RulerInfo[] Rulers { get; set; } = [];
+
+        /// <summary>
         /// Renders a border
         /// </summary>
         /// <returns>Rendered border that will be used by the renderer</returns>
@@ -212,6 +218,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     UseColors = UseColors,
                     DropShadow = DropShadow,
                     ShadowColor = ShadowColor,
+                    Rulers = Rulers,
                 };
                 var box = new Box()
                 {
@@ -229,8 +236,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     boxFrame.TitleColor = TextColor;
                 }
                 border.Append(
-                    boxFrame.Render() +
-                    box.Render()
+                    box.Render() +
+                    boxFrame.Render()
                 );
 
                 // Wrap the sentences to fit the box

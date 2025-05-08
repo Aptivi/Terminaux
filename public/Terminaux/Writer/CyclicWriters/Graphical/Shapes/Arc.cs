@@ -119,7 +119,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                     // Now, go to the next pixel
                     if (d >= 2 * x)
                     {
-                        d -= 2 * x - 1;
+                        d -= 2 * x + 1;
                         x++;
                     }
                     else if (d < 2 * (r - y))

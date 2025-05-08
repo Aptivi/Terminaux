@@ -28,6 +28,7 @@ using Terminaux.Console.Fixtures.Cases.Presentations;
 using Terminaux.Console.Fixtures.Cases.Reader;
 using Terminaux.Console.Fixtures.Cases.Screens;
 using Terminaux.Console.Fixtures.Cases.Shell;
+using Terminaux.Console.Fixtures.Cases.Spectre;
 using Terminaux.Console.Fixtures.Cases.Tui;
 using Terminaux.Console.Fixtures.Cases.Writer;
 
@@ -186,6 +187,7 @@ namespace Terminaux.Console.Fixtures
             new TestAsciinemaV1NoResize(),
             new TestAsciinemaV2(),
             new TestAsciinemaV2NoResize(),
+            new TestBoxFrame(),
 
             // Input
             new TestInputSelection(),
@@ -332,6 +334,7 @@ namespace Terminaux.Console.Fixtures
             new TestScreenPartVisibility(),
             new TestScreenBufferVisibility(),
             new TestScreenCyclic(),
+            new TestScreenPosCanvas(),
 
             // Presentation
             new TestPresentation(),
@@ -381,6 +384,10 @@ namespace Terminaux.Console.Fixtures
 
             // Shell
             new TestShell(),
+
+            // Spectre
+            new MarkupTranslation(),
+            new BoxFrameTranslation(),
         ];
     }
 }

@@ -33,6 +33,8 @@ using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using Textify.General;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
+using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
@@ -46,6 +48,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             if (maxWidth > ConsoleWrapper.WindowWidth - 4)
                 maxWidth = ConsoleWrapper.WindowWidth - 4;
             int maxHeight = splitFinalLines.Length + extraHeight;
+            if (extraHeight > 0)
+                maxHeight++;
             if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -63,12 +67,12 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
             var (choiceText, _) = selectionsRendered.GetChoiceParameters();
             int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
-            int selectionReservedHeight = 4 + selectionChoices;
+            int selectionReservedHeight = 2 + selectionChoices;
             (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
 
             // Fill in some selection properties
             int selectionBoxPosX = borderX + 2;
-            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
+            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
             int leftPos = selectionBoxPosX + 1;
             int maxSelectionWidth = choices.Max((ici) => ConsoleChar.EstimateCellWidth($"   {ici.ChoiceName})  {ici.ChoiceTitle}")) + 4;
             maxSelectionWidth = maxSelectionWidth > maxWidth - 4 ? maxSelectionWidth : maxWidth - 4;
@@ -84,12 +88,12 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputModule[] modules, string[] splitFinalLines)
         {
             int selectionChoices = modules.Length > 10 ? 10 : modules.Length;
-            int selectionReservedHeight = 4 + selectionChoices;
+            int selectionReservedHeight = 2 + selectionChoices;
             (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
 
             // Fill in some selection properties
             int selectionBoxPosX = borderX + 2;
-            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
+            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
             int leftPos = selectionBoxPosX + 1;
             int maxSelectionWidth = maxRenderWidth;
             int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;
@@ -156,6 +160,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 TextColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,
                 Settings = settings,
+                Rulers = maxHeightOffset > 0 ? [new RulerInfo(maxHeight - maxHeightOffset - 1, RulerOrientation.Horizontal)] : [],
             };
             if (!string.IsNullOrEmpty(title))
                 border.Title = (writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth - 9) : title).FormatString(vars);
@@ -265,12 +270,119 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             if (mouse.Coordinates.y < selectionBoxPosY || mouse.Coordinates.y > selectionBoxPosY + selectionChoices - 1)
                 return false;
             int listIndex = mouse.Coordinates.y - selectionBoxPosY;
-            var hitbox = selectionsRendered.GenerateSelectionHitbox(listIndex);
+            if (!selectionsRendered.CanGenerateSelectionHitbox(listIndex, out var hitbox))
+                return false;
 
             // Depending on the hitbox parameter, we need to act accordingly
-            currentSelection = hitbox.related - 1;
+            List<InputChoiceInfo> allAnswers = SelectionInputTools.GetChoicesFromCategories(selections);
+            var highlightedAnswerChoiceInfo = allAnswers[hitbox.related - 1];
+            if (highlightedAnswerChoiceInfo.ChoiceDisabled && hitbox.type == ChoiceHitboxType.Choice)
+                return false;
+            if (!highlightedAnswerChoiceInfo.ChoiceDisabled || hitbox.type != ChoiceHitboxType.Choice)
+                currentSelection = hitbox.related - 1;
             hitboxType = hitbox.type;
             return true;
+        }
+
+        internal static void ProcessSelectionRequest(int mode, int choiceNum, InputChoiceCategoryInfo[] categories, ref List<int> SelectedAnswers)
+        {
+            List<InputChoiceInfo> allAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
+            var choiceGroup = SelectionInputTools.GetCategoryGroupFrom(choiceNum, categories);
+            var enabledAnswers = allAnswers.Select((ici, idx) => (ici, idx)).Where((ici) => !ici.ici.ChoiceDisabled).Select((tuple) => tuple.idx).ToArray();
+            switch (mode)
+            {
+                case 1:
+                    {
+                        var category = choiceGroup.Item1;
+                        var group = choiceGroup.Item2;
+                        var choices = group.Choices;
+                        List<int> indexes = [];
+                        for (int i = 0; i < allAnswers.Count; i++)
+                        {
+                            var answer = allAnswers[i];
+                            foreach (var choice in choices)
+                            {
+                                if (choice == answer && !choice.ChoiceDisabled)
+                                    indexes.Add(i);
+                            }
+                        }
+
+                        bool clear = DetermineClear(indexes, SelectedAnswers);
+                        if (clear)
+                        {
+                            foreach (int index in indexes)
+                                SelectedAnswers.Remove(index);
+                        }
+                        else
+                        {
+                            foreach (int index in indexes)
+                            {
+                                if (!SelectedAnswers.Contains(index))
+                                    SelectedAnswers.Add(index);
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    {
+                        var category = choiceGroup.Item1;
+                        var groups = category.Groups;
+                        List<int> indexes = [];
+                        foreach (var group in groups)
+                        {
+                            var choices = group.Choices;
+                            for (int i = 0; i < allAnswers.Count; i++)
+                            {
+                                var answer = allAnswers[i];
+                                foreach (var choice in choices)
+                                {
+                                    if (choice == answer && !choice.ChoiceDisabled)
+                                        indexes.Add(i);
+                                }
+                            }
+                        }
+
+                        bool clear = DetermineClear(indexes, SelectedAnswers);
+                        if (clear)
+                        {
+                            foreach (int index in indexes)
+                                SelectedAnswers.Remove(index);
+                        }
+                        else
+                        {
+                            foreach (int index in indexes)
+                            {
+                                if (!SelectedAnswers.Contains(index))
+                                    SelectedAnswers.Add(index);
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    bool unselect = SelectedAnswers.Count == enabledAnswers.Count();
+                    if (unselect)
+                        SelectedAnswers.Clear();
+                    else if (SelectedAnswers.Count == 0)
+                        SelectedAnswers.AddRange(enabledAnswers);
+                    else
+                    {
+                        // We need to use Except here to avoid wasting CPU cycles, since we could be dealing with huge data.
+                        var unselected = enabledAnswers.Except(SelectedAnswers);
+                        SelectedAnswers.AddRange(unselected);
+                    }
+                    break;
+            }
+        }
+
+        private static bool DetermineClear(List<int> indexes, List<int> selectedAnswers)
+        {
+            int found = 0;
+            foreach (int selectedAnswer in selectedAnswers)
+            {
+                if (indexes.Contains(selectedAnswer))
+                    found++;
+            }
+            return found == indexes.Count;
         }
     }
 }

@@ -57,167 +57,44 @@ namespace Terminaux.Reader
             state is not null;
 
         /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(bool interruptible = true) =>
-            ReadPassword(GlobalReaderSettings.PasswordMaskChar, interruptible);
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="mask">Password mask character</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(char mask, bool interruptible = true)
-        {
-            var settings = new TermReaderSettings(GlobalReaderSettings)
-            {
-                PasswordMaskChar = mask
-            };
-            return Read("", "", settings, true, false, interruptible);
-        }
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="settings">Settings containing reader-related settings</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(TermReaderSettings settings, bool interruptible = true) =>
-            ReadPassword(settings.PasswordMaskChar, settings, interruptible);
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="mask">Password mask character</param>
-        /// <param name="settings">Settings containing reader-related settings</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(char mask, TermReaderSettings settings, bool interruptible = true)
-        {
-            settings.PasswordMaskChar = mask;
-            return Read("", "", settings, true, false, interruptible);
-        }
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="inputPrompt">The input to be read</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(string inputPrompt, bool interruptible = true) =>
-            ReadPassword(GlobalReaderSettings.PasswordMaskChar, inputPrompt, interruptible);
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="mask">Password mask character</param>
-        /// <param name="inputPrompt">The input to be read</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(char mask, string inputPrompt, bool interruptible = true)
-        {
-            var settings = new TermReaderSettings(GlobalReaderSettings)
-            {
-                PasswordMaskChar = mask
-            };
-            return Read(() => inputPrompt, "", settings, true, false, interruptible);
-        }
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="inputPrompt">The input to be read</param>
-        /// <param name="settings">Settings containing reader-related settings</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(string inputPrompt, TermReaderSettings settings, bool interruptible = true) =>
-            ReadPassword(settings.PasswordMaskChar, inputPrompt, settings, interruptible);
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="mask">Password mask character</param>
-        /// <param name="inputPrompt">The input to be read</param>
-        /// <param name="settings">Settings containing reader-related settings</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(char mask, string inputPrompt, TermReaderSettings settings, bool interruptible = true)
-        {
-            settings.PasswordMaskChar = mask;
-            return Read(() => inputPrompt, "", settings, true, false, interruptible);
-        }
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(Func<string> inputPrompt, bool interruptible = true) =>
-            ReadPassword(GlobalReaderSettings.PasswordMaskChar, inputPrompt, interruptible);
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="mask">Password mask character</param>
-        /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(char mask, Func<string> inputPrompt, bool interruptible = true)
-        {
-            var settings = new TermReaderSettings(GlobalReaderSettings)
-            {
-                PasswordMaskChar = mask
-            };
-            return Read(inputPrompt, "", settings, true, false, interruptible);
-        }
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
-        /// <param name="settings">Settings containing reader-related settings</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(Func<string> inputPrompt, TermReaderSettings settings, bool interruptible = true) =>
-            ReadPassword(settings.PasswordMaskChar, inputPrompt, settings, interruptible);
-
-        /// <summary>
-        /// Reads the input with password character masking
-        /// </summary>
-        /// <param name="mask">Password mask character</param>
-        /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
-        /// <param name="settings">Settings containing reader-related settings</param>
-        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(char mask, Func<string> inputPrompt, TermReaderSettings settings, bool interruptible = true)
-        {
-            settings.PasswordMaskChar = mask;
-            return Read(inputPrompt, "", settings, true, false, interruptible);
-        }
-
-        /// <summary>
         /// Reads the input
         /// </summary>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(bool interruptible = true) =>
-            Read("", "", GlobalReaderSettings, false, false, interruptible);
+        public static string Read(bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
+            Read("", "", GlobalReaderSettings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="settings">Settings containing reader-related settings</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(TermReaderSettings settings, bool interruptible = true) =>
-            Read("", "", settings, false, false, interruptible);
+        public static string Read(TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
+            Read("", "", settings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(string inputPrompt, bool interruptible = true) =>
-            Read(inputPrompt, "", GlobalReaderSettings, false, false, interruptible);
+        public static string Read(string inputPrompt, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
+            Read(inputPrompt, "", GlobalReaderSettings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="settings">Settings containing reader-related settings</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(string inputPrompt, TermReaderSettings settings, bool interruptible = true) =>
-            Read(inputPrompt, "", settings, false, false, interruptible);
+        public static string Read(string inputPrompt, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
+            Read(inputPrompt, "", settings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
@@ -246,18 +123,22 @@ namespace Terminaux.Reader
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(Func<string> inputPrompt, bool interruptible = true) =>
-            Read(inputPrompt, "", GlobalReaderSettings, false, false, interruptible);
+        public static string Read(Func<string> inputPrompt, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
+            Read(inputPrompt, "", GlobalReaderSettings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
         /// <param name="settings">Settings containing reader-related settings</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(Func<string> inputPrompt, TermReaderSettings settings, bool interruptible = true) =>
-            Read(inputPrompt, "", settings, false, false, interruptible);
+        public static string Read(Func<string> inputPrompt, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
+            Read(inputPrompt, "", settings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
@@ -285,34 +166,42 @@ namespace Terminaux.Reader
         /// <summary>
         /// Reads the input
         /// </summary>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static T Read<T>(bool interruptible = true) where T : IConvertible =>
-            Read<T>("", "", GlobalReaderSettings, false, false, interruptible);
+        public static T Read<T>(bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible =>
+            Read<T>("", "", GlobalReaderSettings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="settings">Settings containing reader-related settings</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static T Read<T>(TermReaderSettings settings, bool interruptible = true) where T : IConvertible =>
-            Read<T>("", "", settings, false, false, interruptible);
+        public static T Read<T>(TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible =>
+            Read<T>("", "", settings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static T Read<T>(string inputPrompt, bool interruptible = true) where T : IConvertible =>
-            Read<T>(inputPrompt, "", GlobalReaderSettings, false, false, interruptible);
+        public static T Read<T>(string inputPrompt, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible =>
+            Read<T>(inputPrompt, "", GlobalReaderSettings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="settings">Settings containing reader-related settings</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static T Read<T>(string inputPrompt, TermReaderSettings settings, bool interruptible = true) where T : IConvertible =>
-            Read<T>(inputPrompt, "", settings, false, false, interruptible);
+        public static T Read<T>(string inputPrompt, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible =>
+            Read<T>(inputPrompt, "", settings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
@@ -341,18 +230,22 @@ namespace Terminaux.Reader
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static T Read<T>(Func<string> inputPrompt, bool interruptible = true) where T : IConvertible =>
-            Read<T>(inputPrompt, "", GlobalReaderSettings, false, false, interruptible);
+        public static T Read<T>(Func<string> inputPrompt, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible =>
+            Read<T>(inputPrompt, "", GlobalReaderSettings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
         /// <param name="settings">Settings containing reader-related settings</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static T Read<T>(Func<string> inputPrompt, TermReaderSettings settings, bool interruptible = true) where T : IConvertible =>
-            Read<T>(inputPrompt, "", settings, false, false, interruptible);
+        public static T Read<T>(Func<string> inputPrompt, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible =>
+            Read<T>(inputPrompt, "", settings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input

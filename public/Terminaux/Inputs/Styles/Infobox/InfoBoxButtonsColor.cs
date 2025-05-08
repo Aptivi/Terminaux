@@ -286,11 +286,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
+                        InfoBoxTools.RenderText(3, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
                     );
 
                     // Get the button width list
@@ -300,7 +300,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Place the buttons from the right for familiarity
                     int buttonPanelPosX = borderX + 2;
-                    int buttonPanelPosY = borderY + maxHeight - 3;
+                    int buttonPanelPosY = borderY + maxHeight - 2;
                     for (int i = 1; i <= buttons.Length; i++)
                     {
                         // Get the text and the button position
@@ -353,8 +353,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Wait for keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
-                    maxHeight -= 5;
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
+                    maxHeight -= 3;
 
                     // Get positions for arrows
                     int arrowLeft = maxWidth + borderX + 1;
@@ -539,7 +539,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
             currIdx += level;
             if (currIdx > splitFinalLines.Length - maxHeight)
                 currIdx = splitFinalLines.Length - maxHeight;
@@ -550,9 +550,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static PointerHitbox[] GetButtonHitboxes(string text, object[] vars, InputChoiceInfo[] buttons)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
             int buttonPanelPosX = borderX + 2;
-            int buttonPanelPosY = borderY + maxHeight - 3;
+            int buttonPanelPosY = borderY + maxHeight - 2;
             int maxButtonPanelWidth = maxWidth - 4;
             int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
             List<PointerHitbox> hitboxes = [];
@@ -589,7 +589,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static int[] GetButtonWidths(string text, object[] vars, InputChoiceInfo[] buttons)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, _, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+            var (maxWidth, _, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
             int maxButtonPanelWidth = maxWidth - 4;
             int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
             List<int> buttonWidths = [];

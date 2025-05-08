@@ -51,40 +51,31 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
         ];
 
         /// <summary>
-        /// Parses the markup representation
+        /// Gets a list of markup information instances
         /// </summary>
         /// <param name="mark">Markup instance</param>
-        /// <param name="foregroundColor">Foreground color of the initial markup color. Overrides the initial format argument.</param>
-        /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
-        /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
-        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
-        public static string ParseMarkup(Mark? mark, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
+        /// <returns>Array of parsed markup representations</returns>
+        public static MarkupInfo[] GetMarkupInfo(Mark? mark)
         {
             if (mark is null)
                 throw new TerminauxException("Markup is not specified.");
-            return ParseMarkup(mark.Markup, foregroundColor, backgroundColor, initialFormat);
+            return GetMarkupInfo(mark.Markup);
         }
 
         /// <summary>
-        /// Parses the markup representation
+        /// Gets a list of markup information instances
         /// </summary>
         /// <param name="markup">Markup representation</param>
-        /// <param name="foregroundColor">Foreground color of the initial markup color. Overrides the initial format argument.</param>
-        /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
-        /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
-        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
-        public static string ParseMarkup(string markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "") =>
-            ParseMarkup((WideString)markup, foregroundColor, backgroundColor, initialFormat);
+        /// <returns>Array of parsed markup representations</returns>
+        public static MarkupInfo[] GetMarkupInfo(string markup) =>
+            GetMarkupInfo((WideString)markup);
 
         /// <summary>
-        /// Parses the markup representation
+        /// Gets a list of markup information instances
         /// </summary>
         /// <param name="markup">Markup representation</param>
-        /// <param name="foregroundColor">Foreground color of the initial markup color. Overrides the initial format argument.</param>
-        /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
-        /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
-        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
-        public static string ParseMarkup(WideString markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
+        /// <returns>Array of parsed markup representations</returns>
+        public static MarkupInfo[] GetMarkupInfo(WideString markup)
         {
             // Markup is inspired by BBCode and can have escaped starting and ending sequence characters.
             var finalResult = new StringBuilder(markup);
@@ -165,7 +156,48 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                     }
                 }
             }
-            sequences = [.. sequences.OrderBy((mi) => mi.entranceIndex)];
+            return [.. sequences.OrderBy((mi) => mi.entranceIndex)];
+        }
+
+        /// <summary>
+        /// Parses the markup representation
+        /// </summary>
+        /// <param name="mark">Markup instance</param>
+        /// <param name="foregroundColor">Foreground color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
+        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
+        public static string ParseMarkup(Mark? mark, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
+        {
+            if (mark is null)
+                throw new TerminauxException("Markup is not specified.");
+            return ParseMarkup(mark.Markup, foregroundColor, backgroundColor, initialFormat);
+        }
+
+        /// <summary>
+        /// Parses the markup representation
+        /// </summary>
+        /// <param name="markup">Markup representation</param>
+        /// <param name="foregroundColor">Foreground color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
+        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
+        public static string ParseMarkup(string markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "") =>
+            ParseMarkup((WideString)markup, foregroundColor, backgroundColor, initialFormat);
+
+        /// <summary>
+        /// Parses the markup representation
+        /// </summary>
+        /// <param name="markup">Markup representation</param>
+        /// <param name="foregroundColor">Foreground color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="backgroundColor">Background color of the initial markup color. Overrides the initial format argument.</param>
+        /// <param name="initialFormat">Initial format. Overrides the foreground and the background color arguments.</param>
+        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
+        public static string ParseMarkup(WideString markup, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
+        {
+            // Markup is inspired by BBCode and can have escaped starting and ending sequence characters.
+            var finalResult = new StringBuilder(markup);
+            MarkupInfo[] sequences = GetMarkupInfo(markup);
 
             // Now that we've got properties, split them to process them
             Dictionary<string, IEffect> effectNames = effects.ToDictionary((effect) => effect.MarkupTag, (effect) => effect);
@@ -182,7 +214,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             string resetAll = (TermInfoDesc.Current?.ExitAttributeMode?.Value ?? "") + finalFormat;
             for (int i = finalResult.Length - 1; i >= 0; i--)
             {
-                for (int seq = 0; seq < sequences.Count; seq++)
+                for (int seq = 0; seq < sequences.Length; seq++)
                 {
                     MarkupInfo? sequence = sequences[seq];
                     bool isEntrance = i == sequence.entranceIndex;

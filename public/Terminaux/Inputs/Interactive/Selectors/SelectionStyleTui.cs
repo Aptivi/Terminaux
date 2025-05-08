@@ -24,13 +24,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
@@ -46,6 +49,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private bool showCount;
         private bool sidebar;
         private List<int> selectedAnswers = [];
+        private List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText = [];
         private readonly string question = "";
         private readonly InputChoiceCategoryInfo[] answers = [];
         private readonly SelectionStyleSettings settings = SelectionStyleSettings.GlobalSettings;
@@ -62,11 +66,25 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Get choice numbers and some positions
             int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-            int answersPerPage = listEndPosition - 5;
+            int answersPerPage = listEndPosition - 4;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
             var selectionBuilder = new StringBuilder();
+
+            // Prepare the border
+            var border = new BoxFrame()
+            {
+                Left = 2,
+                Top = 1,
+                Width = interiorWidth,
+                Height = answersPerPage + listStartPosition - 1,
+                FrameColor = settings.SeparatorColor,
+                BackgroundColor = settings.BackgroundColor,
+                Rulers = sentenceLineCount > 0 ? [new(totalHeight, RulerOrientation.Horizontal)] : [],
+            };
+            selectionBuilder.Append(border.Render());
 
             // Write the question in a bordered box.
             if (sentenceLineCount > 0)
@@ -76,54 +94,28 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Left = 3,
                     Top = 1,
                     Width = wholeWidth,
-                    Height = sentenceLineCount > 5 ? 5 : sentenceLineCount,
+                    Height = totalHeight,
                     ForegroundColor = settings.QuestionColor,
                     BackgroundColor = settings.BackgroundColor,
                     Line = questionLine,
                     Text = question,
                 };
-                var questionText = new Border()
-                {
-                    Color = settings.SeparatorColor,
-                    BackgroundColor = settings.BackgroundColor,
-                    Left = 2,
-                    Top = 1,
-                    Width = wholeWidth,
-                    Height = sentenceLineCount > 5 ? 5 : sentenceLineCount
-                };
-                selectionBuilder.Append(questionText.Render());
                 selectionBuilder.Append(boundedQuestion.Render());
             }
 
             // Populate the answers
-            List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(categories);
-            var border = new BoxFrame()
-            {
-                Left = 2,
-                Top = listStartPosition + 1,
-                Width = interiorWidth,
-                Height = answersPerPage,
-                FrameColor = settings.SeparatorColor,
-                BackgroundColor = settings.BackgroundColor,
-                Settings = new()
-                {
-                    BorderRightFrameEnabled = choices.Count <= answersPerPage,
-                }
-            };
             var selections = new Selection(categories)
             {
                 Left = 3,
-                Top = listStartPosition + 2,
+                Top = listStartPosition + 1,
                 CurrentSelection = highlightedAnswer - 1,
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Height = answersPerPage,
                 Width = interiorWidth,
                 Settings = settings,
             };
-            selectionBuilder.Append(
-                border.Render() +
-                selections.Render()
-            );
+            selectionBuilder.Append(selections.Render());
+            choiceText = selections.GetChoiceParameters().choiceText;
 
             // Write description hint
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
@@ -146,9 +138,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var boundedSidebar = new BoundedText()
                 {
                     Left = interiorWidth + 6,
-                    Top = listStartPosition + 1,
+                    Top = 1,
                     Width = sidebarWidth - 3,
-                    Height = answersPerPage,
+                    Height = answersPerPage + totalHeight + 1,
                     ForegroundColor = settings.TextColor,
                     BackgroundColor = settings.BackgroundColor,
                     Line = showcaseLine,
@@ -157,9 +149,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var sidebarBorder = new Border()
                 {
                     Left = interiorWidth + 5,
-                    Top = listStartPosition + 1,
+                    Top = 1,
                     Width = sidebarWidth - 3,
-                    Height = answersPerPage,
+                    Height = answersPerPage + totalHeight + 1,
                     Color = settings.SeparatorColor,
                     BackgroundColor = settings.BackgroundColor,
                 };
@@ -167,12 +159,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     sidebarBorder.Render() +
                     boundedSidebar.Render()
                 );
-                if (lines.Length > answersPerPage)
+                if (lines.Length > answersPerPage + totalHeight + 1)
                 {
-                    var dataSlider = new Slider(showcaseLine, 0, lines.Length)
+                    var dataSlider = new Slider(showcaseLine, 0, lines.Length - answersPerPage + totalHeight - 2)
                     {
                         Vertical = true,
-                        Height = answersPerPage - 2,
+                        Height = answersPerPage + totalHeight - 1,
                         SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                         SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                         SliderActiveForegroundColor = settings.SeparatorColor,
@@ -180,9 +172,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         SliderBackgroundColor = settings.BackgroundColor,
                     };
                     selectionBuilder.Append(
-                        TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
-                        TextWriterWhereColor.RenderWhere("▼", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
-                        RendererTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, listStartPosition + 3))
+                        TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, 2) +
+                        TextWriterWhereColor.RenderWhere("▼", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage) +
+                        RendererTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, 3))
                     );
                 }
             }
@@ -239,54 +231,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void GoUp(PointerEventContext? mouse = null)
+        private void GoUp()
         {
-            // Check the mouse first
-            if (mouse is not null)
-            {
-                int wholeWidth = ConsoleWrapper.WindowWidth - 6;
-                int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
-                int interiorWidth = wholeWidth - sidebarWidth;
-                int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-                int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
-                int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                int answersPerPage = listEndPosition - 5;
-
-                // Check to see if we're scrolling the mouse wheel or not
-                if (mouse.ButtonPress == PointerButtonPress.Scrolled &&
-                    (mouse.Coordinates.x < 3 || mouse.Coordinates.x >= interiorWidth + 3 ||
-                     mouse.Coordinates.y < listStartPosition + 2 || mouse.Coordinates.y >= listStartPosition + 2 + answersPerPage))
-                    return;
-            }
-
-            // Now, we can go up
             highlightedAnswer--;
             if (highlightedAnswer < 1)
                 highlightedAnswer = 1;
             Update(true);
         }
 
-        private void GoDown(PointerEventContext? mouse = null)
+        private void GoDown()
         {
-            // Check the mouse first
-            if (mouse is not null)
-            {
-                int wholeWidth = ConsoleWrapper.WindowWidth - 6;
-                int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
-                int interiorWidth = wholeWidth - sidebarWidth;
-                int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-                int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
-                int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                int answersPerPage = listEndPosition - 5;
-
-                // Check to see if we're scrolling the mouse wheel or not
-                if (mouse.ButtonPress == PointerButtonPress.Scrolled &&
-                    (mouse.Coordinates.x < 3 || mouse.Coordinates.x >= interiorWidth + 3 ||
-                     mouse.Coordinates.y < listStartPosition + 2 || mouse.Coordinates.y >= listStartPosition + 2 + answersPerPage))
-                    return;
-            }
-
-            // Now, we can go down
             highlightedAnswer++;
             if (highlightedAnswer > allAnswers.Count)
                 highlightedAnswer = allAnswers.Count;
@@ -309,9 +263,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
             int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-            int answersPerPage = listEndPosition - 5;
+            int answersPerPage = listEndPosition - 4;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
             int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer) - 1;
             highlightedAnswer -= currentPage != -1 ? choiceNums[currentPage] : choiceNums[0];
@@ -324,9 +279,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
             int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-            int answersPerPage = listEndPosition - 5;
+            int answersPerPage = listEndPosition - 4;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
             int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer);
             highlightedAnswer += choiceNums[currentPage];
@@ -395,17 +351,18 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
             int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
             int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-            int answersPerPage = listEndPosition - 5;
+            int answersPerPage = listEndPosition - 4;
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
             string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
             string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
             if (lines.Length <= answersPerPage)
                 return;
             showcaseLine++;
-            if (showcaseLine > lines.Length - answersPerPage)
-                showcaseLine = lines.Length - answersPerPage;
+            if (showcaseLine > lines.Length - answersPerPage - totalHeight - 1)
+                showcaseLine = lines.Length - answersPerPage - totalHeight - 1;
         }
 
         private void QuestionGoUp(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
@@ -435,6 +392,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void ShowItemInfo(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
+            if (mouse is not null)
+            {
+                if (!UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType) || hitboxType != ChoiceHitboxType.Choice)
+                    return;
+            }
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
             string choiceDesc = highlightedAnswerChoiceInfo.ChoiceDescription;
             if (!string.IsNullOrWhiteSpace(choiceDesc))
@@ -465,108 +427,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         }
 
         private void ProcessSelectAll(int selectionMode) =>
-            ProcessSelectionRequest(selectionMode, highlightedAnswer, categories, ref selectedAnswers);
-
-        private static void ProcessSelectionRequest(int mode, int choiceNum, InputChoiceCategoryInfo[] categories, ref List<int> SelectedAnswers)
-        {
-            List<InputChoiceInfo> allAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
-            var choiceGroup = SelectionInputTools.GetCategoryGroupFrom(choiceNum, categories);
-            var enabledAnswers = allAnswers.Select((ici, idx) => (ici, idx)).Where((ici) => !ici.ici.ChoiceDisabled).Select((tuple) => tuple.idx).ToArray();
-            switch (mode)
-            {
-                case 1:
-                    {
-                        var category = choiceGroup.Item1;
-                        var group = choiceGroup.Item2;
-                        var choices = group.Choices;
-                        List<int> indexes = [];
-                        for (int i = 0; i < allAnswers.Count; i++)
-                        {
-                            var answer = allAnswers[i];
-                            foreach (var choice in choices)
-                            {
-                                if (choice == answer && !choice.ChoiceDisabled)
-                                    indexes.Add(i);
-                            }
-                        }
-
-                        bool clear = DetermineClear(indexes, SelectedAnswers);
-                        if (clear)
-                        {
-                            foreach (int index in indexes)
-                                SelectedAnswers.Remove(index);
-                        }
-                        else
-                        {
-                            foreach (int index in indexes)
-                            {
-                                if (!SelectedAnswers.Contains(index))
-                                    SelectedAnswers.Add(index);
-                            }
-                        }
-                    }
-                    break;
-                case 2:
-                    {
-                        var category = choiceGroup.Item1;
-                        var groups = category.Groups;
-                        List<int> indexes = [];
-                        foreach (var group in groups)
-                        {
-                            var choices = group.Choices;
-                            for (int i = 0; i < allAnswers.Count; i++)
-                            {
-                                var answer = allAnswers[i];
-                                foreach (var choice in choices)
-                                {
-                                    if (choice == answer && !choice.ChoiceDisabled)
-                                        indexes.Add(i);
-                                }
-                            }
-                        }
-
-                        bool clear = DetermineClear(indexes, SelectedAnswers);
-                        if (clear)
-                        {
-                            foreach (int index in indexes)
-                                SelectedAnswers.Remove(index);
-                        }
-                        else
-                        {
-                            foreach (int index in indexes)
-                            {
-                                if (!SelectedAnswers.Contains(index))
-                                    SelectedAnswers.Add(index);
-                            }
-                        }
-                    }
-                    break;
-                case 3:
-                    bool unselect = SelectedAnswers.Count == enabledAnswers.Count();
-                    if (unselect)
-                        SelectedAnswers.Clear();
-                    else if (SelectedAnswers.Count == 0)
-                        SelectedAnswers.AddRange(enabledAnswers);
-                    else
-                    {
-                        // We need to use Except here to avoid wasting CPU cycles, since we could be dealing with huge data.
-                        var unselected = enabledAnswers.Except(SelectedAnswers);
-                        SelectedAnswers.AddRange(unselected);
-                    }
-                    break;
-            }
-        }
-
-        private static bool DetermineClear(List<int> indexes, List<int> selectedAnswers)
-        {
-            int found = 0;
-            foreach (int selectedAnswer in selectedAnswers)
-            {
-                if (indexes.Contains(selectedAnswer))
-                    found++;
-            }
-            return found == indexes.Count;
-        }
+            InfoBoxTools.ProcessSelectionRequest(selectionMode, highlightedAnswer, categories, ref selectedAnswers);
 
         private void ProcessLeftClick(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
@@ -578,23 +439,27 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
             int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-            int answersPerPage = listEndPosition - 5;
+            int answersPerPage = listEndPosition - 4;
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
+            string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
 
             // Make hitboxes for arrow presses
-            var arrowUpHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + 2), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-            var arrowDownHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + 1 + answersPerPage), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-            var sidebarArrowUpHitbox = new PointerHitbox(new(ConsoleWrapper.WindowWidth - 3, listStartPosition + 2), new Action<PointerEventContext>((_) => ShowcaseGoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-            var sidebarArrowDownHitbox = new PointerHitbox(new(ConsoleWrapper.WindowWidth - 3, listStartPosition + 1 + answersPerPage), new Action<PointerEventContext>((_) => ShowcaseGoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-            if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && allAnswers.Count > answersPerPage)
+            var arrowUpHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + 1), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            var arrowDownHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + answersPerPage), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            var sidebarArrowUpHitbox = new PointerHitbox(new(interiorWidth + 3 + sidebarWidth, 2), new Action<PointerEventContext>((_) => ShowcaseGoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            var sidebarArrowDownHitbox = new PointerHitbox(new(interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage), new Action<PointerEventContext>((_) => ShowcaseGoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && choiceText.Count > answersPerPage)
             {
                 arrowUpHitbox.ProcessPointer(mouse, out bool done);
                 if (!done)
                     arrowDownHitbox.ProcessPointer(mouse, out done);
                 showcaseLine = 0;
             }
-            else if ((sidebarArrowUpHitbox.IsPointerWithin(mouse) || sidebarArrowDownHitbox.IsPointerWithin(mouse)) && allAnswers.Count > answersPerPage && sidebar)
+            else if ((sidebarArrowUpHitbox.IsPointerWithin(mouse) || sidebarArrowDownHitbox.IsPointerWithin(mouse)) && lines.Length > answersPerPage + totalHeight + 1 && sidebar)
             {
                 sidebarArrowUpHitbox.ProcessPointer(mouse, out bool done);
                 if (!done)
@@ -602,7 +467,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
             else
             {
-                showcaseLine = 0;
+                int oldIndex = highlightedAnswer;
                 if (UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType))
                 {
                     if (!multiple)
@@ -613,16 +478,70 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         {
                             case ChoiceHitboxType.Category:
                                 ProcessSelectAll(2);
+                                highlightedAnswer = oldIndex;
                                 break;
                             case ChoiceHitboxType.Group:
                                 ProcessSelectAll(1);
+                                highlightedAnswer = oldIndex;
                                 break;
                             case ChoiceHitboxType.Choice:
                                 ModifyChoice(ui, key, mouse);
+                                if (highlightedAnswer != oldIndex)
+                                    showcaseLine = 0;
                                 break;
                         }
                     }
                 }
+            }
+        }
+
+        private void ProcessMouseWheel(PointerEventContext? mouse, bool goingUp = false)
+        {
+            if (mouse is null)
+                return;
+            if (mouse.ButtonPress != PointerButtonPress.Scrolled)
+                return;
+
+            // Get some essential variables
+            int wholeWidth = ConsoleWrapper.WindowWidth - 6;
+            int sidebarWidth = sidebar ? wholeWidth / 4 : 0;
+            int interiorWidth = wholeWidth - sidebarWidth;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+            int answersPerPage = listEndPosition - 4;
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
+            string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
+
+            // Check to see if we're scrolling the mouse wheel or not
+            if (mouse.Coordinates.x < 3 || mouse.Coordinates.x >= interiorWidth + 3 ||
+                mouse.Coordinates.y < listStartPosition + 1 || mouse.Coordinates.y >= listStartPosition + answersPerPage)
+            {
+                // It's possible that the user may be scrolling in the sidebar, but check the coordinates
+                if (!sidebar)
+                    return;
+                if (mouse.Coordinates.x < interiorWidth + 6 || mouse.Coordinates.x >= interiorWidth + sidebarWidth + 3 ||
+                    mouse.Coordinates.y < 2 || mouse.Coordinates.y >= listStartPosition + answersPerPage)
+                    return;
+
+                // Check the lines
+                if (lines.Length <= answersPerPage)
+                    return;
+
+                // Now, scroll the showcase if possible
+                if (goingUp)
+                    ShowcaseGoUp();
+                else
+                    ShowcaseGoDown();
+            }
+            else
+            {
+                if (goingUp)
+                    GoUp();
+                else
+                    GoDown();
             }
         }
 
@@ -631,15 +550,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
             hitboxType = ChoiceHitboxType.Choice;
             if (mouse is null)
                 return false;
-            if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
-                return false;
 
             // Make pages based on console window height
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
             int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? sentenceLineCount > 5 ? 7 : sentenceLineCount + 2 : 1;
+            int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
+            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-            int answersPerPage = listEndPosition - 5;
+            int answersPerPage = listEndPosition - 4;
             int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
             int interiorWidth = ConsoleWrapper.WindowWidth - 6 - sidebarWidth;
 
@@ -647,7 +565,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var selections = new Selection(categories)
             {
                 Left = 3,
-                Top = listStartPosition + 2,
+                Top = listStartPosition + 1,
                 CurrentSelection = highlightedAnswer - 1,
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Height = answersPerPage,
@@ -656,13 +574,20 @@ namespace Terminaux.Inputs.Interactive.Selectors
             };
 
             // Now, translate coordinates to the selected index and get its hitbox
-            if (mouse.Coordinates.y < listStartPosition + 2 || mouse.Coordinates.y > listEndPosition - 1)
+            if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x > interiorWidth + 2)
                 return false;
-            int listIndex = mouse.Coordinates.y - listStartPosition - 2;
-            var hitbox = selections.GenerateSelectionHitbox(listIndex);
+            if (mouse.Coordinates.y < listStartPosition + 1 || mouse.Coordinates.y > listStartPosition + answersPerPage)
+                return false;
+            int listIndex = mouse.Coordinates.y - listStartPosition - 1;
+            if (!selections.CanGenerateSelectionHitbox(listIndex, out var hitbox))
+                return false;
 
             // Depending on the hitbox parameter, we need to act accordingly
-            highlightedAnswer = hitbox.related;
+            var highlightedAnswerChoiceInfo = allAnswers[hitbox.related - 1];
+            if (highlightedAnswerChoiceInfo.ChoiceDisabled && hitbox.type == ChoiceHitboxType.Choice)
+                return false;
+            if (!highlightedAnswerChoiceInfo.ChoiceDisabled || hitbox.type != ChoiceHitboxType.Choice)
+                highlightedAnswer = hitbox.related;
             hitboxType = hitbox.type;
             return true;
         }
@@ -708,8 +633,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.bindings[14], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.showBindings[3], Help));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, mouse) => GoUp(mouse)));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, mouse) => GoDown(mouse)));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, mouse) => ProcessMouseWheel(mouse, true)));
+            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, mouse) => ProcessMouseWheel(mouse)));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[3], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[4], (_, _, mouse) => UpdateSelectedIndexWithMousePos(mouse, out _)));

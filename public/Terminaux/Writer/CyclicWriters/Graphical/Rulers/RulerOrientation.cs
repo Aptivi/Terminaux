@@ -17,24 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Collections.Generic;
-
-namespace Terminaux.Helpers
+namespace Terminaux.Writer.CyclicWriters.Graphical.Rulers
 {
-    internal static class BaseClassesHelper
+    /// <summary>
+    /// Orientation of a ruler
+    /// </summary>
+    public enum RulerOrientation
     {
-        // TODO: Move this to Magico
-        internal static Type[] GetBaseTypes(Type sourceType)
-        {
-            List<Type> types = [];
-            Type baseType = sourceType.BaseType;
-            while (baseType != null)
-            {
-                types.Add(baseType);
-                baseType = baseType.BaseType;
-            }
-            return [.. types];
-        }
+        /// <summary>
+        /// Horizontal rulers
+        /// </summary>
+        Horizontal,
+        /// <summary>
+        /// Vertical rulers
+        /// </summary>
+        Vertical,
     }
 }

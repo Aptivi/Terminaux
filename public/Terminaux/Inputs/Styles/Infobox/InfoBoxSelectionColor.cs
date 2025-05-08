@@ -572,7 +572,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     if (!done)
                                         arrowDownHitbox.ProcessPointer(mouse, out done);
                                 }
-                                else if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && choices.Length > selectionChoices)
+                                else if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && choiceText.Count > selectionChoices)
                                 {
                                     arrowSelectUpHitbox.ProcessPointer(mouse, out bool done);
                                     if (!done)
@@ -588,7 +588,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection);
+                                if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection))
+                                    break;
                                 if (hitboxType != ChoiceHitboxType.Choice)
                                     break;
                                 var selectedInstance = choices[currentSelection];

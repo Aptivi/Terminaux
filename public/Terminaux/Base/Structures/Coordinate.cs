@@ -64,6 +64,13 @@ namespace Terminaux.Base.Structures
             return hashCode;
         }
 
+        /// <summary>
+        /// Generates a string containing positions
+        /// </summary>
+        /// <returns>X and Y coordinates in a string</returns>
+        public override string ToString() =>
+            $"({X}, {Y})";
+
         /// <inheritdoc/>
         public static bool operator ==(Coordinate left, Coordinate right) =>
             left.Equals(right);

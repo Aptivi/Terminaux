@@ -32,7 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
             {
                 PasswordMaskChar = '\0'
             };
-            string input = TermReader.ReadPassword(settings, false);
+            string input = TermReader.Read(settings, true);
             TextWriterColor.Write("Password is: " + input);
         }
     }
