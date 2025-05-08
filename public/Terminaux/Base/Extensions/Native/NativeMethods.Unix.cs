@@ -24,6 +24,11 @@ namespace Terminaux.Base.Extensions.Native
 {
     internal static partial class NativeMethods
     {
+        private const int STDIN_FD = 0;
+        private const int T_TCSANOW = 0;
+
+        private static Termios orig;
+
         internal enum PosixButtonState : uint
         {
             Left = 0x0000,
@@ -42,11 +47,30 @@ namespace Terminaux.Base.Extensions.Native
             Control = 0x0010,
         }
 
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct Termios
+        {
+            public uint c_iflag;
+            public uint c_oflag;
+            public uint c_cflag;
+            public uint c_lflag;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+            public byte[] c_cc;
+            public uint c_ispeed;
+            public uint c_ospeed;
+        }
+
         [DllImport("libc", SetLastError = true)]
         internal static extern unsafe int read(int fd, void* buf, uint count);
 
         [DllImport("libc", SetLastError = true)]
         internal static extern int ioctl(int fd, ulong request, ref uint argp);
+
+        [DllImport("libc", SetLastError = true)]
+        internal static extern int tcgetattr(int fd, out Termios termios_p);
+
+        [DllImport("libc", SetLastError = true)]
+        internal static extern int tcsetattr(int fd, int optional_actions, ref Termios termios_p);
 
         internal static ulong DeterminePeekIoCtl()
         {
@@ -61,6 +85,21 @@ namespace Terminaux.Base.Extensions.Native
             // Return Linux's FIONREAD ioctl according to this line.
             // https://github.com/torvalds/linux/blob/cf87f46fd34d6c19283d9625a7822f20d90b64a4/include/uapi/asm-generic/ioctls.h#L46
             return 0x541b;
+        }
+
+        internal static void RawSet(bool enable)
+        {
+            if (enable)
+            {
+                tcgetattr(STDIN_FD, out orig);
+                Termios newTermios = orig;
+                newTermios.c_iflag &= ~(0x1u | 0x200u | 0x400u);
+                newTermios.c_oflag &= ~(0x1u);
+                newTermios.c_lflag &= ~(0x8u | 0x100u | 0x80u);
+                tcsetattr(STDIN_FD, T_TCSANOW, ref newTermios);
+            }
+            else
+                tcsetattr(STDIN_FD, T_TCSANOW, ref orig);
         }
     }
 }

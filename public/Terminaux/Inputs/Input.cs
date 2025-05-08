@@ -47,7 +47,7 @@ namespace Terminaux.Inputs
         private static int clickTier = 1;
         private static PointerEventContext? tieredContext = null;
         private static bool enableMouse;
-        private static string caughtMouseEvent = "";
+        private static byte[]? cachedMouseEvent = null;
         private static readonly Stopwatch inputTimeout = new();
         private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? NativeMethods.GetStdHandle(-10) : IntPtr.Zero;
 
@@ -201,7 +201,7 @@ namespace Terminaux.Inputs
         // mistake and the pointer detection logic is broken, so be extra careful when adding, modifying, or
         // tweaking the code below to avoid bugs.
         #region Sensitive code points
-        // HACK: We need to eliminate unwanted "feedback" on mouse event, but we can't seem to get rid of it. Assistance!
+        // HACK: We've managed to eliminate unwanted "feedback" on mouse events, but, now, we're being blocked when reading keyboard!
         /// <summary>
         /// Reads a pointer (blocking)
         /// </summary>
@@ -245,81 +245,45 @@ namespace Terminaux.Inputs
             }
             else
             {
-                // Test ioctl
-                ulong ctl = NativeMethods.DeterminePeekIoCtl();
-                uint numRead = 0;
-                int result = NativeMethods.ioctl(0, ctl, ref numRead);
-                if (result == -1)
-                    throw new TerminauxException("Failed to read the pointer.");
-                bool error = false;
-
-                // Functions to help get output
-                unsafe int Read(ref byte[] charRead, ref bool error)
+                NativeMethods.RawSet(true);
+                try
                 {
-                    int result = 0;
-                    lock (Console.In)
-                    {
-                        if (!string.IsNullOrEmpty(caughtMouseEvent))
-                        {
-                            charRead = Encoding.Default.GetBytes(caughtMouseEvent);
-                            caughtMouseEvent = "";
-                            return caughtMouseEvent.Length;
-                        }
-                        bool isMouse = false;
-                        while (!isMouse)
-                        {
-                            byte* chars = stackalloc byte[6];
-                            result = NativeMethods.read(0, chars, 6);
-                            if (result == -1)
-                            {
-                                // Some failure occurred.
-                                error = true;
-                                return -1;
-                            }
-                            isMouse = chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M';
-                            if (isMouse)
-                                charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                        }
-                    }
-                    return result;
-                }
+                    // Get cached buffer
+                    byte[] chars = cachedMouseEvent ?? new byte[6];
+                    if (cachedMouseEvent is null && ReadMouseSequence(ref chars) != 6)
+                        return null;
+                    cachedMouseEvent = null;
 
-                // Fill the chars array
-                byte[] chars = [];
-                byte button = 0;
-                byte x = 0;
-                byte y = 0;
-                int _ = Read(ref chars, ref error);
-                if (error)
-                    throw new TerminauxException("Failed to read the pointer.");
-                if (chars[0] == VtSequenceBasicChars.EscapeChar)
-                {
                     // Now, read the button, X, and Y positions
-                    button = chars[3];
-                    x = (byte)(chars[4] - 32);
-                    y = (byte)(chars[5] - 32);
+                    byte button = chars[3];
+                    byte x = (byte)(chars[4] - 32);
+                    byte y = (byte)(chars[5] - 32);
+                    x -= 1;
+                    y -= 1;
+
+                    // Get the button states and change them as necessary
+                    PosixButtonState state = (PosixButtonState)(button & 0b11);
+                    PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
+                    if (button >= 64 && button < 96)
+                        state = PosixButtonState.Movement;
+                    if (button >= 96 && button % 2 == 0)
+                        state = PosixButtonState.WheelUp;
+                    else if (button >= 97)
+                        state = PosixButtonState.WheelDown;
+                    ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
+
+                    // Now, translate them to something Terminaux understands
+                    (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);
+                    if (!EnableMovementEvents && press == PointerButtonPress.Moved)
+                        return null;
+                    ctx = GenerateContext(x, y, buttonPtr, press, mods);
+                    context = ctx;
+                    return ctx;
                 }
-                x -= 1;
-                y -= 1;
-
-                // Get the button states and change them as necessary
-                PosixButtonState state = (PosixButtonState)(button & 0b11);
-                PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
-                if (button >= 64 && button < 96)
-                    state = PosixButtonState.Movement;
-                if (button >= 96 && button % 2 == 0)
-                    state = PosixButtonState.WheelUp;
-                else if (button >= 97)
-                    state = PosixButtonState.WheelDown;
-                ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
-
-                // Now, translate them to something Terminaux understands
-                (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);
-                if (!EnableMovementEvents && press == PointerButtonPress.Moved)
-                    return null;
-                ctx = GenerateContext(x, y, buttonPtr, press, mods);
-                context = ctx;
-                return ctx;
+                finally
+                {
+                    NativeMethods.RawSet(false);
+                }
             }
         }
 
@@ -354,61 +318,24 @@ namespace Terminaux.Inputs
             }
             else
             {
-                uint numRead = 0;
-                bool error = false;
-                ulong ctl = NativeMethods.DeterminePeekIoCtl();
-                int result = NativeMethods.ioctl(0, ctl, ref numRead);
-                if (result == -1)
-                    return false;
-
-                // Functions to help get output
-                int Peek(ref uint numRead, ref bool error)
+                NativeMethods.RawSet(true);
+                try
                 {
-                    int result = NativeMethods.ioctl(0, ctl, ref numRead);
-                    if (result == -1)
-                    {
-                        // Some failure occurred.
-                        error = true;
-                        return -1;
-                    }
-                    return result;
-                }
-                unsafe int Read(ref bool error)
-                {
-                    int result = 0;
-                    lock (Console.In)
-                    {
-                        int _ = Peek(ref numRead, ref error);
-                        if (numRead > 0 && numRead % 6 == 0)
-                        {
-                            byte* chars = stackalloc byte[6];
-                            result = NativeMethods.read(0, chars, 6);
-                            if (result == -1)
-                            {
-                                // Some failure occurred.
-                                error = true;
-                                return -1;
-                            }
-                            if (chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M')
-                            {
-                                byte[] charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                                caughtMouseEvent = Encoding.Default.GetString(charRead);
-                            }
-                        }
-                    }
-                    return result;
-                }
+                    if (cachedMouseEvent != null)
+                        return true;
 
-                // Fill the chars array
-                if (!string.IsNullOrEmpty(caughtMouseEvent))
+                    // Fill the chars array
+                    byte[] chars = [];
+                    int readBytes = ReadMouseSequence(ref chars);
+                    if (readBytes != 6)
+                        return false;
+                    cachedMouseEvent = chars;
                     return true;
-                Thread.Sleep(10);
-                int readChar = Read(ref error);
-                if (error)
-                    return false;
-                if (readChar == 0)
-                    return false;
-                return !string.IsNullOrEmpty(caughtMouseEvent);
+                }
+                finally
+                {
+                    NativeMethods.RawSet(false);
+                }
             }
         }
 
@@ -546,6 +473,18 @@ namespace Terminaux.Inputs
             return new PointerEventContext(button, press, mods, dragging, x, y, finalTier);
         }
 
+        private static unsafe int ReadMouseSequence(ref byte[] charRead)
+        {
+            byte* chars = stackalloc byte[6];
+            int result = NativeMethods.read(0, chars, 6);
+            if (result == 6 && chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M')
+            {
+                charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
+                return 6;
+            }
+            return -1;
+        }
+
         private static void DisableMouseSupport()
         {
             if (PlatformHelper.IsOnWindows())
@@ -559,10 +498,7 @@ namespace Terminaux.Inputs
                 NativeMethods.SetConsoleMode(stdHandle, mode);
             }
             else
-            {
                 TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000l{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003l" : "")}");
-                Process.Start("stty", "echo");
-            }
         }
 
         private static void EnableMouseSupport()
@@ -578,10 +514,7 @@ namespace Terminaux.Inputs
                 NativeMethods.SetConsoleMode(stdHandle, mode);
             }
             else
-            {
-                Process.Start("stty", "-echo -icanon min 1 time 0");
                 TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000h{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : "")}");
-            }
         }
         #endregion
         #endregion
