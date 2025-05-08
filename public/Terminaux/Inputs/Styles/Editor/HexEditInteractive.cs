@@ -317,6 +317,8 @@ namespace Terminaux.Inputs.Styles.Editor
             byteIdx++;
             if (byteIdx > bytes.Length - 1)
                 byteIdx = bytes.Length - 1;
+            if (byteIdx < 0)
+                byteIdx = 0;
         }
 
         private static void MoveUp()
@@ -331,6 +333,8 @@ namespace Terminaux.Inputs.Styles.Editor
             byteIdx += 16;
             if (byteIdx > bytes.Length - 1)
                 byteIdx = bytes.Length - 1;
+            if (byteIdx < 0)
+                byteIdx = 0;
         }
 
         private static void Insert(ref byte[] bytes, InteractiveTuiSettings settings)
@@ -348,12 +352,16 @@ namespace Terminaux.Inputs.Styles.Editor
         private static void Remove(ref byte[] bytes)
         {
             DeleteByte(ref bytes, byteIdx + 1);
-            if (byteIdx + 1 > bytes.Length)
+            if (byteIdx + 1 > bytes.Length && bytes.Length > 0)
                 MoveBackward();
         }
 
         private static void Replace(ref byte[] bytes, InteractiveTuiSettings settings)
         {
+            // Check the bytes
+            if (bytes.Length == 0)
+                return;
+
             // Get the current byte number and its hex
             byte byteNum = bytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
@@ -371,6 +379,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
         private static void ReplaceAll(ref byte[] bytes, InteractiveTuiSettings settings)
         {
+            // Check the bytes
+            if (bytes.Length == 0)
+                return;
+
             // Get the current byte number and its hex
             byte byteNum = bytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
@@ -388,6 +400,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
         private static void ReplaceAllWhat(ref byte[] bytes, InteractiveTuiSettings settings)
         {
+            // Check the bytes
+            if (bytes.Length == 0)
+                return;
+
             // Prompt and parse the number
             byte byteNum = default;
             string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to be replaced. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
@@ -554,9 +570,11 @@ namespace Terminaux.Inputs.Styles.Editor
             int currentPage = currentSelection / byteLinesPerPage;
             int startIndex = byteLinesPerPage * currentPage;
             int startByte = startIndex * 16;
-            if (startByte > bytes.Length)
-                startByte = bytes.Length;
-            byteIdx = startByte - 1 < 0 ? 0 : startByte - 1;
+            if (startByte > bytes.Length - 1)
+                startByte = bytes.Length - 1;
+            if (startByte < 0)
+                startByte = 0;
+            byteIdx = startByte;
             screen.RequireRefresh();
         }
 
@@ -570,6 +588,8 @@ namespace Terminaux.Inputs.Styles.Editor
             int startByte = endIndex * 16;
             if (startByte > bytes.Length - 1)
                 startByte = bytes.Length - 1;
+            if (startByte < 0)
+                startByte = 0;
             byteIdx = startByte;
             screen.RequireRefresh();
         }
@@ -577,8 +597,12 @@ namespace Terminaux.Inputs.Styles.Editor
         private static void Beginning() =>
             byteIdx = 0;
 
-        private static void End(byte[] bytes) =>
+        private static void End(byte[] bytes)
+        {
             byteIdx = bytes.Length - 1;
+            if (byteIdx < 0)
+                byteIdx = 0;
+        }
 
         private static string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte, InteractiveTuiSettings settings)
         {
@@ -587,14 +611,14 @@ namespace Terminaux.Inputs.Styles.Editor
             var unhighlightedColorBackground = settings.BackgroundColor;
             var highlightedColorBackground = settings.PaneSelectedItemBackColor;
 
+            // Check the index
+            if (byteIdx >= FileByte.Length)
+                return "Empty content";
+
             // Now, do the job!
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
                 throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "Byte number must start with 1.");
-
-            // Check the index
-            if (byteIdx >= FileByte.Length)
-                return "Empty content";
 
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
@@ -667,6 +691,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 if (bytes.Length == 0)
                 {
                     FileBytesList.Add(Content);
+                    bytes = [.. FileBytesList];
                     return;
                 }
 
@@ -694,6 +719,8 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 if (ByteNumber < 1)
                     throw new ArgumentOutOfRangeException(nameof(ByteNumber), ByteNumber, "Byte number must start with 1.");
+                if (bytes.Length == 0)
+                    return;
                 var FileBytesList = bytes.ToList();
                 long ByteIndex = ByteNumber - 1L;
 
@@ -719,6 +746,8 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 if (StartByte < 1)
                     throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "Byte number must start with 1.");
+                if (bytes.Length == 0)
+                    return;
                 if (StartByte <= bytes.LongLength & EndByte <= bytes.LongLength)
                 {
                     for (long ByteNumber = StartByte; ByteNumber <= EndByte; ByteNumber++)
