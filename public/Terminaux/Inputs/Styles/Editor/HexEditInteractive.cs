@@ -345,8 +345,12 @@ namespace Terminaux.Inputs.Styles.Editor
                 AddNewByte(ref bytes, byteNum, byteIdx + 1);
         }
 
-        private static void Remove(ref byte[] bytes) =>
+        private static void Remove(ref byte[] bytes)
+        {
             DeleteByte(ref bytes, byteIdx + 1);
+            if (byteIdx + 1 > bytes.Length)
+                MoveBackward();
+        }
 
         private static void Replace(ref byte[] bytes, InteractiveTuiSettings settings)
         {
@@ -499,6 +503,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
         private static void NumInfo(byte[] bytes, InteractiveTuiSettings settings)
         {
+            // Check the index
+            if (byteIdx >= bytes.Length)
+                return;
+
             // Get the hex number in different formats
             byte byteNum = bytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
@@ -518,6 +526,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
         private static void StatusNumInfo(byte[] bytes)
         {
+            // Check the index
+            if (byteIdx >= bytes.Length)
+                return;
+
             // Get the hex number in different formats
             byte byteNum = bytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
@@ -579,6 +591,10 @@ namespace Terminaux.Inputs.Styles.Editor
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
                 throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "Byte number must start with 1.");
+
+            // Check the index
+            if (byteIdx >= FileByte.Length)
+                return "Empty content";
 
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
@@ -646,14 +662,20 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             if (bytes is not null)
             {
+                // If empty, ignore the position and just use the content given
+                var FileBytesList = bytes.ToList();
+                if (bytes.Length == 0)
+                {
+                    FileBytesList.Add(Content);
+                    return;
+                }
+
                 // Check the position
                 if (pos < 1 || pos > bytes.Length)
                     throw new ArgumentOutOfRangeException(nameof(pos), pos, $"The specified byte number may not be larger than {bytes.LongLength} or smaller than 1.");
 
-                var FileBytesList = bytes.ToList();
-                long ByteIndex = pos - 1L;
-
                 // Actually remove a byte
+                long ByteIndex = pos - 1L;
                 if (pos <= bytes.LongLength)
                 {
                     FileBytesList.Insert((int)ByteIndex, Content);
