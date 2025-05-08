@@ -165,19 +165,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L194">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L65">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.Boolean)">Read(bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.Boolean,System.Boolean,System.Boolean)">Read(bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Read(bool interruptible = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Read(bool password = false, bool oneLineWrap = false, bool interruptible = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -189,6 +189,18 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">bool</span></td>
         <td><span class="parametername">interruptible</span></td>
@@ -214,19 +226,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_Func_System_String__System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.Func%7BSystem.String%7D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_Func_System_String__System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.Func%7BSystem.String%7D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L250">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L129">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read_System_Func_System_String__System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.Func{System.String},System.Boolean)">Read(Func&lt;string&gt;, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read_System_Func_System_String__System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.Func{System.String},System.Boolean,System.Boolean,System.Boolean)">Read(Func&lt;string&gt;, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Read(Func&lt;string&gt; inputPrompt, bool interruptible = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Read(Func&lt;string&gt; inputPrompt, bool password = false, bool oneLineWrap = false, bool interruptible = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -242,6 +254,18 @@
         <td><span class="xref">Func</span>&lt;<span class="xref">string</span>&gt;</td>
         <td><span class="parametername">inputPrompt</span></td>
         <td><p>The dynamic input function to prompt the user</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -272,7 +296,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_Func_System_String__System_String_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.Func%7BSystem.String%7D%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L270">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L151">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
   <h4 id="Terminaux_Reader_TermReader_Read_System_Func_System_String__System_String_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.Func{System.String},System.String,System.Boolean,System.Boolean,System.Boolean)">Read(Func&lt;string&gt;, string, bool, bool, bool)</h4>
@@ -345,7 +369,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_Func_System_String__System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.Func%7BSystem.String%7D%2CSystem.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L282">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L163">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
   <h4 id="Terminaux_Reader_TermReader_Read_System_Func_System_String__System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.Func{System.String},System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read(Func&lt;string&gt;, string, TermReaderSettings, bool, bool, bool)</h4>
@@ -421,19 +445,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.Func%7BSystem.String%7D%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.Func%7BSystem.String%7D%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L259">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L140">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.Func{System.String},Terminaux.Reader.TermReaderSettings,System.Boolean)">Read(Func&lt;string&gt;, TermReaderSettings, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.Func{System.String},Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read(Func&lt;string&gt;, TermReaderSettings, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Read(Func&lt;string&gt; inputPrompt, TermReaderSettings settings, bool interruptible = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Read(Func&lt;string&gt; inputPrompt, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -455,6 +479,18 @@
         <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
         <td><span class="parametername">settings</span></td>
         <td><p>Settings containing reader-related settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -482,19 +518,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_String_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L210">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L85">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read_System_String_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.String,System.Boolean)">Read(string, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read_System_String_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.String,System.Boolean,System.Boolean,System.Boolean)">Read(string, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Read(string inputPrompt, bool interruptible = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Read(string inputPrompt, bool password = false, bool oneLineWrap = false, bool interruptible = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -510,6 +546,18 @@
         <td><span class="xref">string</span></td>
         <td><span class="parametername">inputPrompt</span></td>
         <td><p>The input to be read</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -540,7 +588,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L230">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L107">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
   <h4 id="Terminaux_Reader_TermReader_Read_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">Read(string, string, bool, bool, bool)</h4>
@@ -613,7 +661,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_String_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.String%2CSystem.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L242">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L119">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
   <h4 id="Terminaux_Reader_TermReader_Read_System_String_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read(string, string, TermReaderSettings, bool, bool, bool)</h4>
@@ -689,19 +737,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L219">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L96">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)">Read(string, TermReaderSettings, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read(string, TermReaderSettings, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Read(string inputPrompt, TermReaderSettings settings, bool interruptible = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Read(string inputPrompt, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -723,6 +771,18 @@
         <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
         <td><span class="parametername">settings</span></td>
         <td><p>Settings containing reader-related settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -750,19 +810,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L202">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L75">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read_Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings,System.Boolean)">Read(TermReaderSettings, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read(TermReaderSettings, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Read(TermReaderSettings settings, bool interruptible = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Read(TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -782,106 +842,14 @@
       </tr>
       <tr>
         <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
 </td>
       </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L63">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Boolean)">ReadPassword(bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
       <tr>
         <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Char%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L71">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Char_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Char,System.Boolean)">ReadPassword(char, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(char mask, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">char</span></td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>Password mask character</p>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -909,623 +877,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Char_System_Func_System_String__System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Char%2CSystem.Func%7BSystem.String%7D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L159">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Char_System_Func_System_String__System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Char,System.Func{System.String},System.Boolean)">ReadPassword(char, Func&lt;string&gt;, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(char mask, Func&lt;string&gt; inputPrompt, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">char</span></td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>Password mask character</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Func</span>&lt;<span class="xref">string</span>&gt;</td>
-        <td><span class="parametername">inputPrompt</span></td>
-        <td><p>The dynamic input function to prompt the user</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Char_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Char%2CSystem.Func%7BSystem.String%7D%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L184">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Char_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Char,System.Func{System.String},Terminaux.Reader.TermReaderSettings,System.Boolean)">ReadPassword(char, Func&lt;string&gt;, TermReaderSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(char mask, Func&lt;string&gt; inputPrompt, TermReaderSettings settings, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">char</span></td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>Password mask character</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Func</span>&lt;<span class="xref">string</span>&gt;</td>
-        <td><span class="parametername">inputPrompt</span></td>
-        <td><p>The dynamic input function to prompt the user</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Settings containing reader-related settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Char_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Char%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L114">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Char_System_String_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Char,System.String,System.Boolean)">ReadPassword(char, string, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(char mask, string inputPrompt, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">char</span></td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>Password mask character</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">inputPrompt</span></td>
-        <td><p>The input to be read</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Char_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Char%2CSystem.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L139">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Char_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Char,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)">ReadPassword(char, string, TermReaderSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(char mask, string inputPrompt, TermReaderSettings settings, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">char</span></td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>Password mask character</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">inputPrompt</span></td>
-        <td><p>The input to be read</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Settings containing reader-related settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Char_Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Char%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L94">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Char_Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Char,Terminaux.Reader.TermReaderSettings,System.Boolean)">ReadPassword(char, TermReaderSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(char mask, TermReaderSettings settings, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">char</span></td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>Password mask character</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Settings containing reader-related settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Func_System_String__System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Func%7BSystem.String%7D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L150">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Func_System_String__System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Func{System.String},System.Boolean)">ReadPassword(Func&lt;string&gt;, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(Func&lt;string&gt; inputPrompt, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Func</span>&lt;<span class="xref">string</span>&gt;</td>
-        <td><span class="parametername">inputPrompt</span></td>
-        <td><p>The dynamic input function to prompt the user</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.Func%7BSystem.String%7D%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L174">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.Func{System.String},Terminaux.Reader.TermReaderSettings,System.Boolean)">ReadPassword(Func&lt;string&gt;, TermReaderSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(Func&lt;string&gt; inputPrompt, TermReaderSettings settings, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Func</span>&lt;<span class="xref">string</span>&gt;</td>
-        <td><span class="parametername">inputPrompt</span></td>
-        <td><p>The dynamic input function to prompt the user</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Settings containing reader-related settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L105">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_String_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.String,System.Boolean)">ReadPassword(string, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(string inputPrompt, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">inputPrompt</span></td>
-        <td><p>The input to be read</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L129">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)">ReadPassword(string, TermReaderSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(string inputPrompt, TermReaderSettings settings, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">inputPrompt</span></td>
-        <td><p>The input to be read</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Settings containing reader-related settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_ReadPassword_Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.ReadPassword(Terminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L85">View Source</a>
-  </span>
-  <a id="Terminaux_Reader_TermReader_ReadPassword_" data-uid="Terminaux.Reader.TermReader.ReadPassword*"></a>
-  <h4 id="Terminaux_Reader_TermReader_ReadPassword_Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.ReadPassword(Terminaux.Reader.TermReaderSettings,System.Boolean)">ReadPassword(TermReaderSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Reads the input with password character masking</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ReadPassword(TermReaderSettings settings, bool interruptible = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Settings containing reader-related settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">interruptible</span></td>
-        <td><p>Whether the prompt is interruptible or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L289">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L172">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read__1_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.Boolean)">Read&lt;T&gt;(bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read__1_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(bool interruptible = true) where T : IConvertible</code></pre>
+    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1537,6 +901,18 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">bool</span></td>
         <td><span class="parametername">interruptible</span></td>
@@ -1577,19 +953,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_Func_System_String__System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.Func%7BSystem.String%7D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_Func_System_String__System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.Func%7BSystem.String%7D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L345">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L236">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read__1_System_Func_System_String__System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.Func{System.String},System.Boolean)">Read&lt;T&gt;(Func&lt;string&gt;, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read__1_System_Func_System_String__System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.Func{System.String},System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(Func&lt;string&gt;, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(Func&lt;string&gt; inputPrompt, bool interruptible = true) where T : IConvertible</code></pre>
+    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(Func&lt;string&gt; inputPrompt, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1605,6 +981,18 @@
         <td><span class="xref">Func</span>&lt;<span class="xref">string</span>&gt;</td>
         <td><span class="parametername">inputPrompt</span></td>
         <td><p>The dynamic input function to prompt the user</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -1650,7 +1038,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_Func_System_String__System_String_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.Func%7BSystem.String%7D%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L365">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L258">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
   <h4 id="Terminaux_Reader_TermReader_Read__1_System_Func_System_String__System_String_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.Func{System.String},System.String,System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(Func&lt;string&gt;, string, bool, bool, bool)</h4>
@@ -1738,7 +1126,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_Func_System_String__System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.Func%7BSystem.String%7D%2CSystem.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L377">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L270">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
   <h4 id="Terminaux_Reader_TermReader_Read__1_System_Func_System_String__System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.Func{System.String},System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(Func&lt;string&gt;, string, TermReaderSettings, bool, bool, bool)</h4>
@@ -1829,19 +1217,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.Func%7BSystem.String%7D%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.Func%7BSystem.String%7D%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L354">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L247">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read__1_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.Func{System.String},Terminaux.Reader.TermReaderSettings,System.Boolean)">Read&lt;T&gt;(Func&lt;string&gt;, TermReaderSettings, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read__1_System_Func_System_String__Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.Func{System.String},Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(Func&lt;string&gt;, TermReaderSettings, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(Func&lt;string&gt; inputPrompt, TermReaderSettings settings, bool interruptible = true) where T : IConvertible</code></pre>
+    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(Func&lt;string&gt; inputPrompt, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1863,6 +1251,18 @@
         <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
         <td><span class="parametername">settings</span></td>
         <td><p>Settings containing reader-related settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -1905,19 +1305,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_String_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L305">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L192">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read__1_System_String_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.String,System.Boolean)">Read&lt;T&gt;(string, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read__1_System_String_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.String,System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(string, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(string inputPrompt, bool interruptible = true) where T : IConvertible</code></pre>
+    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(string inputPrompt, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1933,6 +1333,18 @@
         <td><span class="xref">string</span></td>
         <td><span class="parametername">inputPrompt</span></td>
         <td><p>The input to be read</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -1978,7 +1390,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L325">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L214">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
   <h4 id="Terminaux_Reader_TermReader_Read__1_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(string, string, bool, bool, bool)</h4>
@@ -2066,7 +1478,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_String_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.String%2CSystem.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L337">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L226">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
   <h4 id="Terminaux_Reader_TermReader_Read__1_System_String_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(string, string, TermReaderSettings, bool, bool, bool)</h4>
@@ -2157,19 +1569,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L314">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L203">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read__1_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)">Read&lt;T&gt;(string, TermReaderSettings, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read__1_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(string, TermReaderSettings, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(string inputPrompt, TermReaderSettings settings, bool interruptible = true) where T : IConvertible</code></pre>
+    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(string inputPrompt, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -2191,6 +1603,18 @@
         <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
         <td><span class="parametername">settings</span></td>
         <td><p>Settings containing reader-related settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>
@@ -2233,19 +1657,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_Terminaux_Reader_TermReaderSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(Terminaux.Reader.TermReaderSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Reader_TermReader_Read__1_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Reader.TermReader.Read%60%601(Terminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L297">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Reader/TermReader.cs/#L182">View Source</a>
   </span>
   <a id="Terminaux_Reader_TermReader_Read_" data-uid="Terminaux.Reader.TermReader.Read*"></a>
-  <h4 id="Terminaux_Reader_TermReader_Read__1_Terminaux_Reader_TermReaderSettings_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(Terminaux.Reader.TermReaderSettings,System.Boolean)">Read&lt;T&gt;(TermReaderSettings, bool)</h4>
+  <h4 id="Terminaux_Reader_TermReader_Read__1_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Reader.TermReader.Read``1(Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)">Read&lt;T&gt;(TermReaderSettings, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Reads the input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(TermReaderSettings settings, bool interruptible = true) where T : IConvertible</code></pre>
+    <pre><code class="lang-csharp hljs">public static T Read&lt;T&gt;(TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) where T : IConvertible</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -2261,6 +1685,18 @@
         <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
         <td><span class="parametername">settings</span></td>
         <td><p>Settings containing reader-related settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Whether the password mode is enabled</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">oneLineWrap</span></td>
+        <td><p>Whether to wrap overflown text as one line</p>
 </td>
       </tr>
       <tr>

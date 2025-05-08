@@ -991,21 +991,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Colors.Models.CieLab",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLab.yml\" sourcestartlinenumber=\"1\">The CieLab class instance (Observer = 2 degs, Illuminant = D65)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.CieLabFull.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.CieLabFull.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Colors.Models.CieLabFull",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLabFull.yml\" sourcestartlinenumber=\"1\">The CieLab class instance</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLab.yml\" sourcestartlinenumber=\"1\">The CieLab class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1019,21 +1005,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Colors.Models.CieLch",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLch.yml\" sourcestartlinenumber=\"1\">The CieLch class instance (Observer = 2 degs, Illuminant = D65)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.CieLchFull.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.CieLchFull.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Colors.Models.CieLchFull",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLchFull.yml\" sourcestartlinenumber=\"1\">The CieLch class instance</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLch.yml\" sourcestartlinenumber=\"1\">The CieLch class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1047,21 +1019,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Colors.Models.CieLuv",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLuv.yml\" sourcestartlinenumber=\"1\">The CieLuv class instance (Observer = 2 degs, Illuminant = D65)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.CieLuvFull.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.CieLuvFull.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Colors.Models.CieLuvFull",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLuvFull.yml\" sourcestartlinenumber=\"1\">The CieLuv class instance</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.CieLuv.yml\" sourcestartlinenumber=\"1\">The CieLuv class instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1146,6 +1104,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Colors.Models.HueSaturationValue",
       "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.HueSaturationValue.yml\" sourcestartlinenumber=\"1\">The Hue, Saturation, and Value (HSV) model</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.HueWhiteBlack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.HueWhiteBlack.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Models.HueWhiteBlack",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Models.HueWhiteBlack.yml\" sourcestartlinenumber=\"1\">The Hue, Whiteness, and Blackness (HWB) model</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1667,6 +1639,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Icons.Localized.LocalStrings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Icons.Localized.LocalStrings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Icons.Localized.LocalStrings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.Icons.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Icons.Localized.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Icons.Localized.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Icons.Localized",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Images.Icons.yml",
       "output": {
         ".html": {
@@ -1692,6 +1692,34 @@
       "IsMRef": true,
       "Title": "Terminaux.Images.ImageProcessor",
       "Summary": "<p sourcefile=\"api/Terminaux.Images.ImageProcessor.yml\" sourcestartlinenumber=\"1\">Class for processing images</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Localized.LocalStrings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Localized.LocalStrings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Localized.LocalStrings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Localized.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Localized.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Localized",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -2843,6 +2871,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Localized.LocalStrings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Localized.LocalStrings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Localized.LocalStrings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Localized.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Localized.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Localized",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Reader.Bindings.BaseBinding.yml",
       "output": {
         ".html": {
@@ -3935,6 +3991,62 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Spectre.Localized.LocalStrings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Spectre.Localized.LocalStrings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Spectre.Localized.LocalStrings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Spectre.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Spectre.Localized.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Spectre.Localized.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Spectre.Localized",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Spectre.TranslationTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Spectre.TranslationTools.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Spectre.TranslationTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Spectre.TranslationTools.yml\" sourcestartlinenumber=\"1\">Translation tools</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Spectre.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Spectre.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Spectre",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.ListEntryWriterColor.yml",
       "output": {
         ".html": {
@@ -4352,6 +4464,48 @@
       "IsMRef": true,
       "Title": "Terminaux.Writer.CyclicWriters.Graphical.PieChart",
       "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.PieChart.yml\" sourcestartlinenumber=\"1\">Pie chart renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.yml\" sourcestartlinenumber=\"1\">Ruler information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation.yml\" sourcestartlinenumber=\"1\">Orientation of a ruler</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Rulers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Rulers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Rulers",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -4814,6 +4968,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Writer.CyclicWriters.Renderer.Markup.Mark",
       "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Markup.Mark.yml\" sourcestartlinenumber=\"1\">String with console markup support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Markup.MarkupInfo.yml\" sourcestartlinenumber=\"1\">Markup parsing information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5701,11 +5869,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -5724,11 +5892,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
