@@ -96,11 +96,16 @@ namespace Terminaux.Inputs
             get => enableMouse;
             set
             {
-                enableMouse = value;
-                if (!enableMouse)
+                if (!value)
+                {
+                    enableMouse = value;
                     DisableMouseSupport();
+                }
                 else
+                {
                     EnableMouseSupport();
+                    enableMouse = value;
+                }
             }
         }
 
@@ -245,45 +250,40 @@ namespace Terminaux.Inputs
             }
             else
             {
-                NativeMethods.RawSet(true);
-                try
-                {
-                    // Get cached buffer
-                    byte[] chars = cachedMouseEvent ?? new byte[6];
-                    if (cachedMouseEvent is null && ReadMouseSequence(ref chars) != 6)
-                        return null;
-                    cachedMouseEvent = null;
+                if (!ConsoleMode.IsRaw)
+                    return null;
 
-                    // Now, read the button, X, and Y positions
-                    byte button = chars[3];
-                    byte x = (byte)(chars[4] - 32);
-                    byte y = (byte)(chars[5] - 32);
-                    x -= 1;
-                    y -= 1;
+                // Get cached buffer
+                byte[] chars = cachedMouseEvent ?? new byte[6];
+                if (cachedMouseEvent is null && ReadMouseSequence(ref chars) != 6)
+                    return null;
+                cachedMouseEvent = null;
 
-                    // Get the button states and change them as necessary
-                    PosixButtonState state = (PosixButtonState)(button & 0b11);
-                    PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
-                    if (button >= 64 && button < 96)
-                        state = PosixButtonState.Movement;
-                    if (button >= 96 && button % 2 == 0)
-                        state = PosixButtonState.WheelUp;
-                    else if (button >= 97)
-                        state = PosixButtonState.WheelDown;
-                    ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
+                // Now, read the button, X, and Y positions
+                byte button = chars[3];
+                byte x = (byte)(chars[4] - 32);
+                byte y = (byte)(chars[5] - 32);
+                x -= 1;
+                y -= 1;
 
-                    // Now, translate them to something Terminaux understands
-                    (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);
-                    if (!EnableMovementEvents && press == PointerButtonPress.Moved)
-                        return null;
-                    ctx = GenerateContext(x, y, buttonPtr, press, mods);
-                    context = ctx;
-                    return ctx;
-                }
-                finally
-                {
-                    NativeMethods.RawSet(false);
-                }
+                // Get the button states and change them as necessary
+                PosixButtonState state = (PosixButtonState)(button & 0b11);
+                PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
+                if (button >= 64 && button < 96)
+                    state = PosixButtonState.Movement;
+                if (button >= 96 && button % 2 == 0)
+                    state = PosixButtonState.WheelUp;
+                else if (button >= 97)
+                    state = PosixButtonState.WheelDown;
+                ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
+
+                // Now, translate them to something Terminaux understands
+                (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);
+                if (!EnableMovementEvents && press == PointerButtonPress.Moved)
+                    return null;
+                ctx = GenerateContext(x, y, buttonPtr, press, mods);
+                context = ctx;
+                return ctx;
             }
         }
 
@@ -318,24 +318,18 @@ namespace Terminaux.Inputs
             }
             else
             {
-                NativeMethods.RawSet(true);
-                try
-                {
-                    if (cachedMouseEvent != null)
-                        return true;
-
-                    // Fill the chars array
-                    byte[] chars = [];
-                    int readBytes = ReadMouseSequence(ref chars);
-                    if (readBytes != 6)
-                        return false;
-                    cachedMouseEvent = chars;
+                if (!ConsoleMode.IsRaw)
+                    return false;
+                if (cachedMouseEvent != null)
                     return true;
-                }
-                finally
-                {
-                    NativeMethods.RawSet(false);
-                }
+
+                // Fill the chars array
+                byte[] chars = [];
+                int readBytes = ReadMouseSequence(ref chars);
+                if (readBytes != 6)
+                    return false;
+                cachedMouseEvent = chars;
+                return true;
             }
         }
 
@@ -498,7 +492,11 @@ namespace Terminaux.Inputs
                 NativeMethods.SetConsoleMode(stdHandle, mode);
             }
             else
+            {
                 TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000l{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003l" : "")}");
+                if (ConsoleMode.IsRaw)
+                    ConsoleMode.DisableRaw();
+            }
         }
 
         private static void EnableMouseSupport()
@@ -514,7 +512,11 @@ namespace Terminaux.Inputs
                 NativeMethods.SetConsoleMode(stdHandle, mode);
             }
             else
+            {
+                if (!ConsoleMode.IsRaw)
+                    ConsoleMode.EnableRaw();
                 TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000h{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : "")}");
+            }
         }
         #endregion
         #endregion
