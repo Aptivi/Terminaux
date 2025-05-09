@@ -244,7 +244,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Wait until the user presses any key to close the box
-                    SpinWait.SpinUntil(() => Input.InputAvailable);
+                    var (mouse, key) = Input.ReadPointerOrKey();
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
 
@@ -269,12 +269,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                     // Handle input
-                    if (Input.MouseInputAvailable)
+                    if (mouse is not null)
                     {
                         // Mouse input received.
-                        var mouse = Input.ReadPointer();
-                        if (mouse is null)
-                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.Left:
@@ -299,10 +296,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (key is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
-                        var key = Input.ReadKey();
-                        switch (key.Key)
+                        switch (cki.Key)
                         {
                             case ConsoleKey.Q:
                                 bail = true;
@@ -312,7 +308,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case ConsoleKey.PageDown:
                             case ConsoleKey.Enter:
-                                bail = key.Key == ConsoleKey.Enter && currIdx == splitFinalLines.Length - maxHeight;
+                                bail = cki.Key == ConsoleKey.Enter && currIdx == splitFinalLines.Length - maxHeight;
                                 GoDown(ref currIdx, text, vars, increment);
                                 break;
                             case ConsoleKey.UpArrow:

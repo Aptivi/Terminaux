@@ -351,7 +351,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Wait for keypress
-                    SpinWait.SpinUntil(() => Input.InputAvailable);
+                    var (mouse, key) = Input.ReadPointerOrKey();
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
                     maxHeight -= 3;
@@ -378,12 +378,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var buttonHitboxes = GetButtonHitboxes(text, vars, buttons);
 
                     // Handle input
-                    if (Input.MouseInputAvailable)
+                    if (mouse is not null)
                     {
                         // Mouse input received.
-                        var mouse = Input.ReadPointer();
-                        if (mouse is null)
-                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.None:
@@ -450,10 +447,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (key is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
-                        var key = Input.ReadKey();
-                        switch (key.Key)
+                        switch (cki.Key)
                         {
                             case ConsoleKey.LeftArrow:
                                 selectedButton++;

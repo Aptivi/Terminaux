@@ -222,7 +222,7 @@ namespace Terminaux.Inputs.Presentation
                 {
                     // Get the keypress or mouse press
                     ScreenTools.Render();
-                    SpinWait.SpinUntil(() => Input.InputAvailable);
+                    var (mouse, key) = Input.ReadPointerOrKey();
 
                     // Get the lines and the positions
                     string[] splitFinalLines = GetFinalLines(rendered);
@@ -237,7 +237,7 @@ namespace Terminaux.Inputs.Presentation
                     int arrowBottom = presentationLowerInnerBorderTop + 1;
 
                     // Then, determine if the pointer or the keypress is available
-                    if (Input.MouseInputAvailable)
+                    if (mouse is not null)
                     {
                         // Some hitboxes
                         var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), (_) => GoUp(ref currIdx)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
@@ -247,9 +247,6 @@ namespace Terminaux.Inputs.Presentation
                         var inputHitbox = new PointerHitbox(new(presentationUpperInnerBorderLeft, presentationUpperInnerBorderTop), new Coordinate(presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop), (_) => ProcessInput(page, screen)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                         // Mouse input received.
-                        var mouse = Input.ReadPointer();
-                        if (mouse is null)
-                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.Left:
@@ -270,11 +267,10 @@ namespace Terminaux.Inputs.Presentation
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (key is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         // Get the key
-                        var key = Input.ReadKey();
-                        switch (key.Key)
+                        switch (cki.Key)
                         {
                             case ConsoleKey.Escape:
                                 if (required)

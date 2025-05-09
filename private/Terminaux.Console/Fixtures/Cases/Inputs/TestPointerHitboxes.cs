@@ -88,17 +88,17 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 
                     // Render them
                     ScreenTools.Render();
-                    var key = Input.ReadPointerOrKey();
-                    if (key.Item1 is null)
+                    var (mouse, key) = Input.ReadPointerOrKey();
+                    if (key is ConsoleKeyInfo cki)
                     {
-                        switch (key.Item2.Key)
+                        switch (cki.Key)
                         {
                             case ConsoleKey.Q:
                                 bail = true;
                                 break;
                         }
                     }
-                    else
+                    else if (mouse is not null)
                     {
                         var redBox = GenBox(1, ConsoleColors.Red);
                         var greenBox = GenBox(2, ConsoleColors.Lime);
@@ -111,9 +111,9 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                         pressInfo.Clear();
                         pressInfo.AddDynamicText(() =>
                         {
-                            string redHitboxInfo = (string?)redHitbox.ProcessPointer(key.Item1, out bool redInRange) ?? "";
-                            string greenHitboxInfo = (string?)greenHitbox.ProcessPointer(key.Item1, out bool greenInRange) ?? "";
-                            string blueHitboxInfo = (string?)blueHitbox.ProcessPointer(key.Item1, out bool blueInRange) ?? "";
+                            string redHitboxInfo = (string?)redHitbox.ProcessPointer(mouse, out bool redInRange) ?? "";
+                            string greenHitboxInfo = (string?)greenHitbox.ProcessPointer(mouse, out bool greenInRange) ?? "";
+                            string blueHitboxInfo = (string?)blueHitbox.ProcessPointer(mouse, out bool blueInRange) ?? "";
                             string rangeSpecifierRed = redInRange ? "[Y]" : "[N]";
                             string rangeSpecifierGreen = greenInRange ? "[Y]" : "[N]";
                             string rangeSpecifierBlue = blueInRange ? "[Y]" : "[N]";

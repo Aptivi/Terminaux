@@ -75,10 +75,12 @@ namespace Terminaux.Inputs.Interactive
                     if (ui.RefreshDelay > 0)
                         sw.Start();
                     bool timedOut = false;
+                    (PointerEventContext? pointer, ConsoleKeyInfo? key) input = default;
                     SpinWait.SpinUntil(() =>
                     {
                         timedOut = ui.RefreshDelay > 0 && sw.ElapsedMilliseconds >= ui.RefreshDelay;
-                        return Input.InputAvailable || timedOut;
+                        input = Input.ReadPointerOrKeyNoBlock();
+                        return input != default || timedOut;
                     });
                     if (timedOut)
                         continue;
@@ -86,30 +88,22 @@ namespace Terminaux.Inputs.Interactive
                     // Process the user input
                     ui.state = TextualUIState.Busy;
                     List<(Keybinding binding, Action<TextualUI, ConsoleKeyInfo, PointerEventContext?> action)> bindings = [];
-                    PointerEventContext? mouse = null;
-                    ConsoleKeyInfo key = default;
-                    if (Input.MouseInputAvailable)
+                    PointerEventContext? mouse = input.pointer;
+                    ConsoleKeyInfo? key = input.key;
+                    if (mouse is not null)
                     {
-                        // Mouse input has been received
-                        mouse = Input.ReadPointer();
-                        if (mouse is null)
-                            continue;
-
                         // Match the mouse binding
                         bindings = MatchBindings(ui, default, mouse);
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (key is not null && !Input.PointerActive)
                     {
-                        // Keyboard input received
-                        key = Input.ReadKey();
-
                         // Match the key binding
-                        bindings = MatchBindings(ui, key, null);
+                        bindings = MatchBindings(ui, key ?? default, null);
                     }
 
                     // Execute the action according to the bindings
                     foreach (var binding in bindings)
-                        binding.action.Invoke(ui, key, mouse);
+                        binding.action.Invoke(ui, key ?? default, mouse);
                 }
             }
             catch (Exception ex)

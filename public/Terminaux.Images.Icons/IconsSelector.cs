@@ -137,13 +137,9 @@ namespace Terminaux.Images.Icons
                     ScreenTools.Render();
 
                     // Wait for input
-                    SpinWait.SpinUntil(() => Input.InputAvailable);
-                    if (Input.MouseInputAvailable)
+                    var (mouse, key) = Input.ReadPointerOrKey();
+                    if (mouse is not null)
                     {
-                        // Mouse input received.
-                        var mouse = Input.ReadPointer();
-                        if (mouse is null)
-                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
@@ -162,10 +158,9 @@ namespace Terminaux.Images.Icons
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (key is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
-                        var key = Input.ReadKey();
-                        switch (key.Key)
+                        switch (cki.Key)
                         {
                             case ConsoleKey.Enter:
                                 bail = true;
@@ -189,7 +184,7 @@ namespace Terminaux.Images.Icons
                                 screen.RequireRefresh();
                                 break;
                             case ConsoleKey.S:
-                                bool write = key.Modifiers.HasFlag(ConsoleModifiers.Shift);
+                                bool write = cki.Modifiers.HasFlag(ConsoleModifiers.Shift);
                                 if (write)
                                 {
                                     string promptedIconName = InfoBoxInputColor.WriteInfoBoxInput("Write the icon name. It'll be converted to lowercase.").ToLower();

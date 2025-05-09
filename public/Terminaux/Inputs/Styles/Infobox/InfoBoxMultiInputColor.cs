@@ -341,7 +341,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Handle keypress
-                    SpinWait.SpinUntil(() => Input.InputAvailable);
+                    var (mouse, key) = Input.ReadPointerOrKey();
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, arrowSelectLeft, selectionReservedHeight) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
                     maxHeight -= selectionReservedHeight;
@@ -369,7 +369,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => cancel = bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                     // Handle input
-                    if (Input.MouseInputAvailable)
+                    if (mouse is not null)
                     {
                         bool UpdatePositionBasedOnMouse(PointerEventContext mouse)
                         {
@@ -391,9 +391,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                         }
 
                         // Mouse input received.
-                        var mouse = Input.ReadPointer();
-                        if (mouse is null)
-                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
@@ -454,11 +451,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (key is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
-                        var key = Input.ReadKey();
                         var selectedInstance = modules[currentSelection];
-                        switch (key.Key)
+                        switch (cki.Key)
                         {
                             case ConsoleKey.UpArrow:
                                 SelectionGoUp(ref currentSelection);

@@ -47,21 +47,8 @@ namespace Terminaux.Inputs
         private static int clickTier = 1;
         private static PointerEventContext? tieredContext = null;
         private static bool enableMouse;
-        private static byte[]? cachedMouseEvent = null;
         private static readonly Stopwatch inputTimeout = new();
         private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? NativeMethods.GetStdHandle(-10) : IntPtr.Zero;
-
-        /// <summary>
-        /// Checks to see whether any pending keyboard events are here
-        /// </summary>
-        public static bool KeyboardInputAvailable =>
-            ConsoleWrapper.KeyAvailable;
-
-        /// <summary>
-        /// Checks to see whether any pending mouse events are here
-        /// </summary>
-        public static bool MouseInputAvailable =>
-            IsMouseAvailable();
 
         /// <summary>
         /// Checks to see whether the pointer is active or not
@@ -76,12 +63,6 @@ namespace Terminaux.Inputs
                 return active;
             }
         }
-
-        /// <summary>
-        /// Checks to see whether any pending mouse or keyboard events are here
-        /// </summary>
-        public static bool InputAvailable =>
-            MouseInputAvailable || KeyboardInputAvailable;
 
         /// <summary>
         /// Specifies the time in milliseconds whether the double click times out
@@ -146,93 +127,38 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Reads either a pointer or a key (blocking)
         /// </summary>
-        public static (PointerEventContext?, ConsoleKeyInfo) ReadPointerOrKey()
+        public static (PointerEventContext? pointer, ConsoleKeyInfo? key) ReadPointerOrKey()
         {
-            bool looping = true;
-            PointerEventContext? ctx = null;
-            ConsoleKeyInfo cki = default;
-            while (looping)
+            (PointerEventContext? pointer, ConsoleKeyInfo? key) input = default;
+            SpinWait.SpinUntil(() =>
             {
-                SpinWait.SpinUntil(() => InputAvailable);
-                if (MouseInputAvailable)
-                {
-                    // Mouse input received.
-                    ctx = ReadPointer();
-                    looping = false;
-                }
-                else if (KeyboardInputAvailable)
-                {
-                    cki = ReadKey();
-                    looping = false;
-                }
-            }
-            return (ctx, cki);
+                input = ReadPointerOrKeyNoBlock();
+                return input != default;
+            });
+            return input;
         }
 
         /// <summary>
-        /// Reads the next key from the console input stream
+        /// Reads either a pointer or a key (non-blocking)
         /// </summary>
-        public static ConsoleKeyInfo ReadKey() =>
-            ReadKey(true);
-
-        /// <summary>
-        /// Reads the next key from the console input stream
-        /// </summary>
-        /// <param name="intercept">Whether to intercept the key pressed or to just show the actual key to the console</param>
-        public static ConsoleKeyInfo ReadKey(bool intercept)
+        public static (PointerEventContext? pointer, ConsoleKeyInfo? key) ReadPointerOrKeyNoBlock()
         {
-            TermReaderTools.isWaitingForInput = true;
-            SpinWait.SpinUntil(() => KeyboardInputAvailable);
-            TermReaderTools.isWaitingForInput = false;
-            return ConsoleWrapper.ReadKey(intercept);
-        }
-
-        /// <summary>
-        /// Reads the next key from the console input stream with the timeout
-        /// </summary>
-        /// <param name="Intercept">Whether to intercept an input</param>
-        /// <param name="Timeout">Timeout</param>
-        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
-        {
-            TermReaderTools.isWaitingForInput = true;
-            bool result = SpinWait.SpinUntil(() => KeyboardInputAvailable, Timeout);
-            TermReaderTools.isWaitingForInput = false;
-            return (!result ? default : ConsoleWrapper.ReadKey(Intercept), result);
-        }
-
-        // Developers: From this point on, you must be very careful in what you're doing here, because the
-        // Linux mouse input detection logic reads from the stdin stream that the appropriate DEC VT Locator
-        // sequence prints out when every mouse movement is detected. The below code can be tweaked, but any
-        // mistake and the pointer detection logic is broken, so be extra careful when adding, modifying, or
-        // tweaking the code below to avoid bugs.
-        #region Sensitive code points
-        // HACK: We've managed to eliminate unwanted "feedback" on mouse events, but, now, we're being blocked when reading keyboard!
-        /// <summary>
-        /// Reads a pointer (blocking)
-        /// </summary>
-        /// <returns>A <see cref="PointerEventContext"/> instance that describes the last mouse event.</returns>
-        public static PointerEventContext? ReadPointer()
-        {
-            // Check for mouse state
             PointerEventContext? ctx = null;
-            if (!EnableMouse)
-                return ctx;
-            if (PlatformHelper.IsOnWindows())
+            ConsoleKeyInfo? cki = null;
+            while (true)
             {
-                // Set the appropriate modes
-                bool isMouse = false;
-                while (!isMouse)
+                if (PlatformHelper.IsOnWindows())
                 {
+                    // Set the appropriate modes
                     uint numRead = 0;
                     INPUT_RECORD[] record = [new INPUT_RECORD()];
-                    ReadConsoleInput(stdHandle, record, 1, ref numRead);
+                    PeekConsoleInput(stdHandle, record, 1, ref numRead);
 
-                    // Now, filter all events except the mouse ones
+                    // Check the event type
                     switch (record[0].EventType)
                     {
                         case INPUT_RECORD.MOUSE_EVENT:
                             // Get the coordinates and event arguments
-                            isMouse = true;
                             var @event = record[0].MouseEvent;
                             var coord = @event.dwMousePosition;
                             ConsoleLogger.Debug($"Coord: {coord.X}, {coord.Y}, {@event.dwButtonState}, {@event.dwControlKeyState}, {@event.dwEventFlags}");
@@ -244,47 +170,126 @@ namespace Terminaux.Inputs
                             ctx = GenerateContext(coord.X, coord.Y, button, press, mods);
                             context = ctx;
                             break;
+                        default:
+                            cki = ConsoleWrapper.ReadKey(true);
+                            break;
                     }
                 }
-                return ctx;
+                else
+                {
+                    // Get cached buffer
+                    byte[] chars = [];
+                    if (ReadMouseSequence(ref chars))
+                    {
+                        // Now, read the button, X, and Y positions
+                        byte button = chars[3];
+                        byte x = (byte)(chars[4] - 32);
+                        byte y = (byte)(chars[5] - 32);
+                        x -= 1;
+                        y -= 1;
+
+                        // Get the button states and change them as necessary
+                        PosixButtonState state = (PosixButtonState)(button & 0b11);
+                        PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
+                        if (button >= 64 && button < 96)
+                            state = PosixButtonState.Movement;
+                        if (button >= 96 && button % 2 == 0)
+                            state = PosixButtonState.WheelUp;
+                        else if (button >= 97)
+                            state = PosixButtonState.WheelDown;
+                        ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
+
+                        // Now, translate them to something Terminaux understands
+                        (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);
+                        if (EnableMovementEvents || press != PointerButtonPress.Moved)
+                        {
+                            ctx = GenerateContext(x, y, buttonPtr, press, mods);
+                            context = ctx;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        // Keyboard input obtained, but check raw
+                        if (!ConsoleMode.IsRaw)
+                        {
+                            // Use the standard ReadKey function
+                            if (ConsoleWrapper.KeyAvailable)
+                                cki = ConsoleWrapper.ReadKey(true);
+                            break;
+                        }
+                        else
+                        {
+                            // We've obtained the characters, but verify the length
+                            if (chars.Length == 0)
+                                break;
+                            string asciiSeq = Encoding.ASCII.GetString(chars);
+
+                            // Now, parse the sequence by checking for ALT sequences
+                            if (chars.Length == 2 && chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] < 128)
+                            {
+                                char keyChar = (char)chars[1];
+                                cki = new(keyChar, (ConsoleKey)keyChar, false, true, false);
+                                break;
+                            }
+
+                            // Also, check for keys like HOME, END, etc.
+                            if (asciiSeq.StartsWith("\x1B"))
+                            {
+                                // Most likely escape sequence, but we need to distinguish it as it may contain
+                                // information about modifiers
+                                ConsoleLogger.Warning("UNIMPLEMENTED: mod/esc [len: {0}] {1}", chars.Length, asciiSeq);
+                            }
+
+                            // Process a single key
+                            if (chars.Length == 1)
+                            {
+                                // Usually ASCII
+                                char keyChar = (char)chars[0];
+                                ConsoleKey asciiChar = (ConsoleKey)char.ToUpperInvariant(keyChar);
+                                cki = new(keyChar, asciiChar, false, false, false);
+                                break;
+                            }
+                            else
+                                ConsoleLogger.Warning("UNIMPLEMENTED: char [len: {0}] {1}", chars.Length, asciiSeq);
+                        }
+                    }
+                }
             }
-            else
+            return (ctx, cki);
+        }
+
+        /// <summary>
+        /// Reads the next key from the console input stream
+        /// </summary>
+        public static ConsoleKeyInfo ReadKey()
+        {
+            TermReaderTools.isWaitingForInput = true;
+            (PointerEventContext?, ConsoleKeyInfo?) data = default;
+            SpinWait.SpinUntil(() =>
             {
-                if (!ConsoleMode.IsRaw)
-                    return null;
+                data = ReadPointerOrKey();
+                return data.Item2 is not null;
+            });
+            TermReaderTools.isWaitingForInput = false;
+            return data.Item2 ?? default;
+        }
 
-                // Get cached buffer
-                byte[] chars = cachedMouseEvent ?? new byte[6];
-                if (cachedMouseEvent is null && ReadMouseSequence(ref chars) != 6)
-                    return null;
-                cachedMouseEvent = null;
-
-                // Now, read the button, X, and Y positions
-                byte button = chars[3];
-                byte x = (byte)(chars[4] - 32);
-                byte y = (byte)(chars[5] - 32);
-                x -= 1;
-                y -= 1;
-
-                // Get the button states and change them as necessary
-                PosixButtonState state = (PosixButtonState)(button & 0b11);
-                PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
-                if (button >= 64 && button < 96)
-                    state = PosixButtonState.Movement;
-                if (button >= 96 && button % 2 == 0)
-                    state = PosixButtonState.WheelUp;
-                else if (button >= 97)
-                    state = PosixButtonState.WheelDown;
-                ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
-
-                // Now, translate them to something Terminaux understands
-                (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);
-                if (!EnableMovementEvents && press == PointerButtonPress.Moved)
-                    return null;
-                ctx = GenerateContext(x, y, buttonPtr, press, mods);
-                context = ctx;
-                return ctx;
-            }
+        /// <summary>
+        /// Reads the next key from the console input stream with the timeout
+        /// </summary>
+        /// <param name="Timeout">Timeout</param>
+        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(TimeSpan Timeout)
+        {
+            TermReaderTools.isWaitingForInput = true;
+            (PointerEventContext?, ConsoleKeyInfo?) data = default;
+            bool result = SpinWait.SpinUntil(() =>
+            {
+                data = ReadPointerOrKey();
+                return data.Item2 is not null;
+            }, Timeout);
+            TermReaderTools.isWaitingForInput = false;
+            return (!result ? default : data.Item2 ?? default, result);
         }
 
         /// <summary>
@@ -292,45 +297,11 @@ namespace Terminaux.Inputs
         /// </summary>
         public static void InvalidateInput()
         {
-            while (ConsoleWrapper.KeyAvailable)
-                ReadKey(true);
-        }
-
-        #region Private functions
-        private static bool IsMouseAvailable()
-        {
-            if (!EnableMouse)
-                return false;
-            if (PlatformHelper.IsOnWindows())
+            SpinWait.SpinUntil(() =>
             {
-                // Make a record and read the input for mouse event
-                uint numRead = 0;
-                INPUT_RECORD[] record = [new INPUT_RECORD()];
-                if (!PeekConsoleInput(stdHandle, record, 1, ref numRead))
-                    return false;
-
-                // Now, filter all events except the mouse ones
-                return record[0].EventType switch
-                {
-                    INPUT_RECORD.MOUSE_EVENT => true,
-                    _ => false,
-                };
-            }
-            else
-            {
-                if (!ConsoleMode.IsRaw)
-                    return false;
-                if (cachedMouseEvent != null)
-                    return true;
-
-                // Fill the chars array
-                byte[] chars = [];
-                int readBytes = ReadMouseSequence(ref chars);
-                if (readBytes != 6)
-                    return false;
-                cachedMouseEvent = chars;
-                return true;
-            }
+                var data = ReadPointerOrKey();
+                return data.Item2 is null && data.Item1 is null;
+            });
         }
 
         private static void ProcessDragging(ref PointerButtonPress press, ref PointerButton button, out bool dragging)
@@ -467,16 +438,25 @@ namespace Terminaux.Inputs
             return new PointerEventContext(button, press, mods, dragging, x, y, finalTier);
         }
 
-        private static unsafe int ReadMouseSequence(ref byte[] charRead)
+        private static unsafe bool ReadMouseSequence(ref byte[] charRead)
         {
+            if (!ConsoleMode.IsRaw)
+                return false;
+
             byte* chars = stackalloc byte[6];
             int result = NativeMethods.read(0, chars, 6);
             if (result == 6 && chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M')
             {
                 charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                return 6;
+                return true;
             }
-            return -1;
+            else
+            {
+                charRead = new byte[result];
+                for (int i = 0; i < result; i++)
+                    charRead[i] = chars[i];
+            }
+            return false;
         }
 
         private static void DisableMouseSupport()
@@ -518,7 +498,5 @@ namespace Terminaux.Inputs
                 TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000h{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : "")}");
             }
         }
-        #endregion
-        #endregion
     }
 }

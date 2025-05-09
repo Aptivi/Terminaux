@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using SpecProbe.Software.Platform;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Inputs;
 
@@ -40,6 +41,8 @@ namespace Terminaux.Base.Extensions
         /// </summary>
         public static void EnableRaw()
         {
+            if (PlatformHelper.IsOnWindows())
+                return;
             if (Input.EnableMouse)
                 return;
             NativeMethods.RawSet(true);
@@ -51,6 +54,8 @@ namespace Terminaux.Base.Extensions
         /// </summary>
         public static void DisableRaw()
         {
+            if (PlatformHelper.IsOnWindows())
+                return;
             if (Input.EnableMouse)
                 return;
             NativeMethods.RawSet(false);

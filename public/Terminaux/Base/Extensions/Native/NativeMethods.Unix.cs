@@ -94,7 +94,6 @@ namespace Terminaux.Base.Extensions.Native
                 tcgetattr(STDIN_FD, out orig);
                 Termios newTermios = orig;
                 newTermios.c_iflag &= ~(0x1u | 0x200u | 0x400u);
-                newTermios.c_oflag &= ~(0x1u);
                 newTermios.c_lflag &= ~(0x8u | 0x100u | 0x80u);
                 tcsetattr(STDIN_FD, T_TCSANOW, ref newTermios);
             }

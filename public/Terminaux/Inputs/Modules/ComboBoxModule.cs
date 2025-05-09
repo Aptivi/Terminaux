@@ -122,11 +122,10 @@ namespace Terminaux.Inputs.Modules
                     );
 
                     // Prompt user for choice selection
-                    SpinWait.SpinUntil(() => Input.InputAvailable);
-                    if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    var (pointer, key) = Input.ReadPointerOrKey();
+                    if (key is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
-                        var key = Input.ReadKey();
-                        switch (key.Key)
+                        switch (cki.Key)
                         {
                             case ConsoleKey.UpArrow:
                                 goingUp = true;

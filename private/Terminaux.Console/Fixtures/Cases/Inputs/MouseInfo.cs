@@ -36,25 +36,25 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             Input.EnableMouse = true;
             while (looping)
             {
-                var key = Input.ReadPointerOrKey();
-                if (key.Item1 is null)
+                var (mouse, key) = Input.ReadPointerOrKey();
+                if (key is ConsoleKeyInfo cki)
                 {
-                    if (key.Item2.Key == ConsoleKey.Home)
+                    if (cki.Key == ConsoleKey.Home)
                         looping = false;
-                    else if (key.Item2.Key == ConsoleKey.M)
+                    else if (cki.Key == ConsoleKey.M)
                         Input.EnableMovementEvents = !Input.EnableMovementEvents;
-                    else if (key.Item2.Key == ConsoleKey.I)
+                    else if (cki.Key == ConsoleKey.I)
                         Input.InvertScrollYAxis = !Input.InvertScrollYAxis;
-                    else if (key.Item2.Key == ConsoleKey.L)
+                    else if (cki.Key == ConsoleKey.L)
                         Input.SwapLeftRightButtons = !Input.SwapLeftRightButtons;
                 }
-                else
+                else if (mouse is not null)
                 {
-                    TextWriterColor.WriteColor($"{key.Item1.Coordinates.x}/{key.Item1.Coordinates.y} [{key.Item1.Button}, {key.Item1.ButtonPress}, {key.Item1.Modifiers}] [Dragging: {key.Item1.Dragging}, Tier: {key.Item1.ClickTier}]",
-                        key.Item1.ButtonPress == PointerButtonPress.Clicked ? ConsoleColors.Green :
-                        key.Item1.ButtonPress == PointerButtonPress.Released ? ConsoleColors.Purple :
-                        key.Item1.ButtonPress == PointerButtonPress.Scrolled ? ConsoleColors.Red :
-                        key.Item1.Dragging ? ConsoleColors.Yellow :
+                    TextWriterColor.WriteColor($"{mouse.Coordinates.x}/{mouse.Coordinates.y} [{mouse.Button}, {mouse.ButtonPress}, {mouse.Modifiers}] [Dragging: {mouse.Dragging}, Tier: {mouse.ClickTier}]",
+                        mouse.ButtonPress == PointerButtonPress.Clicked ? ConsoleColors.Green :
+                        mouse.ButtonPress == PointerButtonPress.Released ? ConsoleColors.Purple :
+                        mouse.ButtonPress == PointerButtonPress.Scrolled ? ConsoleColors.Red :
+                        mouse.Dragging ? ConsoleColors.Yellow :
                         ConsoleColors.Teal);
                 }
             }
