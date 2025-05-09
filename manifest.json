@@ -323,6 +323,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.ConsoleMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.ConsoleMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleMode",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleMode.yml\" sourcestartlinenumber=\"1\">Console mode manipulation</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Extensions.ConsolePositioning.yml",
       "output": {
         ".html": {
