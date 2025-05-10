@@ -252,263 +252,289 @@ namespace Terminaux.Inputs
 
                             // Refer to https://github.com/dotnet/runtime/blob/main/src/libraries/System.Console/src/System/IO/KeyParser.cs
                             // for future improvements
-                            string asciiSeq = Encoding.ASCII.GetString(chars);
-                            bool bail = false;
-
-                            // Now, parse the sequence by checking for ALT sequences
-                            if (chars.Length == 2 && chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] < 128)
+                            if (ConsoleMode.tk != IntPtr.Zero)
                             {
-                                char keyChar = (char)chars[1];
-                                cki = new(keyChar, (ConsoleKey)keyChar, false, true, false);
-                                bail = true;
-                            }
-                            if (bail)
+                                IntPtr buff = Marshal.AllocHGlobal(chars.Length);
+                                Marshal.Copy(chars, 0, buff, chars.Length);
+                                NativeMethods.termkey_push_bytes(ConsoleMode.tk, buff, (UIntPtr)chars.Length);
+                                while (NativeMethods.termkey_getkey(ConsoleMode.tk, out var key) == TermKeyResult.TERMKEY_RES_KEY)
+                                {
+                                    bool ctrl = (key.modifiers & (int)NativeMethods.TermKeyKeyMod.CTRL) != 0;
+                                    bool alt = (key.modifiers & (int)NativeMethods.TermKeyKeyMod.ALT) != 0;
+                                    bool shift = (key.modifiers & (int)NativeMethods.TermKeyKeyMod.SHIFT) != 0;
+                                    switch (key.type)
+                                    {
+                                        case TermKeyType.TERMKEY_TYPE_KEYSYM:
+                                            cki = new('\0', (ConsoleKey)key.codepoint, shift, alt, ctrl);
+                                            break;
+                                        case TermKeyType.TERMKEY_TYPE_FUNCTION:
+                                            cki = new('\0', (ConsoleKey)key.codepoint, shift, alt, ctrl);
+                                            break;
+                                    }
+                                }
                                 break;
-
-                            // Also, check for keys like HOME, END, etc.
-                            if (chars.Length >= 3 && chars[0] == VtSequenceBasicChars.EscapeChar)
-                            {
-                                // Most likely escape sequence, but we need to distinguish it as it may contain
-                                // information about modifiers
-                                if (chars.Length == 3)
-                                {
-                                    byte prefix = chars[1];
-                                    byte parameter = chars[2];
-                                    switch (parameter)
-                                    {
-                                        case (byte)'A':
-                                            // Arrow up
-                                            if (prefix == (byte)'[' || prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.UpArrow, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'B':
-                                            // Arrow down
-                                            if (prefix == (byte)'[' || prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.DownArrow, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'C':
-                                            // Arrow right
-                                            if (prefix == (byte)'[' || prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.RightArrow, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'D':
-                                            // Arrow left
-                                            if (prefix == (byte)'[' || prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.LeftArrow, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'H':
-                                            // Home key
-                                            if (prefix == (byte)'[' || prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.Home, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'F':
-                                            // End key
-                                            if (prefix == (byte)'[' || prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.End, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'P':
-                                            // F1
-                                            if (prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.F1, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'Q':
-                                            // F2
-                                            if (prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.F2, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'R':
-                                            // F3
-                                            if (prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.F3, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                        case (byte)'S':
-                                            // F4
-                                            if (prefix == (byte)'O')
-                                            {
-                                                cki = new('\0', ConsoleKey.F4, false, false, false);
-                                                bail = true;
-                                            }
-                                            break;
-                                    }
-                                }
-                                else if (chars.Length == 4)
-                                {
-                                    byte prefix = chars[1];
-                                    byte parameter = chars[2];
-                                    byte ending = chars[3];
-                                    if (prefix != (byte)'[')
-                                        break;
-                                    if (ending != (byte)'~')
-                                        break;
-                                    switch (parameter)
-                                    {
-                                        case (byte)'2':
-                                            // Insert
-                                            cki = new('\0', ConsoleKey.Insert, false, false, false);
-                                            bail = true;
-                                            break;
-                                        case (byte)'3':
-                                            // Delete
-                                            cki = new('\0', ConsoleKey.Delete, false, false, false);
-                                            bail = true;
-                                            break;
-                                        case (byte)'5':
-                                            // Page up
-                                            cki = new('\0', ConsoleKey.PageUp, false, false, false);
-                                            bail = true;
-                                            break;
-                                        case (byte)'6':
-                                            // Page down
-                                            cki = new('\0', ConsoleKey.PageDown, false, false, false);
-                                            bail = true;
-                                            break;
-                                    }
-                                }
-                                else if (chars.Length == 5)
-                                {
-                                    byte prefix = chars[1];
-                                    byte parameter = chars[2];
-                                    byte parameter2 = chars[3];
-                                    byte ending = chars[4];
-                                    if (prefix != (byte)'[')
-                                        break;
-                                    if (ending != (byte)'~')
-                                        break;
-                                    switch (parameter)
-                                    {
-                                        case (byte)'1':
-                                            switch (parameter2)
-                                            {
-                                                case (byte)'5':
-                                                    // F5
-                                                    cki = new('\0', ConsoleKey.F5, false, false, false);
-                                                    bail = true;
-                                                    break;
-                                                case (byte)'7':
-                                                    // F6
-                                                    cki = new('\0', ConsoleKey.F6, false, false, false);
-                                                    bail = true;
-                                                    break;
-                                                case (byte)'8':
-                                                    // F7
-                                                    cki = new('\0', ConsoleKey.F7, false, false, false);
-                                                    bail = true;
-                                                    break;
-                                                case (byte)'9':
-                                                    // F8
-                                                    cki = new('\0', ConsoleKey.F8, false, false, false);
-                                                    bail = true;
-                                                    break;
-                                            }
-                                            break;
-                                        case (byte)'2':
-                                            switch (parameter2)
-                                            {
-                                                case (byte)'0':
-                                                    // F9
-                                                    cki = new('\0', ConsoleKey.F9, false, false, false);
-                                                    bail = true;
-                                                    break;
-                                                case (byte)'1':
-                                                    // F10
-                                                    cki = new('\0', ConsoleKey.F10, false, false, false);
-                                                    bail = true;
-                                                    break;
-                                                case (byte)'3':
-                                                    // F11
-                                                    cki = new('\0', ConsoleKey.F11, false, false, false);
-                                                    bail = true;
-                                                    break;
-                                                case (byte)'4':
-                                                    // F12
-                                                    cki = new('\0', ConsoleKey.F12, false, false, false);
-                                                    bail = true;
-                                                    break;
-                                            }
-                                            break;
-                                    }
-                                }
-                                else if (chars.Length == 6)
-                                {
-                                    byte prefix = chars[1];
-                                    byte one = chars[2];
-                                    byte semicolon = chars[3];
-                                    byte five = chars[4];
-                                    byte parameter = chars[4];
-                                    if (prefix != (byte)'[')
-                                        break;
-                                    if (one != (byte)'1')
-                                        break;
-                                    if (semicolon != (byte)';')
-                                        break;
-                                    if (five != (byte)'5')
-                                        break;
-                                    switch (parameter)
-                                    {
-                                        case (byte)'A':
-                                            cki = new('\0', ConsoleKey.UpArrow, false, false, true);
-                                            bail = true;
-                                            break;
-                                        case (byte)'B':
-                                            cki = new('\0', ConsoleKey.DownArrow, false, false, true);
-                                            bail = true;
-                                            break;
-                                        case (byte)'C':
-                                            cki = new('\0', ConsoleKey.RightArrow, false, false, true);
-                                            bail = true;
-                                            break;
-                                        case (byte)'D':
-                                            cki = new('\0', ConsoleKey.LeftArrow, false, false, true);
-                                            bail = true;
-                                            break;
-                                    }
-                                }
-                                if (!bail)
-                                    ConsoleLogger.Warning("UNIMPLEMENTED: mod/esc [len: {0}] {1}", chars.Length, asciiSeq);
-                            }
-                            if (bail)
-                                break;
-
-                            // Process a single key
-                            if (chars.Length == 1)
-                            {
-                                // Usually ASCII
-                                char keyChar = (char)chars[0];
-                                ConsoleKey asciiChar = (ConsoleKey)char.ToUpperInvariant(keyChar);
-                                cki = new(keyChar, asciiChar, false, false, false);
-                                bail = true;
                             }
                             else
-                                ConsoleLogger.Warning("UNIMPLEMENTED: char [len: {0}] {1}", chars.Length, asciiSeq);
-                            if (bail)
-                                break;
+                            {
+                                // libtermkey not available, so rely on our parser
+                                string asciiSeq = Encoding.ASCII.GetString(chars);
+                                bool bail = false;
+
+                                // Now, parse the sequence by checking for ALT sequences
+                                if (chars.Length == 2 && chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] < 128)
+                                {
+                                    char keyChar = (char)chars[1];
+                                    cki = new(keyChar, (ConsoleKey)keyChar, false, true, false);
+                                    bail = true;
+                                }
+                                if (bail)
+                                    break;
+
+                                // Also, check for keys like HOME, END, etc.
+                                if (chars.Length >= 3 && chars[0] == VtSequenceBasicChars.EscapeChar)
+                                {
+                                    // Most likely escape sequence, but we need to distinguish it as it may contain
+                                    // information about modifiers
+                                    if (chars.Length == 3)
+                                    {
+                                        byte prefix = chars[1];
+                                        byte parameter = chars[2];
+                                        switch (parameter)
+                                        {
+                                            case (byte)'A':
+                                                // Arrow up
+                                                if (prefix == (byte)'[' || prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.UpArrow, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'B':
+                                                // Arrow down
+                                                if (prefix == (byte)'[' || prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.DownArrow, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'C':
+                                                // Arrow right
+                                                if (prefix == (byte)'[' || prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.RightArrow, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'D':
+                                                // Arrow left
+                                                if (prefix == (byte)'[' || prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.LeftArrow, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'H':
+                                                // Home key
+                                                if (prefix == (byte)'[' || prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.Home, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'F':
+                                                // End key
+                                                if (prefix == (byte)'[' || prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.End, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'P':
+                                                // F1
+                                                if (prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.F1, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'Q':
+                                                // F2
+                                                if (prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.F2, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'R':
+                                                // F3
+                                                if (prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.F3, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                            case (byte)'S':
+                                                // F4
+                                                if (prefix == (byte)'O')
+                                                {
+                                                    cki = new('\0', ConsoleKey.F4, false, false, false);
+                                                    bail = true;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                    else if (chars.Length == 4)
+                                    {
+                                        byte prefix = chars[1];
+                                        byte parameter = chars[2];
+                                        byte ending = chars[3];
+                                        if (prefix != (byte)'[')
+                                            break;
+                                        if (ending != (byte)'~')
+                                            break;
+                                        switch (parameter)
+                                        {
+                                            case (byte)'2':
+                                                // Insert
+                                                cki = new('\0', ConsoleKey.Insert, false, false, false);
+                                                bail = true;
+                                                break;
+                                            case (byte)'3':
+                                                // Delete
+                                                cki = new('\0', ConsoleKey.Delete, false, false, false);
+                                                bail = true;
+                                                break;
+                                            case (byte)'5':
+                                                // Page up
+                                                cki = new('\0', ConsoleKey.PageUp, false, false, false);
+                                                bail = true;
+                                                break;
+                                            case (byte)'6':
+                                                // Page down
+                                                cki = new('\0', ConsoleKey.PageDown, false, false, false);
+                                                bail = true;
+                                                break;
+                                        }
+                                    }
+                                    else if (chars.Length == 5)
+                                    {
+                                        byte prefix = chars[1];
+                                        byte parameter = chars[2];
+                                        byte parameter2 = chars[3];
+                                        byte ending = chars[4];
+                                        if (prefix != (byte)'[')
+                                            break;
+                                        if (ending != (byte)'~')
+                                            break;
+                                        switch (parameter)
+                                        {
+                                            case (byte)'1':
+                                                switch (parameter2)
+                                                {
+                                                    case (byte)'5':
+                                                        // F5
+                                                        cki = new('\0', ConsoleKey.F5, false, false, false);
+                                                        bail = true;
+                                                        break;
+                                                    case (byte)'7':
+                                                        // F6
+                                                        cki = new('\0', ConsoleKey.F6, false, false, false);
+                                                        bail = true;
+                                                        break;
+                                                    case (byte)'8':
+                                                        // F7
+                                                        cki = new('\0', ConsoleKey.F7, false, false, false);
+                                                        bail = true;
+                                                        break;
+                                                    case (byte)'9':
+                                                        // F8
+                                                        cki = new('\0', ConsoleKey.F8, false, false, false);
+                                                        bail = true;
+                                                        break;
+                                                }
+                                                break;
+                                            case (byte)'2':
+                                                switch (parameter2)
+                                                {
+                                                    case (byte)'0':
+                                                        // F9
+                                                        cki = new('\0', ConsoleKey.F9, false, false, false);
+                                                        bail = true;
+                                                        break;
+                                                    case (byte)'1':
+                                                        // F10
+                                                        cki = new('\0', ConsoleKey.F10, false, false, false);
+                                                        bail = true;
+                                                        break;
+                                                    case (byte)'3':
+                                                        // F11
+                                                        cki = new('\0', ConsoleKey.F11, false, false, false);
+                                                        bail = true;
+                                                        break;
+                                                    case (byte)'4':
+                                                        // F12
+                                                        cki = new('\0', ConsoleKey.F12, false, false, false);
+                                                        bail = true;
+                                                        break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                    else if (chars.Length == 6)
+                                    {
+                                        byte prefix = chars[1];
+                                        byte one = chars[2];
+                                        byte semicolon = chars[3];
+                                        byte five = chars[4];
+                                        byte parameter = chars[4];
+                                        if (prefix != (byte)'[')
+                                            break;
+                                        if (one != (byte)'1')
+                                            break;
+                                        if (semicolon != (byte)';')
+                                            break;
+                                        if (five != (byte)'5')
+                                            break;
+                                        switch (parameter)
+                                        {
+                                            case (byte)'A':
+                                                cki = new('\0', ConsoleKey.UpArrow, false, false, true);
+                                                bail = true;
+                                                break;
+                                            case (byte)'B':
+                                                cki = new('\0', ConsoleKey.DownArrow, false, false, true);
+                                                bail = true;
+                                                break;
+                                            case (byte)'C':
+                                                cki = new('\0', ConsoleKey.RightArrow, false, false, true);
+                                                bail = true;
+                                                break;
+                                            case (byte)'D':
+                                                cki = new('\0', ConsoleKey.LeftArrow, false, false, true);
+                                                bail = true;
+                                                break;
+                                        }
+                                    }
+                                    if (!bail)
+                                        ConsoleLogger.Warning("UNIMPLEMENTED: mod/esc [len: {0}] {1}", chars.Length, asciiSeq);
+                                }
+                                if (bail)
+                                    break;
+
+                                // Process a single key
+                                if (chars.Length == 1)
+                                {
+                                    // Usually ASCII
+                                    char keyChar = (char)chars[0];
+                                    ConsoleKey asciiChar = (ConsoleKey)char.ToUpperInvariant(keyChar);
+                                    cki = new(keyChar, asciiChar, false, false, false);
+                                    bail = true;
+                                }
+                                else
+                                    ConsoleLogger.Warning("UNIMPLEMENTED: char [len: {0}] {1}", chars.Length, asciiSeq);
+                                if (bail)
+                                    break;
+                            }
                         }
                     }
                 }

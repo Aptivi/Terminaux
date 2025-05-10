@@ -18,6 +18,7 @@
 //
 
 using SpecProbe.Software.Platform;
+using System;
 using System.Runtime.InteropServices;
 
 namespace Terminaux.Base.Extensions.Native
@@ -49,6 +50,110 @@ namespace Terminaux.Base.Extensions.Native
             Control = 0x0010,
         }
 
+        [Flags]
+        internal enum TermKeyFlag
+        {
+            TERMKEY_FLAG_NOINTERPRET = 1 << 0,
+            TERMKEY_FLAG_CONVERTKP = 1 << 1,
+            TERMKEY_FLAG_RAW = 1 << 2,
+            TERMKEY_FLAG_UTF8 = 1 << 3,
+        }
+
+        internal enum TermKeyResult
+        {
+            TERMKEY_RES_NONE = 0,
+            TERMKEY_RES_KEY = 1,
+            TERMKEY_RES_EOF = 2,
+            TERMKEY_RES_AGAIN = 3,
+        }
+
+        [Flags]
+        internal enum TermKeyKeyMod
+        {
+            SHIFT = 1 << 0,
+            ALT = 1 << 1,
+            CTRL = 1 << 2,
+        }
+
+        internal enum TermKeyType
+        {
+            TERMKEY_TYPE_UNICODE,
+            TERMKEY_TYPE_FUNCTION,
+            TERMKEY_TYPE_KEYSYM,
+            TERMKEY_TYPE_MOUSE,
+            TERMKEY_TYPE_POSITION,
+            TERMKEY_TYPE_MODEREPORT,
+            TERMKEY_TYPE_DCS,
+            TERMKEY_TYPE_OSC,
+            TERMKEY_TYPE_UNKNOWN_CSI = -1
+        }
+
+        internal enum TermKeySym
+        {
+            TERMKEY_SYM_UNKNOWN = -1,
+            TERMKEY_SYM_NONE = 0,
+            TERMKEY_SYM_BACKSPACE,
+            TERMKEY_SYM_TAB,
+            TERMKEY_SYM_ENTER,
+            TERMKEY_SYM_ESCAPE,
+            TERMKEY_SYM_SPACE,
+            TERMKEY_SYM_DEL,
+            TERMKEY_SYM_UP,
+            TERMKEY_SYM_DOWN,
+            TERMKEY_SYM_LEFT,
+            TERMKEY_SYM_RIGHT,
+            TERMKEY_SYM_BEGIN,
+            TERMKEY_SYM_FIND,
+            TERMKEY_SYM_INSERT,
+            TERMKEY_SYM_DELETE,
+            TERMKEY_SYM_SELECT,
+            TERMKEY_SYM_PAGEUP,
+            TERMKEY_SYM_PAGEDOWN,
+            TERMKEY_SYM_HOME,
+            TERMKEY_SYM_END,
+            TERMKEY_SYM_CANCEL,
+            TERMKEY_SYM_CLEAR,
+            TERMKEY_SYM_CLOSE,
+            TERMKEY_SYM_COMMAND,
+            TERMKEY_SYM_COPY,
+            TERMKEY_SYM_EXIT,
+            TERMKEY_SYM_HELP,
+            TERMKEY_SYM_MARK,
+            TERMKEY_SYM_MESSAGE,
+            TERMKEY_SYM_MOVE,
+            TERMKEY_SYM_OPEN,
+            TERMKEY_SYM_OPTIONS,
+            TERMKEY_SYM_PRINT,
+            TERMKEY_SYM_REDO,
+            TERMKEY_SYM_REFERENCE,
+            TERMKEY_SYM_REFRESH,
+            TERMKEY_SYM_REPLACE,
+            TERMKEY_SYM_RESTART,
+            TERMKEY_SYM_RESUME,
+            TERMKEY_SYM_SAVE,
+            TERMKEY_SYM_SUSPEND,
+            TERMKEY_SYM_UNDO,
+            TERMKEY_SYM_KP0,
+            TERMKEY_SYM_KP1,
+            TERMKEY_SYM_KP2,
+            TERMKEY_SYM_KP3,
+            TERMKEY_SYM_KP4,
+            TERMKEY_SYM_KP5,
+            TERMKEY_SYM_KP6,
+            TERMKEY_SYM_KP7,
+            TERMKEY_SYM_KP8,
+            TERMKEY_SYM_KP9,
+            TERMKEY_SYM_KPENTER,
+            TERMKEY_SYM_KPPLUS,
+            TERMKEY_SYM_KPMINUS,
+            TERMKEY_SYM_KPMULT,
+            TERMKEY_SYM_KPDIV,
+            TERMKEY_SYM_KPCOMMA,
+            TERMKEY_SYM_KPPERIOD,
+            TERMKEY_SYM_KPEQUALS,
+            TERMKEY_N_SYMS
+        }
+
         [StructLayout(LayoutKind.Sequential)]
         internal struct Termios
         {
@@ -60,6 +165,22 @@ namespace Terminaux.Base.Extensions.Native
             public byte[] c_cc;
             public uint c_ispeed;
             public uint c_ospeed;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct TermKeyKey
+        {
+            public TermKeyType type;
+            public int modifiers;
+            public uint codepoint;
+            public int sym;
+            public byte utf8_0;
+            public byte utf8_1;
+            public byte utf8_2;
+            public byte utf8_3;
+            public byte utf8_4;
+            public byte utf8_5;
+            public byte utf8_6;
         }
 
         [DllImport("libc", SetLastError = true)]
@@ -76,6 +197,18 @@ namespace Terminaux.Base.Extensions.Native
 
         [DllImport("libc", SetLastError = true)]
         internal static extern int isatty(int fd);
+
+        [DllImport("termkey", SetLastError = true)]
+        internal static extern IntPtr termkey_new(int fd, TermKeyFlag flags);
+
+        [DllImport("termkey", SetLastError = true)]
+        internal static extern void termkey_destroy(IntPtr tk);
+
+        [DllImport("termkey", SetLastError = true)]
+        internal static extern TermKeyResult termkey_push_bytes(IntPtr tk, IntPtr buffer, UIntPtr length);
+
+        [DllImport("termkey", SetLastError = true)]
+        internal static extern TermKeyResult termkey_getkey(IntPtr tk, out TermKeyKey key);
 
         internal static void RawSet(bool enable)
         {

@@ -18,6 +18,7 @@
 //
 
 using SpecProbe.Software.Platform;
+using System;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Inputs;
 
@@ -28,6 +29,7 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleMode
     {
+        internal static IntPtr tk = IntPtr.Zero;
         private static bool isRaw = false;
         private static bool isBlocking = true;
 
@@ -55,6 +57,7 @@ namespace Terminaux.Base.Extensions
             NativeMethods.RawSet(true);
             isRaw = true;
             isBlocking = false;
+            EnableLibTermKey();
         }
 
         /// <summary>
@@ -69,6 +72,7 @@ namespace Terminaux.Base.Extensions
             NativeMethods.RawSet(false);
             isRaw = false;
             isBlocking = true;
+            DisableLibTermKey();
         }
 
         /// <summary>
@@ -91,6 +95,37 @@ namespace Terminaux.Base.Extensions
                 return;
             NativeMethods.NonblockSet(true);
             isBlocking = false;
+        }
+
+        private static void EnableLibTermKey()
+        {
+            try
+            {
+                tk = NativeMethods.termkey_new(0, NativeMethods.TermKeyFlag.TERMKEY_FLAG_UTF8 | NativeMethods.TermKeyFlag.TERMKEY_FLAG_RAW);
+                if (tk == IntPtr.Zero)
+                    throw new TerminauxInternalException("Failed to create termkey");
+            }
+            catch (Exception e)
+            {
+                ConsoleLogger.Error(e, "Can't enable libtermkey");
+            }
+        }
+
+        private static void DisableLibTermKey()
+        {
+            try
+            {
+                if (tk != IntPtr.Zero)
+                    NativeMethods.termkey_destroy(tk);
+            }
+            catch (Exception e)
+            {
+                ConsoleLogger.Error(e, "Can't disable libtermkey");
+            }
+            finally
+            {
+                tk = IntPtr.Zero;
+            }
         }
     }
 }
