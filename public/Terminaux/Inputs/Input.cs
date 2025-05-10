@@ -265,10 +265,17 @@ namespace Terminaux.Inputs
                                     switch (key.type)
                                     {
                                         case TermKeyType.TERMKEY_TYPE_KEYSYM:
-                                            cki = new('\0', (ConsoleKey)key.codepoint, shift, alt, ctrl);
+                                            (char character, ConsoleKey consoleKey) = NativeMapping.TranslateKeysym((TermKeySym)key.code.codepoint);
+                                            cki = new(character, consoleKey, shift, alt, ctrl);
                                             break;
                                         case TermKeyType.TERMKEY_TYPE_FUNCTION:
-                                            cki = new('\0', (ConsoleKey)key.codepoint, shift, alt, ctrl);
+                                            ConsoleKey functionKey = NativeMapping.TranslateFunction(key.code.number);
+                                            cki = new('\0', functionKey, shift, alt, ctrl);
+                                            break;
+                                        case TermKeyType.TERMKEY_TYPE_UNICODE:
+                                            char upperInvariant = char.ToUpperInvariant((char)key.code.codepoint);
+                                            ConsoleKey ck = key.code.codepoint > 0 && key.code.codepoint <= 255 ? (ConsoleKey)upperInvariant : 0;
+                                            cki = new((char)key.code.codepoint, ck, shift, alt, ctrl);
                                             break;
                                     }
                                 }
@@ -728,22 +735,25 @@ namespace Terminaux.Inputs
 
             // Spin until nonblocking is enabled
             SpinWait.SpinUntil(() => !ConsoleMode.IsBlocking);
-            byte* chars = stackalloc byte[6];
-            int result = NativeMethods.read(0, chars, 6);
-            if (result == 6 && chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M')
+            lock (Console.In)
             {
-                charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                return true;
-            }
-            else if (result != -1)
-            {
-                charRead = new byte[result];
-                for (int i = 0; i < result; i++)
-                    charRead[i] = chars[i];
-            }
-            else if (result == -1 && Marshal.GetLastWin32Error() == 11)
+                byte* chars = stackalloc byte[6];
+                int result = NativeMethods.read(0, chars, 6);
+                if (result == 6 && chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M')
+                {
+                    charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
+                    return true;
+                }
+                else if (result != -1)
+                {
+                    charRead = new byte[result];
+                    for (int i = 0; i < result; i++)
+                        charRead[i] = chars[i];
+                }
+                else if (result == -1 && Marshal.GetLastWin32Error() == 11)
+                    return false;
                 return false;
-            return false;
+            }
         }
 
         private static void DisableMouseSupport()

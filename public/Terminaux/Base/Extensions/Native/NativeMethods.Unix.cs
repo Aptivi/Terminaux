@@ -167,20 +167,26 @@ namespace Terminaux.Base.Extensions.Native
             public uint c_ospeed;
         }
 
+        [StructLayout(LayoutKind.Explicit)]
+        public struct TermKeyKeyCodeUnion
+        {
+            [FieldOffset(0)]
+            public long codepoint;
+            [FieldOffset(0)]
+            public int number;
+            [FieldOffset(0)]
+            public TermKeySym sym;
+        }
+
         [StructLayout(LayoutKind.Sequential)]
         internal struct TermKeyKey
         {
             public TermKeyType type;
+            public TermKeyKeyCodeUnion code;
             public int modifiers;
-            public uint codepoint;
-            public int sym;
-            public byte utf8_0;
-            public byte utf8_1;
-            public byte utf8_2;
-            public byte utf8_3;
-            public byte utf8_4;
-            public byte utf8_5;
-            public byte utf8_6;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 7)]
+            public string utf8;
+
         }
 
         [DllImport("libc", SetLastError = true)]
@@ -218,15 +224,15 @@ namespace Terminaux.Base.Extensions.Native
                 Termios newTermios = orig;
                 newTermios.c_iflag &= ~(0x1u | 0x200u | 0x400u);
                 newTermios.c_lflag &= ~(0x8u | 0x100u | 0x80u);
-                if (PlatformHelper.IsOnMacOS())
+                if (!PlatformHelper.IsOnMacOS())
                 {
                     newTermios.c_cc[6] = 0;
-                    newTermios.c_cc[5] = 0;
+                    newTermios.c_cc[5] = 1;
                 }
                 else
                 {
                     newTermios.c_cc[16] = 0;
-                    newTermios.c_cc[17] = 0;
+                    newTermios.c_cc[17] = 1;
                 }
             }
             else
