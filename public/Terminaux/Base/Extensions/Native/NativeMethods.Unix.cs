@@ -66,9 +66,6 @@ namespace Terminaux.Base.Extensions.Native
         internal static extern unsafe int read(int fd, void* buf, uint count);
 
         [DllImport("libc", SetLastError = true)]
-        internal static extern int ioctl(int fd, ulong request, ref uint argp);
-
-        [DllImport("libc", SetLastError = true)]
         internal static extern int tcgetattr(int fd, out Termios termios_p);
 
         [DllImport("libc", SetLastError = true)]
@@ -79,21 +76,6 @@ namespace Terminaux.Base.Extensions.Native
 
         [DllImport("libc", SetLastError = true)]
         internal static extern int isatty(int fd);
-
-        internal static ulong DeterminePeekIoCtl()
-        {
-            if (PlatformHelper.IsOnMacOS())
-            {
-                // Return FreeBSD's FIONREAD ioctl according to this line, because Darwin is BSD.
-                // http://fxr.watson.org/fxr/source/sys/filio.h#L49
-                //    |  IOC_OUT  |   l   IOCPARM_MASK   |    g         |   n
-                return 0x40000000 | ((4 & 0x1fff) << 16) | (('f') << 8) | (127);
-            }
-
-            // Return Linux's FIONREAD ioctl according to this line.
-            // https://github.com/torvalds/linux/blob/cf87f46fd34d6c19283d9625a7822f20d90b64a4/include/uapi/asm-generic/ioctls.h#L46
-            return 0x541b;
-        }
 
         internal static void RawSet(bool enable)
         {
