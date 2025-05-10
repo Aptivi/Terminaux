@@ -150,15 +150,21 @@ namespace Terminaux.Inputs
                 if (PlatformHelper.IsOnWindows())
                 {
                     // Set the appropriate modes
+                    bool bail = false;
                     uint numRead = 0;
                     INPUT_RECORD[] record = [new INPUT_RECORD()];
                     PeekConsoleInput(stdHandle, record, 1, ref numRead);
+
+                    // Check for event number
+                    if (numRead == 0)
+                        break;
 
                     // Check the event type
                     switch (record[0].EventType)
                     {
                         case INPUT_RECORD.MOUSE_EVENT:
                             // Get the coordinates and event arguments
+                            ReadConsoleInput(stdHandle, record, 1, ref numRead);
                             var @event = record[0].MouseEvent;
                             var coord = @event.dwMousePosition;
                             ConsoleLogger.Debug($"Coord: {coord.X}, {coord.Y}, {@event.dwButtonState}, {@event.dwControlKeyState}, {@event.dwEventFlags}");
@@ -169,11 +175,30 @@ namespace Terminaux.Inputs
                                 break;
                             ctx = GenerateContext(coord.X, coord.Y, button, press, mods);
                             context = ctx;
+                            bail = true;
                             break;
                         default:
-                            cki = ConsoleWrapper.ReadKey(true);
+                            if (ConsoleWrapper.KeyAvailable)
+                            {
+                                // Read a key
+                                cki = ConsoleWrapper.ReadKey(true);
+                                bail = true;
+                            }
+                            else
+                            {
+                                // Dismiss any foreign events, such as window focus event
+                                GetNumberOfConsoleInputEvents(stdHandle, ref numRead);
+                                while (numRead != 0)
+                                {
+                                    ReadConsoleInput(stdHandle, record, 1, ref numRead);
+                                    GetNumberOfConsoleInputEvents(stdHandle, ref numRead);
+                                }
+                            }
                             break;
                     }
+                    if (bail)
+                        break;
+
                 }
                 else
                 {

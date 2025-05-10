@@ -111,6 +111,9 @@ namespace Terminaux.Base.Extensions.Native
         [DllImport(winKernel, CharSet = CharSet.Unicode)]
         internal static extern bool PeekConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);
 
+        [DllImport(winKernel, CharSet = CharSet.Unicode)]
+        internal static extern bool GetNumberOfConsoleInputEvents(IntPtr hConsoleInput, ref uint lpcNumberOfEvents);
+
         [DllImport(winKernel, SetLastError = true)]
         internal static extern IntPtr GetConsoleWindow();
 
