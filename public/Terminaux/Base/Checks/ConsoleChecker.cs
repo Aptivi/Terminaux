@@ -68,6 +68,10 @@ namespace Terminaux.Base.Checks
                         var filtered = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
                         if (!filtered.filtered)
                             _dumb = false;
+
+                        // Additionally, check the isatty output
+                        if (PlatformHelper.IsOnUnix())
+                            _dumb = NativeMethods.isatty(0) != 1;
                     }
                 }
                 catch { }

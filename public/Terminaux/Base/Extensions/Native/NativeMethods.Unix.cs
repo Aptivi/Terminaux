@@ -77,6 +77,9 @@ namespace Terminaux.Base.Extensions.Native
         [DllImport("libc", SetLastError = true)]
         internal static extern int fcntl(int fd, int cmd, int arg);
 
+        [DllImport("libc", SetLastError = true)]
+        internal static extern int isatty(int fd);
+
         internal static ulong DeterminePeekIoCtl()
         {
             if (PlatformHelper.IsOnMacOS())
