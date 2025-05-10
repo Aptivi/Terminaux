@@ -1765,6 +1765,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.InputEventInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.InputEventInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.InputEventInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.InputEventInfo.yml\" sourcestartlinenumber=\"1\">Input event info</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.InputEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.InputEventType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.InputEventType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.InputEventType.yml\" sourcestartlinenumber=\"1\">Input event type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.InputModule.yml",
       "output": {
         ".html": {
