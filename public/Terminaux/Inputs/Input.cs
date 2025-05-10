@@ -20,6 +20,7 @@
 using SpecProbe.Software.Platform;
 using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using Terminaux.Base;
@@ -178,10 +179,10 @@ namespace Terminaux.Inputs
                             bail = true;
                             break;
                         default:
-                            if (ConsoleWrapper.KeyAvailable)
+                            if (Console.KeyAvailable)
                             {
                                 // Read a key
-                                cki = ConsoleWrapper.ReadKey(true);
+                                cki = Console.ReadKey(true);
                                 bail = true;
                             }
                             else
@@ -239,8 +240,8 @@ namespace Terminaux.Inputs
                         if (!ConsoleMode.IsRaw)
                         {
                             // Use the standard ReadKey function
-                            if (ConsoleWrapper.KeyAvailable)
-                                cki = ConsoleWrapper.ReadKey(true);
+                            if (Console.KeyAvailable)
+                                cki = Console.ReadKey(true);
                             break;
                         }
                         else
@@ -524,7 +525,7 @@ namespace Terminaux.Inputs
             (PointerEventContext?, ConsoleKeyInfo?) data = default;
             SpinWait.SpinUntil(() =>
             {
-                data = ReadPointerOrKey();
+                data = ReadPointerOrKeyNoBlock();
                 return data.Item2 is not null;
             });
             TermReaderTools.isWaitingForInput = false;
@@ -541,7 +542,7 @@ namespace Terminaux.Inputs
             (PointerEventContext?, ConsoleKeyInfo?) data = default;
             bool result = SpinWait.SpinUntil(() =>
             {
-                data = ReadPointerOrKey();
+                data = ReadPointerOrKeyNoBlock();
                 return data.Item2 is not null;
             }, Timeout);
             TermReaderTools.isWaitingForInput = false;
@@ -555,8 +556,8 @@ namespace Terminaux.Inputs
         {
             SpinWait.SpinUntil(() =>
             {
-                var data = ReadPointerOrKey();
-                return data.Item2 is null && data.Item1 is null;
+                var (pointer, key) = ReadPointerOrKeyNoBlock();
+                return key is null && pointer is null;
             });
         }
 
@@ -699,6 +700,8 @@ namespace Terminaux.Inputs
             if (!ConsoleMode.IsRaw)
                 return false;
 
+            // Spin until nonblocking is enabled
+            SpinWait.SpinUntil(() => !ConsoleMode.IsBlocking);
             byte* chars = stackalloc byte[6];
             int result = NativeMethods.read(0, chars, 6);
             if (result == 6 && chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M')
@@ -706,12 +709,14 @@ namespace Terminaux.Inputs
                 charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                 return true;
             }
-            else
+            else if (result != -1)
             {
                 charRead = new byte[result];
                 for (int i = 0; i < result; i++)
                     charRead[i] = chars[i];
             }
+            else if (result == -1 && Marshal.GetLastWin32Error() == 11)
+                return false;
             return false;
         }
 

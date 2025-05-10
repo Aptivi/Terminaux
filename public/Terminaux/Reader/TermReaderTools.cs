@@ -29,6 +29,8 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -194,18 +196,25 @@ namespace Terminaux.Reader
 
         internal static ConsoleKeyInfo GetInput(bool interruptible)
         {
+            ConsoleKeyInfo cki = new();
             if (interruptible)
             {
-                SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable || interrupting);
+                (PointerEventContext?, ConsoleKeyInfo?) data = default;
+                isWaitingForInput = true;
+                SpinWait.SpinUntil(() =>
+                {
+                    data = Input.ReadPointerOrKeyNoBlock();
+                    return data.Item2 is not null || interrupting;
+                });
+                isWaitingForInput = false;
                 if (interrupting)
                 {
                     interrupting = false;
-                    if (ConsoleWrapper.KeyAvailable)
-                        ConsoleWrapper.ReadKey(true);
-                    return new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false);
+                    cki = new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false);
                 }
                 else
-                    return ConsoleWrapper.ReadKey(true);
+                    cki = data.Item2 ?? default;
+                return cki;
             }
             else
                 return ConsoleWrapper.ReadKey(true);

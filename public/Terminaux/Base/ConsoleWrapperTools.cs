@@ -24,6 +24,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
+using Terminaux.Inputs;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -525,7 +526,7 @@ namespace Terminaux.Base
             {
                 if (IsDumb)
                     return false;
-                return Console.KeyAvailable;
+                return !ConsoleMode.IsRaw && Console.KeyAvailable;
             }
         }
 
@@ -663,8 +664,12 @@ namespace Terminaux.Base
             Clear();
         }
 
-        private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
-            Console.ReadKey(intercept);
+        private static ConsoleKeyInfo ReadKey(bool intercept = false)
+        {
+            if (!ConsoleMode.IsRaw)
+                return Console.ReadKey(intercept);
+            return Input.ReadKey();
+        }
 
         private static void Write(char value)
         {

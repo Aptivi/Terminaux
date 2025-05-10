@@ -26,6 +26,8 @@ namespace Terminaux.Base.Extensions.Native
     {
         private const int STDIN_FD = 0;
         private const int T_TCSANOW = 0;
+        private const int F_GETFL = 3;
+        private const int F_SETFL = 4;
 
         private static Termios orig;
 
@@ -72,6 +74,9 @@ namespace Terminaux.Base.Extensions.Native
         [DllImport("libc", SetLastError = true)]
         internal static extern int tcsetattr(int fd, int optional_actions, ref Termios termios_p);
 
+        [DllImport("libc", SetLastError = true)]
+        internal static extern int fcntl(int fd, int cmd, int arg);
+
         internal static ulong DeterminePeekIoCtl()
         {
             if (PlatformHelper.IsOnMacOS())
@@ -95,10 +100,48 @@ namespace Terminaux.Base.Extensions.Native
                 Termios newTermios = orig;
                 newTermios.c_iflag &= ~(0x1u | 0x200u | 0x400u);
                 newTermios.c_lflag &= ~(0x8u | 0x100u | 0x80u);
-                tcsetattr(STDIN_FD, T_TCSANOW, ref newTermios);
+                if (PlatformHelper.IsOnMacOS())
+                {
+                    newTermios.c_cc[6] = 0;
+                    newTermios.c_cc[5] = 0;
+                }
+                else
+                {
+                    newTermios.c_cc[16] = 0;
+                    newTermios.c_cc[17] = 0;
+                }
             }
             else
-                tcsetattr(STDIN_FD, T_TCSANOW, ref orig);
+            {
+                if (tcsetattr(STDIN_FD, T_TCSANOW, ref orig) != 0)
+                    throw new TerminauxInternalException($"Can't restore new termios attributes for raw mode: {Marshal.GetLastWin32Error()}");
+            }
+            NonblockSet(enable);
+        }
+
+        internal static void NonblockSet(bool enable)
+        {
+            if (PlatformHelper.IsOnWindows())
+                return;
+
+            int nonBlock = PlatformHelper.IsOnMacOS() ? 0x4 : 0x800;
+            if (enable)
+            {
+                int flags = fcntl(STDIN_FD, F_GETFL, 0);
+                if (flags == -1)
+                    throw new TerminauxInternalException($"Can't get file descriptor flags: {Marshal.GetLastWin32Error()}");
+                if (fcntl(STDIN_FD, F_SETFL, flags | nonBlock) == -1)
+                    throw new TerminauxInternalException($"Can't set file descriptor flag to non-blocking read: {Marshal.GetLastWin32Error()}");
+            }
+            else
+            {
+                int flags = fcntl(STDIN_FD, F_GETFL, 0);
+                if (flags == -1)
+                    throw new TerminauxInternalException($"Can't get file descriptor flags: {Marshal.GetLastWin32Error()}");
+                flags &= ~nonBlock;
+                if (fcntl(STDIN_FD, F_SETFL, flags) == -1)
+                    throw new TerminauxInternalException($"Can't set file descriptor flag to blocking read: {Marshal.GetLastWin32Error()}");
+            }
         }
     }
 }

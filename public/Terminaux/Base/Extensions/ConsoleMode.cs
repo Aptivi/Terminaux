@@ -29,12 +29,19 @@ namespace Terminaux.Base.Extensions
     public static class ConsoleMode
     {
         private static bool isRaw = false;
+        private static bool isBlocking = true;
 
         /// <summary>
         /// Whether the console is in the raw mode or in the cooked mode
         /// </summary>
         public static bool IsRaw =>
             isRaw;
+
+        /// <summary>
+        /// Whether the console is in blocking or in non-blocking read mode
+        /// </summary>
+        public static bool IsBlocking =>
+            isBlocking;
 
         /// <summary>
         /// Enables raw console (goes to raw mode)
@@ -47,6 +54,7 @@ namespace Terminaux.Base.Extensions
                 return;
             NativeMethods.RawSet(true);
             isRaw = true;
+            isBlocking = false;
         }
 
         /// <summary>
@@ -60,6 +68,29 @@ namespace Terminaux.Base.Extensions
                 return;
             NativeMethods.RawSet(false);
             isRaw = false;
+            isBlocking = true;
+        }
+
+        /// <summary>
+        /// Enables read blocking
+        /// </summary>
+        public static void EnableBlocking()
+        {
+            if (PlatformHelper.IsOnWindows())
+                return;
+            NativeMethods.NonblockSet(false);
+            isBlocking = true;
+        }
+
+        /// <summary>
+        /// Disables read blocking
+        /// </summary>
+        public static void DisableBlocking()
+        {
+            if (PlatformHelper.IsOnWindows())
+                return;
+            NativeMethods.NonblockSet(true);
+            isBlocking = false;
         }
     }
 }

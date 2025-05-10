@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Reader;
 
@@ -40,8 +41,25 @@ namespace Terminaux.Base
         /// </summary>
         public static int CursorLeft
         {
-            get => ConsoleWrapperTools.ActionCursorLeft();
-            set => ConsoleWrapperTools.ActionSetCursorLeft(value);
+            get
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                int left = ConsoleWrapperTools.ActionCursorLeft();
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+                return left;
+            }
+            set
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                ConsoleWrapperTools.ActionSetCursorLeft(value);
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+            }
         }
 
         /// <summary>
@@ -49,8 +67,25 @@ namespace Terminaux.Base
         /// </summary>
         public static int CursorTop
         {
-            get => ConsoleWrapperTools.ActionCursorTop();
-            set => ConsoleWrapperTools.ActionSetCursorTop(value);
+            get
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                int top = ConsoleWrapperTools.ActionCursorTop();
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+                return top;
+            }
+            set
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                ConsoleWrapperTools.ActionSetCursorTop(value);
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+            }
         }
 
         /// <summary>
@@ -64,8 +99,25 @@ namespace Terminaux.Base
         /// </summary>
         public static int WindowWidth
         {
-            get => ConsoleWrapperTools.ActionWindowWidth();
-            set => ConsoleWrapperTools.ActionSetWindowWidth(value);
+            get
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                int width = ConsoleWrapperTools.ActionWindowWidth();
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+                return width;
+            }
+            set
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                ConsoleWrapperTools.ActionSetWindowWidth(value);
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+            }
         }
 
         /// <summary>
@@ -73,8 +125,25 @@ namespace Terminaux.Base
         /// </summary>
         public static int WindowHeight
         {
-            get => ConsoleWrapperTools.ActionWindowHeight();
-            set => ConsoleWrapperTools.ActionSetWindowHeight(value);
+            get
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                int height = ConsoleWrapperTools.ActionWindowHeight();
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+                return height;
+            }
+            set
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                ConsoleWrapperTools.ActionSetWindowHeight(value);
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+            }
         }
 
         /// <summary>
@@ -82,8 +151,25 @@ namespace Terminaux.Base
         /// </summary>
         public static int BufferWidth
         {
-            get => ConsoleWrapperTools.ActionBufferWidth();
-            set => ConsoleWrapperTools.ActionSetBufferWidth(value);
+            get
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                int width = ConsoleWrapperTools.ActionBufferWidth();
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+                return width;
+            }
+            set
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                ConsoleWrapperTools.ActionSetBufferWidth(value);
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+            }
         }
 
         /// <summary>
@@ -91,8 +177,25 @@ namespace Terminaux.Base
         /// </summary>
         public static int BufferHeight
         {
-            get => ConsoleWrapperTools.ActionBufferHeight();
-            set => ConsoleWrapperTools.ActionSetBufferHeight(value);
+            get
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                int height = ConsoleWrapperTools.ActionBufferHeight();
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+                return height;
+            }
+            set
+            {
+                bool initialBlocking = ConsoleMode.IsBlocking;
+                if (!initialBlocking)
+                    ConsoleMode.EnableBlocking();
+                ConsoleWrapperTools.ActionSetBufferHeight(value);
+                if (!initialBlocking)
+                    ConsoleMode.DisableBlocking();
+            }
         }
 
         /// <summary>
