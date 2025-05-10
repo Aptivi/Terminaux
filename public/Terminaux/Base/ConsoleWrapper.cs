@@ -45,25 +45,14 @@ namespace Terminaux.Base
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
-                    int left = ConsoleWrapperTools.ActionCursorLeft();
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
-                    return left;
+                    return ConsoleWrapperTools.ActionCursorLeft();
                 }
             }
             set
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
                     ConsoleWrapperTools.ActionSetCursorLeft(value);
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
                 }
             }
         }
@@ -77,25 +66,14 @@ namespace Terminaux.Base
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
-                    int top = ConsoleWrapperTools.ActionCursorTop();
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
-                    return top;
+                    return ConsoleWrapperTools.ActionCursorTop();
                 }
             }
             set
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
                     ConsoleWrapperTools.ActionSetCursorTop(value);
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
                 }
             }
         }
@@ -115,25 +93,14 @@ namespace Terminaux.Base
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
-                    int width = ConsoleWrapperTools.ActionWindowWidth();
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
-                    return width;
+                    return ConsoleWrapperTools.ActionWindowWidth();
                 }
             }
             set
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
                     ConsoleWrapperTools.ActionSetWindowWidth(value);
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
                 }
             }
         }
@@ -147,25 +114,14 @@ namespace Terminaux.Base
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
-                    int height = ConsoleWrapperTools.ActionWindowHeight();
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
-                    return height;
+                    return ConsoleWrapperTools.ActionWindowHeight();
                 }
             }
             set
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
                     ConsoleWrapperTools.ActionSetWindowHeight(value);
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
                 }
             }
         }
@@ -179,25 +135,14 @@ namespace Terminaux.Base
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
-                    int width = ConsoleWrapperTools.ActionBufferWidth();
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
-                    return width;
+                    return ConsoleWrapperTools.ActionBufferWidth();
                 }
             }
             set
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
                     ConsoleWrapperTools.ActionSetBufferWidth(value);
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
                 }
             }
         }
@@ -211,25 +156,14 @@ namespace Terminaux.Base
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
-                    int height = ConsoleWrapperTools.ActionBufferHeight();
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
-                    return height;
+                    return ConsoleWrapperTools.ActionBufferHeight();
                 }
             }
             set
             {
                 lock (Console.In)
                 {
-                    bool initialBlocking = ConsoleMode.IsBlocking;
-                    if (!initialBlocking)
-                        ConsoleMode.EnableBlocking();
                     ConsoleWrapperTools.ActionSetBufferHeight(value);
-                    if (!initialBlocking)
-                        ConsoleMode.DisableBlocking();
                 }
             }
         }

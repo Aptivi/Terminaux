@@ -154,6 +154,14 @@ namespace Terminaux.Base.Extensions.Native
             TERMKEY_N_SYMS
         }
 
+        internal enum TermKeyMouseEvent
+        {
+            TERMKEY_MOUSE_UNKNOWN,
+            TERMKEY_MOUSE_PRESS,
+            TERMKEY_MOUSE_DRAG,
+            TERMKEY_MOUSE_RELEASE
+        }
+
         [StructLayout(LayoutKind.Sequential)]
         internal struct Termios
         {
@@ -184,9 +192,15 @@ namespace Terminaux.Base.Extensions.Native
             public TermKeyType type;
             public TermKeyKeyCodeUnion code;
             public int modifiers;
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 7)]
-            public string utf8;
-
+            public byte utf8_0;
+            public byte utf8_1;
+            public byte utf8_2;
+            public byte utf8_3;
+            public byte utf8_4;
+            public byte utf8_5;
+            public byte utf8_6;
+            //[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 7)]
+            //public string utf8;
         }
 
         [DllImport("libc", SetLastError = true)]
@@ -215,6 +229,12 @@ namespace Terminaux.Base.Extensions.Native
 
         [DllImport("termkey", SetLastError = true)]
         internal static extern TermKeyResult termkey_getkey(IntPtr tk, out TermKeyKey key);
+
+        [DllImport("termkey", SetLastError = true)]
+        internal static extern TermKeyResult termkey_interpret_mouse(IntPtr tk, ref TermKeyKey key, out TermKeyMouseEvent ev, out int button, out int line, out int col);
+
+        [DllImport("termkey", SetLastError = true)]
+        internal static extern TermKeyResult termkey_interpret_position(IntPtr tk, ref TermKeyKey key, out int line, out int col);
 
         internal static void RawSet(bool enable)
         {
