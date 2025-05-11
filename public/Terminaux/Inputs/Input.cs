@@ -19,6 +19,7 @@
 
 using SpecProbe.Software.Platform;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -50,6 +51,9 @@ namespace Terminaux.Inputs
         private static bool enableMouse;
         private static readonly Stopwatch inputTimeout = new();
         private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? NativeMethods.GetStdHandle(-10) : IntPtr.Zero;
+        private static readonly Queue<InputEventInfo> mouseEventQueue = [];
+        private static readonly Queue<InputEventInfo> keyboardEventQueue = [];
+        private static readonly Queue<InputEventInfo> positionEventQueue = [];
 
         /// <summary>
         /// Checks to see whether the pointer is active or not
@@ -128,12 +132,13 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Reads either a pointer or a key (blocking)
         /// </summary>
-        public static InputEventInfo ReadPointerOrKey()
+        /// <param name="eventType">Event types to wait for (None implies all events)</param>
+        public static InputEventInfo ReadPointerOrKey(InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard)
         {
             InputEventInfo input = new();
             SpinWait.SpinUntil(() =>
             {
-                input = ReadPointerOrKeyNoBlock();
+                input = ReadPointerOrKeyNoBlock(eventType);
                 return input.EventType != InputEventType.None;
             });
             return input;
@@ -142,7 +147,95 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Reads either a pointer or a key (non-blocking)
         /// </summary>
-        public static InputEventInfo ReadPointerOrKeyNoBlock()
+        /// <param name="eventType">Event types to wait for (None implies all events)</param>
+        public static InputEventInfo ReadPointerOrKeyNoBlock(InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard)
+        {
+            // First, enqueue an event
+            var genericEvent = new InputEventInfo();
+            var inputEvent = EnqueueEvent();
+
+            // Then, determine whether to place the event to a queue
+            switch (inputEvent.EventType)
+            {
+                case InputEventType.Mouse:
+                    mouseEventQueue.Enqueue(inputEvent);
+                    break;
+                case InputEventType.Keyboard:
+                    keyboardEventQueue.Enqueue(inputEvent);
+                    break;
+                case InputEventType.Position:
+                    positionEventQueue.Enqueue(inputEvent);
+                    break;
+            }
+
+            // Now, return the event itself
+            switch (eventType)
+            {
+                case InputEventType.None:
+                    if (mouseEventQueue.Count > 0)
+                        return mouseEventQueue.Dequeue();
+                    if (keyboardEventQueue.Count > 0)
+                        return keyboardEventQueue.Dequeue();
+                    if (positionEventQueue.Count > 0)
+                        return positionEventQueue.Dequeue();
+                    return genericEvent;
+                default:
+                    if (mouseEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Mouse))
+                        return mouseEventQueue.Dequeue();
+                    if (keyboardEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Keyboard))
+                        return keyboardEventQueue.Dequeue();
+                    if (positionEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Position))
+                        return positionEventQueue.Dequeue();
+                    return genericEvent;
+            }
+        }
+
+        /// <summary>
+        /// Reads the next key from the console input stream
+        /// </summary>
+        public static ConsoleKeyInfo ReadKey()
+        {
+            TermReaderTools.isWaitingForInput = true;
+            InputEventInfo data = new();
+            SpinWait.SpinUntil(() =>
+            {
+                data = ReadPointerOrKeyNoBlock();
+                return data.EventType == InputEventType.Keyboard;
+            });
+            TermReaderTools.isWaitingForInput = false;
+            return data.ConsoleKeyInfo ?? default;
+        }
+
+        /// <summary>
+        /// Reads the next key from the console input stream with the timeout
+        /// </summary>
+        /// <param name="Timeout">Timeout</param>
+        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(TimeSpan Timeout)
+        {
+            TermReaderTools.isWaitingForInput = true;
+            InputEventInfo data = new();
+            bool result = SpinWait.SpinUntil(() =>
+            {
+                data = ReadPointerOrKeyNoBlock();
+                return data.EventType == InputEventType.Keyboard;
+            }, Timeout);
+            TermReaderTools.isWaitingForInput = false;
+            return (!result ? default : data.ConsoleKeyInfo ?? default, result);
+        }
+
+        /// <summary>
+        /// Invalidates the input
+        /// </summary>
+        public static void InvalidateInput()
+        {
+            SpinWait.SpinUntil(() =>
+            {
+                var data = ReadPointerOrKeyNoBlock();
+                return data.EventType == InputEventType.None;
+            });
+        }
+
+        private static InputEventInfo EnqueueEvent()
         {
             PointerEventContext? ctx = null;
             ConsoleKeyInfo? cki = null;
@@ -331,51 +424,6 @@ namespace Terminaux.Inputs
                 }
             }
             return eventInfo;
-        }
-
-        /// <summary>
-        /// Reads the next key from the console input stream
-        /// </summary>
-        public static ConsoleKeyInfo ReadKey()
-        {
-            TermReaderTools.isWaitingForInput = true;
-            InputEventInfo data = new();
-            SpinWait.SpinUntil(() =>
-            {
-                data = ReadPointerOrKeyNoBlock();
-                return data.EventType == InputEventType.Keyboard;
-            });
-            TermReaderTools.isWaitingForInput = false;
-            return data.ConsoleKeyInfo ?? default;
-        }
-
-        /// <summary>
-        /// Reads the next key from the console input stream with the timeout
-        /// </summary>
-        /// <param name="Timeout">Timeout</param>
-        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(TimeSpan Timeout)
-        {
-            TermReaderTools.isWaitingForInput = true;
-            InputEventInfo data = new();
-            bool result = SpinWait.SpinUntil(() =>
-            {
-                data = ReadPointerOrKeyNoBlock();
-                return data.EventType == InputEventType.Keyboard;
-            }, Timeout);
-            TermReaderTools.isWaitingForInput = false;
-            return (!result ? default : data.ConsoleKeyInfo ?? default, result);
-        }
-
-        /// <summary>
-        /// Invalidates the input
-        /// </summary>
-        public static void InvalidateInput()
-        {
-            SpinWait.SpinUntil(() =>
-            {
-                var data = ReadPointerOrKeyNoBlock();
-                return data.EventType == InputEventType.None;
-            });
         }
 
         private static void ProcessDragging(ref PointerButtonPress press, ref PointerButton button, out bool dragging)

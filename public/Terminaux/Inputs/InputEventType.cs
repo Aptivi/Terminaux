@@ -17,28 +17,31 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+
 namespace Terminaux.Inputs
 {
     /// <summary>
     /// Input event type
     /// </summary>
+    [Flags]
     public enum InputEventType
     {
         /// <summary>
         /// No event
         /// </summary>
-        None,
+        None = 1 << 0,
         /// <summary>
         /// Mouse event
         /// </summary>
-        Mouse,
+        Mouse = 1 << 1,
         /// <summary>
         /// Keyboard event
         /// </summary>
-        Keyboard,
+        Keyboard = 1 << 2,
         /// <summary>
-        /// Position even
+        /// Position event
         /// </summary>
-        Position,
+        Position = 1 << 3,
     }
 }

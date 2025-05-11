@@ -435,11 +435,19 @@ namespace Terminaux.Base
                     return 0;
                 if (ConsoleMode.IsRaw)
                 {
-                    Write("\x1b[6n");
-                    Thread.Sleep(5);
-                    var data = Input.ReadPointerOrKeyNoBlock();
-                    if (data.ReportedPos is Coordinate coord)
-                        return coord.X;
+                    while (true)
+                    {
+                        Write("\x1b[6n");
+                        int attempts = 0;
+                        while (attempts < 50)
+                        {
+                            Thread.Sleep(5);
+                            var data = Input.ReadPointerOrKeyNoBlock(InputEventType.Position);
+                            if (data.ReportedPos is Coordinate coord)
+                                return coord.X;
+                            attempts++;
+                        }
+                    }
                 }
                 return Console.CursorLeft;
             }
@@ -454,11 +462,19 @@ namespace Terminaux.Base
                     return 0;
                 if (ConsoleMode.IsRaw)
                 {
-                    Write("\x1b[6n");
-                    Thread.Sleep(5);
-                    var data = Input.ReadPointerOrKeyNoBlock();
-                    if (data.ReportedPos is Coordinate coord)
-                        return coord.Y;
+                    while (true)
+                    {
+                        Write("\x1b[6n");
+                        int attempts = 0;
+                        while (attempts < 50)
+                        {
+                            Thread.Sleep(5);
+                            var data = Input.ReadPointerOrKeyNoBlock(InputEventType.Position);
+                            if (data.ReportedPos is Coordinate coord)
+                                return coord.Y;
+                            attempts++;
+                        }
+                    }
                 }
                 return Console.CursorTop;
             }
