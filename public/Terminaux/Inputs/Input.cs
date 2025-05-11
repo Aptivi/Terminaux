@@ -150,25 +150,11 @@ namespace Terminaux.Inputs
         /// <param name="eventType">Event types to wait for (None implies all events)</param>
         public static InputEventInfo ReadPointerOrKeyNoBlock(InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard)
         {
-            // First, enqueue an event
+            // Enqueue the events
             var genericEvent = new InputEventInfo();
-            var inputEvent = EnqueueEvent();
+            EnqueueEvents();
 
-            // Then, determine whether to place the event to a queue
-            switch (inputEvent.EventType)
-            {
-                case InputEventType.Mouse:
-                    mouseEventQueue.Enqueue(inputEvent);
-                    break;
-                case InputEventType.Keyboard:
-                    keyboardEventQueue.Enqueue(inputEvent);
-                    break;
-                case InputEventType.Position:
-                    positionEventQueue.Enqueue(inputEvent);
-                    break;
-            }
-
-            // Now, return the event itself
+            // Return the enqueued event itself
             switch (eventType)
             {
                 case InputEventType.None:
@@ -235,11 +221,11 @@ namespace Terminaux.Inputs
             });
         }
 
-        private static InputEventInfo EnqueueEvent()
+        private static void EnqueueEvents()
         {
             PointerEventContext? ctx = null;
             ConsoleKeyInfo? cki = null;
-            InputEventInfo eventInfo = new();
+            List<InputEventInfo> eventInfos = [];
             while (true)
             {
                 if (PlatformHelper.IsOnWindows())
@@ -269,7 +255,7 @@ namespace Terminaux.Inputs
                             if (!EnableMovementEvents && press == PointerButtonPress.Moved)
                                 break;
                             ctx = GenerateContext(coord.X, coord.Y, button, press, mods);
-                            eventInfo = new(ctx, null, null);
+                            eventInfos.Add(new(ctx, null, null));
                             context = ctx;
                             bail = true;
                             break;
@@ -278,7 +264,7 @@ namespace Terminaux.Inputs
                             {
                                 // Read a key
                                 cki = Console.ReadKey(true);
-                                eventInfo = new(null, cki, null);
+                                eventInfos.Add(new(null, cki, null));
                                 bail = true;
                             }
                             else
@@ -306,7 +292,7 @@ namespace Terminaux.Inputs
                         if (Console.KeyAvailable)
                         {
                             cki = Console.ReadKey(true);
-                            eventInfo = new(null, cki, null);
+                            eventInfos.Add(new(null, cki, null));
                         }
                         break;
                     }
@@ -334,6 +320,10 @@ namespace Terminaux.Inputs
                         if (charRead.Length == 0)
                             break;
 
+                        // Make a tokenizer instance and return a group of events to install
+                        var tokenizer = new InputPosixTokenizer(charRead);
+                        var parsedEvents = tokenizer.Parse();
+
                         // Check for cursor position query
                         string charString = Encoding.UTF8.GetString(charRead);
                         int escIdx = charString.LastIndexOf(VtSequenceBasicChars.EscapeChar);
@@ -348,7 +338,7 @@ namespace Terminaux.Inputs
                                 string[] posSplit = posStr.Split(';');
                                 int posX = int.Parse(posSplit[0]);
                                 int posY = int.Parse(posSplit[1]);
-                                eventInfo = new(null, null, new(posY - 1, posX - 1));
+                                eventInfos.Add(new(null, null, new(posY - 1, posX - 1)));
                                 break;
                             }
                         }
@@ -369,18 +359,18 @@ namespace Terminaux.Inputs
                                     case TermKeyType.TERMKEY_TYPE_KEYSYM:
                                         (char character, ConsoleKey consoleKey) = NativeMapping.TranslateKeysym((TermKeySym)key.code.codepoint);
                                         cki = new(character, consoleKey, shift, alt, ctrl);
-                                        eventInfo = new(null, cki, null);
+                                        eventInfos.Add(new(null, cki, null));
                                         break;
                                     case TermKeyType.TERMKEY_TYPE_FUNCTION:
                                         ConsoleKey functionKey = NativeMapping.TranslateFunction(key.code.number);
                                         cki = new('\0', functionKey, shift, alt, ctrl);
-                                        eventInfo = new(null, cki, null);
+                                        eventInfos.Add(new(null, cki, null));
                                         break;
                                     case TermKeyType.TERMKEY_TYPE_UNICODE:
                                         char upperInvariant = char.ToUpperInvariant((char)key.code.codepoint);
                                         ConsoleKey ck = key.code.codepoint > 0 && key.code.codepoint <= 255 ? (ConsoleKey)upperInvariant : 0;
                                         cki = new((char)key.code.codepoint, ck, shift, alt, ctrl);
-                                        eventInfo = new(null, cki, null);
+                                        eventInfos.Add(new(null, cki, null));
                                         break;
                                     case TermKeyType.TERMKEY_TYPE_MOUSE:
                                         var mouseEventNative = NativeMethods.termkey_interpret_mouse(ConsoleMode.tk, ref key, out var termKeyMouseEvent, out int termKeyButton, out int y, out int x);
@@ -406,7 +396,7 @@ namespace Terminaux.Inputs
                                             if (EnableMovementEvents || press != PointerButtonPress.Moved)
                                             {
                                                 ctx = GenerateContext(x, y, buttonPtr, press, mods);
-                                                eventInfo = new(ctx, null, null);
+                                                eventInfos.Add(new(ctx, null, null));
                                                 context = ctx;
                                                 break;
                                             }
@@ -414,7 +404,7 @@ namespace Terminaux.Inputs
                                         break;
                                     case TermKeyType.TERMKEY_TYPE_POSITION:
                                         NativeMethods.termkey_interpret_position(ConsoleMode.tk, ref key, out int posY, out int posX);
-                                        eventInfo = new(null, null, new(posY - 1, posX - 1));
+                                        eventInfos.Add(new(null, null, new(posY - 1, posX - 1)));
                                         break;
                                 }
                             }
@@ -423,7 +413,23 @@ namespace Terminaux.Inputs
                     }
                 }
             }
-            return eventInfo;
+
+            // Add all resultant event info instances
+            foreach (var inputEvent in eventInfos)
+            {
+                switch (inputEvent.EventType)
+                {
+                    case InputEventType.Mouse:
+                        mouseEventQueue.Enqueue(inputEvent);
+                        break;
+                    case InputEventType.Keyboard:
+                        keyboardEventQueue.Enqueue(inputEvent);
+                        break;
+                    case InputEventType.Position:
+                        positionEventQueue.Enqueue(inputEvent);
+                        break;
+                }
+            }
         }
 
         private static void ProcessDragging(ref PointerButtonPress press, ref PointerButton button, out bool dragging)
