@@ -192,15 +192,8 @@ namespace Terminaux.Base.Extensions.Native
             public TermKeyType type;
             public TermKeyKeyCodeUnion code;
             public int modifiers;
-            public byte utf8_0;
-            public byte utf8_1;
-            public byte utf8_2;
-            public byte utf8_3;
-            public byte utf8_4;
-            public byte utf8_5;
-            public byte utf8_6;
-            //[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 7)]
-            //public string utf8;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 7)]
+            public string utf8;
         }
 
         [DllImport("libc", SetLastError = true)]
