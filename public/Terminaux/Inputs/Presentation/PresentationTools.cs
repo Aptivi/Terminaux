@@ -222,7 +222,7 @@ namespace Terminaux.Inputs.Presentation
                 {
                     // Get the keypress or mouse press
                     ScreenTools.Render();
-                    var (mouse, key) = Input.ReadPointerOrKey();
+                    InputEventInfo data = Input.ReadPointerOrKey();
 
                     // Get the lines and the positions
                     string[] splitFinalLines = GetFinalLines(rendered);
@@ -237,6 +237,7 @@ namespace Terminaux.Inputs.Presentation
                     int arrowBottom = presentationLowerInnerBorderTop + 1;
 
                     // Then, determine if the pointer or the keypress is available
+                    var mouse = data.PointerEventContext;
                     if (mouse is not null)
                     {
                         // Some hitboxes
@@ -267,7 +268,7 @@ namespace Terminaux.Inputs.Presentation
                                 break;
                         }
                     }
-                    else if (key is ConsoleKeyInfo cki && !Input.PointerActive)
+                    else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         // Get the key
                         switch (cki.Key)

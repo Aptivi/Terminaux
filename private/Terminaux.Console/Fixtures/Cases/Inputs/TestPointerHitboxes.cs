@@ -88,8 +88,9 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 
                     // Render them
                     ScreenTools.Render();
-                    var (mouse, key) = Input.ReadPointerOrKey();
-                    if (key is ConsoleKeyInfo cki)
+                    InputEventInfo data = Input.ReadPointerOrKey();
+                    var mouse = data.PointerEventContext;
+                    if (data.ConsoleKeyInfo is ConsoleKeyInfo cki)
                     {
                         switch (cki.Key)
                         {

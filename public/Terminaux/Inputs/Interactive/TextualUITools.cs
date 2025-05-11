@@ -75,12 +75,12 @@ namespace Terminaux.Inputs.Interactive
                     if (ui.RefreshDelay > 0)
                         sw.Start();
                     bool timedOut = false;
-                    (PointerEventContext? pointer, ConsoleKeyInfo? key) input = default;
+                    InputEventInfo input = new();
                     SpinWait.SpinUntil(() =>
                     {
                         timedOut = ui.RefreshDelay > 0 && sw.ElapsedMilliseconds >= ui.RefreshDelay;
                         input = Input.ReadPointerOrKeyNoBlock();
-                        return input != default || timedOut;
+                        return input.EventType != InputEventType.None || timedOut;
                     });
                     if (timedOut)
                         continue;
@@ -88,8 +88,8 @@ namespace Terminaux.Inputs.Interactive
                     // Process the user input
                     ui.state = TextualUIState.Busy;
                     List<(Keybinding binding, Action<TextualUI, ConsoleKeyInfo, PointerEventContext?> action)> bindings = [];
-                    PointerEventContext? mouse = input.pointer;
-                    ConsoleKeyInfo? key = input.key;
+                    PointerEventContext? mouse = input.PointerEventContext;
+                    ConsoleKeyInfo? key = input.ConsoleKeyInfo;
                     if (mouse is not null)
                     {
                         // Match the mouse binding

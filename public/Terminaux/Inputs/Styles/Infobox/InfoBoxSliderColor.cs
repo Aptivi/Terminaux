@@ -330,7 +330,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Handle keypress
-                    var (mouse, key) = Input.ReadPointerOrKey();
+                    InputEventInfo data = Input.ReadPointerOrKey();
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
 
@@ -363,6 +363,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => cancel = bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                     // Handle input
+                    var mouse = data.PointerEventContext;
                     if (mouse is not null)
                     {
                         // Mouse input received.
@@ -402,7 +403,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                         }
                     }
-                    else if (key is ConsoleKeyInfo cki && !Input.PointerActive)
+                    else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         switch (cki.Key)
                         {

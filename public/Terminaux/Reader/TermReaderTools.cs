@@ -199,12 +199,12 @@ namespace Terminaux.Reader
             ConsoleKeyInfo cki = new();
             if (interruptible)
             {
-                (PointerEventContext?, ConsoleKeyInfo?) data = default;
+                InputEventInfo data = new();
                 isWaitingForInput = true;
                 SpinWait.SpinUntil(() =>
                 {
                     data = Input.ReadPointerOrKeyNoBlock();
-                    return data.Item2 is not null || interrupting;
+                    return data.EventType == InputEventType.Keyboard || interrupting;
                 });
                 isWaitingForInput = false;
                 if (interrupting)
@@ -213,7 +213,7 @@ namespace Terminaux.Reader
                     cki = new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false);
                 }
                 else
-                    cki = data.Item2 ?? default;
+                    cki = data.ConsoleKeyInfo ?? default;
                 return cki;
             }
             else

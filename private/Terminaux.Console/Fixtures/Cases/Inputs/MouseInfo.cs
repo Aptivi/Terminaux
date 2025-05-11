@@ -36,8 +36,9 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             Input.EnableMouse = true;
             while (looping)
             {
-                var (mouse, key) = Input.ReadPointerOrKey();
-                if (key is ConsoleKeyInfo cki)
+                InputEventInfo data = Input.ReadPointerOrKey();
+                var mouse = data.PointerEventContext;
+                if (data.ConsoleKeyInfo is ConsoleKeyInfo cki)
                 {
                     if (cki.Key == ConsoleKey.Home)
                         looping = false;

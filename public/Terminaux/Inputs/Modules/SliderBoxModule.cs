@@ -105,8 +105,8 @@ namespace Terminaux.Inputs.Modules
                     );
 
                     // Handle keypress
-                    var (pointer, key) = Input.ReadPointerOrKey();
-                    if (key is ConsoleKeyInfo cki && !Input.PointerActive)
+                    InputEventInfo data = Input.ReadPointerOrKey();
+                    if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         switch (cki.Key)
                         {

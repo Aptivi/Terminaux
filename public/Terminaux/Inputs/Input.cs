@@ -128,13 +128,13 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Reads either a pointer or a key (blocking)
         /// </summary>
-        public static (PointerEventContext? pointer, ConsoleKeyInfo? key) ReadPointerOrKey()
+        public static InputEventInfo ReadPointerOrKey()
         {
-            (PointerEventContext? pointer, ConsoleKeyInfo? key) input = default;
+            InputEventInfo input = new();
             SpinWait.SpinUntil(() =>
             {
                 input = ReadPointerOrKeyNoBlock();
-                return input != default;
+                return input.EventType != InputEventType.None;
             });
             return input;
         }
@@ -142,7 +142,7 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Reads either a pointer or a key (non-blocking)
         /// </summary>
-        public static (PointerEventContext? pointer, ConsoleKeyInfo? key) ReadPointerOrKeyNoBlock()
+        public static InputEventInfo ReadPointerOrKeyNoBlock()
         {
             PointerEventContext? ctx = null;
             ConsoleKeyInfo? cki = null;
@@ -176,6 +176,7 @@ namespace Terminaux.Inputs
                             if (!EnableMovementEvents && press == PointerButtonPress.Moved)
                                 break;
                             ctx = GenerateContext(coord.X, coord.Y, button, press, mods);
+                            eventInfo = new(ctx, null, null);
                             context = ctx;
                             bail = true;
                             break;
@@ -184,6 +185,7 @@ namespace Terminaux.Inputs
                             {
                                 // Read a key
                                 cki = Console.ReadKey(true);
+                                eventInfo = new(null, cki, null);
                                 bail = true;
                             }
                             else
@@ -209,7 +211,10 @@ namespace Terminaux.Inputs
                     {
                         // Use the standard ReadKey function
                         if (Console.KeyAvailable)
+                        {
                             cki = Console.ReadKey(true);
+                            eventInfo = new(null, cki, null);
+                        }
                         break;
                     }
                     else
@@ -236,6 +241,18 @@ namespace Terminaux.Inputs
                         if (charRead.Length == 0)
                             break;
 
+                        // Check for cursor position query
+                        string charString = Encoding.UTF8.GetString(charRead);
+                        if (charRead[0] == VtSequenceBasicChars.EscapeChar && charRead[1] == '[' && charRead[charRead.Length - 1] == 'R')
+                        {
+                            string posStr = charString.Substring(2, charString.Length - 3);
+                            string[] posSplit = posStr.Split(';');
+                            int posX = int.Parse(posSplit[0]);
+                            int posY = int.Parse(posSplit[1]);
+                            eventInfo = new(null, null, new(posY - 1, posX - 1));
+                            break;
+                        }
+
                         // Pass this to libtermkey
                         if (ConsoleMode.tk != IntPtr.Zero)
                         {
@@ -252,15 +269,18 @@ namespace Terminaux.Inputs
                                     case TermKeyType.TERMKEY_TYPE_KEYSYM:
                                         (char character, ConsoleKey consoleKey) = NativeMapping.TranslateKeysym((TermKeySym)key.code.codepoint);
                                         cki = new(character, consoleKey, shift, alt, ctrl);
+                                        eventInfo = new(null, cki, null);
                                         break;
                                     case TermKeyType.TERMKEY_TYPE_FUNCTION:
                                         ConsoleKey functionKey = NativeMapping.TranslateFunction(key.code.number);
                                         cki = new('\0', functionKey, shift, alt, ctrl);
+                                        eventInfo = new(null, cki, null);
                                         break;
                                     case TermKeyType.TERMKEY_TYPE_UNICODE:
                                         char upperInvariant = char.ToUpperInvariant((char)key.code.codepoint);
                                         ConsoleKey ck = key.code.codepoint > 0 && key.code.codepoint <= 255 ? (ConsoleKey)upperInvariant : 0;
                                         cki = new((char)key.code.codepoint, ck, shift, alt, ctrl);
+                                        eventInfo = new(null, cki, null);
                                         break;
                                     case TermKeyType.TERMKEY_TYPE_MOUSE:
                                         var mouseEventNative = NativeMethods.termkey_interpret_mouse(ConsoleMode.tk, ref key, out var termKeyMouseEvent, out int termKeyButton, out int y, out int x);
@@ -286,6 +306,7 @@ namespace Terminaux.Inputs
                                             if (EnableMovementEvents || press != PointerButtonPress.Moved)
                                             {
                                                 ctx = GenerateContext(x, y, buttonPtr, press, mods);
+                                                eventInfo = new(ctx, null, null);
                                                 context = ctx;
                                                 break;
                                             }
@@ -302,7 +323,7 @@ namespace Terminaux.Inputs
                     }
                 }
             }
-            return (ctx, cki);
+            return eventInfo;
         }
 
         /// <summary>
@@ -311,14 +332,14 @@ namespace Terminaux.Inputs
         public static ConsoleKeyInfo ReadKey()
         {
             TermReaderTools.isWaitingForInput = true;
-            (PointerEventContext?, ConsoleKeyInfo?) data = default;
+            InputEventInfo data = new();
             SpinWait.SpinUntil(() =>
             {
                 data = ReadPointerOrKeyNoBlock();
-                return data.Item2 is not null;
+                return data.EventType == InputEventType.Keyboard;
             });
             TermReaderTools.isWaitingForInput = false;
-            return data.Item2 ?? default;
+            return data.ConsoleKeyInfo ?? default;
         }
 
         /// <summary>
@@ -328,14 +349,14 @@ namespace Terminaux.Inputs
         public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(TimeSpan Timeout)
         {
             TermReaderTools.isWaitingForInput = true;
-            (PointerEventContext?, ConsoleKeyInfo?) data = default;
+            InputEventInfo data = new();
             bool result = SpinWait.SpinUntil(() =>
             {
                 data = ReadPointerOrKeyNoBlock();
-                return data.Item2 is not null;
+                return data.EventType == InputEventType.Keyboard;
             }, Timeout);
             TermReaderTools.isWaitingForInput = false;
-            return (!result ? default : data.Item2 ?? default, result);
+            return (!result ? default : data.ConsoleKeyInfo ?? default, result);
         }
 
         /// <summary>
@@ -345,8 +366,8 @@ namespace Terminaux.Inputs
         {
             SpinWait.SpinUntil(() =>
             {
-                var (pointer, key) = ReadPointerOrKeyNoBlock();
-                return key is null && pointer is null;
+                var data = ReadPointerOrKeyNoBlock();
+                return data.EventType == InputEventType.None;
             });
         }
 

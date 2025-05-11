@@ -137,7 +137,8 @@ namespace Terminaux.Images.Icons
                     ScreenTools.Render();
 
                     // Wait for input
-                    var (mouse, key) = Input.ReadPointerOrKey();
+                    InputEventInfo data = Input.ReadPointerOrKey();
+                    var mouse = data.PointerEventContext;
                     if (mouse is not null)
                     {
                         switch (mouse.Button)
@@ -158,7 +159,7 @@ namespace Terminaux.Images.Icons
                                 break;
                         }
                     }
-                    else if (key is ConsoleKeyInfo cki && !Input.PointerActive)
+                    else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         switch (cki.Key)
                         {

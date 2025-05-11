@@ -432,6 +432,16 @@ namespace Terminaux.Base
             {
                 if (IsDumb)
                     return 0;
+                if (ConsoleMode.IsRaw)
+                {
+                    Write("\x1b[6n");
+                    while (true)
+                    {
+                        var data = Input.ReadPointerOrKeyNoBlock();
+                        if (data.ReportedPos is Coordinate coord)
+                            return coord.X;
+                    }
+                }
                 return Console.CursorLeft;
             }
             set
@@ -447,6 +457,16 @@ namespace Terminaux.Base
             {
                 if (IsDumb)
                     return 0;
+                if (ConsoleMode.IsRaw)
+                {
+                    Write("\x1b[6n");
+                    while (true)
+                    {
+                        var data = Input.ReadPointerOrKeyNoBlock();
+                        if (data.ReportedPos is Coordinate coord)
+                            return coord.Y;
+                    }
+                }
                 return Console.CursorTop;
             }
             set
