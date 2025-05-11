@@ -243,14 +243,21 @@ namespace Terminaux.Inputs
 
                         // Check for cursor position query
                         string charString = Encoding.UTF8.GetString(charRead);
-                        if (charRead[0] == VtSequenceBasicChars.EscapeChar && charRead[1] == '[' && charRead[charRead.Length - 1] == 'R')
+                        int escIdx = charString.LastIndexOf(VtSequenceBasicChars.EscapeChar);
+                        int prefixPosIdx = charString.LastIndexOf('[');
+                        int suffixPosIdx = charString.LastIndexOf('R');
+                        if (escIdx != -1 && prefixPosIdx != -1 && suffixPosIdx != -1)
                         {
-                            string posStr = charString.Substring(2, charString.Length - 3);
-                            string[] posSplit = posStr.Split(';');
-                            int posX = int.Parse(posSplit[0]);
-                            int posY = int.Parse(posSplit[1]);
-                            eventInfo = new(null, null, new(posY - 1, posX - 1));
-                            break;
+                            if (charRead[prefixPosIdx + 1] != 'M')
+                            {
+                                // Cursor position query. We may get multiple sequences in one buffer, but get the most recent event.
+                                string posStr = charString.Substring(prefixPosIdx + 1, suffixPosIdx - (prefixPosIdx + 1));
+                                string[] posSplit = posStr.Split(';');
+                                int posX = int.Parse(posSplit[0]);
+                                int posY = int.Parse(posSplit[1]);
+                                eventInfo = new(null, null, new(posY - 1, posX - 1));
+                                break;
+                            }
                         }
 
                         // Pass this to libtermkey

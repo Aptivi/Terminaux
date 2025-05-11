@@ -26,6 +26,7 @@ using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Inputs;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
@@ -435,20 +436,14 @@ namespace Terminaux.Base
                 if (ConsoleMode.IsRaw)
                 {
                     Write("\x1b[6n");
-                    while (true)
-                    {
-                        var data = Input.ReadPointerOrKeyNoBlock();
-                        if (data.ReportedPos is Coordinate coord)
-                            return coord.X;
-                    }
+                    Thread.Sleep(5);
+                    var data = Input.ReadPointerOrKeyNoBlock();
+                    if (data.ReportedPos is Coordinate coord)
+                        return coord.X;
                 }
                 return Console.CursorLeft;
             }
-            set
-            {
-                if (!IsDumb)
-                    Console.CursorLeft = value;
-            }
+            set => SetCursorLeft(value);
         }
 
         private static int CursorTop
@@ -460,20 +455,14 @@ namespace Terminaux.Base
                 if (ConsoleMode.IsRaw)
                 {
                     Write("\x1b[6n");
-                    while (true)
-                    {
-                        var data = Input.ReadPointerOrKeyNoBlock();
-                        if (data.ReportedPos is Coordinate coord)
-                            return coord.Y;
-                    }
+                    Thread.Sleep(5);
+                    var data = Input.ReadPointerOrKeyNoBlock();
+                    if (data.ReportedPos is Coordinate coord)
+                        return coord.Y;
                 }
                 return Console.CursorTop;
             }
-            set
-            {
-                if (!IsDumb)
-                    Console.CursorTop = value;
-            }
+            set => SetCursorTop(value);
         }
 
         private static Coordinate GetCursorPosition =>
@@ -592,13 +581,27 @@ namespace Terminaux.Base
 
         private static void SetCursorLeft(int left)
         {
-            if (!IsDumb)
+            if (IsDumb)
+                return;
+            if (ConsoleMode.IsRaw)
+            {
+                int top = CursorTop;
+                Write(CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1));
+            }
+            else
                 Console.CursorLeft = left;
         }
 
         private static void SetCursorTop(int top)
         {
-            if (!IsDumb)
+            if (IsDumb)
+                return;
+            if (ConsoleMode.IsRaw)
+            {
+                int left = CursorLeft;
+                Write(CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1));
+            }
+            else
                 Console.CursorTop = top;
         }
 
