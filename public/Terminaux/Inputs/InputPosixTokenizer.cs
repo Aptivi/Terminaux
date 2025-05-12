@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Sequences.Builder;
@@ -196,9 +197,36 @@ namespace Terminaux.Inputs
                 if (arrowKeys.TryGetValue(param, out var key) ||
                     otherKeys.TryGetValue(param, out key))
                 {
+                    // If it's "M", we could have a mouse event using the X10 mouse protocol.
+                    if (param == 'M')
+                    {
+                        if (TryGetChar(idx + 3, out char mouseParam1) &&
+                            TryGetChar(idx + 4, out char mouseParam2) &&
+                            TryGetChar(idx + 5, out char mouseParam3))
+                        {
+                            // Get the button states and change them as necessary
+                            PosixButtonState state = (PosixButtonState)(mouseParam1 & 0b11);
+                            PosixButtonModifierState modState = (PosixButtonModifierState)(mouseParam1 & 0b11100);
+                            if (mouseParam1 >= 64 && mouseParam1 < 96)
+                                state = PosixButtonState.Movement;
+                            if (mouseParam1 >= 96 && mouseParam1 % 2 == 0)
+                                state = PosixButtonState.WheelUp;
+                            else if (mouseParam1 >= 97)
+                                state = PosixButtonState.WheelDown;
+
+                            // Now, translate them to something Terminaux understands
+                            (_, PointerButtonPress press, _) = Input.ProcessPointerEventPosix(state, modState);
+                            if ((Input.EnableMovementEvents || press != PointerButtonPress.Moved) &&
+                                (byte)mouseParam2 >= 32 && (byte)mouseParam2 <= 127 &&
+                                (byte)mouseParam3 >= 32 && (byte)mouseParam3 <= 127)
+                                return false;
+                        }
+                    }
+
                     // It's one of the arrow keys! Parse it.
                     var cki = new ConsoleKeyInfo('\0', key.Item1, key.Item2.HasFlag(ConsoleModifiers.Shift), false, false);
                     evt = new(null, cki, null);
+                    advance++;
                     return true;
                 }
 
@@ -219,7 +247,7 @@ namespace Terminaux.Inputs
                             CheckChars(idx + 4, ['5', 'C']) ||
                             CheckChars(idx + 4, ['5', 'D']))
                         {
-                            advance++;
+                            advance += 2;
                             char arrowKey = charRead[idx + 5];
                             var arrowKeyInfo = arrowKeys[arrowKey];
                             var cki = new ConsoleKeyInfo('\0', arrowKeyInfo.Item1, false, false, true);
@@ -230,7 +258,7 @@ namespace Terminaux.Inputs
                     else if (CheckChar(secParam, ['5', '7', '8', '9']) && CheckChar(idx + 4, ['~', '^', '$', '@']))
                     {
                         // F5 to F8 has been pressed.
-                        advance++;
+                        advance += 2;
 
                         // Map the result
                         ConsoleKey ck =
@@ -249,6 +277,7 @@ namespace Terminaux.Inputs
                         var (shift, ctrl) = GetRxvtModifiers(secParam);
                         var cki = new ConsoleKeyInfo('\0', ConsoleKey.Home, shift, false, ctrl);
                         evt = new(null, cki, null);
+                        advance++;
                         return true;
                     }
                 }
@@ -271,6 +300,7 @@ namespace Terminaux.Inputs
                         var (shift, ctrl) = GetRxvtModifiers(secParam);
                         var cki = new ConsoleKeyInfo('\0', ck, shift, false, ctrl);
                         evt = new(null, cki, null);
+                        advance++;
                         return true;
                     }
 
@@ -278,7 +308,7 @@ namespace Terminaux.Inputs
                     if (param == '2' && CheckChar(secParam, ['0', '1', '3', '4', '5', '6', '8', '9']) && CheckChar(idx + 4, ['~', '^', '$', '@']))
                     {
                         // F9 to F16 has been pressed.
-                        advance++;
+                        advance += 2;
 
                         // Map the result
                         ConsoleKey ck =
@@ -299,7 +329,7 @@ namespace Terminaux.Inputs
                     else if (param == '3' && CheckChar(secParam, ['1', '2', '3', '4']) && CheckChar(idx + 4, ['~', '^', '$', '@']))
                     {
                         // F17 to F20 has been pressed.
-                        advance++;
+                        advance += 2;
 
                         // Map the result
                         ConsoleKey ck =
@@ -332,6 +362,7 @@ namespace Terminaux.Inputs
                         var (shift, ctrl) = GetRxvtModifiers(secParam);
                         var cki = new ConsoleKeyInfo('\0', ck, shift, false, ctrl);
                         evt = new(null, cki, null);
+                        advance++;
                         return true;
                     }
                 }
@@ -347,6 +378,7 @@ namespace Terminaux.Inputs
                     // It's one of the arrow keys, function keys, or keypad keys! Parse it.
                     var cki = new ConsoleKeyInfo('\0', key.Item1, key.Item2.HasFlag(ConsoleModifiers.Shift), false, false);
                     evt = new(null, cki, null);
+                    advance++;
                     return true;
                 }
             }
@@ -359,7 +391,7 @@ namespace Terminaux.Inputs
             evt = new();
             advance = 0;
 
-            // Check to see if we have <ESC>[Mxxx or <ESC>[x;x;x;[Mm] sequences, and advance one byte.
+            // Check to see if we have <ESC>[Mxxx or <ESC>[<x;x;x;[Mm] sequences, and advance one byte.
             if (!TryGetChar(idx + 1, out char prefix) || prefix != '[')
                 return false;
             advance++;
@@ -373,6 +405,7 @@ namespace Terminaux.Inputs
             if (param == 'M')
             {
                 // It's an X10 mouse protocol, so decode it.
+                advance++;
                 if (!TryGetChar(idx + 3, out char buttonChar))
                     return false;
                 advance++;
@@ -399,7 +432,7 @@ namespace Terminaux.Inputs
                     state = PosixButtonState.WheelUp;
                 else if (button >= 97)
                     state = PosixButtonState.WheelDown;
-                ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
+                ConsoleLogger.Debug($"X10: [{button}: {state} {modState}] X={x} Y={y}");
 
                 // Now, translate them to something Terminaux understands
                 (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = Input.ProcessPointerEventPosix(state, modState);
@@ -410,6 +443,96 @@ namespace Terminaux.Inputs
                     evt = new(eventContext, null, null);
                 }
                 return true;
+            }
+            else if (param == '<')
+            {
+                // It's an SGR mouse protocol. Three semicolons and an ending: M (pressed) or m (released).
+                // We have this sequence: <ESC>[<x;x;x;[Mm]. We have to parse the below parameters:
+                //
+                //   - Cb: button parameter (button number [Lo 2 bits] + mods [remaining Hi bits])
+                //   - ;: Semicolon
+                //   - Cx: X coordinate (one-based, so we need to make it an index)
+                //   - ;: Semicolon
+                //   - Cy: Y coordinate (one-based, so we need to make it an index)
+                //   - ;: Semicolon
+                //   - M/m: Press or release
+                int digitIdx = idx + 2;
+                if (!TryGetChar(digitIdx, out char digit) || !char.IsDigit(digit))
+                    return false;
+                advance += 2;
+
+                // Now, run a loop until we reach the semicolon, which separates X from Y.
+                List<char> bDigits = [];
+                List<char> xDigits = [];
+                List<char> yDigits = [];
+                int parseMode = 0;
+                while (TryGetChar(digitIdx, out digit))
+                {
+                    // First, check to see if we've reached ';', 'm', or 'M'
+                    if (digit == 'm' || digit == 'M')
+                    {
+                        // Ensure we don't get illegal 'm' or 'M'
+                        if (parseMode != 2)
+                            return false;
+
+                        // Convert a list of digits to numbers
+                        int b = NumberizeArray(bDigits);
+                        int x = NumberizeArray(xDigits) - 1;
+                        int y = NumberizeArray(yDigits) - 1;
+
+                        // Now, we'll parse the values, so we need to start with the raw button and the
+                        // horizontal/vertical wheel press state. We also need to know whether we're
+                        // releasing the button.
+                        int finalButton = b & 0x3;
+                        bool wheelScroll = (b & 0x40) != 0;
+                        bool releasing = digit == 'm';
+
+                        // What modifiers did we press?
+                        PosixButtonModifierState modState = 0;
+                        if ((b & (int)PosixButtonModifierState.Shift) != 0)
+                            modState |= PosixButtonModifierState.Shift;
+                        if ((b & (int)PosixButtonModifierState.Alt) != 0)
+                            modState |= PosixButtonModifierState.Alt;
+                        if ((b & (int)PosixButtonModifierState.Control) != 0)
+                            modState |= PosixButtonModifierState.Control;
+
+                        // Convert the final button value to POSIX button state
+                        PosixButtonState state =
+                            releasing ? PosixButtonState.Released :
+                            wheelScroll ?
+                                (b & 0x1) == 0 ? PosixButtonState.WheelUp : PosixButtonState.WheelDown :
+                            finalButton == 0 ? PosixButtonState.Left :
+                            finalButton == 1 ? PosixButtonState.Middle :
+                            finalButton == 2 ? PosixButtonState.Right : PosixButtonState.Movement;
+                        ConsoleLogger.Debug($"SGR: [{finalButton}: {state} {modState}] X={x} Y={y}");
+                        (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = Input.ProcessPointerEventPosix(state, modState);
+                        if (Input.EnableMovementEvents || press != PointerButtonPress.Moved)
+                        {
+                            var eventContext = Input.GenerateContext(x, y, buttonPtr, press, mods);
+                            Input.context = eventContext;
+                            evt = new(eventContext, null, null);
+                            advance += digitIdx - (idx + 1);
+                        }
+                        return true;
+                    }
+                    else if (digit == ';')
+                    {
+                        parseMode++;
+                        digitIdx++;
+                        continue;
+                    }
+                    else if (!char.IsDigit(digit))
+                        return false;
+
+                    // Now, we have a digit. Add it.
+                    if (parseMode == 2)
+                        yDigits.Add(digit);
+                    else if (parseMode == 1)
+                        xDigits.Add(digit);
+                    else
+                        bDigits.Add(digit);
+                    digitIdx++;
+                }
             }
             return false;
         }
@@ -490,18 +613,16 @@ namespace Terminaux.Inputs
         private bool TryParseSingleCharacter(int idx, out InputEventInfo evt, out int advance)
         {
             // Set initial values
-            evt = new();
             advance = 0;
 
             // Check to see if we have a single character.
-            if (!TryGetChar(idx + 1, out char character))
-                return false;
+            char character = charRead[idx];
             advance++;
 
             // Parse the sequence now
             var cki = TryParseSingleCharacterCki(character, false);
             evt = new(null, cki, null);
-            return false;
+            return true;
         }
 
         private ConsoleKeyInfo TryParseSingleCharacterCki(char character, bool isAlt)
@@ -518,6 +639,8 @@ namespace Terminaux.Inputs
             if (CharInRange(character, 'A', 'Z'))
                 isShift = true;
             isCtrl = ctrlLetterPressed || ctrlDigitPressed;
+            if (character == '\b' || character == '\t' || character == '\n' || character == '\r')
+                isCtrl = false;
 
             // Parse the sequence now
             ConsoleKey key = character switch
@@ -559,8 +682,6 @@ namespace Terminaux.Inputs
             };
 
             // Finalize the modifiers
-            if (character == '\b' || character == '\n')
-                isCtrl = true;
             if (isAlt)
                 isAlt = character != default;
 
