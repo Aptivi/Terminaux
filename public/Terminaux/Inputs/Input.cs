@@ -495,7 +495,7 @@ namespace Terminaux.Inputs
             }
             else
             {
-                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000l{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003l" : "")}");
+                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000l{VtSequenceBasicChars.EscapeChar}[?1006l{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003l" : "")}");
                 if (ConsoleMode.IsRaw)
                     ConsoleMode.DisableRaw();
             }
@@ -517,7 +517,7 @@ namespace Terminaux.Inputs
             {
                 if (!ConsoleMode.IsRaw)
                     ConsoleMode.EnableRaw();
-                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000h{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : "")}");
+                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000h{VtSequenceBasicChars.EscapeChar}[?1006h{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : "")}");
             }
         }
     }

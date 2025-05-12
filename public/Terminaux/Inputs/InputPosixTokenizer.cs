@@ -456,10 +456,10 @@ namespace Terminaux.Inputs
                 //   - Cy: Y coordinate (one-based, so we need to make it an index)
                 //   - ;: Semicolon
                 //   - M/m: Press or release
-                int digitIdx = idx + 2;
+                int digitIdx = idx + 3;
                 if (!TryGetChar(digitIdx, out char digit) || !char.IsDigit(digit))
                     return false;
-                advance += 2;
+                advance++;
 
                 // Now, run a loop until we reach the semicolon, which separates X from Y.
                 List<char> bDigits = [];
@@ -486,6 +486,7 @@ namespace Terminaux.Inputs
                         int finalButton = b & 0x3;
                         bool wheelScroll = (b & 0x40) != 0;
                         bool releasing = digit == 'm';
+                        bool moving = (b & 0x20) != 0;
 
                         // What modifiers did we press?
                         PosixButtonModifierState modState = 0;
@@ -498,6 +499,7 @@ namespace Terminaux.Inputs
 
                         // Convert the final button value to POSIX button state
                         PosixButtonState state =
+                            moving ? PosixButtonState.Movement :
                             releasing ? PosixButtonState.Released :
                             wheelScroll ?
                                 (b & 0x1) == 0 ? PosixButtonState.WheelUp : PosixButtonState.WheelDown :
@@ -511,7 +513,7 @@ namespace Terminaux.Inputs
                             var eventContext = Input.GenerateContext(x, y, buttonPtr, press, mods);
                             Input.context = eventContext;
                             evt = new(eventContext, null, null);
-                            advance += digitIdx - (idx + 1);
+                            advance += digitIdx - (idx + 2);
                         }
                         return true;
                     }
