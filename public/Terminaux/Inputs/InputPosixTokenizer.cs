@@ -543,7 +543,7 @@ namespace Terminaux.Inputs
             evt = new();
             advance = 0;
 
-            // Check to see if we have an <ESC>[<x>;<y>R sequence, and advance one byte.
+            // Check to see if we have an <ESC>[<y>;<x>R sequence, and advance one byte.
             if (!TryGetChar(idx + 1, out char prefix) || prefix != '[')
                 return false;
             advance++;
@@ -557,14 +557,14 @@ namespace Terminaux.Inputs
             // Now, run a loop until we reach the semicolon, which separates X from Y.
             List<char> xDigits = [];
             List<char> yDigits = [];
-            bool parsingY = false;
+            bool parsingY = true;
             while (TryGetChar(digitIdx, out digit))
             {
                 // First, check to see if we've reached ';' or 'R'
                 if (digit == 'R')
                 {
                     // Ensure we don't get illegal 'R'
-                    if (!parsingY)
+                    if (parsingY)
                         return false;
 
                     // Convert a list of digits to numbers and return them
@@ -576,7 +576,7 @@ namespace Terminaux.Inputs
                 }
                 else if (digit == ';')
                 {
-                    parsingY = true;
+                    parsingY = false;
                     digitIdx++;
                     continue;
                 }
