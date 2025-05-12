@@ -602,7 +602,7 @@ namespace Terminaux.Inputs
             // Check to see if we have an <ESC><char> sequence, and advance one byte.
             if (!TryGetChar(idx + 1, out char altChar) || altChar == VtSequenceBasicChars.EscapeChar)
                 return false;
-            advance++;
+            advance += 2;
 
             // Parse the sequence now
             var cki = TryParseSingleCharacterCki(altChar, false);
