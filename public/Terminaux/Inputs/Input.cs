@@ -43,7 +43,7 @@ namespace Terminaux.Inputs
         private const uint ENABLE_MOUSE_INPUT = 0x0010;
         private const uint ENABLE_QUICK_EDIT_MODE = 0x0040;
 
-        private static PointerEventContext? context = null;
+        internal static PointerEventContext? context = null;
         private static PointerButton draggingButton = PointerButton.None;
         private static bool enableMovementEvents;
         private static int clickTier = 1;
@@ -321,95 +321,10 @@ namespace Terminaux.Inputs
                             break;
 
                         // Make a tokenizer instance and return a group of events to install
-                        var tokenizer = new InputPosixTokenizer(charRead);
+                        char[] tokenChars = Encoding.UTF8.GetChars(charRead);
+                        var tokenizer = new InputPosixTokenizer(tokenChars);
                         var parsedEvents = tokenizer.Parse();
-
-                        // Check for cursor position query
-                        string charString = Encoding.UTF8.GetString(charRead);
-                        int escIdx = charString.LastIndexOf(VtSequenceBasicChars.EscapeChar);
-                        int prefixPosIdx = charString.LastIndexOf('[');
-                        int suffixPosIdx = charString.LastIndexOf('R');
-                        if (escIdx != -1 && prefixPosIdx != -1 && suffixPosIdx != -1)
-                        {
-                            if (charRead[prefixPosIdx + 1] != 'M')
-                            {
-                                // Cursor position query. We may get multiple sequences in one buffer, but get the most recent event.
-                                string posStr = charString.Substring(prefixPosIdx + 1, suffixPosIdx - (prefixPosIdx + 1));
-                                string[] posSplit = posStr.Split(';');
-                                int posX = int.Parse(posSplit[0]);
-                                int posY = int.Parse(posSplit[1]);
-                                eventInfos.Add(new(null, null, new(posY - 1, posX - 1)));
-                                break;
-                            }
-                        }
-
-                        // Pass this to libtermkey
-                        if (ConsoleMode.tk != IntPtr.Zero)
-                        {
-                            IntPtr buff = Marshal.AllocHGlobal(charRead.Length);
-                            Marshal.Copy(charRead, 0, buff, charRead.Length);
-                            NativeMethods.termkey_push_bytes(ConsoleMode.tk, buff, (UIntPtr)charRead.Length);
-                            while (NativeMethods.termkey_getkey(ConsoleMode.tk, out var key) == TermKeyResult.TERMKEY_RES_KEY)
-                            {
-                                bool ctrl = (key.modifiers & (int)NativeMethods.TermKeyKeyMod.CTRL) != 0;
-                                bool alt = (key.modifiers & (int)NativeMethods.TermKeyKeyMod.ALT) != 0;
-                                bool shift = (key.modifiers & (int)NativeMethods.TermKeyKeyMod.SHIFT) != 0;
-                                switch (key.type)
-                                {
-                                    case TermKeyType.TERMKEY_TYPE_KEYSYM:
-                                        (char character, ConsoleKey consoleKey) = NativeMapping.TranslateKeysym((TermKeySym)key.code.codepoint);
-                                        cki = new(character, consoleKey, shift, alt, ctrl);
-                                        eventInfos.Add(new(null, cki, null));
-                                        break;
-                                    case TermKeyType.TERMKEY_TYPE_FUNCTION:
-                                        ConsoleKey functionKey = NativeMapping.TranslateFunction(key.code.number);
-                                        cki = new('\0', functionKey, shift, alt, ctrl);
-                                        eventInfos.Add(new(null, cki, null));
-                                        break;
-                                    case TermKeyType.TERMKEY_TYPE_UNICODE:
-                                        char upperInvariant = char.ToUpperInvariant((char)key.code.codepoint);
-                                        ConsoleKey ck = key.code.codepoint > 0 && key.code.codepoint <= 255 ? (ConsoleKey)upperInvariant : 0;
-                                        cki = new((char)key.code.codepoint, ck, shift, alt, ctrl);
-                                        eventInfos.Add(new(null, cki, null));
-                                        break;
-                                    case TermKeyType.TERMKEY_TYPE_MOUSE:
-                                        var mouseEventNative = NativeMethods.termkey_interpret_mouse(ConsoleMode.tk, ref key, out var termKeyMouseEvent, out int termKeyButton, out int y, out int x);
-                                        if (termKeyMouseEvent != TermKeyMouseEvent.TERMKEY_MOUSE_UNKNOWN)
-                                        {
-                                            x -= 1;
-                                            y -= 1;
-
-                                            // Get the button states and change them as necessary
-                                            byte button = charRead[3];
-                                            PosixButtonState state = (PosixButtonState)(button & 0b11);
-                                            PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
-                                            if (button >= 64 && button < 96)
-                                                state = PosixButtonState.Movement;
-                                            if (button >= 96 && button % 2 == 0)
-                                                state = PosixButtonState.WheelUp;
-                                            else if (button >= 97)
-                                                state = PosixButtonState.WheelDown;
-                                            ConsoleLogger.Debug($"[{button}: {state} {modState}] X={x} Y={y}");
-
-                                            // Now, translate them to something Terminaux understands
-                                            (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);
-                                            if (EnableMovementEvents || press != PointerButtonPress.Moved)
-                                            {
-                                                ctx = GenerateContext(x, y, buttonPtr, press, mods);
-                                                eventInfos.Add(new(ctx, null, null));
-                                                context = ctx;
-                                                break;
-                                            }
-                                        }
-                                        break;
-                                    case TermKeyType.TERMKEY_TYPE_POSITION:
-                                        NativeMethods.termkey_interpret_position(ConsoleMode.tk, ref key, out int posY, out int posX);
-                                        eventInfos.Add(new(null, null, new(posY - 1, posX - 1)));
-                                        break;
-                                }
-                            }
-                            break;
-                        }
+                        eventInfos.AddRange(parsedEvents);
                     }
                 }
             }
@@ -502,7 +417,7 @@ namespace Terminaux.Inputs
             return (button, press, mods);
         }
 
-        private static (PointerButton button, PointerButtonPress press, PointerModifiers mods) ProcessPointerEventPosix(PosixButtonState state, PosixButtonModifierState modState)
+        internal static (PointerButton button, PointerButtonPress press, PointerModifiers mods) ProcessPointerEventPosix(PosixButtonState state, PosixButtonModifierState modState)
         {
             // Determine the button press
             PointerButtonPress press =
@@ -535,7 +450,7 @@ namespace Terminaux.Inputs
             return (button, press, mods);
         }
 
-        private static PointerEventContext GenerateContext(int x, int y, PointerButton button, PointerButtonPress press, PointerModifiers mods)
+        internal static PointerEventContext GenerateContext(int x, int y, PointerButton button, PointerButtonPress press, PointerModifiers mods)
         {
             // Process dragging
             ProcessDragging(ref press, ref button, out bool dragging);
