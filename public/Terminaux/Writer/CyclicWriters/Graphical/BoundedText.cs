@@ -209,7 +209,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     break;
                 }
                 buffer.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + 1 + linesMade % height + 1)}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + linesMade % height + 1)}" +
                     $"{line}"
                 );
                 linesMade++;

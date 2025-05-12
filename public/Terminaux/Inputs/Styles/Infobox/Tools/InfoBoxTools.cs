@@ -175,7 +175,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             var bounded = new BoundedText()
             {
                 Left = borderX + 1,
-                Top = borderY,
+                Top = borderY + 1,
                 Line = currIdx,
                 Height = maxHeight - maxHeightOffset,
                 Width = maxWidth + 1,

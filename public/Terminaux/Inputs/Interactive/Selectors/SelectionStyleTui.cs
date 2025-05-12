@@ -92,7 +92,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var boundedQuestion = new BoundedText()
                 {
                     Left = 3,
-                    Top = 1,
+                    Top = 2,
                     Width = wholeWidth,
                     Height = totalHeight,
                     ForegroundColor = settings.QuestionColor,
@@ -138,7 +138,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var boundedSidebar = new BoundedText()
                 {
                     Left = interiorWidth + 6,
-                    Top = 1,
+                    Top = 2,
                     Width = sidebarWidth - 3,
                     Height = answersPerPage + totalHeight + 1,
                     ForegroundColor = settings.TextColor,
