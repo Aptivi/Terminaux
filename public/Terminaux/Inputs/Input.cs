@@ -553,6 +553,9 @@ namespace Terminaux.Inputs
 
         private static string RenderMouseSupportSequence(bool enable, bool movement, PointerEncoding encoding)
         {
+            if (PlatformHelper.IsOnWindows())
+                return "";
+
             var sequenceBuilder = new StringBuilder();
             char highLow = enable ? 'h' : 'l';
 
