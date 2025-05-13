@@ -85,7 +85,7 @@ namespace Terminaux.Inputs
                 if (!value)
                 {
                     enableMouse = value;
-                    DisableMouseSupport();
+                    DisableMouseSupport(true);
                 }
                 else
                 {
@@ -124,8 +124,14 @@ namespace Terminaux.Inputs
             get => enableMovementEvents;
             set
             {
+                // Stop mouse tracking
+                if (EnableMouse)
+                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents));
+
+                // Restart mouse tracking after setting the value
                 enableMovementEvents = value;
-                TextWriterRaw.WriteRaw(enableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : $"{VtSequenceBasicChars.EscapeChar}[?1003l");
+                if (EnableMouse)
+                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents));
             }
         }
 
@@ -481,9 +487,9 @@ namespace Terminaux.Inputs
             return new PointerEventContext(button, press, mods, dragging, x, y, finalTier);
         }
 
-        private static void DisableMouseSupport()
+        internal static void DisableMouseSupport(bool force = false)
         {
-            if (!EnableMouse)
+            if (!EnableMouse && !force)
                 return;
             if (PlatformHelper.IsOnWindows())
             {
@@ -497,13 +503,13 @@ namespace Terminaux.Inputs
             }
             else
             {
-                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000l{VtSequenceBasicChars.EscapeChar}[?1006l{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003l" : "")}");
+                TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents));
                 if (ConsoleMode.IsRaw)
                     ConsoleMode.DisableRaw();
             }
         }
 
-        private static void EnableMouseSupport()
+        internal static void EnableMouseSupport()
         {
             if (EnableMouse)
                 return;
@@ -521,8 +527,25 @@ namespace Terminaux.Inputs
             {
                 if (!ConsoleMode.IsRaw)
                     ConsoleMode.EnableRaw();
-                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000h{VtSequenceBasicChars.EscapeChar}[?1006h{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : "")}");
+                TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents));
             }
+        }
+
+        private static string RenderMouseSupportSequence(bool enable, bool movement)
+        {
+            var sequenceBuilder = new StringBuilder();
+            char highLow = enable ? 'h' : 'l';
+
+            // Primary mouse tracking
+            sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1000{highLow}");
+
+            // Change encoding to SGR
+            sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1006{highLow}");
+
+            // Whether to also enable movement or not
+            if (movement)
+                sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1003{highLow}");
+            return sequenceBuilder.ToString();
         }
     }
 }
