@@ -47,8 +47,8 @@ namespace Terminaux.Base.Extensions
             if (Input.EnableMouse)
                 return;
             NativeMethods.RawSet(true);
-            AppDomain.CurrentDomain.ProcessExit += (_, _) => Input.DisableMouseSupport();
-            AppDomain.CurrentDomain.UnhandledException += (_, _) => Input.DisableMouseSupport();
+            AppDomain.CurrentDomain.ProcessExit += (_, _) => ProcessDisableOnExit();
+            AppDomain.CurrentDomain.UnhandledException += (_, _) => ProcessDisableOnExit();
             isRaw = true;
         }
 
@@ -62,9 +62,16 @@ namespace Terminaux.Base.Extensions
             if (Input.EnableMouse)
                 return;
             NativeMethods.RawSet(false);
-            AppDomain.CurrentDomain.ProcessExit -= (_, _) => Input.DisableMouseSupport();
-            AppDomain.CurrentDomain.UnhandledException -= (_, _) => Input.DisableMouseSupport();
+            AppDomain.CurrentDomain.ProcessExit -= (_, _) => ProcessDisableOnExit();
+            AppDomain.CurrentDomain.UnhandledException -= (_, _) => ProcessDisableOnExit();
             isRaw = false;
+        }
+
+        private static void ProcessDisableOnExit()
+        {
+            Input.DisableMouseSupport();
+            if (IsRaw)
+                DisableRaw();
         }
     }
 }
