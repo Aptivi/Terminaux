@@ -29,7 +29,6 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleMode
     {
-        internal static IntPtr tk = IntPtr.Zero;
         private static bool isRaw = false;
 
         /// <summary>
@@ -49,7 +48,6 @@ namespace Terminaux.Base.Extensions
                 return;
             NativeMethods.RawSet(true);
             isRaw = true;
-            EnableLibTermKey();
         }
 
         /// <summary>
@@ -63,38 +61,6 @@ namespace Terminaux.Base.Extensions
                 return;
             NativeMethods.RawSet(false);
             isRaw = false;
-            DisableLibTermKey();
-        }
-
-        private static void EnableLibTermKey()
-        {
-            try
-            {
-                tk = NativeMethods.termkey_new(0, NativeMethods.TermKeyFlag.TERMKEY_FLAG_UTF8 | NativeMethods.TermKeyFlag.TERMKEY_FLAG_RAW);
-                if (tk == IntPtr.Zero)
-                    throw new TerminauxInternalException("Failed to create termkey");
-            }
-            catch (Exception e)
-            {
-                ConsoleLogger.Error(e, "Can't enable libtermkey");
-            }
-        }
-
-        private static void DisableLibTermKey()
-        {
-            try
-            {
-                if (tk != IntPtr.Zero)
-                    NativeMethods.termkey_destroy(tk);
-            }
-            catch (Exception e)
-            {
-                ConsoleLogger.Error(e, "Can't disable libtermkey");
-            }
-            finally
-            {
-                tk = IntPtr.Zero;
-            }
         }
     }
 }
