@@ -47,6 +47,8 @@ namespace Terminaux.Base.Extensions
             if (Input.EnableMouse)
                 return;
             NativeMethods.RawSet(true);
+            AppDomain.CurrentDomain.ProcessExit += (_, _) => Input.EnableMouse = false;
+            AppDomain.CurrentDomain.UnhandledException += (_, _) => Input.EnableMouse = false;
             isRaw = true;
         }
 
@@ -60,6 +62,8 @@ namespace Terminaux.Base.Extensions
             if (Input.EnableMouse)
                 return;
             NativeMethods.RawSet(false);
+            AppDomain.CurrentDomain.ProcessExit -= (_, _) => Input.EnableMouse = false;
+            AppDomain.CurrentDomain.UnhandledException -= (_, _) => Input.EnableMouse = false;
             isRaw = false;
         }
     }

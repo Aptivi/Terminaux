@@ -483,6 +483,8 @@ namespace Terminaux.Inputs
 
         private static void DisableMouseSupport()
         {
+            if (!EnableMouse)
+                return;
             if (PlatformHelper.IsOnWindows())
             {
                 // Set the appropriate modes
@@ -503,6 +505,8 @@ namespace Terminaux.Inputs
 
         private static void EnableMouseSupport()
         {
+            if (EnableMouse)
+                return;
             if (PlatformHelper.IsOnWindows())
             {
                 // Set the appropriate modes
