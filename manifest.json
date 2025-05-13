@@ -2143,6 +2143,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerEncoding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.PointerEncoding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Pointer.PointerEncoding",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Pointer.PointerEncoding.yml\" sourcestartlinenumber=\"1\">Pointer encoding</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerEventContext.yml",
       "output": {
         ".html": {
