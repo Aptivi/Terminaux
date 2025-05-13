@@ -232,6 +232,7 @@ namespace Terminaux.Console.Fixtures
             new ColorSelectorNoPaletteNoWriteTest(),
             new KeyInfo(),
             new MouseInfo(),
+            new MouseInfoX10(),
             new TestHexEditorInteractive(),
             new TestHexEditorFullscreenInteractive(),
             new TestHexViewerInteractive(),

@@ -25,15 +25,15 @@ using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
 {
-    internal class MouseInfo : IFixture
+    internal class MouseInfoX10 : IFixture
     {
         public FixtureCategory Category => FixtureCategory.Input;
 
         public void RunFixture()
         {
             bool looping = true;
-            TextWriterColor.Write("[SGR protocol] Move your mouse around here or click anywhere. Press HOME to go back, M to enable/disable movement events, I to invert the scrolling Y axis, or L to invert the left/right mouse buttons.");
-            Input.PointerEncoding = PointerEncoding.SGR;
+            TextWriterColor.Write("[X10 protocol] Move your mouse around here or click anywhere. Press HOME to go back, M to enable/disable movement events, I to invert the scrolling Y axis, or L to invert the left/right mouse buttons.");
+            Input.PointerEncoding = PointerEncoding.X10;
             Input.EnableMouse = true;
             while (looping)
             {

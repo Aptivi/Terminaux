@@ -45,6 +45,7 @@ namespace Terminaux.Inputs
 
         internal static PointerEventContext? context = null;
         private static PointerButton draggingButton = PointerButton.None;
+        private static PointerEncoding encoding = PointerEncoding.SGR;
         private static bool enableMovementEvents;
         private static int clickTier = 1;
         private static PointerEventContext? tieredContext = null;
@@ -126,12 +127,31 @@ namespace Terminaux.Inputs
             {
                 // Stop mouse tracking
                 if (EnableMouse)
-                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents));
+                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents, PointerEncoding));
 
                 // Restart mouse tracking after setting the value
                 enableMovementEvents = value;
                 if (EnableMouse)
-                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents));
+                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents, PointerEncoding));
+            }
+        }
+
+        /// <summary>
+        /// Checks to see whether the movement events are enabled or not
+        /// </summary>
+        public static PointerEncoding PointerEncoding
+        {
+            get => encoding;
+            set
+            {
+                // Stop mouse tracking
+                if (EnableMouse)
+                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents, PointerEncoding));
+
+                // Restart mouse tracking after setting the value
+                encoding = value;
+                if (EnableMouse)
+                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents, PointerEncoding));
             }
         }
 
@@ -503,7 +523,7 @@ namespace Terminaux.Inputs
             }
             else
             {
-                TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents));
+                TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents, PointerEncoding));
                 if (ConsoleMode.IsRaw)
                     ConsoleMode.DisableRaw();
             }
@@ -527,11 +547,11 @@ namespace Terminaux.Inputs
             {
                 if (!ConsoleMode.IsRaw)
                     ConsoleMode.EnableRaw();
-                TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents));
+                TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents, PointerEncoding));
             }
         }
 
-        private static string RenderMouseSupportSequence(bool enable, bool movement)
+        private static string RenderMouseSupportSequence(bool enable, bool movement, PointerEncoding encoding)
         {
             var sequenceBuilder = new StringBuilder();
             char highLow = enable ? 'h' : 'l';
@@ -539,8 +559,9 @@ namespace Terminaux.Inputs
             // Primary mouse tracking
             sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1000{highLow}");
 
-            // Change encoding to SGR
-            sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1006{highLow}");
+            // Change encoding to SGR or X10
+            if (encoding == PointerEncoding.SGR)
+                sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1006{highLow}");
 
             // Whether to also enable movement or not
             if (movement)
