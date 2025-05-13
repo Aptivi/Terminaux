@@ -216,7 +216,7 @@ namespace Terminaux.Base.Checks
             InfoBoxModalColor.WriteInfoBoxModalColor(
                 $"Terminaux {version.Major}.{version.Minor} Beta Program",
                 "Welcome to the Terminaux Beta Program!\n\n" +
-                $"Terminaux {version.Major}.{version.Minor} (Beta 1 - May 8th, 2025)\n\n" +
+                $"Terminaux {version.Major}.{version.Minor} (Beta 2 - June 12th, 2025)\n\n" +
                 "We are introducing you to this beta program to get an early taste of the upcoming " +
                 "version of Terminaux with its new features and improved existing features. You can " +
                 "report bugs or feature suggestions to the Terminaux project via GitHub. However, we " +
