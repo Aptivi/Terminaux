@@ -363,8 +363,8 @@ namespace Terminaux.Writer.ConsoleWriters
                         msg = TextTools.FormatString(msg, vars);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    int OldLeft = ConsoleWrapper.CursorLeft;
-                    int OldTop = ConsoleWrapper.CursorTop;
+                    int OldLeft = Return ? ConsoleWrapper.CursorLeft : 0;
+                    int OldTop = Return ? ConsoleWrapper.CursorTop : 0;
                     int width = ConsoleWrapper.WindowWidth - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
                     if (RightMargin > 0)
