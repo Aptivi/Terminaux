@@ -435,18 +435,12 @@ namespace Terminaux.Base
                     return 0;
                 if (ConsoleMode.IsRaw)
                 {
+                    Write("\x1b[6n");
                     while (true)
                     {
-                        Write("\x1b[6n");
-                        int attempts = 0;
-                        while (attempts < 50)
-                        {
-                            Thread.Sleep(5);
-                            var data = Input.ReadPointerOrKeyNoBlock(InputEventType.Position);
-                            if (data.ReportedPos is Coordinate coord)
-                                return coord.X;
-                            attempts++;
-                        }
+                        var data = Input.ReadPointerOrKeyNoBlock(InputEventType.Position);
+                        if (data.ReportedPos is Coordinate coord)
+                            return coord.X;
                     }
                 }
                 return Console.CursorLeft;
@@ -462,18 +456,12 @@ namespace Terminaux.Base
                     return 0;
                 if (ConsoleMode.IsRaw)
                 {
+                    Write("\x1b[6n");
                     while (true)
                     {
-                        Write("\x1b[6n");
-                        int attempts = 0;
-                        while (attempts < 50)
-                        {
-                            Thread.Sleep(5);
-                            var data = Input.ReadPointerOrKeyNoBlock(InputEventType.Position);
-                            if (data.ReportedPos is Coordinate coord)
-                                return coord.Y;
-                            attempts++;
-                        }
+                        var data = Input.ReadPointerOrKeyNoBlock(InputEventType.Position);
+                        if (data.ReportedPos is Coordinate coord)
+                            return coord.Y;
                     }
                 }
                 return Console.CursorTop;
