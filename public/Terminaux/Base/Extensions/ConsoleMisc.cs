@@ -33,6 +33,7 @@ using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.Unicode;
 using Textify.General;
+using Textify.General.Structures;
 
 namespace Terminaux.Base.Extensions
 {
@@ -348,6 +349,8 @@ namespace Terminaux.Base.Extensions
                 return "";
             if (TerminalReversesRtlText)
                 return target;
+            if (!HasRtl(target))
+                return target;
 
             // Now, figure out how to select control characters, because UnicodeTools.ReverseRtl might mess them up.
             var resultBuilder = new StringBuilder(target);
@@ -372,19 +375,25 @@ namespace Terminaux.Base.Extensions
                         int rightIdx = currentMatch.Index + currentMatch.Length;
 
                         // Process the left string (if found)
-                        if (leftIdx >= 0)
+                        if (leftIdx >= 0 && leftIdx + 1 - lastEnd > 0)
                         {
-                            string left = target.Substring(lastEnd, leftIdx + 1);
-                            string newLeft = UnicodeTools.ReverseRtl(left);
-                            resultBuilder.Replace(left, newLeft, lastEnd, leftIdx + 1);
+                            string left = target.Substring(lastEnd, leftIdx + 1 - lastEnd);
+                            if (HasRtl(left))
+                            {
+                                string newLeft = UnicodeTools.ReverseRtl(left);
+                                resultBuilder.Replace(left, newLeft, lastEnd, leftIdx + 1 - lastEnd);
+                            }
                         }
                             
                         // Process the right string (if found)
-                        if (rightIdx < target.Length)
+                        if (rightIdx < target.Length && nextBegin - rightIdx > 0)
                         {
                             string right = target.Substring(rightIdx, nextBegin - rightIdx);
-                            string newRight = UnicodeTools.ReverseRtl(right);
-                            resultBuilder.Replace(right, newRight, rightIdx, nextBegin);
+                            if (HasRtl(right))
+                            {
+                                string newRight = UnicodeTools.ReverseRtl(right);
+                                resultBuilder.Replace(right, newRight, rightIdx, nextBegin - rightIdx);
+                            }
                         }
                     }
                 }
@@ -501,6 +510,30 @@ namespace Terminaux.Base.Extensions
                 targetNumber = source;
             }
         }
+
+        private static bool HasRtl(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return false;
+
+            var wideText = (WideString)text;
+            foreach (var wideChar in wideText)
+                if (WideCharInRange(wideChar, (WideChar)"\U00010800", (WideChar)"\U00010FFF") || // Ancient RTL scripts
+                    WideCharInRange(wideChar, (WideChar)"\U0001E800", (WideChar)"\U0001EFFF") || // Adlam RTL scripts
+                    WideCharInRange(wideChar, (WideChar)"\u0600", (WideChar)"\u06FF") || // Arabic
+                    WideCharInRange(wideChar, (WideChar)"\u0750", (WideChar)"\u077F") || // Arabic Supplement
+                    WideCharInRange(wideChar, (WideChar)"\u08A0", (WideChar)"\u08FF") || // Arabic Extended A
+                    WideCharInRange(wideChar, (WideChar)"\u0860", (WideChar)"\u089F") || // Arabic Extended B
+                    WideCharInRange(wideChar, (WideChar)"\uFB50", (WideChar)"\uFB4F") || // Arabic Presentation A
+                    WideCharInRange(wideChar, (WideChar)"\uFE70", (WideChar)"\uFEFF") || // Arabic Presentation B
+                    WideCharInRange(wideChar, (WideChar)"\u0590", (WideChar)"\u05FF") || // Hebrew
+                    WideCharInRange(wideChar, (WideChar)"\uFB1D", (WideChar)"\uFB4F"))   // Hebrew Presentation
+                    return true;
+            return false;
+        }
+
+        private static bool WideCharInRange(WideChar ch, WideChar start, WideChar end) =>
+            ch >= start && ch <= end;
 
         static ConsoleMisc()
         {
