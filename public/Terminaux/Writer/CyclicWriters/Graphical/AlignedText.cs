@@ -251,7 +251,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     aligned.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, top + i, true, alignment == TextAlignment.Left ? rightMargin : 0)
+                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, top + i, false, alignment == TextAlignment.Left ? rightMargin : 0)
                     );
                     finalSentence.Clear();
                 }
