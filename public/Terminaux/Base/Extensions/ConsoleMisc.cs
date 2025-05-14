@@ -31,6 +31,7 @@ using Terminaux.Base.TermInfo;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.Data.Unicode;
 using Textify.General;
 
 namespace Terminaux.Base.Extensions
@@ -41,7 +42,6 @@ namespace Terminaux.Base.Extensions
     public static class ConsoleMisc
     {
         private static bool isOnAltBuffer = false;
-        private static readonly Regex rtlRegex = new("[\u04c7-\u0591\u05D0-\u05EA\u05F0-\u05F4\u0600-\u06FF]+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         /// <summary>
         /// Specifies whether your terminal emulator reverses the RTL text automatically or not
@@ -349,82 +349,50 @@ namespace Terminaux.Base.Extensions
             if (TerminalReversesRtlText)
                 return target;
 
-            // Check to see if we have any RTL character or not
-            var rtls = rtlRegex.Matches(target).OfType<Match>().ToArray();
-            if (rtls.Length == 0)
-                return target;
-
-            // Now, reverse every single RTL character
+            // Now, figure out how to select control characters, because UnicodeTools.ReverseRtl might mess them up.
             var resultBuilder = new StringBuilder(target);
-            for (int i = rtls.Length - 1; i >= 0; i--)
+            if (target.Contains(VtSequenceBasicChars.EscapeChar))
             {
-                // Reverse the RTL text
-                var rtl = rtls[i];
-                int rtlIdx = rtl.Index;
-                string rtlText = rtl.Value;
-
-                // Some RTL languages have modifiers, such as Arabic modifiers that are found in the \u0600-\u06FF range for
-                // the whole language, but check for all of them.
-                char[] rtlTextChars = rtlText.ToCharArray();
-                var finalRtlReversed = new StringBuilder();
-                var finalRtlReversedModifiedLetter = new StringBuilder();
-                for (int c = rtlTextChars.Length - 1; c >= 0; c--)
+                // We might have VT sequences.
+                var matches = VtSequenceRegexes.AllVTSequences.Matches(target);
+                if (matches.Count > 0)
                 {
-                    int width = TextTools.GetCharWidth(rtlTextChars[c]);
-                    if (width == 0)
+                    // We have VT sequences! Process each chunk between two VT sequences.
+                    for (int i = 0; i < matches.Count; i++)
                     {
-                        // Is a modifier
-                        finalRtlReversedModifiedLetter.Insert(0, rtlTextChars[c]);
-                        continue;
+                        // Get the next match.
+                        Match? previousMatch = i - 1 >= 0 ? matches[i - 1] : null;
+                        var currentMatch = matches[i];
+                        Match? nextMatch = i + 1 < matches.Count ? matches[i + 1] : null;
+                        int lastEnd = previousMatch is not null ? previousMatch.Index + previousMatch.Length : 0;
+                        int nextBegin = nextMatch is not null ? nextMatch.Index : target.Length - 1;
+
+                        // Get the current match left and right indexes
+                        int leftIdx = currentMatch.Index - 1;
+                        int rightIdx = currentMatch.Index + currentMatch.Length;
+
+                        // Process the left string (if found)
+                        if (leftIdx >= 0)
+                        {
+                            string left = target.Substring(lastEnd, leftIdx + 1);
+                            string newLeft = UnicodeTools.ReverseRtl(left);
+                            resultBuilder.Replace(left, newLeft, lastEnd, leftIdx + 1);
+                        }
+                            
+                        // Process the right string (if found)
+                        if (rightIdx < target.Length)
+                        {
+                            string right = target.Substring(rightIdx, nextBegin - rightIdx);
+                            string newRight = UnicodeTools.ReverseRtl(right);
+                            resultBuilder.Replace(right, newRight, rightIdx, nextBegin);
+                        }
                     }
-                    else
-                        finalRtlReversedModifiedLetter.Insert(0, rtlTextChars[c]);
-                    finalRtlReversed.Append(finalRtlReversedModifiedLetter.ToString());
-                    finalRtlReversedModifiedLetter.Clear();
                 }
-
-                // Save the changes
-                resultBuilder.Replace(rtl.Value, finalRtlReversed.ToString(), rtlIdx, finalRtlReversed.Length);
+                else
+                    return UnicodeTools.ReverseRtl(target);
             }
-
-            // Now, reverse the word order for RTL
-            var resultRtls = rtlRegex.Matches(resultBuilder.ToString()).OfType<Match>().ToArray();
-            if (resultRtls.Length == 0)
-                return resultBuilder.ToString();
-            var finalRtlWords = new StringBuilder();
-            var finalRtlWordReversed = new StringBuilder();
-            for (int i = resultRtls.Length - 1; i >= 0; i--)
-            {
-                // Reverse the RTL word order
-                bool commit = true;
-                var rtl = resultRtls[i];
-                int rtlIdx = rtl.Index;
-                if (i > 0)
-                {
-                    var secondRtl = resultRtls[i - 1];
-                    int secondRtlIdx = secondRtl.Index;
-                    string secondRtlText = secondRtl.Value;
-                    if (rtlIdx - secondRtlText.Length - 1 == secondRtlIdx)
-                        commit = false;
-                }
-                finalRtlWords.Append($"{rtl}{(i > 0 ? " " : "")}");
-                if (commit)
-                {
-                    string[] splitWords = finalRtlWords.ToString().Split([' '], StringSplitOptions.RemoveEmptyEntries);
-                    for (int wordIdx = splitWords.Length - 1; wordIdx >= 0; wordIdx--)
-                    {
-                        string word = splitWords[wordIdx];
-                        finalRtlWordReversed.Append($"{word} ");
-                    }
-
-                    // Save the changes
-                    string finalReversedToBeReplaced = finalRtlWordReversed.ToString().Trim();
-                    string finalReversedToReplaceWith = finalRtlWords.ToString().Trim();
-                    resultBuilder.Replace(finalReversedToBeReplaced, finalReversedToReplaceWith, rtlIdx, finalReversedToReplaceWith.Length);
-                    finalRtlWords.Clear();
-                    finalRtlWordReversed.Clear();
-                }
-            }
+            else
+                return UnicodeTools.ReverseRtl(target);
             return resultBuilder.ToString();
         }
 
