@@ -174,7 +174,7 @@ namespace Terminaux.Writer.CyclicWriters
                     animated.Append(
                         $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, top + i, true, Settings.Alignment == TextAlignment.Left ? left + width : 0)
+                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, Top + i, false, Settings.Alignment == TextAlignment.Left ? Left + Width : 0)
                     );
                     finalSentence.Clear();
                 }
