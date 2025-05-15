@@ -19,12 +19,14 @@
 
 using SpecProbe.Software.Platform;
 using System;
+using System.Text;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Inputs.Pointer
