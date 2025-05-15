@@ -133,8 +133,14 @@ namespace Terminaux.Inputs
             get => enableMovementEvents;
             set
             {
+                // Stop mouse tracking
+                if (EnableMouse)
+                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents));
+
+                // Restart mouse tracking after setting the value
                 enableMovementEvents = value;
-                TextWriterRaw.WriteRaw(enableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : $"{VtSequenceBasicChars.EscapeChar}[?1003l");
+                if (EnableMouse)
+                    TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents));
             }
         }
 
@@ -557,7 +563,7 @@ namespace Terminaux.Inputs
             }
             else
             {
-                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000l{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003l" : "")}");
+                TextWriterRaw.WriteRaw(RenderMouseSupportSequence(false, EnableMovementEvents));
                 Process.Start("stty", "echo");
             }
         }
@@ -577,8 +583,28 @@ namespace Terminaux.Inputs
             else
             {
                 Process.Start("stty", "-echo -icanon min 1 time 0");
-                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000h{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : "")}");
+                TextWriterRaw.WriteRaw(RenderMouseSupportSequence(true, EnableMovementEvents));
             }
+        }
+
+        private static string RenderMouseSupportSequence(bool enable, bool movement)
+        {
+            if (PlatformHelper.IsOnWindows())
+                return "";
+
+            var sequenceBuilder = new StringBuilder();
+            char highLow = enable ? 'h' : 'l';
+
+            // Primary mouse tracking
+            sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1000{highLow}");
+
+            // Change encoding to SGR
+            sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1006{highLow}");
+
+            // Whether to also enable movement or not
+            if (movement)
+                sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1003{highLow}");
+            return sequenceBuilder.ToString();
         }
         #endregion
         #endregion
