@@ -598,9 +598,6 @@ namespace Terminaux.Inputs
             // Primary mouse tracking
             sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1000{highLow}");
 
-            // Change encoding to SGR
-            sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1006{highLow}");
-
             // Whether to also enable movement or not
             if (movement)
                 sequenceBuilder.Append($"{VtSequenceBasicChars.EscapeChar}[?1003{highLow}");
