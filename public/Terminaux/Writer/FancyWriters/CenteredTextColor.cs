@@ -375,7 +375,7 @@ namespace Terminaux.Writer.FancyWriters
                     centered.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWhere(sentence, consoleInfoX, top + i, true, rightMargin, Vars)
+                        TextWriterWhereColor.RenderWhere(sentence, consoleInfoX, top + i, false, rightMargin, Vars)
                     );
                 }
 
