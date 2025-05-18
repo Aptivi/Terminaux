@@ -1,12 +1,18 @@
-Describe what happened since Beta 1
+Since the first beta, we've done many changes to the base Terminaux input system to improve performance and reliability.
 
-You are testing the second beta version of Terminaux 7.0, which was released on TBD.
+You are testing the second beta version of Terminaux 7.0, which was released on June 12th, 2025.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` To be populated
+- `[+]` Added Panel and Markup conversion
+- `[+]` Added the Hue, White, and Black (HWB) color model
+- `[*]` Made significant improvements to the input system
+- `[*]` Made TUIs more mouse friendly
+- `[*]` Improved performance of the selection TUIs
+- `[*]` Improved RTL logical-to-visual mapping
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
