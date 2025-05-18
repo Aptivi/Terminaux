@@ -66,7 +66,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int interiorWidth = wholeWidth - sidebarWidth;
 
             // Get choice numbers and some positions
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
             int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -94,7 +94,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 {
                     Left = 3,
                     Top = 2,
-                    Width = wholeWidth,
+                    Width = interiorWidth,
                     Height = totalHeight,
                     ForegroundColor = settings.QuestionColor,
                     BackgroundColor = settings.BackgroundColor,
@@ -263,7 +263,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void PreviousPage(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
+            int sidebarWidth = sidebarEnabled ? 30 : 0;
+            int interiorWidth = wholeWidth - sidebarWidth;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
             int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -279,7 +282,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void NextPage(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
+            int sidebarWidth = sidebarEnabled ? 30 : 0;
+            int interiorWidth = wholeWidth - sidebarWidth;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
             int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -355,7 +361,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return;
 
             int sidebarWidth = sidebarEnabled ? 30 : 0;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int interiorWidth = wholeWidth - sidebarWidth;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
             int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -373,7 +380,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void QuestionGoUp(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
+            int sidebarWidth = sidebarEnabled ? 30 : 0;
+            int interiorWidth = wholeWidth - sidebarWidth;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             if (sentenceLineCount <= 5)
                 return;
             questionLine--;
@@ -384,7 +394,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void QuestionGoDown(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             int wholeWidth = ConsoleWrapper.WindowWidth - 6;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
+            int sidebarWidth = sidebarEnabled ? 30 : 0;
+            int interiorWidth = wholeWidth - sidebarWidth;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             if (sentenceLineCount <= 5)
                 return;
             questionLine++;
@@ -444,7 +457,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
             int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -513,7 +526,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
             int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -563,7 +576,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, wholeWidth).Length;
+            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
             int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
