@@ -84,5 +84,9 @@ namespace Terminaux.Colors.Transformation
         /// Sepia color filter (to add vintage look and feel)
         /// </summary>
         Sepia,
+        /// <summary>
+        /// Cyanotype color filter (to add cool look and feel)
+        /// </summary>
+        Cyanotype,
     }
 }

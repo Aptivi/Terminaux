@@ -587,6 +587,41 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests initializing color instance from 255 colors (Cyanotype)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFrom255ColorsCyanotype()
+        {
+            // Create instance
+            var settings = new ColorSettings()
+            {
+                Transformations = [new Cyanotype()],
+            };
+            var ColorInstance = new Color(18, settings);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("22;45;83");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;22;45;83m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;22;45;83m");
+            ColorInstance.RGB.R.ShouldBe(22);
+            ColorInstance.RGB.G.ShouldBe(45);
+            ColorInstance.RGB.B.ShouldBe(83);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#162D53");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Grey19);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from 16 colors
         /// </summary>
         [TestMethod]
