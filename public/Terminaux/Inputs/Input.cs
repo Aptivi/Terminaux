@@ -137,8 +137,11 @@ namespace Terminaux.Inputs
         }
 
         /// <summary>
-        /// Checks to see whether the movement events are enabled or not
+        /// Selects a pointer encoding to use when receiving a raw mouse event
         /// </summary>
+        /// <remarks>
+        /// While the SGR encoding provides extended position attributes, X10 is more compatible but limited.
+        /// </remarks>
         public static PointerEncoding PointerEncoding
         {
             get => encoding;
