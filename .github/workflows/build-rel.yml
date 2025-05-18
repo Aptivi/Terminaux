@@ -2,9 +2,9 @@ name: Build Project (Release)
 
 on:
   push:
-    branches: [ "main", "x/oob/4.3.x", "x/oob/5.4.x", "x/oob/6.1.x" ]
+    branches: [ "main", "x/oob/4.3.x", "x/oob/5.4.x", "x/oob/6.1.x", "x/exp/ng-te-b3" ]
   pull_request:
-    branches: [ "main", "x/oob/4.3.x", "x/oob/5.4.x", "x/oob/6.1.x" ]
+    branches: [ "main", "x/oob/4.3.x", "x/oob/5.4.x", "x/oob/6.1.x", "x/exp/ng-te-b3" ]
     
 jobs:
   build:
