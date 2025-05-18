@@ -73,6 +73,27 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string text, params object[] vars) =>
+            WriteInfoBoxMultiInput(modules, text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="modules">Input modules to represent their values.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string text, InfoBoxSettings settings, params object[] vars) =>
+            WriteInfoBoxMultiInputInternal(modules, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
+
+        #region To be removed
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="modules">Input modules to represent their values.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxPlainMultiInput(InputModule[] modules, string text, params object[] vars) =>
             WriteInfoBoxPlainMultiInput(modules, text, BorderSettings.GlobalSettings, vars);
 
@@ -83,17 +104,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxPlainMultiInput(InputModule[] modules, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxPlainMultiInput(modules, "", text, settings, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="modules">Input modules to represent their values.</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string text, params object[] vars) =>
-            WriteInfoBoxMultiInputColorBack(modules, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -102,6 +115,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInputColor(InputModule[] modules, string text, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
@@ -113,6 +127,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
 
@@ -123,6 +138,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInput(InputModule[] modules, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -134,6 +150,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInputColor(InputModule[] modules, string text, BorderSettings settings, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, text, settings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
@@ -146,6 +163,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, "", text, settings, InfoBoxColor, BackgroundColor, vars);
 
@@ -156,6 +174,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxPlainMultiInput(InputModule[] modules, string title, string text, params object[] vars) =>
             WriteInfoBoxPlainMultiInput(modules, title, text, BorderSettings.GlobalSettings, vars);
 
@@ -167,8 +186,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxPlainMultiInput(InputModule[] modules, string title, string text, BorderSettings settings, params object[] vars) =>
-            WriteInfoBoxMultiInputColorBack(modules, title, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
+            WriteInfoBoxMultiInputInternal(modules, title, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -177,6 +197,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInput(InputModule[] modules, string title, string text, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -188,6 +209,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInputColor(InputModule[] modules, string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
@@ -200,6 +222,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
 
@@ -211,6 +234,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInput(InputModule[] modules, string title, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -223,6 +247,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInputColor(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxMultiInputColorBack(modules, title, text, settings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
@@ -236,21 +261,12 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxMultiInputColorBack(modules, title, text, settings, InfoBoxTitledColor, BackgroundColor, true, vars);
+            WriteInfoBoxMultiInputInternal(modules, title, text, settings, InfoBoxTitledColor, BackgroundColor, true, vars);
+        #endregion
 
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="BackgroundColor">InfoBoxTitled background color</param>
-        /// <param name="modules">Input modules to represent their values.</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="useColor">Whether to use color or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        internal static bool WriteInfoBoxMultiInputColorBack(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
+        internal static bool WriteInfoBoxMultiInputInternal(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;

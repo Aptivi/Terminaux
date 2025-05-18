@@ -45,6 +45,27 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBoxProgress(double progress, string text, params object[] vars) =>
+            WriteInfoBoxProgress(progress, text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="progress">Progress percentage from 0 to 100</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars) =>
+            WriteInfoBoxProgressInternal(settings.Title, progress, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
+
+        #region To be removed
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="progress">Progress percentage from 0 to 100</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressPlain(double progress, string text, params object[] vars) =>
             WriteInfoBoxProgressPlain(progress, text, BorderSettings.GlobalSettings, vars);
 
@@ -55,17 +76,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressPlain(double progress, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxProgressPlain("", progress, text, settings, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgress(double progress, string text, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -74,6 +87,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressColor(double progress, string text, Color InfoBoxProgressColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings, InfoBoxProgressColor, ColorTools.currentBackgroundColor, vars);
 
@@ -85,6 +99,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxProgress background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressColorBack(double progress, string text, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings, InfoBoxProgressColor, BackgroundColor, vars);
 
@@ -95,6 +110,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgress(double progress, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxProgressColorBack(progress, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -106,6 +122,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressColor(double progress, string text, BorderSettings settings, Color InfoBoxProgressColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(progress, text, settings, InfoBoxProgressColor, ColorTools.currentBackgroundColor, vars);
 
@@ -118,6 +135,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxProgress background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressColorBack(double progress, string text, BorderSettings settings, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack("", progress, text, settings, InfoBoxProgressColor, BackgroundColor, vars);
 
@@ -128,6 +146,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressPlain(string title, double progress, string text, params object[] vars) =>
             WriteInfoBoxProgressPlain(title, progress, text, BorderSettings.GlobalSettings, vars);
 
@@ -138,6 +157,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgress(string title, double progress, string text, params object[] vars) =>
             WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -149,6 +169,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressColor(string title, double progress, string text, Color InfoBoxTitledProgressColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings, InfoBoxTitledProgressColor, ColorTools.currentBackgroundColor, vars);
 
@@ -161,6 +182,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxTitledProgress background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, Color InfoBoxTitledProgressColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings, InfoBoxTitledProgressColor, BackgroundColor, vars);
 
@@ -172,6 +194,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgress(string title, double progress, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxProgressColorBack(title, progress, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -184,6 +207,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressColor(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(title, progress, text, settings, InfoBoxTitledProgressColor, ColorTools.currentBackgroundColor, vars);
 
@@ -197,21 +221,12 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxTitledProgress background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, settings, InfoBoxTitledProgressColor, BackgroundColor, true, vars);
+            WriteInfoBoxProgressInternal(title, progress, text, settings, InfoBoxTitledProgressColor, BackgroundColor, true, vars);
+        #endregion
 
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxTitledProgress background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="useColor">Whether to use color or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        internal static void WriteInfoBoxProgressColorBack(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, Color BackgroundColor, bool useColor, params object[] vars)
+        internal static void WriteInfoBoxProgressInternal(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;

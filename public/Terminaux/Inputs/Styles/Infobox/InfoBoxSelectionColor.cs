@@ -71,6 +71,57 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelection(selections, text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
+        {
+            var category = new InputChoiceCategoryInfo[]
+            {
+                new("Selection infobox", [new("Available options", selections)])
+            };
+            return WriteInfoBoxSelectionInternal(
+                settings.Title, category, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
+        }
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelection(selections, text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars) =>
+            WriteInfoBoxSelectionInternal(settings.Title, selections, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
+        
+        #region To be removed
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="selections">List of choices</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionPlain(InputChoiceInfo[] selections, string text, params object[] vars) =>
             WriteInfoBoxSelectionPlain(selections, text, BorderSettings.GlobalSettings, vars);
 
@@ -82,18 +133,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionPlain(InputChoiceInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxSelectionPlain("", selections, text, settings, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="selections">List of choices</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -103,6 +145,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColor(InputChoiceInfo[] selections, string text, Color InfoBoxSelectionColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, InfoBoxSelectionColor, ColorTools.currentBackgroundColor, vars);
 
@@ -115,6 +158,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColorBack(InputChoiceInfo[] selections, string text, Color InfoBoxSelectionColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, InfoBoxSelectionColor, BackgroundColor, vars);
 
@@ -126,6 +170,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -139,6 +184,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColorBack(InputChoiceInfo[] selections, string text, BorderSettings settings, Color InfoBoxSelectionColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(
                 "", selections, text, settings, InfoBoxSelectionColor, BackgroundColor, vars);
@@ -151,6 +197,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionPlain(string title, InputChoiceInfo[] selections, string text, params object[] vars) =>
             WriteInfoBoxSelectionPlain(title, selections, text, BorderSettings.GlobalSettings, vars);
 
@@ -163,6 +210,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionPlain(string title, InputChoiceInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(
                 title, selections, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
@@ -175,6 +223,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelection(string title, InputChoiceInfo[] selections, string text, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -187,6 +236,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColor(string title, InputChoiceInfo[] selections, string text, Color InfoBoxTitledSelectionColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, InfoBoxTitledSelectionColor, ColorTools.currentBackgroundColor, vars);
 
@@ -200,6 +250,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColorBack(string title, InputChoiceInfo[] selections, string text, Color InfoBoxTitledSelectionColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, InfoBoxTitledSelectionColor, BackgroundColor, vars);
 
@@ -212,6 +263,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelection(string title, InputChoiceInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(title, selections, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -226,13 +278,14 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColorBack(string title, InputChoiceInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, params object[] vars)
         {
             var category = new InputChoiceCategoryInfo[]
             {
                 new("Selection infobox", [new("Available options", selections)])
             };
-            return WriteInfoBoxSelectionColorBack(
+            return WriteInfoBoxSelectionInternal(
                 title, category, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, true, vars);
         }
 
@@ -243,6 +296,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionPlain(InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
             WriteInfoBoxSelectionPlain(selections, text, BorderSettings.GlobalSettings, vars);
 
@@ -254,18 +308,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionPlain(InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxSelectionPlain("", selections, text, settings, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="selections">List of choices</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -275,6 +320,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColor(InputChoiceCategoryInfo[] selections, string text, Color InfoBoxSelectionColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, InfoBoxSelectionColor, ColorTools.currentBackgroundColor, vars);
 
@@ -287,6 +333,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColorBack(InputChoiceCategoryInfo[] selections, string text, Color InfoBoxSelectionColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text, BorderSettings.GlobalSettings, InfoBoxSelectionColor, BackgroundColor, vars);
 
@@ -298,6 +345,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -311,6 +359,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColorBack(InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, Color InfoBoxSelectionColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(
                 "", selections, text, settings, InfoBoxSelectionColor, BackgroundColor, vars);
@@ -323,6 +372,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionPlain(string title, InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
             WriteInfoBoxSelectionPlain(title, selections, text, BorderSettings.GlobalSettings, vars);
 
@@ -335,8 +385,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionPlain(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
-            WriteInfoBoxSelectionColorBack(
+            WriteInfoBoxSelectionInternal(
                 title, selections, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
 
         /// <summary>
@@ -347,6 +398,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelection(string title, InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -359,6 +411,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColor(string title, InputChoiceCategoryInfo[] selections, string text, Color InfoBoxTitledSelectionColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, InfoBoxTitledSelectionColor, ColorTools.currentBackgroundColor, vars);
 
@@ -372,6 +425,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColorBack(string title, InputChoiceCategoryInfo[] selections, string text, Color InfoBoxTitledSelectionColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(title, selections, text, BorderSettings.GlobalSettings, InfoBoxTitledSelectionColor, BackgroundColor, vars);
 
@@ -384,6 +438,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelection(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(title, selections, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -398,23 +453,13 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSelectionColorBack(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSelectionColorBack(
+            WriteInfoBoxSelectionInternal(
                 title, selections, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, true, vars);
+        #endregion
 
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="selections">List of choices</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxTitledSelectionColor">InfoBoxTitledSelection color</param>
-        /// <param name="BackgroundColor">InfoBoxTitledSelection background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="useColor">Whether to use color or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        internal static int WriteInfoBoxSelectionColorBack(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, bool useColor, params object[] vars)
+        internal static int WriteInfoBoxSelectionInternal(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
             int selectedChoice = -1;
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];

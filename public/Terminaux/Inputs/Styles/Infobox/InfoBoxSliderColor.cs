@@ -65,6 +65,31 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="maxPos">Maximum position</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSlider(currentPos, maxPos, text, InfoBoxSettings.GlobalSettings, minPos, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, InfoBoxSettings settings, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderInternal(settings.Title, currentPos, maxPos, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, minPos, vars);
+
+        #region To be removed
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderPlain(currentPos, maxPos, text, BorderSettings.GlobalSettings, minPos, vars);
 
@@ -77,19 +102,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderPlain("", currentPos, maxPos, text, settings, minPos, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="currentPos">Current position out of maximum position</param>
-        /// <param name="minPos">Maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -100,6 +115,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxSliderColor">InfoBoxSlider color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxSliderColor, ColorTools.currentBackgroundColor, minPos, vars);
 
@@ -113,6 +129,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxSlider background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxSliderColor, BackgroundColor, minPos, vars);
 
@@ -125,6 +142,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, minPos, vars);
 
@@ -138,6 +156,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxSliderColor">InfoBoxSlider color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(currentPos, maxPos, text, settings, InfoBoxSliderColor, ColorTools.currentBackgroundColor, minPos, vars);
 
@@ -152,6 +171,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxSlider background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack("", currentPos, maxPos, text, settings, InfoBoxSliderColor, BackgroundColor, minPos, vars);
 
@@ -164,6 +184,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="maxPos">Maximum position</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderPlain(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, minPos, vars);
 
@@ -177,8 +198,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="settings">Border settings to use</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, false, minPos, vars);
+            WriteInfoBoxSliderInternal(title, currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, false, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -189,6 +211,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="maxPos">Maximum position</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, minPos, vars);
 
@@ -202,6 +225,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledSliderColor">InfoBoxTitledSlider color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxTitledSliderColor, ColorTools.currentBackgroundColor, minPos, vars);
 
@@ -216,6 +240,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxTitledSlider background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxTitledSliderColor, BackgroundColor, minPos, vars);
 
@@ -229,6 +254,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, minPos, vars);
 
@@ -243,6 +269,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledSliderColor">InfoBoxTitledSlider color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, InfoBoxTitledSliderColor, ColorTools.currentBackgroundColor, minPos, vars);
 
@@ -258,23 +285,12 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxTitledSlider background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, InfoBoxTitledSliderColor, BackgroundColor, true, minPos, vars);
+            WriteInfoBoxSliderInternal(title, currentPos, maxPos, text, settings, InfoBoxTitledSliderColor, BackgroundColor, true, minPos, vars);
+        #endregion
 
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="currentPos">Current position out of maximum position</param>
-        /// <param name="minPos">Maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxTitledSliderColor">InfoBoxTitledSlider color</param>
-        /// <param name="BackgroundColor">InfoBoxTitledSlider background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="useColor">Whether to use color or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        internal static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, bool useColor, int minPos = 0, params object[] vars)
+        internal static int WriteInfoBoxSliderInternal(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, bool useColor, int minPos = 0, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;

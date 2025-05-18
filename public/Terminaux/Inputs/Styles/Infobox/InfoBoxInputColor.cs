@@ -44,6 +44,42 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// </summary>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInput(string text, params object[] vars) =>
+            WriteInfoBoxInput(text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInput(string text, InfoBoxSettings settings, params object[] vars) =>
+            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, false, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPassword(string text, params object[] vars) =>
+            WriteInfoBoxInputPassword(text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputPassword(string text, InfoBoxSettings settings, params object[] vars) =>
+            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, true, vars);
+
+        #region To be removed
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxPlainInput(string text, params object[] vars) =>
             WriteInfoBoxPlainInput(text, BorderSettings.GlobalSettings, vars);
 
@@ -53,16 +89,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxPlainInput(string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxPlainInput("", text, settings, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInput(string text, params object[] vars) =>
-            WriteInfoBoxInputColorBack(text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -70,6 +99,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColor(string text, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxInputColorBack(text, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
@@ -80,6 +110,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxInputColorBack(text, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
 
@@ -89,6 +120,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInput(string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxInputColorBack(text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -99,6 +131,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColor(string text, BorderSettings settings, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxInputColorBack(text, settings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
@@ -110,6 +143,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColorBack(string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxInputColorBack("", text, settings, InfoBoxColor, BackgroundColor, vars);
 
@@ -119,6 +153,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="title">Title to be written</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxPlainInput(string title, string text, params object[] vars) =>
             WriteInfoBoxPlainInput(title, text, BorderSettings.GlobalSettings, vars);
 
@@ -129,6 +164,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxPlainInput(string title, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxInputColorBack(title, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
 
@@ -138,6 +174,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="title">Title to be written</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInput(string title, string text, params object[] vars) =>
             WriteInfoBoxInputColorBack(title, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -148,6 +185,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColor(string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxInputColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
@@ -159,6 +197,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxTitled background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColorBack(string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxInputColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
 
@@ -169,6 +208,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInput(string title, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxInputColorBack(title, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -180,6 +220,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColor(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxInputColorBack(title, text, settings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
@@ -192,14 +233,16 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxTitled background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, false, vars);
+            WriteInfoBoxInputInternal(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, false, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxPlainInputPassword(string text, params object[] vars) =>
             WriteInfoBoxPlainInputPassword(text, BorderSettings.GlobalSettings, vars);
 
@@ -209,16 +252,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxPlainInputPassword(string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxPlainInputPassword("", text, settings, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputPassword(string text, params object[] vars) =>
-            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -226,6 +262,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColor(string text, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
@@ -236,6 +273,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
 
@@ -245,6 +283,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPassword(string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -255,6 +294,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColor(string text, BorderSettings settings, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(text, settings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
@@ -266,6 +306,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColorBack(string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack("", text, settings, InfoBoxColor, BackgroundColor, vars);
 
@@ -275,6 +316,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="title">Title to be written</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxPlainInputPassword(string title, string text, params object[] vars) =>
             WriteInfoBoxPlainInputPassword(title, text, BorderSettings.GlobalSettings, vars);
 
@@ -285,6 +327,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxPlainInputPassword(string title, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(title, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
 
@@ -294,6 +337,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="title">Title to be written</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPassword(string title, string text, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -304,6 +348,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColor(string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
@@ -315,6 +360,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxTitled background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColorBack(string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
 
@@ -325,6 +371,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPassword(string title, string text, BorderSettings settings, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(title, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
@@ -336,6 +383,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColor(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxInputPasswordColorBack(title, text, settings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
@@ -348,10 +396,12 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="BackgroundColor">InfoBoxTitled background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, true, vars);
+            WriteInfoBoxInputInternal(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, true, vars);
+        #endregion
 
-        internal static string WriteInfoBoxInputColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, bool password, params object[] vars)
+        internal static string WriteInfoBoxInputInternal(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, bool password, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;

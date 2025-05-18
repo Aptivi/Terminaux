@@ -201,7 +201,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         internal static void ShowKeybindingInfoboxColorBack(string title, Keybinding[] keybindings, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
             string keybindingsText = RenderKeybindingHelpText(keybindings);
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(title, keybindingsText, settings, InfoBoxTitledColor, BackgroundColor, useColor, vars);
+            InfoBoxModalColor.WriteInfoBoxModalInternal(title, keybindingsText, settings, InfoBoxTitledColor, BackgroundColor, useColor, vars);
         }
 
         /// <summary>
