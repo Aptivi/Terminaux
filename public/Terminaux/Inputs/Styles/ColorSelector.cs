@@ -55,6 +55,7 @@ namespace Terminaux.Inputs.Styles
             { TransformationFormula.YellowScale, new Monochromacy() { Type = MonochromacyType.Yellow } },
             { TransformationFormula.AquaScale, new Monochromacy() { Type = MonochromacyType.Cyan } },
             { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta } },
+            { TransformationFormula.Sepia, new Sepia() },
         };
 
         internal readonly static Keybinding[] bindings =

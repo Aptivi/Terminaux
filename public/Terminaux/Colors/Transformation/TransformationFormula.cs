@@ -80,5 +80,9 @@ namespace Terminaux.Colors.Transformation
         /// Pink tinted monochromacy
         /// </summary>
         PinkScale,
+        /// <summary>
+        /// Sepia color filter (to add vintage look and feel)
+        /// </summary>
+        Sepia,
     }
 }

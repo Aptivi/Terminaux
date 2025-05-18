@@ -28,9 +28,9 @@ namespace Terminaux.Inputs
     /// </summary>
     public class InputEventInfo
     {
-        private PointerEventContext? ctx = null;
-        private ConsoleKeyInfo? cki = null;
-        private Coordinate? reportedPos = null;
+        private readonly PointerEventContext? ctx = null;
+        private readonly ConsoleKeyInfo? cki = null;
+        private readonly Coordinate? reportedPos = null;
 
         /// <summary>
         /// Event type to report

@@ -552,6 +552,41 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests initializing color instance from 255 colors (Sepia)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFrom255ColorsSepia()
+        {
+            // Create instance
+            var settings = new ColorSettings()
+            {
+                Transformations = [new Sepia()],
+            };
+            var ColorInstance = new Color(18, settings);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("25;22;17");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;25;22;17m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;25;22;17m");
+            ColorInstance.RGB.R.ShouldBe(25);
+            ColorInstance.RGB.G.ShouldBe(22);
+            ColorInstance.RGB.B.ShouldBe(17);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#191611");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Grey7);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from 16 colors
         /// </summary>
         [TestMethod]
