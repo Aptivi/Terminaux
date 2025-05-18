@@ -58,7 +58,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         ];
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the slider info box
         /// </summary>
         /// <param name="currentPos">Current position out of maximum position</param>
         /// <param name="minPos">Maximum position</param>
@@ -69,7 +69,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxSlider(currentPos, maxPos, text, InfoBoxSettings.GlobalSettings, minPos, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the slider info box
         /// </summary>
         /// <param name="currentPos">Current position out of maximum position</param>
         /// <param name="minPos">Maximum position</param>

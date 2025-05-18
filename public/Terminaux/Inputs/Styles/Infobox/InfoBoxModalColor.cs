@@ -52,7 +52,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         ];
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the info box that appears and waits for user input
         /// </summary>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -60,7 +60,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxModal(text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the info box that appears and waits for user input
         /// </summary>
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>

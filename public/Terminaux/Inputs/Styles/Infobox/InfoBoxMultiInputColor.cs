@@ -68,7 +68,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         ];
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the multi-input method info box
         /// </summary>
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
@@ -77,7 +77,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxMultiInput(modules, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the multi-input method info box
         /// </summary>
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="modules">Input modules to represent their values.</param>

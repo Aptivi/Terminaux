@@ -37,7 +37,7 @@ namespace Terminaux.Inputs.Styles.Infobox
     public static class InfoBoxNonModalColor
     {
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the info box that just appears
         /// </summary>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -45,9 +45,9 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBox(text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the info box that just appears
         /// </summary>
-        /// <param name="settings">Border settings to use</param>
+        /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, InfoBoxSettings settings, params object[] vars) =>

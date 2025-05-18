@@ -57,7 +57,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         ];
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the button info box
         /// </summary>
         /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
         /// <param name="text">Text to be written.</param>
@@ -67,7 +67,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxButtons(buttons, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the button info box
         /// </summary>
         /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
         /// <param name="settings">Infobox settings to use</param>

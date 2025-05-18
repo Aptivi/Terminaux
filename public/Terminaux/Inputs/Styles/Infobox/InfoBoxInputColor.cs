@@ -40,7 +40,7 @@ namespace Terminaux.Inputs.Styles.Infobox
     public static class InfoBoxInputColor
     {
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the input info box
         /// </summary>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -48,7 +48,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxInput(text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the input info box
         /// </summary>
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
@@ -57,7 +57,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, false, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the masked input info box
         /// </summary>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -65,7 +65,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxInputPassword(text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the masked input info box
         /// </summary>
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>

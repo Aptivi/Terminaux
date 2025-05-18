@@ -34,7 +34,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
     public static class KeybindingTools
     {
         /// <summary>
-        /// Writes the info box plainly
+        /// Shows the keybinding information box
         /// </summary>
         /// <param name="keybindings">Keybindings (including the built-in ones)</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -42,9 +42,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             ShowKeybindingInfobox(keybindings, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Shows the keybinding information box
         /// </summary>
-        /// <param name="settings">Border settings to use</param>
+        /// <param name="settings">Infobox settings to use</param>
         /// <param name="keybindings">Keybindings (including the built-in ones)</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void ShowKeybindingInfobox(Keybinding[] keybindings, InfoBoxSettings settings, params object[] vars)

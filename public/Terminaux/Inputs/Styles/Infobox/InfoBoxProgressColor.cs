@@ -40,7 +40,7 @@ namespace Terminaux.Inputs.Styles.Infobox
     public static class InfoBoxProgressColor
     {
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the progress info box
         /// </summary>
         /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="text">Text to be written.</param>
@@ -49,10 +49,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxProgress(progress, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the progress info box
         /// </summary>
         /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="settings">Border settings to use</param>
+        /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars) =>

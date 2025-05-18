@@ -68,7 +68,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         ];
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the multiple-choice selection info box
         /// </summary>
         /// <param name="selections">List of choices</param>
         /// <param name="text">Text to be written.</param>
@@ -78,10 +78,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxSelectionMultiple(selections, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the multiple-choice selection info box
         /// </summary>
         /// <param name="selections">List of choices</param>
-        /// <param name="settings">Border settings to use</param>
+        /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
@@ -96,7 +96,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         }
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the multiple-choice selection info box
         /// </summary>
         /// <param name="selections">List of choices</param>
         /// <param name="text">Text to be written.</param>
@@ -106,10 +106,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             WriteInfoBoxSelectionMultiple(selections, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
-        /// Writes the info box plainly
+        /// Writes the multiple-choice selection info box
         /// </summary>
         /// <param name="selections">List of choices</param>
-        /// <param name="settings">Border settings to use</param>
+        /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
