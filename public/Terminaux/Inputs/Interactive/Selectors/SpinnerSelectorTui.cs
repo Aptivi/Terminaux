@@ -42,24 +42,19 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private string spinner = nameof(BuiltinSpinners.Dots);
         private int selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
         private bool cancel = false;
+        private bool invalidate = true;
+        private Spinner spinnerInstance = BuiltinSpinners.Dots;
         private readonly int selectedSpinnerFallback = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
 
         /// <inheritdoc/>
         public override string Render()
         {
-            // Some initial variables to populate spinner spinners
+            // Some initial variables to populate spinners
             var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
             string spinnerName = SpinnerSelector.spinners.Contains(spinner) ? spinner : nameof(BuiltinSpinners.Dots);
-            selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
 
-            // Now, clear the console and let the user select a spinner spinner while displaying a small text in the middle
+            // Now, clear the console and let the user select a spinner while displaying a small text in the middle
             // of the console
-            var screen = new Screen()
-            {
-                CycleFrequency = 50,
-            };
-            var selectedSpinnerPropertyInfo = builtinSpinners[selectedSpinner];
-            var spinnerObject = selectedSpinnerPropertyInfo.GetGetMethod()?.Invoke(null, null);
             var buffer = new StringBuilder();
 
             // Write the selected spinner name and the keybindings
@@ -80,19 +75,26 @@ namespace Terminaux.Inputs.Interactive.Selectors
             buffer.Append(spinnerInfo.Render());
             buffer.Append(RendererTools.RenderRenderable(spinnerKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
-            // Write the rendered content using the selected spinner
-            if (spinnerObject is Spinner spinnerRenderable)
+            // Determine whether to repopulate cached spinner instance or not
+            if (invalidate)
             {
-                var spinnerDisplay = new AlignedText()
-                {
-                    Settings = new()
-                    {
-                        Alignment = TextAlignment.Middle
-                    },
-                    Text = spinnerRenderable.Render()
-                };
-                buffer.Append(spinnerDisplay.Render());
+                invalidate = false;
+                var selectedSpinnerPropertyInfo = builtinSpinners[selectedSpinner];
+                var spinnerObject = selectedSpinnerPropertyInfo.GetGetMethod()?.Invoke(null, null);
+                if (spinnerObject is Spinner finalSpinner)
+                    spinnerInstance = finalSpinner;
             }
+
+            // Write the rendered content using the selected spinner
+            var spinnerDisplay = new AlignedText()
+            {
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle
+                },
+                Text = spinnerInstance.Render()
+            };
+            buffer.Append(spinnerDisplay.Render());
             return buffer.ToString();
         }
 
@@ -113,6 +115,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             selectedSpinner--;
             if (selectedSpinner < 0)
                 selectedSpinner = SpinnerSelector.spinners.Length - 1;
+            invalidate = true;
             spinner = SpinnerSelector.spinners[selectedSpinner];
             ui.RequireRefresh();
         }
@@ -122,6 +125,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             selectedSpinner++;
             if (selectedSpinner > SpinnerSelector.spinners.Length - 1)
                 selectedSpinner = 0;
+            invalidate = true;
             spinner = SpinnerSelector.spinners[selectedSpinner];
             ui.RequireRefresh();
         }
@@ -158,6 +162,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 });
                 spinner = SpinnerSelector.spinners[selectedSpinner];
             }
+            invalidate = true;
             selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(spinner);
             ui.RequireRefresh();
         }
@@ -165,6 +170,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         internal SpinnerSelectorTui(string name)
         {
             spinner = name;
+            selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
 
             // Keyboard bindings
             Keybindings.Add((SpinnerSelector.bindings[0], Previous));
