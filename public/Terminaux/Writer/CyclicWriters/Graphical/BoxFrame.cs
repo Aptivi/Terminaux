@@ -216,21 +216,27 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 List<Coordinate> processedPositions = [];
                 foreach (var ruler in Rulers.Distinct())
                 {
+                    int intersections = 0;
                     switch (ruler.Orientation)
                     {
                         case RulerOrientation.Horizontal:
                             int top = Top + ruler.Position + 1;
                             if (top > Top && top < Top + Height)
                             {
-                                frameBuilder.Append(
-                                    ConsolePositioning.RenderChangePosition(Left, top) +
-                                    (settings.BorderLeftHorizontalIntersectionEnabled ? $"{settings.BorderLeftHorizontalIntersectionChar}" : " ")
-                                );
-                                for (int i = 1; i <= Width; i++)
+                                // Render the ruler
+                                int i = ruler.InvertDirection ? Width : 1;
+                                int length = 0;
+                                while (ruler.InvertDirection && i >= 1 || i <= Width)
                                 {
                                     Coordinate coord = new(Left + i, top);
+                                    bool intersected = processedPositions.Contains(coord);
+                                    if (intersected)
+                                        intersections++;
+                                    if (ruler.IntersectionStop > 0 && intersections >= ruler.IntersectionStop)
+                                        break;
+                                    length++;
                                     char finalIntersectionChar =
-                                        processedPositions.Contains(coord) ?
+                                        intersected ?
                                         (settings.BorderWholeIntersectionEnabled ? settings.BorderWholeIntersectionChar : ' ') :
                                         (settings.BorderHorizontalIntersectionEnabled ? settings.BorderHorizontalIntersectionChar : ' ');
                                     processedPositions.Add(coord);
@@ -238,24 +244,50 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                         ConsolePositioning.RenderChangePosition(Left + i, top) +
                                         finalIntersectionChar
                                     );
+                                    i += ruler.InvertDirection ? -1 : 1;
                                 }
-                                frameBuilder.Append(
-                                    ConsolePositioning.RenderChangePosition(Left + Width + 1, top) +
-                                    (settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar}" : " ")
-                                );
+
+                                // Render the final intersection characters
+                                if (ruler.InvertDirection)
+                                {
+                                    frameBuilder.Append(
+                                        ConsolePositioning.RenderChangePosition(Left + length - 2, top) +
+                                        (settings.BorderLeftHorizontalIntersectionEnabled ? $"{settings.BorderLeftHorizontalIntersectionChar}" : " ")
+                                    );
+                                    frameBuilder.Append(
+                                        ConsolePositioning.RenderChangePosition(Left + Width + 1, top) +
+                                        (settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar}" : " ")
+                                    );
+                                }
+                                else
+                                {
+                                    frameBuilder.Append(
+                                        ConsolePositioning.RenderChangePosition(Left, top) +
+                                        (settings.BorderLeftHorizontalIntersectionEnabled ? $"{settings.BorderLeftHorizontalIntersectionChar}" : " ")
+                                    );
+                                    frameBuilder.Append(
+                                        ConsolePositioning.RenderChangePosition(Left + length + 1, top) +
+                                        (settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar}" : " ")
+                                    );
+                                }
                             }
                             break;
                         case RulerOrientation.Vertical:
                             int left = Left + ruler.Position + 1;
                             if (left > Left && left < Left + Width)
                             {
-                                frameBuilder.Append(
-                                    ConsolePositioning.RenderChangePosition(left, Top) +
-                                    (settings.BorderTopVerticalIntersectionEnabled ? $"{settings.BorderTopVerticalIntersectionChar}" : " ")
-                                );
-                                for (int i = 1; i <= Height; i++)
+                                // Render the ruler
+                                int i = ruler.InvertDirection ? Height : 1;
+                                int length = 0;
+                                while (ruler.InvertDirection && i >= 1 || i <= Height)
                                 {
                                     Coordinate coord = new(left, Top + i);
+                                    bool intersected = processedPositions.Contains(coord);
+                                    if (intersected)
+                                        intersections++;
+                                    if (ruler.IntersectionStop > 0 && intersections >= ruler.IntersectionStop)
+                                        break;
+                                    length++;
                                     char finalIntersectionChar =
                                         processedPositions.Contains(coord) ?
                                         (settings.BorderWholeIntersectionEnabled ? settings.BorderWholeIntersectionChar : ' ') :
@@ -265,11 +297,32 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                         ConsolePositioning.RenderChangePosition(left, Top + i) +
                                         finalIntersectionChar
                                     );
+                                    i += ruler.InvertDirection ? -1 : 1;
                                 }
-                                frameBuilder.Append(
-                                    ConsolePositioning.RenderChangePosition(left, Top + Height + 1) +
-                                    (settings.BorderBottomVerticalIntersectionEnabled ? $"{settings.BorderBottomVerticalIntersectionChar}" : " ")
-                                );
+
+                                // Render the final intersection characters
+                                if (ruler.InvertDirection)
+                                {
+                                    frameBuilder.Append(
+                                        ConsolePositioning.RenderChangePosition(left, Top + length + 1) +
+                                        (settings.BorderTopVerticalIntersectionEnabled ? $"{settings.BorderTopVerticalIntersectionChar}" : " ")
+                                    );
+                                    frameBuilder.Append(
+                                        ConsolePositioning.RenderChangePosition(left, Top + Height + 1) +
+                                        (settings.BorderBottomVerticalIntersectionEnabled ? $"{settings.BorderBottomVerticalIntersectionChar}" : " ")
+                                    );
+                                }
+                                else
+                                {
+                                    frameBuilder.Append(
+                                        ConsolePositioning.RenderChangePosition(left, Top) +
+                                        (settings.BorderTopVerticalIntersectionEnabled ? $"{settings.BorderTopVerticalIntersectionChar}" : " ")
+                                    );
+                                    frameBuilder.Append(
+                                        ConsolePositioning.RenderChangePosition(left, Top + length + 1) +
+                                        (settings.BorderBottomVerticalIntersectionEnabled ? $"{settings.BorderBottomVerticalIntersectionChar}" : " ")
+                                    );
+                                }
                             }
                             break;
                     }

@@ -28,6 +28,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Rulers
     public struct RulerInfo
     {
         private int position;
+        private int intersectionStop;
 
         /// <summary>
         /// Zero-based position of the ruler relative to the supported cyclic writer or its inside
@@ -52,14 +53,43 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Rulers
         public RulerOrientation Orientation { get; set; }
 
         /// <summary>
+        /// Whether to invert the rendering direction or not
+        /// </summary>
+        /// <remarks>
+        /// If <see cref="Orientation"/> is set to <see cref="RulerOrientation.Horizontal"/>, the renderer will render a ruler from the right to the left if inversion is enabled, or from the left to the right if inversion is disabled.<br></br>
+        /// If <see cref="Orientation"/> is set to <see cref="RulerOrientation.Vertical"/>, the renderer will render a ruler from the bottom to the top if inversion is enabled, or from the top to the bottom if inversion is disabled.
+        /// </remarks>
+        public bool InvertDirection { get; set; }
+
+        /// <summary>
+        /// Defines a stop level when defining intersections (skip n intersections)
+        /// </summary>
+        /// <remarks>
+        /// If set to 0, no stops will occur. Otherwise, the renderer will render intersections a specified number of times.
+        /// </remarks>
+        public int IntersectionStop
+        {
+            readonly get => intersectionStop;
+            set
+            {
+                if (intersectionStop >= 0)
+                    intersectionStop = value;
+            }
+        }
+
+        /// <summary>
         /// Makes a new ruler info struct
         /// </summary>
         /// <param name="position">Zero-based position of the ruler relative to the supported cyclic writer or its inside</param>
         /// <param name="orientation">Orientation of the ruler</param>
-        public RulerInfo(int position, RulerOrientation orientation)
+        /// <param name="intersectionStop">Stop level for intersections</param>
+        /// <param name="invertDirection">Whether to invert the rendering direction or not</param>
+        public RulerInfo(int position, RulerOrientation orientation, int intersectionStop = 0, bool invertDirection = false)
         {
             this.position = position;
             Orientation = orientation;
+            this.intersectionStop = intersectionStop;
+            InvertDirection = invertDirection;
         }
     }
 }
