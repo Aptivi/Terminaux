@@ -54,20 +54,23 @@ namespace Terminaux.Inputs.Styles
         ];
 
         /// <summary>
-        /// Prompts the user for a spinner spinner
+        /// Prompts the user for a spinner
         /// </summary>
-        /// <returns>Selected spinner spinner</returns>
+        /// <returns>Selected spinner</returns>
         public static Spinner PromptForSpinner() =>
             PromptForSpinner(nameof(BuiltinSpinners.Dots));
 
         /// <summary>
-        /// Prompts the user for a spinner spinner
+        /// Prompts the user for a spinner
         /// </summary>
         /// <param name="spinner">Initial spinner to select</param>
-        /// <returns>Selected spinner spinner</returns>
+        /// <returns>Selected spinner</returns>
         public static Spinner PromptForSpinner(string spinner)
         {
-            var spinnerSelectorTui = new SpinnerSelectorTui(spinner);
+            var spinnerSelectorTui = new SpinnerSelectorTui(spinner)
+            {
+                RefreshDelay = 50
+            };
             TextualUITools.RunTui(spinnerSelectorTui);
             return spinnerSelectorTui.GetResultingSpinner();
         }

@@ -47,7 +47,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Some initial variables to populate spinners
             var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
             string spinnerName = SpinnerSelector.spinners.Contains(spinner) ? spinner : nameof(BuiltinSpinners.Dots);
-            selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
 
             // Now, clear the console and let the user select a spinner while displaying a small text in the middle
             // of the console
@@ -160,6 +159,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         internal SpinnerSelectorTui(string name)
         {
             spinner = name;
+            selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
 
             // Keyboard bindings
             Keybindings.Add((SpinnerSelector.bindings[0], Previous));
