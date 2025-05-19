@@ -19,7 +19,7 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Interactive
 {
@@ -44,9 +44,7 @@ namespace Terminaux.Inputs.Interactive
         private Color keyBindingBuiltinBackgroundColor = ConsoleColors.Green;
         private Color keyBindingBuiltinColor = ConsoleColors.Black;
         private Color keyBindingBuiltinForegroundColor = ConsoleColors.Lime;
-        private Color boxBackgroundColor = ConsoleColors.Black;
-        private Color boxForegroundColor = ConsoleColors.Yellow;
-        private BorderSettings borderSettings = BorderSettings.GlobalSettings;
+        private InfoBoxSettings infoBoxSettings = new(InfoBoxSettings.GlobalSettings);
 
         /// <summary>
         /// Global interactive TUI settings
@@ -194,8 +192,8 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public Color BoxBackgroundColor
         {
-            get => boxBackgroundColor;
-            set => boxBackgroundColor = value;
+            get => InfoBoxSettings.BackgroundColor;
+            set => InfoBoxSettings.BackgroundColor = value;
         }
 
         /// <summary>
@@ -203,17 +201,17 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public Color BoxForegroundColor
         {
-            get => boxForegroundColor;
-            set => boxForegroundColor = value;
+            get => InfoBoxSettings.ForegroundColor;
+            set => InfoBoxSettings.ForegroundColor = value;
         }
 
         /// <summary>
-        /// Border settings to use when rendering the interactive TUI
+        /// Infobox settings to use when rendering the interactive TUI
         /// </summary>
-        public BorderSettings BorderSettings
+        public InfoBoxSettings InfoBoxSettings
         {
-            get => borderSettings;
-            set => borderSettings = value;
+            get => infoBoxSettings;
+            set => infoBoxSettings = value;
         }
 
         /// <summary>
@@ -230,8 +228,6 @@ namespace Terminaux.Inputs.Interactive
         {
             BackgroundColor = settings.BackgroundColor;
             ForegroundColor = settings.ForegroundColor;
-            BoxBackgroundColor = settings.BoxBackgroundColor;
-            BoxForegroundColor = settings.BoxForegroundColor;
             KeyBindingOptionColor = settings.KeyBindingOptionColor;
             KeyBindingBuiltinColor = settings.KeyBindingBuiltinColor;
             KeyBindingBuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor;
@@ -245,7 +241,9 @@ namespace Terminaux.Inputs.Interactive
             PaneSelectedItemBackColor = settings.PaneSelectedItemBackColor;
             PaneSelectedSeparatorColor = settings.PaneSelectedSeparatorColor;
             PaneBackgroundColor = settings.PaneBackgroundColor;
-            BorderSettings = settings.BorderSettings;
+            InfoBoxSettings = settings.InfoBoxSettings;
+            BoxBackgroundColor = settings.BoxBackgroundColor;
+            BoxForegroundColor = settings.BoxForegroundColor;
         }
     }
 }

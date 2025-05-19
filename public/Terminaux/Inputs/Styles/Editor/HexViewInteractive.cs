@@ -33,6 +33,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -279,7 +280,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
-            InfoBoxModalColor.WriteInfoBoxModalColorBack("Available keybindings", bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
+            {
+                Title = "Available keybindings",
+            });
             return bytes;
         }
 
@@ -318,7 +322,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a byte or a group of bytes separated by whitespaces. It can be from 00 to FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInput("Write a byte or a group of bytes separated by whitespaces. It can be from 00 to FF.", settings.InfoBoxSettings);
             byte[] refBytes;
 
             // See if we have a cached find if the user didn't provide any string to find
@@ -326,7 +330,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 if (cachedFind.Length == 0)
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal("Bytes are required to find, but you haven't provided one.", settings.BorderSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal("Bytes are required to find, but you haven't provided one.", settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -342,7 +346,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     // Check this individual byte
                     if (!byte.TryParse(byteSplit, NumberStyles.AllowHexSpecifier, null, out byte finalByte))
                     {
-                        InfoBoxModalColor.WriteInfoBoxModal($"Invalid byte {byteSplit}.", settings.BorderSettings);
+                        InfoBoxModalColor.WriteInfoBoxModal($"Invalid byte {byteSplit}.", settings.InfoBoxSettings);
                         return;
                     }
 
@@ -403,7 +407,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 cachedFind = refBytes;
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.BorderSettings);
+                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
         }
 
         private static byte[] NumInfo(byte[] bytes, InteractiveTuiSettings settings)
@@ -416,13 +420,15 @@ namespace Terminaux.Inputs.Styles.Editor
             string byteNumBinary = Convert.ToString(byteNum, 2);
 
             // Print the number information
-            InfoBoxModalColor.WriteInfoBoxModalColorBack("Number information",
+            InfoBoxModalColor.WriteInfoBoxModal(
                 $"Position:     0x{byteIdx:X8}" + CharManager.NewLine +
                 $"Hexadecimal:  0x{byteNumHex}" + CharManager.NewLine +
                 $"Octal:        {byteNumOctal}" + CharManager.NewLine +
                 $"Number:       {byteNumNumber}" + CharManager.NewLine +
-                $"Binary:       {byteNumBinary}"
-                , settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                $"Binary:       {byteNumBinary}", new InfoBoxSettings(settings.InfoBoxSettings)
+                {
+                    Title = "Number information",
+                });
             return bytes;
         }
 

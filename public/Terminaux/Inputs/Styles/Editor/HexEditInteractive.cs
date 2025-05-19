@@ -34,6 +34,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -302,7 +303,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
-            InfoBoxModalColor.WriteInfoBoxModalColorBack("Available keybindings", bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
+            {
+                Title = "Available keybindings",
+            });
         }
 
         private static void MoveBackward()
@@ -341,10 +345,10 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value. 00 -> FF.", settings.InfoBoxSettings);
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
             else
                 AddNewByte(ref bytes, byteNum, byteIdx + 1);
         }
@@ -368,10 +372,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(ref bytes, byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
@@ -389,10 +393,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(ref bytes, byteNum, byteNumReplaced);
@@ -406,17 +410,17 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to be replaced. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to be replaced. 00 -> FF.", settings.InfoBoxSettings);
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(ref bytes, byteNum, byteNumReplaced);
@@ -429,7 +433,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a byte or a group of bytes separated by whitespaces. It can be from 00 to FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInput("Write a byte or a group of bytes separated by whitespaces. It can be from 00 to FF.", settings.InfoBoxSettings);
             byte[] refBytes;
 
             // See if we have a cached find if the user didn't provide any string to find
@@ -437,7 +441,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 if (cachedFind.Length == 0)
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal("Bytes are required to find, but you haven't provided one.", settings.BorderSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal("Bytes are required to find, but you haven't provided one.", settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -453,7 +457,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     // Check this individual byte
                     if (!byte.TryParse(byteSplit, NumberStyles.AllowHexSpecifier, null, out byte finalByte))
                     {
-                        InfoBoxModalColor.WriteInfoBoxModal($"Invalid byte {byteSplit}.", settings.BorderSettings);
+                        InfoBoxModalColor.WriteInfoBoxModal($"Invalid byte {byteSplit}.", settings.InfoBoxSettings);
                         return;
                     }
 
@@ -514,7 +518,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 cachedFind = refBytes;
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.BorderSettings);
+                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
         }
 
         private static void NumInfo(byte[] bytes, InteractiveTuiSettings settings)
@@ -531,13 +535,15 @@ namespace Terminaux.Inputs.Styles.Editor
             string byteNumBinary = Convert.ToString(byteNum, 2);
 
             // Print the number information
-            InfoBoxModalColor.WriteInfoBoxModalColorBack("Number information",
+            InfoBoxModalColor.WriteInfoBoxModal(
                 $"Position:     0x{byteIdx:X8}" + CharManager.NewLine +
                 $"Hexadecimal:  0x{byteNumHex}" + CharManager.NewLine +
                 $"Octal:        {byteNumOctal}" + CharManager.NewLine +
                 $"Number:       {byteNumNumber}" + CharManager.NewLine +
-                $"Binary:       {byteNumBinary}"
-                , settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                $"Binary:       {byteNumBinary}", new InfoBoxSettings(settings.InfoBoxSettings)
+                {
+                    Title = "Number information",
+                });
         }
 
         private static void StatusNumInfo(byte[] bytes)

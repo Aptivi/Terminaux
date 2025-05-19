@@ -26,6 +26,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Simple;
@@ -80,7 +81,12 @@ namespace Terminaux.Inputs.Modules
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
                 int value = Value is int valueInt ? valueInt : MinPos;
-                int choiceIndex = InfoBoxSliderColor.WriteInfoBoxSlider(Name, value, MaxPos, Description, MinPos);
+                int choiceIndex = InfoBoxSliderColor.WriteInfoBoxSlider(value, MaxPos, Description, new InfoBoxSettings()
+                {
+                    Title = Name,
+                    ForegroundColor = Foreground,
+                    BackgroundColor = Background,
+                }, MinPos);
                 Value = choiceIndex;
             }
             else

@@ -22,6 +22,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
@@ -65,7 +66,12 @@ namespace Terminaux.Inputs.Modules
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                Value = InfoBoxInputColor.WriteInfoBoxInputColorBack(Name, Description, Foreground, Background);
+                Value = InfoBoxInputColor.WriteInfoBoxInput(Description, new InfoBoxSettings()
+                {
+                    Title = Name,
+                    ForegroundColor = Foreground,
+                    BackgroundColor = Background,
+                });
             }
             else
             {

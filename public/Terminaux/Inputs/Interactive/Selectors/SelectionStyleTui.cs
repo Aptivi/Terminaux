@@ -420,7 +420,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (!string.IsNullOrWhiteSpace(choiceDesc))
             {
                 string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
-                InfoBoxModalColor.WriteInfoBoxModal("Item info", finalSidebarText);
+                InfoBoxModalColor.WriteInfoBoxModal(finalSidebarText, new InfoBoxSettings()
+                {
+                    Title = "Item info"
+                });
                 ui.RequireRefresh();
             }
         }

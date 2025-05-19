@@ -22,6 +22,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Modules;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
@@ -89,7 +90,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     ],
                 },
             };
-            InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInput), "Select an input module to test...");
+            InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "Select an input module to test...", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxMultiInputSelect)
+            });
             string[] rendered = [.. modules.Select((im) => im.Value is int[] indexes ? string.Join(", ", indexes.Select((idx) => ((MultiComboBoxModule)modules[2]).Choices[0].Groups[0].Choices[idx].ChoiceName)) : im.Value?.ToString() ?? "")];
             TextWriterWhereColor.WriteWhere("  - " + string.Join("\n  - ", rendered), 0, 0);
             Input.EnableMouse = false;

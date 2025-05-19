@@ -20,6 +20,7 @@
 using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -29,7 +30,10 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            InfoBoxNonModalColor.WriteInfoBox("Non-modal information box", "This info box should close automatically within 10 seconds.", false);
+            InfoBoxNonModalColor.WriteInfoBox("This info box should close automatically within 10 seconds.", new InfoBoxSettings()
+            {
+                Title = "Non-modal information box"
+            });
             Thread.Sleep(10000);
             ColorTools.LoadBack();
         }

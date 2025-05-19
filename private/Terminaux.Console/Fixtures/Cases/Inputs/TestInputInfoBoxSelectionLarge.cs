@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
@@ -35,7 +36,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
-            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(nameof(TestInputInfoBoxSelectionLarge), [.. choices], "Select a number");
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], "Select a number", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxSelectionLarge)
+            });
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
             Input.EnableMouse = false;
         }

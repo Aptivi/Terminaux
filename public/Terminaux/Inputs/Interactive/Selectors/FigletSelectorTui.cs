@@ -29,6 +29,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -223,7 +224,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else
             {
                 InputChoiceInfo[] figletSelections = [.. InputChoiceTools.GetInputChoices(FigletSelector.fonts.Select((font, num) => ($"{num}", font)).ToArray())];
-                selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection("Font selection", figletSelections, "Select a figlet font from the list below");
+                selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection(figletSelections, "Select a figlet font from the list below", new InfoBoxSettings()
+                {
+                    Title = "Font selection"
+                });
                 font = FigletSelector.fonts[selectedFont];
             }
             selectedFont = FigletSelector.DetermineFigletIndex(font);

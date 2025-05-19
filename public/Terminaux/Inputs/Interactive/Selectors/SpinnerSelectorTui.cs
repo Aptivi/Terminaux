@@ -30,6 +30,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -151,7 +152,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else
             {
                 InputChoiceInfo[] spinnerSelections = [.. InputChoiceTools.GetInputChoices(SpinnerSelector.spinners.Select((spinner, num) => ($"{num}", spinner)).ToArray())];
-                selectedSpinner = InfoBoxSelectionColor.WriteInfoBoxSelection("Spinner selection", spinnerSelections, "Select a spinner spinner from the list below");
+                selectedSpinner = InfoBoxSelectionColor.WriteInfoBoxSelection(spinnerSelections, "Select a spinner from the list below", new InfoBoxSettings()
+                {
+                    Title = "Spinner selection"
+                });
                 spinner = SpinnerSelector.spinners[selectedSpinner];
             }
             selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(spinner);

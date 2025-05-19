@@ -24,6 +24,7 @@ using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -74,12 +75,15 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 throw new TerminauxException($"Type name {typeName} is invalid.");
             string charName = SecondaryDataSource.ElementAt(SecondPaneCurrentSelection - 1).Substring(2).Trim();
             string nerdFontChar = NerdFontsTools.GetNerdFontChar(type, charName);
-            InfoBoxModalColor.WriteInfoBoxModal("NF Character Info",
+            InfoBoxModalColor.WriteInfoBoxModal(
                 $"WARNING: You must use a font that supports NF glyphs. Otherwise, you'll see the \"missing character\" symbol.\n" +
                 $"\n" +
                 $"NF character name: {charName} ({typeName})\n" +
                 $"Surrogate pair: {(nerdFontChar.Length == 2 ? "Yes" : "No")}\n" +
-                $"NF character: {nerdFontChar}");
+                $"NF character: {nerdFontChar}", new InfoBoxSettings()
+                {
+                    Title = "NF Character Info",
+                });
         }
     }
 }

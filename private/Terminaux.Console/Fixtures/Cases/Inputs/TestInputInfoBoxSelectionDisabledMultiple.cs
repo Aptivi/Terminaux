@@ -20,6 +20,7 @@
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
@@ -56,7 +57,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     ])
                 ]),
             };
-            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(nameof(TestInputInfoBoxSelectionDisabledMultiple), choices, "Which Ubuntu version would you like to run?");
+            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(choices, "Which Ubuntu version would you like to run?", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxSelectionDisabledMultiple)
+            });
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);
             Input.EnableMouse = false;
         }

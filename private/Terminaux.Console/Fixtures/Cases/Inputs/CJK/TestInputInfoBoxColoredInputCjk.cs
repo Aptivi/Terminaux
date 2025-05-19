@@ -19,6 +19,7 @@
 
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
@@ -29,7 +30,12 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 
         public void RunFixture()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(nameof(TestInputInfoBoxColoredInputCjk), "写下你的文字。", ConsoleColors.Yellow, ConsoleColors.DarkBlue);
+            string answer = InfoBoxInputColor.WriteInfoBoxInput("写下你的文字。", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxColoredInputCjk),
+                ForegroundColor = ConsoleColors.Yellow,
+                BackgroundColor = ConsoleColors.DarkBlue
+            });
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

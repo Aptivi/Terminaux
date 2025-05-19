@@ -641,7 +641,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal(choiceDesc, new InfoBoxSettings()
+                                    {
+                                        Title = $"[{choiceName}] {choiceTitle}",
+                                    });
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;
@@ -692,7 +695,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal(choiceDesc, new InfoBoxSettings()
+                                    {
+                                        Title = $"[{choiceName}] {choiceTitle}"
+                                    });
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;

@@ -36,6 +36,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -478,7 +479,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(finalBindings);
-            InfoBoxModalColor.WriteInfoBoxModalColorBack("Available keybindings", bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
+            {
+                Title = "Available keybindings"
+            });
         }
 
         private static void MoveBackward(List<string> lines, Screen screen) =>
@@ -553,8 +557,8 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the string to find", settings.BoxForegroundColor, settings.BoxBackgroundColor);
-            string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the replacement string", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            string replacementText = InfoBoxInputColor.WriteInfoBoxInput("Write the string to find", settings.InfoBoxSettings);
+            string replacedText = InfoBoxInputColor.WriteInfoBoxInput("Write the replacement string", settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(ref lines, replacementText, replacedText, lineIdx + 1);
@@ -567,8 +571,8 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the string to find", settings.BoxForegroundColor, settings.BoxBackgroundColor);
-            string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the replacement string", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            string replacementText = InfoBoxInputColor.WriteInfoBoxInput("Write the string to find", settings.InfoBoxSettings);
+            string replacedText = InfoBoxInputColor.WriteInfoBoxInput("Write the replacement string", settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(ref lines, replacementText, replacedText);
@@ -581,14 +585,14 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string text = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a string to find. Supports regular expressions.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            string text = InfoBoxInputColor.WriteInfoBoxInput("Write a string to find. Supports regular expressions.", settings.InfoBoxSettings);
 
             // See if we have a cached find if the user didn't provide any string to find
             if (string.IsNullOrEmpty(text))
             {
                 if (string.IsNullOrEmpty(cachedFind))
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal("String is required to find, but you haven't provided one.", settings.BorderSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal("String is required to find, but you haven't provided one.", settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -598,7 +602,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Validate the regex
             if (!RegexTools.IsValidRegex(text))
             {
-                InfoBoxModalColor.WriteInfoBoxModal("This string to find is not a valid regular expression.", settings.BorderSettings);
+                InfoBoxModalColor.WriteInfoBoxModal("This string to find is not a valid regular expression.", settings.InfoBoxSettings);
                 return;
             }
 
@@ -653,7 +657,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 cachedFind = text;
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.BorderSettings);
+                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
         }
 
         private static void StatusTextInfo(List<string> lines)

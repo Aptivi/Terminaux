@@ -40,6 +40,7 @@ using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Base.Structures;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -378,7 +379,10 @@ namespace Terminaux.Inputs.Presentation
 
                     // Let the user select an option, then process the input
                     screen.RequireRefresh();
-                    inputBail = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "Input required", "This presentation page requires the following inputs to be fulfilled before being able to advance to the next page.");
+                    inputBail = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "This presentation page requires the following inputs to be fulfilled before being able to advance to the next page.", new InfoBoxSettings()
+                    {
+                        Title = "Input required",
+                    });
                     if (inputBail)
                     {
                         // Check the required inputs if they have been filled
@@ -391,12 +395,18 @@ namespace Terminaux.Inputs.Presentation
                             var processedRequiredInputs = filledRequiredInputs.Where((ii) => ii.ProcessFunction(ii.InputMethod.Value)).ToArray();
                             inputBail = processedRequiredInputs.Length == filledRequiredInputs.Length;
                             if (!inputBail)
-                                InfoBoxModalColor.WriteInfoBoxModal("Incorrect Input", $"One or more of the following inputs have not been filled correctly:\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                                InfoBoxModalColor.WriteInfoBoxModal($"One or more of the following inputs have not been filled correctly:\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
+                                {
+                                    Title = "Incorrect Input",
+                                });
                         }
                         else
                         {
                             screen.RequireRefresh();
-                            InfoBoxModalColor.WriteInfoBoxModal("Input not provided", $"Required inputs have not been provided. You'll need to fill in the values of the following inputs:\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                            InfoBoxModalColor.WriteInfoBoxModal($"Required inputs have not been provided. You'll need to fill in the values of the following inputs:\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
+                            {
+                                Title = "Input not provided",
+                            });
                         }
                     }
                 }

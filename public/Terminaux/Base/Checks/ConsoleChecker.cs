@@ -33,6 +33,7 @@ using System.Threading;
 using Terminaux.Inputs;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Base.Checks
 {
@@ -213,8 +214,7 @@ namespace Terminaux.Base.Checks
             ConsoleLogger.Info("This Terminaux application can now run!");
 
             var version = typeof(ConsoleChecker).Assembly.GetName().Version;
-            InfoBoxModalColor.WriteInfoBoxModalColor(
-                $"Terminaux {version.Major}.{version.Minor} Beta Program",
+            InfoBoxModalColor.WriteInfoBoxModal(
                 "Welcome to the Terminaux Beta Program!\n\n" +
                 $"Terminaux {version.Major}.{version.Minor} (Beta 3 - TBD)\n\n" +
                 "We are introducing you to this beta program to get an early taste of the upcoming " +
@@ -223,7 +223,11 @@ namespace Terminaux.Base.Checks
                 "can't guarantee that everything works flawlessly, and there may be some features that " +
                 "might not make it to the final version.\n\n" +
                 "To get started, please press any key.",
-                ConsoleColors.Yellow
+                new InfoBoxSettings()
+                {
+                    Title = $"Terminaux {version.Major}.{version.Minor} Beta Program",
+                    ForegroundColor = ConsoleColors.Yellow,
+                }
             );
         }
 

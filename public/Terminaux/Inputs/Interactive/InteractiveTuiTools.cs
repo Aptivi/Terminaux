@@ -172,7 +172,7 @@ namespace Terminaux.Inputs.Interactive
                 Top = SeparatorMinimumHeight,
                 Width = SeparatorHalfConsoleWidthInterior,
                 Height = SeparatorMaximumHeightInterior,
-                Settings = interactiveTui.Settings.BorderSettings,
+                Settings = interactiveTui.Settings.InfoBoxSettings.BorderSettings,
                 Color = finalForeColorFirstPane,
                 BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
             };
@@ -182,7 +182,7 @@ namespace Terminaux.Inputs.Interactive
                 Top = SeparatorMinimumHeight,
                 Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
                 Height = SeparatorMaximumHeightInterior,
-                Settings = interactiveTui.Settings.BorderSettings,
+                Settings = interactiveTui.Settings.InfoBoxSettings.BorderSettings,
                 Color = finalForeColorSecondPane,
                 BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
             };
@@ -285,8 +285,8 @@ namespace Terminaux.Inputs.Interactive
                     SliderActiveForegroundColor = finalColor,
                     SliderForegroundColor = TransformationTools.GetDarkBackground(finalColor),
                     SliderBackgroundColor = interactiveTui.Settings.BackgroundColor,
-                    SliderVerticalActiveTrackChar = interactiveTui.Settings.BorderSettings.BorderRightFrameChar,
-                    SliderVerticalInactiveTrackChar = interactiveTui.Settings.BorderSettings.BorderRightFrameChar,
+                    SliderVerticalActiveTrackChar = interactiveTui.Settings.InfoBoxSettings.BorderSettings.BorderRightFrameChar,
+                    SliderVerticalInactiveTrackChar = interactiveTui.Settings.InfoBoxSettings.BorderSettings.BorderRightFrameChar,
                 };
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalColor, interactiveTui.Settings.PaneBackgroundColor));
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalColor, interactiveTui.Settings.PaneBackgroundColor));
@@ -322,7 +322,7 @@ namespace Terminaux.Inputs.Interactive
                 Top = SeparatorMinimumHeight,
                 Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
                 Height = SeparatorMaximumHeightInterior,
-                Settings = interactiveTui.Settings.BorderSettings,
+                Settings = interactiveTui.Settings.InfoBoxSettings.BorderSettings,
                 Color = finalForeColorSecondPane,
                 BackgroundColor = interactiveTui.Settings.PaneBackgroundColor
             };
@@ -356,8 +356,8 @@ namespace Terminaux.Inputs.Interactive
                     SliderActiveForegroundColor = finalForeColorSecondPane,
                     SliderForegroundColor = TransformationTools.GetDarkBackground(finalForeColorSecondPane),
                     SliderBackgroundColor = interactiveTui.Settings.BackgroundColor,
-                    SliderVerticalActiveTrackChar = interactiveTui.Settings.BorderSettings.BorderRightFrameChar,
-                    SliderVerticalInactiveTrackChar = interactiveTui.Settings.BorderSettings.BorderRightFrameChar,
+                    SliderVerticalActiveTrackChar = interactiveTui.Settings.InfoBoxSettings.BorderSettings.BorderRightFrameChar,
+                    SliderVerticalInactiveTrackChar = interactiveTui.Settings.InfoBoxSettings.BorderSettings.BorderRightFrameChar,
                 };
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
@@ -536,7 +536,7 @@ namespace Terminaux.Inputs.Interactive
             if ((interactiveTui.PrimaryDataSource is null || interactiveTui.SecondaryDataSource is null ||
                 (interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0)) && !interactiveTui.AcceptsEmptyData)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name);
+                InfoBoxModalColor.WriteInfoBoxModal("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.InfoBoxSettings, interactiveTui.GetType().Name);
                 return false;
             }
 
@@ -552,7 +552,7 @@ namespace Terminaux.Inputs.Interactive
             }
             if (conflicts.Count > 0)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The interactive TUI {0} has conflicting keyboard or mouse bindings.\n\nThe following keybindings or mouse bindings conflict:\n  - {1}\n\nThis program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
+                InfoBoxModalColor.WriteInfoBoxModal("The interactive TUI {0} has conflicting keyboard or mouse bindings.\n\nThe following keybindings or mouse bindings conflict:\n  - {1}\n\nThis program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.InfoBoxSettings, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
                 return false;
             }
             return true;

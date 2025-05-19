@@ -20,6 +20,7 @@
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
@@ -39,7 +40,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 new("jammy", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04 LTS, codenamed Jammy Jellyfish, was released on 21 April 2022, and is a long-term support release, supported for five years, until April 2027.", false, true),
                 new("noble", "24.04 (Noble Numbat)", "Ubuntu 24.04 LTS, codenamed Noble Numbat, is planned to be released on April 2024, and is a long-term support release, supported for five years, until April 2029.", true, true),
             };
-            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(nameof(TestInputInfoBoxMultiSelection), choices, "Which Ubuntu version would you like to run?");
+            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(choices, "Which Ubuntu version would you like to run?", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxMultiSelection)
+            });
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);
             Input.EnableMouse = false;
         }

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.NameGen;
 
@@ -37,7 +38,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
             var names = NameGenerator.FindFirstNames("");
             for (int i = 0; i < names.Length; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", names[i]));
-            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(nameof(TestInputInfoBoxSelectionHugeMultipleCjk), [.. choices], "选择一个号码");
+            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple([.. choices], "选择一个号码", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxSelectionHugeMultipleCjk)
+            });
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);
             Input.EnableMouse = false;
         }

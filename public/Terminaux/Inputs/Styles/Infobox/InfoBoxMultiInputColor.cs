@@ -457,7 +457,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string desc = selectedInstance.Description;
                                 if (!string.IsNullOrWhiteSpace(desc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal(name, desc);
+                                    InfoBoxModalColor.WriteInfoBoxModal(desc, new InfoBoxSettings()
+                                    {
+                                        Title = name,
+                                    });
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;
@@ -504,7 +507,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string desc = selectedInstance.Description;
                                 if (!string.IsNullOrWhiteSpace(desc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal(name, desc);
+                                    InfoBoxModalColor.WriteInfoBoxModal(desc, new InfoBoxSettings()
+                                    {
+                                        Title = name,
+                                    });
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;

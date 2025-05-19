@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
@@ -28,7 +29,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 
         public void RunFixture()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInput(nameof(TestInputInfoBoxInput), "Write your text.");
+            string answer = InfoBoxInputColor.WriteInfoBoxInput("Write your text.", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxInput)
+            });
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

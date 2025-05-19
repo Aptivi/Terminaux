@@ -28,6 +28,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -108,7 +109,10 @@ namespace Terminaux.Inputs.Interactive
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor($"The textual UI has crashed. It's usually a problem in the application end.\n\n{ex}", ConsoleColors.Red);
+                InfoBoxModalColor.WriteInfoBoxModal($"The textual UI has crashed. It's usually a problem in the application end.\n\n{ex}", new InfoBoxSettings()
+                {
+                    ForegroundColor = ConsoleColors.Red
+                });
             }
             finally
             {

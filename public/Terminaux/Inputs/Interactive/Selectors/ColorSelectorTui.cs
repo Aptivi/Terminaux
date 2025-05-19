@@ -34,6 +34,7 @@ using Terminaux.Colors.Transformation.Formulas;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
@@ -585,7 +586,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void ShowColorInfoBox(string title, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
         {
             string rendered = ShowColorInfo(selectedColor, colorBlind, formula, severity);
-            InfoBoxModalColor.WriteInfoBoxModal(title, rendered);
+            InfoBoxModalColor.WriteInfoBoxModal(rendered, new InfoBoxSettings()
+            {
+                Title = title,
+            });
         }
 
         private void SelectWebColor(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)

@@ -33,6 +33,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Images.Icons
 {
@@ -196,7 +197,10 @@ namespace Terminaux.Images.Icons
                                 }
                                 else
                                 {
-                                    selectedIcon = InfoBoxSelectionColor.WriteInfoBoxSelection("Icon selection", iconsSelections, "Select an icon from the list below");
+                                    selectedIcon = InfoBoxSelectionColor.WriteInfoBoxSelection(iconsSelections, "Select an icon from the list below", new InfoBoxSettings()
+                                    {
+                                        Title = "Icon selection",
+                                    });
                                     iconName = icons[selectedIcon];
                                 }
                                 screen.RequireRefresh();

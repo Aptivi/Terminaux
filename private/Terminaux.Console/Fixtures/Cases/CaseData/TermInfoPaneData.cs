@@ -25,6 +25,7 @@ using Terminaux.Base.TermInfo.Parsing;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -80,14 +81,20 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         internal void ShowCustomInfo()
         {
             string[] names = TermInfoDesc.GetBuiltins();
-            int idx = InfoBoxSelectionColor.WriteInfoBoxSelection("TermInfo", names.Select((name, idx) => new InputChoiceInfo($"{idx + 1}", name)).ToArray(), "Write the terminal info name");
+            int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(names.Select((name, idx) => new InputChoiceInfo($"{idx + 1}", name)).ToArray(), "Write the terminal info name", new InfoBoxSettings()
+            {
+                Title = "TermInfo",
+            });
             if (idx < 0)
                 return;
             string name = names[idx];
             if (!TermInfoDesc.TryLoad(name, out TermInfoDesc? desc) || desc is null)
                 return;
             string descString = ShowDesc(desc);
-            InfoBoxModalColor.WriteInfoBoxModal(name, descString);
+            InfoBoxModalColor.WriteInfoBoxModal(descString, new InfoBoxSettings()
+            {
+                Title = name,
+            });
         }
 
         private string ShowDesc(TermInfoDesc desc)

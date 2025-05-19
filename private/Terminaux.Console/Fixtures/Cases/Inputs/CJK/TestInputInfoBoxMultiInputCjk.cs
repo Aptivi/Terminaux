@@ -22,6 +22,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Modules;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
@@ -60,7 +61,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
                     Value = 100,
                 },
             };
-            InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInput), "选择要测试的输入模块...");
+            InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "选择要测试的输入模块...", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxMultiInputCjk)
+            });
             string[] rendered = [.. modules.Select((im) => im.Value?.ToString() ?? "")];
             TextWriterWhereColor.WriteWhere("  - " + string.Join("\n  - ", rendered), 0, 0);
             Input.EnableMouse = false;

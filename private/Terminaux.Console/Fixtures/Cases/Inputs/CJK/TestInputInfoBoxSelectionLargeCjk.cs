@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
@@ -35,7 +36,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"数字 #{i + 1}"));
-            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(nameof(TestInputInfoBoxSelectionLargeCjk), [.. choices], "选择一个号码");
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], "选择一个号码", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxSelectionLargeCjk)
+            });
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
             Input.EnableMouse = false;
         }

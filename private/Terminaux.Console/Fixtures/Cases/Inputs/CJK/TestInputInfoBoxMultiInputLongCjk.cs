@@ -22,6 +22,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Modules;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
@@ -97,7 +98,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
                     Description = "写下这个人的经历",
                 },
             };
-            InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInputLong), "请填写此人的详细信息。请提供正确的信息，以便我们处理此人并将其添加到已批准人员列表中。任何不正确的信息都可能导致您的请求被拒绝。");
+            InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "请填写此人的详细信息。请提供正确的信息，以便我们处理此人并将其添加到已批准人员列表中。任何不正确的信息都可能导致您的请求被拒绝。", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxMultiInputLongCjk)
+            });
             string[] rendered = [.. modules.Select((im) => im.Value?.ToString() ?? "")];
             TextWriterWhereColor.WriteWhere("  - " + string.Join("\n  - ", rendered), 0, 0);
             Input.EnableMouse = false;

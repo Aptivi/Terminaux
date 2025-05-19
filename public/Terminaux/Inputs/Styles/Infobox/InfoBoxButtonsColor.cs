@@ -281,7 +281,16 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.
-                return InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(title, buttons, text, InfoBoxTitledButtonsColor, BackgroundColor);
+                // TODO: Use InfoBoxSettings variable instead of reconstructing once we remove deprecated functions.
+                var finalSettings = new InfoBoxSettings()
+                {
+                    Title = title,
+                    BorderSettings = settings,
+                    ForegroundColor = InfoBoxTitledButtonsColor,
+                    BackgroundColor = BackgroundColor,
+                    UseColors = useColor,
+                };
+                return InfoBoxSelectionColor.WriteInfoBoxSelection(buttons, text, finalSettings);
             }
 
             // Now, the button selection
@@ -438,7 +447,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal(choiceDesc, new InfoBoxSettings()
+                                    {
+                                        Title = $"[{choiceName}] {choiceTitle}",
+                                    });
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;
@@ -485,7 +497,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal(choiceDesc, new InfoBoxSettings()
+                                    {
+                                        Title = $"[{choiceName}] {choiceTitle}",
+                                    });
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;

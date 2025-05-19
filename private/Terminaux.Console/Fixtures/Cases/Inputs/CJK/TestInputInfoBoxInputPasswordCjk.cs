@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
@@ -28,7 +29,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 
         public void RunFixture()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInputPassword(nameof(TestInputInfoBoxInputPasswordCjk), "写下您的密码。");
+            string answer = InfoBoxInputColor.WriteInfoBoxInputPassword("写下您的密码。", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxInputPasswordCjk)
+            });
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

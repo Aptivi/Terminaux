@@ -19,6 +19,7 @@
 
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
@@ -30,7 +31,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
         public void RunFixture()
         {
             Input.EnableMouse = true;
-            int selected = InfoBoxSliderColor.WriteInfoBoxSlider(nameof(TestInputInfoBoxSliderMin), 6, 20, "Select number from 4 to 20, with 6 being the default.", 4);
+            int selected = InfoBoxSliderColor.WriteInfoBoxSlider(6, 20, "Select number from 4 to 20, with 6 being the default.", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxSliderMin)
+            }, 4);
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
             Input.EnableMouse = false;
         }

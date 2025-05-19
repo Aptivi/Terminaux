@@ -27,6 +27,7 @@ using Terminaux.Base;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Tools;
 
@@ -145,16 +146,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             string finalInfoRendered = InteractiveTuiTools.RenderFinalInfo(selectorTui);
             if (!string.IsNullOrEmpty(finalInfoRendered))
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered, selectorTui.Settings.BorderSettings, selectorTui.Settings.BoxForegroundColor, selectorTui.Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered, selectorTui.Settings.InfoBoxSettings);
         }
 
         private void ListBindings()
         {
             var bindings = InteractiveTuiTools.GetAllBindings(selectorTui, true);
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(
-                "Available keys",
-                KeybindingTools.RenderKeybindingHelpText(bindings)
-            , selectorTui.Settings.BorderSettings, selectorTui.Settings.BoxForegroundColor, selectorTui.Settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings(selectorTui.Settings.InfoBoxSettings)
+            {
+                Title = "Available keys"
+            });
         }
 
         private void UpdateSelectionBasedOnMouse(PointerEventContext? mouse)
@@ -329,7 +330,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 (selectorTui.CurrentPane == 2 ?
                  selectorTui.SecondaryDataSource.Select(selectorTui.GetEntryFromItemSecondary) :
                  selectorTui.PrimaryDataSource.Select(selectorTui.GetEntryFromItem)).ToArray();
-            string keyword = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a search term (supports regular expressions)", selectorTui.Settings.BorderSettings, selectorTui.Settings.BoxForegroundColor, selectorTui.Settings.BoxBackgroundColor);
+            string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)", selectorTui.Settings.InfoBoxSettings);
             if (!RegexTools.IsValidRegex(keyword))
             {
                 InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");
@@ -343,14 +344,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (resultEntries.Length > 0)
             {
                 var choices = InputChoiceTools.GetInputChoices(resultEntries);
-                int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:", selectorTui.Settings.BorderSettings, selectorTui.Settings.BoxForegroundColor, selectorTui.Settings.BoxBackgroundColor);
+                int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:", selectorTui.Settings.InfoBoxSettings);
                 if (answer < 0)
                     return;
                 var resultIdx = int.Parse(resultEntries[answer].Item1);
                 InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("No item found.", selectorTui.Settings.BorderSettings, selectorTui.Settings.BoxForegroundColor, selectorTui.Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal("No item found.", selectorTui.Settings.InfoBoxSettings);
         }
 
         private void Exit(TextualUI ui)

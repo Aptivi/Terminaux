@@ -78,7 +78,12 @@ namespace Terminaux.Inputs.Modules
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                Value = InfoBoxSelectionColor.WriteInfoBoxSelection(Name, Choices, Description);
+                Value = InfoBoxSelectionColor.WriteInfoBoxSelection(Choices, Description, new InfoBoxSettings()
+                {
+                    Title = Name,
+                    ForegroundColor = Foreground,
+                    BackgroundColor = Background,
+                });
                 Provided = (int)Value != -1;
             }
             else
@@ -170,7 +175,12 @@ namespace Terminaux.Inputs.Modules
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal(choiceDesc, new InfoBoxSettings()
+                                    {
+                                        Title = $"[{choiceName}] {choiceTitle}",
+                                        ForegroundColor = Foreground,
+                                        BackgroundColor = Background,
+                                    });
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;

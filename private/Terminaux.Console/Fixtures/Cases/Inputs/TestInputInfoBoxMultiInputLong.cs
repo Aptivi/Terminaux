@@ -22,6 +22,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Modules;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
@@ -97,7 +98,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Description = "Write this person's experiences",
                 },
             };
-            InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, nameof(TestInputInfoBoxMultiInputLong), "Write details of this person. Please provide the correct information so that we can process this person and add them to the list of approved people. Any incorrect information may cause your request to be rejected.");
+            InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "Write details of this person. Please provide the correct information so that we can process this person and add them to the list of approved people. Any incorrect information may cause your request to be rejected.", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxMultiInputLong)
+            });
             string[] rendered = [.. modules.Select((im) => im.Value?.ToString() ?? "")];
             TextWriterWhereColor.WriteWhere("  - " + string.Join("\n  - ", rendered), 0, 0);
             Input.EnableMouse = false;
