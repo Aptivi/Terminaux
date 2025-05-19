@@ -44,12 +44,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
         /// <inheritdoc/>
         public override string Render()
         {
-            // Some initial variables to populate spinner spinners
+            // Some initial variables to populate spinners
             var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
             string spinnerName = SpinnerSelector.spinners.Contains(spinner) ? spinner : nameof(BuiltinSpinners.Dots);
             selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
 
-            // Now, clear the console and let the user select a spinner spinner while displaying a small text in the middle
+            // Now, clear the console and let the user select a spinner while displaying a small text in the middle
             // of the console
             var screen = new Screen()
             {
@@ -150,7 +150,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else
             {
                 InputChoiceInfo[] spinnerSelections = [.. InputChoiceTools.GetInputChoices(SpinnerSelector.spinners.Select((spinner, num) => ($"{num}", spinner)).ToArray())];
-                selectedSpinner = InfoBoxSelectionColor.WriteInfoBoxSelection("Spinner selection", spinnerSelections, "Select a spinner spinner from the list below");
+                selectedSpinner = InfoBoxSelectionColor.WriteInfoBoxSelection("Spinner selection", spinnerSelections, "Select a spinner from the list below");
                 spinner = SpinnerSelector.spinners[selectedSpinner];
             }
             selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(spinner);
