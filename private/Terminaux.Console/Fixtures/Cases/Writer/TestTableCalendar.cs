@@ -36,8 +36,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Month = DateTime.Now.Month,
                 Left = 4,
                 Top = 2,
-                InteriorWidth = ConsoleWrapper.WindowWidth - 8,
-                InteriorHeight = ConsoleWrapper.WindowHeight - 4,
             };
             TextWriterRaw.WriteRaw(calendar.Render());
         }
