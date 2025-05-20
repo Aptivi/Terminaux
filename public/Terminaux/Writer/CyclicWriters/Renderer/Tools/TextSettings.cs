@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Structures;
+
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
@@ -41,5 +43,10 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// Specifies a title text alignment (for some writers)
         /// </summary>
         public TextAlignment TitleAlignment { get; set; } = TextAlignment.Left;
+
+        /// <summary>
+        /// Specifies a title offset for positioning
+        /// </summary>
+        public HorizontalPad TitleOffset { get; set; }
     }
 }

@@ -362,15 +362,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
 
                 // Text title
-                if (!string.IsNullOrEmpty(text) && Width - 8 > 0 && ConsoleChar.EstimateCellWidth(text) <= Width - 8)
+                int finalWidth = Width - 6 - (titleSettings.TitleOffset.Left + titleSettings.TitleOffset.Right);
+                if (!string.IsNullOrEmpty(text) && finalWidth > 0)
                 {
                     string finalText =
                         $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
-                        text.Truncate(Width - 8) +
+                        text.Truncate(finalWidth) +
                         $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "")}";
-                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, Width - 8, TitleSettings.TitleAlignment, Left + 2);
+                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, finalWidth, TitleSettings.TitleAlignment, Left + 2);
                     frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(leftPos + titleSettings.TitleOffset.Left + 1, Top + 1)}" +
                         $"{finalText}"
                     );
                 }

@@ -148,6 +148,12 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
 
+            // Finalize the offsets
+            var titleSettings = new TextSettings()
+            {
+                TitleOffset = new(0, buttonsWidth + 2)
+            };
+
             // Fill the info box with text inside it
             var boxBuffer = new StringBuilder();
             var border = new Border()
@@ -160,10 +166,11 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 TextColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,
                 Settings = settings,
+                TextSettings = titleSettings,
                 Rulers = maxHeightOffset > 0 ? [new RulerInfo(maxHeight - maxHeightOffset - 1, RulerOrientation.Horizontal)] : [],
             };
             if (!string.IsNullOrEmpty(title))
-                border.Title = (writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth - 9) : title).FormatString(vars);
+                border.Title = (writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth) : title).FormatString(vars);
             boxBuffer.Append(
                 (useColor ? InfoBoxColor.VTSequenceForeground : "") +
                 (useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
