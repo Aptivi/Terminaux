@@ -352,15 +352,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     }
                 }
 
-                // Colors
-                if (UseColors)
-                {
-                    frameBuilder.Append(
-                        ColorTools.RenderSetConsoleColor(TitleColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                    );
-                }
-
                 // Text title
                 int finalWidth = Width - 6 - (titleSettings.TitleOffset.Left + titleSettings.TitleOffset.Right);
                 if (!string.IsNullOrEmpty(text) && finalWidth > 0)
@@ -369,11 +360,18 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
                         text.Truncate(finalWidth) +
                         $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "")}";
-                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, finalWidth, TitleSettings.TitleAlignment, Left + 2);
-                    frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(leftPos + titleSettings.TitleOffset.Left + 1, Top + 1)}" +
-                        $"{finalText}"
-                    );
+                    var titleWriter = new AlignedText()
+                    {
+                        Text = finalText,
+                        LeftMargin = Left + 2,
+                        RightMargin = ConsoleWrapper.WindowWidth - (Left + finalWidth + 8),
+                        Top = Top,
+                        Width = finalWidth,
+                        ForegroundColor = TitleColor,
+                        BackgroundColor = BackgroundColor,
+                        Settings = TitleSettings,
+                    };
+                    frameBuilder.Append(titleWriter.Render());
                 }
 
                 // Write the resulting buffer
