@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSTest.Sdk/3.8.3">
+﻿<Project Sdk="MSTest.Sdk/3.9.0">
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net48</TargetFrameworks>
@@ -30,6 +30,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.14.0" />
   </ItemGroup>
 
 </Project>
