@@ -353,8 +353,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
 
                 // Text title
-                int finalWidth = Width - 6 - (titleSettings.TitleOffset.Left + titleSettings.TitleOffset.Right);
-                if (!string.IsNullOrEmpty(text) && finalWidth > 0)
+                int finalWidth = Width - 7 - (titleSettings.TitleOffset.Left + titleSettings.TitleOffset.Right);
+                if (!string.IsNullOrEmpty(text) && finalWidth > 3)
                 {
                     string finalText =
                         $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
@@ -364,9 +364,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         Text = finalText,
                         LeftMargin = Left + 2,
-                        RightMargin = ConsoleWrapper.WindowWidth - (Left + finalWidth + 8),
+                        RightMargin = ConsoleWrapper.WindowWidth - (Left + finalWidth + 7),
                         Top = Top,
-                        Width = finalWidth,
+                        Width = Width - titleSettings.TitleOffset.Right,
                         ForegroundColor = TitleColor,
                         BackgroundColor = BackgroundColor,
                         Settings = TitleSettings,
