@@ -58,16 +58,11 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 
         internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputChoiceCategoryInfo[] selections, string[] splitFinalLines)
         {
-            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
-            return GetDimensions(choices, splitFinalLines);
-        }
-
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputChoiceInfo[] selections, string[] splitFinalLines)
-        {
             var selectionsRendered = new Selections(selections)
             {
                 Width = 42,
             };
+            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
             var (choiceText, _) = selectionsRendered.GetChoiceParameters();
             int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
             int selectionReservedHeight = 2 + selectionChoices;
@@ -77,7 +72,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int selectionBoxPosX = borderX + 2;
             int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
             int leftPos = selectionBoxPosX + 1;
-            int maxSelectionWidth = selections.Max((ici) => ConsoleChar.EstimateCellWidth($"   {ici.ChoiceName})  {ici.ChoiceTitle}")) + 4;
+            int maxSelectionWidth = choices.Max((ici) => ConsoleChar.EstimateCellWidth($"   {ici.ChoiceName})  {ici.ChoiceTitle}")) + 4;
             maxSelectionWidth = maxSelectionWidth > maxWidth - 4 ? maxSelectionWidth : maxWidth - 4;
             maxSelectionWidth = maxSelectionWidth >= ConsoleWrapper.WindowWidth - 8 ? ConsoleWrapper.WindowWidth - 8 : maxSelectionWidth;
             int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;

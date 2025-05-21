@@ -587,7 +587,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Make hitboxes for arrow and button presses
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars, selections))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
@@ -602,18 +602,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
-                                if (IsMouseWithinText(text, vars, choices, mouse))
+                                if (IsMouseWithinText(text, vars, selections, mouse))
                                     GoUp(ref currIdx, 3);
-                                else if (IsMouseWithinInputBox(text, vars, choices, mouse))
+                                else if (IsMouseWithinInputBox(text, vars, selections, mouse))
                                 {
                                     goingUp = true;
                                     SelectionGoUp(ref currentSelection, choices);
                                 }
                                 break;
                             case PointerButton.WheelDown:
-                                if (IsMouseWithinText(text, vars, choices, mouse))
-                                    GoDown(ref currIdx, text, vars, choices, 3);
-                                else if (IsMouseWithinInputBox(text, vars, choices, mouse))
+                                if (IsMouseWithinText(text, vars, selections, mouse))
+                                    GoDown(ref currIdx, text, vars, selections, 3);
+                                else if (IsMouseWithinInputBox(text, vars, selections, mouse))
                                     SelectionGoDown(ref currentSelection, choices);
                                 break;
                             case PointerButton.Left:
@@ -781,13 +781,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.D:
-                                GoDown(ref currIdx, text, vars, choices, increment);
+                                GoDown(ref currIdx, text, vars, selections, increment);
                                 break;
                             case ConsoleKey.W:
                                 GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.S:
-                                GoDown(ref currIdx, text, vars, choices);
+                                GoDown(ref currIdx, text, vars, selections);
                                 break;
                             case ConsoleKey.Enter:
                                 bail = true;
@@ -834,7 +834,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             return [.. selectedChoices];
         }
 
-        private static bool IsMouseWithinText(string text, object[] vars, InputChoiceInfo[] choices, PointerEventContext mouse)
+        private static bool IsMouseWithinText(string text, object[] vars, InputChoiceCategoryInfo[] choices, PointerEventContext mouse)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, reservedHeight) = InfoBoxTools.GetDimensions(choices, splitFinalLines);
@@ -844,7 +844,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
         }
 
-        private static bool IsMouseWithinInputBox(string text, object[] vars, InputChoiceInfo[] choices, PointerEventContext mouse)
+        private static bool IsMouseWithinInputBox(string text, object[] vars, InputChoiceCategoryInfo[] choices, PointerEventContext mouse)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (_, _, _, _, _, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, reservedHeight) = InfoBoxTools.GetDimensions(choices, splitFinalLines);
@@ -860,7 +860,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 currIdx = 0;
         }
 
-        private static void GoDown(ref int currIdx, string text, object[] vars, InputChoiceInfo[] choices, int level = 1)
+        private static void GoDown(ref int currIdx, string text, object[] vars, InputChoiceCategoryInfo[] choices, int level = 1)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (_, maxHeight, _, _, _, _, _, _, _, _, reservedHeight) = InfoBoxTools.GetDimensions(choices, splitFinalLines);
