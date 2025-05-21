@@ -386,15 +386,15 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
-                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                if (IsMouseWithinText(text, vars, mouse))
                                     GoUp(ref currIdx, 3);
-                                else
+                                else if (IsMouseWithinSlider(text, vars, mouse))
                                     ValueGoUp(ref selected, minPos, maxPos);
                                 break;
                             case PointerButton.WheelDown:
-                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                if (IsMouseWithinText(text, vars, mouse))
                                     GoDown(ref currIdx, text, vars, 3);
-                                else
+                                else if (IsMouseWithinSlider(text, vars, mouse))
                                     ValueGoDown(ref selected, minPos, maxPos);
                                 break;
                             case PointerButton.Left:
@@ -485,6 +485,29 @@ namespace Terminaux.Inputs.Styles.Infobox
             return selected;
         }
 
+        private static bool IsMouseWithinText(string text, object[] vars, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
+            maxHeight -= 1;
+
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
+        }
+
+        private static bool IsMouseWithinSlider(string text, object[] vars, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
+
+            // Check the dimensions
+            int maxSliderWidth = maxWidth - 4;
+            int sliderArrowTop = borderY + maxHeight;
+            int sliderArrowLeft = borderX + 2;
+            int sliderArrowRight = sliderArrowLeft + maxSliderWidth + 1;
+            return PointerTools.PointerWithinRange(mouse, (sliderArrowLeft, sliderArrowTop), (sliderArrowRight, sliderArrowTop));
+        }
+
         private static void GoUp(ref int currIdx, int level = 1)
         {
             currIdx -= level;
@@ -495,7 +518,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
             currIdx += level;
             if (currIdx > splitFinalLines.Length - maxHeight)
                 currIdx = splitFinalLines.Length - maxHeight;

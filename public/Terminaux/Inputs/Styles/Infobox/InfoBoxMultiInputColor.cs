@@ -597,8 +597,8 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static bool IsMouseWithinText(string text, object[] vars, InputModule[] modules, PointerEventContext mouse)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, _, _, borderX, borderY, _, selectionBoxPosY, _, _, _, _) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
-            int maxHeight = selectionBoxPosY - borderY - 2;
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, reservedHeight) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
+            maxHeight -= reservedHeight;
 
             // Check the dimensions
             return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
@@ -623,8 +623,8 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static void GoDown(ref int currIdx, string text, object[] vars, InputModule[] modules, int level = 1)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, borderY, _, selectionBoxPosY, _, _, _, _) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
-            maxHeight -= selectionBoxPosY - borderY;
+            var (_, maxHeight, _, _, _, _, _, _, _, _, reservedHeight) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
+            maxHeight -= reservedHeight;
             currIdx += level;
             if (currIdx > splitFinalLines.Length - maxHeight)
                 currIdx = splitFinalLines.Length - maxHeight;
