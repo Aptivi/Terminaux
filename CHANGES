@@ -1,10 +1,10 @@
-We've spinned this version of Terminaux to fix a typo in the spinner selector.
+We've made this version of Terminaux to make the calendar more gorgeous.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed bugs in the spinner selector
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
