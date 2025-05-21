@@ -41,7 +41,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
                 间发生的更改历史记录。 您必须更新导入以指向新的根命名空间。
                 """;
             var editLines = toBeEdited.SplitNewLines().ToList();
-            TextViewInteractive.OpenInteractive(editLines);
+            TextEditInteractive.OpenInteractive(ref editLines, edit: false);
         }
     }
 }

@@ -50,7 +50,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 scelerisque fermentum dui faucibus in ornare quam.
                 """;
             var editLines = toBeEdited.SplitNewLines().ToList();
-            TextViewInteractive.OpenInteractive(editLines);
+            TextEditInteractive.OpenInteractive(ref editLines, edit: false);
         }
     }
 }

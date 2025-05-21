@@ -49,7 +49,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 scelerisque fermentum dui faucibus in ornare quam.
                 """;
             var editBytes = Encoding.Default.GetBytes(toBeEdited);
-            HexViewInteractive.OpenInteractive(editBytes, fullscreen: true);
+            HexEditInteractive.OpenInteractive(ref editBytes, fullscreen: true, edit: false);
         }
     }
 }

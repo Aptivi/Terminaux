@@ -69,11 +69,11 @@ namespace Terminaux.Writer.ConsoleWriters
                 var lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth).ToList();
                 if (force || lines.Count >= ConsoleWrapper.WindowHeight)
                 {
-                    TextViewInteractive.OpenInteractive(lines, new()
+                    TextEditInteractive.OpenInteractive(ref lines, new()
                     {
                         PaneSelectedItemBackColor = foregroundColor,
                         BackgroundColor = backgroundColor,
-                    }, true);
+                    }, true, false);
                 }
                 else
                     TextWriterColor.WriteColorBack(text, foregroundColor, backgroundColor);

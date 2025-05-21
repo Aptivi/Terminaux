@@ -51,7 +51,14 @@ namespace Terminaux.Inputs.Styles.Editor
         private static bool entering;
         private static int lineIdx = 0;
         private static int lineColIdx = 0;
+        private static bool editable = true;
         private static readonly Keybinding[] bindings =
+        [
+            new Keybinding("Exit", ConsoleKey.Escape),
+            new Keybinding("Keybindings", ConsoleKey.K),
+            new Keybinding("Find Next", ConsoleKey.Divide),
+        ];
+        private static readonly Keybinding[] editorBindings =
         [
             new Keybinding("Exit", ConsoleKey.Escape),
             new Keybinding("Keybindings", ConsoleKey.K),
@@ -77,11 +84,13 @@ namespace Terminaux.Inputs.Styles.Editor
         /// <param name="lines">Target number of lines</param>
         /// <param name="settings">TUI settings</param>
         /// <param name="fullscreen">Whether it's a fullscreen viewer or not</param>
-        public static void OpenInteractive(ref List<string> lines, InteractiveTuiSettings? settings = null, bool fullscreen = false)
+        /// <param name="edit">Whether it's editable or not</param>
+        public static void OpenInteractive(ref List<string> lines, InteractiveTuiSettings? settings = null, bool fullscreen = false, bool edit = true)
         {
             // Set status
             status = "Ready";
             bail = false;
+            editable = edit;
             settings ??= InteractiveTuiSettings.GlobalSettings;
 
             // Check to see if the list of lines is empty
@@ -143,7 +152,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 var keybindingsRenderable = new Keybindings()
                 {
-                    KeybindingList = entering ? bindingsEntering : bindings,
+                    KeybindingList = editable ? entering ? bindingsEntering : editorBindings : bindings,
                     BuiltinColor = settings.KeyBindingBuiltinColor,
                     BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
                     BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
@@ -377,34 +386,44 @@ namespace Terminaux.Inputs.Styles.Editor
                         RenderKeybindingsBox(settings);
                         screen.RequireRefresh();
                         break;
+                    case ConsoleKey.Oem2:
+                    case ConsoleKey.Divide:
+                        FindNext(ref lines, settings, screen);
+                        screen.RequireRefresh();
+                        break;
                     case ConsoleKey.I:
+                        if (!editable)
+                            break;
                         SwitchEnter(lines, screen);
                         break;
                     case ConsoleKey.X:
+                        if (!editable)
+                            break;
                         DeleteChar(ref lines, screen);
                         break;
                     case ConsoleKey.F1:
+                        if (!editable)
+                            break;
                         if (key.Modifiers == ConsoleModifiers.Shift)
                             InsertNoMove(ref lines, screen);
                         else
                             Insert(ref lines, screen);
                         break;
                     case ConsoleKey.F2:
+                        if (!editable)
+                            break;
                         if (key.Modifiers == ConsoleModifiers.Shift)
                             RemoveLineNoMove(ref lines, screen);
                         else
                             RemoveLine(ref lines, screen);
                         break;
                     case ConsoleKey.F3:
+                        if (!editable)
+                            break;
                         if (key.Modifiers == ConsoleModifiers.Shift)
                             ReplaceAll(ref lines, settings);
                         else
                             Replace(ref lines, settings);
-                        screen.RequireRefresh();
-                        break;
-                    case ConsoleKey.Oem2:
-                    case ConsoleKey.Divide:
-                        FindNext(ref lines, settings, screen);
                         screen.RequireRefresh();
                         break;
                 }
@@ -473,7 +492,7 @@ namespace Terminaux.Inputs.Styles.Editor
         private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
         {
             // Show the available keys list
-            var finalBindings = entering ? bindingsEntering : bindings;
+            var finalBindings = editable ? entering ? bindingsEntering : editorBindings : bindings;
             if (finalBindings.Length == 0)
                 return;
 

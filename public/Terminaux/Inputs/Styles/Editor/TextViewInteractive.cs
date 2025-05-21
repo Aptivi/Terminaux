@@ -43,6 +43,7 @@ namespace Terminaux.Inputs.Styles.Editor
     /// <summary>
     /// Interactive text viewer
     /// </summary>
+    [Obsolete("To avoid duplicate code, we've deprecated this class. Please use TextEditInteractive with \"edit\" set to false.")]
     public static class TextViewInteractive
     {
         private static string status = "";

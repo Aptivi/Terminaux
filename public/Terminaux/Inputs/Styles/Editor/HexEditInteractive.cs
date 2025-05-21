@@ -47,7 +47,15 @@ namespace Terminaux.Inputs.Styles.Editor
         private static byte[] cachedFind = [];
         private static bool bail;
         private static int byteIdx = 0;
+        private static bool editable = true;
         private static readonly Keybinding[] bindings =
+        [
+            new Keybinding("Exit", ConsoleKey.Escape),
+            new Keybinding("Keybindings", ConsoleKey.K),
+            new Keybinding("Number Info", ConsoleKey.F4),
+            new Keybinding("Find Next", ConsoleKey.Divide),
+        ];
+        private static readonly Keybinding[] editorBindings =
         [
             new Keybinding("Exit", ConsoleKey.Escape),
             new Keybinding("Keybindings", ConsoleKey.K),
@@ -66,11 +74,13 @@ namespace Terminaux.Inputs.Styles.Editor
         /// <param name="bytes">Byte array to showcase</param>
         /// <param name="settings">TUI settings</param>
         /// <param name="fullscreen">Whether it's a fullscreen viewer or not</param>
-        public static void OpenInteractive(ref byte[] bytes, InteractiveTuiSettings? settings = null, bool fullscreen = false)
+        /// <param name="edit">Whether it's editable or not</param>
+        public static void OpenInteractive(ref byte[] bytes, InteractiveTuiSettings? settings = null, bool fullscreen = false, bool edit = true)
         {
             // Set status
             status = "Ready";
             bail = false;
+            editable = edit;
             settings ??= InteractiveTuiSettings.GlobalSettings;
 
             // Main loop
@@ -126,7 +136,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 var keybindingsRenderable = new Keybindings()
                 {
-                    KeybindingList = bindings,
+                    KeybindingList = editable ? editorBindings : bindings,
                     BuiltinColor = settings.KeyBindingBuiltinColor,
                     BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
                     BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
@@ -266,23 +276,6 @@ namespace Terminaux.Inputs.Styles.Editor
                     RenderKeybindingsBox(settings);
                     screen.RequireRefresh();
                     break;
-                case ConsoleKey.F1:
-                    Insert(ref bytes, settings);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.F2:
-                    Remove(ref bytes);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.F3:
-                    if (key.Modifiers == ConsoleModifiers.Shift)
-                        ReplaceAll(ref bytes, settings);
-                    else if (key.Modifiers == (ConsoleModifiers.Shift | ConsoleModifiers.Alt))
-                        ReplaceAllWhat(ref bytes, settings);
-                    else
-                        Replace(ref bytes, settings);
-                    screen.RequireRefresh();
-                    break;
                 case ConsoleKey.F4:
                     NumInfo(bytes, settings);
                     screen.RequireRefresh();
@@ -292,17 +285,41 @@ namespace Terminaux.Inputs.Styles.Editor
                     FindNext(ref bytes, settings);
                     screen.RequireRefresh();
                     break;
+                case ConsoleKey.F1:
+                    if (!editable)
+                        break;
+                    Insert(ref bytes, settings);
+                    screen.RequireRefresh();
+                    break;
+                case ConsoleKey.F2:
+                    if (!editable)
+                        break;
+                    Remove(ref bytes);
+                    screen.RequireRefresh();
+                    break;
+                case ConsoleKey.F3:
+                    if (!editable)
+                        break;
+                    if (key.Modifiers == ConsoleModifiers.Shift)
+                        ReplaceAll(ref bytes, settings);
+                    else if (key.Modifiers == (ConsoleModifiers.Shift | ConsoleModifiers.Alt))
+                        ReplaceAllWhat(ref bytes, settings);
+                    else
+                        Replace(ref bytes, settings);
+                    screen.RequireRefresh();
+                    break;
             }
         }
 
         private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
         {
             // Show the available keys list
-            if (bindings.Length == 0)
+            var finalBindings = editable ? editorBindings : bindings;
+            if (finalBindings.Length == 0)
                 return;
 
             // User needs an infobox that shows all available keys
-            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
+            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(finalBindings);
             InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
             {
                 Title = "Available keybindings",

@@ -40,6 +40,7 @@ namespace Terminaux.Inputs.Styles.Editor
     /// <summary>
     /// Interactive hex viewer
     /// </summary>
+    [Obsolete("To avoid duplicate code, we've deprecated this class. Please use HexEditInteractive with \"edit\" set to false.")]
     public static class HexViewInteractive
     {
         private static string status = "";

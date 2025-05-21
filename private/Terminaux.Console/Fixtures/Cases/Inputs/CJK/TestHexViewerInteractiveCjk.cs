@@ -40,7 +40,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
                 间发生的更改历史记录。 您必须更新导入以指向新的根命名空间。
                 """;
             var editBytes = Encoding.Default.GetBytes(toBeEdited);
-            HexViewInteractive.OpenInteractive(editBytes);
+            HexEditInteractive.OpenInteractive(ref editBytes, edit: false);
         }
     }
 }
