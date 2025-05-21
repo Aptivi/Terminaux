@@ -48,8 +48,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             if (maxWidth > ConsoleWrapper.WindowWidth - 4)
                 maxWidth = ConsoleWrapper.WindowWidth - 4;
             int maxHeight = splitFinalLines.Length + extraHeight;
-            if (extraHeight > 0)
-                maxHeight++;
             if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -167,7 +165,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 BackgroundColor = BackgroundColor,
                 Settings = settings,
                 TextSettings = titleSettings,
-                Rulers = maxHeightOffset > 0 ? [new RulerInfo(maxHeight - maxHeightOffset - 1, RulerOrientation.Horizontal)] : [],
             };
             if (!string.IsNullOrEmpty(title))
                 border.Title = (writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth) : title).FormatString(vars);
