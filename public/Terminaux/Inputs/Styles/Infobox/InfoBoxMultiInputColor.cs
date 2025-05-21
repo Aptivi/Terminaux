@@ -598,8 +598,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (maxWidth, _, _, borderX, borderY, _, selectionBoxPosY, _, _, _, _) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
-            int selectionChoices = modules.Length > 10 ? 10 : modules.Length;
-            int maxHeight = selectionBoxPosY - borderY - selectionChoices + 2;
+            int maxHeight = selectionBoxPosY - borderY - 2;
 
             // Check the dimensions
             return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
