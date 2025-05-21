@@ -602,18 +602,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
-                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                if (IsMouseWithinText(text, vars, choices, mouse))
                                     GoUp(ref currIdx, 3);
-                                else
+                                else if (IsMouseWithinInputBox(text, vars, choices, mouse))
                                 {
                                     goingUp = true;
                                     SelectionGoUp(ref currentSelection, choices);
                                 }
                                 break;
                             case PointerButton.WheelDown:
-                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                if (IsMouseWithinText(text, vars, choices, mouse))
                                     GoDown(ref currIdx, text, vars, 3);
-                                else
+                                else if (IsMouseWithinInputBox(text, vars, choices, mouse))
                                     SelectionGoDown(ref currentSelection, choices);
                                 break;
                             case PointerButton.Left:
@@ -832,6 +832,25 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Return the selected choices
             selectedChoices.Sort();
             return [.. selectedChoices];
+        }
+
+        private static bool IsMouseWithinText(string text, object[] vars, InputChoiceInfo[] choices, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, _, _, borderX, borderY, _, selectionBoxPosY, _, _, _, _) = InfoBoxTools.GetDimensions(choices, splitFinalLines);
+            int maxHeight = selectionBoxPosY - borderY - 2;
+
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
+        }
+
+        private static bool IsMouseWithinInputBox(string text, object[] vars, InputChoiceInfo[] choices, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (_, _, _, _, _, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, reservedHeight) = InfoBoxTools.GetDimensions(choices, splitFinalLines);
+
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (selectionBoxPosX + 1, selectionBoxPosY), (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + reservedHeight - 3));
         }
 
         private static void GoUp(ref int currIdx, int level = 1)
