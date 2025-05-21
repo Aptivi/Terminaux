@@ -177,8 +177,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Write the calendar title in a box
             var boxForeground = ForegroundColor;
             var background = BackgroundColor;
-            int boxLeft = 4;
-            int boxTop = 3;
+            int boxLeft = Left;
+            int boxTop = Top;
             int boxWidth = 4 + (6 * 6);
             int boxHeight = 13;
             var border = new Border()
@@ -192,7 +192,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 TextColor = boxForeground,
                 TextSettings = new()
                 {
-                    Alignment = TextAlignment.Middle
+                    TitleAlignment = TextAlignment.Middle
                 },
                 BackgroundColor = background,
             };
@@ -200,7 +200,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Make a calendar
             int dayPosX;
-            int dayPosY = 6;
+            int dayPosY = Top + 3;
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 // Populate some variables
@@ -237,7 +237,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Make a single-letter day indicator
             int dayIndicatorPosX = boxLeft + 1;
-            int dayIndicatorPosY = 4;
+            int dayIndicatorPosY = boxTop + 1;
             for (int i = 0; i < mappedDays.Count; i++)
             {
                 string dayName = $"{calendarDays[(int)mappedDays.Keys.ElementAt(i)]}";
