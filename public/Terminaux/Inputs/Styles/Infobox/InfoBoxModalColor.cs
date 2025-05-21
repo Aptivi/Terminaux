@@ -49,6 +49,9 @@ namespace Terminaux.Inputs.Styles.Infobox
             new Keybinding("Goes to the next page of text", ConsoleKey.PageDown),
             new Keybinding("Goes to the next page of text, or closes the modal informational box", ConsoleKey.Enter),
             new Keybinding("Closes the modal informational box", ConsoleKey.Escape),
+            new Keybinding("Performs an action", PointerButton.Left),
+            new Keybinding("Previous three lines of text", PointerButton.WheelUp),
+            new Keybinding("Next three lines of text", PointerButton.WheelDown),
         ];
 
         /// <summary>

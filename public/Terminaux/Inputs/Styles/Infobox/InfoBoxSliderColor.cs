@@ -55,6 +55,9 @@ namespace Terminaux.Inputs.Styles.Infobox
             new Keybinding("Goes to the next page of text", ConsoleKey.D),
             new Keybinding("Submits the value", ConsoleKey.Enter),
             new Keybinding("Closes without submitting the value", ConsoleKey.Escape),
+            new Keybinding("Performs an action or selects a choice", PointerButton.Left),
+            new Keybinding("Decrements value or moves three lines of text up", PointerButton.WheelUp),
+            new Keybinding("Increments value or moves three lines of text down", PointerButton.WheelDown),
         ];
 
         /// <summary>

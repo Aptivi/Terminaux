@@ -65,6 +65,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             new Keybinding("Selects or deselects a choice", ConsoleKey.Spacebar),
             new Keybinding("Submits the values", ConsoleKey.Enter),
             new Keybinding("Closes without submitting the values", ConsoleKey.Escape),
+            new Keybinding("Performs an action or selects a choice", PointerButton.Left),
+            new Keybinding("Shows more info in an infobox", PointerButton.Right),
+            new Keybinding("Previous choice or previous three lines of text", PointerButton.WheelUp),
+            new Keybinding("Next choice or next three lines of text", PointerButton.WheelDown),
         ];
 
         /// <summary>
