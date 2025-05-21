@@ -69,18 +69,14 @@ namespace Terminaux.Writer.CyclicWriters
         /// <summary>
         /// Full calendar width (constant)
         /// </summary>
-        public override int Width
-        {
-            get => calendarWidth;
-        }
+        public int Width =>
+            calendarWidth;
 
         /// <summary>
         /// Full calendar height (constant)
         /// </summary>
-        public override int Height
-        {
-            get => calendarHeight;
-        }
+        public int Height =>
+            calendarHeight;
 
         /// <summary>
         /// Year of the calendar
@@ -235,7 +231,7 @@ namespace Terminaux.Writer.CyclicWriters
                 TextColor = boxForeground,
                 TextSettings = new()
                 {
-                    TitleAlignment = TextAlignment.Middle
+                    Alignment = TextAlignment.Middle
                 },
                 BackgroundColor = background,
             };
