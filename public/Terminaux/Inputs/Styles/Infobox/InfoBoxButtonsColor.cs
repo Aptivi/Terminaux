@@ -455,9 +455,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 break;
                             case PointerButton.WheelUp:
-                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                if (IsMouseWithinText(text, vars, mouse))
                                     GoUp(ref currIdx, 3);
-                                else
+                                else if (IsMouseWithinButtons(buttonHitboxes, mouse))
                                 {
                                     selectedButton--;
                                     if (selectedButton < 0)
@@ -465,9 +465,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 break;
                             case PointerButton.WheelDown:
-                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                if (IsMouseWithinText(text, vars, mouse))
                                     GoDown(ref currIdx, text, vars, 3);
-                                else
+                                else if (IsMouseWithinButtons(buttonHitboxes, mouse))
                                 {
                                     selectedButton++;
                                     if (selectedButton > buttons.Length - 1)
@@ -598,6 +598,16 @@ namespace Terminaux.Inputs.Styles.Infobox
                 hitboxes.Add(hitbox);
             }
             return [.. hitboxes];
+        }
+
+        private static bool IsMouseWithinText(string text, object[] vars, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
+            maxHeight -= 3;
+
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
         }
 
         private static bool IsMouseWithinButtons(PointerHitbox[] buttonHitboxes, PointerEventContext mouse) =>
