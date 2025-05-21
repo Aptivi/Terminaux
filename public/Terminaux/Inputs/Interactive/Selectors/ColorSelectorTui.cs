@@ -764,6 +764,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void ShowColorList(TextualUI ui)
         {
             showColorList = !showColorList;
+            ui.RequireRefresh();
         }
 
         private void DecrementColor(ColorType type)
