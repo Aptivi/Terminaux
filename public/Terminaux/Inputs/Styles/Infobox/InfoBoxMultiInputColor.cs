@@ -378,7 +378,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Make hitboxes for arrow and button presses
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars, modules))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, modules))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
@@ -411,15 +411,15 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
-                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                if (IsMouseWithinText(text, vars, modules, mouse))
                                     GoUp(ref currIdx, 3);
-                                else
+                                else if (IsMouseWithinInputBox(text, vars, modules, mouse))
                                     SelectionGoUp(ref currentSelection);
                                 break;
                             case PointerButton.WheelDown:
-                                if (mouse.Modifiers == PointerModifiers.Shift)
-                                    GoDown(ref currIdx, text, vars, 3);
-                                else
+                                if (IsMouseWithinText(text, vars, modules, mouse))
+                                    GoDown(ref currIdx, text, vars, modules, 3);
+                                else if (IsMouseWithinInputBox(text, vars, modules, mouse))
                                     SelectionGoDown(ref currentSelection, modules);
                                 break;
                             case PointerButton.Left:
@@ -546,13 +546,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.D:
-                                GoDown(ref currIdx, text, vars, increment);
+                                GoDown(ref currIdx, text, vars, modules, increment);
                                 break;
                             case ConsoleKey.W:
                                 GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.S:
-                                GoDown(ref currIdx, text, vars);
+                                GoDown(ref currIdx, text, vars, modules);
                                 break;
                             case ConsoleKey.Spacebar:
                                 selectedInstance.ProcessInput();
@@ -594,6 +594,26 @@ namespace Terminaux.Inputs.Styles.Infobox
             return !cancel;
         }
 
+        private static bool IsMouseWithinText(string text, object[] vars, InputModule[] modules, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, _, _, borderX, borderY, _, selectionBoxPosY, _, _, _, _) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
+            int selectionChoices = modules.Length > 10 ? 10 : modules.Length;
+            int maxHeight = selectionBoxPosY - borderY - selectionChoices + 2;
+
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
+        }
+
+        private static bool IsMouseWithinInputBox(string text, object[] vars, InputModule[] modules, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (_, _, _, _, _, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, reservedHeight) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
+
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (selectionBoxPosX + 1, selectionBoxPosY), (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + reservedHeight - 3));
+        }
+
         private static void GoUp(ref int currIdx, int level = 1)
         {
             currIdx -= level;
@@ -601,10 +621,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 currIdx = 0;
         }
 
-        private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
+        private static void GoDown(ref int currIdx, string text, object[] vars, InputModule[] modules, int level = 1)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+            var (_, maxHeight, _, _, borderY, _, selectionBoxPosY, _, _, _, _) = InfoBoxTools.GetDimensions(modules, splitFinalLines);
+            maxHeight -= selectionBoxPosY - borderY;
             currIdx += level;
             if (currIdx > splitFinalLines.Length - maxHeight)
                 currIdx = splitFinalLines.Length - maxHeight;
