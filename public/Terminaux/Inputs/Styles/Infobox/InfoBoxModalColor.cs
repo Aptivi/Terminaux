@@ -306,10 +306,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 break;
                             case PointerButton.WheelUp:
-                                GoUp(ref currIdx, 3);
+                                if (IsMouseWithinText(text, vars, mouse))
+                                    GoUp(ref currIdx, 3);
                                 break;
                             case PointerButton.WheelDown:
-                                GoDown(ref currIdx, text, vars, 3);
+                                if (IsMouseWithinText(text, vars, mouse))
+                                    GoDown(ref currIdx, text, vars, 3);
                                 break;
                         }
                     }
@@ -370,6 +372,15 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
         }
 
+        private static bool IsMouseWithinText(string text, object[] vars, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
+        }
+
         private static void GoUp(ref int currIdx, int level = 1)
         {
             currIdx -= level;
@@ -380,7 +391,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
+            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines);
             currIdx += level;
             if (currIdx > splitFinalLines.Length - maxHeight)
                 currIdx = splitFinalLines.Length - maxHeight;
