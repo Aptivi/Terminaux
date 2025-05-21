@@ -141,9 +141,14 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             Culture.DateTimeFormat.Calendar;
 
         /// <summary>
-        /// Specifies the cell options to highlight days
+        /// Whether to highlight the current day or to highlight a specified day
         /// </summary>
-        public List<CellOptions> CellOptions { get; set; } = [];
+        public bool HighlightToday { get; set; } = true;
+
+        /// <summary>
+        /// Highlight a specified day
+        /// </summary>
+        public DateTime HighlightedDay { get; set; } = DateTime.Today;
 
         /// <summary>
         /// Renders a calendar
@@ -214,8 +219,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 dayPosX = boxLeft + 1 + (6 * (currentDay - 1));
 
                 // Some flags
+                var dateHighlight = HighlightToday ? DateTime.Today : HighlightedDay;
                 bool IsWeekend = currentDay > 5;
-                bool IsToday = CurrentDate == DateTime.Today;
+                bool IsToday = CurrentDate == dateHighlight;
                 var foreground =
                     IsToday ? TodayColor :
                     IsWeekend ? WeekendColor :
