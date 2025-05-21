@@ -28,30 +28,26 @@ namespace Terminaux.Base.Structures
     [DebuggerDisplay("W: {Width}, H: {Height}")]
     public struct Margin : IEquatable<Margin>
     {
-        private readonly int left;
-        private readonly int top;
-        private readonly int right;
-        private readonly int bottom;
-        private readonly int width;
-        private readonly int height;
+        private readonly HorizontalMargin horizontalMargin;
+        private readonly VerticalMargin verticalMargin;
 
         /// <summary>
         /// Gets the final width with margins applied
         /// </summary>
         public readonly int Width =>
-            width - left - right < 0 ? 0 : width - left - right;
+            horizontalMargin.Width;
 
         /// <summary>
         /// Gets the final height with margins applied
         /// </summary>
         public readonly int Height =>
-            height - top - bottom < 0 ? 0 : height - top - bottom;
+            verticalMargin.Height;
 
         /// <summary>
         /// Gets the margin values
         /// </summary>
         public readonly Padding Margins =>
-            new(left, top, right, bottom);
+            new(horizontalMargin.Margins, verticalMargin.Margins);
 
         /// <inheritdoc/>
         public override bool Equals(object? obj) =>
@@ -61,24 +57,16 @@ namespace Terminaux.Base.Structures
         public bool Equals(Margin other)
         {
             return
-                left == other.left &&
-                top == other.top &&
-                right == other.right &&
-                bottom == other.bottom &&
-                width == other.width &&
-                height == other.height;
+                horizontalMargin == other.horizontalMargin &&
+                verticalMargin == other.verticalMargin;
         }
 
         /// <inheritdoc/>
         public override int GetHashCode()
         {
             int hashCode = -260290644;
-            hashCode = hashCode * -1521134295 + left.GetHashCode();
-            hashCode = hashCode * -1521134295 + top.GetHashCode();
-            hashCode = hashCode * -1521134295 + right.GetHashCode();
-            hashCode = hashCode * -1521134295 + bottom.GetHashCode();
-            hashCode = hashCode * -1521134295 + width.GetHashCode();
-            hashCode = hashCode * -1521134295 + height.GetHashCode();
+            hashCode = hashCode * -1521134295 + horizontalMargin.GetHashCode();
+            hashCode = hashCode * -1521134295 + verticalMargin.GetHashCode();
             return hashCode;
         }
 
@@ -109,14 +97,21 @@ namespace Terminaux.Base.Structures
         /// <param name="margins">Margins</param>
         /// <param name="width">Width to subtract from to get margins</param>
         /// <param name="height">Height to subtract from to get margins</param>
-        public Margin(Padding margins, int width, int height)
+        public Margin(Padding margins, int width, int height) :
+            this(new(margins.Left, margins.Right), new(margins.Top, margins.Bottom), width, height)
+        { }
+
+        /// <summary>
+        /// Makes a new margin instance
+        /// </summary>
+        /// <param name="horizontalMargin">Horizontal margin</param>
+        /// <param name="verticalMargin">Vertical margin</param>
+        /// <param name="width">Width to subtract from to get margins</param>
+        /// <param name="height">Height to subtract from to get margins</param>
+        public Margin(HorizontalPad horizontalMargin, VerticalPad verticalMargin, int width, int height)
         {
-            left = margins.Left;
-            top = margins.Top;
-            right = margins.Right;
-            bottom = margins.Bottom;
-            this.width = width;
-            this.height = height;
+            this.horizontalMargin = new(horizontalMargin, width);
+            this.verticalMargin = new(verticalMargin, height);
         }
     }
 }

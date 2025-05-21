@@ -368,5 +368,73 @@ namespace Terminaux.Tests.Base
             margin.Height.ShouldBe(expectedHeight);
         }
 
+        /// <summary>
+        /// Tests padding
+        /// </summary>
+        [TestMethod]
+        [DataRow(2, 2)]
+        [DataRow(2, 0)]
+        [DataRow(0, 2)]
+        [DataRow(0, 0)]
+        [Description("Querying")]
+        public void TestHorizontalPadding(int left, int right)
+        {
+            var padding = new HorizontalPad(left, right);
+            padding.Left.ShouldBe(left);
+            padding.Right.ShouldBe(right);
+        }
+
+        /// <summary>
+        /// Tests margins
+        /// </summary>
+        [TestMethod]
+        [DataRow(2, 2, 10, 6)]
+        [DataRow(2, 0, 10, 8)]
+        [DataRow(0, 2, 10, 8)]
+        [DataRow(0, 0, 10, 10)]
+        [Description("Querying")]
+        public void TestHorizontalMargins(int left, int right, int width, int expectedWidth)
+        {
+            var padding = new HorizontalPad(left, right);
+            var margin = new HorizontalMargin(padding, width);
+            margin.Margins.Left.ShouldBe(left);
+            margin.Margins.Right.ShouldBe(right);
+            margin.Width.ShouldBe(expectedWidth);
+        }
+
+        /// <summary>
+        /// Tests padding
+        /// </summary>
+        [TestMethod]
+        [DataRow(2, 2)]
+        [DataRow(2, 0)]
+        [DataRow(0, 2)]
+        [DataRow(0, 0)]
+        [Description("Querying")]
+        public void TestVerticalPadding(int top, int bottom)
+        {
+            var padding = new VerticalPad(top, bottom);
+            padding.Top.ShouldBe(top);
+            padding.Bottom.ShouldBe(bottom);
+        }
+
+        /// <summary>
+        /// Tests margins
+        /// </summary>
+        [TestMethod]
+        [DataRow(2, 2, 10, 6)]
+        [DataRow(2, 0, 10, 8)]
+        [DataRow(0, 2, 10, 8)]
+        [DataRow(0, 0, 10, 10)]
+        [Description("Querying")]
+        public void TestVerticalMargins(int top, int bottom, int height, int expectedHeight)
+        {
+            var padding = new VerticalPad(top, bottom);
+            var margin = new VerticalMargin(padding, height);
+            margin.Margins.Top.ShouldBe(top);
+            margin.Margins.Bottom.ShouldBe(bottom);
+            margin.Height.ShouldBe(expectedHeight);
+        }
+
     }
 }

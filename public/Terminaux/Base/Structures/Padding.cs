@@ -28,34 +28,32 @@ namespace Terminaux.Base.Structures
     [DebuggerDisplay("L: {Left}, T: {Top}, R: {Right}, B: {Bottom}")]
     public struct Padding : IEquatable<Padding>
     {
-        private readonly int left;
-        private readonly int top;
-        private readonly int right;
-        private readonly int bottom;
+        private readonly HorizontalPad horizontalPad;
+        private readonly VerticalPad verticalPad;
 
         /// <summary>
         /// Gets the left padding
         /// </summary>
         public readonly int Left =>
-            left;
+            horizontalPad.Left;
 
         /// <summary>
         /// Gets the top padding
         /// </summary>
         public readonly int Top =>
-            top;
+            verticalPad.Top;
 
         /// <summary>
         /// Gets the right padding
         /// </summary>
         public readonly int Right =>
-            right;
+            horizontalPad.Right;
 
         /// <summary>
         /// Gets the bottom padding
         /// </summary>
         public readonly int Bottom =>
-            bottom;
+            verticalPad.Bottom;
 
         /// <inheritdoc/>
         public override bool Equals(object? obj) =>
@@ -65,20 +63,16 @@ namespace Terminaux.Base.Structures
         public bool Equals(Padding other)
         {
             return
-                left == other.left &&
-                top == other.top &&
-                right == other.right &&
-                bottom == other.bottom;
+                horizontalPad == other.horizontalPad &&
+                verticalPad == other.verticalPad;
         }
 
         /// <inheritdoc/>
         public override int GetHashCode()
         {
             int hashCode = -971476797;
-            hashCode = hashCode * -1521134295 + left.GetHashCode();
-            hashCode = hashCode * -1521134295 + top.GetHashCode();
-            hashCode = hashCode * -1521134295 + right.GetHashCode();
-            hashCode = hashCode * -1521134295 + bottom.GetHashCode();
+            hashCode = hashCode * -1521134295 + horizontalPad.GetHashCode();
+            hashCode = hashCode * -1521134295 + verticalPad.GetHashCode();
             return hashCode;
         }
 
@@ -93,16 +87,25 @@ namespace Terminaux.Base.Structures
         /// <summary>
         /// Makes a new padding instance
         /// </summary>
+        /// <param name="horizontalPad">Horizontal padding</param>
+        /// <param name="verticalPad">Vertical padding</param>
+        public Padding(HorizontalPad horizontalPad, VerticalPad verticalPad)
+        {
+            this.horizontalPad = horizontalPad;
+            this.verticalPad = verticalPad;
+        }
+
+        /// <summary>
+        /// Makes a new padding instance
+        /// </summary>
         /// <param name="left">A left padding</param>
         /// <param name="top">A top padding</param>
         /// <param name="right">A right padding</param>
         /// <param name="bottom">A bottom padding</param>
         public Padding(int left, int top, int right, int bottom)
         {
-            this.left = left;
-            this.top = top;
-            this.right = right;
-            this.bottom = bottom;
+            horizontalPad = new(left, right);
+            verticalPad = new(top, bottom);
         }
     }
 }

@@ -272,27 +272,26 @@ namespace Terminaux.Writer.CyclicWriters
                     }
                 }
 
-                // Colors
-                if (useColor)
-                {
-                    frameBuilder.Append(
-                        ColorTools.RenderSetConsoleColor(TextColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                    );
-                }
-
                 // Text title
-                if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0 && ConsoleChar.EstimateCellWidth(text) <= InteriorWidth - 8)
+                int finalWidth = InteriorWidth - 7 - (textSettings.TitleOffset.Left + textSettings.TitleOffset.Right);
+                text = TextTools.FormatString(text, vars);
+                if (!string.IsNullOrEmpty(text) && finalWidth > 3)
                 {
                     string finalText =
                         $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
-                        $"{TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)}" +
+                        text.Truncate(finalWidth) +
                         $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "")}";
-                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.TitleAlignment, Left + 2);
-                    frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
-                        $"{finalText}"
-                    );
+                    var titleWriter = new AlignedText()
+                    {
+                        Text = finalText,
+                        LeftMargin = Left + 2,
+                        RightMargin = ConsoleWrapper.WindowWidth - (Left + finalWidth + 7),
+                        Top = Top,
+                        ForegroundColor = TextColor,
+                        BackgroundColor = BackgroundColor,
+                        Settings = textSettings,
+                    };
+                    frameBuilder.Append(titleWriter.Render());
                 }
 
                 // Write the resulting buffer
