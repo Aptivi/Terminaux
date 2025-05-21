@@ -215,7 +215,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 TextColor = boxForeground,
                 TextSettings = new()
                 {
-                    TitleAlignment = TextAlignment.Middle
+                    Alignment = TextAlignment.Middle
                 },
                 BackgroundColor = background,
             };
