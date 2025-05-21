@@ -33,6 +33,8 @@ namespace Terminaux.Writer.CyclicWriters
     /// </summary>
     public class Calendars : IStaticRenderable
     {
+        internal const int calendarWidth = 4 + (6 * 6);
+        internal const int calendarHeight = 13;
         private int year = 0;
         private int month = 0;
         private int left = 0;
@@ -62,6 +64,22 @@ namespace Terminaux.Writer.CyclicWriters
         {
             get => top;
             set => top = value;
+        }
+
+        /// <summary>
+        /// Full calendar width (constant)
+        /// </summary>
+        public override int Width
+        {
+            get => calendarWidth;
+        }
+
+        /// <summary>
+        /// Full calendar height (constant)
+        /// </summary>
+        public override int Height
+        {
+            get => calendarHeight;
         }
 
         /// <summary>
@@ -204,8 +222,8 @@ namespace Terminaux.Writer.CyclicWriters
             var background = BackgroundColor;
             int boxLeft = Left;
             int boxTop = Top;
-            int boxWidth = 4 + (6 * 6);
-            int boxHeight = 13;
+            int boxWidth = Width;
+            int boxHeight = Height;
             var border = new Border()
             {
                 Title = CalendarTitle,
