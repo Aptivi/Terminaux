@@ -33,6 +33,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Calendars : GraphicalCyclicWriter
     {
+        internal const int calendarWidth = 4 + (6 * 6);
+        internal const int calendarHeight = 13;
         private int year = 0;
         private int month = 0;
         private CultureInfo culture = new("en-US");
@@ -43,6 +45,22 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private BorderSettings borderSettings = new();
         private bool useColors = true;
+
+        /// <summary>
+        /// Full calendar width (constant)
+        /// </summary>
+        public override int Width
+        {
+            get => calendarWidth;
+        }
+
+        /// <summary>
+        /// Full calendar height (constant)
+        /// </summary>
+        public override int Height
+        {
+            get => calendarHeight;
+        }
 
         /// <summary>
         /// Year of the calendar
@@ -184,8 +202,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             var background = BackgroundColor;
             int boxLeft = Left;
             int boxTop = Top;
-            int boxWidth = 4 + (6 * 6);
-            int boxHeight = 13;
+            int boxWidth = Width;
+            int boxHeight = Height;
             var border = new Border()
             {
                 Title = CalendarTitle,
