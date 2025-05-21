@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
@@ -250,6 +251,8 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             Keybinding[] finalBindings = [.. keybindings.Where((kb) => !kb.BindingHidden)];
             var nonMouseBindings = finalBindings.Where((bind) => !bind.BindingUsesMouse).ToArray();
             var mouseBindings = finalBindings.Where((bind) => bind.BindingUsesMouse).ToArray();
+            if (!Input.EnableMouse)
+                mouseBindings = [];
 
             // Get the maximum length for keyboard and for mouse
             int maxKeyboardBindingLength = nonMouseBindings.Length > 0 ?
