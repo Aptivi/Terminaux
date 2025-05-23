@@ -2153,6 +2153,70 @@ namespace Terminaux.Writer.CyclicWriters.Builtins
                 @"⣀⣀⣀⣀⣀⣀⣀",
                 @"⣀⣀⣀⣀⣀⣀⣀",
             ]);
+
+        /// <summary>
+        /// From arc to circle border to filled circle.
+        /// </summary>
+        public static Spinner ArcFill =>
+            new([
+                @"◜",
+                @"◠",
+                @"○",
+                @"◔",
+                @"◑",
+                @"◕",
+                @"●",
+                @"◕",
+                @"◑",
+                @"◔",
+                @"○",
+                @"◠",
+                @"◜",
+            ]);
+
+        /// <summary>
+        /// A flashing triangle that points to the left.
+        /// </summary>
+        public static Spinner FlashTriangleLeft =>
+            new([
+                @"◁",
+                @"◁",
+                @"◀",
+                @"◀",
+            ]);
+
+        /// <summary>
+        /// A flashing triangle that points to the right.
+        /// </summary>
+        public static Spinner FlashTriangleRight =>
+            new([
+                @"▷",
+                @"▷",
+                @"▶",
+                @"▶",
+            ]);
+
+        /// <summary>
+        /// A flashing triangle that points to the top.
+        /// </summary>
+        public static Spinner FlashTriangleTop =>
+            new([
+                @"△",
+                @"△",
+                @"▲",
+                @"▲",
+            ]);
+
+        /// <summary>
+        /// A flashing triangle that points to the bottom.
+        /// </summary>
+        public static Spinner FlashTriangleBottom =>
+            new([
+                @"▽",
+                @"▽",
+                @"▼",
+                @"▼",
+            ]);
         #endregion
     }
 }
