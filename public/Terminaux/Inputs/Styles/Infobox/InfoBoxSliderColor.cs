@@ -309,14 +309,15 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(1, title, text, settings, InfoBoxTitledSliderColor, BackgroundColor, useColor, ref increment, currIdx, false, true, vars)
+                        InfoBoxTools.RenderText(2, title, text, settings, InfoBoxTitledSliderColor, BackgroundColor, useColor, ref increment, currIdx, false, true, vars)
                     );
 
                     // Now, write the current position on the border of the slider bar and the arrows
+                    string posText = $"[  {minPos}  <=  {selected}  <=  {maxPos} ]";
                     int sliderPosX = borderX + 2;
                     int sliderPosY = borderY + maxHeight - 3;
                     int maxSliderWidth = maxWidth - 4;
@@ -330,10 +331,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                         SliderVerticalInactiveTrackChar = settings.BorderRightFrameChar,
                     };
                     boxBuffer.Append(
-                        RendererTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 3)) +
-                        TextWriterWhereColor.RenderWhereColorBack($"{settings.BorderRightHorizontalIntersectionChar} {selected} / {maxPos} {settings.BorderLeftHorizontalIntersectionChar}", sliderPosX - 1, sliderPosY + 4, InfoBoxTitledSliderColor, BackgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor)
+                        RendererTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 2)) +
+                        TextWriterWhereColor.RenderWhereColorBack(posText, sliderPosX - 1 + (maxWidth / 2 - ConsoleChar.EstimateCellWidth(posText) / 2), sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 2, InfoBoxTitledSliderColor, BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 2, InfoBoxTitledSliderColor, BackgroundColor)
                     );
                     return boxBuffer.ToString();
                 });
@@ -349,7 +350,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Handle keypress
                     InputEventInfo data = Input.ReadPointerOrKey();
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
 
                     // Get positions for arrows
                     int arrowLeft = maxWidth + borderX + 1;
@@ -358,7 +359,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Get positions for slider buttons
                     int maxSliderWidth = maxWidth - 4;
-                    int sliderArrowTop = borderY + maxHeight;
+                    int sliderArrowTop = borderY + maxHeight - 1;
                     int sliderArrowLeft = borderX + 2;
                     int sliderArrowRight = sliderArrowLeft + maxSliderWidth + 1;
 
@@ -489,8 +490,8 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static bool IsMouseWithinText(string text, object[] vars, PointerEventContext mouse)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
-            maxHeight -= 1;
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+            maxHeight -= 2;
 
             // Check the dimensions
             return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
@@ -499,11 +500,11 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static bool IsMouseWithinSlider(string text, object[] vars, PointerEventContext mouse)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
 
             // Check the dimensions
             int maxSliderWidth = maxWidth - 4;
-            int sliderArrowTop = borderY + maxHeight;
+            int sliderArrowTop = borderY + maxHeight - 1;
             int sliderArrowLeft = borderX + 2;
             int sliderArrowRight = sliderArrowLeft + maxSliderWidth + 1;
             return PointerTools.PointerWithinRange(mouse, (sliderArrowLeft, sliderArrowTop), (sliderArrowRight, sliderArrowTop));
@@ -519,7 +520,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
         {
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
+            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
             currIdx += level;
             if (currIdx > splitFinalLines.Length - maxHeight)
                 currIdx = splitFinalLines.Length - maxHeight;
