@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Sequences.Builder;

@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base.Checks;
 using Terminaux.Writer.ConsoleWriters;

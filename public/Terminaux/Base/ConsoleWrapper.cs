@@ -18,7 +18,6 @@
 //
 
 using System;
-using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Reader;
 

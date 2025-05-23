@@ -21,7 +21,6 @@ using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
-using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.CyclicWriters.Builtins;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

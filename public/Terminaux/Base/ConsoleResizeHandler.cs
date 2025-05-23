@@ -22,7 +22,6 @@ using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using System.Threading;
-using System.Diagnostics;
 
 namespace Terminaux.Base
 {

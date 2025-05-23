@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {

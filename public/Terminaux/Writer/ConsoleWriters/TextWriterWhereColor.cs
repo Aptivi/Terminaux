@@ -21,7 +21,6 @@ using System;
 using Terminaux.Colors;
 using System.Text;
 using Terminaux.Base;
-using System.Diagnostics;
 using Textify.General;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;

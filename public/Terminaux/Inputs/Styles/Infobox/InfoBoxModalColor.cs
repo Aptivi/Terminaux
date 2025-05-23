@@ -18,11 +18,9 @@
 //
 
 using System;
-using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using System.Diagnostics;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;

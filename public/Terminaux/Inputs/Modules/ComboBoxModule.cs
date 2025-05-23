@@ -19,7 +19,6 @@
 
 using System;
 using System.Linq;
-using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;

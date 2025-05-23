@@ -30,7 +30,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
-using Terminaux.Inputs.Pointer;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;

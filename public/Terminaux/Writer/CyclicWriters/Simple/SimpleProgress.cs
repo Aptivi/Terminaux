@@ -21,7 +21,6 @@ using System;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Colors.Gradients;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {

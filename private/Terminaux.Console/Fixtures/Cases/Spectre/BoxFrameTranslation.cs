@@ -19,12 +19,9 @@
 
 using Spectre.Console;
 using Terminaux.Base;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 
 namespace Terminaux.Console.Fixtures.Cases.Spectre
 {

@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using System;
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;

@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
@@ -27,7 +26,6 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
-using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 

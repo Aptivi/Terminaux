@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Base;
-using Terminaux.Colors.Transformation.Tools;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {

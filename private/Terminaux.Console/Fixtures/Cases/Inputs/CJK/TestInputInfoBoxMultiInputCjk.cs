@@ -20,7 +20,6 @@
 using System.Linq;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Modules;
-using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;

@@ -23,7 +23,6 @@ using Terminaux.Colors;
 using System.Text;
 using Terminaux.Base;
 using Textify.General;
-using System.Diagnostics;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Terminaux.Base.Checks;

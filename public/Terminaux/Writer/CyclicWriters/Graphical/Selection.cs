@@ -35,7 +35,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
-using Textify.General;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
 {

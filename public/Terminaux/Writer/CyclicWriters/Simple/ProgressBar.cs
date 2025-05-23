@@ -21,7 +21,6 @@ using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Colors.Gradients;
 using Terminaux.Writer.CyclicWriters.Builtins;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;

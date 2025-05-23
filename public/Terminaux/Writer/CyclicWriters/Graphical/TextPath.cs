@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;

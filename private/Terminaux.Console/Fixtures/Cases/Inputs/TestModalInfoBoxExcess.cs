@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;

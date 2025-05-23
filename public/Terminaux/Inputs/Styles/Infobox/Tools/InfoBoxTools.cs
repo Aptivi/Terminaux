@@ -34,7 +34,6 @@ using Textify.General;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 using System.Collections.Generic;
-using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
