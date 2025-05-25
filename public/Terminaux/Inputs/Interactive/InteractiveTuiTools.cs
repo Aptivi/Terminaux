@@ -75,10 +75,25 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         /// <param name="interactiveTui">Interactive TUI to deal with</param>
         /// <param name="pos">Position to move the pane selection to</param>
-        public static void SelectionMovement<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, int pos)
+        public static void SelectionMovement<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, int pos) =>
+            SelectionMovement(interactiveTui, pos, interactiveTui.CurrentPane);
+
+        /// <summary>
+        /// Initiates the selection movement
+        /// </summary>
+        /// <param name="interactiveTui">Interactive TUI to deal with</param>
+        /// <param name="pos">Position to move the pane selection to</param>
+        /// <param name="paneNum">Pane number to process</param>
+        public static void SelectionMovement<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, int pos, int paneNum)
         {
+            // Check the pane number
+            if (paneNum < 1)
+                paneNum = 1;
+            if (paneNum > 2)
+                paneNum = 2;
+
             // Check the position
-            int elements = interactiveTui.CurrentPane == 2 ? interactiveTui.SecondaryDataSource.Count() : interactiveTui.PrimaryDataSource.Count();
+            int elements = paneNum == 2 ? interactiveTui.SecondaryDataSource.Count() : interactiveTui.PrimaryDataSource.Count();
             if (pos < 1)
                 pos = 1;
             if (pos > elements)
@@ -86,7 +101,7 @@ namespace Terminaux.Inputs.Interactive
 
             // Now, process the movement
             interactiveTui.CurrentInfoLine = 0;
-            if (interactiveTui.CurrentPane == 2)
+            if (paneNum == 2)
                 interactiveTui.SecondPaneCurrentSelection = pos;
             else
                 interactiveTui.FirstPaneCurrentSelection = pos;
