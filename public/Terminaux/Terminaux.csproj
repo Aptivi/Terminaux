@@ -46,7 +46,7 @@
     <PackageReference Include="Aptivestigate.Serilog" Version="1.2.2" />
     <PackageReference Include="BassBoom.Basolia" Version="0.2.8" />
     <PackageReference Include="LocaleStation" Version="1.1.0" />
-    <PackageReference Include="Magico" Version="1.4.0" />
+    <PackageReference Include="Magico" Version="1.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="SpecProbe.Software" Version="3.5.1" />
