@@ -43,14 +43,13 @@ namespace Terminaux.Images.Icons
         /// <param name="left">Zero-based console left position to start writing the icon to</param>
         /// <param name="top">Zero-based console top position to start writing the icon to</param>
         /// <param name="color">Icon color</param>
-        /// <param name="quality">Icon quality</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderIcon(string iconName, int width, int height, int left, int top, IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal, Color? background = null)
+        public static string RenderIcon(string iconName, int width, int height, int left, int top, IconsColor color = IconsColor.Colored, Color? background = null)
         {
             // Check for icon
-            string[] iconNames = GetIconNames(color, quality);
-            ConsoleLogger.Debug("Got {0} icons from quality {1}", iconNames.Length, quality);
+            string[] iconNames = GetIconNames(color);
+            ConsoleLogger.Debug("Got {0} icons from quality {1}", iconNames.Length);
             if (!iconNames.Contains(iconName))
             {
                 ConsoleLogger.Error("Can't find {0} of all {1} icons", iconName, iconNames.Length);
@@ -58,8 +57,8 @@ namespace Terminaux.Images.Icons
             }
 
             // Now, get the fully qualified name of the icon and render it
-            string iconFullyQualifiedName = BuildFullyQualifiedIconName(iconName, color, quality);
-            ConsoleLogger.Info("Got icon fully qualified name {0} from {1}, {2}, {3}", iconFullyQualifiedName, iconName, color, quality);
+            string iconFullyQualifiedName = BuildFullyQualifiedIconName(iconName, color);
+            ConsoleLogger.Info("Got icon fully qualified name {0} from {1}, {2}, {3}", iconFullyQualifiedName, iconName, color);
             var stream = typeof(IconsManager).Assembly.GetManifestResourceStream(iconFullyQualifiedName) ??
                 throw new TerminauxException($"Icon {iconName} exists, but failed to load.");
             ConsoleLogger.Debug("Stream length is {0} bytes", stream.Length);
@@ -70,57 +69,50 @@ namespace Terminaux.Images.Icons
         /// Gets the icon names
         /// </summary>
         /// <param name="color">Icon color</param>
-        /// <param name="quality">Icon quality</param>
         /// <returns>An array of icon names</returns>
-        public static string[] GetIconNames(IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal)
+        public static string[] GetIconNames(IconsColor color = IconsColor.Colored)
         {
             // Unqualify the full icon names and get only the names
             List<string> names = [];
-            string prefix = GetPrefix(color, quality);
-            string[] icons = GetIconGroup(color, quality);
-            string extension = quality == IconsQuality.Scalable ? ".svg" : ".png";
-            ConsoleLogger.Info("Prefix is {0} from color {1} and quality {2}, which has an extension of {3}", prefix, color, quality, extension);
+            string prefix = GetPrefix(color);
+            string[] icons = GetIconGroup(color);
+            ConsoleLogger.Info("Prefix is {0} from color {1}.", prefix, color);
             foreach (string icon in icons)
             {
                 ConsoleLogger.Debug("Populating {0}...", icon);
-                names.Add(icon.RemovePrefix(prefix).RemoveSuffix(extension));
+                names.Add(icon.RemovePrefix(prefix).RemoveSuffix(".png"));
             }
 
             // Return the emoji names
             return [.. names];
         }
 
-        private static string BuildFullyQualifiedIconName(string iconName, IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal)
+        private static string BuildFullyQualifiedIconName(string iconName, IconsColor color = IconsColor.Colored)
         {
             // We have the emoji name, so we need to check for the qualification before going ahead
-            string prefix = GetPrefix(color, quality);
+            string prefix = GetPrefix(color);
             if (iconName.StartsWith(prefix))
                 return iconName;
 
             // We're done here.
-            string extension = quality == IconsQuality.Scalable ? ".svg" : ".png";
-            ConsoleLogger.Info("Prefix is {0} from color {1} and quality {2}, which has an extension of {3}. Icon name is {4}", prefix, color, quality, extension, iconName);
-            return prefix + iconName + extension;
+            ConsoleLogger.Info("Prefix is {0} from color {1}. Icon name is {2}", prefix, color, iconName);
+            return prefix + iconName + ".png";
         }
 
-        private static string GetPrefix(IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal)
+        private static string GetPrefix(IconsColor color = IconsColor.Colored)
         {
             // Build the prefix according to the color and the quality of the icons requested.
             var prefixBuilder = new StringBuilder($"Terminaux.Images.Icons.Resources.Icons.{color}");
-            if (quality == IconsQuality.High)
-                prefixBuilder.Append("_HQ");
-            else if (quality == IconsQuality.Scalable)
-                prefixBuilder.Append("_SVG");
 
             // We're done here.
             prefixBuilder.Append(".");
             return prefixBuilder.ToString();
         }
 
-        private static string[] GetIconGroup(IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal)
+        private static string[] GetIconGroup(IconsColor color = IconsColor.Colored)
         {
             // Get the prefix to test the icon resource names
-            string prefix = GetPrefix(color, quality);
+            string prefix = GetPrefix(color);
             List<string> names = [];
             foreach (string icon in builtinIcons)
                 if (icon.StartsWith(prefix))
