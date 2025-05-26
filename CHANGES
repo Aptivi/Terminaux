@@ -1,10 +1,10 @@
-We've made this version of Terminaux to make the calendar more gorgeous.
+We've made this version of Terminaux to add a new API.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements and bug fixes
+- `[+]` Added SelectionMovement() overload to allow you to select a pane
 
 Review the commit history if you want to get a deep insight about the changes.
 
