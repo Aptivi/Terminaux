@@ -390,6 +390,7 @@ namespace Terminaux.Console.Fixtures
             // Spectre
             new MarkupTranslation(),
             new BoxFrameTranslation(),
+            new TableTranslation(),
         ];
     }
 }

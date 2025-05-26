@@ -26,6 +26,7 @@ using Terminaux.Sequences;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
+using Table = Spectre.Console.Table;
 
 namespace Terminaux.Spectre
 {
@@ -103,6 +104,45 @@ namespace Terminaux.Spectre
                 Border = BoxBorder.Rounded,
             };
             return spectrePanel;
+        }
+
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="Table"/> from Terminaux's <see cref="Writer.CyclicWriters.Graphical.Table"/>
+        /// </summary>
+        /// <param name="table">Terminaux's table instance</param>
+        /// <returns>Spectre.Console's table instance</returns>
+        public static Table GetTable(Writer.CyclicWriters.Graphical.Table table)
+        {
+            // Make a new table
+            var spectreTable = new Table()
+            {
+                Width = table.Width,
+                Title = new(table.Title),
+                Border = TableBorder.Rounded,
+                ShowHeaders = table.Header,
+            };
+
+            // Add rows and columns
+            int columnsCount = table.Rows.GetLength(1);
+            int rowsCount = table.Rows.GetLength(0);
+            for (int x = 0; x < columnsCount; x++)
+            {
+                string column = table.Rows[0, x];
+                spectreTable.AddColumn(column);
+            }
+            for (int y = table.Header ? 1 : 0; y < rowsCount; y++)
+            {
+                List<string> rows = [];
+                for (int x = 0; x < columnsCount; x++)
+                {
+                    string row = table.Rows[y, x];
+                    rows.Add(row);
+                }
+                spectreTable.AddRow([.. rows]);
+            }
+
+            // Return the new table
+            return spectreTable;
         }
     }
 }
