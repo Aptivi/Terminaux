@@ -51,8 +51,8 @@
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="SpecProbe.Software" Version="3.5.1" />
     <PackageReference Include="System.Memory" Version="4.6.3" />
-    <PackageReference Include="Textify.Offline" Version="2.10.0" />
-    <PackageReference Include="Textify.Offline.Data" Version="2.10.0" />
+    <PackageReference Include="Textify.Offline" Version="2.11.0" />
+    <PackageReference Include="Textify.Offline.Data" Version="2.11.0" />
   </ItemGroup>
 
   <ItemGroup>
