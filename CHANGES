@@ -1,10 +1,10 @@
-This version of Terminaux improves your application's performance.
+We've made this version of Terminaux to remove icon quality enumeration.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements
+- `[-]` Removed the icon quality enumeration
 
 Review the commit history if you want to get a deep insight about the changes.
 
