@@ -391,6 +391,7 @@ namespace Terminaux.Console.Fixtures
             new MarkupTranslation(),
             new BoxFrameTranslation(),
             new TableTranslation(),
+            new BarChartTranslation(),
         ];
     }
 }

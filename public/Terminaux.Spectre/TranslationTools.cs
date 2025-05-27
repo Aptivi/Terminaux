@@ -27,6 +27,9 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
 using Table = Spectre.Console.Table;
+using SBarChart = Spectre.Console.BarChart;
+using SColor = Spectre.Console.Color;
+using TColor = Terminaux.Colors.Color;
 
 namespace Terminaux.Spectre
 {
@@ -34,7 +37,23 @@ namespace Terminaux.Spectre
     /// Translation tools
     /// </summary>
 	public static class TranslationTools
-	{
+    {
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="SColor"/> from Terminaux's <see cref="TColor"/>
+        /// </summary>
+        /// <param name="color">Terminaux's color instance</param>
+        /// <returns>Spectre.Console's color instance</returns>
+        public static SColor GetColor(TColor color) =>
+            new((byte)color.RGB.R, (byte)color.RGB.G, (byte)color.RGB.B);
+
+        /// <summary>
+        /// Returns a compatible Terminaux <see cref="TColor"/> from Spectre.Console's <see cref="SColor"/>
+        /// </summary>
+        /// <param name="color">Spectre.Console's color instance</param>
+        /// <returns>Terminaux's color instance</returns>
+        public static TColor GetColor(SColor color) =>
+            new(color.R, color.G, color.B);
+
         /// <summary>
         /// Returns a compatible Spectre.Console <see cref="Markup"/> from Terminaux's <see cref="Mark"/>
         /// </summary>
@@ -143,6 +162,31 @@ namespace Terminaux.Spectre
 
             // Return the new table
             return spectreTable;
+        }
+
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="SBarChart"/> from Terminaux's <see cref="Writer.CyclicWriters.Graphical.BarChart"/>
+        /// </summary>
+        /// <param name="barChart">Terminaux's bar chart instance</param>
+        /// <returns>Spectre.Console's bar chart instance</returns>
+        public static SBarChart GetBarChart(Writer.CyclicWriters.Graphical.BarChart barChart)
+        {
+            // Make a new bar chart
+            var spectreBarChart = new SBarChart()
+            {
+                Width = barChart.Width,
+                ShowValues = barChart.Showcase,
+            };
+
+            // Add values
+            foreach (var element in barChart.Elements)
+            {
+                var spectreColor = GetColor(element.Color);
+                spectreBarChart.AddItem(element.Name, element.Value, spectreColor);
+            }
+
+            // Return the new bar chart
+            return spectreBarChart;
         }
     }
 }
