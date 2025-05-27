@@ -29,7 +29,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
         {
             Input.EnableMouse = true;
             string font = IconsSelector.PromptForIcons();
-            var icon = IconsManager.RenderIcon(font, 40, 20, 4, 2, IconsColor.Colored, IconsQuality.Scalable);
+            var icon = IconsManager.RenderIcon(font, 40, 20, 4, 2, IconsColor.Colored);
             TextWriterColor.Write($"Got icon font {font}!");
             TextWriterRaw.WriteRaw(icon);
             Input.EnableMouse = false;
