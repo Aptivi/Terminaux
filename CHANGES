@@ -1,10 +1,10 @@
-We've made this version of Terminaux to add a new API.
+We've made this version of Terminaux to remove icon quality enumeration.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added SelectionMovement() overload to allow you to select a pane
+- `[-]` Removed the icon quality enumeration
 
 Review the commit history if you want to get a deep insight about the changes.
 
