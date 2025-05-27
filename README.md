@@ -14,7 +14,7 @@
 
 # Terminaux
     
-*A library that allows you to manipulate with the console*
+*Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...*
 
 *All emojis designed by [OpenMoji](https://openmoji.org/) – the open-source emoji and icon project. License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
 

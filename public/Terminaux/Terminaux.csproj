@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyTitle>Terminaux</AssemblyTitle>
     <AssemblyDescription>Console Manipulation Library</AssemblyDescription>
-    <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
+    <Description>Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...</Description>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Terminaux</AssemblyName>
     <PackageId>Terminaux</PackageId>

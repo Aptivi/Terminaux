@@ -4,8 +4,8 @@
     <AssemblyTitle>Terminaux.Images</AssemblyTitle>
     <AssemblyDescription>Console Manipulation Library - Image Processing</AssemblyDescription>
     <Description>
-      A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.
-      This provides developers the image processing component for both .NET Framework 4.8 and .NET 8.0 applications.
+      Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...
+      This provides developers the image processing component for both .NET Framework and .NET applications.
     </Description>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Terminaux.Images</AssemblyName>

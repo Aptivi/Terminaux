@@ -4,7 +4,7 @@
     <AssemblyTitle>Terminaux.Spectre</AssemblyTitle>
     <AssemblyDescription>Console Manipulation Library - Spectre.Console Interoperability Tool</AssemblyDescription>
     <Description>
-      A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.
+      Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...
       This provides developers the interoperability tool between Spectre.Console and Terminaux with translated functions.
     </Description>
     <TargetFramework>netstandard2.0</TargetFramework>
