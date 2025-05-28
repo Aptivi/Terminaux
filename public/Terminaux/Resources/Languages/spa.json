@@ -1,7 +1,7 @@
 ﻿{
     "lang": "spa",
     "name": "Spanish (Español)",
-    "cultures": [ "es-ES", "es-AR", "..." ],
+    "cultures": [ "es-ES", "es-AR" ],
     "locs": [
         {
             "loc": "TEXT_HELLO_WORLD",

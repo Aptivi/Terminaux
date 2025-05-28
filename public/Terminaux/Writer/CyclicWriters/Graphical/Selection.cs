@@ -359,7 +359,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int startIndexTristates = 0;
             int startIndexGroupTristates = 0;
             int relatedIdx = -1;
-            var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, choices, CurrentSelections, ref startIndexTristates) : [];
+            var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, CurrentSelections, ref startIndexTristates) : [];
             string prefix = isMultiple ? "  [ ] " : ShowRadioButtons ? "  ( ) " : "  ";
             int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
             for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
@@ -374,7 +374,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     processedHeight++;
                 }
 
-                var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, choices, CurrentSelections, ref startIndexGroupTristates) : [];
+                var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, CurrentSelections, ref startIndexGroupTristates) : [];
                 for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
                 {
                     InputChoiceGroupInfo? group = category.Groups[groupIdx];

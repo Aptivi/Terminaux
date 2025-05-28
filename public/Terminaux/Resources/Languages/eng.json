@@ -1,7 +1,7 @@
 ﻿{
     "lang": "eng",
     "name": "English",
-    "cultures": [ "en-US", "en-GB", "..." ],
+    "cultures": [ "en-US", "en-GB" ],
     "locs": [
         {
             "loc": "TEXT_HELLO_WORLD",
