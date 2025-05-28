@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>Terminaux.Spectre</AssemblyTitle>
-    <AssemblyDescription>Console Manipulation Library - Spectre.Console Interoperability Tool</AssemblyDescription>
+    <AssemblyDescription>Graphical Console Tools - Spectre.Console Interoperability Tool</AssemblyDescription>
     <Description>
       Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...
       This provides developers the interoperability tool between Spectre.Console and Terminaux with translated functions.

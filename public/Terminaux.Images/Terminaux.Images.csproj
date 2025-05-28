@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>Terminaux.Images</AssemblyTitle>
-    <AssemblyDescription>Console Manipulation Library - Image Processing</AssemblyDescription>
+    <AssemblyDescription>Graphical Console Tools - Image Processing</AssemblyDescription>
     <Description>
       Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...
       This provides developers the image processing component for both .NET Framework and .NET applications.

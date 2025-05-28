@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>Terminaux.Images.Icons</AssemblyTitle>
-    <AssemblyDescription>Console Manipulation Library - Image Processing</AssemblyDescription>
+    <AssemblyDescription>Graphical Console Tools - Icons for Terminaux.Images</AssemblyDescription>
     <Description>
       Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...
       This provides developers icons provided by OpenMoji for both .NET Framework and .NET applications.

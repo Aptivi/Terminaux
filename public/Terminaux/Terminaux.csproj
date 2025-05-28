@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>Terminaux</AssemblyTitle>
-    <AssemblyDescription>Console Manipulation Library</AssemblyDescription>
+    <AssemblyDescription>Graphical Console Tools</AssemblyDescription>
     <Description>Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...</Description>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Terminaux</AssemblyName>
