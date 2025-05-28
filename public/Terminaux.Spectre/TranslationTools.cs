@@ -28,8 +28,10 @@ using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
 using Table = Spectre.Console.Table;
 using SBarChart = Spectre.Console.BarChart;
+using SBreakdownChart = Spectre.Console.BreakdownChart;
 using SColor = Spectre.Console.Color;
 using TColor = Terminaux.Colors.Color;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Spectre
 {
@@ -187,6 +189,28 @@ namespace Terminaux.Spectre
 
             // Return the new bar chart
             return spectreBarChart;
+        }
+
+        public static SBreakdownChart GetBreakdownChart(Writer.CyclicWriters.Graphical.BreakdownChart breakdownChart)
+        {
+            // Make a new breakdown chart
+            var spectreBreakdownChart = new SBreakdownChart()
+            {
+                Width = breakdownChart.Width,
+                Compact = !breakdownChart.Showcase,
+                ShowTagValues = true,
+                ShowTags = true,
+            };
+
+            // Add values
+            foreach (var element in breakdownChart.Elements)
+            {
+                var spectreColor = GetColor(element.Color);
+                spectreBreakdownChart.AddItem(element.Name, element.Value, spectreColor);
+            }
+
+            // Return the new breakdown chart
+            return spectreBreakdownChart;
         }
     }
 }
