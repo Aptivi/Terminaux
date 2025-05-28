@@ -29,9 +29,12 @@ using Textify.General;
 using Table = Spectre.Console.Table;
 using SBarChart = Spectre.Console.BarChart;
 using SBreakdownChart = Spectre.Console.BreakdownChart;
+using SFigletFont = Spectre.Console.FigletFont;
+using SFigletText = Spectre.Console.FigletText;
 using SColor = Spectre.Console.Color;
 using TColor = Terminaux.Colors.Color;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Spectre
 {
@@ -234,6 +237,38 @@ namespace Terminaux.Spectre
 
             // Return the new calendar
             return spectreCalendar;
+        }
+
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="Justify"/> from Terminaux's <see cref="TextAlignment"/>
+        /// </summary>
+        /// <param name="alignment">Terminaux's text alignment</param>
+        /// <returns>Spectre.Console's text alignment</returns>
+        public static Justify GetAlignment(TextAlignment alignment) =>
+            alignment switch
+            {
+                TextAlignment.Left => Justify.Left,
+                TextAlignment.Middle => Justify.Center,
+                TextAlignment.Right => Justify.Right,
+                _ => Justify.Left
+            };
+
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="SFigletText"/> from Terminaux's <see cref="AlignedFigletText"/>
+        /// </summary>
+        /// <param name="figletText">Terminaux's figlet text instance</param>
+        /// <returns>Spectre.Console's figlet text instance</returns>
+        public static SFigletText GetFigletText(AlignedFigletText figletText)
+        {
+            // Make a new figlet text
+            var spectreFigletText = new SFigletText(figletText.Text)
+            {
+                Color = GetColor(figletText.ForegroundColor),
+                Justification = GetAlignment(figletText.Settings.Alignment),
+            };
+
+            // Return the new figlet text
+            return spectreFigletText;
         }
     }
 }
