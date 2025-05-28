@@ -29,8 +29,8 @@ using Textify.General;
 using Table = Spectre.Console.Table;
 using SBarChart = Spectre.Console.BarChart;
 using SBreakdownChart = Spectre.Console.BreakdownChart;
-using SFigletFont = Spectre.Console.FigletFont;
 using SFigletText = Spectre.Console.FigletText;
+using SCanvas = Spectre.Console.Canvas;
 using SColor = Spectre.Console.Color;
 using TColor = Terminaux.Colors.Color;
 using Terminaux.Writer.CyclicWriters.Simple;
@@ -269,6 +269,33 @@ namespace Terminaux.Spectre
 
             // Return the new figlet text
             return spectreFigletText;
+        }
+
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="SCanvas"/> from Terminaux's <see cref="Writer.CyclicWriters.Graphical.Canvas"/>
+        /// </summary>
+        /// <param name="canvas">Terminaux's canvas instance</param>
+        /// <returns>Spectre.Console's canvas instance</returns>
+        public static SCanvas GetCanvas(Writer.CyclicWriters.Graphical.Canvas canvas)
+        {
+            // Make a new canvas
+            var spectreCanvas = new SCanvas(canvas.Width, canvas.Height)
+            {
+                PixelWidth = canvas.DoubleWidth ? 2 : 1,
+            };
+
+            // Set the background pixels (if any)
+            if (!canvas.Transparent)
+                for (int x = 0; x < canvas.Width; x++)
+                    for (int y = 0; y < canvas.Height; y++)
+                        spectreCanvas.SetPixel(x, y, GetColor(canvas.Color));
+
+            // Set the pixels
+            foreach (var pixel in canvas.Pixels)
+                spectreCanvas.SetPixel(pixel.ColumnIndex, pixel.RowIndex, GetColor(pixel.CellColor));
+
+            // Return the new canvas
+            return spectreCanvas;
         }
     }
 }
