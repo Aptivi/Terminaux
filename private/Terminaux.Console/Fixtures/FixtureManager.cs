@@ -397,6 +397,7 @@ namespace Terminaux.Console.Fixtures
             new CalendarsTranslationHijri(),
             new FigletTextTranslation(),
             new CanvasTranslation(),
+            new TextPathTranslation(),
         ];
     }
 }

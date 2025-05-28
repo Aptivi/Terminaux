@@ -31,6 +31,7 @@ using SBarChart = Spectre.Console.BarChart;
 using SBreakdownChart = Spectre.Console.BreakdownChart;
 using SFigletText = Spectre.Console.FigletText;
 using SCanvas = Spectre.Console.Canvas;
+using STextPath = Spectre.Console.TextPath;
 using SColor = Spectre.Console.Color;
 using TColor = Terminaux.Colors.Color;
 using Terminaux.Writer.CyclicWriters.Simple;
@@ -296,6 +297,27 @@ namespace Terminaux.Spectre
 
             // Return the new canvas
             return spectreCanvas;
+        }
+
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="STextPath"/> from Terminaux's <see cref="Writer.CyclicWriters.Graphical.TextPath"/>
+        /// </summary>
+        /// <param name="textPath">Terminaux's text path instance</param>
+        /// <returns>Spectre.Console's text path instance</returns>
+        public static STextPath GetTextPath(Writer.CyclicWriters.Graphical.TextPath textPath)
+        {
+            // Make a new text path
+            var spectreTextPath = new STextPath(textPath.PathText)
+            {
+                Justification = GetAlignment(textPath.Settings.Alignment),
+                RootStyle = new(GetColor(textPath.RootDriveColor)),
+                LeafStyle = new(GetColor(textPath.LastPathColor)),
+                StemStyle = new(GetColor(textPath.SeparatorColor)),
+                SeparatorStyle = new(GetColor(textPath.SeparatorColor)),
+            };
+
+            // Return the new text path
+            return spectreTextPath;
         }
     }
 }
