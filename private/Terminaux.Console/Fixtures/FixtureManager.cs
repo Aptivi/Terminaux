@@ -393,6 +393,8 @@ namespace Terminaux.Console.Fixtures
             new TableTranslation(),
             new BarChartTranslation(),
             new BreakdownChartTranslation(),
+            new CalendarsTranslation(),
+            new CalendarsTranslationHijri(),
         ];
     }
 }

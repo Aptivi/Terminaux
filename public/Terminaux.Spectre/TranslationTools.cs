@@ -191,6 +191,11 @@ namespace Terminaux.Spectre
             return spectreBarChart;
         }
 
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="SBreakdownChart"/> from Terminaux's <see cref="Writer.CyclicWriters.Graphical.BreakdownChart"/>
+        /// </summary>
+        /// <param name="breakdownChart">Terminaux's breakdown chart instance</param>
+        /// <returns>Spectre.Console's breakdown chart instance</returns>
         public static SBreakdownChart GetBreakdownChart(Writer.CyclicWriters.Graphical.BreakdownChart breakdownChart)
         {
             // Make a new breakdown chart
@@ -211,6 +216,24 @@ namespace Terminaux.Spectre
 
             // Return the new breakdown chart
             return spectreBreakdownChart;
+        }
+
+        /// <summary>
+        /// Returns a compatible Spectre.Console <see cref="Calendar"/> from Terminaux's <see cref="Calendars"/>
+        /// </summary>
+        /// <param name="calendars">Terminaux's calendar instance</param>
+        /// <returns>Spectre.Console's calendar instance</returns>
+        public static Calendar GetCalendar(Calendars calendars)
+        {
+            // Make a new calendar
+            var spectreCalendar = new Calendar(calendars.Year, calendars.Month)
+            {
+                Border = TableBorder.Rounded,
+                Culture = calendars.Culture,
+            };
+
+            // Return the new calendar
+            return spectreCalendar;
         }
     }
 }
