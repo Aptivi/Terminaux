@@ -189,6 +189,8 @@ namespace Terminaux.Console.Fixtures
             new TestAsciinemaV2(),
             new TestAsciinemaV2NoResize(),
             new TestBoxFrame(),
+            new TestRulers(),
+            new TestRulers2(),
 
             // Input
             new TestInputSelection(),
