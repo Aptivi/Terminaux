@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 using Terminaux.Base.Structures;
 using Terminaux.Inputs.Pointer;
 
@@ -30,8 +31,8 @@ namespace Terminaux.Writer.CyclicWriters
     {
         private int left = 0;
         private int top = 0;
-        private int width = 0;
-        private int height = 0;
+        private int width = ConsoleWrapper.WindowWidth;
+        private int height = ConsoleWrapper.WindowHeight;
 
         /// <summary>
         /// Left position

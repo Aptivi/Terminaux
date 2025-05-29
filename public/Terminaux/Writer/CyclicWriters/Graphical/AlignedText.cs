@@ -36,32 +36,15 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class AlignedText : GraphicalCyclicWriter
     {
-        private int top = 0;
         private string text = "";
         private bool oneLine = false;
-        private int leftMargin = 0;
-        private int rightMargin = 0;
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private TextSettings settings = new();
-        private bool customTop = false;
         private bool useColors = true;
         private bool rainbow = false;
         private bool rainbowBg = false;
         private Decoration? decoration = null;
-
-        /// <summary>
-        /// Top position
-        /// </summary>
-        public override int Top
-        {
-            get => top;
-            set
-            {
-                top = value;
-                customTop = true;
-            }
-        }
 
         /// <summary>
         /// Text to render
@@ -69,40 +52,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public string Text
         {
             get => text;
-            set
-            {
-                text = value;
-                if (!customTop)
-                    UpdateInternalTop();
-            }
-        }
-
-        /// <summary>
-        /// Left margin of the aligned figlet text
-        /// </summary>
-        public int LeftMargin
-        {
-            get => leftMargin;
-            set
-            {
-                leftMargin = value;
-                if (!customTop)
-                    UpdateInternalTop();
-            }
-        }
-
-        /// <summary>
-        /// Right margin of the aligned figlet text
-        /// </summary>
-        public int RightMargin
-        {
-            get => rightMargin;
-            set
-            {
-                rightMargin = value;
-                if (!customTop)
-                    UpdateInternalTop();
-            }
+            set => text = value;
         }
 
         /// <summary>
@@ -186,29 +136,21 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
             if (!OneLine)
                 return RenderAligned(
-                    Top, Text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState, Decoration);
+                    Left, Top, Width, Text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState, Decoration);
             else
             {
-                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
+                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, Width);
                 return RenderAligned(
-                    Top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState, Decoration);
+                    Left, Top, Width, sentences[0].Truncate(Width - 4), ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState, Decoration);
             }
         }
 
-        internal void UpdateInternalTop()
-        {
-            string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-
-            // Install the values
-            top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-        }
-
-        internal static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, int rainbowState = 0, Decoration? decoration = null, params object[] Vars)
+        internal static string RenderAligned(int left, int top, int width, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int rainbowState = 0, Decoration? decoration = null)
         {
             try
             {
                 // Decorate the text if needed
-                var decoratedText = new StringBuilder(Text.FormatString(Text, Vars));
+                var decoratedText = new StringBuilder(Text);
                 if (decoration is not null)
                 {
                     decoratedText.Insert(0,
@@ -222,13 +164,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Process the sentences
                 var aligned = new StringBuilder();
-                int width = ConsoleWrapper.WindowWidth - rightMargin - leftMargin;
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, width);
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
                     StringBuilder finalSentence = new();
-                    int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, width, alignment, leftMargin);
+                    int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, width, alignment, left);
                     if (rainbowState != 0)
                     {
                         var stringInfo = new StringInfo(sentence);
@@ -250,7 +191,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     aligned.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, top + i, false, alignment == TextAlignment.Left ? rightMargin : 0)
+                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, top + i, false)
                     );
                     finalSentence.Clear();
                 }
@@ -281,7 +222,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             // Install the values
             this.text = TextTools.FormatString(text ?? "", vars);
-            UpdateInternalTop();
         }
     }
 }

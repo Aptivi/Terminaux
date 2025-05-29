@@ -39,8 +39,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 ForegroundColor = ConsoleColors.Green,
                 Settings = new() { Alignment = TextAlignment.Right },
                 Top = 5,
-                LeftMargin = 20,
-                RightMargin = 10,
+                Left = 20,
+                Margins = new(0, 0, 30, 0)
             };
             TextWriterRaw.WriteRaw(aligned.Render());
         }

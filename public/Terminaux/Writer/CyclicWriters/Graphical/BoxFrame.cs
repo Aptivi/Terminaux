@@ -362,8 +362,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     var titleWriter = new AlignedText()
                     {
                         Text = finalText,
-                        LeftMargin = Left + 2,
-                        RightMargin = ConsoleWrapper.WindowWidth - (Left + finalWidth + 7),
+                        Left = Left + 2,
                         Top = Top,
                         Width = Width - titleSettings.TitleOffset.Right,
                         ForegroundColor = TitleColor,

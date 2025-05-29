@@ -36,8 +36,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Text = $"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台右側{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}，并且故意设计得很长，以演示右边距偏移和左边距偏移的偏心效果。",
                 ForegroundColor = ConsoleColors.Green,
                 Settings = new() { Alignment = TextAlignment.Right },
-                LeftMargin = 15,
-                RightMargin = 30,
+                Left = 15,
+                Top = 2,
+                Margins = new(0, 0, 45, 0)
             };
             TextWriterRaw.WriteRaw(aligned.Render());
         }

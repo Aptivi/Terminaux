@@ -56,14 +56,14 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             {
                 ForegroundColor = ConsoleColors.Yellow,
                 Top = 6,
-                LeftMargin = "Aligned text without decoration: ".Length,
+                Left = "Aligned text without decoration: ".Length,
             };
             var alignedTextDecorated = new AlignedText("Aligned text")
             {
                 ForegroundColor = ConsoleColors.Yellow,
                 UseColors = true,
                 Top = 7,
-                LeftMargin = "Aligned text without decoration: ".Length,
+                Left = "Aligned text without decoration: ".Length,
                 Decoration = decoration2,
             };
             TextWriterRaw.WritePlain("Aligned text without decoration: " + alignedTextUndecorated.Render());

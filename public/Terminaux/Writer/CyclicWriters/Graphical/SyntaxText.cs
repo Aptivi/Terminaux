@@ -191,9 +191,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     Text = output,
                     ForegroundColor = ForegroundColor,
                     BackgroundColor = BackgroundColor,
+                    Left = Left,
                     Top = Top,
-                    LeftMargin = LeftMargin,
-                    RightMargin = RightMargin,
+                    Width = Width,
                     UseColors = UseColors,
                 }.Render());
 

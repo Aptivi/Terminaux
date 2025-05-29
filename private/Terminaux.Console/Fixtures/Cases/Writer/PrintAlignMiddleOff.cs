@@ -39,8 +39,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 {
                     Alignment = TextAlignment.Middle
                 },
-                LeftMargin = 15,
-                RightMargin = 30,
+                Left = 15,
+                Top = 2,
+                Margins = new(0, 0, 45, 0)
             };
             TextWriterRaw.WriteRaw(aligned.Render());
         }

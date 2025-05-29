@@ -35,15 +35,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     public class AlignedFigletText : GraphicalCyclicWriter
     {
         private FigletFont figletFont = FigletFonts.GetByName("small");
-        private int top = 0;
         private string text = "";
-        private bool oneLine = false;
-        private int leftMargin = 0;
-        private int rightMargin = 0;
         private Color foregroundColor = ColorTools.CurrentForegroundColor;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private TextSettings settings = new();
-        private bool customTop = false;
         private bool useColors = true;
         private bool rainbow = false;
         private bool rainbowBg = false;
@@ -51,56 +46,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Top position
         /// </summary>
-        public override int Top
-        {
-            get => top;
-            set
-            {
-                top = value;
-                customTop = true;
-            }
-        }
-
-        /// <summary>
-        /// Top position
-        /// </summary>
         public string Text
         {
             get => text;
-            set
-            {
-                text = value;
-                if (!customTop)
-                    UpdateInternalTop();
-            }
-        }
-
-        /// <summary>
-        /// Left margin of the aligned figlet text
-        /// </summary>
-        public int LeftMargin
-        {
-            get => leftMargin;
-            set
-            {
-                leftMargin = value;
-                if (!customTop)
-                    UpdateInternalTop();
-            }
-        }
-
-        /// <summary>
-        /// Right margin of the aligned figlet text
-        /// </summary>
-        public int RightMargin
-        {
-            get => rightMargin;
-            set
-            {
-                rightMargin = value;
-                if (!customTop)
-                    UpdateInternalTop();
-            }
+            set => text = value;
         }
 
         /// <summary>
@@ -140,15 +89,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
-        /// Whether to print all lines or only one line
-        /// </summary>
-        public bool OneLine
-        {
-            get => oneLine;
-            set => oneLine = value;
-        }
-
-        /// <summary>
         /// Whether to use colors or not
         /// </summary>
         public bool UseColors
@@ -181,65 +121,40 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
-            if (!OneLine)
-                return RenderAligned(
-                    Top, Font, Text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
-            else
-            {
-                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-                return RenderAligned(
-                    Top, Font, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
-            }
-        }
-
-        internal void UpdateInternalTop()
-        {
-            string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-
-            // Install the values
-            top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-        }
-
-        internal static string RenderAligned(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, int rainbowState = 0, params object[] Vars)
-        {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
+                int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
                 var figFontFallback = FigletTools.GetFigletFont("small");
-                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-                int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
-                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
-                int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
-                int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                int consoleMaxY = top + figHeight;
-                int textMaxWidth = ConsoleWrapper.WindowWidth - (leftMargin + consoleX + rightMargin);
-                if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+                int figWidth = FigletTools.GetFigletWidth(Text, Font);
+                int figHeight = FigletTools.GetFigletHeight(Text, Font, Width);
+                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback);
+                int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback, Width);
+                int markedX = Left;
+                int markedY = Top;
+                int markedEndX = markedX + figWidth;
+                int markedEndY = markedY + figHeight;
+                int markedEndFallX = markedX + figWidthFallback;
+                int markedEndFallY = markedY + figHeightFallback;
+
+                // Determine whether to use the selected figlet font or resort to fallbacks
+                if (markedEndFallX >= Width && markedEndFallY >= Height)
+                {
+                    // The fallback figlet won't fit, so use smaller text
+                    ConsoleLogger.Warning("Fallback figlet exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndFallX, markedEndFallY, Width, Height);
+                    return AlignedText.RenderAligned(markedX, markedY, Width, Text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
+                }
+                else if (markedEndX >= Width && markedEndY >= Height)
                 {
                     // The figlet won't fit, so use small text
-                    consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
-                    consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                    consoleMaxY = top + figHeightFallback;
-                    if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
-                    {
-                        // The fallback figlet also won't fit, so use smaller text
-                        ConsoleLogger.Warning("Fallback figlet exceeds ({0}, {1}) (max: {2}) (window: {3})", consoleX, consoleY, consoleMaxY, ConsoleWrapper.WindowHeight);
-                        return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, rainbowState);
-                    }
-                    else
-                    {
-                        // Write the figlet.
-                        ConsoleLogger.Warning("Figlet exceeds ({0}, {1}) (max: {2}) (window: {3})", consoleX, consoleY, consoleMaxY, ConsoleWrapper.WindowHeight);
-                        string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, textMaxWidth);
-                        return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, rainbowState);
-                    }
+                    ConsoleLogger.Warning("Figlet exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndX, markedEndY, Width, Height);
+                    string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, Width);
+                    return AlignedText.RenderAligned(markedX, markedY, Width, renderedFiglet, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
                 else
                 {
                     // Write the figlet.
-                    string renderedFiglet = FigletTools.RenderFiglet(Text, FigletFont, textMaxWidth);
-                    return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, rainbowState);
+                    string renderedFiglet = FigletTools.RenderFiglet(Text, Font, Width);
+                    return AlignedText.RenderAligned(markedX, markedY, Width, renderedFiglet, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
             }
             catch (Exception ex)
@@ -260,7 +175,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Install the values
             this.text = TextTools.FormatString(text ?? "", vars);
             this.figletFont = figletFont;
-            UpdateInternalTop();
         }
     }
 }
