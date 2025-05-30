@@ -83,7 +83,7 @@ namespace Terminaux.Inputs.Styles
         {
             var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
             string[] spinners = builtinSpinners.Select((pi) => pi.Name).ToArray();
-            int selectedSpinner = 0;
+            int selectedSpinner;
             for (selectedSpinner = 0; selectedSpinner < spinners.Length; selectedSpinner++)
             {
                 string queriedSpinner = spinners[selectedSpinner];

@@ -81,7 +81,7 @@ namespace Terminaux.Inputs.Styles
 
         internal static int DetermineFigletIndex(string name)
         {
-            int selectedFont = 0;
+            int selectedFont;
             for (selectedFont = 0; selectedFont < fonts.Length; selectedFont++)
             {
                 string queriedFont = fonts[selectedFont];

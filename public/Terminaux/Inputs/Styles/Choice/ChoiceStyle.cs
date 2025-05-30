@@ -25,6 +25,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Choice
@@ -115,16 +116,19 @@ namespace Terminaux.Inputs.Styles.Choice
                         }
                     case ChoiceOutputType.Modern:
                         {
-                            TextWriterColor.WriteColor(Question + CharManager.NewLine, true, settings.QuestionColor);
-                            if (answers.Count > 0)
-                                PrintChoices(Answers, settings.OptionColor, settings.DisabledOptionColor);
-                            if (altAnswers.Count > 0)
+                            var selection = new PassiveSelection([.. Answers, .. AltAnswers])
                             {
-                                if (answers.Count > 0)
-                                    TextWriterRaw.Write();
-                                PrintChoices(AltAnswers, settings.AltOptionColor, settings.DisabledOptionColor);
-                            }
-                            TextWriterColor.WriteColor(CharManager.NewLine + ">> ", false, settings.InputColor);
+                                AltChoicePos = Answers.Length,
+                                Settings = new()
+                                {
+                                    OptionColor = settings.OptionColor,
+                                    AltOptionColor = settings.AltOptionColor,
+                                    DisabledOptionColor = settings.DisabledOptionColor,
+                                }
+                            };
+                            TextWriterColor.WriteColor(Question + CharManager.NewLine, true, settings.QuestionColor);
+                            TextWriterRaw.WritePlain(selection.Render());
+                            TextWriterColor.WriteColor(">> ", false, settings.InputColor);
                             break;
                         }
                 }
