@@ -93,7 +93,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * Height / maxValue))).ToArray();
             int showcaseLength = showcase ? nameLength + 3 : 0;
             double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
-            int median = (int)shownElements.Average((element) => element.Value);
+            double median = shownElements.Average((element) => element.Value);
             int medianPosition = (int)(median * Height / maxValue);
             int inverseMedianPosition = Height - medianPosition;
 
@@ -101,14 +101,20 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             StringBuilder lineChart = new();
             if (Showcase)
             {
-                for (int i = 0; i < shownElements.Length; i++)
+                var elementsWithRun = shownElements.Union([new ChartElement()
+                {
+                    Name = "Average Run",
+                    Value = median,
+                    Color = ConsoleColors.Fuchsia,
+                }]).ToArray();
+                for (int i = 0; i < elementsWithRun.Length; i++)
                 {
                     // Get the element showcase position and write it there
                     bool canShow = Height > i;
                     if (!canShow)
                         break;
                     Coordinate coord = new(Left, Top + i);
-                    var element = shownElements[i];
+                    var element = elementsWithRun[i];
 
                     // Now, write it at the selected position
                     lineChart.Append(
