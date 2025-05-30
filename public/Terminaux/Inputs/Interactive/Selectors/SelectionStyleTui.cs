@@ -44,6 +44,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
     internal class SelectionStyleTui : TextualUI
     {
         private int highlightedAnswer = 1;
+        private int selectedAnswer = 1;
         private int questionLine;
         private int showcaseLine;
         private bool showCount;
@@ -109,7 +110,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 Left = 3,
                 Top = listStartPosition + 1,
+                ShowRadioButtons = settings.RadioButtons,
                 CurrentSelection = highlightedAnswer - 1,
+                SelectedChoice = selectedAnswer - 1,
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Height = answersPerPage,
                 Width = interiorWidth,
@@ -228,7 +231,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 selectedAnswers.Clear();
             }
             else if (!multiple)
-                selectedAnswers.Add(highlightedAnswer - 1);
+            {
+                if (settings.RadioButtons)
+                    selectedAnswers.Add(selectedAnswer - 1);
+                else
+                    selectedAnswers.Add(highlightedAnswer - 1);
+            }
             TextualUITools.ExitTui(ui);
         }
 
@@ -447,6 +455,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 selectedAnswers.Add(highlightedAnswer - 1);
         }
 
+        private void ProcessSelect()
+        {
+            if (settings.RadioButtons)
+                selectedAnswer = highlightedAnswer;
+        }
+
         private void ProcessSelectAll(int selectionMode) =>
             InfoBoxTools.ProcessSelectionRequest(selectionMode, highlightedAnswer, categories, ref selectedAnswers);
 
@@ -493,7 +507,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType))
                 {
                     if (!multiple)
-                        Exit(ui, false);
+                    {
+                        if (!settings.RadioButtons)
+                            Exit(ui, false);
+                        else
+                            selectedAnswer = highlightedAnswer;
+                    }
                     else
                     {
                         switch (hitboxType)
@@ -590,7 +609,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 Left = 3,
                 Top = listStartPosition + 1,
+                ShowRadioButtons = settings.RadioButtons,
                 CurrentSelection = highlightedAnswer - 1,
+                SelectedChoice = selectedAnswer - 1,
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Height = answersPerPage,
                 Width = interiorWidth,
@@ -638,23 +659,27 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (highlightedAnswer > allAnswers.Count)
                 highlightedAnswer = 1;
             highlightedAnswer = allAnswers.Any((ici) => ici.ChoiceDefault) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
+            if (selectedAnswer > allAnswers.Count)
+                selectedAnswer = 1;
+            selectedAnswer = allAnswers.Any((ici) => ici.ChoiceDefault) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
 
             // Install keybindings
             Keybindings.Add((SelectionStyleBase.bindings[0], (ui, _, _) => Exit(ui, false)));
-            Keybindings.Add((SelectionStyleBase.bindings[1], (ui, _, _) => Exit(ui, true)));
-            Keybindings.Add((SelectionStyleBase.bindings[2], (_, _, _) => GoUp()));
-            Keybindings.Add((SelectionStyleBase.bindings[3], (_, _, _) => GoDown()));
-            Keybindings.Add((SelectionStyleBase.bindings[4], GoFirst));
-            Keybindings.Add((SelectionStyleBase.bindings[5], GoLast));
-            Keybindings.Add((SelectionStyleBase.bindings[6], PreviousPage));
-            Keybindings.Add((SelectionStyleBase.bindings[7], NextPage));
-            Keybindings.Add((SelectionStyleBase.bindings[8], SearchPrompt));
-            Keybindings.Add((SelectionStyleBase.bindings[9], (_, _, _) => ShowcaseGoUp()));
-            Keybindings.Add((SelectionStyleBase.bindings[10], (_, _, _) => ShowcaseGoDown()));
-            Keybindings.Add((SelectionStyleBase.bindings[11], QuestionGoUp));
-            Keybindings.Add((SelectionStyleBase.bindings[12], QuestionGoDown));
-            Keybindings.Add((SelectionStyleBase.bindings[13], ShowCount));
-            Keybindings.Add((SelectionStyleBase.bindings[14], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.bindings[1], (_, _, _) => ProcessSelect()));
+            Keybindings.Add((SelectionStyleBase.bindings[2], (ui, _, _) => Exit(ui, true)));
+            Keybindings.Add((SelectionStyleBase.bindings[3], (_, _, _) => GoUp()));
+            Keybindings.Add((SelectionStyleBase.bindings[4], (_, _, _) => GoDown()));
+            Keybindings.Add((SelectionStyleBase.bindings[5], GoFirst));
+            Keybindings.Add((SelectionStyleBase.bindings[6], GoLast));
+            Keybindings.Add((SelectionStyleBase.bindings[7], PreviousPage));
+            Keybindings.Add((SelectionStyleBase.bindings[8], NextPage));
+            Keybindings.Add((SelectionStyleBase.bindings[9], SearchPrompt));
+            Keybindings.Add((SelectionStyleBase.bindings[10], (_, _, _) => ShowcaseGoUp()));
+            Keybindings.Add((SelectionStyleBase.bindings[11], (_, _, _) => ShowcaseGoDown()));
+            Keybindings.Add((SelectionStyleBase.bindings[12], QuestionGoUp));
+            Keybindings.Add((SelectionStyleBase.bindings[13], QuestionGoDown));
+            Keybindings.Add((SelectionStyleBase.bindings[14], ShowCount));
+            Keybindings.Add((SelectionStyleBase.bindings[15], ShowItemInfo));
             Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.showBindings[3], Help));
             Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, mouse) => ProcessMouseWheel(mouse, true)));
@@ -666,10 +691,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Install mode-dependent keybindings
             if (multiple)
             {
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[15], ModifyChoice));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], (_, _, _) => ProcessSelectAll(1)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[17], (_, _, _) => ProcessSelectAll(2)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[18], (_, _, _) => ProcessSelectAll(3)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], ModifyChoice));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[17], (_, _, _) => ProcessSelectAll(1)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[18], (_, _, _) => ProcessSelectAll(2)));
+                Keybindings.Add((SelectionStyleBase.bindingsMultiple[19], (_, _, _) => ProcessSelectAll(3)));
             }
         }
     }

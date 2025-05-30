@@ -36,41 +36,55 @@ namespace Terminaux.Inputs.Styles.Selection
         /// Question color
         /// </summary>
         public Color QuestionColor { get; set; } = new(ConsoleColors.Yellow);
+
         /// <summary>
         /// Slider color
         /// </summary>
         public Color SliderColor { get; set; } = new(ConsoleColors.Yellow);
+
         /// <summary>
         /// Input color
         /// </summary>
         public Color InputColor { get; set; } = new(ConsoleColors.White);
+
         /// <summary>
         /// Option color
         /// </summary>
         public Color OptionColor { get; set; } = new(ConsoleColors.Olive);
+
         /// <summary>
         /// Alternative option color
         /// </summary>
         public Color AltOptionColor { get; set; } = new(ConsoleColors.Yellow);
+
         /// <summary>
         /// Selected option color
         /// </summary>
         public Color SelectedOptionColor { get; set; } = new(ConsoleColors.Aqua);
+
         /// <summary>
         /// Separator color
         /// </summary>
         public Color SeparatorColor { get; set; } = new(ConsoleColors.Silver);
+
         /// <summary>
         /// Text color
         /// </summary>
         public Color TextColor { get; set; } = new(ConsoleColors.Silver);
+
         /// <summary>
         /// Disabled option color
         /// </summary>
         public Color DisabledOptionColor { get; set; } = new(ConsoleColors.Grey);
+
         /// <summary>
         /// Background color
         /// </summary>
         public Color BackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
+
+        /// <summary>
+        /// Use the radio buttons when dealing with selection style (single-choice)
+        /// </summary>
+        public bool RadioButtons { get; set; }
     }
 }

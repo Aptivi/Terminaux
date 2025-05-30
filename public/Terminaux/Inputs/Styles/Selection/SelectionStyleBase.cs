@@ -46,6 +46,7 @@ namespace Terminaux.Inputs.Styles.Selection
         internal static Keybinding[] bindings =
         [
             new("Confirms selection(s)", ConsoleKey.Enter),
+            new("Changes the selected value (radio buttons)", ConsoleKey.Spacebar),
             new("Cancel selection(s)", ConsoleKey.Escape),
             new("Goes one element up", ConsoleKey.UpArrow),
             new("Goes one element down", ConsoleKey.DownArrow),

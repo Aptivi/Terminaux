@@ -196,11 +196,17 @@ namespace Terminaux.Console.Fixtures
 
             // Input
             new TestInputSelection(),
+            new TestInputSelectionRadio(),
             new TestInputSelectionLarge(),
+            new TestInputSelectionLargeRadio(),
             new TestInputSelectionHuge(),
+            new TestInputSelectionHugeRadio(),
             new TestInputSelectionScroll(),
+            new TestInputSelectionScrollRadio(),
             new TestInputSelectionDisabled(),
+            new TestInputSelectionDisabledRadio(),
             new TestInputSelectionScrollDisabled(),
+            new TestInputSelectionScrollDisabledRadio(),
             new TestInputSelectionMultiple(),
             new TestInputSelectionLargeMultiple(),
             new TestInputSelectionHugeMultiple(),
