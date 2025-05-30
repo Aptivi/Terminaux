@@ -43,6 +43,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Selection : GraphicalCyclicWriter
     {
+        private int selectedChoice;
+
         /// <summary>
         /// List of selection categories
         /// </summary>
@@ -56,7 +58,24 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Current selection (zero-based)
         /// </summary>
+        /// <remarks>
+        /// Use this property only if either <see cref="CurrentSelections"/> is not null or if <see cref="ShowRadioButtons"/> is not true. Otherwise,
+        /// rely on the value of <see cref="SelectedChoice"/>
+        /// </remarks>
         public int CurrentSelection { get; set; }
+
+        /// <summary>
+        /// Selected choice (zero-based, -1 if <see cref="ShowRadioButtons"/> is not true or if <see cref="CurrentSelections"/> is not null)
+        /// </summary>
+        /// <remarks>
+        /// Use this property only if <see cref="CurrentSelections"/> is null and <see cref="ShowRadioButtons"/> is true. Otherwise,
+        /// rely on the value of <see cref="CurrentSelection"/>
+        /// </remarks>
+        public int SelectedChoice
+        {
+            get => !ShowRadioButtons || CurrentSelections is not null ? -1 : selectedChoice;
+            set => selectedChoice = value;
+        }
 
         /// <summary>
         /// Current selections (null for single selection)
@@ -390,6 +409,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         relatedIdx++;
                         bool selected = processedChoices == CurrentSelection;
+                        bool radioSelected = processedChoices == SelectedChoice;
                         var choice = group.Choices[i];
                         string AnswerTitle = choice.ChoiceTitle ?? "";
                         bool disabled = choice.ChoiceDisabled;
@@ -398,7 +418,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         string selectionIndicator = selected ? ">" : disabled ? "X" : " ";
                         string selectedIndicator =
                             isMultiple ? $" [{(CurrentSelections.Contains(relatedIdx) ? "*" : " ")}]" :
-                            ShowRadioButtons ? $" ({(selected ? "*" : " ")})" : "";
+                            ShowRadioButtons ? $" ({(radioSelected ? "*" : " ")})" : "";
                         string modifiers = $"{selectionIndicator}{selectedIndicator}";
                         string AnswerOption = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
                         if (AnswerTitleLeft < Width)

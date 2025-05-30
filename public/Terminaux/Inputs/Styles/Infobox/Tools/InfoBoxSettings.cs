@@ -49,6 +49,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             get => title;
             set => title = value;
         }
+
         /// <summary>
         /// Border settings for the informational box 
         /// </summary>
@@ -57,6 +58,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             get => borderSettings;
             set => borderSettings = value;
         }
+
         /// <summary>
         /// Foreground color of the infobox 
         /// </summary>
@@ -65,6 +67,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             get => foregroundColor;
             set => foregroundColor = value;
         }
+
         /// <summary>
         /// Background color of the infobox 
         /// </summary>
@@ -73,6 +76,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             get => backgroundColor;
             set => backgroundColor = value;
         }
+
         /// <summary>
         /// Whether to use the colors or not 
         /// </summary>
@@ -81,6 +85,11 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             get => useColors;
             set => useColors = value;
         }
+
+        /// <summary>
+        /// Use the radio buttons when dealing with selection infoboxes (single-choice)
+        /// </summary>
+        public bool RadioButtons { get; set; }
 
         /// <summary>
         /// Makes a new instance of the infobox settings
@@ -98,6 +107,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             borderSettings = settings.borderSettings;
             foregroundColor = settings.foregroundColor;
             backgroundColor = settings.backgroundColor;
+            useColors = settings.useColors;
+            RadioButtons = settings.RadioButtons;
         }
     }
 }
