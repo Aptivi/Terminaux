@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -33,7 +34,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Calendars : GraphicalCyclicWriter
     {
-        internal const int calendarWidth = 4 + (6 * 6);
+        internal const int calendarWidth = 5 + (6 * 6);
         internal const int calendarHeight = 13;
         private int year = 0;
         private int month = 0;
@@ -259,13 +260,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 );
             }
 
-            // Make a single-letter day indicator
+            // Make day indicators
             int dayIndicatorPosX = boxLeft + 1;
             int dayIndicatorPosY = boxTop + 1;
             for (int i = 0; i < mappedDays.Count; i++)
             {
                 string dayName = $"{calendarDays[(int)mappedDays.Keys.ElementAt(i)]}";
-                char dayChar = char.ToUpper(dayName[0]);
+                if (ConsoleChar.EstimateCellWidth($"{dayName[0]}") == 2)
+                    dayName = $"{dayName[dayName.Length - 1]}";
+                else
+                    dayName = dayName.Truncate(3, false);
                 if (useColors)
                 {
                     calendarRendered.Append(
@@ -275,7 +279,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
                 calendarRendered.Append(
                     CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + (6 * i) + 2, dayIndicatorPosY + 1) +
-                    dayChar
+                    dayName
                 );
             }
 

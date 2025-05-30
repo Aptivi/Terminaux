@@ -142,6 +142,7 @@ namespace Terminaux.Console.Fixtures
             new TestTableCjk(),
             new TestTableCalendar(),
             new TestTableCalendarHijri(),
+            new TestTableCalendarCjk(),
             new BorderText(),
             new TestNonModalInfoBox(),
             new TestNonModalInfoBoxExcess(),
