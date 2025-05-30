@@ -88,10 +88,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int maxNameLength = Width / 4;
             var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
             double maxValue = shownElements.Max((element) => element.Value);
-            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
-            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
             var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * Height / maxValue))).ToArray();
-            int showcaseLength = showcase ? nameLength + 3 : 0;
+            int showcaseLength = 0;
             double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
             double median = shownElements.Average((element) => element.Value);
             int medianPosition = (int)(median * Height / maxValue);
@@ -107,6 +105,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     Value = median,
                     Color = ConsoleColors.Fuchsia,
                 }]).ToArray();
+                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value:0.00}".Length);
+                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+                showcaseLength = nameLength + 3;
+                lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
                 for (int i = 0; i < elementsWithRun.Length; i++)
                 {
                     // Get the element showcase position and write it there
@@ -124,7 +126,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                         element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
                         (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        element.Value
+                        $"{element.Value:0.00}"
                     );
                 }
 
