@@ -466,10 +466,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((ColorSelector.additionalBindingsGeneral[0], ShowColorInfo));
 
             // Simulation of color-blindness and transformations
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[1], (ui, _, _) => ChangeSimulation(ui, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[2], (ui, _, _) => ChangeSimulation(ui, true)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[3], (ui, _, _) => ChangeSimulationSeverity(ui, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[4], (ui, _, _) => ChangeSimulationSeverity(ui, true)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[1], (_, _, _) => ChangeSimulation(false)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[2], (_, _, _) => ChangeSimulation(true)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[3], (_, _, _) => ChangeSimulationSeverity(false)));
+            Keybindings.Add((ColorSelector.additionalBindingsGeneral[4], (_, _, _) => ChangeSimulationSeverity(true)));
 
             // These require write access
             if (!readOnly)
@@ -485,29 +485,29 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     finalSettings.Opacity--;
                     UpdateColor(ref selectedColor, type, finalSettings);
                 }));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[8], (ui, _, _) => ChangeMode(ui, false)));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[9], (ui, _, _) => ChangeMode(ui, true)));
+                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[8], (_, _, _) => ChangeMode(false)));
+                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[9], (_, _, _) => ChangeMode(true)));
 
                 // Mouse bindings
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[10], (ui, _, mouse) => ChangeValue(ui, mouse, false)));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[11], (ui, _, mouse) => ChangeValue(ui, mouse, true)));
+                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[10], (_, _, mouse) => ChangeValue(mouse, false)));
+                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[11], (_, _, mouse) => ChangeValue(mouse, true)));
 
                 // Type-specific bindings
                 switch (type)
                 {
                     case ColorType.TrueColor:
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[12], (ui, _, _) => ChangeHue(ui, true)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[13], (ui, _, _) => ChangeLightness(ui, true)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[14], (ui, _, _) => ChangeSaturation(ui, true)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[15], (ui, _, _) => ChangeHue(ui, false)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[16], (ui, _, _) => ChangeLightness(ui, false)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[17], (ui, _, _) => ChangeSaturation(ui, false)));
+                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[12], (_, _, _) => ChangeHue(true)));
+                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[13], (_, _, _) => ChangeLightness(true)));
+                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[14], (_, _, _) => ChangeSaturation(true)));
+                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[15], (_, _, _) => ChangeHue(false)));
+                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[16], (_, _, _) => ChangeLightness(false)));
+                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[17], (_, _, _) => ChangeSaturation(false)));
                         break;
                     case ColorType.EightBitColor:
                     case ColorType.FourBitColor:
-                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[12], (ui, _, _) => ChangeColor(ui, true)));
-                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[13], (ui, _, _) => ChangeColor(ui, false)));
-                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[14], (ui, _, _) => ShowColorList(ui)));
+                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[12], (_, _, _) => ChangeColor(true)));
+                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[13], (_, _, _) => ChangeColor(false)));
+                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[14], (_, _, _) => ShowColorList()));
                         break;
                 }
             }
@@ -609,7 +609,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             UpdateColor(ref selectedColor, type, finalSettings);
         }
 
-        private void ChangeMode(TextualUI ui, bool goBack)
+        private void ChangeMode(bool goBack)
         {
             if (goBack)
             {
@@ -627,7 +627,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             UpdateColor(ref selectedColor, type, finalSettings);
         }
 
-        private void ChangeSimulation(TextualUI ui, bool goBack)
+        private void ChangeSimulation(bool goBack)
         {
             if (goBack)
             {
@@ -644,7 +644,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             UpdateColor(ref selectedColor, type, finalSettings);
         }
 
-        private void ChangeSimulationSeverity(TextualUI ui, bool goBack)
+        private void ChangeSimulationSeverity(bool goBack)
         {
             if (goBack)
             {
@@ -661,7 +661,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             UpdateColor(ref selectedColor, type, finalSettings);
         }
 
-        private void ChangeValue(TextualUI ui, PointerEventContext? mouse, bool goBack)
+        private void ChangeValue(PointerEventContext? mouse, bool goBack)
         {
             if (mouse is null)
                 return;
@@ -674,12 +674,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int grayRampBarY = colorBoxY + 9;
 
             // Make pointer hitboxes to detect boundaries
-            var colorBoxHitbox = new PointerHitbox(new(colorBoxX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + colorBoxX, boxHeight + colorBoxY), (pec) => ChangeColor(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
-            var colorListHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + generalX, boxHeight + colorBoxY), (pec) => ChangeColor(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
-            var colorHueBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(generalX + boxWidth, colorBoxY + 2), (pec) => ChangeHue(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
-            var colorSaturationBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 3), new Coordinate(generalX + boxWidth, colorBoxY + 4), (pec) => ChangeSaturation(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
-            var colorLightnessBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 5), new Coordinate(generalX + boxWidth, colorBoxY + 6), (pec) => ChangeLightness(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
-            var colorTransparencyBarHitbox = new PointerHitbox(new(generalX + 1, grayRampBarY + 1), new Coordinate(generalX + boxWidth - 6, grayRampBarY + 2), (pec) => ChangeTransparency(ui, goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorBoxHitbox = new PointerHitbox(new(colorBoxX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + colorBoxX, boxHeight + colorBoxY), (pec) => ChangeColor(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorListHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + generalX, boxHeight + colorBoxY), (pec) => ChangeColor(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorHueBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 1), new Coordinate(generalX + boxWidth, colorBoxY + 2), (pec) => ChangeHue(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorSaturationBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 3), new Coordinate(generalX + boxWidth, colorBoxY + 4), (pec) => ChangeSaturation(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorLightnessBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 5), new Coordinate(generalX + boxWidth, colorBoxY + 6), (pec) => ChangeLightness(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorTransparencyBarHitbox = new PointerHitbox(new(generalX + 1, grayRampBarY + 1), new Coordinate(generalX + boxWidth - 6, grayRampBarY + 2), (pec) => ChangeTransparency(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
 
             // Detect the boundaries and do the action!
             if (colorBoxHitbox.IsPointerWithin(mouse))
@@ -700,7 +700,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             UpdateColor(ref selectedColor, type, finalSettings);
         }
 
-        private void ChangeHue(TextualUI ui, bool goBack)
+        private void ChangeHue(bool goBack)
         {
             if (goBack)
                 DecrementHue(type);
@@ -708,7 +708,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 IncrementHue(type);
         }
 
-        private void ChangeLightness(TextualUI ui, bool goBack)
+        private void ChangeLightness(bool goBack)
         {
             if (goBack)
                 DecrementLightness(type);
@@ -716,7 +716,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 IncrementLightness(type);
         }
 
-        private void ChangeSaturation(TextualUI ui, bool goBack)
+        private void ChangeSaturation(bool goBack)
         {
             if (goBack)
                 DecrementSaturation(type);
@@ -724,7 +724,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 IncrementSaturation(type);
         }
 
-        private void ChangeTransparency(TextualUI ui, bool goBack)
+        private void ChangeTransparency(bool goBack)
         {
             if (goBack)
                 finalSettings.Opacity--;
@@ -732,7 +732,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 finalSettings.Opacity++;
         }
 
-        private void ChangeColor(TextualUI ui, bool goBack)
+        private void ChangeColor(bool goBack)
         {
             if (goBack)
                 DecrementColor(type);
@@ -740,10 +740,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 IncrementColor(type);
         }
 
-        private void ShowColorList(TextualUI ui)
-        {
+        private void ShowColorList() =>
             showColorList = !showColorList;
-        }
 
         private void DecrementColor(ColorType type)
         {

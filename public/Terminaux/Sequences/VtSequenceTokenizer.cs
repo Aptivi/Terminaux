@@ -21,5 +21,6 @@ namespace Terminaux.Sequences
 {
     internal class VtSequenceTokenizer
     {
+        // TODO: Expected to start here after Beta 3 finishes development
     }
 }
