@@ -94,15 +94,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
                 double maxValue = elements.Sum((element) => element.Value);
                 double maxValueDisplay = shownElements.Max((element) => element.Value);
-                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
-                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
                 var shownElementHeightsSelect = shownElements.Select((ce) => (ce, (int)Math.Round(ce.Value * Height / maxValue)));
                 var shownElementHeights = (UpsideDown ? shownElementHeightsSelect.OrderBy((ce) => ce.Item2) : shownElementHeightsSelect.OrderByDescending((ce) => ce.Item2)).ToArray();
-                int showcaseLength = showcase ? nameLength + 3 : 0;
+                int showcaseLength = 0;
 
                 // Fill the breakdown chart with the showcase first
                 if (Showcase)
                 {
+                    int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
+                    nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+                    showcaseLength = nameLength + 3;
                     for (int i = 0; i < shownElements.Length; i++)
                     {
                         // Get the element showcase position and write it there

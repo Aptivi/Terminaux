@@ -87,15 +87,17 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int maxNameLength = Width / 4;
             var shownElements = namesAsElements.Where((ce) => !ce.Hidden).ToArray();
             double maxValue = shownElements.Max((element) => element.Value);
-            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
-            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-            int showcaseLength = showcase ? nameLength + 3 : 0;
+            int showcaseLength = 0;
             double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
 
             // Fill the lines chart with the showcase first
             StringBuilder linesChart = new();
             if (Showcase)
             {
+                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
+                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+                showcaseLength = nameLength + 3;
+                lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
                 for (int i = 0; i < shownElements.Length; i++)
                 {
                     // Get the element showcase position and write it there

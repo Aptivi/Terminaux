@@ -87,14 +87,15 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
             double maxValue = shownElements.Max((element) => element.Value);
             double maxValueAngles = shownElements.Sum((element) => element.Value);
-            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
-            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-            int showcaseLength = showcase ? nameLength + 3 : 0;
+            int showcaseLength = 0;
 
             // Fill the pie chart with the showcase first
             StringBuilder pieChart = new();
             if (Showcase)
             {
+                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
+                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+                showcaseLength = nameLength + 3;
                 for (int i = 0; i < shownElements.Length; i++)
                 {
                     // Get the element showcase position and write it there

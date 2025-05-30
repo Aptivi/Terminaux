@@ -79,16 +79,18 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int maxNameLength = Width / 4;
             var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
             double maxValue = shownElements.Max((element) => element.Value);
-            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
-            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
             var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * Height / maxValue))).ToArray();
-            int showcaseLength = showcase ? nameLength + 3 : 0;
+            int showcaseLength = 0;
             double stickWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
 
             // Fill the stick chart with the showcase first
             StringBuilder stickChart = new();
             if (Showcase)
             {
+                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
+                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+                showcaseLength = nameLength + 3;
+                stickWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
                 for (int i = 0; i < shownElements.Length; i++)
                 {
                     // Get the element showcase position and write it there

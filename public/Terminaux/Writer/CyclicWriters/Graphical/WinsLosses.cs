@@ -75,17 +75,19 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int wholeLength = Height - 1;
             double maxWinValue = elements.Max((element) => element.win.Value);
             double maxLossValue = elements.Max((element) => element.loss.Value);
-            int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.win.Value}/{element.loss.Value}".Length);
-            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
             var shownWinElementHeights = elements.Select((ce) => (ce.win, (int)(ce.win.Value * wholeLength / 2 / maxWinValue))).ToArray();
             var shownLossElementHeights = elements.Select((ce) => (ce.loss, (int)(ce.loss.Value * wholeLength / 2 / maxLossValue))).ToArray();
-            int showcaseLength = showcase ? nameLength + 3 : 0;
+            int showcaseLength = 0;
             double stickWidth = (double)(Width - (showcaseLength + 3)) / elements.Length / 2;
 
             // Fill the stick chart with the showcase first
             StringBuilder winsLosses = new();
             if (Showcase)
             {
+                int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.win.Value}/{element.loss.Value}".Length);
+                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+                showcaseLength = nameLength + 3;
+                stickWidth = (double)(Width - (showcaseLength + 3)) / elements.Length / 2;
                 for (int i = 0; i < elements.Length; i++)
                 {
                     // Get the element showcase position and write it there
@@ -121,16 +123,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         " ┃ "
                     );
                 }
-            }
 
-            // Write a separator between wins and losses
-            Coordinate winLossSeparatorCoord = new(Left + nameLength, Top + (Height / 2));
-            winsLosses.Append(
-                ConsolePositioning.RenderChangePosition(winLossSeparatorCoord.X, winLossSeparatorCoord.Y) +
-                (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                " ┣━" +
-                new string('━', Width - showcaseLength - 1)
-            );
+                // Write a separator between wins and losses
+                Coordinate winLossSeparatorCoord = new(Left + nameLength, Top + (Height / 2));
+                winsLosses.Append(
+                    ConsolePositioning.RenderChangePosition(winLossSeparatorCoord.X, winLossSeparatorCoord.Y) +
+                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                    " ┣━" +
+                    new string('━', Width - showcaseLength - 1)
+                );
+            }
 
             // Show the actual win-loss chart
             for (int e = 0; e < elements.Length; e++)
