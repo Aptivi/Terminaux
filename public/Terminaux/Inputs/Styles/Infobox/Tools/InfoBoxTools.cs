@@ -216,6 +216,12 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return boxBuffer.ToString();
         }
 
+        internal static void VerifyDisabled(ref int currentSelection, InputChoiceCategoryInfo[] selections, bool goingUp = false)
+        {
+            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
+            VerifyDisabled(ref currentSelection, choices, goingUp);
+        }
+
         internal static void VerifyDisabled(ref int currentSelection, InputChoiceInfo[] selections, bool goingUp = false)
         {
             if (currentSelection < 0 || currentSelection > selections.Length - 1)
@@ -240,7 +246,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             }
         }
 
-        internal static bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse, InputChoiceCategoryInfo[] selections, string text, object[] vars, out ChoiceHitboxType hitboxType, ref int currentSelection)
+        internal static bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse, InputChoiceCategoryInfo[] selections, string text, object[] vars, out ChoiceHitboxType hitboxType, ref int currentSelection, bool checkPos = true)
         {
             hitboxType = ChoiceHitboxType.Choice;
             if (mouse is null)
@@ -283,6 +289,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 return false;
             if (!highlightedAnswerChoiceInfo.ChoiceDisabled || hitbox.type != ChoiceHitboxType.Choice)
                 currentSelection = hitbox.related - 1;
+            if (checkPos)
+                VerifyDisabled(ref currentSelection, selections);
             hitboxType = hitbox.type;
             return true;
         }

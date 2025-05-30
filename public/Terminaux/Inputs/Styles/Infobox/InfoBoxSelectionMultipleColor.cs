@@ -640,7 +640,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 else
                                 {
                                     int oldIndex = currentSelection;
-                                    if (InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection))
+                                    if (InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection, false))
                                     {
                                         switch (hitboxType)
                                         {
@@ -653,6 +653,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                                 currentSelection = oldIndex;
                                                 break;
                                             case ChoiceHitboxType.Choice:
+                                                InfoBoxTools.VerifyDisabled(ref currentSelection, choices, goingUp);
                                                 if (!selectedChoices.Remove(currentSelection))
                                                     selectedChoices.Add(currentSelection);
                                                 break;

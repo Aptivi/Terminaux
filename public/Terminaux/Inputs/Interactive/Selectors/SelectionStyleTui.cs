@@ -504,10 +504,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else
             {
                 int oldIndex = highlightedAnswer;
-                if (UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType))
+                if (UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType, false))
                 {
                     if (!multiple)
                     {
+                        Update(false);
                         if (!settings.RadioButtons)
                             Exit(ui, false);
                         else
@@ -526,6 +527,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                                 highlightedAnswer = oldIndex;
                                 break;
                             case ChoiceHitboxType.Choice:
+                                Update(false);
                                 ModifyChoice(ui, key, mouse);
                                 if (highlightedAnswer != oldIndex)
                                     showcaseLine = 0;
@@ -587,7 +589,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private bool UpdateSelectedIndexWithMousePos(PointerEventContext? mouse, out ChoiceHitboxType hitboxType)
+        private bool UpdateSelectedIndexWithMousePos(PointerEventContext? mouse, out ChoiceHitboxType hitboxType, bool checkPos = true)
         {
             hitboxType = ChoiceHitboxType.Choice;
             if (mouse is null)
@@ -633,6 +635,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 return false;
             if (!highlightedAnswerChoiceInfo.ChoiceDisabled || hitbox.type != ChoiceHitboxType.Choice)
                 highlightedAnswer = hitbox.related;
+            if (checkPos)
+                Update(false);
             hitboxType = hitbox.type;
             return true;
         }
@@ -691,6 +695,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Install mode-dependent keybindings
             if (multiple)
             {
+                Keybindings.RemoveAt(1);
                 Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], ModifyChoice));
                 Keybindings.Add((SelectionStyleBase.bindingsMultiple[17], (_, _, _) => ProcessSelectAll(1)));
                 Keybindings.Add((SelectionStyleBase.bindingsMultiple[18], (_, _, _) => ProcessSelectAll(2)));
