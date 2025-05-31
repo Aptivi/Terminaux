@@ -385,6 +385,7 @@ namespace Terminaux.Console.Fixtures
             new RenderImage(),
             new RenderImageSvg(),
             new RenderImageBuiltin(),
+            new TestImageViewInteractive(),
 
             // Graphics
             new RenderLines(),
