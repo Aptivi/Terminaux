@@ -71,7 +71,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int selectionBoxPosX = borderX + 2;
             int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
             int leftPos = selectionBoxPosX + 1;
-            int maxSelectionWidth = choices.Max((ici) => ConsoleChar.EstimateCellWidth($"   {ici.ChoiceName})  {ici.ChoiceTitle}")) + 4;
+            int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(selections.Length > 1 ? $"    {x.ChoiceName}) " : $"  {x.ChoiceName}) "));
+            int maxSelectionWidth = choices.Max((ici) => ConsoleChar.EstimateCellWidth($" {ici.ChoiceTitle}") + AnswerTitleLeft);
             maxSelectionWidth = maxSelectionWidth > maxWidth - 4 ? maxSelectionWidth : maxWidth - 4;
             maxSelectionWidth = maxSelectionWidth >= ConsoleWrapper.WindowWidth - 8 ? ConsoleWrapper.WindowWidth - 8 : maxSelectionWidth;
             int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;

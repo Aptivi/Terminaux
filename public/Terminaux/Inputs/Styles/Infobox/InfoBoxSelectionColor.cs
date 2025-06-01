@@ -466,7 +466,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         {
             int selectedChoice = -1;
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
-            int AnswerTitleLeft = choices.Max(x => $"  {x.ChoiceName}) ".Length);
 
             // First, verify that we have selections
             if (choices is null || choices.Length == 0)

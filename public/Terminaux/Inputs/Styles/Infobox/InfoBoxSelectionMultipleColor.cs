@@ -468,7 +468,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         {
             List<int> selectedChoices = [];
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
-            int AnswerTitleLeft = choices.Max(x => $"  [ ] {x.ChoiceName}) ".Length);
 
             // Make selected choices from the ChoiceDefaultSelected value.
             selectedChoices = choices.Any((ici) => ici.ChoiceDefaultSelected) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx).ToList() : [];
