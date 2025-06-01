@@ -56,7 +56,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     Name = "Gender",
                     Description = "Is this person a male, a female, or some other gender?",
                 },
-                new TextBoxModule()
+                new DateBoxModule()
                 {
                     Name = "Birthdate",
                     Description = "When is this person's birthday?",
