@@ -595,11 +595,19 @@ namespace Terminaux.Inputs.Styles.Editor
             UpdateLineIndex(endIndex);
         }
 
-        private void Beginning() =>
+        private void Beginning()
+        {
             UpdateLineIndex(0);
+            UpdateColumnIndex(0);
+        }
 
-        private void End() =>
+        private void End()
+        {
             UpdateLineIndex(lines.Count - 1);
+            int maxLen = lines[lineIdx].Length;
+            maxLen -= entering ? 0 : 1;
+            UpdateColumnIndex(maxLen);
+        }
 
         private void UpdateLineIndex(int lnIdx)
         {
