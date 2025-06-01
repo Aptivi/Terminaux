@@ -315,6 +315,12 @@ namespace Terminaux.Console.Fixtures
             new TestMultiComboBoxModulePopover(),
             new TestSliderBoxModule(),
             new TestSliderBoxModulePopover(),
+            new TestCharBoxModule(),
+            new TestCharBoxModulePopover(),
+            new TestDateBoxModule(),
+            new TestDateBoxModulePopover(),
+            new TestTimeBoxModule(),
+            new TestTimeBoxModulePopover(),
 
             // Input (Misc)
             new TestPointerHitboxes(),
