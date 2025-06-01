@@ -23,19 +23,15 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Inputs.Modules
 {
     /// <summary>
     /// Date box module
     /// </summary>
-    // TODO: This is just a scaffolding.
     public class DateBoxModule : InputModule
     {
         /// <inheritdoc/>

@@ -27,7 +27,7 @@ namespace Terminaux.Tests.Inputs
         [TestMethod]
         public void TestTokenizeCtlSeqs()
         {
-            // TODO: Fill unit tests
+            // TODO: Fill unit tests in Beta 4
         }
     }
 }

@@ -23,7 +23,6 @@ using System.Linq;
 using System.Text;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base.Buffered;
 using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;

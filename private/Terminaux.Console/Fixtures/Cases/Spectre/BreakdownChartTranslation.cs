@@ -22,7 +22,6 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
 using BreakdownChart = Terminaux.Writer.CyclicWriters.Graphical.BreakdownChart;
 
 namespace Terminaux.Console.Fixtures.Cases.Spectre

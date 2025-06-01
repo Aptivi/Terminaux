@@ -34,7 +34,6 @@ using SCanvas = Spectre.Console.Canvas;
 using STextPath = Spectre.Console.TextPath;
 using SColor = Spectre.Console.Color;
 using TColor = Terminaux.Colors.Color;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Spectre

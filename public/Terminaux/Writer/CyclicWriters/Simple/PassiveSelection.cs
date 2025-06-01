@@ -17,23 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
-using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Colors.Transformation;
-using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {

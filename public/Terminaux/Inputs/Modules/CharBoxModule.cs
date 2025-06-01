@@ -33,7 +33,6 @@ namespace Terminaux.Inputs.Modules
     /// <summary>
     /// Character box module
     /// </summary>
-    // TODO: This is just a scaffolding.
     public class CharBoxModule : InputModule
     {
         /// <inheritdoc/>

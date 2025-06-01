@@ -24,7 +24,6 @@ using Terminaux.Sequences.Builder.Types;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;

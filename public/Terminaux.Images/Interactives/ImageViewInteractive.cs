@@ -19,25 +19,14 @@
 
 using System;
 using System.Text;
-using Terminaux.Sequences;
-using Terminaux.Sequences.Builder.Types;
-using System.Collections.Generic;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Base.Extensions;
-using System.Text.RegularExpressions;
 using Terminaux.Inputs.Interactive;
-using Textify.General;
-using Textify.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Inputs;
 using ImageMagick;
 using Terminaux.Images.Writers;
 

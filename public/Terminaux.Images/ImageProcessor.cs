@@ -19,11 +19,9 @@
 
 using ImageMagick;
 using System.IO;
-using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Images.Writers;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Images

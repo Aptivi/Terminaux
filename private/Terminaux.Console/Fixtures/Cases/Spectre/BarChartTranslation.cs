@@ -21,7 +21,6 @@ using Spectre.Console;
 using Terminaux.Base;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
 using BarChart = Terminaux.Writer.CyclicWriters.Graphical.BarChart;
 
 namespace Terminaux.Console.Fixtures.Cases.Spectre

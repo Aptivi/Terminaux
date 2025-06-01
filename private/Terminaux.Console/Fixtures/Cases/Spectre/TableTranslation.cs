@@ -21,7 +21,6 @@ using Spectre.Console;
 using Terminaux.Base;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
 using Table = Terminaux.Writer.CyclicWriters.Graphical.Table;
 
 namespace Terminaux.Console.Fixtures.Cases.Spectre
