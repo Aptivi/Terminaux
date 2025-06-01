@@ -166,12 +166,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Make hitboxes for arrow and button presses
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeDecreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsLeft, timeArrowTop), new Action<PointerEventContext>((_) => YearsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeIncreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsRight, timeArrowTop), new Action<PointerEventContext>((_) => YearsModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeDecreaseMonthsHitbox = new PointerHitbox(new(timeArrowMonthsLeft, timeArrowTop), new Action<PointerEventContext>((_) => MonthsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeIncreaseMonthsHitbox = new PointerHitbox(new(timeArrowMonthsRight, timeArrowTop), new Action<PointerEventContext>((_) => MonthsModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeDecreaseDaysHitbox = new PointerHitbox(new(timeArrowDaysLeft, timeArrowTop), new Action<PointerEventContext>((_) => DaysModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeIncreaseDaysHitbox = new PointerHitbox(new(timeArrowDaysRight, timeArrowTop), new Action<PointerEventContext>((_) => DaysModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeDecreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.YearsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeIncreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.YearsModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeDecreaseMonthsHitbox = new PointerHitbox(new(timeArrowMonthsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.MonthsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeIncreaseMonthsHitbox = new PointerHitbox(new(timeArrowMonthsRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.MonthsModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeDecreaseDaysHitbox = new PointerHitbox(new(timeArrowDaysLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.DaysModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeIncreaseDaysHitbox = new PointerHitbox(new(timeArrowDaysRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.DaysModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                     // Handle input
                     var mouse = data.PointerEventContext;
@@ -186,11 +186,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 else if (IsMouseWithinTime(text, vars, mouse))
                                 {
                                     if (IsMouseWithinYears(text, vars, mouse))
-                                        YearsModify(ref selected, ref inputMode, true);
+                                        TimeDateInputTools.YearsModify(ref selected, ref inputMode, true);
                                     else if (IsMouseWithinMonths(text, vars, mouse))
-                                        MonthsModify(ref selected, ref inputMode, true);
+                                        TimeDateInputTools.MonthsModify(ref selected, ref inputMode, true);
                                     else if (IsMouseWithinDays(text, vars, mouse))
-                                        DaysModify(ref selected, ref inputMode, true);
+                                        TimeDateInputTools.DaysModify(ref selected, ref inputMode, true);
                                 }
                                 break;
                             case PointerButton.WheelDown:
@@ -199,11 +199,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 else if (IsMouseWithinTime(text, vars, mouse))
                                 {
                                     if (IsMouseWithinYears(text, vars, mouse))
-                                        YearsModify(ref selected, ref inputMode);
+                                        TimeDateInputTools.YearsModify(ref selected, ref inputMode);
                                     else if (IsMouseWithinMonths(text, vars, mouse))
-                                        MonthsModify(ref selected, ref inputMode);
+                                        TimeDateInputTools.MonthsModify(ref selected, ref inputMode);
                                     else if (IsMouseWithinDays(text, vars, mouse))
-                                        DaysModify(ref selected, ref inputMode);
+                                        TimeDateInputTools.DaysModify(ref selected, ref inputMode);
                                 }
                                 break;
                             case PointerButton.Left:
@@ -241,16 +241,16 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (cki.Key)
                         {
                             case ConsoleKey.LeftArrow:
-                                ValueGoDown(ref selected, inputMode);
+                                TimeDateInputTools.ValueGoDown(ref selected, inputMode);
                                 break;
                             case ConsoleKey.RightArrow:
-                                ValueGoUp(ref selected, inputMode);
+                                TimeDateInputTools.ValueGoUp(ref selected, inputMode);
                                 break;
                             case ConsoleKey.Home:
-                                ValueFirst(ref selected, inputMode);
+                                TimeDateInputTools.ValueFirst(ref selected, inputMode);
                                 break;
                             case ConsoleKey.End:
-                                ValueLast(ref selected, inputMode);
+                                TimeDateInputTools.ValueLast(ref selected, inputMode);
                                 break;
                             case ConsoleKey.E:
                                 GoUp(ref currIdx, maxHeight);
@@ -266,9 +266,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case ConsoleKey.Tab:
                                 if (cki.Modifiers.HasFlag(ConsoleModifiers.Shift))
-                                    ChangeInputMode(ref inputMode, true);
+                                    TimeDateInputTools.ChangeInputMode(ref inputMode, true);
                                 else
-                                    ChangeInputMode(ref inputMode);
+                                    TimeDateInputTools.ChangeInputMode(ref inputMode);
                                 break;
                             case ConsoleKey.Enter:
                                 bail = true;
@@ -392,169 +392,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (currIdx < 0)
                 currIdx = 0;
         }
-
-        private static void ChangeInputMode(ref DateInputMode inputMode, bool backward = false)
-        {
-            if (backward)
-            {
-                inputMode--;
-                if (inputMode < DateInputMode.Years)
-                    inputMode = DateInputMode.Days;
-            }
-            else
-            {
-                inputMode++;
-                if (inputMode > DateInputMode.Days)
-                    inputMode = DateInputMode.Years;
-            }
-        }
-
-        private static void ValueGoDown(ref DateTimeOffset selected, DateInputMode inputMode)
-        {
-            switch (inputMode)
-            {
-                case DateInputMode.Years:
-                    YearsModify(ref selected, ref inputMode);
-                    break;
-                case DateInputMode.Months:
-                    MonthsModify(ref selected, ref inputMode);
-                    break;
-                case DateInputMode.Days:
-                    DaysModify(ref selected, ref inputMode);
-                    break;
-            }
-        }
-
-        private static void ValueGoUp(ref DateTimeOffset selected, DateInputMode inputMode)
-        {
-            switch (inputMode)
-            {
-                case DateInputMode.Years:
-                    YearsModify(ref selected, ref inputMode, true);
-                    break;
-                case DateInputMode.Months:
-                    MonthsModify(ref selected, ref inputMode, true);
-                    break;
-                case DateInputMode.Days:
-                    DaysModify(ref selected, ref inputMode, true);
-                    break;
-            }
-        }
-
-        private static void YearsModify(ref DateTimeOffset selected, ref DateInputMode inputMode, bool goUp = false)
-        {
-            if (inputMode != DateInputMode.Years)
-                inputMode = DateInputMode.Years;
-            (int min, int max) = GetMinMax(selected, inputMode);
-            int year = selected.Year;
-            if (goUp)
-            {
-                year++;
-                if (year > max)
-                    year = min;
-            }
-            else
-            {
-                year--;
-                if (year < min)
-                    year = max;
-            }
-
-            // Check the day
-            (_, int maxDay) = GetMinMax(year, selected.Month, DateInputMode.Days);
-            selected = new(year, selected.Month, selected.Day > maxDay ? maxDay : selected.Day, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-        }
-
-        private static void MonthsModify(ref DateTimeOffset selected, ref DateInputMode inputMode, bool goUp = false)
-        {
-            if (inputMode != DateInputMode.Months)
-                inputMode = DateInputMode.Months;
-            (int min, int max) = GetMinMax(selected, inputMode);
-            int month = selected.Month;
-            if (goUp)
-            {
-                month++;
-                if (month > max)
-                    month = min;
-            }
-            else
-            {
-                month--;
-                if (month < min)
-                    month = max;
-            }
-
-            // Check the day
-            (_, int maxDay) = GetMinMax(selected.Year, month, DateInputMode.Days);
-            selected = new(selected.Year, month, selected.Day > maxDay ? maxDay : selected.Day, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-        }
-
-        private static void DaysModify(ref DateTimeOffset selected, ref DateInputMode inputMode, bool goUp = false)
-        {
-            if (inputMode != DateInputMode.Days)
-                inputMode = DateInputMode.Days;
-            (int min, int max) = GetMinMax(selected, inputMode);
-            int day = selected.Day;
-            if (goUp)
-            {
-                day++;
-                if (day > max)
-                    day = min;
-            }
-            else
-            {
-                day--;
-                if (day < min)
-                    day = max;
-            }
-            selected = new(selected.Year, selected.Month, day, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-        }
-
-        private static void ValueFirst(ref DateTimeOffset selected, DateInputMode inputMode)
-        {
-            (int min, _) = GetMinMax(selected, inputMode);
-            switch (inputMode)
-            {
-                case DateInputMode.Years:
-                    selected = new(min, selected.Month, selected.Day, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-                    break;
-                case DateInputMode.Months:
-                    selected = new(selected.Year, min, selected.Day, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-                    break;
-                case DateInputMode.Days:
-                    selected = new(selected.Year, selected.Month, min, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-                    break;
-            }
-        }
-
-        private static void ValueLast(ref DateTimeOffset selected, DateInputMode inputMode)
-        {
-            (_, int max) = GetMinMax(selected, inputMode);
-            switch (inputMode)
-            {
-                case DateInputMode.Years:
-                    selected = new(max, selected.Month, selected.Day, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-                    break;
-                case DateInputMode.Months:
-                    selected = new(selected.Year, max, selected.Day, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-                    break;
-                case DateInputMode.Days:
-                    selected = new(selected.Year, selected.Month, max, selected.Hour, selected.Minute, selected.Second, selected.Offset);
-                    break;
-            }
-        }
-
-        private static (int min, int max) GetMinMax(DateTimeOffset selected, DateInputMode inputMode) =>
-            inputMode switch
-            {
-                DateInputMode.Years => (1, 9999),
-                DateInputMode.Months => (1, 12),
-                DateInputMode.Days => (1, CultureInfo.InvariantCulture.Calendar.GetDaysInMonth(selected.Year, selected.Month)),
-                _ => default,
-            };
-
-        private static (int min, int max) GetMinMax(int year, int month, DateInputMode inputMode) =>
-            GetMinMax(new DateTimeOffset(year, month, 1, 0, 0, 0, TimeSpan.Zero), inputMode);
 
         static InfoBoxDateColor()
         {

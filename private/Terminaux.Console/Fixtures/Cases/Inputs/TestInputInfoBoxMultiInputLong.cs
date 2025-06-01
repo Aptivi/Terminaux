@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Linq;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Modules;
@@ -95,6 +96,18 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 {
                     Name = "Experiences",
                     Description = "Write this person's experiences",
+                },
+                new DateBoxModule()
+                {
+                    Name = "Registration Date",
+                    Description = "Write this person's registration date",
+                    Value = DateTimeOffset.Now,
+                },
+                new TimeBoxModule()
+                {
+                    Name = "Registration Time",
+                    Description = "Write this person's registration time",
+                    Value = DateTimeOffset.Now,
                 },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "Write details of this person. Please provide the correct information so that we can process this person and add them to the list of approved people. Any incorrect information may cause your request to be rejected.", new InfoBoxSettings()

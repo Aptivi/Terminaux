@@ -18,9 +18,11 @@
 //
 
 using System;
+using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
@@ -36,22 +38,12 @@ namespace Terminaux.Inputs.Modules
     // TODO: This is just a scaffolding.
     public class DateBoxModule : InputModule
     {
-        /// <summary>
-        /// Minimum position
-        /// </summary>
-        public int MinPos { get; set; }
-
-        /// <summary>
-        /// Maximum position
-        /// </summary>
-        public int MaxPos { get; set; }
-
         /// <inheritdoc/>
         public override string RenderInput(int width)
         {
             // Render an input text box with selected value and blanks as underscores.
-            int value = Value is int valueInt ? valueInt : MinPos;
-            string valueString = $"{value} of {MinPos}/{MaxPos}";
+            DateTimeOffset value = Value is DateTimeOffset valueDate ? valueDate : DateTimeOffset.Now;
+            string valueString = $"{value}";
             string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($" ◎ {valueString}", width);
             valueString = wrappedValue[0];
 
@@ -78,35 +70,59 @@ namespace Terminaux.Inputs.Modules
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                int value = Value is int valueInt ? valueInt : MinPos;
-                int choiceIndex = InfoBoxSliderColor.WriteInfoBoxSlider(value, MaxPos, Description, new InfoBoxSettings()
+                DateTimeOffset value = Value is DateTimeOffset valueDate ? valueDate : DateTimeOffset.Now;
+                Value = InfoBoxDateColor.WriteInfoBoxDate(value, Description, new InfoBoxSettings()
                 {
                     Title = Name,
                     ForegroundColor = Foreground,
                     BackgroundColor = Background,
-                }, MinPos);
-                Value = choiceIndex;
+                });
             }
             else
             {
                 bool bail = false;
                 bool cancel = false;
-                int value = Value is int valueInt ? valueInt : MinPos;
+                DateInputMode inputMode = DateInputMode.Years;
+                DateTimeOffset value = Value is DateTimeOffset valueTime ? valueTime : DateTimeOffset.Now;
                 while (!bail)
                 {
-                    // Render the popover. A slider will appear on the input.
-                    var slider = new Slider(value, MinPos, MaxPos)
-                    {
-                        Width = inputPopoverSize.Width - 1,
-                        SliderActiveForegroundColor = Foreground,
-                        SliderForegroundColor = TransformationTools.GetDarkBackground(Foreground),
-                        SliderBackgroundColor = Background,
-                    };
-                    TextWriterRaw.WriteRaw(
-                        RendererTools.RenderRenderable(slider, new(inputPopoverPos.X + 1, inputPopoverPos.Y)) +
-                        TextWriterWhereColor.RenderWhereColorBack("◀", inputPopoverPos.X, inputPopoverPos.Y, Foreground, Background) +
-                        TextWriterWhereColor.RenderWhereColorBack("▶", inputPopoverPos.X + inputPopoverSize.Width - 1, inputPopoverPos.Y, Foreground, Background)
+                    // Clear the popover. A slider will appear on the input.
+                    var boxBuffer = new StringBuilder();
+                    int maxTimeWidth = inputPopoverSize.Width;
+                    int maxTimePartWidth = maxTimeWidth / 3 - 2;
+                    boxBuffer.Append(
+                        TextWriterWhereColor.RenderWhereColorBack(new(' ', maxTimeWidth), inputPopoverPos.X, inputPopoverPos.Y, Foreground, Background)
                     );
+
+                    // Write years
+                    string years = value.Year.ToString();
+                    int yearsPos = inputPopoverPos.X + maxTimePartWidth / 2 - ConsoleChar.EstimateFullWidths(years);
+                    boxBuffer.Append(
+                        TextWriterWhereColor.RenderWhereColorBack(years, yearsPos, inputPopoverPos.Y, inputMode == DateInputMode.Years ? ConsoleColors.Lime : Foreground, Background) +
+                        TextWriterWhereColor.RenderWhereColorBack("◀", inputPopoverPos.X, inputPopoverPos.Y, Foreground, Background) +
+                        TextWriterWhereColor.RenderWhereColorBack("▶", inputPopoverPos.X + maxTimePartWidth + 1, inputPopoverPos.Y, Foreground, Background)
+                    );
+
+                    // Write months
+                    string months = value.Month.ToString();
+                    int monthsPos = inputPopoverPos.X + maxTimePartWidth + maxTimePartWidth / 2 + 3 - ConsoleChar.EstimateFullWidths(months);
+                    boxBuffer.Append(
+                        TextWriterWhereColor.RenderWhereColorBack(months, monthsPos, inputPopoverPos.Y, inputMode == DateInputMode.Months ? ConsoleColors.Lime : Foreground, Background) +
+                        TextWriterWhereColor.RenderWhereColorBack("◀", inputPopoverPos.X + maxTimePartWidth + 3, inputPopoverPos.Y, Foreground, Background) +
+                        TextWriterWhereColor.RenderWhereColorBack("▶", inputPopoverPos.X + maxTimePartWidth * 2 + 4, inputPopoverPos.Y, Foreground, Background)
+                    );
+
+                    // Write days
+                    string days = value.Day.ToString();
+                    int daysPos = inputPopoverPos.X + maxTimePartWidth * 2 + maxTimePartWidth / 2 + 7 - ConsoleChar.EstimateFullWidths(days);
+                    boxBuffer.Append(
+                        TextWriterWhereColor.RenderWhereColorBack(days, daysPos, inputPopoverPos.Y, inputMode == DateInputMode.Days ? ConsoleColors.Lime : Foreground, Background) +
+                        TextWriterWhereColor.RenderWhereColorBack("◀", inputPopoverPos.X + maxTimePartWidth * 2 + 6, inputPopoverPos.Y, Foreground, Background) +
+                        TextWriterWhereColor.RenderWhereColorBack("▶", inputPopoverPos.X + maxTimePartWidth * 3 + 8, inputPopoverPos.Y, Foreground, Background)
+                    );
+
+                    // Write the whole popover to replace the input field
+                    TextWriterRaw.WriteRaw(boxBuffer.ToString());
 
                     // Handle keypress
                     InputEventInfo data = Input.ReadPointerOrKey();
@@ -115,20 +131,22 @@ namespace Terminaux.Inputs.Modules
                         switch (cki.Key)
                         {
                             case ConsoleKey.LeftArrow:
-                                value--;
-                                if (value < MinPos)
-                                    value = MaxPos;
+                                TimeDateInputTools.ValueGoDown(ref value, inputMode);
                                 break;
                             case ConsoleKey.RightArrow:
-                                value++;
-                                if (value > MaxPos)
-                                    value = MinPos;
+                                TimeDateInputTools.ValueGoUp(ref value, inputMode);
                                 break;
                             case ConsoleKey.Home:
-                                value = MinPos;
+                                TimeDateInputTools.ValueFirst(ref value, inputMode);
                                 break;
                             case ConsoleKey.End:
-                                value = MaxPos;
+                                TimeDateInputTools.ValueLast(ref value, inputMode);
+                                break;
+                            case ConsoleKey.Tab:
+                                if (cki.Modifiers.HasFlag(ConsoleModifiers.Shift))
+                                    TimeDateInputTools.ChangeInputMode(ref inputMode, true);
+                                else
+                                    TimeDateInputTools.ChangeInputMode(ref inputMode);
                                 break;
                             case ConsoleKey.Enter:
                                 bail = true;
