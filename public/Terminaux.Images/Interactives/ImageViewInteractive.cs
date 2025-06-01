@@ -178,9 +178,12 @@ namespace Terminaux.Images.Interactives
                     End(pixels, ref screen);
                     return;
                 case ConsoleKey.F:
+                    if (!fit)
+                    {
+                        UpdateColumnIndex(0, pixels, ref screen);
+                        UpdateLineIndex(0, pixels, ref screen);
+                    }
                     fit = !fit;
-                    UpdateColumnIndex(0, pixels, ref screen);
-                    UpdateLineIndex(0, pixels, ref screen);
                     return;
                 case ConsoleKey.Escape:
                     bail = true;
