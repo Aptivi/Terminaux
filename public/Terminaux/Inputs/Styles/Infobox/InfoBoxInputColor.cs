@@ -30,6 +30,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Textify.General.Structures;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -53,7 +54,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, false, vars);
+            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, false, false, vars);
 
         /// <summary>
         /// Writes the masked input info box
@@ -70,7 +71,24 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputPassword(string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, true, vars);
+            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, true, false, vars);
+
+        /// <summary>
+        /// Writes the single-character input info box
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputChar(string text, params object[] vars) =>
+            WriteInfoBoxInputChar(text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the single-character input info box
+        /// </summary>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string WriteInfoBoxInputChar(string text, InfoBoxSettings settings, params object[] vars) =>
+            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, false, true, vars);
 
         #region To be removed
         /// <summary>
@@ -234,7 +252,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputInternal(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, false, vars);
+            WriteInfoBoxInputInternal(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, false, false, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -397,10 +415,10 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static string WriteInfoBoxInputPasswordColorBack(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputInternal(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, true, vars);
+            WriteInfoBoxInputInternal(title, text, settings, InfoBoxTitledColor, BackgroundColor, true, true, false, vars);
         #endregion
 
-        internal static string WriteInfoBoxInputInternal(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, bool password, params object[] vars)
+        internal static string WriteInfoBoxInputInternal(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, bool password, bool character, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -466,7 +484,15 @@ namespace Terminaux.Inputs.Styles.Infobox
                     readerSettings.InputBackgroundColor = BackgroundColor;
                 }
                 string input = TermReader.Read("", "", readerSettings, password, true);
-                return input;
+                if (character)
+                {
+                    WideString wideInput = (WideString)input;
+                    if (wideInput.Length > 0)
+                        return $"{wideInput[0]}";
+                    return input;
+                }
+                else
+                    return input;
             }
             catch (Exception ex)
             {

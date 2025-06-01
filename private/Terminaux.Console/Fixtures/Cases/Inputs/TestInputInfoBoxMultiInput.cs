@@ -59,6 +59,11 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                     MaxPos = 250,
                     Value = 100,
                 },
+                new CharBoxModule()
+                {
+                    Name = "Choose a Character",
+                    Description = "Choose a character. You can also use emoji here.",
+                },
             };
             InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "Select an input module to test...", new InfoBoxSettings()
             {

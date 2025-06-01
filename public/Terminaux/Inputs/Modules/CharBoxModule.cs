@@ -26,6 +26,7 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General.Structures;
 
 namespace Terminaux.Inputs.Modules
 {
@@ -67,7 +68,7 @@ namespace Terminaux.Inputs.Modules
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                Value = InfoBoxInputColor.WriteInfoBoxInput(Description, new InfoBoxSettings()
+                Value = InfoBoxInputColor.WriteInfoBoxInputChar(Description, new InfoBoxSettings()
                 {
                     Title = Name,
                     ForegroundColor = Foreground,
@@ -95,7 +96,11 @@ namespace Terminaux.Inputs.Modules
                     readerSettings.InputForegroundColor = Foreground;
                     readerSettings.InputBackgroundColor = Background;
                 }
-                Value = TermReader.Read("", value, readerSettings, false, true);
+                string finalValue = TermReader.Read("", value, readerSettings, false, true);
+                WideString wideInput = (WideString)finalValue;
+                if (wideInput.Length > 0)
+                    Value = $"{wideInput[0]}";
+                Value = finalValue;
             }
             Provided = true;
         }
