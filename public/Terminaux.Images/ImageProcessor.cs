@@ -22,6 +22,7 @@ using System.IO;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Images.Writers;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -340,44 +341,20 @@ namespace Terminaux.Images
 
         internal static string RenderImage(Color[,] imageColors, int width, int height, int left, int top, Color? background, bool useLeftTop)
         {
-            // Get the image width and height in pixels and get their comparison factor
-            int imageWidth = imageColors.GetLength(0);
-            int imageHeight = imageColors.GetLength(1);
-            double imageWidthThreshold = (double)imageWidth / width;
-            double imageHeightThreshold = (double)imageHeight / height;
-            ConsoleLogger.Debug("Width: {0} [T: {1}], height: {2} [T: {3}]", imageWidth, imageWidthThreshold, imageHeight, imageHeightThreshold);
-
-            // Build the buffer
-            StringBuilder buffer = new();
-            int absoluteY = 0;
-
-            // Process the pixels in scanlines
-            string bgSeq = background is null ? ColorTools.RenderRevertBackground() : ColorTools.RenderSetConsoleColor(background, true);
-            for (double y = 0; y < imageHeight; y += imageHeightThreshold, absoluteY++)
+            // Make a new image viewer instance
+            var viewer = new ImageView(imageColors)
             {
-                // Some positioning
-                if (useLeftTop)
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(left + 1, top + absoluteY + 1));
+                Width = width,
+                Height = height,
+                Left = left,
+                Top = top,
+                UsePositioning = useLeftTop,
+            };
+            if (background is not null)
+                viewer.BackgroundColor = background;
 
-                // Determine how to process the width
-                for (double x = 0; x < imageWidth; x += imageWidthThreshold)
-                {
-                    // Add the appropriate color to the buffer
-                    int pixelX = (int)x;
-                    int pixelY = (int)y;
-                    var imageColor = imageColors[pixelX, pixelY];
-                    buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB && imageColor.RGB.A == 0 ? bgSeq : imageColor.VTSequenceBackgroundTrueColor) + " ");
-                }
-
-                // Add space if not using console positioning
-                if (!useLeftTop)
-                    buffer.AppendLine();
-            }
-
-            // Return the resulting buffer
-            buffer.Append(ColorTools.RenderRevertBackground());
-            ConsoleLogger.Debug("Need to write {0} bytes to the console", buffer.Length);
-            return buffer.ToString();
+            // Render the image viewer
+            return viewer.Render();
         }
     }
 }

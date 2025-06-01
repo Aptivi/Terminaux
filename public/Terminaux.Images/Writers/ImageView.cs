@@ -103,6 +103,11 @@ namespace Terminaux.Images.Writers
         public bool Fit { get; set; } = true;
 
         /// <summary>
+        /// Whether to use positioning or not?
+        /// </summary>
+        public bool UsePositioning { get; set; } = true;
+
+        /// <summary>
         /// Renders an image
         /// </summary>
         /// <returns>Rendered image that will be used by the renderer</returns>
@@ -124,7 +129,8 @@ namespace Terminaux.Images.Writers
             for (double y = RowOffset; y < imageHeight && absoluteY < Height; y += Fit ? imageHeightThreshold : 1, absoluteY++)
             {
                 // Some positioning
-                buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + absoluteY + 1));
+                if (UsePositioning)
+                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + absoluteY + 1));
 
                 // Determine how to process the width
                 int absoluteX = 0;
@@ -136,6 +142,10 @@ namespace Terminaux.Images.Writers
                     var imageColor = imageColors[pixelX, pixelY];
                     buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB && imageColor.RGB.A == 0 ? bgSeq : imageColor.VTSequenceBackgroundTrueColor) + " ");
                 }
+
+                // Add space if not using console positioning
+                if (!UsePositioning)
+                    buffer.AppendLine();
             }
 
             // Return the resulting buffer
