@@ -32,7 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
         public void RunFixture()
         {
             Input.EnableMouse = true;
-            var selected = InfoBoxTimeColor.WriteInfoBoxTime(DateTimeOffset.Now, "Select number from 0 to 20, with 2 being the default.", new InfoBoxSettings()
+            var selected = InfoBoxTimeColor.WriteInfoBoxTime(DateTimeOffset.Now, "Select time in hours, minutes, and seconds using the left/right arrows and TAB.", new InfoBoxSettings()
             {
                 Title = nameof(TestInputInfoBoxTime)
             });

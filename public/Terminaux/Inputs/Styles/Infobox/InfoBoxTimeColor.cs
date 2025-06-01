@@ -29,10 +29,6 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Colors.Transformation;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Base.Structures;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -169,12 +165,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Make hitboxes for arrow and button presses
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeDecreaseHoursHitbox = new PointerHitbox(new(timeArrowHoursLeft, timeArrowTop), new Action<PointerEventContext>((_) => HoursModify(ref selected))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeIncreaseHoursHitbox = new PointerHitbox(new(timeArrowHoursRight, timeArrowTop), new Action<PointerEventContext>((_) => HoursModify(ref selected, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeDecreaseMinutesHitbox = new PointerHitbox(new(timeArrowMinutesLeft, timeArrowTop), new Action<PointerEventContext>((_) => MinutesModify(ref selected))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeIncreaseMinutesHitbox = new PointerHitbox(new(timeArrowMinutesRight, timeArrowTop), new Action<PointerEventContext>((_) => MinutesModify(ref selected, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeDecreaseSecondsHitbox = new PointerHitbox(new(timeArrowSecondsLeft, timeArrowTop), new Action<PointerEventContext>((_) => SecondsModify(ref selected))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowTimeIncreaseSecondsHitbox = new PointerHitbox(new(timeArrowSecondsRight, timeArrowTop), new Action<PointerEventContext>((_) => SecondsModify(ref selected, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeDecreaseHoursHitbox = new PointerHitbox(new(timeArrowHoursLeft, timeArrowTop), new Action<PointerEventContext>((_) => HoursModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeIncreaseHoursHitbox = new PointerHitbox(new(timeArrowHoursRight, timeArrowTop), new Action<PointerEventContext>((_) => HoursModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeDecreaseMinutesHitbox = new PointerHitbox(new(timeArrowMinutesLeft, timeArrowTop), new Action<PointerEventContext>((_) => MinutesModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeIncreaseMinutesHitbox = new PointerHitbox(new(timeArrowMinutesRight, timeArrowTop), new Action<PointerEventContext>((_) => MinutesModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeDecreaseSecondsHitbox = new PointerHitbox(new(timeArrowSecondsLeft, timeArrowTop), new Action<PointerEventContext>((_) => SecondsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowTimeIncreaseSecondsHitbox = new PointerHitbox(new(timeArrowSecondsRight, timeArrowTop), new Action<PointerEventContext>((_) => SecondsModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                     // Handle input
                     var mouse = data.PointerEventContext;
@@ -187,13 +183,27 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (IsMouseWithinText(text, vars, mouse))
                                     GoUp(ref currIdx, 3);
                                 else if (IsMouseWithinTime(text, vars, mouse))
-                                    ValueGoDown(ref selected, inputMode);
+                                {
+                                    if (IsMouseWithinHours(text, vars, mouse))
+                                        HoursModify(ref selected, ref inputMode, true);
+                                    else if (IsMouseWithinMinutes(text, vars, mouse))
+                                        MinutesModify(ref selected, ref inputMode, true);
+                                    else if (IsMouseWithinSeconds(text, vars, mouse))
+                                        SecondsModify(ref selected, ref inputMode, true);
+                                }
                                 break;
                             case PointerButton.WheelDown:
                                 if (IsMouseWithinText(text, vars, mouse))
                                     GoDown(ref currIdx, text, vars, 3);
                                 else if (IsMouseWithinTime(text, vars, mouse))
-                                    ValueGoUp(ref selected, inputMode);
+                                {
+                                    if (IsMouseWithinHours(text, vars, mouse))
+                                        HoursModify(ref selected, ref inputMode);
+                                    else if (IsMouseWithinMinutes(text, vars, mouse))
+                                        MinutesModify(ref selected, ref inputMode);
+                                    else if (IsMouseWithinSeconds(text, vars, mouse))
+                                        SecondsModify(ref selected, ref inputMode);
+                                }
                                 break;
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
@@ -320,6 +330,50 @@ namespace Terminaux.Inputs.Styles.Infobox
             return PointerTools.PointerWithinRange(mouse, (timeArrowLeft, timeArrowTop), (timeArrowRight, timeArrowTop));
         }
 
+        private static bool IsMouseWithinHours(string text, object[] vars, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+
+            // Check the dimensions
+            int maxTimeWidth = maxWidth - 4;
+            int maxTimePartWidth = maxTimeWidth / 3 - 2;
+            int timeTop = borderY + maxHeight - 1;
+            int timeHoursLeft = borderX + 3;
+            int timeHoursRight = timeHoursLeft + maxTimePartWidth - 1;
+            return PointerTools.PointerWithinRange(mouse, (timeHoursLeft, timeTop), (timeHoursRight, timeTop));
+        }
+
+        private static bool IsMouseWithinMinutes(string text, object[] vars, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+
+            // Check the dimensions
+            int maxTimeWidth = maxWidth - 4;
+            int maxTimePartWidth = maxTimeWidth / 3 - 2;
+            int timeTop = borderY + maxHeight - 1;
+            int timeHoursLeft = borderX + 3;
+            int timeMinutesLeft = timeHoursLeft + maxTimePartWidth + 3;
+            int timeMinutesRight = timeHoursLeft + maxTimePartWidth * 2 + 2;
+            return PointerTools.PointerWithinRange(mouse, (timeMinutesLeft, timeTop), (timeMinutesRight, timeTop));
+        }
+
+        private static bool IsMouseWithinSeconds(string text, object[] vars, PointerEventContext mouse)
+        {
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+
+            // Check the dimensions
+            int maxTimeWidth = maxWidth - 4;
+            int maxTimePartWidth = maxTimeWidth / 3 - 2;
+            int timeTop = borderY + maxHeight - 1;
+            int timeHoursLeft = borderX + 3;
+            int timeSecondsLeft = timeHoursLeft + maxTimePartWidth * 2 + 6;
+            int timeSecondsRight = timeHoursLeft + maxTimePartWidth * 3 + 6;
+            return PointerTools.PointerWithinRange(mouse, (timeSecondsLeft, timeTop), (timeSecondsRight, timeTop));
+        }
+
         private static void GoUp(ref int currIdx, int level = 1)
         {
             currIdx -= level;
@@ -359,13 +413,13 @@ namespace Terminaux.Inputs.Styles.Infobox
             switch (inputMode)
             {
                 case TimeInputMode.Hours:
-                    HoursModify(ref selected);
+                    HoursModify(ref selected, ref inputMode);
                     break;
                 case TimeInputMode.Minutes:
-                    MinutesModify(ref selected);
+                    MinutesModify(ref selected, ref inputMode);
                     break;
                 case TimeInputMode.Seconds:
-                    SecondsModify(ref selected);
+                    SecondsModify(ref selected, ref inputMode);
                     break;
             }
         }
@@ -375,20 +429,22 @@ namespace Terminaux.Inputs.Styles.Infobox
             switch (inputMode)
             {
                 case TimeInputMode.Hours:
-                    HoursModify(ref selected, true);
+                    HoursModify(ref selected, ref inputMode, true);
                     break;
                 case TimeInputMode.Minutes:
-                    MinutesModify(ref selected, true);
+                    MinutesModify(ref selected, ref inputMode, true);
                     break;
                 case TimeInputMode.Seconds:
-                    SecondsModify(ref selected, true);
+                    SecondsModify(ref selected, ref inputMode, true);
                     break;
             }
         }
 
-        private static void HoursModify(ref DateTimeOffset selected, bool goUp = false)
+        private static void HoursModify(ref DateTimeOffset selected, ref TimeInputMode inputMode, bool goUp = false)
         {
-            (int min, int max) = GetMinMax(TimeInputMode.Hours);
+            if (inputMode != TimeInputMode.Hours)
+                inputMode = TimeInputMode.Hours;
+            (int min, int max) = GetMinMax(inputMode);
             int hour = selected.Hour;
             if (goUp)
             {
@@ -405,9 +461,11 @@ namespace Terminaux.Inputs.Styles.Infobox
             selected = new(selected.Year, selected.Month, selected.Day, hour, selected.Minute, selected.Second, selected.Offset);
         }
 
-        private static void MinutesModify(ref DateTimeOffset selected, bool goUp = false)
+        private static void MinutesModify(ref DateTimeOffset selected, ref TimeInputMode inputMode, bool goUp = false)
         {
-            (int min, int max) = GetMinMax(TimeInputMode.Minutes);
+            if (inputMode != TimeInputMode.Minutes)
+                inputMode = TimeInputMode.Minutes;
+            (int min, int max) = GetMinMax(inputMode);
             int minute = selected.Minute;
             if (goUp)
             {
@@ -424,9 +482,11 @@ namespace Terminaux.Inputs.Styles.Infobox
             selected = new(selected.Year, selected.Month, selected.Day, selected.Hour, minute, selected.Second, selected.Offset);
         }
 
-        private static void SecondsModify(ref DateTimeOffset selected, bool goUp = false)
+        private static void SecondsModify(ref DateTimeOffset selected, ref TimeInputMode inputMode, bool goUp = false)
         {
-            (int min, int max) = GetMinMax(TimeInputMode.Seconds);
+            if (inputMode != TimeInputMode.Seconds)
+                inputMode = TimeInputMode.Seconds;
+            (int min, int max) = GetMinMax(inputMode);
             int second = selected.Second;
             if (goUp)
             {
