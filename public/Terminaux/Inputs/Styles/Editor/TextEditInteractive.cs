@@ -43,32 +43,40 @@ namespace Terminaux.Inputs.Styles.Editor
     /// <summary>
     /// Interactive text editor
     /// </summary>
-    public static class TextEditInteractive
+    public class TextEditInteractive : TextualUI
     {
-        private static string status = "";
-        private static string cachedFind = "";
-        private static bool bail;
-        private static bool entering;
-        private static int lineIdx = 0;
-        private static int lineColIdx = 0;
-        private static bool editable = true;
+        private string status = "";
+        private List<string> lines = [];
+        private InteractiveTuiSettings settings = InteractiveTuiSettings.GlobalSettings;
+        private string cachedFind = "";
+        private bool entering;
+        private int lineIdx = 0;
+        private int lineColIdx = 0;
+        private bool fullscreen;
+        private bool editable = true;
         private static readonly Keybinding[] bindings =
         [
             new Keybinding("Exit", ConsoleKey.Escape),
             new Keybinding("Keybindings", ConsoleKey.K),
             new Keybinding("Find Next", ConsoleKey.Divide),
+            new Keybinding("Move Up", ConsoleKey.UpArrow),
+            new Keybinding("Move Down", ConsoleKey.DownArrow),
+            new Keybinding("Move Left", ConsoleKey.LeftArrow),
+            new Keybinding("Move Right", ConsoleKey.RightArrow),
+            new Keybinding("Previous Page", ConsoleKey.PageUp),
+            new Keybinding("Next Page", ConsoleKey.PageDown),
+            new Keybinding("Go to Beginning", ConsoleKey.Home),
+            new Keybinding("Go to Ending", ConsoleKey.End),
         ];
         private static readonly Keybinding[] editorBindings =
         [
-            new Keybinding("Exit", ConsoleKey.Escape),
-            new Keybinding("Keybindings", ConsoleKey.K),
+            .. bindings,
             new Keybinding("Enter...", ConsoleKey.I),
             new Keybinding("Delete here", ConsoleKey.X),
             new Keybinding("Insert", ConsoleKey.F1),
             new Keybinding("Remove Line", ConsoleKey.F2),
             new Keybinding("Insert", ConsoleKey.F1, ConsoleModifiers.Shift),
             new Keybinding("Remove Line", ConsoleKey.F2, ConsoleModifiers.Shift),
-            new Keybinding("Find Next", ConsoleKey.Divide),
             new Keybinding("Replace", ConsoleKey.F3),
             new Keybinding("Replace All", ConsoleKey.F3, ConsoleModifiers.Shift),
         ];
@@ -76,6 +84,8 @@ namespace Terminaux.Inputs.Styles.Editor
         [
             new Keybinding("Stop Entering", ConsoleKey.Escape),
             new Keybinding("New Line", ConsoleKey.Enter),
+            new Keybinding("Backspace", ConsoleKey.Backspace),
+            new Keybinding("Delete", ConsoleKey.Delete),
         ];
 
         /// <summary>
@@ -87,350 +97,206 @@ namespace Terminaux.Inputs.Styles.Editor
         /// <param name="edit">Whether it's editable or not</param>
         public static void OpenInteractive(ref List<string> lines, InteractiveTuiSettings? settings = null, bool fullscreen = false, bool edit = true)
         {
-            // Set status
-            status = "Ready";
-            bail = false;
-            editable = edit;
-            settings ??= InteractiveTuiSettings.GlobalSettings;
-
-            // Check to see if the list of lines is empty
-            if (lines.Count == 0)
-                lines = [""];
-
-            // Main loop
-            lineIdx = 0;
-            lineColIdx = 0;
-            cachedFind = "";
-            var screen = new Screen();
-            ScreenTools.SetCurrent(screen);
-            ConsoleWrapper.CursorVisible = false;
-            try
+            // Make a new TUI
+            var finalSettings = settings ?? InteractiveTuiSettings.GlobalSettings;
+            var textEditor = new TextEditInteractive()
             {
-                while (!bail)
-                {
-                    // Now, render the keybindings
-                    RenderKeybindings(ref screen, settings);
+                status = "Ready",
+                editable = edit,
+                lines = lines,
+                settings = finalSettings,
+                fullscreen = fullscreen,
+            };
 
-                    // Check to see if we need to render the box and the status
-                    if (!fullscreen)
-                    {
-                        // Render the box
-                        RenderTextViewBox(ref screen, settings);
+            // Assign keybindings
+            textEditor.UpdateKeybindings();
 
-                        // Render the status
-                        RenderStatus(ref screen, settings);
-                    }
-
-                    // Now, render the visual text with the current selection
-                    RenderContentsWithSelection(lineIdx, ref screen, lines, settings, fullscreen);
-
-                    // Wait for a keypress
-                    ScreenTools.Render(screen);
-                    var keypress = Input.ReadKey();
-                    HandleKeypress(keypress, ref lines, screen, fullscreen, settings);
-
-                    // Reset, in case selection changed
-                    screen.RemoveBufferedParts();
-                }
-            }
-            catch (Exception ex)
-            {
-                InfoBoxModalColor.WriteInfoBoxModal($"The text editor failed: {ex.Message}");
-            }
-            bail = false;
-            ScreenTools.UnsetCurrent(screen);
-
-            // Close the file and clean up
-            ColorTools.LoadBack();
+            // Run the TUI
+            TextualUITools.RunTui(textEditor);
+            lines = textEditor.lines;
         }
 
-        private static void RenderKeybindings(ref Screen screen, InteractiveTuiSettings settings)
+        /// <inheritdoc/>
+        public override string Render()
         {
-            // Make a screen part
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
+            var builder = new StringBuilder();
+
+            // Now, render the keybindings
+            builder.Append(RenderKeybindings());
+
+            // Check to see if we need to render the box and the status
+            if (!fullscreen)
             {
-                var keybindingsRenderable = new Keybindings()
-                {
-                    KeybindingList = editable ? entering ? bindingsEntering : editorBindings : bindings,
-                    BuiltinColor = settings.KeyBindingBuiltinColor,
-                    BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
-                    BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
-                    OptionColor = settings.KeyBindingOptionColor,
-                    OptionForegroundColor = settings.OptionForegroundColor,
-                    OptionBackgroundColor = settings.OptionBackgroundColor,
-                    BackgroundColor = settings.BackgroundColor,
-                    Width = ConsoleWrapper.WindowWidth - 1,
-                };
-                return RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
-            });
-            screen.AddBufferedPart("Text editor interactive - Keybindings", part);
-        }
-
-        private static void RenderStatus(ref Screen screen, InteractiveTuiSettings settings)
-        {
-            // Make a screen part
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
-            {
-                var builder = new StringBuilder();
-                builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
-                    $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
-                );
-                return builder.ToString();
-            });
-            screen.AddBufferedPart("Text editor interactive - Status", part);
-        }
-
-        private static void RenderTextViewBox(ref Screen screen, InteractiveTuiSettings settings)
-        {
-            // Make a screen part
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
-            {
-                var builder = new StringBuilder();
-
-                // Get the widths and heights
-                int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
-                int SeparatorMinimumHeight = 1;
-                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-
                 // Render the box
-                var border = new Border()
-                {
-                    Left = 0,
-                    Top = SeparatorMinimumHeight,
-                    Width = SeparatorConsoleWidthInterior,
-                    Height = SeparatorMaximumHeightInterior,
-                };
-                builder.Append(
-                    ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +
-                    ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) +
-                    border.Render()
-                );
-                return builder.ToString();
-            });
-            screen.AddBufferedPart("Text editor interactive - Text view box", part);
+                builder.Append(RenderTextViewBox());
+
+                // Render the status
+                builder.Append(RenderStatus());
+            }
+
+            // Now, render the text with the current selection
+            builder.Append(RenderContentsWithSelection());
+            return builder.ToString();
         }
 
-        private static void RenderContentsWithSelection(int lineIdx, ref Screen screen, List<string> lines, InteractiveTuiSettings settings, bool fullscreen)
+        private string RenderKeybindings()
+        {
+            var keybindingsRenderable = new Keybindings()
+            {
+                KeybindingList = editable ? entering ? bindingsEntering : editorBindings : bindings,
+                BuiltinColor = settings.KeyBindingBuiltinColor,
+                BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
+                BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
+                OptionColor = settings.KeyBindingOptionColor,
+                OptionForegroundColor = settings.OptionForegroundColor,
+                OptionBackgroundColor = settings.OptionBackgroundColor,
+                BackgroundColor = settings.BackgroundColor,
+                Width = ConsoleWrapper.WindowWidth - 1,
+            };
+            return RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
+        }
+
+        private string RenderStatus()
         {
             // First, update the status
-            StatusTextInfo(lines);
+            StatusTextInfo();
 
+            // Now, render the status
+            var builder = new StringBuilder();
+            builder.Append(
+                $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
+                $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
+                $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
+            );
+            return builder.ToString();
+        }
+
+        private string RenderTextViewBox()
+        {
+            var builder = new StringBuilder();
+
+            // Get the widths and heights
+            int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
+            int SeparatorMinimumHeight = 1;
+            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+
+            // Render the box
+            var border = new Border()
+            {
+                Left = 0,
+                Top = SeparatorMinimumHeight,
+                Width = SeparatorConsoleWidthInterior,
+                Height = SeparatorMaximumHeightInterior,
+            };
+            builder.Append(
+                ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +
+                ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) +
+                border.Render()
+            );
+            return builder.ToString();
+        }
+
+        private string RenderContentsWithSelection()
+        {
             // Check the lines
             if (lines.Count == 0)
-                return;
+                return "";
 
-            // Now, make a dynamic text
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
+            // Get the widths and heights
+            int SeparatorConsoleWidthInterior = fullscreen ? ConsoleWrapper.WindowWidth : ConsoleWrapper.WindowWidth - 2;
+            int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
+
+            // Get the colors
+            var unhighlightedColorBackground = settings.BackgroundColor;
+            var highlightedColorBackground = settings.PaneSelectedItemBackColor;
+
+            // Get the start and the end indexes for lines
+            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
+            int currentPage = lineIdx / lineLinesPerPage;
+            int startIndex = lineLinesPerPage * currentPage + 1;
+            int endIndex = lineLinesPerPage * (currentPage + 1);
+            if (startIndex > lines.Count)
+                startIndex = lines.Count;
+            if (endIndex > lines.Count)
+                endIndex = lines.Count;
+
+            // Get the lines and highlight the selection
+            int count = 0;
+            var sels = new StringBuilder();
+            for (int i = startIndex; i <= endIndex; i++)
             {
-                // Get the widths and heights
-                int SeparatorConsoleWidthInterior = fullscreen ? ConsoleWrapper.WindowWidth : ConsoleWrapper.WindowWidth - 2;
-                int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
+                // Get a line
+                string source = lines[i - 1].Replace("\t", ">");
+                if (source.Length == 0)
+                    source = " ";
+                var sequencesCollections = VtSequenceTools.MatchVTSequences(source);
+                int vtSeqIdx = 0;
 
-                // Get the colors
-                var unhighlightedColorBackground = settings.BackgroundColor;
-                var highlightedColorBackground = settings.PaneSelectedItemBackColor;
-
-                // Get the start and the end indexes for lines
-                int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
-                int currentPage = lineIdx / lineLinesPerPage;
-                int startIndex = lineLinesPerPage * currentPage + 1;
-                int endIndex = lineLinesPerPage * (currentPage + 1);
-                if (startIndex > lines.Count)
-                    startIndex = lines.Count;
-                if (endIndex > lines.Count)
-                    endIndex = lines.Count;
-
-                // Get the lines and highlight the selection
-                int count = 0;
-                var sels = new StringBuilder();
-                for (int i = startIndex; i <= endIndex; i++)
+                // Seek through the whole string to find unprintable characters
+                var sourceBuilder = new StringBuilder();
+                int width = ConsoleChar.EstimateCellWidth(source);
+                for (int l = 0; l < source.Length; l++)
                 {
-                    // Get a line
-                    string source = lines[i - 1].Replace("\t", ">");
-                    if (source.Length == 0)
-                        source = " ";
-                    var sequencesCollections = VtSequenceTools.MatchVTSequences(source);
-                    int vtSeqIdx = 0;
-
-                    // Seek through the whole string to find unprintable characters
-                    var sourceBuilder = new StringBuilder();
-                    int width = ConsoleChar.EstimateCellWidth(source);
-                    for (int l = 0; l < source.Length; l++)
-                    {
-                        string sequence = ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
-                        bool unprintable = ConsoleChar.EstimateCellWidth(sequence) == 0;
-                        string rendered = unprintable && !isVtSequence ? "." : sequence;
-                        sourceBuilder.Append(rendered);
-                    }
-                    source = sourceBuilder.ToString();
-
-                    // Now, get the line range
-                    var lineBuilder = new StringBuilder();
-                    var absolutes = GetAbsoluteSequences(source, sequencesCollections);
-                    if (source.Length > 0)
-                    {
-                        int charsPerPage = SeparatorConsoleWidthInterior;
-                        int currentCharPage = lineColIdx / charsPerPage;
-                        int startLineIndex = charsPerPage * currentCharPage;
-                        int endLineIndex = charsPerPage * (currentCharPage + 1);
-                        if (startLineIndex > absolutes.Length)
-                            startLineIndex = absolutes.Length;
-                        if (endLineIndex > absolutes.Length)
-                            endLineIndex = absolutes.Length;
-                        source = "";
-                        for (int a = startLineIndex; a < endLineIndex; a++)
-                            source += absolutes[a].Item2;
-                    }
-                    lineBuilder.Append(source);
-
-                    // Highlight the selection
-                    if (i == lineIdx + 1)
-                    {
-                        bool overflown = lineColIdx >= lines[i - 1].Length;
-                        int adjustedIdx = lineColIdx % SeparatorConsoleWidthInterior;
-                        int finalPos = 1;
-                        for (int a = adjustedIdx; a > 0 && !overflown; a--)
-                            finalPos += TextTools.GetCharWidth(lines[i - 1][lineColIdx - a]);
-                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
-                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
-                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
-                        lineBuilder.Append(overflown ? ' ' : lines[i - 1][lineColIdx]);
-                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
-                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
-                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(SeparatorConsoleWidthInterior + 3 - (SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source)), SeparatorMinimumHeightInterior + count + 1));
-                    }
-                    lineBuilder.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
-                    );
-
-                    // Change the color depending on the highlighted line and column
-                    sels.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
-                        $"{ColorTools.RenderSetConsoleColor(highlightedColorBackground)}" +
-                        $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
-                        lineBuilder
-                    );
-                    count++;
+                    string sequence = ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
+                    bool unprintable = ConsoleChar.EstimateCellWidth(sequence) == 0;
+                    string rendered = unprintable && !isVtSequence ? "." : sequence;
+                    sourceBuilder.Append(rendered);
                 }
-                return sels.ToString();
-            });
-            screen.AddBufferedPart("Text editor interactive - Contents", part);
+                source = sourceBuilder.ToString();
+
+                // Now, get the line range
+                var lineBuilder = new StringBuilder();
+                var absolutes = GetAbsoluteSequences(source, sequencesCollections);
+                if (source.Length > 0)
+                {
+                    int charsPerPage = SeparatorConsoleWidthInterior;
+                    int currentCharPage = lineColIdx / charsPerPage;
+                    int startLineIndex = charsPerPage * currentCharPage;
+                    int endLineIndex = charsPerPage * (currentCharPage + 1);
+                    if (startLineIndex > absolutes.Length)
+                        startLineIndex = absolutes.Length;
+                    if (endLineIndex > absolutes.Length)
+                        endLineIndex = absolutes.Length;
+                    source = "";
+                    for (int a = startLineIndex; a < endLineIndex; a++)
+                        source += absolutes[a].Item2;
+                }
+                lineBuilder.Append(source);
+
+                // Highlight the selection
+                if (i == lineIdx + 1)
+                {
+                    bool overflown = lineColIdx >= lines[i - 1].Length;
+                    int adjustedIdx = lineColIdx % SeparatorConsoleWidthInterior;
+                    int finalPos = 1;
+                    for (int a = adjustedIdx; a > 0 && !overflown; a--)
+                        finalPos += TextTools.GetCharWidth(lines[i - 1][lineColIdx - a]);
+                    lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
+                    lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
+                    lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
+                    lineBuilder.Append(overflown ? ' ' : lines[i - 1][lineColIdx]);
+                    lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                    lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
+                    lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(SeparatorConsoleWidthInterior + 3 - (SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source)), SeparatorMinimumHeightInterior + count + 1));
+                }
+                lineBuilder.Append(
+                    ColorTools.RenderRevertForeground() +
+                    ColorTools.RenderRevertBackground()
+                );
+
+                // Change the color depending on the highlighted line and column
+                sels.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
+                    $"{ColorTools.RenderSetConsoleColor(highlightedColorBackground)}" +
+                    $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
+                    lineBuilder
+                );
+                count++;
+            }
+            return sels.ToString();
         }
 
-        private static void HandleKeypress(ConsoleKeyInfo key, ref List<string> lines, Screen screen, bool fullscreen, InteractiveTuiSettings settings)
-        {
-            switch (key.Key)
-            {
-                case ConsoleKey.LeftArrow:
-                    MoveBackward(lines, screen);
-                    return;
-                case ConsoleKey.RightArrow:
-                    MoveForward(lines, screen);
-                    return;
-                case ConsoleKey.UpArrow:
-                    MoveUp(lines, screen);
-                    return;
-                case ConsoleKey.DownArrow:
-                    MoveDown(lines, screen);
-                    return;
-                case ConsoleKey.PageUp:
-                    PreviousPage(lines, screen, fullscreen);
-                    return;
-                case ConsoleKey.PageDown:
-                    NextPage(lines, screen, fullscreen);
-                    return;
-                case ConsoleKey.Home:
-                    Beginning(lines, screen);
-                    return;
-                case ConsoleKey.End:
-                    End(lines, screen);
-                    return;
-            }
-            if (entering)
-            {
-                // Handle the entering keys apppropriately
-                switch (key.Key)
-                {
-                    case ConsoleKey.Backspace:
-                        RuboutChar(ref lines, screen);
-                        break;
-                    case ConsoleKey.Delete:
-                        DeleteChar(ref lines, screen);
-                        break;
-                    case ConsoleKey.Escape:
-                        SwitchEnter(lines, screen);
-                        break;
-                    case ConsoleKey.Enter:
-                        Insert(ref lines, screen);
-                        break;
-                    default:
-                        InsertChar(key.KeyChar, ref lines, screen);
-                        break;
-                }
-            }
-            else
-            {
-                switch (key.Key)
-                {
-                    case ConsoleKey.Escape:
-                        bail = true;
-                        break;
-                    case ConsoleKey.K:
-                        RenderKeybindingsBox(settings);
-                        screen.RequireRefresh();
-                        break;
-                    case ConsoleKey.Oem2:
-                    case ConsoleKey.Divide:
-                        FindNext(ref lines, settings, screen);
-                        screen.RequireRefresh();
-                        break;
-                    case ConsoleKey.I:
-                        if (!editable)
-                            break;
-                        SwitchEnter(lines, screen);
-                        break;
-                    case ConsoleKey.X:
-                        if (!editable)
-                            break;
-                        DeleteChar(ref lines, screen);
-                        break;
-                    case ConsoleKey.F1:
-                        if (!editable)
-                            break;
-                        if (key.Modifiers == ConsoleModifiers.Shift)
-                            InsertNoMove(ref lines, screen);
-                        else
-                            Insert(ref lines, screen);
-                        break;
-                    case ConsoleKey.F2:
-                        if (!editable)
-                            break;
-                        if (key.Modifiers == ConsoleModifiers.Shift)
-                            RemoveLineNoMove(ref lines, screen);
-                        else
-                            RemoveLine(ref lines, screen);
-                        break;
-                    case ConsoleKey.F3:
-                        if (!editable)
-                            break;
-                        if (key.Modifiers == ConsoleModifiers.Shift)
-                            ReplaceAll(ref lines, settings);
-                        else
-                            Replace(ref lines, settings);
-                        screen.RequireRefresh();
-                        break;
-                }
-            }
-        }
-
-        private static void InsertChar(char keyChar, ref List<string> lines, Screen screen)
+        private void InsertChar(char keyChar)
         {
             // Check the lines
             if (lines.Count == 0)
@@ -438,10 +304,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Insert a character
             lines[lineIdx] = lines[lineIdx].Insert(lines[lineIdx].Length == 0 ? 0 : lineColIdx, $"{keyChar}");
-            MoveForward(lines, screen);
+            MoveForward();
         }
 
-        private static void RuboutChar(ref List<string> lines, Screen screen)
+        private void RuboutChar()
         {
             // Check the lines
             if (lines.Count == 0)
@@ -455,19 +321,19 @@ namespace Terminaux.Inputs.Styles.Editor
                 int colIdx = absolutes[lineColIdx - 1].Item1;
                 int seqLength = absolutes[lineColIdx - 1].Item2.Length;
                 lines[lineIdx] = lines[lineIdx].Remove(colIdx, seqLength);
-                MoveBackward(lines, screen);
+                MoveBackward();
             }
             else if (lineIdx > 0)
             {
                 string substring = lines[lineIdx];
                 int oldLen = lines[lineIdx - 1].Length;
                 lines[lineIdx - 1] = lines[lineIdx - 1] + substring;
-                RemoveLine(ref lines, screen);
-                UpdateColumnIndex(oldLen, lines, screen);
+                RemoveLine();
+                UpdateColumnIndex(oldLen);
             }
         }
 
-        private static void DeleteChar(ref List<string> lines, Screen screen)
+        private void DeleteChar()
         {
             // Check the lines
             if (lines.Count == 0)
@@ -483,13 +349,13 @@ namespace Terminaux.Inputs.Styles.Editor
                 int colIdx = absolutes[lineColIdx].Item1;
                 int seqLength = absolutes[lineColIdx].Item2.Length;
                 lines[lineIdx] = lines[lineIdx].Remove(colIdx, seqLength);
-                UpdateLineIndex(lineIdx, lines, screen);
+                UpdateLineIndex(lineIdx);
             }
             else
-                RemoveLine(ref lines, screen);
+                RemoveLine();
         }
 
-        private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
+        private void RenderKeybindingsBox()
         {
             // Show the available keys list
             var finalBindings = editable ? entering ? bindingsEntering : editorBindings : bindings;
@@ -502,21 +368,22 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 Title = "Available keybindings"
             });
+            RequireRefresh();
         }
 
-        private static void MoveBackward(List<string> lines, Screen screen) =>
-            UpdateColumnIndex(lineColIdx - 1, lines, screen);
+        private void MoveBackward() =>
+            UpdateColumnIndex(lineColIdx - 1);
 
-        private static void MoveForward(List<string> lines, Screen screen) =>
-            UpdateColumnIndex(lineColIdx + 1, lines, screen);
+        private void MoveForward() =>
+            UpdateColumnIndex(lineColIdx + 1);
 
-        private static void MoveUp(List<string> lines, Screen screen) =>
-            UpdateLineIndex(lineIdx - 1, lines, screen);
+        private void MoveUp() =>
+            UpdateLineIndex(lineIdx - 1);
 
-        private static void MoveDown(List<string> lines, Screen screen) =>
-            UpdateLineIndex(lineIdx + 1, lines, screen);
+        private void MoveDown() =>
+            UpdateLineIndex(lineIdx + 1);
 
-        private static void Insert(ref List<string> lines, Screen screen)
+        private void Insert()
         {
             // Insert a line
             if (lines.Count == 0)
@@ -533,43 +400,43 @@ namespace Terminaux.Inputs.Styles.Editor
                 lines.Insert(lineIdx + 1, substringNewLine);
             }
 
-            MoveDown(lines, screen);
-            UpdateColumnIndex(0, lines, screen);
+            MoveDown();
+            UpdateColumnIndex(0);
         }
 
-        private static void RemoveLine(ref List<string> lines, Screen screen)
+        private void RemoveLine()
         {
             // Check the lines
             if (lines.Count == 0)
                 return;
 
             // Remove a line
-            RemoveLine(ref lines, lineIdx + 1);
-            MoveUp(lines, screen);
+            RemoveLine(lineIdx + 1);
+            MoveUp();
         }
 
-        private static void InsertNoMove(ref List<string> lines, Screen screen)
+        private void InsertNoMove()
         {
             // Insert a line
             if (lines.Count == 0)
                 lines.Add("");
             else
                 lines.Insert(lineIdx + 1, "");
-            UpdateLineIndex(lineIdx, lines, screen);
+            UpdateLineIndex(lineIdx);
         }
 
-        private static void RemoveLineNoMove(ref List<string> lines, Screen screen)
+        private void RemoveLineNoMove()
         {
             // Check the lines
             if (lines.Count == 0)
                 return;
 
             // Remove a line
-            RemoveLine(ref lines, lineIdx + 1);
-            UpdateLineIndex(lineIdx, lines, screen);
+            RemoveLine(lineIdx + 1);
+            UpdateLineIndex(lineIdx);
         }
 
-        private static void Replace(ref List<string> lines, InteractiveTuiSettings settings)
+        private void Replace()
         {
             // Check the lines
             if (lines.Count == 0)
@@ -580,10 +447,11 @@ namespace Terminaux.Inputs.Styles.Editor
             string replacedText = InfoBoxInputColor.WriteInfoBoxInput("Write the replacement string", settings.InfoBoxSettings);
 
             // Do the replacement!
-            Replace(ref lines, replacementText, replacedText, lineIdx + 1);
+            Replace(replacementText, replacedText, lineIdx + 1);
+            RequireRefresh();
         }
 
-        private static void ReplaceAll(ref List<string> lines, InteractiveTuiSettings settings)
+        private void ReplaceAll()
         {
             // Check the lines
             if (lines.Count == 0)
@@ -594,10 +462,11 @@ namespace Terminaux.Inputs.Styles.Editor
             string replacedText = InfoBoxInputColor.WriteInfoBoxInput("Write the replacement string", settings.InfoBoxSettings);
 
             // Do the replacement!
-            Replace(ref lines, replacementText, replacedText);
+            Replace(replacementText, replacedText);
+            RequireRefresh();
         }
 
-        private static void FindNext(ref List<string> lines, InteractiveTuiSettings settings, Screen screen)
+        private void FindNext()
         {
             // Check the lines
             if (lines.Count == 0)
@@ -671,15 +540,16 @@ namespace Terminaux.Inputs.Styles.Editor
             // Update line index and column index if found. Otherwise, show a message
             if (found)
             {
-                UpdateLineIndex(r, lines, screen);
-                UpdateColumnIndex(c, lines, screen);
+                UpdateLineIndex(r);
+                UpdateColumnIndex(c);
                 cachedFind = text;
             }
             else
                 InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
+            RequireRefresh();
         }
 
-        private static void StatusTextInfo(List<string> lines)
+        private void StatusTextInfo()
         {
             // Get the status
             status =
@@ -703,7 +573,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 status += $" | Tab: {(int)currChar[0]}";
         }
 
-        private static void PreviousPage(List<string> lines, Screen screen, bool fullscreen)
+        private void PreviousPage()
         {
             int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
             int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
@@ -711,10 +581,10 @@ namespace Terminaux.Inputs.Styles.Editor
             int startIndex = lineLinesPerPage * currentPage;
             if (startIndex > lines.Count)
                 startIndex = lines.Count;
-            UpdateLineIndex(startIndex - 1 < 0 ? 0 : startIndex - 1, lines, screen);
+            UpdateLineIndex(startIndex - 1 < 0 ? 0 : startIndex - 1);
         }
 
-        private static void NextPage(List<string> lines, Screen screen, bool fullscreen)
+        private void NextPage()
         {
             int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
             int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
@@ -722,26 +592,26 @@ namespace Terminaux.Inputs.Styles.Editor
             int endIndex = lineLinesPerPage * (currentPage + 1);
             if (endIndex > lines.Count - 1)
                 endIndex = lines.Count - 1;
-            UpdateLineIndex(endIndex, lines, screen);
+            UpdateLineIndex(endIndex);
         }
 
-        private static void Beginning(List<string> lines, Screen screen) =>
-            UpdateLineIndex(0, lines, screen);
+        private void Beginning() =>
+            UpdateLineIndex(0);
 
-        private static void End(List<string> lines, Screen screen) =>
-            UpdateLineIndex(lines.Count - 1, lines, screen);
+        private void End() =>
+            UpdateLineIndex(lines.Count - 1);
 
-        private static void UpdateLineIndex(int lnIdx, List<string> lines, Screen screen)
+        private void UpdateLineIndex(int lnIdx)
         {
             lineIdx = lnIdx;
             if (lineIdx > lines.Count - 1)
                 lineIdx = lines.Count - 1;
             if (lineIdx < 0)
                 lineIdx = 0;
-            UpdateColumnIndex(lineColIdx, lines, screen);
+            UpdateColumnIndex(lineColIdx);
         }
 
-        private static void UpdateColumnIndex(int clIdx, List<string> lines, Screen screen)
+        private void UpdateColumnIndex(int clIdx)
         {
             lineColIdx = clIdx;
             if (lines.Count == 0)
@@ -755,17 +625,17 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = maxLen;
             if (lineColIdx < 0)
                 lineColIdx = 0;
-            screen.RequireRefresh();
+            RequireRefresh();
         }
 
-        private static void SwitchEnter(List<string> lines, Screen screen)
+        private void SwitchEnter()
         {
             entering = !entering;
-            screen.RequireRefresh();
-            UpdateLineIndex(lineIdx, lines, screen);
+            RequireRefresh();
+            UpdateLineIndex(lineIdx);
         }
 
-        private static (int, string)[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
+        private (int, string)[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
         {
             int vtSeqIdx = 0;
             List<(int, string)> sequences = [];
@@ -781,7 +651,7 @@ namespace Terminaux.Inputs.Styles.Editor
             return [.. sequences];
         }
 
-        private static void RemoveLine(ref List<string> lines, int LineNumber)
+        private void RemoveLine(int LineNumber)
         {
             if (lines is not null)
             {
@@ -795,7 +665,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 throw new ArgumentNullException("Can't perform this operation on null lines list.");
         }
 
-        private static void Replace(ref List<string> lines, string From, string With)
+        private void Replace(string From, string With)
         {
             if (string.IsNullOrEmpty(From))
                 throw new ArgumentNullException(nameof(From));
@@ -808,7 +678,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 throw new ArgumentNullException("Can't perform this operation on null lines list.");
         }
 
-        private static void Replace(ref List<string> lines, string From, string With, int LineNumber)
+        private void Replace(string From, string With, int LineNumber)
         {
             if (string.IsNullOrEmpty(From))
                 throw new ArgumentNullException(nameof(From));
@@ -822,6 +692,50 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on null lines list.");
+        }
+
+        private void UpdateKeybindings()
+        {
+            Keybindings.Clear();
+            if (entering)
+            {
+                Keybindings.Add((bindingsEntering[0], (ui, _, _) => ((TextEditInteractive)ui).SwitchEnter()));
+                Keybindings.Add((bindingsEntering[1], (ui, _, _) => ((TextEditInteractive)ui).Insert()));
+                Keybindings.Add((bindingsEntering[2], (ui, _, _) => ((TextEditInteractive)ui).RuboutChar()));
+                Keybindings.Add((bindingsEntering[3], (ui, _, _) => ((TextEditInteractive)ui).DeleteChar()));
+                Fallback = (ui, cki, _) => ((TextEditInteractive)ui).InsertChar(cki.KeyChar);
+            }
+            else
+            {
+                Fallback = null;
+
+                // Assign keybindings
+                Keybindings.Add((bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
+                Keybindings.Add((bindings[1], (ui, _, _) => ((TextEditInteractive)ui).RenderKeybindingsBox()));
+                Keybindings.Add((bindings[2], (ui, _, _) => ((TextEditInteractive)ui).FindNext()));
+                Keybindings.Add((new Keybinding("Find Next", ConsoleKey.Oem2), (ui, _, _) => ((TextEditInteractive)ui).FindNext()));
+                Keybindings.Add((bindings[3], (ui, _, _) => ((TextEditInteractive)ui).MoveUp()));
+                Keybindings.Add((bindings[4], (ui, _, _) => ((TextEditInteractive)ui).MoveDown()));
+                Keybindings.Add((bindings[5], (ui, _, _) => ((TextEditInteractive)ui).MoveBackward()));
+                Keybindings.Add((bindings[6], (ui, _, _) => ((TextEditInteractive)ui).MoveForward()));
+                Keybindings.Add((bindings[7], (ui, _, _) => ((TextEditInteractive)ui).PreviousPage()));
+                Keybindings.Add((bindings[8], (ui, _, _) => ((TextEditInteractive)ui).NextPage()));
+                Keybindings.Add((bindings[9], (ui, _, _) => ((TextEditInteractive)ui).Beginning()));
+                Keybindings.Add((bindings[10], (ui, _, _) => ((TextEditInteractive)ui).End()));
+
+                // Assign edit keybindings
+                if (editable)
+                {
+                    Keybindings.Add((editorBindings[11], (ui, _, _) => ((TextEditInteractive)ui).SwitchEnter()));
+                    Keybindings.Add((editorBindings[12], (ui, _, _) => ((TextEditInteractive)ui).DeleteChar()));
+                    Keybindings.Add((editorBindings[13], (ui, _, _) => ((TextEditInteractive)ui).Insert()));
+                    Keybindings.Add((editorBindings[14], (ui, _, _) => ((TextEditInteractive)ui).RemoveLine()));
+                    Keybindings.Add((editorBindings[15], (ui, _, _) => ((TextEditInteractive)ui).InsertNoMove()));
+                    Keybindings.Add((editorBindings[16], (ui, _, _) => ((TextEditInteractive)ui).RemoveLineNoMove()));
+                    Keybindings.Add((editorBindings[17], (ui, _, _) => ((TextEditInteractive)ui).Replace()));
+                    Keybindings.Add((editorBindings[18], (ui, _, _) => ((TextEditInteractive)ui).ReplaceAll()));
+                }
+            }
         }
     }
 }

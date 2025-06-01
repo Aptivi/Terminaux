@@ -41,32 +41,40 @@ namespace Terminaux.Inputs.Styles.Editor
     /// <summary>
     /// Interactive hex editor
     /// </summary>
-    public static class HexEditInteractive
+    public class HexEditInteractive : TextualUI
     {
-        private static string status = "";
-        private static byte[] cachedFind = [];
-        private static bool bail;
-        private static int byteIdx = 0;
-        private static bool editable = true;
         private static readonly Keybinding[] bindings =
         [
             new Keybinding("Exit", ConsoleKey.Escape),
             new Keybinding("Keybindings", ConsoleKey.K),
             new Keybinding("Number Info", ConsoleKey.F4),
             new Keybinding("Find Next", ConsoleKey.Divide),
+            new Keybinding("Move Up", ConsoleKey.UpArrow),
+            new Keybinding("Move Down", ConsoleKey.DownArrow),
+            new Keybinding("Move Left", ConsoleKey.LeftArrow),
+            new Keybinding("Move Right", ConsoleKey.RightArrow),
+            new Keybinding("Previous Page", ConsoleKey.PageUp),
+            new Keybinding("Next Page", ConsoleKey.PageDown),
+            new Keybinding("Go to Beginning", ConsoleKey.Home),
+            new Keybinding("Go to Ending", ConsoleKey.End),
         ];
         private static readonly Keybinding[] editorBindings =
         [
-            new Keybinding("Exit", ConsoleKey.Escape),
-            new Keybinding("Keybindings", ConsoleKey.K),
+            .. bindings,
             new Keybinding("Insert", ConsoleKey.F1),
             new Keybinding("Remove", ConsoleKey.F2),
             new Keybinding("Replace", ConsoleKey.F3),
             new Keybinding("Replace All", ConsoleKey.F3, ConsoleModifiers.Shift),
             new Keybinding("Replace All What", ConsoleKey.F3, ConsoleModifiers.Shift | ConsoleModifiers.Alt),
-            new Keybinding("Find Next", ConsoleKey.Divide),
-            new Keybinding("Number Info", ConsoleKey.F4),
         ];
+
+        private string status = "";
+        private byte[] bytes = [];
+        private InteractiveTuiSettings settings = InteractiveTuiSettings.GlobalSettings;
+        private byte[] cachedFind = [];
+        private int byteIdx = 0;
+        private bool fullscreen;
+        private bool editable = true;
 
         /// <summary>
         /// Opens an interactive hex editor
@@ -77,241 +85,155 @@ namespace Terminaux.Inputs.Styles.Editor
         /// <param name="edit">Whether it's editable or not</param>
         public static void OpenInteractive(ref byte[] bytes, InteractiveTuiSettings? settings = null, bool fullscreen = false, bool edit = true)
         {
-            // Set status
-            status = "Ready";
-            bail = false;
-            editable = edit;
-            settings ??= InteractiveTuiSettings.GlobalSettings;
-
-            // Main loop
-            byteIdx = 0;
-            var screen = new Screen();
-            ScreenTools.SetCurrent(screen);
-            ConsoleWrapper.CursorVisible = false;
-            try
+            // Make a new TUI
+            var finalSettings = settings ?? InteractiveTuiSettings.GlobalSettings;
+            var hexEditor = new HexEditInteractive()
             {
-                while (!bail)
-                {
-                    // Now, render the keybindings
-                    RenderKeybindings(ref screen, settings);
+                status = "Ready",
+                editable = edit,
+                bytes = bytes,
+                settings = finalSettings,
+                fullscreen = fullscreen,
+            };
 
-                    // Check to see if we need to render the box and the status
-                    if (!fullscreen)
-                    {
-                        // Render the box
-                        RenderHexViewBox(ref screen, settings);
+            // Assign keybindings
+            hexEditor.Keybindings.Add((bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
+            hexEditor.Keybindings.Add((bindings[1], (ui, _, _) => ((HexEditInteractive)ui).RenderKeybindingsBox()));
+            hexEditor.Keybindings.Add((bindings[2], (ui, _, _) => ((HexEditInteractive)ui).NumInfo()));
+            hexEditor.Keybindings.Add((bindings[3], (ui, _, _) => ((HexEditInteractive)ui).FindNext()));
+            hexEditor.Keybindings.Add((new Keybinding("Find Next", ConsoleKey.Oem2), (ui, _, _) => ((HexEditInteractive)ui).FindNext()));
+            hexEditor.Keybindings.Add((bindings[4], (ui, _, _) => ((HexEditInteractive)ui).MoveUp()));
+            hexEditor.Keybindings.Add((bindings[5], (ui, _, _) => ((HexEditInteractive)ui).MoveDown()));
+            hexEditor.Keybindings.Add((bindings[6], (ui, _, _) => ((HexEditInteractive)ui).MoveBackward()));
+            hexEditor.Keybindings.Add((bindings[7], (ui, _, _) => ((HexEditInteractive)ui).MoveForward()));
+            hexEditor.Keybindings.Add((bindings[8], (ui, _, _) => ((HexEditInteractive)ui).PreviousPage()));
+            hexEditor.Keybindings.Add((bindings[9], (ui, _, _) => ((HexEditInteractive)ui).NextPage()));
+            hexEditor.Keybindings.Add((bindings[10], (ui, _, _) => ((HexEditInteractive)ui).Beginning()));
+            hexEditor.Keybindings.Add((bindings[11], (ui, _, _) => ((HexEditInteractive)ui).End()));
 
-                        // Render the status
-                        RenderStatus(ref screen, settings);
-                    }
-
-                    // Now, render the visual hex with the current selection
-                    RenderContentsInHexWithSelection(byteIdx, ref screen, bytes, settings, fullscreen);
-
-                    // Wait for a keypress
-                    ScreenTools.Render(screen);
-                    var keypress = Input.ReadKey();
-                    HandleKeypress(keypress, ref bytes, screen, fullscreen, settings);
-
-                    // Reset, in case selection changed
-                    screen.RemoveBufferedParts();
-                }
+            // Assign edit keybindings
+            if (edit)
+            {
+                hexEditor.Keybindings.Add((editorBindings[12], (ui, _, _) => ((HexEditInteractive)ui).Insert()));
+                hexEditor.Keybindings.Add((editorBindings[13], (ui, _, _) => ((HexEditInteractive)ui).Remove()));
+                hexEditor.Keybindings.Add((editorBindings[14], (ui, _, _) => ((HexEditInteractive)ui).Replace()));
+                hexEditor.Keybindings.Add((editorBindings[15], (ui, _, _) => ((HexEditInteractive)ui).ReplaceAll()));
+                hexEditor.Keybindings.Add((editorBindings[16], (ui, _, _) => ((HexEditInteractive)ui).ReplaceAllWhat()));
             }
-            catch (Exception ex)
-            {
-                InfoBoxModalColor.WriteInfoBoxModal($"The hex editor failed: {ex.Message}");
-            }
-            bail = false;
-            ScreenTools.UnsetCurrent(screen);
 
-            // Clean up
-            ColorTools.LoadBack();
+            // Run the TUI
+            TextualUITools.RunTui(hexEditor);
+            bytes = hexEditor.bytes;
         }
 
-        private static void RenderKeybindings(ref Screen screen, InteractiveTuiSettings settings)
+        /// <inheritdoc/>
+        public override string Render()
         {
-            // Make a screen part
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
+            var builder = new StringBuilder();
+
+            // Now, render the keybindings
+            builder.Append(RenderKeybindings());
+
+            // Check to see if we need to render the box and the status
+            if (!fullscreen)
             {
-                var keybindingsRenderable = new Keybindings()
-                {
-                    KeybindingList = editable ? editorBindings : bindings,
-                    BuiltinColor = settings.KeyBindingBuiltinColor,
-                    BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
-                    BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
-                    OptionColor = settings.KeyBindingOptionColor,
-                    OptionForegroundColor = settings.OptionForegroundColor,
-                    OptionBackgroundColor = settings.OptionBackgroundColor,
-                    BackgroundColor = settings.BackgroundColor,
-                    Width = ConsoleWrapper.WindowWidth - 1,
-                };
-                return RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
-            });
-            screen.AddBufferedPart("Hex editor interactive - Keybindings", part);
-        }
-
-        private static void RenderStatus(ref Screen screen, InteractiveTuiSettings settings)
-        {
-            // Make a screen part
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
-            {
-                var builder = new StringBuilder();
-                builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
-                    $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
-                );
-                return builder.ToString();
-            });
-            screen.AddBufferedPart("Hex editor interactive - Status", part);
-        }
-
-        private static void RenderHexViewBox(ref Screen screen, InteractiveTuiSettings settings)
-        {
-            // Make a screen part
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
-            {
-                var builder = new StringBuilder();
-
-                // Get the widths and heights
-                int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
-                int SeparatorMinimumHeight = 1;
-                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-
                 // Render the box
-                var border = new Border()
-                {
-                    Left = 0,
-                    Top = SeparatorMinimumHeight,
-                    Width = SeparatorConsoleWidthInterior,
-                    Height = SeparatorMaximumHeightInterior,
-                };
-                builder.Append(
-                    ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +
-                    ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) +
-                    border.Render()
-                );
-                return builder.ToString();
-            });
-            screen.AddBufferedPart("Hex editor interactive - Hex view box", part);
+                builder.Append(RenderHexViewBox());
+
+                // Render the status
+                builder.Append(RenderStatus());
+            }
+
+            // Now, render the visual hex with the current selection
+            builder.Append(RenderContentsInHexWithSelection());
+            return builder.ToString();
         }
 
-        private static void RenderContentsInHexWithSelection(int byteIdx, ref Screen screen, byte[] bytes, InteractiveTuiSettings settings, bool fullscreen)
+        private string RenderKeybindings()
+        {
+            var keybindingsRenderable = new Keybindings()
+            {
+                KeybindingList = editable ? editorBindings : bindings,
+                BuiltinColor = settings.KeyBindingBuiltinColor,
+                BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
+                BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
+                OptionColor = settings.KeyBindingOptionColor,
+                OptionForegroundColor = settings.OptionForegroundColor,
+                OptionBackgroundColor = settings.OptionBackgroundColor,
+                BackgroundColor = settings.BackgroundColor,
+                Width = ConsoleWrapper.WindowWidth - 1,
+            };
+            return RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
+        }
+
+        private string RenderStatus()
         {
             // First, update the status
-            StatusNumInfo(bytes);
+            StatusNumInfo();
 
-            // Then, render the contents with the selection indicator
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
-            {
-                int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
-                var builder = new StringBuilder();
-                int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
-                int currentSelection = byteIdx / 16;
-                int currentPage = currentSelection / byteLinesPerPage;
-                int startIndex = byteLinesPerPage * currentPage;
-                int endIndex = byteLinesPerPage * (currentPage + 1);
-                int startByte = startIndex * 16 + 1;
-                int endByte = endIndex * 16;
-                if (startByte > bytes.Length)
-                    startByte = bytes.Length;
-                if (endByte > bytes.Length)
-                    endByte = bytes.Length;
-                string rendered = RenderContentsInHex(byteIdx + 1, startByte, endByte, bytes, settings);
-
-                // Render the box
-                builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
-                    $"{TextWriterWhereColor.RenderWhere(rendered, fullscreen ? 0 : 1, SeparatorMinimumHeightInterior)}"
-                );
-                return builder.ToString();
-            });
-            screen.AddBufferedPart("Hex editor interactive - Contents", part);
+            // Now, render the status
+            var builder = new StringBuilder();
+            builder.Append(
+                $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
+                $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
+                $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
+            );
+            return builder.ToString();
         }
 
-        private static void HandleKeypress(ConsoleKeyInfo key, ref byte[] bytes, Screen screen, bool fullscreen, InteractiveTuiSettings settings)
+        private string RenderHexViewBox()
         {
-            // Check to see if we have this binding
-            switch (key.Key)
+            var builder = new StringBuilder();
+
+            // Get the widths and heights
+            int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
+            int SeparatorMinimumHeight = 1;
+            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+
+            // Render the box
+            var border = new Border()
             {
-                case ConsoleKey.LeftArrow:
-                    MoveBackward();
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.RightArrow:
-                    MoveForward(bytes);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.UpArrow:
-                    MoveUp();
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.DownArrow:
-                    MoveDown(bytes);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.PageUp:
-                    PreviousPage(bytes, screen, fullscreen);
-                    break;
-                case ConsoleKey.PageDown:
-                    NextPage(bytes, screen, fullscreen);
-                    break;
-                case ConsoleKey.Home:
-                    Beginning();
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.End:
-                    End(bytes);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.Escape:
-                    bail = true;
-                    break;
-                case ConsoleKey.K:
-                    RenderKeybindingsBox(settings);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.F4:
-                    NumInfo(bytes, settings);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.Oem2:
-                case ConsoleKey.Divide:
-                    FindNext(ref bytes, settings);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.F1:
-                    if (!editable)
-                        break;
-                    Insert(ref bytes, settings);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.F2:
-                    if (!editable)
-                        break;
-                    Remove(ref bytes);
-                    screen.RequireRefresh();
-                    break;
-                case ConsoleKey.F3:
-                    if (!editable)
-                        break;
-                    if (key.Modifiers == ConsoleModifiers.Shift)
-                        ReplaceAll(ref bytes, settings);
-                    else if (key.Modifiers == (ConsoleModifiers.Shift | ConsoleModifiers.Alt))
-                        ReplaceAllWhat(ref bytes, settings);
-                    else
-                        Replace(ref bytes, settings);
-                    screen.RequireRefresh();
-                    break;
-            }
+                Left = 0,
+                Top = SeparatorMinimumHeight,
+                Width = SeparatorConsoleWidthInterior,
+                Height = SeparatorMaximumHeightInterior,
+            };
+            builder.Append(
+                ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +
+                ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) +
+                border.Render()
+            );
+            return builder.ToString();
         }
 
-        private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
+        private string RenderContentsInHexWithSelection()
+        {
+            // Render the contents with the selection indicator
+            int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
+            var builder = new StringBuilder();
+            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
+            int currentSelection = byteIdx / 16;
+            int currentPage = currentSelection / byteLinesPerPage;
+            int startIndex = byteLinesPerPage * currentPage;
+            int endIndex = byteLinesPerPage * (currentPage + 1);
+            int startByte = startIndex * 16 + 1;
+            int endByte = endIndex * 16;
+            if (startByte > bytes.Length)
+                startByte = bytes.Length;
+            if (endByte > bytes.Length)
+                endByte = bytes.Length;
+            string rendered = RenderContentsInHex(byteIdx + 1, startByte, endByte, bytes, settings);
+
+            // Render the box
+            builder.Append(
+                $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
+                $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
+                $"{TextWriterWhereColor.RenderWhere(rendered, fullscreen ? 0 : 1, SeparatorMinimumHeightInterior)}"
+            );
+            return builder.ToString();
+        }
+
+        private void RenderKeybindingsBox()
         {
             // Show the available keys list
             var finalBindings = editable ? editorBindings : bindings;
@@ -324,41 +246,46 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 Title = "Available keybindings",
             });
+            RequireRefresh();
         }
 
-        private static void MoveBackward()
+        private void MoveBackward()
         {
             byteIdx--;
             if (byteIdx < 0)
                 byteIdx = 0;
+            RequireRefresh();
         }
 
-        private static void MoveForward(byte[] bytes)
+        private void MoveForward()
         {
             byteIdx++;
             if (byteIdx > bytes.Length - 1)
                 byteIdx = bytes.Length - 1;
             if (byteIdx < 0)
                 byteIdx = 0;
+            RequireRefresh();
         }
 
-        private static void MoveUp()
+        private void MoveUp()
         {
             byteIdx -= 16;
             if (byteIdx < 0)
                 byteIdx = 0;
+            RequireRefresh();
         }
 
-        private static void MoveDown(byte[] bytes)
+        private void MoveDown()
         {
             byteIdx += 16;
             if (byteIdx > bytes.Length - 1)
                 byteIdx = bytes.Length - 1;
             if (byteIdx < 0)
                 byteIdx = 0;
+            RequireRefresh();
         }
 
-        private static void Insert(ref byte[] bytes, InteractiveTuiSettings settings)
+        private void Insert()
         {
             // Prompt and parse the number
             byte byteNum = default;
@@ -367,17 +294,19 @@ namespace Terminaux.Inputs.Styles.Editor
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
             else
-                AddNewByte(ref bytes, byteNum, byteIdx + 1);
+                AddNewByte(byteNum, byteIdx + 1);
+            RequireRefresh();
         }
 
-        private static void Remove(ref byte[] bytes)
+        private void Remove()
         {
-            DeleteByte(ref bytes, byteIdx + 1);
+            DeleteByte(byteIdx + 1);
             if (byteIdx + 1 > bytes.Length && bytes.Length > 0)
                 MoveBackward();
+            RequireRefresh();
         }
 
-        private static void Replace(ref byte[] bytes, InteractiveTuiSettings settings)
+        private void Replace()
         {
             // Check the bytes
             if (bytes.Length == 0)
@@ -395,10 +324,11 @@ namespace Terminaux.Inputs.Styles.Editor
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
 
             // Do the replacement!
-            Replace(ref bytes, byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
+            Replace(byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
+            RequireRefresh();
         }
 
-        private static void ReplaceAll(ref byte[] bytes, InteractiveTuiSettings settings)
+        private void ReplaceAll()
         {
             // Check the bytes
             if (bytes.Length == 0)
@@ -416,10 +346,11 @@ namespace Terminaux.Inputs.Styles.Editor
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
 
             // Do the replacement!
-            Replace(ref bytes, byteNum, byteNumReplaced);
+            Replace(byteNum, byteNumReplaced);
+            RequireRefresh();
         }
 
-        private static void ReplaceAllWhat(ref byte[] bytes, InteractiveTuiSettings settings)
+        private void ReplaceAllWhat()
         {
             // Check the bytes
             if (bytes.Length == 0)
@@ -440,10 +371,11 @@ namespace Terminaux.Inputs.Styles.Editor
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
 
             // Do the replacement!
-            Replace(ref bytes, byteNum, byteNumReplaced);
+            Replace(byteNum, byteNumReplaced);
+            RequireRefresh();
         }
 
-        private static void FindNext(ref byte[] bytes, InteractiveTuiSettings settings)
+        private void FindNext()
         {
             // Check the bytes
             if (bytes.Length == 0)
@@ -536,9 +468,10 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
+            RequireRefresh();
         }
 
-        private static void NumInfo(byte[] bytes, InteractiveTuiSettings settings)
+        private void NumInfo()
         {
             // Check the index
             if (byteIdx >= bytes.Length)
@@ -561,9 +494,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 {
                     Title = "Number information",
                 });
+            RequireRefresh();
         }
 
-        private static void StatusNumInfo(byte[] bytes)
+        private void StatusNumInfo()
         {
             // Check the index
             if (byteIdx >= bytes.Length)
@@ -585,7 +519,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 $"Binary: {byteNumBinary}";
         }
 
-        private static void PreviousPage(byte[] bytes, Screen screen, bool fullscreen)
+        private void PreviousPage()
         {
             int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
             int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
@@ -598,10 +532,10 @@ namespace Terminaux.Inputs.Styles.Editor
             if (startByte < 0)
                 startByte = 0;
             byteIdx = startByte;
-            screen.RequireRefresh();
+            RequireRefresh();
         }
 
-        private static void NextPage(byte[] bytes, Screen screen, bool fullscreen)
+        private void NextPage()
         {
             int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
             int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
@@ -614,20 +548,24 @@ namespace Terminaux.Inputs.Styles.Editor
             if (startByte < 0)
                 startByte = 0;
             byteIdx = startByte;
-            screen.RequireRefresh();
+            RequireRefresh();
         }
 
-        private static void Beginning() =>
+        private void Beginning()
+        {
             byteIdx = 0;
+            RequireRefresh();
+        }
 
-        private static void End(byte[] bytes)
+        private void End()
         {
             byteIdx = bytes.Length - 1;
             if (byteIdx < 0)
                 byteIdx = 0;
+            RequireRefresh();
         }
 
-        private static string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte, InteractiveTuiSettings settings)
+        private string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte, InteractiveTuiSettings settings)
         {
             // Get the un-highlighted and highlighted colors
             var entryColor = settings.PaneItemForeColor;
@@ -705,7 +643,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 throw new ArgumentOutOfRangeException($"The specified byte number is invalid. {StartByte}, {EndByte}");
         }
 
-        private static void AddNewByte(ref byte[] bytes, byte Content, long pos)
+        private void AddNewByte(byte Content, long pos)
         {
             if (bytes is not null)
             {
@@ -736,7 +674,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 throw new ArgumentNullException("Can't perform this operation on a null array.");
         }
 
-        private static void DeleteByte(ref byte[] bytes, long ByteNumber)
+        private void DeleteByte(long ByteNumber)
         {
             if (bytes is not null)
             {
@@ -760,10 +698,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 throw new ArgumentNullException("Can't perform this operation on a null array.");
         }
 
-        private static void Replace(ref byte[] bytes, byte FromByte, byte WithByte) =>
-            Replace(ref bytes, FromByte, WithByte, 1L, bytes.LongLength);
+        private void Replace(byte FromByte, byte WithByte) =>
+            Replace(FromByte, WithByte, 1L, bytes.LongLength);
 
-        private static void Replace(ref byte[] bytes, byte FromByte, byte WithByte, long StartByte, long EndByte)
+        private void Replace(byte FromByte, byte WithByte, long StartByte, long EndByte)
         {
             if (bytes is not null)
             {
