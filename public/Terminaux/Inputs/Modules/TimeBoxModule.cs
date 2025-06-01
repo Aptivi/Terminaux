@@ -89,7 +89,7 @@ namespace Terminaux.Inputs.Modules
                     // Clear the popover. A slider will appear on the input.
                     var boxBuffer = new StringBuilder();
                     int maxTimeWidth = inputPopoverSize.Width;
-                    int maxTimePartWidth = maxTimeWidth / 3 - 2;
+                    int maxTimePartWidth = (maxTimeWidth - 4) / 3 - 2;
                     boxBuffer.Append(
                         TextWriterWhereColor.RenderWhereColorBack(new(' ', maxTimeWidth), inputPopoverPos.X, inputPopoverPos.Y, Foreground, Background)
                     );

@@ -100,7 +100,8 @@ namespace Terminaux.Inputs.Modules
                 WideString wideInput = (WideString)finalValue;
                 if (wideInput.Length > 0)
                     Value = $"{wideInput[0]}";
-                Value = finalValue;
+                else
+                    Value = finalValue;
             }
             Provided = true;
         }
