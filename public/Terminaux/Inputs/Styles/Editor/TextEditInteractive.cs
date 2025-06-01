@@ -268,7 +268,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 {
                     bool overflown = lineColIdx >= lines[i - 1].Length;
                     int adjustedIdx = lineColIdx % SeparatorConsoleWidthInterior;
-                    int finalPos = 1;
+                    int finalPos = overflown ? adjustedIdx + 1 : 1;
                     for (int a = adjustedIdx; a > 0 && !overflown; a--)
                         finalPos += TextTools.GetCharWidth(lines[i - 1][lineColIdx - a]);
                     lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
