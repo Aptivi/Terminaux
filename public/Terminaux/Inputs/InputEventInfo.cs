@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Terminaux.Base.Structures;
 using Terminaux.Inputs.Pointer;
 
@@ -26,6 +27,7 @@ namespace Terminaux.Inputs
     /// <summary>
     /// Input event info
     /// </summary>
+    [DebuggerDisplay("[{EventType}] {PointerEventContext} | {ConsoleKeyInfo?.Key} | {ReportedPos}")]
     public class InputEventInfo
     {
         private readonly PointerEventContext? ctx = null;

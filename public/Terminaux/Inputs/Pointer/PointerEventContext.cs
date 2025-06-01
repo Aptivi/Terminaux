@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Diagnostics;
+
 namespace Terminaux.Inputs.Pointer
 {
     /// <summary>
     /// Pointer event context
     /// </summary>
+    [DebuggerDisplay("{Button}, {ButtonPress}, {Modifiers}, ({x}, {y}: {ClickTier}), D: {Dragging}")]
     public class PointerEventContext
     {
         private readonly PointerButton mouseButton;
