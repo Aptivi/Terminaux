@@ -46,17 +46,28 @@ namespace Terminaux.Images.Interactives
     /// <summary>
     /// Interactive image viewer
     /// </summary>
-    public static class ImageViewInteractive
+    public class ImageViewInteractive : TextualUI
     {
-        private static bool bail;
-        private static bool fit = true;
-        private static int lineIdx = 0;
-        private static int lineColIdx = 0;
         private static readonly Keybinding[] bindings =
         [
             new Keybinding("Exit", ConsoleKey.Escape),
             new Keybinding("Keybindings", ConsoleKey.K),
+            new Keybinding("Fit or Scaled", ConsoleKey.F),
+            new Keybinding("Move Up", ConsoleKey.UpArrow),
+            new Keybinding("Move Down", ConsoleKey.DownArrow),
+            new Keybinding("Move Left", ConsoleKey.LeftArrow),
+            new Keybinding("Move Right", ConsoleKey.RightArrow),
+            new Keybinding("Previous Page", ConsoleKey.PageUp),
+            new Keybinding("Next Page", ConsoleKey.PageDown),
+            new Keybinding("Go to Beginning", ConsoleKey.Home),
+            new Keybinding("Go to Ending", ConsoleKey.End),
         ];
+
+        private bool fit = true;
+        private InteractiveTuiSettings settings = InteractiveTuiSettings.GlobalSettings;
+        private Color[,] pixels = new Color[0, 0];
+        private int lineIdx = 0;
+        private int lineColIdx = 0;
 
         /// <summary>
         /// Opens an interactive image viewer
@@ -65,137 +76,76 @@ namespace Terminaux.Images.Interactives
         /// <param name="settings">TUI settings</param>
         public static void OpenInteractive(MagickImage image, InteractiveTuiSettings? settings = null)
         {
-            // Set status
-            bail = false;
-            fit = true;
-            settings ??= InteractiveTuiSettings.GlobalSettings;
+            // Make a new TUI
+            var finalSettings = settings ?? InteractiveTuiSettings.GlobalSettings;
             var pixels = ImageProcessor.GetColorsFromImage(image);
-
-            // Main loop
-            lineIdx = 0;
-            lineColIdx = 0;
-            var screen = new Screen();
-            ScreenTools.SetCurrent(screen);
-            ConsoleWrapper.CursorVisible = false;
-            try
+            var imageViewer = new ImageViewInteractive()
             {
-                while (!bail)
-                {
-                    // Now, render the keybindings
-                    RenderKeybindings(ref screen, settings);
+                settings = finalSettings,
+                pixels = pixels,
+            };
 
-                    // Now, render the image with the current selection
-                    RenderContentsWithSelection(lineIdx, lineColIdx, ref screen, pixels);
+            // Assign keybindings
+            imageViewer.Keybindings.Add((bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
+            imageViewer.Keybindings.Add((bindings[1], (ui, _, _) => ((ImageViewInteractive)ui).RenderKeybindingsBox()));
+            imageViewer.Keybindings.Add((bindings[2], (ui, _, _) => ((ImageViewInteractive)ui).FitScale()));
+            imageViewer.Keybindings.Add((bindings[3], (ui, _, _) => ((ImageViewInteractive)ui).MoveUp()));
+            imageViewer.Keybindings.Add((bindings[4], (ui, _, _) => ((ImageViewInteractive)ui).MoveDown()));
+            imageViewer.Keybindings.Add((bindings[5], (ui, _, _) => ((ImageViewInteractive)ui).MoveBackward()));
+            imageViewer.Keybindings.Add((bindings[6], (ui, _, _) => ((ImageViewInteractive)ui).MoveForward()));
+            imageViewer.Keybindings.Add((bindings[7], (ui, _, _) => ((ImageViewInteractive)ui).PreviousPage()));
+            imageViewer.Keybindings.Add((bindings[8], (ui, _, _) => ((ImageViewInteractive)ui).NextPage()));
+            imageViewer.Keybindings.Add((bindings[9], (ui, _, _) => ((ImageViewInteractive)ui).Beginning()));
+            imageViewer.Keybindings.Add((bindings[10], (ui, _, _) => ((ImageViewInteractive)ui).End()));
 
-                    // Wait for a keypress
-                    ScreenTools.Render(screen);
-                    var keypress = Input.ReadKey();
-                    HandleKeypress(ref screen, keypress, pixels, settings);
-
-                    // Reset, in case selection changed
-                    screen.RemoveBufferedParts();
-                }
-            }
-            catch (Exception ex)
-            {
-                InfoBoxModalColor.WriteInfoBoxModal($"The text viewer failed: {ex.Message}");
-            }
-            bail = false;
-            ScreenTools.UnsetCurrent(screen);
-
-            // Close the file and clean up
-            ColorTools.LoadBack();
+            // Run the TUI
+            TextualUITools.RunTui(imageViewer);
         }
 
-        private static void RenderKeybindings(ref Screen screen, InteractiveTuiSettings settings)
+        /// <inheritdoc/>
+        public override string Render()
         {
-            // Make a screen part
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
-            {
-                var keybindingsRenderable = new Keybindings()
-                {
-                    KeybindingList = bindings,
-                    BuiltinColor = settings.KeyBindingBuiltinColor,
-                    BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
-                    BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
-                    OptionColor = settings.KeyBindingOptionColor,
-                    OptionForegroundColor = settings.OptionForegroundColor,
-                    OptionBackgroundColor = settings.OptionBackgroundColor,
-                    BackgroundColor = settings.BackgroundColor,
-                    Width = ConsoleWrapper.WindowWidth - 1,
-                };
-                return RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
-            });
-            screen.AddBufferedPart("Image viewer interactive - Keybindings", part);
+            var builder = new StringBuilder();
+
+            // Now, render the keybindings
+            builder.Append(RenderKeybindings());
+
+            // Now, render the image with the current selection
+            builder.Append(RenderContentsWithSelection());
+            return builder.ToString();
         }
 
-        private static void RenderContentsWithSelection(int lineIdx, int columnIdx, ref Screen screen, Color[,] pixels)
+        private string RenderKeybindings()
         {
-            // Render the contents using the image viewer
-            var part = new ScreenPart();
-            part.AddDynamicText(() =>
+            var keybindingsRenderable = new Keybindings()
             {
-                var renderer = new ImageView(pixels)
-                {
-                    Width = ConsoleWrapper.WindowWidth - 1,
-                    Height = ConsoleWrapper.WindowHeight - 1,
-                    ColumnOffset = columnIdx,
-                    RowOffset = lineIdx,
-                    Fit = fit,
-                };
-                return renderer.Render();
-            });
-            screen.AddBufferedPart("Image viewer interactive - Contents", part);
+                KeybindingList = bindings,
+                BuiltinColor = settings.KeyBindingBuiltinColor,
+                BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
+                BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
+                OptionColor = settings.KeyBindingOptionColor,
+                OptionForegroundColor = settings.OptionForegroundColor,
+                OptionBackgroundColor = settings.OptionBackgroundColor,
+                BackgroundColor = settings.BackgroundColor,
+                Width = ConsoleWrapper.WindowWidth - 1,
+            };
+            return RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1));
         }
 
-        private static void HandleKeypress(ref Screen screen, ConsoleKeyInfo key, Color[,] pixels, InteractiveTuiSettings settings)
+        private string RenderContentsWithSelection()
         {
-            switch (key.Key)
+            var renderer = new ImageView(pixels)
             {
-                case ConsoleKey.LeftArrow:
-                    MoveBackward(pixels, ref screen);
-                    return;
-                case ConsoleKey.RightArrow:
-                    MoveForward(pixels, ref screen);
-                    return;
-                case ConsoleKey.UpArrow:
-                    MoveUp(pixels, ref screen);
-                    return;
-                case ConsoleKey.DownArrow:
-                    MoveDown(pixels, ref screen);
-                    return;
-                case ConsoleKey.PageUp:
-                    PreviousPage(pixels, ref screen);
-                    return;
-                case ConsoleKey.PageDown:
-                    NextPage(pixels, ref screen);
-                    return;
-                case ConsoleKey.Home:
-                    Beginning(pixels, ref screen);
-                    return;
-                case ConsoleKey.End:
-                    End(pixels, ref screen);
-                    return;
-                case ConsoleKey.F:
-                    if (!fit)
-                    {
-                        UpdateColumnIndex(0, pixels, ref screen);
-                        UpdateLineIndex(0, pixels, ref screen);
-                    }
-                    fit = !fit;
-                    return;
-                case ConsoleKey.Escape:
-                    bail = true;
-                    return;
-                case ConsoleKey.K:
-                    RenderKeybindingsBox(settings);
-                    screen.RequireRefresh();
-                    return;
-            }
+                Width = ConsoleWrapper.WindowWidth,
+                Height = ConsoleWrapper.WindowHeight - 1,
+                ColumnOffset = lineColIdx,
+                RowOffset = lineIdx,
+                Fit = fit,
+            };
+            return renderer.Render();
         }
 
-        private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
+        private void RenderKeybindingsBox()
         {
             // Show the available keys list
             if (bindings.Length == 0)
@@ -209,50 +159,60 @@ namespace Terminaux.Images.Interactives
             });
         }
 
-        private static void MoveBackward(Color[,] pixels, ref Screen screen) =>
-            UpdateColumnIndex(lineColIdx - 1, pixels, ref screen);
+        private void FitScale()
+        {
+            if (!fit)
+            {
+                UpdateColumnIndex(0);
+                UpdateLineIndex(0);
+            }
+            fit = !fit;
+        }
 
-        private static void MoveForward(Color[,] pixels, ref Screen screen) =>
-            UpdateColumnIndex(lineColIdx + 1, pixels, ref screen);
+        private void MoveBackward() =>
+            UpdateColumnIndex(lineColIdx - 1);
 
-        private static void MoveUp(Color[,] pixels, ref Screen screen) =>
-            UpdateLineIndex(lineIdx - 1, pixels, ref screen);
+        private void MoveForward() =>
+            UpdateColumnIndex(lineColIdx + 1);
 
-        private static void MoveDown(Color[,] pixels, ref Screen screen) =>
-            UpdateLineIndex(lineIdx + 1, pixels, ref screen);
+        private void MoveUp() =>
+            UpdateLineIndex(lineIdx - 1);
 
-        private static void PreviousPage(Color[,] pixels, ref Screen screen)
+        private void MoveDown() =>
+            UpdateLineIndex(lineIdx + 1);
+
+        private void PreviousPage()
         {
             int imageHeight = pixels.GetLength(1);
-            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 2;
+            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 1;
             int currentPage = lineIdx / lineLinesPerPage;
             int startIndex = lineLinesPerPage * currentPage;
             if (startIndex > imageHeight)
                 startIndex = imageHeight;
-            UpdateLineIndex(startIndex - 1 < 0 ? 0 : startIndex - 1, pixels, ref screen);
+            UpdateLineIndex(startIndex - 1 < 0 ? 0 : startIndex - 1);
         }
 
-        private static void NextPage(Color[,] pixels, ref Screen screen)
+        private void NextPage()
         {
             int imageHeight = pixels.GetLength(1);
-            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 2;
+            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 1;
             int currentPage = lineIdx / lineLinesPerPage;
             int endIndex = lineLinesPerPage * (currentPage + 1);
             if (endIndex > imageHeight - 1)
                 endIndex = imageHeight - 1;
-            UpdateLineIndex(endIndex, pixels, ref screen);
+            UpdateLineIndex(endIndex);
         }
 
-        private static void Beginning(Color[,] pixels, ref Screen screen) =>
-            UpdateLineIndex(0, pixels, ref screen);
+        private void Beginning() =>
+            UpdateLineIndex(0);
 
-        private static void End(Color[,] pixels, ref Screen screen)
+        private void End()
         {
             int imageHeight = pixels.GetLength(1);
-            UpdateLineIndex(imageHeight - 1, pixels, ref screen);
+            UpdateLineIndex(imageHeight - 1);
         }
 
-        private static void UpdateLineIndex(int lnIdx, Color[,] pixels, ref Screen screen)
+        private void UpdateLineIndex(int lnIdx)
         {
             if (fit)
                 return;
@@ -262,10 +222,10 @@ namespace Terminaux.Images.Interactives
                 lineIdx = imageHeight - ConsoleWrapper.WindowHeight + 1;
             if (lineIdx < 0)
                 lineIdx = 0;
-            UpdateColumnIndex(lineColIdx, pixels, ref screen);
+            UpdateColumnIndex(lineColIdx);
         }
 
-        private static void UpdateColumnIndex(int clIdx, Color[,] pixels, ref Screen screen)
+        private void UpdateColumnIndex(int clIdx)
         {
             if (fit)
                 return;
@@ -277,11 +237,11 @@ namespace Terminaux.Images.Interactives
                 lineColIdx = 0;
                 return;
             }
-            if (lineColIdx + ConsoleWrapper.WindowWidth - 1 > imageWidth - 1)
-                lineColIdx = imageWidth - ConsoleWrapper.WindowWidth + 1;
+            if (lineColIdx + ConsoleWrapper.WindowWidth > imageWidth - 1)
+                lineColIdx = imageWidth - ConsoleWrapper.WindowWidth;
             if (lineColIdx < 0)
                 lineColIdx = 0;
-            screen.RequireRefresh();
+            RequireRefresh();
         }
     }
 }
