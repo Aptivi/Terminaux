@@ -42,6 +42,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         public int OuterRadius { get; set; }
 
         /// <summary>
+        /// Horizontal radius of the arc
+        /// </summary>
+        public int RadiusX { get; set; }
+
+        /// <summary>
+        /// Vertical radius of the arc
+        /// </summary>
+        public int RadiusY { get; set; }
+
+        /// <summary>
         /// Starting angle
         /// </summary>
         public int AngleStart { get; set; }
@@ -62,8 +72,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         /// <returns>A rendered arc using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public override string Render()
         {
-            double halfPi = Math.PI / 2;
-            double quarterPi = Math.PI / 4;
+            // Check the arc radius
+            if (RadiusX == 0)
+                RadiusX = OuterRadius;
+            if (RadiusY == 0)
+                RadiusY = OuterRadius;
 
             // Process the angle inputs
             bool inverted = AngleStart > AngleEnd;
@@ -88,50 +101,91 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 Top = Top,
             };
             var pixels = new List<CellOptions>();
-            for (int r = InnerRadius; r <= OuterRadius; r++)
+
+            // Helper function to add pixel
+            void PlotPoint(int ratio, int x, int y)
             {
+                if (full || (ratio >= angleStart && ratio < angleEnd) ^ inverted)
+                    pixels.Add(new(centerX + x + 1, centerY - y + 1) { CellColor = ShapeColor });
+
+                int ratio2 = (180 - ratio) % 360;
+                if (full || (ratio2 >= angleStart && ratio2 < angleEnd) ^ inverted)
+                    pixels.Add(new(centerX - x + 1, centerY - y + 1) { CellColor = ShapeColor });
+
+                int ratio3 = (180 + ratio) % 360;
+                if (full || (ratio3 >= angleStart && ratio3 < angleEnd) ^ inverted)
+                    pixels.Add(new(centerX - x + 1, centerY + y + 1) { CellColor = ShapeColor });
+
+                int ratio4 = (360 - ratio) % 360;
+                if (full || (ratio4 >= angleStart && ratio4 < angleEnd) ^ inverted)
+                    pixels.Add(new(centerX + x + 1, centerY + y + 1) { CellColor = ShapeColor });
+            }
+            for (int layer = 0; layer <= (OuterRadius - InnerRadius); layer++)
+            {
+                int currentRadiusA = InnerRadius + layer;
+                int currentRadiusB = (int)(currentRadiusA * RadiusY / (double)RadiusX);
+
                 int x = 0;
-                int y = r;
-                int d = r - 1;
-                while (y >= x)
+                int y = currentRadiusB;
+                int radiusA = currentRadiusA * currentRadiusA;
+                int radiusB = currentRadiusB * currentRadiusB;
+                int twoRadiusA = 2 * radiusA;
+                int twoRadiusB = 2 * radiusB;
+                int p1 = radiusB - (radiusA * currentRadiusB) + (radiusA + 2) / 4;
+                int dX = 0;
+                int dY = twoRadiusA * y;
+                while (dX < dY)
                 {
-                    // Get the circle percentage
-                    int ratio = (int)Math.Floor((halfPi - Math.Atan2(y, x)) * 32 / quarterPi);
+                    double angle = Math.Atan2(y, x);
+                    if (angle < 0)
+                        angle += 2 * Math.PI;
+                    int ratio = (int)Math.Floor(angle * 180 / Math.PI);
 
                     // Fill the pixels
-                    if (full || (ratio >= angleStart && ratio < angleEnd) ^ inverted)
-                        pixels.Add(new(centerX + y + 1, centerY - x + 1) { CellColor = ShapeColor });
-                    if (full || ((ratio + angleEnd) > 89 && (ratio + angleStart) <= 89) ^ inverted)
-                        pixels.Add(new(centerX + x + 1, centerY - y + 1) { CellColor = ShapeColor });
-                    if (full || ((ratio + 90) >= angleStart && (ratio + 90) < angleEnd) ^ inverted)
-                        pixels.Add(new(centerX - x + 1, centerY - y + 1) { CellColor = ShapeColor });
-                    if (full || ((ratio + angleEnd) > 179 && (ratio + angleStart) <= 179) ^ inverted)
-                        pixels.Add(new(centerX - y + 1, centerY - x + 1) { CellColor = ShapeColor });
-                    if (full || ((ratio + 180) >= angleStart && (ratio + 180) < angleEnd) ^ inverted)
-                        pixels.Add(new(centerX - y + 1, centerY + x + 1) { CellColor = ShapeColor });
-                    if (full || ((ratio + angleEnd) > 269 && (ratio + angleStart) <= 269) ^ inverted)
-                        pixels.Add(new(centerX - x + 1, centerY + y + 1) { CellColor = ShapeColor });
-                    if (full || ((ratio + 270) >= angleStart && (ratio + 270) < angleEnd) ^ inverted)
-                        pixels.Add(new(centerX + x + 1, centerY + y + 1) { CellColor = ShapeColor });
-                    if (full || ((ratio + angleEnd) > 359 && (ratio + angleStart) <= 359) ^ inverted)
-                        pixels.Add(new(centerX + y + 1, centerY + x + 1) { CellColor = ShapeColor });
+                    PlotPoint(ratio, x, y);
 
                     // Now, go to the next pixel
-                    if (d >= 2 * x)
+                    if (p1 < 0)
                     {
-                        d -= 2 * x + 1;
                         x++;
-                    }
-                    else if (d < 2 * (r - y))
-                    {
-                        d += 2 * y - 1;
-                        y--;
+                        dX = twoRadiusB * x;
+                        p1 += dX + radiusB;
                     }
                     else
                     {
-                        d += 2 * (y - x - 1);
                         x++;
                         y--;
+                        dX = twoRadiusB * x;
+                        dY = twoRadiusA * y;
+                        p1 += dX - dY + radiusB;
+                    }
+                }
+
+                int p2 = radiusB * (x + 1) * (x + 1) + radiusA * (y - 1) * (y - 1) - radiusA * radiusB;
+                while (y >= 0)
+                {
+                    double angle = Math.Atan2(y, x);
+                    if (angle < 0)
+                        angle += 2 * Math.PI;
+                    int ratio = (int)Math.Floor(angle * 180 / Math.PI);
+
+                    // Fill the pixels
+                    PlotPoint(ratio, x, y);
+
+                    // Now, go to the next pixel
+                    if (p2 > 0)
+                    {
+                        y--;
+                        dY = twoRadiusA * y;
+                        p2 -= dY + radiusA;
+                    }
+                    else
+                    {
+                        x++;
+                        y--;
+                        dX = twoRadiusB * x;
+                        dY = twoRadiusA * y;
+                        p2 += dX - dY + radiusA;
                     }
                 }
             }
