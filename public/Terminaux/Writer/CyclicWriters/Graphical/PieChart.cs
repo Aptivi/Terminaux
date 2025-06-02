@@ -147,19 +147,14 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // If this is the last element and the angle is not yet 360, we need to finish it
                 if (i == shownElements.Length - 1 && startAngle < 360)
-                    angles.Add((startAngle, 360));
+                    angles[i] = (angles[i].start, 360);
             }
             
             // Create pies with element representations
             for (int i = 0; i < angles.Count; i++)
             {
                 var (start, sweep) = angles[i];
-                var element = i < shownElements.Length ? shownElements[i] : new()
-                {
-                    Name = "Others...",
-                    Value = (sweep - start) / 360,
-                    Color = ConsoleColors.Silver,
-                };
+                var element = shownElements[i];
 
                 // Render the element using a pie
                 ConsoleLogger.Debug("Rendering pie chart element {0}: (start angle: {1}, sweep angle: {2})", i, start, sweep);
