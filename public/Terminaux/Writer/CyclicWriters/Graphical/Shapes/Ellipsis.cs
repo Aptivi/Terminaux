@@ -60,8 +60,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             // Check to see if it's a circle or an ellipsis
             if (Width != Height)
             {
-                arc.RadiusX = Width;
-                arc.RadiusY = Height;
+                arc.Width = Width;
+                arc.Height = Height;
+                arc.RadiusX = Width / 2;
+                arc.RadiusY = Height / 2;
             }
 
             // Render the arc

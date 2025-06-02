@@ -121,8 +121,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             }
             for (int layer = 0; layer <= (OuterRadius - InnerRadius); layer++)
             {
-                int currentRadiusA = InnerRadius + layer;
-                int currentRadiusB = (int)(currentRadiusA * RadiusY / (double)RadiusX);
+                int layerRadius = InnerRadius + layer;
+                int currentRadiusA = (int)(layerRadius * RadiusX / (double)OuterRadius);
+                int currentRadiusB = (int)(layerRadius * RadiusY / (double)OuterRadius);
 
                 int x = 0;
                 int y = currentRadiusB;

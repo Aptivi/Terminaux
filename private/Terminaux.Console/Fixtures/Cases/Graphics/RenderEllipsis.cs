@@ -31,8 +31,14 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
         {
             var ellipsis = new Ellipsis(20, 20, 4, 2, true, ConsoleColors.Red);
             var ellipsis2 = new Ellipsis(10, 20, 46, 2, false, ConsoleColors.Aqua);
+            var ellipsis3 = new Ellipsis(20, 10, 68, 2, true, ConsoleColors.Lime);
+            var ellipsis4 = new Ellipsis(10, 10, 68, 12, false, ConsoleColors.Blue);
+            var ellipsis5 = new Ellipsis(10, 10, 90, 12, true, ConsoleColors.Blue3);
             TextWriterRaw.WriteRaw(ellipsis.Render());
             TextWriterRaw.WriteRaw(ellipsis2.Render());
+            TextWriterRaw.WriteRaw(ellipsis3.Render());
+            TextWriterRaw.WriteRaw(ellipsis4.Render());
+            TextWriterRaw.WriteRaw(ellipsis5.Render());
         }
     }
 }
