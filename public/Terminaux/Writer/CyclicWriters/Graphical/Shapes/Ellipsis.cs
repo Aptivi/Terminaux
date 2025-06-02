@@ -58,55 +58,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             ConsoleLogger.Debug("Center position: {0}, {1}", centerX, centerY);
 
             // Now, draw the ellipsis
-            if (Height == Width)
+            var arc = new Arc(Height, Left, Top, ShapeColor)
             {
-                var arc = new Arc(Height, Left, Top, ShapeColor)
-                {
-                    InnerRadius = Filled ? 0 : Height / 2,
-                    OuterRadius = Height / 2,
-                    AngleStart = 0,
-                    AngleEnd = 360,
-                };
-                return arc.Render();
-            }
-            else
-            {
-                var canvas = new Canvas()
-                {
-                    Transparent = true,
-                    Height = Height,
-                    Width = Width,
-                    Left = Left,
-                    Top = Top,
-                };
-                var pixels = new List<CellOptions>();
-                for (int i = 0; i < Width; i++)
-                {
-                    // Get the final positions
-                    int diffX = i - Width / 2;
-                    int prevDiffX = i - 1 - Width / 2;
-                    int nextDiffX = i + 1 - Width / 2;
-                    int drawX = centerX + diffX + 1;
-
-                    // Now, get the height difference
-                    int height = (int)Math.Round(Height * Math.Sqrt(Math.Pow(Width, 2) / 4.0 - Math.Pow(diffX, 2)) / Width);
-                    int prevHeight = (int)Math.Round(Height * Math.Sqrt(Math.Pow(Width, 2) / 4.0 - Math.Pow(prevDiffX, 2)) / Width);
-                    int nextHeight = (int)Math.Round(Height * Math.Sqrt(Math.Pow(Width, 2) / 4.0 - Math.Pow(nextDiffX, 2)) / Width);
-                    for (int diffY = 1; diffY <= height; diffY++)
-                    {
-                        if ((height - prevHeight >= 0 && diffY < prevHeight || height - nextHeight >= 0 && diffY < nextHeight) && !Filled)
-                            continue;
-                        pixels.Add(new(drawX, centerY + diffY + 1) { CellColor = ShapeColor });
-                        pixels.Add(new(drawX, centerY - diffY + 1) { CellColor = ShapeColor });
-                    }
-
-                    // Make sure that we don't have two semi-circles
-                    if (height > 0 && (Filled || !Filled && (i == 1 || i == Width - 1)))
-                        pixels.Add(new(drawX, centerY + 1) { CellColor = ShapeColor });
-                }
-                canvas.Pixels = [.. pixels];
-                return canvas.Render();
-            }
+                InnerRadius = Filled ? 0 : Height / 2,
+                OuterRadius = Height / 2,
+                RadiusX = Width / 2,
+                RadiusY = Height / 2,
+                AngleStart = 0,
+                AngleEnd = 360,
+            };
+            return arc.Render();
         }
 
         /// <summary>
