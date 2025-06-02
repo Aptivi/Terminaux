@@ -101,24 +101,23 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 Top = Top,
             };
             var pixels = new List<CellOptions>();
+            var plotted = new HashSet<(int x, int y)>();
 
             // Helper function to add pixel
-            void PlotPoint(int ratio, int x, int y)
+            void AddPixel(int pixelX, int pixelY)
             {
+                var pos = (centerX + pixelX + 1, centerY - pixelY + 1);
+                if (plotted.Contains(pos))
+                    return;
+                double angle = Math.Atan2(pixelY, pixelX);
+                if (angle < 0)
+                    angle += 2 * Math.PI;
+                int ratio = (int)Math.Round(angle * 180 / Math.PI) % 360;
                 if (full || (ratio >= angleStart && ratio < angleEnd) ^ inverted)
-                    pixels.Add(new(centerX + x + 1, centerY - y + 1) { CellColor = ShapeColor });
-
-                int ratio2 = (180 - ratio) % 360;
-                if (full || (ratio2 >= angleStart && ratio2 < angleEnd) ^ inverted)
-                    pixels.Add(new(centerX - x + 1, centerY - y + 1) { CellColor = ShapeColor });
-
-                int ratio3 = (180 + ratio) % 360;
-                if (full || (ratio3 >= angleStart && ratio3 < angleEnd) ^ inverted)
-                    pixels.Add(new(centerX - x + 1, centerY + y + 1) { CellColor = ShapeColor });
-
-                int ratio4 = (360 - ratio) % 360;
-                if (full || (ratio4 >= angleStart && ratio4 < angleEnd) ^ inverted)
-                    pixels.Add(new(centerX + x + 1, centerY + y + 1) { CellColor = ShapeColor });
+                {
+                    pixels.Add(new(pos.Item1, pos.Item2) { CellColor = ShapeColor });
+                    plotted.Add(pos);
+                }
             }
             for (int layer = 0; layer <= (OuterRadius - InnerRadius); layer++)
             {
@@ -136,13 +135,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 int dY = twoRadiusA * y;
                 while (dX < dY)
                 {
-                    double angle = Math.Atan2(y, x);
-                    if (angle < 0)
-                        angle += 2 * Math.PI;
-                    int ratio = (int)Math.Floor(angle * 180 / Math.PI);
-
-                    // Fill the pixels
-                    PlotPoint(ratio, x, y);
+                    AddPixel(x, y);
+                    AddPixel(-x, y);
+                    AddPixel(-x, -y);
+                    AddPixel(x, -y);
 
                     // Now, go to the next pixel
                     if (p1 < 0)
@@ -164,13 +160,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                 int p2 = radiusB * (x + 1) * (x + 1) + radiusA * (y - 1) * (y - 1) - radiusA * radiusB;
                 while (y >= 0)
                 {
-                    double angle = Math.Atan2(y, x);
-                    if (angle < 0)
-                        angle += 2 * Math.PI;
-                    int ratio = (int)Math.Floor(angle * 180 / Math.PI);
-
-                    // Fill the pixels
-                    PlotPoint(ratio, x, y);
+                    AddPixel(x, y);
+                    AddPixel(-x, y);
+                    AddPixel(-x, -y);
+                    AddPixel(x, -y);
 
                     // Now, go to the next pixel
                     if (p2 > 0)
@@ -186,6 +179,36 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
                         dX = twoRadiusB * x;
                         dY = twoRadiusA * y;
                         p2 += dX - dY + radiusA;
+                    }
+                }
+
+                int startAngle = full ? 0 : angleStart;
+                int endAngle = full ? 360 : angleEnd;
+                if (inverted && !full)
+                {
+                    for (int angle = startAngle; angle < 360; angle++)
+                    {
+                        double rad = angle * Math.PI / 180;
+                        int pX = (int)Math.Round(currentRadiusA * Math.Cos(rad));
+                        int pY = (int)Math.Round(currentRadiusB * Math.Sin(rad));
+                        AddPixel(pX, pY);
+                    }
+                    for (int angle = 0; angle <= endAngle; angle++)
+                    {
+                        double rad = angle * Math.PI / 180;
+                        int pX = (int)Math.Round(currentRadiusA * Math.Cos(rad));
+                        int pY = (int)Math.Round(currentRadiusB * Math.Sin(rad));
+                        AddPixel(pX, pY);
+                    }
+                }
+                else
+                {
+                    for (int angle = startAngle; angle < endAngle; angle++)
+                    {
+                        double rad = angle * Math.PI / 180;
+                        int pX = (int)Math.Round(currentRadiusA * Math.Cos(rad));
+                        int pY = (int)Math.Round(currentRadiusB * Math.Sin(rad));
+                        AddPixel(pX, pY);
                     }
                 }
             }
