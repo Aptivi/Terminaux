@@ -13,6 +13,8 @@
 <br>
 
 # Terminaux
+
+***WARNING: We are ending support for Terminaux 4.3.x on July 7th, 2025. Please upgrade your projects to continue receiving support.***
     
 *A library that allows you to manipulate with the console*
 
