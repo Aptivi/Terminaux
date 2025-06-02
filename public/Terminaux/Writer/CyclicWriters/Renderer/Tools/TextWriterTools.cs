@@ -42,19 +42,21 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// Determines the text alignment X position (zero-based)
         /// </summary>
-        /// <param name="text">Text to process. Only the first line is taken, so split the sentences using <see cref="ConsoleMisc.GetWrappedSentencesByWords(string, int)"/> or <see cref="ConsoleMisc.GetWrappedSentences(string, int)"/>.</param>
+        /// <param name="text">Text to process</param>
         /// <param name="width">Target width (zero-based)</param>
         /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">Left margin (zero-based)</param>
         /// <returns>A zero-based X position of the aligned text</returns>
+        /// <remarks>
+        /// Split the sentences using <see cref="ConsoleMisc.GetWrappedSentencesByWords(string, int)"/> or
+        /// <see cref="ConsoleMisc.GetWrappedSentences(string, int)"/> and call this for every line, or wrong
+        /// results will occur!
+        /// </remarks>
         public static int DetermineTextAlignment(string text, int width, TextAlignment alignment, int leftMargin = 0)
         {
-            // First, get the text console width after wrapping it in a width
-            string[] wrappedLines = ConsoleMisc.GetWrappedSentencesByWords(text, width);
-            string wrappedLine = wrappedLines.Length > 0 ? wrappedLines[0] : "";
-            int maxWidth = ConsoleChar.EstimateCellWidth(wrappedLine);
+            int maxWidth = ConsoleChar.EstimateCellWidth(text);
 
-            // Then, process the positions depending on the alignment
+            // Process the positions depending on the alignment
             int x = leftMargin;
             ConsoleLogger.Debug("Initial x position: {0}, alignment {1}.", x, alignment);
             switch (alignment)
