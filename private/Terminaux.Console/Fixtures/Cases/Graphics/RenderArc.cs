@@ -43,28 +43,28 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
                 InnerRadius = 0,
                 OuterRadius = 9,
                 AngleStart = 120,
-                AngleEnd = 170,
+                AngleEnd = 270,
             };
             var arc3 = new Arc(20, 46, 2, ConsoleColors.Yellow)
             {
                 InnerRadius = 6,
                 OuterRadius = 9,
                 AngleStart = 360,
-                AngleEnd = 100,
+                AngleEnd = 150,
             };
             var arc4 = new Arc(20, 46, 2, ConsoleColors.Fuchsia)
             {
                 InnerRadius = 6,
                 OuterRadius = 9,
                 AngleStart = 150,
-                AngleEnd = 300,
+                AngleEnd = 360,
             };
             var arc5 = new Arc(20, 46, 2, ConsoleColors.Olive)
             {
                 InnerRadius = 6,
                 OuterRadius = 9,
-                AngleStart = 100,
-                AngleEnd = 150,
+                AngleStart = 150,
+                AngleEnd = 210,
             };
             container.AddRenderable("Arc 1", arc);
             container.AddRenderable("Arc 2", arc2);
