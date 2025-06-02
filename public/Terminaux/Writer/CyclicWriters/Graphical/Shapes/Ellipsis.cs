@@ -48,25 +48,23 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         /// <returns>A rendered ellipsis using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public override string Render()
         {
-            StringBuilder buffer = new();
-            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
-
-            // Get the center X and Y positions, since we're dealing with the upper left corner positions, so that we know
-            // the radius of the circle
-            int centerX = Width / 2;
-            int centerY = Height / 2;
-            ConsoleLogger.Debug("Center position: {0}, {1}", centerX, centerY);
-
-            // Now, draw the ellipsis
+            // Make a new arc
             var arc = new Arc(Height, Left, Top, ShapeColor)
             {
                 InnerRadius = Filled ? 0 : Height / 2,
                 OuterRadius = Height / 2,
-                RadiusX = Width / 2,
-                RadiusY = Height / 2,
                 AngleStart = 0,
                 AngleEnd = 360,
             };
+
+            // Check to see if it's a circle or an ellipsis
+            if (Width != Height)
+            {
+                arc.RadiusX = Width;
+                arc.RadiusY = Height;
+            }
+
+            // Render the arc
             return arc.Render();
         }
 
