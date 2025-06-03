@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using Terminaux.Base;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Sequences;
 using Terminaux.Sequences.Builder;
 using static Terminaux.Base.Extensions.Native.NativeMethods;
 
@@ -180,12 +181,12 @@ namespace Terminaux.Inputs
 
             // Check to see if we have <ESC>[ or <ESC>O sequences, and advance two bytes to indicate that we've seen
             // the two characters before the prefix.
-            if (!TryGetChar(idx + 1, out char prefix) || (prefix != '[' && prefix != 'O'))
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 1, out char prefix) || (prefix != '[' && prefix != 'O'))
                 return false;
             advance++;
 
             // Check the parameter character
-            if (!TryGetChar(idx + 2, out char param))
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 2, out char param))
                 return false;
             advance++;
 
@@ -199,9 +200,9 @@ namespace Terminaux.Inputs
                     // If it's "M", we could have a mouse event using the X10 mouse protocol.
                     if (param == 'M')
                     {
-                        if (TryGetChar(idx + 3, out char mouseParam1) &&
-                            TryGetChar(idx + 4, out char mouseParam2) &&
-                            TryGetChar(idx + 5, out char mouseParam3))
+                        if (VtSequenceTokenTools.TryGetChar(charRead, idx + 3, out char mouseParam1) &&
+                            VtSequenceTokenTools.TryGetChar(charRead, idx + 4, out char mouseParam2) &&
+                            VtSequenceTokenTools.TryGetChar(charRead, idx + 5, out char mouseParam3))
                         {
                             // Get the button states and change them as necessary
                             PosixButtonState state = (PosixButtonState)(mouseParam1 & 0b11);
@@ -233,7 +234,7 @@ namespace Terminaux.Inputs
                 if (param == '1')
                 {
                     // It's either F5 to F8, or CTRL + Arrow.
-                    if (!TryGetChar(idx + 3, out char secParam))
+                    if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 3, out char secParam))
                         return false;
                     advance++;
 
@@ -241,10 +242,10 @@ namespace Terminaux.Inputs
                     if (secParam == ';')
                     {
                         // CTRL + Arrow key has been pressed.
-                        if (CheckChars(idx + 4, ['5', 'A']) ||
-                            CheckChars(idx + 4, ['5', 'B']) ||
-                            CheckChars(idx + 4, ['5', 'C']) ||
-                            CheckChars(idx + 4, ['5', 'D']))
+                        if (VtSequenceTokenTools.CheckChars(charRead, idx + 4, ['5', 'A']) ||
+                            VtSequenceTokenTools.CheckChars(charRead, idx + 4, ['5', 'B']) ||
+                            VtSequenceTokenTools.CheckChars(charRead, idx + 4, ['5', 'C']) ||
+                            VtSequenceTokenTools.CheckChars(charRead, idx + 4, ['5', 'D']))
                         {
                             advance += 2;
                             char arrowKey = charRead[idx + 5];
@@ -254,7 +255,9 @@ namespace Terminaux.Inputs
                             return true;
                         }
                     }
-                    else if (CheckChar(secParam, ['5', '7', '8', '9']) && CheckChar(idx + 4, ['~', '^', '$', '@']))
+                    else if (
+                        VtSequenceTokenTools.CheckChar(charRead, secParam, ['5', '7', '8', '9']) &&
+                        VtSequenceTokenTools.CheckChar(charRead, idx + 4, ['~', '^', '$', '@']))
                     {
                         // F5 to F8 has been pressed.
                         advance += 2;
@@ -271,7 +274,7 @@ namespace Terminaux.Inputs
                         evt = new(null, cki, null);
                         return true;
                     }
-                    else if (CheckChar(secParam, ['~', '^', '$', '@']))
+                    else if (VtSequenceTokenTools.CheckChar(charRead, secParam, ['~', '^', '$', '@']))
                     {
                         var (shift, ctrl) = GetRxvtModifiers(secParam);
                         var cki = new ConsoleKeyInfo('\0', ConsoleKey.Home, shift, false, ctrl);
@@ -280,15 +283,15 @@ namespace Terminaux.Inputs
                         return true;
                     }
                 }
-                else if (CheckChar(param, ['2', '3', '5', '6']))
+                else if (VtSequenceTokenTools.CheckChar(charRead, param, ['2', '3', '5', '6']))
                 {
                     // Check for tilde mapped to Insert, Delete, PageUp, or PageDown
-                    if (!TryGetChar(idx + 3, out char secParam))
+                    if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 3, out char secParam))
                         return false;
                     advance++;
 
                     // If this is a tilde, we assume that the key is Insert, Delete, PageUp, or PageDown
-                    if (CheckChar(secParam, ['~', '^', '$', '@']))
+                    if (VtSequenceTokenTools.CheckChar(charRead, secParam, ['~', '^', '$', '@']))
                     {
                         // User pressed Insert, Delete, PageUp, or PageDown. Add it.
                         ConsoleKey ck =
@@ -304,7 +307,9 @@ namespace Terminaux.Inputs
                     }
 
                     // Check for F9 to F16
-                    if (param == '2' && CheckChar(secParam, ['0', '1', '3', '4', '5', '6', '8', '9']) && CheckChar(idx + 4, ['~', '^', '$', '@']))
+                    if (param == '2' &&
+                        VtSequenceTokenTools.CheckChar(charRead, secParam, ['0', '1', '3', '4', '5', '6', '8', '9']) &&
+                        VtSequenceTokenTools.CheckChar(charRead, idx + 4, ['~', '^', '$', '@']))
                     {
                         // F9 to F16 has been pressed.
                         advance += 2;
@@ -325,7 +330,9 @@ namespace Terminaux.Inputs
                         evt = new(null, cki, null);
                         return true;
                     }
-                    else if (param == '3' && CheckChar(secParam, ['1', '2', '3', '4']) && CheckChar(idx + 4, ['~', '^', '$', '@']))
+                    else if (param == '3' &&
+                        VtSequenceTokenTools.CheckChar(charRead, secParam, ['1', '2', '3', '4']) &&
+                        VtSequenceTokenTools.CheckChar(charRead, idx + 4, ['~', '^', '$', '@']))
                     {
                         // F17 to F20 has been pressed.
                         advance += 2;
@@ -343,15 +350,15 @@ namespace Terminaux.Inputs
                         return true;
                     }
                 }
-                else if (CheckChar(param, ['7', '4', '8']))
+                else if (VtSequenceTokenTools.CheckChar(charRead, param, ['7', '4', '8']))
                 {
                     // Check for tilde mapped to Home or End
-                    if (!TryGetChar(idx + 3, out char secParam))
+                    if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 3, out char secParam))
                         return false;
                     advance++;
 
                     // If this is a tilde, we assume that the key is Home or End
-                    if (CheckChar(secParam, ['~', '^', '$', '@']))
+                    if (VtSequenceTokenTools.CheckChar(charRead, secParam, ['~', '^', '$', '@']))
                     {
                         // User pressed Home or End. Add it.
                         ConsoleKey ck =
@@ -391,12 +398,12 @@ namespace Terminaux.Inputs
             advance = 0;
 
             // Check to see if we have <ESC>[Mxxx or <ESC>[<x;x;x;[Mm] sequences, and advance one byte.
-            if (!TryGetChar(idx + 1, out char prefix) || prefix != '[')
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 1, out char prefix) || prefix != '[')
                 return false;
             advance++;
 
             // Check the parameter character
-            if (!TryGetChar(idx + 2, out char param))
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 2, out char param))
                 return false;
             advance++;
 
@@ -405,13 +412,13 @@ namespace Terminaux.Inputs
             {
                 // It's an X10 mouse protocol, so decode it.
                 advance++;
-                if (!TryGetChar(idx + 3, out char buttonChar))
+                if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 3, out char buttonChar))
                     return false;
                 advance++;
-                if (!TryGetChar(idx + 4, out char posX))
+                if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 4, out char posX))
                     return false;
                 advance++;
-                if (!TryGetChar(idx + 5, out char posY))
+                if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 5, out char posY))
                     return false;
                 advance++;
 
@@ -456,7 +463,7 @@ namespace Terminaux.Inputs
                 //   - ;: Semicolon
                 //   - M/m: Press or release
                 int digitIdx = idx + 3;
-                if (!TryGetChar(digitIdx, out char digit) || !char.IsDigit(digit))
+                if (!VtSequenceTokenTools.TryGetChar(charRead, digitIdx, out char digit) || !char.IsDigit(digit))
                     return false;
                 advance++;
 
@@ -465,7 +472,7 @@ namespace Terminaux.Inputs
                 List<char> xDigits = [];
                 List<char> yDigits = [];
                 int parseMode = 0;
-                while (TryGetChar(digitIdx, out digit))
+                while (VtSequenceTokenTools.TryGetChar(charRead, digitIdx, out digit))
                 {
                     // First, check to see if we've reached ';', 'm', or 'M'
                     if (digit == 'm' || digit == 'M')
@@ -475,9 +482,9 @@ namespace Terminaux.Inputs
                             return false;
 
                         // Convert a list of digits to numbers
-                        int b = NumberizeArray(bDigits);
-                        int x = NumberizeArray(xDigits) - 1;
-                        int y = NumberizeArray(yDigits) - 1;
+                        int b = VtSequenceTokenTools.NumberizeArray(bDigits);
+                        int x = VtSequenceTokenTools.NumberizeArray(xDigits) - 1;
+                        int y = VtSequenceTokenTools.NumberizeArray(yDigits) - 1;
 
                         // Now, we'll parse the values, so we need to start with the raw button and the
                         // horizontal/vertical wheel press state. We also need to know whether we're
@@ -545,13 +552,13 @@ namespace Terminaux.Inputs
             advance = 0;
 
             // Check to see if we have an <ESC>[<y>;<x>R sequence, and advance one byte.
-            if (!TryGetChar(idx + 1, out char prefix) || prefix != '[')
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 1, out char prefix) || prefix != '[')
                 return false;
             advance++;
 
             // Check the first parameter for digit
             int digitIdx = idx + 2;
-            if (!TryGetChar(digitIdx, out char digit) || !char.IsDigit(digit))
+            if (!VtSequenceTokenTools.TryGetChar(charRead, digitIdx, out char digit) || !char.IsDigit(digit))
                 return false;
             advance++;
 
@@ -559,7 +566,7 @@ namespace Terminaux.Inputs
             List<char> xDigits = [];
             List<char> yDigits = [];
             bool parsingY = true;
-            while (TryGetChar(digitIdx, out digit))
+            while (VtSequenceTokenTools.TryGetChar(charRead, digitIdx, out digit))
             {
                 // First, check to see if we've reached ';' or 'R'
                 if (digit == 'R')
@@ -569,8 +576,8 @@ namespace Terminaux.Inputs
                         return false;
 
                     // Convert a list of digits to numbers and return them
-                    int x = NumberizeArray(xDigits) - 1;
-                    int y = NumberizeArray(yDigits) - 1;
+                    int x = VtSequenceTokenTools.NumberizeArray(xDigits) - 1;
+                    int y = VtSequenceTokenTools.NumberizeArray(yDigits) - 1;
                     evt = new(null, null, new(x, y));
                     advance += digitIdx - (idx + 1);
                     return true;
@@ -601,7 +608,7 @@ namespace Terminaux.Inputs
             advance = 0;
 
             // Check to see if we have an <ESC><char> sequence, and advance one byte.
-            if (!TryGetChar(idx + 1, out char altChar) || altChar == VtSequenceBasicChars.EscapeChar)
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 1, out char altChar) || altChar == VtSequenceBasicChars.EscapeChar)
                 return false;
             advance += 2;
 
@@ -633,11 +640,11 @@ namespace Terminaux.Inputs
             char finalChar = character;
 
             // Determine the pressed modifiers
-            bool ctrlLetterPressed = CharInRange(character, (char)1, (char)26);
-            bool ctrlDigitPressed = CharInRange(character, (char)28, (char)31) || character == '\0';
+            bool ctrlLetterPressed = VtSequenceTokenTools.CharInRange(character, (char)1, (char)26);
+            bool ctrlDigitPressed = VtSequenceTokenTools.CharInRange(character, (char)28, (char)31) || character == '\0';
 
             // Determine the modifiers to pass to the constructor
-            if (CharInRange(character, 'A', 'Z'))
+            if (VtSequenceTokenTools.CharInRange(character, 'A', 'Z'))
                 isShift = true;
             isCtrl = ctrlLetterPressed || ctrlDigitPressed;
             if (character == '\b' || character == '\t' || character == '\n' || character == '\r')
@@ -665,15 +672,15 @@ namespace Terminaux.Inputs
                 '.' => ConsoleKey.OemPeriod,
 
                 // Letters
-                _ when CharInRange(character, 'a', 'z') => ConsoleKey.A + character - 'a',
-                _ when CharInRange(character, 'A', 'Z') => ConsoleKey.A + character - 'A',
+                _ when VtSequenceTokenTools.CharInRange(character, 'a', 'z') => ConsoleKey.A + character - 'a',
+                _ when VtSequenceTokenTools.CharInRange(character, 'A', 'Z') => ConsoleKey.A + character - 'A',
 
                 // Digits
-                _ when CharInRange(character, '0', '9') => ConsoleKey.D0 + character - '0',
+                _ when VtSequenceTokenTools.CharInRange(character, '0', '9') => ConsoleKey.D0 + character - '0',
 
                 // Control characters
-                _ when CharInRange(character, (char)1, (char)26) => ConsoleKey.A + character - 1,
-                _ when CharInRange(character, (char)28, (char)31) => ConsoleKey.D4 + character - 28,
+                _ when VtSequenceTokenTools.CharInRange(character, (char)1, (char)26) => ConsoleKey.A + character - 1,
+                _ when VtSequenceTokenTools.CharInRange(character, (char)28, (char)31) => ConsoleKey.D4 + character - 28,
                 '\0' => ConsoleKey.D2,
 
                 // They default to 0
@@ -695,51 +702,6 @@ namespace Terminaux.Inputs
             return cki;
         }
 
-        private int NumberizeArray(List<char> numbers)
-        {
-            int num = 0;
-            for (int i = 0; i < numbers.Count; i++)
-                num += (int)(MapDigitNum(numbers[i]) * Math.Pow(10, numbers.Count - (i + 1)));
-            return num;
-        }
-
-        private bool CheckChar(int idx, char[] expected)
-        {
-            if (idx > charRead.Length)
-                return false;
-            char actual = charRead[idx];
-            return CheckChar(actual, expected);
-        }
-
-        private bool CheckChar(char character, char[] expected)
-        {
-            // Check character one by one
-            for (int i = 0; i < expected.Length; i++)
-            {
-                char exp = expected[i];
-                if (character == exp)
-                    return true;
-            }
-            return false;
-        }
-
-        private bool CheckChars(int idx, char[] expected)
-        {
-            if (idx + expected.Length > charRead.Length)
-                return false;
-
-            // Check character one by one
-            for (int i = 0; i < expected.Length; i++)
-            {
-                char exp = expected[i];
-                char actual = charRead[idx + i];
-                if (actual != exp)
-                    return false;
-            }
-
-            return true;
-        }
-
         private (bool shift, bool ctrl) GetRxvtModifiers(char mod) =>
             mod switch
             {
@@ -748,33 +710,6 @@ namespace Terminaux.Inputs
                 '@' => (true, true),
                 _ => default,
             };
-
-        private int MapDigitNum(char digit) =>
-            digit switch
-            {
-                '1' => 1,
-                '2' => 2,
-                '3' => 3,
-                '4' => 4,
-                '5' => 5,
-                '6' => 6,
-                '7' => 7,
-                '8' => 8,
-                '9' => 9,
-                _ => 0,
-            };
-
-        private bool TryGetChar(int idx, out char character)
-        {
-            character = '\0';
-            if (idx < 0 || idx >= charRead.Length)
-                return false;
-            character = charRead[idx];
-            return true;
-        }
-
-        private bool CharInRange(char ch, char start, char end) =>
-            (uint)(ch - start) <= (uint)(end - start);
 
         internal InputPosixTokenizer(char[] charRead)
         {

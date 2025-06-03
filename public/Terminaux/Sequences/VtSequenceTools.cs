@@ -109,6 +109,10 @@ namespace Terminaux.Sequences
                 return sequenceFilterRegex.IsMatch(Text);
             }
 
+            // TEST POINT: Remove the regex-based solution as soon as we're done testing the tokenizer logically.
+            var tokenizer = new VtSequenceTokenizer(Text.ToCharArray());
+            var tokens = tokenizer.Parse();
+
             // Match all VT sequences according to the type
             List<bool> results = [];
             if (type != VtSequenceType.All)

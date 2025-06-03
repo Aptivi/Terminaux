@@ -136,5 +136,10 @@ namespace Terminaux.Sequences.Builder
         /// Gets the St character
         /// </summary>
         public const char StChar = '\x9C';
+
+        /// <summary>
+        /// Gets the CSI character
+        /// </summary>
+        public const char CsiChar = '\x9B';
     }
 }
