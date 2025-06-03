@@ -1,12 +1,22 @@
-Describe what happened since Beta 2
+Since Beta 2, we've improved renderables by getting rid of unnecessary code while aiming for more improvements.
 
-You are testing the third beta version of Terminaux 7.0, which was released on TBD.
+You are testing the third beta version of Terminaux 7.0, which was released on July 3rd, 2025.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` To be populated
+- `[+]` Added `InfoBoxSettings`
+- `[+]` Added Sepia and Cyanotype color filters
+- `[+]` Added more spinners
+- `[+]` Added more translation functions for Spectre.Console
+- `[+]` Added radio button support for selection and infoboxes
+- `[+]` Added more infoboxes and input modules
+- `[+]` Added elliptical arcs
+- `[*]` Improved calendar appearance
+- `[*]` Improved text alignment behavior
+- `[*]` Improved scroll wheel support for infoboxes
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 

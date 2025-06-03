@@ -216,7 +216,7 @@ namespace Terminaux.Base.Checks
             var version = typeof(ConsoleChecker).Assembly.GetName().Version;
             InfoBoxModalColor.WriteInfoBoxModal(
                 "Welcome to the Terminaux Beta Program!\n\n" +
-                $"Terminaux {version.Major}.{version.Minor} (Beta 3 - TBD)\n\n" +
+                $"Terminaux {version.Major}.{version.Minor} (Beta 3 - July 3rd, 2025)\n\n" +
                 "We are introducing you to this beta program to get an early taste of the upcoming " +
                 "version of Terminaux with its new features and improved existing features. You can " +
                 "report bugs or feature suggestions to the Terminaux project via GitHub. However, we " +
