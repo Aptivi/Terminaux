@@ -291,7 +291,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(modules, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
+                        InfoBoxTools.RenderText(modules, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, vars)
                     );
 
                     // Buffer the selection box

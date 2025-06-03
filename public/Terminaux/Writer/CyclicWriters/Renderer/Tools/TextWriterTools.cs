@@ -75,7 +75,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         }
 
         internal static string[] GetFinalLines(string text, params object[] vars) =>
-            GetFinalLines(text, ConsoleWrapper.WindowWidth - 4, vars);
+            GetFinalLines(text, ConsoleWrapper.WindowWidth - 6, vars);
 
         internal static string[] GetFinalLines(string text, int width, params object[] vars)
         {
