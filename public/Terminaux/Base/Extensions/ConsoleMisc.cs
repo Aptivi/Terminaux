@@ -357,22 +357,23 @@ namespace Terminaux.Base.Extensions
             if (target.Contains(VtSequenceBasicChars.EscapeChar))
             {
                 // We might have VT sequences.
-                var matches = VtSequenceRegexes.AllVTSequences.Matches(target);
-                if (matches.Count > 0)
+                var tokenizer = new VtSequenceTokenizer(target.ToCharArray());
+                var tokens = tokenizer.Parse();
+                if (tokens.Length > 0)
                 {
                     // We have VT sequences! Process each chunk between two VT sequences.
-                    for (int i = 0; i < matches.Count; i++)
+                    for (int i = 0; i < tokens.Length; i++)
                     {
                         // Get the next match.
-                        Match? previousMatch = i - 1 >= 0 ? matches[i - 1] : null;
-                        var currentMatch = matches[i];
-                        Match? nextMatch = i + 1 < matches.Count ? matches[i + 1] : null;
-                        int lastEnd = previousMatch is not null ? previousMatch.Index + previousMatch.Length : 0;
-                        int nextBegin = nextMatch is not null ? nextMatch.Index : target.Length - 1;
+                        VtSequenceInfo? previousMatch = i - 1 >= 0 ? tokens[i - 1] : null;
+                        var currentMatch = tokens[i];
+                        VtSequenceInfo? nextMatch = i + 1 < tokens.Length ? tokens[i + 1] : null;
+                        int lastEnd = previousMatch is not null ? previousMatch.Start + previousMatch.FullSequence.Length : 0;
+                        int nextBegin = nextMatch is not null ? nextMatch.Start : target.Length - 1;
 
                         // Get the current match left and right indexes
-                        int leftIdx = currentMatch.Index - 1;
-                        int rightIdx = currentMatch.Index + currentMatch.Length;
+                        int leftIdx = currentMatch.Start - 1;
+                        int rightIdx = currentMatch.Start + currentMatch.FullSequence.Length;
 
                         // Process the left string (if found)
                         if (leftIdx >= 0 && leftIdx + 1 - lastEnd > 0)

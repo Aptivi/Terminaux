@@ -203,49 +203,5 @@ namespace Terminaux.Sequences
                 return VtSequenceType.None;
             return finalTypes;
         }
-
-        /// <summary>
-        /// Gets the sequence filter regular expression from all the VT sequences (<see cref="VtSequenceType"/>)
-        /// </summary>
-        /// <returns>Regular expression from all the VT sequences</returns>
-        public static Regex GetSequenceFilterRegexFromType() =>
-            GetSequenceFilterRegexFromType(VtSequenceType.All);
-
-        /// <summary>
-        /// Gets the sequence filter regular expression from the provided VT sequence <paramref name="type"/> (<see cref="VtSequenceType"/>)
-        /// </summary>
-        /// <param name="type">VT sequence type</param>
-        /// <returns>Regular expression from the provided VT sequence <paramref name="type"/></returns>
-        public static partial Regex GetSequenceFilterRegexFromType(VtSequenceType type);
-
-        /// <summary>
-        /// Gets the sequence filter regular expression from the provided VT sequence <paramref name="types"/> (<see cref="VtSequenceType"/>)
-        /// </summary>
-        /// <param name="types">VT sequence types</param>
-        /// <returns>Regular expression from the provided VT sequence <paramref name="types"/></returns>
-        public static Regex GetSequenceFilterRegexFromTypes(VtSequenceType types = VtSequenceType.All)
-        {
-            if (types == VtSequenceType.All)
-                return VtSequenceRegexes.AllVTSequences;
-
-            // Check the enum to get the needed regular expression for the specific types
-            var pattern = new StringBuilder();
-            for (int i = 1; i < typeValues.Length - 1; i++)
-            {
-                // Check to see if there is a flag denoting a type
-                VtSequenceType typeValueEnum = typeValues[i];
-                if (types.HasFlag(typeValueEnum))
-                {
-                    // Go ahead and add the result to the dictionary with the tested type.
-                    var sequenceFilterRegex = GetSequenceFilterRegexFromType(typeValueEnum);
-                    pattern.Append(sequenceFilterRegex.ToString());
-                    if (i < typeValues.Length - 1)
-                        pattern.Append("|");
-                }
-            }
-            if (pattern.Length > 0)
-                pattern.Remove(pattern.Length - 1, 1);
-            return new(pattern.ToString());
-        }
     }
 }

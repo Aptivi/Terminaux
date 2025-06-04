@@ -51,36 +51,5 @@ namespace Terminaux.Sequences.Builder
             var sequenceRegexGenerator = sequenceBuilders[specificType].generator;
             return DeterministicExecution(sequenceRegexGenerator, arguments);
         }
-
-        /// <summary>
-        /// Determines the VT sequence type from the given sequence
-        /// </summary>
-        /// <param name="sequence">The sequence to query</param>
-        /// <returns>A tuple of (<see cref="VtSequenceType"/>, <see cref="VtSequenceSpecificTypes"/>) containing information about a sequence type and a sequence command type</returns>
-        /// <exception cref="TerminauxException"></exception>
-        public static (VtSequenceType, VtSequenceSpecificTypes) DetermineTypeFromSequence(string sequence)
-        {
-            // First, get all the VT sequence types
-            ConsoleLogger.Debug("Sequence is {0} bytes", sequence.Length);
-            var seqTypeEnumNames = sequenceBuilders.Keys;
-
-            // Then, iterate through all the sequence types until we find an appropriate one that matches the sequence
-            foreach (var seqType in seqTypeEnumNames)
-            {
-                // Now, get the appropriate regex to check to see if there is a match.
-                var builder = sequenceBuilders[seqType];
-                var regex = builder.matchRegex;
-                VtSequenceType sequenceType = builder.sequenceType;
-                if (regex.IsMatch(sequence))
-                {
-                    // It's a match!
-                    ConsoleLogger.Debug("Found match: {0}, {1}", sequenceType, seqType);
-                    return (sequenceType, seqType);
-                }
-            }
-
-            // If still not found, then throw
-            throw new TerminauxException("Can't determine type from this sequence. Make sure that you've specified it correctly.");
-        }
     }
 }

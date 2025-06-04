@@ -1,11 +1,9 @@
 [
     {
         "type": "Csi",
-        "regex": "(\\x9B|\\x1B\\[)[0-?]*[ -\\/]*[@-~]",
         "sequences": [
             {
                 "name": "CsiInsertBlankCharacters",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[@]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}@",
                 "arguments": [
                     {
@@ -16,7 +14,6 @@
             },
             {
                 "name": "CsiShiftLeftColumns",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[ ][@]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} @",
                 "arguments": [
                     {
@@ -27,7 +24,6 @@
             },
             {
                 "name": "CsiMoveCursorUp",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[A]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}A",
                 "arguments": [
                     {
@@ -38,7 +34,6 @@
             },
             {
                 "name": "CsiShiftRightColumns",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[ ][A]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} A",
                 "arguments": [
                     {
@@ -49,7 +44,6 @@
             },
             {
                 "name": "CsiMoveCursorDown",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[B]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}B",
                 "arguments": [
                     {
@@ -60,7 +54,6 @@
             },
             {
                 "name": "CsiMoveCursorRight",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[C]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}C",
                 "arguments": [
                     {
@@ -71,7 +64,6 @@
             },
             {
                 "name": "CsiMoveCursorLeft",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[D]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}D",
                 "arguments": [
                     {
@@ -82,7 +74,6 @@
             },
             {
                 "name": "CsiMoveCursorNextLine",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[E]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}E",
                 "arguments": [
                     {
@@ -93,7 +84,6 @@
             },
             {
                 "name": "CsiMoveCursorPreviousLine",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[F]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}F",
                 "arguments": [
                     {
@@ -104,7 +94,6 @@
             },
             {
                 "name": "CsiCursorCharacterAbsoluteLine",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[G]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}G",
                 "arguments": [
                     {
@@ -115,7 +104,6 @@
             },
             {
                 "name": "CsiCursorPosition",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[;][0-9]*[H]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{1}};{{0}}H",
                 "arguments": [
                     {
@@ -130,7 +118,6 @@
             },
             {
                 "name": "CsiCursorForwardTabulation",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[I]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}I",
                 "arguments": [
                     {
@@ -141,7 +128,6 @@
             },
             {
                 "name": "CsiEraseInDisplay",
-                "regex": "(\\x9B|\\x1B\\[)[0-3]*[J]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}J",
                 "arguments": [
                     {
@@ -152,7 +138,6 @@
             },
             {
                 "name": "CsiEraseInDisplayDecsed",
-                "regex": "(\\x9B|\\x1B\\[)\\?[0-3]*[J]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}J",
                 "arguments": [
                     {
@@ -163,7 +148,6 @@
             },
             {
                 "name": "CsiEraseInLine",
-                "regex": "(\\x9B|\\x1B\\[)[0-3]*[K]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}K",
                 "arguments": [
                     {
@@ -174,7 +158,6 @@
             },
             {
                 "name": "CsiEraseInLineDecsel",
-                "regex": "(\\x9B|\\x1B\\[)\\?[0-3]*[K]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}K",
                 "arguments": [
                     {
@@ -185,7 +168,6 @@
             },
             {
                 "name": "CsiInsertLine",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[L]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}L",
                 "arguments": [
                     {
@@ -196,7 +178,6 @@
             },
             {
                 "name": "CsiDeleteLine",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[M]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}M",
                 "arguments": [
                     {
@@ -207,7 +188,6 @@
             },
             {
                 "name": "CsiDeleteChars",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[P]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}P",
                 "arguments": [
                     {
@@ -218,13 +198,11 @@
             },
             {
                 "name": "CsiPushColorToStack",
-                "regex": "(\\x9B|\\x1B\\[)#[P]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[#P",
                 "arguments": []
             },
             {
                 "name": "CsiPushColorToStackWithArgs",
-                "regex": "(\\x9B|\\x1B\\[)(.+?)#[P]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#P",
                 "arguments": [
                     {
@@ -235,13 +213,11 @@
             },
             {
                 "name": "CsiPopColorFromStack",
-                "regex": "(\\x9B|\\x1B\\[)#[Q]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[#Q",
                 "arguments": []
             },
             {
                 "name": "CsiPopColorFromStackWithArgs",
-                "regex": "(\\x9B|\\x1B\\[)(.+?)#[Q]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#Q",
                 "arguments": [
                     {
@@ -252,13 +228,11 @@
             },
             {
                 "name": "CsiReportPaletteStack",
-                "regex": "(\\x9B|\\x1B\\[)#[R]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[#R",
                 "arguments": []
             },
             {
                 "name": "CsiScrollUp",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[S]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}S",
                 "arguments": [
                     {
@@ -269,7 +243,6 @@
             },
             {
                 "name": "CsiSetGraphicsAttribute",
-                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*\\;[0-9]*\\;(.+?)*[S]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}};{{1}};{{2}}S",
                 "arguments": [
                     {
@@ -288,7 +261,6 @@
             },
             {
                 "name": "CsiScrollDown",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[T]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}T",
                 "arguments": [
                     {
@@ -299,7 +271,6 @@
             },
             {
                 "name": "CsiInitiateHighlightMouseTracking",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[T]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}}T",
                 "arguments": [
                     {
@@ -326,7 +297,6 @@
             },
             {
                 "name": "CsiResetTitleModeFeatures",
-                "regex": "(\\x9B|\\x1B\\[)\\>(.+?)[T]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}T",
                 "arguments": [
                     {
@@ -337,7 +307,6 @@
             },
             {
                 "name": "CsiEraseCharacters",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[X]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}X",
                 "arguments": [
                     {
@@ -348,7 +317,6 @@
             },
             {
                 "name": "CsiCursorBackwardTabulation",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[Z]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}Z",
                 "arguments": [
                     {
@@ -359,7 +327,6 @@
             },
             {
                 "name": "CsiScrollDownOriginal",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[\\^]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}^",
                 "arguments": [
                     {
@@ -370,7 +337,6 @@
             },
             {
                 "name": "CsiCursorPositionAbsolute",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[`]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}`",
                 "arguments": [
                     {
@@ -381,7 +347,6 @@
             },
             {
                 "name": "CsiCursorPositionRelative",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[a]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}a",
                 "arguments": [
                     {
@@ -392,7 +357,6 @@
             },
             {
                 "name": "CsiRepeatGraphicCharacter",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[b]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}b",
                 "arguments": [
                     {
@@ -403,7 +367,6 @@
             },
             {
                 "name": "CsiSendDeviceAttributesPrimary",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[c]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}c",
                 "arguments": [
                     {
@@ -414,7 +377,6 @@
             },
             {
                 "name": "CsiSendDeviceAttributesSecondary",
-                "regex": "(\\x9B|\\x1B\\[)=[0-9]*[c]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[={{0}}c",
                 "arguments": [
                     {
@@ -425,7 +387,6 @@
             },
             {
                 "name": "CsiSendDeviceAttributesTertiary",
-                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[c]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}c",
                 "arguments": [
                     {
@@ -436,7 +397,6 @@
             },
             {
                 "name": "CsiLinePositionAbsolute",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[d]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}d",
                 "arguments": [
                     {
@@ -447,7 +407,6 @@
             },
             {
                 "name": "CsiLinePositionRelative",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[e]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}e",
                 "arguments": [
                     {
@@ -458,7 +417,6 @@
             },
             {
                 "name": "CsiLeftTopPosition",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[f]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{1}};{{0}}f",
                 "arguments": [
                     {
@@ -473,7 +431,6 @@
             },
             {
                 "name": "CsiTabClear",
-                "regex": "(\\x9B|\\x1B\\[)[03][g]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}g",
                 "arguments": [
                     {
@@ -484,7 +441,6 @@
             },
             {
                 "name": "CsiSetMode",
-                "regex": "(\\x9B|\\x1B\\[)(.+?)[h]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}h",
                 "arguments": [
                     {
@@ -495,7 +451,6 @@
             },
             {
                 "name": "CsiSetPrivateMode",
-                "regex": "(\\x9B|\\x1B\\[)\\?(.+?)[h]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}h",
                 "arguments": [
                     {
@@ -506,7 +461,6 @@
             },
             {
                 "name": "CsiMediaCopy",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[i]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}i",
                 "arguments": [
                     {
@@ -517,7 +471,6 @@
             },
             {
                 "name": "CsiMediaCopyPrivate",
-                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*[i]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}i",
                 "arguments": [
                     {
@@ -528,7 +481,6 @@
             },
             {
                 "name": "CsiResetMode",
-                "regex": "(\\x9B|\\x1B\\[)(.+?)[l]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}l",
                 "arguments": [
                     {
@@ -539,7 +491,6 @@
             },
             {
                 "name": "CsiResetPrivateMode",
-                "regex": "(\\x9B|\\x1B\\[)\\?(.+?)[l]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}l",
                 "arguments": [
                     {
@@ -550,7 +501,6 @@
             },
             {
                 "name": "CsiCharacterAttributes",
-                "regex": "(\\x9B|\\x1B\\[)(.+?)[m]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}m",
                 "arguments": [
                     {
@@ -561,7 +511,6 @@
             },
             {
                 "name": "CsiSetKeyModifierOptions",
-                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*\\;[0-9]*[m]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}};{{1}}m",
                 "arguments": [
                     {
@@ -576,7 +525,6 @@
             },
             {
                 "name": "CsiResetKeyModifierOptions",
-                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[m]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}m",
                 "arguments": [
                     {
@@ -587,7 +535,6 @@
             },
             {
                 "name": "CsiQueryKeyModifierOptions",
-                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*[m]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}m",
                 "arguments": [
                     {
@@ -598,7 +545,6 @@
             },
             {
                 "name": "CsiDeviceStatusReport",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[n]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}n",
                 "arguments": [
                     {
@@ -609,7 +555,6 @@
             },
             {
                 "name": "CsiDisableKeyModifierOptions",
-                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[n]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}n",
                 "arguments": [
                     {
@@ -620,7 +565,6 @@
             },
             {
                 "name": "CsiDeviceStatusReportDec",
-                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*[n]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}n",
                 "arguments": [
                     {
@@ -631,7 +575,6 @@
             },
             {
                 "name": "CsiSetPointerModeXterm",
-                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[p]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}p",
                 "arguments": [
                     {
@@ -642,13 +585,11 @@
             },
             {
                 "name": "CsiSoftTerminalReset",
-                "regex": "(\\x9B|\\x1B\\[)![p]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[!p",
                 "arguments": []
             },
             {
                 "name": "CsiSetConformanceLevel",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[\"\"]p",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}\\\"p",
                 "arguments": [
                     {
@@ -663,7 +604,6 @@
             },
             {
                 "name": "CsiRequestAnsiMode",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[$]p",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$p",
                 "arguments": [
                     {
@@ -674,7 +614,6 @@
             },
             {
                 "name": "CsiRequestDecPrivateMode",
-                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*[$]p",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}$p",
                 "arguments": [
                     {
@@ -685,13 +624,11 @@
             },
             {
                 "name": "CsiPushVideoAttributesToStack",
-                "regex": "(\\x9B|\\x1B\\[)#[p]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[#p",
                 "arguments": []
             },
             {
                 "name": "CsiPushVideoAttributesToStackWithArgs",
-                "regex": "(\\x9B|\\x1B\\[)(.+?)#[p]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#p",
                 "arguments": [
                     {
@@ -702,7 +639,6 @@
             },
             {
                 "name": "CsiReportXtermVersion",
-                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[q]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}q",
                 "arguments": [
                     {
@@ -713,7 +649,6 @@
             },
             {
                 "name": "CsiLoadLeds",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[q]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}q",
                 "arguments": [
                     {
@@ -724,7 +659,6 @@
             },
             {
                 "name": "CsiSetCursorStyle",
-                "regex": "(\\x9B|\\x1B\\[)[0-6]* [q]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} q",
                 "arguments": [
                     {
@@ -735,7 +669,6 @@
             },
             {
                 "name": "CsiSelectCharacterProtectionAttribute",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[\"\"]q",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}\\\"q",
                 "arguments": [
                     {
@@ -746,13 +679,11 @@
             },
             {
                 "name": "CsiPopVideoAttributesFromStack",
-                "regex": "(\\x9B|\\x1B\\[)#[q]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[#q",
                 "arguments": []
             },
             {
                 "name": "CsiSetScrollingRegion",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[r]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}r",
                 "arguments": [
                     {
@@ -767,7 +698,6 @@
             },
             {
                 "name": "CsiRestoreDecPrivateModeValues",
-                "regex": "(\\x9B|\\x1B\\[)\\?(.+?)[r]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}r",
                 "arguments": [
                     {
@@ -778,7 +708,6 @@
             },
             {
                 "name": "CsiChangeAttributesInRectangularArea",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;(.+?)[$]r",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}}$r",
                 "arguments": [
                     {
@@ -805,13 +734,11 @@
             },
             {
                 "name": "CsiSaveCursor",
-                "regex": "(\\x9B|\\x1B\\[)s",
                 "format": "{VtSequenceBasicChars.EscapeChar}[s",
                 "arguments": []
             },
             {
                 "name": "CsiSetLeftRightMargins",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[s]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}s",
                 "arguments": [
                     {
@@ -826,7 +753,6 @@
             },
             {
                 "name": "CsiSetShiftEscapeOptions",
-                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[s]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}s",
                 "arguments": [
                     {
@@ -837,7 +763,6 @@
             },
             {
                 "name": "CsiDecPrivateModeValues",
-                "regex": "(\\x9B|\\x1B\\[)\\?(.+?)[s]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}s",
                 "arguments": [
                     {
@@ -848,7 +773,6 @@
             },
             {
                 "name": "CsiWindowManipulation",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*[t]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}}t",
                 "arguments": [
                     {
@@ -867,7 +791,6 @@
             },
             {
                 "name": "CsiSetTitleModeXterm",
-                "regex": "(\\x9B|\\x1B\\[)\\>(.+?)[t]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}t",
                 "arguments": [
                     {
@@ -878,7 +801,6 @@
             },
             {
                 "name": "CsiSetWarningBellVolume",
-                "regex": "(\\x9B|\\x1B\\[)[0-8]* [t]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} t",
                 "arguments": [
                     {
@@ -889,7 +811,6 @@
             },
             {
                 "name": "CsiReverseAttributesInRectangularArea",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;(.+?)[$]t",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}}$t",
                 "arguments": [
                     {
@@ -916,13 +837,11 @@
             },
             {
                 "name": "CsiRestoreCursor",
-                "regex": "(\\x9B|\\x1B\\[)u",
                 "format": "{VtSequenceBasicChars.EscapeChar}[u",
                 "arguments": []
             },
             {
                 "name": "CsiSetMarginBellVolume",
-                "regex": "(\\x9B|\\x1B\\[)[0-8] [u]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} u",
                 "arguments": [
                     {
@@ -933,7 +852,6 @@
             },
             {
                 "name": "CsiCopyRectangularArea",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[$]v",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}};{{5}};{{6}};{{7}}$v",
                 "arguments": [
                     {
@@ -972,7 +890,6 @@
             },
             {
                 "name": "CsiRequestPresentationStateReport",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[$]w",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$w",
                 "arguments": [
                     {
@@ -983,7 +900,6 @@
             },
             {
                 "name": "CsiEnableFilterRectangle",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[']w",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}}'w",
                 "arguments": [
                     {
@@ -1006,7 +922,6 @@
             },
             {
                 "name": "CsiRequestTerminalParameters",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[x]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}x",
                 "arguments": [
                     {
@@ -1017,7 +932,6 @@
             },
             {
                 "name": "CsiSelectAttributeChangeExtent",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[\\*]x",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}*x",
                 "arguments": [
                     {
@@ -1028,7 +942,6 @@
             },
             {
                 "name": "CsiFillRectangularArea",
-                "regex": "(\\x9B|\\x1B\\[)\\D+\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[$]x",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}}$x",
                 "arguments": [
                     {
@@ -1055,7 +968,6 @@
             },
             {
                 "name": "CsiSelectChecksumExtension",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[#]y",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#y",
                 "arguments": [
                     {
@@ -1066,7 +978,6 @@
             },
             {
                 "name": "CsiRectangularAreaChecksum",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[\\*]y",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}};{{5}}*y",
                 "arguments": [
                     {
@@ -1097,7 +1008,6 @@
             },
             {
                 "name": "CsiLocatorReporting",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[']z",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}'z",
                 "arguments": [
                     {
@@ -1112,7 +1022,6 @@
             },
             {
                 "name": "CsiEraseRectangularArea",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[$]z",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}}$z",
                 "arguments": [
                     {
@@ -1135,7 +1044,6 @@
             },
             {
                 "name": "CsiSelectLocatorEvents",
-                "regex": "(\\x9B|\\x1B\\[)(.+?)[']\\{",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}'{{",
                 "arguments": [
                     {
@@ -1146,13 +1054,11 @@
             },
             {
                 "name": "CsiPushVideoAttributesToStackXterm",
-                "regex": "(\\x9B|\\x1B\\[)#[\\{]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[#{{",
                 "arguments": []
             },
             {
                 "name": "CsiPushVideoAttributesToStackXtermWithArgs",
-                "regex": "(\\x9B|\\x1B\\[)(.+?)#[\\{]",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#{{",
                 "arguments": [
                     {
@@ -1163,7 +1069,6 @@
             },
             {
                 "name": "CsiSelectiveEraseRectangularArea",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[$]\\{",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}}${{",
                 "arguments": [
                     {
@@ -1186,7 +1091,6 @@
             },
             {
                 "name": "CsiReportGraphicsRenditionRectangularArea",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[#]\\|",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}}#|",
                 "arguments": [
                     {
@@ -1209,7 +1113,6 @@
             },
             {
                 "name": "CsiSelectColumnsPerPage",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[$]\\|",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$|",
                 "arguments": [
                     {
@@ -1220,7 +1123,6 @@
             },
             {
                 "name": "CsiRequestLocatorPosition",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[']\\|",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}'|",
                 "arguments": [
                     {
@@ -1231,7 +1133,6 @@
             },
             {
                 "name": "CsiSelectNumberOfLinesPerScreen",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[\\*]\\|",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}*|",
                 "arguments": [
                     {
@@ -1242,13 +1143,11 @@
             },
             {
                 "name": "CsiPopVideoAttributesFromStackXterm",
-                "regex": "(\\x9B|\\x1B\\[)[#]\\}",
                 "format": "{VtSequenceBasicChars.EscapeChar}[#}}",
                 "arguments": []
             },
             {
                 "name": "CsiInsertColumns",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[']\\}",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}'}}",
                 "arguments": [
                     {
@@ -1259,7 +1158,6 @@
             },
             {
                 "name": "CsiSelectActiveStatusDisplay",
-                "regex": "(\\x9B|\\x1B\\[)[01]*[$]\\}",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$}}",
                 "arguments": [
                     {
@@ -1270,7 +1168,6 @@
             },
             {
                 "name": "CsiDeleteColumns",
-                "regex": "(\\x9B|\\x1B\\[)[0-9]*[']~",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}'~",
                 "arguments": [
                     {
@@ -1281,7 +1178,6 @@
             },
             {
                 "name": "CsiSelectStatusLineType",
-                "regex": "(\\x9B|\\x1B\\[)[0-2]*[$]~",
                 "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$~",
                 "arguments": [
                     {
@@ -1294,11 +1190,9 @@
     },
     {
         "type": "Osc",
-        "regex": "(\\x9D|\\x1B\\]).+(\\x07|\\x9c)",
         "sequences": [
             {
                 "name": "OscOperatingSystemCommand",
-                "regex": "(\\x9D|\\x1B\\]).+[\\x07]",
                 "format": "{VtSequenceBasicChars.EscapeChar}]{{0}}{VtSequenceBasicChars.BellChar}",
                 "arguments": [
                     {
@@ -1309,7 +1203,6 @@
             },
             {
                 "name": "OscOperatingSystemCommandAlt",
-                "regex": "(\\x9D|\\x1B\\]).+[\\x9c]",
                 "format": "{VtSequenceBasicChars.EscapeChar}]{{0}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1322,83 +1215,69 @@
     },
     {
         "type": "Esc",
-        "regex": "\\x1b [F-Nf-n]|\\x1b#[3-8]|\\x1b%[@Gg]|\\x1b[()*+][A-Za-z0-9=`<>]|\\x1b[()*+]\"\"[>4?]|\\x1b[()*+]%[0-6=]|\\x1b[()*+]&[4-5]|\\x1b[-.\\/][ABFHLM]|\\x1b[6-9Fcl-o=>\\|\\}~]",
         "sequences": [
             {
                 "name": "Esc7BitControls",
-                "regex": "\\x1b F",
                 "format": "{VtSequenceBasicChars.EscapeChar} F",
                 "arguments": []
             },
             {
                 "name": "Esc8BitControls",
-                "regex": "\\x1b G",
                 "format": "{VtSequenceBasicChars.EscapeChar} G",
                 "arguments": []
             },
             {
                 "name": "EscAnsiConformanceLevel1",
-                "regex": "\\x1b L",
                 "format": "{VtSequenceBasicChars.EscapeChar} L",
                 "arguments": []
             },
             {
                 "name": "EscAnsiConformanceLevel2",
-                "regex": "\\x1b M",
                 "format": "{VtSequenceBasicChars.EscapeChar} M",
                 "arguments": []
             },
             {
                 "name": "EscAnsiConformanceLevel3",
-                "regex": "\\x1b N",
                 "format": "{VtSequenceBasicChars.EscapeChar} N",
                 "arguments": []
             },
             {
                 "name": "EscDecDoubleHeightLineTopHalf",
-                "regex": "\\x1b#3",
                 "format": "{VtSequenceBasicChars.EscapeChar}#3",
                 "arguments": []
             },
             {
                 "name": "EscDecDoubleHeightLineBottomHalf",
-                "regex": "\\x1b#4",
                 "format": "{VtSequenceBasicChars.EscapeChar}#4",
                 "arguments": []
             },
             {
                 "name": "EscDecSingleWidthLine",
-                "regex": "\\x1b#5",
                 "format": "{VtSequenceBasicChars.EscapeChar}#5",
                 "arguments": []
             },
             {
                 "name": "EscDecDoubleWidthLine",
-                "regex": "\\x1b#6",
                 "format": "{VtSequenceBasicChars.EscapeChar}#6",
                 "arguments": []
             },
             {
                 "name": "EscDecScreenAlignmentTest",
-                "regex": "\\x1b#8",
                 "format": "{VtSequenceBasicChars.EscapeChar}#8",
                 "arguments": []
             },
             {
                 "name": "EscSelectDefaultCharacterSet",
-                "regex": "\\x1b%@",
                 "format": "{VtSequenceBasicChars.EscapeChar}%@",
                 "arguments": []
             },
             {
                 "name": "EscSelectUtf8CharacterSet",
-                "regex": "\\x1b%G",
                 "format": "{VtSequenceBasicChars.EscapeChar}%G",
                 "arguments": []
             },
             {
                 "name": "EscDesignateG0CharacterSet",
-                "regex": "\\x1b\\(.+",
                 "format": "{VtSequenceBasicChars.EscapeChar}({{0}}",
                 "arguments": [
                     {
@@ -1409,7 +1288,6 @@
             },
             {
                 "name": "EscDesignateG1CharacterSet",
-                "regex": "\\x1b\\).+",
                 "format": "{VtSequenceBasicChars.EscapeChar}){{0}}",
                 "arguments": [
                     {
@@ -1420,7 +1298,6 @@
             },
             {
                 "name": "EscDesignateG2CharacterSet",
-                "regex": "\\x1b\\*.+",
                 "format": "{VtSequenceBasicChars.EscapeChar}*{{0}}",
                 "arguments": [
                     {
@@ -1431,7 +1308,6 @@
             },
             {
                 "name": "EscDesignateG3CharacterSet",
-                "regex": "\\x1b\\+.+",
                 "format": "{VtSequenceBasicChars.EscapeChar}+{{0}}",
                 "arguments": [
                     {
@@ -1442,7 +1318,6 @@
             },
             {
                 "name": "EscDesignateG1CharacterSetAlt",
-                "regex": "\\x1b\\-.+",
                 "format": "{VtSequenceBasicChars.EscapeChar}-{{0}}",
                 "arguments": [
                     {
@@ -1453,7 +1328,6 @@
             },
             {
                 "name": "EscDesignateG2CharacterSetAlt",
-                "regex": "\\x1b,.+",
                 "format": "{VtSequenceBasicChars.EscapeChar},{{0}}",
                 "arguments": [
                     {
@@ -1464,7 +1338,6 @@
             },
             {
                 "name": "EscDesignateG3CharacterSetAlt",
-                "regex": "\\x1b/.+",
                 "format": "{VtSequenceBasicChars.EscapeChar}/{{0}}",
                 "arguments": [
                     {
@@ -1475,91 +1348,76 @@
             },
             {
                 "name": "EscBackIndex",
-                "regex": "\\x1b6",
                 "format": "{VtSequenceBasicChars.EscapeChar}6",
                 "arguments": []
             },
             {
                 "name": "EscSaveCursor",
-                "regex": "\\x1b7",
                 "format": "{VtSequenceBasicChars.EscapeChar}7",
                 "arguments": []
             },
             {
                 "name": "EscRestoreCursor",
-                "regex": "\\x1b8",
                 "format": "{VtSequenceBasicChars.EscapeChar}8",
                 "arguments": []
             },
             {
                 "name": "EscForwardIndex",
-                "regex": "\\x1b9",
                 "format": "{VtSequenceBasicChars.EscapeChar}9",
                 "arguments": []
             },
             {
                 "name": "EscApplicationKeypad",
-                "regex": "\\x1b=",
                 "format": "{VtSequenceBasicChars.EscapeChar}=",
                 "arguments": []
             },
             {
                 "name": "EscNormalKeypad",
-                "regex": "\\x1b\\>",
                 "format": "{VtSequenceBasicChars.EscapeChar}>",
                 "arguments": []
             },
             {
                 "name": "EscCursorToLowerLeftCorner",
-                "regex": "\\x1bF",
                 "format": "{VtSequenceBasicChars.EscapeChar}F",
                 "arguments": []
             },
             {
                 "name": "EscFullReset",
-                "regex": "\\x1bc",
                 "format": "{VtSequenceBasicChars.EscapeChar}c",
                 "arguments": []
             },
             {
                 "name": "EscMemoryLock",
-                "regex": "\\x1bl",
                 "format": "{VtSequenceBasicChars.EscapeChar}l",
                 "arguments": []
             },
             {
                 "name": "EscMemoryUnlock",
-                "regex": "\\x1bm",
                 "format": "{VtSequenceBasicChars.EscapeChar}m",
                 "arguments": []
             },
             {
                 "name": "EscInvokeG2CharacterSetGl",
-                "regex": "\\x1bn",
                 "format": "{VtSequenceBasicChars.EscapeChar}n",
                 "arguments": []
             },
             {
                 "name": "EscInvokeG3CharacterSetGl",
-                "regex": "\\x1bo",
                 "format": "{VtSequenceBasicChars.EscapeChar}o",
                 "arguments": []
             },
             {
                 "name": "EscInvokeG2CharacterSetGr",
-                "regex": "\\x1b\\}",
                 "format": "{VtSequenceBasicChars.EscapeChar}}}",
                 "arguments": []
             },
             {
                 "name": "EscInvokeG3CharacterSetGr",
-                "regex": "\\x1b\\|",
                 "format": "{VtSequenceBasicChars.EscapeChar}|",
                 "arguments": []
             },
             {
                 "name": "EscInvokeG1CharacterSetGr",
-                "regex": "\\x1b~",
                 "format": "{VtSequenceBasicChars.EscapeChar}~",
                 "arguments": []
             }
@@ -1567,11 +1425,9 @@
     },
     {
         "type": "Apc",
-        "regex": "(\\x9f|\\x1b_).+\\x9c",
         "sequences": [
             {
                 "name": "ApcApplicationProgramCommand",
-                "regex": "(\\x9f|\\x1b_).+\\x9c",
                 "format": "{VtSequenceBasicChars.EscapeChar}_{{0}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1584,11 +1440,9 @@
     },
     {
         "type": "Dcs",
-        "regex": "(\\x90|\\x1bP).+\\x9c",
         "sequences": [
             {
                 "name": "DcsUserDefinedKeys",
-                "regex": "(\\x90|\\x1bP)[0-9]*\\;[0-9]*\\|(.+?)\\x9c",
                 "format": "{VtSequenceBasicChars.EscapeChar}P{{0}};{{1}}|{{2}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1607,7 +1461,6 @@
             },
             {
                 "name": "DcsRequestStatusString",
-                "regex": "(\\x90|\\x1bP)\\$q(.+?)\\x9c",
                 "format": "{VtSequenceBasicChars.EscapeChar}P$q{{0}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1618,7 +1471,6 @@
             },
             {
                 "name": "DcsRestorePresentationStatus",
-                "regex": "(\\x90|\\x1bP)[0-9]*\\$t[0-9]*\\x9c",
                 "format": "{VtSequenceBasicChars.EscapeChar}P{{0}}$t{{1}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1633,7 +1485,6 @@
             },
             {
                 "name": "DcsRequestResourceValues",
-                "regex": "(\\x90|\\x1bP)\\+Q(.+?)\\x9c",
                 "format": "{VtSequenceBasicChars.EscapeChar}P+Q{{0}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1644,7 +1495,6 @@
             },
             {
                 "name": "DcsSetTermInfoData",
-                "regex": "(\\x90|\\x1bP)\\+p(.+?)\\x9c",
                 "format": "{VtSequenceBasicChars.EscapeChar}P+p{{0}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1655,7 +1505,6 @@
             },
             {
                 "name": "DcsRequestTermInfoData",
-                "regex": "(\\x90|\\x1bP)\\+q(.+?)\\x9c",
                 "format": "{VtSequenceBasicChars.EscapeChar}P+q{{0}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1668,11 +1517,9 @@
     },
     {
         "type": "Pm",
-        "regex": "(\\x9e|\\x1b\\^).+\\x9c",
         "sequences": [
             {
                 "name": "PmPrivacyMessage",
-                "regex": "(\\x9e|\\x1b\\^).+\\x9c",
                 "format": "{VtSequenceBasicChars.EscapeChar}^{{0}}{VtSequenceBasicChars.StChar}",
                 "arguments": [
                     {
@@ -1685,101 +1532,84 @@
     },
     {
         "type": "C1",
-        "regex": "\\x1b[DEHMNOVWXYZ78]",
         "sequences": [
             {
                 "name": "C1Index",
-                "regex": "\\x1bD",
                 "format": "{VtSequenceBasicChars.EscapeChar}D",
                 "arguments": []
             },
             {
                 "name": "C1NextLine",
-                "regex": "\\x1bE",
                 "format": "{VtSequenceBasicChars.EscapeChar}E",
                 "arguments": []
             },
             {
                 "name": "C1TabSet",
-                "regex": "\\x1bH",
                 "format": "{VtSequenceBasicChars.EscapeChar}H",
                 "arguments": []
             },
             {
                 "name": "C1ReverseIndex",
-                "regex": "\\x1bM",
                 "format": "{VtSequenceBasicChars.EscapeChar}M",
                 "arguments": []
             },
             {
                 "name": "C1SingleShiftSelectG2CharacterSet",
-                "regex": "\\x1bN",
                 "format": "{VtSequenceBasicChars.EscapeChar}N",
                 "arguments": []
             },
             {
                 "name": "C1SingleShiftSelectG3CharacterSet",
-                "regex": "\\x1bO",
                 "format": "{VtSequenceBasicChars.EscapeChar}O",
                 "arguments": []
             },
             {
                 "name": "C1DeviceControlString",
-                "regex": "\\x1bP",
                 "format": "{VtSequenceBasicChars.EscapeChar}P",
                 "arguments": []
             },
             {
                 "name": "C1StartOfGuardedArea",
-                "regex": "\\x1bV",
                 "format": "{VtSequenceBasicChars.EscapeChar}V",
                 "arguments": []
             },
             {
                 "name": "C1EndOfGuardedArea",
-                "regex": "\\x1bW",
                 "format": "{VtSequenceBasicChars.EscapeChar}W",
                 "arguments": []
             },
             {
                 "name": "C1StartOfString",
-                "regex": "\\x1bX",
                 "format": "{VtSequenceBasicChars.EscapeChar}X",
                 "arguments": []
             },
             {
                 "name": "C1ReturnTerminalId",
-                "regex": "\\x1bZ",
                 "format": "{VtSequenceBasicChars.EscapeChar}Z",
                 "arguments": []
             },
             {
                 "name": "C1ControlSequenceIndicator",
-                "regex": "\\x1b\\[",
                 "format": "{VtSequenceBasicChars.EscapeChar}[",
                 "arguments": []
             },
             {
                 "name": "C1StringTerminator",
-                "regex": "\\x1b\\\\",
                 "format": "{VtSequenceBasicChars.EscapeChar}\\\\",
                 "arguments": []
             },
             {
                 "name": "C1OperatingSystemCommand",
-                "regex": "\\x1b\\]",
                 "format": "{VtSequenceBasicChars.EscapeChar}]",
                 "arguments": []
             },
             {
                 "name": "C1PrivacyMessage",
-                "regex": "\\x1b\\^",
                 "format": "{VtSequenceBasicChars.EscapeChar}^",
                 "arguments": []
             },
             {
                 "name": "C1ApplicationProgramCommand",
-                "regex": "\\x1b_",
                 "format": "{VtSequenceBasicChars.EscapeChar}_",
                 "arguments": []
             }
