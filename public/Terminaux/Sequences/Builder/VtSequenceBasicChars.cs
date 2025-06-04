@@ -141,5 +141,25 @@ namespace Terminaux.Sequences.Builder
         /// Gets the CSI character
         /// </summary>
         public const char CsiChar = '\x9B';
+
+        /// <summary>
+        /// Gets the OSC character
+        /// </summary>
+        public const char OSCChar = '\x9D';
+
+        /// <summary>
+        /// Gets the APC character
+        /// </summary>
+        public const char APCChar = '\x9F';
+
+        /// <summary>
+        /// Gets the DCS character
+        /// </summary>
+        public const char DCSChar = '\x90';
+
+        /// <summary>
+        /// Gets the PM character
+        /// </summary>
+        public const char PMChar = '\x9E';
     }
 }

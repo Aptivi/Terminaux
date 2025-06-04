@@ -30,7 +30,7 @@ namespace Terminaux.Sequences
 
         internal VtSequenceInfo[] Parse()
         {
-            List<VtSequenceInfo> eventInfos = [];
+            List<VtSequenceInfo> sequenceInfos = [];
 
             // Run a main loop
             for (int pos = 0; pos < charRead.Length; pos++)
@@ -45,13 +45,67 @@ namespace Terminaux.Sequences
                 if (TryParseCsiSeqs(pos, out var seq, out int bytesToAdd))
                 {
                     // Add this sequence
-                    eventInfos.Add(seq);
+                    sequenceInfos.Add(seq);
+                    pos += bytesToAdd - 1;
+                    continue;
+                }
+
+                // Parse OSC sequences
+                if (TryParseOscSeqs(pos, out seq, out bytesToAdd))
+                {
+                    // Add this sequence
+                    sequenceInfos.Add(seq);
+                    pos += bytesToAdd - 1;
+                    continue;
+                }
+
+                // Parse ESC sequences
+                if (TryParseEscSeqs(pos, out seq, out bytesToAdd))
+                {
+                    // Add this sequence
+                    sequenceInfos.Add(seq);
+                    pos += bytesToAdd - 1;
+                    continue;
+                }
+
+                // Parse APC sequences
+                if (TryParseApcSeqs(pos, out seq, out bytesToAdd))
+                {
+                    // Add this sequence
+                    sequenceInfos.Add(seq);
+                    pos += bytesToAdd - 1;
+                    continue;
+                }
+
+                // Parse DCS sequences
+                if (TryParseDcsSeqs(pos, out seq, out bytesToAdd))
+                {
+                    // Add this sequence
+                    sequenceInfos.Add(seq);
+                    pos += bytesToAdd - 1;
+                    continue;
+                }
+
+                // Parse PM sequences
+                if (TryParsePmSeqs(pos, out seq, out bytesToAdd))
+                {
+                    // Add this sequence
+                    sequenceInfos.Add(seq);
+                    pos += bytesToAdd - 1;
+                    continue;
+                }
+
+                // Parse C1 sequences
+                if (TryParseC1Seqs(pos, out seq, out bytesToAdd))
+                {
+                    // Add this sequence
+                    sequenceInfos.Add(seq);
                     pos += bytesToAdd - 1;
                     continue;
                 }
             }
 
-            return [.. eventInfos];
+            return [.. sequenceInfos];
         }
 
         private bool TryParseCsiSeqs(int idx, out VtSequenceInfo seq, out int advance)
@@ -92,25 +146,29 @@ namespace Terminaux.Sequences
             var intermediates = new StringBuilder();
             char ending = '\0';
             int increment = 0;
-            while (VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out char output))
+            bool result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            while (result)
             {
-                if (output >= 0x30 && output <= 0x3F)
+                if (param >= 0x30 && param <= 0x3F)
                 {
-                    parameters.Append(output);
+                    parameters.Append(param);
                     increment++;
                 }
-                else if (output >= 0x20 && output <= 0x2F)
+                else if (param >= 0x20 && param <= 0x2F)
                 {
-                    intermediates.Append(output);
+                    intermediates.Append(param);
                     increment++;
                 }
-                else if (output >= 0x40 && output <= 0x7E)
+                else if (param >= 0x40 && param <= 0x7E)
                 {
-                    ending = output;
+                    ending = param;
                     increment++;
                     break;
                 }
+                result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
             }
+            if (!result)
+                return false;
 
             // Build the sequence now
             char[] finalChars = new char[advance + increment - 1];
@@ -120,6 +178,357 @@ namespace Terminaux.Sequences
             // Make a VT sequence instance
             seq = new VtSequenceInfo(VtSequenceType.Csi, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}[" : $"{VtSequenceBasicChars.CsiChar}", parameters.ToString(), intermediates.ToString(), finalSeq, ending, idx);
             advance += increment - 1;
+            return true;
+        }
+
+        private bool TryParseOscSeqs(int idx, out VtSequenceInfo seq, out int advance)
+        {
+            // Set initial values
+            seq = new();
+            advance = 0;
+
+            // Check to see if we have <ESC>] or <OSC> sequences, and advance two bytes to indicate that we've seen
+            // the two characters before the prefix.
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx, out char prefix) || (prefix != VtSequenceBasicChars.EscapeChar && prefix != VtSequenceBasicChars.OSCChar))
+                return false;
+            advance++;
+
+            // If it's ESC, we need to check the ']' prefix.
+            int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != ']')
+                return false;
+            advance++;
+
+            // Check the parameter character
+            if (offset == 1)
+            {
+                if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset + 1, out _))
+                    return false;
+                advance++;
+            }
+
+            // Parse until the end
+            var sequenceType = VtSequenceStartType.Special;
+            int sequenceStart = idx + advance;
+
+            // Parse the parameter
+            var parameters = new StringBuilder();
+            char ending = '\0';
+            int increment = 0;
+            bool result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            while (result)
+            {
+                if (param == VtSequenceBasicChars.BellChar || param == VtSequenceBasicChars.StChar)
+                {
+                    ending = param;
+                    increment++;
+                    break;
+                }
+                else
+                {
+                    parameters.Append(param);
+                    increment++;
+                }
+                result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            }
+            if (!result)
+                return false;
+
+            // Build the sequence now
+            char[] finalChars = new char[advance + increment - 1];
+            Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
+            string finalSeq = new(finalChars);
+
+            // Make a VT sequence instance
+            seq = new VtSequenceInfo(VtSequenceType.Osc, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}]" : $"{VtSequenceBasicChars.OSCChar}", parameters.ToString(), "", finalSeq, ending, idx);
+            advance += increment - 1;
+            return true;
+        }
+
+        private bool TryParseEscSeqs(int idx, out VtSequenceInfo seq, out int advance)
+        {
+            // Set initial values
+            seq = new();
+            advance = 0;
+
+            // Check to see if we have <ESC> sequences, and advance one byte.
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx, out char prefix) || prefix != VtSequenceBasicChars.EscapeChar)
+                return false;
+            advance++;
+
+            // Parse until the end
+            var sequenceType = VtSequenceStartType.Special;
+            int sequenceStart = idx + advance;
+
+            // Parse the sequence
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 1, out char param))
+                return false;
+            advance++;
+
+            // Those sequences may need an additional letter, so parse it, too.
+            if (VtSequenceTokenTools.CheckChar(param, [' ', '#', '%', '(', ')', '*', '+', '-', ',', '/']))
+            {
+                if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 2, out char argParam))
+                    return false;
+                advance++;
+
+                if (param == ' ')
+                {
+                    // Check the parameter after the ' ' parameter
+                    if (!VtSequenceTokenTools.CheckChar(argParam, ['F', 'G', 'L', 'M', 'N']))
+                        return false;
+                }
+                else if (param == '#')
+                {
+                    // Check the parameter after the '#' parameter
+                    if (!VtSequenceTokenTools.CheckChar(argParam, ['3', '4', '5', '6', '8']))
+                        return false;
+                }
+                else if (param == '%')
+                {
+                    // Check the parameter after the '%' parameter
+                    if (!VtSequenceTokenTools.CheckChar(argParam, ['@', 'G']))
+                        return false;
+                }
+            }
+
+            // Check for those sequences, too
+            if (!VtSequenceTokenTools.CheckChar(param, ['6', '7', '8', '9', '=', '>', 'F', 'c', 'l', 'm', 'n', 'o', '}', '|', '~']))
+                return false;
+
+            // Build the sequence now
+            char[] finalChars = new char[idx + advance - sequenceStart];
+            Array.Copy(charRead, idx, finalChars, 0, idx + advance - sequenceStart);
+            string finalSeq = new(finalChars);
+
+            // Make a VT sequence instance
+            seq = new VtSequenceInfo(VtSequenceType.Esc, sequenceType, $"{VtSequenceBasicChars.EscapeChar}", "", "", finalSeq, '\0', idx);
+            return true;
+        }
+
+        private bool TryParseApcSeqs(int idx, out VtSequenceInfo seq, out int advance)
+        {
+            // Set initial values
+            seq = new();
+            advance = 0;
+
+            // Check to see if we have <ESC>_ or <APC> sequences, and advance two bytes to indicate that we've seen
+            // the two characters before the prefix.
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx, out char prefix) || (prefix != VtSequenceBasicChars.EscapeChar && prefix != VtSequenceBasicChars.APCChar))
+                return false;
+            advance++;
+
+            // If it's ESC, we need to check the '_' prefix.
+            int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != '_')
+                return false;
+            advance++;
+
+            // Check the parameter character
+            if (offset == 1)
+            {
+                if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset + 1, out _))
+                    return false;
+                advance++;
+            }
+
+            // Parse until the end
+            var sequenceType = VtSequenceStartType.Special;
+            int sequenceStart = idx + advance;
+
+            // Parse the parameter
+            var parameters = new StringBuilder();
+            char ending = '\0';
+            int increment = 0;
+            bool result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            while (result)
+            {
+                if (param == VtSequenceBasicChars.StChar)
+                {
+                    ending = param;
+                    increment++;
+                    break;
+                }
+                else
+                {
+                    parameters.Append(param);
+                    increment++;
+                }
+                result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            }
+            if (!result)
+                return false;
+
+            // Build the sequence now
+            char[] finalChars = new char[advance + increment - 1];
+            Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
+            string finalSeq = new(finalChars);
+
+            // Make a VT sequence instance
+            seq = new VtSequenceInfo(VtSequenceType.Apc, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}]" : $"{VtSequenceBasicChars.APCChar}", parameters.ToString(), "", finalSeq, ending, idx);
+            advance += increment - 1;
+            return true;
+        }
+
+        private bool TryParseDcsSeqs(int idx, out VtSequenceInfo seq, out int advance)
+        {
+            // Set initial values
+            seq = new();
+            advance = 0;
+
+            // Check to see if we have <ESC>P or <DCS> sequences, and advance two bytes to indicate that we've seen
+            // the two characters before the prefix.
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx, out char prefix) || (prefix != VtSequenceBasicChars.EscapeChar && prefix != VtSequenceBasicChars.DCSChar))
+                return false;
+            advance++;
+
+            // If it's ESC, we need to check the 'P' prefix.
+            int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != 'P')
+                return false;
+            advance++;
+
+            // Check the parameter character
+            if (offset == 1)
+            {
+                if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset + 1, out _))
+                    return false;
+                advance++;
+            }
+
+            // Parse until the end
+            var sequenceType = VtSequenceStartType.Special;
+            int sequenceStart = idx + advance;
+
+            // Parse the parameter
+            var parameters = new StringBuilder();
+            char ending = '\0';
+            int increment = 0;
+            bool result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            while (result)
+            {
+                if (param == VtSequenceBasicChars.StChar)
+                {
+                    ending = param;
+                    increment++;
+                    break;
+                }
+                else
+                {
+                    parameters.Append(param);
+                    increment++;
+                }
+                result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            }
+            if (!result)
+                return false;
+
+            // Build the sequence now
+            char[] finalChars = new char[advance + increment - 1];
+            Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
+            string finalSeq = new(finalChars);
+
+            // Make a VT sequence instance
+            seq = new VtSequenceInfo(VtSequenceType.Dcs, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}]" : $"{VtSequenceBasicChars.DCSChar}", parameters.ToString(), "", finalSeq, ending, idx);
+            advance += increment - 1;
+            return true;
+        }
+
+        private bool TryParsePmSeqs(int idx, out VtSequenceInfo seq, out int advance)
+        {
+            // Set initial values
+            seq = new();
+            advance = 0;
+
+            // Check to see if we have <ESC>^ or <PM> sequences, and advance two bytes to indicate that we've seen
+            // the two characters before the prefix.
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx, out char prefix) || (prefix != VtSequenceBasicChars.EscapeChar && prefix != VtSequenceBasicChars.PMChar))
+                return false;
+            advance++;
+
+            // If it's ESC, we need to check the '^' prefix.
+            int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != '^')
+                return false;
+            advance++;
+
+            // Check the parameter character
+            if (offset == 1)
+            {
+                if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset + 1, out _))
+                    return false;
+                advance++;
+            }
+
+            // Parse until the end
+            var sequenceType = VtSequenceStartType.Special;
+            int sequenceStart = idx + advance;
+
+            // Parse the parameter
+            var parameters = new StringBuilder();
+            char ending = '\0';
+            int increment = 0;
+            bool result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            while (result)
+            {
+                if (param == VtSequenceBasicChars.StChar)
+                {
+                    ending = param;
+                    increment++;
+                    break;
+                }
+                else
+                {
+                    parameters.Append(param);
+                    increment++;
+                }
+                result = VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out param);
+            }
+            if (!result)
+                return false;
+
+            // Build the sequence now
+            char[] finalChars = new char[advance + increment - 1];
+            Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
+            string finalSeq = new(finalChars);
+
+            // Make a VT sequence instance
+            seq = new VtSequenceInfo(VtSequenceType.Pm, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}]" : $"{VtSequenceBasicChars.PMChar}", parameters.ToString(), "", finalSeq, ending, idx);
+            advance += increment - 1;
+            return true;
+        }
+
+        private bool TryParseC1Seqs(int idx, out VtSequenceInfo seq, out int advance)
+        {
+            // Set initial values
+            seq = new();
+            advance = 0;
+
+            // Check to see if we have <ESC> sequences, and advance one byte.
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx, out char prefix) || prefix != VtSequenceBasicChars.EscapeChar)
+                return false;
+            advance++;
+
+            // Parse until the end
+            var sequenceType = VtSequenceStartType.Special;
+            int sequenceStart = idx + advance;
+
+            // Parse the sequence
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 1, out char param))
+                return false;
+            advance++;
+
+            // Check for the sequence
+            if (!VtSequenceTokenTools.CharInRange(param, (char)0x80, (char)0x9F))
+                return false;
+
+            // Build the sequence now
+            char[] finalChars = new char[idx + advance - sequenceStart];
+            Array.Copy(charRead, idx, finalChars, 0, idx + advance - sequenceStart);
+            string finalSeq = new(finalChars);
+
+            // Make a VT sequence instance
+            seq = new VtSequenceInfo(VtSequenceType.Esc, sequenceType, $"{VtSequenceBasicChars.EscapeChar}", "", "", finalSeq, '\0', idx);
             return true;
         }
 

@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Diagnostics;
+
 namespace Terminaux.Sequences
 {
     /// <summary>
     /// VT sequence token info
     /// </summary>
+    [DebuggerDisplay("{Type} ({StartType}): {FullSequence} ({Start} -> {End})")]
     public class VtSequenceInfo
     {
         /// <summary>
