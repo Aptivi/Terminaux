@@ -40,22 +40,22 @@ namespace Terminaux.Sequences
         /// <summary>
         /// Prefix of the sequence
         /// </summary>
-        public string Prefix { get; } = "";
+        public string Prefix { get; } = string.Empty;
 
         /// <summary>
         /// Parameters of the sequence
         /// </summary>
-        public string Parameters { get; } = "";
+        public string Parameters { get; } = string.Empty;
 
         /// <summary>
         /// Intermediates of the sequence
         /// </summary>
-        public string Intermediates { get; } = "";
+        public string Intermediates { get; } = string.Empty;
 
         /// <summary>
         /// Full sequence
         /// </summary>
-        public string FullSequence { get; } = "";
+        public string FullSequence { get; } = string.Empty;
 
         /// <summary>
         /// Final char

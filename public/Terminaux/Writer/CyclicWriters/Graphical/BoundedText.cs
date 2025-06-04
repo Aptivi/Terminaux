@@ -303,7 +303,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             return sels.ToString();
         }
 
-        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
+        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, VtSequenceInfo[] sequences)[] sequencesCollections)
         {
             int vtSeqIdx = 0;
             List<string> sequences = [];

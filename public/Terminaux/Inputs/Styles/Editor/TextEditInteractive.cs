@@ -643,7 +643,7 @@ namespace Terminaux.Inputs.Styles.Editor
             UpdateKeybindings();
         }
 
-        private (int, string)[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
+        private (int, string)[] GetAbsoluteSequences(string source, (VtSequenceType type, VtSequenceInfo[] sequences)[] sequencesCollections)
         {
             int vtSeqIdx = 0;
             List<(int, string)> sequences = [];

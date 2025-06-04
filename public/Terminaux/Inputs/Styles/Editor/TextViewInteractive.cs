@@ -531,7 +531,7 @@ namespace Terminaux.Inputs.Styles.Editor
             screen.RequireRefresh();
         }
 
-        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
+        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, VtSequenceInfo[] sequences)[] sequencesCollections)
         {
             int vtSeqIdx = 0;
             List<string> sequences = [];

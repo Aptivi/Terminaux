@@ -41,30 +41,27 @@ namespace Terminaux.Sequences
         /// <returns>The text that doesn't contain the VT sequences</returns>
         public static string FilterVTSequences(string Text, string replace = "", VtSequenceType types = VtSequenceType.All)
         {
-            static string FilterIndividual(string Text, string replace = "", VtSequenceType type = VtSequenceType.All)
-            {
-                // Filter all sequences according to the list of flags
-                var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
-                Text = sequenceFilterRegex.Replace(Text, replace);
+            // Parse the VT sequences
+            var tokenizer = new VtSequenceTokenizer(Text.ToCharArray());
+            var tokens = tokenizer.Parse(types);
+            if (tokens.Length <= 0)
                 return Text;
-            }
 
-            // Filter all sequences according to the list of flags
-            if (types != VtSequenceType.All)
+            // Make a string builder to track indexes
+            var builder = new StringBuilder(Text);
+            for (int i = tokens.Length - 1; i >= 0; i--)
             {
-                for (int i = 1; i < typeValues.Length - 1; i++)
-                {
-                    // Check to see if there is a flag denoting a type
-                    VtSequenceType typeValueEnum = typeValues[i];
-                    if (types.HasFlag(typeValueEnum))
-                        Text = FilterIndividual(Text, replace, typeValueEnum);
-                }
+                // Reverse, because deleting from the left means that our indexes will be invalid.
+                VtSequenceInfo? token = tokens[i];
+                int start = token.Start;
+                int length = token.FullSequence.Length;
+                builder.Remove(start, length);
+
+                // Optionally, put a replacement string
+                if (!string.IsNullOrEmpty(replace))
+                    builder.Insert(start, replace);
             }
-            else
-                // We don't want to go through all the types just for "all sequences", because we need this for performance.
-                // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                Text = FilterIndividual(Text, replace);
-            return Text;
+            return builder.ToString();
         }
 
         /// <summary>
@@ -72,24 +69,30 @@ namespace Terminaux.Sequences
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
-        /// <returns>The array of <see cref="Match"/>es that contain the capture and group information for the found VT sequences</returns>
-        public static (VtSequenceType type, Match[] matches)[] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
+        /// <returns>The array of <see cref="VtSequenceInfo"/> that contain the information for the found VT sequences</returns>
+        public static (VtSequenceType type, VtSequenceInfo[] matches)[] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            static Match[] MatchIndividual(string Text, VtSequenceType type = VtSequenceType.All)
-            {
-                // Match all sequences according to the type
-                var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
-                return sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray();
-            }
+            List<(VtSequenceType, VtSequenceInfo[])> matchCollections = [];
 
-            // Match all sequences according to the list of flags
-            List<(VtSequenceType, Match[])> matchCollections = [];
+            // Parse the VT sequences
+            var tokenizer = new VtSequenceTokenizer(Text.ToCharArray());
+            var tokens = tokenizer.Parse(type);
+            if (tokens.Length <= 0)
+                return [];
+
+            // Match all sequences according to the list of types
             for (int i = 1; i < typeValues.Length - 1; i++)
             {
-                // Check to see if there is a flag denoting a type
-                VtSequenceType typeValueEnum = typeValues[i];
-                if (type.HasFlag(typeValueEnum))
-                    matchCollections.Add((typeValueEnum, MatchIndividual(Text, typeValueEnum)));
+                VtSequenceType seqType = typeValues[i];
+                List<VtSequenceInfo> infos = [];
+
+                // Using the existing token array, just add them if they match.
+                foreach (var token in tokens)
+                    if (token.Type == seqType)
+                        infos.Add(token);
+
+                // Add the match for this type
+                matchCollections.Add((seqType, [.. infos]));
             }
             return [.. matchCollections];
         }
@@ -102,32 +105,10 @@ namespace Terminaux.Sequences
         /// <returns>True if any of the provided VT types are found; otherwise, false.</returns>
         public static bool IsMatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            static bool IsMatchIndividual(string Text, VtSequenceType type = VtSequenceType.All)
-            {
-                // Match all VT sequences according to the type
-                var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
-                return sequenceFilterRegex.IsMatch(Text);
-            }
-
-            // TEST POINT: Remove the regex-based solution as soon as we're done testing the tokenizer logically.
+            // Parse the VT sequences
             var tokenizer = new VtSequenceTokenizer(Text.ToCharArray());
             var tokens = tokenizer.Parse(type);
-
-            // Match all VT sequences according to the type
-            List<bool> results = [];
-            if (type != VtSequenceType.All)
-            {
-                for (int i = 1; i < typeValues.Length - 1; i++)
-                {
-                    // Check to see if there is a flag denoting a type
-                    VtSequenceType typeValueEnum = typeValues[i];
-                    if (type.HasFlag(typeValueEnum))
-                        results.Add(IsMatchIndividual(Text, typeValueEnum));
-                }
-            }
-            else
-                results.Add(IsMatchIndividual(Text));
-            return results.Contains(true);
+            return tokens.Length > 0;
         }
 
         /// <summary>
@@ -138,18 +119,22 @@ namespace Terminaux.Sequences
         /// <returns>A dictionary of each VT sequence type with either true/false for any type test.</returns>
         public static Dictionary<VtSequenceType, bool> IsMatchVTSequencesSpecific(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            // Filter all sequences according to the list of flags
             Dictionary<VtSequenceType, bool> results = [];
+
+            // Parse the VT sequences
+            var tokenizer = new VtSequenceTokenizer(Text.ToCharArray());
+            var tokens = tokenizer.Parse(type);
+            if (tokens.Length <= 0)
+                return [];
+
+            // Filter all sequences according to the list of types
             for (int i = 1; i < typeValues.Length - 1; i++)
             {
-                // Check to see if there is a flag denoting a type
-                VtSequenceType typeValueEnum = typeValues[i];
-                if (type.HasFlag(typeValueEnum))
-                {
-                    // Go ahead and add the result to the dictionary with the tested type.
-                    var sequenceFilterRegex = GetSequenceFilterRegexFromType(typeValueEnum);
-                    results.Add(typeValueEnum, sequenceFilterRegex.IsMatch(Text));
-                }
+                VtSequenceType seqType = typeValues[i];
+                if (tokens.Length == 0)
+                    results.Add(seqType, false);
+                foreach (var token in tokens)
+                    results.Add(seqType, token.Type == seqType);
             }
             return results;
         }
@@ -162,8 +147,33 @@ namespace Terminaux.Sequences
         /// <returns>The group of texts that don't contain the VT sequences</returns>
         public static string[] SplitVTSequences(string Text, VtSequenceType types = VtSequenceType.All)
         {
-            var regex = GetSequenceFilterRegexFromTypes(types);
-            return regex.Split(Text);
+            List<string> split = [];
+
+            // Parse the VT sequences
+            var tokenizer = new VtSequenceTokenizer(Text.ToCharArray());
+            var tokens = tokenizer.Parse(types);
+            if (tokens.Length <= 0)
+                return [Text];
+
+            // Use the tokens to split the strings according to the given indexes
+            int startIdx = 0;
+            int endIdx;
+            string part;
+            foreach (var token in tokens)
+            {
+                endIdx = token.Start;
+
+                // Get this substring
+                part = Text.Substring(startIdx, endIdx - startIdx);
+                split.Add(part);
+
+                startIdx = token.End;
+            }
+
+            // Get the last substring
+            part = Text.Substring(startIdx);
+            split.Add(part);
+            return [.. split];
         }
 
         /// <summary>
@@ -178,14 +188,17 @@ namespace Terminaux.Sequences
 
             // Use IsMatchVTSequencesSpecific so that we can determine the successful matches against all the VT sequences.
             var matches = IsMatchVTSequencesSpecific(Text);
-            var successMatches = matches.Keys.Where((seqType) => matches[seqType] == true).ToArray();
-            int finalTypesInt = 0;
-            VtSequenceType finalTypes = VtSequenceType.None;
 
-            // Add the values of the types to determine the correct flag combination
-            foreach (VtSequenceType successMatch in successMatches)
-                finalTypesInt += (int)successMatch;
-            if (!Enum.TryParse(finalTypesInt.ToString(), out finalTypes))
+            // Cycle through them to add successful matches
+            int finalTypesInt = 0;
+            foreach (var match in matches)
+            {
+                var type = match.Key;
+                var success = match.Value;
+                if (success)
+                    finalTypesInt += (int)type;
+            }
+            if (!Enum.TryParse(finalTypesInt.ToString(), out VtSequenceType finalTypes))
                 return VtSequenceType.None;
             return finalTypes;
         }
