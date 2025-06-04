@@ -37,6 +37,7 @@ using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using System.Collections.ObjectModel;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -531,7 +532,7 @@ namespace Terminaux.Inputs.Styles.Editor
             screen.RequireRefresh();
         }
 
-        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, VtSequenceInfo[] sequences)[] sequencesCollections)
+        private static string[] GetAbsoluteSequences(string source, ReadOnlyDictionary<VtSequenceType, VtSequenceInfo[]> sequencesCollections)
         {
             int vtSeqIdx = 0;
             List<string> sequences = [];

@@ -287,14 +287,15 @@ namespace Terminaux.Tests.Sequences
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.Length.ShouldBe(7);
-            matchCollections2.Length.ShouldBe(7);
-            matchCollections3.Length.ShouldBe(7);
+            matchCollections1.Count.ShouldBe(7);
+            matchCollections2.Count.ShouldBe(7);
+            matchCollections3.Count.ShouldBe(7);
             bool found1 = false;
             bool found2 = false;
             bool found3 = false;
-            foreach (var (type, matches) in matchCollections1)
+            foreach (var kvp in matchCollections1)
             {
+                var matches = kvp.Value;
                 if (matches.Length > 0)
                 {
                     matches.ShouldNotBeEmpty();
@@ -302,8 +303,9 @@ namespace Terminaux.Tests.Sequences
                     found1 = true;
                 }
             }
-            foreach (var (type, matches) in matchCollections2)
+            foreach (var kvp in matchCollections2)
             {
+                var matches = kvp.Value;
                 if (matches.Length > 0)
                 {
                     matches.ShouldNotBeEmpty();
@@ -311,8 +313,9 @@ namespace Terminaux.Tests.Sequences
                     found2 = true;
                 }
             }
-            foreach (var (type, matches) in matchCollections3)
+            foreach (var kvp in matchCollections3)
             {
+                var matches = kvp.Value;
                 if (matches.Length > 0)
                 {
                     matches.ShouldNotBeEmpty();
@@ -340,18 +343,15 @@ namespace Terminaux.Tests.Sequences
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.ShouldHaveSingleItem();
-            matchCollections2.ShouldHaveSingleItem();
-            matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].type.ShouldBe(requestedType);
-            matchCollections2[0].type.ShouldBe(requestedType);
-            matchCollections3[0].type.ShouldBe(requestedType);
-            matchCollections1[0].matches.ShouldNotBeEmpty();
-            matchCollections2[0].matches.ShouldNotBeEmpty();
-            matchCollections3[0].matches.ShouldNotBeEmpty();
-            matchCollections1[0].matches.ShouldHaveSingleItem();
-            matchCollections2[0].matches.ShouldHaveSingleItem();
-            matchCollections3[0].matches.ShouldHaveSingleItem();
+            matchCollections1.ShouldContainKey(requestedType);
+            matchCollections2.ShouldContainKey(requestedType);
+            matchCollections3.ShouldContainKey(requestedType);
+            matchCollections1[requestedType].ShouldNotBeEmpty();
+            matchCollections2[requestedType].ShouldNotBeEmpty();
+            matchCollections3[requestedType].ShouldNotBeEmpty();
+            matchCollections1[requestedType].ShouldHaveSingleItem();
+            matchCollections2[requestedType].ShouldHaveSingleItem();
+            matchCollections3[requestedType].ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -370,18 +370,15 @@ namespace Terminaux.Tests.Sequences
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.ShouldHaveSingleItem();
-            matchCollections2.ShouldHaveSingleItem();
-            matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].type.ShouldBe(requestedType);
-            matchCollections2[0].type.ShouldBe(requestedType);
-            matchCollections3[0].type.ShouldBe(requestedType);
-            matchCollections1[0].matches.ShouldNotBeEmpty();
-            matchCollections2[0].matches.ShouldNotBeEmpty();
-            matchCollections3[0].matches.ShouldNotBeEmpty();
-            matchCollections1[0].matches.ShouldHaveSingleItem();
-            matchCollections2[0].matches.ShouldHaveSingleItem();
-            matchCollections3[0].matches.ShouldHaveSingleItem();
+            matchCollections1.ShouldContainKey(requestedType);
+            matchCollections2.ShouldContainKey(requestedType);
+            matchCollections3.ShouldContainKey(requestedType);
+            matchCollections1[requestedType].ShouldNotBeEmpty();
+            matchCollections2[requestedType].ShouldNotBeEmpty();
+            matchCollections3[requestedType].ShouldNotBeEmpty();
+            matchCollections1[requestedType].ShouldHaveSingleItem();
+            matchCollections2[requestedType].ShouldHaveSingleItem();
+            matchCollections3[requestedType].ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -399,18 +396,15 @@ namespace Terminaux.Tests.Sequences
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.ShouldHaveSingleItem();
-            matchCollections2.ShouldHaveSingleItem();
-            matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].type.ShouldBe(requestedType);
-            matchCollections2[0].type.ShouldBe(requestedType);
-            matchCollections3[0].type.ShouldBe(requestedType);
-            matchCollections1[0].matches.ShouldNotBeEmpty();
-            matchCollections2[0].matches.ShouldNotBeEmpty();
-            matchCollections3[0].matches.ShouldNotBeEmpty();
-            matchCollections1[0].matches.ShouldHaveSingleItem();
-            matchCollections2[0].matches.ShouldHaveSingleItem();
-            matchCollections3[0].matches.ShouldHaveSingleItem();
+            matchCollections1.ShouldContainKey(requestedType);
+            matchCollections2.ShouldContainKey(requestedType);
+            matchCollections3.ShouldContainKey(requestedType);
+            matchCollections1[requestedType].ShouldNotBeEmpty();
+            matchCollections2[requestedType].ShouldNotBeEmpty();
+            matchCollections3[requestedType].ShouldNotBeEmpty();
+            matchCollections1[requestedType].ShouldHaveSingleItem();
+            matchCollections2[requestedType].ShouldHaveSingleItem();
+            matchCollections3[requestedType].ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -429,18 +423,15 @@ namespace Terminaux.Tests.Sequences
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.ShouldHaveSingleItem();
-            matchCollections2.ShouldHaveSingleItem();
-            matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].type.ShouldBe(requestedType);
-            matchCollections2[0].type.ShouldBe(requestedType);
-            matchCollections3[0].type.ShouldBe(requestedType);
-            matchCollections1[0].matches.ShouldNotBeEmpty();
-            matchCollections2[0].matches.ShouldNotBeEmpty();
-            matchCollections3[0].matches.ShouldNotBeEmpty();
-            matchCollections1[0].matches.ShouldHaveSingleItem();
-            matchCollections2[0].matches.ShouldHaveSingleItem();
-            matchCollections3[0].matches.ShouldHaveSingleItem();
+            matchCollections1.ShouldContainKey(requestedType);
+            matchCollections2.ShouldContainKey(requestedType);
+            matchCollections3.ShouldContainKey(requestedType);
+            matchCollections1[requestedType].ShouldNotBeEmpty();
+            matchCollections2[requestedType].ShouldNotBeEmpty();
+            matchCollections3[requestedType].ShouldNotBeEmpty();
+            matchCollections1[requestedType].ShouldHaveSingleItem();
+            matchCollections2[requestedType].ShouldHaveSingleItem();
+            matchCollections3[requestedType].ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -459,18 +450,15 @@ namespace Terminaux.Tests.Sequences
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.ShouldHaveSingleItem();
-            matchCollections2.ShouldHaveSingleItem();
-            matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].type.ShouldBe(requestedType);
-            matchCollections2[0].type.ShouldBe(requestedType);
-            matchCollections3[0].type.ShouldBe(requestedType);
-            matchCollections1[0].matches.ShouldNotBeEmpty();
-            matchCollections2[0].matches.ShouldNotBeEmpty();
-            matchCollections3[0].matches.ShouldNotBeEmpty();
-            matchCollections1[0].matches.ShouldHaveSingleItem();
-            matchCollections2[0].matches.ShouldHaveSingleItem();
-            matchCollections3[0].matches.ShouldHaveSingleItem();
+            matchCollections1.ShouldContainKey(requestedType);
+            matchCollections2.ShouldContainKey(requestedType);
+            matchCollections3.ShouldContainKey(requestedType);
+            matchCollections1[requestedType].ShouldNotBeEmpty();
+            matchCollections2[requestedType].ShouldNotBeEmpty();
+            matchCollections3[requestedType].ShouldNotBeEmpty();
+            matchCollections1[requestedType].ShouldHaveSingleItem();
+            matchCollections2[requestedType].ShouldHaveSingleItem();
+            matchCollections3[requestedType].ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -489,18 +477,15 @@ namespace Terminaux.Tests.Sequences
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.ShouldHaveSingleItem();
-            matchCollections2.ShouldHaveSingleItem();
-            matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].type.ShouldBe(requestedType);
-            matchCollections2[0].type.ShouldBe(requestedType);
-            matchCollections3[0].type.ShouldBe(requestedType);
-            matchCollections1[0].matches.ShouldNotBeEmpty();
-            matchCollections2[0].matches.ShouldNotBeEmpty();
-            matchCollections3[0].matches.ShouldNotBeEmpty();
-            matchCollections1[0].matches.ShouldHaveSingleItem();
-            matchCollections2[0].matches.ShouldHaveSingleItem();
-            matchCollections3[0].matches.ShouldHaveSingleItem();
+            matchCollections1.ShouldContainKey(requestedType);
+            matchCollections2.ShouldContainKey(requestedType);
+            matchCollections3.ShouldContainKey(requestedType);
+            matchCollections1[requestedType].ShouldNotBeEmpty();
+            matchCollections2[requestedType].ShouldNotBeEmpty();
+            matchCollections3[requestedType].ShouldNotBeEmpty();
+            matchCollections1[requestedType].ShouldHaveSingleItem();
+            matchCollections2[requestedType].ShouldHaveSingleItem();
+            matchCollections3[requestedType].ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -519,18 +504,15 @@ namespace Terminaux.Tests.Sequences
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.ShouldHaveSingleItem();
-            matchCollections2.ShouldHaveSingleItem();
-            matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].type.ShouldBe(requestedType);
-            matchCollections2[0].type.ShouldBe(requestedType);
-            matchCollections3[0].type.ShouldBe(requestedType);
-            matchCollections1[0].matches.ShouldNotBeEmpty();
-            matchCollections2[0].matches.ShouldNotBeEmpty();
-            matchCollections3[0].matches.ShouldNotBeEmpty();
-            matchCollections1[0].matches.ShouldHaveSingleItem();
-            matchCollections2[0].matches.ShouldHaveSingleItem();
-            matchCollections3[0].matches.ShouldHaveSingleItem();
+            matchCollections1.ShouldContainKey(requestedType);
+            matchCollections2.ShouldContainKey(requestedType);
+            matchCollections3.ShouldContainKey(requestedType);
+            matchCollections1[requestedType].ShouldNotBeEmpty();
+            matchCollections2[requestedType].ShouldNotBeEmpty();
+            matchCollections3[requestedType].ShouldNotBeEmpty();
+            matchCollections1[requestedType].ShouldHaveSingleItem();
+            matchCollections2[requestedType].ShouldHaveSingleItem();
+            matchCollections3[requestedType].ShouldHaveSingleItem();
         }
 
         /// <summary>

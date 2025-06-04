@@ -24,6 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Sequences;
+using System.Collections.ObjectModel;
 
 namespace Terminaux.Base.Extensions
 {
@@ -153,7 +154,7 @@ namespace Terminaux.Base.Extensions
             return (LeftSeekPosition, TopSeekPosition);
         }
 
-        internal static string BufferChar(string text, (VtSequenceType type, VtSequenceInfo[] sequences)[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
+        internal static string BufferChar(string text, ReadOnlyDictionary<VtSequenceType, VtSequenceInfo[]> sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
         {
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
@@ -171,7 +172,7 @@ namespace Terminaux.Base.Extensions
             char ch = text[i];
             string seq = "";
             bool vtSeq = false;
-            foreach ((var _, var sequences) in sequencesCollections)
+            foreach (var sequences in sequencesCollections.Values)
             {
                 if (sequences.Length > 0 && vtSeqIdx < sequences.Length && sequences[vtSeqIdx].Start == i)
                 {

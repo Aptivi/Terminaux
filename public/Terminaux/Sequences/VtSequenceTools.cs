@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -70,15 +71,15 @@ namespace Terminaux.Sequences
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
         /// <returns>The array of <see cref="VtSequenceInfo"/> that contain the information for the found VT sequences</returns>
-        public static (VtSequenceType type, VtSequenceInfo[] matches)[] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
+        public static ReadOnlyDictionary<VtSequenceType, VtSequenceInfo[]> MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            List<(VtSequenceType, VtSequenceInfo[])> matchCollections = [];
+            Dictionary<VtSequenceType, VtSequenceInfo[]> matchCollections = [];
 
             // Parse the VT sequences
             var tokenizer = new VtSequenceTokenizer(Text.ToCharArray());
             var tokens = tokenizer.Parse(type);
             if (tokens.Length <= 0)
-                return [];
+                return new(new Dictionary<VtSequenceType, VtSequenceInfo[]>());
 
             // Match all sequences according to the list of types
             for (int i = 1; i < typeValues.Length - 1; i++)
@@ -92,9 +93,9 @@ namespace Terminaux.Sequences
                         infos.Add(token);
 
                 // Add the match for this type
-                matchCollections.Add((seqType, [.. infos]));
+                matchCollections.Add(seqType, [.. infos]);
             }
-            return [.. matchCollections];
+            return new(matchCollections);
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Terminaux.Sequences
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
         /// <returns>A dictionary of each VT sequence type with either true/false for any type test.</returns>
-        public static Dictionary<VtSequenceType, bool> IsMatchVTSequencesSpecific(string Text, VtSequenceType type = VtSequenceType.All)
+        public static ReadOnlyDictionary<VtSequenceType, bool> IsMatchVTSequencesSpecific(string Text, VtSequenceType type = VtSequenceType.All)
         {
             Dictionary<VtSequenceType, bool> results = [];
 
@@ -125,7 +126,7 @@ namespace Terminaux.Sequences
             var tokenizer = new VtSequenceTokenizer(Text.ToCharArray());
             var tokens = tokenizer.Parse(type);
             if (tokens.Length <= 0)
-                return [];
+                return new(new Dictionary<VtSequenceType, bool>());
 
             // Filter all sequences according to the list of types
             for (int i = 1; i < typeValues.Length - 1; i++)
@@ -136,7 +137,7 @@ namespace Terminaux.Sequences
                 foreach (var token in tokens)
                     results.Add(seqType, token.Type == seqType);
             }
-            return results;
+            return new(results);
         }
 
         /// <summary>

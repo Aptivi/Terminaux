@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
@@ -303,7 +304,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             return sels.ToString();
         }
 
-        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, VtSequenceInfo[] sequences)[] sequencesCollections)
+        private static string[] GetAbsoluteSequences(string source, ReadOnlyDictionary<VtSequenceType, VtSequenceInfo[]> sequencesCollections)
         {
             int vtSeqIdx = 0;
             List<string> sequences = [];
