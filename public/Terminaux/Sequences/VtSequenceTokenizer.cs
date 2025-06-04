@@ -34,6 +34,26 @@ namespace Terminaux.Sequences
                 return [];
             List<VtSequenceInfo> sequenceInfos = [];
 
+            // First, check to see if we have ESC sequence characters
+            bool hasSequences = false;
+            for (int pos = 0; pos < charRead.Length; pos++)
+            {
+                hasSequences =
+                    VtSequenceTokenTools.CheckChar(charRead, pos,
+                    [
+                        VtSequenceBasicChars.EscapeChar,
+                        VtSequenceBasicChars.CsiChar,
+                        VtSequenceBasicChars.OSCChar,
+                        VtSequenceBasicChars.APCChar,
+                        VtSequenceBasicChars.DCSChar,
+                        VtSequenceBasicChars.PMChar,
+                    ]);
+                if (hasSequences)
+                    break;
+            }
+            if (!hasSequences)
+                return [];
+
             // Run a main loop
             for (int pos = 0; pos < charRead.Length; pos++)
             {
