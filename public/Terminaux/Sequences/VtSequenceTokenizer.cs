@@ -28,8 +28,10 @@ namespace Terminaux.Sequences
     {
         private readonly char[] charRead;
 
-        internal VtSequenceInfo[] Parse()
+        internal VtSequenceInfo[] Parse(VtSequenceType type = VtSequenceType.All)
         {
+            if (type == VtSequenceType.None)
+                return [];
             List<VtSequenceInfo> sequenceInfos = [];
 
             // Run a main loop
@@ -45,7 +47,8 @@ namespace Terminaux.Sequences
                 if (TryParseCsiSeqs(pos, out var seq, out int bytesToAdd))
                 {
                     // Add this sequence
-                    sequenceInfos.Add(seq);
+                    if (type.HasFlag(VtSequenceType.Csi))
+                        sequenceInfos.Add(seq);
                     pos += bytesToAdd - 1;
                     continue;
                 }
@@ -54,7 +57,8 @@ namespace Terminaux.Sequences
                 if (TryParseOscSeqs(pos, out seq, out bytesToAdd))
                 {
                     // Add this sequence
-                    sequenceInfos.Add(seq);
+                    if (type.HasFlag(VtSequenceType.Osc))
+                        sequenceInfos.Add(seq);
                     pos += bytesToAdd - 1;
                     continue;
                 }
@@ -63,7 +67,8 @@ namespace Terminaux.Sequences
                 if (TryParseEscSeqs(pos, out seq, out bytesToAdd))
                 {
                     // Add this sequence
-                    sequenceInfos.Add(seq);
+                    if (type.HasFlag(VtSequenceType.Esc))
+                        sequenceInfos.Add(seq);
                     pos += bytesToAdd - 1;
                     continue;
                 }
@@ -72,7 +77,8 @@ namespace Terminaux.Sequences
                 if (TryParseApcSeqs(pos, out seq, out bytesToAdd))
                 {
                     // Add this sequence
-                    sequenceInfos.Add(seq);
+                    if (type.HasFlag(VtSequenceType.Apc))
+                        sequenceInfos.Add(seq);
                     pos += bytesToAdd - 1;
                     continue;
                 }
@@ -81,7 +87,8 @@ namespace Terminaux.Sequences
                 if (TryParseDcsSeqs(pos, out seq, out bytesToAdd))
                 {
                     // Add this sequence
-                    sequenceInfos.Add(seq);
+                    if (type.HasFlag(VtSequenceType.Dcs))
+                        sequenceInfos.Add(seq);
                     pos += bytesToAdd - 1;
                     continue;
                 }
@@ -90,7 +97,8 @@ namespace Terminaux.Sequences
                 if (TryParsePmSeqs(pos, out seq, out bytesToAdd))
                 {
                     // Add this sequence
-                    sequenceInfos.Add(seq);
+                    if (type.HasFlag(VtSequenceType.Pm))
+                        sequenceInfos.Add(seq);
                     pos += bytesToAdd - 1;
                     continue;
                 }
@@ -99,7 +107,8 @@ namespace Terminaux.Sequences
                 if (TryParseC1Seqs(pos, out seq, out bytesToAdd))
                 {
                     // Add this sequence
-                    sequenceInfos.Add(seq);
+                    if (type.HasFlag(VtSequenceType.C1))
+                        sequenceInfos.Add(seq);
                     pos += bytesToAdd - 1;
                     continue;
                 }
