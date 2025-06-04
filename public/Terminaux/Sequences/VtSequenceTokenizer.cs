@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
+using System.Text;
 using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Sequences
@@ -78,38 +80,47 @@ namespace Terminaux.Sequences
                 advance++;
             }
 
-            // Helper function to help with the digits
-            void AdvanceDigits(ref int advance)
+            // Now, check to see if the parameter is numeric or not, and assign a type
+            var sequenceType =
+                char.IsDigit(param) ? VtSequenceStartType.Numeric :
+                char.IsLetter(param) ? VtSequenceStartType.Alphabetic :
+                VtSequenceStartType.Special;
+            int sequenceStart = idx + advance;
+
+            // Parse the parameters first
+            var parameters = new StringBuilder();
+            var intermediates = new StringBuilder();
+            char ending = '\0';
+            int increment = 0;
+            while (VtSequenceTokenTools.TryGetChar(charRead, sequenceStart + increment - 1, out char output))
             {
-                while (char.IsDigit(param))
+                if (output >= 0x30 && output <= 0x3F)
                 {
-                    if (!VtSequenceTokenTools.TryGetChar(charRead, idx + advance, out param))
-                        return;
-                    if (char.IsDigit(param))
-                        advance++;
+                    parameters.Append(output);
+                    increment++;
+                }
+                else if (output >= 0x20 && output <= 0x2F)
+                {
+                    intermediates.Append(output);
+                    increment++;
+                }
+                else if (output >= 0x40 && output <= 0x7E)
+                {
+                    ending = output;
+                    increment++;
+                    break;
                 }
             }
 
-            // Now, check to see if the parameter is numeric or not
-            if (char.IsDigit(param))
-            {
-                // We have a digit from 0 to 9! Now, check the parameters, since we could have 10, 100, ...
-                bool bailNumber = false;
-                while (!bailNumber)
-                {
-                    AdvanceDigits(ref advance);
-                    if (param != ';')
-                        break;
-                }
-            }
-            else
-            {
-                // We have non-digit character, so we need to check further
+            // Build the sequence now
+            char[] finalChars = new char[advance + increment - 1];
+            Array.Copy(charRead, idx, finalChars, 0, advance + increment - 1);
+            string finalSeq = new(finalChars);
 
-            }
-
-            // Parse the sequence now
-            return false;
+            // Make a VT sequence instance
+            seq = new VtSequenceInfo(VtSequenceType.Csi, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}[" : $"{VtSequenceBasicChars.CsiChar}", parameters.ToString(), intermediates.ToString(), finalSeq, ending, idx);
+            advance += increment - 1;
+            return true;
         }
 
         internal VtSequenceTokenizer(char[] charRead)

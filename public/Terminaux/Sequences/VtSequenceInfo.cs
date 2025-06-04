@@ -24,6 +24,65 @@ namespace Terminaux.Sequences
     /// </summary>
     public class VtSequenceInfo
     {
+        /// <summary>
+        /// VT sequence type
+        /// </summary>
+        public VtSequenceType Type { get; }
+        
+        /// <summary>
+        /// VT sequence start type
+        /// </summary>
+        public VtSequenceStartType StartType { get; }
 
+        /// <summary>
+        /// Prefix of the sequence
+        /// </summary>
+        public string Prefix { get; } = "";
+
+        /// <summary>
+        /// Parameters of the sequence
+        /// </summary>
+        public string Parameters { get; } = "";
+
+        /// <summary>
+        /// Intermediates of the sequence
+        /// </summary>
+        public string Intermediates { get; } = "";
+
+        /// <summary>
+        /// Full sequence
+        /// </summary>
+        public string FullSequence { get; } = "";
+
+        /// <summary>
+        /// Final char
+        /// </summary>
+        public char FinalChar { get; }
+
+        /// <summary>
+        /// Start index within a sequence of text
+        /// </summary>
+        public int Start { get; }
+
+        /// <summary>
+        /// End index within a sequence of text
+        /// </summary>
+        public int End =>
+            Start + FullSequence.Length - 1;
+
+        internal VtSequenceInfo()
+        { }
+
+        internal VtSequenceInfo(VtSequenceType type, VtSequenceStartType startType, string prefix, string parameters, string intermediates, string fullSequence, char finalChar, int start)
+        {
+            Type = type;
+            StartType = startType;
+            Prefix = prefix;
+            Parameters = parameters;
+            Intermediates = intermediates;
+            FullSequence = fullSequence;
+            FinalChar = finalChar;
+            Start = start;
+        }
     }
 }
