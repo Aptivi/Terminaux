@@ -307,22 +307,20 @@ namespace Terminaux.Sequences
                     // Check the parameter after the ' ' parameter
                     if (!VtSequenceTokenTools.CheckChar(argParam, ['F', 'G', 'L', 'M', 'N']))
                         return false;
-                    found = true;
                 }
                 else if (param == '#')
                 {
                     // Check the parameter after the '#' parameter
                     if (!VtSequenceTokenTools.CheckChar(argParam, ['3', '4', '5', '6', '8']))
                         return false;
-                    found = true;
                 }
                 else if (param == '%')
                 {
                     // Check the parameter after the '%' parameter
                     if (!VtSequenceTokenTools.CheckChar(argParam, ['@', 'G']))
                         return false;
-                    found = true;
                 }
+                found = true;
             }
 
             // Check for those sequences, too
@@ -552,7 +550,7 @@ namespace Terminaux.Sequences
             advance++;
 
             // Check for the sequence
-            if (!VtSequenceTokenTools.CheckChar(param, ['D', 'E', 'H', 'M', 'N', 'O', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_']))
+            if (!VtSequenceTokenTools.CheckChar(param, ['D', 'E', 'H', 'M', 'N', 'O', 'P', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_']))
                 return false;
 
             // Build the sequence now
