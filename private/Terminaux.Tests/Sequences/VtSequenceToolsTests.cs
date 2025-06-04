@@ -67,7 +67,7 @@ namespace Terminaux.Tests.Sequences
         public void TestSplitC1Sequences()
         {
             char EscapeChar = Convert.ToChar(0x1b);
-            string vtSequence1 = $"{EscapeChar}8";
+            string vtSequence1 = $"{EscapeChar}\\";
             string vtSequence2 = $"{EscapeChar}M";
             VtSequenceType requestedType = VtSequenceType.C1;
             VtSequenceTools.SplitVTSequences($"Hello!{vtSequence1}", requestedType).ShouldNotBeEmpty();
@@ -187,7 +187,7 @@ namespace Terminaux.Tests.Sequences
         public void TestFilterC1Sequences()
         {
             char EscapeChar = Convert.ToChar(0x1b);
-            string vtSequence1 = $"{EscapeChar}8";
+            string vtSequence1 = $"{EscapeChar}\\";
             string vtSequence2 = $"{EscapeChar}M";
             VtSequenceType requestedType = VtSequenceType.C1;
             VtSequenceTools.FilterVTSequences($"Hello!{vtSequence1}", "", requestedType).ShouldBe("Hello!");
@@ -361,7 +361,7 @@ namespace Terminaux.Tests.Sequences
         public void TestMatchC1Sequences()
         {
             char EscapeChar = Convert.ToChar(0x1b);
-            string vtSequence1 = $"{EscapeChar}8";
+            string vtSequence1 = $"{EscapeChar}\\";
             string vtSequence2 = $"{EscapeChar}M";
             VtSequenceType requestedType = VtSequenceType.C1;
             var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
@@ -554,7 +554,7 @@ namespace Terminaux.Tests.Sequences
         public void TestIsMatchC1Sequences()
         {
             char EscapeChar = Convert.ToChar(0x1b);
-            string vtSequence1 = $"{EscapeChar}8";
+            string vtSequence1 = $"{EscapeChar}\\";
             string vtSequence2 = $"{EscapeChar}M";
             VtSequenceType requestedType = VtSequenceType.C1;
             VtSequenceTools.IsMatchVTSequences($"Hello!{vtSequence1}", requestedType).ShouldBeTrue();
@@ -687,7 +687,7 @@ namespace Terminaux.Tests.Sequences
         public void TestIsMatchSpecificC1Sequences()
         {
             char EscapeChar = Convert.ToChar(0x1b);
-            string vtSequence1 = $"{EscapeChar}8";
+            string vtSequence1 = $"{EscapeChar}\\";
             string vtSequence2 = $"{EscapeChar}M";
             VtSequenceType requestedType = VtSequenceType.C1;
             var matchCollections1 = VtSequenceTools.IsMatchVTSequencesSpecific($"Hello!{vtSequence1}", requestedType);

@@ -295,6 +295,7 @@ namespace Terminaux.Sequences
             advance++;
 
             // Those sequences may need an additional letter, so parse it, too.
+            bool found = false;
             if (VtSequenceTokenTools.CheckChar(param, [' ', '#', '%', '(', ')', '*', '+', '-', ',', '/']))
             {
                 if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 2, out char argParam))
@@ -306,28 +307,31 @@ namespace Terminaux.Sequences
                     // Check the parameter after the ' ' parameter
                     if (!VtSequenceTokenTools.CheckChar(argParam, ['F', 'G', 'L', 'M', 'N']))
                         return false;
+                    found = true;
                 }
                 else if (param == '#')
                 {
                     // Check the parameter after the '#' parameter
                     if (!VtSequenceTokenTools.CheckChar(argParam, ['3', '4', '5', '6', '8']))
                         return false;
+                    found = true;
                 }
                 else if (param == '%')
                 {
                     // Check the parameter after the '%' parameter
                     if (!VtSequenceTokenTools.CheckChar(argParam, ['@', 'G']))
                         return false;
+                    found = true;
                 }
             }
 
             // Check for those sequences, too
-            if (!VtSequenceTokenTools.CheckChar(param, ['6', '7', '8', '9', '=', '>', 'F', 'c', 'l', 'm', 'n', 'o', '}', '|', '~']))
+            if (!found && !VtSequenceTokenTools.CheckChar(param, ['6', '7', '8', '9', '=', '>', 'F', 'c', 'l', 'm', 'n', 'o', '}', '|', '~']))
                 return false;
 
             // Build the sequence now
-            char[] finalChars = new char[idx + advance - sequenceStart];
-            Array.Copy(charRead, idx, finalChars, 0, idx + advance - sequenceStart);
+            char[] finalChars = new char[idx + advance - sequenceStart + 1];
+            Array.Copy(charRead, idx, finalChars, 0, idx + advance - sequenceStart + 1);
             string finalSeq = new(finalChars);
 
             // Make a VT sequence instance
@@ -548,16 +552,16 @@ namespace Terminaux.Sequences
             advance++;
 
             // Check for the sequence
-            if (!VtSequenceTokenTools.CharInRange(param, (char)0x80, (char)0x9F))
+            if (!VtSequenceTokenTools.CheckChar(param, ['D', 'E', 'H', 'M', 'N', 'O', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_']))
                 return false;
 
             // Build the sequence now
-            char[] finalChars = new char[idx + advance - sequenceStart];
-            Array.Copy(charRead, idx, finalChars, 0, idx + advance - sequenceStart);
+            char[] finalChars = new char[idx + advance - sequenceStart + 1];
+            Array.Copy(charRead, idx, finalChars, 0, idx + advance - sequenceStart + 1);
             string finalSeq = new(finalChars);
 
             // Make a VT sequence instance
-            seq = new VtSequenceInfo(VtSequenceType.Esc, sequenceType, $"{VtSequenceBasicChars.EscapeChar}", "", "", finalSeq, '\0', idx);
+            seq = new VtSequenceInfo(VtSequenceType.C1, sequenceType, $"{VtSequenceBasicChars.EscapeChar}", "", "", finalSeq, '\0', idx);
             return true;
         }
 
