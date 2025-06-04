@@ -272,6 +272,7 @@ namespace Terminaux.SequenceTypesGen
                                 
                 using System.Text.RegularExpressions;
                 using Terminaux.Base;
+                using Terminaux.Sequences;
 
                 namespace Terminaux.Sequences.Builder.Types
                 {
@@ -370,8 +371,9 @@ namespace Terminaux.SequenceTypesGen
                                 {
                                     string result = $"{{seqFormat}}";
                                     ConsoleLogger.Debug("Parsing sequence format for type {{typeNameUpper}} with action {{seqName}}: {0}", result);
-                                    var regexParser = {{seqName}}SequenceRegex;
-                                    if (!regexParser.IsMatch(result))
+                                    var tokenizer = new VtSequenceTokenizer(result.ToCharArray());
+                                    var tokens = tokenizer.Parse();
+                                    if (tokens.Length <= 0)
                                         throw new TerminauxException($"We have failed to generate a working VT sequence of type {{typeNameUpper}} with action {{seqName}}. Make sure that you've specified values correctly.");
                                     return result;
                                 }
