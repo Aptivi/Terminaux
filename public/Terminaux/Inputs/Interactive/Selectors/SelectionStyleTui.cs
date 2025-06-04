@@ -50,7 +50,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private bool showCount;
         private bool sidebar;
         private List<int> selectedAnswers = [];
-        private List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText = [];
+        private List<(ChoiceHitboxType type, int related)> relatedHeights = [];
         private readonly string question = "";
         private readonly InputChoiceCategoryInfo[] answers = [];
         private readonly SelectionStyleSettings settings = SelectionStyleSettings.GlobalSettings;
@@ -119,7 +119,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Settings = settings,
             };
             selectionBuilder.Append(selections.Render());
-            choiceText = selections.GetChoiceParameters().choiceText;
+            relatedHeights = selections.GetRelatedHeights();
 
             // Write description hint
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
@@ -488,7 +488,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var arrowDownHitbox = new PointerHitbox(new(interiorWidth + 3, listStartPosition + answersPerPage), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
             var sidebarArrowUpHitbox = new PointerHitbox(new(interiorWidth + 3 + sidebarWidth, 2), new Action<PointerEventContext>((_) => ShowcaseGoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
             var sidebarArrowDownHitbox = new PointerHitbox(new(interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage), new Action<PointerEventContext>((_) => ShowcaseGoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-            if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && choiceText.Count > answersPerPage)
+            if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && relatedHeights.Count > answersPerPage)
             {
                 arrowUpHitbox.ProcessPointer(mouse, out bool done);
                 if (!done)

@@ -186,7 +186,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public bool CanGenerateSelectionHitbox(int selectionIdx, int hitboxIdx, out (PointerHitbox hitbox, ChoiceHitboxType type, int related) hitbox)
         {
             // Get the choice parameters
-            (_, List<int> selectionHeights) = GetChoiceParameters();
+            List<int> selectionHeights = GetSelectionHeights();
             hitbox = default;
             if (selectionHeights.Count == 0 || selectionIdx < 0 || selectionIdx >= selectionHeights.Count)
                 return false;
@@ -233,7 +233,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public (PointerHitbox hitbox, ChoiceHitboxType type, int related)[] GenerateSelectionHitboxes(int selectionIdx)
         {
             // Get the choice parameters
-            (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText, List<int> selectionHeights) = GetChoiceParameters();
+            List<int> selectionHeights = GetSelectionHeights();
+            List<(ChoiceHitboxType type, int related)> relatedHeights = GetRelatedHeights();
 
             // Get the choice hitboxes
             List<(PointerHitbox hitbox, ChoiceHitboxType type, int related)> hitboxes = [];
@@ -244,12 +245,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 // Populate the selection box
                 int finalIndex = i + startIndex;
-                if (finalIndex >= choiceText.Count)
+                if (finalIndex >= relatedHeights.Count)
                     break;
                 int optionTop = Top + finalIndex - startIndex;
                 Coordinate start = new(Left, optionTop);
                 Coordinate end = new(Left + Width, optionTop);
-                (_, _, _, _, var type, int related) = choiceText[finalIndex];
+                (var type, int related) = relatedHeights[finalIndex];
                 hitboxes.Add((new(start, end, null), type, related));
             }
             return [.. hitboxes];
@@ -270,7 +271,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 AltChoicePos = choices.Count;
 
             // Get the choice parameters
-            (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText, List<int> selectionHeights) = GetChoiceParameters();
+            List<int> selectionHeights = GetSelectionHeights();
+            List<(string text, Color fore, Color back, bool force)> choiceText = GetChoiceParameters();
 
             // Render the choices
             int selectionHeight = selectionHeights[CurrentSelection];
@@ -300,7 +302,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
                 else
                 {
-                    var (text, fore, back, force, _, _) = choiceText[finalIndex];
+                    var (text, fore, back, force) = choiceText[finalIndex];
                     if (UseColors || force)
                     {
                         buffer.Append(
@@ -360,7 +362,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             return buffer.ToString();
         }
 
-        internal (List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText, List<int> selectionHeights) GetChoiceParameters()
+        internal List<int> GetSelectionHeights()
         {
             // Determine if multiple or single
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
@@ -371,16 +373,84 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 AltChoicePos = choices.Count;
 
             // Now, get the choice parameters
-            List<(string text, Color fore, Color back, bool force, ChoiceHitboxType type, int related)> choiceText = [];
             List<int> selectionHeights = [];
             int processedHeight = 0;
+            for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
+            {
+                InputChoiceCategoryInfo? category = Selections[categoryIdx];
+                if (Selections.Length > 1)
+                    processedHeight++;
+                for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
+                {
+                    InputChoiceGroupInfo? group = category.Groups[groupIdx];
+                    if (category.Groups.Length > 1)
+                        processedHeight++;
+                    for (int i = 0; i < group.Choices.Length; i++)
+                    {
+                        processedHeight++;
+                        selectionHeights.Add(processedHeight);
+                    }
+                }
+            }
+
+            // Return the parameters
+            return selectionHeights;
+        }
+
+        internal List<(ChoiceHitboxType, int)> GetRelatedHeights()
+        {
+            // Determine if multiple or single
+            List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
+            bool isMultiple = CurrentSelections is not null;
+            if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
+                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+            if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
+                AltChoicePos = choices.Count;
+
+            // Now, get the choice parameters
+            List<(ChoiceHitboxType, int)> relatedHeights = [];
+            int relatedIdx = -1;
+            for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
+            {
+                InputChoiceCategoryInfo? category = Selections[categoryIdx];
+                if (Selections.Length > 1)
+                    relatedHeights.Add((ChoiceHitboxType.Category, relatedIdx == -1 ? 1 : relatedIdx + 2));
+                for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
+                {
+                    InputChoiceGroupInfo? group = category.Groups[groupIdx];
+                    if (category.Groups.Length > 1)
+                        relatedHeights.Add((ChoiceHitboxType.Group, relatedIdx == -1 ? 1 : relatedIdx + 2));
+                    for (int i = 0; i < group.Choices.Length; i++)
+                    {
+                        relatedIdx++;
+                        relatedHeights.Add((ChoiceHitboxType.Choice, relatedIdx + 1));
+                    }
+                }
+            }
+
+            // Return the parameters
+            return relatedHeights;
+        }
+
+        internal List<(string text, Color fore, Color back, bool force)> GetChoiceParameters()
+        {
+            // Determine if multiple or single
+            List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
+            bool isMultiple = CurrentSelections is not null;
+            if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
+                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+            if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
+                AltChoicePos = choices.Count;
+
+            // Now, get the choice parameters
+            List<(string text, Color fore, Color back, bool force)> choiceText = [];
             int processedChoices = 0;
             int startIndexTristates = 0;
             int startIndexGroupTristates = 0;
             int relatedIdx = -1;
             var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, CurrentSelections, ref startIndexTristates) : [];
             string prefix = isMultiple ? "  [ ] " : ShowRadioButtons ? "  ( ) " : "  ";
-            int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
+            int AnswerTitleLeft = choices.Count > 5000 ? 0 : choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
             for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
             {
                 InputChoiceCategoryInfo? category = Selections[categoryIdx];
@@ -389,8 +459,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
                     string finalRendered = $"{modifiers}{category.Name}";
-                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true, ChoiceHitboxType.Category, relatedIdx == -1 ? 1 : relatedIdx + 2));
-                    processedHeight++;
+                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true));
                 }
 
                 var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, CurrentSelections, ref startIndexGroupTristates) : [];
@@ -402,8 +471,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
                         string finalRendered = $"  {modifiers}{group.Name}";
-                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true, ChoiceHitboxType.Group, relatedIdx == -1 ? 1 : relatedIdx + 2));
-                        processedHeight++;
+                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true));
                     }
                     for (int i = 0; i < group.Choices.Length; i++)
                     {
@@ -421,7 +489,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             ShowRadioButtons ? $" ({(radioSelected ? "*" : " ")})" : "";
                         string modifiers = $"{selectionIndicator}{selectedIndicator}";
                         string AnswerOption = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
-                        if (AnswerTitleLeft < Width)
+                        if (choices.Count <= 5000 && AnswerTitleLeft < Width)
                         {
                             string renderedChoice = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
@@ -446,16 +514,14 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                     SwapSelectedColors ? SelectedForegroundColor : SelectedBackgroundColor
                                  :
                                 isAlt ? AltBackgroundColor : BackgroundColor;
-                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false, ChoiceHitboxType.Choice, relatedIdx + 1));
-                        processedHeight++;
+                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false));
                         processedChoices++;
-                        selectionHeights.Add(processedHeight);
                     }
                 }
             }
 
             // Return the parameters
-            return (choiceText, selectionHeights);
+            return choiceText;
         }
 
         /// <summary>

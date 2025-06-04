@@ -57,13 +57,10 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 
         internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputChoiceCategoryInfo[] selections, string[] splitFinalLines)
         {
-            var selectionsRendered = new Selections(selections)
-            {
-                Width = 42,
-            };
+            var selectionsRendered = new Selections(selections);
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
-            var (choiceText, _) = selectionsRendered.GetChoiceParameters();
-            int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
+            var related = selectionsRendered.GetRelatedHeights();
+            int selectionChoices = related.Count > 10 ? 10 : related.Count;
             int selectionReservedHeight = 2 + selectionChoices;
             (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
 
@@ -254,25 +251,11 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 return false;
 
             // Get necessary variables
-            var selectionsRendered = new Selections(selections)
-            {
-                CurrentSelection = currentSelection,
-                Width = 42,
-            };
-            var (choiceText, _) = selectionsRendered.GetChoiceParameters();
-            int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
+            var selectionsRendered = new Selections(selections);
+            var related = selectionsRendered.GetRelatedHeights();
+            int selectionChoices = related.Count > 10 ? 10 : related.Count;
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (_, _, _, _, _, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = GetDimensions(selections, splitFinalLines);
-
-            // Determine the selection renderer
-            selectionsRendered = new Selections(selections)
-            {
-                Left = selectionBoxPosX,
-                Top = selectionBoxPosY,
-                CurrentSelection = currentSelection,
-                Height = selectionChoices,
-                Width = maxSelectionWidth,
-            };
 
             // Now, translate coordinates to the selected index
             if (mouse.Coordinates.x <= selectionBoxPosX || mouse.Coordinates.x > selectionBoxPosX + maxSelectionWidth)

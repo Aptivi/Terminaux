@@ -496,8 +496,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     SelectedChoice = currentSelected,
                     Width = 42,
                 };
-                var (choiceText, _) = selectionsRendered.GetChoiceParameters();
-                int selectionChoices = choiceText.Count > 10 ? 10 : choiceText.Count;
+                var related = selectionsRendered.GetRelatedHeights();
+                int selectionChoices = related.Count > 10 ? 10 : related.Count;
 
                 // Edge case: We need to check to see if the current highlight is disabled
                 InfoBoxTools.VerifyDisabled(ref currentSelection, choices);
@@ -622,7 +622,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     if (!done)
                                         arrowDownHitbox.ProcessPointer(mouse, out done);
                                 }
-                                else if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && choiceText.Count > selectionChoices)
+                                else if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && related.Count > selectionChoices)
                                 {
                                     arrowSelectUpHitbox.ProcessPointer(mouse, out bool done);
                                     if (!done)
