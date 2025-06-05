@@ -76,8 +76,7 @@ namespace Terminaux.Base.TermInfo
                     return desc;
             }
 
-            // Last resort (builtins tracked from Debian's NCurses: https://packages.debian.org/sid/all/ncurses-base/download
-            // and https://packages.debian.org/sid/all/ncurses-term/download)
+            // Last resort (builtins tracked from https://archlinux.org/packages/core/x86_64/ncurses/)
             ConsoleLogger.Warning("All {0} directories led to nonexistent terminfo file when finding {1}", directories.Count, name);
             var builtins = TermInfoDesc.GetBuiltinPaths();
             foreach (string builtin in builtins)
