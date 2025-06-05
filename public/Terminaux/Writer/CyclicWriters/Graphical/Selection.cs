@@ -518,12 +518,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         bool disabled = choice.ChoiceDisabled;
 
                         // Get the option
-                        string selectedIndicator = isMultiple ? $" [ ]" : ShowRadioButtons ? $" ( )" : "";
-                        string modifiers = $" {selectedIndicator}";
-                        string AnswerOption = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
+                        string selectedIndicator = isMultiple ? $"  [ ]" : ShowRadioButtons ? $"  ( )" : " ";
+                        string AnswerOption = Selections.Length > 1 ? $"  {selectedIndicator} {choice.ChoiceName}) {AnswerTitle}" : $"{selectedIndicator} {choice.ChoiceName}) {AnswerTitle}";
                         if (choices.Count <= 5000 && AnswerTitleLeft < Width)
                         {
-                            string renderedChoice = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
+                            string renderedChoice = Selections.Length > 1 ? $"  {selectedIndicator} {choice.ChoiceName}) " : $"{selectedIndicator} {choice.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                         }
@@ -590,7 +589,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         string selectedIndicator =
                             isMultiple ? $" [{(CurrentSelections.Contains(relatedIdx) ? "*" : " ")}]" :
                             ShowRadioButtons ? $" ({(radioSelected ? "*" : " ")})" : "";
-                        string modifiers = $"{selectionIndicator}{selectedIndicator}";
+                        string modifiers = Selections.Length > 1 ? $"  {selectionIndicator}{selectedIndicator}" : $"{selectionIndicator}{selectedIndicator}";
 
                         // Render an entry
                         bool isAlt = processedChoices + 1 > AltChoicePos;
