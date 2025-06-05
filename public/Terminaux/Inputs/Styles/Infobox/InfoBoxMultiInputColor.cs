@@ -657,11 +657,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 currentSelection = 0;
         }
 
-        private static int WriteInfoBoxSelection(InputChoiceInfo[] choices, string v)
-        {
-            throw new NotImplementedException();
-        }
-
         static InfoBoxMultiInputColor()
         {
             if (!ConsoleChecker.busy)
