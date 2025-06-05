@@ -277,7 +277,6 @@ namespace Terminaux.Reader
 
                 // Initialize everything
                 string input = defaultValue;
-                var struckKey = new ConsoleKeyInfo();
                 var readState = new TermReaderState
                 {
                     settings = settings
@@ -293,6 +292,12 @@ namespace Terminaux.Reader
                     // Sanity checks
                     if (settings.PrintDefaultValue && settings.WriteDefaultValue)
                         throw new TerminauxException($"There's a conflict between {nameof(settings.PrintDefaultValue)} and {nameof(settings.WriteDefaultValue)}.");
+
+                    // Helper function
+                    string GetFinalInput() =>
+                        readState.CurrentText.Length == 0 ?
+                        defaultValue :
+                        readState.CurrentText.ToString();
 
                     // Initialize some of the state variables
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
@@ -324,6 +329,7 @@ namespace Terminaux.Reader
                     string finalPlaceholder = lines.Length > 0 ? lines[0] : "";
                     int width = ConsoleChar.EstimateCellWidth(finalPlaceholder);
                     bool cleared = false;
+                    bool terminate = false;
                     ConsoleWrapper.CursorVisible = true;
                     if (!string.IsNullOrEmpty(defaultValue) && readState.Settings.WriteDefaultValue)
                     {
@@ -331,7 +337,7 @@ namespace Terminaux.Reader
                         TermReaderTools.InsertNewText(defaultValue);
                         PositioningTools.SeekTo(readState.Settings.InitialPosition, ref readState);
                     }
-                    while (!BindingsTools.IsTerminate(struckKey))
+                    while (!terminate)
                     {
                         // Write placeholder if needed
                         if (readState.CurrentText.Length == 0 && finalPlaceholder.Length != 0)
@@ -355,7 +361,7 @@ namespace Terminaux.Reader
                         // Get a key
                         TermReaderTools.isWaitingForInput = true;
                         ConsoleLogger.Info("Reader is waiting for input...");
-                        struckKey = TermReaderTools.GetInput(interruptible);
+                        var struckKey = TermReaderTools.GetInput(interruptible);
                         ConsoleLogger.Info("Reader is no longer waiting for input...");
                         ConsoleWrapper.CursorVisible = false;
                         TermReaderTools.isWaitingForInput = false;
@@ -371,6 +377,23 @@ namespace Terminaux.Reader
                         BindingsTools.Execute(readState);
                         TermReaderTools.Refresh();
                         PositioningTools.Commit(readState);
+
+                        // Check to see if we need to process input
+                        if (BindingsTools.IsTerminate(struckKey))
+                        {
+                            terminate = true;
+                            try
+                            {
+                                // Since there is no TryChangeType(), we need to catch all possible exceptions.
+                                string finalInput = GetFinalInput();
+                                Convert.ChangeType(finalInput, typeof(T));
+                            }
+                            catch
+                            {
+                                terminate = false;
+                                readState.operationWasInvalid = true;
+                            }
+                        }
 
                         // Write the bell character if invalid
                         if (readState.OperationWasInvalid)
@@ -394,10 +417,7 @@ namespace Terminaux.Reader
                     TextWriterRaw.Write();
 
                     // Return the input after adding it to history
-                    input =
-                        readState.CurrentText.Length == 0 ?
-                        defaultValue :
-                        readState.CurrentText.ToString();
+                    input = GetFinalInput();
                     if (!password && settings.HistoryEnabled)
                     {
                         // We don't want passwords in the history. Also, check to see if the history entry can be added or not based
