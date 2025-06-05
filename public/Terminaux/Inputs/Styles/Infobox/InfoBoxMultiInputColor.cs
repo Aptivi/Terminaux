@@ -530,14 +530,16 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 var resultEntries = entriesString
                                     .Select((entry, idx) => (entry.Name, entry.Description, idx))
                                     .Where((entry) => regex.IsMatch(entry.Name) || regex.IsMatch(entry.Description)).ToArray();
-                                if (resultEntries.Length > 0)
+                                if (resultEntries.Length > 1)
                                 {
                                     var choices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.Name, tuple.Description)).ToArray();
-                                    int answer = WriteInfoBoxSelection(choices, "Select one of the entries:");
+                                    int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
                                     if (answer < 0)
                                         break;
                                     currentSelection = resultEntries[answer].idx;
                                 }
+                                else if (resultEntries.Length == 1)
+                                    currentSelection = resultEntries[0].idx;
                                 else
                                     InfoBoxModalColor.WriteInfoBoxModal("No item found.");
                                 ScreenTools.CurrentScreen?.RequireRefresh();

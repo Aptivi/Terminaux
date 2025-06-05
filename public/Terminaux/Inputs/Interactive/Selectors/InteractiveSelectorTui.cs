@@ -340,13 +340,18 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var resultEntries = entriesString
                 .Select((entry, idx) => ($"{idx + 1}", entry))
                 .Where((tuple) => regex.IsMatch(tuple.entry)).ToArray();
-            if (resultEntries.Length > 0)
+            if (resultEntries.Length > 1)
             {
                 var choices = InputChoiceTools.GetInputChoices(resultEntries);
                 int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:", selectorTui.Settings.InfoBoxSettings);
                 if (answer < 0)
                     return;
                 var resultIdx = int.Parse(resultEntries[answer].Item1);
+                InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
+            }
+            else if (resultEntries.Length == 1)
+            {
+                var resultIdx = int.Parse(resultEntries[0].Item1);
                 InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
             }
             else

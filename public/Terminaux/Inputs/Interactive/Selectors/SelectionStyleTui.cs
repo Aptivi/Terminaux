@@ -305,7 +305,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private void SearchPrompt(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             // Prompt the user for search term
-            var entriesString = allAnswers.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
+            var entriesString = allAnswers.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled)).ToArray();
             string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)");
             if (!RegexTools.IsValidRegex(keyword))
             {
@@ -317,8 +317,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Get the result entries
             var regex = new Regex(keyword);
             var resultEntries = entriesString
-                .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, itemNum: idx + 1))
-                .Where((entry) => regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)).ToArray();
+                .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, itemNum: idx + 1))
+                .Where((entry) => (regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)) && !entry.ChoiceDisabled).ToArray();
 
             // Act, depending on the result entries
             int idx = 0;

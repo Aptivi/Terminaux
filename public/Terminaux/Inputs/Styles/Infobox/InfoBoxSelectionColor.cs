@@ -721,7 +721,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 // Search function
                                 if (selectionChoices <= 0)
                                     break;
-                                var entriesString = choices.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
+                                var entriesString = choices.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled)).ToArray();
                                 string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)");
                                 if (!RegexTools.IsValidRegex(keyword))
                                 {
@@ -731,9 +731,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 var regex = new Regex(keyword);
                                 var resultEntries = entriesString
-                                    .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, idx))
-                                    .Where((entry) => regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)).ToArray();
-                                if (resultEntries.Length > 0)
+                                    .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, idx))
+                                    .Where((entry) => (regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)) && !entry.ChoiceDisabled).ToArray();
+                                if (resultEntries.Length > 1)
                                 {
                                     var resultChoices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
                                     int answer = WriteInfoBoxSelection(resultChoices, "Select one of the entries:");
@@ -741,6 +741,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                         break;
                                     currentSelection = resultEntries[answer].idx;
                                 }
+                                else if (resultEntries.Length == 1)
+                                    currentSelection = resultEntries[0].idx;
                                 else
                                     InfoBoxModalColor.WriteInfoBoxModal("No item found.");
                                 ScreenTools.CurrentScreen?.RequireRefresh();
