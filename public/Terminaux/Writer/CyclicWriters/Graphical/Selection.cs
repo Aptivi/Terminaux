@@ -299,7 +299,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Get the choice parameters
             List<int> selectionHeights = GetSelectionHeights();
             choiceTexts = GetChoiceParameters();
-            var choiceStates = GetChoiceParametersStates();
+            var choiceStates = GetChoiceParametersStates(selectionHeights);
 
             // Render the choices
             int selectionHeight = selectionHeights[CurrentSelection];
@@ -330,7 +330,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 else
                 {
                     var text = choiceTexts[finalIndex];
-                    var (textState, fore, back, force) = choiceStates[finalIndex];
+                    var (textState, fore, back, force) = choiceStates[i];
                     if (UseColors || force)
                     {
                         buffer.Append(
@@ -539,7 +539,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             return choiceText;
         }
 
-        internal List<(string text, Color fore, Color back, bool force)> GetChoiceParametersStates()
+        internal List<(string text, Color fore, Color back, bool force)> GetChoiceParametersStates(List<int> selectionHeights)
         {
             // Determine if multiple or single
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
@@ -551,6 +551,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Now, get the choice parameters
             List<(string text, Color fore, Color back, bool force)> choiceText = [];
+            List<(SelectionTristate tristate, ChoiceHitboxType type, bool radioSelected, bool multipleSelected, bool disabled, bool isAlt)> choiceParams = [];
             int processedChoices = 0;
             int startIndexTristates = 0;
             int startIndexGroupTristates = 0;
@@ -561,10 +562,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 InputChoiceCategoryInfo? category = Selections[categoryIdx];
                 var tristate = isMultiple ? tristates[categoryIdx] : SelectionTristate.Unselected;
                 if (Selections.Length > 1)
-                {
-                    string modifiers = isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "";
-                    choiceText.Add((modifiers, ConsoleColorData.Silver.Color, BackgroundColor, true));
-                }
+                    choiceParams.Add((tristate, ChoiceHitboxType.Category, false, false, false, false));
 
                 var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, CurrentSelections, ref startIndexGroupTristates) : [];
                 for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
@@ -572,10 +570,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     InputChoiceGroupInfo? group = category.Groups[groupIdx];
                     var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
                     if (category.Groups.Length > 1)
-                    {
-                        string modifiers = isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "";
-                        choiceText.Add(($"  {modifiers}", ConsoleColorData.Grey.Color, BackgroundColor, true));
-                    }
+                        choiceParams.Add((groupTristate, ChoiceHitboxType.Group, false, false, false, false));
                     for (int i = 0; i < group.Choices.Length; i++)
                     {
                         relatedIdx++;
@@ -584,17 +579,57 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         var choice = group.Choices[i];
                         bool disabled = choice.ChoiceDisabled;
 
+                        // Render an entry
+                        bool isAlt = processedChoices + 1 > AltChoicePos;
+                        choiceParams.Add((selected ? SelectionTristate.Selected : SelectionTristate.Unselected, ChoiceHitboxType.Choice, radioSelected, isMultiple && CurrentSelections.Contains(relatedIdx), disabled, isAlt));
+                        processedChoices++;
+                    }
+                }
+            }
+
+            int selectionHeight = selectionHeights[CurrentSelection];
+            int currentPage = (selectionHeight - 1) / Height;
+            int startIndex = Height * currentPage;
+            for (int i = 0; i <= Height - 1; i++)
+            {
+                // Populate the selection box
+                int finalIndex = i + startIndex;
+                if (finalIndex < selectionHeights[selectionHeights.Count - 1])
+                {
+                    var (tristate, type, radioSelected, multipleSelected, disabled, isAlt) = choiceParams[finalIndex];
+
+                    // Check the type
+                    if (type == ChoiceHitboxType.Category)
+                    {
+                        string modifiers =
+                            isMultiple ?
+                                tristate == SelectionTristate.Selected ? "[*] " :
+                                tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] "
+                            : "";
+                        choiceText.Add((modifiers, ConsoleColorData.Silver.Color, BackgroundColor, true));
+                    }
+                    else if (type == ChoiceHitboxType.Group)
+                    {
+                        string modifiers =
+                            isMultiple ?
+                                tristate == SelectionTristate.Selected ? "  [*] " :
+                                tristate == SelectionTristate.FiftyFifty ? "  [/] " : "  [ ] " :
+                            "  ";
+                        choiceText.Add((modifiers, ConsoleColorData.Grey.Color, BackgroundColor, true));
+                    }
+                    else
+                    {
                         // Get the option
+                        bool selected = tristate == SelectionTristate.Selected;
                         string selectionIndicator = selected ? ">" : disabled ? "X" : " ";
                         string selectedIndicator =
-                            isMultiple ? $" [{(CurrentSelections.Contains(relatedIdx) ? "*" : " ")}]" :
+                            isMultiple ? $" [{(multipleSelected ? "*" : " ")}]" :
                             ShowRadioButtons ? $" ({(radioSelected ? "*" : " ")})" : "";
                         string modifiers = Selections.Length > 1 ? $"  {selectionIndicator}{selectedIndicator}" : $"{selectionIndicator}{selectedIndicator}";
 
                         // Render an entry
-                        bool isAlt = processedChoices + 1 > AltChoicePos;
                         var finalForeColor =
-                            choice.ChoiceDisabled ? DisabledForegroundColor :
+                            disabled ? DisabledForegroundColor :
                             selected ?
                                 isAlt ?
                                     SwapSelectedColors ? AltSelectedBackgroundColor : AltSelectedForegroundColor :
@@ -602,7 +637,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                  :
                                 isAlt ? AltForegroundColor : ForegroundColor;
                         var finalBackColor =
-                            choice.ChoiceDisabled ? DisabledBackgroundColor :
+                            disabled ? DisabledBackgroundColor :
                             selected ?
                                 isAlt ?
                                     SwapSelectedColors ? AltSelectedForegroundColor : AltSelectedBackgroundColor :
@@ -610,7 +645,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                  :
                                 isAlt ? AltBackgroundColor : BackgroundColor;
                         choiceText.Add((modifiers, finalForeColor, finalBackColor, false));
-                        processedChoices++;
                     }
                 }
             }
