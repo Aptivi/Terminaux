@@ -43,8 +43,7 @@ namespace Terminaux.Base.Extensions
                 return 0;
 
             // We need to filter VT sequences if we suspect that we can find one of them
-            if (VtSequenceTools.IsMatchVTSequences(sentence))
-                sentence = VtSequenceTools.FilterVTSequences(sentence);
+            sentence = VtSequenceTools.FilterVTSequences(sentence);
 
             // Iterate through every character inside this string to get their widths according to the Unicode
             // standards to ensure that we have the correct cell width count that the string takes up.
@@ -75,7 +74,7 @@ namespace Terminaux.Base.Extensions
                     return -1;
 
                 // We need to filter VT sequences if we suspect that we can find one of them
-                if (processed && VtSequenceTools.IsMatchVTSequences(sentence))
+                if (processed)
                     sentence = VtSequenceTools.FilterVTSequences(sentence);
 
                 // Process index
@@ -113,8 +112,7 @@ namespace Terminaux.Base.Extensions
                     return 0;
 
                 // We need to filter VT sequences if we suspect that we can find one of them
-                if (VtSequenceTools.IsMatchVTSequences(sentence))
-                    sentence = VtSequenceTools.FilterVTSequences(sentence);
+                sentence = VtSequenceTools.FilterVTSequences(sentence);
 
                 // Iterate through every character inside this string to get their widths according to the Unicode
                 // standards to ensure that we calculate all the zero widths.
@@ -155,8 +153,7 @@ namespace Terminaux.Base.Extensions
                     return 0;
 
                 // We need to filter VT sequences if we suspect that we can find one of them
-                if (VtSequenceTools.IsMatchVTSequences(sentence))
-                    sentence = VtSequenceTools.FilterVTSequences(sentence);
+                sentence = VtSequenceTools.FilterVTSequences(sentence);
 
                 // Iterate through every character inside this string to get their widths according to the Unicode
                 // standards to ensure that we calculate all the full widths.
