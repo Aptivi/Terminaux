@@ -44,11 +44,37 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     public class Selection : GraphicalCyclicWriter
     {
         private int selectedChoice;
+        private bool cached;
+        private List<string> choiceTexts = [];
+        private InputChoiceCategoryInfo[] selections = [];
 
         /// <summary>
         /// List of selection categories
         /// </summary>
-        public InputChoiceCategoryInfo[] Selections { get; set; } = [];
+        public InputChoiceCategoryInfo[] Selections
+        {
+            get => selections;
+            set
+            {
+                List<InputChoiceInfo> oldChoices = SelectionInputTools.GetChoicesFromCategories(Selections);
+                List<InputChoiceInfo> newChoices = SelectionInputTools.GetChoicesFromCategories(value);
+                if (!newChoices.SequenceEqual(oldChoices))
+                    InvalidateCache();
+                selections = value;
+            }
+        }
+
+        /// <inheritdoc/>
+        public override int Width
+        {
+            get => base.Width;
+            set
+            {
+                if (Width != value)
+                    InvalidateCache();
+                base.Width = value;
+            }
+        }
 
         /// <summary>
         /// Alternative choice position (one-based)
@@ -272,7 +298,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Get the choice parameters
             List<int> selectionHeights = GetSelectionHeights();
-            List<(string text, Color fore, Color back, bool force)> choiceText = GetChoiceParameters();
+            choiceTexts = GetChoiceParameters();
+            var choiceStates = GetChoiceParametersStates();
 
             // Render the choices
             int selectionHeight = selectionHeights[CurrentSelection];
@@ -302,7 +329,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
                 else
                 {
-                    var (text, fore, back, force) = choiceText[finalIndex];
+                    var text = choiceTexts[finalIndex];
+                    var (textState, fore, back, force) = choiceStates[finalIndex];
                     if (UseColors || force)
                     {
                         buffer.Append(
@@ -310,7 +338,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             ColorTools.RenderSetConsoleColor(back, true)
                         );
                     }
-                    string truncated = text.Truncate(Width, Ellipsis);
+                    var textBuilder = new StringBuilder(text);
+                    textBuilder.Remove(0, textState.Length);
+                    textBuilder.Insert(0, textState);
+                    string truncated = textBuilder.ToString().Truncate(Width, Ellipsis);
                     buffer.Append(
                         CsiSequences.GenerateCsiCursorPosition(Left + 1, optionTop + 1) +
                         truncated + new string(' ', Width - ConsoleChar.EstimateCellWidth(truncated))
@@ -319,7 +350,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             }
 
             // Render the vertical bar
-            if (choiceText.Count > Height && Height >= 4)
+            if (choiceTexts.Count > Height && Height >= 4)
             {
                 int finalWidth = Left + Width;
                 var slider = new Slider(CurrentSelection + 1, 0, choices.Count)
@@ -432,7 +463,84 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             return relatedHeights;
         }
 
-        internal List<(string text, Color fore, Color back, bool force)> GetChoiceParameters()
+        internal List<string> GetChoiceParameters()
+        {
+            if (cached)
+                return choiceTexts;
+            cached = true;
+
+            // Determine if multiple or single
+            List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
+            bool isMultiple = CurrentSelections is not null;
+            if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
+                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+            if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
+                AltChoicePos = choices.Count;
+
+            // Now, get the choice text instances
+            List<string> choiceText = [];
+            int processedChoices = 0;
+            int startIndexTristates = 0;
+            int startIndexGroupTristates = 0;
+            int relatedIdx = -1;
+            var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, CurrentSelections, ref startIndexTristates) : [];
+            string prefix = isMultiple ? "  [ ] " : ShowRadioButtons ? "  ( ) " : "  ";
+            int AnswerTitleLeft = choices.Count > 5000 ? 0 : choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
+            for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
+            {
+                InputChoiceCategoryInfo? category = Selections[categoryIdx];
+                var tristate = isMultiple ? tristates[categoryIdx] : SelectionTristate.Unselected;
+                if (Selections.Length > 1)
+                {
+                    string modifiers = isMultiple ? "[ ] " : "";
+                    string finalRendered = $"{modifiers}{category.Name}";
+                    choiceText.Add(finalRendered);
+                }
+
+                var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, CurrentSelections, ref startIndexGroupTristates) : [];
+                for (int groupIdx = 0; groupIdx < category.Groups.Length; groupIdx++)
+                {
+                    InputChoiceGroupInfo? group = category.Groups[groupIdx];
+                    var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
+                    if (category.Groups.Length > 1)
+                    {
+                        string modifiers = isMultiple ? "[ ] " : "";
+                        string finalRendered = $"  {modifiers}{group.Name}";
+                        choiceText.Add(finalRendered);
+                    }
+                    for (int i = 0; i < group.Choices.Length; i++)
+                    {
+                        relatedIdx++;
+                        bool selected = processedChoices == CurrentSelection;
+                        bool radioSelected = processedChoices == SelectedChoice;
+                        var choice = group.Choices[i];
+                        string AnswerTitle = choice.ChoiceTitle ?? "";
+                        bool disabled = choice.ChoiceDisabled;
+
+                        // Get the option
+                        string selectedIndicator = isMultiple ? $" [ ]" : ShowRadioButtons ? $" ( )" : "";
+                        string modifiers = $" {selectedIndicator}";
+                        string AnswerOption = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
+                        if (choices.Count <= 5000 && AnswerTitleLeft < Width)
+                        {
+                            string renderedChoice = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
+                            int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
+                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
+                        }
+
+                        // Render an entry
+                        choiceText.Add(AnswerOption);
+                        processedChoices++;
+                    }
+                }
+            }
+
+            // Return the parameters
+            choiceTexts = choiceText;
+            return choiceText;
+        }
+
+        internal List<(string text, Color fore, Color back, bool force)> GetChoiceParametersStates()
         {
             // Determine if multiple or single
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
@@ -449,17 +557,14 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int startIndexGroupTristates = 0;
             int relatedIdx = -1;
             var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, CurrentSelections, ref startIndexTristates) : [];
-            string prefix = isMultiple ? "  [ ] " : ShowRadioButtons ? "  ( ) " : "  ";
-            int AnswerTitleLeft = choices.Count > 5000 ? 0 : choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
             for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
             {
                 InputChoiceCategoryInfo? category = Selections[categoryIdx];
                 var tristate = isMultiple ? tristates[categoryIdx] : SelectionTristate.Unselected;
                 if (Selections.Length > 1)
                 {
-                    string modifiers = $"{(isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
-                    string finalRendered = $"{modifiers}{category.Name}";
-                    choiceText.Add((finalRendered, ConsoleColorData.Silver.Color, BackgroundColor, true));
+                    string modifiers = isMultiple ? tristate == SelectionTristate.Selected ? "[*] " : tristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "";
+                    choiceText.Add((modifiers, ConsoleColorData.Silver.Color, BackgroundColor, true));
                 }
 
                 var groupTristates = isMultiple ? SelectionInputTools.GetGroupTristates(category.Groups, CurrentSelections, ref startIndexGroupTristates) : [];
@@ -469,9 +574,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     var groupTristate = isMultiple ? groupTristates[groupIdx] : SelectionTristate.Unselected;
                     if (category.Groups.Length > 1)
                     {
-                        string modifiers = $"{(isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "")}";
-                        string finalRendered = $"  {modifiers}{group.Name}";
-                        choiceText.Add((finalRendered, ConsoleColorData.Grey.Color, BackgroundColor, true));
+                        string modifiers = isMultiple ? groupTristate == SelectionTristate.Selected ? "[*] " : groupTristate == SelectionTristate.FiftyFifty ? "[/] " : "[ ] " : "";
+                        choiceText.Add(($"  {modifiers}", ConsoleColorData.Grey.Color, BackgroundColor, true));
                     }
                     for (int i = 0; i < group.Choices.Length; i++)
                     {
@@ -479,7 +583,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         bool selected = processedChoices == CurrentSelection;
                         bool radioSelected = processedChoices == SelectedChoice;
                         var choice = group.Choices[i];
-                        string AnswerTitle = choice.ChoiceTitle ?? "";
                         bool disabled = choice.ChoiceDisabled;
 
                         // Get the option
@@ -488,13 +591,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             isMultiple ? $" [{(CurrentSelections.Contains(relatedIdx) ? "*" : " ")}]" :
                             ShowRadioButtons ? $" ({(radioSelected ? "*" : " ")})" : "";
                         string modifiers = $"{selectionIndicator}{selectedIndicator}";
-                        string AnswerOption = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
-                        if (choices.Count <= 5000 && AnswerTitleLeft < Width)
-                        {
-                            string renderedChoice = Selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
-                            int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
-                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
-                        }
 
                         // Render an entry
                         bool isAlt = processedChoices + 1 > AltChoicePos;
@@ -514,7 +610,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                     SwapSelectedColors ? SelectedForegroundColor : SelectedBackgroundColor
                                  :
                                 isAlt ? AltBackgroundColor : BackgroundColor;
-                        choiceText.Add((AnswerOption, finalForeColor, finalBackColor, false));
+                        choiceText.Add((modifiers, finalForeColor, finalBackColor, false));
                         processedChoices++;
                     }
                 }
@@ -523,6 +619,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Return the parameters
             return choiceText;
         }
+
+        /// <summary>
+        /// Forces refresh
+        /// </summary>
+        public void InvalidateCache() =>
+            cached = false;
 
         /// <summary>
         /// Makes a new selection instance

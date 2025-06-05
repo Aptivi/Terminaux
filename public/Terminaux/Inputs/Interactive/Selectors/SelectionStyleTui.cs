@@ -52,7 +52,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         private List<int> selectedAnswers = [];
         private List<(ChoiceHitboxType type, int related)> relatedHeights = [];
         private readonly string question = "";
-        private readonly InputChoiceCategoryInfo[] answers = [];
+        private readonly Selection selection = new();
         private readonly SelectionStyleSettings settings = SelectionStyleSettings.GlobalSettings;
         private readonly bool kiosk;
         private readonly bool multiple;
@@ -106,20 +106,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
 
             // Populate the answers
-            var selections = new Selection(categories)
-            {
-                Left = 3,
-                Top = listStartPosition + 1,
-                ShowRadioButtons = settings.RadioButtons,
-                CurrentSelection = highlightedAnswer - 1,
-                SelectedChoice = selectedAnswer - 1,
-                CurrentSelections = multiple ? [.. selectedAnswers] : null,
-                Height = answersPerPage,
-                Width = interiorWidth,
-                Settings = settings,
-            };
-            selectionBuilder.Append(selections.Render());
-            relatedHeights = selections.GetRelatedHeights();
+            selection.Top = listStartPosition + 1;
+            selection.Height = answersPerPage;
+            selection.Width = interiorWidth;
+            selection.ShowRadioButtons = settings.RadioButtons;
+            selection.CurrentSelection = highlightedAnswer - 1;
+            selection.SelectedChoice = selectedAnswer - 1;
+            selection.CurrentSelections = multiple ? [.. selectedAnswers] : null;
+            selection.Settings = settings;
+            selectionBuilder.Append(selection.Render());
+            relatedHeights = selection.GetRelatedHeights();
 
             // Write description hint
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
@@ -607,18 +603,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int answersPerPage = listEndPosition - 4;
 
             // Determine the hitbox types
-            var selections = new Selection(categories)
-            {
-                Left = 3,
-                Top = listStartPosition + 1,
-                ShowRadioButtons = settings.RadioButtons,
-                CurrentSelection = highlightedAnswer - 1,
-                SelectedChoice = selectedAnswer - 1,
-                CurrentSelections = multiple ? [.. selectedAnswers] : null,
-                Height = answersPerPage,
-                Width = interiorWidth,
-                Settings = settings,
-            };
+            selection.Top = listStartPosition + 1;
+            selection.Height = answersPerPage;
+            selection.Width = interiorWidth;
+            selection.ShowRadioButtons = settings.RadioButtons;
+            selection.CurrentSelection = highlightedAnswer - 1;
+            selection.SelectedChoice = selectedAnswer - 1;
+            selection.CurrentSelections = multiple ? [.. selectedAnswers] : null;
+            selection.Settings = settings;
 
             // Now, translate coordinates to the selected index and get its hitbox
             if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x > interiorWidth + 2)
@@ -626,7 +618,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (mouse.Coordinates.y < listStartPosition + 1 || mouse.Coordinates.y > listStartPosition + answersPerPage)
                 return false;
             int listIndex = mouse.Coordinates.y - listStartPosition - 1;
-            if (!selections.CanGenerateSelectionHitbox(listIndex, out var hitbox))
+            if (!selection.CanGenerateSelectionHitbox(listIndex, out var hitbox))
                 return false;
 
             // Depending on the hitbox parameter, we need to act accordingly
@@ -651,10 +643,18 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Install values
             this.question = question;
-            this.answers = answers;
             this.settings = settings ?? SelectionStyleSettings.GlobalSettings;
             this.kiosk = kiosk;
             this.multiple = multiple;
+            selection = new Selection(categories)
+            {
+                Left = 3,
+                ShowRadioButtons = this.settings.RadioButtons,
+                CurrentSelection = highlightedAnswer - 1,
+                SelectedChoice = selectedAnswer - 1,
+                CurrentSelections = multiple ? [.. selectedAnswers] : null,
+                Settings = this.settings,
+            };
 
             // Make selected choices from the ChoiceDefaultSelected value.
             selectedAnswers = allAnswers.Any((ici) => ici.ChoiceDefaultSelected) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx + 1).ToList() : [];

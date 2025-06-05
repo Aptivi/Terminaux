@@ -39,10 +39,21 @@ namespace Terminaux.Inputs.Modules
     /// </summary>
     public class ComboBoxModule : InputModule
     {
+        private Selection selection = new();
+        private InputChoiceCategoryInfo[] choices = [];
+
         /// <summary>
         /// Choices to render
         /// </summary>
-        public InputChoiceCategoryInfo[] Choices { get; set; } = [];
+        public InputChoiceCategoryInfo[] Choices
+        {
+            get => choices;
+            set
+            {
+                choices = value;
+                selection = new Selection(Choices);
+            }
+        }
 
         /// <inheritdoc/>
         public override string RenderInput(int width)
@@ -106,23 +117,20 @@ namespace Terminaux.Inputs.Modules
                         FrameColor = Foreground,
                         BackgroundColor = Background,
                     };
-                    var comboSelections = new Selection(Choices)
+                    selection.Left = inputPopoverPos.X + 1;
+                    selection.Top = inputPopoverPos.Y + 1;
+                    selection.Width = inputPopoverSize.Width - 2;
+                    selection.Height = finalPopoverHeight;
+                    selection.CurrentSelection = currentSelection;
+                    selection.Settings = new()
                     {
-                        Left = inputPopoverPos.X + 1,
-                        Top = inputPopoverPos.Y + 1,
-                        Width = inputPopoverSize.Width - 2,
-                        Height = finalPopoverHeight,
-                        CurrentSelection = currentSelection,
-                        Settings = new()
-                        {
-                            OptionColor = TransformationTools.GetDarkBackground(Foreground),
-                            SelectedOptionColor = Foreground,
-                            BackgroundColor = Background,
-                        }
+                        OptionColor = TransformationTools.GetDarkBackground(Foreground),
+                        SelectedOptionColor = Foreground,
+                        BackgroundColor = Background,
                     };
                     TextWriterRaw.WriteRaw(
                         comboSelectionBoxFrame.Render() +
-                        comboSelections.Render()
+                        selection.Render()
                     );
 
                     // Prompt user for choice selection
