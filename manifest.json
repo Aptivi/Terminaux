@@ -463,6 +463,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.HorizontalMargin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.HorizontalMargin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures.HorizontalMargin",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.HorizontalMargin.yml\" sourcestartlinenumber=\"1\">Horizontal margin struct</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.HorizontalPad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.HorizontalPad.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures.HorizontalPad",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.HorizontalPad.yml\" sourcestartlinenumber=\"1\">Horizontal padding struct</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Structures.Margin.yml",
       "output": {
         ".html": {
@@ -502,6 +530,34 @@
       "IsMRef": true,
       "Title": "Terminaux.Base.Structures.Size",
       "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.Size.yml\" sourcestartlinenumber=\"1\">Size struct</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.VerticalMargin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.VerticalMargin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures.VerticalMargin",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.VerticalMargin.yml\" sourcestartlinenumber=\"1\">Margin struct</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Structures.VerticalPad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Structures.VerticalPad.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Structures.VerticalPad",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Structures.VerticalPad.yml\" sourcestartlinenumber=\"1\">Vertical padding struct</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1443,6 +1499,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Cyanotype.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Cyanotype.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Formulas.Cyanotype",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Formulas.Cyanotype.yml\" sourcestartlinenumber=\"1\">Cyanotype color filtering.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Inverse.yml",
       "output": {
         ".html": {
@@ -1468,6 +1538,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Colors.Transformation.Formulas.Monochromacy",
       "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Formulas.Monochromacy.yml\" sourcestartlinenumber=\"1\">Full color blindness, can only see grayscale.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Sepia.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Sepia.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Transformation.Formulas.Sepia",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Transformation.Formulas.Sepia.yml\" sourcestartlinenumber=\"1\">Sepia color filtering.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1625,20 +1709,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Images.Icons.IconsQuality.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Images.Icons.IconsQuality.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Images.Icons.IconsQuality",
-      "Summary": "<p sourcefile=\"api/Terminaux.Images.Icons.IconsQuality.yml\" sourcestartlinenumber=\"1\">Specifies the quality of the icons</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Images.Icons.IconsSelector.yml",
       "output": {
         ".html": {
@@ -1709,6 +1779,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Interactives.ImageViewInteractive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Interactives.ImageViewInteractive.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Interactives.ImageViewInteractive",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.Interactives.ImageViewInteractive.yml\" sourcestartlinenumber=\"1\">Interactive image viewer</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Interactives.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Interactives.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Interactives",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Images.Localized.LocalStrings.yml",
       "output": {
         ".html": {
@@ -1733,6 +1831,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Images.Localized",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Writers.ImageView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Writers.ImageView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Writers.ImageView",
+      "Summary": "<p sourcefile=\"api/Terminaux.Images.Writers.ImageView.yml\" sourcestartlinenumber=\"1\">Image viewer renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Images.Writers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Images.Writers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Images.Writers",
       "Summary": null
     },
     {
@@ -2031,6 +2157,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Modules.CharBoxModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Modules.CharBoxModule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Modules.CharBoxModule",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.CharBoxModule.yml\" sourcestartlinenumber=\"1\">Character box module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Modules.ComboBoxModule.yml",
       "output": {
         ".html": {
@@ -2042,6 +2182,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Inputs.Modules.ComboBoxModule",
       "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.ComboBoxModule.yml\" sourcestartlinenumber=\"1\">Combo box (selection) module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Modules.DateBoxModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Modules.DateBoxModule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Modules.DateBoxModule",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.DateBoxModule.yml\" sourcestartlinenumber=\"1\">Date box module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2098,6 +2252,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Inputs.Modules.TextBoxModule",
       "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.TextBoxModule.yml\" sourcestartlinenumber=\"1\">Text box module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Modules.TimeBoxModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Modules.TimeBoxModule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Modules.TimeBoxModule",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Modules.TimeBoxModule.yml\" sourcestartlinenumber=\"1\">Time box module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2521,6 +2689,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxDateColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxDateColor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxDateColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxDateColor.yml\" sourcestartlinenumber=\"1\">Info box writer with date and color support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.yml",
       "output": {
         ".html": {
@@ -2630,6 +2812,48 @@
       "IsMRef": true,
       "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor",
       "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.yml\" sourcestartlinenumber=\"1\">Info box writer with slider and color support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxTimeColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxTimeColor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxTimeColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxTimeColor.yml\" sourcestartlinenumber=\"1\">Info box writer with time and color support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings.yml\" sourcestartlinenumber=\"1\">Infobox settings</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.Tools",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -5755,6 +5979,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.PassiveSelection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.PassiveSelection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.PassiveSelection",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.PassiveSelection.yml\" sourcestartlinenumber=\"1\">Passive selection cyclic renderer</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.PowerLine.yml",
       "output": {
         ".html": {
@@ -5794,6 +6032,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Writer.CyclicWriters.Simple.ProgressBarNoText",
       "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.ProgressBarNoText.yml\" sourcestartlinenumber=\"1\">Progress bar without text</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Ruler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Simple.Ruler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Simple.Ruler",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Simple.Ruler.yml\" sourcestartlinenumber=\"1\">Ruler renderable</p>\n"
     },
     {
       "type": "ManagedReference",

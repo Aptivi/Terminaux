@@ -104,11 +104,11 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_Int32_System_Int32_System_String_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.Int32%2CSystem.Int32%2CSystem.String%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L91">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L69">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_Int32_System_Int32_System_String_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.Int32,System.Int32,System.String,System.Int32,System.Object[])">WriteInfoBoxSlider(int, int, string, int, params object[])</h4>
-  <div class="markdown level1 summary"><p>Writes the info box plainly</p>
+  <div class="markdown level1 summary"><p>Writes the slider info box</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -174,10 +174,89 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_Int32_System_Int32_System_String_Terminaux_Inputs_Styles_Infobox_Tools_InfoBoxSettings_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L81">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_Int32_System_Int32_System_String_Terminaux_Inputs_Styles_Infobox_Tools_InfoBoxSettings_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.Int32,System.Int32,System.String,Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings,System.Int32,System.Object[])">WriteInfoBoxSlider(int, int, string, InfoBoxSettings, int, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes the slider info box</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, InfoBoxSettings settings, int minPos = 0, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">currentPos</span></td>
+        <td><p>Current position out of maximum position</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">maxPos</span></td>
+        <td><p>Maximum position</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text to be written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings.html">InfoBoxSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Infobox settings to use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">minPos</span></td>
+        <td><p>Maximum position</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L128">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L146">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.Int32,System.Int32,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Int32,System.Object[])">WriteInfoBoxSlider(int, int, string, BorderSettings, int, params object[])</h4>
@@ -186,7 +265,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -256,7 +336,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_String_System_Int32_System_Int32_System_String_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L192">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L215">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_String_System_Int32_System_Int32_System_String_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Object[])">WriteInfoBoxSlider(string, int, int, string, int, params object[])</h4>
@@ -265,7 +345,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -335,7 +416,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_String_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L232">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L258">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSlider_System_String_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSlider(System.String,System.Int32,System.Int32,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Int32,System.Object[])">WriteInfoBoxSlider(string, int, int, string, BorderSettings, int, params object[])</h4>
@@ -344,7 +425,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -420,7 +502,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_System_Int32_System_Int32_System_String_Terminaux_Colors_Color_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor(System.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L103">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L119">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_System_Int32_System_Int32_System_String_Terminaux_Colors_Color_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor(System.Int32,System.Int32,System.String,Terminaux.Colors.Color,System.Int32,System.Object[])">WriteInfoBoxSliderColor(int, int, string, Color, int, params object[])</h4>
@@ -429,7 +511,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -499,7 +582,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor(System.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L141">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L160">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor(System.Int32,System.Int32,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,System.Int32,System.Object[])">WriteInfoBoxSliderColor(int, int, string, BorderSettings, Color, int, params object[])</h4>
@@ -508,7 +591,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -584,7 +668,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_System_String_System_Int32_System_Int32_System_String_Terminaux_Colors_Color_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L205">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L229">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_System_String_System_Int32_System_Int32_System_String_Terminaux_Colors_Color_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor(System.String,System.Int32,System.Int32,System.String,Terminaux.Colors.Color,System.Int32,System.Object[])">WriteInfoBoxSliderColor(string, int, int, string, Color, int, params object[])</h4>
@@ -593,7 +677,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -669,7 +754,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_System_String_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L246">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L273">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColor_System_String_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColor(System.String,System.Int32,System.Int32,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,System.Int32,System.Object[])">WriteInfoBoxSliderColor(string, int, int, string, BorderSettings, Color, int, params object[])</h4>
@@ -678,7 +763,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -760,7 +846,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_System_Int32_System_Int32_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack(System.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L116">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L133">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_System_Int32_System_Int32_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack(System.Int32,System.Int32,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Object[])">WriteInfoBoxSliderColorBack(int, int, string, Color, Color, int, params object[])</h4>
@@ -769,7 +855,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -845,7 +932,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack(System.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L155">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L175">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack(System.Int32,System.Int32,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Object[])">WriteInfoBoxSliderColorBack(int, int, string, BorderSettings, Color, Color, int, params object[])</h4>
@@ -854,7 +941,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -936,7 +1024,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_System_String_System_Int32_System_Int32_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L219">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L244">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_System_String_System_Int32_System_Int32_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack(System.String,System.Int32,System.Int32,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Object[])">WriteInfoBoxSliderColorBack(string, int, int, string, Color, Color, int, params object[])</h4>
@@ -945,7 +1033,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1027,7 +1116,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_System_String_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L261">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L289">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderColorBack_System_String_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderColorBack(System.String,System.Int32,System.Int32,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Object[])">WriteInfoBoxSliderColorBack(string, int, int, string, BorderSettings, Color, Color, int, params object[])</h4>
@@ -1036,7 +1125,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1124,7 +1214,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_System_Int32_System_Int32_System_String_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain(System.Int32%2CSystem.Int32%2CSystem.String%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L68">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L93">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_System_Int32_System_Int32_System_String_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain(System.Int32,System.Int32,System.String,System.Int32,System.Object[])">WriteInfoBoxSliderPlain(int, int, string, int, params object[])</h4>
@@ -1133,7 +1223,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1197,7 +1288,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain(System.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L80">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L106">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain(System.Int32,System.Int32,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Int32,System.Object[])">WriteInfoBoxSliderPlain(int, int, string, BorderSettings, int, params object[])</h4>
@@ -1206,7 +1297,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1276,7 +1368,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_System_String_System_Int32_System_Int32_System_String_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L167">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L188">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_System_String_System_Int32_System_Int32_System_String_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Object[])">WriteInfoBoxSliderPlain(string, int, int, string, int, params object[])</h4>
@@ -1285,7 +1377,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1355,7 +1448,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_System_String_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L180">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L202">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor_WriteInfoBoxSliderPlain_System_String_System_Int32_System_Int32_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Int32_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor.WriteInfoBoxSliderPlain(System.String,System.Int32,System.Int32,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Int32,System.Object[])">WriteInfoBoxSliderPlain(string, int, int, string, BorderSettings, int, params object[])</h4>
@@ -1364,7 +1457,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -1447,7 +1541,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxSliderColor.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxSliderColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L44" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxSliderColor.cs/#L42" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

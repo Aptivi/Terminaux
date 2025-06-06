@@ -96,19 +96,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo__ctor_System_Int32_Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerOrientation_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.%23ctor(System.Int32%2CTerminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo__ctor_System_Int32_Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerOrientation_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.%23ctor(System.Int32%2CTerminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Graphical/Rulers/RulerInfo.cs/#L59">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Graphical/Rulers/RulerInfo.cs/#L87">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo__ctor_" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.#ctor*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo__ctor_System_Int32_Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerOrientation_" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.#ctor(System.Int32,Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation)">RulerInfo(int, RulerOrientation)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo__ctor_System_Int32_Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerOrientation_System_Int32_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.#ctor(System.Int32,Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation,System.Int32,System.Boolean)">RulerInfo(int, RulerOrientation, int, bool)</h4>
   <div class="markdown level1 summary"><p>Makes a new ruler info struct</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RulerInfo(int position, RulerOrientation orientation)</code></pre>
+    <pre><code class="lang-csharp hljs">public RulerInfo(int position, RulerOrientation orientation, int intersectionStop = 0, bool invertDirection = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -132,16 +132,97 @@
         <td><p>Orientation of the ruler</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">intersectionStop</span></td>
+        <td><p>Stop level for intersections</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">invertDirection</span></td>
+        <td><p>Whether to invert the rendering direction or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_IntersectionStop.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.IntersectionStop%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Graphical/Rulers/RulerInfo.cs/#L70">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_IntersectionStop_" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.IntersectionStop*"></a>
+  <h4 id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_IntersectionStop" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.IntersectionStop">IntersectionStop</h4>
+  <div class="markdown level1 summary"><p>Defines a stop level when defining intersections (skip n intersections)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IntersectionStop { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_IntersectionStop_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If set to 0, no stops will occur. Otherwise, the renderer will render intersections a specified number of times.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_InvertDirection.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.InvertDirection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Graphical/Rulers/RulerInfo.cs/#L62">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_InvertDirection_" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.InvertDirection*"></a>
+  <h4 id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_InvertDirection" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.InvertDirection">InvertDirection</h4>
+  <div class="markdown level1 summary"><p>Whether to invert the rendering direction or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool InvertDirection { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_InvertDirection_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <a class="xref" href="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.html#Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_Orientation">Orientation</a> is set to <a class="xref" href="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation.html#Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerOrientation_Horizontal">Horizontal</a>, the renderer will render a ruler from the right to the left if inversion is enabled, or from the left to the right if inversion is disabled.<br>
+If <a class="xref" href="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.html#Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_Orientation">Orientation</a> is set to <a class="xref" href="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerOrientation.html#Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerOrientation_Vertical">Vertical</a>, the renderer will render a ruler from the bottom to the top if inversion is enabled, or from the top to the bottom if inversion is disabled.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_Orientation.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.Orientation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Graphical/Rulers/RulerInfo.cs/#L52">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Graphical/Rulers/RulerInfo.cs/#L53">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_Orientation_" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.Orientation*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_Orientation" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.Orientation">Orientation</h4>
@@ -172,7 +253,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_Position.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.Position%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Graphical/Rulers/RulerInfo.cs/#L39">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Graphical/Rulers/RulerInfo.cs/#L40">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_Position_" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.Position*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Graphical_Rulers_RulerInfo_Position" data-uid="Terminaux.Writer.CyclicWriters.Graphical.Rulers.RulerInfo.Position">Position</h4>

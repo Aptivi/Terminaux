@@ -104,11 +104,11 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L67">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L47">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double,System.String,System.Object[])">WriteInfoBoxProgress(double, string, params object[])</h4>
-  <div class="markdown level1 summary"><p>Writes the info box plainly</p>
+  <div class="markdown level1 summary"><p>Writes the progress info box</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -147,10 +147,62 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_Terminaux_Inputs_Styles_Infobox_Tools_InfoBoxSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double%2CSystem.String%2CTerminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L57">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_Terminaux_Inputs_Styles_Infobox_Tools_InfoBoxSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double,System.String,Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings,System.Object[])">WriteInfoBoxProgress(double, string, InfoBoxSettings, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes the progress info box</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td><span class="parametername">progress</span></td>
+        <td><p>Progress percentage from 0 to 100</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text to be written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxSettings.html">InfoBoxSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Infobox settings to use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L98">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L112">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxProgress(double, string, BorderSettings, params object[])</h4>
@@ -159,7 +211,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgress(double progress, string text, BorderSettings settings, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgress(double progress, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -202,7 +255,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_String_System_Double_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String%2CSystem.Double%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L141">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L159">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_String_System_Double_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String,System.Double,System.String,System.Object[])">WriteInfoBoxProgress(string, double, string, params object[])</h4>
@@ -211,7 +264,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgress(string title, double progress, string text, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgress(string title, double progress, string text, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -254,7 +308,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_String_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String%2CSystem.Double%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L175">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L196">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_String_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String,System.Double,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxProgress(string, double, string, BorderSettings, params object[])</h4>
@@ -263,7 +317,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgress(string title, double progress, string text, BorderSettings settings, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgress(string title, double progress, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -312,7 +367,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L77">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L89">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxProgressColor(double, string, Color, params object[])</h4>
@@ -321,7 +376,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressColor(double progress, string text, Color InfoBoxProgressColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressColor(double progress, string text, Color InfoBoxProgressColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -364,7 +420,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L109">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L124">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxProgressColor(double, string, BorderSettings, Color, params object[])</h4>
@@ -373,7 +429,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressColor(double progress, string text, BorderSettings settings, Color InfoBoxProgressColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressColor(double progress, string text, BorderSettings settings, Color InfoBoxProgressColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -422,7 +479,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String%2CSystem.Double%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L152">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L171">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxProgressColor(string, double, string, Color, params object[])</h4>
@@ -431,7 +488,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressColor(string title, double progress, string text, Color InfoBoxTitledProgressColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressColor(string title, double progress, string text, Color InfoBoxTitledProgressColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -480,7 +538,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String%2CSystem.Double%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L187">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L209">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxProgressColor(string, double, string, BorderSettings, Color, params object[])</h4>
@@ -489,7 +547,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressColor(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressColor(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -544,7 +603,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L88">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L101">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxProgressColorBack(double, string, Color, Color, params object[])</h4>
@@ -553,7 +612,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressColorBack(double progress, string text, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressColorBack(double progress, string text, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -602,7 +662,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L121">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L137">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxProgressColorBack(double, string, BorderSettings, Color, Color, params object[])</h4>
@@ -611,7 +671,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressColorBack(double progress, string text, BorderSettings settings, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressColorBack(double progress, string text, BorderSettings settings, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -666,7 +727,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String%2CSystem.Double%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L164">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L184">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxProgressColorBack(string, double, string, Color, Color, params object[])</h4>
@@ -675,7 +736,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, Color InfoBoxTitledProgressColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, Color InfoBoxTitledProgressColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -730,7 +792,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String%2CSystem.Double%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L200">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L223">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxProgressColorBack(string, double, string, BorderSettings, Color, Color, params object[])</h4>
@@ -739,7 +801,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -800,7 +863,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_System_Double_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.Double%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L48">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L67">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_System_Double_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.Double,System.String,System.Object[])">WriteInfoBoxProgressPlain(double, string, params object[])</h4>
@@ -809,7 +872,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressPlain(double progress, string text, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressPlain(double progress, string text, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -846,7 +910,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.Double%2CSystem.String%2CTerminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L58">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L78">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_System_Double_System_String_Terminaux_Writer_CyclicWriters_Renderer_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.Double,System.String,Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings,System.Object[])">WriteInfoBoxProgressPlain(double, string, BorderSettings, params object[])</h4>
@@ -855,7 +919,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressPlain(double progress, string text, BorderSettings settings, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressPlain(double progress, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -898,7 +963,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_System_String_System_Double_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.String%2CSystem.Double%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L131">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L148">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_System_String_System_Double_System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.String,System.Double,System.String,System.Object[])">WriteInfoBoxProgressPlain(string, double, string, params object[])</h4>
@@ -907,7 +972,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteInfoBoxProgressPlain(string title, double progress, string text, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.&quot;)]
+public static void WriteInfoBoxProgressPlain(string title, double progress, string text, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -957,7 +1023,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L40" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Infobox/InfoBoxProgressColor.cs/#L39" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
