@@ -93,6 +93,35 @@ pushall() {
     checkvendorerror $?
 }
 
+increment() {
+    # Check the versions
+    OLDVER=$1
+    NEWVER=$2
+    if [ -z $OLDVER ]; then
+        printf "Old version must be specified.\n"
+        exit 1
+    fi
+    if [ -z $NEWVER ]; then
+        printf "New version must be specified to replace old version $OLDVER.\n"
+        exit 1
+    fi
+
+    # Populate some of the files needed to replace the old version with the new version
+    FILES=(
+        "$ROOTDIR/Directory.Build.props"
+        "$ROOTDIR/CHANGES.TITLE"
+    )
+    for FILE in "${FILES[@]}"; do
+        printf "Processing $FILE...\n"
+        sed -b -i "s/$OLDVER/$NEWVER/g" "$FILE"
+        result=$?
+        if [ $result -ne 0 ]; then
+            checkvendorerror $result
+            return $result
+        fi
+    done
+}
+
 clean() {
     OUTPUTS=(
         '-name "bin" -or'
