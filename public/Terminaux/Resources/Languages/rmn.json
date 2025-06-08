@@ -1,1423 +1,1399 @@
 {
-  "lang": "spa",
-  "name": "Spanish",
+  "lang": "rmn",
+  "name": "Romanian",
   "cultures": [
-    "es",
-    "es-419",
-    "es-AR",
-    "es-BO",
-    "es-BR",
-    "es-BZ",
-    "es-CL",
-    "es-CO",
-    "es-CR",
-    "es-CU",
-    "es-DO",
-    "es-EC",
-    "es-ES",
-    "es-GQ",
-    "es-GT",
-    "es-HN",
-    "es-MX",
-    "es-NI",
-    "es-PA",
-    "es-PE",
-    "es-PH",
-    "es-PR",
-    "es-PY",
-    "es-SV",
-    "es-US",
-    "es-UY",
-    "es-VE"
+    "ro",
+    "ro-MD",
+    "ro-RO"
   ],
   "locs": [
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR1",
-      "text": "¡Error general de Terminaux!"
+      "text": "Eroare generală Terminals!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR2",
-      "text": "¡Error interno de Terminaux!"
+      "text": "Eroare internă Terminals!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR3",
-      "text": "Error desconocido"
+      "text": "Eroare necunoscută"
     },
     {
       "loc": "T_EXCEPTION_NOTIMPLEMENTED",
-      "text": "Aún no implementado."
+      "text": "Încă nu a fost implementat."
     },
     {
       "loc": "T_COMMON_CANTCONTINUE",
-      "text": "Este programa no puede continuar."
+      "text": "Acest program nu poate continua."
     },
     {
       "loc": "T_COMMON_ANYKEY",
-      "text": "Presione cualquier tecla para continuar..."
+      "text": "Apăsați orice tastă pentru a continua..."
     },
     {
       "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
-      "text": "Tipo inválido"
+      "text": "Tip nevalid"
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
-      "text": "Debes especificar la parte de la pantalla."
+      "text": "Trebuie să specificați partea de ecran."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
-      "text": "Debes especificar el nombre de la pantalla."
+      "text": "Trebuie să specificați numele de utilizator."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de pieza especificado está fuera de rango."
+      "text": "Indexul piesei specificat este în afara intervalului."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
-      "text": "No se encuentra el nombre de la pieza especificada."
+      "text": "Numele piesei specificat nu a fost găsit."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
-      "text": "No se encuentra la parte especificada."
+      "text": "Piesa specificată nu a fost găsită."
     },
     {
       "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de búfer no puede ser menor que cero ni mayor que {0} búferes."
+      "text": "Indexul bufferului nu poate fi mai mic decât zero sau mai mare decât {0} buffere."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
-      "text": "La pantalla no está especificada."
+      "text": "Ecranul nu este specificat."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
-      "text": "La pantalla no es cíclica."
+      "text": "Ecranul nu este ciclic."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux usando una terminal tonta."
+      "text": "Utilizatorul a încercat să ruleze o aplicație Terminaux folosind un terminal prost."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Esta aplicación utiliza funciones de consola extendidas proporcionadas por Terminaux que requieren funciones no admitidas por terminales \"tontas\"."
+      "text": "Această aplicație folosește funcții extinse ale consolei oferite de Terminaux, care necesită funcții neacceptate de terminalele „proste”."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Posible solución: Use un emulador de terminal adecuado o consulte la configuración de su terminal para configurar el tipo de terminal en un valor distinto al \"tonto\". Recomendamos usar los emuladores de terminal \"vt100\" para sacar el máximo provecho de esta aplicación."
+      "text": "Soluție posibilă: Folosiți un emulator de terminal adecvat sau consultați setările terminalului pentru a seta tipul de terminal diferit de „dumb”. Vă recomandăm să utilizați emulatorii de terminal „vt100” pentru a profita la maximum de această aplicație."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un tipo de terminal incluido en la lista negra."
+      "text": "Utilizatorul a încercat să ruleze o aplicație Terminaux pe un tip de terminal aflat pe lista neagră."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "Tipul de consolă pe care îl utilizați în prezent, {0}, este pe lista neagră: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "Tipul de consolă pe care îl utilizați în prezent, {0}, este pe lista gri: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un emulador de terminal incluido en la lista negra."
+      "text": "Utilizatorul a încercat să ruleze o aplicație Terminaux pe un emulator de terminal aflat pe lista neagră."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "Emulatorul de terminal pe care îl utilizați în prezent, {0}, este pe lista neagră: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "Emulatorul de terminal pe care îl utilizați în prezent, {0}, este pe lista gri: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "El tipo de terminal {0} no admite 256 colores según terminfo"
+      "text": "Tipul de terminal {0} nu acceptă 256 de culori conform terminfo"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en MinTTY de Git Bash sin winpty."
+      "text": "Utilizatorul a încercat să ruleze o aplicație Terminaux pe MinTTY din Git Bash fără winpty."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Necesitarás usar WinPty para poder usar este programa. Si estás seguro de no estar ejecutando Git Bash, asegúrate de usar una terminal de Windows adecuada."
+      "text": "Va trebui să utilizați winpty pentru a putea utiliza acest program. Dacă sunteți sigur că nu rulați Git Bash, asigurați-vă că utilizați un terminal Windows corespunzător."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona debido a un error de E/S, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "Poziționarea consolei nu funcționează din cauza unei erori I/O, așadar această aplicație s-ar putea comporta neregulat."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona correctamente, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "Poziționarea consolei nu funcționează corect, așadar această aplicație s-ar putea comporta neregulat."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
-      "text": "Tu consola es demasiado pequeña para funcionar correctamente: {0}x{1} | beneficio: {2}x{3} | mínimo: {4}x{5}"
+      "text": "Consola ta este prea mică pentru a rula corect: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
-      "text": "Para una mejor experiencia, cambia el tamaño de la ventana de la consola sin salir de esta pantalla. Presiona cualquier tecla para continuar..."
+      "text": "Pentru o experiență mai bună, redimensionați fereastra consolei în timp ce vă aflați încă pe acest ecran. Apăsați orice tastă pentru a continua..."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "No se proporciona montaje."
+      "text": "Asamblarea nu este inclusă."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} No se puede continuar."
+      "text": "{0} Nu se poate continua."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "El tipo de consola solo admite escritura básica."
+      "text": "Tipul de consolă acceptă doar scrierea de bază."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "El tipo de consola es de naturaleza desconocida."
+      "text": "Tipul consolei este de natură necunoscută."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Esta aplicación utiliza secuencias de escape VT, pero Terminal.app no ​​tiene soporte para 255 y colores verdaderos."
+      "text": "Această aplicație folosește secvențe de escape VT, dar Terminal.app nu mai suportă 255 și culorile reale."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "El tipo de consola no admite 256 colores."
+      "text": "Tipul de consolă nu acceptă 256 de culori."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "No se puede filtrar sin ninguna consulta."
+      "text": "Nu se poate filtra fără nicio interogare."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "No se puede filtrar con una consulta no válida."
+      "text": "Nu se poate filtra cu o interogare nevalidă."
     },
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "No hay ninguna expresión en el filtro de la consola."
+      "text": "Nu există nicio expresie în filtrul consolei."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "No se pueden restaurar nuevos atributos de termios para el modo sin procesar: {0}"
+      "text": "Nu se pot restaura noile atribute termios pentru modul brut: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "No se pueden obtener los indicadores del descriptor de archivo: {0}"
+      "text": "Nu se pot obține semnalizatoarele descriptorului de fișier: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "No se puede establecer el indicador de descriptor de archivo en lectura sin bloqueo: {0}"
+      "text": "Nu se poate seta indicatorul descriptorului de fișier la citire neblocantă: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "No se puede establecer el indicador del descriptor de archivo para bloquear la lectura: {0}"
+      "text": "Nu se poate seta indicatorul descriptorului de fișier la blocarea citirii: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
-      "text": "No se puede obtener información del sintetizador de la representación proporcionada."
+      "text": "Nu se pot obține informații despre sintetizator din reprezentarea furnizată."
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
-      "text": "La representación del sintetizador no es válida en [{0}.{1}]"
+      "text": "Reprezentarea sintetizatorului este invalidă la [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
-      "text": "La frecuencia no es válida en [{0}.{1}]"
+      "text": "Frecvența este invalidă la [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
-      "text": "La duración no es válida en [{0}.{1}]"
+      "text": "Durata este invalidă la [{0}.{1}]"
     },
     {
       "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
-      "text": "El objetivo no puede ser nulo"
+      "text": "Ținta poate să nu fie nulă"
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
-      "text": "El valor máximo [{0}] no debe ser menor que el valor de progreso [{1}]"
+      "text": "Valoarea maximă [{0}] nu trebuie să fie mai mică decât valoarea de progres [{1}]"
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
-      "text": "El valor de progreso [{0}] debe estar entre 0 y el valor máximo de {1}."
+      "text": "Valoarea de progres [{0}] trebuie să fie între 0 și valoarea maximă {1}."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un parámetro"
+      "text": "Acest indicator nu poate fi amplasat la sfârșitul șirului fără a specifica un parametru."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
-      "text": "Este designador sólo puede tomar un número como parámetro."
+      "text": "Acest designator poate lua ca parametru doar un număr."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
-      "text": "Este designador sólo puede tomar un número del 1 al 9."
+      "text": "Acest indicator poate lua doar un număr de la 1 la 9."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
-      "text": "Este designador sólo puede tomar una letra como parámetro."
+      "text": "Acest indicator poate lua ca parametru doar o literă."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
-      "text": "Este designador necesita una constante entera"
+      "text": "Acest designator necesită o constantă întreagă"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
-      "text": "Este designador contiene una constante entera no válida"
+      "text": "Acest indicator conține o constantă întreagă nevalidă"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar una constante de carácter"
+      "text": "Acest indicator nu poate fi amplasat la sfârșitul șirului fără a specifica o constantă de caractere."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
-      "text": "No puedes agregar más de un carácter"
+      "text": "Nu poți adăuga mai mult de un caracter"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
-      "text": "Este designador necesita una colección de caracteres."
+      "text": "Acest designator are nevoie de o colecție de caractere"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
-      "text": "El ancho no es válido"
+      "text": "Lățimea nu este validă"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un tipo"
+      "text": "Acest designator nu poate fi amplasat la sfârșitul șirului fără a specifica un tip"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
-      "text": "No se puede procesar la secuencia nula."
+      "text": "Nu se poate procesa secvența nulă."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
-      "text": "No se pueden procesar parámetros nulos."
+      "text": "Nu se pot procesa parametrii nuli."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
-      "text": "Esta bandera debe representar un signo menos"
+      "text": "Acest steag trebuie să reprezinte un semn minus"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
-      "text": "Todavía hay más datos después del índice {0} de {1} para formatear"
+      "text": "Există încă date suplimentare după indexul {0} din {1} pentru formatare"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
-      "text": "La constante entera para el carácter no es válida."
+      "text": "Constanta întreagă pentru caracter nu este validă."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
-      "text": "La constante entera no es válida."
+      "text": "Constanta întreagă nu este validă."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
-      "text": "No se puede insertar una variable inexistente."
+      "text": "Nu se poate introduce o variabilă inexistentă."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
-      "text": "Esta es una operación binaria, pero el número de argumentos en cola es {0}"
+      "text": "Aceasta este o operație binară, dar numărul de argumente puse în coadă este {0}"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
-      "text": "La constante entera para el primer operando no es válida."
+      "text": "Constanta întreagă pentru primul operand nu este validă."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
-      "text": "La constante entera para el segundo operando no es válida."
+      "text": "Constanta întreagă pentru al doilea operand nu este validă."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
-      "text": "Esta es una operación unaria, pero el número de argumentos en cola es {0}"
+      "text": "Aceasta este o operație unară, dar numărul de argumente puse în coadă este {0}"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "La constante entera no es válida."
+      "text": "Constanta întreagă nu este validă."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
-      "text": "La representación condicional {0} no es válida."
+      "text": "Reprezentarea condiționată {0} este invalidă."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
-      "text": "No se pudo leer el número de bytes solicitado."
+      "text": "Nu s-a putut citi numărul solicitat de octeți."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
-      "text": "¡Tabla de cadenas no válida!"
+      "text": "Tabela de șiruri de caractere este invalidă!"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
-      "text": "Magia de encabezado no válida"
+      "text": "Magie de antet nevalidă"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
-      "text": "No se puede procesar un parámetro de tipo distinto de cadena. La enumeración es {0} y el tipo es {1}."
+      "text": "Nu se poate procesa parametrul pe un tip de valoare care nu este șir de caractere. Enumerarea este {0}, iar tipul este {1}."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
-      "text": "El designador de retraso finalizó prematuramente."
+      "text": "Indicatorul de întârziere s-a încheiat prematur."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
-      "text": "Designador de retraso no válido."
+      "text": "Indicator de întârziere nevalid."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
-      "text": "El valor de retardo no es un número."
+      "text": "Valoarea întârzierii nu este un număr."
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
-      "text": "Tipo de capacidad desconocida '{0}'"
+      "text": "Tip de capacitate necunoscut „{0}”"
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
-      "text": "No se puede cargar {0}"
+      "text": "Nu se poate încărca {0}"
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
-      "text": "El color está fuera de rango."
+      "text": "Culoarea este în afara intervalului."
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "No se pueden obtener datos de color."
+      "text": "Nu se pot obține date despre culoare."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
-      "text": "¿Estás seguro de que este gradiente no es nulo?"
+      "text": "Ești sigur că acest gradient nu este nul?"
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
-      "text": "Especifique al menos un color."
+      "text": "Specificați cel puțin o culoare."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
-      "text": "No se puede convertir la fuente nula."
+      "text": "Nu se poate converti sursa nulă."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
-      "text": "No se puede convertir al tipo nulo."
+      "text": "Nu se poate converti la tip nul."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
-      "text": "Debes especificar un modelo de color de origen específico, no el base."
+      "text": "Ar trebui să specificați un model de culoare sursă specific, nu cel de bază."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
-      "text": "No es un modelo de color."
+      "text": "Nu este un model de culoare."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
-      "text": "Debes especificar un modelo de color de destino específico, no el base."
+      "text": "Ar trebui să specificați un model de culoare țintă specific, nu cel de bază."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
-      "text": "No es un modelo de color objetivo."
+      "text": "Nu este un model de culoare țintă."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
-      "text": "No se puede convertir el mismo modelo de color."
+      "text": "Nu se poate converti același model de culoare."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
-      "text": "No se puede convertir a RGB."
+      "text": "Nu se poate converti în RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
-      "text": "No se puede convertir desde el modelo de color base."
+      "text": "Nu se poate converti din modelul de culoare de bază."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
-      "text": "No se puede convertir a CMYK."
+      "text": "Nu se poate converti în CMYK."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
-      "text": "No se puede convertir a CMY."
+      "text": "Nu se poate converti în CMY."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
-      "text": "No se puede convertir a HSL."
+      "text": "Nu se poate converti la HSL."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
-      "text": "No se puede convertir a HSV."
+      "text": "Nu se poate converti în HSV."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
-      "text": "No se puede convertir a RYB."
+      "text": "Nu se poate converti în RYB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
-      "text": "No se puede convertir a YIQ."
+      "text": "Nu se poate converti în YIQ."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
-      "text": "No se puede convertir a YUV."
+      "text": "Nu se poate converti la YUV."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
-      "text": "No se puede convertir a XYZ."
+      "text": "Nu se poate converti în XYZ."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
-      "text": "No se puede convertir a YXY."
+      "text": "Nu se poate converti în YXY."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
-      "text": "No se puede convertir a HunterLab."
+      "text": "Nu se poate converti la HunterLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
-      "text": "No se puede convertir a CieLab."
+      "text": "Nu se poate converti în CieLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
-      "text": "No se puede convertir a CieLuv."
+      "text": "Nu se poate converti în CieLuv."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
-      "text": "No se puede convertir a CieLch."
+      "text": "Nu se poate converti în CieLch."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "No se puede convertir a HWB."
+      "text": "Nu se poate converti în HWB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
-      "text": "No se puede convertir desde RGB."
+      "text": "Nu se poate converti din RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMYK!"
+      "text": "Nu se poate converti o instanță RGB nulă în CMYK!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMY!"
+      "text": "Nu se poate converti o instanță RGB nulă în CMY!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSL!"
+      "text": "Nu se poate converti o instanță RGB nulă în HSL!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSV!"
+      "text": "Nu se poate converti o instanță RGB nulă în HSV!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a RYB!"
+      "text": "Nu se poate converti o instanță RGB nulă în RYB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YIQ!"
+      "text": "Nu se poate converti o instanță RGB nulă în YIQ!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YUV!"
+      "text": "Nu se poate converti o instanță RGB nulă în YUV!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a XYZ!"
+      "text": "Nu se poate converti o instanță RGB nulă în XYZ!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YXY!"
+      "text": "Nu se poate converti o instanță RGB nulă în YXY!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HunterLab!"
+      "text": "Nu se poate converti o instanță RGB nulă în HunterLab!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLab!"
+      "text": "Nu se poate converti o instanță RGB nulă în CieLab!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLuv!"
+      "text": "Nu se poate converti o instanță RGB nulă în CieLuv!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLch!"
+      "text": "Nu se poate converti o instanță RGB nulă în CieLch!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HWB!"
+      "text": "Nu se poate converti o instanță RGB nulă în HWB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
-      "text": "¡No se puede convertir una instancia CMYK nula a RGB!"
+      "text": "Nu se poate converti o instanță CMYK nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
-      "text": "¡No se puede convertir una instancia CMY nula a RGB!"
+      "text": "Nu se poate converti o instanță CMY nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
-      "text": "¡No se puede convertir una instancia HSL nula a RGB!"
+      "text": "Nu se poate converti o instanță HSL nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
-      "text": "¡No se puede convertir una instancia HSV nula a RGB!"
+      "text": "Nu se poate converti o instanță HSV nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
-      "text": "¡No se puede convertir una instancia RYB nula a RGB!"
+      "text": "Nu se poate converti o instanță RYB nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
-      "text": "¡No se puede convertir una instancia YIQ nula a RGB!"
+      "text": "Nu se poate converti o instanță YIQ nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
-      "text": "¡No se puede convertir una instancia YUV nula a RGB!"
+      "text": "Nu se poate converti o instanță YUV nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
-      "text": "¡No se puede convertir una instancia XYZ nula a RGB!"
+      "text": "Nu se poate converti o instanță XYZ nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
-      "text": "¡No se puede convertir una instancia YXY nula a RGB!"
+      "text": "Nu se poate converti o instanță YXY nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
-      "text": "¡No se puede convertir una instancia nula de HunterLab a RGB!"
+      "text": "Nu se poate converti o instanță HunterLab nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
-      "text": "¡No se puede convertir una instancia nula de CieLab a RGB!"
+      "text": "Nu se poate converti o instanță CieLab nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
-      "text": "¡No se puede convertir una instancia nula de CieLuv a RGB!"
+      "text": "Nu se poate converti o instanță CieLuv nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
-      "text": "¡No se puede convertir una instancia nula de CieLch a RGB!"
+      "text": "Nu se poate converti o instanță CieLch nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "¡No se puede convertir una instancia HWB nula a RGB!"
+      "text": "Nu se poate converti o instanță HWB nulă în RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
-      "text": "El observador debe tener 2 o 10 años."
+      "text": "Observatorul trebuie să fie fie 2, fie 10"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
-      "text": "El iluminante no es válido"
+      "text": "Iluminantul este invalid"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
-      "text": "No se pueden obtener referencias de la tabla"
+      "text": "Nu se pot obține referințe din tabel"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Si usa 256 colores, deberá introducir un valor positivo entre 0 y 255 o un nombre de color válido. Si usa color verdadero, deberá escribir un especificador de color válido, como RRR;GGG;BBB, o un código de color hasta 16777215."
+      "text": "Specificator de culoare nevalid „{0}”. Dacă utilizați 256 de culori, va trebui să introduceți o valoare pozitivă de la 0 la 255 sau un nume de culoare valid. Dacă utilizați culoarea reală, va trebui fie să scrieți un specificator de culoare valid, cum ar fi RRR;GGG;BBB, fie un cod de culoare până la 16777215."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
-      "text": "El nivel de color rojo está fuera de rango (0 -> 255)."
+      "text": "Nivelul culorii roșii este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
-      "text": "El nivel de color verde está fuera de rango (0 -> 255)."
+      "text": "Nivelul culorii verde este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
-      "text": "El nivel de color azul está fuera de rango (0 -> 255)."
+      "text": "Nivelul culorii albastre este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
-      "text": "El especificador hexadecimal de color \"{0}\" no es válido. Este especificador debe comenzar con la etiqueta hash. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator hexadecimal de culoare nevalid „{0}”. Acest specificator trebuie să înceapă cu hashtagul. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
-      "text": "Longitud hexadecimal de color \"{0}\" no válida. Asegúrese de que tenga el formato correcto."
+      "text": "Lungime hexadecimală a culorii „{0}” nevalidă. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
-      "text": "No se puede resolver el color hexadecimal \"{0}\"."
+      "text": "Nu se poate rezolva hexagrama culorii „{0}”."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CieLab nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Valoarea L este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 128.0)."
+      "text": "Valoarea A este în afara intervalului (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 128.0)."
+      "text": "Valoarea B este în afara intervalului (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CieLab nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CieLch nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Valoarea L este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
-      "text": "El valor C está fuera de rango (-128.0 -> 128.0)."
+      "text": "Valoarea C este în afara intervalului (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
-      "text": "El valor H está fuera de rango (-128.0 -> 128.0)."
+      "text": "Valoarea H este în afara intervalului (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CieLch nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CieLuv nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Valoarea L este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
-      "text": "El valor U está fuera de rango (-134.0 -> 220.0)."
+      "text": "Valoarea U este în afara intervalului (-134,0 -> 220,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
-      "text": "El valor V está fuera de rango (-140.0 -> 122.0)."
+      "text": "Valoarea V este în afara intervalului (-140,0 -> 122,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CieLuv nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
-      "text": "El especificador de color CMY \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CMY nevalid „{0}”. Asigurați-vă că este în formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "Nivelul de culoare cyan este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "Nivelul de culoare magenta este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "Nivelul culorii galbene este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
-      "text": "El especificador de color CMY \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CMY nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CMYK nevalid „{0}”. Asigurați-vă că este în formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "Nivelul de culoare cyan este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "Nivelul de culoare magenta este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "Nivelul culorii galbene este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "El nivel de color negro está fuera de rango (0 -> 100)."
+      "text": "Nivelul de culoare neagră este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. El especificador no puede tener más de cuatro elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare CMYK nevalid „{0}”. Specificatorul nu poate avea mai mult de patru elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
-      "text": "Especificador de color HSL \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare HSL nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Nivelul de nuanță este în afara intervalului (0' -> 360' grade)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "Nivelul de saturație este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
-      "text": "El nivel de luminosidad está fuera de rango (0 -> 100)."
+      "text": "Nivelul de luminozitate este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
-      "text": "Especificador de color HSL \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare HSL nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
-      "text": "El especificador de color HSV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare HSV nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Nivelul de nuanță este în afara intervalului (0' -> 360' grade)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "Nivelul de saturație este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
-      "text": "El nivel de valor está fuera de rango (0 -> 100)."
+      "text": "Nivelul valorii este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
-      "text": "Especificador de color HSV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare HSV nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "El especificador de color HWB \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare HWB nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Nivelul de nuanță este în afara intervalului (0' -> 360' grade)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "El nivel de blancura está fuera de rango (0 -> 100)."
+      "text": "Nivelul de alb este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "El nivel de oscuridad está fuera de rango (0 -> 100)."
+      "text": "Nivelul de întuneric este în afara intervalului (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "El especificador de color HWB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare HWB nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare HunterLab nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Valoarea L este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 127.0)."
+      "text": "Valoarea A este în afara intervalului (-128,0 -> 127,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 127.0)."
+      "text": "Valoarea B este în afara intervalului (-128,0 -> 127,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare HunterLab nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
-      "text": "El especificador de color YUV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare YUV nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "Nivelul de luminanță este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
-      "text": "El nivel de croma (U) está fuera de rango (0 -> 255)."
+      "text": "Nivelul de cromă (U) este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
-      "text": "El nivel de croma (V) está fuera de rango (0 -> 255)."
+      "text": "Nivelul de cromă (V) este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
-      "text": "Especificador de color YUV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare YUV nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare YIQ nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "Nivelul de luminanță este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
-      "text": "El nivel en fase está fuera de rango (0 -> 255)."
+      "text": "Nivelul în fază este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
-      "text": "El nivel de cuadratura está fuera de rango (0 -> 255)."
+      "text": "Nivelul de cuadratură este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare YIQ nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Asegúrese de que tenga el formato correcto, es decir, un número del 0 al 255 si se utilizan 255 colores, o una secuencia VT si se utiliza color verdadero, como se indica a continuación."
+      "text": "Specificator de culoare nevalid „{0}”. Asigurați-vă că este în formatul corect, adică un număr de la 0 la 255 dacă utilizați 255 de culori sau o secvență VT dacă utilizați culoarea reală, după cum urmează."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
-      "text": "Especificador de color \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
-      "text": "Este color ya es un color original."
+      "text": "Această culoare este deja o culoare originală."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
-      "text": "Especificador de color RYB \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare RYB nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
-      "text": "El nivel rojo está fuera de rango (0 -> 255)."
+      "text": "Nivelul roșu este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
-      "text": "El nivel amarillo está fuera de rango (0 -> 255)."
+      "text": "Nivelul galben este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
-      "text": "El nivel azul está fuera de rango (0 -> 255)."
+      "text": "Nivelul de albastru este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
-      "text": "El especificador de color RYB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare RYB nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare XYZ nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "Valoarea X este în afara intervalului (0,0 -> 95,047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "Valoarea Y este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "Valoarea Z este în afara intervalului (0,0 -> 108,883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare XYZ nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare XYZ nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "Valoarea X este în afara intervalului (0,0 -> 95,047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "Valoarea Y este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "Valoarea Z este în afara intervalului (0,0 -> 108,883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare XYZ nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
-      "text": "Especificador de color YXY \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare YXY nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
-      "text": "El valor Y1 está fuera de rango (0.0 -> 100.0)."
+      "text": "Valoarea Y1 este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 1.0)."
+      "text": "Valoarea X este în afara intervalului (0.0 -> 1.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
-      "text": "El valor Y2 está fuera de rango (0.0 -> 1.0)."
+      "text": "Valoarea Y2 este în afara intervalului (0,0 -> 1,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
-      "text": "Especificador de color YXY \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificator de culoare YXY „{0}” nevalid. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "No se especificó ningún nombre de componente."
+      "text": "Nu a fost specificat niciun nume de componentă."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "No se especificó ningún color para el componente {0}."
+      "text": "Nu a fost specificată nicio culoare pentru componenta {0}."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "El componente {0} ya existe."
+      "text": "Componenta {0} există deja."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "El componente {0} no existe."
+      "text": "Componenta {0} nu există."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "El componente {0} está predefinido y, por lo tanto, no se puede eliminar."
+      "text": "Componenta {0} este predefinită și, prin urmare, nu poate fi eliminată."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "La plantilla no tiene componentes."
+      "text": "Șablonul nu are componente."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "La plantilla no tiene componentes predefinidos que deban definirse ({0})."
+      "text": "Șablonul nu are componente predefinite care trebuie definite ({0})."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "No se proporcionó el nombre de la plantilla."
+      "text": "Nu a fost furnizat niciun nume al șablonului."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "No se puede encontrar la plantilla {0}"
+      "text": "Nu se poate găsi șablonul {0}"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "No se puede encontrar el componente {0} en la plantilla {1}"
+      "text": "Nu se poate găsi componenta {0} în șablonul {1}"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Plantilla no válida."
+      "text": "Șablon nevalid."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "La plantilla no tiene nombre."
+      "text": "Șablonul nu are nume."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "La plantilla ya existe."
+      "text": "Șablonul există deja."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "No se puede eliminar la plantilla incorporada {0}"
+      "text": "Nu se poate elimina șablonul încorporat {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
-      "text": "El tipo de color no es válido"
+      "text": "Tipul de culoare este invalid"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
-      "text": "El especificador de color para visibilidad no es válido"
+      "text": "Specificatorul de culoare pentru vizibilitate este nevalid"
     },
     {
       "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
-      "text": "Tipo de monocromatismo no válido"
+      "text": "Tip de monocromație nevalid"
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
-      "text": "No se puede determinar cómo convertir un {0} de {1} a un color."
+      "text": "Nu se poate determina cum se convertește un(n) {0} din {1} într-o culoare."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
-      "text": "No se puede determinar cómo convertir un {0} de un tipo desconocido a un color."
+      "text": "Nu se poate determina cum se convertește un(n) {0} de tip necunoscut într-o culoare."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
-      "text": "No puedo obtener el color"
+      "text": "Nu pot obține culoare."
     },
     {
       "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
-      "text": "No se pudo establecer el fondo"
+      "text": "Nu s-a putut seta fundalul"
     },
     {
       "loc": "T_COLOR_EXCEPTION_COLORISNULL",
-      "text": "No se proporciona instancia de color."
+      "text": "Instanța de culoare nu este furnizată."
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
-      "text": "Salida"
+      "text": "Ieșire"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
-      "text": "Combinaciones de teclas"
+      "text": "Combinări de taste"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
-      "text": "Encuentra el siguiente"
+      "text": "Găsește următorul"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "Subir"
+      "text": "Mută ​​în sus"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
-      "text": "Sube un elemento"
+      "text": "Mergeți cu un element în sus"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "Bajar"
+      "text": "Mutare în jos"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
-      "text": "Bajar un elemento"
+      "text": "Mergeți cu un element mai jos"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "Página anterior"
+      "text": "Pagina anterioară"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
-      "text": "Ir a la página anterior"
+      "text": "Mergi la pagina anterioară"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "Página siguiente"
+      "text": "Pagina următoare"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
-      "text": "Ir a la página siguiente"
+      "text": "Mergi la pagina următoare"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "Ir al inicio"
+      "text": "Mergi la început"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
-      "text": "Ir al primer elemento"
+      "text": "Mergi la primul element"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "Ir al final"
+      "text": "Mergi la final"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
-      "text": "Ir al último elemento"
+      "text": "Mergi la ultimul element"
     },
     {
       "loc": "T_INPUT_COMMON_SEARCHPROMPT",
-      "text": "Escribe un término de búsqueda (admite expresiones regulares)"
+      "text": "Scrieți un termen de căutare (acceptă expresii regulate)"
     },
     {
       "loc": "T_INPUT_COMMON_INVALIDQUERY",
-      "text": "Su consulta no es una expresión regular válida."
+      "text": "Interogarea ta nu este o expresie regulată validă."
     },
     {
       "loc": "T_INPUT_COMMON_ENTRYPROMPT",
-      "text": "Seleccione una de las entradas:"
+      "text": "Selectați una dintre intrări:"
     },
     {
       "loc": "T_INPUT_COMMON_NOITEMS",
-      "text": "No se encontró ningún artículo."
+      "text": "Niciun articol găsit."
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
-      "text": "Buscar un elemento"
+      "text": "Căutați un element"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
-      "text": "Ir una línea hacia arriba (informativo)"
+      "text": "Mergeți cu un rând mai sus (informativ)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
-      "text": "Bajar una línea (informativo)"
+      "text": "Mergeți cu o linie mai jos (informativ)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
-      "text": "Cambiar"
+      "text": "Comutator"
     },
     {
       "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
-      "text": "Lista de {0} colores predefinidos"
+      "text": "Listă de {0} culori predefinite"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
-      "text": "Gris"
+      "text": "Gri"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
-      "text": "Transparencia"
+      "text": "Transparenţă"
     },
     {
       "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
-      "text": "Sombra y tinte"
+      "text": "Umbră și nuanță"
     },
     {
       "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
-      "text": "Información de color"
+      "text": "Informații despre culoare"
     },
     {
       "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
-      "text": "Transformar"
+      "text": "Transforma"
     },
     {
       "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
-      "text": "Tipo de color no válido en el selector de colores"
+      "text": "Tip de culoare nevalid în selectorul de culori"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
-      "text": "Escribe el nombre de la fuente. Se convertirá a minúsculas."
+      "text": "Scrieți numele fontului. Acesta va fi convertit în litere mici."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_NOFONT",
-      "text": "La fuente no existe."
+      "text": "Fontul nu există."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
-      "text": "Seleccione una fuente figlet de la lista a continuación"
+      "text": "Selectați un font figlet din lista de mai jos"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
-      "text": "Selección de fuentes"
+      "text": "Selectarea fontului"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
-      "text": "El selector no está especificado"
+      "text": "Selectorul nu este specificat"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
-      "text": "Leer más..."
+      "text": "Citeşte mai mult..."
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Lista de combinaciones de teclas"
+      "text": "Listează combinațiile de taste"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
-      "text": "Cambiar de lugar"
+      "text": "Mișcă-te"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
-      "text": "Sale de la TUI interactiva"
+      "text": "Ieșire din interfața interactivă TUI"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
-      "text": "Información del artículo"
+      "text": "Informații despre articol"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de selección requiere que haya al menos una opción habilitada."
+      "text": "Stilul de selecție necesită activarea a cel puțin o opțiune."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Escribe el nombre del spinner. Se convertirá a minúsculas."
+      "text": "Scrieți numele rotiței. Acesta va fi convertit în litere mici."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "La ruleta no existe"
+      "text": "Rotitorul nu există."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Seleccione un spinner de la lista a continuación"
+      "text": "Selectați un spinner din lista de mai jos"
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Selección de Spinner"
+      "text": "Selecție de spinner"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
-      "text": "Sin información."
+      "text": "Nicio informație."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
-      "text": "Sin estatus"
+      "text": "Fără statut"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
-      "text": "Se intentó representar elementos TUI interactivos para el panel secundario en una TUI interactiva que solo permite la interacción desde un panel."
+      "text": "Am încercat să redau elemente TUI interactive pentru panoul secundar dintr-un TUI interactiv care permite interacțiunea doar dintr-un singur panou."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
-      "text": "Intenté representar información en el panel secundario en una TUI interactiva que permite la interacción desde dos paneles, lo que arruinó la representación de la selección allí."
+      "text": "Am încercat să redau informații în panoul secundar într-o interfață TUI interactivă care permite interacțiunea din două panouri, perturbând randarea selecției acolo."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
-      "text": "Se intentó representar información sobre datos nulos"
+      "text": "S-a încercat redarea informațiilor despre datele nule"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
-      "text": "No se pudo obtener información."
+      "text": "Nu s-au putut obține informații."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
-      "text": "Realizar una acción sobre el elemento seleccionado"
+      "text": "Efectuați o acțiune asupra elementului selectat"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
-      "text": "Proporcione una clase TUI interactiva base y vuelva a intentarlo."
+      "text": "Vă rugăm să furnizați o clasă TUI interactivă de bază și să încercați din nou."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
-      "text": "La TUI interactiva {0} no contiene ninguna fuente de datos."
+      "text": "Interfața interactivă TUI {0} nu conține nicio sursă de date."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
-      "text": "La TUI interactiva {0} tiene asignaciones de teclado o mouse conflictivas."
+      "text": "Interfața interactivă TUI {0} are legături contradictorii de tastatură sau mouse."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
-      "text": "Las siguientes combinaciones de teclas o del mouse entran en conflicto:"
+      "text": "Următoarele combinații de taste sau combinații de mouse intră în conflict:"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
-      "text": "La interfaz textual se ha bloqueado. Suele ser un problema de la aplicación."
+      "text": "Interfața textuală s-a blocat. De obicei, este o problemă din partea aplicației."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
-      "text": "La interfaz de usuario textual no está especificada"
+      "text": "Interfața textuală nu este specificată"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
-      "text": "Esta IU textual [{0}] no está lista porque el estado es {1}"
+      "text": "Această interfață textuală [{0}] nu este gata deoarece starea este {1}"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
-      "text": "Hay {0} combinaciones de teclas conflictivas en la interfaz de usuario textual [{1}]"
+      "text": "Există {0} combinații de taste conflictuale în interfața textuală [{1}]"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
-      "text": "No se especifica el contexto del evento del puntero"
+      "text": "Contextul evenimentului pointerului nu este specificat"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
-      "text": "La posición inicial no puede ser menor que cero"
+      "text": "Poziția de pornire nu poate fi mai mică decât zero"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
-      "text": "La posición final no puede ser menor que cero"
+      "text": "Poziția finală nu poate fi mai mică decât zero"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
-      "text": "La posición inicial X no puede ser mayor que la posición final X"
+      "text": "Poziția X de început nu poate fi mai mare decât poziția X de sfârșit"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
-      "text": "La posición inicial Y no puede ser mayor que la posición final Y"
+      "text": "Poziția inițială Y nu poate fi mai mare decât poziția finală Y"
     },
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
-      "text": "El nombre de entrada no está especificado"
+      "text": "Numele intrării nu este specificat"
     },
     {
       "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
-      "text": "Avance"
+      "text": "Avans"
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "Esta página de presentación requiere que se completen los siguientes datos antes de poder avanzar a la página siguiente."
+      "text": "Această pagină de prezentare necesită completarea următoarelor câmpuri înainte de a putea trece la pagina următoare."
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
-      "text": "Entrada requerida"
+      "text": "Introducerea este necesară"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
-      "text": "Una o más de las siguientes entradas no se han completado correctamente:"
+      "text": "Unul sau mai multe dintre următoarele câmpuri nu au fost completate corect:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
-      "text": "Entrada incorrecta"
+      "text": "Introducere incorectă"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
-      "text": "No se han proporcionado los datos requeridos. Deberá completar los valores de los siguientes campos:"
+      "text": "Nu au fost furnizate datele de intrare necesare. Va trebui să completați valorile următoarelor date de intrare:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
-      "text": "Entrada no proporcionada"
+      "text": "Intrarea nu a fost furnizată"
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
-      "text": "No se puede mostrar una opción sin respuestas ni respuestas alternativas."
+      "text": "Nu se poate demonstra o alegere fără răspunsuri și fără răspunsuri alternative."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de elección requiere que haya al menos una opción habilitada."
+      "text": "Stilul de alegere necesită activarea a cel puțin o opțiune."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
-      "text": "No puedes proporcionar respuestas con más de un carácter en el modo de un solo carácter."
+      "text": "Nu poți oferi răspunsuri cu mai mult de un caracter în modul cu un singur caracter."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
-      "text": "Respuesta incorrecta. Inténtalo de nuevo."
+      "text": "Răspuns greșit. Vă rugăm să încercați din nou."
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "Mover a la izquierda"
+      "text": "Mutare la stânga"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "Mover a la derecha"
+      "text": "Mută ​​la dreapta"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
-      "text": "Insertar"
+      "text": "Introduce"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
-      "text": "Reemplazar"
+      "text": "Înlocui"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
-      "text": "Reemplazar todo"
+      "text": "Înlocuiți tot"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
-      "text": "Listo"
+      "text": "Gata"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
-      "text": "No encontrado. Revisa la sintaxis o amplía la búsqueda."
+      "text": "Nu a fost găsit. Verificați sintaxa sau extindeți căutarea."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
-      "text": "Información del número"
+      "text": "Informații despre număr"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
-      "text": "Eliminar"
+      "text": "Elimina"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
-      "text": "Reemplazar todo lo que"
+      "text": "Înlocuiți tot ce"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
-      "text": "Escribe el número de byte con el valor hexadecimal."
+      "text": "Scrieți numărul de octeți cu valoarea hexazecimală."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
-      "text": "El número de byte especificado no es válido."
+      "text": "Numărul de octeți specificat nu este valid."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
-      "text": "Byte no válido {0}."
+      "text": "Octet {0} nevalid."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
-      "text": "Escriba el número de byte con el valor hexadecimal con el que reemplazar {0}."
+      "text": "Scrieți numărul de octeți cu valoarea hexazecimală cu care se va înlocui {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
-      "text": "Escriba el número de byte con el valor hexadecimal a reemplazar."
+      "text": "Scrieți numărul de octet cu valoarea hexazecimală care trebuie înlocuită."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
-      "text": "Escribe un byte o un grupo de bytes separados por espacios en blanco."
+      "text": "Scrieți un octet sau un grup de octeți separați prin spații albe."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
-      "text": "Se requieren bytes para buscar, pero no ha proporcionado ninguno."
+      "text": "Sunt necesari octeți pentru a găsi, dar nu ai furnizat niciunul."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
-      "text": "Posición"
+      "text": "Poziţie"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
-      "text": "Hexadecimal"
+      "text": "Hexazecimal"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
@@ -1425,415 +1401,415 @@
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
-      "text": "Número"
+      "text": "Număr"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
-      "text": "Binario"
+      "text": "Binar"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
-      "text": "Información del número"
+      "text": "Informații despre număr"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "Contenido vacío"
+      "text": "Conținut gol"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
-      "text": "El número de byte de inicio especificado no puede ser mayor que el tamaño del archivo."
+      "text": "Numărul specificat pentru octetul de început nu poate fi mai mare decât dimensiunea fișierului."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
-      "text": "El número de byte final especificado no puede ser mayor que el tamaño del archivo."
+      "text": "Numărul specificat pentru octetul final nu poate fi mai mare decât dimensiunea fișierului."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
-      "text": "El número de byte especificado no es válido."
+      "text": "Numărul de octeți specificat este invalid."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
-      "text": "El número de byte especificado no puede ser mayor que {0} ni menor que 1."
+      "text": "Numărul de octeți specificat nu poate fi mai mare decât {0} sau mai mic decât 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
-      "text": "El número de byte especificado no puede ser mayor que {0}."
+      "text": "Numărul de octeți specificat nu poate fi mai mare de {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
-      "text": "No se puede realizar esta operación en una matriz nula."
+      "text": "Nu se poate efectua această operațiune pe o matrice nulă."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
-      "text": "El número de byte debe comenzar con 1."
+      "text": "Numărul de octeți trebuie să înceapă cu 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
-      "text": "El número de byte de inicio especificado no puede ser mayor que {0}."
+      "text": "Numărul specificat pentru octetul de început nu poate fi mai mare de {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
-      "text": "El número de byte final especificado no puede ser mayor que {0}."
+      "text": "Numărul specificat pentru octetul final nu poate fi mai mare de {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
-      "text": "Ingresar..."
+      "text": "Introduceți..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
-      "text": "Borrar aquí"
+      "text": "Ștergeți aici"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
-      "text": "Eliminar línea"
+      "text": "Eliminați linia"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
-      "text": "Dejar de entrar"
+      "text": "Nu mai intrați"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
-      "text": "Nueva línea"
+      "text": "Linie nouă"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "Retroceso"
+      "text": "Backspace"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "Borrar"
+      "text": "Şterge"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
-      "text": "Escribe la cadena a encontrar"
+      "text": "Scrieți șirul pentru a găsi"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
-      "text": "Escribe la cadena de reemplazo"
+      "text": "Scrieți șirul de înlocuire"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
-      "text": "Escribe una cadena para buscar. Admite expresiones regulares."
+      "text": "Scrieți un șir de caractere pentru a-l găsi. Acceptă expresii regulate."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
-      "text": "Se requiere una cadena para buscar, pero no ha proporcionado ninguna."
+      "text": "Șirul de caractere este necesar pentru a găsi, dar nu ați furnizat unul."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
-      "text": "Esta cadena a buscar no es una expresión regular válida."
+      "text": "Acest șir de caractere de găsit nu este o expresie regulată validă."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
-      "text": "Pauta"
+      "text": "Linii"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
-      "text": "Columna"
+      "text": "Coloană"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
-      "text": "Fila"
+      "text": "Rând"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
-      "text": "El número de línea especificado no puede ser mayor que {0}."
+      "text": "Numărul liniei specificat nu poate fi mai mare decât {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
-      "text": "No se puede realizar esta operación en una lista de líneas nulas."
+      "text": "Nu se poate efectua această operațiune pe o listă de linii nule."
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
-      "text": "Muestra más información en un cuadro de información."
+      "text": "Afișează mai multe informații într-o casetă informativă"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
-      "text": "Va una línea hacia arriba"
+      "text": "Merge cu o linie mai sus"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
-      "text": "Va una línea hacia abajo"
+      "text": "Merge cu o linie mai jos"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
-      "text": "Va a la página anterior del texto."
+      "text": "Merge la pagina anterioară a textului"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
-      "text": "Va a la siguiente página de texto."
+      "text": "Merge la pagina următoare de text"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
-      "text": "Envía el valor"
+      "text": "Trimite valoarea"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
-      "text": "Envía los valores"
+      "text": "Trimite valorile"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
-      "text": "Cierra sin enviar el valor"
+      "text": "Se închide fără a trimite valoarea"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
-      "text": "Cierra sin enviar los valores"
+      "text": "Se închide fără a trimite valorile"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "Realiza una acción o selecciona una opción"
+      "text": "Efectuează o acțiune sau selectează o opțiune"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "Disminuye el valor o mueve tres líneas de texto hacia arriba"
+      "text": "Decrementează valoarea sau mută textul cu trei rânduri în sus"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "Incrementa el valor o mueve tres líneas de texto hacia abajo"
+      "text": "Incrementează valoarea sau mută textul cu trei rânduri în jos"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "Opción anterior o tres líneas de texto anteriores"
+      "text": "Alegerea anterioară sau ultimele trei rânduri de text"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "Siguiente opción o siguientes tres líneas de texto"
+      "text": "Următoarea opțiune sau următoarele trei rânduri de text"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
-      "text": "Disminuye el valor actual"
+      "text": "Decrementează valoarea curentă"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
-      "text": "Incrementa el valor actual"
+      "text": "Incrementează valoarea curentă"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
-      "text": "Establece el valor al valor mínimo"
+      "text": "Setează valoarea la valoarea minimă"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
-      "text": "Establece el valor al valor máximo"
+      "text": "Setează valoarea la valoarea maximă"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "Establece el foco actual en el siguiente elemento de valor"
+      "text": "Setează focalizarea curentă la următorul element de valoare"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "Establece el foco actual en el elemento de valor anterior"
+      "text": "Setează focalizarea curentă la elementul de valoare anterior"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
-      "text": "Va al botón anterior"
+      "text": "Merge la butonul anterior"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
-      "text": "Va al siguiente botón"
+      "text": "Merge la butonul următor"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "Botón anterior o tres líneas de texto anteriores"
+      "text": "Butonul anterior sau ultimele trei rânduri de text"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "Botón siguiente o siguientes tres líneas de texto"
+      "text": "Butonul Următorul sau următoarele trei rânduri de text"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
-      "text": "Va a la primera línea de texto."
+      "text": "Merge la prima linie de text"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
-      "text": "Va a la última línea de texto."
+      "text": "Merge la ultima linie de text"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
-      "text": "Va a la siguiente página de texto o cierra el cuadro de información modal."
+      "text": "Merge la pagina următoare de text sau închide caseta informativă modală"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
-      "text": "Cierra el cuadro de información modal."
+      "text": "Închide caseta informativă modală"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "Realiza una acción"
+      "text": "Efectuează o acțiune"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "Las tres líneas de texto anteriores"
+      "text": "Cele trei rânduri de text anterioare"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "Próximas tres líneas de texto"
+      "text": "Următoarele trei rânduri de text"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "Va a la página anterior de entradas."
+      "text": "Merge la pagina anterioară de intrări"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "Va a la siguiente página de entradas."
+      "text": "Merge la următoarea pagină de intrări"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "Busca una entrada"
+      "text": "Caută o intrare"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "Cambia el valor de entrada seleccionado"
+      "text": "Modifică valoarea de intrare selectată"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
-      "text": "Sube una opción (siguiente opción)"
+      "text": "Urmează o opțiune (următoarea opțiune)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
-      "text": "Baja una opción (opción anterior)"
+      "text": "Coboară o opțiune (opțiunea anterioară)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
-      "text": "Va a la primera opción"
+      "text": "Merge la prima opțiune"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
-      "text": "Va a la última opción"
+      "text": "Merge la ultima opțiune"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
-      "text": "Va a la página anterior de opciones."
+      "text": "Merge la pagina anterioară de opțiuni"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
-      "text": "Va a la siguiente página de opciones."
+      "text": "Merge la pagina următoare de opțiuni"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
-      "text": "Busca una elección"
+      "text": "Caută o alegere"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
-      "text": "Selecciona o deselecciona todas las opciones"
+      "text": "Selectează sau deselectează toate opțiunile"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
-      "text": "No se puede obtener la categoría y el grupo en la opción número {0}."
+      "text": "Nu se pot obține categoria și grupul în opțiunea numărul {0}."
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
-      "text": "Opciones generales"
+      "text": "Alegeri generale"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
-      "text": "Opciones disponibles"
+      "text": "Opțiuni disponibile"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
-      "text": "Opciones alternativas"
+      "text": "Opțiuni alternative"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
-      "text": "Confirmar"
+      "text": "Confirma"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
-      "text": "Barra lateral"
+      "text": "Bara laterală"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "Más"
+      "text": "Mai mult"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
-      "text": "Confirma la(s) selección(es)"
+      "text": "Confirmă selecția/selecțiile"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "Cambia el valor seleccionado (botones de opción)"
+      "text": "Modifică valoarea selectată (butoane radio)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
-      "text": "Cancelar selección(es)"
+      "text": "Anulați selecția/selecțiile"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
-      "text": "Sube un elemento"
+      "text": "Merge cu un element în sus"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
-      "text": "Va un elemento hacia abajo"
+      "text": "Coboară cu un element"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
-      "text": "Va al primer elemento"
+      "text": "Merge la primul element"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
-      "text": "Va al último elemento"
+      "text": "Merge la ultimul element"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
-      "text": "Va a la página anterior"
+      "text": "Merge la pagina anterioară"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
-      "text": "Va a la página siguiente"
+      "text": "Merge la pagina următoare"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
-      "text": "Busca un elemento"
+      "text": "Caută un element"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
-      "text": "Subir a una barra lateral"
+      "text": "Mergeți în sus într-o bară laterală"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
-      "text": "Bajar a la barra lateral"
+      "text": "Mergeți în jos într-o bară laterală"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
-      "text": "Subir en un cuadro de preguntas"
+      "text": "Mergeți în sus într-o casetă de întrebări"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
-      "text": "Bajar en un cuadro de preguntas"
+      "text": "Coborâți într-o casetă de întrebări"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
-      "text": "Mostrar el recuento de páginas y opciones"
+      "text": "Afișați numărul de pagini și opțiuni"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
-      "text": "Mostrar información del artículo"
+      "text": "Afișează informații despre articol"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
-      "text": "Selecciona o deselecciona una opción"
+      "text": "Selectează sau deselectează o opțiune"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
-      "text": "Selecciona todos los elementos del mismo grupo y categoría"
+      "text": "Selectează toate elementele din același grup și categorie"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos de la misma categoría"
+      "text": "Selectează toate elementele din toate grupurile din aceeași categorie"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos en todas las categorías"
+      "text": "Selectează toate elementele din toate grupurile din toate categoriile"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "Va un elemento o línea de escaparate"
+      "text": "Predă un element sau o linie de prezentare"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "Va un elemento o línea de escaparate hacia abajo"
+      "text": "Merge cu un element sau o linie de prezentare mai jos"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
-      "text": "Actualizar posición"
+      "text": "Actualizați poziția"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
@@ -1841,703 +1817,703 @@
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
-      "text": "Próximo"
+      "text": "Următorul"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
-      "text": "Entregar"
+      "text": "Trimite"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
-      "text": "Cancelar"
+      "text": "Anula"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
-      "text": "Ayuda"
+      "text": "Ajutor"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
-      "text": "Hecho"
+      "text": "Făcut"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
-      "text": "Seleccionar"
+      "text": "Selecta"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
-      "text": "Selección manual"
+      "text": "Selectare manuală"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
-      "text": "Información de color"
+      "text": "Informații despre culoare"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
-      "text": "Próxima simulación de daltonismo"
+      "text": "Următoarea simulare a daltonismului"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
-      "text": "Simulación previa de daltonismo"
+      "text": "Simulare anterioară a daltonismului"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
-      "text": "Aumentar la frecuencia de transformación"
+      "text": "Creșterea frecvenței de transformare"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
-      "text": "Disminuir la frecuencia de transformación"
+      "text": "Reduceți frecvența de transformare"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
-      "text": "Seleccionar color web"
+      "text": "Selectați culoarea web"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
-      "text": "Aumentar la opacidad"
+      "text": "Crește opacitatea"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
-      "text": "Aumentar la transparencia"
+      "text": "Creșterea transparenței"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
-      "text": "Siguiente modo de color"
+      "text": "Următorul mod de culoare"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
-      "text": "Modo de color anterior"
+      "text": "Modul de culoare anterior"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
-      "text": "Aumentar el valor"
+      "text": "Creșteți valoarea"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
-      "text": "Disminuir valor"
+      "text": "Reduceți valoarea"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
-      "text": "Reducir el tono de color"
+      "text": "Reduceți nuanța culorii"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
-      "text": "Aumentar el tono del color"
+      "text": "Crește nuanța culorii"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
-      "text": "Reducir la luminosidad del color"
+      "text": "Reduceți luminozitatea culorii"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
-      "text": "Aumentar la luminosidad del color"
+      "text": "Creșterea luminozității culorii"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
-      "text": "Reducir la saturación"
+      "text": "Reduceți saturația"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
-      "text": "Aumentar la saturación"
+      "text": "Creșterea saturației"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
-      "text": "Color anterior"
+      "text": "Culoarea anterioară"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
-      "text": "Siguiente color"
+      "text": "Următoarea culoare"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
-      "text": "Mostrar y ocultar la lista de colores"
+      "text": "Afișează și ascunde lista de culori"
     },
     {
       "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
-      "text": "Exhibición de personajes"
+      "text": "Prezentare de personaje"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
-      "text": "Este elemento fijo no puede ser una clase base. Especifique un elemento fijo incondicional."
+      "text": "Este posibil ca acest dispozitiv de fixare să nu fie o clasă de dispozitive de fixare de bază. Specificați un dispozitiv de fixare necondiționat."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
-      "text": "Es posible que este elemento no sea una clase base. Especifique un elemento condicional."
+      "text": "Este posibil ca acest dispozitiv de fixare să nu fie o clasă de dispozitive de fixare de bază. Specificați un dispozitiv de fixare condițional."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
-      "text": "El valor devuelto {0} no coincide con el valor esperado {1}"
+      "text": "Valoarea returnată {0} nu corespunde valorii așteptate {1}"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
-      "text": "Este encuentro no es condicional."
+      "text": "Această fixare nu este condiționată."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
-      "text": "Este tipo de accesorio no es válido."
+      "text": "Acest tip de dispozitiv de fixare este invalid."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
-      "text": "No hay ningún elemento fijo aquí. Inserte uno."
+      "text": "Nu există accesorii aici. Introduceți unul."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
-      "text": "Seleccione un dispositivo de prueba."
+      "text": "Alegeți un dispozitiv de testare."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
-      "text": "Sale del selector de accesorios de prueba."
+      "text": "Ieșire din selectorul de dispozitive de testare"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
-      "text": "¡Esta prueba ha sido un éxito!"
+      "text": "Acest test a reușit!"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
-      "text": "El valor esperado coincide con el valor real."
+      "text": "Valoarea așteptată corespunde cu valoarea reală."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
-      "text": "Esta prueba ha fallado."
+      "text": "Acest test a eșuat."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
-      "text": "Mensaje"
+      "text": "Mesaj"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
-      "text": "El valor esperado no coincide con el valor real."
+      "text": "Valoarea așteptată nu corespunde cu valoarea reală."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
-      "text": "El método en este delegado no puede devolver nulo"
+      "text": "Metoda din acest delegat nu poate returna void"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
-      "text": "El método en este delegado debe devolver vacío"
+      "text": "Metoda din acest delegat trebuie să returneze void."
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
-      "text": "La expresión regular del componente no es válida"
+      "text": "Expresia regulată a componentei este invalidă"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
-      "text": "Expresión regular del componente no proporcionada"
+      "text": "Expresia regulată a componentei nu a fost furnizată"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
-      "text": "No se proporciona el color de primer plano del componente"
+      "text": "Culoarea de prim-plan a componentei nu a fost furnizată"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
-      "text": "No se proporciona el color de fondo del componente"
+      "text": "Culoarea de fundal a componentei nu a fost furnizată"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador."
+      "text": "Nu a fost furnizat numele evidențiatorului."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador base."
+      "text": "Nu a fost furnizat numele evidențiatorului de bază."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
-      "text": "No puedo encontrar el resaltador {0}"
+      "text": "Nu găsesc evidențiatorul {0}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
-      "text": "No puedo encontrar el resaltador"
+      "text": "Nu găsesc evidențiatorul"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
-      "text": "No se puede encontrar el componente {0} en el resaltador {1}"
+      "text": "Nu se poate găsi componenta {0} în evidențiatorul {1}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
-      "text": "Resaltador no válido."
+      "text": "Evidențiator nevalid."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
-      "text": "El resaltador no tiene nombre."
+      "text": "Evidențiatorul nu are nume."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
-      "text": "El resaltador ya existe"
+      "text": "Evidențiatorul există deja."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
-      "text": "El resaltador no tiene componentes."
+      "text": "Evidențiatorul nu are componente."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
-      "text": "No se puede eliminar el resaltador incorporado {0}"
+      "text": "Nu se poate elimina evidențiatorul încorporat {0}"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
-      "text": "El nombre del historial no está especificado"
+      "text": "Numele istoricului nu este specificat"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
-      "text": "Las entradas del historial no están especificadas"
+      "text": "Intrările din istoric nu sunt specificate"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
-      "text": "No se proporciona la ruta del archivo de historial."
+      "text": "Calea fișierului istoric nu este furnizată."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
-      "text": "No se proporciona representación JSON del historial."
+      "text": "Reprezentarea JSON istorică nu este furnizată."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
-      "text": "Se analiza JSON, pero no se proporciona la representación JSON del historial."
+      "text": "JSON analizat, dar reprezentarea istorică JSON nu este furnizată."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
-      "text": "No se proporciona información histórica."
+      "text": "Informațiile istorice nu sunt furnizate."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
-      "text": "No se proporcionó el nombre del historial. ¿Está seguro de haber especificado el nombre en su representación JSON?"
+      "text": "Numele istoric nu este furnizat. Sigur ați specificat numele în reprezentarea JSON?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
-      "text": "No se proporcionan entradas del historial. ¿Está seguro de haber especificado las entradas en su representación JSON?"
+      "text": "Nu sunt furnizate intrările din istoric. Sunteți sigur că ați specificat intrările în reprezentarea JSON?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
-      "text": "Historial {0} no encontrado."
+      "text": "Istoricul {0} nu a fost găsit."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
-      "text": "El historial general no se puede eliminar, pero se puede borrar."
+      "text": "Istoricul general nu poate fi eliminat, dar poate fi șters."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
-      "text": "La historia no es parte de las historias registradas."
+      "text": "Istoricul nu face parte din istoriile înregistrate."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
-      "text": "No se pudo eliminar el historial."
+      "text": "Istoricul nu a putut fi șters."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
-      "text": "No se proporciona entrada de historial."
+      "text": "Nu este furnizată intrarea în istoric."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
-      "text": "No se proporciona la lista de entradas del historial."
+      "text": "Lista de intrări din istoric nu este furnizată."
     },
     {
       "loc": "T_READER_EXCEPTION_PRINTWRITE",
-      "text": "Hay un conflicto entre {0} y {1}."
+      "text": "Există un conflict între {0} și {1}."
     },
     {
       "loc": "T_READER_FAILED",
-      "text": "El lector de entrada ha fallado"
+      "text": "Cititorul de intrare a eșuat"
     },
     {
       "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
-      "text": "Esta corriente no puede buscar."
+      "text": "Acest flux nu poate căuta."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "No se ha podido generar una secuencia VT funcional del tipo {0} con la acción {1}. Asegúrese de haber especificado los valores correctamente."
+      "text": "Nu am reușit să generăm o secvență VT funcțională de tip {0} cu acțiunea {1}. Asigurați-vă că ați specificat corect valorile."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
-      "text": "No se puede construir la secuencia VT para el tipo inexistente {0}"
+      "text": "Nu se poate construi secvența VT pentru tipul inexistent {0}"
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
-      "text": "No se puede generar la secuencia VT sin argumentos. Se esperaban {0} argumentos, pero se obtuvieron {1}."
+      "text": "Nu se poate construi secvența VT fără argumente. Se așteptau {0} argumente, dar s-au obținut {1} argumente."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Un alias no puede ser el mismo nombre que un comando."
+      "text": "Un alias nu poate avea același nume ca o comandă."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
-      "text": "Comando no encontrado para crear el alias {0}."
+      "text": "Comanda nu a fost găsită pentru aliasul {0}."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​ya encontrado"
+      "text": "Aliasul a fost deja găsit"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "No se encontró el alias {0} para eliminar."
+      "text": "Aliasul {0} nu a fost găsit ca fiind eliminat."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "No se encuentra el alias {0} para realizar la consulta."
+      "text": "Aliasul {0} nu a fost găsit pentru a fi interogat."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
-      "text": "Uso"
+      "text": "Utilizare"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
-      "text": "Dominio"
+      "text": "Comanda"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
-      "text": "Descripción"
+      "text": "Descriere"
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
-      "text": "No hay ayuda para el argumento \"{0}\"."
+      "text": "Nu există ajutor pentru argumentul „{0}”."
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
-      "text": "Descripción de ayuda sin argumentos"
+      "text": "Descrierea fără ajutor la argumente"
     },
     {
       "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
-      "text": "Este argumento aún no se ha implementado."
+      "text": "Acest argument nu este încă implementat."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
-      "text": "No hubo suficientes argumentos."
+      "text": "Nu au fost suficiente argumente."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "Argument necunoscut"
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
-      "text": "Error irrecuperable en el argumento"
+      "text": "Eroare irecuperabilă în argument"
     },
     {
       "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
-      "text": "No se puede obtener información del argumento para el comando o argumento"
+      "text": "Nu se pot obține informații despre argumente pentru comandă sau argument."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
-      "text": "No se especifican los parámetros del hilo."
+      "text": "Parametrii firului de execuție nu sunt specificați."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
-      "text": "No se proporcionan los argumentos obligatorios para todos los usos siguientes:"
+      "text": "Argumentele obligatorii nu sunt furnizate pentru toate utilizările de mai jos:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "Argument necunoscut"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
-      "text": "No se proporcionan los argumentos obligatorios."
+      "text": "Nu sunt furnizate argumentele necesare."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
-      "text": "No se proporcionan los interruptores necesarios."
+      "text": "Comutatoarele necesare nu sunt furnizate."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
-      "text": "Uno de los conmutadores requiere un valor que no se proporciona."
+      "text": "Unul dintre comutatoare necesită o valoare care nu este furnizată."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
-      "text": "Los interruptores que se enumeran a continuación son desconocidos."
+      "text": "Comutatoarele enumerate mai jos sunt necunoscute."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
-      "text": "Los interruptores que se enumeran a continuación entran en conflicto entre sí."
+      "text": "Comutatoarele enumerate mai jos intră în conflict între ele."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
-      "text": "Los siguientes interruptores no aceptan valores."
+      "text": "Comutatoarele de mai jos nu acceptă valori."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
-      "text": "Uno o más de los argumentos esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "Unul sau mai multe dintre argumente așteaptă o valoare numerică, dar ați furnizat un număr nevalid."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
-      "text": "Uno o más de los argumentos esperan una redacción exacta, pero usted proporcionó una palabra no válida."
+      "text": "Unul sau mai multe dintre argumente așteaptă o formulare exactă, dar ați furnizat un cuvânt nevalid."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
-      "text": "Uno o más de los conmutadores esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "Unul sau mai multe dintre comutatoare așteaptă o valoare numerică, dar ați furnizat un număr nevalid."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
-      "text": "Consulte la entrada de ayuda de este comando para obtener más información."
+      "text": "Consultați intrarea de ajutor pentru această comandă pentru mai multe informații."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
-      "text": "El comando está siendo interrumpido..."
+      "text": "Comanda este întreruptă..."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
-      "text": "Error al intentar ejecutar el comando {2}."
+      "text": "Eroare la încercarea de executare a comenzii {2}."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
-      "text": "Error"
+      "text": "Eroare"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
-      "text": "Comando abortado por el siguiente motivo"
+      "text": "Comandă anulată din următorul motiv"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
-      "text": "Patrón de comando proporcionado no válido."
+      "text": "Model de comandă furnizat nevalid."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
-      "text": "Comando no encontrado."
+      "text": "Comandă negăsită."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
-      "text": "El tipo de shell {0} no existe."
+      "text": "Tipul de shell {0} nu există."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
-      "text": "Debes proporcionar la base de comando."
+      "text": "Trebuie să furnizați baza de comandă."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
-      "text": "Debes proporcionar el comando."
+      "text": "Trebuie să furnizați comanda."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
-      "text": "El comando especificado ya está agregado."
+      "text": "Comanda specificată este deja adăugată."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden cargar."
+      "text": "Unele dintre comenzile personalizate nu pot fi încărcate."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
-      "text": "No se encuentra el comando personalizado especificado."
+      "text": "Comanda personalizată specificată nu a fost găsită."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden descargar."
+      "text": "Unele dintre comenzile personalizate nu pot fi descărcate."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
-      "text": "Este shell usa comandos de barra diagonal para ejecutar los comandos. Para comenzar, añada la barra diagonal \"/\" al principio del comando. Por ejemplo:"
+      "text": "Această shell folosește comenzile slash pentru a executa comenzile. Adăugați simbolul slash „/” la începutul comenzii pentru a începe. De exemplu:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
-      "text": "Este comando no está definido."
+      "text": "Această comandă nu este definită."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
-      "text": "Comandos disponibles:"
+      "text": "Comenzi disponibile:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
-      "text": "Órdenes generales:"
+      "text": "Comenzi generale:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "No hay comandos de shell."
+      "text": "Nicio comandă shell."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
-      "text": "Comandos adicionales:"
+      "text": "Comenzi suplimentare:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Sin comandos adicionales"
+      "text": "Fără comenzi suplimentare."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
-      "text": "Comandos de alias:"
+      "text": "Comenzi alias:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Sin comandos de alias."
+      "text": "Fără comenzi alias."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
-      "text": "Comandos unificados:"
+      "text": "Comenzi unificate:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "No hay comandos unificados"
+      "text": "Fără comenzi unificate."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
-      "text": "Comando definido por"
+      "text": "Comandă definită de"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
-      "text": "Este comando tiene los siguientes argumentos que cambian su funcionamiento:"
+      "text": "Această comandă are următoarele argumente care îi modifică funcționarea:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
-      "text": "Descripción de argumento no especificado"
+      "text": "Descrierea argumentului nespecificată"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
-      "text": "Este comando tiene los siguientes interruptores que cambian su funcionamiento:"
+      "text": "Această comandă are următoarele comutatoare care îi modifică modul de funcționare:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
-      "text": "Descripción del interruptor no especificado"
+      "text": "Descrierea comutatorului nespecificată"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
-      "text": "No hay ayuda para el comando \"{0}\"."
+      "text": "Nu există ajutor pentru comanda „{0}”."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
-      "text": "No se encuentra el ajuste preestablecido especificado {0}."
+      "text": "Presetarea specificată {0} nu a fost găsită."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
-      "text": "Seleccionar ajuste preestablecido para {0}:"
+      "text": "Selectați o presetare pentru {0}:"
     },
     {
       "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
-      "text": "No se encontraron comandos."
+      "text": "Nu s-au găsit comenzi."
     },
     {
       "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
-      "text": "Sale del shell si se ejecuta en un subshell"
+      "text": "Ieșire din shell dacă rulează pe subshell"
     },
     {
       "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
-      "text": "Encuentra los comandos disponibles en el tipo de shell actual"
+      "text": "Găsește comenzile disponibile în tipul curent de shell"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
-      "text": "Página de ayuda"
+      "text": "Pagină de ajutor"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
-      "text": "Muestra comandos generales (predeterminado)"
+      "text": "Afișează comenzi generale (implicit)"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
-      "text": "Muestra comandos con alias"
+      "text": "Afișează comenzi aliasate"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
-      "text": "Muestra comandos unificados"
+      "text": "Afișează comenzi unificate"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
-      "text": "Muestra comandos adicionales"
+      "text": "Afișează comenzi suplimentare"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
-      "text": "Muestra todos los comandos"
+      "text": "Afișează toate comenzile"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
-      "text": "Utiliza ayuda simplificada"
+      "text": "Folosește ajutor simplificat"
     },
     {
       "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
-      "text": "Abre la biblioteca de ajustes preestablecidos de shell"
+      "text": "Deschide biblioteca de preseturi shell"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
-      "text": "Mensaje del shell: No se encuentra el comando solicitado {0}. Consulte la ayuda para ver los comandos disponibles."
+      "text": "Mesaj shell: Comanda solicitată {0} nu a fost găsită. Consultați secțiunea „ajutor” pentru comenzile disponibile."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
-      "text": "Error al intentar ejecutar el comando."
+      "text": "Eroare la încercarea de executare a comenzii."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
-      "text": "No se puede obtener el ejecutor de shell para {0}"
+      "text": "Nu se poate obține executorul shell pentru {0}"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
-      "text": "Error al intentar inicializar el shell"
+      "text": "Încercarea de inițializare a shell-ului a eșuat"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
-      "text": "No se puede determinar si la entrada de selección es única o múltiple"
+      "text": "Nu se poate determina dacă intrarea de selecție este una sau mai multe"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
-      "text": "No se especifica el marcado."
+      "text": "Marcajul nu este specificat."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
-      "text": "Especificador de etiqueta final no válido."
+      "text": "Specificator de etichetă de încheiere nevalid."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
-      "text": "No hay secuencias en cola para finalizar la etiqueta."
+      "text": "Nu există secvențe în coadă cu care să se încheie eticheta."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
-      "text": "Faltan {0} etiquetas finales."
+      "text": "Lipsesc {0} etichete de încheiere."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
-      "text": "El formato inicial no debe imprimir ningún texto; solo debe contener secuencias VT de formato."
+      "text": "Formatul inițial nu trebuie să afișeze niciun text; trebuie să conțină doar secvențe VT de formatare."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "No hay ningún archivo Asciicast"
+      "text": "Nu există niciun fișier Asciicast"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "No se puede deserializar la representación base de Asciicast"
+      "text": "Nu se poate deserializa reprezentarea Asciicast de bază"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v1"
+      "text": "Nu se poate deserializa reprezentarea Asciicast v1"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v2"
+      "text": "Nu se poate deserializa reprezentarea Asciicast v2"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "No se puede obtener información del evento"
+      "text": "Nu se pot obține informații despre eveniment"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
-      "text": "Combinaciones de teclas disponibles"
+      "text": "Combinații de taste disponibile"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
-      "text": "No hay enlaces definidos en este contexto."
+      "text": "Nu sunt definite legături în acest context."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
-      "text": "Atajos de teclado"
+      "text": "Legături de tastatură"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
-      "text": "Vinculaciones del ratón"
+      "text": "Legături pentru mouse"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
-      "text": "Nombre de personaje de Nerd Fonts no válido {0} en el tipo {1}"
+      "text": "Nume de caracter {0} invalid în fonturile Nerd Fonts, în tipul {1}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
-      "text": "Representación de carácter de Nerd Fonts no válida {0} de {1} en el tipo {2}"
+      "text": "Reprezentare invalidă a caracterelor {0} din {1} în fonturile Nerd Fonts, în tipul {2}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
-      "text": "Tipo de fuente Nerd no válido {0}"
+      "text": "Tip de fonturi Nerd nevalid {0}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
-      "text": "Las fuentes Nerd tipo {0} no tienen caracteres"
+      "text": "Fonturile Nerd de tip {0} nu au caractere"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
-      "text": "Renderable ya está registrado"
+      "text": "Renderabilul este deja înregistrat"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
-      "text": "Renderable no está registrado"
+      "text": "Renderabilul nu este înregistrat"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
-      "text": "Todos los hilanderos deben tener el mismo ancho."
+      "text": "Toate rotitoarele ar trebui să aibă aceeași lățime."
     }
   ]
 }

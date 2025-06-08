@@ -1,0 +1,86 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_EXIT",
+      "text": "Вихід"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
+      "text": "Прив'язки клавіш"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
+      "text": "Fit або масштабований"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEUP",
+      "text": "Рух вгору"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEDOWN",
+      "text": "Рух вниз"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVELEFT",
+      "text": "Рух ліворуч"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVERIGHT",
+      "text": "Рух праворуч"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_PREVIOUSPAGE",
+      "text": "Попередня сторінка"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_NEXTPAGE",
+      "text": "Наступна сторінка"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOBEGINNING",
+      "text": "Перейти на початок"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
+      "text": "Перейти до кінця"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
+      "text": "Доступні сполучення клавіш"
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Шлях до зображення не надано."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Дані зображення не надаються."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Потік зображень не надається."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
+      "text": "Шлях до зображення не надано."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
+      "text": "Дані зображення не надаються."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Потік зображень не надається."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Зображення не надається."
+    }
+  ]
+}

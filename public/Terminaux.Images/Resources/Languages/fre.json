@@ -1,0 +1,132 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_EXIT",
+      "text": "Quitter"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
+      "text": "Raccourcis clavier"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
+      "text": "Ajuster ou mettre à l'échelle"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEUP",
+      "text": "Monter"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEDOWN",
+      "text": "Descendre"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVELEFT",
+      "text": "Gauche"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVERIGHT",
+      "text": "Droite"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_PREVIOUSPAGE",
+      "text": "Page précédente"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_NEXTPAGE",
+      "text": "Page suivante"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOBEGINNING",
+      "text": "Aller au début"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
+      "text": "Aller à la fin"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
+      "text": "Raccourcis clavier disponibles"
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Chemin d'accès à l'image non fourni."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Données d'image non fournies."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Flux d'image non fourni."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
+      "text": "Chemin d'accès à l'image non fourni."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
+      "text": "Données d'image non fournies."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Flux d'image non fourni."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Image non fournie."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_EXIT",
+      "text": "Εξοδος"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
+      "text": "Keybindings"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
+      "text": "Fit ή Scaled"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEUP",
+      "text": "Μετακίνηση προς τα επάνω"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEDOWN",
+      "text": "Μετακίνηση προς τα κάτω"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVELEFT",
+      "text": "Μετακίνηση Αριστερά"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVERIGHT",
+      "text": "Μετακίνηση Δεξιά"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_PREVIOUSPAGE",
+      "text": "Προηγούμενη Σελίδα"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_NEXTPAGE",
+      "text": "Επόμενη Σελίδα"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOBEGINNING",
+      "text": "Μετάβαση στην αρχή"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
+      "text": "Μετάβαση στο Τέλος"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
+      "text": "Διαθέσιμα πλήκτρα"
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Η διαδρομή εικόνας δεν παρέχεται."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Δεν παρέχονται δεδομένα εικόνας."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Δεν παρέχεται ροή εικόνας."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
+      "text": "Η διαδρομή εικόνας δεν παρέχεται."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
+      "text": "Δεν παρέχονται δεδομένα εικόνας."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Δεν παρέχεται ροή εικόνας."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Η εικόνα δεν παρέχεται."
+    }
+  ]
+}

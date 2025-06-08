@@ -1,0 +1,87 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_EXIT",
+      "text": "Ieșire"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
+      "text": "Legături de taste"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
+      "text": "Fit sau scalat"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEUP",
+      "text": "Deplasați-vă în sus"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEDOWN",
+      "text": "Mutați în jos"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVELEFT",
+      "text": "Mutați la stânga"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVERIGHT",
+      "text": "Mută-te la dreapta"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_PREVIOUSPAGE",
+      "text": "Pagina anterioară"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_NEXTPAGE",
+      "text": "Pagina următoare"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOBEGINNING",
+      "text": "Du-te la Început"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
+      "text": "Accesați sfârșitul"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
+      "text": "Legături de taste disponibile"
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Calea imaginii nu este furnizată."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Datele de imagine nu sunt furnizate."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Fluxul de imagini nu este furnizat."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
+      "text": "Calea imaginii nu este furnizată."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
+      "text": "Datele de imagine nu sunt furnizate."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Fluxul de imagini nu este furnizat."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Imaginea nu este furnizată."
+    }
+  ]
+}

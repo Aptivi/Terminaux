@@ -1,0 +1,95 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_EXIT",
+      "text": "Beenden"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS",
+      "text": "Tastenkombinationen"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED",
+      "text": "Anpassen oder Skalieren"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEUP",
+      "text": "Nach oben"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEDOWN",
+      "text": "Nach unten"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVELEFT",
+      "text": "Nach links"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVERIGHT",
+      "text": "Nach rechts"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_PREVIOUSPAGE",
+      "text": "Vorherige Seite"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_NEXTPAGE",
+      "text": "Nächste Seite"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOBEGINNING",
+      "text": "Zum Anfang"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING",
+      "text": "Zum Ende"
+    },
+    {
+      "loc": "TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE",
+      "text": "Verfügbare Tastenkombinationen"
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Bildpfad nicht angegeben."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Bilddaten nicht angegeben."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Bildstream nicht angegeben."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
+      "text": "Bildpfad nicht angegeben."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
+      "text": "Bilddaten nicht angegeben."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Bildstream nicht angegeben."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Bild nicht angegeben."
+    }
+  ]
+}

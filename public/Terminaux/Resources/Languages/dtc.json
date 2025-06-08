@@ -1,2543 +1,2524 @@
 {
-  "lang": "spa",
-  "name": "Spanish",
+  "lang": "dtc",
+  "name": "Dutch",
   "cultures": [
-    "es",
-    "es-419",
-    "es-AR",
-    "es-BO",
-    "es-BR",
-    "es-BZ",
-    "es-CL",
-    "es-CO",
-    "es-CR",
-    "es-CU",
-    "es-DO",
-    "es-EC",
-    "es-ES",
-    "es-GQ",
-    "es-GT",
-    "es-HN",
-    "es-MX",
-    "es-NI",
-    "es-PA",
-    "es-PE",
-    "es-PH",
-    "es-PR",
-    "es-PY",
-    "es-SV",
-    "es-US",
-    "es-UY",
-    "es-VE"
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
   ],
   "locs": [
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR1",
-      "text": "¡Error general de Terminaux!"
+      "text": "Algemene Terminaux-fout!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR2",
-      "text": "¡Error interno de Terminaux!"
+      "text": "Interne fout in Terminals!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR3",
-      "text": "Error desconocido"
+      "text": "Onbekende fout"
     },
     {
       "loc": "T_EXCEPTION_NOTIMPLEMENTED",
-      "text": "Aún no implementado."
+      "text": "Nog niet geïmplementeerd."
     },
     {
       "loc": "T_COMMON_CANTCONTINUE",
-      "text": "Este programa no puede continuar."
+      "text": "Dit programma kan niet doorgaan."
     },
     {
       "loc": "T_COMMON_ANYKEY",
-      "text": "Presione cualquier tecla para continuar..."
+      "text": "Druk op een toets om door te gaan..."
     },
     {
       "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
-      "text": "Tipo inválido"
+      "text": "Ongeldig type"
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
-      "text": "Debes especificar la parte de la pantalla."
+      "text": "U moet het schermonderdeel opgeven."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
-      "text": "Debes especificar el nombre de la pantalla."
+      "text": "U moet de schermnaam opgeven."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de pieza especificado está fuera de rango."
+      "text": "De opgegeven onderdeelindex valt buiten het bereik."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
-      "text": "No se encuentra el nombre de la pieza especificada."
+      "text": "De opgegeven onderdeelnaam is niet gevonden."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
-      "text": "No se encuentra la parte especificada."
+      "text": "Het opgegeven onderdeel is niet gevonden."
     },
     {
       "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de búfer no puede ser menor que cero ni mayor que {0} búferes."
+      "text": "De bufferindex mag niet kleiner zijn dan nul of groter dan {0} buffers."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
-      "text": "La pantalla no está especificada."
+      "text": "Scherm is niet gespecificeerd."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
-      "text": "La pantalla no es cíclica."
+      "text": "Het scherm is niet cyclisch."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux usando una terminal tonta."
+      "text": "Gebruiker probeerde een Terminaux-applicatie uit te voeren met behulp van een domme terminal."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Esta aplicación utiliza funciones de consola extendidas proporcionadas por Terminaux que requieren funciones no admitidas por terminales \"tontas\"."
+      "text": "Deze applicatie maakt gebruik van uitgebreide consolefuncties van Terminaux die functies vereisen die niet worden ondersteund door 'domme' terminals."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Posible solución: Use un emulador de terminal adecuado o consulte la configuración de su terminal para configurar el tipo de terminal en un valor distinto al \"tonto\". Recomendamos usar los emuladores de terminal \"vt100\" para sacar el máximo provecho de esta aplicación."
+      "text": "Mogelijke oplossing: Gebruik een geschikte terminal-emulator of raadpleeg uw terminalinstellingen om het terminaltype in te stellen op iets anders dan \"dom\". We raden aan de \"vt100\" terminal-emulators te gebruiken om deze applicatie optimaal te benutten."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un tipo de terminal incluido en la lista negra."
+      "text": "Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminaltype dat op de zwarte lijst staat."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "Het consoletype dat u momenteel gebruikt, {0}, staat op de zwarte lijst: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "Het consoletype dat u momenteel gebruikt, {0}, staat op de grijze lijst: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un emulador de terminal incluido en la lista negra."
+      "text": "Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminal-emulator die op de zwarte lijst staat."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "De terminal-emulator die u momenteel gebruikt, {0}, staat op de zwarte lijst: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "De terminal-emulator die u momenteel gebruikt, {0}, staat op de grijze lijst: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "El tipo de terminal {0} no admite 256 colores según terminfo"
+      "text": "Terminaltype {0} ondersteunt volgens terminfo geen 256 kleuren"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en MinTTY de Git Bash sin winpty."
+      "text": "Gebruiker probeerde een Terminaux-applicatie uit te voeren op Git Bash's MinTTY zonder winpty."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Necesitarás usar WinPty para poder usar este programa. Si estás seguro de no estar ejecutando Git Bash, asegúrate de usar una terminal de Windows adecuada."
+      "text": "Je hebt WinPty nodig om dit programma te kunnen gebruiken. Als je zeker weet dat je Git Bash niet gebruikt, zorg er dan voor dat je een geschikte Windows-terminal gebruikt."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona debido a un error de E/S, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "De consolepositionering werkt niet vanwege een I/O-fout. Deze toepassing kan zich daardoor vreemd gedragen."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona correctamente, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "De positionering van de console werkt niet goed, waardoor deze toepassing mogelijk vreemd gedrag vertoont."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
-      "text": "Tu consola es demasiado pequeña para funcionar correctamente: {0}x{1} | beneficio: {2}x{3} | mínimo: {4}x{5}"
+      "text": "Je console is te klein om goed te kunnen draaien: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
-      "text": "Para una mejor experiencia, cambia el tamaño de la ventana de la consola sin salir de esta pantalla. Presiona cualquier tecla para continuar..."
+      "text": "Voor een betere ervaring kunt u het formaat van uw consolevenster aanpassen terwijl u nog steeds op dit scherm bent. Druk op een toets om door te gaan..."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "No se proporciona montaje."
+      "text": "Montage niet voorzien."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} No se puede continuar."
+      "text": "{0} Kan niet doorgaan."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "El tipo de consola solo admite escritura básica."
+      "text": "Het consoletype ondersteunt alleen basisschrijfbewerkingen."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "El tipo de consola es de naturaleza desconocida."
+      "text": "Het type console is van onbekende aard."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Esta aplicación utiliza secuencias de escape VT, pero Terminal.app no ​​tiene soporte para 255 y colores verdaderos."
+      "text": "Deze applicatie maakt gebruik van VT escape sequences, maar Terminal.app ondersteunt geen 255 en true colors meer."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "El tipo de consola no admite 256 colores."
+      "text": "Het consoletype ondersteunt geen 256 kleuren."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "No se puede filtrar sin ninguna consulta."
+      "text": "Kan niet filteren zonder query."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "No se puede filtrar con una consulta no válida."
+      "text": "Kan niet filteren met een ongeldige zoekopdracht."
     },
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "No hay ninguna expresión en el filtro de la consola."
+      "text": "Er is geen expressie in het consolefilter."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "No se pueden restaurar nuevos atributos de termios para el modo sin procesar: {0}"
+      "text": "Kan nieuwe termios-kenmerken voor de raw-modus niet herstellen: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "No se pueden obtener los indicadores del descriptor de archivo: {0}"
+      "text": "Kan bestandsdescriptorvlaggen niet ophalen: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "No se puede establecer el indicador de descriptor de archivo en lectura sin bloqueo: {0}"
+      "text": "Kan bestandsdescriptorvlag niet instellen op niet-blokkerend lezen: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "No se puede establecer el indicador del descriptor de archivo para bloquear la lectura: {0}"
+      "text": "Kan bestandsdescriptorvlag niet instellen om lezen te blokkeren: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
-      "text": "No se puede obtener información del sintetizador de la representación proporcionada."
+      "text": "Kan geen synth-info verkrijgen uit de verstrekte weergave."
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
-      "text": "La representación del sintetizador no es válida en [{0}.{1}]"
+      "text": "Synth-representatie is ongeldig op [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
-      "text": "La frecuencia no es válida en [{0}.{1}]"
+      "text": "Frequentie is ongeldig op [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
-      "text": "La duración no es válida en [{0}.{1}]"
+      "text": "Duur is ongeldig op [{0}.{1}]"
     },
     {
       "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
-      "text": "El objetivo no puede ser nulo"
+      "text": "Het doel is mogelijk niet nul"
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
-      "text": "El valor máximo [{0}] no debe ser menor que el valor de progreso [{1}]"
+      "text": "De maximale waarde [{0}] mag niet kleiner zijn dan de voortgangswaarde [{1}]"
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
-      "text": "El valor de progreso [{0}] debe estar entre 0 y el valor máximo de {1}."
+      "text": "De voortgangswaarde [{0}] moet tussen 0 en de maximumwaarde van {1} liggen."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un parámetro"
+      "text": "Deze aanduiding mag niet aan het einde van de tekenreeks worden geplaatst zonder één parameter op te geven"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
-      "text": "Este designador sólo puede tomar un número como parámetro."
+      "text": "Deze aanduiding mag alleen een getal als parameter hebben."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
-      "text": "Este designador sólo puede tomar un número del 1 al 9."
+      "text": "Deze aanduiding mag alleen een cijfer van 1 tot en met 9 bevatten."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
-      "text": "Este designador sólo puede tomar una letra como parámetro."
+      "text": "Deze aanduiding mag alleen een letter als parameter hebben."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
-      "text": "Este designador necesita una constante entera"
+      "text": "Deze aanduiding heeft een geheel getal als constante nodig"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
-      "text": "Este designador contiene una constante entera no válida"
+      "text": "Deze aanduiding bevat een ongeldige gehele constante"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar una constante de carácter"
+      "text": "Deze aanduiding mag niet aan het einde van de tekenreeks worden geplaatst zonder een tekenconstante op te geven"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
-      "text": "No puedes agregar más de un carácter"
+      "text": "Je kunt niet meer dan één teken toevoegen"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
-      "text": "Este designador necesita una colección de caracteres."
+      "text": "Deze aanduiding heeft een tekenverzameling nodig"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
-      "text": "El ancho no es válido"
+      "text": "Breedte is niet geldig"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un tipo"
+      "text": "Deze aanduiding mag niet aan het einde van de tekenreeks worden geplaatst zonder een type op te geven"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
-      "text": "No se puede procesar la secuencia nula."
+      "text": "Kan nulreeks niet verwerken."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
-      "text": "No se pueden procesar parámetros nulos."
+      "text": "Kan geen null-parameters verwerken."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
-      "text": "Esta bandera debe representar un signo menos"
+      "text": "Deze vlag moet een minteken voorstellen"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
-      "text": "Todavía hay más datos después del índice {0} de {1} para formatear"
+      "text": "Er zijn nog verdere gegevens na index {0} van {1} voor opmaak"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
-      "text": "La constante entera para el carácter no es válida."
+      "text": "De gehele constante voor het teken is niet geldig."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
-      "text": "La constante entera no es válida."
+      "text": "Gehele constante is niet geldig."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
-      "text": "No se puede insertar una variable inexistente."
+      "text": "Kan een niet-bestaande variabele niet pushen."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
-      "text": "Esta es una operación binaria, pero el número de argumentos en cola es {0}"
+      "text": "Dit is een binaire bewerking, maar het aantal in de wachtrij geplaatste argumenten is {0}"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
-      "text": "La constante entera para el primer operando no es válida."
+      "text": "Gehele constante voor de eerste operand is niet geldig."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
-      "text": "La constante entera para el segundo operando no es válida."
+      "text": "Gehele constante voor tweede operand is ongeldig."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
-      "text": "Esta es una operación unaria, pero el número de argumentos en cola es {0}"
+      "text": "Dit is een unaire bewerking, maar het aantal in de wachtrij geplaatste argumenten is {0}"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "La constante entera no es válida."
+      "text": "Gehele constante is niet geldig."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
-      "text": "La representación condicional {0} no es válida."
+      "text": "Voorwaardelijke weergave {0} is ongeldig."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
-      "text": "No se pudo leer el número de bytes solicitado."
+      "text": "Het gevraagde aantal bytes kon niet worden gelezen."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
-      "text": "¡Tabla de cadenas no válida!"
+      "text": "Ongeldige tekenreekstabel!"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
-      "text": "Magia de encabezado no válida"
+      "text": "Ongeldige header magie"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
-      "text": "No se puede procesar un parámetro de tipo distinto de cadena. La enumeración es {0} y el tipo es {1}."
+      "text": "Kan parameter niet verwerken op een waarde van een ander type dan een tekenreeks. Enum is {0} en type is {1}."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
-      "text": "El designador de retraso finalizó prematuramente."
+      "text": "De vertragingsaanduiding is voortijdig beëindigd."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
-      "text": "Designador de retraso no válido."
+      "text": "Ongeldige vertragingsaanduiding."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
-      "text": "El valor de retardo no es un número."
+      "text": "De vertragingswaarde is geen getal."
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
-      "text": "Tipo de capacidad desconocida '{0}'"
+      "text": "Onbekend capaciteitstype '{0}'"
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
-      "text": "No se puede cargar {0}"
+      "text": "Kan {0} niet laden"
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
-      "text": "El color está fuera de rango."
+      "text": "De kleur valt buiten het bereik."
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "No se pueden obtener datos de color."
+      "text": "Kan geen kleurgegevens ophalen."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
-      "text": "¿Estás seguro de que este gradiente no es nulo?"
+      "text": "Weet je zeker dat dit verloop niet nul is?"
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
-      "text": "Especifique al menos un color."
+      "text": "Geef minimaal één kleur op."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
-      "text": "No se puede convertir la fuente nula."
+      "text": "Kan geen null-bron converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
-      "text": "No se puede convertir al tipo nulo."
+      "text": "Kan niet converteren naar nultype."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
-      "text": "Debes especificar un modelo de color de origen específico, no el base."
+      "text": "U moet een specifiek bronkleurmodel opgeven, niet het basiskleurmodel."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
-      "text": "No es un modelo de color."
+      "text": "Geen kleurmodel."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
-      "text": "Debes especificar un modelo de color de destino específico, no el base."
+      "text": "U moet een specifiek doelkleurmodel opgeven, niet het basiskleurmodel."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
-      "text": "No es un modelo de color objetivo."
+      "text": "Geen doelkleurmodel."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
-      "text": "No se puede convertir el mismo modelo de color."
+      "text": "Kan hetzelfde kleurmodel niet converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
-      "text": "No se puede convertir a RGB."
+      "text": "Kan niet naar RGB converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
-      "text": "No se puede convertir desde el modelo de color base."
+      "text": "Kan niet converteren van basiskleurmodel."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
-      "text": "No se puede convertir a CMYK."
+      "text": "Kan niet naar CMYK converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
-      "text": "No se puede convertir a CMY."
+      "text": "Kan niet naar CMY converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
-      "text": "No se puede convertir a HSL."
+      "text": "Kan niet naar HSL converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
-      "text": "No se puede convertir a HSV."
+      "text": "Kan niet naar HSV converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
-      "text": "No se puede convertir a RYB."
+      "text": "Kan niet naar RYB converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
-      "text": "No se puede convertir a YIQ."
+      "text": "Kan niet naar YIQ converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
-      "text": "No se puede convertir a YUV."
+      "text": "Kan niet naar YUV converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
-      "text": "No se puede convertir a XYZ."
+      "text": "Kan niet naar XYZ converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
-      "text": "No se puede convertir a YXY."
+      "text": "Kan niet naar YXY converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
-      "text": "No se puede convertir a HunterLab."
+      "text": "Kan niet converteren naar HunterLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
-      "text": "No se puede convertir a CieLab."
+      "text": "Kan niet converteren naar CieLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
-      "text": "No se puede convertir a CieLuv."
+      "text": "Kan niet converteren naar CieLuv."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
-      "text": "No se puede convertir a CieLch."
+      "text": "Kan niet converteren naar CieLch."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "No se puede convertir a HWB."
+      "text": "Kan niet naar HWB converteren."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
-      "text": "No se puede convertir desde RGB."
+      "text": "Kan niet converteren van RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMYK!"
+      "text": "Kan een nul-RGB-instantie niet naar CMYK converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMY!"
+      "text": "Kan een nul-RGB-instantie niet naar CMY converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSL!"
+      "text": "Kan een nul-RGB-instantie niet naar HSL converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSV!"
+      "text": "Kan een nul-RGB-instantie niet naar HSV converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a RYB!"
+      "text": "Kan een nul-RGB-instantie niet naar RYB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YIQ!"
+      "text": "Kan een nul-RGB-instantie niet naar YIQ converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YUV!"
+      "text": "Kan een nul-RGB-instantie niet naar YUV converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a XYZ!"
+      "text": "Kan een nul-RGB-instantie niet naar XYZ converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YXY!"
+      "text": "Kan een nul-RGB-instantie niet naar YXY converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HunterLab!"
+      "text": "Kan een null RGB-instantie niet naar HunterLab converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLab!"
+      "text": "Kan een null RGB-instantie niet naar CieLab converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLuv!"
+      "text": "Kan een null RGB-instantie niet naar CieLuv converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLch!"
+      "text": "Kan een null RGB-instantie niet naar CieLch converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HWB!"
+      "text": "Kan een null RGB-instantie niet naar HWB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
-      "text": "¡No se puede convertir una instancia CMYK nula a RGB!"
+      "text": "Kan een lege CMYK-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
-      "text": "¡No se puede convertir una instancia CMY nula a RGB!"
+      "text": "Kan een lege CMY-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
-      "text": "¡No se puede convertir una instancia HSL nula a RGB!"
+      "text": "Kan een null HSL-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
-      "text": "¡No se puede convertir una instancia HSV nula a RGB!"
+      "text": "Kan een nul-HSV-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
-      "text": "¡No se puede convertir una instancia RYB nula a RGB!"
+      "text": "Kan een null RYB-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
-      "text": "¡No se puede convertir una instancia YIQ nula a RGB!"
+      "text": "Kan een nul YIQ-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
-      "text": "¡No se puede convertir una instancia YUV nula a RGB!"
+      "text": "Kan een nul-YUV-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
-      "text": "¡No se puede convertir una instancia XYZ nula a RGB!"
+      "text": "Kan een nul XYZ-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
-      "text": "¡No se puede convertir una instancia YXY nula a RGB!"
+      "text": "Kan een null YXY-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
-      "text": "¡No se puede convertir una instancia nula de HunterLab a RGB!"
+      "text": "Kan een null HunterLab-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
-      "text": "¡No se puede convertir una instancia nula de CieLab a RGB!"
+      "text": "Kan een nul CieLab-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
-      "text": "¡No se puede convertir una instancia nula de CieLuv a RGB!"
+      "text": "Kan een null CieLuv-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
-      "text": "¡No se puede convertir una instancia nula de CieLch a RGB!"
+      "text": "Kan een null CieLch-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "¡No se puede convertir una instancia HWB nula a RGB!"
+      "text": "Kan een null HWB-instantie niet naar RGB converteren!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
-      "text": "El observador debe tener 2 o 10 años."
+      "text": "De waarnemer moet 2 of 10 zijn"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
-      "text": "El iluminante no es válido"
+      "text": "Verlichtingsmiddel is ongeldig"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
-      "text": "No se pueden obtener referencias de la tabla"
+      "text": "Kan geen referenties uit de tabel halen"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Si usa 256 colores, deberá introducir un valor positivo entre 0 y 255 o un nombre de color válido. Si usa color verdadero, deberá escribir un especificador de color válido, como RRR;GGG;BBB, o un código de color hasta 16777215."
+      "text": "Ongeldige kleurspecificatie \"{0}\". Als u 256 kleuren gebruikt, moet u een positieve waarde tussen 0 en 255 of een geldige kleurnaam invoeren. Als u ware kleuren gebruikt, moet u een geldige kleurspecificatie invoeren, zoals RRR;GGG;BBB, of een kleurcode tot 16777215."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
-      "text": "El nivel de color rojo está fuera de rango (0 -> 255)."
+      "text": "Het rode kleurniveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
-      "text": "El nivel de color verde está fuera de rango (0 -> 255)."
+      "text": "Het groene kleurniveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
-      "text": "El nivel de color azul está fuera de rango (0 -> 255)."
+      "text": "Het blauwe kleurniveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
-      "text": "El especificador hexadecimal de color \"{0}\" no es válido. Este especificador debe comenzar con la etiqueta hash. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige hex-kleurspecificatie \"{0}\". Deze specificatie moet beginnen met de hashtag. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
-      "text": "Longitud hexadecimal de color \"{0}\" no válida. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige hex-lengte van de kleur \"{0}\". Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
-      "text": "No se puede resolver el color hexadecimal \"{0}\"."
+      "text": "Kan kleur hex \"{0}\" niet oplossen."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CieLab-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "De L-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 128.0)."
+      "text": "De A-waarde ligt buiten het bereik (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 128.0)."
+      "text": "De B-waarde ligt buiten het bereik (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CieLab-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CieLch-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "De L-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
-      "text": "El valor C está fuera de rango (-128.0 -> 128.0)."
+      "text": "De C-waarde ligt buiten het bereik (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
-      "text": "El valor H está fuera de rango (-128.0 -> 128.0)."
+      "text": "De H-waarde ligt buiten het bereik (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CieLch-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CieLuv-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "De L-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
-      "text": "El valor U está fuera de rango (-134.0 -> 220.0)."
+      "text": "De U-waarde ligt buiten het bereik (-134,0 -> 220,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
-      "text": "El valor V está fuera de rango (-140.0 -> 122.0)."
+      "text": "De V-waarde ligt buiten het bereik (-140,0 -> 122,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CieLuv-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
-      "text": "El especificador de color CMY \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CMY-kleurspecificatie \"{0}\". Zorg ervoor dat deze het juiste formaat heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "Het cyaankleurniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "Het kleurniveau magenta ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "Het gele kleurniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
-      "text": "El especificador de color CMY \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CMY-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CMYK-kleurspecificatie \"{0}\". Zorg ervoor dat deze het juiste formaat heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "Het cyaankleurniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "Het kleurniveau magenta ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "Het gele kleurniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "El nivel de color negro está fuera de rango (0 -> 100)."
+      "text": "Het zwarte kleurniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. El especificador no puede tener más de cuatro elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige CMYK-kleurspecificatie \"{0}\". De specificatie mag niet meer dan vier elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
-      "text": "Especificador de color HSL \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige HSL-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Het tintniveau ligt buiten het bereik (0' -> 360' graden)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "Het verzadigingsniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
-      "text": "El nivel de luminosidad está fuera de rango (0 -> 100)."
+      "text": "Het helderheidsniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
-      "text": "Especificador de color HSL \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige HSL-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
-      "text": "El especificador de color HSV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige HSV-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Het tintniveau ligt buiten het bereik (0' -> 360' graden)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "Het verzadigingsniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
-      "text": "El nivel de valor está fuera de rango (0 -> 100)."
+      "text": "De waarde ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
-      "text": "Especificador de color HSV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige HSV-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "El especificador de color HWB \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige HWB-kleurspecificatie \"{0}\". Zorg ervoor dat deze het juiste formaat heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Het tintniveau ligt buiten het bereik (0' -> 360' graden)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "El nivel de blancura está fuera de rango (0 -> 100)."
+      "text": "Het witheidsniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "El nivel de oscuridad está fuera de rango (0 -> 100)."
+      "text": "Het zwartheidsniveau ligt buiten het bereik (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "El especificador de color HWB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige HWB-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige HunterLab-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "De L-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 127.0)."
+      "text": "De A-waarde ligt buiten het bereik (-128,0 -> 127,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 127.0)."
+      "text": "De B-waarde ligt buiten het bereik (-128,0 -> 127,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige HunterLab-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
-      "text": "El especificador de color YUV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige YUV-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "Het luma-niveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
-      "text": "El nivel de croma (U) está fuera de rango (0 -> 255)."
+      "text": "Het chroma (U)-niveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
-      "text": "El nivel de croma (V) está fuera de rango (0 -> 255)."
+      "text": "Het chroma (V)-niveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
-      "text": "Especificador de color YUV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige YUV-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige YIQ-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "Het luma-niveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
-      "text": "El nivel en fase está fuera de rango (0 -> 255)."
+      "text": "Het in-fase niveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
-      "text": "El nivel de cuadratura está fuera de rango (0 -> 255)."
+      "text": "Het kwadratuurniveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige YIQ-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Asegúrese de que tenga el formato correcto, es decir, un número del 0 al 255 si se utilizan 255 colores, o una secuencia VT si se utiliza color verdadero, como se indica a continuación."
+      "text": "Ongeldige kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste notatie heeft, wat betekent een getal van 0-255 als u 255 kleuren gebruikt of een VT-reeks als u ware kleuren gebruikt, zoals hieronder."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
-      "text": "Especificador de color \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
-      "text": "Este color ya es un color original."
+      "text": "Deze kleur is al een originele kleur."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
-      "text": "Especificador de color RYB \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige RYB-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
-      "text": "El nivel rojo está fuera de rango (0 -> 255)."
+      "text": "Het rode niveau valt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
-      "text": "El nivel amarillo está fuera de rango (0 -> 255)."
+      "text": "Het gele niveau valt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
-      "text": "El nivel azul está fuera de rango (0 -> 255)."
+      "text": "Het blauwe niveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
-      "text": "El especificador de color RYB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige RYB-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige XYZ-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "De X-waarde ligt buiten het bereik (0,0 -> 95,047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "De Y-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "De Z-waarde ligt buiten het bereik (0,0 -> 108,883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige XYZ-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige XYZ-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "De X-waarde ligt buiten het bereik (0,0 -> 95,047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "De Y-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "De Z-waarde ligt buiten het bereik (0,0 -> 108,883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige XYZ-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
-      "text": "Especificador de color YXY \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige YXY-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
-      "text": "El valor Y1 está fuera de rango (0.0 -> 100.0)."
+      "text": "De Y1-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 1.0)."
+      "text": "De X-waarde ligt buiten het bereik (0,0 -> 1,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
-      "text": "El valor Y2 está fuera de rango (0.0 -> 1.0)."
+      "text": "De Y2-waarde ligt buiten het bereik (0,0 -> 1,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
-      "text": "Especificador de color YXY \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Ongeldige YXY-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "No se especificó ningún nombre de componente."
+      "text": "Er is geen componentnaam opgegeven."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "No se especificó ningún color para el componente {0}."
+      "text": "Er is geen kleur opgegeven voor onderdeel {0}."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "El componente {0} ya existe."
+      "text": "Onderdeel {0} bestaat al."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "El componente {0} no existe."
+      "text": "Component {0} bestaat niet."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "El componente {0} está predefinido y, por lo tanto, no se puede eliminar."
+      "text": "Component {0} is vooraf gedefinieerd en kan dus niet worden verwijderd."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "La plantilla no tiene componentes."
+      "text": "Sjabloon heeft geen componenten."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "La plantilla no tiene componentes predefinidos que deban definirse ({0})."
+      "text": "Sjabloon heeft geen vooraf gedefinieerde componenten die gedefinieerd moeten worden ({0})."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "No se proporcionó el nombre de la plantilla."
+      "text": "Er is geen naam voor de sjabloon opgegeven."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "No se puede encontrar la plantilla {0}"
+      "text": "Kan sjabloon {0} niet vinden"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "No se puede encontrar el componente {0} en la plantilla {1}"
+      "text": "Kan component {0} niet vinden in sjabloon {1}"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Plantilla no válida."
+      "text": "Ongeldige sjabloon."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "La plantilla no tiene nombre."
+      "text": "Sjabloon heeft geen naam."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "La plantilla ya existe."
+      "text": "Sjabloon bestaat al."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "No se puede eliminar la plantilla incorporada {0}"
+      "text": "Kan ingebouwde sjabloon {0} niet verwijderen"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
-      "text": "El tipo de color no es válido"
+      "text": "Kleurtype is ongeldig"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
-      "text": "El especificador de color para visibilidad no es válido"
+      "text": "Kleurspecificatie voor zichtbaarheid is ongeldig"
     },
     {
       "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
-      "text": "Tipo de monocromatismo no válido"
+      "text": "Ongeldig monochromatietype"
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
-      "text": "No se puede determinar cómo convertir un {0} de {1} a un color."
+      "text": "Ik kan niet bepalen hoe ik een {0} van {1} naar een kleur kan converteren."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
-      "text": "No se puede determinar cómo convertir un {0} de un tipo desconocido a un color."
+      "text": "Ik kan niet bepalen hoe ik een {0} van een onbekend type naar een kleur kan converteren."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
-      "text": "No puedo obtener el color"
+      "text": "Ik krijg geen kleur."
     },
     {
       "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
-      "text": "No se pudo establecer el fondo"
+      "text": "Achtergrond instellen mislukt"
     },
     {
       "loc": "T_COLOR_EXCEPTION_COLORISNULL",
-      "text": "No se proporciona instancia de color."
+      "text": "Er is geen kleurinstantie beschikbaar."
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
-      "text": "Salida"
+      "text": "Uitgang"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
-      "text": "Combinaciones de teclas"
+      "text": "Toetscombinaties"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
-      "text": "Encuentra el siguiente"
+      "text": "Vind volgende"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "Subir"
+      "text": "Omhoog gaan"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
-      "text": "Sube un elemento"
+      "text": "Ga één element omhoog"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "Bajar"
+      "text": "Omlaag verplaatsen"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
-      "text": "Bajar un elemento"
+      "text": "Ga één element naar beneden"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "Página anterior"
+      "text": "Vorige pagina"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
-      "text": "Ir a la página anterior"
+      "text": "Ga naar de vorige pagina"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "Página siguiente"
+      "text": "Volgende pagina"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
-      "text": "Ir a la página siguiente"
+      "text": "Ga naar de volgende pagina"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "Ir al inicio"
+      "text": "Ga naar Begin"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
-      "text": "Ir al primer elemento"
+      "text": "Ga naar het eerste element"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "Ir al final"
+      "text": "Ga naar Einde"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
-      "text": "Ir al último elemento"
+      "text": "Ga naar het laatste element"
     },
     {
       "loc": "T_INPUT_COMMON_SEARCHPROMPT",
-      "text": "Escribe un término de búsqueda (admite expresiones regulares)"
+      "text": "Schrijf een zoekterm (ondersteunt reguliere expressies)"
     },
     {
       "loc": "T_INPUT_COMMON_INVALIDQUERY",
-      "text": "Su consulta no es una expresión regular válida."
+      "text": "Uw query is geen geldige reguliere expressie."
     },
     {
       "loc": "T_INPUT_COMMON_ENTRYPROMPT",
-      "text": "Seleccione una de las entradas:"
+      "text": "Selecteer een van de items:"
     },
     {
       "loc": "T_INPUT_COMMON_NOITEMS",
-      "text": "No se encontró ningún artículo."
+      "text": "Geen item gevonden."
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
-      "text": "Buscar un elemento"
+      "text": "Zoek naar een element"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
-      "text": "Ir una línea hacia arriba (informativo)"
+      "text": "Ga één regel omhoog (informatief)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
-      "text": "Bajar una línea (informativo)"
+      "text": "Ga één regel naar beneden (informatief)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
-      "text": "Cambiar"
+      "text": "Schakelaar"
     },
     {
       "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
-      "text": "Lista de {0} colores predefinidos"
+      "text": "Lijst met {0} vooraf gedefinieerde kleuren"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
-      "text": "Gris"
+      "text": "Grijs"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
-      "text": "Transparencia"
+      "text": "Transparantie"
     },
     {
       "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
-      "text": "Sombra y tinte"
+      "text": "Schaduw en tint"
     },
     {
       "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
-      "text": "Información de color"
+      "text": "Kleurinfo"
     },
     {
       "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
-      "text": "Transformar"
+      "text": "Transformeren"
     },
     {
       "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
-      "text": "Tipo de color no válido en el selector de colores"
+      "text": "Ongeldig kleurtype in de kleurenkiezer"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
-      "text": "Escribe el nombre de la fuente. Se convertirá a minúsculas."
+      "text": "Schrijf de naam van het lettertype. Deze wordt omgezet naar kleine letters."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_NOFONT",
-      "text": "La fuente no existe."
+      "text": "Het lettertype bestaat niet."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
-      "text": "Seleccione una fuente figlet de la lista a continuación"
+      "text": "Selecteer een figletlettertype uit de onderstaande lijst"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
-      "text": "Selección de fuentes"
+      "text": "Lettertypeselectie"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
-      "text": "El selector no está especificado"
+      "text": "Selector is niet gespecificeerd"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
-      "text": "Leer más..."
+      "text": "Lees verder..."
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Lista de combinaciones de teclas"
+      "text": "Lijst met sneltoetsen"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
-      "text": "Cambiar de lugar"
+      "text": "Beweeg rond"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
-      "text": "Sale de la TUI interactiva"
+      "text": "Verlaat de interactieve TUI"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
-      "text": "Información del artículo"
+      "text": "Artikelinfo"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de selección requiere que haya al menos una opción habilitada."
+      "text": "De selectiestijl vereist dat er minimaal één keuze is ingeschakeld."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Escribe el nombre del spinner. Se convertirá a minúsculas."
+      "text": "Schrijf de naam van de spinner. Deze wordt omgezet naar kleine letters."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "La ruleta no existe"
+      "text": "De spinner bestaat niet."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Seleccione un spinner de la lista a continuación"
+      "text": "Selecteer een spinner uit de onderstaande lijst"
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Selección de Spinner"
+      "text": "Spinnerselectie"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
-      "text": "Sin información."
+      "text": "Geen informatie."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
-      "text": "Sin estatus"
+      "text": "Geen status"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
-      "text": "Se intentó representar elementos TUI interactivos para el panel secundario en una TUI interactiva que solo permite la interacción desde un panel."
+      "text": "Probeer interactieve TUI-items weer te geven voor het secundaire deelvenster op een interactieve TUI die alleen interactie vanuit één deelvenster toestaat."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
-      "text": "Intenté representar información en el panel secundario en una TUI interactiva que permite la interacción desde dos paneles, lo que arruinó la representación de la selección allí."
+      "text": "Er werd geprobeerd informatie weer te geven op het secundaire deelvenster in een interactieve TUI die interactie tussen twee deelvensters toestaat, waardoor de selectieweergave daar in de war raakte."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
-      "text": "Se intentó representar información sobre datos nulos"
+      "text": "Probeerde informatie over nulgegevens weer te geven"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
-      "text": "No se pudo obtener información."
+      "text": "Het is niet gelukt om de informatie te verkrijgen."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
-      "text": "Realizar una acción sobre el elemento seleccionado"
+      "text": "Een actie uitvoeren op het geselecteerde item"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
-      "text": "Proporcione una clase TUI interactiva base y vuelva a intentarlo."
+      "text": "Geef een interactieve TUI-basisklasse en probeer het opnieuw."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
-      "text": "La TUI interactiva {0} no contiene ninguna fuente de datos."
+      "text": "De interactieve TUI {0} bevat geen gegevensbron."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
-      "text": "La TUI interactiva {0} tiene asignaciones de teclado o mouse conflictivas."
+      "text": "De interactieve TUI {0} heeft conflicterende toetsenbord- of muiskoppelingen."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
-      "text": "Las siguientes combinaciones de teclas o del mouse entran en conflicto:"
+      "text": "De volgende toetscombinaties of muiscombinaties veroorzaken conflicten:"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
-      "text": "La interfaz textual se ha bloqueado. Suele ser un problema de la aplicación."
+      "text": "De tekstuele gebruikersinterface is gecrasht. Dit is meestal een probleem aan de applicatiekant."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
-      "text": "La interfaz de usuario textual no está especificada"
+      "text": "Tekstuele gebruikersinterface is niet gespecificeerd"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
-      "text": "Esta IU textual [{0}] no está lista porque el estado es {1}"
+      "text": "Deze tekstuele gebruikersinterface [{0}] is niet gereed omdat de status {1} is"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
-      "text": "Hay {0} combinaciones de teclas conflictivas en la interfaz de usuario textual [{1}]"
+      "text": "Er zijn {0} conflicterende toetscombinaties in de [{1}] tekstuele gebruikersinterface"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
-      "text": "No se especifica el contexto del evento del puntero"
+      "text": "De context van de aanwijzergebeurtenis is niet gespecificeerd"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
-      "text": "La posición inicial no puede ser menor que cero"
+      "text": "De startpositie mag niet kleiner zijn dan nul"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
-      "text": "La posición final no puede ser menor que cero"
+      "text": "Eindpositie mag niet kleiner zijn dan nul"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
-      "text": "La posición inicial X no puede ser mayor que la posición final X"
+      "text": "De start X-positie mag niet groter zijn dan de eind X-positie"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
-      "text": "La posición inicial Y no puede ser mayor que la posición final Y"
+      "text": "De startpositie Y mag niet groter zijn dan de eindpositie Y"
     },
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
-      "text": "El nombre de entrada no está especificado"
+      "text": "Invoernaam is niet opgegeven"
     },
     {
       "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
-      "text": "Avance"
+      "text": "Voorschot"
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "Esta página de presentación requiere que se completen los siguientes datos antes de poder avanzar a la página siguiente."
+      "text": "Voor deze presentatiepagina moeten de volgende gegevens worden ingevuld voordat u naar de volgende pagina kunt gaan."
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
-      "text": "Entrada requerida"
+      "text": "Invoer vereist"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
-      "text": "Una o más de las siguientes entradas no se han completado correctamente:"
+      "text": "Een of meer van de volgende velden zijn niet correct ingevuld:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
-      "text": "Entrada incorrecta"
+      "text": "Onjuiste invoer"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
-      "text": "No se han proporcionado los datos requeridos. Deberá completar los valores de los siguientes campos:"
+      "text": "De vereiste invoergegevens zijn niet verstrekt. U moet de waarden van de volgende invoergegevens invullen:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
-      "text": "Entrada no proporcionada"
+      "text": "Invoer niet verstrekt"
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
-      "text": "No se puede mostrar una opción sin respuestas ni respuestas alternativas."
+      "text": "Je kunt geen keuze tonen als er geen antwoorden en alternatieve antwoorden zijn."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de elección requiere que haya al menos una opción habilitada."
+      "text": "Voor de keuzestijl is het vereist dat er minimaal één keuze is ingeschakeld."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
-      "text": "No puedes proporcionar respuestas con más de un carácter en el modo de un solo carácter."
+      "text": "In de modus voor één teken kunt u geen antwoorden met meer dan één teken opgeven."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
-      "text": "Respuesta incorrecta. Inténtalo de nuevo."
+      "text": "Verkeerd antwoord. Probeer het opnieuw."
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "Mover a la izquierda"
+      "text": "Naar links bewegen"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "Mover a la derecha"
+      "text": "Ga naar rechts"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
-      "text": "Insertar"
+      "text": "Invoegen"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
-      "text": "Reemplazar"
+      "text": "Vervangen"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
-      "text": "Reemplazar todo"
+      "text": "Alles vervangen"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
-      "text": "Listo"
+      "text": "Klaar"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
-      "text": "No encontrado. Revisa la sintaxis o amplía la búsqueda."
+      "text": "Niet gevonden. Controleer uw syntaxis of verbreed uw zoekopdracht."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
-      "text": "Información del número"
+      "text": "Nummerinfo"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
-      "text": "Eliminar"
+      "text": "Verwijderen"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
-      "text": "Reemplazar todo lo que"
+      "text": "Vervang alles wat"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
-      "text": "Escribe el número de byte con el valor hexadecimal."
+      "text": "Schrijf het bytenummer met de hexadecimale waarde."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
-      "text": "El número de byte especificado no es válido."
+      "text": "Het opgegeven bytenummer is ongeldig."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
-      "text": "Byte no válido {0}."
+      "text": "Ongeldige byte {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
-      "text": "Escriba el número de byte con el valor hexadecimal con el que reemplazar {0}."
+      "text": "Schrijf het bytenummer met de hexadecimale waarde waarmee {0} vervangen moet worden."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
-      "text": "Escriba el número de byte con el valor hexadecimal a reemplazar."
+      "text": "Schrijf het bytenummer met de hexadecimale waarde die vervangen moet worden."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
-      "text": "Escribe un byte o un grupo de bytes separados por espacios en blanco."
+      "text": "Schrijf een byte of een groep bytes gescheiden door spaties."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
-      "text": "Se requieren bytes para buscar, pero no ha proporcionado ninguno."
+      "text": "Er zijn bytes nodig om te vinden, maar u heeft er geen opgegeven."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
-      "text": "Posición"
+      "text": "Positie"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
-      "text": "Hexadecimal"
+      "text": "Hexadecimaal"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
-      "text": "Octal"
+      "text": "Octaal"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
-      "text": "Número"
+      "text": "Nummer"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
-      "text": "Binario"
+      "text": "Binair"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
-      "text": "Información del número"
+      "text": "Nummerinformatie"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "Contenido vacío"
+      "text": "Lege inhoud"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
-      "text": "El número de byte de inicio especificado no puede ser mayor que el tamaño del archivo."
+      "text": "Het opgegeven startbytenummer mag niet groter zijn dan de bestandsgrootte."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
-      "text": "El número de byte final especificado no puede ser mayor que el tamaño del archivo."
+      "text": "Het opgegeven eindbytenummer mag niet groter zijn dan de bestandsgrootte."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
-      "text": "El número de byte especificado no es válido."
+      "text": "Het opgegeven bytenummer is ongeldig."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
-      "text": "El número de byte especificado no puede ser mayor que {0} ni menor que 1."
+      "text": "Het opgegeven bytenummer mag niet groter zijn dan {0} of kleiner dan 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
-      "text": "El número de byte especificado no puede ser mayor que {0}."
+      "text": "Het opgegeven bytenummer mag niet groter zijn dan {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
-      "text": "No se puede realizar esta operación en una matriz nula."
+      "text": "Deze bewerking kan niet worden uitgevoerd op een null-array."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
-      "text": "El número de byte debe comenzar con 1."
+      "text": "Bytenummer moet beginnen met 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
-      "text": "El número de byte de inicio especificado no puede ser mayor que {0}."
+      "text": "Het opgegeven startbytenummer mag niet groter zijn dan {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
-      "text": "El número de byte final especificado no puede ser mayor que {0}."
+      "text": "Het opgegeven eindbytenummer mag niet groter zijn dan {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
-      "text": "Ingresar..."
+      "text": "Binnenkomen..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
-      "text": "Borrar aquí"
+      "text": "Hier verwijderen"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
-      "text": "Eliminar línea"
+      "text": "Regel verwijderen"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
-      "text": "Dejar de entrar"
+      "text": "Stop met binnenkomen"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
-      "text": "Nueva línea"
+      "text": "Nieuwe lijn"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "Retroceso"
+      "text": "Backspace"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "Borrar"
+      "text": "Verwijderen"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
-      "text": "Escribe la cadena a encontrar"
+      "text": "Schrijf de string om te vinden"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
-      "text": "Escribe la cadena de reemplazo"
+      "text": "Schrijf de vervangende string"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
-      "text": "Escribe una cadena para buscar. Admite expresiones regulares."
+      "text": "Schrijf een string om te vinden. Ondersteunt reguliere expressies."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
-      "text": "Se requiere una cadena para buscar, pero no ha proporcionado ninguna."
+      "text": "Er is een string vereist om te vinden, maar u heeft er geen opgegeven."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
-      "text": "Esta cadena a buscar no es una expresión regular válida."
+      "text": "Deze te vinden tekenreeks is geen geldige reguliere expressie."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
-      "text": "Pauta"
+      "text": "Lijnen"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
-      "text": "Columna"
+      "text": "Kolom"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
-      "text": "Fila"
+      "text": "Rij"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
-      "text": "El número de línea especificado no puede ser mayor que {0}."
+      "text": "Het opgegeven regelnummer mag niet groter zijn dan {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
-      "text": "No se puede realizar esta operación en una lista de líneas nulas."
+      "text": "Deze bewerking kan niet worden uitgevoerd op een lijst met lege regels."
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
-      "text": "Muestra más información en un cuadro de información."
+      "text": "Toont meer info in een infobox"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
-      "text": "Va una línea hacia arriba"
+      "text": "Gaat één lijn omhoog"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
-      "text": "Va una línea hacia abajo"
+      "text": "Gaat één regel naar beneden"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
-      "text": "Va a la página anterior del texto."
+      "text": "Gaat naar de vorige tekstpagina"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
-      "text": "Va a la siguiente página de texto."
+      "text": "Gaat naar de volgende tekstpagina"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
-      "text": "Envía el valor"
+      "text": "Verzendt de waarde"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
-      "text": "Envía los valores"
+      "text": "Verzendt de waarden"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
-      "text": "Cierra sin enviar el valor"
+      "text": "Sluit zonder de waarde in te dienen"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
-      "text": "Cierra sin enviar los valores"
+      "text": "Sluit zonder de waarden in te dienen"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "Realiza una acción o selecciona una opción"
+      "text": "Voert een actie uit of selecteert een keuze"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "Disminuye el valor o mueve tres líneas de texto hacia arriba"
+      "text": "Verlaagt de waarde of verplaatst drie tekstregels omhoog"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "Incrementa el valor o mueve tres líneas de texto hacia abajo"
+      "text": "Verhoogt de waarde of verplaatst drie regels tekst naar beneden"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "Opción anterior o tres líneas de texto anteriores"
+      "text": "Vorige keuze of vorige drie tekstregels"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "Siguiente opción o siguientes tres líneas de texto"
+      "text": "Volgende keuze of volgende drie tekstregels"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
-      "text": "Disminuye el valor actual"
+      "text": "Verlaagt de huidige waarde"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
-      "text": "Incrementa el valor actual"
+      "text": "Verhoogt de huidige waarde"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
-      "text": "Establece el valor al valor mínimo"
+      "text": "Stelt de waarde in op de minimumwaarde"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
-      "text": "Establece el valor al valor máximo"
+      "text": "Stelt de waarde in op de maximale waarde"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "Establece el foco actual en el siguiente elemento de valor"
+      "text": "Stelt de huidige focus in op het volgende waarde-element"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "Establece el foco actual en el elemento de valor anterior"
+      "text": "Stelt de huidige focus in op het vorige waarde-element"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
-      "text": "Va al botón anterior"
+      "text": "Gaat naar de vorige knop"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
-      "text": "Va al siguiente botón"
+      "text": "Gaat naar de volgende knop"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "Botón anterior o tres líneas de texto anteriores"
+      "text": "Vorige knop of vorige drie tekstregels"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "Botón siguiente o siguientes tres líneas de texto"
+      "text": "Volgende knop of volgende drie regels tekst"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
-      "text": "Va a la primera línea de texto."
+      "text": "Gaat naar de eerste tekstregel"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
-      "text": "Va a la última línea de texto."
+      "text": "Gaat naar de laatste tekstregel"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
-      "text": "Va a la siguiente página de texto o cierra el cuadro de información modal."
+      "text": "Gaat naar de volgende tekstpagina of sluit het modale informatievenster"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
-      "text": "Cierra el cuadro de información modal."
+      "text": "Sluit het modale informatievenster"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "Realiza una acción"
+      "text": "Voert een actie uit"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "Las tres líneas de texto anteriores"
+      "text": "Vorige drie regels tekst"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "Próximas tres líneas de texto"
+      "text": "Volgende drie regels tekst"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "Va a la página anterior de entradas."
+      "text": "Gaat naar de vorige pagina met invoer"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "Va a la siguiente página de entradas."
+      "text": "Gaat naar de volgende pagina met invoer"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "Busca una entrada"
+      "text": "Zoekt naar een invoer"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "Cambia el valor de entrada seleccionado"
+      "text": "Wijzigt de geselecteerde invoerwaarde"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
-      "text": "Sube una opción (siguiente opción)"
+      "text": "Gaat één keuze omhoog (volgende keuze)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
-      "text": "Baja una opción (opción anterior)"
+      "text": "Gaat één keuze omlaag (vorige keuze)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
-      "text": "Va a la primera opción"
+      "text": "Gaat naar de eerste keuze"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
-      "text": "Va a la última opción"
+      "text": "Gaat naar de laatste keuze"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
-      "text": "Va a la página anterior de opciones."
+      "text": "Gaat naar de vorige pagina met keuzes"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
-      "text": "Va a la siguiente página de opciones."
+      "text": "Gaat naar de volgende pagina met keuzes"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
-      "text": "Busca una elección"
+      "text": "Zoekt naar een keuze"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
-      "text": "Selecciona o deselecciona todas las opciones"
+      "text": "Selecteert of deselecteert alle keuzes"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
-      "text": "No se puede obtener la categoría y el grupo en la opción número {0}."
+      "text": "Kan categorie en groep niet ophalen in keuzenummer {0}."
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
-      "text": "Opciones generales"
+      "text": "Algemene keuzes"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
-      "text": "Opciones disponibles"
+      "text": "Beschikbare keuzes"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
-      "text": "Opciones alternativas"
+      "text": "Alternatieve keuzes"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
-      "text": "Confirmar"
+      "text": "Bevestigen"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
-      "text": "Barra lateral"
+      "text": "Zijbalk"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "Más"
+      "text": "Meer"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
-      "text": "Confirma la(s) selección(es)"
+      "text": "Bevestigt selectie(s)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "Cambia el valor seleccionado (botones de opción)"
+      "text": "Wijzigt de geselecteerde waarde (keuzerondjes)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
-      "text": "Cancelar selección(es)"
+      "text": "Selectie(s) annuleren"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
-      "text": "Sube un elemento"
+      "text": "Gaat één element omhoog"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
-      "text": "Va un elemento hacia abajo"
+      "text": "Gaat één element naar beneden"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
-      "text": "Va al primer elemento"
+      "text": "Gaat naar het eerste element"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
-      "text": "Va al último elemento"
+      "text": "Gaat naar het laatste element"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
-      "text": "Va a la página anterior"
+      "text": "Gaat naar de vorige pagina"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
-      "text": "Va a la página siguiente"
+      "text": "Gaat naar de volgende pagina"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
-      "text": "Busca un elemento"
+      "text": "Zoekt naar een element"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
-      "text": "Subir a una barra lateral"
+      "text": "Ga omhoog in een zijbalk"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
-      "text": "Bajar a la barra lateral"
+      "text": "Ga naar beneden in een zijbalk"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
-      "text": "Subir en un cuadro de preguntas"
+      "text": "Ga omhoog in een vragenbox"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
-      "text": "Bajar en un cuadro de preguntas"
+      "text": "Ga naar beneden in een vragenbox"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
-      "text": "Mostrar el recuento de páginas y opciones"
+      "text": "Toon pagina en keuze aantal"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
-      "text": "Mostrar información del artículo"
+      "text": "Iteminfo weergeven"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
-      "text": "Selecciona o deselecciona una opción"
+      "text": "Selecteert of deselecteert een keuze"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
-      "text": "Selecciona todos los elementos del mismo grupo y categoría"
+      "text": "Selecteert alle elementen in dezelfde groep en categorie"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos de la misma categoría"
+      "text": "Selecteert alle elementen in alle groepen in dezelfde categorie"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos en todas las categorías"
+      "text": "Selecteert alle elementen in alle groepen in alle categorieën"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "Va un elemento o línea de escaparate"
+      "text": "Gaat één element of showcase line-up"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "Va un elemento o línea de escaparate hacia abajo"
+      "text": "Gaat één element of showcase-regel naar beneden"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
-      "text": "Actualizar posición"
+      "text": "Positie bijwerken"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
-      "text": "Anterior"
+      "text": "Vorig"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
-      "text": "Próximo"
+      "text": "Volgende"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
-      "text": "Entregar"
+      "text": "Indienen"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
-      "text": "Cancelar"
+      "text": "Annuleren"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
-      "text": "Ayuda"
+      "text": "Hulp"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
-      "text": "Hecho"
+      "text": "Klaar"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
-      "text": "Seleccionar"
+      "text": "Selecteer"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
-      "text": "Selección manual"
+      "text": "Handmatige selectie"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
-      "text": "Información de color"
+      "text": "Kleurinformatie"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
-      "text": "Próxima simulación de daltonismo"
+      "text": "Volgende simulatie van kleurenblindheid"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
-      "text": "Simulación previa de daltonismo"
+      "text": "Eerdere simulatie van kleurenblindheid"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
-      "text": "Aumentar la frecuencia de transformación"
+      "text": "Verhoog de transformatiefrequentie"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
-      "text": "Disminuir la frecuencia de transformación"
+      "text": "Verlaag de transformatiefrequentie"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
-      "text": "Seleccionar color web"
+      "text": "Selecteer webkleur"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
-      "text": "Aumentar la opacidad"
+      "text": "Verhoog de ondoorzichtigheid"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
-      "text": "Aumentar la transparencia"
+      "text": "Verhoog de transparantie"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
-      "text": "Siguiente modo de color"
+      "text": "Volgende kleurmodus"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
-      "text": "Modo de color anterior"
+      "text": "Vorige kleurmodus"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
-      "text": "Aumentar el valor"
+      "text": "Verhoog de waarde"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
-      "text": "Disminuir valor"
+      "text": "Waarde verlagen"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
-      "text": "Reducir el tono de color"
+      "text": "Kleurtoon verminderen"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
-      "text": "Aumentar el tono del color"
+      "text": "Kleurtoon verhogen"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
-      "text": "Reducir la luminosidad del color"
+      "text": "Verminder de kleurhelderheid"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
-      "text": "Aumentar la luminosidad del color"
+      "text": "Verhoog de kleurhelderheid"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
-      "text": "Reducir la saturación"
+      "text": "Verzadiging verminderen"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
-      "text": "Aumentar la saturación"
+      "text": "Verhoog de verzadiging"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
-      "text": "Color anterior"
+      "text": "Vorige kleur"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
-      "text": "Siguiente color"
+      "text": "Volgende kleur"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
-      "text": "Mostrar y ocultar la lista de colores"
+      "text": "Kleurenlijst weergeven en verbergen"
     },
     {
       "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
-      "text": "Exhibición de personajes"
+      "text": "Karakterpresentatie"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
-      "text": "Este elemento fijo no puede ser una clase base. Especifique un elemento fijo incondicional."
+      "text": "Deze fixture is mogelijk geen basis Fixture-klasse. Specificeer een onvoorwaardelijke fixture."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
-      "text": "Es posible que este elemento no sea una clase base. Especifique un elemento condicional."
+      "text": "Deze fixture is mogelijk geen basis Fixture-klasse. Specificeer een voorwaardelijke fixture."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
-      "text": "El valor devuelto {0} no coincide con el valor esperado {1}"
+      "text": "De geretourneerde waarde {0} komt niet overeen met de verwachte waarde {1}"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
-      "text": "Este encuentro no es condicional."
+      "text": "Deze wedstrijd is niet voorwaardelijk."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
-      "text": "Este tipo de accesorio no es válido."
+      "text": "Dit type fixture is ongeldig."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
-      "text": "No hay ningún elemento fijo aquí. Inserte uno."
+      "text": "Geen fittingen hier. Voeg er een toe."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
-      "text": "Seleccione un dispositivo de prueba."
+      "text": "Kies een testopstelling."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
-      "text": "Sale del selector de accesorios de prueba."
+      "text": "Verlaat de testfixture-selector"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
-      "text": "¡Esta prueba ha sido un éxito!"
+      "text": "Deze test is geslaagd!"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
-      "text": "El valor esperado coincide con el valor real."
+      "text": "Verwachte waarde komt overeen met werkelijke waarde."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
-      "text": "Esta prueba ha fallado."
+      "text": "Deze test is mislukt."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
-      "text": "Mensaje"
+      "text": "Bericht"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
-      "text": "El valor esperado no coincide con el valor real."
+      "text": "Verwachte waarde komt niet overeen met werkelijke waarde."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
-      "text": "El método en este delegado no puede devolver nulo"
+      "text": "Methode in deze gedelegeerde retourneert mogelijk geen void"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
-      "text": "El método en este delegado debe devolver vacío"
+      "text": "Methode in deze gedelegeerde moet void retourneren"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
-      "text": "La expresión regular del componente no es válida"
+      "text": "Component reguliere expressie is ongeldig"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
-      "text": "Expresión regular del componente no proporcionada"
+      "text": "Component reguliere expressie niet verstrekt"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
-      "text": "No se proporciona el color de primer plano del componente"
+      "text": "Component voorgrondkleur niet opgegeven"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
-      "text": "No se proporciona el color de fondo del componente"
+      "text": "Achtergrondkleur van component niet opgegeven"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador."
+      "text": "Er is geen naam voor de markeerstift opgegeven."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador base."
+      "text": "Er is geen naam opgegeven voor de basismarkeerstift."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
-      "text": "No puedo encontrar el resaltador {0}"
+      "text": "Kan markeerstift {0} niet vinden"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
-      "text": "No puedo encontrar el resaltador"
+      "text": "Kan markeerstift niet vinden"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
-      "text": "No se puede encontrar el componente {0} en el resaltador {1}"
+      "text": "Kan component {0} niet vinden in markeerstift {1}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
-      "text": "Resaltador no válido."
+      "text": "Ongeldige markeerstift."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
-      "text": "El resaltador no tiene nombre."
+      "text": "Markeerstift heeft geen naam."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
-      "text": "El resaltador ya existe"
+      "text": "Markeerstift bestaat al."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
-      "text": "El resaltador no tiene componentes."
+      "text": "Markeerstift heeft geen componenten."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
-      "text": "No se puede eliminar el resaltador incorporado {0}"
+      "text": "Kan ingebouwde markeerstift niet verwijderen {0}"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
-      "text": "El nombre del historial no está especificado"
+      "text": "Geschiedenisnaam is niet opgegeven"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
-      "text": "Las entradas del historial no están especificadas"
+      "text": "Geschiedenisvermeldingen zijn niet gespecificeerd"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
-      "text": "No se proporciona la ruta del archivo de historial."
+      "text": "Het pad naar het geschiedenisbestand is niet opgegeven."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
-      "text": "No se proporciona representación JSON del historial."
+      "text": "Er is geen JSON-weergave van de geschiedenis beschikbaar."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
-      "text": "Se analiza JSON, pero no se proporciona la representación JSON del historial."
+      "text": "JSON geparseerd, maar er wordt geen JSON-geschiedenisrepresentatie verstrekt."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
-      "text": "No se proporciona información histórica."
+      "text": "Er wordt geen historische informatie verstrekt."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
-      "text": "No se proporcionó el nombre del historial. ¿Está seguro de haber especificado el nombre en su representación JSON?"
+      "text": "De geschiedenisnaam is niet opgegeven. Weet u zeker dat u de naam in uw JSON-weergave hebt opgegeven?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
-      "text": "No se proporcionan entradas del historial. ¿Está seguro de haber especificado las entradas en su representación JSON?"
+      "text": "Er worden geen historische items verstrekt. Weet u zeker dat u de items in uw JSON-weergave hebt opgegeven?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
-      "text": "Historial {0} no encontrado."
+      "text": "Geschiedenis {0} niet gevonden."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
-      "text": "El historial general no se puede eliminar, pero se puede borrar."
+      "text": "De algemene geschiedenis kan niet worden verwijderd, maar wel gewist."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
-      "text": "La historia no es parte de las historias registradas."
+      "text": "Geschiedenis maakt geen deel uit van de geregistreerde geschiedenissen."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
-      "text": "No se pudo eliminar el historial."
+      "text": "Het verwijderen van de geschiedenis is mislukt."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
-      "text": "No se proporciona entrada de historial."
+      "text": "Er is geen geschiedenisinvoer beschikbaar."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
-      "text": "No se proporciona la lista de entradas del historial."
+      "text": "Er is geen lijst met historische vermeldingen beschikbaar."
     },
     {
       "loc": "T_READER_EXCEPTION_PRINTWRITE",
-      "text": "Hay un conflicto entre {0} y {1}."
+      "text": "Er is een conflict tussen {0} en {1}."
     },
     {
       "loc": "T_READER_FAILED",
-      "text": "El lector de entrada ha fallado"
+      "text": "Invoerlezer is defect"
     },
     {
       "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
-      "text": "Esta corriente no puede buscar."
+      "text": "Deze stroom kan niet zoeken."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "No se ha podido generar una secuencia VT funcional del tipo {0} con la acción {1}. Asegúrese de haber especificado los valores correctamente."
+      "text": "Het is ons niet gelukt een werkende VT-reeks van type {0} met actie {1} te genereren. Controleer of u de waarden correct hebt opgegeven."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
-      "text": "No se puede construir la secuencia VT para el tipo inexistente {0}"
+      "text": "Kan geen VT-sequentie bouwen voor niet-bestaand type {0}"
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
-      "text": "No se puede generar la secuencia VT sin argumentos. Se esperaban {0} argumentos, pero se obtuvieron {1}."
+      "text": "Kan VT-reeks niet bouwen met ontbrekende argumenten. Verwachte {0} argumenten, ontvangen {1} argumenten."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Un alias no puede ser el mismo nombre que un comando."
+      "text": "Alias ​​kan niet dezelfde naam zijn als een opdracht."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
-      "text": "Comando no encontrado para crear el alias {0}."
+      "text": "Opdracht niet gevonden om alias aan {0} te geven."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​ya encontrado"
+      "text": "Alias ​​al gevonden"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "No se encontró el alias {0} para eliminar."
+      "text": "Alias ​​{0} kan niet worden verwijderd."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "No se encuentra el alias {0} para realizar la consulta."
+      "text": "Alias ​​{0} kan niet worden opgevraagd."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
-      "text": "Uso"
+      "text": "Gebruik"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
-      "text": "Dominio"
+      "text": "Commando"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
-      "text": "Descripción"
+      "text": "Beschrijving"
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
-      "text": "No hay ayuda para el argumento \"{0}\"."
+      "text": "Geen hulp voor argument \"{0}\"."
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
-      "text": "Descripción de ayuda sin argumentos"
+      "text": "Geen argument help beschrijving"
     },
     {
       "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
-      "text": "Este argumento aún no se ha implementado."
+      "text": "Dit argument is nog niet geïmplementeerd."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
-      "text": "No hubo suficientes argumentos."
+      "text": "Er waren niet genoeg argumenten."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "Onbekend argument"
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
-      "text": "Error irrecuperable en el argumento"
+      "text": "Onherstelbare fout in argument"
     },
     {
       "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
-      "text": "No se puede obtener información del argumento para el comando o argumento"
+      "text": "Kan geen argumentinfo voor commando of argument ophalen"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
-      "text": "No se especifican los parámetros del hilo."
+      "text": "Er zijn geen threadparameters opgegeven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
-      "text": "No se proporcionan los argumentos obligatorios para todos los usos siguientes:"
+      "text": "Vereiste argumenten zijn niet voor alle onderstaande toepassingen beschikbaar:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "Onbekend argument"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
-      "text": "No se proporcionan los argumentos obligatorios."
+      "text": "Vereiste argumenten zijn niet opgegeven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
-      "text": "No se proporcionan los interruptores necesarios."
+      "text": "Vereiste schakelaars zijn niet aanwezig."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
-      "text": "Uno de los conmutadores requiere un valor que no se proporciona."
+      "text": "Voor een van de schakelaars is een waarde nodig die niet is opgegeven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
-      "text": "Los interruptores que se enumeran a continuación son desconocidos."
+      "text": "De hieronder vermelde schakelaars zijn onbekend."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
-      "text": "Los interruptores que se enumeran a continuación entran en conflicto entre sí."
+      "text": "De hieronder vermelde schakelaars conflicteren met elkaar."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
-      "text": "Los siguientes interruptores no aceptan valores."
+      "text": "De onderstaande schakelaars accepteren geen waarden."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
-      "text": "Uno o más de los argumentos esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "Een of meer argumenten verwachten een numerieke waarde, maar u hebt een ongeldig getal opgegeven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
-      "text": "Uno o más de los argumentos esperan una redacción exacta, pero usted proporcionó una palabra no válida."
+      "text": "Een of meer argumenten verwachten een exacte formulering, maar u hebt een ongeldig woord opgegeven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
-      "text": "Uno o más de los conmutadores esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "Een of meer schakelaars verwachten een numerieke waarde, maar u hebt een ongeldig getal opgegeven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
-      "text": "Consulte la entrada de ayuda de este comando para obtener más información."
+      "text": "Raadpleeg het help-item voor deze opdracht voor meer informatie"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
-      "text": "El comando está siendo interrumpido..."
+      "text": "Het commando wordt onderbroken..."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
-      "text": "Error al intentar ejecutar el comando {2}."
+      "text": "Fout bij het uitvoeren van opdracht {2}."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
-      "text": "Error"
+      "text": "Fout"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
-      "text": "Comando abortado por el siguiente motivo"
+      "text": "Opdracht afgebroken om de volgende reden"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
-      "text": "Patrón de comando proporcionado no válido."
+      "text": "Er is een ongeldig opdrachtpatroon opgegeven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
-      "text": "Comando no encontrado."
+      "text": "Opdracht niet gevonden."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
-      "text": "El tipo de shell {0} no existe."
+      "text": "Shell type {0} bestaat niet."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
-      "text": "Debes proporcionar la base de comando."
+      "text": "U moet de commandobasis opgeven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
-      "text": "Debes proporcionar el comando."
+      "text": "U moet het commando geven."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
-      "text": "El comando especificado ya está agregado."
+      "text": "De opgegeven opdracht is al toegevoegd."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden cargar."
+      "text": "Sommige aangepaste opdrachten kunnen niet worden geladen."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
-      "text": "No se encuentra el comando personalizado especificado."
+      "text": "De opgegeven aangepaste opdracht is niet gevonden."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden descargar."
+      "text": "Sommige aangepaste opdrachten kunnen niet worden ontladen."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
-      "text": "Este shell usa comandos de barra diagonal para ejecutar los comandos. Para comenzar, añada la barra diagonal \"/\" al principio del comando. Por ejemplo:"
+      "text": "Deze shell gebruikt de slash-opdrachten om opdrachten uit te voeren. Voeg het slash-symbool '/' toe aan het begin van de opdracht om te beginnen. Bijvoorbeeld:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
-      "text": "Este comando no está definido."
+      "text": "Deze opdracht is niet gedefinieerd."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
-      "text": "Comandos disponibles:"
+      "text": "Beschikbare opdrachten:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
-      "text": "Órdenes generales:"
+      "text": "Algemene commando's:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "No hay comandos de shell."
+      "text": "Geen shell-opdrachten."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
-      "text": "Comandos adicionales:"
+      "text": "Extra commando's:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Sin comandos adicionales"
+      "text": "Geen extra opdrachten."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
-      "text": "Comandos de alias:"
+      "text": "Alias-opdrachten:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Sin comandos de alias."
+      "text": "Geen aliasopdrachten."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
-      "text": "Comandos unificados:"
+      "text": "Geünificeerde opdrachten:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "No hay comandos unificados"
+      "text": "Geen uniforme commando’s."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
-      "text": "Comando definido por"
+      "text": "Commando gedefinieerd door"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
-      "text": "Este comando tiene los siguientes argumentos que cambian su funcionamiento:"
+      "text": "Deze opdracht heeft de onderstaande argumenten die de werking veranderen:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
-      "text": "Descripción de argumento no especificado"
+      "text": "Ongespecificeerde argumentbeschrijving"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
-      "text": "Este comando tiene los siguientes interruptores que cambian su funcionamiento:"
+      "text": "Deze opdracht heeft de onderstaande schakelaars waarmee u de werking kunt wijzigen:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
-      "text": "Descripción del interruptor no especificado"
+      "text": "Ongespecificeerde schakelaarbeschrijving"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
-      "text": "No hay ayuda para el comando \"{0}\"."
+      "text": "Geen hulp voor opdracht \"{0}\"."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
-      "text": "No se encuentra el ajuste preestablecido especificado {0}."
+      "text": "De opgegeven voorinstelling {0} is niet gevonden."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
-      "text": "Seleccionar ajuste preestablecido para {0}:"
+      "text": "Selecteer voorinstelling voor {0}:"
     },
     {
       "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
-      "text": "No se encontraron comandos."
+      "text": "Geen opdrachten gevonden."
     },
     {
       "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
-      "text": "Sale del shell si se ejecuta en un subshell"
+      "text": "Verlaat de shell als deze op een subshell wordt uitgevoerd"
     },
     {
       "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
-      "text": "Encuentra los comandos disponibles en el tipo de shell actual"
+      "text": "Zoekt de beschikbare opdrachten in het huidige shelltype"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
-      "text": "Página de ayuda"
+      "text": "Helppagina"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
-      "text": "Muestra comandos generales (predeterminado)"
+      "text": "Toont algemene opdrachten (standaard)"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
-      "text": "Muestra comandos con alias"
+      "text": "Geeft aliasopdrachten weer"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
-      "text": "Muestra comandos unificados"
+      "text": "Geeft uniforme opdrachten weer"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
-      "text": "Muestra comandos adicionales"
+      "text": "Geeft extra opdrachten weer"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
-      "text": "Muestra todos los comandos"
+      "text": "Toont alle opdrachten"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
-      "text": "Utiliza ayuda simplificada"
+      "text": "Gebruikt vereenvoudigde hulp"
     },
     {
       "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
-      "text": "Abre la biblioteca de ajustes preestablecidos de shell"
+      "text": "Opent de shell-presetbibliotheek"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
-      "text": "Mensaje del shell: No se encuentra el comando solicitado {0}. Consulte la ayuda para ver los comandos disponibles."
+      "text": "Shell-bericht: De gevraagde opdracht {0} is niet gevonden. Zie 'help' voor beschikbare opdrachten."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
-      "text": "Error al intentar ejecutar el comando."
+      "text": "Fout bij het uitvoeren van de opdracht."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
-      "text": "No se puede obtener el ejecutor de shell para {0}"
+      "text": "Kan shell-uitvoerder voor {0} niet verkrijgen"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
-      "text": "Error al intentar inicializar el shell"
+      "text": "Het initialiseren van de shell is mislukt"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
-      "text": "No se puede determinar si la entrada de selección es única o múltiple"
+      "text": "Kan niet bepalen of de selectie-invoer enkelvoudig of meervoudig is"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
-      "text": "No se especifica el marcado."
+      "text": "Er is geen markering opgegeven."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
-      "text": "Especificador de etiqueta final no válido."
+      "text": "Ongeldige eindtag-specificatie."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
-      "text": "No hay secuencias en cola para finalizar la etiqueta."
+      "text": "Er zijn geen wachtrijsequenties waarmee de tag kan worden afgesloten."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
-      "text": "Faltan {0} etiquetas finales."
+      "text": "Er ontbreken {0} eindtags."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
-      "text": "El formato inicial no debe imprimir ningún texto; solo debe contener secuencias VT de formato."
+      "text": "In de initiële opmaak mag geen tekst worden afgedrukt, maar mogen alleen opmaak-VT-reeksen voorkomen."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "No hay ningún archivo Asciicast"
+      "text": "Er is geen Asciicast-bestand"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "No se puede deserializar la representación base de Asciicast"
+      "text": "Kan de basis Asciicast-weergave niet deserialiseren"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v1"
+      "text": "Kan Asciicast v1-weergave niet deserialiseren"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v2"
+      "text": "Kan Asciicast v2-weergave niet deserialiseren"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "No se puede obtener información del evento"
+      "text": "Kan geen evenementinformatie verkrijgen"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
-      "text": "Combinaciones de teclas disponibles"
+      "text": "Beschikbare sneltoetsen"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
-      "text": "No hay enlaces definidos en este contexto."
+      "text": "Er zijn geen bindingen gedefinieerd in deze context."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
-      "text": "Atajos de teclado"
+      "text": "Toetsenbordbindingen"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
-      "text": "Vinculaciones del ratón"
+      "text": "Muisbindingen"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
-      "text": "Nombre de personaje de Nerd Fonts no válido {0} en el tipo {1}"
+      "text": "Ongeldige Nerd Fonts-karakternaam {0} in type {1}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
-      "text": "Representación de carácter de Nerd Fonts no válida {0} de {1} en el tipo {2}"
+      "text": "Ongeldige Nerd Fonts-tekenweergave {0} van {1} in type {2}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
-      "text": "Tipo de fuente Nerd no válido {0}"
+      "text": "Ongeldig Nerd-lettertype {0}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
-      "text": "Las fuentes Nerd tipo {0} no tienen caracteres"
+      "text": "Nerd-lettertypen type {0} heeft geen tekens"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
-      "text": "Renderable ya está registrado"
+      "text": "Renderable is al geregistreerd"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
-      "text": "Renderable no está registrado"
+      "text": "Renderable is niet geregistreerd"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
-      "text": "Todos los hilanderos deben tener el mismo ancho."
+      "text": "Alle spinners moeten dezelfde breedte hebben."
     }
   ]
 }

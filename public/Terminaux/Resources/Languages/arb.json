@@ -1,2543 +1,2544 @@
 {
-  "lang": "spa",
-  "name": "Spanish",
+  "lang": "arb",
+  "name": "Arabic",
   "cultures": [
-    "es",
-    "es-419",
-    "es-AR",
-    "es-BO",
-    "es-BR",
-    "es-BZ",
-    "es-CL",
-    "es-CO",
-    "es-CR",
-    "es-CU",
-    "es-DO",
-    "es-EC",
-    "es-ES",
-    "es-GQ",
-    "es-GT",
-    "es-HN",
-    "es-MX",
-    "es-NI",
-    "es-PA",
-    "es-PE",
-    "es-PH",
-    "es-PR",
-    "es-PY",
-    "es-SV",
-    "es-US",
-    "es-UY",
-    "es-VE"
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
   ],
   "locs": [
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR1",
-      "text": "¡Error general de Terminaux!"
+      "text": "khata eam fi Terminaux!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR2",
-      "text": "¡Error interno de Terminaux!"
+      "text": "khata dakhili fi Terminaux!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR3",
-      "text": "Error desconocido"
+      "text": "khata ghayr maeruf"
     },
     {
       "loc": "T_EXCEPTION_NOTIMPLEMENTED",
-      "text": "Aún no implementado."
+      "text": "lam yatima altanfidh biedu."
     },
     {
       "loc": "T_COMMON_CANTCONTINUE",
-      "text": "Este programa no puede continuar."
+      "text": "la yumkin lihadha albarnamaj almutabieatu."
     },
     {
       "loc": "T_COMMON_ANYKEY",
-      "text": "Presione cualquier tecla para continuar..."
+      "text": "adghat ealaa 'ayi miftah lilmutabaeati..."
     },
     {
       "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
-      "text": "Tipo inválido"
+      "text": "nawe ghayr salih"
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
-      "text": "Debes especificar la parte de la pantalla."
+      "text": "yajib tahdid juz' alshaashati."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
-      "text": "Debes especificar el nombre de la pantalla."
+      "text": "yajib tahdid asm alshaashati."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de pieza especificado está fuera de rango."
+      "text": "faharas aljuz' almuhadad kharij alnitaqi."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
-      "text": "No se encuentra el nombre de la pieza especificada."
+      "text": "asm aljuz' almuhadad ghayr mawjudi."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
-      "text": "No se encuentra la parte especificada."
+      "text": "aljuz' almuhadad ghayr mawjudi."
     },
     {
       "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de búfer no puede ser menor que cero ni mayor que {0} búferes."
+      "text": "yajib 'alaa yakun fahras almakhzan almuaqat 'aqala min sifr 'aw 'akbar min {0} min almakhazin almuaqatati."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
-      "text": "La pantalla no está especificada."
+      "text": "alshaashat ghayr muhadadatin."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
-      "text": "La pantalla no es cíclica."
+      "text": "alshaashat ghayr dawriatin."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux usando una terminal tonta."
+      "text": "hawil almustakhdim tashghil tatbiq Terminaux biastikhdam tarafiat ghayr mutawafiqatin."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Esta aplicación utiliza funciones de consola extendidas proporcionadas por Terminaux que requieren funciones no admitidas por terminales \"tontas\"."
+      "text": "yustakhdam hadha altatbiq mizat wahdat altahakum almuasaeat alati tuafiruha Terminaux walati tatatalab mizat ghayr madeumat min qibal almahataat ghayr altawafuqiati."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Posible solución: Use un emulador de terminal adecuado o consulte la configuración de su terminal para configurar el tipo de terminal en un valor distinto al \"tonto\". Recomendamos usar los emuladores de terminal \"vt100\" para sacar el máximo provecho de esta aplicación."
+      "text": "alhalu almuhtamali: aistakhdim muhaki tarafiatan mnasban 'aw rajie 'iiedadat almahatat litaeyin nawe almahatat 'iilaa nawe mukhtalif ean \"ghayr altawafuqiati\". nusi biaistikhdam muhakayat altarafia \"vt100\" litahqiq 'aqsaa aistifadatan min hadha altatbiqi."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un tipo de terminal incluido en la lista negra."
+      "text": "hawal almustakhdam tashghil tatbiq Terminaux ealaa nawe tarafiat mahzura."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "nawe wahdat altahakum alati tastakhdimuha halyan, {0}, mahzuru: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "nawe wahdat altahakum alati tastakhdimuha halyan, {0}, mahzuru: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un emulador de terminal incluido en la lista negra."
+      "text": "hawal almustakhdim tashghil tatbiq Terminaux ealaa mahaki tarafiat mahzuri."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "muhaki altarafiat aladhi tastakhdimuh halyan, {0}, mahzuru: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "muhaki altarafiat aladhi tastakhdimuh halyan, {0}, mahzuru: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "El tipo de terminal {0} no admite 256 colores según terminfo"
+      "text": "nawe altarafia {0} la yadeam 256 lwnan wfqan li terminfo"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en MinTTY de Git Bash sin winpty."
+      "text": "hawil almustakhdim tashghil tatbiq Terminaux ealaa MinTTY alkhasi bi Git Bash bidun winpty."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Necesitarás usar WinPty para poder usar este programa. Si estás seguro de no estar ejecutando Git Bash, asegúrate de usar una terminal de Windows adecuada."
+      "text": "satahtaj 'iilaa astikhdam winpty litatamakan min astikhdam hadha albarnamaji. 'iidha kunt mtakdan min 'anak la tastakhdam Git Bash, fata'akad min astikhdam tarafiat Windows munasibatin."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona debido a un error de E/S, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "la yaemal tahdid mawdie wahdat altahakum bisabab khata fi al'iidkhali/al'iikhraji, lidha qad yatasaraf hadha altatbiq bishakl ghayr sahihin."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona correctamente, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "la yaemal tahdid mawdie wahdat altahakum bishakl sahihin, lidha qad yatasaraf hadha altatbiq bishakl ghayr sahihin."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
-      "text": "Tu consola es demasiado pequeña para funcionar correctamente: {0}x{1} | beneficio: {2}x{3} | mínimo: {4}x{5}"
+      "text": "wahdat altahakum ladayk saghirat jdan bihayth la taemal bishakl sahihin: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
-      "text": "Para una mejor experiencia, cambia el tamaño de la ventana de la consola sin salir de esta pantalla. Presiona cualquier tecla para continuar..."
+      "text": "litajribat 'afdala, ghyr hajm nafidhat wahdat altahakum 'athna' wujudik ealaa hadhih alshaashati. adghat ealaa 'ayi miftah lilmutabaeati..."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "No se proporciona montaje."
+      "text": "altajmie ghayr mutawafiri."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} No se puede continuar."
+      "text": "{0} la yumkin almutabaeatu."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "El tipo de consola solo admite escritura básica."
+      "text": "nawe wahdat altahakum yadeam alkitabat al'asasiat faqat."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "El tipo de consola es de naturaleza desconocida."
+      "text": "tabieat nawe wahdat altahakum ghayr maerufatin."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Esta aplicación utiliza secuencias de escape VT, pero Terminal.app no ​​tiene soporte para 255 y colores verdaderos."
+      "text": "yustakhdam hadha altatbiq tasalsilat hurub VT, walakin Terminal.app la yadeam 'alwan 255 wal'alwan alhaqiqiatu."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "El tipo de consola no admite 256 colores."
+      "text": "nawe wahdat altahakum la yadeam 'alwan 256."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "No se puede filtrar sin ninguna consulta."
+      "text": "la yumkin altasfiat bidun 'ayi astielami."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "No se puede filtrar con una consulta no válida."
+      "text": "la yumkin altasfiat biastikhdam astielam ghayr salihi."
     },
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "No hay ninguna expresión en el filtro de la consola."
+      "text": "la yujad taebir fi murashah wahdat altahakumi."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "No se pueden restaurar nuevos atributos de termios para el modo sin procesar: {0}"
+      "text": "la yumkin astieadat simat termios aljadidat liwade raw: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "No se pueden obtener los indicadores del descriptor de archivo: {0}"
+      "text": "la yumkin alhusul ealaa ealamat wasif almilafa: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "No se puede establecer el indicador de descriptor de archivo en lectura sin bloqueo: {0}"
+      "text": "la yumkin dabt ealamat wasif almilafa ealaa qira'at ghayr hazri: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "No se puede establecer el indicador del descriptor de archivo para bloquear la lectura: {0}"
+      "text": "la yumkin dabt ealamat wasif almilafa ealaa qira'at hazri: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
-      "text": "No se puede obtener información del sintetizador de la representación proporcionada."
+      "text": "la yumkin alhusul ealaa maelumat almurkib min altamthil almuqdam."
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
-      "text": "La representación del sintetizador no es válida en [{0}.{1}]"
+      "text": "tamthil almurkib ghayr salih eind [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
-      "text": "La frecuencia no es válida en [{0}.{1}]"
+      "text": "altaradud ghayr salih eind [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
-      "text": "La duración no es válida en [{0}.{1}]"
+      "text": "almudat ghayr salihat eind [{0}.{1}]"
     },
     {
       "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
-      "text": "El objetivo no puede ser nulo"
+      "text": "la yajib 'an yakun alhadaf farghan."
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
-      "text": "El valor máximo [{0}] no debe ser menor que el valor de progreso [{1}]"
+      "text": "yajib 'alaa takun alqimat alquswaa [{0}] 'asghar min qimat altaqadum [{1}]."
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
-      "text": "El valor de progreso [{0}] debe estar entre 0 y el valor máximo de {1}."
+      "text": "yajib 'an takun qimat altaqadum [{0}] bayn 0 waqima {1}."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un parámetro"
+      "text": "la yumkin wade hadha almueyin fi nihayat alsilsilat dun tahdid mueaml wahidi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
-      "text": "Este designador sólo puede tomar un número como parámetro."
+      "text": "la yumkin 'an yakhudh hadha almueyin rqman faqat kamaeamila."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
-      "text": "Este designador sólo puede tomar un número del 1 al 9."
+      "text": "la yumkin 'an yakhudh hadha almueyin rqman min 1 'iilaa 9."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
-      "text": "Este designador sólo puede tomar una letra como parámetro."
+      "text": "la yumkin 'an yakhudh hadha almueyin hrfan faqat kamaeamil."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
-      "text": "Este designador necesita una constante entera"
+      "text": "hadha almueayin yahtaj 'iilaa thabit eadad sahihin."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
-      "text": "Este designador contiene una constante entera no válida"
+      "text": "hadha almueayin yahtawi ealaa thabit eadad sahih ghayr salihi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar una constante de carácter"
+      "text": "la yumkn wade hadha almueayin fi nihayat alsilsilat dun tahdid thabit harafa."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
-      "text": "No puedes agregar más de un carácter"
+      "text": "la yumkn 'iidafat 'akthar min harf wahidi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
-      "text": "Este designador necesita una colección de caracteres."
+      "text": "hadha almueayin yahtaj 'iilaa majmueat 'ahrufu."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
-      "text": "El ancho no es válido"
+      "text": "aleard ghayr salihin."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un tipo"
+      "text": "la yumkn wade hadha almueayin fi nihayat alsilsilat dun tahdid nawea."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
-      "text": "No se puede procesar la secuencia nula."
+      "text": "la yumkn muealajat tasalsul fargh."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
-      "text": "No se pueden procesar parámetros nulos."
+      "text": "la yumkn muealajat mueamlat farighatin."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
-      "text": "Esta bandera debe representar un signo menos"
+      "text": "yajib 'an yumthl hadha aleilm ealamat naqisin."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
-      "text": "Todavía hay más datos después del índice {0} de {1} para formatear"
+      "text": "la tazal hunak bayanat 'iidafiat baed alfahras {0} min {1} liltansiqi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
-      "text": "La constante entera para el carácter no es válida."
+      "text": "althaabit alsahih lilharf ghayr salihi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
-      "text": "La constante entera no es válida."
+      "text": "althaabit alsahih ghayr salihi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
-      "text": "No se puede insertar una variable inexistente."
+      "text": "la yumkn dafe mutghyr ghayr mawjudi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
-      "text": "Esta es una operación binaria, pero el número de argumentos en cola es {0}"
+      "text": "hadhih eamaliat thunayiyatun, walakina eadad almueamlat almudrjt fi qayimat alaintizar hu {0}."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
-      "text": "La constante entera para el primer operando no es válida."
+      "text": "althaabit alsahih llmueaml al'awal ghayr salihi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
-      "text": "La constante entera para el segundo operando no es válida."
+      "text": "althaabit alsahih llmueaml althaani ghayr salihi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
-      "text": "Esta es una operación unaria, pero el número de argumentos en cola es {0}"
+      "text": "hadhih eamaliat 'uhadiatun, walakina eadad almueamlat almudrjt fi qayimat alaintizar hu {0}."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "La constante entera no es válida."
+      "text": "althaabit alsahih ghayr salihi."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
-      "text": "La representación condicional {0} no es válida."
+      "text": "altamthil alshurtiu {0} ghayr salihi."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
-      "text": "No se pudo leer el número de bytes solicitado."
+      "text": "taeadhir qira'at eadad albayitat almatlubi."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
-      "text": "¡Tabla de cadenas no válida!"
+      "text": "jadwal nisiyin ghayr salihi!"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
-      "text": "Magia de encabezado no válida"
+      "text": "sahar ras ghayr salih"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
-      "text": "No se puede procesar un parámetro de tipo distinto de cadena. La enumeración es {0} y el tipo es {1}."
+      "text": "la yumkin muealajat almuealimat ealaa nawe qimat ghayr nasiyatin. qimat altiedad hi {0} walnawe hu {1}."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
-      "text": "El designador de retraso finalizó prematuramente."
+      "text": "antahaa muerrf altaakhir qabl 'awanihi."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
-      "text": "Designador de retraso no válido."
+      "text": "muerrf altaakhir ghayr salihin."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
-      "text": "El valor de retardo no es un número."
+      "text": "qimat altaakhir laysat rqman."
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
-      "text": "Tipo de capacidad desconocida '{0}'"
+      "text": "nawe alqudrat ghayr maeruf '{0}'"
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
-      "text": "No se puede cargar {0}"
+      "text": "la yumkin tahmil {0}"
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
-      "text": "El color está fuera de rango."
+      "text": "allawn kharij alnitaqi."
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "No se pueden obtener datos de color."
+      "text": "la yumkin alhusul ealaa bayanat alluwni."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
-      "text": "¿Estás seguro de que este gradiente no es nulo?"
+      "text": "hal 'ant muta'akid min 'ana hadha altadaruj lays farghan?"
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
-      "text": "Especifique al menos un color."
+      "text": "hadid lwnan wahdan ealaa al'aqala."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
-      "text": "No se puede convertir la fuente nula."
+      "text": "la yumkin tahwil masdar farghi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
-      "text": "No se puede convertir al tipo nulo."
+      "text": "la yumkin altahwil 'iilaa nawe farghin."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
-      "text": "Debes especificar un modelo de color de origen específico, no el base."
+      "text": "yajib tahdid namudhaj lawn masdar muhadadun, walays alnumudhaj al'asasiu."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
-      "text": "No es un modelo de color."
+      "text": "lays namudhaj lun."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
-      "text": "Debes especificar un modelo de color de destino específico, no el base."
+      "text": "yajib tahdid namudhaj lawn hadaf muhadadin, walays alnumudhaj al'asasiu."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
-      "text": "No es un modelo de color objetivo."
+      "text": "lays namudhaj lawn hadafun."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
-      "text": "No se puede convertir el mismo modelo de color."
+      "text": "la yumkin tahwil namudhaj allawn nafsihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
-      "text": "No se puede convertir a RGB."
+      "text": "la yumkin altahwil 'iilaa RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
-      "text": "No se puede convertir desde el modelo de color base."
+      "text": "la yumkin altahwil min namudhaj allawn al'asasii."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
-      "text": "No se puede convertir a CMYK."
+      "text": "la ​​yumkin altahwil 'iilaa CMYK."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
-      "text": "No se puede convertir a CMY."
+      "text": "la yumkin altahwil 'iilaa CMY."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
-      "text": "No se puede convertir a HSL."
+      "text": "la yumkin altahwil 'iilaa HSL."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
-      "text": "No se puede convertir a HSV."
+      "text": "la yumkin altahwil 'iilaa HSV."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
-      "text": "No se puede convertir a RYB."
+      "text": "la yumkin altahwil 'iilaa RYB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
-      "text": "No se puede convertir a YIQ."
+      "text": "la yumkin altahwil 'iilaa YIQ."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
-      "text": "No se puede convertir a YUV."
+      "text": "la yumkin altahwil 'iilaa YUV."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
-      "text": "No se puede convertir a XYZ."
+      "text": "la yumkin altahwil 'iilaa XYZ."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
-      "text": "No se puede convertir a YXY."
+      "text": "la yumkin altahwil 'iilaa YXY."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
-      "text": "No se puede convertir a HunterLab."
+      "text": "la yumkin altahwil 'iilaa HunterLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
-      "text": "No se puede convertir a CieLab."
+      "text": "la yumkin altahwil 'iilaa CieLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
-      "text": "No se puede convertir a CieLuv."
+      "text": "la yumkin altahwil 'iilaa CieLuv."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
-      "text": "No se puede convertir a CieLch."
+      "text": "la yumkin altahwil 'iilaa CieLch."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "No se puede convertir a HWB."
+      "text": "la yumkin altahwil 'iilaa HWB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
-      "text": "No se puede convertir desde RGB."
+      "text": "la yumkin altahwil min RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMYK!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CMYK!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMY!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CMY!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSL!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa HSL!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSV!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa HSV!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a RYB!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa RYB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YIQ!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa YIQ!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YUV!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa YUV!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a XYZ!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa XYZ!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YXY!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa YXY!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HunterLab!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa HunterLab!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLab!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CieLab!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLuv!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CieLuv!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLch!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CieLch!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HWB!"
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa HWB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
-      "text": "¡No se puede convertir una instancia CMYK nula a RGB!"
+      "text": "la yumkin tahwil namudhaj CMYK farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
-      "text": "¡No se puede convertir una instancia CMY nula a RGB!"
+      "text": "la yumkin tahwil namudhaj CMY farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
-      "text": "¡No se puede convertir una instancia HSL nula a RGB!"
+      "text": "la yumkin tahwil namudhaj HSL farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
-      "text": "¡No se puede convertir una instancia HSV nula a RGB!"
+      "text": "la yumkin tahwil namudhaj HSV farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
-      "text": "¡No se puede convertir una instancia RYB nula a RGB!"
+      "text": "la yumkin tahwil namudhaj RYB farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
-      "text": "¡No se puede convertir una instancia YIQ nula a RGB!"
+      "text": "la yumkin tahwil namudhaj YIQ farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
-      "text": "¡No se puede convertir una instancia YUV nula a RGB!"
+      "text": "la yumkin tahwil namudhaj YUV farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
-      "text": "¡No se puede convertir una instancia XYZ nula a RGB!"
+      "text": "la yumkin tahwil namudhaj XYZ farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
-      "text": "¡No se puede convertir una instancia YXY nula a RGB!"
+      "text": "la yumkin tahwil namudhaj YXY farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
-      "text": "¡No se puede convertir una instancia nula de HunterLab a RGB!"
+      "text": "la yumkin tahwil namudhaj HunterLab farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
-      "text": "¡No se puede convertir una instancia nula de CieLab a RGB!"
+      "text": "la yumkin tahwil namudhaj CieLab farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
-      "text": "¡No se puede convertir una instancia nula de CieLuv a RGB!"
+      "text": "la yumkin tahwil namudhaj CieLuv farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
-      "text": "¡No se puede convertir una instancia nula de CieLch a RGB!"
+      "text": "la yumkin tahwil namudhaj CieLch farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "¡No se puede convertir una instancia HWB nula a RGB!"
+      "text": "la yumkin tahwil namudhaj HWB farigh 'iilaa RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
-      "text": "El observador debe tener 2 o 10 años."
+      "text": "yajib 'an yakun almuraqib 'iimaa 2 'aw 10"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
-      "text": "El iluminante no es válido"
+      "text": "almisbah ghayr salih"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
-      "text": "No se pueden obtener referencias de la tabla"
+      "text": "la yumkin alhusul ealaa marajie min aljadwal"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Si usa 256 colores, deberá introducir un valor positivo entre 0 y 255 o un nombre de color válido. Si usa color verdadero, deberá escribir un especificador de color válido, como RRR;GGG;BBB, o un código de color hasta 16777215."
+      "text": "muhadad lawn ghayr salih \"{0}\". 'iidha kunt tustakhdam 256 lwnan, fasatahtaj 'iilaa 'iidkhal qimat mujabat min 0 'iilaa 255 'aw asm lawn salihi. 'iidha kunt tustakhdam lwnan hqyqyan, fasatahtaj 'iimaa 'iilaa kitabat muhadad lawn salihin, mithl RRR;GGG;BBB, 'aw ramz lawn yasil 'iilaa 16777215."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
-      "text": "El nivel de color rojo está fuera de rango (0 -> 255)."
+      "text": "mustawaa allawn al'ahmar kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
-      "text": "El nivel de color verde está fuera de rango (0 -> 255)."
+      "text": "mustawaa allawn al'akhdar kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
-      "text": "El nivel de color azul está fuera de rango (0 -> 255)."
+      "text": "mustawaa allawn al'azraq kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
-      "text": "El especificador hexadecimal de color \"{0}\" no es válido. Este especificador debe comenzar con la etiqueta hash. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid allawn alsudasii eashri \"{0}\" ghayr salihin. yajib 'an yabda hadha almuhdid bialwasam. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
-      "text": "Longitud hexadecimal de color \"{0}\" no válida. Asegúrese de que tenga el formato correcto."
+      "text": "tul allawn alsudasii eashari \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
-      "text": "No se puede resolver el color hexadecimal \"{0}\"."
+      "text": "la yumkin tahlil allawn alsudasii eashri \"{0}\"."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn CieLab \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "qimat L kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 128.0)."
+      "text": "qimat A kharij alnitaq (-128.0 -> 128.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 128.0)."
+      "text": "qimat B kharij alnitaq (-128.0 -> 128.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn CieLab \"{0}\" ghayr salihi. la yumkin 'an yazid eadad eanasir almuhdid ean thalathati. ta'akad min 'ana altansiq sahihun."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn CieLch ghayr salih \"{0}\". ta'akad min 'ana altansiq sahihun."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "qimat L kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
-      "text": "El valor C está fuera de rango (-128.0 -> 128.0)."
+      "text": "qimat C kharij alnitaq (-128.0 -> 128.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
-      "text": "El valor H está fuera de rango (-128.0 -> 128.0)."
+      "text": "qimat H kharij alnitaq (-128.0 -> 128.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn CieLch ghayr salih \"{0}\". yajib 'alaa yazid eadad eanasir almuhadad ean thalathati. ta'akad min 'ana altansiq sahihun."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn CieLuv ghayr salih \"{0}\". ta'akad min 'ana altansiq sahihun."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "qimat L kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
-      "text": "El valor U está fuera de rango (-134.0 -> 220.0)."
+      "text": "qimat U kharij alnitaq (-134.0 -> 220.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
-      "text": "El valor V está fuera de rango (-140.0 -> 122.0)."
+      "text": "qimat V kharij alnitaq (-140.0 -> 122.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn CieLuv ghayr salih \"{0}\". yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
-      "text": "El especificador de color CMY \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn CMY ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "mustawaa allawn alsamawii kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "mustawaa allawn al'arjwanii kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "mustawaa allawn al'asfar kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
-      "text": "El especificador de color CMY \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn CMY ghayr salih \"{0}\". yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn CMYK ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "mustawaa allawn alsamawii kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "mustawaa allawn al'arjwanii kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "mustawaa allawn al'asfar kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "El nivel de color negro está fuera de rango (0 -> 100)."
+      "text": "mustawaa allawn al'aswad kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. El especificador no puede tener más de cuatro elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn CMYK ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad 'arbaeat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
-      "text": "Especificador de color HSL \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn HSL ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "mustawaa tadruj allawn kharij alnitaq (0' -> 360' darajatan)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "mustawaa altashabue kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
-      "text": "El nivel de luminosidad está fuera de rango (0 -> 100)."
+      "text": "mustawaa al'iida'at kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
-      "text": "Especificador de color HSL \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn HSL ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
-      "text": "El especificador de color HSV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn HSV ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "mustawaa tadruj allawn kharij alnitaq (0' -> 360' darajatan)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "mustawaa altashabue kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
-      "text": "El nivel de valor está fuera de rango (0 -> 100)."
+      "text": "mustawaa alqimat kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
-      "text": "Especificador de color HSV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn HSV ghayr salih \"{0}\". la yajib 'an yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "El especificador de color HWB \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn HWB ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "mustawaa altadaruj allawni kharij alnitaq (0' -> 360' darajatu)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "El nivel de blancura está fuera de rango (0 -> 100)."
+      "text": "mustawaa albayad kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "El nivel de oscuridad está fuera de rango (0 -> 100)."
+      "text": "mustawaa alsawad kharij alnitaq (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "El especificador de color HWB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn HWB ghayr salih \"{0}\". yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn HunterLab ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "qimat L kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 127.0)."
+      "text": "qimat A kharij alnitaq (-128.0 -> 127.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 127.0)."
+      "text": "qimat B kharij alnitaq (-128.0 -> 127.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn HunterLab ghayr salih \"{0}\". yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
-      "text": "El especificador de color YUV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn YUV ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "mustawaa alsutue kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
-      "text": "El nivel de croma (U) está fuera de rango (0 -> 255)."
+      "text": "mustawaa allawn (U) kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
-      "text": "El nivel de croma (V) está fuera de rango (0 -> 255)."
+      "text": "mustawaa allawn (V) kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
-      "text": "Especificador de color YUV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn YUV ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn YIQ ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "mustawaa alsutue kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
-      "text": "El nivel en fase está fuera de rango (0 -> 255)."
+      "text": "mustawaa altawr almutazamin kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
-      "text": "El nivel de cuadratura está fuera de rango (0 -> 255)."
+      "text": "mustawaa altarbie kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn YIQ ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Asegúrese de que tenga el formato correcto, es decir, un número del 0 al 255 si se utilizan 255 colores, o una secuencia VT si se utiliza color verdadero, como se indica a continuación."
+      "text": "muhadad lawn ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi, 'ay raqm min 0 'iilaa 255 'iidha kunt tustakhdam 255 lwnan 'aw tasalsul VT 'iidha kunt tustakhdam lwnan hqyqyan kama yali."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
-      "text": "Especificador de color \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhadad lawn ghayr salih \"{0}\". la yajuz 'an yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
-      "text": "Este color ya es un color original."
+      "text": "hadha allawn lawn 'usaliy bialfieli."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
-      "text": "Especificador de color RYB \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn RYB ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
-      "text": "El nivel rojo está fuera de rango (0 -> 255)."
+      "text": "mustawaa allawn al'ahmar kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
-      "text": "El nivel amarillo está fuera de rango (0 -> 255)."
+      "text": "mustawaa allawn al'asfar kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
-      "text": "El nivel azul está fuera de rango (0 -> 255)."
+      "text": "mustawaa allawn al'azraq kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
-      "text": "El especificador de color RYB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn RYB ghayr salih \"{0}\". la yajuz 'an yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn XYZ ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "qimat X kharij alnitaq (0.0 -> 95.047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "qimat Y kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "qimat Z kharij alnitaq (0.0 -> 108.883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn XYZ \"{0}\" ghayr salihin. yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn XYZ \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "qimat X kharij alnitaq (0.0 -> 95.047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "qimat Y kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "qimat Z kharij alnitaq (0.0 -> 108.883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn XYZ \"{0}\" ghayr salihin. yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
-      "text": "Especificador de color YXY \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn YXY \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
-      "text": "El valor Y1 está fuera de rango (0.0 -> 100.0)."
+      "text": "qimat Y1 kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 1.0)."
+      "text": "qimat X kharij alnitaq (0.0 -> 1.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
-      "text": "El valor Y2 está fuera de rango (0.0 -> 1.0)."
+      "text": "qimat Y2 kharij alnitaq (0.0 -> 1.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
-      "text": "Especificador de color YXY \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "muhdid lawn YXY \"{0}\" ghayr salihi. la yajib 'an yazid eadad eanasir almuhdid ean thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "No se especificó ningún nombre de componente."
+      "text": "lam yatima tahdid asm lilmukawini."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "No se especificó ningún color para el componente {0}."
+      "text": "lam yatima tahdid lawn lilmukawin {0}."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "El componente {0} ya existe."
+      "text": "almukawan {0} mawjud msbqan."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "El componente {0} no existe."
+      "text": "almukawan {0} ghayr mawjudi."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "El componente {0} está predefinido y, por lo tanto, no se puede eliminar."
+      "text": "almukawan {0} mueraf msbqan, wabialtaali la yumkin 'iizalatuhu."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "La plantilla no tiene componentes."
+      "text": "la yahtawi alqalib ealaa mukawinati."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "La plantilla no tiene componentes predefinidos que deban definirse ({0})."
+      "text": "la yahtawi alqalib ealaa mukawinat mueraft msbqan yajib taerifuha ({0})."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "No se proporcionó el nombre de la plantilla."
+      "text": "lam yatima taqdim asm lilqalibi."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "No se puede encontrar la plantilla {0}"
+      "text": "la yumkin aleuthur ealaa alqalab {0}"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "No se puede encontrar el componente {0} en la plantilla {1}"
+      "text": "la yumkin aleuthur ealaa almukawan {0} fi alqalab {1}."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Plantilla no válida."
+      "text": "qalab ghayr salihi."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "La plantilla no tiene nombre."
+      "text": "la yujad asm lilqalibi."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "La plantilla ya existe."
+      "text": "alqalib mawjud msbqan."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "No se puede eliminar la plantilla incorporada {0}"
+      "text": "la yumkin 'iizalat alqalab almudmaj {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
-      "text": "El tipo de color no es válido"
+      "text": "nawe allawn ghayr salih"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
-      "text": "El especificador de color para visibilidad no es válido"
+      "text": "muhadad allawn liqabiliat alruwyat ghayr salih"
     },
     {
       "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
-      "text": "Tipo de monocromatismo no válido"
+      "text": "nawe 'uhadii allawn ghayr salih"
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
-      "text": "No se puede determinar cómo convertir un {0} de {1} a un color."
+      "text": "la yumkin tahdid kayfiat tahwil {0} min {1} 'iilaa lun."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
-      "text": "No se puede determinar cómo convertir un {0} de un tipo desconocido a un color."
+      "text": "la yumkin tahdid kayfiat tahwil {0} min nawe ghayr maeruf 'iilaa lun."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
-      "text": "No puedo obtener el color"
+      "text": "la yumkin alhusul ealaa alluwni."
     },
     {
       "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
-      "text": "No se pudo establecer el fondo"
+      "text": "fashil fi taeyin alkhalfia"
     },
     {
       "loc": "T_COLOR_EXCEPTION_COLORISNULL",
-      "text": "No se proporciona instancia de color."
+      "text": "lam yatima tawfir mathil alluwn."
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
-      "text": "Salida"
+      "text": "khuruj"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
-      "text": "Combinaciones de teclas"
+      "text": "rawabit almafatih"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
-      "text": "Encuentra el siguiente"
+      "text": "bahath ean altaali"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "Subir"
+      "text": "tahrik li'aelaa"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
-      "text": "Sube un elemento"
+      "text": "aintiqal eunsur wahid li'aelaa"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "Bajar"
+      "text": "tahrik li'asfal"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
-      "text": "Bajar un elemento"
+      "text": "aintiqal eunsur wahid li'asfal"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "Página anterior"
+      "text": "alsafhat alsaabiqa"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
-      "text": "Ir a la página anterior"
+      "text": "aintiqal 'iilaa alsafhat alsaabiqa"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "Página siguiente"
+      "text": "alsafhat altaalia"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
-      "text": "Ir a la página siguiente"
+      "text": "aintiqal 'iilaa alsafhat altaalia"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "Ir al inicio"
+      "text": "aintiqal 'iilaa albidaya"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
-      "text": "Ir al primer elemento"
+      "text": "aintiqal 'iilaa aleunsur al'awal"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "Ir al final"
+      "text": "aintiqal 'iilaa alnihaya"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
-      "text": "Ir al último elemento"
+      "text": "aintiqal 'iilaa aleunsur al'akhir"
     },
     {
       "loc": "T_INPUT_COMMON_SEARCHPROMPT",
-      "text": "Escribe un término de búsqueda (admite expresiones regulares)"
+      "text": "aktub mustalah bahth (yadeam altaebirat alnamatiata)."
     },
     {
       "loc": "T_INPUT_COMMON_INVALIDQUERY",
-      "text": "Su consulta no es una expresión regular válida."
+      "text": "astielamuk lays tebyran nmtyan salhan."
     },
     {
       "loc": "T_INPUT_COMMON_ENTRYPROMPT",
-      "text": "Seleccione una de las entradas:"
+      "text": "aikhtar 'ahad al'iidkhalati:"
     },
     {
       "loc": "T_INPUT_COMMON_NOITEMS",
-      "text": "No se encontró ningún artículo."
+      "text": "lam yatima aleuthur ealaa eunsur."
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
-      "text": "Buscar un elemento"
+      "text": "albahth ean eunsur"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
-      "text": "Ir una línea hacia arriba (informativo)"
+      "text": "aintaqal stran wahdan li'aelaa (maelumati)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
-      "text": "Bajar una línea (informativo)"
+      "text": "aintaqal stran wahdan li'asfal (maelumati)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
-      "text": "Cambiar"
+      "text": "tabdil"
     },
     {
       "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
-      "text": "Lista de {0} colores predefinidos"
+      "text": "qayimat min {0} 'alwan muhadadat msbqan"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
-      "text": "Gris"
+      "text": "ramadi"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
-      "text": "Transparencia"
+      "text": "shafaafia"
     },
     {
       "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
-      "text": "Sombra y tinte"
+      "text": "tazlil watudraj"
     },
     {
       "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
-      "text": "Información de color"
+      "text": "maelumat allawn"
     },
     {
       "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
-      "text": "Transformar"
+      "text": "tahwil"
     },
     {
       "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
-      "text": "Tipo de color no válido en el selector de colores"
+      "text": "nawe lawn ghayr salih fi muhadad al'alwan"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
-      "text": "Escribe el nombre de la fuente. Se convertirá a minúsculas."
+      "text": "aktub asm alkhata. sayatimu tahwiluh 'iilaa 'ahruf saghiratin."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_NOFONT",
-      "text": "La fuente no existe."
+      "text": "alkhatu ghayr mawjudi."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
-      "text": "Seleccione una fuente figlet de la lista a continuación"
+      "text": "akhtar khata figlet min alqayimat 'adnah"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
-      "text": "Selección de fuentes"
+      "text": "aikhtiar alkhati"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
-      "text": "El selector no está especificado"
+      "text": "almuhadad ghayr muhadad"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
-      "text": "Leer más..."
+      "text": "aqra almazida..."
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Lista de combinaciones de teclas"
+      "text": "rawabit mafatih alqayima"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
-      "text": "Cambiar de lugar"
+      "text": "altanaqul"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
-      "text": "Sale de la TUI interactiva"
+      "text": "alkhuruj min wajihat almustakhdim altafaeulia (TUI)"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
-      "text": "Información del artículo"
+      "text": "maelumat aleunsur"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de selección requiere que haya al menos una opción habilitada."
+      "text": "yatatalab namat aliaikhtiar tafeil khiar wahid ealaa al'aqala."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Escribe el nombre del spinner. Se convertirá a minúsculas."
+      "text": "aktub asm 'adat altadwiri. sayatimu tahwiluh 'iilaa 'ahruf saghiratin."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "La ruleta no existe"
+      "text": "'adat altadwir ghayr mawjudatin."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Seleccione un spinner de la lista a continuación"
+      "text": "akhtar 'adat tadwir min alqayimat 'adnah"
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Selección de Spinner"
+      "text": "aikhtiar 'adaat altadwir"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
-      "text": "Sin información."
+      "text": "la tujad maelumatun."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
-      "text": "Sin estatus"
+      "text": "la tujad hala"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
-      "text": "Se intentó representar elementos TUI interactivos para el panel secundario en una TUI interactiva que solo permite la interacción desde un panel."
+      "text": "hawalt eard eanasir wajihat almustakhdim altafaeulia (TUI) liljuz' althaanawii ealaa wajihat mustakhdim tafaeulia (TUI) tasmah bialtafaeul min juz' wahid faqat."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
-      "text": "Intenté representar información en el panel secundario en una TUI interactiva que permite la interacción desde dos paneles, lo que arruinó la representación de la selección allí."
+      "text": "hawlt eard maelumat ealaa allawhat althaanawiat fi wajihat mustakhdim tafaeuliat tasmah bialtafaeul min lwhin, mimaa 'adaa 'iilaa 'iifsad eard altahdid hunaka."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
-      "text": "Se intentó representar información sobre datos nulos"
+      "text": "hawlt eard maelumat hawl bayanat farighatin."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
-      "text": "No se pudo obtener información."
+      "text": "fshlt fi alhusul ealaa almaelumati."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
-      "text": "Realizar una acción sobre el elemento seleccionado"
+      "text": "nffdh 'ijra'an ealaa aleunsur almuhadadi."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
-      "text": "Proporcione una clase TUI interactiva base y vuelva a intentarlo."
+      "text": "yurjaa tawfir fiat wajihat almustakhdim altafaeuliat al'asasiat walmuhawalat maratan 'ukhraa."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
-      "text": "La TUI interactiva {0} no contiene ninguna fuente de datos."
+      "text": "la tahtawi wajihat almustakhdim altafaeulia {0} ealaa 'ayi masdar bayanatin."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
-      "text": "La TUI interactiva {0} tiene asignaciones de teclado o mouse conflictivas."
+      "text": "tahtawi wajihat almustakhdim altafaeulia {0} ealaa rawabit mutaearidat lilawhat almafatih 'aw almaws."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
-      "text": "Las siguientes combinaciones de teclas o del mouse entran en conflicto:"
+      "text": "tataearad rawabit almafatih 'aw rawabit almawis altaaliati:"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
-      "text": "La interfaz textual se ha bloqueado. Suele ser un problema de la aplicación."
+      "text": "taeatalat wajihat almustakhdim alnasiyata. eadtan ma takun almushkilat fi altatbiqi."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
-      "text": "La interfaz de usuario textual no está especificada"
+      "text": "lam yatima tahdid wajihat almustakhdim alnasiyati."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
-      "text": "Esta IU textual [{0}] no está lista porque el estado es {1}"
+      "text": "wajihat almustakhdim alnasiyat hadhih [{0}] ghayr jahizat li'ana halataha hi {1}."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
-      "text": "Hay {0} combinaciones de teclas conflictivas en la interfaz de usuario textual [{1}]"
+      "text": "yujad {0} rabit miftah mutaearid fi wajihat almustakhdim alnasiya [{1}]."
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
-      "text": "No se especifica el contexto del evento del puntero"
+      "text": "lam yatima tahdid siaq hadath almuashiri."
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
-      "text": "La posición inicial no puede ser menor que cero"
+      "text": "la yajuz 'an yakun mawdie albidayat 'aqala min alsafri."
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
-      "text": "La posición final no puede ser menor que cero"
+      "text": "la yajuz 'an yakun mawdie alnihayat 'aqala min alsafri."
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
-      "text": "La posición inicial X no puede ser mayor que la posición final X"
+      "text": "la yajuz 'an yakun mawdie albidayat s 'akbar min mawdie alnihayat si."
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
-      "text": "La posición inicial Y no puede ser mayor que la posición final Y"
+      "text": "la yajuz 'an yakun mawdie albidayat s 'akbar min mawdie alnihayat sa."
     },
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
-      "text": "El nombre de entrada no está especificado"
+      "text": "lam yatima tahdid aism al'iidkhali."
     },
     {
       "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
-      "text": "Avance"
+      "text": "altaqadumu."
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "Esta página de presentación requiere que se completen los siguientes datos antes de poder avanzar a la página siguiente."
+      "text": "tatatalab safhat aleard altaqdimii hadhih aistifa' almadkhalat altaaliat qabl alaintiqal 'iilaa alsafhat altaaliati."
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
-      "text": "Entrada requerida"
+      "text": "matlub 'iidkhal"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
-      "text": "Una o más de las siguientes entradas no se han completado correctamente:"
+      "text": "lam yatima 'iidkhal wahid 'aw 'akthar min almadkhalat altaaliat bishakl sahihin:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
-      "text": "Entrada incorrecta"
+      "text": "madkhal ghayr sahih"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
-      "text": "No se han proporcionado los datos requeridos. Deberá completar los valores de los siguientes campos:"
+      "text": "lam yatima taqdim almadkhalat almatlubati. satahtaj 'iilaa 'iidkhal qiam almadkhalat altaaliati:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
-      "text": "Entrada no proporcionada"
+      "text": "lam yatima taqdim almadkhal"
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
-      "text": "No se puede mostrar una opción sin respuestas ni respuestas alternativas."
+      "text": "la yumkin eard khiar bidun 'iijabat wabidun 'iijabat badilatin."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de elección requiere que haya al menos una opción habilitada."
+      "text": "yatatalab namat aliaikhtiar tafeil khiar wahid ealaa al'aqala."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
-      "text": "No puedes proporcionar respuestas con más de un carácter en el modo de un solo carácter."
+      "text": "la yumkinuk taqdim 'iijabat bi'akthar min harf wahid fi wade alhiraf alwahidi."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
-      "text": "Respuesta incorrecta. Inténtalo de nuevo."
+      "text": "'iijabat khatiatun. yurja almuhawalat maratan 'ukhraa."
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "Mover a la izquierda"
+      "text": "naql lilysar"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "Mover a la derecha"
+      "text": "naql lilyamin"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
-      "text": "Insertar"
+      "text": "'iidraj"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
-      "text": "Reemplazar"
+      "text": "aistibdal"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
-      "text": "Reemplazar todo"
+      "text": "aistibdal alkuli"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
-      "text": "Listo"
+      "text": "jahiz"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
-      "text": "No encontrado. Revisa la sintaxis o amplía la búsqueda."
+      "text": "ghayr mawjudi. tahaqaq min bina' aljumlat 'aw wsse nitaq bahthika."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
-      "text": "Información del número"
+      "text": "maelumat alraqm"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
-      "text": "Eliminar"
+      "text": "'iizala"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
-      "text": "Reemplazar todo lo que"
+      "text": "aistibdal alkuli"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
-      "text": "Escribe el número de byte con el valor hexadecimal."
+      "text": "aktub raqm albayit bialqimat alsudasiat eishriatan."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
-      "text": "El número de byte especificado no es válido."
+      "text": "raqm albayit almuhadad ghayr salihi."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
-      "text": "Byte no válido {0}."
+      "text": "bayat {0} ghayr salihi."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
-      "text": "Escriba el número de byte con el valor hexadecimal con el que reemplazar {0}."
+      "text": "aktub raqm albayit bialqimat alsudasiat eishriatan liastibdal {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
-      "text": "Escriba el número de byte con el valor hexadecimal a reemplazar."
+      "text": "aktub raqm albayit bialqimat alsudasiat eashriatan liastibdal {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
-      "text": "Escribe un byte o un grupo de bytes separados por espacios en blanco."
+      "text": "aktub baytan 'aw majmueat baytat mafsulatan bimasafati."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
-      "text": "Se requieren bytes para buscar, pero no ha proporcionado ninguno."
+      "text": "albaytat matlubat lilbahthi, walakinak lam tudkhl wahdan."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
-      "text": "Posición"
+      "text": "almawdie"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
-      "text": "Hexadecimal"
+      "text": "sit eashri"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
-      "text": "Octal"
+      "text": "thamani"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
-      "text": "Número"
+      "text": "alraqm"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
-      "text": "Binario"
+      "text": "thunayiy"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
-      "text": "Información del número"
+      "text": "maelumat alraqm"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "Contenido vacío"
+      "text": "muhtawaa farigh"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
-      "text": "El número de byte de inicio especificado no puede ser mayor que el tamaño del archivo."
+      "text": "la yajuz 'an yakun raqm bayat albidayat almuhadad 'akbar min hajm almilafa."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
-      "text": "El número de byte final especificado no puede ser mayor que el tamaño del archivo."
+      "text": "la yajuz 'an yakun raqm bayat alnihayat almuhadad 'akbar min hajm almilafa."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
-      "text": "El número de byte especificado no es válido."
+      "text": "raqm albayit almuhadad ghayr salihi."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
-      "text": "El número de byte especificado no puede ser mayor que {0} ni menor que 1."
+      "text": "la yajuz 'an yakun raqm albayit almuhadad 'akbar min {0} 'aw 'asghar man 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
-      "text": "El número de byte especificado no puede ser mayor que {0}."
+      "text": "la yajuz 'an yakun raqm albayit almuhadad 'akbar min {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
-      "text": "No se puede realizar esta operación en una matriz nula."
+      "text": "la yumkin 'iijra' hadhih aleamaliat ealaa masfufat farigha."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
-      "text": "El número de byte debe comenzar con 1."
+      "text": "yajib 'an yabda raqm albayit bialraqm 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
-      "text": "El número de byte de inicio especificado no puede ser mayor que {0}."
+      "text": "la yajuz 'an yakun raqm bayt albidayat almuhadad 'akbar min {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
-      "text": "El número de byte final especificado no puede ser mayor que {0}."
+      "text": "la yajuz 'an yakun raqm bayat alnihayat almuhadad 'akbar min {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
-      "text": "Ingresar..."
+      "text": "'adkhil..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
-      "text": "Borrar aquí"
+      "text": "aihdhaf huna"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
-      "text": "Eliminar línea"
+      "text": "hadhf satr"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
-      "text": "Dejar de entrar"
+      "text": "'iiqaf al'iidkhal"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
-      "text": "Nueva línea"
+      "text": "satr jadid"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "Retroceso"
+      "text": "masafatan lilkhalf"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "Borrar"
+      "text": "hadhf"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
-      "text": "Escribe la cadena a encontrar"
+      "text": "kitabat alsilsilat alnasiyat lilbahth"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
-      "text": "Escribe la cadena de reemplazo"
+      "text": "kitabat alsilsilat alnasiyat albadila"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
-      "text": "Escribe una cadena para buscar. Admite expresiones regulares."
+      "text": "kitabat silsilat nasiyat lilbahth. yadeam hadha altaebirat alnamatiata."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
-      "text": "Se requiere una cadena para buscar, pero no ha proporcionado ninguna."
+      "text": "alsilsilat alnasiyat matlubat lilbahthi, walakinak lam tudkhl wahidatan."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
-      "text": "Esta cadena a buscar no es una expresión regular válida."
+      "text": "hadhih alsilsilat alnasiyat lilbahth laysat tebyran nmtyan salhan."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
-      "text": "Pauta"
+      "text": "'astur"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
-      "text": "Columna"
+      "text": "eamuwd"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
-      "text": "Fila"
+      "text": "saf"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
-      "text": "El número de línea especificado no puede ser mayor que {0}."
+      "text": "la yajuz 'an yakun raqm alsatr almuhadad 'akbar min {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
-      "text": "No se puede realizar esta operación en una lista de líneas nulas."
+      "text": "la yumkin 'iijra' hadhih aleamaliat ealaa qayimat al'astur alfarighati."
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
-      "text": "Muestra más información en un cuadro de información."
+      "text": "yaerid almazid min almaelumat fi murabae almaelumat"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
-      "text": "Va una línea hacia arriba"
+      "text": "yantaqil stran wahdan li'aelaa"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
-      "text": "Va una línea hacia abajo"
+      "text": "yantaqil stran wahdan li'asfal"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
-      "text": "Va a la página anterior del texto."
+      "text": "yantaqil 'iilaa alsafhat alsaabiqat min alnasi"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
-      "text": "Va a la siguiente página de texto."
+      "text": "yantaqil 'iilaa alsafhat altaaliat min alnasi"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
-      "text": "Envía el valor"
+      "text": "yursl alqima"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
-      "text": "Envía los valores"
+      "text": "yursl alqiam"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
-      "text": "Cierra sin enviar el valor"
+      "text": "yughlq bidun 'iirsal alqima"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
-      "text": "Cierra sin enviar los valores"
+      "text": "yughlq bidun 'iirsal alqiam"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "Realiza una acción o selecciona una opción"
+      "text": "yunfdh 'ijra'an 'aw yuhdd khyaran"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "Disminuye el valor o mueve tres líneas de texto hacia arriba"
+      "text": "yunqs alqimat 'aw yuhrk thalathat 'astur min alnasi li'aelaa"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "Incrementa el valor o mueve tres líneas de texto hacia abajo"
+      "text": "yazid alqimat 'aw yuhrk thalathat 'astur min alnasi li'asfal"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "Opción anterior o tres líneas de texto anteriores"
+      "text": "alkhiar alsaabiq 'aw al'astur althalathat alsaabiqat min alnasi"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "Siguiente opción o siguientes tres líneas de texto"
+      "text": "alkhiar altaali 'aw al'astur althalathat altaaliat min alnasi"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
-      "text": "Disminuye el valor actual"
+      "text": "yunqs alqimat alhalia"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
-      "text": "Incrementa el valor actual"
+      "text": "yazid alqimat alhalia"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
-      "text": "Establece el valor al valor mínimo"
+      "text": "yudbt alqimat ealaa alhadi al'adnaa lilqima"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
-      "text": "Establece el valor al valor máximo"
+      "text": "yudbt alqimat ealaa alhadi al'aqsaa lilqima"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "Establece el foco actual en el siguiente elemento de valor"
+      "text": "yudbt altarkiz alhaliu ealaa eunsur alqimat altaali"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "Establece el foco actual en el elemento de valor anterior"
+      "text": "yudbt altarkiz alhaliu ealaa eunsur alqimat alsaabiq"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
-      "text": "Va al botón anterior"
+      "text": "yuntql 'iilaa alziri alsaabiq"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
-      "text": "Va al siguiente botón"
+      "text": "yuntql 'iilaa alziri altaali"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "Botón anterior o tres líneas de texto anteriores"
+      "text": "alziru alsaabiq 'aw al'astur althalathat alsaabiqat min alnasi"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "Botón siguiente o siguientes tres líneas de texto"
+      "text": "alzaru altaali 'aw al'astur althalathat altaaliat min alnasi"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
-      "text": "Va a la primera línea de texto."
+      "text": "yuntql 'iilaa alsatr al'awal min alnasi"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
-      "text": "Va a la última línea de texto."
+      "text": "yuntql 'iilaa alsatr al'akhir min alnasi"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
-      "text": "Va a la siguiente página de texto o cierra el cuadro de información modal."
+      "text": "yuntql 'iilaa alsafhat altaaliat min alnas, 'aw 'iighlaq nafidhat almaelumat"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
-      "text": "Cierra el cuadro de información modal."
+      "text": "'iighlaq nafidhat almaelumat"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "Realiza una acción"
+      "text": "tanfidh 'iijra'"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "Las tres líneas de texto anteriores"
+      "text": "al'astur althalathat alsaabiqa"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "Próximas tres líneas de texto"
+      "text": "al'astur althalathat altaalia"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "Va a la página anterior de entradas."
+      "text": "alaintiqal 'iilaa alsafhat alsaabiqat min almadkhalat"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "Va a la siguiente página de entradas."
+      "text": "alaintiqal 'iilaa alsafhat altaaliat min almadkhalat"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "Busca una entrada"
+      "text": "albahth ean mudkhl"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "Cambia el valor de entrada seleccionado"
+      "text": "taghyir qimat almudkhl almuhdd"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
-      "text": "Sube una opción (siguiente opción)"
+      "text": "alaintiqal 'iilaa khiar wahid lil'aelaa (alkhiar altaali)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
-      "text": "Baja una opción (opción anterior)"
+      "text": "alaintiqal 'iilaa khiar wahid lil'asfal (alkhiar alsaabiqi)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
-      "text": "Va a la primera opción"
+      "text": "alaintiqal 'iilaa alkhiar al'awal"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
-      "text": "Va a la última opción"
+      "text": "alaintiqal 'iilaa alkhiar al'akhir"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
-      "text": "Va a la página anterior de opciones."
+      "text": "alaintiqal 'iilaa alsafhat alsaabiqat min alkhiarat"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
-      "text": "Va a la siguiente página de opciones."
+      "text": "alaintiqal 'iilaa alsafhat altaaliat min alkhiarat"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
-      "text": "Busca una elección"
+      "text": "albahth ean khiar"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
-      "text": "Selecciona o deselecciona todas las opciones"
+      "text": "tahdid 'aw 'iilgha' tahdid jamie alkhiarat"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
-      "text": "No se puede obtener la categoría y el grupo en la opción número {0}."
+      "text": "la yumkin alhusul ealaa alfiat walmajmueat fi raqm alkhiar {0}."
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
-      "text": "Opciones generales"
+      "text": "khiarat eama"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
-      "text": "Opciones disponibles"
+      "text": "alkhiarat almutaha"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
-      "text": "Opciones alternativas"
+      "text": "khiarat badila"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
-      "text": "Confirmar"
+      "text": "takid"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
-      "text": "Barra lateral"
+      "text": "alsharit aljanibiu"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "Más"
+      "text": "almazid"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
-      "text": "Confirma la(s) selección(es)"
+      "text": "takid alaikhtiarat"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "Cambia el valor seleccionado (botones de opción)"
+      "text": "taghyir alqimat almuhadada ('azrar aliakhtiari)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
-      "text": "Cancelar selección(es)"
+      "text": "'iilgha' alaikhtiarat"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
-      "text": "Sube un elemento"
+      "text": "alaintiqal 'iilaa eunsur wahid li'aelaa"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
-      "text": "Va un elemento hacia abajo"
+      "text": "alaintiqal 'iilaa eunsur wahid li'asfal"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
-      "text": "Va al primer elemento"
+      "text": "alaintiqal 'iilaa aleunsur al'awal"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
-      "text": "Va al último elemento"
+      "text": "alaintiqal 'iilaa aleunsur al'akhir"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
-      "text": "Va a la página anterior"
+      "text": "alaintiqal 'iilaa alsafhat alsaabiqa"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
-      "text": "Va a la página siguiente"
+      "text": "alaintiqal 'iilaa alsafhat altaalia"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
-      "text": "Busca un elemento"
+      "text": "albahth ean eunsur"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
-      "text": "Subir a una barra lateral"
+      "text": "aliantiqal 'iilaa sharit janibiin"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
-      "text": "Bajar a la barra lateral"
+      "text": "alantiqal 'iilaa 'asfal"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
-      "text": "Subir en un cuadro de preguntas"
+      "text": "alaintiqal 'iilaa 'aelaa fi murabae suaal"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
-      "text": "Bajar en un cuadro de preguntas"
+      "text": "alantiqal 'iilaa 'asfal fi murabae suaal"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
-      "text": "Mostrar el recuento de páginas y opciones"
+      "text": "'iizhar eadad alsafahat walkhiarat"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
-      "text": "Mostrar información del artículo"
+      "text": "'iizhar maelumat aleunsur"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
-      "text": "Selecciona o deselecciona una opción"
+      "text": "tahdid 'aw 'iilgha' tahdid khiar"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
-      "text": "Selecciona todos los elementos del mismo grupo y categoría"
+      "text": "tahdid jamie aleanasir fi nafs almajmueat walfia"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos de la misma categoría"
+      "text": "tahdid jamie aleanasir fi jamie almajmueat fi nafs alfia"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos en todas las categorías"
+      "text": "tahdid jamie aleanasir fi jamie almajmueat fi jamie alfiat"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "Va un elemento o línea de escaparate"
+      "text": "rafe eunsur wahid 'aw khata eard"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "Va un elemento o línea de escaparate hacia abajo"
+      "text": "khafd eunsur wahid 'aw khati eard"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
-      "text": "Actualizar posición"
+      "text": "tahdith almawdie"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
-      "text": "Anterior"
+      "text": "alsaabiq"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
-      "text": "Próximo"
+      "text": "altaali"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
-      "text": "Entregar"
+      "text": "'iirsal"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
-      "text": "Cancelar"
+      "text": "'iilgha'"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
-      "text": "Ayuda"
+      "text": "musaeida"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
-      "text": "Hecho"
+      "text": "tama"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
-      "text": "Seleccionar"
+      "text": "tahdid"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
-      "text": "Selección manual"
+      "text": "tahdid yadawiun"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
-      "text": "Información de color"
+      "text": "maelumat allawn"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
-      "text": "Próxima simulación de daltonismo"
+      "text": "muhakaat eamaa al'alwan altaalia"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
-      "text": "Simulación previa de daltonismo"
+      "text": "muhakat eamaa al'alwan alsaabiqa"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
-      "text": "Aumentar la frecuencia de transformación"
+      "text": "ziadat mueadal altahwil"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
-      "text": "Disminuir la frecuencia de transformación"
+      "text": "khafd mueadal altahwil"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
-      "text": "Seleccionar color web"
+      "text": "tahdid lawn alwib"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
-      "text": "Aumentar la opacidad"
+      "text": "ziadat altaetim"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
-      "text": "Aumentar la transparencia"
+      "text": "ziadat alshafaafia"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
-      "text": "Siguiente modo de color"
+      "text": "wadae allawn altaali"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
-      "text": "Modo de color anterior"
+      "text": "wade allawn alsaabiq"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
-      "text": "Aumentar el valor"
+      "text": "ziadat alqima"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
-      "text": "Disminuir valor"
+      "text": "khafd alqima"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
-      "text": "Reducir el tono de color"
+      "text": "khafd tadraj allawn"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
-      "text": "Aumentar el tono del color"
+      "text": "ziadat tadruj allawn"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
-      "text": "Reducir la luminosidad del color"
+      "text": "khafd sutue allawn"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
-      "text": "Aumentar la luminosidad del color"
+      "text": "ziadat sutue allawn"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
-      "text": "Reducir la saturación"
+      "text": "khafd altashabue"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
-      "text": "Aumentar la saturación"
+      "text": "ziadat altashabue"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
-      "text": "Color anterior"
+      "text": "allawn alsaabiq"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
-      "text": "Siguiente color"
+      "text": "allawn altaali"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
-      "text": "Mostrar y ocultar la lista de colores"
+      "text": "'iizhar wa'iikhfa' qayimat al'alwan"
     },
     {
       "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
-      "text": "Exhibición de personajes"
+      "text": "eard al'ahruf"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
-      "text": "Este elemento fijo no puede ser una clase base. Especifique un elemento fijo incondicional."
+      "text": "qad la takun hadhih altarkibat fiat tarkib 'asasiatin. hadid trkyban ghayr mashruta."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
-      "text": "Es posible que este elemento no sea una clase base. Especifique un elemento condicional."
+      "text": "qad la takun hadhih altarkibat fiat tarkib 'asasiatin. hadad trkyban mshrwtan."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
-      "text": "El valor devuelto {0} no coincide con el valor esperado {1}"
+      "text": "alqimat almuead {0} la tutabq alqimat almutawaqaea {1}"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
-      "text": "Este encuentro no es condicional."
+      "text": "hadhih altarkibat ghayr mashrutatin."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
-      "text": "Este tipo de accesorio no es válido."
+      "text": "nawe altarkibat hadha ghayr salihi."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
-      "text": "No hay ningún elemento fijo aquí. Inserte uno."
+      "text": "la tujad tarkibat huna. 'udrij wahidatan."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
-      "text": "Seleccione un dispositivo de prueba."
+      "text": "akhtar trkyban tjrybyan."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
-      "text": "Sale del selector de accesorios de prueba."
+      "text": "alkhuruj min muhdd tarkibat aliakhtibari."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
-      "text": "¡Esta prueba ha sido un éxito!"
+      "text": "najah hadha alaikhtibari!"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
-      "text": "El valor esperado coincide con el valor real."
+      "text": "alqimat almutawaqaeat tutabq alqimat alfieliati."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
-      "text": "Esta prueba ha fallado."
+      "text": "fashil hadha aliakhtibari."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
-      "text": "Mensaje"
+      "text": "alrisala"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
-      "text": "El valor esperado no coincide con el valor real."
+      "text": "alqimat almutawaqaeat la tutabq alqimat alfieliati."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
-      "text": "El método en este delegado no puede devolver nulo"
+      "text": "qad la turje altariqat fi hadha almufwwd qimatan void"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
-      "text": "El método en este delegado debe devolver vacío"
+      "text": "altariqat fi hadha almufwwd yajib 'an turje qimat void"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
-      "text": "La expresión regular del componente no es válida"
+      "text": "altaebir alnamatiu lilmukawin ghayr salihi."
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
-      "text": "Expresión regular del componente no proporcionada"
+      "text": "altaebir alnamatiu lilmukawin ghayr mutah."
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
-      "text": "No se proporciona el color de primer plano del componente"
+      "text": "lawn muqadimat almukawin ghayr mutah."
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
-      "text": "No se proporciona el color de fondo del componente"
+      "text": "lawn khalfiat almukawin ghayr mutah."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador."
+      "text": "asm 'adat altamyiz ghayr mutah."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador base."
+      "text": "asm 'adat altamyiz al'asasiat ghayr mutah."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
-      "text": "No puedo encontrar el resaltador {0}"
+      "text": "la yumkn aleuthur ealaa 'adat altamyiz {0}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
-      "text": "No puedo encontrar el resaltador"
+      "text": "la yumkn aleuthur ealaa 'adat altamyiz"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
-      "text": "No se puede encontrar el componente {0} en el resaltador {1}"
+      "text": "la yumkn aleuthur ealaa almukwwn {0} fi 'adat altamyiiz {1}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
-      "text": "Resaltador no válido."
+      "text": "'adat altamyiz ghayr salihatin."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
-      "text": "El resaltador no tiene nombre."
+      "text": "asm 'adat altamyiz ghayr mutah."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
-      "text": "El resaltador ya existe"
+      "text": "'adat altamyiz mawjudat musbqan."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
-      "text": "El resaltador no tiene componentes."
+      "text": "la tahtawi 'adat altamyiz ealaa 'ayi mukwnat."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
-      "text": "No se puede eliminar el resaltador incorporado {0}"
+      "text": "la yumkin 'iizalat 'adat altamyiz almudmaja {0}"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
-      "text": "El nombre del historial no está especificado"
+      "text": "aism alsijili ghayr muhadad"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
-      "text": "Las entradas del historial no están especificadas"
+      "text": "madkhalat alsijili ghayr muhadada"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
-      "text": "No se proporciona la ruta del archivo de historial."
+      "text": "masar milafi alsijili ghayr mutawafiri."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
-      "text": "No se proporciona representación JSON del historial."
+      "text": "tamthil alsijil bisighat JSON ghayr mutawafiri."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
-      "text": "Se analiza JSON, pero no se proporciona la representación JSON del historial."
+      "text": "tama tahlil JSON, walakina tamthil alsijil bisighat JSON ghayr mutawafiri."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
-      "text": "No se proporciona información histórica."
+      "text": "maelumat alsijili ghayr mutawafiratin."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
-      "text": "No se proporcionó el nombre del historial. ¿Está seguro de haber especificado el nombre en su representación JSON?"
+      "text": "asm alsijili ghayr mutawafiri. hal 'ant muta'akid min tahdid aliasm fi tamthil JSON?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
-      "text": "No se proporcionan entradas del historial. ¿Está seguro de haber especificado las entradas en su representación JSON?"
+      "text": "madkhalat alsijili ghayr mutawafiratin. hal 'ant muta'akid min tahdid almadkhalat fi tamthil JSON?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
-      "text": "Historial {0} no encontrado."
+      "text": "alsijalu {0} ghayr mawjudi."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
-      "text": "El historial general no se puede eliminar, pero se puede borrar."
+      "text": "la yumkin 'iizalat alsijili aleama, walakin yumkin mashahu."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
-      "text": "La historia no es parte de las historias registradas."
+      "text": "alsijil lays jz'an min alsijilaat almusajalati."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
-      "text": "No se pudo eliminar el historial."
+      "text": "fashil hadhf alsijili."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
-      "text": "No se proporciona entrada de historial."
+      "text": "madkhal alsijili ghayr mutawafiri."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
-      "text": "No se proporciona la lista de entradas del historial."
+      "text": "qayimat madkhalat alsijili ghayr mutawafiratin."
     },
     {
       "loc": "T_READER_EXCEPTION_PRINTWRITE",
-      "text": "Hay un conflicto entre {0} y {1}."
+      "text": "hunak taearud bayn {0} wa{1}."
     },
     {
       "loc": "T_READER_FAILED",
-      "text": "El lector de entrada ha fallado"
+      "text": "fashil qari al'iidkhali."
     },
     {
       "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
-      "text": "Esta corriente no puede buscar."
+      "text": "la yumkin lihadha aldafq albahtha."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "No se ha podido generar una secuencia VT funcional del tipo {0} con la acción {1}. Asegúrese de haber especificado los valores correctamente."
+      "text": "fashilna fi 'iinsha' tasalsul VT eamil min alnawe {0} bial'iijra' {1}. ta'akad min tahdid alqiam bishakl sahihin."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
-      "text": "No se puede construir la secuencia VT para el tipo inexistente {0}"
+      "text": "la yumkin bina' tasalsul VT linawe ghayr mawjud {0}"
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
-      "text": "No se puede generar la secuencia VT sin argumentos. Se esperaban {0} argumentos, pero se obtuvieron {1}."
+      "text": "la yumkin bina' tasalsul VT mae wasayit mafqudatin. tama tawaque {0} wasitata, watama alhusul ealaa {1} wasitati."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Un alias no puede ser el mismo nombre que un comando."
+      "text": "la yumkin 'an yakun aliasm almustaear hu nafs asm al'amra."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
-      "text": "Comando no encontrado para crear el alias {0}."
+      "text": "lam yatima aleuthur ealaa al'amr liliasm almustaear {0}."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​ya encontrado"
+      "text": "tama aleuthur ealaa asm mustaear msbqan."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "No se encontró el alias {0} para eliminar."
+      "text": "lam yatima aleuthur ealaa aliasm almustaear {0} liatima 'iizalatuhu."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "No se encuentra el alias {0} para realizar la consulta."
+      "text": "lam yatima aleuthur ealaa aliasm almustaear {0} liatima aliastielam eanhu."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
-      "text": "Uso"
+      "text": "aliastikhdam"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
-      "text": "Dominio"
+      "text": "al'amr"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
-      "text": "Descripción"
+      "text": "alwasf"
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
-      "text": "No hay ayuda para el argumento \"{0}\"."
+      "text": "la tujad musaeadat lilwasit \"{0}\"."
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
-      "text": "Descripción de ayuda sin argumentos"
+      "text": "la yujad wusf limusaeadat alwasitati."
     },
     {
       "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
-      "text": "Este argumento aún no se ha implementado."
+      "text": "lam yatima tanfidh hadhih alwasitat bieda."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
-      "text": "No hubo suficientes argumentos."
+      "text": "lam takun hunak wasayit kafiatun."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "wasitat ghayr maerufa"
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
-      "text": "Error irrecuperable en el argumento"
+      "text": "khata ghayr qabil lil'iislah fi alwasita"
     },
     {
       "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
-      "text": "No se puede obtener información del argumento para el comando o argumento"
+      "text": "la yumkin alhusul ealaa maelumat alwasitat lil'amr 'aw alwasitati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
-      "text": "No se especifican los parámetros del hilo."
+      "text": "lam yatima tahdid muealimat silsilat aleamaliaati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
-      "text": "No se proporcionan los argumentos obligatorios para todos los usos siguientes:"
+      "text": "lam yatima tawfir alwasayit almatlubat lijamie alaistikhdamat 'adnah:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "wasit ghayr maeruf"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
-      "text": "No se proporcionan los argumentos obligatorios."
+      "text": "lam yatima tawfir alwasayit almatlubati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
-      "text": "No se proporcionan los interruptores necesarios."
+      "text": "lam yatima tawfir almafatih almatlubati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
-      "text": "Uno de los conmutadores requiere un valor que no se proporciona."
+      "text": "yatatalab 'ahad almafatih qimatan ghayr mutawafiratin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
-      "text": "Los interruptores que se enumeran a continuación son desconocidos."
+      "text": "almafatih almudrajat 'adnah ghayr maerufatin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
-      "text": "Los interruptores que se enumeran a continuación entran en conflicto entre sí."
+      "text": "almafatih almudrajat 'adnaah tataearad mae baediha albaed."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
-      "text": "Los siguientes interruptores no aceptan valores."
+      "text": "almafatih 'adnah la taqbal alqima."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
-      "text": "Uno o más de los argumentos esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "yatawaqae wasit wahid 'aw 'akthar qimat raqmiatan, walakinak 'udkhilt rqman ghayr sahihin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
-      "text": "Uno o más de los argumentos esperan una redacción exacta, pero usted proporcionó una palabra no válida."
+      "text": "yatawaqae wasit wahid 'aw 'akthar siaghatan daqiqatan, walakinak 'udkhilat kalimat ghayr sahihatin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
-      "text": "Uno o más de los conmutadores esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "yatawaqae wasit wahid 'aw 'akthar qimat raqmiatan, walakinak 'udkhilt rqman ghayr sahihin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
-      "text": "Consulte la entrada de ayuda de este comando para obtener más información."
+      "text": "rajie madkhal almusaeadat lihadha al'amr limazid min almaelumati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
-      "text": "El comando está siendo interrumpido..."
+      "text": "tamat muqataeat al'amri..."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
-      "text": "Error al intentar ejecutar el comando {2}."
+      "text": "khata 'athna' muhawalat tanfidh al'amr {2}."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
-      "text": "Error"
+      "text": "khata"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
-      "text": "Comando abortado por el siguiente motivo"
+      "text": "tama 'iilgha' al'amr lilsabab altaali:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
-      "text": "Patrón de comando proporcionado no válido."
+      "text": "namat 'amr ghayr salihin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
-      "text": "Comando no encontrado."
+      "text": "al'amr ghayr mawjudi."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
-      "text": "El tipo de shell {0} no existe."
+      "text": "nawe shell {0} ghayr mawjudi."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
-      "text": "Debes proporcionar la base de comando."
+      "text": "yajib ealayk tawfir qaeidat al'awamir."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
-      "text": "Debes proporcionar el comando."
+      "text": "yajib ealayk tawfir al'amri."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
-      "text": "El comando especificado ya está agregado."
+      "text": "al'amr almuhadad mudaf bialfieli."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden cargar."
+      "text": "la yumkin tahmil baed al'awamir almukhasasati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
-      "text": "No se encuentra el comando personalizado especificado."
+      "text": "al'amr almukhasas almuhadad ghayr mawjudi."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden descargar."
+      "text": "la yumkin 'iilgha' tahmil baed al'awamir almukhasasati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
-      "text": "Este shell usa comandos de barra diagonal para ejecutar los comandos. Para comenzar, añada la barra diagonal \"/\" al principio del comando. Por ejemplo:"
+      "text": "yustakhdam hadha al'amr 'awamir alshurtat almayilat litanfidhiha. yurja 'iidafat ramz alshurtat almayila '/' 'iilaa bidayat al'amr lilbad'i. ealaa sabil almithali:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
-      "text": "Este comando no está definido."
+      "text": "hadha al'amr ghayr muerrf."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
-      "text": "Comandos disponibles:"
+      "text": "al'awamir almutahatu:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
-      "text": "Órdenes generales:"
+      "text": "al'awamir aleamatu:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "No hay comandos de shell."
+      "text": "la tujad 'awamir sudfatin."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
-      "text": "Comandos adicionales:"
+      "text": "al'awamir al'iidafiatu:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Sin comandos adicionales"
+      "text": "la tujad 'awamir 'iidafiatun."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
-      "text": "Comandos de alias:"
+      "text": "al'awamir albadilatu:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Sin comandos de alias."
+      "text": "la tujad 'awamir badilatun."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
-      "text": "Comandos unificados:"
+      "text": "al'awamir almuahadatu:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "No hay comandos unificados"
+      "text": "la tujad 'awamir muahadatun."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
-      "text": "Comando definido por"
+      "text": "al'amr muerrf biwasita"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
-      "text": "Este comando tiene los siguientes argumentos que cambian su funcionamiento:"
+      "text": "yahtawi hadha al'amr ealaa alwasaytat altaaliat alati tughyr tariqat eamalihi:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
-      "text": "Descripción de argumento no especificado"
+      "text": "wasf wasitat ghayr muhdd"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
-      "text": "Este comando tiene los siguientes interruptores que cambian su funcionamiento:"
+      "text": "yahtawi hadha al'amr ealaa almufatyh altaaliat alati tughyr tariqat eamalihi:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
-      "text": "Descripción del interruptor no especificado"
+      "text": "wasaf muftah ghayr muhdd"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
-      "text": "No hay ayuda para el comando \"{0}\"."
+      "text": "la tujad musaeadat lil'amr \"{0}\"."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
-      "text": "No se encuentra el ajuste preestablecido especificado {0}."
+      "text": "al'iiedad almusbq almuhdd {0} ghayr mawjudi."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
-      "text": "Seleccionar ajuste preestablecido para {0}:"
+      "text": "tahdid al'iiedad almusbq la {0}:"
     },
     {
       "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
-      "text": "No se encontraron comandos."
+      "text": "la tujad 'awamir."
     },
     {
       "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
-      "text": "Sale del shell si se ejecuta en un subshell"
+      "text": "yughlq alsudfat 'iidha kan yaemal ealaa sudfat fareiatin."
     },
     {
       "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
-      "text": "Encuentra los comandos disponibles en el tipo de shell actual"
+      "text": "albahth ean al'awamir almutahat fi nawe shell alhali"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
-      "text": "Página de ayuda"
+      "text": "safhat almusaeada"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
-      "text": "Muestra comandos generales (predeterminado)"
+      "text": "eard al'awamir aleama (aftiradi)"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
-      "text": "Muestra comandos con alias"
+      "text": "eard al'awamir almustaeara"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
-      "text": "Muestra comandos unificados"
+      "text": "eard al'awamir almuahada"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
-      "text": "Muestra comandos adicionales"
+      "text": "eard al'awamir al'iidafia"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
-      "text": "Muestra todos los comandos"
+      "text": "eard jamie al'awamir"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
-      "text": "Utiliza ayuda simplificada"
+      "text": "aistikhdam taelimat mubasata"
     },
     {
       "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
-      "text": "Abre la biblioteca de ajustes preestablecidos de shell"
+      "text": "fath maktabat al'iiedadat almusbaqat li shell"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
-      "text": "Mensaje del shell: No se encuentra el comando solicitado {0}. Consulte la ayuda para ver los comandos disponibles."
+      "text": "risalat shell: lam yatima aleuthur ealaa al'amr almatlub {0}. rajie \"almusaeadati\" liliatilae ealaa al'awamir almutahati."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
-      "text": "Error al intentar ejecutar el comando."
+      "text": "khataan fi muhawalat tanfidh al'amr."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
-      "text": "No se puede obtener el ejecutor de shell para {0}"
+      "text": "taeadhur alhusul ealaa munfidh shell la {0}"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
-      "text": "Error al intentar inicializar el shell"
+      "text": "fashilat muhawalat tahyiat shell"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
-      "text": "No se puede determinar si la entrada de selección es única o múltiple"
+      "text": "taeadhur tahdid ma 'iidha kan 'iidkhal altahdid mfrdan 'am mteddan"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
-      "text": "No se especifica el marcado."
+      "text": "lam yatima tahdid alealamati."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
-      "text": "Especificador de etiqueta final no válido."
+      "text": "muhdid wasam nihayat ghayr salihi."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
-      "text": "No hay secuencias en cola para finalizar la etiqueta."
+      "text": "la tujad tasalsilat fi qayimat alaintizar li'iinha' alwasm bha."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
-      "text": "Faltan {0} etiquetas finales."
+      "text": "hunak {0} wasam nihayat mafqudi."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
-      "text": "El formato inicial no debe imprimir ningún texto; solo debe contener secuencias VT de formato."
+      "text": "yajib 'alaa yatbae altansiq al'awaliu 'ayu nas; yajib 'an yahtawi faqat ealaa tasalsilat VT liltansiqi."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "No hay ningún archivo Asciicast"
+      "text": "la yujad milafun Asciicast."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "No se puede deserializar la representación base de Asciicast"
+      "text": "taeadhur 'iilgha' tasalsul tamthil Asciicast al'asasi."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v1"
+      "text": "taeadhur 'iilgha' tasalsul tamthil Asciicast al'iisdar 1."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v2"
+      "text": "taeadhur 'iilgha' tasalsul tamthil Asciicast al'iisdar 2."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "No se puede obtener información del evento"
+      "text": "taeadhar alhusul ealaa maelumat alhadathi."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
-      "text": "Combinaciones de teclas disponibles"
+      "text": "rawabit almafatih almutahati."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
-      "text": "No hay enlaces definidos en este contexto."
+      "text": "la tujad rawabit muerrft fi hadha alsiyaqi."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
-      "text": "Atajos de teclado"
+      "text": "rawabit lawhat almafatihi."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
-      "text": "Vinculaciones del ratón"
+      "text": "rawabit almawsi."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
-      "text": "Nombre de personaje de Nerd Fonts no válido {0} en el tipo {1}"
+      "text": "asm harf Nerd Fonts ghayr salih {0} fi alnawe {1}."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
-      "text": "Representación de carácter de Nerd Fonts no válida {0} de {1} en el tipo {2}"
+      "text": "tamthil harf Nerd Fonts ghayr salih {0} min {1} fi alnawe {2}."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
-      "text": "Tipo de fuente Nerd no válido {0}"
+      "text": "nawe Nerd Fonts ghayr salih {0}."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
-      "text": "Las fuentes Nerd tipo {0} no tienen caracteres"
+      "text": "la yahtawi nawe Nerd Fonts {0} ealaa 'ayi 'ahrufu."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
-      "text": "Renderable ya está registrado"
+      "text": "qabil lileard musjjl musbqan."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
-      "text": "Renderable no está registrado"
+      "text": "qabil lileard ghayr musjjl."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
-      "text": "Todos los hilanderos deben tener el mismo ancho."
+      "text": "yajib 'an yakun eard jamie aldwwarat mtsawyan."
     }
   ]
 }

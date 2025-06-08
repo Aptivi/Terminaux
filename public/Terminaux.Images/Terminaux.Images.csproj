@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LocaleStation" Version="1.1.0" />
     <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.6.0" />
   </ItemGroup>
 
@@ -39,6 +40,10 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Placeholders\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
   </ItemGroup>
 
 </Project>

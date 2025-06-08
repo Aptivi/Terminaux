@@ -1,1431 +1,1409 @@
 {
-  "lang": "spa",
-  "name": "Spanish",
+  "lang": "ita",
+  "name": "Italian",
   "cultures": [
-    "es",
-    "es-419",
-    "es-AR",
-    "es-BO",
-    "es-BR",
-    "es-BZ",
-    "es-CL",
-    "es-CO",
-    "es-CR",
-    "es-CU",
-    "es-DO",
-    "es-EC",
-    "es-ES",
-    "es-GQ",
-    "es-GT",
-    "es-HN",
-    "es-MX",
-    "es-NI",
-    "es-PA",
-    "es-PE",
-    "es-PH",
-    "es-PR",
-    "es-PY",
-    "es-SV",
-    "es-US",
-    "es-UY",
-    "es-VE"
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
   ],
   "locs": [
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR1",
-      "text": "¡Error general de Terminaux!"
+      "text": "Errore generale di Terminaux!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR2",
-      "text": "¡Error interno de Terminaux!"
+      "text": "Errore interno di Terminaux!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR3",
-      "text": "Error desconocido"
+      "text": "Errore sconosciuto"
     },
     {
       "loc": "T_EXCEPTION_NOTIMPLEMENTED",
-      "text": "Aún no implementado."
+      "text": "Non ancora implementato."
     },
     {
       "loc": "T_COMMON_CANTCONTINUE",
-      "text": "Este programa no puede continuar."
+      "text": "Questo programma non può continuare."
     },
     {
       "loc": "T_COMMON_ANYKEY",
-      "text": "Presione cualquier tecla para continuar..."
+      "text": "Premi un tasto qualsiasi per continuare..."
     },
     {
       "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
-      "text": "Tipo inválido"
+      "text": "Tipo non valido"
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
-      "text": "Debes especificar la parte de la pantalla."
+      "text": "È necessario specificare la parte dello schermo."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
-      "text": "Debes especificar el nombre de la pantalla."
+      "text": "È necessario specificare il nome dello schermo."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de pieza especificado está fuera de rango."
+      "text": "L'indice della parte specificato è fuori intervallo."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
-      "text": "No se encuentra el nombre de la pieza especificada."
+      "text": "Il nome della parte specificato non è stato trovato."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
-      "text": "No se encuentra la parte especificada."
+      "text": "La parte specificata non è stata trovata."
     },
     {
       "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de búfer no puede ser menor que cero ni mayor que {0} búferes."
+      "text": "L'indice del buffer non può essere inferiore a zero o superiore a {0} buffer."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
-      "text": "La pantalla no está especificada."
+      "text": "Lo schermo non è specificato."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
-      "text": "La pantalla no es cíclica."
+      "text": "Lo schermo non è ciclico."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux usando una terminal tonta."
+      "text": "L'utente ha provato a eseguire un'applicazione Terminaux utilizzando un terminale stupido."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Esta aplicación utiliza funciones de consola extendidas proporcionadas por Terminaux que requieren funciones no admitidas por terminales \"tontas\"."
+      "text": "Questa applicazione sfrutta le funzionalità estese della console fornite da Terminaux che richiedono funzionalità non supportate dai terminali \"stupidi\"."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Posible solución: Use un emulador de terminal adecuado o consulte la configuración de su terminal para configurar el tipo de terminal en un valor distinto al \"tonto\". Recomendamos usar los emuladores de terminal \"vt100\" para sacar el máximo provecho de esta aplicación."
+      "text": "Possibile soluzione: utilizzare un emulatore di terminale appropriato o consultare le impostazioni del terminale per impostare un tipo di terminale diverso da \"stupido\". Si consiglia di utilizzare gli emulatori di terminale \"vt100\" per sfruttare al meglio questa applicazione."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un tipo de terminal incluido en la lista negra."
+      "text": "L'utente ha tentato di eseguire un'applicazione Terminaux su un tipo di terminale inserito nella blacklist."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "Il tipo di console che stai attualmente utilizzando, {0}, è nella blacklist: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "Il tipo di console che stai utilizzando attualmente, {0}, è in graylist: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un emulador de terminal incluido en la lista negra."
+      "text": "L'utente ha tentato di eseguire un'applicazione Terminaux su un emulatore di terminale inserito nella blacklist."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "L'emulatore di terminale che stai utilizzando attualmente, {0}, è nella blacklist: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "L'emulatore di terminale che stai utilizzando attualmente, {0}, è nella lista grigia: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "El tipo de terminal {0} no admite 256 colores según terminfo"
+      "text": "Il tipo di terminale {0} non supporta 256 colori secondo terminfo"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en MinTTY de Git Bash sin winpty."
+      "text": "L'utente ha provato a eseguire un'applicazione Terminaux su MinTTY di Git Bash senza winpty."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Necesitarás usar WinPty para poder usar este programa. Si estás seguro de no estar ejecutando Git Bash, asegúrate de usar una terminal de Windows adecuada."
+      "text": "Per poter utilizzare questo programma, è necessario usare winpty. Se sei sicuro di non usare Git Bash, assicurati di utilizzare un terminale Windows appropriato."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona debido a un error de E/S, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "Il posizionamento della console non funziona a causa di un errore I/O, pertanto questa applicazione potrebbe comportarsi in modo anomalo."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona correctamente, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "Il posizionamento della console non funziona correttamente, pertanto l'applicazione potrebbe comportarsi in modo anomalo."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
-      "text": "Tu consola es demasiado pequeña para funcionar correctamente: {0}x{1} | beneficio: {2}x{3} | mínimo: {4}x{5}"
+      "text": "La tua console è troppo piccola per funzionare correttamente: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
-      "text": "Para una mejor experiencia, cambia el tamaño de la ventana de la consola sin salir de esta pantalla. Presiona cualquier tecla para continuar..."
+      "text": "Per un'esperienza migliore, ridimensiona la finestra della console rimanendo su questa schermata. Premi un tasto qualsiasi per continuare..."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "No se proporciona montaje."
+      "text": "Montaggio non previsto."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} No se puede continuar."
+      "text": "{0} Impossibile continuare."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "El tipo de consola solo admite escritura básica."
+      "text": "Il tipo console supporta solo la scrittura di base."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "El tipo de consola es de naturaleza desconocida."
+      "text": "Il tipo di console è di natura sconosciuta."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Esta aplicación utiliza secuencias de escape VT, pero Terminal.app no ​​tiene soporte para 255 y colores verdaderos."
+      "text": "Questa applicazione utilizza sequenze di escape VT, ma Terminal.app non supporta più 255 colori e colori reali."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "El tipo de consola no admite 256 colores."
+      "text": "Il tipo di console non supporta 256 colori."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "No se puede filtrar sin ninguna consulta."
+      "text": "Non è possibile filtrare senza alcuna query."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "No se puede filtrar con una consulta no válida."
+      "text": "Impossibile filtrare con una query non valida."
     },
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "No hay ninguna expresión en el filtro de la consola."
+      "text": "Non c'è alcuna espressione nel filtro della console."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "No se pueden restaurar nuevos atributos de termios para el modo sin procesar: {0}"
+      "text": "Impossibile ripristinare i nuovi attributi Termios per la modalità raw: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "No se pueden obtener los indicadores del descriptor de archivo: {0}"
+      "text": "Impossibile ottenere i flag descrittori di file: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "No se puede establecer el indicador de descriptor de archivo en lectura sin bloqueo: {0}"
+      "text": "Impossibile impostare il flag descrittore del file su lettura non bloccante: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "No se puede establecer el indicador del descriptor de archivo para bloquear la lectura: {0}"
+      "text": "Impossibile impostare il flag del descrittore di file per bloccare la lettura: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
-      "text": "No se puede obtener información del sintetizador de la representación proporcionada."
+      "text": "Impossibile ottenere informazioni sul sintetizzatore dalla rappresentazione fornita."
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
-      "text": "La representación del sintetizador no es válida en [{0}.{1}]"
+      "text": "La rappresentazione del sintetizzatore non è valida in [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
-      "text": "La frecuencia no es válida en [{0}.{1}]"
+      "text": "La frequenza non è valida in [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
-      "text": "La duración no es válida en [{0}.{1}]"
+      "text": "La durata non è valida in [{0}.{1}]"
     },
     {
       "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
-      "text": "El objetivo no puede ser nulo"
+      "text": "Il target non può essere nullo"
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
-      "text": "El valor máximo [{0}] no debe ser menor que el valor de progreso [{1}]"
+      "text": "Il valore massimo [{0}] non deve essere inferiore al valore di avanzamento [{1}]"
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
-      "text": "El valor de progreso [{0}] debe estar entre 0 y el valor máximo de {1}."
+      "text": "Il valore di avanzamento [{0}] deve essere compreso tra 0 e il valore massimo di {1}."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un parámetro"
+      "text": "Questo designatore non può essere posizionato alla fine della stringa senza specificare un parametro"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
-      "text": "Este designador sólo puede tomar un número como parámetro."
+      "text": "Questo designatore può accettare solo un numero come parametro."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
-      "text": "Este designador sólo puede tomar un número del 1 al 9."
+      "text": "Questo designatore può assumere solo un numero compreso tra 1 e 9."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
-      "text": "Este designador sólo puede tomar una letra como parámetro."
+      "text": "Questo designatore può accettare solo una lettera come parametro."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
-      "text": "Este designador necesita una constante entera"
+      "text": "Questo designatore necessita di una costante intera"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
-      "text": "Este designador contiene una constante entera no válida"
+      "text": "Questo designatore contiene una costante intera non valida"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar una constante de carácter"
+      "text": "Questo designatore non può essere posizionato alla fine della stringa senza specificare una costante di carattere"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
-      "text": "No puedes agregar más de un carácter"
+      "text": "Non puoi aggiungere più di un carattere"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
-      "text": "Este designador necesita una colección de caracteres."
+      "text": "Questo designatore necessita di una raccolta di caratteri"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
-      "text": "El ancho no es válido"
+      "text": "La larghezza non è valida"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un tipo"
+      "text": "Questo designatore non può essere posizionato alla fine della stringa senza specificare un tipo"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
-      "text": "No se puede procesar la secuencia nula."
+      "text": "Impossibile elaborare la sequenza nulla."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
-      "text": "No se pueden procesar parámetros nulos."
+      "text": "Impossibile elaborare parametri nulli."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
-      "text": "Esta bandera debe representar un signo menos"
+      "text": "Questo flag deve rappresentare un segno meno"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
-      "text": "Todavía hay más datos después del índice {0} de {1} para formatear"
+      "text": "Ci sono ancora ulteriori dati dopo l'indice {0} su {1} per la formattazione"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
-      "text": "La constante entera para el carácter no es válida."
+      "text": "La costante intera per il carattere non è valida."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
-      "text": "La constante entera no es válida."
+      "text": "La costante intera non è valida."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
-      "text": "No se puede insertar una variable inexistente."
+      "text": "Impossibile caricare una variabile inesistente."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
-      "text": "Esta es una operación binaria, pero el número de argumentos en cola es {0}"
+      "text": "Questa è un'operazione binaria, ma il numero di argomenti in coda è {0}"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
-      "text": "La constante entera para el primer operando no es válida."
+      "text": "La costante intera per il primo operando non è valida."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
-      "text": "La constante entera para el segundo operando no es válida."
+      "text": "La costante intera per il secondo operando non è valida."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
-      "text": "Esta es una operación unaria, pero el número de argumentos en cola es {0}"
+      "text": "Questa è un'operazione unaria, ma il numero di argomenti in coda è {0}"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "La constante entera no es válida."
+      "text": "La costante intera non è valida."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
-      "text": "La representación condicional {0} no es válida."
+      "text": "La rappresentazione condizionale {0} non è valida."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
-      "text": "No se pudo leer el número de bytes solicitado."
+      "text": "Impossibile leggere il numero di byte richiesto."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
-      "text": "¡Tabla de cadenas no válida!"
+      "text": "Tabella stringhe non valida!"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
-      "text": "Magia de encabezado no válida"
+      "text": "Intestazione magica non valida"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
-      "text": "No se puede procesar un parámetro de tipo distinto de cadena. La enumeración es {0} y el tipo es {1}."
+      "text": "Impossibile elaborare il parametro su un tipo di valore non stringa. L'enum è {0} e il tipo è {1}."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
-      "text": "El designador de retraso finalizó prematuramente."
+      "text": "Il designatore di ritardo è terminato prematuramente."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
-      "text": "Designador de retraso no válido."
+      "text": "Designatore di ritardo non valido."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
-      "text": "El valor de retardo no es un número."
+      "text": "Il valore del ritardo non è un numero."
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
-      "text": "Tipo de capacidad desconocida '{0}'"
+      "text": "Tipo di capacità sconosciuto '{0}'"
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
-      "text": "No se puede cargar {0}"
+      "text": "Impossibile caricare {0}"
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
-      "text": "El color está fuera de rango."
+      "text": "Il colore è fuori gamma."
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "No se pueden obtener datos de color."
+      "text": "Impossibile ottenere i dati sul colore."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
-      "text": "¿Estás seguro de que este gradiente no es nulo?"
+      "text": "Sei sicuro che questo gradiente non sia nullo?"
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
-      "text": "Especifique al menos un color."
+      "text": "Specificare almeno un colore."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
-      "text": "No se puede convertir la fuente nula."
+      "text": "Impossibile convertire la sorgente null."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
-      "text": "No se puede convertir al tipo nulo."
+      "text": "Impossibile convertire nel tipo null."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
-      "text": "Debes especificar un modelo de color de origen específico, no el base."
+      "text": "Dovresti specificare un modello di colore sorgente specifico, non quello di base."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
-      "text": "No es un modelo de color."
+      "text": "Non è un modello di colore."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
-      "text": "Debes especificar un modelo de color de destino específico, no el base."
+      "text": "Dovresti specificare un modello di colore di destinazione specifico, non quello di base."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
-      "text": "No es un modelo de color objetivo."
+      "text": "Non è un modello di colore target."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
-      "text": "No se puede convertir el mismo modelo de color."
+      "text": "Impossibile convertire lo stesso modello di colore."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
-      "text": "No se puede convertir a RGB."
+      "text": "Non è possibile convertire in RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
-      "text": "No se puede convertir desde el modelo de color base."
+      "text": "Impossibile convertire dal modello di colore di base."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
-      "text": "No se puede convertir a CMYK."
+      "text": "Impossibile convertire in CMYK."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
-      "text": "No se puede convertir a CMY."
+      "text": "Impossibile convertire in CMY."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
-      "text": "No se puede convertir a HSL."
+      "text": "Impossibile convertire in HSL."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
-      "text": "No se puede convertir a HSV."
+      "text": "Impossibile convertire in HSV."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
-      "text": "No se puede convertir a RYB."
+      "text": "Non è possibile convertire in RYB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
-      "text": "No se puede convertir a YIQ."
+      "text": "Impossibile convertire in YIQ."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
-      "text": "No se puede convertir a YUV."
+      "text": "Non è possibile convertire in YUV."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
-      "text": "No se puede convertir a XYZ."
+      "text": "Impossibile convertire in XYZ."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
-      "text": "No se puede convertir a YXY."
+      "text": "Impossibile convertire in YXY."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
-      "text": "No se puede convertir a HunterLab."
+      "text": "Impossibile convertire in HunterLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
-      "text": "No se puede convertir a CieLab."
+      "text": "Impossibile convertire in CieLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
-      "text": "No se puede convertir a CieLuv."
+      "text": "Impossibile convertire in CieLuv."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
-      "text": "No se puede convertir a CieLch."
+      "text": "Impossibile convertire in CieLch."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "No se puede convertir a HWB."
+      "text": "Non è possibile convertire in HWB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
-      "text": "No se puede convertir desde RGB."
+      "text": "Non è possibile convertire da RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMYK!"
+      "text": "Impossibile convertire un'istanza RGB nulla in CMYK!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMY!"
+      "text": "Impossibile convertire un'istanza RGB nulla in CMY!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSL!"
+      "text": "Impossibile convertire un'istanza RGB nulla in HSL!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSV!"
+      "text": "Impossibile convertire un'istanza RGB nulla in HSV!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a RYB!"
+      "text": "Impossibile convertire un'istanza RGB nulla in RYB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YIQ!"
+      "text": "Impossibile convertire un'istanza RGB nulla in YIQ!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YUV!"
+      "text": "Non è possibile convertire un'istanza RGB nulla in YUV!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a XYZ!"
+      "text": "Impossibile convertire un'istanza RGB nulla in XYZ!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YXY!"
+      "text": "Impossibile convertire un'istanza RGB nulla in YXY!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HunterLab!"
+      "text": "Impossibile convertire un'istanza RGB nulla in HunterLab!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLab!"
+      "text": "Impossibile convertire un'istanza RGB nulla in CieLab!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLuv!"
+      "text": "Impossibile convertire un'istanza RGB nulla in CieLuv!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLch!"
+      "text": "Impossibile convertire un'istanza RGB nulla in CieLch!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HWB!"
+      "text": "Impossibile convertire un'istanza RGB nulla in HWB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
-      "text": "¡No se puede convertir una instancia CMYK nula a RGB!"
+      "text": "Impossibile convertire un'istanza CMYK nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
-      "text": "¡No se puede convertir una instancia CMY nula a RGB!"
+      "text": "Impossibile convertire un'istanza CMY nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
-      "text": "¡No se puede convertir una instancia HSL nula a RGB!"
+      "text": "Impossibile convertire un'istanza HSL nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
-      "text": "¡No se puede convertir una instancia HSV nula a RGB!"
+      "text": "Impossibile convertire un'istanza HSV nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
-      "text": "¡No se puede convertir una instancia RYB nula a RGB!"
+      "text": "Impossibile convertire un'istanza RYB nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
-      "text": "¡No se puede convertir una instancia YIQ nula a RGB!"
+      "text": "Impossibile convertire un'istanza YIQ nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
-      "text": "¡No se puede convertir una instancia YUV nula a RGB!"
+      "text": "Impossibile convertire un'istanza YUV nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
-      "text": "¡No se puede convertir una instancia XYZ nula a RGB!"
+      "text": "Impossibile convertire un'istanza XYZ nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
-      "text": "¡No se puede convertir una instancia YXY nula a RGB!"
+      "text": "Impossibile convertire un'istanza YXY nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
-      "text": "¡No se puede convertir una instancia nula de HunterLab a RGB!"
+      "text": "Impossibile convertire un'istanza HunterLab nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
-      "text": "¡No se puede convertir una instancia nula de CieLab a RGB!"
+      "text": "Impossibile convertire un'istanza CieLab nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
-      "text": "¡No se puede convertir una instancia nula de CieLuv a RGB!"
+      "text": "Impossibile convertire un'istanza CieLuv nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
-      "text": "¡No se puede convertir una instancia nula de CieLch a RGB!"
+      "text": "Impossibile convertire un'istanza CieLch nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "¡No se puede convertir una instancia HWB nula a RGB!"
+      "text": "Impossibile convertire un'istanza HWB nulla in RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
-      "text": "El observador debe tener 2 o 10 años."
+      "text": "L'osservatore deve avere 2 o 10 anni"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
-      "text": "El iluminante no es válido"
+      "text": "L'illuminante non è valido"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
-      "text": "No se pueden obtener referencias de la tabla"
+      "text": "Non riesco a ottenere riferimenti dalla tabella"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Si usa 256 colores, deberá introducir un valor positivo entre 0 y 255 o un nombre de color válido. Si usa color verdadero, deberá escribir un especificador de color válido, como RRR;GGG;BBB, o un código de color hasta 16777215."
+      "text": "Specificatore di colore non valido \"{0}\". Se utilizzi 256 colori, dovrai inserire un valore positivo compreso tra 0 e 255 o un nome di colore valido. Se utilizzi colori reali, dovrai scrivere uno specificatore di colore valido, ad esempio RRR;GGG;BBB, oppure un codice colore fino a 16777215."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
-      "text": "El nivel de color rojo está fuera de rango (0 -> 255)."
+      "text": "Il livello del colore rosso è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
-      "text": "El nivel de color verde está fuera de rango (0 -> 255)."
+      "text": "Il livello del colore verde è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
-      "text": "El nivel de color azul está fuera de rango (0 -> 255)."
+      "text": "Il livello del colore blu è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
-      "text": "El especificador hexadecimal de color \"{0}\" no es válido. Este especificador debe comenzar con la etiqueta hash. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore esadecimale di colore \"{0}\" non valido. Questo specificatore deve iniziare con il tag hash. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
-      "text": "Longitud hexadecimal de color \"{0}\" no válida. Asegúrese de que tenga el formato correcto."
+      "text": "Lunghezza esadecimale del colore non valida \"{0}\". Assicurati che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
-      "text": "No se puede resolver el color hexadecimal \"{0}\"."
+      "text": "Impossibile risolvere il colore esadecimale \"{0}\"."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CieLab non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Il valore L è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 128.0)."
+      "text": "Il valore A è fuori intervallo (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 128.0)."
+      "text": "Il valore B è fuori intervallo (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CieLab \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CieLch non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Il valore L è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
-      "text": "El valor C está fuera de rango (-128.0 -> 128.0)."
+      "text": "Il valore C è fuori intervallo (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
-      "text": "El valor H está fuera de rango (-128.0 -> 128.0)."
+      "text": "Il valore H è fuori intervallo (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CieLch \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CieLuv non valido \"{0}\". Assicurati che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Il valore L è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
-      "text": "El valor U está fuera de rango (-134.0 -> 220.0)."
+      "text": "Il valore U è fuori intervallo (-134,0 -> 220,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
-      "text": "El valor V está fuera de rango (-140.0 -> 122.0)."
+      "text": "Il valore V è fuori intervallo (-140,0 -> 122,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CieLuv \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
-      "text": "El especificador de color CMY \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CMY non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "Il livello del colore ciano è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "Il livello del colore magenta è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "Il livello del colore giallo è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
-      "text": "El especificador de color CMY \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CMY \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CMYK non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "Il livello del colore ciano è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "Il livello del colore magenta è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "Il livello del colore giallo è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "El nivel de color negro está fuera de rango (0 -> 100)."
+      "text": "Il livello del colore nero è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. El especificador no puede tener más de cuatro elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore CMYK \"{0}\" non valido. Lo specificatore non può contenere più di quattro elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
-      "text": "Especificador de color HSL \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore HSL non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Il livello di tonalità è fuori intervallo (0' -> 360' gradi)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "Il livello di saturazione è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
-      "text": "El nivel de luminosidad está fuera de rango (0 -> 100)."
+      "text": "Il livello di luminosità è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
-      "text": "Especificador de color HSL \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore HSL \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
-      "text": "El especificador de color HSV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore HSV non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Il livello di tonalità è fuori intervallo (0' -> 360' gradi)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "Il livello di saturazione è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
-      "text": "El nivel de valor está fuera de rango (0 -> 100)."
+      "text": "Il livello del valore è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
-      "text": "Especificador de color HSV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore HSV \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "El especificador de color HWB \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore HWB non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Il livello di tonalità è fuori intervallo (0' -> 360' gradi)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "El nivel de blancura está fuera de rango (0 -> 100)."
+      "text": "Il livello di bianchezza è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "El nivel de oscuridad está fuera de rango (0 -> 100)."
+      "text": "Il livello di oscurità è fuori intervallo (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "El especificador de color HWB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore HWB \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore HunterLab non valido \"{0}\". Assicurati che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Il valore L è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 127.0)."
+      "text": "Il valore A è fuori intervallo (-128,0 -> 127,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 127.0)."
+      "text": "Il valore B è fuori intervallo (-128,0 -> 127,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore HunterLab \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
-      "text": "El especificador de color YUV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore YUV non valido \"{0}\". Assicurati che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "Il livello di luminanza è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
-      "text": "El nivel de croma (U) está fuera de rango (0 -> 255)."
+      "text": "Il livello di croma (U) è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
-      "text": "El nivel de croma (V) está fuera de rango (0 -> 255)."
+      "text": "Il livello di crominanza (V) è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
-      "text": "Especificador de color YUV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore YUV \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore YIQ non valido \"{0}\". Assicurati che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "Il livello di luminanza è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
-      "text": "El nivel en fase está fuera de rango (0 -> 255)."
+      "text": "Il livello in fase è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
-      "text": "El nivel de cuadratura está fuera de rango (0 -> 255)."
+      "text": "Il livello di quadratura è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore YIQ \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Asegúrese de que tenga el formato correcto, es decir, un número del 0 al 255 si se utilizan 255 colores, o una secuencia VT si se utiliza color verdadero, como se indica a continuación."
+      "text": "Specificatore di colore non valido \"{0}\". Assicurarsi che sia nel formato corretto, ovvero un numero da 0 a 255 se si utilizzano 255 colori o una sequenza VT se si utilizzano colori reali come segue."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
-      "text": "Especificador de color \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
-      "text": "Este color ya es un color original."
+      "text": "Questo colore è già un colore originale."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
-      "text": "Especificador de color RYB \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore RYB non valido \"{0}\". Assicurati che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
-      "text": "El nivel rojo está fuera de rango (0 -> 255)."
+      "text": "Il livello del rosso è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
-      "text": "El nivel amarillo está fuera de rango (0 -> 255)."
+      "text": "Il livello giallo è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
-      "text": "El nivel azul está fuera de rango (0 -> 255)."
+      "text": "Il livello blu è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
-      "text": "El especificador de color RYB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore RYB \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore XYZ non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "Il valore X è fuori intervallo (0,0 -> 95,047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "Il valore Y è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "Il valore Z è fuori intervallo (0,0 -> 108,883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore XYZ \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore XYZ non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "Il valore X è fuori intervallo (0,0 -> 95,047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "Il valore Y è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "Il valore Z è fuori intervallo (0,0 -> 108,883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore XYZ \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
-      "text": "Especificador de color YXY \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore YXY non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
-      "text": "El valor Y1 está fuera de rango (0.0 -> 100.0)."
+      "text": "Il valore Y1 è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 1.0)."
+      "text": "Il valore X è fuori intervallo (0,0 -> 1,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
-      "text": "El valor Y2 está fuera de rango (0.0 -> 1.0)."
+      "text": "Il valore Y2 è fuori intervallo (0,0 -> 1,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
-      "text": "Especificador de color YXY \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Specificatore di colore YXY \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "No se especificó ningún nombre de componente."
+      "text": "Nessun nome di componente specificato."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "No se especificó ningún color para el componente {0}."
+      "text": "Nessun colore specificato per il componente {0}."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "El componente {0} ya existe."
+      "text": "Il componente {0} esiste già."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "El componente {0} no existe."
+      "text": "Il componente {0} non esiste."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "El componente {0} está predefinido y, por lo tanto, no se puede eliminar."
+      "text": "Il componente {0} è predefinito e quindi non può essere rimosso."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "La plantilla no tiene componentes."
+      "text": "Il modello non ha componenti."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "La plantilla no tiene componentes predefinidos que deban definirse ({0})."
+      "text": "Il modello non ha componenti predefiniti che devono essere definiti ({0})."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "No se proporcionó el nombre de la plantilla."
+      "text": "Nessun nome del modello fornito."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "No se puede encontrar la plantilla {0}"
+      "text": "Impossibile trovare il modello {0}"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "No se puede encontrar el componente {0} en la plantilla {1}"
+      "text": "Impossibile trovare il componente {0} nel modello {1}"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Plantilla no válida."
+      "text": "Modello non valido."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "La plantilla no tiene nombre."
+      "text": "Il modello non ha nome."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "La plantilla ya existe."
+      "text": "Il modello esiste già."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "No se puede eliminar la plantilla incorporada {0}"
+      "text": "Impossibile rimuovere il modello incorporato {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
-      "text": "El tipo de color no es válido"
+      "text": "Il tipo di colore non è valido"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
-      "text": "El especificador de color para visibilidad no es válido"
+      "text": "Lo specificatore di colore per la visibilità non è valido"
     },
     {
       "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
-      "text": "Tipo de monocromatismo no válido"
+      "text": "Tipo di monocromia non valido"
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
-      "text": "No se puede determinar cómo convertir un {0} de {1} a un color."
+      "text": "Non riesco a determinare come convertire {0} di {1} in un colore."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
-      "text": "No se puede determinar cómo convertir un {0} de un tipo desconocido a un color."
+      "text": "Non riesco a determinare come convertire un {0} di tipo sconosciuto in un colore."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
-      "text": "No puedo obtener el color"
+      "text": "Non riesco a vedere il colore."
     },
     {
       "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
-      "text": "No se pudo establecer el fondo"
+      "text": "Impossibile impostare lo sfondo"
     },
     {
       "loc": "T_COLOR_EXCEPTION_COLORISNULL",
-      "text": "No se proporciona instancia de color."
+      "text": "Non è fornita l'istanza del colore."
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
-      "text": "Salida"
+      "text": "Uscita"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
-      "text": "Combinaciones de teclas"
+      "text": "Associazioni di tasti"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
-      "text": "Encuentra el siguiente"
+      "text": "Trova successivo"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "Subir"
+      "text": "Spostarsi verso l'alto"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
-      "text": "Sube un elemento"
+      "text": "Vai su di un elemento"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "Bajar"
+      "text": "Sposta giù"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
-      "text": "Bajar un elemento"
+      "text": "Scendi di un elemento"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "Página anterior"
+      "text": "Pagina precedente"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
-      "text": "Ir a la página anterior"
+      "text": "Vai alla pagina precedente"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "Página siguiente"
+      "text": "Pagina successiva"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
-      "text": "Ir a la página siguiente"
+      "text": "Vai alla pagina successiva"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "Ir al inicio"
+      "text": "Vai all'inizio"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
-      "text": "Ir al primer elemento"
+      "text": "Vai al primo elemento"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "Ir al final"
+      "text": "Vai alla fine"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
-      "text": "Ir al último elemento"
+      "text": "Vai all'ultimo elemento"
     },
     {
       "loc": "T_INPUT_COMMON_SEARCHPROMPT",
-      "text": "Escribe un término de búsqueda (admite expresiones regulares)"
+      "text": "Scrivi un termine di ricerca (supporta le espressioni regolari)"
     },
     {
       "loc": "T_INPUT_COMMON_INVALIDQUERY",
-      "text": "Su consulta no es una expresión regular válida."
+      "text": "La tua query non è un'espressione regolare valida."
     },
     {
       "loc": "T_INPUT_COMMON_ENTRYPROMPT",
-      "text": "Seleccione una de las entradas:"
+      "text": "Seleziona una delle voci:"
     },
     {
       "loc": "T_INPUT_COMMON_NOITEMS",
-      "text": "No se encontró ningún artículo."
+      "text": "Nessun elemento trovato."
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
-      "text": "Buscar un elemento"
+      "text": "Cerca un elemento"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
-      "text": "Ir una línea hacia arriba (informativo)"
+      "text": "Vai avanti di una fila (informativo)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
-      "text": "Bajar una línea (informativo)"
+      "text": "Vai alla riga successiva (informativo)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
-      "text": "Cambiar"
+      "text": "Interruttore"
     },
     {
       "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
-      "text": "Lista de {0} colores predefinidos"
+      "text": "Elenco di {0} colori predefiniti"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
-      "text": "Gris"
+      "text": "Grigio"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
-      "text": "Transparencia"
+      "text": "Trasparenza"
     },
     {
       "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
-      "text": "Sombra y tinte"
+      "text": "Ombra e tinta"
     },
     {
       "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
-      "text": "Información de color"
+      "text": "Informazioni sul colore"
     },
     {
       "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
-      "text": "Transformar"
+      "text": "Trasformare"
     },
     {
       "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
-      "text": "Tipo de color no válido en el selector de colores"
+      "text": "Tipo di colore non valido nel selettore colori"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
-      "text": "Escribe el nombre de la fuente. Se convertirá a minúsculas."
+      "text": "Scrivi il nome del font. Verrà convertito in minuscolo."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_NOFONT",
-      "text": "La fuente no existe."
+      "text": "Il font non esiste."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
-      "text": "Seleccione una fuente figlet de la lista a continuación"
+      "text": "Seleziona un font figlet dall'elenco sottostante"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
-      "text": "Selección de fuentes"
+      "text": "Selezione del carattere"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
-      "text": "El selector no está especificado"
+      "text": "Il selettore non è specificato"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
-      "text": "Leer más..."
+      "text": "Per saperne di più..."
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Lista de combinaciones de teclas"
+      "text": "Elenco delle combinazioni di tasti"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
-      "text": "Cambiar de lugar"
+      "text": "Muoversi"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
-      "text": "Sale de la TUI interactiva"
+      "text": "Esce dalla TUI interattiva"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
-      "text": "Información del artículo"
+      "text": "Informazioni sull'articolo"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de selección requiere que haya al menos una opción habilitada."
+      "text": "Lo stile di selezione richiede che sia abilitata almeno una scelta."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Escribe el nombre del spinner. Se convertirá a minúsculas."
+      "text": "Scrivi il nome dello spinner. Verrà convertito in minuscolo."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "La ruleta no existe"
+      "text": "Lo spinner non esiste."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Seleccione un spinner de la lista a continuación"
+      "text": "Seleziona uno spinner dall'elenco sottostante"
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Selección de Spinner"
+      "text": "Selezione dello spinner"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
-      "text": "Sin información."
+      "text": "Nessuna informazione."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
-      "text": "Sin estatus"
+      "text": "Nessuno stato"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
-      "text": "Se intentó representar elementos TUI interactivos para el panel secundario en una TUI interactiva que solo permite la interacción desde un panel."
+      "text": "Si è tentato di eseguire il rendering di elementi TUI interattivi per il riquadro secondario su una TUI interattiva che consente l'interazione solo da un riquadro."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
-      "text": "Intenté representar información en el panel secundario en una TUI interactiva que permite la interacción desde dos paneles, lo que arruinó la representación de la selección allí."
+      "text": "Ho provato a visualizzare le informazioni nel riquadro secondario in una TUI interattiva che consente l'interazione da due riquadri, rovinando il rendering della selezione in alto."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
-      "text": "Se intentó representar información sobre datos nulos"
+      "text": "Tentativo di rendering di informazioni su dati nulli"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
-      "text": "No se pudo obtener información."
+      "text": "Impossibile ottenere informazioni."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
-      "text": "Realizar una acción sobre el elemento seleccionado"
+      "text": "Esegui un'azione sull'elemento selezionato"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
-      "text": "Proporcione una clase TUI interactiva base y vuelva a intentarlo."
+      "text": "Fornisci una classe TUI interattiva di base e riprova."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
-      "text": "La TUI interactiva {0} no contiene ninguna fuente de datos."
+      "text": "L'interfaccia utente interattiva {0} non contiene alcuna fonte dati."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
-      "text": "La TUI interactiva {0} tiene asignaciones de teclado o mouse conflictivas."
+      "text": "L'interfaccia utente interattiva {0} presenta associazioni di tastiera o mouse in conflitto."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
-      "text": "Las siguientes combinaciones de teclas o del mouse entran en conflicto:"
+      "text": "Le seguenti combinazioni di tasti o associazioni del mouse creano conflitti:"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
-      "text": "La interfaz textual se ha bloqueado. Suele ser un problema de la aplicación."
+      "text": "L'interfaccia utente testuale si è bloccata. Di solito è un problema a livello dell'applicazione."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
-      "text": "La interfaz de usuario textual no está especificada"
+      "text": "L'interfaccia utente testuale non è specificata"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
-      "text": "Esta IU textual [{0}] no está lista porque el estado es {1}"
+      "text": "Questa interfaccia utente testuale [{0}] non è pronta perché lo stato è {1}"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
-      "text": "Hay {0} combinaciones de teclas conflictivas en la interfaz de usuario textual [{1}]"
+      "text": "Ci sono {0} associazioni di tasti in conflitto nell'interfaccia utente testuale [{1}]"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
-      "text": "No se especifica el contexto del evento del puntero"
+      "text": "Il contesto dell'evento del puntatore non è specificato"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
-      "text": "La posición inicial no puede ser menor que cero"
+      "text": "La posizione di partenza non può essere inferiore a zero"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
-      "text": "La posición final no puede ser menor que cero"
+      "text": "La posizione finale non può essere inferiore a zero"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
-      "text": "La posición inicial X no puede ser mayor que la posición final X"
+      "text": "La posizione iniziale X non può essere maggiore della posizione finale X"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
-      "text": "La posición inicial Y no puede ser mayor que la posición final Y"
+      "text": "La posizione iniziale Y non può essere maggiore della posizione finale Y"
     },
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
-      "text": "El nombre de entrada no está especificado"
+      "text": "Il nome dell'input non è specificato"
     },
     {
       "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
-      "text": "Avance"
+      "text": "Anticipo"
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "Esta página de presentación requiere que se completen los siguientes datos antes de poder avanzar a la página siguiente."
+      "text": "Per poter passare alla pagina successiva, è necessario che i seguenti dati siano soddisfatti prima di poter compilare questa pagina di presentazione."
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
-      "text": "Entrada requerida"
+      "text": "Input richiesto"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
-      "text": "Una o más de las siguientes entradas no se han completado correctamente:"
+      "text": "Uno o più dei seguenti input non sono stati compilati correttamente:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
-      "text": "Entrada incorrecta"
+      "text": "Input errato"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
-      "text": "No se han proporcionado los datos requeridos. Deberá completar los valores de los siguientes campos:"
+      "text": "Non sono stati forniti i dati richiesti. Dovrai inserire i valori dei seguenti dati:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
-      "text": "Entrada no proporcionada"
+      "text": "Input non fornito"
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
-      "text": "No se puede mostrar una opción sin respuestas ni respuestas alternativas."
+      "text": "Non è possibile mostrare una scelta senza risposte o risposte alternative."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de elección requiere que haya al menos una opción habilitada."
+      "text": "Lo stile di scelta richiede che sia abilitata almeno una scelta."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
-      "text": "No puedes proporcionar respuestas con más de un carácter en el modo de un solo carácter."
+      "text": "Nella modalità a carattere singolo non è possibile fornire risposte composte da più di un carattere."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
-      "text": "Respuesta incorrecta. Inténtalo de nuevo."
+      "text": "Risposta sbagliata. Riprova."
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "Mover a la izquierda"
+      "text": "Sposta a sinistra"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "Mover a la derecha"
+      "text": "Spostati a destra"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
-      "text": "Insertar"
+      "text": "Inserire"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
-      "text": "Reemplazar"
+      "text": "Sostituire"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
-      "text": "Reemplazar todo"
+      "text": "Sostituisci tutto"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
-      "text": "Listo"
+      "text": "Pronto"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
-      "text": "No encontrado. Revisa la sintaxis o amplía la búsqueda."
+      "text": "Non trovato. Controlla la sintassi o amplia la ricerca."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
-      "text": "Información del número"
+      "text": "Informazioni sul numero"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
-      "text": "Eliminar"
+      "text": "Rimuovere"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
-      "text": "Reemplazar todo lo que"
+      "text": "Sostituisci tutto ciò che"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
-      "text": "Escribe el número de byte con el valor hexadecimal."
+      "text": "Scrivere il numero di byte con il valore esadecimale."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
-      "text": "El número de byte especificado no es válido."
+      "text": "Il numero di byte specificato non è valido."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
-      "text": "Byte no válido {0}."
+      "text": "Byte non valido {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
-      "text": "Escriba el número de byte con el valor hexadecimal con el que reemplazar {0}."
+      "text": "Scrivi il numero di byte con il valore esadecimale con cui sostituire {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
-      "text": "Escriba el número de byte con el valor hexadecimal a reemplazar."
+      "text": "Scrivere il numero di byte con il valore esadecimale da sostituire."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
-      "text": "Escribe un byte o un grupo de bytes separados por espacios en blanco."
+      "text": "Scrive un byte o un gruppo di byte separati da spazi."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
-      "text": "Se requieren bytes para buscar, pero no ha proporcionado ninguno."
+      "text": "Per la ricerca sono necessari dei byte, ma non ne hai specificato uno."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
-      "text": "Posición"
+      "text": "Posizione"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
-      "text": "Hexadecimal"
+      "text": "Esadecimale"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
-      "text": "Octal"
+      "text": "Ottale"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
-      "text": "Número"
+      "text": "Numero"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
@@ -1433,1111 +1411,1111 @@
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
-      "text": "Información del número"
+      "text": "Informazioni sul numero"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "Contenido vacío"
+      "text": "Contenuto vuoto"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
-      "text": "El número de byte de inicio especificado no puede ser mayor que el tamaño del archivo."
+      "text": "Il numero di byte di inizio specificato non può essere maggiore della dimensione del file."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
-      "text": "El número de byte final especificado no puede ser mayor que el tamaño del archivo."
+      "text": "Il numero di byte finali specificato non può essere maggiore della dimensione del file."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
-      "text": "El número de byte especificado no es válido."
+      "text": "Il numero di byte specificato non è valido."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
-      "text": "El número de byte especificado no puede ser mayor que {0} ni menor que 1."
+      "text": "Il numero di byte specificato non può essere maggiore di {0} o minore di 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
-      "text": "El número de byte especificado no puede ser mayor que {0}."
+      "text": "Il numero di byte specificato non può essere maggiore di {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
-      "text": "No se puede realizar esta operación en una matriz nula."
+      "text": "Impossibile eseguire questa operazione su un array nullo."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
-      "text": "El número de byte debe comenzar con 1."
+      "text": "Il numero di byte deve iniziare con 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
-      "text": "El número de byte de inicio especificado no puede ser mayor que {0}."
+      "text": "Il numero di byte di inizio specificato non può essere maggiore di {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
-      "text": "El número de byte final especificado no puede ser mayor que {0}."
+      "text": "Il numero di byte finale specificato non può essere maggiore di {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
-      "text": "Ingresar..."
+      "text": "Entra..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
-      "text": "Borrar aquí"
+      "text": "Elimina qui"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
-      "text": "Eliminar línea"
+      "text": "Rimuovi linea"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
-      "text": "Dejar de entrar"
+      "text": "Smettere di entrare"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
-      "text": "Nueva línea"
+      "text": "Nuova linea"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "Retroceso"
+      "text": "Backspace"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "Borrar"
+      "text": "Eliminare"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
-      "text": "Escribe la cadena a encontrar"
+      "text": "Scrivi la stringa da trovare"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
-      "text": "Escribe la cadena de reemplazo"
+      "text": "Scrivi la stringa di sostituzione"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
-      "text": "Escribe una cadena para buscar. Admite expresiones regulares."
+      "text": "Scrivi una stringa da trovare. Supporta le espressioni regolari."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
-      "text": "Se requiere una cadena para buscar, pero no ha proporcionado ninguna."
+      "text": "È richiesta una stringa da cercare, ma non ne hai fornita una."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
-      "text": "Esta cadena a buscar no es una expresión regular válida."
+      "text": "La stringa da trovare non è un'espressione regolare valida."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
-      "text": "Pauta"
+      "text": "Linee"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
-      "text": "Columna"
+      "text": "Colonna"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
-      "text": "Fila"
+      "text": "Riga"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
-      "text": "El número de línea especificado no puede ser mayor que {0}."
+      "text": "Il numero di riga specificato non può essere maggiore di {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
-      "text": "No se puede realizar esta operación en una lista de líneas nulas."
+      "text": "Impossibile eseguire questa operazione sull'elenco delle righe nulle."
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
-      "text": "Muestra más información en un cuadro de información."
+      "text": "Mostra maggiori informazioni in un infobox"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
-      "text": "Va una línea hacia arriba"
+      "text": "Va una fila in su"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
-      "text": "Va una línea hacia abajo"
+      "text": "Va una riga più in basso"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
-      "text": "Va a la página anterior del texto."
+      "text": "Va alla pagina precedente del testo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
-      "text": "Va a la siguiente página de texto."
+      "text": "Va alla pagina successiva del testo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
-      "text": "Envía el valor"
+      "text": "Invia il valore"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
-      "text": "Envía los valores"
+      "text": "Invia i valori"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
-      "text": "Cierra sin enviar el valor"
+      "text": "Chiude senza inviare il valore"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
-      "text": "Cierra sin enviar los valores"
+      "text": "Chiude senza inviare i valori"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "Realiza una acción o selecciona una opción"
+      "text": "Esegue un'azione o seleziona una scelta"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "Disminuye el valor o mueve tres líneas de texto hacia arriba"
+      "text": "Decrementa il valore o sposta tre righe di testo verso l'alto"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "Incrementa el valor o mueve tres líneas de texto hacia abajo"
+      "text": "Incrementa il valore o sposta tre righe di testo verso il basso"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "Opción anterior o tres líneas de texto anteriores"
+      "text": "Scelta precedente o tre righe di testo precedenti"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "Siguiente opción o siguientes tres líneas de texto"
+      "text": "Scelta successiva o tre righe di testo successive"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
-      "text": "Disminuye el valor actual"
+      "text": "Decrementa il valore corrente"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
-      "text": "Incrementa el valor actual"
+      "text": "Incrementa il valore corrente"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
-      "text": "Establece el valor al valor mínimo"
+      "text": "Imposta il valore al valore minimo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
-      "text": "Establece el valor al valor máximo"
+      "text": "Imposta il valore sul valore massimo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "Establece el foco actual en el siguiente elemento de valor"
+      "text": "Imposta il focus corrente sul prossimo elemento di valore"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "Establece el foco actual en el elemento de valor anterior"
+      "text": "Imposta il focus corrente sull'elemento valore precedente"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
-      "text": "Va al botón anterior"
+      "text": "Va al pulsante precedente"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
-      "text": "Va al siguiente botón"
+      "text": "Va al pulsante successivo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "Botón anterior o tres líneas de texto anteriores"
+      "text": "Pulsante precedente o tre righe di testo precedenti"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "Botón siguiente o siguientes tres líneas de texto"
+      "text": "Pulsante Avanti o tre righe di testo successive"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
-      "text": "Va a la primera línea de texto."
+      "text": "Va alla prima riga di testo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
-      "text": "Va a la última línea de texto."
+      "text": "Va all'ultima riga di testo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
-      "text": "Va a la siguiente página de texto o cierra el cuadro de información modal."
+      "text": "Va alla pagina successiva del testo o chiude la casella informativa modale"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
-      "text": "Cierra el cuadro de información modal."
+      "text": "Chiude la finestra informativa modale"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "Realiza una acción"
+      "text": "Esegue un'azione"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "Las tres líneas de texto anteriores"
+      "text": "Tre righe di testo precedenti"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "Próximas tres líneas de texto"
+      "text": "Le prossime tre righe di testo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "Va a la página anterior de entradas."
+      "text": "Va alla pagina precedente degli input"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "Va a la siguiente página de entradas."
+      "text": "Va alla pagina successiva degli input"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "Busca una entrada"
+      "text": "Cerca un input"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "Cambia el valor de entrada seleccionado"
+      "text": "Modifica il valore di input selezionato"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
-      "text": "Sube una opción (siguiente opción)"
+      "text": "Va una scelta in su (scelta successiva)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
-      "text": "Baja una opción (opción anterior)"
+      "text": "Scende di una scelta (scelta precedente)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
-      "text": "Va a la primera opción"
+      "text": "Va alla prima scelta"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
-      "text": "Va a la última opción"
+      "text": "Va all'ultima scelta"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
-      "text": "Va a la página anterior de opciones."
+      "text": "Va alla pagina precedente delle scelte"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
-      "text": "Va a la siguiente página de opciones."
+      "text": "Va alla pagina successiva delle scelte"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
-      "text": "Busca una elección"
+      "text": "Ricerche per una scelta"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
-      "text": "Selecciona o deselecciona todas las opciones"
+      "text": "Seleziona o deseleziona tutte le scelte"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
-      "text": "No se puede obtener la categoría y el grupo en la opción número {0}."
+      "text": "Impossibile ottenere la categoria e il gruppo nella scelta numero {0}."
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
-      "text": "Opciones generales"
+      "text": "Scelte generali"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
-      "text": "Opciones disponibles"
+      "text": "Scelte disponibili"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
-      "text": "Opciones alternativas"
+      "text": "Scelte alternative"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
-      "text": "Confirmar"
+      "text": "Confermare"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
-      "text": "Barra lateral"
+      "text": "Barra laterale"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "Más"
+      "text": "Di più"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
-      "text": "Confirma la(s) selección(es)"
+      "text": "Conferma la/le selezione/i"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "Cambia el valor seleccionado (botones de opción)"
+      "text": "Modifica il valore selezionato (pulsanti di scelta)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
-      "text": "Cancelar selección(es)"
+      "text": "Annulla selezione/i"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
-      "text": "Sube un elemento"
+      "text": "Sale di un elemento"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
-      "text": "Va un elemento hacia abajo"
+      "text": "Scende di un elemento"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
-      "text": "Va al primer elemento"
+      "text": "Va al primo elemento"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
-      "text": "Va al último elemento"
+      "text": "Va all'ultimo elemento"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
-      "text": "Va a la página anterior"
+      "text": "Va alla pagina precedente"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
-      "text": "Va a la página siguiente"
+      "text": "Va alla pagina successiva"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
-      "text": "Busca un elemento"
+      "text": "Cerca un elemento"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
-      "text": "Subir a una barra lateral"
+      "text": "Vai su in una barra laterale"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
-      "text": "Bajar a la barra lateral"
+      "text": "Scendi in una barra laterale"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
-      "text": "Subir en un cuadro de preguntas"
+      "text": "Vai in una casella delle domande"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
-      "text": "Bajar en un cuadro de preguntas"
+      "text": "Scendi in una casella delle domande"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
-      "text": "Mostrar el recuento de páginas y opciones"
+      "text": "Mostra il numero di pagine e di scelte"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
-      "text": "Mostrar información del artículo"
+      "text": "Mostra informazioni sull'articolo"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
-      "text": "Selecciona o deselecciona una opción"
+      "text": "Seleziona o deseleziona una scelta"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
-      "text": "Selecciona todos los elementos del mismo grupo y categoría"
+      "text": "Seleziona tutti gli elementi nello stesso gruppo e categoria"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos de la misma categoría"
+      "text": "Seleziona tutti gli elementi in tutti i gruppi nella stessa categoria"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos en todas las categorías"
+      "text": "Seleziona tutti gli elementi in tutti i gruppi in tutte le categorie"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "Va un elemento o línea de escaparate"
+      "text": "Va un elemento o una linea di presentazione"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "Va un elemento o línea de escaparate hacia abajo"
+      "text": "Scende di un elemento o di una linea di presentazione"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
-      "text": "Actualizar posición"
+      "text": "Aggiorna posizione"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
-      "text": "Anterior"
+      "text": "Precedente"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
-      "text": "Próximo"
+      "text": "Prossimo"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
-      "text": "Entregar"
+      "text": "Invia"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
-      "text": "Cancelar"
+      "text": "Cancellare"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
-      "text": "Ayuda"
+      "text": "Aiuto"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
-      "text": "Hecho"
+      "text": "Fatto"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
-      "text": "Seleccionar"
+      "text": "Selezionare"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
-      "text": "Selección manual"
+      "text": "Selezione manuale"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
-      "text": "Información de color"
+      "text": "Informazioni sul colore"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
-      "text": "Próxima simulación de daltonismo"
+      "text": "Prossima simulazione del daltonismo"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
-      "text": "Simulación previa de daltonismo"
+      "text": "Simulazione precedente di daltonismo"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
-      "text": "Aumentar la frecuencia de transformación"
+      "text": "Aumentare la frequenza di trasformazione"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
-      "text": "Disminuir la frecuencia de transformación"
+      "text": "Diminuire la frequenza di trasformazione"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
-      "text": "Seleccionar color web"
+      "text": "Seleziona il colore del web"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
-      "text": "Aumentar la opacidad"
+      "text": "Aumentare l'opacità"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
-      "text": "Aumentar la transparencia"
+      "text": "Aumentare la trasparenza"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
-      "text": "Siguiente modo de color"
+      "text": "Modalità colore successiva"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
-      "text": "Modo de color anterior"
+      "text": "Modalità colore precedente"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
-      "text": "Aumentar el valor"
+      "text": "Aumentare il valore"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
-      "text": "Disminuir valor"
+      "text": "Diminuire il valore"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
-      "text": "Reducir el tono de color"
+      "text": "Ridurre la tonalità del colore"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
-      "text": "Aumentar el tono del color"
+      "text": "Aumenta la tonalità del colore"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
-      "text": "Reducir la luminosidad del color"
+      "text": "Ridurre la luminosità del colore"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
-      "text": "Aumentar la luminosidad del color"
+      "text": "Aumenta la luminosità del colore"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
-      "text": "Reducir la saturación"
+      "text": "Ridurre la saturazione"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
-      "text": "Aumentar la saturación"
+      "text": "Aumentare la saturazione"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
-      "text": "Color anterior"
+      "text": "Colore precedente"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
-      "text": "Siguiente color"
+      "text": "Colore successivo"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
-      "text": "Mostrar y ocultar la lista de colores"
+      "text": "Mostra e nascondi l'elenco dei colori"
     },
     {
       "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
-      "text": "Exhibición de personajes"
+      "text": "Vetrina dei personaggi"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
-      "text": "Este elemento fijo no puede ser una clase base. Especifique un elemento fijo incondicional."
+      "text": "Questa fixture potrebbe non essere una classe base. Specificare una fixture non condizionale."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
-      "text": "Es posible que este elemento no sea una clase base. Especifique un elemento condicional."
+      "text": "Questa fixture potrebbe non essere una classe base. Specificare una fixture condizionale."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
-      "text": "El valor devuelto {0} no coincide con el valor esperado {1}"
+      "text": "Il valore restituito {0} non corrisponde al valore previsto {1}"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
-      "text": "Este encuentro no es condicional."
+      "text": "Questa apparecchiatura non è condizionale."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
-      "text": "Este tipo de accesorio no es válido."
+      "text": "Questo tipo di dispositivo non è valido."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
-      "text": "No hay ningún elemento fijo aquí. Inserte uno."
+      "text": "Nessuna presenza qui. Inseriscine una."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
-      "text": "Seleccione un dispositivo de prueba."
+      "text": "Selezionare un dispositivo di prova."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
-      "text": "Sale del selector de accesorios de prueba."
+      "text": "Esce dal selettore del dispositivo di prova"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
-      "text": "¡Esta prueba ha sido un éxito!"
+      "text": "Questo test è riuscito!"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
-      "text": "El valor esperado coincide con el valor real."
+      "text": "Il valore atteso corrisponde al valore effettivo."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
-      "text": "Esta prueba ha fallado."
+      "text": "Questo test è fallito."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
-      "text": "Mensaje"
+      "text": "Messaggio"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
-      "text": "El valor esperado no coincide con el valor real."
+      "text": "Il valore atteso non corrisponde al valore effettivo."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
-      "text": "El método en este delegado no puede devolver nulo"
+      "text": "Il metodo in questo delegato non può restituire void"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
-      "text": "El método en este delegado debe devolver vacío"
+      "text": "Il metodo in questo delegato deve restituire void"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
-      "text": "La expresión regular del componente no es válida"
+      "text": "L'espressione regolare del componente non è valida"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
-      "text": "Expresión regular del componente no proporcionada"
+      "text": "Espressione regolare del componente non fornita"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
-      "text": "No se proporciona el color de primer plano del componente"
+      "text": "Colore di primo piano del componente non fornito"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
-      "text": "No se proporciona el color de fondo del componente"
+      "text": "Colore di sfondo del componente non fornito"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador."
+      "text": "Non è stato fornito il nome dell'evidenziatore."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador base."
+      "text": "Non è stato fornito il nome dell'evidenziatore di base."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
-      "text": "No puedo encontrar el resaltador {0}"
+      "text": "Non riesco a trovare l'evidenziatore {0}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
-      "text": "No puedo encontrar el resaltador"
+      "text": "Non riesco a trovare l'evidenziatore"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
-      "text": "No se puede encontrar el componente {0} en el resaltador {1}"
+      "text": "Impossibile trovare il componente {0} nell'evidenziatore {1}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
-      "text": "Resaltador no válido."
+      "text": "Evidenziatore non valido."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
-      "text": "El resaltador no tiene nombre."
+      "text": "L'evidenziatore non ha nome."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
-      "text": "El resaltador ya existe"
+      "text": "L'evidenziatore esiste già."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
-      "text": "El resaltador no tiene componentes."
+      "text": "L'evidenziatore non ha componenti."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
-      "text": "No se puede eliminar el resaltador incorporado {0}"
+      "text": "Impossibile rimuovere l'evidenziatore incorporato {0}"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
-      "text": "El nombre del historial no está especificado"
+      "text": "Il nome della cronologia non è specificato"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
-      "text": "Las entradas del historial no están especificadas"
+      "text": "Le voci della cronologia non sono specificate"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
-      "text": "No se proporciona la ruta del archivo de historial."
+      "text": "Il percorso del file cronologico non è fornito."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
-      "text": "No se proporciona representación JSON del historial."
+      "text": "La rappresentazione JSON della cronologia non è fornita."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
-      "text": "Se analiza JSON, pero no se proporciona la representación JSON del historial."
+      "text": "JSON analizzato, ma non viene fornita la rappresentazione JSON della cronologia."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
-      "text": "No se proporciona información histórica."
+      "text": "Non vengono fornite informazioni storiche."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
-      "text": "No se proporcionó el nombre del historial. ¿Está seguro de haber especificado el nombre en su representación JSON?"
+      "text": "Il nome della cronologia non è stato fornito. Sei sicuro di aver specificato il nome nella rappresentazione JSON?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
-      "text": "No se proporcionan entradas del historial. ¿Está seguro de haber especificado las entradas en su representación JSON?"
+      "text": "Le voci della cronologia non sono fornite. Sei sicuro di averle specificate nella tua rappresentazione JSON?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
-      "text": "Historial {0} no encontrado."
+      "text": "Cronologia {0} non trovata."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
-      "text": "El historial general no se puede eliminar, pero se puede borrar."
+      "text": "La cronologia generale non può essere rimossa, ma può essere cancellata."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
-      "text": "La historia no es parte de las historias registradas."
+      "text": "La storia non fa parte delle storie registrate."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
-      "text": "No se pudo eliminar el historial."
+      "text": "Impossibile eliminare la cronologia."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
-      "text": "No se proporciona entrada de historial."
+      "text": "Non è prevista alcuna voce nella cronologia."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
-      "text": "No se proporciona la lista de entradas del historial."
+      "text": "Non è fornito l'elenco delle voci cronologiche."
     },
     {
       "loc": "T_READER_EXCEPTION_PRINTWRITE",
-      "text": "Hay un conflicto entre {0} y {1}."
+      "text": "C'è un conflitto tra {0} e {1}."
     },
     {
       "loc": "T_READER_FAILED",
-      "text": "El lector de entrada ha fallado"
+      "text": "Il lettore di input non è riuscito"
     },
     {
       "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
-      "text": "Esta corriente no puede buscar."
+      "text": "Questo flusso non può effettuare la ricerca."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "No se ha podido generar una secuencia VT funcional del tipo {0} con la acción {1}. Asegúrese de haber especificado los valores correctamente."
+      "text": "Non siamo riusciti a generare una sequenza VT funzionante di tipo {0} con azione {1}. Assicurati di aver specificato i valori correttamente."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
-      "text": "No se puede construir la secuencia VT para el tipo inexistente {0}"
+      "text": "Impossibile creare la sequenza VT per il tipo inesistente {0}"
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
-      "text": "No se puede generar la secuencia VT sin argumentos. Se esperaban {0} argumentos, pero se obtuvieron {1}."
+      "text": "Impossibile creare la sequenza VT con argomenti mancanti. Attesi {0} argomenti, ottenuti {1} argomenti."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Un alias no puede ser el mismo nombre que un comando."
+      "text": "L'alias non può avere lo stesso nome di un comando."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
-      "text": "Comando no encontrado para crear el alias {0}."
+      "text": "Comando non trovato per l'alias di {0}."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​ya encontrado"
+      "text": "Alias ​​già trovato"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "No se encontró el alias {0} para eliminar."
+      "text": "L'alias {0} non è stato rimosso."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "No se encuentra el alias {0} para realizar la consulta."
+      "text": "L'alias {0} non è stato trovato per essere interrogato."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
-      "text": "Uso"
+      "text": "Utilizzo"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
-      "text": "Dominio"
+      "text": "Comando"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
-      "text": "Descripción"
+      "text": "Descrizione"
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
-      "text": "No hay ayuda para el argumento \"{0}\"."
+      "text": "Nessun aiuto per l'argomento \"{0}\"."
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
-      "text": "Descripción de ayuda sin argumentos"
+      "text": "Nessuna descrizione di aiuto per l'argomento"
     },
     {
       "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
-      "text": "Este argumento aún no se ha implementado."
+      "text": "Questa argomentazione non è ancora stata implementata."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
-      "text": "No hubo suficientes argumentos."
+      "text": "Non c'erano abbastanza argomenti."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "Argomento sconosciuto"
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
-      "text": "Error irrecuperable en el argumento"
+      "text": "Errore irrecuperabile nell'argomento"
     },
     {
       "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
-      "text": "No se puede obtener información del argumento para el comando o argumento"
+      "text": "Impossibile ottenere informazioni sull'argomento per il comando o l'argomento"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
-      "text": "No se especifican los parámetros del hilo."
+      "text": "I parametri del thread non sono specificati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
-      "text": "No se proporcionan los argumentos obligatorios para todos los usos siguientes:"
+      "text": "Gli argomenti obbligatori non sono forniti per tutti gli utilizzi seguenti:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "Argomento sconosciuto"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
-      "text": "No se proporcionan los argumentos obligatorios."
+      "text": "Non vengono forniti argomenti obbligatori."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
-      "text": "No se proporcionan los interruptores necesarios."
+      "text": "Non sono forniti gli interruttori necessari."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
-      "text": "Uno de los conmutadores requiere un valor que no se proporciona."
+      "text": "Uno degli switch richiede un valore che non è stato fornito."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
-      "text": "Los interruptores que se enumeran a continuación son desconocidos."
+      "text": "Gli switch elencati di seguito sono sconosciuti."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
-      "text": "Los interruptores que se enumeran a continuación entran en conflicto entre sí."
+      "text": "Gli switch elencati di seguito sono in conflitto tra loro."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
-      "text": "Los siguientes interruptores no aceptan valores."
+      "text": "Gli switch sottostanti non accettano valori."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
-      "text": "Uno o más de los argumentos esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "Uno o più argomenti prevedono un valore numerico, ma hai fornito un numero non valido."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
-      "text": "Uno o más de los argumentos esperan una redacción exacta, pero usted proporcionó una palabra no válida."
+      "text": "Uno o più argomenti richiedono una formulazione esatta, ma hai fornito una parola non valida."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
-      "text": "Uno o más de los conmutadores esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "Uno o più switch si aspettano un valore numerico, ma hai fornito un numero non valido."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
-      "text": "Consulte la entrada de ayuda de este comando para obtener más información."
+      "text": "Per maggiori informazioni consultare la voce di aiuto per questo comando"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
-      "text": "El comando está siendo interrumpido..."
+      "text": "Il comando è stato interrotto..."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
-      "text": "Error al intentar ejecutar el comando {2}."
+      "text": "Errore durante il tentativo di esecuzione del comando {2}."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
-      "text": "Error"
+      "text": "Errore"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
-      "text": "Comando abortado por el siguiente motivo"
+      "text": "Comando interrotto per il seguente motivo"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
-      "text": "Patrón de comando proporcionado no válido."
+      "text": "È stato fornito un modello di comando non valido."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
-      "text": "Comando no encontrado."
+      "text": "Comando non trovato."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
-      "text": "El tipo de shell {0} no existe."
+      "text": "Il tipo di shell {0} non esiste."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
-      "text": "Debes proporcionar la base de comando."
+      "text": "È necessario fornire la base di comando."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
-      "text": "Debes proporcionar el comando."
+      "text": "Devi fornire il comando."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
-      "text": "El comando especificado ya está agregado."
+      "text": "Il comando specificato è già stato aggiunto."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden cargar."
+      "text": "Alcuni comandi personalizzati non possono essere caricati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
-      "text": "No se encuentra el comando personalizado especificado."
+      "text": "Il comando personalizzato specificato non è stato trovato."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden descargar."
+      "text": "Alcuni comandi personalizzati non possono essere scaricati."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
-      "text": "Este shell usa comandos de barra diagonal para ejecutar los comandos. Para comenzar, añada la barra diagonal \"/\" al principio del comando. Por ejemplo:"
+      "text": "Questa shell utilizza i comandi slash per eseguire i comandi. Per iniziare, aggiungere il simbolo slash '/' all'inizio del comando. Per esempio:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
-      "text": "Este comando no está definido."
+      "text": "Questo comando non è definito."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
-      "text": "Comandos disponibles:"
+      "text": "Comandi disponibili:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
-      "text": "Órdenes generales:"
+      "text": "Comandi generali:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "No hay comandos de shell."
+      "text": "Nessun comando shell."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
-      "text": "Comandos adicionales:"
+      "text": "Comandi aggiuntivi:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Sin comandos adicionales"
+      "text": "Nessun comando extra."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
-      "text": "Comandos de alias:"
+      "text": "Comandi alias:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Sin comandos de alias."
+      "text": "Nessun comando alias."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
-      "text": "Comandos unificados:"
+      "text": "Comandi unificati:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "No hay comandos unificados"
+      "text": "Nessun comando unificato."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
-      "text": "Comando definido por"
+      "text": "Comando definito da"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
-      "text": "Este comando tiene los siguientes argumentos que cambian su funcionamiento:"
+      "text": "Questo comando ha gli argomenti sottostanti che ne modificano il funzionamento:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
-      "text": "Descripción de argumento no especificado"
+      "text": "Descrizione dell'argomento non specificata"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
-      "text": "Este comando tiene los siguientes interruptores que cambian su funcionamiento:"
+      "text": "Questo comando presenta le seguenti opzioni che ne modificano il funzionamento:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
-      "text": "Descripción del interruptor no especificado"
+      "text": "Descrizione dell'interruttore non specificata"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
-      "text": "No hay ayuda para el comando \"{0}\"."
+      "text": "Nessun aiuto per il comando \"{0}\"."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
-      "text": "No se encuentra el ajuste preestablecido especificado {0}."
+      "text": "Il preset specificato {0} non è stato trovato."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
-      "text": "Seleccionar ajuste preestablecido para {0}:"
+      "text": "Seleziona preset per {0}:"
     },
     {
       "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
-      "text": "No se encontraron comandos."
+      "text": "Nessun comando trovato."
     },
     {
       "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
-      "text": "Sale del shell si se ejecuta en un subshell"
+      "text": "Esce dalla shell se è in esecuzione sulla subshell"
     },
     {
       "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
-      "text": "Encuentra los comandos disponibles en el tipo de shell actual"
+      "text": "Trova i comandi disponibili nel tipo di shell corrente"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
-      "text": "Página de ayuda"
+      "text": "Pagina di aiuto"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
-      "text": "Muestra comandos generales (predeterminado)"
+      "text": "Mostra i comandi generali (predefinito)"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
-      "text": "Muestra comandos con alias"
+      "text": "Mostra i comandi con alias"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
-      "text": "Muestra comandos unificados"
+      "text": "Mostra comandi unificati"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
-      "text": "Muestra comandos adicionales"
+      "text": "Mostra comandi extra"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
-      "text": "Muestra todos los comandos"
+      "text": "Mostra tutti i comandi"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
-      "text": "Utiliza ayuda simplificada"
+      "text": "Utilizza una guida semplificata"
     },
     {
       "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
-      "text": "Abre la biblioteca de ajustes preestablecidos de shell"
+      "text": "Apre la libreria delle preimpostazioni della shell"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
-      "text": "Mensaje del shell: No se encuentra el comando solicitado {0}. Consulte la ayuda para ver los comandos disponibles."
+      "text": "Messaggio shell: il comando richiesto {0} non è stato trovato. Consultare la sezione \"Aiuto\" per i comandi disponibili."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
-      "text": "Error al intentar ejecutar el comando."
+      "text": "Errore durante il tentativo di esecuzione del comando."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
-      "text": "No se puede obtener el ejecutor de shell para {0}"
+      "text": "Impossibile ottenere l'esecutore shell per {0}"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
-      "text": "Error al intentar inicializar el shell"
+      "text": "Errore nel tentativo di inizializzare la shell"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
-      "text": "No se puede determinar si la entrada de selección es única o múltiple"
+      "text": "Non è possibile determinare se l'input di selezione è singolo o multiplo"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
-      "text": "No se especifica el marcado."
+      "text": "Il markup non è specificato."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
-      "text": "Especificador de etiqueta final no válido."
+      "text": "Specificatore di tag di fine non valido."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
-      "text": "No hay secuencias en cola para finalizar la etiqueta."
+      "text": "Non ci sono sequenze in coda con cui terminare il tag."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
-      "text": "Faltan {0} etiquetas finales."
+      "text": "Mancano {0} tag di fine."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
-      "text": "El formato inicial no debe imprimir ningún texto; solo debe contener secuencias VT de formato."
+      "text": "Il formato iniziale non deve stampare alcun testo; deve contenere solo sequenze di formattazione VT."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "No hay ningún archivo Asciicast"
+      "text": "Non esiste alcun file Asciicast"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "No se puede deserializar la representación base de Asciicast"
+      "text": "Impossibile deserializzare la rappresentazione Asciicast di base"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v1"
+      "text": "Impossibile deserializzare la rappresentazione Asciicast v1"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v2"
+      "text": "Impossibile deserializzare la rappresentazione Asciicast v2"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "No se puede obtener información del evento"
+      "text": "Impossibile ottenere informazioni sull'evento"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
-      "text": "Combinaciones de teclas disponibles"
+      "text": "Combinazioni di tasti disponibili"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
-      "text": "No hay enlaces definidos en este contexto."
+      "text": "Nessun legame definito in questo contesto."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
-      "text": "Atajos de teclado"
+      "text": "Associazioni di tastiera"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
-      "text": "Vinculaciones del ratón"
+      "text": "Associazioni del mouse"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
-      "text": "Nombre de personaje de Nerd Fonts no válido {0} en el tipo {1}"
+      "text": "Nome del personaggio Nerd Fonts non valido {0} nel tipo {1}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
-      "text": "Representación de carácter de Nerd Fonts no válida {0} de {1} en el tipo {2}"
+      "text": "Rappresentazione del carattere Nerd Fonts non valida {0} da {1} nel tipo {2}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
-      "text": "Tipo de fuente Nerd no válido {0}"
+      "text": "Tipo di font Nerd non valido {0}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
-      "text": "Las fuentes Nerd tipo {0} no tienen caracteres"
+      "text": "Il tipo di carattere Nerd {0} non contiene caratteri"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
-      "text": "Renderable ya está registrado"
+      "text": "Il render è già registrato"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
-      "text": "Renderable no está registrado"
+      "text": "Il render non è registrato"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
-      "text": "Todos los hilanderos deben tener el mismo ancho."
+      "text": "Tutti gli spinner dovrebbero avere la stessa larghezza."
     }
   ]
 }

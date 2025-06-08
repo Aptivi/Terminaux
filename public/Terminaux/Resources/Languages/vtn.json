@@ -1,2543 +1,2518 @@
 {
-  "lang": "spa",
-  "name": "Spanish",
+  "lang": "vtn",
+  "name": "Vietnamese",
   "cultures": [
-    "es",
-    "es-419",
-    "es-AR",
-    "es-BO",
-    "es-BR",
-    "es-BZ",
-    "es-CL",
-    "es-CO",
-    "es-CR",
-    "es-CU",
-    "es-DO",
-    "es-EC",
-    "es-ES",
-    "es-GQ",
-    "es-GT",
-    "es-HN",
-    "es-MX",
-    "es-NI",
-    "es-PA",
-    "es-PE",
-    "es-PH",
-    "es-PR",
-    "es-PY",
-    "es-SV",
-    "es-US",
-    "es-UY",
-    "es-VE"
+    "vi",
+    "vi-VN"
   ],
   "locs": [
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR1",
-      "text": "¡Error general de Terminaux!"
+      "text": "Lỗi chung của Terminaux!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR2",
-      "text": "¡Error interno de Terminaux!"
+      "text": "Lỗi nội bộ của Terminaux!"
     },
     {
       "loc": "T_EXCEPTION_UNKNOWNERROR3",
-      "text": "Error desconocido"
+      "text": "Lỗi không xác định"
     },
     {
       "loc": "T_EXCEPTION_NOTIMPLEMENTED",
-      "text": "Aún no implementado."
+      "text": "Chưa được triển khai."
     },
     {
       "loc": "T_COMMON_CANTCONTINUE",
-      "text": "Este programa no puede continuar."
+      "text": "Chương trình này không thể tiếp tục."
     },
     {
       "loc": "T_COMMON_ANYKEY",
-      "text": "Presione cualquier tecla para continuar..."
+      "text": "Nhấn phím bất kỳ để tiếp tục..."
     },
     {
       "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
-      "text": "Tipo inválido"
+      "text": "Loại không hợp lệ"
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
-      "text": "Debes especificar la parte de la pantalla."
+      "text": "Bạn phải chỉ định phần màn hình."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
-      "text": "Debes especificar el nombre de la pantalla."
+      "text": "Bạn phải chỉ định tên màn hình."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de pieza especificado está fuera de rango."
+      "text": "Chỉ số bộ phận được chỉ định nằm ngoài phạm vi."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
-      "text": "No se encuentra el nombre de la pieza especificada."
+      "text": "Không tìm thấy tên bộ phận được chỉ định."
     },
     {
       "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
-      "text": "No se encuentra la parte especificada."
+      "text": "Không tìm thấy phần được chỉ định."
     },
     {
       "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
-      "text": "El índice de búfer no puede ser menor que cero ni mayor que {0} búferes."
+      "text": "Chỉ số bộ đệm không được nhỏ hơn 0 hoặc lớn hơn {0} bộ đệm."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
-      "text": "La pantalla no está especificada."
+      "text": "Màn hình không được chỉ định."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
-      "text": "La pantalla no es cíclica."
+      "text": "Màn hình không tuần hoàn."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux usando una terminal tonta."
+      "text": "Người dùng đã thử chạy ứng dụng Terminaux bằng một thiết bị đầu cuối không có chức năng."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
-      "text": "Esta aplicación utiliza funciones de consola extendidas proporcionadas por Terminaux que requieren funciones no admitidas por terminales \"tontas\"."
+      "text": "Ứng dụng này sử dụng các tính năng bảng điều khiển mở rộng do Terminaux cung cấp, yêu cầu các tính năng không được hỗ trợ bởi các thiết bị đầu cuối \"thông thường\"."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Posible solución: Use un emulador de terminal adecuado o consulte la configuración de su terminal para configurar el tipo de terminal en un valor distinto al \"tonto\". Recomendamos usar los emuladores de terminal \"vt100\" para sacar el máximo provecho de esta aplicación."
+      "text": "Giải pháp khả thi: Sử dụng trình giả lập thiết bị đầu cuối phù hợp hoặc tham khảo cài đặt thiết bị đầu cuối của bạn để đặt loại thiết bị đầu cuối thành thứ gì đó khác ngoài \"dumb\". Chúng tôi khuyên bạn nên sử dụng trình giả lập thiết bị đầu cuối \"vt100\" để tận dụng tối đa ứng dụng này."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un tipo de terminal incluido en la lista negra."
+      "text": "Người dùng đã cố chạy ứng dụng Terminaux trên loại thiết bị đầu cuối bị đưa vào danh sách đen."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "Loại bảng điều khiển bạn đang sử dụng, {0}, đã bị đưa vào danh sách đen: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
-      "text": "El tipo de consola que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "Loại bảng điều khiển bạn đang sử dụng, {0}, được liệt kê trong danh sách xám: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en un emulador de terminal incluido en la lista negra."
+      "text": "Người dùng đã cố chạy ứng dụng Terminaux trên trình giả lập thiết bị đầu cuối bị đưa vào danh sách đen."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista negra: {1}"
+      "text": "Trình giả lập thiết bị đầu cuối mà bạn hiện đang sử dụng, {0}, đã bị đưa vào danh sách đen: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
-      "text": "El emulador de terminal que estás usando actualmente, {0}, está en la lista gris: {1}"
+      "text": "Trình giả lập thiết bị đầu cuối mà bạn hiện đang sử dụng, {0}, được đưa vào danh sách xám: {1}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
-      "text": "El tipo de terminal {0} no admite 256 colores según terminfo"
+      "text": "Kiểu thiết bị đầu cuối {0} không hỗ trợ 256 màu theo terminfo"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
-      "text": "El usuario intentó ejecutar una aplicación Terminaux en MinTTY de Git Bash sin winpty."
+      "text": "Người dùng đã thử chạy ứng dụng Terminaux trên MinTTY của Git Bash mà không cần winpty."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
-      "text": "Necesitarás usar WinPty para poder usar este programa. Si estás seguro de no estar ejecutando Git Bash, asegúrate de usar una terminal de Windows adecuada."
+      "text": "Bạn sẽ cần sử dụng winpty để có thể sử dụng chương trình này. Nếu bạn chắc chắn rằng mình không chạy Git Bash, hãy đảm bảo rằng bạn đang sử dụng một thiết bị đầu cuối Windows phù hợp."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona debido a un error de E/S, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "Vị trí bảng điều khiển không hoạt động do lỗi I/O, vì vậy ứng dụng này có thể hoạt động không bình thường."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
-      "text": "El posicionamiento de la consola no funciona correctamente, por lo que esta aplicación podría comportarse de manera errática."
+      "text": "Vị trí bảng điều khiển không hoạt động bình thường nên ứng dụng này có thể hoạt động không bình thường."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
-      "text": "Tu consola es demasiado pequeña para funcionar correctamente: {0}x{1} | beneficio: {2}x{3} | mínimo: {4}x{5}"
+      "text": "Máy chơi game của bạn quá nhỏ để chạy bình thường: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
     },
     {
       "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
-      "text": "Para una mejor experiencia, cambia el tamaño de la ventana de la consola sin salir de esta pantalla. Presiona cualquier tecla para continuar..."
+      "text": "Để có trải nghiệm tốt hơn, hãy thay đổi kích thước cửa sổ bảng điều khiển của bạn trong khi vẫn ở trên màn hình này. Nhấn bất kỳ phím nào để tiếp tục..."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
-      "text": "No se proporciona montaje."
+      "text": "Không cung cấp dịch vụ lắp ráp."
     },
     {
       "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
-      "text": "{0} No se puede continuar."
+      "text": "{0} Không thể tiếp tục."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
-      "text": "El tipo de consola solo admite escritura básica."
+      "text": "Kiểu console chỉ hỗ trợ viết cơ bản."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
-      "text": "El tipo de consola es de naturaleza desconocida."
+      "text": "Loại bảng điều khiển chưa được xác định."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
-      "text": "Esta aplicación utiliza secuencias de escape VT, pero Terminal.app no ​​tiene soporte para 255 y colores verdaderos."
+      "text": "Ứng dụng này sử dụng chuỗi thoát VT, nhưng Terminal.app đã không còn hỗ trợ 255 màu và màu thực."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
-      "text": "El tipo de consola no admite 256 colores."
+      "text": "Kiểu máy chơi game không hỗ trợ 256 màu."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
-      "text": "No se puede filtrar sin ninguna consulta."
+      "text": "Không thể lọc mà không có bất kỳ truy vấn nào."
     },
     {
       "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
-      "text": "No se puede filtrar con una consulta no válida."
+      "text": "Không thể lọc bằng truy vấn không hợp lệ."
     },
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
-      "text": "No hay ninguna expresión en el filtro de la consola."
+      "text": "Không có biểu thức nào trong bộ lọc bảng điều khiển."
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "No se pueden restaurar nuevos atributos de termios para el modo sin procesar: {0}"
+      "text": "Không thể khôi phục các thuộc tính termios mới cho chế độ thô: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "No se pueden obtener los indicadores del descriptor de archivo: {0}"
+      "text": "Không thể lấy được cờ mô tả tệp: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "No se puede establecer el indicador de descriptor de archivo en lectura sin bloqueo: {0}"
+      "text": "Không thể đặt cờ mô tả tệp thành đọc không chặn: {0}"
     },
     {
       "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "No se puede establecer el indicador del descriptor de archivo para bloquear la lectura: {0}"
+      "text": "Không thể đặt cờ mô tả tệp để chặn đọc: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
-      "text": "No se puede obtener información del sintetizador de la representación proporcionada."
+      "text": "Không thể lấy thông tin tổng hợp từ biểu diễn được cung cấp."
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
-      "text": "La representación del sintetizador no es válida en [{0}.{1}]"
+      "text": "Biểu diễn tổng hợp không hợp lệ tại [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
-      "text": "La frecuencia no es válida en [{0}.{1}]"
+      "text": "Tần suất không hợp lệ tại [{0}.{1}]"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
-      "text": "La duración no es válida en [{0}.{1}]"
+      "text": "Thời lượng không hợp lệ tại [{0}.{1}]"
     },
     {
       "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
-      "text": "El objetivo no puede ser nulo"
+      "text": "Mục tiêu không được là null"
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
-      "text": "El valor máximo [{0}] no debe ser menor que el valor de progreso [{1}]"
+      "text": "Giá trị tối đa [{0}] không được nhỏ hơn giá trị tiến trình [{1}]"
     },
     {
       "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
-      "text": "El valor de progreso [{0}] debe estar entre 0 y el valor máximo de {1}."
+      "text": "Giá trị tiến trình [{0}] phải nằm giữa 0 và giá trị tối đa của {1}."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un parámetro"
+      "text": "Ký hiệu này không được đặt ở cuối chuỗi nếu không chỉ định một tham số"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
-      "text": "Este designador sólo puede tomar un número como parámetro."
+      "text": "Chỉ định này chỉ có thể lấy một số làm tham số."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
-      "text": "Este designador sólo puede tomar un número del 1 al 9."
+      "text": "Ký hiệu này chỉ có thể sử dụng số từ 1 đến 9."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
-      "text": "Este designador sólo puede tomar una letra como parámetro."
+      "text": "Ký hiệu này chỉ có thể lấy một chữ cái làm tham số."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
-      "text": "Este designador necesita una constante entera"
+      "text": "Chỉ định này cần một hằng số nguyên"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
-      "text": "Este designador contiene una constante entera no válida"
+      "text": "Ký hiệu này chứa hằng số nguyên không hợp lệ"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar una constante de carácter"
+      "text": "Ký hiệu này không được đặt ở cuối chuỗi nếu không chỉ định hằng số ký tự"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
-      "text": "No puedes agregar más de un carácter"
+      "text": "Bạn không thể thêm nhiều hơn một ký tự"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
-      "text": "Este designador necesita una colección de caracteres."
+      "text": "Người chỉ định này cần một bộ sưu tập ký tự"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
-      "text": "El ancho no es válido"
+      "text": "Chiều rộng không hợp lệ"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
-      "text": "Este designador no puede ubicarse al final de la cadena sin especificar un tipo"
+      "text": "Ký hiệu này không được đặt ở cuối chuỗi nếu không chỉ định loại"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
-      "text": "No se puede procesar la secuencia nula."
+      "text": "Không thể xử lý chuỗi null."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
-      "text": "No se pueden procesar parámetros nulos."
+      "text": "Không thể xử lý tham số null."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
-      "text": "Esta bandera debe representar un signo menos"
+      "text": "Cờ này cần phải biểu thị một dấu trừ"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
-      "text": "Todavía hay más datos después del índice {0} de {1} para formatear"
+      "text": "Vẫn còn dữ liệu sau chỉ mục {0} trong số {1} để định dạng"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
-      "text": "La constante entera para el carácter no es válida."
+      "text": "Hằng số nguyên cho ký tự không hợp lệ."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
-      "text": "La constante entera no es válida."
+      "text": "Hằng số nguyên không hợp lệ."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
-      "text": "No se puede insertar una variable inexistente."
+      "text": "Không thể đẩy biến không tồn tại."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
-      "text": "Esta es una operación binaria, pero el número de argumentos en cola es {0}"
+      "text": "Đây là một hoạt động nhị phân, nhưng số lượng đối số được xếp hàng là {0}"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
-      "text": "La constante entera para el primer operando no es válida."
+      "text": "Hằng số nguyên cho toán hạng đầu tiên không hợp lệ."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
-      "text": "La constante entera para el segundo operando no es válida."
+      "text": "Hằng số nguyên cho toán hạng thứ hai không hợp lệ."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
-      "text": "Esta es una operación unaria, pero el número de argumentos en cola es {0}"
+      "text": "Đây là một phép toán đơn, nhưng số lượng đối số được xếp hàng là {0}"
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "La constante entera no es válida."
+      "text": "Hằng số nguyên không hợp lệ."
     },
     {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
-      "text": "La representación condicional {0} no es válida."
+      "text": "Biểu diễn có điều kiện {0} không hợp lệ."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
-      "text": "No se pudo leer el número de bytes solicitado."
+      "text": "Không thể đọc được số byte được yêu cầu."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
-      "text": "¡Tabla de cadenas no válida!"
+      "text": "Bảng chuỗi không hợp lệ!"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
-      "text": "Magia de encabezado no válida"
+      "text": "Tiêu đề không hợp lệ"
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
-      "text": "No se puede procesar un parámetro de tipo distinto de cadena. La enumeración es {0} y el tipo es {1}."
+      "text": "Không thể xử lý tham số trên kiểu giá trị không phải chuỗi. Enum là {0} và kiểu là {1}."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
-      "text": "El designador de retraso finalizó prematuramente."
+      "text": "Chỉ định trì hoãn đã kết thúc sớm."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
-      "text": "Designador de retraso no válido."
+      "text": "Chỉ định độ trễ không hợp lệ."
     },
     {
       "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
-      "text": "El valor de retardo no es un número."
+      "text": "Giá trị trễ không phải là một con số."
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
-      "text": "Tipo de capacidad desconocida '{0}'"
+      "text": "Loại khả năng không xác định '{0}'"
     },
     {
       "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
-      "text": "No se puede cargar {0}"
+      "text": "Không thể tải {0}"
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
-      "text": "El color está fuera de rango."
+      "text": "Màu sắc nằm ngoài phạm vi."
     },
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "No se pueden obtener datos de color."
+      "text": "Không lấy được dữ liệu màu."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
-      "text": "¿Estás seguro de que este gradiente no es nulo?"
+      "text": "Bạn có chắc chắn rằng gradient này không phải là null không?"
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
-      "text": "Especifique al menos un color."
+      "text": "Chỉ định ít nhất một màu."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
-      "text": "No se puede convertir la fuente nula."
+      "text": "Không thể chuyển đổi nguồn null."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
-      "text": "No se puede convertir al tipo nulo."
+      "text": "Không thể chuyển đổi sang kiểu null."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
-      "text": "Debes especificar un modelo de color de origen específico, no el base."
+      "text": "Bạn nên chỉ định một mô hình màu nguồn cụ thể, không phải mô hình màu cơ sở."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
-      "text": "No es un modelo de color."
+      "text": "Không phải là mô hình màu."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
-      "text": "Debes especificar un modelo de color de destino específico, no el base."
+      "text": "Bạn nên chỉ định một mô hình màu mục tiêu cụ thể, không phải mô hình màu cơ sở."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
-      "text": "No es un modelo de color objetivo."
+      "text": "Không phải là mô hình màu mục tiêu."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
-      "text": "No se puede convertir el mismo modelo de color."
+      "text": "Không thể chuyển đổi cùng một mô hình màu."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
-      "text": "No se puede convertir a RGB."
+      "text": "Không thể chuyển đổi sang RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
-      "text": "No se puede convertir desde el modelo de color base."
+      "text": "Không thể chuyển đổi từ mô hình màu cơ bản."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
-      "text": "No se puede convertir a CMYK."
+      "text": "Không thể chuyển đổi sang CMYK."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
-      "text": "No se puede convertir a CMY."
+      "text": "Không thể chuyển đổi sang CMY."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
-      "text": "No se puede convertir a HSL."
+      "text": "Không thể chuyển đổi sang HSL."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
-      "text": "No se puede convertir a HSV."
+      "text": "Không thể chuyển đổi sang HSV."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
-      "text": "No se puede convertir a RYB."
+      "text": "Không thể chuyển đổi sang RYB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
-      "text": "No se puede convertir a YIQ."
+      "text": "Không thể chuyển đổi sang YIQ."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
-      "text": "No se puede convertir a YUV."
+      "text": "Không thể chuyển đổi sang YUV."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
-      "text": "No se puede convertir a XYZ."
+      "text": "Không thể chuyển đổi sang XYZ."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
-      "text": "No se puede convertir a YXY."
+      "text": "Không thể chuyển đổi sang YXY."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
-      "text": "No se puede convertir a HunterLab."
+      "text": "Không thể chuyển đổi sang HunterLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
-      "text": "No se puede convertir a CieLab."
+      "text": "Không thể chuyển đổi sang CieLab."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
-      "text": "No se puede convertir a CieLuv."
+      "text": "Không thể chuyển đổi sang CieLuv."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
-      "text": "No se puede convertir a CieLch."
+      "text": "Không thể chuyển đổi sang CieLch."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "No se puede convertir a HWB."
+      "text": "Không thể chuyển đổi sang HWB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
-      "text": "No se puede convertir desde RGB."
+      "text": "Không thể chuyển đổi từ RGB."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMYK!"
+      "text": "Không thể chuyển đổi phiên bản RGB rỗng sang CMYK!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CMY!"
+      "text": "Không thể chuyển đổi phiên bản RGB rỗng sang CMY!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSL!"
+      "text": "Không thể chuyển đổi một thể hiện RGB rỗng sang HSL!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HSV!"
+      "text": "Không thể chuyển đổi một trường hợp RGB rỗng sang HSV!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a RYB!"
+      "text": "Không thể chuyển đổi một thể hiện RGB rỗng sang RYB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YIQ!"
+      "text": "Không thể chuyển đổi một trường hợp RGB rỗng sang YIQ!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YUV!"
+      "text": "Không thể chuyển đổi một trường hợp RGB rỗng sang YUV!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a XYZ!"
+      "text": "Không thể chuyển đổi một thể hiện RGB rỗng sang XYZ!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a YXY!"
+      "text": "Không thể chuyển đổi một thể hiện RGB rỗng sang YXY!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HunterLab!"
+      "text": "Không thể chuyển đổi phiên bản RGB rỗng sang HunterLab!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLab!"
+      "text": "Không thể chuyển đổi phiên bản RGB rỗng sang CieLab!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLuv!"
+      "text": "Không thể chuyển đổi một thể hiện RGB rỗng sang CieLuv!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a CieLch!"
+      "text": "Không thể chuyển đổi một thể hiện RGB rỗng sang CieLch!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "¡No se puede convertir una instancia RGB nula a HWB!"
+      "text": "Không thể chuyển đổi phiên bản RGB rỗng sang HWB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
-      "text": "¡No se puede convertir una instancia CMYK nula a RGB!"
+      "text": "Không thể chuyển đổi phiên bản CMYK rỗng sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
-      "text": "¡No se puede convertir una instancia CMY nula a RGB!"
+      "text": "Không thể chuyển đổi phiên bản CMY rỗng sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
-      "text": "¡No se puede convertir una instancia HSL nula a RGB!"
+      "text": "Không thể chuyển đổi phiên bản HSL null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
-      "text": "¡No se puede convertir una instancia HSV nula a RGB!"
+      "text": "Không thể chuyển đổi phiên bản HSV null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
-      "text": "¡No se puede convertir una instancia RYB nula a RGB!"
+      "text": "Không thể chuyển đổi phiên bản RYB rỗng sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
-      "text": "¡No se puede convertir una instancia YIQ nula a RGB!"
+      "text": "Không thể chuyển đổi phiên bản YIQ null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
-      "text": "¡No se puede convertir una instancia YUV nula a RGB!"
+      "text": "Không thể chuyển đổi một trường hợp YUV null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
-      "text": "¡No se puede convertir una instancia XYZ nula a RGB!"
+      "text": "Không thể chuyển đổi một thể hiện XYZ rỗng sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
-      "text": "¡No se puede convertir una instancia YXY nula a RGB!"
+      "text": "Không thể chuyển đổi một thể hiện YXY null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
-      "text": "¡No se puede convertir una instancia nula de HunterLab a RGB!"
+      "text": "Không thể chuyển đổi phiên bản HunterLab null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
-      "text": "¡No se puede convertir una instancia nula de CieLab a RGB!"
+      "text": "Không thể chuyển đổi phiên bản CieLab null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
-      "text": "¡No se puede convertir una instancia nula de CieLuv a RGB!"
+      "text": "Không thể chuyển đổi phiên bản CieLuv null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
-      "text": "¡No se puede convertir una instancia nula de CieLch a RGB!"
+      "text": "Không thể chuyển đổi một thể hiện CieLch null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "¡No se puede convertir una instancia HWB nula a RGB!"
+      "text": "Không thể chuyển đổi phiên bản HWB null sang RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
-      "text": "El observador debe tener 2 o 10 años."
+      "text": "Người quan sát phải là 2 hoặc 10"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
-      "text": "El iluminante no es válido"
+      "text": "Chất chiếu sáng không hợp lệ"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
-      "text": "No se pueden obtener referencias de la tabla"
+      "text": "Không thể lấy được tham chiếu từ bảng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Si usa 256 colores, deberá introducir un valor positivo entre 0 y 255 o un nombre de color válido. Si usa color verdadero, deberá escribir un especificador de color válido, como RRR;GGG;BBB, o un código de color hasta 16777215."
+      "text": "Chỉ định màu không hợp lệ \"{0}\". Nếu bạn đang sử dụng 256 màu, bạn sẽ cần nhập giá trị dương từ 0 đến 255 hoặc tên màu hợp lệ. Nếu bạn đang sử dụng màu thực, bạn sẽ cần viết chỉ định màu hợp lệ, chẳng hạn như RRR;GGG;BBB hoặc mã màu lên đến 16777215."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
-      "text": "El nivel de color rojo está fuera de rango (0 -> 255)."
+      "text": "Mức độ màu đỏ nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
-      "text": "El nivel de color verde está fuera de rango (0 -> 255)."
+      "text": "Mức độ màu xanh lá cây nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
-      "text": "El nivel de color azul está fuera de rango (0 -> 255)."
+      "text": "Mức độ màu xanh nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
-      "text": "El especificador hexadecimal de color \"{0}\" no es válido. Este especificador debe comenzar con la etiqueta hash. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định hex màu không hợp lệ \"{0}\". Chỉ định này phải bắt đầu bằng thẻ bắt đầu bằng dấu thăng. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
-      "text": "Longitud hexadecimal de color \"{0}\" no válida. Asegúrese de que tenga el formato correcto."
+      "text": "Độ dài hex màu không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
-      "text": "No se puede resolver el color hexadecimal \"{0}\"."
+      "text": "Không thể giải quyết mã màu hex \"{0}\"."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CieLab không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Giá trị L nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 128.0)."
+      "text": "Giá trị A nằm ngoài phạm vi (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 128.0)."
+      "text": "Giá trị B nằm ngoài phạm vi (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
-      "text": "El especificador de color CieLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CieLab không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CieLch không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Giá trị L nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
-      "text": "El valor C está fuera de rango (-128.0 -> 128.0)."
+      "text": "Giá trị C nằm ngoài phạm vi (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
-      "text": "El valor H está fuera de rango (-128.0 -> 128.0)."
+      "text": "Giá trị H nằm ngoài phạm vi (-128,0 -> 128,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
-      "text": "El especificador de color CieLch \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CieLch không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CieLuv không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Giá trị L nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
-      "text": "El valor U está fuera de rango (-134.0 -> 220.0)."
+      "text": "Giá trị U nằm ngoài phạm vi (-134,0 -> 220,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
-      "text": "El valor V está fuera de rango (-140.0 -> 122.0)."
+      "text": "Giá trị V nằm ngoài phạm vi (-140,0 -> 122,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
-      "text": "El especificador de color CieLuv \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CieLuv không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
-      "text": "El especificador de color CMY \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CMY không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "Mức độ màu lục lam nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "Mức màu đỏ tươi nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "Mức độ màu vàng nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
-      "text": "El especificador de color CMY \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CMY không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CMYK không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "El nivel de color cian está fuera de rango (0 -> 100)."
+      "text": "Mức độ màu lục lam nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "El nivel de color magenta está fuera de rango (0 -> 100)."
+      "text": "Mức màu đỏ tươi nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "El nivel de color amarillo está fuera de rango (0 -> 100)."
+      "text": "Mức độ màu vàng nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "El nivel de color negro está fuera de rango (0 -> 100)."
+      "text": "Mức độ màu đen nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "El especificador de color CMYK \"{0}\" no es válido. El especificador no puede tener más de cuatro elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu CMYK không hợp lệ \"{0}\". Chỉ định màu không được quá bốn phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
-      "text": "Especificador de color HSL \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu HSL không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Mức độ màu sắc nằm ngoài phạm vi (0' -> 360' độ)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "Mức độ bão hòa nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
-      "text": "El nivel de luminosidad está fuera de rango (0 -> 100)."
+      "text": "Mức độ sáng nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
-      "text": "Especificador de color HSL \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu HSL không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
-      "text": "El especificador de color HSV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu HSV không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Mức độ màu sắc nằm ngoài phạm vi (0' -> 360' độ)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "El nivel de saturación está fuera de rango (0 -> 100)."
+      "text": "Mức độ bão hòa nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
-      "text": "El nivel de valor está fuera de rango (0 -> 100)."
+      "text": "Mức giá trị nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
-      "text": "Especificador de color HSV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu HSV không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "El especificador de color HWB \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu HWB không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "El nivel de tono está fuera de rango (0' -> 360' grados)."
+      "text": "Mức độ màu sắc nằm ngoài phạm vi (0' -> 360' độ)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "El nivel de blancura está fuera de rango (0 -> 100)."
+      "text": "Mức độ trắng nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "El nivel de oscuridad está fuera de rango (0 -> 100)."
+      "text": "Mức độ đen nằm ngoài phạm vi (0 -> 100)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "El especificador de color HWB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu HWB không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu HunterLab không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "El valor L está fuera de rango (0.0 -> 100.0)."
+      "text": "Giá trị L nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
-      "text": "El valor A está fuera de rango (-128.0 -> 127.0)."
+      "text": "Giá trị A nằm ngoài phạm vi (-128,0 -> 127,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
-      "text": "El valor B está fuera de rango (-128.0 -> 127.0)."
+      "text": "Giá trị B nằm ngoài phạm vi (-128,0 -> 127,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
-      "text": "El especificador de color de HunterLab \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu HunterLab không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
-      "text": "El especificador de color YUV \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu YUV không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "Mức độ sáng nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
-      "text": "El nivel de croma (U) está fuera de rango (0 -> 255)."
+      "text": "Mức độ sắc độ (U) nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
-      "text": "El nivel de croma (V) está fuera de rango (0 -> 255)."
+      "text": "Mức độ sắc độ (V) nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
-      "text": "Especificador de color YUV \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu YUV không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu YIQ không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "El nivel de luminancia está fuera de rango (0 -> 255)."
+      "text": "Mức độ sáng nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
-      "text": "El nivel en fase está fuera de rango (0 -> 255)."
+      "text": "Mức độ trong pha nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
-      "text": "El nivel de cuadratura está fuera de rango (0 -> 255)."
+      "text": "Mức độ vuông góc nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
-      "text": "El especificador de color YIQ \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu YIQ không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
-      "text": "Especificador de color \"{0}\" no válido. Asegúrese de que tenga el formato correcto, es decir, un número del 0 al 255 si se utilizan 255 colores, o una secuencia VT si se utiliza color verdadero, como se indica a continuación."
+      "text": "Chỉ định màu không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng, nghĩa là một số từ 0-255 nếu sử dụng 255 màu hoặc một chuỗi VT nếu sử dụng màu thực như sau"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
-      "text": "Especificador de color \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
-      "text": "Este color ya es un color original."
+      "text": "Màu này vốn đã là màu gốc."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
-      "text": "Especificador de color RYB \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu RYB không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
-      "text": "El nivel rojo está fuera de rango (0 -> 255)."
+      "text": "Mức màu đỏ nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
-      "text": "El nivel amarillo está fuera de rango (0 -> 255)."
+      "text": "Mức màu vàng nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
-      "text": "El nivel azul está fuera de rango (0 -> 255)."
+      "text": "Mức màu xanh nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
-      "text": "El especificador de color RYB \"{0}\" no es válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu RYB không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu XYZ không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "Giá trị X nằm ngoài phạm vi (0,0 -> 95,047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "Giá trị Y nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "Giá trị Z nằm ngoài phạm vi (0,0 -> 108,883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu XYZ không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu XYZ không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
+      "text": "Giá trị X nằm ngoài phạm vi (0,0 -> 95,047)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
+      "text": "Giá trị Y nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
+      "text": "Giá trị Z nằm ngoài phạm vi (0,0 -> 108,883)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu XYZ không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
-      "text": "Especificador de color YXY \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu YXY không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
-      "text": "El valor Y1 está fuera de rango (0.0 -> 100.0)."
+      "text": "Giá trị Y1 nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 1.0)."
+      "text": "Giá trị X nằm ngoài phạm vi (0,0 -> 1,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
-      "text": "El valor Y2 está fuera de rango (0.0 -> 1.0)."
+      "text": "Giá trị Y2 nằm ngoài phạm vi (0,0 -> 1,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
-      "text": "Especificador de color YXY \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
+      "text": "Chỉ định màu YXY không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "No se especificó ningún nombre de componente."
+      "text": "Không có tên thành phần nào được chỉ định."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "No se especificó ningún color para el componente {0}."
+      "text": "Không có màu nào được chỉ định cho thành phần {0}."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "El componente {0} ya existe."
+      "text": "Thành phần {0} đã tồn tại."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "El componente {0} no existe."
+      "text": "Thành phần {0} không tồn tại."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "El componente {0} está predefinido y, por lo tanto, no se puede eliminar."
+      "text": "Thành phần {0} được xác định trước và do đó không thể xóa được."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "La plantilla no tiene componentes."
+      "text": "Mẫu không có thành phần nào."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "La plantilla no tiene componentes predefinidos que deban definirse ({0})."
+      "text": "Mẫu không có thành phần nào được xác định trước cần phải được xác định ({0})."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "No se proporcionó el nombre de la plantilla."
+      "text": "Không cung cấp tên mẫu."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "No se puede encontrar la plantilla {0}"
+      "text": "Không tìm thấy mẫu {0}"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "No se puede encontrar el componente {0} en la plantilla {1}"
+      "text": "Không tìm thấy thành phần {0} trong mẫu {1}"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Plantilla no válida."
+      "text": "Mẫu không hợp lệ."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "La plantilla no tiene nombre."
+      "text": "Mẫu không có tên."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "La plantilla ya existe."
+      "text": "Mẫu đã tồn tại."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "No se puede eliminar la plantilla incorporada {0}"
+      "text": "Không thể xóa mẫu tích hợp {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
-      "text": "El tipo de color no es válido"
+      "text": "Kiểu màu không hợp lệ"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
-      "text": "El especificador de color para visibilidad no es válido"
+      "text": "Chỉ định màu sắc cho khả năng nhìn thấy không hợp lệ"
     },
     {
       "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
-      "text": "Tipo de monocromatismo no válido"
+      "text": "Loại đơn sắc không hợp lệ"
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
-      "text": "No se puede determinar cómo convertir un {0} de {1} a un color."
+      "text": "Không thể xác định cách chuyển đổi {0} của {1} thành một màu."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
-      "text": "No se puede determinar cómo convertir un {0} de un tipo desconocido a un color."
+      "text": "Không xác định được cách chuyển đổi {0} của một kiểu không xác định thành một màu."
     },
     {
       "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
-      "text": "No puedo obtener el color"
+      "text": "Không thể lấy được màu."
     },
     {
       "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
-      "text": "No se pudo establecer el fondo"
+      "text": "Không thể thiết lập nền"
     },
     {
       "loc": "T_COLOR_EXCEPTION_COLORISNULL",
-      "text": "No se proporciona instancia de color."
+      "text": "Không cung cấp phiên bản màu."
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
-      "text": "Salida"
+      "text": "Ra"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
-      "text": "Combinaciones de teclas"
+      "text": "Phím tắt"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
-      "text": "Encuentra el siguiente"
+      "text": "Tìm Tiếp Theo"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "Subir"
+      "text": "Di chuyển lên"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
-      "text": "Sube un elemento"
+      "text": "Đi lên một phần tử"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "Bajar"
+      "text": "Di chuyển xuống"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
-      "text": "Bajar un elemento"
+      "text": "Đi xuống một phần tử"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "Página anterior"
+      "text": "Trang trước"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
-      "text": "Ir a la página anterior"
+      "text": "Quay lại trang trước"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "Página siguiente"
+      "text": "Trang tiếp theo"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
-      "text": "Ir a la página siguiente"
+      "text": "Đi đến trang tiếp theo"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "Ir al inicio"
+      "text": "Đi đến phần đầu"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
-      "text": "Ir al primer elemento"
+      "text": "Đi đến phần tử đầu tiên"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "Ir al final"
+      "text": "Đi đến Kết thúc"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
-      "text": "Ir al último elemento"
+      "text": "Đi đến phần tử cuối cùng"
     },
     {
       "loc": "T_INPUT_COMMON_SEARCHPROMPT",
-      "text": "Escribe un término de búsqueda (admite expresiones regulares)"
+      "text": "Viết một thuật ngữ tìm kiếm (hỗ trợ biểu thức chính quy)"
     },
     {
       "loc": "T_INPUT_COMMON_INVALIDQUERY",
-      "text": "Su consulta no es una expresión regular válida."
+      "text": "Truy vấn của bạn không phải là biểu thức chính quy hợp lệ."
     },
     {
       "loc": "T_INPUT_COMMON_ENTRYPROMPT",
-      "text": "Seleccione una de las entradas:"
+      "text": "Chọn một trong các mục sau:"
     },
     {
       "loc": "T_INPUT_COMMON_NOITEMS",
-      "text": "No se encontró ningún artículo."
+      "text": "Không tìm thấy mục nào."
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
-      "text": "Buscar un elemento"
+      "text": "Tìm kiếm một phần tử"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
-      "text": "Ir una línea hacia arriba (informativo)"
+      "text": "Đi một hàng lên (thông tin)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
-      "text": "Bajar una línea (informativo)"
+      "text": "Đi xuống một dòng (thông tin)"
     },
     {
       "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
-      "text": "Cambiar"
+      "text": "Công tắc"
     },
     {
       "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
-      "text": "Lista de {0} colores predefinidos"
+      "text": "Danh sách {0} màu được xác định trước"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
-      "text": "Gris"
+      "text": "Xám"
     },
     {
       "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
-      "text": "Transparencia"
+      "text": "Tính minh bạch"
     },
     {
       "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
-      "text": "Sombra y tinte"
+      "text": "Bóng râm và màu sắc"
     },
     {
       "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
-      "text": "Información de color"
+      "text": "Thông tin màu sắc"
     },
     {
       "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
-      "text": "Transformar"
+      "text": "Biến đổi"
     },
     {
       "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
-      "text": "Tipo de color no válido en el selector de colores"
+      "text": "Kiểu màu không hợp lệ trong bộ chọn màu"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
-      "text": "Escribe el nombre de la fuente. Se convertirá a minúsculas."
+      "text": "Viết tên phông chữ. Nó sẽ được chuyển thành chữ thường."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_NOFONT",
-      "text": "La fuente no existe."
+      "text": "Phông chữ không tồn tại."
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
-      "text": "Seleccione una fuente figlet de la lista a continuación"
+      "text": "Chọn một phông chữ figlet từ danh sách bên dưới"
     },
     {
       "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
-      "text": "Selección de fuentes"
+      "text": "Lựa chọn phông chữ"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
-      "text": "El selector no está especificado"
+      "text": "Bộ chọn không được chỉ định"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
-      "text": "Leer más..."
+      "text": "Đọc thêm..."
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
-      "text": "Lista de combinaciones de teclas"
+      "text": "Liệt kê các phím tắt"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
-      "text": "Cambiar de lugar"
+      "text": "Di chuyển xung quanh"
     },
     {
       "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
-      "text": "Sale de la TUI interactiva"
+      "text": "Thoát khỏi TUI tương tác"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
-      "text": "Información del artículo"
+      "text": "Thông tin mục"
     },
     {
       "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de selección requiere que haya al menos una opción habilitada."
+      "text": "Kiểu lựa chọn yêu cầu phải có ít nhất một lựa chọn được bật."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
-      "text": "Escribe el nombre del spinner. Se convertirá a minúsculas."
+      "text": "Viết tên spinner. Tên này sẽ được chuyển thành chữ thường."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
-      "text": "La ruleta no existe"
+      "text": "Con quay không tồn tại."
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
-      "text": "Seleccione un spinner de la lista a continuación"
+      "text": "Chọn một spinner từ danh sách bên dưới"
     },
     {
       "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
-      "text": "Selección de Spinner"
+      "text": "Lựa chọn Spinner"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
-      "text": "Sin información."
+      "text": "Không có thông tin."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
-      "text": "Sin estatus"
+      "text": "Không có trạng thái"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
-      "text": "Se intentó representar elementos TUI interactivos para el panel secundario en una TUI interactiva que solo permite la interacción desde un panel."
+      "text": "Đã thử hiển thị các mục TUI tương tác cho khung phụ trên TUI tương tác chỉ cho phép tương tác từ một khung."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
-      "text": "Intenté representar información en el panel secundario en una TUI interactiva que permite la interacción desde dos paneles, lo que arruinó la representación de la selección allí."
+      "text": "Đã cố gắng hiển thị thông tin trên khung phụ trong TUI tương tác cho phép tương tác từ hai khung, làm hỏng kết quả hiển thị lựa chọn ở đó."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
-      "text": "Se intentó representar información sobre datos nulos"
+      "text": "Đã cố gắng hiển thị thông tin về dữ liệu null"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
-      "text": "No se pudo obtener información."
+      "text": "Không nhận được thông tin."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
-      "text": "Realizar una acción sobre el elemento seleccionado"
+      "text": "Thực hiện hành động trên mục đã chọn"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
-      "text": "Proporcione una clase TUI interactiva base y vuelva a intentarlo."
+      "text": "Vui lòng cung cấp lớp TUI tương tác cơ bản và thử lại."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
-      "text": "La TUI interactiva {0} no contiene ninguna fuente de datos."
+      "text": "TUI tương tác {0} không chứa bất kỳ nguồn dữ liệu nào."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
-      "text": "La TUI interactiva {0} tiene asignaciones de teclado o mouse conflictivas."
+      "text": "TUI tương tác {0} có xung đột giữa các phím tắt hoặc chuột."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
-      "text": "Las siguientes combinaciones de teclas o del mouse entran en conflicto:"
+      "text": "Các phím tắt hoặc phím chuột sau đây xung đột với nhau:"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
-      "text": "La interfaz textual se ha bloqueado. Suele ser un problema de la aplicación."
+      "text": "Giao diện người dùng văn bản đã bị sập. Thường thì đây là vấn đề ở phía ứng dụng."
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
-      "text": "La interfaz de usuario textual no está especificada"
+      "text": "Giao diện người dùng dạng văn bản không được chỉ định"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
-      "text": "Esta IU textual [{0}] no está lista porque el estado es {1}"
+      "text": "Giao diện người dùng văn bản này [{0}] chưa sẵn sàng vì trạng thái là {1}"
     },
     {
       "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
-      "text": "Hay {0} combinaciones de teclas conflictivas en la interfaz de usuario textual [{1}]"
+      "text": "Có {0} ràng buộc phím xung đột trong giao diện người dùng văn bản [{1}]"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
-      "text": "No se especifica el contexto del evento del puntero"
+      "text": "Bối cảnh sự kiện con trỏ không được chỉ định"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
-      "text": "La posición inicial no puede ser menor que cero"
+      "text": "Vị trí bắt đầu không được nhỏ hơn số không"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
-      "text": "La posición final no puede ser menor que cero"
+      "text": "Vị trí cuối không được nhỏ hơn số không"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
-      "text": "La posición inicial X no puede ser mayor que la posición final X"
+      "text": "Vị trí X bắt đầu không được lớn hơn vị trí X kết thúc"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
-      "text": "La posición inicial Y no puede ser mayor que la posición final Y"
+      "text": "Vị trí Y bắt đầu không được lớn hơn vị trí Y kết thúc"
     },
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
-      "text": "El nombre de entrada no está especificado"
+      "text": "Tên đầu vào không được chỉ định"
     },
     {
       "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
-      "text": "Avance"
+      "text": "Nâng cao"
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "Esta página de presentación requiere que se completen los siguientes datos antes de poder avanzar a la página siguiente."
+      "text": "Trang trình bày này yêu cầu phải hoàn thành các thông tin đầu vào sau đây trước khi có thể chuyển sang trang tiếp theo."
     },
     {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
-      "text": "Entrada requerida"
+      "text": "Yêu cầu nhập dữ liệu"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
-      "text": "Una o más de las siguientes entradas no se han completado correctamente:"
+      "text": "Một hoặc nhiều mục nhập sau đây không được điền chính xác:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
-      "text": "Entrada incorrecta"
+      "text": "Đầu vào không đúng"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
-      "text": "No se han proporcionado los datos requeridos. Deberá completar los valores de los siguientes campos:"
+      "text": "Chưa cung cấp các đầu vào bắt buộc. Bạn sẽ cần điền các giá trị của các đầu vào sau:"
     },
     {
       "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
-      "text": "Entrada no proporcionada"
+      "text": "Đầu vào không được cung cấp"
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
-      "text": "No se puede mostrar una opción sin respuestas ni respuestas alternativas."
+      "text": "Không thể đưa ra lựa chọn khi không có câu trả lời hoặc không có câu trả lời thay thế."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
-      "text": "El estilo de elección requiere que haya al menos una opción habilitada."
+      "text": "Kiểu lựa chọn yêu cầu phải có ít nhất một lựa chọn được bật."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
-      "text": "No puedes proporcionar respuestas con más de un carácter en el modo de un solo carácter."
+      "text": "Bạn không thể cung cấp câu trả lời có nhiều hơn một ký tự ở chế độ một ký tự."
     },
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
-      "text": "Respuesta incorrecta. Inténtalo de nuevo."
+      "text": "Câu trả lời sai. Vui lòng thử lại."
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "Mover a la izquierda"
+      "text": "Di chuyển sang trái"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "Mover a la derecha"
+      "text": "Di chuyển sang phải"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
-      "text": "Insertar"
+      "text": "Chèn"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
-      "text": "Reemplazar"
+      "text": "Thay thế"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
-      "text": "Reemplazar todo"
+      "text": "Thay thế tất cả"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
-      "text": "Listo"
+      "text": "Sẵn sàng"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
-      "text": "No encontrado. Revisa la sintaxis o amplía la búsqueda."
+      "text": "Không tìm thấy. Kiểm tra cú pháp hoặc mở rộng tìm kiếm của bạn."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
-      "text": "Información del número"
+      "text": "Thông tin số"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
-      "text": "Eliminar"
+      "text": "Di dời"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
-      "text": "Reemplazar todo lo que"
+      "text": "Thay thế tất cả những gì"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
-      "text": "Escribe el número de byte con el valor hexadecimal."
+      "text": "Viết số byte có giá trị thập lục phân."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
-      "text": "El número de byte especificado no es válido."
+      "text": "Số byte được chỉ định không hợp lệ."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
-      "text": "Byte no válido {0}."
+      "text": "Byte {0} không hợp lệ."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
-      "text": "Escriba el número de byte con el valor hexadecimal con el que reemplazar {0}."
+      "text": "Viết số byte có giá trị thập lục phân để thay thế {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
-      "text": "Escriba el número de byte con el valor hexadecimal a reemplazar."
+      "text": "Viết số byte có giá trị thập lục phân cần thay thế."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
-      "text": "Escribe un byte o un grupo de bytes separados por espacios en blanco."
+      "text": "Viết một byte hoặc một nhóm byte được phân tách bằng khoảng trắng."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
-      "text": "Se requieren bytes para buscar, pero no ha proporcionado ninguno."
+      "text": "Cần phải có byte để tìm, nhưng bạn chưa cung cấp."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
-      "text": "Posición"
+      "text": "Chức vụ"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
-      "text": "Hexadecimal"
+      "text": "Hệ thập lục phân"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
-      "text": "Octal"
+      "text": "Bát phân"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
-      "text": "Número"
+      "text": "Con số"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
-      "text": "Binario"
+      "text": "nhị phân"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
-      "text": "Información del número"
+      "text": "Thông tin số"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "Contenido vacío"
+      "text": "Nội dung trống"
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
-      "text": "El número de byte de inicio especificado no puede ser mayor que el tamaño del archivo."
+      "text": "Số byte bắt đầu được chỉ định không được lớn hơn kích thước tệp."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
-      "text": "El número de byte final especificado no puede ser mayor que el tamaño del archivo."
+      "text": "Số byte kết thúc được chỉ định không được lớn hơn kích thước tệp."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
-      "text": "El número de byte especificado no es válido."
+      "text": "Số byte được chỉ định không hợp lệ."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
-      "text": "El número de byte especificado no puede ser mayor que {0} ni menor que 1."
+      "text": "Số byte được chỉ định không được lớn hơn {0} hoặc nhỏ hơn 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
-      "text": "El número de byte especificado no puede ser mayor que {0}."
+      "text": "Số byte được chỉ định không được lớn hơn {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
-      "text": "No se puede realizar esta operación en una matriz nula."
+      "text": "Không thể thực hiện thao tác này trên mảng null."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
-      "text": "El número de byte debe comenzar con 1."
+      "text": "Số byte phải bắt đầu bằng 1."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
-      "text": "El número de byte de inicio especificado no puede ser mayor que {0}."
+      "text": "Số byte bắt đầu được chỉ định không được lớn hơn {0}."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
-      "text": "El número de byte final especificado no puede ser mayor que {0}."
+      "text": "Số byte kết thúc được chỉ định không được lớn hơn {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
-      "text": "Ingresar..."
+      "text": "Đi vào..."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
-      "text": "Borrar aquí"
+      "text": "Xóa ở đây"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
-      "text": "Eliminar línea"
+      "text": "Xóa dòng"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
-      "text": "Dejar de entrar"
+      "text": "Dừng nhập"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
-      "text": "Nueva línea"
+      "text": "Dòng mới"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "Retroceso"
+      "text": "Phím xóa lùi"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "Borrar"
+      "text": "Xóa bỏ"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
-      "text": "Escribe la cadena a encontrar"
+      "text": "Viết chuỗi để tìm"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
-      "text": "Escribe la cadena de reemplazo"
+      "text": "Viết chuỗi thay thế"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
-      "text": "Escribe una cadena para buscar. Admite expresiones regulares."
+      "text": "Viết một chuỗi để tìm. Hỗ trợ biểu thức chính quy."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
-      "text": "Se requiere una cadena para buscar, pero no ha proporcionado ninguna."
+      "text": "Cần phải có chuỗi để tìm, nhưng bạn chưa cung cấp chuỗi nào."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
-      "text": "Esta cadena a buscar no es una expresión regular válida."
+      "text": "Chuỗi cần tìm này không phải là một biểu thức chính quy hợp lệ."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
-      "text": "Pauta"
+      "text": "Dòng"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
-      "text": "Columna"
+      "text": "Cột"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
-      "text": "Fila"
+      "text": "Hàng ngang"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
-      "text": "El número de línea especificado no puede ser mayor que {0}."
+      "text": "Số dòng được chỉ định không được lớn hơn {0}."
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
-      "text": "No se puede realizar esta operación en una lista de líneas nulas."
+      "text": "Không thể thực hiện thao tác này trên danh sách dòng null."
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
-      "text": "Muestra más información en un cuadro de información."
+      "text": "Hiển thị thêm thông tin trong hộp thông tin"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
-      "text": "Va una línea hacia arriba"
+      "text": "Đi một hàng lên"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
-      "text": "Va una línea hacia abajo"
+      "text": "Đi xuống một dòng"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
-      "text": "Va a la página anterior del texto."
+      "text": "Đi đến trang văn bản trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
-      "text": "Va a la siguiente página de texto."
+      "text": "Chuyển đến trang văn bản tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
-      "text": "Envía el valor"
+      "text": "Gửi giá trị"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
-      "text": "Envía los valores"
+      "text": "Gửi các giá trị"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
-      "text": "Cierra sin enviar el valor"
+      "text": "Đóng mà không gửi giá trị"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
-      "text": "Cierra sin enviar los valores"
+      "text": "Đóng mà không gửi các giá trị"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "Realiza una acción o selecciona una opción"
+      "text": "Thực hiện một hành động hoặc chọn một lựa chọn"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "Disminuye el valor o mueve tres líneas de texto hacia arriba"
+      "text": "Giảm giá trị hoặc di chuyển ba dòng văn bản lên trên"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "Incrementa el valor o mueve tres líneas de texto hacia abajo"
+      "text": "Tăng giá trị hoặc di chuyển ba dòng văn bản xuống dưới"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "Opción anterior o tres líneas de texto anteriores"
+      "text": "Lựa chọn trước đó hoặc ba dòng văn bản trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "Siguiente opción o siguientes tres líneas de texto"
+      "text": "Lựa chọn tiếp theo hoặc ba dòng văn bản tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
-      "text": "Disminuye el valor actual"
+      "text": "Giảm giá trị hiện tại"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
-      "text": "Incrementa el valor actual"
+      "text": "Tăng giá trị hiện tại"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
-      "text": "Establece el valor al valor mínimo"
+      "text": "Đặt giá trị ở mức giá trị tối thiểu"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
-      "text": "Establece el valor al valor máximo"
+      "text": "Đặt giá trị ở mức giá trị tối đa"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "Establece el foco actual en el siguiente elemento de valor"
+      "text": "Đặt tiêu điểm hiện tại vào phần tử giá trị tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "Establece el foco actual en el elemento de valor anterior"
+      "text": "Đặt tiêu điểm hiện tại vào phần tử giá trị trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
-      "text": "Va al botón anterior"
+      "text": "Đi tới nút trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
-      "text": "Va al siguiente botón"
+      "text": "Chuyển đến nút tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "Botón anterior o tres líneas de texto anteriores"
+      "text": "Nút trước hoặc ba dòng văn bản trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "Botón siguiente o siguientes tres líneas de texto"
+      "text": "Nút tiếp theo hoặc ba dòng văn bản tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
-      "text": "Va a la primera línea de texto."
+      "text": "Đi đến dòng đầu tiên của văn bản"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
-      "text": "Va a la última línea de texto."
+      "text": "Đi đến dòng cuối cùng của văn bản"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
-      "text": "Va a la siguiente página de texto o cierra el cuadro de información modal."
+      "text": "Chuyển đến trang văn bản tiếp theo hoặc đóng hộp thông tin mô hình"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
-      "text": "Cierra el cuadro de información modal."
+      "text": "Đóng hộp thông tin mô hình"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "Realiza una acción"
+      "text": "Thực hiện một hành động"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "Las tres líneas de texto anteriores"
+      "text": "Ba dòng văn bản trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "Próximas tres líneas de texto"
+      "text": "Ba dòng văn bản tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "Va a la página anterior de entradas."
+      "text": "Đi đến trang đầu vào trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "Va a la siguiente página de entradas."
+      "text": "Chuyển đến trang đầu vào tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "Busca una entrada"
+      "text": "Tìm kiếm một đầu vào"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "Cambia el valor de entrada seleccionado"
+      "text": "Thay đổi giá trị đầu vào đã chọn"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
-      "text": "Sube una opción (siguiente opción)"
+      "text": "Đi lên một lựa chọn (lựa chọn tiếp theo)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
-      "text": "Baja una opción (opción anterior)"
+      "text": "Đi xuống một lựa chọn (lựa chọn trước đó)"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
-      "text": "Va a la primera opción"
+      "text": "Đi đến lựa chọn đầu tiên"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
-      "text": "Va a la última opción"
+      "text": "Đi đến lựa chọn cuối cùng"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
-      "text": "Va a la página anterior de opciones."
+      "text": "Đi đến trang lựa chọn trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
-      "text": "Va a la siguiente página de opciones."
+      "text": "Chuyển đến trang lựa chọn tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
-      "text": "Busca una elección"
+      "text": "Tìm kiếm một sự lựa chọn"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
-      "text": "Selecciona o deselecciona todas las opciones"
+      "text": "Chọn hoặc bỏ chọn tất cả các lựa chọn"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
-      "text": "No se puede obtener la categoría y el grupo en la opción número {0}."
+      "text": "Không thể lấy được danh mục và nhóm trong lựa chọn số {0}."
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
-      "text": "Opciones generales"
+      "text": "Lựa chọn chung"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
-      "text": "Opciones disponibles"
+      "text": "Lựa chọn có sẵn"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
-      "text": "Opciones alternativas"
+      "text": "Lựa chọn thay thế"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
-      "text": "Confirmar"
+      "text": "Xác nhận"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
-      "text": "Barra lateral"
+      "text": "Thanh bên"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "Más"
+      "text": "Hơn"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
-      "text": "Confirma la(s) selección(es)"
+      "text": "Xác nhận lựa chọn"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "Cambia el valor seleccionado (botones de opción)"
+      "text": "Thay đổi giá trị đã chọn (nút radio)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
-      "text": "Cancelar selección(es)"
+      "text": "Hủy lựa chọn"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
-      "text": "Sube un elemento"
+      "text": "Tăng một phần tử lên"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
-      "text": "Va un elemento hacia abajo"
+      "text": "Giảm một phần tử xuống"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
-      "text": "Va al primer elemento"
+      "text": "Đi đến phần tử đầu tiên"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
-      "text": "Va al último elemento"
+      "text": "Đi đến phần tử cuối cùng"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
-      "text": "Va a la página anterior"
+      "text": "Đi đến trang trước"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
-      "text": "Va a la página siguiente"
+      "text": "Chuyển đến trang tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
-      "text": "Busca un elemento"
+      "text": "Tìm kiếm một phần tử"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
-      "text": "Subir a una barra lateral"
+      "text": "Đi lên trong thanh bên"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
-      "text": "Bajar a la barra lateral"
+      "text": "Đi xuống trong thanh bên"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
-      "text": "Subir en un cuadro de preguntas"
+      "text": "Đi lên hộp câu hỏi"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
-      "text": "Bajar en un cuadro de preguntas"
+      "text": "Đi xuống hộp câu hỏi"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
-      "text": "Mostrar el recuento de páginas y opciones"
+      "text": "Hiển thị số trang và lựa chọn"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
-      "text": "Mostrar información del artículo"
+      "text": "Hiển thị thông tin mục"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
-      "text": "Selecciona o deselecciona una opción"
+      "text": "Chọn hoặc bỏ chọn một lựa chọn"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
-      "text": "Selecciona todos los elementos del mismo grupo y categoría"
+      "text": "Chọn tất cả các phần tử trong cùng một nhóm và danh mục"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos de la misma categoría"
+      "text": "Chọn tất cả các phần tử trong tất cả các nhóm trong cùng một danh mục"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
-      "text": "Selecciona todos los elementos de todos los grupos en todas las categorías"
+      "text": "Chọn tất cả các phần tử trong tất cả các nhóm trong tất cả các danh mục"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "Va un elemento o línea de escaparate"
+      "text": "Đi một yếu tố hoặc dòng trưng bày"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "Va un elemento o línea de escaparate hacia abajo"
+      "text": "Đi xuống một phần tử hoặc dòng giới thiệu"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
-      "text": "Actualizar posición"
+      "text": "Cập nhật vị trí"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
-      "text": "Anterior"
+      "text": "Trước"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
-      "text": "Próximo"
+      "text": "Kế tiếp"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
-      "text": "Entregar"
+      "text": "Nộp"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
-      "text": "Cancelar"
+      "text": "Hủy bỏ"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
-      "text": "Ayuda"
+      "text": "Giúp đỡ"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
-      "text": "Hecho"
+      "text": "Xong"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
-      "text": "Seleccionar"
+      "text": "Lựa chọn"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
-      "text": "Selección manual"
+      "text": "Chọn thủ công"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
-      "text": "Información de color"
+      "text": "Thông tin màu sắc"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
-      "text": "Próxima simulación de daltonismo"
+      "text": "Mô phỏng mù màu tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
-      "text": "Simulación previa de daltonismo"
+      "text": "Mô phỏng mù màu trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
-      "text": "Aumentar la frecuencia de transformación"
+      "text": "Tăng tần số chuyển đổi"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
-      "text": "Disminuir la frecuencia de transformación"
+      "text": "Giảm tần số biến đổi"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
-      "text": "Seleccionar color web"
+      "text": "Chọn màu web"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
-      "text": "Aumentar la opacidad"
+      "text": "Tăng độ mờ đục"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
-      "text": "Aumentar la transparencia"
+      "text": "Tăng tính minh bạch"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
-      "text": "Siguiente modo de color"
+      "text": "Chế độ màu tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
-      "text": "Modo de color anterior"
+      "text": "Chế độ màu trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
-      "text": "Aumentar el valor"
+      "text": "Tăng giá trị"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
-      "text": "Disminuir valor"
+      "text": "Giảm giá trị"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
-      "text": "Reducir el tono de color"
+      "text": "Giảm sắc độ màu"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
-      "text": "Aumentar el tono del color"
+      "text": "Tăng cường sắc độ màu"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
-      "text": "Reducir la luminosidad del color"
+      "text": "Giảm độ sáng màu"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
-      "text": "Aumentar la luminosidad del color"
+      "text": "Tăng độ sáng màu"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
-      "text": "Reducir la saturación"
+      "text": "Giảm độ bão hòa"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
-      "text": "Aumentar la saturación"
+      "text": "Tăng độ bão hòa"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
-      "text": "Color anterior"
+      "text": "Màu trước đó"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
-      "text": "Siguiente color"
+      "text": "Màu tiếp theo"
     },
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
-      "text": "Mostrar y ocultar la lista de colores"
+      "text": "Hiển thị và ẩn danh sách màu"
     },
     {
       "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
-      "text": "Exhibición de personajes"
+      "text": "Trình bày nhân vật"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
-      "text": "Este elemento fijo no puede ser una clase base. Especifique un elemento fijo incondicional."
+      "text": "Đồ đạc này có thể không phải là lớp Đồ đạc cơ sở. Hãy chỉ định một đồ đạc không điều kiện."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
-      "text": "Es posible que este elemento no sea una clase base. Especifique un elemento condicional."
+      "text": "Đồ đạc này có thể không phải là lớp Đồ đạc cơ sở. Hãy chỉ định đồ đạc có điều kiện."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
-      "text": "El valor devuelto {0} no coincide con el valor esperado {1}"
+      "text": "Giá trị trả về {0} không khớp với giá trị mong đợi {1}"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
-      "text": "Este encuentro no es condicional."
+      "text": "Trận đấu này không có điều kiện."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
-      "text": "Este tipo de accesorio no es válido."
+      "text": "Kiểu đồ đạc này không hợp lệ."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
-      "text": "No hay ningún elemento fijo aquí. Inserte uno."
+      "text": "Không có đồ đạc nào ở đây. Hãy chèn một cái."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
-      "text": "Seleccione un dispositivo de prueba."
+      "text": "Chọn thiết bị thử nghiệm."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
-      "text": "Sale del selector de accesorios de prueba."
+      "text": "Thoát khỏi bộ chọn đồ gá thử nghiệm"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
-      "text": "¡Esta prueba ha sido un éxito!"
+      "text": "Thử nghiệm này đã thành công!"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
-      "text": "El valor esperado coincide con el valor real."
+      "text": "Giá trị mong đợi khớp với giá trị thực tế."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
-      "text": "Esta prueba ha fallado."
+      "text": "Bài kiểm tra này đã thất bại."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
-      "text": "Mensaje"
+      "text": "Tin nhắn"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
-      "text": "El valor esperado no coincide con el valor real."
+      "text": "Giá trị mong đợi không khớp với giá trị thực tế."
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
-      "text": "El método en este delegado no puede devolver nulo"
+      "text": "Phương pháp trong đại biểu này không được trả về void"
     },
     {
       "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
-      "text": "El método en este delegado debe devolver vacío"
+      "text": "Phương thức trong đại biểu này cần trả về giá trị void"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
-      "text": "La expresión regular del componente no es válida"
+      "text": "Biểu thức chính quy của thành phần không hợp lệ"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
-      "text": "Expresión regular del componente no proporcionada"
+      "text": "Biểu thức chính quy thành phần không được cung cấp"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
-      "text": "No se proporciona el color de primer plano del componente"
+      "text": "Màu nền của thành phần không được cung cấp"
     },
     {
       "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
-      "text": "No se proporciona el color de fondo del componente"
+      "text": "Màu nền của thành phần không được cung cấp"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador."
+      "text": "Không cung cấp tên của bút đánh dấu."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
-      "text": "No se proporcionó el nombre del resaltador base."
+      "text": "Không cung cấp tên của bút đánh dấu cơ bản."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
-      "text": "No puedo encontrar el resaltador {0}"
+      "text": "Không tìm thấy bút đánh dấu {0}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
-      "text": "No puedo encontrar el resaltador"
+      "text": "Không tìm thấy bút đánh dấu"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
-      "text": "No se puede encontrar el componente {0} en el resaltador {1}"
+      "text": "Không tìm thấy thành phần {0} trong highlighter {1}"
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
-      "text": "Resaltador no válido."
+      "text": "Bút đánh dấu không hợp lệ."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
-      "text": "El resaltador no tiene nombre."
+      "text": "Bút dạ quang không có tên."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
-      "text": "El resaltador ya existe"
+      "text": "Công cụ đánh dấu đã tồn tại."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
-      "text": "El resaltador no tiene componentes."
+      "text": "Bút đánh dấu không có thành phần nào."
     },
     {
       "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
-      "text": "No se puede eliminar el resaltador incorporado {0}"
+      "text": "Không thể xóa công cụ đánh dấu tích hợp {0}"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
-      "text": "El nombre del historial no está especificado"
+      "text": "Tên lịch sử không được chỉ định"
     },
     {
       "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
-      "text": "Las entradas del historial no están especificadas"
+      "text": "Các mục nhập lịch sử không được chỉ định"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
-      "text": "No se proporciona la ruta del archivo de historial."
+      "text": "Đường dẫn tệp lịch sử không được cung cấp."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
-      "text": "No se proporciona representación JSON del historial."
+      "text": "Không cung cấp biểu diễn JSON về lịch sử."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
-      "text": "Se analiza JSON, pero no se proporciona la representación JSON del historial."
+      "text": "Đã phân tích cú pháp JSON, nhưng không cung cấp lịch sử biểu diễn JSON."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
-      "text": "No se proporciona información histórica."
+      "text": "Không cung cấp thông tin lịch sử."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
-      "text": "No se proporcionó el nombre del historial. ¿Está seguro de haber especificado el nombre en su representación JSON?"
+      "text": "Tên lịch sử không được cung cấp. Bạn có chắc chắn rằng bạn đã chỉ định tên trong biểu diễn JSON của mình không?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
-      "text": "No se proporcionan entradas del historial. ¿Está seguro de haber especificado las entradas en su representación JSON?"
+      "text": "Không cung cấp mục nhập lịch sử. Bạn có chắc chắn rằng bạn đã chỉ định các mục nhập trong biểu diễn JSON của mình không?"
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
-      "text": "Historial {0} no encontrado."
+      "text": "Lịch sử {0} không tìm thấy."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
-      "text": "El historial general no se puede eliminar, pero se puede borrar."
+      "text": "Không thể xóa lịch sử chung nhưng có thể xóa."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
-      "text": "La historia no es parte de las historias registradas."
+      "text": "Lịch sử không phải là một phần của lịch sử đã đăng ký."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
-      "text": "No se pudo eliminar el historial."
+      "text": "Không xóa được lịch sử."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
-      "text": "No se proporciona entrada de historial."
+      "text": "Không cung cấp mục nhập lịch sử."
     },
     {
       "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
-      "text": "No se proporciona la lista de entradas del historial."
+      "text": "Không cung cấp danh sách mục nhập lịch sử."
     },
     {
       "loc": "T_READER_EXCEPTION_PRINTWRITE",
-      "text": "Hay un conflicto entre {0} y {1}."
+      "text": "Có xung đột giữa {0} và {1}."
     },
     {
       "loc": "T_READER_FAILED",
-      "text": "El lector de entrada ha fallado"
+      "text": "Đầu đọc đầu vào đã bị lỗi"
     },
     {
       "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
-      "text": "Esta corriente no puede buscar."
+      "text": "Luồng này không thể tìm kiếm."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "No se ha podido generar una secuencia VT funcional del tipo {0} con la acción {1}. Asegúrese de haber especificado los valores correctamente."
+      "text": "Chúng tôi không thể tạo chuỗi VT hoạt động thuộc loại {0} với hành động {1}. Hãy đảm bảo rằng bạn đã chỉ định đúng giá trị."
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
-      "text": "No se puede construir la secuencia VT para el tipo inexistente {0}"
+      "text": "Không thể xây dựng chuỗi VT cho loại không tồn tại {0}"
     },
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
-      "text": "No se puede generar la secuencia VT sin argumentos. Se esperaban {0} argumentos, pero se obtuvieron {1}."
+      "text": "Không thể xây dựng chuỗi VT với các đối số bị thiếu. Dự kiến ​​{0} đối số, nhận được {1} đối số."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Un alias no puede ser el mismo nombre que un comando."
+      "text": "Biệt danh không thể giống với tên của lệnh."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
-      "text": "Comando no encontrado para crear el alias {0}."
+      "text": "Không tìm thấy lệnh để đặt bí danh cho {0}."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​ya encontrado"
+      "text": "Đã tìm thấy bí danh"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "No se encontró el alias {0} para eliminar."
+      "text": "Không tìm thấy biệt danh {0} để xóa."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "No se encuentra el alias {0} para realizar la consulta."
+      "text": "Không tìm thấy biệt danh {0} để truy vấn."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
-      "text": "Uso"
+      "text": "Cách sử dụng"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
-      "text": "Dominio"
+      "text": "Yêu cầu"
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
-      "text": "Descripción"
+      "text": "Sự miêu tả"
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
-      "text": "No hay ayuda para el argumento \"{0}\"."
+      "text": "Không có trợ giúp cho đối số \"{0}\"."
     },
     {
       "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
-      "text": "Descripción de ayuda sin argumentos"
+      "text": "Không có mô tả trợ giúp tranh luận"
     },
     {
       "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
-      "text": "Este argumento aún no se ha implementado."
+      "text": "Lập luận này vẫn chưa được thực hiện."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
-      "text": "No hubo suficientes argumentos."
+      "text": "Không có đủ lý lẽ."
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "Đối số chưa biết"
     },
     {
       "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
-      "text": "Error irrecuperable en el argumento"
+      "text": "Lỗi không thể phục hồi trong lập luận"
     },
     {
       "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
-      "text": "No se puede obtener información del argumento para el comando o argumento"
+      "text": "Không thể lấy thông tin đối số cho lệnh hoặc đối số"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
-      "text": "No se especifican los parámetros del hilo."
+      "text": "Các tham số của luồng không được chỉ định."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
-      "text": "No se proporcionan los argumentos obligatorios para todos los usos siguientes:"
+      "text": "Không cung cấp các đối số bắt buộc cho tất cả các cách sử dụng dưới đây:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argumento desconocido"
+      "text": "Đối số chưa biết"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
-      "text": "No se proporcionan los argumentos obligatorios."
+      "text": "Không cung cấp các đối số bắt buộc."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
-      "text": "No se proporcionan los interruptores necesarios."
+      "text": "Không cung cấp công tắc bắt buộc."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
-      "text": "Uno de los conmutadores requiere un valor que no se proporciona."
+      "text": "Một trong các công tắc yêu cầu giá trị không được cung cấp."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
-      "text": "Los interruptores que se enumeran a continuación son desconocidos."
+      "text": "Các công tắc được liệt kê dưới đây không phải là công tắc chưa biết."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
-      "text": "Los interruptores que se enumeran a continuación entran en conflicto entre sí."
+      "text": "Các công tắc được liệt kê bên dưới sẽ xung đột với nhau."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
-      "text": "Los siguientes interruptores no aceptan valores."
+      "text": "Các công tắc bên dưới không chấp nhận giá trị."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
-      "text": "Uno o más de los argumentos esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "Một hoặc nhiều đối số mong đợi một giá trị số, nhưng bạn đã cung cấp một số không hợp lệ."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
-      "text": "Uno o más de los argumentos esperan una redacción exacta, pero usted proporcionó una palabra no válida."
+      "text": "Một hoặc nhiều đối số yêu cầu một từ ngữ chính xác, nhưng bạn đã cung cấp một từ không hợp lệ."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
-      "text": "Uno o más de los conmutadores esperan un valor numérico, pero usted proporcionó un número no válido."
+      "text": "Một hoặc nhiều công tắc mong muốn giá trị số, nhưng bạn đã cung cấp số không hợp lệ."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
-      "text": "Consulte la entrada de ayuda de este comando para obtener más información."
+      "text": "Tham khảo mục trợ giúp cho lệnh này để biết thêm thông tin"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
-      "text": "El comando está siendo interrumpido..."
+      "text": "Lệnh đang bị gián đoạn..."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
-      "text": "Error al intentar ejecutar el comando {2}."
+      "text": "Lỗi khi cố gắng thực hiện lệnh {2}."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
-      "text": "Error"
+      "text": "Lỗi"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
-      "text": "Comando abortado por el siguiente motivo"
+      "text": "Lệnh bị hủy bỏ vì lý do sau"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
-      "text": "Patrón de comando proporcionado no válido."
+      "text": "Cung cấp mẫu lệnh không hợp lệ."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
-      "text": "Comando no encontrado."
+      "text": "Không tìm thấy lệnh."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
-      "text": "El tipo de shell {0} no existe."
+      "text": "Kiểu shell {0} không tồn tại."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
-      "text": "Debes proporcionar la base de comando."
+      "text": "Bạn phải cung cấp cơ sở chỉ huy."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
-      "text": "Debes proporcionar el comando."
+      "text": "Bạn phải cung cấp lệnh."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
-      "text": "El comando especificado ya está agregado."
+      "text": "Lệnh được chỉ định đã được thêm vào."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden cargar."
+      "text": "Một số lệnh tùy chỉnh không thể tải được."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
-      "text": "No se encuentra el comando personalizado especificado."
+      "text": "Không tìm thấy lệnh tùy chỉnh được chỉ định."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
-      "text": "Algunos de los comandos personalizados no se pueden descargar."
+      "text": "Một số lệnh tùy chỉnh không thể được dỡ bỏ."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
-      "text": "Este shell usa comandos de barra diagonal para ejecutar los comandos. Para comenzar, añada la barra diagonal \"/\" al principio del comando. Por ejemplo:"
+      "text": "Shell này sử dụng lệnh gạch chéo để thực thi lệnh. Vui lòng thêm ký hiệu gạch chéo '/' vào đầu lệnh để bắt đầu. Ví dụ:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
-      "text": "Este comando no está definido."
+      "text": "Lệnh này chưa được xác định."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
-      "text": "Comandos disponibles:"
+      "text": "Các lệnh có sẵn:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
-      "text": "Órdenes generales:"
+      "text": "Lệnh chung:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
-      "text": "No hay comandos de shell."
+      "text": "Không có lệnh shell."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
-      "text": "Comandos adicionales:"
+      "text": "Các lệnh bổ sung:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
-      "text": "Sin comandos adicionales"
+      "text": "Không có lệnh bổ sung."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
-      "text": "Comandos de alias:"
+      "text": "Lệnh bí danh:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
-      "text": "Sin comandos de alias."
+      "text": "Không có lệnh bí danh."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
-      "text": "Comandos unificados:"
+      "text": "Các lệnh thống nhất:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
-      "text": "No hay comandos unificados"
+      "text": "Không có lệnh thống nhất."
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
-      "text": "Comando definido por"
+      "text": "Lệnh được xác định bởi"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
-      "text": "Este comando tiene los siguientes argumentos que cambian su funcionamiento:"
+      "text": "Lệnh này có các đối số bên dưới để thay đổi cách thức hoạt động:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
-      "text": "Descripción de argumento no especificado"
+      "text": "Mô tả đối số không xác định"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
-      "text": "Este comando tiene los siguientes interruptores que cambian su funcionamiento:"
+      "text": "Lệnh này có các công tắc bên dưới để thay đổi cách thức hoạt động:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
-      "text": "Descripción del interruptor no especificado"
+      "text": "Mô tả công tắc không xác định"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
-      "text": "No hay ayuda para el comando \"{0}\"."
+      "text": "Không có trợ giúp cho lệnh \"{0}\"."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
-      "text": "No se encuentra el ajuste preestablecido especificado {0}."
+      "text": "Không tìm thấy cài đặt trước được chỉ định {0}."
     },
     {
       "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
-      "text": "Seleccionar ajuste preestablecido para {0}:"
+      "text": "Chọn cài đặt trước cho {0}:"
     },
     {
       "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
-      "text": "No se encontraron comandos."
+      "text": "Không tìm thấy lệnh nào."
     },
     {
       "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
-      "text": "Sale del shell si se ejecuta en un subshell"
+      "text": "Thoát khỏi shell nếu đang chạy trên subshell"
     },
     {
       "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
-      "text": "Encuentra los comandos disponibles en el tipo de shell actual"
+      "text": "Tìm các lệnh có sẵn trong loại shell hiện tại"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
-      "text": "Página de ayuda"
+      "text": "Trang trợ giúp"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
-      "text": "Muestra comandos generales (predeterminado)"
+      "text": "Hiển thị các lệnh chung (mặc định)"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
-      "text": "Muestra comandos con alias"
+      "text": "Hiển thị các lệnh có bí danh"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
-      "text": "Muestra comandos unificados"
+      "text": "Hiển thị các lệnh thống nhất"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
-      "text": "Muestra comandos adicionales"
+      "text": "Hiển thị các lệnh bổ sung"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
-      "text": "Muestra todos los comandos"
+      "text": "Hiển thị tất cả các lệnh"
     },
     {
       "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
-      "text": "Utiliza ayuda simplificada"
+      "text": "Sử dụng trợ giúp đơn giản hóa"
     },
     {
       "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
-      "text": "Abre la biblioteca de ajustes preestablecidos de shell"
+      "text": "Mở thư viện cài đặt sẵn của shell"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
-      "text": "Mensaje del shell: No se encuentra el comando solicitado {0}. Consulte la ayuda para ver los comandos disponibles."
+      "text": "Thông báo Shell: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' để biết các lệnh khả dụng."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
-      "text": "Error al intentar ejecutar el comando."
+      "text": "Có lỗi khi thực hiện lệnh."
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
-      "text": "No se puede obtener el ejecutor de shell para {0}"
+      "text": "Không thể lấy được shell executor cho {0}"
     },
     {
       "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
-      "text": "Error al intentar inicializar el shell"
+      "text": "Không khởi tạo được shell"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
-      "text": "No se puede determinar si la entrada de selección es única o múltiple"
+      "text": "Không thể xác định đầu vào lựa chọn là đơn hay nhiều"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
-      "text": "No se especifica el marcado."
+      "text": "Không chỉ định đánh dấu."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
-      "text": "Especificador de etiqueta final no válido."
+      "text": "Chỉ định thẻ kết thúc không hợp lệ."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
-      "text": "No hay secuencias en cola para finalizar la etiqueta."
+      "text": "Không có chuỗi nào được xếp hàng để kết thúc thẻ."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
-      "text": "Faltan {0} etiquetas finales."
+      "text": "Có {0} thẻ kết thúc bị thiếu."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
-      "text": "El formato inicial no debe imprimir ningún texto; solo debe contener secuencias VT de formato."
+      "text": "Định dạng ban đầu không được in bất kỳ văn bản nào; nó chỉ được chứa các chuỗi VT định dạng."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "No hay ningún archivo Asciicast"
+      "text": "Không có tập tin Asciicast"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "No se puede deserializar la representación base de Asciicast"
+      "text": "Không thể hủy tuần tự hóa biểu diễn Asciicast cơ sở"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v1"
+      "text": "Không thể hủy tuần tự hóa biểu diễn Asciicast v1"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "No se puede deserializar la representación de Asciicast v2"
+      "text": "Không thể hủy tuần tự hóa biểu diễn Asciicast v2"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "No se puede obtener información del evento"
+      "text": "Không thể lấy thông tin sự kiện"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
-      "text": "Combinaciones de teclas disponibles"
+      "text": "Phím tắt có sẵn"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
-      "text": "No hay enlaces definidos en este contexto."
+      "text": "Không có ràng buộc nào được xác định trong bối cảnh này."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
-      "text": "Atajos de teclado"
+      "text": "Liên kết bàn phím"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
-      "text": "Vinculaciones del ratón"
+      "text": "Liên kết chuột"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
-      "text": "Nombre de personaje de Nerd Fonts no válido {0} en el tipo {1}"
+      "text": "Tên ký tự Nerd Fonts không hợp lệ {0} trong loại {1}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
-      "text": "Representación de carácter de Nerd Fonts no válida {0} de {1} en el tipo {2}"
+      "text": "Biểu diễn ký tự Nerd Fonts không hợp lệ {0} từ {1} trong loại {2}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
-      "text": "Tipo de fuente Nerd no válido {0}"
+      "text": "Kiểu phông chữ Nerd không hợp lệ {0}"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
-      "text": "Las fuentes Nerd tipo {0} no tienen caracteres"
+      "text": "Kiểu chữ Nerd Fonts {0} không có ký tự nào"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
-      "text": "Renderable ya está registrado"
+      "text": "Renderable đã được đăng ký"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
-      "text": "Renderable no está registrado"
+      "text": "Renderable không được đăng ký"
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
-      "text": "Todos los hilanderos deben tener el mismo ancho."
+      "text": "Tất cả các con quay phải có cùng chiều rộng."
     }
   ]
 }

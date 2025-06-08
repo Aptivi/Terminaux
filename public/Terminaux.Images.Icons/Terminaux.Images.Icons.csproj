@@ -30,11 +30,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LocaleStation" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\public\Terminaux.Images\Terminaux.Images.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources/Icons/**/*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
   </ItemGroup>
 
 </Project>

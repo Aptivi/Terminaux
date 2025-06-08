@@ -1,0 +1,2518 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR1",
+      "text": "सामान्य टर्मिनॉक्स त्रुटि!"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR2",
+      "text": "टर्मिनेक्स आंतरिक त्रुटि!"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR3",
+      "text": "अज्ञात त्रुटि"
+    },
+    {
+      "loc": "T_EXCEPTION_NOTIMPLEMENTED",
+      "text": "अभी तक कार्यान्वित नहीं किया गया।"
+    },
+    {
+      "loc": "T_COMMON_CANTCONTINUE",
+      "text": "यह कार्यक्रम जारी नहीं रह सकता."
+    },
+    {
+      "loc": "T_COMMON_ANYKEY",
+      "text": "जारी रखने के लिए किसी भी कुंजी को दबाएं..."
+    },
+    {
+      "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
+      "text": "अमान्य प्रकार"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
+      "text": "आपको स्क्रीन भाग निर्दिष्ट करना होगा."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
+      "text": "आपको स्क्रीन नाम निर्दिष्ट करना होगा."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
+      "text": "निर्दिष्ट भाग सूचकांक सीमा से बाहर है."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
+      "text": "निर्दिष्ट भाग का नाम नहीं मिला."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
+      "text": "निर्दिष्ट भाग नहीं मिला."
+    },
+    {
+      "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
+      "text": "बफर सूचकांक शून्य से कम या {0} बफर से अधिक नहीं हो सकता।"
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
+      "text": "स्क्रीन निर्दिष्ट नहीं है."
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
+      "text": "स्क्रीन चक्रीय नहीं है."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
+      "text": "उपयोगकर्ता ने डंब टर्मिनल का उपयोग करके टर्मिनेक्स अनुप्रयोग चलाने का प्रयास किया।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
+      "text": "यह अनुप्रयोग टर्मिनॉक्स द्वारा प्रदान की गई विस्तारित कंसोल सुविधाओं का उपयोग करता है, जिसके लिए उन सुविधाओं की आवश्यकता होती है जो \"डम्ब\" टर्मिनलों द्वारा समर्थित नहीं होती हैं।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
+      "text": "संभावित समाधान: टर्मिनल प्रकार को \"डंब\" के अलावा किसी अन्य प्रकार में सेट करने के लिए उपयुक्त टर्मिनल एमुलेटर का उपयोग करें या अपनी टर्मिनल सेटिंग से परामर्श करें। हम इस एप्लिकेशन से अधिकतम लाभ उठाने के लिए \"vt100\" टर्मिनल एमुलेटर का उपयोग करने की सलाह देते हैं।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
+      "text": "उपयोगकर्ता ने ब्लैकलिस्टेड टर्मिनल प्रकार पर टर्मिनॉक्स अनुप्रयोग चलाने का प्रयास किया।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
+      "text": "आप वर्तमान में जिस कंसोल प्रकार का उपयोग कर रहे हैं, {0}, उसे ब्लैकलिस्ट किया गया है: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
+      "text": "आप वर्तमान में जिस कंसोल प्रकार का उपयोग कर रहे हैं, {0}, वह ग्रे सूची में है: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
+      "text": "उपयोगकर्ता ने ब्लैकलिस्टेड टर्मिनल एमुलेटर पर टर्मिनॉक्स एप्लिकेशन चलाने का प्रयास किया।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
+      "text": "आप वर्तमान में जिस टर्मिनल एमुलेटर {0} का उपयोग कर रहे हैं, उसे ब्लैकलिस्ट कर दिया गया है: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
+      "text": "वर्तमान में आप जिस टर्मिनल एमुलेटर {0} का उपयोग कर रहे हैं, वह ग्रे सूची में है: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
+      "text": "टर्मिनल प्रकार {0} टर्मिनफो के अनुसार 256 रंगों का समर्थन नहीं करता है"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
+      "text": "उपयोगकर्ता ने बिना winpty के Git Bash के MinTTY पर एक Terminaux अनुप्रयोग चलाने का प्रयास किया।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
+      "text": "इस प्रोग्राम का उपयोग करने के लिए आपको winpty का उपयोग करना होगा। यदि आप सुनिश्चित हैं कि आप Git Bash नहीं चला रहे हैं, तो सुनिश्चित करें कि आप उचित Windows टर्मिनल का उपयोग कर रहे हैं।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
+      "text": "I/O त्रुटि के कारण कंसोल पोजिशनिंग काम नहीं कर रही है, इसलिए यह एप्लिकेशन अनियमित रूप से व्यवहार कर सकता है।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
+      "text": "कंसोल पोजिशनिंग ठीक से काम नहीं कर रही है, इसलिए यह एप्लिकेशन अनियमित रूप से व्यवहार कर सकता है।"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
+      "text": "आपका कंसोल ठीक से चलने के लिए बहुत छोटा है: {0}x{1} | बफ़: {2}x{3} | मिन: {4}x{5}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
+      "text": "बेहतर अनुभव के लिए, इस स्क्रीन पर रहते हुए अपनी कंसोल विंडो का आकार बदलें। जारी रखने के लिए कोई भी कुंजी दबाएँ..."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
+      "text": "असेंबली उपलब्ध नहीं है."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
+      "text": "{0} जारी नहीं रखा जा सकता."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
+      "text": "कंसोल प्रकार केवल मूल लेखन का समर्थन करता है।"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
+      "text": "कंसोल का प्रकार अज्ञात है।"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
+      "text": "यह एप्लिकेशन VT एस्केप अनुक्रमों का उपयोग करता है, लेकिन टर्मिनल.एप ने 255 और ट्रू कलर्स के लिए समर्थन समाप्त कर दिया है।"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
+      "text": "कंसोल प्रकार 256 रंगों का समर्थन नहीं करता है."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
+      "text": "बिना किसी प्रश्न के फ़िल्टर नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
+      "text": "अमान्य क्वेरी के साथ फ़िल्टर नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
+      "text": "कंसोल फ़िल्टर में कोई अभिव्यक्ति नहीं है."
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
+      "text": "रॉ मोड के लिए नई टर्मियोस विशेषताएँ पुनर्स्थापित नहीं की जा सकतीं: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
+      "text": "फ़ाइल डिस्क्रिप्टर फ़्लैग प्राप्त नहीं किए जा सके: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
+      "text": "फ़ाइल डिस्क्रिप्टर फ़्लैग को नॉन-ब्लॉकिंग रीड पर सेट नहीं किया जा सकता: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
+      "text": "फ़ाइल डिस्क्रिप्टर फ़्लैग को पढ़ने को रोकने के लिए सेट नहीं किया जा सकता: {0}"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
+      "text": "प्रदान किए गए प्रतिनिधित्व से सिंथ जानकारी प्राप्त नहीं की जा सकती।"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
+      "text": "[{0}.{1}] पर सिंथ प्रतिनिधित्व अमान्य है"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
+      "text": "[{0}.{1}] पर आवृत्ति अमान्य है"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
+      "text": "[{0}.{1}] पर अवधि अमान्य है"
+    },
+    {
+      "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
+      "text": "लक्ष्य शून्य नहीं हो सकता"
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
+      "text": "अधिकतम मान [{0}] प्रगति मान [{1}] से छोटा नहीं होना चाहिए"
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
+      "text": "प्रगति मान [{0}] 0 और अधिकतम मान {1} के बीच होना चाहिए."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
+      "text": "यह निर्दिष्टकर्ता एक पैरामीटर निर्दिष्ट किए बिना स्ट्रिंग के अंत में स्थित नहीं हो सकता है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
+      "text": "यह निर्दिष्टक केवल एक संख्या को पैरामीटर के रूप में ले सकता है।"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
+      "text": "यह पदनाम केवल 1 से 9 तक की संख्या ले सकता है।"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
+      "text": "यह निर्दिष्टक केवल एक अक्षर को पैरामीटर के रूप में ले सकता है।"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
+      "text": "इस डिज़िग्नेटर को एक पूर्णांक स्थिरांक की आवश्यकता है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
+      "text": "इस डिज़िग्नेटर में अमान्य पूर्णांक स्थिरांक है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
+      "text": "यह निर्दिष्टकर्ता वर्ण स्थिरांक निर्दिष्ट किए बिना स्ट्रिंग के अंत में स्थित नहीं हो सकता है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
+      "text": "आप एक से अधिक वर्ण नहीं जोड़ सकते"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
+      "text": "इस डिज़िग्नेटर को वर्ण संग्रह की आवश्यकता है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
+      "text": "चौड़ाई मान्य नहीं है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
+      "text": "इस डिज़िग्नेटर को किसी प्रकार को निर्दिष्ट किए बिना स्ट्रिंग के अंत में स्थित नहीं किया जा सकता है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
+      "text": "शून्य अनुक्रम संसाधित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
+      "text": "शून्य पैरामीटर संसाधित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
+      "text": "इस ध्वज को माइनस चिह्न का प्रतिनिधित्व करना चाहिए"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
+      "text": "स्वरूपण के लिए {1} में से {0} इंडेक्स के बाद अभी और डेटा है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
+      "text": "वर्ण के लिए पूर्णांक स्थिरांक मान्य नहीं है."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
+      "text": "पूर्णांक स्थिरांक मान्य नहीं है."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
+      "text": "अस्तित्वहीन चर को पुश नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
+      "text": "यह एक बाइनरी ऑपरेशन है, लेकिन पंक्तिबद्ध तर्क संख्या {0} है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
+      "text": "प्रथम ऑपरेंड के लिए पूर्णांक स्थिरांक मान्य नहीं है।"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
+      "text": "दूसरे ऑपरेंड के लिए पूर्णांक स्थिरांक मान्य नहीं है."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
+      "text": "यह एकल ऑपरेशन है, लेकिन पंक्तिबद्ध तर्क संख्या {0} है"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
+      "text": "पूर्णांक स्थिरांक मान्य नहीं है."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
+      "text": "सशर्त प्रतिनिधित्व {0} अमान्य है."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
+      "text": "अनुरोधित बाइट्स की संख्या नहीं पढ़ी जा सकी."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
+      "text": "अमान्य स्ट्रिंग तालिका!"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
+      "text": "अमान्य हेडर मैजिक"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
+      "text": "गैर-स्ट्रिंग मान प्रकार पर पैरामीटर संसाधित नहीं किया जा सकता। Enum {0} है और प्रकार {1} है।"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
+      "text": "विलंब पदनाम समय से पहले समाप्त हो गया।"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
+      "text": "अमान्य विलंब निर्दिष्टक."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
+      "text": "विलंब मान कोई संख्या नहीं है."
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
+      "text": "अज्ञात क्षमता प्रकार '{0}'"
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
+      "text": "{0} लोड नहीं किया जा सकता"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
+      "text": "रंग सीमा से बाहर है."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "रंग डेटा प्राप्त नहीं किया जा सका."
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
+      "text": "क्या आप निश्चित हैं कि यह ग्रेडिएंट शून्य नहीं है?"
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
+      "text": "कम से कम एक रंग निर्दिष्ट करें."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
+      "text": "शून्य स्रोत परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
+      "text": "शून्य प्रकार में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
+      "text": "आपको एक विशिष्ट स्रोत रंग मॉडल निर्दिष्ट करना चाहिए, न कि आधार रंग मॉडल।"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
+      "text": "रंग मॉडल नहीं."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
+      "text": "आपको एक विशिष्ट लक्ष्य रंग मॉडल निर्दिष्ट करना चाहिए, न कि आधार मॉडल।"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
+      "text": "लक्ष्य रंग मॉडल नहीं."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
+      "text": "समान रंग मॉडल परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
+      "text": "RGB में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
+      "text": "आधार रंग मॉडल से रूपांतरण नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
+      "text": "CMYK में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
+      "text": "CMY में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
+      "text": "HSL में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
+      "text": "HSV में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
+      "text": "RYB में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
+      "text": "YIQ में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
+      "text": "YUV में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
+      "text": "XYZ में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
+      "text": "YXY में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
+      "text": "हंटरलैब में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
+      "text": "CieLab में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
+      "text": "CieLuv में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
+      "text": "CieLch में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
+      "text": "HWB में परिवर्तित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
+      "text": "RGB से रूपांतरण नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को CMYK में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को CMY में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को HSL में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को HSV में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को RYB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को YIQ में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को YUV में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को XYZ में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को YXY में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को HunterLab में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को CieLab में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को CieLuv में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को CieLch में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
+      "text": "शून्य RGB इंस्टैंस को HWB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
+      "text": "शून्य CMYK इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
+      "text": "शून्य CMY इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
+      "text": "शून्य HSL इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
+      "text": "शून्य HSV इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
+      "text": "शून्य RYB इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
+      "text": "शून्य YIQ इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
+      "text": "शून्य YUV इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
+      "text": "शून्य XYZ उदाहरण को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
+      "text": "शून्य YXY इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
+      "text": "शून्य HunterLab इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
+      "text": "शून्य CieLab इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
+      "text": "शून्य CieLuv इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
+      "text": "शून्य CieLch इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
+      "text": "शून्य HWB इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
+      "text": "पर्यवेक्षक की संख्या 2 या 10 होनी चाहिए"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
+      "text": "प्रकाशक अमान्य है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
+      "text": "तालिका से संदर्भ प्राप्त नहीं किया जा सका"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
+      "text": "अमान्य रंग विनिर्देशक \"{0}\"। यदि आप 256 रंगों का उपयोग कर रहे हैं, तो आपको 0 से 255 तक का सकारात्मक मान या मान्य रंग नाम दर्ज करना होगा। यदि आप सही रंग का उपयोग कर रहे हैं, तो आपको या तो RRR;GGG;BBB जैसा कोई मान्य रंग विनिर्देशक लिखना होगा, या 16777215 तक का रंग कोड लिखना होगा।"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
+      "text": "लाल रंग का स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
+      "text": "हरा रंग स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
+      "text": "नीला रंग स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
+      "text": "अमान्य रंग हेक्स विनिर्देशक \"{0}\"। यह विनिर्देशक हैश टैग से शुरू होना चाहिए। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
+      "text": "अमान्य रंग हेक्स लंबाई \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
+      "text": "रंग हेक्स \"{0}\" का समाधान नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
+      "text": "CieLab रंग विनिर्देशक \"{0}\" अमान्य है। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
+      "text": "L मान सीमा से बाहर है (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
+      "text": "A मान सीमा से बाहर है (-128.0 -> 128.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
+      "text": "B मान सीमा से बाहर है (-128.0 -> 128.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
+      "text": "अमान्य CieLab रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से अधिक तत्व नहीं हो सकते। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
+      "text": "अमान्य CieLch रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
+      "text": "L मान सीमा से बाहर है (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
+      "text": "C मान सीमा से बाहर है (-128.0 -> 128.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
+      "text": "H मान सीमा से बाहर है (-128.0 -> 128.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
+      "text": "अमान्य CieLch रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से अधिक तत्व नहीं हो सकते। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
+      "text": "CieLuv रंग विनिर्देशक \"{0}\" अमान्य है। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
+      "text": "L मान सीमा से बाहर है (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
+      "text": "U मान सीमा से बाहर है (-134.0 -> 220.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
+      "text": "V मान सीमा से बाहर है (-140.0 -> 122.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
+      "text": "CieLuv रंग विनिर्देशक \"{0}\" अमान्य है। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
+      "text": "अमान्य CMY रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
+      "text": "सियान रंग स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
+      "text": "मैजेन्टा रंग स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
+      "text": "पीला रंग स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
+      "text": "अमान्य CMY रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
+      "text": "अमान्य CMYK रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
+      "text": "सियान रंग स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
+      "text": "मैजेन्टा रंग स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
+      "text": "पीला रंग स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "काले रंग का स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "अमान्य CMYK रंग विनिर्देशक \"{0}\"। विनिर्देशक में चार तत्वों से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
+      "text": "अमान्य HSL रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
+      "text": "रंग स्तर सीमा से बाहर है (0' -> 360' डिग्री)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
+      "text": "संतृप्ति स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
+      "text": "हल्कापन स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
+      "text": "अमान्य HSL रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
+      "text": "अमान्य HSV रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
+      "text": "रंग स्तर सीमा से बाहर है (0' -> 360' डिग्री)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
+      "text": "संतृप्ति स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
+      "text": "मान स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
+      "text": "अमान्य HSV रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
+      "text": "अमान्य HWB रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
+      "text": "रंग स्तर सीमा से बाहर है (0' -> 360' डिग्री)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
+      "text": "सफेदी का स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
+      "text": "कालापन स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
+      "text": "अमान्य HWB रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
+      "text": "हंटरलैब रंग विनिर्देशक \"{0}\" अमान्य है। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
+      "text": "L मान सीमा से बाहर है (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
+      "text": "A मान सीमा से बाहर है (-128.0 -> 127.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
+      "text": "B मान सीमा से बाहर है (-128.0 -> 127.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
+      "text": "हंटरलैब रंग विनिर्देशक \"{0}\" अमान्य है। विनिर्देशक में तीन तत्वों से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
+      "text": "अमान्य YUV रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
+      "text": "ल्यूमा स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
+      "text": "क्रोमा (U) स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
+      "text": "क्रोमा (V) स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
+      "text": "अमान्य YUV रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
+      "text": "YIQ रंग विनिर्देशक \"{0}\" अमान्य है। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
+      "text": "ल्यूमा स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
+      "text": "इन-फ़ेज़ स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
+      "text": "चतुर्भुज स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
+      "text": "अमान्य YIQ रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
+      "text": "अमान्य रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप में है, जिसका अर्थ है कि यदि 255 रंगों का उपयोग किया जा रहा है तो 0-255 तक की संख्या या यदि सही रंग का उपयोग किया जा रहा है तो VT अनुक्रम इस प्रकार है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
+      "text": "अमान्य रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं हो सकते। सुनिश्चित करें कि यह सही फ़ॉर्मेट पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
+      "text": "यह रंग पहले से ही एक मूल रंग है।"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
+      "text": "अमान्य RYB रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
+      "text": "लाल स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
+      "text": "पीला स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
+      "text": "नीला स्तर सीमा से बाहर है (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
+      "text": "अमान्य RYB रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "अमान्य XYZ रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "X मान सीमा से बाहर है (0.0 -> 95.047)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "Y मान सीमा से बाहर है (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "Z मान सीमा से बाहर है (0.0 -> 108.883)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "अमान्य XYZ रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "अमान्य XYZ रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "X मान सीमा से बाहर है (0.0 -> 95.047)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "Y मान सीमा से बाहर है (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "Z मान सीमा से बाहर है (0.0 -> 108.883)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "अमान्य XYZ रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
+      "text": "अमान्य YXY रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
+      "text": "Y1 मान सीमा से बाहर है (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
+      "text": "X मान सीमा से बाहर है (0.0 -> 1.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
+      "text": "Y2 मान सीमा से बाहर है (0.0 -> 1.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
+      "text": "अमान्य YXY रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
+      "text": "कोई घटक नाम निर्दिष्ट नहीं किया गया."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
+      "text": "घटक {0} के लिए कोई रंग निर्दिष्ट नहीं किया गया है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
+      "text": "घटक {0} पहले से मौजूद है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
+      "text": "घटक {0} मौजूद नहीं है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
+      "text": "घटक {0} पूर्वनिर्धारित है और इसलिए इसे हटाया नहीं जा सकता."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
+      "text": "टेम्पलेट में कोई घटक नहीं है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
+      "text": "टेम्पलेट में कोई पूर्व-परिभाषित घटक नहीं है जिसे परिभाषित किया जाना आवश्यक हो ({0})."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "टेम्पलेट का कोई नाम उपलब्ध नहीं कराया गया है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
+      "text": "टेम्पलेट {0} नहीं मिल सका"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
+      "text": "टेम्पलेट {1} में घटक {0} नहीं मिल सका"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
+      "text": "अमान्य टेम्पलेट."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
+      "text": "टेम्पलेट का कोई नाम नहीं है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
+      "text": "टेम्पलेट पहले से मौजूद है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
+      "text": "अंतर्निहित टेम्पलेट {0} को हटाया नहीं जा सकता"
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
+      "text": "रंग प्रकार अमान्य है"
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
+      "text": "दृश्यता के लिए रंग निर्दिष्टकर्ता अमान्य है"
+    },
+    {
+      "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
+      "text": "अमान्य मोनोक्रोमेसी प्रकार"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
+      "text": "यह निर्धारित नहीं किया जा सकता कि {1} में से {0} को रंग में कैसे परिवर्तित किया जाए।"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
+      "text": "यह निर्धारित नहीं किया जा सकता कि अज्ञात प्रकार के {0} को रंग में कैसे परिवर्तित किया जाए।"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
+      "text": "रंग नहीं मिल सकता."
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
+      "text": "पृष्ठभूमि सेट करने में विफल"
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_COLORISNULL",
+      "text": "रंग उदाहरण प्रदान नहीं किया गया है."
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
+      "text": "बाहर निकलना"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
+      "text": "कुंजी बाइंडिंग"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
+      "text": "दूसरा खोजो"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
+      "text": "बढ़ाना"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
+      "text": "एक तत्व ऊपर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
+      "text": "नीचे की ओर"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
+      "text": "एक तत्व नीचे जाएँ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
+      "text": "पिछला पृष्ठ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
+      "text": "पिछले पृष्ठ पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
+      "text": "अगला पृष्ठ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
+      "text": "अगले पेज पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
+      "text": "आरंभ पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
+      "text": "पहले तत्व पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
+      "text": "अंत पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
+      "text": "अंतिम तत्व पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT",
+      "text": "खोज शब्द लिखें (नियमित अभिव्यक्तियों का समर्थन करता है)"
+    },
+    {
+      "loc": "T_INPUT_COMMON_INVALIDQUERY",
+      "text": "आपकी क्वेरी वैध नियमित अभिव्यक्ति नहीं है."
+    },
+    {
+      "loc": "T_INPUT_COMMON_ENTRYPROMPT",
+      "text": "निम्न प्रविष्टियों में से एक का चयन करें:"
+    },
+    {
+      "loc": "T_INPUT_COMMON_NOITEMS",
+      "text": "कोई आइटम नहीं मिला."
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
+      "text": "किसी तत्व की खोज करें"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
+      "text": "एक पंक्ति ऊपर जाएँ (सूचनात्मक)"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
+      "text": "एक पंक्ति नीचे जाएँ (सूचनात्मक)"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
+      "text": "बदलना"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
+      "text": "{0} पूर्वनिर्धारित रंगों की सूची"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
+      "text": "स्लेटी"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
+      "text": "पारदर्शिता"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
+      "text": "छाया और रंग"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
+      "text": "रंग जानकारी"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
+      "text": "परिवर्तन"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
+      "text": "रंग चयनकर्ता में अमान्य रंग प्रकार"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
+      "text": "फ़ॉन्ट का नाम लिखें। इसे लोअरकेस में बदल दिया जाएगा।"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_NOFONT",
+      "text": "फ़ॉन्ट मौजूद नहीं है."
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
+      "text": "नीचे दी गई सूची से फ़िगलेट फ़ॉन्ट चुनें"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
+      "text": "फ़ॉन्ट चयन"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
+      "text": "चयनकर्ता निर्दिष्ट नहीं है"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
+      "text": "और पढ़ें..."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
+      "text": "कीबाइंडिंग की सूची बनाएं"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
+      "text": "चारों ओर घूमें"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
+      "text": "इंटरैक्टिव TUI से बाहर निकलें"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
+      "text": "आइटम जानकारी"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "चयन शैली के लिए आवश्यक है कि कम से कम एक विकल्प सक्षम हो।"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
+      "text": "स्पिनर का नाम लिखें। इसे लोअरकेस में बदल दिया जाएगा।"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
+      "text": "स्पिनर मौजूद नहीं है."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
+      "text": "नीचे दी गई सूची से एक स्पिनर चुनें"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
+      "text": "स्पिनर चयन"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
+      "text": "कोई जानकारी नहीं."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
+      "text": "कोई स्थिति नहीं"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
+      "text": "एक ऐसे इंटरैक्टिव TUI पर द्वितीयक फलक के लिए इंटरैक्टिव TUI आइटम प्रस्तुत करने का प्रयास किया गया जो केवल एक फलक से ही इंटरेक्शन की अनुमति देता है।"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
+      "text": "एक इंटरैक्टिव TUI में द्वितीयक फलक पर सूचना प्रस्तुत करने का प्रयास किया, जो दो फलकों से अंतर्क्रिया की अनुमति देता है, जिससे वहां चयन प्रस्तुतीकरण में गड़बड़ी हो गई।"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
+      "text": "शून्य डेटा के बारे में जानकारी प्रस्तुत करने का प्रयास किया गया"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
+      "text": "जानकारी प्राप्त करने में असफल."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
+      "text": "चयनित आइटम पर कोई कार्रवाई करें"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
+      "text": "कृपया एक आधार इंटरैक्टिव TUI वर्ग प्रदान करें और पुनः प्रयास करें."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
+      "text": "इंटरैक्टिव TUI {0} में कोई डेटा स्रोत नहीं है."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
+      "text": "इंटरैक्टिव TUI {0} में परस्पर विरोधी कीबोर्ड या माउस बाइंडिंग हैं."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
+      "text": "निम्नलिखित कीबाइंडिंग या माउस बाइंडिंग में टकराव है:"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
+      "text": "टेक्स्टुअल यूआई क्रैश हो गया है। यह आमतौर पर एप्लीकेशन के अंत में एक समस्या है।"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
+      "text": "पाठ्य UI निर्दिष्ट नहीं है"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
+      "text": "यह पाठ्य यूआई [{0}] तैयार नहीं है क्योंकि स्थिति {1} है"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
+      "text": "[{1}] टेक्स्टुअल UI में {0} परस्पर विरोधी कुंजी बाइंडिंग हैं"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
+      "text": "पॉइंटर ईवेंट संदर्भ निर्दिष्ट नहीं है"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
+      "text": "प्रारंभिक स्थिति शून्य से कम नहीं हो सकती"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
+      "text": "अंतिम स्थिति शून्य से कम नहीं हो सकती"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
+      "text": "आरंभ X स्थिति अंत X स्थिति से अधिक नहीं हो सकती"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
+      "text": "आरंभिक Y स्थिति अंतिम Y स्थिति से अधिक नहीं हो सकती"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
+      "text": "इनपुट नाम निर्दिष्ट नहीं है"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
+      "text": "अग्रिम"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
+      "text": "इस प्रस्तुति पृष्ठ पर अगले पृष्ठ पर जाने से पहले निम्नलिखित इनपुटों की पूर्ति आवश्यक है।"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
+      "text": "इनपुट आवश्यक"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
+      "text": "निम्नलिखित में से एक या अधिक इनपुट सही ढंग से नहीं भरे गए हैं:"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
+      "text": "ग़लत इनपुट"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
+      "text": "आवश्यक इनपुट प्रदान नहीं किए गए हैं। आपको निम्नलिखित इनपुट के मान भरने होंगे:"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
+      "text": "इनपुट उपलब्ध नहीं कराया गया"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
+      "text": "बिना उत्तर और बिना वैकल्पिक उत्तर के विकल्प नहीं दिखाया जा सकता।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "विकल्प शैली के लिए यह आवश्यक है कि कम से कम एक विकल्प सक्षम हो।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
+      "text": "आप एकल-वर्ण मोड में एक से अधिक वर्णों वाले उत्तर नहीं दे सकते।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
+      "text": "ग़लत जवाब. कृपया पुनः प्रयास करें."
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
+      "text": "बाएं खिसको"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
+      "text": "सही कदम"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
+      "text": "डालना"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
+      "text": "प्रतिस्थापित करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
+      "text": "सभी को प्रतिस्थापित करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
+      "text": "तैयार"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
+      "text": "नहीं मिला। अपना वाक्यविन्यास जांचें या अपनी खोज विस्तृत करें।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
+      "text": "नंबर जानकारी"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
+      "text": "निकालना"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
+      "text": "सभी को बदलें क्या"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
+      "text": "बाइट संख्या को हेक्साडेसिमल मान के साथ लिखें।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
+      "text": "निर्दिष्ट बाइट संख्या मान्य नहीं है."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
+      "text": "अमान्य बाइट {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
+      "text": "{0} को प्रतिस्थापित करने के लिए हेक्साडेसिमल मान के साथ बाइट संख्या लिखें।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
+      "text": "प्रतिस्थापित किये जाने वाले हेक्साडेसिमल मान के साथ बाइट संख्या लिखें।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
+      "text": "रिक्त स्थानों से अलग करके एक बाइट या बाइट्स का समूह लिखें।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
+      "text": "खोजने के लिए बाइट्स की आवश्यकता होती है, लेकिन आपने कोई बाइट्स उपलब्ध नहीं कराया है।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
+      "text": "पद"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
+      "text": "हेक्साडेसिमल"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
+      "text": "अष्टभुजाकार"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
+      "text": "संख्या"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
+      "text": "द्विआधारी"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
+      "text": "संख्या की जानकारी"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
+      "text": "खाली सामग्री"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
+      "text": "निर्दिष्ट आरंभ बाइट संख्या फ़ाइल आकार से बड़ी नहीं हो सकती।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
+      "text": "निर्दिष्ट अंतिम बाइट संख्या फ़ाइल आकार से बड़ी नहीं हो सकती।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
+      "text": "निर्दिष्ट बाइट संख्या अमान्य है."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
+      "text": "निर्दिष्ट बाइट संख्या {0} से बड़ी या 1 से छोटी नहीं हो सकती."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
+      "text": "निर्दिष्ट बाइट संख्या {0} से बड़ी नहीं हो सकती."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
+      "text": "यह ऑपरेशन शून्य सरणी पर निष्पादित नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
+      "text": "बाइट संख्या 1 से शुरू होनी चाहिए."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
+      "text": "निर्दिष्ट आरंभ बाइट संख्या {0} से बड़ी नहीं हो सकती."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
+      "text": "निर्दिष्ट अंतिम बाइट संख्या {0} से बड़ी नहीं हो सकती."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
+      "text": "प्रवेश करना..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
+      "text": "यहां हटाएं"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
+      "text": "लाइन हटाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
+      "text": "प्रवेश रोकें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
+      "text": "नई लाइन"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
+      "text": "बैकस्पेस"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
+      "text": "मिटाना"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
+      "text": "खोजने के लिए स्ट्रिंग लिखें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
+      "text": "प्रतिस्थापन स्ट्रिंग लिखें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
+      "text": "खोजने के लिए एक स्ट्रिंग लिखें। नियमित अभिव्यक्तियों का समर्थन करता है।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
+      "text": "खोजने के लिए स्ट्रिंग की आवश्यकता है, लेकिन आपने कोई स्ट्रिंग प्रदान नहीं की है।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
+      "text": "खोजने के लिए यह स्ट्रिंग एक वैध नियमित अभिव्यक्ति नहीं है।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
+      "text": "पंक्तियां"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
+      "text": "स्तंभ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
+      "text": "पंक्ति"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
+      "text": "निर्दिष्ट पंक्ति संख्या {0} से बड़ी नहीं हो सकती."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
+      "text": "यह ऑपरेशन शून्य पंक्तियों की सूची पर नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
+      "text": "इन्फोबॉक्स में अधिक जानकारी दिखाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
+      "text": "एक पंक्ति ऊपर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
+      "text": "एक लाइन नीचे चला जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
+      "text": "पाठ के पिछले पृष्ठ पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
+      "text": "पाठ के अगले पृष्ठ पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
+      "text": "मान सबमिट करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
+      "text": "मान प्रस्तुत करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
+      "text": "मान सबमिट किए बिना बंद हो जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
+      "text": "मान सबमिट किए बिना बंद हो जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
+      "text": "कोई कार्रवाई करता है या कोई विकल्प चुनता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
+      "text": "मान घटाता है या पाठ की तीन पंक्तियाँ ऊपर ले जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
+      "text": "मान बढ़ाता है या पाठ की तीन पंक्तियाँ नीचे ले जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
+      "text": "पिछला विकल्प या पाठ की पिछली तीन पंक्तियाँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
+      "text": "अगला विकल्प या पाठ की अगली तीन पंक्तियाँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
+      "text": "वर्तमान मूल्य घटाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
+      "text": "वर्तमान मान बढ़ाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
+      "text": "मान को न्यूनतम मान पर सेट करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
+      "text": "मान को अधिकतम मान पर सेट करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
+      "text": "वर्तमान फ़ोकस को अगले मान तत्व पर सेट करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
+      "text": "वर्तमान फ़ोकस को पिछले मान तत्व पर सेट करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
+      "text": "पिछले बटन पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
+      "text": "अगले बटन पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
+      "text": "पिछला बटन या पाठ की पिछली तीन पंक्तियाँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
+      "text": "अगला बटन या पाठ की अगली तीन पंक्तियाँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
+      "text": "पाठ की पहली पंक्ति पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
+      "text": "पाठ की अंतिम पंक्ति पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
+      "text": "पाठ के अगले पृष्ठ पर जाता है, या मोडल सूचना बॉक्स को बंद करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
+      "text": "मोडल सूचना बॉक्स बंद करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
+      "text": "कोई कार्रवाई करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
+      "text": "पाठ की पिछली तीन पंक्तियाँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
+      "text": "पाठ की अगली तीन पंक्तियाँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
+      "text": "इनपुट के पिछले पृष्ठ पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
+      "text": "इनपुट के अगले पृष्ठ पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
+      "text": "इनपुट खोजता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
+      "text": "चयनित इनपुट मान बदलता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
+      "text": "एक विकल्प ऊपर जाता है (अगला विकल्प)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
+      "text": "एक विकल्प नीचे चला जाता है (पिछला विकल्प)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
+      "text": "पहली पसंद पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
+      "text": "अंतिम विकल्प पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
+      "text": "विकल्पों के पिछले पृष्ठ पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
+      "text": "विकल्पों के अगले पृष्ठ पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
+      "text": "किसी विकल्प की खोज करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
+      "text": "सभी विकल्पों का चयन या अचयन करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
+      "text": "विकल्प संख्या {0} में श्रेणी और समूह प्राप्त नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
+      "text": "सामान्य विकल्प"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
+      "text": "उपलब्ध विकल्प"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
+      "text": "वैकल्पिक विकल्प"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
+      "text": "पुष्टि करना"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
+      "text": "साइड बार"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
+      "text": "अधिक"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
+      "text": "चयन की पुष्टि करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
+      "text": "चयनित मान परिवर्तित करता है (रेडियो बटन)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
+      "text": "चयन रद्द करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
+      "text": "एक तत्व ऊपर चला जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
+      "text": "एक तत्व नीचे चला जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
+      "text": "पहले तत्व पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
+      "text": "अंतिम तत्व पर जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
+      "text": "पिछले पृष्ठ पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
+      "text": "अगले पेज पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
+      "text": "किसी तत्व की खोज करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
+      "text": "साइडबार में ऊपर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
+      "text": "साइडबार में नीचे जाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
+      "text": "प्रश्न बॉक्स में ऊपर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
+      "text": "प्रश्न बॉक्स में नीचे जाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
+      "text": "पृष्ठ और विकल्प संख्या दिखाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
+      "text": "आइटम जानकारी दिखाएं"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
+      "text": "किसी विकल्प का चयन या अचयन करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
+      "text": "एक ही समूह और श्रेणी के सभी तत्वों का चयन करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
+      "text": "एक ही श्रेणी के सभी समूहों में सभी तत्वों का चयन करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
+      "text": "सभी श्रेणियों के सभी समूहों में सभी तत्वों का चयन करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
+      "text": "एक तत्व या शोकेस लाइन अप चला जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
+      "text": "एक तत्व या शोकेस लाइन नीचे चला जाता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
+      "text": "स्थिति अपडेट करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
+      "text": "पहले का"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
+      "text": "अगला"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
+      "text": "जमा करना"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
+      "text": "रद्द करना"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
+      "text": "मदद"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
+      "text": "हो गया"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
+      "text": "चुनना"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
+      "text": "मैनुअल चयन"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
+      "text": "रंग जानकारी"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
+      "text": "अगला रंग अंधापन सिमुलेशन"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
+      "text": "पिछला रंग अंधापन सिमुलेशन"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
+      "text": "परिवर्तन आवृत्ति बढ़ाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
+      "text": "परिवर्तन आवृत्ति घटाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
+      "text": "वेब रंग चुनें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
+      "text": "अपारदर्शिता बढ़ाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
+      "text": "पारदर्शिता बढ़ाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
+      "text": "अगला रंग मोड"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
+      "text": "पिछला रंग मोड"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
+      "text": "मूल्य बढ़ाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
+      "text": "मूल्य घटाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
+      "text": "रंग की छटा कम करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
+      "text": "रंग की छटा बढ़ाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
+      "text": "रंग का हल्कापन कम करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
+      "text": "रंग का हल्कापन बढ़ाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
+      "text": "संतृप्ति कम करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
+      "text": "संतृप्ति बढ़ाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
+      "text": "पिछला रंग"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
+      "text": "अगला रंग"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
+      "text": "रंग सूची दिखाएँ और छिपाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
+      "text": "चरित्र प्रदर्शन"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
+      "text": "यह फिक्सचर बेस फिक्सचर क्लास नहीं हो सकता है। बिना शर्त फिक्सचर निर्दिष्ट करें।"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
+      "text": "यह फिक्सचर बेस फिक्सचर क्लास नहीं हो सकता है। एक सशर्त फिक्सचर निर्दिष्ट करें।"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
+      "text": "लौटाया गया मान {0} अपेक्षित मान {1} से मेल नहीं खाता"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
+      "text": "यह स्थिरता सशर्त नहीं है।"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
+      "text": "यह फ़िक्स्चर प्रकार अमान्य है."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
+      "text": "यहाँ कोई फिक्सचर नहीं है। एक लगाओ।"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
+      "text": "एक परीक्षण स्थिरता चुनें."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
+      "text": "परीक्षण फ़िक्स्चर चयनकर्ता से बाहर निकलता है"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
+      "text": "यह परीक्षण सफल रहा!"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
+      "text": "अपेक्षित मूल्य वास्तविक मूल्य से मेल खाता है."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
+      "text": "यह परीक्षण विफल हो गया है."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
+      "text": "संदेश"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
+      "text": "अपेक्षित मूल्य वास्तविक मूल्य से मेल नहीं खाता."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
+      "text": "इस प्रतिनिधि में विधि शून्य वापस नहीं कर सकती है"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
+      "text": "इस प्रतिनिधि में विधि को शून्य वापस करने की आवश्यकता है"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
+      "text": "घटक नियमित अभिव्यक्ति अमान्य है"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
+      "text": "घटक नियमित अभिव्यक्ति प्रदान नहीं की गई"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
+      "text": "घटक अग्रभूमि रंग प्रदान नहीं किया गया"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
+      "text": "घटक पृष्ठभूमि रंग प्रदान नहीं किया गया"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
+      "text": "हाइलाइटर का कोई नाम नहीं दिया गया।"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
+      "text": "आधार हाइलाइटर का कोई नाम नहीं दिया गया।"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
+      "text": "हाइलाइटर {0} नहीं मिल सका"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
+      "text": "हाइलाइटर नहीं मिल रहा"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
+      "text": "हाइलाइटर {1} में घटक {0} नहीं मिल सका"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
+      "text": "अमान्य हाइलाइटर."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
+      "text": "हाइलाइटर का कोई नाम नहीं है."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
+      "text": "हाइलाइटर पहले से मौजूद है."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
+      "text": "हाइलाइटर में कोई घटक नहीं होता है।"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
+      "text": "अंतर्निहित हाइलाइटर {0} को हटाया नहीं जा सकता"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
+      "text": "इतिहास का नाम निर्दिष्ट नहीं है"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
+      "text": "इतिहास प्रविष्टियाँ निर्दिष्ट नहीं हैं"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
+      "text": "इतिहास फ़ाइल पथ प्रदान नहीं किया गया है."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
+      "text": "इतिहास JSON प्रतिनिधित्व प्रदान नहीं किया गया है."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
+      "text": "JSON पार्स किया गया, लेकिन इतिहास JSON प्रतिनिधित्व प्रदान नहीं किया गया।"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
+      "text": "इतिहास की जानकारी उपलब्ध नहीं कराई गई है."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
+      "text": "इतिहास का नाम नहीं दिया गया है। क्या आप सुनिश्चित हैं कि आपने अपने JSON प्रतिनिधित्व में नाम निर्दिष्ट किया है?"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
+      "text": "इतिहास प्रविष्टियाँ प्रदान नहीं की गई हैं। क्या आप सुनिश्चित हैं कि आपने अपने JSON प्रतिनिधित्व में प्रविष्टियाँ निर्दिष्ट की हैं?"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
+      "text": "इतिहास {0} नहीं मिला."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
+      "text": "सामान्य इतिहास को हटाया नहीं जा सकता, लेकिन साफ़ किया जा सकता है."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
+      "text": "इतिहास पंजीकृत इतिहास का हिस्सा नहीं है।"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
+      "text": "इतिहास मिटाने में विफल."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
+      "text": "इतिहास प्रविष्टि प्रदान नहीं की गई है."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
+      "text": "इतिहास प्रविष्टि सूची उपलब्ध नहीं है."
+    },
+    {
+      "loc": "T_READER_EXCEPTION_PRINTWRITE",
+      "text": "{0} और {1} के बीच संघर्ष है."
+    },
+    {
+      "loc": "T_READER_FAILED",
+      "text": "इनपुट रीडर विफल हो गया है"
+    },
+    {
+      "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
+      "text": "इस धारा की तलाश नहीं कर सकते."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "हम क्रिया {1} के साथ {0} प्रकार का कार्यशील VT अनुक्रम उत्पन्न करने में विफल रहे हैं। सुनिश्चित करें कि आपने मान सही ढंग से निर्दिष्ट किए हैं।"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
+      "text": "गैर-मौजूद प्रकार {0} के लिए VT अनुक्रम नहीं बनाया जा सकता"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
+      "text": "गुम तर्कों के साथ VT अनुक्रम नहीं बनाया जा सकता। अपेक्षित {0} तर्क, प्राप्त {1} तर्क।"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
+      "text": "उपनाम कमांड के समान नाम नहीं हो सकता।"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
+      "text": "{0} को उपनामित करने के लिए आदेश नहीं मिला."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
+      "text": "उपनाम पहले ही मिल चुका है"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
+      "text": "उपनाम {0} हटाया नहीं जा सका."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
+      "text": "उपनाम {0} पूछताछ के लिए नहीं मिला."
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
+      "text": "प्रयोग"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
+      "text": "आज्ञा"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
+      "text": "विवरण"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
+      "text": "तर्क \"{0}\" के लिए कोई सहायता नहीं."
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
+      "text": "कोई तर्क सहायता विवरण नहीं"
+    },
+    {
+      "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
+      "text": "यह तर्क अभी तक कार्यान्वित नहीं हुआ है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
+      "text": "वहाँ पर्याप्त तर्क नहीं थे."
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
+      "text": "अज्ञात तर्क"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
+      "text": "तर्क में सुधार न की जा सकने वाली त्रुटि"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
+      "text": "आदेश या तर्क के लिए तर्क जानकारी प्राप्त नहीं की जा सकती"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
+      "text": "थ्रेड पैरामीटर निर्दिष्ट नहीं हैं."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
+      "text": "नीचे दिए गए सभी प्रयोगों के लिए आवश्यक तर्क उपलब्ध नहीं हैं:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
+      "text": "अज्ञात तर्क"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
+      "text": "आवश्यक तर्क उपलब्ध नहीं कराये गये हैं।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
+      "text": "आवश्यक स्विच उपलब्ध नहीं हैं।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
+      "text": "इनमें से एक स्विच को एक मान की आवश्यकता है जो उपलब्ध नहीं कराया गया है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
+      "text": "नीचे सूचीबद्ध स्विच अज्ञात हैं।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
+      "text": "नीचे सूचीबद्ध स्विच एक दूसरे के साथ संघर्ष करते हैं।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
+      "text": "नीचे दिए गए स्विच मान स्वीकार नहीं करते हैं।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
+      "text": "एक या अधिक तर्कों में संख्यात्मक मान अपेक्षित है, लेकिन आपने अमान्य संख्या प्रदान की है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
+      "text": "एक या अधिक तर्कों में सटीक शब्दावली की अपेक्षा की गई थी, लेकिन आपने अमान्य शब्द दिया है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
+      "text": "एक या अधिक स्विच संख्यात्मक मान की अपेक्षा रखते हैं, लेकिन आपने अमान्य संख्या प्रदान की है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
+      "text": "अधिक जानकारी के लिए इस कमांड की सहायता प्रविष्टि देखें"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
+      "text": "आदेश बाधित हो रहा है..."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
+      "text": "आदेश {2} निष्पादित करने का प्रयास करते समय त्रुटि हुई."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
+      "text": "गलती"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
+      "text": "निम्न कारण से आदेश निरस्त किया गया"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
+      "text": "अमान्य कमांड पैटर्न प्रदान किया गया."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
+      "text": "यह कमांड नहीं मिला।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
+      "text": "शैल प्रकार {0} मौजूद नहीं है."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
+      "text": "आपको कमांड बेस प्रदान करना होगा."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
+      "text": "आपको आदेश देना होगा."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
+      "text": "निर्दिष्ट आदेश पहले से ही जोड़ा गया है."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
+      "text": "कुछ कस्टम कमांड लोड नहीं किए जा सकते."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
+      "text": "निर्दिष्ट कस्टम कमांड नहीं मिला."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
+      "text": "कुछ कस्टम कमांड अनलोड नहीं किए जा सकते."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
+      "text": "यह शेल कमांड को निष्पादित करने के लिए स्लैश कमांड का उपयोग करता है। आरंभ करने के लिए कृपया कमांड की शुरुआत में स्लैश प्रतीक '/' जोड़ें। उदाहरण के लिए:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
+      "text": "यह आदेश परिभाषित नहीं है."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
+      "text": "उपलब्ध आदेश:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
+      "text": "सामान्य आदेश:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
+      "text": "कोई शेल कमांड नहीं."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
+      "text": "अतिरिक्त आदेश:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
+      "text": "कोई अतिरिक्त आदेश नहीं."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
+      "text": "उपनाम आदेश:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
+      "text": "कोई उपनाम आदेश नहीं."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
+      "text": "एकीकृत आदेश:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
+      "text": "कोई एकीकृत आदेश नहीं."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
+      "text": "द्वारा परिभाषित आदेश"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
+      "text": "इस कमांड में निम्नलिखित तर्क हैं जो इसके कार्य करने के तरीके को बदलते हैं:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
+      "text": "अनिर्दिष्ट तर्क विवरण"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
+      "text": "इस कमांड में नीचे दिए गए स्विच हैं जो इसके कार्य करने के तरीके को बदलते हैं:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
+      "text": "अनिर्दिष्ट स्विच विवरण"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
+      "text": "आदेश \"{0}\" के लिए कोई सहायता नहीं."
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
+      "text": "निर्दिष्ट प्रीसेट {0} नहीं मिला."
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
+      "text": "{0} के लिए प्रीसेट चुनें:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
+      "text": "कोई आदेश नहीं मिला."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
+      "text": "यदि सबशेल पर चल रहा हो तो शेल से बाहर निकल जाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
+      "text": "वर्तमान शेल प्रकार में उपलब्ध कमांड ढूँढता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
+      "text": "सहायता पृष्ठ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
+      "text": "सामान्य आदेश दिखाता है (डिफ़ॉल्ट)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
+      "text": "उपनामित आदेश दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
+      "text": "एकीकृत आदेश दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
+      "text": "अतिरिक्त आदेश दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
+      "text": "सभी आदेश दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
+      "text": "सरलीकृत सहायता का उपयोग करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
+      "text": "शेल प्रीसेट लाइब्रेरी खोलता है"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
+      "text": "शेल संदेश: अनुरोधित कमांड {0} नहीं मिला। उपलब्ध कमांड के लिए 'मदद' देखें।"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
+      "text": "आदेश निष्पादित करने में त्रुटि हुई."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
+      "text": "{0} के लिए शेल निष्पादक प्राप्त नहीं किया जा सका"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
+      "text": "शेल आरंभ करने का प्रयास विफल रहा"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
+      "text": "यह निर्धारित नहीं किया जा सकता कि चयन इनपुट एकल है या एकाधिक"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
+      "text": "मार्कअप निर्दिष्ट नहीं है."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
+      "text": "अमान्य अंत टैग निर्दिष्टकर्ता."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
+      "text": "टैग को समाप्त करने के लिए कोई पंक्तिबद्ध अनुक्रम नहीं है।"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
+      "text": "{0} अंत टैग लुप्त हैं."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
+      "text": "प्रारंभिक प्रारूप में कोई पाठ मुद्रित नहीं होना चाहिए; इसमें केवल प्रारूपण VT अनुक्रम ही होना चाहिए।"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
+      "text": "कोई Asciicast फ़ाइल नहीं है"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
+      "text": "आधार Asciicast प्रतिनिधित्व को डिसेरीलाइज़ नहीं किया जा सकता"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
+      "text": "Asciicast v1 प्रतिनिधित्व को डिसेरीलाइज़ नहीं किया जा सकता"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
+      "text": "Asciicast v2 प्रतिनिधित्व को डिसेरीलाइज़ नहीं किया जा सकता"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
+      "text": "ईवेंट की जानकारी प्राप्त नहीं की जा सकी"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
+      "text": "उपलब्ध कीबाइंडिंग"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
+      "text": "इस संदर्भ में कोई बंधन परिभाषित नहीं है।"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
+      "text": "कीबोर्ड बाइंडिंग"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
+      "text": "माउस बाइंडिंग"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
+      "text": "प्रकार {1} में अमान्य Nerd फ़ॉन्ट वर्ण नाम {0}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
+      "text": "प्रकार {2} में {1} से {0} Nerd फ़ॉन्ट्स वर्ण प्रतिनिधित्व अमान्य है"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
+      "text": "अमान्य Nerd फ़ॉन्ट प्रकार {0}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
+      "text": "Nerd फ़ॉन्ट्स प्रकार {0} में कोई वर्ण नहीं है"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
+      "text": "रेंडरेबल पहले से ही पंजीकृत है"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
+      "text": "रेंडरेबल पंजीकृत नहीं है"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
+      "text": "सभी स्पिनरों की चौड़ाई समान होनी चाहिए।"
+    }
+  ]
+}
