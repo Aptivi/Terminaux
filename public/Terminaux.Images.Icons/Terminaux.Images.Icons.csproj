@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LocaleStation" Version="1.1.0" />
+    <PackageReference Include="LocaleStation" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
