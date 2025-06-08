@@ -2128,7 +2128,7 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Alias ​​tidak dapat sama dengan nama perintah."
+      "text": "Alias tidak dapat sama dengan nama perintah."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
@@ -2136,15 +2136,15 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​sudah ditemukan"
+      "text": "Alias sudah ditemukan"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "Alias ​​{0} tidak ditemukan untuk dihapus."
+      "text": "Alias {0} tidak ditemukan untuk dihapus."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "Alias ​​{0} tidak ditemukan untuk ditanyakan."
+      "text": "Alias {0} tidak ditemukan untuk ditanyakan."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",

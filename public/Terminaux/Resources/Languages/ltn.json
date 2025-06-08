@@ -2136,15 +2136,15 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​iam inventum"
+      "text": "Alias iam inventum"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "Alias ​​{0} non inventum est ut remotus sit."
+      "text": "Alias {0} non inventum est ut remotus sit."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "Alias ​​{0} non inventum est ut quaeratur."
+      "text": "Alias {0} non inventum est ut quaeratur."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",

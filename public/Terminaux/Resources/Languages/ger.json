@@ -2145,15 +2145,15 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​bereits gefunden"
+      "text": "Alias bereits gefunden"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "Der zu entfernende Alias ​​{0} wurde nicht gefunden."
+      "text": "Der zu entfernende Alias {0} wurde nicht gefunden."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "Der Alias ​​{0} konnte nicht abgefragt werden."
+      "text": "Der Alias {0} konnte nicht abgefragt werden."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",

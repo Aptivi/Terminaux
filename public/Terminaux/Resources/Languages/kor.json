@@ -57,7 +57,7 @@
     },
     {
       "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
-      "text": "beopeo indegseuneun 0boda jaggeona {0}gae beopeoboda ​​keul su eobs-seubnida."
+      "text": "beopeo indegseuneun 0boda jaggeona {0}gae beopeoboda keul su eobs-seubnida."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
@@ -2441,7 +2441,7 @@
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
-      "text": "taegeuleul jonglyohal daegiyeol sikwonseuga ​​eobs-seubnida."
+      "text": "taegeuleul jonglyohal daegiyeol sikwonseuga eobs-seubnida."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",

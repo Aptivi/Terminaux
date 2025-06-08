@@ -2132,7 +2132,7 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Alias ​​kan ikke være det samme navnet som en kommando."
+      "text": "Alias kan ikke være det samme navnet som en kommando."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",

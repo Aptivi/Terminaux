@@ -57,7 +57,7 @@
     },
     {
       "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
-      "text": "버퍼 인덱스는 0보다 작거나 {0}개 버퍼보다 ​​클 수 없습니다."
+      "text": "버퍼 인덱스는 0보다 작거나 {0}개 버퍼보다 클 수 없습니다."
     },
     {
       "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
@@ -1789,15 +1789,15 @@
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
-      "text": "동일한 그룹 및 범주에 있는 모든 요소를 ​​선택합니다."
+      "text": "동일한 그룹 및 범주에 있는 모든 요소를 선택합니다."
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
-      "text": "동일한 카테고리의 모든 그룹에 있는 모든 요소를 ​​선택합니다."
+      "text": "동일한 카테고리의 모든 그룹에 있는 모든 요소를 선택합니다."
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
-      "text": "모든 카테고리의 모든 그룹에 있는 모든 요소를 ​​선택합니다."
+      "text": "모든 카테고리의 모든 그룹에 있는 모든 요소를 선택합니다."
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
@@ -2105,7 +2105,7 @@
     },
     {
       "loc": "T_READER_EXCEPTION_PRINTWRITE",
-      "text": "{0}와 ​​{1} 사이에 충돌이 있습니다."
+      "text": "{0}와 {1} 사이에 충돌이 있습니다."
     },
     {
       "loc": "T_READER_FAILED",
@@ -2441,7 +2441,7 @@
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
-      "text": "태그를 끝낼 대기열 시퀀스가 ​​없습니다."
+      "text": "태그를 끝낼 대기열 시퀀스가 없습니다."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",

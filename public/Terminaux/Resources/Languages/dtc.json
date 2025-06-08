@@ -2134,7 +2134,7 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Alias ​​kan niet dezelfde naam zijn als een opdracht."
+      "text": "Alias kan niet dezelfde naam zijn als een opdracht."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
@@ -2142,15 +2142,15 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​al gevonden"
+      "text": "Alias al gevonden"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "Alias ​​{0} kan niet worden verwijderd."
+      "text": "Alias {0} kan niet worden verwijderd."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "Alias ​​{0} kan niet worden opgevraagd."
+      "text": "Alias {0} kan niet worden opgevraagd."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",

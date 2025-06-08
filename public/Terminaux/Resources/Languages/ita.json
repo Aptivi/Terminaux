@@ -2139,7 +2139,7 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias ​​già trovato"
+      "text": "Alias già trovato"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",

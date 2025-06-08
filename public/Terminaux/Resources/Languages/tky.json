@@ -1257,7 +1257,7 @@
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
-      "text": "Başlangıç ​​pozisyonu sıfırdan küçük olamaz"
+      "text": "Başlangıç pozisyonu sıfırdan küçük olamaz"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
@@ -1265,11 +1265,11 @@
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
-      "text": "Başlangıç ​​X konumu bitiş X konumundan büyük olamaz"
+      "text": "Başlangıç X konumu bitiş X konumundan büyük olamaz"
     },
     {
       "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
-      "text": "Başlangıç ​​Y konumu bitiş Y konumundan büyük olamaz"
+      "text": "Başlangıç Y konumu bitiş Y konumundan büyük olamaz"
     },
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
@@ -1417,7 +1417,7 @@
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
-      "text": "Belirtilen başlangıç ​​bayt numarası dosya boyutundan büyük olamaz."
+      "text": "Belirtilen başlangıç bayt numarası dosya boyutundan büyük olamaz."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
@@ -1445,7 +1445,7 @@
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
-      "text": "Belirtilen başlangıç ​​bayt numarası {0} değerinden büyük olamaz."
+      "text": "Belirtilen başlangıç bayt numarası {0} değerinden büyük olamaz."
     },
     {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
@@ -2321,7 +2321,7 @@
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
-      "text": "Alias ​​komutları:"
+      "text": "Alias komutları:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
@@ -2449,7 +2449,7 @@
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
-      "text": "Başlangıç ​​formatında herhangi bir metin basılmamalı, sadece biçimlendirme VT dizileri bulunmalıdır."
+      "text": "Başlangıç formatında herhangi bir metin basılmamalı, sadece biçimlendirme VT dizileri bulunmalıdır."
     },
     {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
