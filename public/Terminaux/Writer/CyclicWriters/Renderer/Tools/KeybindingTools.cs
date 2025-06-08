@@ -270,9 +270,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 return "No bindings defined in this context.";
             var helpTextBuilder = new StringBuilder();
             if (bindingRepresentations.Length > 0)
-                helpTextBuilder.Append($"Keyboard bindings:\n\n{string.Join("\n", bindingRepresentations)}");
+                helpTextBuilder.Append("Keyboard bindings" + $":\n\n{string.Join("\n", bindingRepresentations)}");
             if (bindingMouseRepresentations.Length > 0)
-                helpTextBuilder.Append($"\n\nMouse bindings:\n\n{string.Join("\n", bindingMouseRepresentations)}");
+                helpTextBuilder.Append("\n\n" + "Mouse bindings" + $":\n\n{string.Join("\n", bindingMouseRepresentations)}");
             return helpTextBuilder.ToString();
         }
 

@@ -51,7 +51,7 @@ namespace Terminaux.Shell.Help
             {
                 TextWriterColor.WriteColor(CharManager.NewLine + "General commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, commandList.Count);
                 if (commandList.Count == 0)
-                    TextWriterColor.WriteColor("  - No shell commands.", ConsoleColors.Silver);
+                    TextWriterColor.WriteColor("  - " + "No shell commands.", ConsoleColors.Silver);
                 foreach (var cmd in commandList)
                 {
                     TextWriterRaw.WriteRaw(new ListEntry()
@@ -154,7 +154,7 @@ namespace Terminaux.Shell.Help
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
-                    HelpDefinition = "Command defined by " + command;
+                    HelpDefinition = "Command defined by" + $" {command}";
                 TextWriterRaw.WriteRaw(new ListEntry()
                 {
                     Entry = "Command",
@@ -191,7 +191,7 @@ namespace Terminaux.Shell.Help
                     // If we have arguments, print their descriptions
                     if (Arguments.Length != 0)
                     {
-                        TextWriterColor.WriteColor("* This command has the below arguments that change how it works:", ConsoleColors.Silver);
+                        TextWriterColor.WriteColor("* " + "This command has the below arguments that change how it works:", ConsoleColors.Silver);
                         foreach (var argument in Arguments)
                         {
                             string argumentName = argument.ArgumentExpression;
@@ -211,7 +211,7 @@ namespace Terminaux.Shell.Help
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
-                        TextWriterColor.WriteColor("* This command has the below switches that change how it works:", ConsoleColors.Silver);
+                        TextWriterColor.WriteColor("* " + "This command has the below switches that change how it works:", ConsoleColors.Silver);
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;

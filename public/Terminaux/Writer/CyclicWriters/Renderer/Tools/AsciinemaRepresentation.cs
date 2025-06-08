@@ -69,7 +69,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         {
             // Check to see if we have this file
             if (!File.Exists(fileName))
-                throw new TerminauxException($"There is no Asciicast file: {fileName}");
+                throw new TerminauxException("There is no Asciicast file" + $": {fileName}");
 
             // Open the file and parse its contents
             string contents = File.ReadAllText(fileName);

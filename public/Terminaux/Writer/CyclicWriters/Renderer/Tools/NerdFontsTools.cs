@@ -38,13 +38,13 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         {
             var nerdEntries = VerifyEntries(type);
             if (!nerdEntries.TryGetValue(charName, out string character))
-                throw new TerminauxException($"Invalid Nerd Fonts character name {charName} in type {type}");
+                throw new TerminauxException("Invalid Nerd Fonts character name {0} in type {1}", charName, type.ToString());
             if (!char.TryParse(character, out char c))
             {
                 // We may have surrogate pair based Nerd Fonts character, so we need to process it.
                 if (character.Length == 2 && char.IsSurrogatePair(character[0], character[1]))
                     return character;
-                throw new TerminauxException($"Invalid Nerd Fonts character representation {character} from {charName} in type {type}");
+                throw new TerminauxException("Invalid Nerd Fonts character representation {0} from {1} in type {2}", character, charName, type.ToString());
             }
             return $"{c}";
         }
@@ -64,9 +64,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         private static Dictionary<string, string> VerifyEntries(NerdFontsTypes type)
         {
             if (!nerdFontChars.TryGetValue(type, out var nerdEntries))
-                throw new TerminauxException($"Invalid Nerd Fonts type {type}");
+                throw new TerminauxException("Invalid Nerd Fonts type {0}", type);
             if (nerdEntries.Count == 0)
-                throw new TerminauxException($"Nerd Fonts type {type} has no characters");
+                throw new TerminauxException("Nerd Fonts type {0} has no characters", type.ToString());
             return nerdEntries;
         }
     }
