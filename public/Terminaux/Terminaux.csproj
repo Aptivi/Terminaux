@@ -20,6 +20,9 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    
+    <!-- For cross platform and .NET 8.0+ support -->
+    <AptLocDisableInvalidCultureWarnings>true</AptLocDisableInvalidCultureWarnings>
   </PropertyGroup>
 
   <ItemGroup>
