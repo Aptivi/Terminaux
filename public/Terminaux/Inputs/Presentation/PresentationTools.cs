@@ -393,7 +393,7 @@ namespace Terminaux.Inputs.Presentation
                             var processedRequiredInputs = filledRequiredInputs.Where((ii) => ii.ProcessFunction(ii.InputMethod.Value)).ToArray();
                             inputBail = processedRequiredInputs.Length == filledRequiredInputs.Length;
                             if (!inputBail)
-                                InfoBoxModalColor.WriteInfoBoxModal($"One or more of the following inputs have not been filled correctly:\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
+                                InfoBoxModalColor.WriteInfoBoxModal("One or more of the following inputs have not been filled correctly:" + $"\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
                                 {
                                     Title = "Incorrect Input",
                                 });
@@ -401,7 +401,7 @@ namespace Terminaux.Inputs.Presentation
                         else
                         {
                             screen.RequireRefresh();
-                            InfoBoxModalColor.WriteInfoBoxModal($"Required inputs have not been provided. You'll need to fill in the values of the following inputs:\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
+                            InfoBoxModalColor.WriteInfoBoxModal("Required inputs have not been provided. You'll need to fill in the values of the following inputs:" + $"\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
                             {
                                 Title = "Input not provided",
                             });

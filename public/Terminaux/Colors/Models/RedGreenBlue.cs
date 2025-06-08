@@ -23,6 +23,7 @@ using System.Diagnostics;
 using System.Numerics;
 using Terminaux.Base;
 using Terminaux.Colors.Transformation;
+using Textify.General;
 
 namespace Terminaux.Colors.Models
 {
@@ -168,7 +169,7 @@ namespace Terminaux.Colors.Models
         public static new RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings? settings = null)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new TerminauxException("Invalid color specifier \"{0}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows".FormatString(specifier) + ": <R>;<G>;<B>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Split(';');
@@ -177,13 +178,13 @@ namespace Terminaux.Colors.Models
                 // We got the RGB values! First, check to see if we need to filter the color for the color-blind
                 int r = Convert.ToInt32(specifierArray[0]);
                 if (r < 0 || r > 255)
-                    throw new TerminauxException($"The red color level is out of range (0 -> 255). {r}");
+                    throw new TerminauxException("The red color level is out of range (0 -> 255)." + $" {r}");
                 int g = Convert.ToInt32(specifierArray[1]);
                 if (g < 0 || g > 255)
-                    throw new TerminauxException($"The green color level is out of range (0 -> 255). {g}");
+                    throw new TerminauxException("The green color level is out of range (0 -> 255)." + $" {g}");
                 int b = Convert.ToInt32(specifierArray[2]);
                 if (b < 0 || b > 255)
-                    throw new TerminauxException($"The blue color level is out of range (0 -> 255). {b}");
+                    throw new TerminauxException("The blue color level is out of range (0 -> 255)." + $" {b}");
 
                 // Now, transform
                 settings ??= new(ColorTools.GlobalSettings);
@@ -193,7 +194,7 @@ namespace Terminaux.Colors.Models
                 return new(finalRgb.r, finalRgb.g, finalRgb.b);
             }
             else
-                throw new TerminauxException($"Invalid RGB color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: rgb:<C>;<M>;<Y>");
+                throw new TerminauxException("Invalid color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": <R>;<G>;<B>");
         }
 
         /// <inheritdoc/>

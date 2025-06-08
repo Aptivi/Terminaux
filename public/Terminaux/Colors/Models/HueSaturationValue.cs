@@ -23,6 +23,7 @@ using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
+using Textify.General;
 
 namespace Terminaux.Colors.Models
 {
@@ -84,7 +85,7 @@ namespace Terminaux.Colors.Models
         public static HueSaturationValue ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid HSV color specifier \"{specifier}\". Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+                throw new TerminauxException("Invalid HSV color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": hsv:<hue>;<sat>;<val>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -93,13 +94,13 @@ namespace Terminaux.Colors.Models
                 // We got the HSV whole values! First, check to see if we need to filter the color for the color-blind
                 int h = Convert.ToInt32(specifierArray[0]);
                 if (h < 0 || h > 360)
-                    throw new TerminauxException($"The hue level is out of range (0' -> 360' degrees). {h}");
+                    throw new TerminauxException("The hue level is out of range (0' -> 360' degrees)." + $" {h}");
                 int s = Convert.ToInt32(specifierArray[1]);
                 if (s < 0 || s > 100)
-                    throw new TerminauxException($"The saturation level is out of range (0 -> 100). {s}");
+                    throw new TerminauxException("The saturation level is out of range (0 -> 100)." + $" {s}");
                 int v = Convert.ToInt32(specifierArray[2]);
                 if (v < 0 || v > 100)
-                    throw new TerminauxException($"The value level is out of range (0 -> 100). {v}");
+                    throw new TerminauxException("The value level is out of range (0 -> 100)." + $" {v}");
 
                 // First, we need to convert from HSV to RGB
                 double hPart = (double)h / 360;
@@ -109,7 +110,7 @@ namespace Terminaux.Colors.Models
                 return hsv;
             }
             else
-                throw new TerminauxException($"Invalid HSV color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: hsv:<C>;<M>;<Y>");
+                throw new TerminauxException("Invalid HSV color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": hsv:<hue>;<sat>;<val>");
         }
 
         /// <summary>

@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
 using Terminaux.Colors.Transformation;
+using Textify.General;
 
 namespace Terminaux.Colors.Models
 {
@@ -151,7 +152,7 @@ namespace Terminaux.Colors.Models
         public static CieLuv ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid CieLuv color specifier \"{specifier}\". Ensure that it's on the correct format: cieluv:<red>;<yellow>;<blue>;<observer>;<illuminant>");
+                throw new TerminauxException("Invalid CieLuv color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": cieluv:<l>;<u>;<v>;<observer>;<illuminant>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(7).Split(';');
@@ -161,13 +162,13 @@ namespace Terminaux.Colors.Models
                 // We got the CieLuv whole values! First, check to see if we need to filter the color for the color-blind
                 double l = Convert.ToDouble(specifierArray[0]);
                 if (l < 0 || l > 100)
-                    throw new TerminauxException($"The L value is out of range (0.0 -> 100.0). {l}");
+                    throw new TerminauxException("The L value is out of range (0.0 -> 100.0)." + $" {l}");
                 double u = Convert.ToDouble(specifierArray[1]);
                 if (u < -134 || u > 220)
-                    throw new TerminauxException($"The U value is out of range (-134.0 -> 220.0). {u}");
+                    throw new TerminauxException("The U value is out of range (-134.0 -> 220.0)." + $" {u}");
                 double v = Convert.ToDouble(specifierArray[2]);
                 if (v < -140 || v > 122)
-                    throw new TerminauxException($"The V value is out of range (-140.0 -> 122.0). {v}");
+                    throw new TerminauxException("The V value is out of range (-140.0 -> 122.0)." + $" {v}");
 
                 // Get the observer and the illuminant when needed
                 int observer = 2;
@@ -177,10 +178,10 @@ namespace Terminaux.Colors.Models
                     // We've explicitly specified the observer and the illuminant
                     observer = Convert.ToInt32(specifierArray[3]);
                     if (observer != 2 && observer != 10)
-                        throw new TerminauxException($"Observer must be either 2 or 10. {observer}");
+                        throw new TerminauxException("Observer must be either 2 or 10" + $": {observer}");
                     illuminant = (IlluminantType)Convert.ToInt32(specifierArray[4]);
                     if (illuminant < IlluminantType.A || illuminant > IlluminantType.F12)
-                        throw new TerminauxException($"Illuminant is invalid. {(int)illuminant}");
+                        throw new TerminauxException("Illuminant is invalid" + $": {(int)illuminant}");
                 }
 
                 // Finally, return the CieLuv instance
@@ -188,7 +189,7 @@ namespace Terminaux.Colors.Models
                 return CieLuv;
             }
             else
-                throw new TerminauxException($"Invalid CieLuv color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cieluv:<red>;<yellow>;<blue>;<observer>;<illuminant>");
+                throw new TerminauxException("Invalid CieLuv color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": cieluv:<l>;<u>;<v>;<observer>;<illuminant>");
         }
 
         /// <inheritdoc/>

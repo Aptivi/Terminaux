@@ -41,7 +41,11 @@ namespace Terminaux.Colors
             else if (reader.Value is long colorValueLong)
                 color = new Color((int)colorValueLong);
             else
-                throw new TerminauxException($"Can't determine how to convert a(n) {reader.TokenType} of {reader.ValueType?.Name ?? "an unknown type"} to a color.");
+            {
+                if (reader.ValueType?.Name is not null)
+                    throw new TerminauxException("Can't determine how to convert a(n) {0} of {1} to a color.", reader.TokenType, reader.ValueType?.Name ?? "");
+                throw new TerminauxException("Can't determine how to convert a(n) {0} of an unknown type to a color.", reader.TokenType);
+            }
             return color;
         }
 

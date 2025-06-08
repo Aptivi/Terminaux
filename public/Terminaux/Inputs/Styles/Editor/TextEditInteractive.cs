@@ -553,9 +553,9 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             // Get the status
             status =
-                $"Lines: {lines.Count} | " +
-                $"Column: {lineColIdx + 1} | " +
-                $"Row: {lineIdx + 1}";
+                "Lines" + $": {lines.Count} | " +
+                "Column" + $": {lineColIdx + 1} | " +
+                "Row" + $": {lineIdx + 1}";
 
             // Check to see if the current character is unprintable
             if (lines.Count == 0)
@@ -668,7 +668,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 if (LineNumber <= lines.Count)
                     lines.RemoveAt(LineIndex);
                 else
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, $"The specified line number may not be larger than {lines.Count}.");
+                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, "The specified line number may not be larger than {0}.".FormatString(lines.Count));
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on null lines list.");
@@ -697,7 +697,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 if (LineNumber <= lines.Count)
                     lines[(int)LineIndex] = lines[(int)LineIndex].Replace(From, With);
                 else
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, $"The specified line number may not be larger than {lines.Count}.");
+                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, "The specified line number may not be larger than {0}.".FormatString(lines.Count));
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on null lines list.");

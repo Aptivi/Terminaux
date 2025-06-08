@@ -65,7 +65,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 else
                 {
                     TextWriterColor.WriteColor("This test has failed.", ConsoleColors.Red);
-                    TextWriterColor.WriteColor("Message: " + exc?.Message ?? "Unknown error", ConsoleColors.Red);
+                    TextWriterColor.WriteColor("Message" + ": " + exc?.Message ?? "Unknown error", ConsoleColors.Red);
                     if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
                         TextWriterColor.WriteColor("Expected value doesn't match actual value.", ConsoleColors.Red);
                 }

@@ -23,6 +23,7 @@ using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
+using Textify.General;
 
 namespace Terminaux.Colors.Models
 {
@@ -117,7 +118,7 @@ namespace Terminaux.Colors.Models
         public static Yxy ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid YXY color specifier \"{specifier}\". Ensure that it's on the correct format: yxy:<red>;<yellow>;<blue>");
+                throw new TerminauxException("Invalid YXY color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": yxy:<y>;<x>;<y>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -126,20 +127,20 @@ namespace Terminaux.Colors.Models
                 // We got the YXY whole values! First, check to see if we need to filter the color for the color-blind
                 double y1 = Convert.ToDouble(specifierArray[0]);
                 if (y1 < 0 || y1 > 100)
-                    throw new TerminauxException($"The Y1 value is out of range (0.0 -> 100.0). {y1}");
+                    throw new TerminauxException("The Y1 value is out of range (0.0 -> 100.0)." + $" {y1}");
                 double x = Convert.ToDouble(specifierArray[1]);
                 if (x < 0 || x > 1)
-                    throw new TerminauxException($"The X value is out of range (0.0 -> 1.0). {x}");
+                    throw new TerminauxException("The X value is out of range (0.0 -> 1.0)." + $" {x}");
                 double y2 = Convert.ToDouble(specifierArray[2]);
                 if (y2 < 0 || y2 > 1)
-                    throw new TerminauxException($"The Y2 value is out of range (0.0 -> 1.0). {y2}");
+                    throw new TerminauxException("The Y2 value is out of range (0.0 -> 1.0)." + $" {y2}");
 
                 // First, we need to convert from YXY to RGB
                 var yxy = new Yxy(y1, x, y2);
                 return yxy;
             }
             else
-                throw new TerminauxException($"Invalid YXY color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: yxy:<C>;<M>;<Y>");
+                throw new TerminauxException("Invalid YXY color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": yxy:<y>;<x>;<y>");
         }
 
         /// <inheritdoc/>

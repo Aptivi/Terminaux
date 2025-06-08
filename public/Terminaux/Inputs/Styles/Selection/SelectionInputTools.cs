@@ -155,7 +155,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
                 }
             }
-            throw new TerminauxInternalException($"Can't get category and group in choice number {choiceNum}.");
+            throw new TerminauxInternalException("Can't get category and group in choice number {0}.", choiceNum);
         }
     }
 }

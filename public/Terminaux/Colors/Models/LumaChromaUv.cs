@@ -23,6 +23,7 @@ using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
+using Textify.General;
 
 namespace Terminaux.Colors.Models
 {
@@ -75,7 +76,7 @@ namespace Terminaux.Colors.Models
         public static LumaChromaUv ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid YUV color specifier \"{specifier}\". Ensure that it's on the correct format: yuv:<Y>;<I>;<Q>");
+                throw new TerminauxException("Invalid YUV color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": yuv:<Y>;<U>;<V>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -84,20 +85,20 @@ namespace Terminaux.Colors.Models
                 // We got the YUV whole values! First, check to see if we need to filter the color for the color-blind
                 int y = Convert.ToInt32(specifierArray[0]);
                 if (y < 0 || y > 255)
-                    throw new TerminauxException($"The luma level is out of range (0 -> 255). {y}");
+                    throw new TerminauxException("The luma level is out of range (0 -> 255)." + $" {y}");
                 int u = Convert.ToInt32(specifierArray[1]);
                 if (u < 0 || u > 255)
-                    throw new TerminauxException($"The chroma (U) level is out of range (0 -> 255). {u}");
+                    throw new TerminauxException("The chroma (U) level is out of range (0 -> 255)." + $" {u}");
                 int v = Convert.ToInt32(specifierArray[2]);
                 if (v < 0 || v > 255)
-                    throw new TerminauxException($"The chroma (V) level is out of range (0 -> 255). {v}");
+                    throw new TerminauxException("The chroma (V) level is out of range (0 -> 255)." + $" {v}");
 
                 // First, we need to convert from YUV to RGB
                 var yuv = new LumaChromaUv(y, u, v);
                 return yuv;
             }
             else
-                throw new TerminauxException($"Invalid YUV color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: yuv:<Y>;<I>;<Q>");
+                throw new TerminauxException("Invalid YUV color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": yuv:<Y>;<U>;<V>");
         }
 
         /// <summary>

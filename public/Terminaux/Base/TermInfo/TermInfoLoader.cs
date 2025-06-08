@@ -90,7 +90,7 @@ namespace Terminaux.Base.TermInfo
 
             // We're totally screwed
             ConsoleLogger.Error("Finding {0} to be loaded failed.", name);
-            throw new TerminauxException($"Can't load {name}");
+            throw new TerminauxException("Can't load {0}".FormatString(name));
         }
 
         public static TermInfoDesc Load(Stream stream)

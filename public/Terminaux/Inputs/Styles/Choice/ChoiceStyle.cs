@@ -150,23 +150,6 @@ namespace Terminaux.Inputs.Styles.Choice
             }
         }
 
-        private static void PrintChoices(InputChoiceInfo[] answerInfos, Color answerColor, Color disabledOptionColor)
-        {
-            int AnswerTitleLeft = answerInfos.Max(x => $" {x.ChoiceName}) ".Length);
-            for (int AnswerIndex = 0; AnswerIndex <= answerInfos.Length - 1; AnswerIndex++)
-            {
-                var AnswerInstance = answerInfos[AnswerIndex];
-                string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
-                string AnswerOption = $" {AnswerInstance.ChoiceName}) {AnswerTitle}";
-                if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
-                {
-                    int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
-                    AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
-                }
-                TextWriterColor.WriteColor(AnswerOption, true, AnswerInstance.ChoiceDisabled ? disabledOptionColor : answerColor);
-            }
-        }
-
         static ChoiceStyle()
         {
             if (!ConsoleChecker.busy)

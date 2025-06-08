@@ -291,7 +291,7 @@ namespace Terminaux.Reader
                 {
                     // Sanity checks
                     if (settings.PrintDefaultValue && settings.WriteDefaultValue)
-                        throw new TerminauxException($"There's a conflict between {nameof(settings.PrintDefaultValue)} and {nameof(settings.WriteDefaultValue)}.");
+                        throw new TerminauxException("There's a conflict between {0} and {1}.", nameof(settings.PrintDefaultValue), nameof(settings.WriteDefaultValue));
 
                     // Helper function
                     string GetFinalInput() =>
@@ -431,7 +431,7 @@ namespace Terminaux.Reader
                 catch (Exception ex)
                 {
                     ConsoleLogger.Error(ex, "Input reader has failed");
-                    TextWriterColor.WriteColor($"Input reader has failed: {ex.Message}", ConsoleColors.Red);
+                    TextWriterColor.WriteColor("Input reader has failed" + $": {ex.Message}", ConsoleColors.Red);
                     TextWriterColor.WriteColor(ex.StackTrace, ConsoleColors.Red);
                 }
                 finally

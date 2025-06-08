@@ -19,6 +19,7 @@
 
 using SpecProbe.Software.Platform;
 using System.Runtime.InteropServices;
+using Textify.General;
 
 namespace Terminaux.Base.Extensions.Native
 {
@@ -99,7 +100,7 @@ namespace Terminaux.Base.Extensions.Native
             else
             {
                 if (tcsetattr(STDIN_FD, T_TCSANOW, ref orig) != 0)
-                    throw new TerminauxInternalException($"Can't restore new termios attributes for raw mode: {Marshal.GetLastWin32Error()}");
+                    throw new TerminauxInternalException("Can't restore new termios attributes for raw mode: {0}".FormatString(Marshal.GetLastWin32Error()));
             }
             NonblockSet(enable);
         }
@@ -114,18 +115,18 @@ namespace Terminaux.Base.Extensions.Native
             {
                 int flags = fcntl(STDIN_FD, F_GETFL, 0);
                 if (flags == -1)
-                    throw new TerminauxInternalException($"Can't get file descriptor flags: {Marshal.GetLastWin32Error()}");
+                    throw new TerminauxInternalException("Can't get file descriptor flags: {0}".FormatString(Marshal.GetLastWin32Error()));
                 if (fcntl(STDIN_FD, F_SETFL, flags | nonBlock) == -1)
-                    throw new TerminauxInternalException($"Can't set file descriptor flag to non-blocking read: {Marshal.GetLastWin32Error()}");
+                    throw new TerminauxInternalException("Can't set file descriptor flag to non-blocking read: {0}".FormatString(Marshal.GetLastWin32Error()));
             }
             else
             {
                 int flags = fcntl(STDIN_FD, F_GETFL, 0);
                 if (flags == -1)
-                    throw new TerminauxInternalException($"Can't get file descriptor flags: {Marshal.GetLastWin32Error()}");
+                    throw new TerminauxInternalException("Can't get file descriptor flags: {0}".FormatString(Marshal.GetLastWin32Error()));
                 flags &= ~nonBlock;
                 if (fcntl(STDIN_FD, F_SETFL, flags) == -1)
-                    throw new TerminauxInternalException($"Can't set file descriptor flag to blocking read: {Marshal.GetLastWin32Error()}");
+                    throw new TerminauxInternalException("Can't set file descriptor flag to blocking read: {0}".FormatString(Marshal.GetLastWin32Error()));
             }
         }
     }

@@ -90,7 +90,7 @@ namespace Terminaux.Colors
             }
             catch (Exception ex)
             {
-                throw new TerminauxException($"Failed to set background: {ex.Message}");
+                throw new TerminauxException("Failed to set background" + $": {ex.Message}");
             }
         }
 
@@ -114,7 +114,7 @@ namespace Terminaux.Colors
             }
             catch (Exception ex)
             {
-                throw new TerminauxException($"Failed to set background: {ex.Message}");
+                throw new TerminauxException("Failed to set background" + $": {ex.Message}");
             }
         }
 

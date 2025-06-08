@@ -53,7 +53,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             new Keybinding("Goes to the last choice", ConsoleKey.End),
             new Keybinding("Goes to the previous page of choices", ConsoleKey.PageUp),
             new Keybinding("Goes to the next page of choices", ConsoleKey.PageDown),
-            new Keybinding("Shows more info in an informational box", ConsoleKey.Tab),
+            new Keybinding("Shows more info in an infobox", ConsoleKey.Tab),
             new Keybinding("Searches for a choice", ConsoleKey.F),
             new Keybinding("Goes one line up", ConsoleKey.W),
             new Keybinding("Goes one line down", ConsoleKey.S),

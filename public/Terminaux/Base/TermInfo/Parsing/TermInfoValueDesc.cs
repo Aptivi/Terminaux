@@ -23,6 +23,7 @@ using System.Text;
 using System.Threading;
 using Terminaux.Base.TermInfo.Parsing.Parameters;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Base.TermInfo.Parsing
 {
@@ -73,7 +74,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             if (Value is null)
                 return null;
             if (ValueType != TermInfoValueType.String || Value is not string || this is not TermInfoValueDesc<string> valueDesc)
-                throw new TerminauxException($"Can't process parameter on non-string value type. Enum is {ValueType} and type is {Value?.GetType().Name ?? "<null>"}.");
+                throw new TerminauxException("Can't process parameter on non-string value type. Enum is {0} and type is {1}.".FormatString(ValueType, Value?.GetType().Name ?? "<null>"));
 
             // Now, process the sequence with the provided arguments
             string processed = ParameterProcessor.ProcessSequenceParams(valueDesc, args);

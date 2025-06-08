@@ -81,7 +81,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 var selectionNames = Enum.GetNames(type == ColorType.FourBitColor ? typeof(ConsoleColor) : typeof(ConsoleColors)).ToList();
                 var finalSelections = selectionNames.Select((type, idx) => new InputChoiceInfo($"{idx + 1}", type)).ToArray();
-                var selectionBorder = new BoxFrame($"List of {finalSelections.Length} predefined colors")
+                var selectionBorder = new BoxFrame("List of {0} predefined colors".FormatString(finalSelections.Length))
                 {
                     Left = generalX,
                     Top = 1,
@@ -216,7 +216,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         int transparency = (int)(mono.RGB.originalAlpha * width);
                         transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                     }
-                    var rampFrame = new BoxFrame($"Gray: {mono.RGB.R}/255 | Transp.: {finalSettings.Opacity}/255")
+                    var rampFrame = new BoxFrame("Gray" + $": {mono.RGB.R}/255 | " + "Transparency" + $": {finalSettings.Opacity}/255")
                     {
                         Left = hslBarX,
                         Top = grayRampBarY,
@@ -329,7 +329,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         Width = halfBoxWidth,
                         Height = boxHeight + 2,
                     };
-                    var colorBlindnessFrame = new BoxFrame($"Transform [[{colorBlindnessSeverity:0.00}]]")
+                    var colorBlindnessFrame = new BoxFrame("Transform" + $" [[{colorBlindnessSeverity:0.00}]]")
                     {
                         Left = otherHalfLeft,
                         Top = infoRampBarY,
@@ -543,7 +543,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     break;
                 default:
                     var formula = (TransformationFormula)(colorBlindnessSimulationIdx - 1);
-                    ShowColorInfoBox($"Color info ({formula})", selectedColor, true, (TransformationFormula)(colorBlindnessSimulationIdx - 1), colorBlindnessSeverity);
+                    ShowColorInfoBox("Color info" + $" ({formula})", selectedColor, true, (TransformationFormula)(colorBlindnessSimulationIdx - 1), colorBlindnessSeverity);
                     break;
             }
             ui.RequireRefresh();

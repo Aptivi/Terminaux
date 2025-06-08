@@ -131,7 +131,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 if (!returned.Equals(expected))
                 {
                     ConsoleLogger.Error("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue);
-                    throw new TerminauxException($"Returned value {returned} doesn't match expected value {fixture.expectedValue}");
+                    throw new TerminauxException("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue ?? "");
                 }
             }
             catch (Exception exc)
@@ -173,7 +173,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 if (!returned.Equals(expected))
                 {
                     ConsoleLogger.Error("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue);
-                    throw new TerminauxException($"Returned value {returned} doesn't match expected value {fixture.expectedValue}");
+                    throw new TerminauxException("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue ?? "");
                 }
             }
             catch (Exception exc)

@@ -142,13 +142,13 @@ namespace Terminaux.Base.Checks
                 ConsoleLogger.Fatal("Terminal {0} on {1} is blacklisted!", TerminalType, TerminalEmulator);
                 FastFail(
                     "User tried to run a Terminaux application on a blacklisted terminal type.",
-                    $"The console type you're currently using, {TerminalType}, is blacklisted: {justification}"
+                    "The console type you're currently using, {0}, is blacklisted: {1}".FormatString(TerminalType, justification)
                 );
             }
             if (graylisted)
             {
                 ConsoleLogger.Warning("Terminal {0} on {1} is graylisted!", TerminalType, TerminalEmulator);
-                TextWriterRaw.WritePlain($"The console type you're currently using, {TerminalType}, is graylisted: {justification2}");
+                TextWriterRaw.WritePlain("The console type you're currently using, {0}, is graylisted: {1}".FormatString(TerminalType, justification2));
             }
 
             // Check the blacklist and the graylist for the terminal emulator
@@ -161,18 +161,18 @@ namespace Terminaux.Base.Checks
                 ConsoleLogger.Fatal("Emulator {0} is blacklisted!", TerminalEmulator);
                 FastFail(
                     "User tried to run a Terminaux application on a blacklisted terminal emulator.",
-                    $"The terminal emulator you're currently using, {TerminalEmulator}, is blacklisted: {emuJustification}"
+                    "The terminal emulator you're currently using, {0}, is blacklisted: {1}".FormatString(TerminalEmulator, emuJustification)
                 );
             }
             if (emuGraylisted)
             {
                 ConsoleLogger.Warning("Emulator {0} is graylisted!", TerminalEmulator);
-                TextWriterRaw.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is graylisted: {emuJustification2}");
+                TextWriterRaw.WritePlain("The terminal emulator you're currently using, {0}, is graylisted: {1}".FormatString(TerminalEmulator, emuJustification2));
             }
 
             // Check for 256 colors
             if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
-                TextWriterRaw.WritePlain($"Terminal type {TerminalType} doesn't support 256 colors according to terminfo");
+                TextWriterRaw.WritePlain("Terminal type {0} doesn't support 256 colors according to terminfo".FormatString(TerminalType));
 
             // Check to see if we can call cursor info without errors
             try
@@ -414,7 +414,7 @@ namespace Terminaux.Base.Checks
 
         internal static void FastFail(string eventMessage, string description, Exception? ex = null)
         {
-            TextWriterColor.WriteColor($"{description} Can't continue.", ConsoleColors.Red);
+            TextWriterColor.WriteColor("{0} Can't continue.".FormatString(description), ConsoleColors.Red);
             ConsoleLogger.Fatal("Event: {0}, desc: {1}", eventMessage, description);
             ConsoleLogger.Fatal("Rude exit");
             if (ex is null)

@@ -53,14 +53,14 @@ namespace Terminaux.Images.Icons
             if (!iconNames.Contains(iconName))
             {
                 ConsoleLogger.Error("Can't find {0} of all {1} icons", iconName, iconNames.Length);
-                throw new TerminauxException($"Icon {iconName} doesn't exist.");
+                throw new TerminauxException("Icon {0} doesn't exist.".FormatString(iconName));
             }
 
             // Now, get the fully qualified name of the icon and render it
             string iconFullyQualifiedName = BuildFullyQualifiedIconName(iconName, color);
             ConsoleLogger.Info("Got icon fully qualified name {0} from {1}, {2}, {3}", iconFullyQualifiedName, iconName, color);
             var stream = typeof(IconsManager).Assembly.GetManifestResourceStream(iconFullyQualifiedName) ??
-                throw new TerminauxException($"Icon {iconName} exists, but failed to load.");
+                throw new TerminauxException("Icon {0} exists, but failed to load.".FormatString(iconName));
             ConsoleLogger.Debug("Stream length is {0} bytes", stream.Length);
             return ImageProcessor.RenderImage(stream, width, height, left, top, background);
         }

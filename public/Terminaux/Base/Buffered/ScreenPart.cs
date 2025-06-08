@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Textify.General;
 
 namespace Terminaux.Base.Buffered
 {
@@ -122,7 +123,7 @@ namespace Terminaux.Base.Buffered
         public bool GetBufferVisibility(int buffer)
         {
             if (buffer < 0 || buffer >= dynamicBuffers.Count)
-                throw new TerminauxException($"Buffer index may not be less than zero or greater than {dynamicBuffers.Count} buffers.");
+                throw new TerminauxException("Buffer index may not be less than zero or greater than {0} buffers.".FormatString(dynamicBuffers));
             return dynamicBuffers[buffer].visible;
         }
 
@@ -135,7 +136,7 @@ namespace Terminaux.Base.Buffered
         public void SetBufferVisibility(int buffer, bool visible)
         {
             if (buffer < 0 || buffer >= dynamicBuffers.Count)
-                throw new TerminauxException($"Buffer index may not be less than zero or greater than {dynamicBuffers.Count} buffers.");
+                throw new TerminauxException("Buffer index may not be less than zero or greater than {0} buffers.".FormatString(dynamicBuffers));
             dynamicBuffers[buffer] = (visible, dynamicBuffers[buffer].buffer);
         }
 

@@ -288,7 +288,7 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value. 00 -> FF.", settings.InfoBoxSettings);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value." + " 00 -> FF.", settings.InfoBoxSettings);
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
@@ -317,7 +317,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with." + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
@@ -339,7 +339,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with." + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
@@ -357,14 +357,14 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to be replaced. 00 -> FF.", settings.InfoBoxSettings);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to be replaced." + " 00 -> FF.", settings.InfoBoxSettings);
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with." + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
@@ -381,7 +381,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInput("Write a byte or a group of bytes separated by whitespaces. It can be from 00 to FF.", settings.InfoBoxSettings);
+            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInput("Write a byte or a group of bytes separated by whitespaces." + " 00 -> FF.", settings.InfoBoxSettings);
             byte[] refBytes;
 
             // See if we have a cached find if the user didn't provide any string to find
@@ -405,7 +405,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     // Check this individual byte
                     if (!byte.TryParse(byteSplit, NumberStyles.AllowHexSpecifier, null, out byte finalByte))
                     {
-                        InfoBoxModalColor.WriteInfoBoxModal($"Invalid byte {byteSplit}.", settings.InfoBoxSettings);
+                        InfoBoxModalColor.WriteInfoBoxModal("Invalid byte {0}.", settings.InfoBoxSettings, byteSplit);
                         return;
                     }
 
@@ -485,11 +485,11 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Print the number information
             InfoBoxModalColor.WriteInfoBoxModal(
-                $"Position:     0x{byteIdx:X8}" + CharManager.NewLine +
-                $"Hexadecimal:  0x{byteNumHex}" + CharManager.NewLine +
-                $"Octal:        {byteNumOctal}" + CharManager.NewLine +
-                $"Number:       {byteNumNumber}" + CharManager.NewLine +
-                $"Binary:       {byteNumBinary}", new InfoBoxSettings(settings.InfoBoxSettings)
+                "Position" + $": 0x{byteIdx:X8}" + CharManager.NewLine +
+                "Hexadecimal" + $": 0x{byteNumHex}" + CharManager.NewLine +
+                "Octal" + $": {byteNumOctal}" + CharManager.NewLine +
+                "Number" + $": {byteNumNumber}" + CharManager.NewLine +
+                "Binary" + $": {byteNumBinary}", new InfoBoxSettings(settings.InfoBoxSettings)
                 {
                     Title = "Number information",
                 });
@@ -511,11 +511,11 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Change the status to the number information
             status =
-                $"Position: 0x{byteIdx:X8} | " +
-                $"Hexadecimal: 0x{byteNumHex} | " +
-                $"Octal: {byteNumOctal} | " +
-                $"Number: {byteNumNumber} | " +
-                $"Binary: {byteNumBinary}";
+                "Position" + $": 0x{byteIdx:X8} | " +
+                "Hexadecimal" + $": 0x{byteNumHex} | " +
+                "Octal" + $": {byteNumOctal} | " +
+                "Number" + $": {byteNumNumber} | " +
+                "Binary" + $": {byteNumBinary}";
         }
 
         private void PreviousPage()
@@ -639,7 +639,7 @@ namespace Terminaux.Inputs.Styles.Editor
             else if (EndByte > FileByte.LongLength)
                 throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, "The specified end byte number may not be larger than the file size.");
             else
-                throw new ArgumentOutOfRangeException($"The specified byte number is invalid. {StartByte}, {EndByte}");
+                throw new ArgumentOutOfRangeException("The specified byte number is invalid." + $" {StartByte}, {EndByte}");
         }
 
         private void AddNewByte(byte Content, long pos)
@@ -657,7 +657,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
                 // Check the position
                 if (pos < 1 || pos > bytes.Length)
-                    throw new ArgumentOutOfRangeException(nameof(pos), pos, $"The specified byte number may not be larger than {bytes.LongLength} or smaller than 1.");
+                    throw new ArgumentOutOfRangeException(nameof(pos), pos, "The specified byte number may not be larger than {0} or smaller than 1.".FormatString(bytes.LongLength));
 
                 // Actually remove a byte
                 long ByteIndex = pos - 1L;
@@ -667,7 +667,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     bytes = [.. FileBytesList];
                 }
                 else
-                    throw new ArgumentOutOfRangeException(nameof(pos), pos, $"The specified byte number may not be larger than {bytes.LongLength}.");
+                    throw new ArgumentOutOfRangeException(nameof(pos), pos, "The specified byte number may not be larger than {0}.".FormatString(bytes.LongLength));
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on a null array.");
@@ -691,7 +691,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     bytes = [.. FileBytesList];
                 }
                 else
-                    throw new ArgumentOutOfRangeException(nameof(ByteNumber), ByteNumber, $"The specified byte number may not be larger than {bytes.LongLength}.");
+                    throw new ArgumentOutOfRangeException(nameof(ByteNumber), ByteNumber, "The specified byte number may not be larger than {0}.".FormatString(bytes.LongLength));
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on a null array.");
@@ -717,9 +717,9 @@ namespace Terminaux.Inputs.Styles.Editor
                     }
                 }
                 else if (StartByte > bytes.LongLength)
-                    throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, $"The specified start byte number may not be larger than {bytes.LongLength}.");
+                    throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "The specified start byte number may not be larger than {0}.".FormatString(bytes.LongLength));
                 else if (EndByte > bytes.LongLength)
-                    throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, $"The specified end byte number may not be larger than {bytes.LongLength}.");
+                    throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, "The specified end byte number may not be larger than {0}.".FormatString(bytes.LongLength));
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on a null array.");
