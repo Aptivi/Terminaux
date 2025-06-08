@@ -148,7 +148,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                 if (queuedSequences.Count > 0 && i == markup.Length - 1)
                 {
                     ConsoleLogger.Warning("When reaching end of sequence, queued sequences: {0}", queuedSequences.Count);
-                    throw new TerminauxException($"There are {queuedSequences.Count} missing end tags.");
+                    throw new TerminauxException("There are {0} missing end tags.", queuedSequences.Count);
                 }
 
                 // Add a character

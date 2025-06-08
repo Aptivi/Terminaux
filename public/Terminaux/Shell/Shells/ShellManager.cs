@@ -74,10 +74,6 @@ namespace Terminaux.Shell.Shells
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("mod", "Shows mod commands", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        }),
                         new SwitchInfo("alias", "Shows aliased commands", new SwitchOptions()
                         {
                             AcceptsValues = false
@@ -86,7 +82,7 @@ namespace Terminaux.Shell.Shells
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("extra", "Shows kernel extra commands", new SwitchOptions()
+                        new SwitchInfo("extra", "Shows extra commands", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
@@ -300,7 +296,7 @@ namespace Terminaux.Shell.Shells
                     catch (Exception ex)
                     {
                         ConsoleLogger.Error(ex, "Cmd exec {0} failed: an error occurred", commandName);
-                        TextWriterColor.WriteColor("Error trying to execute command." + CharManager.NewLine + "Error {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
+                        TextWriterColor.WriteColor("Error trying to execute command." + CharManager.NewLine + "Error" + " {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
                     }
                 }
             }
@@ -327,7 +323,7 @@ namespace Terminaux.Shell.Shells
                 // Make a shell executor based on shell type to select a specific executor (if the shell type is not MESH, and if the new shell isn't a mother shell)
                 // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
                 var ShellExecute = GetShellExecutor(ShellType) ??
-                    throw new TerminauxException($"Can't get shell executor for {ShellType}");
+                    throw new TerminauxException("Can't get shell executor for {0}", ShellType.ToString());
 
                 // Make a new instance of shell information
                 var ShellCommandThread = RegenerateCommandThread(ShellType);

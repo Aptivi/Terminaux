@@ -217,24 +217,18 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 return "No keybindings available";
 
             // User needs an infobox that shows all available keys
-            int maxBindingLength = nonMouseBindings
-                .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb)));
-            string[] bindingRepresentations = nonMouseBindings
-                .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")
-                .ToArray();
-            string[] bindingMouseRepresentations = [];
-            if (mouseBindings is not null && mouseBindings.Length > 0)
-            {
-                int maxMouseBindingLength = mouseBindings
-                    .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb)));
-                bindingMouseRepresentations = mouseBindings
-                    .Select((itb) => $"{GetBindingMouseShortcut(itb) + new string(' ', maxMouseBindingLength - ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) + $" | {itb.BindingName}"}")
-                    .ToArray();
-            }
-            return
-                $"{string.Join("\n", bindingRepresentations)}" +
-                "\n\nMouse bindings:\n\n" +
-                $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}";
+            string[] bindingRepresentations = [.. nonMouseBindings.Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")];
+            string[] bindingMouseRepresentations = [.. mouseBindings.Select((itb) => $"{GetBindingMouseShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) + $" | {itb.BindingName}"}")];
+
+            // Build the final help text
+            if (bindingRepresentations.Length == 0 && bindingMouseRepresentations.Length == 0)
+                return "No bindings defined in this context.";
+            var helpTextBuilder = new StringBuilder();
+            if (bindingRepresentations.Length > 0)
+                helpTextBuilder.Append("Keyboard bindings" + $":\n\n{string.Join("\n", bindingRepresentations)}");
+            if (bindingMouseRepresentations.Length > 0)
+                helpTextBuilder.Append("\n\n" + "Mouse bindings" + $":\n\n{string.Join("\n", bindingMouseRepresentations)}");
+            return helpTextBuilder.ToString();
         }
 
         internal static string GetBindingKeyShortcut(Keybinding bind, bool mark = true) =>

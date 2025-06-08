@@ -75,7 +75,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 if (Arguments.Length != 0 || Switches.Length != 0)
                 {
                     // Print the usage information holder
-                    TextWriterColor.WriteColor($"Usage: {argument}", false, ConsoleColors.Yellow);
+                    TextWriterColor.WriteColor("Usage" + $": {argument}", false, ConsoleColors.Yellow);
 
                     // Enumerate through the available switches first
                     foreach (var Switch in Switches)
@@ -98,7 +98,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                     TextWriterRaw.Write();
                 }
                 else
-                    TextWriterColor.WriteColor($"Usage: {argument}", true, ConsoleColors.Yellow);
+                    TextWriterColor.WriteColor("Usage" + $": {argument}", true, ConsoleColors.Yellow);
             }
 
             // Write the description now
@@ -107,7 +107,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 ConsoleLogger.Warning("No argument help description for {0}", argument);
                 HelpDefinition = "No argument help description";
             }
-            TextWriterColor.WriteColor($"Description: {HelpDefinition}", true, ConsoleColors.Olive);
+            TextWriterColor.WriteColor("Description" + $": {HelpDefinition}", true, ConsoleColors.Olive);
             argInfo.ArgumentBase.HelpHelper();
         }
     }
