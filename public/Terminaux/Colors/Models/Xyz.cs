@@ -23,6 +23,7 @@ using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
+using Textify.General;
 
 namespace Terminaux.Colors.Models
 {
@@ -117,7 +118,7 @@ namespace Terminaux.Colors.Models
         public static Xyz ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid XYZ color specifier \"{specifier}\". Ensure that it's on the correct format: xyz:<red>;<yellow>;<blue>");
+                throw new TerminauxException("Invalid XYZ color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": xyz:<x>;<y>;<z>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -126,20 +127,20 @@ namespace Terminaux.Colors.Models
                 // We got the XYZ whole values! First, check to see if we need to filter the color for the color-blind
                 double x = Convert.ToDouble(specifierArray[0]);
                 if (x < 0 || x > 95.047)
-                    throw new TerminauxException($"The X value is out of range (0.0 -> 95.047). {x}");
+                    throw new TerminauxException("The X value is out of range (0.0 -> 95.047)." + $" {x}");
                 double y = Convert.ToDouble(specifierArray[1]);
                 if (y < 0 || y > 100)
-                    throw new TerminauxException($"The Y value is out of range (0.0 -> 100.0). {y}");
+                    throw new TerminauxException("The Y value is out of range (0.0 -> 100.0)." + $" {y}");
                 double z = Convert.ToDouble(specifierArray[2]);
                 if (z < 0 || z > 108.883)
-                    throw new TerminauxException($"The Z value is out of range (0.0 -> 108.883). {z}");
+                    throw new TerminauxException("The Z value is out of range (0.0 -> 108.883)." + $" {z}");
 
                 // First, we need to convert from XYZ to RGB
                 var xyz = new Xyz(x, y, z);
                 return xyz;
             }
             else
-                throw new TerminauxException($"Invalid XYZ color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: xyz:<C>;<M>;<Y>");
+                throw new TerminauxException("Invalid XYZ color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": xyz:<x>;<y>;<z>");
         }
 
         /// <inheritdoc/>

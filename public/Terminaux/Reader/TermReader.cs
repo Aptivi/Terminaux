@@ -400,7 +400,7 @@ namespace Terminaux.Reader
                 {
                     // Sanity checks
                     if (settings.PrintDefaultValue && settings.WriteDefaultValue)
-                        throw new TerminauxException($"There's a conflict between {nameof(settings.PrintDefaultValue)} and {nameof(settings.WriteDefaultValue)}.");
+                        throw new TerminauxException("There's a conflict between {0} and {1}.", nameof(settings.PrintDefaultValue), nameof(settings.WriteDefaultValue));
 
                     // Initialize some of the state variables
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
@@ -514,7 +514,7 @@ namespace Terminaux.Reader
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteColor($"Input reader has failed: {ex.Message}", ConsoleColors.Red);
+                    TextWriterColor.WriteColor("Input reader has failed" + $": {ex.Message}", ConsoleColors.Red);
                     TextWriterColor.WriteColor(ex.StackTrace, ConsoleColors.Red);
                 }
                 finally

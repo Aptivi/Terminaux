@@ -82,15 +82,15 @@ namespace Terminaux.Colors.Models.Parsing
         {
             // Check the observer
             if (observer != 2 && observer != 10)
-                throw new TerminauxException($"Observer must be either 2 or 10: {observer}");
+                throw new TerminauxException("Observer must be either 2 or 10" + $": {observer}");
 
             // Check the illuminant
             if (illuminant < 0 || illuminant > IlluminantType.F12)
-                throw new TerminauxException($"Illuminant is invalid: {(int)illuminant}");
+                throw new TerminauxException("Illuminant is invalid" + $": {(int)illuminant}");
 
             // Now, get the references from the table
             if (!illuminanceTable.TryGetValue((observer, illuminant), out var references))
-                throw new TerminauxException($"Can't get references from the table: {observer} degs, {(int)illuminant}");
+                throw new TerminauxException("Can't get references from the table" + $": {observer} degs, {(int)illuminant}");
             return references;
         }
     }

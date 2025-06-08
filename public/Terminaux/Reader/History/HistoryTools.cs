@@ -102,7 +102,7 @@ namespace Terminaux.Reader.History
         public static void Unload(string historyName)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException($"History {historyName} not found.");
+                throw new TerminauxException("History {0} not found.", historyName);
             if (historyName == generalHistory)
                 throw new TerminauxException("General history can't be removed, but can be cleared.");
             int idx = GetHistoryIndexFrom(historyName);
@@ -136,7 +136,7 @@ namespace Terminaux.Reader.History
         public static string[] GetHistoryEntries(string historyName)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException($"History {historyName} not found.");
+                throw new TerminauxException("History {0} not found.", historyName);
             int idx = GetHistoryIndexFrom(historyName);
             HistoryInfo info = histories[idx];
             return [.. info.HistoryEntries];
@@ -150,7 +150,7 @@ namespace Terminaux.Reader.History
         public static void Clear(string historyName)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException($"History {historyName} not found.");
+                throw new TerminauxException("History {0} not found.", historyName);
             int idx = GetHistoryIndexFrom(historyName);
             histories[idx].HistoryEntries.Clear();
         }
@@ -164,7 +164,7 @@ namespace Terminaux.Reader.History
         public static void Append(string historyName, string entry)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException($"History {historyName} not found.");
+                throw new TerminauxException("History {0} not found.", historyName);
             if (entry is null)
                 throw new TerminauxException("History entry is not provided.");
             int idx = GetHistoryIndexFrom(historyName);
@@ -180,7 +180,7 @@ namespace Terminaux.Reader.History
         public static void Switch(string historyName, string[] entries)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException($"History {historyName} not found.");
+                throw new TerminauxException("History {0} not found.", historyName);
             if (entries is null)
                 throw new TerminauxException("History entry list is not provided.");
             int idx = GetHistoryIndexFrom(historyName);
@@ -197,7 +197,7 @@ namespace Terminaux.Reader.History
         public static string SaveToString(string historyName)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException($"History {historyName} not found.");
+                throw new TerminauxException("History {0} not found.", historyName);
             int idx = GetHistoryIndexFrom(historyName);
             return SaveToString(histories[idx]);
         }

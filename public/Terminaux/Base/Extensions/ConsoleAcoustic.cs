@@ -20,6 +20,7 @@
 using Newtonsoft.Json;
 using System.Threading;
 using Terminaux.Base.Extensions.Data;
+using Textify.General;
 
 namespace Terminaux.Base.Extensions
 {
@@ -60,11 +61,11 @@ namespace Terminaux.Base.Extensions
                         string synth = chapter.Synths[j];
                         var split = synth.Split(' ');
                         if (split.Length != 2)
-                            throw new TerminauxException($"Synth representation is invalid at [{i + 1}.{j + 1}]");
+                            throw new TerminauxException("Synth representation is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
                         if (!int.TryParse(split[0], out int freq))
-                            throw new TerminauxException($"Frequency is invalid at [{i + 1}.{j + 1}]");
+                            throw new TerminauxException($"Frequency is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
                         if (!int.TryParse(split[1], out int ms))
-                            throw new TerminauxException($"Duration is invalid at [{i + 1}.{j + 1}]");
+                            throw new TerminauxException($"Duration is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
                         if (freq == 0)
                             Thread.Sleep(ms);
                         else

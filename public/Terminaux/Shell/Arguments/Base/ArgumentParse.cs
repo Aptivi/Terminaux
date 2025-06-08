@@ -103,7 +103,6 @@ namespace Terminaux.Shell.Arguments.Base
             }
             catch (Exception ex)
             {
-                ConsoleLogger.Error(ex, "Argument execution failed");
                 TextWriterColor.WriteColor("Unrecoverable error in argument" + $": {ex.Message}", ConsoleColors.Red);
             }
         }

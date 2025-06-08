@@ -22,6 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base.TermInfo.Parsing;
+using Textify.General;
 
 namespace Terminaux.Base.TermInfo
 {
@@ -76,7 +77,7 @@ namespace Terminaux.Base.TermInfo
                 TermInfoValueType.Boolean => new List<string>(_booleans.Keys),
                 TermInfoValueType.Integer => new List<string>(_nums.Keys),
                 TermInfoValueType.String => new List<string>(_strings.Keys),
-                _ => throw new NotSupportedException($"Unknown capability type '{kind}'"),
+                _ => throw new NotSupportedException("Unknown capability type '{0}'".FormatString(kind)),
             };
 
         /// <summary>

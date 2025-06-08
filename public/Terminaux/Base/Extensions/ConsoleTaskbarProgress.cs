@@ -23,6 +23,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Base.Extensions
 {
@@ -64,9 +65,9 @@ namespace Terminaux.Base.Extensions
 
             // Check the progress value range
             if (maximum < progressValue)
-                throw new ArgumentOutOfRangeException(nameof(maximum), $"Maximum value [{maximum}] should not be smaller than the progress value [{progressValue}]");
+                throw new ArgumentOutOfRangeException(nameof(maximum), "Maximum value [{0}] should not be smaller than the progress value [{1}]".FormatString(maximum, progressValue));
             if (progressValue < 0 || progressValue > maximum)
-                throw new ArgumentOutOfRangeException(nameof(progressValue), $"The progress value [{progressValue}] must be between 0 and the maximum value of {maximum}.");
+                throw new ArgumentOutOfRangeException(nameof(progressValue), "The progress value [{0}] must be between 0 and the maximum value of {1}.".FormatString(progressValue, maximum));
             
             // Set the value and the state
             taskbarCom.SetState(state);

@@ -30,6 +30,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.General;
 
 namespace Terminaux.Inputs.Interactive
 {
@@ -114,7 +115,7 @@ namespace Terminaux.Inputs.Interactive
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor($"The textual UI has crashed. It's usually a problem in the application end.\n\n{ex}", ConsoleColors.Red);
+                InfoBoxModalColor.WriteInfoBoxModalColor("The textual UI has crashed. It's usually a problem in the application end." + $"\n\n{ex}", ConsoleColors.Red);
             }
             finally
             {
@@ -169,7 +170,7 @@ namespace Terminaux.Inputs.Interactive
             if (ui is null)
                 throw new TerminauxException("Textual UI is not specified");
             if (ui.State != TextualUIState.Ready)
-                throw new TerminauxException($"This textual UI [{ui.Name}] is not ready because the state is {ui.State} - {ui.Guid}");
+                throw new TerminauxException("This textual UI [{0}] is not ready because the state is {1}".FormatString(ui.Name, ui.State) + $" - {ui.Guid}");
 
             // Check the keybindings
             foreach ((Keybinding binding, Delegate action) in ui.Keybindings)
@@ -185,7 +186,7 @@ namespace Terminaux.Inputs.Interactive
                         match.binding.BindingPointerModifiers == binding.BindingPointerModifiers;
                 });
                 if (conflicts.Count > 1)
-                    throw new TerminauxException($"There are {conflicts.Count - 1} conflicting key binding(s) in the [{ui.Name}] textual UI - {ui.Guid}");
+                    throw new TerminauxException("There are {0} conflicting key binding(s) in the [{1}] textual UI".FormatString(conflicts.Count - 1, ui.Name) + $" - {ui.Guid}");
             }
 
             // Return the UI

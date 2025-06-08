@@ -19,6 +19,7 @@
 
 using System;
 using System.Linq;
+using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -215,6 +216,14 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             var mouseBindings = keybindings.Where((bind) => bind.BindingUsesMouse).ToArray();
             if (keybindings is null || keybindings.Length == 0)
                 return "No keybindings available";
+
+            // Get the maximum length for keyboard and for mouse
+            int maxKeyboardBindingLength = nonMouseBindings.Length > 0 ?
+                nonMouseBindings.Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) : 0;
+            int maxMouseBindingLength = mouseBindings.Length > 0 ?
+                mouseBindings.Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) : 0;
+            int maxBindingLength = Math.Max(maxKeyboardBindingLength, maxMouseBindingLength);
+
 
             // User needs an infobox that shows all available keys
             string[] bindingRepresentations = [.. nonMouseBindings.Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")];

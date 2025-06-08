@@ -315,7 +315,7 @@ namespace Terminaux.Inputs.Interactive
         {
             // Check to make sure that we're not rendering the information pane on the both-panes interactive TUI
             if (interactiveTui.SecondPaneInteractable)
-                throw new TerminauxInternalException("Tried to render information the secondary pane on an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
+                throw new TerminauxInternalException("Tried to render information on the secondary pane in an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
 
             // Populate some colors
             var ForegroundColor = interactiveTui.Settings.ForegroundColor;
@@ -552,7 +552,11 @@ namespace Terminaux.Inputs.Interactive
             if ((interactiveTui.PrimaryDataSource is null || interactiveTui.SecondaryDataSource is null ||
                 (interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0)) && !interactiveTui.AcceptsEmptyData)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name);
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(
+                    "The interactive TUI {0} doesn't contain any data source." + "\n\n" +
+                    "This program can't continue." + "\n" +
+                    "Press any key to continue...",
+                    interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name);
                 return false;
             }
 
@@ -568,7 +572,12 @@ namespace Terminaux.Inputs.Interactive
             }
             if (conflicts.Count > 0)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack("The interactive TUI {0} has conflicting keyboard or mouse bindings.\n\nThe following keybindings or mouse bindings conflict:\n  - {1}\n\nThis program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(
+                    "The interactive TUI {0} has conflicting keyboard or mouse bindings." + "\n\n" +
+                    "The following keybindings or mouse bindings conflict:" + "\n" +
+                    "  - {1}" + "\n\n" +
+                    "This program can't continue." + "\n" +
+                    "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
                 return false;
             }
             return true;

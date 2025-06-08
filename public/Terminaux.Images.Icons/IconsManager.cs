@@ -50,7 +50,7 @@ namespace Terminaux.Images.Icons
             // Check for icon
             string[] iconNames = GetIconNames(color);
             if (!iconNames.Contains(iconName))
-                throw new TerminauxException(LanguageTools.GetLocalized("TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON"), iconName);
+                throw new TerminauxException("Icon {0} doesn't exist.".FormatString(iconName));
 
             // Now, get the fully qualified name of the icon and render it
             string iconFullyQualifiedName = BuildFullyQualifiedIconName(iconName, color);

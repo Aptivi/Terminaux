@@ -24,6 +24,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using Terminaux.Base;
+using Textify.General;
 
 namespace Terminaux.Colors.Templates
 {
@@ -80,9 +81,9 @@ namespace Terminaux.Colors.Templates
             if (string.IsNullOrEmpty(componentName))
                 throw new TerminauxException("No component name specified.");
             if (color is null)
-                throw new TerminauxException($"No color specified for component {componentName}.");
+                throw new TerminauxException("No color specified for component {0}.".FormatString(componentName));
             if (ComponentExists(componentName))
-                throw new TerminauxException($"Component {componentName} already exists.");
+                throw new TerminauxException("Component {0} already exists.".FormatString(componentName));
 
             // Now, add a component
             components.Add(componentName, color);
@@ -97,9 +98,9 @@ namespace Terminaux.Colors.Templates
             if (string.IsNullOrEmpty(componentName))
                 throw new TerminauxException("No component name specified.");
             if (!ComponentExists(componentName))
-                throw new TerminauxException($"Component {componentName} doesn't exist.");
+                throw new TerminauxException("Component {0} doesn't exist.".FormatString(componentName));
             if (ComponentPredefined(componentName))
-                throw new TerminauxException($"Component {componentName} is predefined and thus cannot be removed.");
+                throw new TerminauxException("Component {0} is predefined and thus cannot be removed.".FormatString(componentName));
 
             // Now, add a component
             components.Remove(componentName);
@@ -115,9 +116,9 @@ namespace Terminaux.Colors.Templates
             if (string.IsNullOrEmpty(componentName))
                 throw new TerminauxException("No component name specified.");
             if (color is null)
-                throw new TerminauxException($"No color specified for component {componentName}.");
+                throw new TerminauxException("No color specified for component {0}.".FormatString(componentName));
             if (!ComponentExists(componentName))
-                throw new TerminauxException($"Component {componentName} doesn't exist.");
+                throw new TerminauxException("Component {0} doesn't exist.".FormatString(componentName));
 
             // Now, add a component
             components[componentName] = color;
@@ -151,7 +152,7 @@ namespace Terminaux.Colors.Templates
                 if (string.IsNullOrEmpty(name))
                     throw new TerminauxException("No component name specified.");
                 if (color is null)
-                    throw new TerminauxException($"No color specified for component {name}.");
+                    throw new TerminauxException("No color specified for component {0}.".FormatString(name));
                 if (components.Count == 0)
                     throw new TerminauxException("Template has no components.");
                 finalComponents.Add(name, color);

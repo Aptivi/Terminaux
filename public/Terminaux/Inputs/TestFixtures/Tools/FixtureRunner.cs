@@ -124,7 +124,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 var returned = (TValue)fixture.fixtureDelegate.DynamicInvoke(args);
                 var expected = (TValue?)fixture.expectedValue;
                 if (!returned.Equals(expected))
-                    throw new TerminauxException($"Returned value {returned} doesn't match expected value {fixture.expectedValue}");
+                    throw new TerminauxException("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue ?? "");
             }
             catch (Exception exc)
             {
@@ -161,7 +161,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 var returned = (TValue)fixture.fixtureDelegate.DynamicInvoke(args);
                 var expected = (TValue?)fixture.expectedValue;
                 if (!returned.Equals(expected))
-                    throw new TerminauxException($"Returned value {returned} doesn't match expected value {fixture.expectedValue}");
+                    throw new TerminauxException("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue ?? "");
             }
             catch (Exception exc)
             {
