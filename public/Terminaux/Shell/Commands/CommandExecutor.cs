@@ -204,7 +204,7 @@ namespace Terminaux.Shell.Commands
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Failed to execute command {0}", RequestedCommand);
-                TextWriterColor.WriteColor("Error trying to execute command {2}." + CharManager.NewLine + "Error {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
+                TextWriterColor.WriteColor("Error trying to execute command {2}." + CharManager.NewLine + "Error" + " {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
             }
         }
 
@@ -219,7 +219,7 @@ namespace Terminaux.Shell.Commands
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteColor($"Command aborted for the following reason: {ex.Message}", ConsoleColors.Red);
+                TextWriterColor.WriteColor("Command aborted for the following reason" + $": {ex.Message}", ConsoleColors.Red);
             }
         }
 

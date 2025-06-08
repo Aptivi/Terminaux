@@ -39,8 +39,6 @@ namespace Terminaux.Shell.Shells.Unified
             bool showCount = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-count");
             bool showGeneral = parameters.SwitchesList.Length == 0 ||
                 SwitchManager.ContainsSwitch(parameters.SwitchesList, "-general") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
-            bool showMod = parameters.SwitchesList.Length > 0 &&
-                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-mod") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
             bool showAlias = parameters.SwitchesList.Length > 0 &&
                 (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-alias") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
             bool showUnified = parameters.SwitchesList.Length > 0 &&

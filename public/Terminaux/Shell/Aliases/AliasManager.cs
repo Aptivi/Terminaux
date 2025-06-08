@@ -49,14 +49,14 @@ namespace Terminaux.Shell.Aliases
                 else if (!CommandManager.IsCommandFound(SourceAlias, Type))
                     throw new TerminauxException("Command not found to alias to {0}.", Destination);
                 else if (DoesAliasExist(Destination, Type))
-                    throw new TerminauxException("Alias already found: {0}", SourceAlias);
+                    throw new TerminauxException("Alias already found" + ": {0}", SourceAlias);
                 ConsoleLogger.Info("Adding alias {0} pointing to {1} under type {2}...", SourceAlias, Destination, Type);
                 var aliasInstance = new AliasInfo(Destination, SourceAlias, Type);
                 aliases.Add(aliasInstance);
                 return true;
             }
             else
-                throw new TerminauxException("Invalid type {0}.", Type);
+                throw new TerminauxException("Invalid type" + " {0}.", Type);
         }
 
         /// <summary>
