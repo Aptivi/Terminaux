@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
+using Terminaux.Base;
 using Terminaux.Localized;
 
 namespace Terminaux.Common
@@ -28,6 +30,12 @@ namespace Terminaux.Common
     /// </summary>
     public static class LanguageCommon
     {
+        // TODO: Once tests prove stability, move them to supplemental package of LocaleStation in v1.2.0.
+        private static readonly Dictionary<string, Type> localTypes = new()
+        {
+            { "Terminaux", typeof(LocalStrings) },
+        };
+        private static readonly Dictionary<string, Type> localCustomTypes = [];
         private static string language = "eng";
 
         /// <summary>
@@ -36,30 +44,158 @@ namespace Terminaux.Common
         public static string Language
         {
             get => language;
-            set
-            {
-                // This only checks the main language list. Individual extras may not have this language.
-                if (LocalStrings.Languages.Contains(value))
-                    language = value;
-            }
+            set => language = value;
         }
 
         /// <summary>
         /// Inferred language according to the current UI culture
         /// </summary>
-        public static string InferredLanguage
-        {
-            get
-            {
-                var currentCulture = CultureInfo.CurrentUICulture;
-                string cultureName = currentCulture.Name;
-                var cultLangs = LocalStrings.ListLanguagesCulture(cultureName);
+        /// <param name="localType">Localization type</param>
+        public static string GetInferredLanguage(string localType = "") =>
+            GetInferredLanguages(localType)[0];
 
-                // Usually only one
-                if (cultLangs.Length > 0)
-                    return cultLangs[0];
-                return "eng";
-            }
+        /// <summary>
+        /// Inferred languages according to the current UI culture
+        /// </summary>
+        /// <param name="localType">Localization type</param>
+        public static string[] GetInferredLanguages(string localType = "")
+        {
+            var currentCulture = CultureInfo.CurrentUICulture;
+            string cultureName = currentCulture.Name;
+            var langType = GetType(localType);
+            var listLangCultureMethod = langType.GetMethod(nameof(LocalStrings.ListLanguagesCulture));
+            var cultLangs = (string[])listLangCultureMethod.Invoke(null, [cultureName]);
+
+            // Usually only one
+            if (cultLangs.Length > 0)
+                return cultLangs;
+            return ["eng"];
+        }
+
+        /// <summary>
+        /// Translates the string using a specified localization ID
+        /// </summary>
+        /// <param name="locId">Localization ID</param>
+        /// <returns>Translated string</returns>
+        public static string Translate(string locId) =>
+            Translate(locId, Language, "Terminaux");
+
+        /// <summary>
+        /// Translates the string using a specified localization ID
+        /// </summary>
+        /// <param name="locId">Localization ID</param>
+        /// <param name="type">Local type</param>
+        /// <returns>Translated string</returns>
+        public static string Translate(string locId, string type) =>
+            Translate(locId, Language, type);
+
+        /// <summary>
+        /// Translates the string using a specified localization ID
+        /// </summary>
+        /// <param name="locId">Localization ID</param>
+        /// <param name="type">Local type</param>
+        /// <param name="language">Language to use</param>
+        /// <returns>Translated string</returns>
+        public static string Translate(string locId, string type, string language)
+        {
+            var langType = GetType(type);
+            var translateMethod = langType.GetMethod(nameof(LocalStrings.Translate));
+            var translated = (string)translateMethod.Invoke(null, [locId, language]);
+            return translated;
+        }
+
+        /// <summary>
+        /// Is the custom type built-in?
+        /// </summary>
+        /// <param name="name">Name of the type</param>
+        /// <returns>True if built-in; false otherwise</returns>
+        public static bool IsCustomTypeBuiltin(string name) =>
+            localTypes.ContainsKey(name);
+
+        /// <summary>
+        /// Is the custom type defined?
+        /// </summary>
+        /// <param name="name">Name of the type</param>
+        /// <returns>True if defined; false otherwise</returns>
+        public static bool IsCustomTypeDefined(string name) =>
+            IsCustomTypeBuiltin(name) || localCustomTypes.ContainsKey(name);
+
+        /// <summary>
+        /// Adds a custom type for language translation
+        /// </summary>
+        /// <param name="name">Name of the type</param>
+        /// <param name="type">Type that contains localized strings generated by Localizer</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void AddCustomType(string name, Type type)
+        {
+            if (IsCustomTypeDefined(name))
+                throw new TerminauxException("Custom language type {0} is already defined", name);
+            if (!VerifyType(type))
+                throw new TerminauxException("Custom language type {0} is invalid", name);
+            localCustomTypes.Add(name, type);
+        }
+
+        /// <summary>
+        /// Removes a custom type for language translation
+        /// </summary>
+        /// <param name="name">Name of the type</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void RemoveCustomType(string name)
+        {
+            if (!IsCustomTypeDefined(name))
+                throw new TerminauxException("Custom language type {0} is not defined", name);
+            if (IsCustomTypeBuiltin(name))
+                throw new TerminauxException("Custom language type {0} is builtin and thus cannot be removed", name);
+            localCustomTypes.Remove(name);
+        }
+
+        /// <summary>
+        /// Gets the language type
+        /// </summary>
+        /// <param name="name">Name of the type</param>
+        /// <returns>A <see cref="Type"/> object that contains the Translate() function</returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static Type GetType(string name)
+        {
+            if (!localTypes.TryGetValue(name, out var type))
+                if (!localCustomTypes.TryGetValue(name, out type))
+                    throw new TerminauxException("Language type {0} is not defined", name);
+            return type;
+        }
+
+        internal static void AddBuiltinType(string name, Type type)
+        {
+            if (IsCustomTypeDefined(name))
+                throw new TerminauxException("Builtin language type {0} is already defined", name);
+            if (!VerifyType(type))
+                throw new TerminauxException("Builtin language type {0} is invalid", name);
+            localTypes.Add(name, type);
+        }
+
+        internal static void RemoveBuiltinType(string name)
+        {
+            if (!IsCustomTypeDefined(name))
+                throw new TerminauxException("Custom language type {0} is not defined", name);
+            if (!IsCustomTypeBuiltin(name))
+                throw new TerminauxException("Custom language type {0} is custom and thus cannot be removed", name);
+            localTypes.Remove(name);
+        }
+
+        private static bool VerifyType(Type type)
+        {
+            var languagesProperty = type.GetProperty(nameof(LocalStrings.Languages));
+            var localizationsProperty = type.GetProperty(nameof(LocalStrings.Localizations));
+            var translateMethod = type.GetMethod(nameof(LocalStrings.Translate));
+            var checkCultureMethod = type.GetMethod(nameof(LocalStrings.CheckCulture));
+            var listLanguagesCultureMethod = type.GetMethod(nameof(LocalStrings.ListLanguagesCulture));
+            var existsMethod = type.GetMethod(nameof(LocalStrings.Exists));
+            return
+                languagesProperty is not null &&
+                localizationsProperty is not null &&
+                translateMethod is not null &&
+                checkCultureMethod is not null &&
+                listLanguagesCultureMethod is not null &&
+                existsMethod is not null;
         }
     }
 }

@@ -24,7 +24,13 @@ namespace Terminaux.Images.Icons
 {
     internal static class LanguageTools
     {
-        internal static string GetLocalized(string id) =>
-            LocalStrings.Translate(id, LanguageCommon.Language);
+        private const string localType = "Terminaux.Images.Icons";
+
+        internal static string GetLocalized(string id)
+        {
+            if (!LanguageCommon.IsCustomTypeBuiltin(localType))
+                LanguageCommon.AddBuiltinType(localType, typeof(LocalStrings));
+            return LanguageCommon.Translate(id, localType);
+        }
     }
 }
