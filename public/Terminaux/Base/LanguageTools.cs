@@ -18,13 +18,13 @@
 //
 
 using LocaleStation.Tools;
-using Terminaux.Images.Icons.Localized;
+using Terminaux.Localized;
 
-namespace Terminaux.Images.Icons
+namespace Terminaux.Base
 {
     internal static class LanguageTools
     {
-        private const string localType = "Terminaux.Images.Icons";
+        private const string localType = "Terminaux";
 
         internal static string GetLocalized(string id)
         {

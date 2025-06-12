@@ -33,7 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LocaleStation" Version="1.1.1" />
+    <PackageReference Include="LocaleStation" Version="1.2.0" />
+    <PackageReference Include="LocaleStation.Tools" Version="1.2.0" />
     <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.6.0" />
   </ItemGroup>
 

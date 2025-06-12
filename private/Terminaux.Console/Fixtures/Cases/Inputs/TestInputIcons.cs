@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Common;
+using LocaleStation.Tools;
 using Terminaux.Images.Icons;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;

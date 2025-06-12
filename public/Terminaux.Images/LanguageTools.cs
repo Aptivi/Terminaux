@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Common;
+using LocaleStation.Tools;
 using Terminaux.Images.Localized;
 
 namespace Terminaux.Images
@@ -28,8 +28,8 @@ namespace Terminaux.Images
 
         internal static string GetLocalized(string id)
         {
-            if (!LanguageCommon.IsCustomActionsBuiltin(localType))
-                LanguageCommon.AddBuiltinActions(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            if (!LanguageCommon.IsCustomActionDefined(localType))
+                LanguageCommon.AddCustomAction(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             return LanguageCommon.Translate(id, localType);
         }
     }

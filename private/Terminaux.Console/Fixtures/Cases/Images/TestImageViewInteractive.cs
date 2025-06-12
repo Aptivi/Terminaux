@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using LocaleStation.Tools;
 using System;
 using System.Reflection;
-using Terminaux.Common;
 using Terminaux.Images;
 using Terminaux.Images.Interactives;
 
