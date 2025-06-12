@@ -28,8 +28,8 @@ namespace Terminaux.Images.Icons
 
         internal static string GetLocalized(string id)
         {
-            if (!LanguageCommon.IsCustomTypeBuiltin(localType))
-                LanguageCommon.AddBuiltinType(localType, typeof(LocalStrings));
+            if (!LanguageCommon.IsCustomActionsBuiltin(localType))
+                LanguageCommon.AddBuiltinActions(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             return LanguageCommon.Translate(id, localType);
         }
     }
