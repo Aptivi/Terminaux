@@ -49,7 +49,7 @@ namespace Terminaux.Images
         {
             // Check for null
             if (string.IsNullOrWhiteSpace(imagePath))
-                throw new TerminauxException("Image path is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH"));
 
             ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
@@ -66,7 +66,7 @@ namespace Terminaux.Images
         {
             // Check for null
             if (imageBytes is null || imageBytes.Length == 0)
-                throw new TerminauxException("Image data is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA"));
 
             var imageStream = new MemoryStream(imageBytes);
             ConsoleLogger.Debug("Image stream length is {0} bytes", imageStream.Length);
@@ -82,7 +82,7 @@ namespace Terminaux.Images
         {
             // Check for null
             if (imageStream is null)
-                throw new TerminauxException("Image stream is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM"));
 
             // Open the image
             var settings = new MagickReadSettings
@@ -113,7 +113,7 @@ namespace Terminaux.Images
         {
             // Check for null
             if (string.IsNullOrWhiteSpace(imagePath))
-                throw new TerminauxException("Image path is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH"));
 
             ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
@@ -130,7 +130,7 @@ namespace Terminaux.Images
         {
             // Check for null
             if (imageBytes is null || imageBytes.Length == 0)
-                throw new TerminauxException("Image data is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA"));
 
             var imageStream = new MemoryStream(imageBytes);
             ConsoleLogger.Debug("Image stream length is {0} bytes", imageStream.Length);
@@ -146,7 +146,7 @@ namespace Terminaux.Images
         {
             // Check for null
             if (imageStream is null)
-                throw new TerminauxException("Image stream is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM"));
 
             // Open the image
             var image = OpenImage(imageStream);
@@ -163,7 +163,7 @@ namespace Terminaux.Images
         {
             // Check for null
             if (image is null)
-                throw new TerminauxException("Image is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE"));
 
             // Get the amount of pixels to get color information
             var pixelCollection = image.GetPixels();

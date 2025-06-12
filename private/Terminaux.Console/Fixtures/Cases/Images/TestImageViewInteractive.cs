@@ -19,6 +19,7 @@
 
 using System;
 using System.Reflection;
+using Terminaux.Common;
 using Terminaux.Images;
 using Terminaux.Images.Interactives;
 
@@ -32,6 +33,7 @@ namespace Terminaux.Console.Fixtures.Cases.Images
         {
             var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Terminaux.Console.Assets.pictures.aptivi-logo-ios.png") ??
                 throw new Exception("Resource doesn't exist: aptivi-logo-ios.png");
+            LanguageCommon.Language = "ger";
             var image = ImageProcessor.OpenImage(stream);
             ImageViewInteractive.OpenInteractive(image);
         }

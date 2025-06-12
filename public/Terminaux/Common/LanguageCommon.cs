@@ -78,7 +78,7 @@ namespace Terminaux.Common
         /// <param name="locId">Localization ID</param>
         /// <returns>Translated string</returns>
         public static string Translate(string locId) =>
-            Translate(locId, Language, "Terminaux");
+            Translate(locId, "Terminaux", Language);
 
         /// <summary>
         /// Translates the string using a specified localization ID
@@ -87,7 +87,7 @@ namespace Terminaux.Common
         /// <param name="type">Local type</param>
         /// <returns>Translated string</returns>
         public static string Translate(string locId, string type) =>
-            Translate(locId, Language, type);
+            Translate(locId, type, Language);
 
         /// <summary>
         /// Translates the string using a specified localization ID

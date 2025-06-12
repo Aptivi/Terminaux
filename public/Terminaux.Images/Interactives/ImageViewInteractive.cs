@@ -37,21 +37,7 @@ namespace Terminaux.Images.Interactives
     /// </summary>
     public class ImageViewInteractive : TextualUI
     {
-        private static readonly Keybinding[] bindings =
-        [
-            new Keybinding("Exit", ConsoleKey.Escape),
-            new Keybinding("Keybindings", ConsoleKey.K),
-            new Keybinding("Fit or Scaled", ConsoleKey.F),
-            new Keybinding("Move Up", ConsoleKey.UpArrow),
-            new Keybinding("Move Down", ConsoleKey.DownArrow),
-            new Keybinding("Move Left", ConsoleKey.LeftArrow),
-            new Keybinding("Move Right", ConsoleKey.RightArrow),
-            new Keybinding("Previous Page", ConsoleKey.PageUp),
-            new Keybinding("Next Page", ConsoleKey.PageDown),
-            new Keybinding("Go to Beginning", ConsoleKey.Home),
-            new Keybinding("Go to Ending", ConsoleKey.End),
-        ];
-
+        private static Keybinding[] bindings = [];
         private bool fit = true;
         private InteractiveTuiSettings settings = InteractiveTuiSettings.GlobalSettings;
         private Color[,] pixels = new Color[0, 0];
@@ -75,6 +61,20 @@ namespace Terminaux.Images.Interactives
             };
 
             // Assign keybindings
+            bindings =
+            [
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_EXIT"), ConsoleKey.Escape),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS"), ConsoleKey.K),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED"), ConsoleKey.F),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEUP"), ConsoleKey.UpArrow),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEDOWN"), ConsoleKey.DownArrow),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVELEFT"), ConsoleKey.LeftArrow),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVERIGHT"), ConsoleKey.RightArrow),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_PREVIOUSPAGE"), ConsoleKey.PageUp),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_NEXTPAGE"), ConsoleKey.PageDown),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOBEGINNING"), ConsoleKey.Home),
+                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING"), ConsoleKey.End),
+            ];
             imageViewer.Keybindings.Add((bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
             imageViewer.Keybindings.Add((bindings[1], (ui, _, _) => ((ImageViewInteractive)ui).RenderKeybindingsBox()));
             imageViewer.Keybindings.Add((bindings[2], (ui, _, _) => ((ImageViewInteractive)ui).FitScale()));
@@ -144,7 +144,7 @@ namespace Terminaux.Images.Interactives
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
             InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
             {
-                Title = "Available keybindings"
+                Title = LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE")
             });
         }
 
