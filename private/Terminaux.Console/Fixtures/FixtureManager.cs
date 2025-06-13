@@ -24,6 +24,7 @@ using Terminaux.Console.Fixtures.Cases.Images;
 using Terminaux.Console.Fixtures.Cases.Inputs;
 using Terminaux.Console.Fixtures.Cases.Inputs.CJK;
 using Terminaux.Console.Fixtures.Cases.Inputs.Modules;
+using Terminaux.Console.Fixtures.Cases.Localization;
 using Terminaux.Console.Fixtures.Cases.Presentations;
 using Terminaux.Console.Fixtures.Cases.Reader;
 using Terminaux.Console.Fixtures.Cases.Screens;
@@ -422,6 +423,12 @@ namespace Terminaux.Console.Fixtures
             new FigletTextTranslation(),
             new CanvasTranslation(),
             new TextPathTranslation(),
+
+            // Localization
+            new Localize(),
+            new LocalizeInfer(),
+            new LocalizeManual(),
+            new LocalizeDefault(),
         ];
     }
 }

@@ -153,7 +153,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var bindings = InteractiveTuiTools.GetAllBindings(selectorTui, true);
             InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings(selectorTui.Settings.InfoBoxSettings)
             {
-                Title = "Available keys"
+                Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS")
             });
         }
 

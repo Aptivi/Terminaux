@@ -17,24 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Console.Fixtures
+using LocaleStation.Tools;
+using Terminaux.Writer.ConsoleWriters;
+
+namespace Terminaux.Console.Fixtures.Cases.Localization
 {
-    internal enum FixtureCategory
+    internal class LocalizeDefault : IFixture
     {
-        Unapplicable,
-        Reader,
-        Writer,
-        Input,
-        InputCjk,
-        Color,
-        TextualUi,
-        Screen,
-        Presentation,
-        Console,
-        Image,
-        Graphics,
-        Shell,
-        Spectre,
-        Localization,
+        public FixtureCategory Category => FixtureCategory.Localization;
+
+        public void RunFixture()
+        {
+            LanguageCommon.Language = "eng";
+            TextWriterColor.Write("Selected default language");
+        }
     }
 }

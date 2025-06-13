@@ -17,24 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Console.Fixtures
+using LocaleStation.Tools;
+using System;
+using Terminaux.Localized;
+using Terminaux.Writer.ConsoleWriters;
+
+namespace Terminaux.Console.Fixtures.Cases.Localization
 {
-    internal enum FixtureCategory
+    internal class Localize : IFixture
     {
-        Unapplicable,
-        Reader,
-        Writer,
-        Input,
-        InputCjk,
-        Color,
-        TextualUi,
-        Screen,
-        Presentation,
-        Console,
-        Image,
-        Graphics,
-        Shell,
-        Spectre,
-        Localization,
+        public FixtureCategory Category => FixtureCategory.Localization;
+
+        public void RunFixture()
+        {
+            TextWriterColor.Write("Selecting random language...");
+            var randomNumberGenerator = new Random();
+            int randomLangIdx = randomNumberGenerator.Next(LocalStrings.Languages.Length);
+            string language = LocalStrings.Languages[randomLangIdx];
+            LanguageCommon.Language = language;
+            TextWriterColor.Write($"Selected language {language}");
+        }
     }
 }

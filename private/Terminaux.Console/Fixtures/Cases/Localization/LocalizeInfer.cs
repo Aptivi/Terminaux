@@ -17,24 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Console.Fixtures
+using LocaleStation.Tools;
+using System.Globalization;
+using Terminaux.Writer.ConsoleWriters;
+
+namespace Terminaux.Console.Fixtures.Cases.Localization
 {
-    internal enum FixtureCategory
+    internal class LocalizeInfer : IFixture
     {
-        Unapplicable,
-        Reader,
-        Writer,
-        Input,
-        InputCjk,
-        Color,
-        TextualUi,
-        Screen,
-        Presentation,
-        Console,
-        Image,
-        Graphics,
-        Shell,
-        Spectre,
-        Localization,
+        public FixtureCategory Category => FixtureCategory.Localization;
+
+        public void RunFixture()
+        {
+            TextWriterColor.Write($"Selecting inferred language according to culture {CultureInfo.CurrentUICulture.Name}...");
+            string language = LanguageCommon.GetInferredLanguage("Terminaux");
+            LanguageCommon.Language = language;
+            TextWriterColor.Write($"Selected language {language}");
+        }
     }
 }
