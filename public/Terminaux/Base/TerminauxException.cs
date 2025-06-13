@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -27,13 +27,11 @@ namespace Terminaux.Base
     /// </summary>
     public class TerminauxException : Exception
     {
-        private const string generalError = "General Terminaux error!";
-
         /// <summary>
         /// Makes an empty <see cref="TerminauxException"/> exception instance with the default message
         /// </summary>
         public TerminauxException() :
-            base(generalError)
+            base(LanguageTools.GetLocalized("T_EXCEPTION_UNKNOWNERROR1"))
         { }
 
         /// <summary>
@@ -41,7 +39,7 @@ namespace Terminaux.Base
         /// </summary>
         /// <param name="innerException">An inner exception to specify</param>
         public TerminauxException(Exception innerException) :
-            base(generalError, innerException)
+            base(LanguageTools.GetLocalized("T_EXCEPTION_UNKNOWNERROR1"), innerException)
         { }
 
         /// <summary>

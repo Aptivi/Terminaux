@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -45,7 +45,7 @@ namespace Terminaux.Inputs.TestFixtures
             if (fixtureDelegate is null)
                 throw new TerminauxException(nameof(fixtureDelegate));
             if (fixtureDelegate.Method.ReturnType != typeof(void))
-                throw new TerminauxException("Method in this delegate needs to return void");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID"));
 
             // Install values
             this.fixtureDelegate = fixtureDelegate;

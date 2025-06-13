@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -20,6 +20,7 @@
 using System;
 using System.Linq;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -52,7 +53,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         {
             var finalSettings = new InfoBoxSettings(settings)
             {
-                Title = string.IsNullOrEmpty(settings.Title) ? "Available keybindings" : settings.Title
+                Title = string.IsNullOrEmpty(settings.Title) ? LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS") : settings.Title
             };
             string keybindingsText = RenderKeybindingHelpText(keybindings);
             InfoBoxModalColor.WriteInfoBoxModal(keybindingsText, finalSettings, vars);
@@ -76,7 +77,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfoboxPlain(Keybinding[] keybindings, BorderSettings settings, params object[] vars) =>
-            ShowKeybindingInfoboxPlain("Available keybindings", keybindings, settings, vars);
+            ShowKeybindingInfoboxPlain(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS"), keybindings, settings, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -130,7 +131,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfoboxColorBack(Keybinding[] keybindings, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack("Available keybindings", keybindings, settings, InfoBoxColor, BackgroundColor, vars);
+            ShowKeybindingInfoboxColorBack(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS"), keybindings, settings, InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -267,12 +268,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 
             // Build the final help text
             if (bindingRepresentations.Length == 0 && bindingMouseRepresentations.Length == 0)
-                return "No bindings defined in this context.";
+                return LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS");
             var helpTextBuilder = new StringBuilder();
             if (bindingRepresentations.Length > 0)
-                helpTextBuilder.Append("Keyboard bindings" + $":\n\n{string.Join("\n", bindingRepresentations)}");
+                helpTextBuilder.Append(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS") + $":\n\n{string.Join("\n", bindingRepresentations)}");
             if (bindingMouseRepresentations.Length > 0)
-                helpTextBuilder.Append("\n\n" + "Mouse bindings" + $":\n\n{string.Join("\n", bindingMouseRepresentations)}");
+                helpTextBuilder.Append("\n\n" + LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS") + $":\n\n{string.Join("\n", bindingMouseRepresentations)}");
             return helpTextBuilder.ToString();
         }
 

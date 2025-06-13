@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -65,15 +65,15 @@ namespace Terminaux.Inputs.Pointer
         public static bool PointerWithinRange(PointerEventContext context, (int x, int y) start, (int x, int y) end)
         {
             if (context is null)
-                throw new TerminauxException("Pointer event context is not specified");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_POINTER_EXCEPTION_NOEVENTCTX"));
             if (start.x < 0 || start.y < 0)
-                throw new TerminauxException("Start position may not be less then zero");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW"));
             if (end.x < 0 || end.y < 0)
-                throw new TerminauxException("End position may not be less then zero");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW"));
             if (start.x > end.x)
-                throw new TerminauxException("Start X position may not be greater than the end X position");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND"));
             if (start.y > end.y)
-                throw new TerminauxException("Start Y position may not be greater than the end Y position");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND"));
             ConsoleLogger.Debug("Mouse pos: {0} | Start: {1}, End: {2}", context.Coordinates, start, end);
             return
                 context.Coordinates.x >= start.x && context.Coordinates.x <= end.x &&

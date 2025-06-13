@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LocaleStation.Tools;
 using Terminaux.Images.Icons;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
@@ -31,7 +30,6 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
         public void RunFixture()
         {
             Input.EnableMouse = true;
-            LanguageCommon.Language = "ger";
             string font = IconsSelector.PromptForIcons();
             var icon = IconsManager.RenderIcon(font, 40, 20, 4, 2, IconsColor.Colored);
             TextWriterColor.Write($"Got icon font {font}!");

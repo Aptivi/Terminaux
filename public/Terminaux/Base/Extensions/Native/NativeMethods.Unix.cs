@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -100,7 +100,7 @@ namespace Terminaux.Base.Extensions.Native
             else
             {
                 if (tcsetattr(STDIN_FD, T_TCSANOW, ref orig) != 0)
-                    throw new TerminauxInternalException("Can't restore new termios attributes for raw mode: {0}".FormatString(Marshal.GetLastWin32Error()));
+                    throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED").FormatString(Marshal.GetLastWin32Error()));
             }
             NonblockSet(enable);
         }
@@ -115,18 +115,18 @@ namespace Terminaux.Base.Extensions.Native
             {
                 int flags = fcntl(STDIN_FD, F_GETFL, 0);
                 if (flags == -1)
-                    throw new TerminauxInternalException("Can't get file descriptor flags: {0}".FormatString(Marshal.GetLastWin32Error()));
+                    throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED").FormatString(Marshal.GetLastWin32Error()));
                 if (fcntl(STDIN_FD, F_SETFL, flags | nonBlock) == -1)
-                    throw new TerminauxInternalException("Can't set file descriptor flag to non-blocking read: {0}".FormatString(Marshal.GetLastWin32Error()));
+                    throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED").FormatString(Marshal.GetLastWin32Error()));
             }
             else
             {
                 int flags = fcntl(STDIN_FD, F_GETFL, 0);
                 if (flags == -1)
-                    throw new TerminauxInternalException("Can't get file descriptor flags: {0}".FormatString(Marshal.GetLastWin32Error()));
+                    throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED").FormatString(Marshal.GetLastWin32Error()));
                 flags &= ~nonBlock;
                 if (fcntl(STDIN_FD, F_SETFL, flags) == -1)
-                    throw new TerminauxInternalException("Can't set file descriptor flag to blocking read: {0}".FormatString(Marshal.GetLastWin32Error()));
+                    throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED").FormatString(Marshal.GetLastWin32Error()));
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
@@ -41,7 +42,7 @@ namespace Terminaux.Shell.Shells.Unified
                 TextWriterColor.WriteColor(command.Command, ConsoleColors.Olive);
             }
             if (commands.Length == 0)
-                TextWriterColor.WriteColor("No commands found.", ConsoleColors.Grey);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIND_NOTFOUND"), ConsoleColors.Grey);
         }
 
     }

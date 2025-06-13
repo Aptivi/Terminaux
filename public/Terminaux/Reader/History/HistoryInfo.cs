@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -53,9 +53,9 @@ namespace Terminaux.Reader.History
         public HistoryInfo(string historyName, List<string> historyEntries)
         {
             if (string.IsNullOrEmpty(historyName))
-                throw new TerminauxException("History name is not specified");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED"));
             if (historyEntries is null)
-                throw new TerminauxException("History entries are not specified");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED"));
             HistoryName = historyName;
             HistoryEntries = historyEntries;
         }

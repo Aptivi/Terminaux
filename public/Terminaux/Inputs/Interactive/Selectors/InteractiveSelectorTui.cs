@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -329,10 +329,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 (selectorTui.CurrentPane == 2 ?
                  selectorTui.SecondaryDataSource.Select(selectorTui.GetEntryFromItemSecondary) :
                  selectorTui.PrimaryDataSource.Select(selectorTui.GetEntryFromItem)).ToArray();
-            string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)", selectorTui.Settings.InfoBoxSettings);
+            string keyword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT"), selectorTui.Settings.InfoBoxSettings);
             if (!RegexTools.IsValidRegex(keyword))
             {
-                InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
                 ui.RequireRefresh();
                 return;
             }
@@ -343,7 +343,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (resultEntries.Length > 1)
             {
                 var choices = InputChoiceTools.GetInputChoices(resultEntries);
-                int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:", selectorTui.Settings.InfoBoxSettings);
+                int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("T_INPUT_COMMON_ENTRYPROMPT"), selectorTui.Settings.InfoBoxSettings);
                 if (answer < 0)
                     return;
                 var resultIdx = int.Parse(resultEntries[answer].Item1);
@@ -355,7 +355,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 InteractiveTuiTools.SelectionMovement(selectorTui, resultIdx);
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("No item found.", selectorTui.Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"), selectorTui.Settings.InfoBoxSettings);
         }
 
         private void Exit(TextualUI ui)
@@ -374,31 +374,31 @@ namespace Terminaux.Inputs.Interactive.Selectors
         internal InteractiveSelectorTui(BaseInteractiveTui<TPrimary, TSecondary>? selectorTui)
         {
             this.selectorTui = selectorTui ??
-                throw new TerminauxException("Selector is not specified");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR"));
 
             // Base bindings
-            Keybindings.Add((new Keybinding("Go one element up", ConsoleKey.UpArrow), (_, _, _) => GoUp()));
-            Keybindings.Add((new Keybinding("Go one element down", ConsoleKey.DownArrow), (_, _, _) => GoDown()));
-            Keybindings.Add((new Keybinding("Go one element up", PointerButton.WheelUp, PointerButtonPress.Scrolled), (_, _, mouse) => GoUpDeterministic(mouse)));
-            Keybindings.Add((new Keybinding("Go one element down", PointerButton.WheelDown, PointerButtonPress.Scrolled), (_, _, mouse) => GoDownDeterministic(mouse)));
-            Keybindings.Add((new Keybinding("Go to the first element", ConsoleKey.Home), (_, _, _) => First()));
-            Keybindings.Add((new Keybinding("Go to the last element", ConsoleKey.End), (_, _, _) => Last()));
-            Keybindings.Add((new Keybinding("Go to the previous page", ConsoleKey.PageUp), (_, _, _) => PreviousPage()));
-            Keybindings.Add((new Keybinding("Go to the next page", ConsoleKey.PageDown), (_, _, _) => NextPage()));
-            Keybindings.Add((new Keybinding("Read more...", ConsoleKey.I, ConsoleModifiers.Shift), (_, _, _) => More()));
-            Keybindings.Add((new Keybinding("List keybindings", ConsoleKey.K), (_, _, _) => ListBindings()));
-            Keybindings.Add((new Keybinding("Move around", PointerButton.None, PointerButtonPress.Moved), (_, _, mouse) => UpdateSelectionBasedOnMouse(mouse)));
-            Keybindings.Add((new Keybinding("Search for an element", ConsoleKey.F), (ui, _, _) => LaunchFinder(ui)));
-            Keybindings.Add((new Keybinding("Exits the interactive TUI", ConsoleKey.Escape), (ui, _, _) => Exit(ui)));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2"), ConsoleKey.UpArrow), (_, _, _) => GoUp()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2"), ConsoleKey.DownArrow), (_, _, _) => GoDown()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2"), PointerButton.WheelUp, PointerButtonPress.Scrolled), (_, _, mouse) => GoUpDeterministic(mouse)));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2"), PointerButton.WheelDown, PointerButtonPress.Scrolled), (_, _, mouse) => GoDownDeterministic(mouse)));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOFIRST2"), ConsoleKey.Home), (_, _, _) => First()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOLAST2"), ConsoleKey.End), (_, _, _) => Last()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2"), ConsoleKey.PageUp), (_, _, _) => PreviousPage()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2"), ConsoleKey.PageDown), (_, _, _) => NextPage()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_READMORE"), ConsoleKey.I, ConsoleModifiers.Shift), (_, _, _) => More()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS"), ConsoleKey.K), (_, _, _) => ListBindings()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND"), PointerButton.None, PointerButtonPress.Moved), (_, _, mouse) => UpdateSelectionBasedOnMouse(mouse)));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCH"), ConsoleKey.F), (ui, _, _) => LaunchFinder(ui)));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_EXIT"), ConsoleKey.Escape), (ui, _, _) => Exit(ui)));
 
             // Informational selector TUI
             if (!selectorTui.SecondPaneInteractable)
             {
-                Keybindings.Add((new Keybinding("Go one line up (informational)", ConsoleKey.W), (_, _, _) => InteractiveTuiTools.InfoScrollUp(selectorTui)));
-                Keybindings.Add((new Keybinding("Go one line down (informational)", ConsoleKey.S), (_, _, _) => InteractiveTuiTools.InfoScrollDown(selectorTui)));
+                Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO"), ConsoleKey.W), (_, _, _) => InteractiveTuiTools.InfoScrollUp(selectorTui)));
+                Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO"), ConsoleKey.S), (_, _, _) => InteractiveTuiTools.InfoScrollDown(selectorTui)));
             }
             else
-                Keybindings.Add((new Keybinding("Switch", ConsoleKey.Tab), (_, _, _) => InteractiveTuiTools.SwitchSides(selectorTui)));
+                Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SWITCH"), ConsoleKey.Tab), (_, _, _) => InteractiveTuiTools.SwitchSides(selectorTui)));
 
             // Dynamic fallback
             Fallback = (_, key, mouse) => Act(key, mouse);

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -53,7 +53,7 @@ namespace Terminaux.Shell.Commands
         internal static void ExecuteCommand(CommandExecutorParameters? ThreadParams)
         {
             if (ThreadParams is null)
-                throw new TerminauxException("Thread parameters are not specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS"));
             var RequestedCommand = ThreadParams.RequestedCommand;
             var RequestedCommandInfo = ThreadParams.RequestedCommandInfo;
             string ShellType = ThreadParams.ShellType;
@@ -69,7 +69,7 @@ namespace Terminaux.Shell.Commands
                 if (satisfied is null)
                 {
                     ConsoleLogger.Warning("Arguments not satisfied.");
-                    TextWriterColor.WriteColor("Required arguments are not provided for all usages below:", ConsoleColors.Red);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST"), ConsoleColors.Red);
                     for (int i = 0; i < total.Length; i++)
                     {
                         ProvidedArgumentsInfo unsatisfied = total[i];
@@ -80,7 +80,7 @@ namespace Terminaux.Shell.Commands
                             TextWriterRaw.WriteRaw(new ListEntry()
                             {
                                 Entry = $"- [{i + 1}] {command}: ",
-                                Value = "Unknown argument"
+                                Value = LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_UNKNOWNARG")
                             }.Render() + "\n");
                             continue;
                         }
@@ -93,28 +93,28 @@ namespace Terminaux.Shell.Commands
                         if (!unsatisfied.RequiredArgumentsProvided)
                         {
                             ConsoleLogger.Warning("User hasn't provided enough arguments for {0}", command);
-                            TextWriterColor.WriteColor("Required arguments are not provided.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED"), ConsoleColors.Olive);
                         }
 
                         // Check for required switches
                         if (!unsatisfied.RequiredSwitchesProvided)
                         {
                             ConsoleLogger.Warning("User hasn't provided enough switches for {0}", command);
-                            TextWriterColor.WriteColor("Required switches are not provided.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED"), ConsoleColors.Olive);
                         }
 
                         // Check for required switch arguments
                         if (!unsatisfied.RequiredSwitchArgumentsProvided)
                         {
                             ConsoleLogger.Warning("User hasn't provided a value for one of the switches for {0}", command);
-                            TextWriterColor.WriteColor("One of the switches requires a value that is not provided.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE"), ConsoleColors.Olive);
                         }
 
                         // Check for unknown switches
                         if (unsatisfied.UnknownSwitchesList.Length > 0)
                         {
                             ConsoleLogger.Warning("User has provided unknown switches {0}", command);
-                            TextWriterColor.WriteColor("Switches that are listed below are unknown.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES"), ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.UnknownSwitchesList,
@@ -125,7 +125,7 @@ namespace Terminaux.Shell.Commands
                         if (unsatisfied.ConflictingSwitchesList.Length > 0)
                         {
                             ConsoleLogger.Warning("User has provided conflicting switches for {0}", command);
-                            TextWriterColor.WriteColor("Switches that are listed below conflict with each other.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESCONFLICT"), ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.ConflictingSwitchesList,
@@ -136,7 +136,7 @@ namespace Terminaux.Shell.Commands
                         if (unsatisfied.NoValueSwitchesList.Length > 0)
                         {
                             ConsoleLogger.Warning("User has provided switches that don't accept values for {0}", command);
-                            TextWriterColor.WriteColor("The below switches don't accept values.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOVALUES"), ConsoleColors.Olive);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.NoValueSwitchesList,
@@ -147,24 +147,24 @@ namespace Terminaux.Shell.Commands
                         if (!unsatisfied.NumberProvided)
                         {
                             ConsoleLogger.Warning("User has provided invalid number for one or more of the arguments for {0}", command);
-                            TextWriterColor.WriteColor("One or more of the arguments expect a numeric value, but you provided an invalid number.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGNUMERIC"), ConsoleColors.Olive);
                         }
 
                         // Check for invalid exact wording
                         if (!unsatisfied.ExactWordingProvided)
                         {
                             ConsoleLogger.Warning("User has provided non-exact wording for {0}", command);
-                            TextWriterColor.WriteColor("One or more of the arguments expect an exact wording, but you provided an invalid word.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGEXACT"), ConsoleColors.Olive);
                         }
 
                         // Check for invalid number in numeric switches
                         if (!unsatisfied.SwitchNumberProvided)
                         {
                             ConsoleLogger.Warning("User has provided invalid number for one or more of the switches for {0}", command);
-                            TextWriterColor.WriteColor("One or more of the switches expect a numeric value, but you provided an invalid number.", ConsoleColors.Olive);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHNUMERIC"), ConsoleColors.Olive);
                         }
                     }
-                    TextWriterColor.WriteColor("Consult the help entry for this command for more info", ConsoleColors.Red);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CONSULTHELP"), ConsoleColors.Red);
                     return;
                 }
 
@@ -199,12 +199,12 @@ namespace Terminaux.Shell.Commands
             catch (ThreadInterruptedException)
             {
                 ConsoleLogger.Warning("Command {0} is being interrupted...", RequestedCommand);
-                TextWriterColor.WriteColor("Command is being interrupted...", ConsoleColors.Red);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_COMMANDINTERRUPT"), ConsoleColors.Red);
             }
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Failed to execute command {0}", RequestedCommand);
-                TextWriterColor.WriteColor("Error trying to execute command {2}." + CharManager.NewLine + "Error" + " {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND1") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2") + " {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
             }
         }
 
@@ -219,7 +219,7 @@ namespace Terminaux.Shell.Commands
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteColor("Command aborted for the following reason" + $": {ex.Message}", ConsoleColors.Red);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ABORTEXCEPTION") + $": {ex.Message}", ConsoleColors.Red);
             }
         }
 

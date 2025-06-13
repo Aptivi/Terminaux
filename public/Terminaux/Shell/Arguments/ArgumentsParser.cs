@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -164,7 +164,7 @@ namespace Terminaux.Shell.Arguments
             string[] conflictingSwitchesList = [];
             string[] noValueSwitchesList = [];
             var argInfos = (CommandInfo is not null ? CommandInfo.CommandArgumentInfo : argumentInfo?.ArgArgumentInfo) ??
-                throw new TerminauxException("Can't get argument info for command or argument");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO"));
             if (argInfos.Length == 0)
                 argInfos = [new CommandArgumentInfo()];
             foreach (var argInfo in argInfos)

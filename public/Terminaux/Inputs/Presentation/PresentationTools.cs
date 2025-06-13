@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -49,12 +49,12 @@ namespace Terminaux.Inputs.Presentation
     {
         private readonly static Keybinding[] bindings =
         [
-            new("Advance", ConsoleKey.Enter)
+            new(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_KEYBINDING_ADVANCE"), ConsoleKey.Enter)
         ];
         private readonly static Keybinding[] nonKioskBindings =
         [
             .. bindings,
-            new("Exit", ConsoleKey.Escape)
+            new(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape)
         ];
 
         /// <summary>
@@ -377,9 +377,9 @@ namespace Terminaux.Inputs.Presentation
 
                     // Let the user select an option, then process the input
                     screen.RequireRefresh();
-                    inputBail = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, "This presentation page requires the following inputs to be fulfilled before being able to advance to the next page.", new InfoBoxSettings()
+                    inputBail = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("T_INPUT_PRESENTATION_NEEDSINPUTPROMPT"), new InfoBoxSettings()
                     {
-                        Title = "Input required",
+                        Title = LanguageTools.GetLocalized("T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE"),
                     });
                     if (inputBail)
                     {
@@ -393,17 +393,17 @@ namespace Terminaux.Inputs.Presentation
                             var processedRequiredInputs = filledRequiredInputs.Where((ii) => ii.ProcessFunction(ii.InputMethod.Value)).ToArray();
                             inputBail = processedRequiredInputs.Length == filledRequiredInputs.Length;
                             if (!inputBail)
-                                InfoBoxModalColor.WriteInfoBoxModal("One or more of the following inputs have not been filled correctly:" + $"\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
+                                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY") + $"\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
                                 {
-                                    Title = "Incorrect Input",
+                                    Title = LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE"),
                                 });
                         }
                         else
                         {
                             screen.RequireRefresh();
-                            InfoBoxModalColor.WriteInfoBoxModal("Required inputs have not been provided. You'll need to fill in the values of the following inputs:" + $"\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
+                            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTNOTPROVIDED") + $"\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
                             {
-                                Title = "Input not provided",
+                                Title = LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE"),
                             });
                         }
                     }

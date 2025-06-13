@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -28,6 +28,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Aliases;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Help
 {
@@ -44,14 +45,14 @@ namespace Terminaux.Shell.Help
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
-            TextWriterColor.WriteColor("Available commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, commands.Length);
+            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS") + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, commands.Length);
 
             // The built-in commands
             if (showGeneral)
             {
-                TextWriterColor.WriteColor(CharManager.NewLine + "General commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, commandList.Count);
+                TextWriterColor.WriteColor(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_GENERALCMDS") + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, commandList.Count);
                 if (commandList.Count == 0)
-                    TextWriterColor.WriteColor("  - " + "No shell commands.", ConsoleColors.Silver);
+                    TextWriterColor.WriteColor("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS"), ConsoleColors.Silver);
                 foreach (var cmd in commandList)
                 {
                     TextWriterRaw.WriteRaw(new ListEntry()
@@ -65,7 +66,7 @@ namespace Terminaux.Shell.Help
             // The extra commands
             if (showExtra)
             {
-                TextWriterColor.WriteColor(CharManager.NewLine + "Extra commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, ExtraCommandList.Count);
+                TextWriterColor.WriteColor(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXTRACMDS") + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, ExtraCommandList.Count);
                 if (ExtraCommandList.Count == 0)
                     TextWriterColor.WriteColor("  - No extra commands.", ConsoleColors.Silver);
                 foreach (var cmd in ExtraCommandList)
@@ -81,7 +82,7 @@ namespace Terminaux.Shell.Help
             // The alias commands
             if (showAlias)
             {
-                TextWriterColor.WriteColor(CharManager.NewLine + "Alias commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, AliasedCommandList.Count);
+                TextWriterColor.WriteColor(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ALIASCMDS") + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
                     TextWriterColor.WriteColor("  - No alias commands.", ConsoleColors.Silver);
                 foreach (var cmd in AliasedCommandList)
@@ -97,7 +98,7 @@ namespace Terminaux.Shell.Help
             // The unified commands
             if (showUnified)
             {
-                TextWriterColor.WriteColor(CharManager.NewLine + "Unified commands:" + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, unifiedCommandList.Count);
+                TextWriterColor.WriteColor(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS") + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
                     TextWriterColor.WriteColor("  - No unified commands.", ConsoleColors.Silver);
                 foreach (var cmd in unifiedCommandList)
@@ -154,16 +155,16 @@ namespace Terminaux.Shell.Help
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
-                    HelpDefinition = "Command defined by" + $" {command}";
+                    HelpDefinition = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY") + $" {command}";
                 TextWriterRaw.WriteRaw(new ListEntry()
                 {
-                    Entry = "Command",
+                    Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD"),
                     Value = FinalCommand,
                     Indicator = false,
                 }.Render() + "\n");
                 TextWriterRaw.WriteRaw(new ListEntry()
                 {
-                    Entry = "Description",
+                    Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC"),
                     Value = HelpDefinition,
                     Indicator = false,
                 }.Render() + "\n");
@@ -191,13 +192,13 @@ namespace Terminaux.Shell.Help
                     // If we have arguments, print their descriptions
                     if (Arguments.Length != 0)
                     {
-                        TextWriterColor.WriteColor("* " + "This command has the below arguments that change how it works:", ConsoleColors.Silver);
+                        TextWriterColor.WriteColor("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGSLIST"), ConsoleColors.Silver);
                         foreach (var argument in Arguments)
                         {
                             string argumentName = argument.ArgumentExpression;
                             string argumentDesc = argument.Options.ArgumentDescription;
                             if (string.IsNullOrWhiteSpace(argumentDesc))
-                                argumentDesc = "Unspecified argument description";
+                                argumentDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED");
                             TextWriterRaw.WriteRaw(new ListEntry()
                             {
                                 Entry = argumentName,
@@ -211,13 +212,13 @@ namespace Terminaux.Shell.Help
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
-                        TextWriterColor.WriteColor("* " + "This command has the below switches that change how it works:", ConsoleColors.Silver);
+                        TextWriterColor.WriteColor("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST"), ConsoleColors.Silver);
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;
                             string switchDesc = Switch.HelpDefinition;
                             if (string.IsNullOrWhiteSpace(switchDesc))
-                                switchDesc = "Unspecified switch description";
+                                switchDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED");
                             TextWriterRaw.WriteRaw(new ListEntry()
                             {
                                 Entry = $"-{switchName}",
@@ -233,7 +234,7 @@ namespace Terminaux.Shell.Help
                 FinalCommandList[FinalCommand].CommandBase?.HelpHelper();
             }
             else
-                TextWriterColor.WriteColor("No help for command \"{0}\".", ConsoleColors.Red, command);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_CMDNOHELP"), ConsoleColors.Red, command);
         }
     }
 }

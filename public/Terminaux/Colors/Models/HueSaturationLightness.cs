@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -85,7 +85,7 @@ namespace Terminaux.Colors.Models
         public static HueSaturationLightness ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException("Invalid HSL color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": hsl:<hue>;<sat>;<lig>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER").FormatString(specifier) + ": hsl:<hue>;<sat>;<lig>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -94,13 +94,13 @@ namespace Terminaux.Colors.Models
                 // We got the HSL whole values! First, check to see if we need to filter the color for the color-blind
                 int h = Convert.ToInt32(specifierArray[0]);
                 if (h < 0 || h > 360)
-                    throw new TerminauxException("The hue level is out of range (0' -> 360' degrees)." + $" {h}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL") + $" {h}");
                 int s = Convert.ToInt32(specifierArray[1]);
                 if (s < 0 || s > 100)
-                    throw new TerminauxException("The saturation level is out of range (0 -> 100)." + $" {s}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL") + $" {s}");
                 int l = Convert.ToInt32(specifierArray[2]);
                 if (l < 0 || l > 100)
-                    throw new TerminauxException("The lightness level is out of range (0 -> 100)." + $" {l}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL") + $" {l}");
 
                 // First, we need to convert from HSL to RGB
                 double hPart = (double)h / 360;
@@ -110,7 +110,7 @@ namespace Terminaux.Colors.Models
                 return hsl;
             }
             else
-                throw new TerminauxException("Invalid HSL color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": hsl:<hue>;<sat>;<lig>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED").FormatString(specifier) + ": hsl:<hue>;<sat>;<lig>");
         }
 
         /// <summary>

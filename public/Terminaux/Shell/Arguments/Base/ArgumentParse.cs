@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -102,7 +102,7 @@ namespace Terminaux.Shell.Arguments.Base
                                 else if (isLast)
                                 {
                                     ConsoleLogger.Error("Not enough arguments {0}", ArgumentName);
-                                    TextWriterColor.WriteColor("There were not enough arguments.", ConsoleColors.Red);
+                                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS"), ConsoleColors.Red);
                                 }
                             }
                         }
@@ -110,14 +110,14 @@ namespace Terminaux.Shell.Arguments.Base
                     else
                     {
                         ConsoleLogger.Error("No such argument {0}", ArgumentName);
-                        TextWriterColor.WriteColor("Unknown argument" + $" {Argument}", ConsoleColors.Red);
+                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_UNKNOWNARG") + $" {Argument}", ConsoleColors.Red);
                     }
                 }
             }
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Argument execution failed");
-                TextWriterColor.WriteColor("Unrecoverable error in argument" + $": {ex.Message}", ConsoleColors.Red);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR") + $": {ex.Message}", ConsoleColors.Red);
             }
         }
 

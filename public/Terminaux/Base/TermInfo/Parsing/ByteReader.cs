@@ -45,7 +45,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             var buffer = new byte[count];
             var read = Read(buffer, count);
             if (read != count)
-                throw new InvalidOperationException("Could not read the requested number of bytes.");
+                throw new InvalidOperationException(LanguageTools.GetLocalized("T_CT_PARSING_EXCEPTION_BYTESREAD"));
 
             return buffer;
         }

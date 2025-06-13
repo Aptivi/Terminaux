@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -40,13 +40,13 @@ namespace Terminaux.Sequences.Builder
             // Check the type
             ConsoleLogger.Debug("Type is {0}", specificType);
             if (!Enum.IsDefined(typeof(VtSequenceSpecificTypes), specificType))
-                throw new TerminauxException("Cannot build VT sequence for nonexistent type {0}", Convert.ToInt32(specificType));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND"), Convert.ToInt32(specificType));
 
             // Now, check the argument count
             int argCount = sequenceBuilders[specificType].argumentsRequired;
             ConsoleLogger.Debug("Passed {0} arguments, expected {1} arguments", arguments.Length, argCount);
             if (argCount < arguments.Length)
-                throw new TerminauxException("Cannot build VT sequence with missing arguments. Expected {0} arguments, got {1} arguments.".FormatString(argCount, arguments.Length) + $" {Convert.ToInt32(specificType)}");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING").FormatString(argCount, arguments.Length) + $" {Convert.ToInt32(specificType)}");
 
             // Now, get the sequence and statically give arguments for performance to try to escape from DynamicInvoke
             var sequenceRegexGenerator = sequenceBuilders[specificType].generator;

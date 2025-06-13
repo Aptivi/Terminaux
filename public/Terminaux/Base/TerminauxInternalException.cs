@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -27,13 +27,11 @@ namespace Terminaux.Base
     /// </summary>
     public class TerminauxInternalException : Exception
     {
-        private const string generalError = "Terminaux internal error!";
-
         /// <summary>
         /// Makes an empty <see cref="TerminauxInternalException"/> exception instance with the default message
         /// </summary>
         public TerminauxInternalException() :
-            base(generalError)
+            base(LanguageTools.GetLocalized("T_EXCEPTION_UNKNOWNERROR2"))
         { }
 
         /// <summary>
@@ -41,7 +39,7 @@ namespace Terminaux.Base
         /// </summary>
         /// <param name="innerException">An inner exception to specify</param>
         public TerminauxInternalException(Exception innerException) :
-            base(generalError, innerException)
+            base(LanguageTools.GetLocalized("T_EXCEPTION_UNKNOWNERROR2"), innerException)
         { }
 
         /// <summary>

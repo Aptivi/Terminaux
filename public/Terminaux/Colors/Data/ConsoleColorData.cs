@@ -71,7 +71,7 @@ namespace Terminaux.Colors.Data
         [JsonIgnore]
         public
 #if GENERATOR
-            (int r, int g, int b) RGB =>
+            (int R, int G, int B) RGB =>
                 rgb;
 #else
             RedGreenBlue RGB =>

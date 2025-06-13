@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -215,18 +215,18 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (write)
             {
-                string promptedfont = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
+                string promptedfont = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTNAMEPROMPT")).ToLower();
                 if (!FigletSelector.fonts.Contains(promptedfont))
-                    InfoBoxModalColor.WriteInfoBoxModal("The font doesn't exist.");
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_NOFONT"));
                 else
                     font = promptedfont;
             }
             else
             {
                 InputChoiceInfo[] figletSelections = [.. InputChoiceTools.GetInputChoices(FigletSelector.fonts.Select((font, num) => ($"{num}", font)).ToArray())];
-                selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection(figletSelections, "Select a figlet font from the list below", new InfoBoxSettings()
+                selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection(figletSelections, LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTSELECTPROMPT"), new InfoBoxSettings()
                 {
-                    Title = "Font selection"
+                    Title = LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE")
                 });
                 font = FigletSelector.fonts[selectedFont];
             }

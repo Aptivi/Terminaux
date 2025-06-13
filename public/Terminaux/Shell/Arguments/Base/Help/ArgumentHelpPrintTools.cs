@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -49,7 +49,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
             // Check to see if we have this argument
             if (!arguments.TryGetValue(argument, out ArgumentInfo? argInfo))
             {
-                TextWriterColor.WriteColor("No help for argument \"{0}\".", ConsoleColors.Red, argument);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELP_ARG"), ConsoleColors.Red, argument);
                 return;
             }
 
@@ -69,7 +69,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 if (Arguments.Length != 0 || Switches.Length != 0)
                 {
                     // Print the usage information holder
-                    TextWriterColor.WriteColor("Usage" + $": {argument}", false, ConsoleColors.Yellow);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE") + $": {argument}", false, ConsoleColors.Yellow);
 
                     // Enumerate through the available switches first
                     foreach (var Switch in Switches)
@@ -94,16 +94,16 @@ namespace Terminaux.Shell.Arguments.Base.Help
                     TextWriterRaw.Write();
                 }
                 else
-                    TextWriterColor.WriteColor("Usage" + $": {argument}", true, ConsoleColors.Yellow);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE") + $": {argument}", true, ConsoleColors.Yellow);
             }
 
             // Write the description now
             if (string.IsNullOrEmpty(HelpDefinition))
             {
                 ConsoleLogger.Warning("No argument help description for {0}", argument);
-                HelpDefinition = "No argument help description";
+                HelpDefinition = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELPDESC_ARG");
             }
-            TextWriterColor.WriteColor("Description" + $": {HelpDefinition}", true, ConsoleColors.Olive);
+            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC") + $": {HelpDefinition}", true, ConsoleColors.Olive);
             argInfo.ArgumentBase.HelpHelper();
         }
     }

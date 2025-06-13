@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -85,7 +85,7 @@ namespace Terminaux.Colors.Models
         public static HueWhiteBlack ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException("Invalid HWB color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": hwb:<hue>;<whiteness>;<blackness>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER").FormatString(specifier) + ": hwb:<hue>;<whiteness>;<blackness>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -94,13 +94,13 @@ namespace Terminaux.Colors.Models
                 // We got the HWB whole blacknesss! First, check to see if we need to filter the color for the color-blind
                 int h = Convert.ToInt32(specifierArray[0]);
                 if (h < 0 || h > 360)
-                    throw new TerminauxException("The hue level is out of range (0' -> 360' degrees)." + $" {h}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL") + $" {h}");
                 int s = Convert.ToInt32(specifierArray[1]);
                 if (s < 0 || s > 100)
-                    throw new TerminauxException("The whiteness level is out of range (0 -> 100)." + $" {s}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL") + $" {s}");
                 int v = Convert.ToInt32(specifierArray[2]);
                 if (v < 0 || v > 100)
-                    throw new TerminauxException("The blackness level is out of range (0 -> 100)." + $" {v}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL") + $" {v}");
 
                 // First, we need to convert from HWB to RGB
                 double hPart = (double)h / 360;
@@ -110,7 +110,7 @@ namespace Terminaux.Colors.Models
                 return hwb;
             }
             else
-                throw new TerminauxException("Invalid HWB color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": hwb:<hue>;<whiteness>;<blackness>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED").FormatString(specifier) + ": hwb:<hue>;<whiteness>;<blackness>");
         }
 
         /// <summary>

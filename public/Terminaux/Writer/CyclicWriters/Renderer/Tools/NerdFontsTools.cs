@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -38,13 +38,13 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         {
             var nerdEntries = VerifyEntries(type);
             if (!nerdEntries.TryGetValue(charName, out string character))
-                throw new TerminauxException("Invalid Nerd Fonts character name {0} in type {1}", charName, type.ToString());
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID"), charName, type.ToString());
             if (!char.TryParse(character, out char c))
             {
                 // We may have surrogate pair based Nerd Fonts character, so we need to process it.
                 if (character.Length == 2 && char.IsSurrogatePair(character[0], character[1]))
                     return character;
-                throw new TerminauxException("Invalid Nerd Fonts character representation {0} from {1} in type {2}", character, charName, type.ToString());
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID"), character, charName, type.ToString());
             }
             return $"{c}";
         }
@@ -64,9 +64,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         private static Dictionary<string, string> VerifyEntries(NerdFontsTypes type)
         {
             if (!nerdFontChars.TryGetValue(type, out var nerdEntries))
-                throw new TerminauxException("Invalid Nerd Fonts type {0}", type);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID"), type);
             if (nerdEntries.Count == 0)
-                throw new TerminauxException("Nerd Fonts type {0} has no characters", type.ToString());
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS"), type.ToString());
             return nerdEntries;
         }
     }

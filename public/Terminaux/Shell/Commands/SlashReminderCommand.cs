@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -28,7 +29,7 @@ namespace Terminaux.Shell.Commands
         public override void Execute(CommandParameters parameters)
         {
             TextWriterColor.WriteColor(
-                "* " + "This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:" + $" /{parameters.CommandText} {parameters.ArgumentsText}", ConsoleColors.Yellow);
+                "* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDNEEDSSLASH") + $" /{parameters.CommandText} {parameters.ArgumentsText}", ConsoleColors.Yellow);
         }
 
     }

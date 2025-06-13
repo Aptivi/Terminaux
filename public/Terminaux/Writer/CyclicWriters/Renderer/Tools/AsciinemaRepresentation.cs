@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -69,7 +69,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         {
             // Check to see if we have this file
             if (!File.Exists(fileName))
-                throw new TerminauxException("There is no Asciicast file" + $": {fileName}");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND") + $": {fileName}");
 
             // Open the file and parse its contents
             string contents = File.ReadAllText(fileName);
@@ -113,7 +113,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                     // Try to serialize at least the version
                     var asciiCastToken = JToken.ReadFrom(contentReader);
                     var asciicastGeneric = asciiCastToken.ToObject<Asciicast>() ??
-                        throw new TerminauxException("Can't deserialize base Asciicast representation");
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE"));
                     int version = asciicastGeneric.Version;
                     ConsoleLogger.Debug("Got asciicast version {0}", version);
 
@@ -126,7 +126,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                     {
                         // We are on version 1. Use its class and deserialize it
                         var deserializedAsciicast = asciiCastToken.ToObject<AsciicastV1>() ??
-                            throw new TerminauxException("Can't deserialize Asciicast v1 representation");
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE"));
                         asciicast = deserializedAsciicast;
                         ConsoleLogger.Debug("Finalized asciicast v1 implementation");
                     }
@@ -134,7 +134,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                     {
                         // We are on version 2. Use its class and deserialize it
                         var deserializedAsciicast = asciiCastToken.ToObject<AsciicastV2>() ??
-                            throw new TerminauxException("Can't deserialize Asciicast v2 representation");
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE"));
                         asciicast = deserializedAsciicast;
                         addingData = true;
                         ConsoleLogger.Debug("Finalized asciicast v2 implementation; adding data...");
@@ -144,7 +144,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 {
                     // Deserialize into array
                     var readArray = serializer.Deserialize<object[]>(contentReader) ??
-                        throw new TerminauxException("Can't obtain event information");
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO"));
 
                     // Get items from this array and install their values
                     double delay = (double)readArray[0];

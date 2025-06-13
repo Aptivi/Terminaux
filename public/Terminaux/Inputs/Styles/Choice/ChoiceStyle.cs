@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -74,12 +74,12 @@ namespace Terminaux.Inputs.Styles.Choice
         {
             // Check for answer count
             if (Answers.Length == 0 && AltAnswers.Length == 0)
-                throw new TerminauxException("Can't show choice with no answers and no alternative answers.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS"));
 
             // We need not to run the selection style when everything is disabled
             bool allDisabled = Answers.All((ici) => ici.ChoiceDisabled) && AltAnswers.All((ici) => ici.ChoiceDisabled);
             if (allDisabled)
-                throw new TerminauxException("The choice style requires that there is at least one choice enabled.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM"));
 
             // Check settings and assign them if not found
             settings ??= new();
@@ -95,7 +95,7 @@ namespace Terminaux.Inputs.Styles.Choice
                 string[] answerNames = [.. answers.Keys];
                 string[] altAnswerNames = [.. altAnswers.Keys];
                 if (!settings.PressEnter && (answerNames.Any((answer) => answer.Length > 1) || altAnswerNames.Any((answer) => answer.Length > 1)))
-                    throw new TerminauxException("You can't provide answers with more than one character in single-character mode.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES"));
 
                 // Ask a question
                 switch (settings.OutputType)
@@ -146,7 +146,7 @@ namespace Terminaux.Inputs.Styles.Choice
                 if (answerNames.Contains(answer) && !answers[answer] || altAnswerNames.Contains(answer) && !altAnswers[answer])
                     return answer;
                 else
-                    TextWriterColor.Write("Wrong answer. Please try again.");
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_WRONGANSWER"));
             }
         }
 

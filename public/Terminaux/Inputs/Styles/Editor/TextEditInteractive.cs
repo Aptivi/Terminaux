@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -56,36 +56,36 @@ namespace Terminaux.Inputs.Styles.Editor
         private bool editable = true;
         private static readonly Keybinding[] bindings =
         [
-            new Keybinding("Exit", ConsoleKey.Escape),
-            new Keybinding("Keybindings", ConsoleKey.K),
-            new Keybinding("Find Next", ConsoleKey.Divide),
-            new Keybinding("Move Up", ConsoleKey.UpArrow),
-            new Keybinding("Move Down", ConsoleKey.DownArrow),
-            new Keybinding("Move Left", ConsoleKey.LeftArrow),
-            new Keybinding("Move Right", ConsoleKey.RightArrow),
-            new Keybinding("Previous Page", ConsoleKey.PageUp),
-            new Keybinding("Next Page", ConsoleKey.PageDown),
-            new Keybinding("Go to Beginning", ConsoleKey.Home),
-            new Keybinding("Go to Ending", ConsoleKey.End),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Divide),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP1"), ConsoleKey.UpArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN1"), ConsoleKey.DownArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT"), ConsoleKey.LeftArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT"), ConsoleKey.RightArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1"), ConsoleKey.PageUp),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1"), ConsoleKey.PageDown),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOFIRST1"), ConsoleKey.Home),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOLAST1"), ConsoleKey.End),
         ];
         private static readonly Keybinding[] editorBindings =
         [
             .. bindings,
-            new Keybinding("Enter...", ConsoleKey.I),
-            new Keybinding("Delete here", ConsoleKey.X),
-            new Keybinding("Insert", ConsoleKey.F1),
-            new Keybinding("Remove Line", ConsoleKey.F2),
-            new Keybinding("Insert", ConsoleKey.F1, ConsoleModifiers.Shift),
-            new Keybinding("Remove Line", ConsoleKey.F2, ConsoleModifiers.Shift),
-            new Keybinding("Replace", ConsoleKey.F3),
-            new Keybinding("Replace All", ConsoleKey.F3, ConsoleModifiers.Shift),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER"), ConsoleKey.I),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE"), ConsoleKey.X),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT"), ConsoleKey.F1),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE"), ConsoleKey.F2),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT"), ConsoleKey.F1, ConsoleModifiers.Shift),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE"), ConsoleKey.F2, ConsoleModifiers.Shift),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE"), ConsoleKey.F3),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL"), ConsoleKey.F3, ConsoleModifiers.Shift),
         ];
         private static readonly Keybinding[] bindingsEntering =
         [
-            new Keybinding("Stop Entering", ConsoleKey.Escape),
-            new Keybinding("New Line", ConsoleKey.Enter),
-            new Keybinding("Backspace", ConsoleKey.Backspace),
-            new Keybinding("Delete", ConsoleKey.Delete),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING"), ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE"), ConsoleKey.Enter),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE"), ConsoleKey.Backspace),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE"), ConsoleKey.Delete),
         ];
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Terminaux.Inputs.Styles.Editor
             var finalSettings = settings ?? InteractiveTuiSettings.GlobalSettings;
             var textEditor = new TextEditInteractive()
             {
-                status = "Ready",
+                status = LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_STATUS_READY"),
                 editable = edit,
                 lines = lines,
                 settings = finalSettings,
@@ -366,7 +366,7 @@ namespace Terminaux.Inputs.Styles.Editor
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(finalBindings);
             InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
             {
-                Title = "Available keybindings"
+                Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS")
             });
             RequireRefresh();
         }
@@ -443,8 +443,8 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string replacementText = InfoBoxInputColor.WriteInfoBoxInput("Write the string to find", settings.InfoBoxSettings);
-            string replacedText = InfoBoxInputColor.WriteInfoBoxInput("Write the replacement string", settings.InfoBoxSettings);
+            string replacementText = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT"), settings.InfoBoxSettings);
+            string replacedText = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT"), settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(replacementText, replacedText, lineIdx + 1);
@@ -458,8 +458,8 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string replacementText = InfoBoxInputColor.WriteInfoBoxInput("Write the string to find", settings.InfoBoxSettings);
-            string replacedText = InfoBoxInputColor.WriteInfoBoxInput("Write the replacement string", settings.InfoBoxSettings);
+            string replacementText = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT"), settings.InfoBoxSettings);
+            string replacedText = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT"), settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(replacementText, replacedText);
@@ -473,14 +473,14 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string text = InfoBoxInputColor.WriteInfoBoxInput("Write a string to find. Supports regular expressions.", settings.InfoBoxSettings);
+            string text = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT"), settings.InfoBoxSettings);
 
             // See if we have a cached find if the user didn't provide any string to find
             if (string.IsNullOrEmpty(text))
             {
                 if (string.IsNullOrEmpty(cachedFind))
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal("String is required to find, but you haven't provided one.", settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED"), settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -490,7 +490,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Validate the regex
             if (!RegexTools.IsValidRegex(text))
             {
-                InfoBoxModalColor.WriteInfoBoxModal("This string to find is not a valid regular expression.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID"), settings.InfoBoxSettings);
                 return;
             }
 
@@ -545,7 +545,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 cachedFind = text;
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_NOTFOUND"), settings.InfoBoxSettings);
             RequireRefresh();
         }
 
@@ -553,9 +553,9 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             // Get the status
             status =
-                "Lines" + $": {lines.Count} | " +
-                "Column" + $": {lineColIdx + 1} | " +
-                "Row" + $": {lineIdx + 1}";
+                LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES") + $": {lines.Count} | " +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN") + $": {lineColIdx + 1} | " +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW") + $": {lineIdx + 1}";
 
             // Check to see if the current character is unprintable
             if (lines.Count == 0)
@@ -668,10 +668,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 if (LineNumber <= lines.Count)
                     lines.RemoveAt(LineIndex);
                 else
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, "The specified line number may not be larger than {0}.".FormatString(lines.Count));
+                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER").FormatString(lines.Count));
             }
             else
-                throw new ArgumentNullException("Can't perform this operation on null lines list.");
+                throw new ArgumentNullException(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL"));
         }
 
         private void Replace(string From, string With)
@@ -684,7 +684,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     lines[LineIndex] = lines[LineIndex].Replace(From, With);
             }
             else
-                throw new ArgumentNullException("Can't perform this operation on null lines list.");
+                throw new ArgumentNullException(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL"));
         }
 
         private void Replace(string From, string With, int LineNumber)
@@ -697,10 +697,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 if (LineNumber <= lines.Count)
                     lines[(int)LineIndex] = lines[(int)LineIndex].Replace(From, With);
                 else
-                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, "The specified line number may not be larger than {0}.".FormatString(lines.Count));
+                    throw new ArgumentOutOfRangeException(nameof(LineNumber), LineNumber, LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER").FormatString(lines.Count));
             }
             else
-                throw new ArgumentNullException("Can't perform this operation on null lines list.");
+                throw new ArgumentNullException(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL"));
         }
 
         private void UpdateKeybindings()
@@ -734,7 +734,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 Keybindings.Add((bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
                 Keybindings.Add((bindings[1], (ui, _, _) => ((TextEditInteractive)ui).RenderKeybindingsBox()));
                 Keybindings.Add((bindings[2], (ui, _, _) => ((TextEditInteractive)ui).FindNext()));
-                Keybindings.Add((new Keybinding("Find Next", ConsoleKey.Oem2), (ui, _, _) => ((TextEditInteractive)ui).FindNext()));
+                Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Oem2), (ui, _, _) => ((TextEditInteractive)ui).FindNext()));
 
                 // Assign edit keybindings
                 if (editable)

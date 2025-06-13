@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -74,7 +74,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             if (Value is null)
                 return null;
             if (ValueType != TermInfoValueType.String || Value is not string || this is not TermInfoValueDesc<string> valueDesc)
-                throw new TerminauxException("Can't process parameter on non-string value type. Enum is {0} and type is {1}.".FormatString(ValueType, Value?.GetType().Name ?? "<null>"));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_EXCEPTION_PARAMONNONSTRING").FormatString(ValueType, Value?.GetType().Name ?? "<null>"));
 
             // Now, process the sequence with the provided arguments
             string processed = ParameterProcessor.ProcessSequenceParams(valueDesc, args);
@@ -109,14 +109,14 @@ namespace Terminaux.Base.TermInfo.Parsing
                         while (true)
                         {
                             if (++i == processed.Length)
-                                throw new TerminauxException("Delay designator ended prematurely.");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED"));
 
                             // Add the digits or flags, as long as they're valid
                             next = processed[i];
                             if (next == '>')
                                 break;
                             if (!char.IsNumber(next) && next != '*' && next != '/')
-                                throw new TerminauxException("Invalid delay designator.");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID"));
 
                             // Ignore the flags
                             if (next == '*' || next == '/')
@@ -128,7 +128,7 @@ namespace Terminaux.Base.TermInfo.Parsing
 
                         // Convert to integer and add the result, clearing it in the process.
                         if (!int.TryParse(delayBuilder.ToString(), out delay))
-                            throw new TerminauxException("Delay value is not a number.");
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER"));
                         parts.Add((delay, partBuilder.ToString()));
                         partBuilder.Clear();
                         delay = 0;

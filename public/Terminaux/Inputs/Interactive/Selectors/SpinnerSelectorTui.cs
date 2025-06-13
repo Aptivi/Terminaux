@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -146,18 +146,18 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (write)
             {
-                string promptedSpinnerName = InfoBoxInputColor.WriteInfoBoxInput("Write the spinner name. It'll be converted to lowercase.").ToLower();
+                string promptedSpinnerName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT")).ToLower();
                 if (!SpinnerSelector.spinners.Contains(promptedSpinnerName))
-                    InfoBoxModalColor.WriteInfoBoxModal("The spinner doesn't exist.");
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_IS_SPINNER_NOSPINNER"));
                 else
                     spinner = promptedSpinnerName;
             }
             else
             {
                 InputChoiceInfo[] spinnerSelections = [.. InputChoiceTools.GetInputChoices(SpinnerSelector.spinners.Select((spinner, num) => ($"{num}", spinner)).ToArray())];
-                selectedSpinner = InfoBoxSelectionColor.WriteInfoBoxSelection(spinnerSelections, "Select a spinner from the list below", new InfoBoxSettings()
+                selectedSpinner = InfoBoxSelectionColor.WriteInfoBoxSelection(spinnerSelections, LanguageTools.GetLocalized("T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT"), new InfoBoxSettings()
                 {
-                    Title = "Spinner selection"
+                    Title = LanguageTools.GetLocalized("T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE")
                 });
                 spinner = SpinnerSelector.spinners[selectedSpinner];
             }

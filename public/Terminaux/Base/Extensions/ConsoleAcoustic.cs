@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -40,7 +40,7 @@ namespace Terminaux.Base.Extensions
         public static SynthInfo GetSynthInfo(string synthJson)
         {
             var synthInfo = JsonConvert.DeserializeObject<SynthInfo>(synthJson) ??
-                throw new TerminauxException("Can't get synth info from the provided representation.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO"));
             ConsoleLogger.Debug("Synth: {0} (JSON {1} bytes)", synthInfo.Name, synthJson.Length);
             return synthInfo;
         }
@@ -64,13 +64,13 @@ namespace Terminaux.Base.Extensions
                         var split = synth.Split(' ');
                         ConsoleLogger.Debug("Synth split to {0} elements", split.Length);
                         if (split.Length != 2)
-                            throw new TerminauxException("Synth representation is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH").FormatString(i + 1, j + 1));
                         ConsoleLogger.Debug("Frequency is {0} (unparsed)", split[0]);
                         if (!int.TryParse(split[0], out int freq))
-                            throw new TerminauxException($"Frequency is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY").FormatString(i + 1, j + 1));
                         ConsoleLogger.Debug("Delay is {0} (unparsed)", split[1]);
                         if (!int.TryParse(split[1], out int ms))
-                            throw new TerminauxException($"Duration is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION").FormatString(i + 1, j + 1));
                         if (freq == 0)
                         {
                             ConsoleLogger.Debug("Sleeping for {0} ms...", ms);

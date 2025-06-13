@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -61,45 +61,45 @@ namespace Terminaux.Inputs.Styles
 
         internal readonly static Keybinding[] bindings =
         [
-            new("Submit", ConsoleKey.Enter),
-            new("Cancel", ConsoleKey.Escape),
-            new("Help", ConsoleKey.H),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT"), ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H),
         ];
         internal readonly static Keybinding[] additionalBindingsGeneral =
         [
-            new("Color information", ConsoleKey.I),
-            new("Next color blindness simulation", ConsoleKey.N),
-            new("Previous color blindness simulation", ConsoleKey.M),
-            new("Increase transformation frequency", ConsoleKey.N, ConsoleModifiers.Control),
-            new("Decrease transformation frequency", ConsoleKey.M, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO"), ConsoleKey.I),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM"), ConsoleKey.N),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM"), ConsoleKey.M),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ"), ConsoleKey.N, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ"), ConsoleKey.M, ConsoleModifiers.Control),
         ];
         internal readonly static Keybinding[] additionalBindingsReadWrite =
         [
             .. additionalBindingsGeneral,
-            new("Select web color", ConsoleKey.W),
-            new("Increase opaqueness", ConsoleKey.O),
-            new("Increase transparency", ConsoleKey.P),
-            new("Next color mode", ConsoleKey.Tab),
-            new("Previous color mode", ConsoleKey.Tab, ConsoleModifiers.Shift),
-            new("Increase value", PointerButton.WheelDown, PointerButtonPress.Scrolled),
-            new("Decrease value", PointerButton.WheelUp, PointerButtonPress.Scrolled),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR"), ConsoleKey.W),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS"), ConsoleKey.O),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY"), ConsoleKey.P),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE"), ConsoleKey.Tab),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE"), ConsoleKey.Tab, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE"), PointerButton.WheelDown, PointerButtonPress.Scrolled),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE"), PointerButton.WheelUp, PointerButtonPress.Scrolled),
         ];
         internal readonly static Keybinding[] additionalBindingsTrueColor =
         [
             .. additionalBindingsReadWrite,
-            new("Reduce color hue", ConsoleKey.LeftArrow),
-            new("Reduce color lightness", ConsoleKey.LeftArrow, ConsoleModifiers.Control),
-            new("Reduce saturation", ConsoleKey.DownArrow),
-            new("Increase color hue", ConsoleKey.RightArrow),
-            new("Increase color lightness", ConsoleKey.RightArrow, ConsoleModifiers.Control),
-            new("Increase saturation", ConsoleKey.UpArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE"), ConsoleKey.LeftArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS"), ConsoleKey.LeftArrow, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION"), ConsoleKey.DownArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE"), ConsoleKey.RightArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS"), ConsoleKey.RightArrow, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION"), ConsoleKey.UpArrow),
         ];
         internal readonly static Keybinding[] additionalBindingsNormalColor =
         [
             .. additionalBindingsReadWrite,
-            new("Previous color", ConsoleKey.LeftArrow),
-            new("Next color", ConsoleKey.RightArrow),
-            new("Show and hide color list", ConsoleKey.L),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR"), ConsoleKey.LeftArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR"), ConsoleKey.RightArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST"), ConsoleKey.L),
         ];
 
         /// <summary>

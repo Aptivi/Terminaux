@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -43,19 +43,19 @@ namespace Terminaux.Inputs.Styles.Infobox
     {
         private static readonly Keybinding[] keybindings =
         [
-            new Keybinding("Goes to the previous button", ConsoleKey.LeftArrow),
-            new Keybinding("Goes to the next button", ConsoleKey.RightArrow),
-            new Keybinding("Shows more info in an infobox", ConsoleKey.Tab),
-            new Keybinding("Goes one line up", ConsoleKey.W),
-            new Keybinding("Goes one line down", ConsoleKey.S),
-            new Keybinding("Goes to the previous page of text", ConsoleKey.E),
-            new Keybinding("Goes to the next page of text", ConsoleKey.D),
-            new Keybinding("Submits the value", ConsoleKey.Enter),
-            new Keybinding("Closes without submitting the value", ConsoleKey.Escape),
-            new Keybinding("Performs an action or selects a choice", PointerButton.Left),
-            new Keybinding("Shows more info in an infobox", PointerButton.Right),
-            new Keybinding("Previous button or previous three lines of text", PointerButton.WheelUp),
-            new Keybinding("Next button or next three lines of text", PointerButton.WheelDown),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON"), ConsoleKey.LeftArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON"), ConsoleKey.RightArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO"), ConsoleKey.Tab),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP"), ConsoleKey.W),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN"), ConsoleKey.S),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT"), ConsoleKey.E),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT"), ConsoleKey.D),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR"), ConsoleKey.Enter),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR"), ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT"), PointerButton.Left),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO"), PointerButton.Right),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP"), PointerButton.WheelUp),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN"), PointerButton.WheelDown),
         ];
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -55,7 +55,7 @@ namespace Terminaux.Base.Buffered
         {
             // Check the screen instance
             if (screen is null)
-                throw new TerminauxException("Screen is not specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN"));
 
             // Now, render the screen
             string buffer = screen.GetBuffer();
@@ -75,7 +75,7 @@ namespace Terminaux.Base.Buffered
         {
             // Check the screen instance
             if (screen is null)
-                throw new TerminauxException("Screen is not specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN"));
 
             // Add the screen to the list
             screens.Add(screen);
@@ -90,7 +90,7 @@ namespace Terminaux.Base.Buffered
         {
             // Check the screen instance
             if (screen is null)
-                throw new TerminauxException("Screen is not specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN"));
 
             // Remove the screen from the list
             screens.Remove(screen);
@@ -105,9 +105,9 @@ namespace Terminaux.Base.Buffered
         {
             // Check the screen instance
             if (screen is null)
-                throw new TerminauxException("Screen is not specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN"));
             if (screen.CycleFrequency <= 0)
-                throw new TerminauxException("Screen is not cyclic.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC"));
 
             // Add the screen to the cyclic screen variable
             ConsoleLogger.Debug("Adding cyclic screen with frequency {0} ms...", screen.CycleFrequency);
@@ -135,7 +135,7 @@ namespace Terminaux.Base.Buffered
         {
             // Check the screen instance
             if (screen is null)
-                throw new TerminauxException("Screen is not specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN"));
 
             // Now, start a thread with cyclic screen info
             StopCyclicScreen();

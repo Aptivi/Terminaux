@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -44,27 +44,27 @@ namespace Terminaux.Inputs.Styles.Editor
     {
         private static readonly Keybinding[] bindings =
         [
-            new Keybinding("Exit", ConsoleKey.Escape),
-            new Keybinding("Keybindings", ConsoleKey.K),
-            new Keybinding("Number Info", ConsoleKey.F4),
-            new Keybinding("Find Next", ConsoleKey.Divide),
-            new Keybinding("Move Up", ConsoleKey.UpArrow),
-            new Keybinding("Move Down", ConsoleKey.DownArrow),
-            new Keybinding("Move Left", ConsoleKey.LeftArrow),
-            new Keybinding("Move Right", ConsoleKey.RightArrow),
-            new Keybinding("Previous Page", ConsoleKey.PageUp),
-            new Keybinding("Next Page", ConsoleKey.PageDown),
-            new Keybinding("Go to Beginning", ConsoleKey.Home),
-            new Keybinding("Go to Ending", ConsoleKey.End),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO"), ConsoleKey.F4),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Divide),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP1"), ConsoleKey.UpArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN1"), ConsoleKey.DownArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT"), ConsoleKey.LeftArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT"), ConsoleKey.RightArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1"), ConsoleKey.PageUp),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1"), ConsoleKey.PageDown),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOFIRST1"), ConsoleKey.Home),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOLAST1"), ConsoleKey.End),
         ];
         private static readonly Keybinding[] editorBindings =
         [
             .. bindings,
-            new Keybinding("Insert", ConsoleKey.F1),
-            new Keybinding("Remove", ConsoleKey.F2),
-            new Keybinding("Replace", ConsoleKey.F3),
-            new Keybinding("Replace All", ConsoleKey.F3, ConsoleModifiers.Shift),
-            new Keybinding("Replace All What", ConsoleKey.F3, ConsoleModifiers.Shift | ConsoleModifiers.Alt),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT"), ConsoleKey.F1),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE"), ConsoleKey.F2),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE"), ConsoleKey.F3),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL"), ConsoleKey.F3, ConsoleModifiers.Shift),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT"), ConsoleKey.F3, ConsoleModifiers.Shift | ConsoleModifiers.Alt),
         ];
 
         private string status = "";
@@ -88,7 +88,7 @@ namespace Terminaux.Inputs.Styles.Editor
             var finalSettings = settings ?? InteractiveTuiSettings.GlobalSettings;
             var hexEditor = new HexEditInteractive()
             {
-                status = "Ready",
+                status = LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_STATUS_READY"),
                 editable = edit,
                 bytes = bytes,
                 settings = finalSettings,
@@ -100,7 +100,7 @@ namespace Terminaux.Inputs.Styles.Editor
             hexEditor.Keybindings.Add((bindings[1], (ui, _, _) => ((HexEditInteractive)ui).RenderKeybindingsBox()));
             hexEditor.Keybindings.Add((bindings[2], (ui, _, _) => ((HexEditInteractive)ui).NumInfo()));
             hexEditor.Keybindings.Add((bindings[3], (ui, _, _) => ((HexEditInteractive)ui).FindNext()));
-            hexEditor.Keybindings.Add((new Keybinding("Find Next", ConsoleKey.Oem2), (ui, _, _) => ((HexEditInteractive)ui).FindNext()));
+            hexEditor.Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Oem2), (ui, _, _) => ((HexEditInteractive)ui).FindNext()));
             hexEditor.Keybindings.Add((bindings[4], (ui, _, _) => ((HexEditInteractive)ui).MoveUp()));
             hexEditor.Keybindings.Add((bindings[5], (ui, _, _) => ((HexEditInteractive)ui).MoveDown()));
             hexEditor.Keybindings.Add((bindings[6], (ui, _, _) => ((HexEditInteractive)ui).MoveBackward()));
@@ -243,7 +243,7 @@ namespace Terminaux.Inputs.Styles.Editor
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(finalBindings);
             InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
             {
-                Title = "Available keybindings",
+                Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS"),
             });
             RequireRefresh();
         }
@@ -288,10 +288,10 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value." + " 00 -> FF.", settings.InfoBoxSettings);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT") + " 00 -> FF.", settings.InfoBoxSettings);
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
-                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
             else
                 AddNewByte(byteNum, byteIdx + 1);
             RequireRefresh();
@@ -317,10 +317,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with." + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
@@ -339,10 +339,10 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with." + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(byteNum, byteNumReplaced);
@@ -357,17 +357,17 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to be replaced." + " 00 -> FF.", settings.InfoBoxSettings);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED") + " 00 -> FF.", settings.InfoBoxSettings);
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
-                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput("Write the byte number with the hexadecimal value to replace {0} with." + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE") + " 00 -> FF.", settings.InfoBoxSettings, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxModalColor.WriteInfoBoxModal("The byte number specified is not valid.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
 
             // Do the replacement!
             Replace(byteNum, byteNumReplaced);
@@ -381,7 +381,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInput("Write a byte or a group of bytes separated by whitespaces." + " 00 -> FF.", settings.InfoBoxSettings);
+            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT") + " 00 -> FF.", settings.InfoBoxSettings);
             byte[] refBytes;
 
             // See if we have a cached find if the user didn't provide any string to find
@@ -389,7 +389,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 if (cachedFind.Length == 0)
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal("Bytes are required to find, but you haven't provided one.", settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED"), settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -405,7 +405,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     // Check this individual byte
                     if (!byte.TryParse(byteSplit, NumberStyles.AllowHexSpecifier, null, out byte finalByte))
                     {
-                        InfoBoxModalColor.WriteInfoBoxModal("Invalid byte {0}.", settings.InfoBoxSettings, byteSplit);
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2"), settings.InfoBoxSettings, byteSplit);
                         return;
                     }
 
@@ -466,7 +466,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 cachedFind = refBytes;
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_NOTFOUND"), settings.InfoBoxSettings);
             RequireRefresh();
         }
 
@@ -485,13 +485,13 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Print the number information
             InfoBoxModalColor.WriteInfoBoxModal(
-                "Position" + $": 0x{byteIdx:X8}" + CharManager.NewLine +
-                "Hexadecimal" + $": 0x{byteNumHex}" + CharManager.NewLine +
-                "Octal" + $": {byteNumOctal}" + CharManager.NewLine +
-                "Number" + $": {byteNumNumber}" + CharManager.NewLine +
-                "Binary" + $": {byteNumBinary}", new InfoBoxSettings(settings.InfoBoxSettings)
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION") + $": 0x{byteIdx:X8}" + CharManager.NewLine +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL") + $": 0x{byteNumHex}" + CharManager.NewLine +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL") + $": {byteNumOctal}" + CharManager.NewLine +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER") + $": {byteNumNumber}" + CharManager.NewLine +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY") + $": {byteNumBinary}", new InfoBoxSettings(settings.InfoBoxSettings)
                 {
-                    Title = "Number information",
+                    Title = LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE"),
                 });
             RequireRefresh();
         }
@@ -511,11 +511,11 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Change the status to the number information
             status =
-                "Position" + $": 0x{byteIdx:X8} | " +
-                "Hexadecimal" + $": 0x{byteNumHex} | " +
-                "Octal" + $": {byteNumOctal} | " +
-                "Number" + $": {byteNumNumber} | " +
-                "Binary" + $": {byteNumBinary}";
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION") + $": 0x{byteIdx:X8} | " +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL") + $": 0x{byteNumHex} | " +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL") + $": {byteNumOctal} | " +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER") + $": {byteNumNumber} | " +
+                LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY") + $": {byteNumBinary}";
         }
 
         private void PreviousPage()
@@ -573,12 +573,12 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Check the index
             if (byteIdx >= FileByte.Length)
-                return "Empty content";
+                return LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT");
 
             // Now, do the job!
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
-                throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "Byte number must start with 1.");
+                throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER"));
 
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
@@ -635,11 +635,11 @@ namespace Terminaux.Inputs.Styles.Editor
                 return builder.ToString();
             }
             else if (StartByte > FileByte.LongLength)
-                throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "The specified start byte number may not be larger than the file size.");
+                throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1"));
             else if (EndByte > FileByte.LongLength)
-                throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, "The specified end byte number may not be larger than the file size.");
+                throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1"));
             else
-                throw new ArgumentOutOfRangeException("The specified byte number is invalid." + $" {StartByte}, {EndByte}");
+                throw new ArgumentOutOfRangeException(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER") + $" {StartByte}, {EndByte}");
         }
 
         private void AddNewByte(byte Content, long pos)
@@ -657,7 +657,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
                 // Check the position
                 if (pos < 1 || pos > bytes.Length)
-                    throw new ArgumentOutOfRangeException(nameof(pos), pos, "The specified byte number may not be larger than {0} or smaller than 1.".FormatString(bytes.LongLength));
+                    throw new ArgumentOutOfRangeException(nameof(pos), pos, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1").FormatString(bytes.LongLength));
 
                 // Actually remove a byte
                 long ByteIndex = pos - 1L;
@@ -667,10 +667,10 @@ namespace Terminaux.Inputs.Styles.Editor
                     bytes = [.. FileBytesList];
                 }
                 else
-                    throw new ArgumentOutOfRangeException(nameof(pos), pos, "The specified byte number may not be larger than {0}.".FormatString(bytes.LongLength));
+                    throw new ArgumentOutOfRangeException(nameof(pos), pos, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2").FormatString(bytes.LongLength));
             }
             else
-                throw new ArgumentNullException("Can't perform this operation on a null array.");
+                throw new ArgumentNullException(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL"));
         }
 
         private void DeleteByte(long ByteNumber)
@@ -678,7 +678,7 @@ namespace Terminaux.Inputs.Styles.Editor
             if (bytes is not null)
             {
                 if (ByteNumber < 1)
-                    throw new ArgumentOutOfRangeException(nameof(ByteNumber), ByteNumber, "Byte number must start with 1.");
+                    throw new ArgumentOutOfRangeException(nameof(ByteNumber), ByteNumber, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER"));
                 if (bytes.Length == 0)
                     return;
                 var FileBytesList = bytes.ToList();
@@ -691,10 +691,10 @@ namespace Terminaux.Inputs.Styles.Editor
                     bytes = [.. FileBytesList];
                 }
                 else
-                    throw new ArgumentOutOfRangeException(nameof(ByteNumber), ByteNumber, "The specified byte number may not be larger than {0}.".FormatString(bytes.LongLength));
+                    throw new ArgumentOutOfRangeException(nameof(ByteNumber), ByteNumber, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2").FormatString(bytes.LongLength));
             }
             else
-                throw new ArgumentNullException("Can't perform this operation on a null array.");
+                throw new ArgumentNullException(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL"));
         }
 
         private void Replace(byte FromByte, byte WithByte) =>
@@ -705,7 +705,7 @@ namespace Terminaux.Inputs.Styles.Editor
             if (bytes is not null)
             {
                 if (StartByte < 1)
-                    throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "Byte number must start with 1.");
+                    throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER"));
                 if (bytes.Length == 0)
                     return;
                 if (StartByte <= bytes.LongLength & EndByte <= bytes.LongLength)
@@ -717,12 +717,12 @@ namespace Terminaux.Inputs.Styles.Editor
                     }
                 }
                 else if (StartByte > bytes.LongLength)
-                    throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "The specified start byte number may not be larger than {0}.".FormatString(bytes.LongLength));
+                    throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2").FormatString(bytes.LongLength));
                 else if (EndByte > bytes.LongLength)
-                    throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, "The specified end byte number may not be larger than {0}.".FormatString(bytes.LongLength));
+                    throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2").FormatString(bytes.LongLength));
             }
             else
-                throw new ArgumentNullException("Can't perform this operation on a null array.");
+                throw new ArgumentNullException(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL"));
         }
     }
 }

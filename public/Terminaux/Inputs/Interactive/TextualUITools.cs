@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -110,7 +110,7 @@ namespace Terminaux.Inputs.Interactive
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal("The textual UI has crashed. It's usually a problem in the application end." + $"\n\n{ex}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_TEXTUAL_CRASH") + $"\n\n{ex}", new InfoBoxSettings()
                 {
                     ForegroundColor = ConsoleColors.Red
                 });
@@ -166,9 +166,9 @@ namespace Terminaux.Inputs.Interactive
         {
             // Sanity check
             if (ui is null)
-                throw new TerminauxException("Textual UI is not specified");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED"));
             if (ui.State != TextualUIState.Ready)
-                throw new TerminauxException("This textual UI [{0}] is not ready because the state is {1}".FormatString(ui.Name, ui.State) + $" - {ui.Guid}");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY").FormatString(ui.Name, ui.State) + $" - {ui.Guid}");
 
             // Check the keybindings
             foreach ((Keybinding binding, Delegate action) in ui.Keybindings)
@@ -184,7 +184,7 @@ namespace Terminaux.Inputs.Interactive
                         match.binding.BindingPointerModifiers == binding.BindingPointerModifiers;
                 });
                 if (conflicts.Count > 1)
-                    throw new TerminauxException("There are {0} conflicting key binding(s) in the [{1}] textual UI".FormatString(conflicts.Count - 1, ui.Name) + $" - {ui.Guid}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS").FormatString(conflicts.Count - 1, ui.Name) + $" - {ui.Guid}");
             }
 
             // Return the UI

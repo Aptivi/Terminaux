@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -33,7 +33,7 @@ namespace Terminaux.Reader.Highlighting
     {
         private static readonly SyntaxHighlighting[] baseHighlighters =
         [
-            new("Command", new Dictionary<string, SyntaxHighlightingComponent>()
+            new(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD"), new Dictionary<string, SyntaxHighlightingComponent>()
             {
                 { "CommandName", new(@"^[^ ]+", ConsoleColors.Yellow, Color.Empty, false, true) }
             })
@@ -60,7 +60,7 @@ namespace Terminaux.Reader.Highlighting
         public static bool Exists(string highlighter)
         {
             if (string.IsNullOrWhiteSpace(highlighter))
-                throw new TerminauxException("No name of the highlighter provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME"));
             return HighlighterNames.Contains(highlighter);
         }
 
@@ -72,7 +72,7 @@ namespace Terminaux.Reader.Highlighting
         public static bool ExistsBuiltin(string highlighter)
         {
             if (string.IsNullOrWhiteSpace(highlighter))
-                throw new TerminauxException("No name of the base highlighter provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME"));
             return baseHighlighters.Any((highlight) => highlight.Name == highlighter);
         }
 
@@ -92,7 +92,7 @@ namespace Terminaux.Reader.Highlighting
         {
             // Check to see if we have this highlighter
             if (!Exists(highlighter))
-                throw new TerminauxException("Can't find highlighter {0}", highlighter);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1"), highlighter);
 
             // Now, get the highlighter
             int idx = GetHighlighterIndexFrom(highlighter);
@@ -126,11 +126,11 @@ namespace Terminaux.Reader.Highlighting
         {
             // Check to see if we have this highlighter
             if (highlighter is null)
-                throw new TerminauxException("Can't find highlighter");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2"));
 
             // Now, get the highlighter
             if (!highlighter.Components.TryGetValue(componentName, out SyntaxHighlightingComponent component))
-                throw new TerminauxException("Can't find component {0} in highlighter {1}", componentName, highlighter);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND"), componentName, highlighter);
             return component;
         }
 
@@ -142,13 +142,13 @@ namespace Terminaux.Reader.Highlighting
         {
             // Check the highlighter
             if (highlighter is null)
-                throw new TerminauxException("Invalid highlighter.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID"));
             if (string.IsNullOrWhiteSpace(highlighter.Name))
-                throw new TerminauxException("Highlighter has no name.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME"));
             if (Exists(highlighter.Name))
-                throw new TerminauxException("Highlighter already exists.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS"));
             if (highlighter.Components is null || highlighter.Components.Count == 0)
-                throw new TerminauxException("Highlighter has no components.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS"));
 
             // Now, actually register the highlighter
             customHighlighters.Add(highlighter);
@@ -162,9 +162,9 @@ namespace Terminaux.Reader.Highlighting
         {
             // Check to see if we have this highlighter
             if (!Exists(highlighter))
-                throw new TerminauxException("Can't find highlighter {0}", highlighter);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1"), highlighter);
             if (ExistsBuiltin(highlighter))
-                throw new TerminauxException("Can't remove built-in highlighter {0}", highlighter);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER"), highlighter);
 
             // Now, remove the highlighter
             var SyntaxHighlighting = GetHighlighter(highlighter);
@@ -198,7 +198,7 @@ namespace Terminaux.Reader.Highlighting
         {
             // Check to see if we have this highlighter
             if (highlighter is null)
-                throw new TerminauxException("Can't find highlighter");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2"));
 
             // Now, get the highlighter JSON
             return JsonConvert.SerializeObject(highlighter, Formatting.Indented);

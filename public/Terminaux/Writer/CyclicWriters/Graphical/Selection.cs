@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -292,7 +292,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
             bool isMultiple = CurrentSelections is not null;
             if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
-                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE"));
             if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
@@ -399,7 +399,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
             bool isMultiple = CurrentSelections is not null;
             if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
-                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE"));
             if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
@@ -434,7 +434,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
             bool isMultiple = CurrentSelections is not null;
             if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
-                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE"));
             if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
@@ -473,7 +473,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
             bool isMultiple = CurrentSelections is not null;
             if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
-                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE"));
             if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 
@@ -545,7 +545,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             List<InputChoiceInfo> choices = SelectionInputTools.GetChoicesFromCategories(Selections);
             bool isMultiple = CurrentSelections is not null;
             if ((CurrentSelection < 0 || CurrentSelection >= choices.Count) && !isMultiple)
-                throw new TerminauxException("Can't determine if the selection input is single or multiple");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE"));
             if (AltChoicePos <= 0 || AltChoicePos > choices.Count)
                 AltChoicePos = choices.Count;
 

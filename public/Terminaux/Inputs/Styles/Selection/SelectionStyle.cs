@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
+
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.Styles.Selection
 {
@@ -134,16 +136,16 @@ namespace Terminaux.Inputs.Styles.Selection
         {
             InputChoiceCategoryInfo[] answersCategory =
             [
-                new InputChoiceCategoryInfo("General choices",
+                new InputChoiceCategoryInfo(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_GENERALCHOICES"),
                 [
-                    new InputChoiceGroupInfo("Available choices", Answers)
+                    new InputChoiceGroupInfo(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_AVAILABLECHOICES"), Answers)
                 ])
             ];
             InputChoiceCategoryInfo[] altAnswersCategory = AltAnswers.Length == 0 ? [] :
             [
-                new InputChoiceCategoryInfo("Alternative choices",
+                new InputChoiceCategoryInfo(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES"),
                 [
-                    new InputChoiceGroupInfo("Available choices", AltAnswers)
+                    new InputChoiceGroupInfo(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_AVAILABLECHOICES"), AltAnswers)
                 ])
             ];
             return PromptSelection(Question, answersCategory, altAnswersCategory, settings, kiosk);

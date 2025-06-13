@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -49,10 +49,10 @@ namespace Terminaux.Inputs.Styles.Editor
         private static int byteIdx = 0;
         private static readonly Keybinding[] bindings =
         [
-            new Keybinding("Exit", ConsoleKey.Escape),
-            new Keybinding("Keybindings", ConsoleKey.K),
-            new Keybinding("Number Info", ConsoleKey.F1),
-            new Keybinding("Find Next", ConsoleKey.Divide),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO"), ConsoleKey.F1),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Divide),
         ];
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Terminaux.Inputs.Styles.Editor
         public static void OpenInteractive(byte[] bytes, InteractiveTuiSettings? settings = null, bool fullscreen = false)
         {
             // Set status
-            status = "Ready";
+            status = LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_STATUS_READY");
             bail = false;
             settings ??= InteractiveTuiSettings.GlobalSettings;
 
@@ -283,7 +283,7 @@ namespace Terminaux.Inputs.Styles.Editor
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
             InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
             {
-                Title = "Available keybindings",
+                Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS"),
             });
             return bytes;
         }
@@ -331,7 +331,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 if (cachedFind.Length == 0)
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal("Bytes are required to find, but you haven't provided one.", settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED"), settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -408,7 +408,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 cachedFind = refBytes;
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_NOTFOUND"), settings.InfoBoxSettings);
         }
 
         private static byte[] NumInfo(byte[] bytes, InteractiveTuiSettings settings)
@@ -428,7 +428,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 $"Number:       {byteNumNumber}" + CharManager.NewLine +
                 $"Binary:       {byteNumBinary}", new InfoBoxSettings(settings.InfoBoxSettings)
                 {
-                    Title = "Number information",
+                    Title = LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE"),
                 });
             return bytes;
         }
@@ -495,7 +495,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Now, do the job!
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
-                throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "Byte number must start with 1.");
+                throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER"));
 
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
@@ -552,9 +552,9 @@ namespace Terminaux.Inputs.Styles.Editor
                 return builder.ToString();
             }
             else if (StartByte > FileByte.LongLength)
-                throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, "The specified start byte number may not be larger than the file size.");
+                throw new ArgumentOutOfRangeException(nameof(StartByte), StartByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1"));
             else if (EndByte > FileByte.LongLength)
-                throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, "The specified end byte number may not be larger than the file size.");
+                throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1"));
             else
                 throw new ArgumentOutOfRangeException($"The specified byte number is invalid. {StartByte}, {EndByte}");
         }

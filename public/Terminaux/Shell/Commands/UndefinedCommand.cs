@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 
 namespace Terminaux.Shell.Commands
 {
@@ -25,7 +26,7 @@ namespace Terminaux.Shell.Commands
     {
         public override void Execute(CommandParameters parameters)
         {
-            throw new NotImplementedException("This command is not defined.");
+            throw new NotImplementedException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNDEFINED"));
         }
     }
 }

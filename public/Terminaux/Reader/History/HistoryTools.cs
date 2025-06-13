@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -59,7 +59,7 @@ namespace Terminaux.Reader.History
         public static void LoadFromFile(string filePath)
         {
             if (string.IsNullOrEmpty(filePath))
-                throw new TerminauxException("History file path is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED"));
             string fileContents = File.ReadAllText(filePath);
             LoadFromJson(fileContents);
         }
@@ -72,9 +72,9 @@ namespace Terminaux.Reader.History
         public static void LoadFromJson([StringSyntax(StringSyntaxAttribute.Json)] string historyJson)
         {
             if (string.IsNullOrEmpty(historyJson))
-                throw new TerminauxException("History JSON representation is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED"));
             var info = JsonConvert.DeserializeObject<HistoryInfo>(historyJson) ??
-                throw new TerminauxException("JSON parsed, but history JSON representation is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED"));
             LoadFromInstance(info);
         }
 
@@ -86,11 +86,11 @@ namespace Terminaux.Reader.History
         public static void LoadFromInstance(HistoryInfo info)
         {
             if (info is null)
-                throw new TerminauxException("History info is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED"));
             if (string.IsNullOrEmpty(info.HistoryName))
-                throw new TerminauxException("History name is not provided. Are you sure that you have specified the name in your JSON representation?");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND"));
             if (info.HistoryEntries is null)
-                throw new TerminauxException("History entries are not provided. Are you sure that you have specified the entries in your JSON representation?");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND"));
             ConsoleLogger.Debug("Adding history {0} with {1} entries", info.HistoryName, info.HistoryEntries.Count);
             histories.Add(info);
         }
@@ -103,9 +103,9 @@ namespace Terminaux.Reader.History
         public static void Unload(string historyName)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException("History {0} not found.", historyName);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
             if (historyName == generalHistory)
-                throw new TerminauxException("General history can't be removed, but can be cleared.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY"));
             int idx = GetHistoryIndexFrom(historyName);
             HistoryInfo info = histories[idx];
             Unload(info);
@@ -119,14 +119,14 @@ namespace Terminaux.Reader.History
         public static void Unload(HistoryInfo info)
         {
             if (info is null)
-                throw new TerminauxException("History info is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED"));
             if (!histories.Contains(info))
-                throw new TerminauxException("History is not part of the registered histories.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED"));
             if (info.HistoryName == generalHistory)
-                throw new TerminauxException("General history can't be removed, but can be cleared.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY"));
             ConsoleLogger.Debug("Removing history {0} with {1} entries", info.HistoryName, info.HistoryEntries.Count);
             if (!histories.Remove(info))
-                throw new TerminauxException("Failed to delete history.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED"));
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Terminaux.Reader.History
         public static string[] GetHistoryEntries(string historyName)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException("History {0} not found.", historyName);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
             int idx = GetHistoryIndexFrom(historyName);
             HistoryInfo info = histories[idx];
             ConsoleLogger.Debug("Returning {0} entries", info.HistoryEntries.Count);
@@ -153,7 +153,7 @@ namespace Terminaux.Reader.History
         public static void Clear(string historyName)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException("History {0} not found.", historyName);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
             int idx = GetHistoryIndexFrom(historyName);
             ConsoleLogger.Debug("Clearing {0} entries from {1}", histories[idx].HistoryEntries.Count, historyName);
             histories[idx].HistoryEntries.Clear();
@@ -168,9 +168,9 @@ namespace Terminaux.Reader.History
         public static void Append(string historyName, string entry)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException("History {0} not found.", historyName);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
             if (entry is null)
-                throw new TerminauxException("History entry is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED"));
             int idx = GetHistoryIndexFrom(historyName);
             ConsoleLogger.Debug("Adding {0} to {1}", entry, historyName);
             histories[idx].HistoryEntries.Add(entry);
@@ -185,9 +185,9 @@ namespace Terminaux.Reader.History
         public static void Switch(string historyName, string[] entries)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException("History {0} not found.", historyName);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
             if (entries is null)
-                throw new TerminauxException("History entry list is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED"));
             int idx = GetHistoryIndexFrom(historyName);
             ConsoleLogger.Debug("Switching {0} entries in {1}", histories[idx].HistoryEntries.Count, historyName);
             histories[idx].HistoryEntries.Clear();
@@ -203,7 +203,7 @@ namespace Terminaux.Reader.History
         public static string SaveToString(string historyName)
         {
             if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException("History {0} not found.", historyName);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
             int idx = GetHistoryIndexFrom(historyName);
             return SaveToString(histories[idx]);
         }
@@ -217,9 +217,9 @@ namespace Terminaux.Reader.History
         public static string SaveToString(HistoryInfo info)
         {
             if (info is null)
-                throw new TerminauxException("History info is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED"));
             if (!histories.Contains(info))
-                throw new TerminauxException("History is not part of the registered histories.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED"));
             string historyInfoString = JsonConvert.SerializeObject(info, Formatting.Indented);
             return historyInfoString;
         }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -81,7 +81,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 var selectionNames = Enum.GetNames(type == ColorType.FourBitColor ? typeof(ConsoleColor) : typeof(ConsoleColors)).ToList();
                 var finalSelections = selectionNames.Select((type, idx) => new InputChoiceInfo($"{idx + 1}", type)).ToArray();
-                var selectionBorder = new BoxFrame("List of {0} predefined colors".FormatString(finalSelections.Length))
+                var selectionBorder = new BoxFrame(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS").FormatString(finalSelections.Length))
                 {
                     Left = generalX,
                     Top = 1,
@@ -216,7 +216,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         int transparency = (int)(mono.RGB.originalAlpha * width);
                         transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                     }
-                    var rampFrame = new BoxFrame("Gray" + $": {mono.RGB.R}/255 | " + "Transparency" + $": {finalSettings.Opacity}/255")
+                    var rampFrame = new BoxFrame(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_RAMPFRAME_GRAY") + $": {mono.RGB.R}/255 | " + LanguageTools.GetLocalized("T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY") + $": {finalSettings.Opacity}/255")
                     {
                         Left = hslBarX,
                         Top = grayRampBarY,
@@ -300,7 +300,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         shadeRamp.Append($"{new Color(shades[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                         tintRamp.Append($"{new Color(tints[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                     }
-                    var shadeTintFrame = new BoxFrame("Shade and Tint")
+                    var shadeTintFrame = new BoxFrame(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_SHADETINTFRAME"))
                     {
                         Left = hslBarX,
                         Top = shadeTintRampBarY,
@@ -322,14 +322,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     // Render the two boxes
                     int halfBoxWidth = boxWidth / 2 - 2;
                     int otherHalfLeft = hslBarX + boxWidth / 2 + 2;
-                    var colorInfoFrame = new BoxFrame("Color info")
+                    var colorInfoFrame = new BoxFrame(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_COLORINFOFRAME"))
                     {
                         Left = hslBarX,
                         Top = infoRampBarY,
                         Width = halfBoxWidth,
                         Height = boxHeight + 2,
                     };
-                    var colorBlindnessFrame = new BoxFrame("Transform" + $" [[{colorBlindnessSeverity:0.00}]]")
+                    var colorBlindnessFrame = new BoxFrame(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_TRANSFORMFRAME") + $" [[{colorBlindnessSeverity:0.00}]]")
                     {
                         Left = otherHalfLeft,
                         Top = infoRampBarY,
@@ -539,11 +539,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             switch (colorBlindnessSimulationIdx)
             {
                 case 0:
-                    ShowColorInfoBox("Color info", selectedColor);
+                    ShowColorInfoBox(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_COLORINFOFRAME"), selectedColor);
                     break;
                 default:
                     var formula = (TransformationFormula)(colorBlindnessSimulationIdx - 1);
-                    ShowColorInfoBox("Color info" + $" ({formula})", selectedColor, true, (TransformationFormula)(colorBlindnessSimulationIdx - 1), colorBlindnessSeverity);
+                    ShowColorInfoBox(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_COLORINFOFRAME") + $" ({formula})", selectedColor, true, (TransformationFormula)(colorBlindnessSimulationIdx - 1), colorBlindnessSeverity);
                     break;
             }
             ui.RequireRefresh();
@@ -873,7 +873,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     colorValue16 = selectedColor.ColorEnum16;
                     break;
                 default:
-                    throw new TerminauxException("Invalid color type in the color selector");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE"));
             }
             UpdateColor(ref selectedColor, type, finalSettings);
             UpdateKeybindings();

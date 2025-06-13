@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -58,7 +58,7 @@ namespace Terminaux.Shell.Prompts
             else if (ThrowOnNotFound)
             {
                 ConsoleLogger.Error("Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
-                throw new TerminauxException("The specified preset {0} is not found.", PresetName);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND"), PresetName);
             }
             else
             {
@@ -142,7 +142,7 @@ namespace Terminaux.Shell.Prompts
 
             // Now, prompt the user
             var PresetNames = Presets.Select((kvp) => (kvp.Key, kvp.Value.PresetPromptShowcase)).ToArray();
-            int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString("Select preset for {0}:", shellType), PresetNames);
+            int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString(LanguageTools.GetLocalized("T_SHELL_PROMPTS_PRESETS_SELECTPRESET"), shellType), PresetNames);
             if (SelectedPreset == -1)
                 return "Default";
             string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset - 1);

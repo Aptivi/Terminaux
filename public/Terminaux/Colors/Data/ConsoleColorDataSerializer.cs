@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -63,11 +63,7 @@ namespace Terminaux.Colors.Data
         {
             var color = value as ConsoleColorData ??
                 throw new Exception("Can't get color data.");
-#if GENERATOR
-            serializer.Serialize(writer, $"{color.RGB.r};{color.RGB.g};{color.RGB.b}");
-#else
             serializer.Serialize(writer, $"{color.RGB.R};{color.RGB.G};{color.RGB.B}");
-#endif
         }
     }
 }

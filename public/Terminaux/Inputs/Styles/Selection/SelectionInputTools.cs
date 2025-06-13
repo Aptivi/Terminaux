@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -155,7 +155,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
                 }
             }
-            throw new TerminauxInternalException("Can't get category and group in choice number {0}.", choiceNum);
+            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR"), choiceNum);
         }
     }
 }

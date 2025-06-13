@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -54,9 +54,9 @@ namespace Terminaux.Inputs.Styles.Editor
         private static int lineColIdx = 0;
         private static readonly Keybinding[] bindings =
         [
-            new Keybinding("Exit", ConsoleKey.Escape),
-            new Keybinding("Keybindings", ConsoleKey.K),
-            new Keybinding("Find Next", ConsoleKey.Divide),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Divide),
         ];
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Terminaux.Inputs.Styles.Editor
         public static void OpenInteractive(List<string> lines, InteractiveTuiSettings? settings = null, bool fullscreen = false)
         {
             // Set status
-            status = "Ready";
+            status = LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_STATUS_READY");
             bail = false;
             settings ??= InteractiveTuiSettings.GlobalSettings;
 
@@ -356,7 +356,7 @@ namespace Terminaux.Inputs.Styles.Editor
             string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
             InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
             {
-                Title = "Available keybindings"
+                Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS")
             });
             return lines;
         }
@@ -380,14 +380,14 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string text = InfoBoxInputColor.WriteInfoBoxInput("Write a string to find. Supports regular expressions.", settings.InfoBoxSettings);
+            string text = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT"), settings.InfoBoxSettings);
 
             // See if we have a cached find if the user didn't provide any string to find
             if (string.IsNullOrEmpty(text))
             {
                 if (string.IsNullOrEmpty(cachedFind))
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal("String is required to find, but you haven't provided one.", settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED"), settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -397,7 +397,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Validate the regex
             if (!RegexTools.IsValidRegex(text))
             {
-                InfoBoxModalColor.WriteInfoBoxModal("This string to find is not a valid regular expression.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID"), settings.InfoBoxSettings);
                 return;
             }
 
@@ -452,7 +452,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 cachedFind = text;
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_NOTFOUND"), settings.InfoBoxSettings);
         }
 
         private static void StatusTextInfo(List<string> lines)

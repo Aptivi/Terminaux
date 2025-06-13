@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -55,7 +55,7 @@ namespace Terminaux.Colors.Transformation.Formulas
                 MonochromacyType.Cyan =>        (0,     sMono, sMono),
                 MonochromacyType.Magenta =>     (sMono, 0,     sMono),
                 MonochromacyType.Yellow =>      (sMono, sMono, 0    ),
-                _ => throw new TerminauxException("Invalid monochromacy type"),
+                _ => throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE")),
             };
             var final = TransformationTools.BlendColor((r, g, b), (mono.r, mono.g, mono.b), Frequency);
             ConsoleLogger.Debug("Transformed to {0} using parameters: freq: {1}, blend: {2}", (final.RGB.R, final.RGB.G, final.RGB.B), Frequency, (mono.r, mono.g, mono.b));

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LocaleStation.Tools;
 using System;
 using System.Reflection;
 using Terminaux.Images;
@@ -33,7 +32,6 @@ namespace Terminaux.Console.Fixtures.Cases.Images
         {
             var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Terminaux.Console.Assets.pictures.aptivi-logo-ios.png") ??
                 throw new Exception("Resource doesn't exist: aptivi-logo-ios.png");
-            LanguageCommon.Language = "ger";
             var image = ImageProcessor.OpenImage(stream);
             ImageViewInteractive.OpenInteractive(image);
         }

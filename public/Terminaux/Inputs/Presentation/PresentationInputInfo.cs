@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -70,7 +70,7 @@ namespace Terminaux.Inputs.Presentation
         public PresentationInputInfo(string inputName, string inputDescription, InputModule inputMethod, bool required = false)
         {
             InputName = !string.IsNullOrEmpty(inputName) ? inputName :
-                throw new TerminauxException("Input name is not specified");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME"));
             InputDescription = inputDescription;
             InputMethod = inputMethod ??
                 throw new TerminauxException(nameof(inputMethod));

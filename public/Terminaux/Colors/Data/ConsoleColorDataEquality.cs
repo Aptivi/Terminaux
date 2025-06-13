@@ -51,11 +51,7 @@ namespace Terminaux.Colors.Data
         /// </summary>
         /// <returns>RGB order code in decimal RRRGGGBBB format</returns>
         public int GetOrderCode() =>
-#if GENERATOR
-            (RGB.b << 16) | (RGB.g << 8) | RGB.r;
-#else
-            ((RGB?.B << 16) | (RGB?.G << 8) | RGB?.R) ?? 0;
-#endif
+            (RGB.B << 16) | (RGB.G << 8) | RGB.R;
 
         /// <inheritdoc/>
         public static bool operator ==(ConsoleColorData? left, ConsoleColorData? right)
