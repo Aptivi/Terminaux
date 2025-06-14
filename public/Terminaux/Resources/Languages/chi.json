@@ -2517,6 +2517,22 @@
     {
       "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
       "text": "suǒyǒu xuánzhuǎn ànniǔ de kuāndù yīng xiāngtóng."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
+      "text": "Xiàngshàng yídòng yīgè shūrù yuánsù"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
+      "text": "Xiàng xià yídòng yīgè shūrù yuánsù"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
+      "text": "Zhuǎn dào dì yī gè shūrù"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
+      "text": "Zhuǎn dào zuìhòu yīgè shūrù"
     }
   ]
 }

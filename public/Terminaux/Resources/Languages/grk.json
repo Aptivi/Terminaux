@@ -2514,6 +2514,22 @@
     {
       "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
       "text": "Όλοι οι περιστρεφόμενοι τροχοί πρέπει να έχουν το ίδιο πλάτος."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
+      "text": "Πηγαίνει ένα στοιχείο εισόδου προς τα πάνω"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
+      "text": "Πηγαίνει ένα στοιχείο εισόδου προς τα κάτω"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
+      "text": "Πηγαίνει στην πρώτη είσοδο"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
+      "text": "Πηγαίνει στην τελευταία είσοδο"
     }
   ]
 }

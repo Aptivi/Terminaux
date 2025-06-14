@@ -46,10 +46,10 @@ namespace Terminaux.Inputs.Styles.Infobox
     {
         private static Keybinding[] Keybindings =>
         [
-            new Keybinding("Goes one input element up", ConsoleKey.UpArrow),
-            new Keybinding("Goes one input element down", ConsoleKey.DownArrow),
-            new Keybinding("Goes to the first input", ConsoleKey.Home),
-            new Keybinding("Goes to the last input", ConsoleKey.End),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP"), ConsoleKey.UpArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN"), ConsoleKey.DownArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST"), ConsoleKey.Home),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST"), ConsoleKey.End),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS"), ConsoleKey.PageUp),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS"), ConsoleKey.PageDown),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO"), ConsoleKey.Tab),
