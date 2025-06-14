@@ -216,7 +216,7 @@ namespace Terminaux.SequenceTypesGen
                                     var tokenizer = new VtSequenceTokenizer(result.ToCharArray());
                                     var tokens = tokenizer.Parse();
                                     if (tokens.Length <= 0)
-                                        throw new TerminauxException("We have failed to generate a working VT sequence of type {0} with action {1}. Make sure that you've specified values correctly.", "{{typeNameUpper}}", "{{seqName}}");
+                                        throw new TerminauxException(LanguageTools.GetLocalized("T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED"), "{{typeNameUpper}}", "{{seqName}}");
                                     return result;
                                 }
                         """
