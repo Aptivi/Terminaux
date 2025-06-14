@@ -182,7 +182,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Render keybindings
             var keybindingsRenderable = new Keybindings()
             {
-                KeybindingList = multiple ? SelectionStyleBase.showBindingsMultiple : SelectionStyleBase.showBindings,
+                KeybindingList = multiple ? SelectionStyleBase.ShowBindingsMultiple : SelectionStyleBase.ShowBindings,
                 Width = ConsoleWrapper.WindowWidth - 1,
                 BackgroundColor = settings.BackgroundColor,
                 WriteHelpKeyInfo = false,
@@ -440,7 +440,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            Keybinding[] allBindings = multiple ? SelectionStyleBase.bindingsMultiple : SelectionStyleBase.bindings;
+            Keybinding[] allBindings = multiple ? SelectionStyleBase.BindingsMultiple : SelectionStyleBase.Bindings;
             KeybindingTools.ShowKeybindingInfobox(allBindings);
             ui.RequireRefresh();
         }
@@ -668,38 +668,38 @@ namespace Terminaux.Inputs.Interactive.Selectors
             selectedAnswer = allAnswers.Any((ici) => ici.ChoiceDefault) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
 
             // Install keybindings
-            Keybindings.Add((SelectionStyleBase.bindings[0], (ui, _, _) => Exit(ui, false)));
-            Keybindings.Add((SelectionStyleBase.bindings[1], (_, _, _) => ProcessSelect()));
-            Keybindings.Add((SelectionStyleBase.bindings[2], (ui, _, _) => Exit(ui, true)));
-            Keybindings.Add((SelectionStyleBase.bindings[3], (_, _, _) => GoUp()));
-            Keybindings.Add((SelectionStyleBase.bindings[4], (_, _, _) => GoDown()));
-            Keybindings.Add((SelectionStyleBase.bindings[5], GoFirst));
-            Keybindings.Add((SelectionStyleBase.bindings[6], GoLast));
-            Keybindings.Add((SelectionStyleBase.bindings[7], PreviousPage));
-            Keybindings.Add((SelectionStyleBase.bindings[8], NextPage));
-            Keybindings.Add((SelectionStyleBase.bindings[9], SearchPrompt));
-            Keybindings.Add((SelectionStyleBase.bindings[10], (_, _, _) => ShowcaseGoUp()));
-            Keybindings.Add((SelectionStyleBase.bindings[11], (_, _, _) => ShowcaseGoDown()));
-            Keybindings.Add((SelectionStyleBase.bindings[12], QuestionGoUp));
-            Keybindings.Add((SelectionStyleBase.bindings[13], QuestionGoDown));
-            Keybindings.Add((SelectionStyleBase.bindings[14], ShowCount));
-            Keybindings.Add((SelectionStyleBase.bindings[15], ShowItemInfo));
-            Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
-            Keybindings.Add((SelectionStyleBase.showBindings[3], Help));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], (_, _, mouse) => ProcessMouseWheel(mouse, true)));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], (_, _, mouse) => ProcessMouseWheel(mouse)));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[3], ShowItemInfo));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[4], (_, _, mouse) => UpdateSelectedIndexWithMousePos(mouse, out _)));
+            Keybindings.Add((SelectionStyleBase.Bindings[0], (ui, _, _) => Exit(ui, false)));
+            Keybindings.Add((SelectionStyleBase.Bindings[1], (_, _, _) => ProcessSelect()));
+            Keybindings.Add((SelectionStyleBase.Bindings[2], (ui, _, _) => Exit(ui, true)));
+            Keybindings.Add((SelectionStyleBase.Bindings[3], (_, _, _) => GoUp()));
+            Keybindings.Add((SelectionStyleBase.Bindings[4], (_, _, _) => GoDown()));
+            Keybindings.Add((SelectionStyleBase.Bindings[5], GoFirst));
+            Keybindings.Add((SelectionStyleBase.Bindings[6], GoLast));
+            Keybindings.Add((SelectionStyleBase.Bindings[7], PreviousPage));
+            Keybindings.Add((SelectionStyleBase.Bindings[8], NextPage));
+            Keybindings.Add((SelectionStyleBase.Bindings[9], SearchPrompt));
+            Keybindings.Add((SelectionStyleBase.Bindings[10], (_, _, _) => ShowcaseGoUp()));
+            Keybindings.Add((SelectionStyleBase.Bindings[11], (_, _, _) => ShowcaseGoDown()));
+            Keybindings.Add((SelectionStyleBase.Bindings[12], QuestionGoUp));
+            Keybindings.Add((SelectionStyleBase.Bindings[13], QuestionGoDown));
+            Keybindings.Add((SelectionStyleBase.Bindings[14], ShowCount));
+            Keybindings.Add((SelectionStyleBase.Bindings[15], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.ShowBindings[1], ShowSidebar));
+            Keybindings.Add((SelectionStyleBase.ShowBindings[3], Help));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[0], (_, _, mouse) => ProcessMouseWheel(mouse, true)));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[1], (_, _, mouse) => ProcessMouseWheel(mouse)));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[2], ProcessLeftClick));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[3], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[4], (_, _, mouse) => UpdateSelectedIndexWithMousePos(mouse, out _)));
 
             // Install mode-dependent keybindings
             if (multiple)
             {
                 Keybindings.RemoveAt(1);
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], ModifyChoice));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[17], (_, _, _) => ProcessSelectAll(1)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[18], (_, _, _) => ProcessSelectAll(2)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[19], (_, _, _) => ProcessSelectAll(3)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[16], ModifyChoice));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[17], (_, _, _) => ProcessSelectAll(1)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[18], (_, _, _) => ProcessSelectAll(2)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[19], (_, _, _) => ProcessSelectAll(3)));
             }
         }
     }

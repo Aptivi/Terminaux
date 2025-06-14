@@ -85,7 +85,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var figletKeybindings = new Keybindings()
                 {
                     Width = ConsoleWrapper.WindowWidth - 1,
-                    KeybindingList = FigletSelector.bindings,
+                    KeybindingList = FigletSelector.Bindings,
                     WriteHelpKeyInfo = false,
                 };
                 buffer.Append(figletInfo.Render());
@@ -120,7 +120,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var figletKeybindings = new Keybindings()
                 {
                     Width = ConsoleWrapper.WindowWidth - 1,
-                    KeybindingList = FigletSelector.charSelectBindings,
+                    KeybindingList = FigletSelector.CharSelectBindings,
                 };
                 buffer.Append(figletInfo.Render());
                 buffer.Append(RendererTools.RenderRenderable(figletKeybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
@@ -141,24 +141,24 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (screenNum == 0)
             {
                 // Keyboard bindings
-                Keybindings.Add((FigletSelector.bindings[0], Previous));
-                Keybindings.Add((FigletSelector.bindings[1], Next));
-                Keybindings.Add((FigletSelector.bindings[2], (ui, _, _) => Exit(ui, false)));
-                Keybindings.Add((FigletSelector.bindings[3], (ui, _, _) => Exit(ui, true)));
-                Keybindings.Add((FigletSelector.bindings[4], Help));
-                Keybindings.Add((FigletSelector.additionalBindings[0], (ui, _, _) => Select(ui, false)));
-                Keybindings.Add((FigletSelector.additionalBindings[1], (ui, _, _) => Select(ui, true)));
-                Keybindings.Add((FigletSelector.additionalBindings[2], Showcase));
+                Keybindings.Add((FigletSelector.Bindings[0], Previous));
+                Keybindings.Add((FigletSelector.Bindings[1], Next));
+                Keybindings.Add((FigletSelector.Bindings[2], (ui, _, _) => Exit(ui, false)));
+                Keybindings.Add((FigletSelector.Bindings[3], (ui, _, _) => Exit(ui, true)));
+                Keybindings.Add((FigletSelector.Bindings[4], Help));
+                Keybindings.Add((FigletSelector.AdditionalBindings[0], (ui, _, _) => Select(ui, false)));
+                Keybindings.Add((FigletSelector.AdditionalBindings[1], (ui, _, _) => Select(ui, true)));
+                Keybindings.Add((FigletSelector.AdditionalBindings[2], Showcase));
 
                 // Mouse bindings
-                Keybindings.Add((FigletSelector.additionalBindings[3], Previous));
-                Keybindings.Add((FigletSelector.additionalBindings[4], Next));
+                Keybindings.Add((FigletSelector.AdditionalBindings[3], Previous));
+                Keybindings.Add((FigletSelector.AdditionalBindings[4], Next));
             }
             else
             {
-                Keybindings.Add((FigletSelector.charSelectBindings[0], Previous));
-                Keybindings.Add((FigletSelector.charSelectBindings[1], Next));
-                Keybindings.Add((FigletSelector.charSelectBindings[2], GoBack));
+                Keybindings.Add((FigletSelector.CharSelectBindings[0], Previous));
+                Keybindings.Add((FigletSelector.CharSelectBindings[1], Next));
+                Keybindings.Add((FigletSelector.CharSelectBindings[2], GoBack));
             }
         }
 
@@ -206,7 +206,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            Keybinding[] allBindings = [.. FigletSelector.bindings, .. FigletSelector.additionalBindings];
+            Keybinding[] allBindings = [.. FigletSelector.Bindings, .. FigletSelector.AdditionalBindings];
             KeybindingTools.ShowKeybindingInfobox(allBindings);
             ui.RequireRefresh();
         }

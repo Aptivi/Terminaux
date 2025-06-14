@@ -52,7 +52,8 @@ namespace Terminaux.Inputs.Styles.Editor
         private static bool bail;
         private static int lineIdx = 0;
         private static int lineColIdx = 0;
-        private static readonly Keybinding[] bindings =
+
+        private static Keybinding[] Bindings =>
         [
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
@@ -131,7 +132,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 var keybindingsRenderable = new Keybindings()
                 {
-                    KeybindingList = bindings,
+                    KeybindingList = Bindings,
                     BuiltinColor = settings.KeyBindingBuiltinColor,
                     BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
                     BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
@@ -349,11 +350,11 @@ namespace Terminaux.Inputs.Styles.Editor
         private static List<string> RenderKeybindingsBox(List<string> lines, InteractiveTuiSettings settings)
         {
             // Show the available keys list
-            if (bindings.Length == 0)
+            if (Bindings.Length == 0)
                 return lines;
 
             // User needs an infobox that shows all available keys
-            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
+            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(Bindings);
             InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
             {
                 Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS")

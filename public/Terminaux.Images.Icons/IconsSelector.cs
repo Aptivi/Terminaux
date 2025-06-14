@@ -210,6 +210,7 @@ namespace Terminaux.Images.Icons
             }
             return cancel ? icon : iconName;
         }
+
         private static Keybinding[] Bindings =>
             [
                 new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_BINDINGS_PREVIOUS"), ConsoleKey.LeftArrow),
