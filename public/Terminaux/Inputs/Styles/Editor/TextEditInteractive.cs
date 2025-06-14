@@ -48,9 +48,9 @@ namespace Terminaux.Inputs.Styles.Editor
         private static bool entering;
         private static int lineIdx = 0;
         private static int lineColIdx = 0;
-        private static readonly Keybinding[] bindings =
-        [
-            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
+		private static Keybinding[] Bindings =>
+		[
+			new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER"), ConsoleKey.I),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE"), ConsoleKey.X),
@@ -62,7 +62,8 @@ namespace Terminaux.Inputs.Styles.Editor
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE"), ConsoleKey.F3),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL"), ConsoleKey.F3, ConsoleModifiers.Shift),
         ];
-        private static readonly Keybinding[] bindingsEntering =
+
+        private static Keybinding[] BindingsEntering =>
         [
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING"), ConsoleKey.Escape),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE"), ConsoleKey.Enter),
@@ -140,7 +141,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 var keybindingsRenderable = new Keybindings()
                 {
-                    KeybindingList = entering ? bindingsEntering : bindings,
+                    KeybindingList = entering ? BindingsEntering : Bindings,
                     BuiltinColor = settings.KeyBindingBuiltinColor,
                     BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
                     BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
@@ -472,7 +473,7 @@ namespace Terminaux.Inputs.Styles.Editor
         private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
         {
             // Show the available keys list
-            var finalBindings = entering ? bindingsEntering : bindings;
+            var finalBindings = entering ? BindingsEntering : Bindings;
             if (finalBindings.Length == 0)
                 return;
 

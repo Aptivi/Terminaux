@@ -47,13 +47,14 @@ namespace Terminaux.Inputs.Presentation
     /// </summary>
     public static class PresentationTools
     {
-        private readonly static Keybinding[] bindings =
+        private static Keybinding[] Bindings =>
         [
             new(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_KEYBINDING_ADVANCE"), ConsoleKey.Enter)
         ];
-        private readonly static Keybinding[] nonKioskBindings =
+
+        private static Keybinding[] NonKioskBindings =>
         [
-            .. bindings,
+            .. Bindings,
             new(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape)
         ];
 
@@ -133,7 +134,7 @@ namespace Terminaux.Inputs.Presentation
                     // Write the bindings
                     var keybindingsRenderable = new Keybindings()
                     {
-                        KeybindingList = !kiosk && !required ? nonKioskBindings : bindings,
+                        KeybindingList = !kiosk && !required ? NonKioskBindings : Bindings,
                         BackgroundColor = presentation.BackgroundColor,
                         Left = 0,
                         Top = ConsoleWrapper.WindowHeight - 1,

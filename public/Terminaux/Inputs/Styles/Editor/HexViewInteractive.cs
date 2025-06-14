@@ -43,7 +43,8 @@ namespace Terminaux.Inputs.Styles.Editor
         private static byte[] cachedFind = [];
         private static bool bail;
         private static int byteIdx = 0;
-        private static readonly Keybinding[] bindings =
+
+        private static Keybinding[] Bindings =>
         [
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
@@ -117,7 +118,7 @@ namespace Terminaux.Inputs.Styles.Editor
             {
                 var keybindingsRenderable = new Keybindings()
                 {
-                    KeybindingList = bindings,
+                    KeybindingList = Bindings,
                     BuiltinColor = settings.KeyBindingBuiltinColor,
                     BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
                     BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
@@ -274,11 +275,11 @@ namespace Terminaux.Inputs.Styles.Editor
         private static byte[] RenderKeybindingsBox(byte[] bytes, InteractiveTuiSettings settings)
         {
             // Show the available keys list
-            if (bindings.Length == 0)
+            if (Bindings.Length == 0)
                 return bytes;
 
             // User needs an infobox that shows all available keys
-            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
+            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(Bindings);
             InfoBoxModalColor.WriteInfoBoxModalColorBack(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS"), bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
             return bytes;
         }

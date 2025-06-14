@@ -42,7 +42,7 @@ namespace Terminaux.Inputs.Styles.Infobox
     /// </summary>
     public static class InfoBoxSliderColor
     {
-        private static readonly Keybinding[] keybindings =
+        private static Keybinding[] Keybindings =>
         [
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE"), ConsoleKey.UpArrow),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE"), ConsoleKey.DownArrow),
@@ -436,7 +436,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             if (mouse.Coordinates.y == buttonsTop)
                             {
                                 if (PointerTools.PointerWithinRange(mouse, (buttonLeftHelpMin, buttonsTop), (buttonLeftHelpMax, buttonsTop)))
-                                    KeybindingTools.ShowKeybindingInfobox(keybindings);
+                                    KeybindingTools.ShowKeybindingInfobox(Keybindings);
                                 else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
                                 {
                                     bail = true;
@@ -541,7 +541,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case ConsoleKey.K:
                                 // Keys function
-                                KeybindingTools.ShowKeybindingInfobox(keybindings);
+                                KeybindingTools.ShowKeybindingInfobox(Keybindings);
                                 break;
                         }
                     }
