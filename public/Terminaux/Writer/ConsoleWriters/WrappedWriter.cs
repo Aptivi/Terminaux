@@ -19,10 +19,13 @@
 
 using System;
 using System.Linq;
+using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Editor;
+using Terminaux.Sequences;
 using Textify.General;
 
 namespace Terminaux.Writer.ConsoleWriters
@@ -80,6 +83,113 @@ namespace Terminaux.Writer.ConsoleWriters
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWrappedPlain(string Text, bool Line, params object[] vars)
+        {
+            var LinesMade = 0;
+            try
+            {
+                // Format string as needed
+                if (vars.Length > 0)
+                    Text = TextTools.FormatString(Text, vars);
+                Text = Text.Replace(Convert.ToChar(13), default);
+
+                // First, split the text to wrap
+                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth);
+
+                // Iterate through sentences
+                var buffered = new StringBuilder();
+                for (int idx = 0; idx < sentences.Length; idx++)
+                {
+                    string sentence = sentences[idx];
+
+                    // Grab each VT sequence from the paragraph and fetch their indexes
+                    var sequences = VtSequenceTools.MatchVTSequences(sentence);
+                    int vtSeqIdx = 0;
+                    bool bail = false;
+                    for (int i = 0; i < sentence.Length; i++)
+                    {
+                        char TextChar = sentence[i];
+
+                        // Write a character individually
+                        if (LinesMade == ConsoleWrapper.WindowHeight - 1)
+                        {
+                            TextWriterRaw.WriteRaw(buffered.ToString());
+                            buffered.Clear();
+                            var key = Input.ReadKey().Key;
+                            switch (key)
+                            {
+                                case ConsoleKey.Escape:
+                                    return;
+                                case ConsoleKey.PageUp:
+                                    bail = true;
+                                    idx -= ConsoleWrapper.WindowHeight * 2 - 1;
+                                    if (idx < 0)
+                                        idx = -1;
+                                    break;
+                                case ConsoleKey.PageDown:
+                                    bail = true;
+                                    if (idx > sentences.Length - 1 - ConsoleWrapper.WindowHeight)
+                                        idx = sentences.Length - 1 - ConsoleWrapper.WindowHeight;
+                                    else
+                                        idx--;
+                                    break;
+                                case ConsoleKey.UpArrow:
+                                    bail = true;
+                                    idx -= ConsoleWrapper.WindowHeight + 1;
+                                    if (idx < 0)
+                                        idx = -1;
+                                    break;
+                                case ConsoleKey.DownArrow:
+                                    bail = true;
+                                    if (idx >= sentences.Length - 1)
+                                    {
+                                        idx = sentences.Length - 1 - ConsoleWrapper.WindowHeight;
+                                        break;
+                                    }
+                                    idx -= ConsoleWrapper.WindowHeight - 1;
+                                    if (idx < 0)
+                                        idx = -1;
+                                    break;
+                                case ConsoleKey.Home:
+                                    bail = true;
+                                    idx = -1;
+                                    break;
+                                case ConsoleKey.End:
+                                    bail = true;
+                                    idx = sentences.Length - 1 - ConsoleWrapper.WindowHeight;
+                                    if (idx < 0)
+                                        idx = -1;
+                                    break;
+                            }
+                            LinesMade = 0;
+                        }
+                        if (bail)
+                            break;
+                        buffered.Append(ConsolePositioning.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
+                    }
+                    if (!bail && idx < sentences.Length - 1)
+                    {
+                        buffered.AppendLine();
+                        LinesMade++;
+                    }
+                }
+                TextWriterRaw.WriteRaw(buffered.ToString());
+                buffered.Clear();
+                if (Line)
+                    TextWriterRaw.Write();
+            }
+            catch (Exception ex)
+            {
+                ConsoleLogger.Error(ex, $"There is a serious error when printing wrapped text. {ex.Message}");
             }
         }
     }
