@@ -199,7 +199,7 @@ namespace Terminaux.Reader
         public SyntaxHighlighting? SyntaxHighlighter
         {
             get => syntaxHighlighter;
-            set => syntaxHighlighter = value ?? SyntaxHighlightingTools.GetHighlighter(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD"));
+            set => syntaxHighlighter = value ?? SyntaxHighlightingTools.GetHighlighter("Command");
         }
 
         /// <summary>
