@@ -33,7 +33,7 @@ namespace Terminaux.Reader.Highlighting
     {
         private static readonly SyntaxHighlighting[] baseHighlighters =
         [
-            new(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD"), new Dictionary<string, SyntaxHighlightingComponent>()
+            new("Command", new Dictionary<string, SyntaxHighlightingComponent>()
             {
                 { "CommandName", new(@"^[^ ]+", ConsoleColors.Yellow, Color.Empty, false, true) }
             })
