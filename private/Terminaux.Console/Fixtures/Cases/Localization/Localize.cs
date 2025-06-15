@@ -19,6 +19,7 @@
 
 using LocaleStation.Tools;
 using System;
+using System.Linq;
 using Terminaux.Localized;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -32,8 +33,8 @@ namespace Terminaux.Console.Fixtures.Cases.Localization
         {
             TextWriterColor.Write("Selecting random language...");
             var randomNumberGenerator = new Random();
-            int randomLangIdx = randomNumberGenerator.Next(LocalStrings.Languages.Length);
-            string language = LocalStrings.Languages[randomLangIdx];
+            int randomLangIdx = randomNumberGenerator.Next(LocalStrings.Languages.Count);
+            string language = LocalStrings.Languages.ElementAt(randomLangIdx).Key;
             LanguageCommon.Language = language;
             TextWriterColor.Write($"Selected language {language}");
         }

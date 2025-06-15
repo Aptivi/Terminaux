@@ -19,6 +19,7 @@
 
 using LocaleStation.Tools;
 using System;
+using System.Linq;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Localized;
@@ -32,16 +33,14 @@ namespace Terminaux.Console.Fixtures.Cases.Localization
 
         public void RunFixture()
         {
-            InputChoiceInfo[] choices = InputChoiceTools.GetInputChoices(LocalStrings.Languages);
-            string languageIdxStr = ChoiceStyle.PromptChoice("Choose a language", choices, new()
+            InputChoiceInfo[] choices = InputChoiceTools.GetInputChoices([.. LocalStrings.Languages.Select((kvp) => (kvp.Key, kvp.Value))]);
+            string languageStr = ChoiceStyle.PromptChoice("Choose a language", choices, new()
             {
                 PressEnter = true,
                 OutputType = ChoiceOutputType.Modern,
             });
-            int languageIdx = int.Parse(languageIdxStr);
-            string language = LocalStrings.Languages[languageIdx - 1];
-            LanguageCommon.Language = language;
-            TextWriterColor.Write($"Selected language {language}");
+            LanguageCommon.Language = languageStr;
+            TextWriterColor.Write($"Selected language {languageStr}");
         }
     }
 }
