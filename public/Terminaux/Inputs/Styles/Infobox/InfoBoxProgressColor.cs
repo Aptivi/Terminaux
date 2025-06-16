@@ -256,11 +256,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var progressBar = new SimpleProgress((int)progress, 100)
                     {
                         Width = maxProgressWidth,
-                        ProgressPercentageTextColor = InfoBoxTitledProgressColor,
-                        ProgressActiveForegroundColor = InfoBoxTitledProgressColor,
-                        ProgressForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledProgressColor),
-                        ProgressBackgroundColor = BackgroundColor,
                     };
+                    if (useColor)
+                    {
+                        progressBar.ProgressPercentageTextColor = InfoBoxTitledProgressColor;
+                        progressBar.ProgressActiveForegroundColor = InfoBoxTitledProgressColor;
+                        progressBar.ProgressForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledProgressColor);
+                        progressBar.ProgressBackgroundColor = BackgroundColor;
+                    }
                     boxBuffer.Append(RendererTools.RenderRenderable(progressBar, new(progressPosX + 1, progressPosY + 3)));
                     return boxBuffer.ToString();
                 });

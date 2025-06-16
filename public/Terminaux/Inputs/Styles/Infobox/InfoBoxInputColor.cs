@@ -455,12 +455,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Top = inputPosY,
                         Width = maxInputWidth,
                         Height = 1,
+                        UseColors = useColor,
+                        Color = InfoBoxTitledColor,
+                        BackgroundColor = BackgroundColor,
                     };
-                    if (useColor)
-                    {
-                        border.Color = InfoBoxTitledColor;
-                        border.BackgroundColor = BackgroundColor;
-                    }
                     boxBuffer.Append(
                         border.Render() +
                         CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2) +

@@ -108,7 +108,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string years = selected.Year.ToString();
                     int yearsPos = timePosX + maxTimePartWidth / 2 - ConsoleChar.EstimateFullWidths(years);
                     boxBuffer.Append(
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(inputMode == DateInputMode.Years ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
                         TextWriterWhereColor.RenderWhereColorBack(years, yearsPos, timePosY + 2, inputMode == DateInputMode.Years ? ConsoleColors.Lime : settings.ForegroundColor, settings.BackgroundColor) +
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
                         TextWriterWhereColor.RenderWhereColorBack("◀", timePosX, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("▶", timePosX + maxTimePartWidth + 1, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor)
                     );
@@ -117,7 +120,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string months = selected.Month.ToString();
                     int monthsPos = timePosX + maxTimePartWidth + maxTimePartWidth / 2 + 3 - ConsoleChar.EstimateFullWidths(months);
                     boxBuffer.Append(
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(inputMode == DateInputMode.Months ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
                         TextWriterWhereColor.RenderWhereColorBack(months, monthsPos, timePosY + 2, inputMode == DateInputMode.Months ? ConsoleColors.Lime : settings.ForegroundColor, settings.BackgroundColor) +
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
                         TextWriterWhereColor.RenderWhereColorBack("◀", timePosX + maxTimePartWidth + 3, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("▶", timePosX + maxTimePartWidth * 2 + 4, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor)
                     );
@@ -126,7 +132,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string days = selected.Day.ToString();
                     int daysPos = timePosX + maxTimePartWidth * 2 + maxTimePartWidth / 2 + 7 - ConsoleChar.EstimateFullWidths(days);
                     boxBuffer.Append(
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(inputMode == DateInputMode.Days ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
                         TextWriterWhereColor.RenderWhereColorBack(days, daysPos, timePosY + 2, inputMode == DateInputMode.Days ? ConsoleColors.Lime : settings.ForegroundColor, settings.BackgroundColor) +
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
                         TextWriterWhereColor.RenderWhereColorBack("◀", timePosX + maxTimePartWidth * 2 + 6, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("▶", timePosX + maxTimePartWidth * 3 + 8, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor)
                     );

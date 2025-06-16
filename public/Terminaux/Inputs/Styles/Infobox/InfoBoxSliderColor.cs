@@ -330,6 +330,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                         SliderVerticalActiveTrackChar = settings.BorderRightFrameChar,
                         SliderVerticalInactiveTrackChar = settings.BorderRightFrameChar,
                     };
+                    if (useColor)
+                    {
+                        slider.SliderActiveForegroundColor = InfoBoxTitledSliderColor;
+                        slider.SliderForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledSliderColor);
+                        slider.SliderBackgroundColor = BackgroundColor;
+                    }
                     boxBuffer.Append(
                         RendererTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 2)) +
                         TextWriterWhereColor.RenderWhereColorBack(posText, sliderPosX - 1 + (maxWidth / 2 - ConsoleChar.EstimateCellWidth(posText) / 2), sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor) +

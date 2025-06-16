@@ -525,7 +525,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Width = maxSelectionWidth,
                         Height = selectionChoices,
                         Settings = settings,
+                        UseColors = useColor,
                         Color = InfoBoxTitledSelectionMultipleColor,
+                        BackgroundColor = BackgroundColor,
                     };
                     boxBuffer.Append(border.Render());
 
@@ -539,6 +541,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Height = selectionChoices,
                         Width = maxSelectionWidth,
                         SwapSelectedColors = true,
+                        UseColors = useColor,
                         Settings = new()
                         {
                             OptionColor = InfoBoxTitledSelectionMultipleColor,

@@ -302,12 +302,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Width = maxSelectionWidth,
                         Height = selectionChoices,
                         Settings = settings,
+                        UseColors = useColor,
+                        Color = InfoBoxTitledColor,
+                        BackgroundColor = BackgroundColor,
                     };
-                    if (useColor)
-                    {
-                        border.Color = InfoBoxTitledColor;
-                        border.BackgroundColor = BackgroundColor;
-                    }
                     boxBuffer.Append(border.Render());
 
                     // Prepare the selections
@@ -331,6 +329,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Width = maxSelectionWidth,
                         SwapSelectedColors = true,
                         Ellipsis = false,
+                        UseColors = useColor,
                         Settings = new()
                         {
                             OptionColor = InfoBoxTitledColor,
