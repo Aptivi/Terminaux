@@ -140,7 +140,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         {
             // Deal with the lines to actually fit text in the infobox
             string buttons = GetButtons(settings);
-            int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
+            int buttonsWidth = writeBinding ? ConsoleChar.EstimateCellWidth(buttons) : -2;
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
 
             // Finalize the offsets
