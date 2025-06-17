@@ -33,8 +33,8 @@
   <ItemGroup>
     <PackageReference Include="Aptivestigate.Serilog" Version="1.2.2" />
     <PackageReference Include="BassBoom.Basolia" Version="0.2.9" />
-    <PackageReference Include="LocaleStation" Version="1.3.0" />
-    <PackageReference Include="LocaleStation.Tools" Version="1.3.0" />
+    <PackageReference Include="LocaleStation" Version="1.3.1" />
+    <PackageReference Include="LocaleStation.Tools" Version="1.3.1" />
     <PackageReference Include="Magico" Version="1.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
