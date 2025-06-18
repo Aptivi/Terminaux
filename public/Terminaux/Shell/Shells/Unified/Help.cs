@@ -32,7 +32,7 @@ namespace Terminaux.Shell.Shells.Unified
     class HelpUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(CommandParameters parameters)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Determine which type to show
             bool useSimplified = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-simplified");
@@ -51,6 +51,7 @@ namespace Terminaux.Shell.Shells.Unified
                 HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showAlias, showUnified, showExtra, showCount);
             else
                 HelpPrint.ShowHelpExtended(parameters.ArgumentsList[0], useSimplified);
+            return 0;
         }
 
     }

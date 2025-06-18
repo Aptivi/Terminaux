@@ -2555,6 +2555,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "يذهب إلى آخر الإدخالات"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "يضبط قيمة الإخراج على متغير UESH المحدد"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "لا يمكن الحصول على معلمات الخيط لتنفيذ العملية."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "خطأ في محاولة تنفيذ الأمر"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "الخطأ {0}: {1}"
     }
   ]
 }

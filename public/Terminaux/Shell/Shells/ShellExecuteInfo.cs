@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Terminaux.Shell.Shells
@@ -26,6 +27,8 @@ namespace Terminaux.Shell.Shells
     /// </summary>
     public class ShellExecuteInfo
     {
+        internal int LastErrorCode = 0;
+        internal readonly List<Thread> AltCommandThreads = [];
         internal bool interrupting = false;
         internal Thread shellCommandThread;
         private readonly string shellType;

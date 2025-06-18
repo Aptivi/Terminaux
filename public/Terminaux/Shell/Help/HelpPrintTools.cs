@@ -37,11 +37,12 @@ namespace Terminaux.Shell.Help
         internal static void ShowCommandList(string commandType, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)
         {
             // Get general commands
+            var shellInfo = ShellManager.GetShellInfo(commandType);
             var commands = CommandManager.GetCommands(commandType);
-            var commandList = ShellManager.GetShellInfo(commandType).Commands;
+            var commandList = shellInfo.Commands;
 
             // Add every command from each extra and alias
-            var ExtraCommandList = ShellManager.GetShellInfo(commandType).extraCommands;
+            var ExtraCommandList = shellInfo.extraCommands;
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
@@ -55,10 +56,12 @@ namespace Terminaux.Shell.Help
                     TextWriterColor.WriteColor("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS"), ConsoleColors.Silver);
                 foreach (var cmd in commandList)
                 {
+                    string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
-                        Entry = cmd.Command,
-                        Value = cmd.HelpDefinition,
+                        Entry = "  - {0}{1}: ".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                        Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
+                        Indicator = false,
                     }.Render() + "\n");
                 }
             }
@@ -71,10 +74,12 @@ namespace Terminaux.Shell.Help
                     TextWriterColor.WriteColor("  - No extra commands.", ConsoleColors.Silver);
                 foreach (var cmd in ExtraCommandList)
                 {
+                    string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
-                        Entry = cmd.Command,
-                        Value = cmd.HelpDefinition,
+                        Entry = "  - {0}{1}: ".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                        Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
+                        Indicator = false,
                     }.Render() + "\n");
                 }
             }
@@ -87,10 +92,12 @@ namespace Terminaux.Shell.Help
                     TextWriterColor.WriteColor("  - No alias commands.", ConsoleColors.Silver);
                 foreach (var cmd in AliasedCommandList)
                 {
+                    string[] usages = [.. cmd.Value.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
-                        Entry = $"{cmd.Key.Alias} -> {cmd.Value.Command}",
-                        Value = cmd.Value.HelpDefinition,
+                        Entry = "  - {0} -> {1}{2}: ".FormatString(cmd.Key.Alias, cmd.Value.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                        Value = LanguageTools.GetLocalized(cmd.Value.HelpDefinition),
+                        Indicator = false,
                     }.Render() + "\n");
                 }
             }
@@ -103,10 +110,12 @@ namespace Terminaux.Shell.Help
                     TextWriterColor.WriteColor("  - No unified commands.", ConsoleColors.Silver);
                 foreach (var cmd in unifiedCommandList)
                 {
+                    string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
-                        Entry = cmd.Command,
-                        Value = cmd.HelpDefinition,
+                        Entry = "  - {0}{1}: ".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                        Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
+                        Indicator = false,
                     }.Render() + "\n");
                 }
             }
@@ -122,10 +131,11 @@ namespace Terminaux.Shell.Help
         internal static void ShowHelpUsage(string command, string commandType)
         {
             // Determine command type
-            var CommandList = ShellManager.GetShellInfo(commandType).Commands;
+            var shellInfo = ShellManager.GetShellInfo(commandType);
+            var CommandList = shellInfo.Commands;
 
             // Add every command from each mod, extra, and alias
-            var ExtraCommandList = ShellManager.GetShellInfo(commandType).extraCommands;
+            var ExtraCommandList = shellInfo.extraCommands;
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
@@ -196,7 +206,7 @@ namespace Terminaux.Shell.Help
                         foreach (var argument in Arguments)
                         {
                             string argumentName = argument.ArgumentExpression;
-                            string argumentDesc = argument.Options.ArgumentDescription;
+                            string argumentDesc = LanguageTools.GetLocalized(argument.Options.ArgumentDescription);
                             if (string.IsNullOrWhiteSpace(argumentDesc))
                                 argumentDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED");
                             TextWriterRaw.WriteRaw(new ListEntry()
@@ -216,7 +226,7 @@ namespace Terminaux.Shell.Help
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;
-                            string switchDesc = Switch.HelpDefinition;
+                            string switchDesc = LanguageTools.GetLocalized(Switch.HelpDefinition);
                             if (string.IsNullOrWhiteSpace(switchDesc))
                                 switchDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED");
                             TextWriterRaw.WriteRaw(new ListEntry()

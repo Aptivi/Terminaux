@@ -24,7 +24,7 @@ namespace Terminaux.Shell.Commands
 {
     internal class UndefinedCommand : BaseCommand, ICommand
     {
-        public override void Execute(CommandParameters parameters)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             throw new NotImplementedException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNDEFINED"));
         }

@@ -2533,6 +2533,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Går til siste inngang"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Setter verdien på utgangen til den valgte UESH-variabelen"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Kan ikke hente trådparametere for prosesskjøring."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Feil under forsøk på å utføre kommandoen"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Feil {0}: {1}"
     }
   ]
 }

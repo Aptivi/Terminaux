@@ -27,22 +27,14 @@ namespace Terminaux.Shell.Commands
     public abstract class BaseCommand : ICommand
     {
 
-        /// <summary>
-        /// Executes a command
-        /// </summary>
-        /// <param name="parameters">Command parameters including passed arguments and switches information</param>
-        public abstract void Execute(CommandParameters parameters);
+        /// <inheritdoc/>
+        public abstract int Execute(CommandParameters parameters, ref string variableValue);
 
-        /// <summary>
-        /// Executes a command on dumb consoles
-        /// </summary>
-        /// <param name="parameters">Command parameters including passed arguments and switches information</param>
-        public virtual void ExecuteDumb(CommandParameters parameters) =>
-            Execute(parameters);
+        /// <inheritdoc/>
+        public virtual int ExecuteDumb(CommandParameters parameters, ref string variableValue) =>
+            Execute(parameters, ref variableValue);
 
-        /// <summary>
-        /// The help helper
-        /// </summary>
+        /// <inheritdoc/>
         public virtual void HelpHelper() =>
             ConsoleLogger.Debug("No additional information found.");
 

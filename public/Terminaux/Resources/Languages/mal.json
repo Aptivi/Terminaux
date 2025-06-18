@@ -2532,6 +2532,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Pergi ke input terakhir"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Menetapkan nilai output kepada pembolehubah UESH yang dipilih"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Tidak boleh mendapatkan parameter benang untuk pelaksanaan proses."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Ralat semasa cuba melaksanakan arahan"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Ralat {0}: {1}"
     }
   ]
 }

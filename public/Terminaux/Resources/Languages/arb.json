@@ -2555,6 +2555,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "yadhhab 'iilaa akhar al'iidkhalat"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "īḍbṭ qīmẗ al-iẖrāǧ ʿli mtġīr UESH al-mḥdd"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "la yumkin alhusul ealaa muealimat alkhayt litanfidh aleamaliati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "khata fi muhawalat tanfidh al'amr"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "alkhata {0}: {1}"
     }
   ]
 }

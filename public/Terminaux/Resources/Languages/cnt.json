@@ -2532,6 +2532,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Zhuǎn dào zuìhòu yīgè shūrù"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "jiāng shū chū zhí shè zhì wéi xuǎn dìng de UESH biàn liáng"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Wúfǎ qǔdé jìnchéng zhíxíng de zhíxíng xù cānshù."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Chángshì zhíxíng mìnglìng shí chūcuò"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Cuòwù {0}:{1}"
     }
   ]
 }

@@ -2530,6 +2530,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Téigh go dtí an t-ionchur deiridh"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Socraíonn sé luach an aschuir chuig an athróg UESH roghnaithe"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Ní féidir paraiméadair snáithe a fháil chun an próiseas a chur i gcrích."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Earráid agus iarracht á déanamh an t-ordú a rith"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Earráid {0}: {1}"
     }
   ]
 }

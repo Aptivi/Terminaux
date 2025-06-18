@@ -2529,6 +2529,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "अंतिम इनपुट पर जाता है"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "आउटपुट का मान चयनित UESH वेरिएबल पर सेट करता है"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "प्रक्रिया निष्पादन के लिए थ्रेड पैरामीटर प्राप्त नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "कमांड निष्पादित करने में त्रुटि"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "त्रुटि {0}: {1}"
     }
   ]
 }

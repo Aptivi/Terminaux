@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Shell.Commands;
@@ -31,6 +33,34 @@ namespace Terminaux.Shell.Aliases
     public static class AliasManager
     {
         internal static List<AliasInfo> aliases = [];
+
+        /// <summary>
+        /// Initializes aliases
+        /// </summary>
+        public static void InitAliases(string aliasPath)
+        {
+            // Get all aliases from file
+            if (!File.Exists(aliasPath))
+                File.WriteAllText(aliasPath, "[]");
+            string AliasJsonContent = File.ReadAllText(aliasPath);
+            var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent) ?? [];
+            foreach (var alias in aliasesArray)
+            {
+                if (!DoesAliasExist(alias.Alias, alias.Type))
+                    aliases.Add(alias);
+            }
+        }
+
+        /// <summary>
+        /// Saves aliases
+        /// </summary>
+        public static void SaveAliases(string aliasPath)
+        {
+            // Save all aliases
+            ConsoleLogger.Debug("Saving aliases...");
+            string serialized = JsonConvert.SerializeObject(aliases.ToArray(), Formatting.Indented);
+            File.WriteAllText(aliasPath, serialized);
+        }
 
         /// <summary>
         /// Adds alias

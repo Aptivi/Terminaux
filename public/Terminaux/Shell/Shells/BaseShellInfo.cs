@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using Terminaux.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Prompts;
 
@@ -31,8 +32,6 @@ namespace Terminaux.Shell.Shells
     {
         internal List<CommandInfo> extraCommands = [];
         internal Dictionary<string, PromptPresetBase> customShellPresets = [];
-        internal static CommandInfo fallbackNonSlashCommand =
-            new("slashreminder", "Reminder for the slash commands", new SlashReminderCommand());
 
         /// <inheritdoc/>
         public virtual object ShellLock => new();
@@ -43,12 +42,16 @@ namespace Terminaux.Shell.Shells
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> CustomShellPresets => customShellPresets;
         /// <inheritdoc/>
+        public virtual bool AcceptsNetworkConnection => false;
+        /// <inheritdoc/>
+        public virtual string NetworkConnectionType => "";
+        /// <inheritdoc/>
         public virtual bool OneLineWrap => false;
         /// <inheritdoc/>
         public virtual bool SlashCommand => false;
         /// <inheritdoc/>
         public virtual CommandInfo NonSlashCommandInfo =>
-            fallbackNonSlashCommand;
+            new("slashreminder", LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC"), new SlashReminderCommand());
         /// <inheritdoc/>
         public virtual BaseShell? ShellBase =>
             Activator.CreateInstance<BaseShell>();
@@ -63,7 +66,7 @@ namespace Terminaux.Shell.Shells
     }
 
     /// <summary>
-    /// Shell information for both the KS shells and the custom shells made by mods
+    /// Shell information
     /// </summary>
     public abstract class BaseShellInfo<TShell> : BaseShellInfo, IShellInfo
         where TShell : BaseShell, IShell

@@ -2529,6 +2529,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "最後の入力へ移動"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "出力の値を選択した UESH 変数に設定します"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "プロセス実行のスレッド パラメータを取得できません。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "コマンドの実行中にエラーが発生しました"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "エラー{0}：{1}"
     }
   ]
 }

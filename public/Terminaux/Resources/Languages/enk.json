@@ -2528,6 +2528,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Goes to the last input"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Sets the value of the output to the selected UESH variable"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Can't get thread parameters for process execution."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Error trying to execute command"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Error {0}: {1}"
     }
   ]
 }

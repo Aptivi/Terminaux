@@ -2529,6 +2529,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Accedit ad ultimum initus"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Valorem de output ad lectus UESH variabilis"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Filum parametri ad processum executionis non potest."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Errore conatur facere mandatum"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Error {0}: {1}"
     }
   ]
 }

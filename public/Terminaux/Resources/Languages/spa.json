@@ -2554,6 +2554,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Va a la última entrada"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Establece el valor de la salida a la variable UESH seleccionada"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "No se pueden obtener los parámetros del hilo para la ejecución del proceso."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Error al intentar ejecutar el comando"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Error {0}: {1}"
     }
   ]
 }

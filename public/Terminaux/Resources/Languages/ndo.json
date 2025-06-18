@@ -2529,6 +2529,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Pergi ke input terakhir"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Mengatur nilai output ke variabel UESH yang dipilih"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Tidak dapat memperoleh parameter thread untuk eksekusi proses."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Terjadi kesalahan saat mencoba menjalankan perintah"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Kesalahan {0}: {1}"
     }
   ]
 }

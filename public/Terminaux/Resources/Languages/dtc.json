@@ -2535,6 +2535,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Gaat naar de laatste invoer"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Stelt de waarde van de uitvoer in op de geselecteerde UESH-variabele"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Threadparameters voor procesuitvoering kunnen niet worden opgehaald."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Fout bij proberen opdracht uit te voeren"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Fout {0}: {1}"
     }
   ]
 }

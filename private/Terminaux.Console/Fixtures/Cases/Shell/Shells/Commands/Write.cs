@@ -24,7 +24,10 @@ namespace Terminaux.Console.Fixtures.Cases.Shell.Shells.Commands
 {
     class WriteCommand : BaseCommand, ICommand
     {
-        public override void Execute(CommandParameters parameters) =>
+        public override int Execute(CommandParameters parameters, ref string variableValue)
+        {
             TextWriterColor.Write("Test text");
+            return 0;
+        }
     }
 }

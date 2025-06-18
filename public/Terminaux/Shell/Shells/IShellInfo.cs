@@ -45,6 +45,14 @@ namespace Terminaux.Shell.Shells
         /// </summary>
         Dictionary<string, PromptPresetBase> CustomShellPresets { get; }
         /// <summary>
+        /// Whether the shell accepts network connection
+        /// </summary>
+        bool AcceptsNetworkConnection { get; }
+        /// <summary>
+        /// Network connection type defined for the shell (valid only on shells that have <see cref="AcceptsNetworkConnection"/> set to true)
+        /// </summary>
+        string NetworkConnectionType { get; }
+        /// <summary>
         /// Whether the shell uses one line for input
         /// </summary>
         bool OneLineWrap { get; }

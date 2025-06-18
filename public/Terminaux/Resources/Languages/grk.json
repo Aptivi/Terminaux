@@ -2530,6 +2530,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Πηγαίνει στην τελευταία είσοδο"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Ορίζει την τιμή της εξόδου στην επιλεγμένη μεταβλητή UESH"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Δεν είναι δυνατή η λήψη παραμέτρων νήματος για την εκτέλεση της διαδικασίας."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Σφάλμα κατά την εκτέλεση της εντολής"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Σφάλμα {0}: {1}"
     }
   ]
 }

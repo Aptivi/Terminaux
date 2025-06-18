@@ -2530,6 +2530,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "majimag iblyeog-eulo idonghabnida"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "chullyeok gapseul seontaekhan UESH byeonsuro seoljeonghapnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "peuloseseu silhaeng-e daehan seuledeu maegaebyeonsuleul gajyeool su eobs-seubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "myeonglyeong-eul silhaenghaneun dong-an olyuga balsaenghaessseubnida"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "olyu {0} : {1}"
     }
   ]
 }

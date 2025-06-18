@@ -2533,6 +2533,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "转到最后一个输入"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "将输出值设置为选定的 UESH 变量"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "无法获取进程执行的线程参数。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "尝试执行命令时出错"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "错误{0}：{1}"
     }
   ]
 }

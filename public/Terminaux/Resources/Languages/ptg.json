@@ -2539,6 +2539,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Vai para a última entrada"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Define o valor da saída para a variável UESH selecionada"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Não é possível obter parâmetros do thread para execução de processos."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Erro ao tentar executar o comando"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Erro {0}: {1}"
     }
   ]
 }

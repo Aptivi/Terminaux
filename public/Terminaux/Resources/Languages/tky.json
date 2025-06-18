@@ -2530,6 +2530,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Son girdiye gider"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Çıktının değerini seçili UESH değişkenine ayarlar"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "İşlem yürütme için iş parçacığı parametreleri alınamıyor."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Komut yürütülürken hata oluştu"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Hata {0}: {1}"
     }
   ]
 }

@@ -2529,6 +2529,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Перехід до останнього входу"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Встановлює значення виведення для вибраної змінної UESH"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Не вдається отримати параметри потоку для виконання процесу."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Помилка під час спроби виконати команду"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Помилка {0}: {1}"
     }
   ]
 }

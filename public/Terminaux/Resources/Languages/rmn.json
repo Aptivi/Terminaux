@@ -2530,6 +2530,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Trece la ultima intrare"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Setează valoarea ieșirii la variabila UESH selectată"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Nu se pot obține parametrii firului de execuție pentru execuția procesului."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Eroare la încercarea de a executa comanda"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Eroare {0}: {1}"
     }
   ]
 }

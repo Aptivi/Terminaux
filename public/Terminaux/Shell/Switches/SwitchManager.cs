@@ -99,7 +99,7 @@ namespace Terminaux.Shell.Switches
         public static bool IsSwitchValueNumeric(string[] switches, string switchKey)
         {
             var switchValue = GetSwitchValue(switches, switchKey);
-            return switchValue.IsStringNumeric();
+            return TextTools.IsStringNumeric(switchValue);
         }
     }
 }

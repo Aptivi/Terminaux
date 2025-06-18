@@ -29,13 +29,17 @@ namespace Terminaux.Shell.Commands
         /// Executes the command with the given argument
         /// </summary>
         /// <param name="parameters">Command parameters including passed arguments and switches information</param>
-        void Execute(CommandParameters parameters);
+        /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
+        /// <returns>Error code for the command</returns>
+        int Execute(CommandParameters parameters, ref string variableValue);
 
         /// <summary>
         /// Executes the command with the given argument on dumb consoles
         /// </summary>
         /// <param name="parameters">Command parameters including passed arguments and switches information</param>
-        void ExecuteDumb(CommandParameters parameters);
+        /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
+        /// <returns>Error code for the command</returns>
+        int ExecuteDumb(CommandParameters parameters, ref string variableValue);
 
         /// <summary>
         /// Shows additional information for the command when "help command" is invoked

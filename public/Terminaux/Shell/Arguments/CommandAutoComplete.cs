@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.IO;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Textify.General;
@@ -64,9 +66,21 @@ namespace Terminaux.Shell.Arguments
             ConsoleLogger.Debug("Command arguments [{0}]: {1}", finalCommandArgsEnclosed.Length, finalCommandArgs);
             ConsoleLogger.Debug("last argument: {0}", LastArgument);
 
-            // Make a list
-            string[] finalCompletions = [];
-            if (string.IsNullOrEmpty(finalCommandArgs))
+            // Make a file and folder list
+            string[] finalCompletions;
+            if (!string.IsNullOrEmpty(finalCommandArgs))
+            {
+                ConsoleLogger.Debug("Creating list of files and directories starting with argument {0} [{1}]...", LastArgument, LastArgument.Length);
+                string lookupPath = Path.IsPathRooted(LastArgument) ? Path.GetDirectoryName(LastArgument) ?? "" : ConsoleFilesystem.NeutralizePath(LastArgument, ConsoleFilesystem.CurrentDir);
+                lookupPath = Directory.Exists(lookupPath) ? lookupPath : Path.GetDirectoryName(ConsoleFilesystem.CurrentDir + "/" + LastArgument) ?? "";
+                finalCompletions = Directory.EnumerateFileSystemEntries(lookupPath)
+                    .Select(x => Path.IsPathRooted(LastArgument) ? ConsoleFilesystem.NeutralizePath(x) : ConsoleFilesystem.NeutralizePath(x).Replace(ConsoleFilesystem.CurrentDir + "/", ""))
+                    .Where(x => x.StartsWith(LastArgument))
+                    .Select(x => x.Substring(LastArgument.Length))
+                    .ToArray();
+                ConsoleLogger.Debug("Initially invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
+            }
+            else
             {
                 ConsoleLogger.Debug("Creating list of commands starting with command {0} [{1}]...", CommandName, CommandName.Length);
                 finalCompletions = ShellCommandNames
@@ -88,7 +102,7 @@ namespace Terminaux.Shell.Arguments
             {
                 ConsoleLogger.Debug("Command {0} has argument info? {1}", CommandName, CommandArgumentInfo is not null);
                 if (CommandArgumentInfo is null)
-                    // No arguments. Return nothing
+                    // No arguments. Return file list
                     return finalCompletions;
 
                 // There are arguments! Now, check to see if it has the accessible auto completer from the last argument
@@ -98,7 +112,7 @@ namespace Terminaux.Shell.Arguments
                     null;
                 ConsoleLogger.Debug("Command {0} has auto complete info? {1}", CommandName, AutoCompleter is not null);
                 if (AutoCompleter is null)
-                    // No delegate. Return nothing
+                    // No delegate. Return file list
                     return finalCompletions;
 
                 // We have the delegate! Invoke it.

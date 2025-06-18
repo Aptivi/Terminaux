@@ -2529,6 +2529,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "Đi đến đầu vào cuối cùng"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Đặt giá trị của đầu ra cho biến UESH đã chọn"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Không thể lấy tham số luồng để thực thi quy trình."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Lỗi khi cố gắng thực hiện lệnh"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Lỗi {0}: {1}"
     }
   ]
 }

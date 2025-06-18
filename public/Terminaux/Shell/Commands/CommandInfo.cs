@@ -34,7 +34,7 @@ namespace Terminaux.Shell.Commands
         /// </summary>
         public string Command { get; private set; }
         /// <summary>
-        /// The help definition of command
+        /// The help definition of command.
         /// </summary>
         public string HelpDefinition { get; set; }
         /// <summary>
@@ -45,6 +45,10 @@ namespace Terminaux.Shell.Commands
         /// Command base for execution
         /// </summary>
         public BaseCommand CommandBase { get; private set; }
+        /// <summary>
+        /// Command properties
+        /// </summary>
+        public CommandFlags Flags { get; private set; }
         /// <summary>
         /// Aliases for this command
         /// </summary>
@@ -59,8 +63,9 @@ namespace Terminaux.Shell.Commands
         /// <param name="Command">Command</param>
         /// <param name="HelpDefinition">Command help definition</param>
         /// <param name="CommandBase">Command base for execution</param>
-        public CommandInfo(string Command, string HelpDefinition, BaseCommand? CommandBase) :
-            this(Command, HelpDefinition, null, CommandBase)
+        /// <param name="Flags">Command flags</param>
+        public CommandInfo(string Command, string HelpDefinition, BaseCommand? CommandBase, CommandFlags Flags = CommandFlags.None) :
+            this(Command, HelpDefinition, null, CommandBase, Flags)
         { }
 
         /// <summary>
@@ -70,12 +75,14 @@ namespace Terminaux.Shell.Commands
         /// <param name="HelpDefinition">Command help definition</param>
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
-        public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[]? CommandArgumentInfo, BaseCommand? CommandBase)
+        /// <param name="Flags">Command flags</param>
+        public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[]? CommandArgumentInfo, BaseCommand? CommandBase, CommandFlags Flags = CommandFlags.None)
         {
             this.Command = Command;
             this.HelpDefinition = HelpDefinition;
             this.CommandArgumentInfo = CommandArgumentInfo ?? [];
             this.CommandBase = CommandBase ?? new UndefinedCommand();
+            this.Flags = Flags;
         }
 
         /// <summary>
@@ -86,5 +93,6 @@ namespace Terminaux.Shell.Commands
         internal CommandInfo(string Command, string HelpDefinition) :
             this(Command, HelpDefinition, null, null)
         { }
+
     }
 }

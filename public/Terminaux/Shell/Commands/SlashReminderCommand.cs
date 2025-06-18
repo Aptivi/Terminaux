@@ -26,10 +26,11 @@ namespace Terminaux.Shell.Commands
     internal class SlashReminderCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(CommandParameters parameters)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.WriteColor(
                 "* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDNEEDSSLASH") + $" /{parameters.CommandText} {parameters.ArgumentsText}", ConsoleColors.Yellow);
+            return 0;
         }
 
     }

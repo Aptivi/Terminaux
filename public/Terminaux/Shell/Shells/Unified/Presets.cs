@@ -30,7 +30,10 @@ namespace Terminaux.Shell.Shells.Unified
     /// </remarks>
     class PresetsUnifiedCommand : BaseCommand, ICommand
     {
-        public override void Execute(CommandParameters parameters) =>
+        public override int Execute(CommandParameters parameters, ref string variableValue)
+        {
             PromptPresetManager.PromptForPresets();
+            return 0;
+        }
     }
 }

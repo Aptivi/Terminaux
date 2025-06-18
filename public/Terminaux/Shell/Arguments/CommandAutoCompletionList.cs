@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Scripting;
 using Terminaux.Shell.Shells;
 
 namespace Terminaux.Shell.Arguments
@@ -32,6 +33,7 @@ namespace Terminaux.Shell.Arguments
     {
         private static readonly Dictionary<string, Func<string[], string[]>> completions = new()
         {
+            { "$variable",  (_) => UESHVariables.Variables.Keys.ToArray() },
             { "cmd",        (_) => PopulateCommands() },
             { "command",    (_) => PopulateCommands() },
             { "shell",      (_) => ShellManager.AvailableShells.Keys.ToArray() },

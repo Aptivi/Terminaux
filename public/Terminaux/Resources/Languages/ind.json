@@ -2529,6 +2529,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "antim inaput par jaata hai"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "aautaput ke maan ko chayanit uaish vairiebal par set karata hai"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "prakriya nishpaadan ke lie thred pairaameetar nahin mil sakate."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "kamaand  nishpaadit karane ka prayaas karane mein truti"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "truti {0}: {1}"
     }
   ]
 }

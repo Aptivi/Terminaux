@@ -2530,6 +2530,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "마지막 입력으로 이동합니다"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "출력 값을 선택한 UESH 변수로 설정합니다."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "프로세스 실행을 위한 스레드 매개변수를 가져올 수 없습니다."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "명령을 실행하는 동안 오류가 발생했습니다"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "오류 {0} : {1}"
     }
   ]
 }

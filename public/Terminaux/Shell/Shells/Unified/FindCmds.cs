@@ -33,7 +33,7 @@ namespace Terminaux.Shell.Shells.Unified
     class FindCmdsUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(CommandParameters parameters)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var commands = CommandManager.FindCommands(parameters.ArgumentsList[0], ShellManager.CurrentShellType);
             foreach (var command in commands)
@@ -43,6 +43,7 @@ namespace Terminaux.Shell.Shells.Unified
             }
             if (commands.Length == 0)
                 TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIND_NOTFOUND"), ConsoleColors.Grey);
+            return 0;
         }
 
     }

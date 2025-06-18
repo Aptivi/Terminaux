@@ -2532,6 +2532,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
       "text": "轉到最後一個輸入"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "將輸出值設定為選定的 UESH 變數"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "無法取得進程執行的執行緒參數。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "嘗試執行命令時出錯"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "錯誤 {0}：{1}"
     }
   ]
 }
