@@ -84,12 +84,12 @@ namespace Terminaux.Shell.Commands
                     ConsoleLogger.Debug("Locking to cancel...");
                     cancelRequested = true;
                     TextWriterRaw.Write();
-                    ConsoleWrapperTools.SetWrapper(nameof(Null));
+                    ConsoleWrapperTools.SetWrapperLocal(nameof(Null));
                     cts.Cancel();
                     ProcessExecutor.processExecutorThread.Interrupt();
                     ProcessExecutor.processExecutorThread.Join();
                     ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
-                    ConsoleWrapperTools.SetWrapper(nameof(BaseConsoleWrapper));
+                    ConsoleWrapperTools.UnsetWrapperLocal();
                     ConsoleLogger.Debug("Cancelled command.");
                 }
             }
