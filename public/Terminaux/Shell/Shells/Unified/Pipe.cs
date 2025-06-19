@@ -65,14 +65,14 @@ namespace Terminaux.Shell.Shells.Unified
                 if (buildingTarget)
                 {
                     ConsoleLogger.Error(ex, $"Execution of {sourceCommand} to the buffer failed.");
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_WRAP_SOURCEFAILED"), ConsoleColors.Red);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_SOURCEFAILED"), ConsoleColors.Red);
                 }
                 else
                 {
                     ConsoleLogger.Error(ex, $"Execution of {targetCommandBuilder} failed.");
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_WRAP_TARGETFAILED") + $"\n    {targetCommandBuilder}", ConsoleColors.Red);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_TARGETFAILED") + $"\n    {targetCommandBuilder}", ConsoleColors.Red);
                 }
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_WRAP_FAILED"), ConsoleColors.Red);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_FAILED"), ConsoleColors.Red);
                 ConsoleLogger.Error(ex, $"Reason for failure: {ex.Message}.");
                 return ex.GetHashCode();
             }

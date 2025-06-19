@@ -2545,6 +2545,402 @@
     {
       "loc": "T_COMMON_ERRORDESC",
       "text": "त्रुटि {0}: {1}"
+    },
+    {
+      "loc": "T_SHELL_BASE_OBSOLETECMD",
+      "text": "यह कमांड अप्रचलित है और भविष्य के रिलीज़ में हटा दी जाएगी।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
+      "text": "लपेटने योग्य आदेश नहीं मिला है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
+      "text": "आपको इस कमांड को रैप्ड मोड में सीधे निष्पादित नहीं करना चाहिए।"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
+      "text": "आदेश लपेटने योग्य नहीं है। ये आदेश लपेटने योग्य हैं:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
+      "text": "कमांड आउटपुट को लपेटने का प्रयास करते समय एक त्रुटि उत्पन्न हुई"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
+      "text": "उस कमांड को बफर नहीं किया जा सकता जो रैप करने योग्य के रूप में सेट नहीं है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
+      "text": "आप शर्तों या लूप जैसे निर्माण का समर्थन करने वाले भाव डालने से पहले नए ब्लॉक की घोषणा नहीं कर सकते। स्टैक संख्या {0} है."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
+      "text": "नया ब्लॉक शुरू करते समय, सुनिश्चित करें कि आपने स्टैक को सही ढंग से इंडेंट किया है। स्टैक संख्या {0} है."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
+      "text": "स्क्रिप्ट ख़राब है. स्क्रिप्ट की जाँच करें और किसी भी त्रुटि का समाधान करें।"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
+      "text": "स्क्रिप्ट विकृत है। स्क्रिप्ट की जाँच करें और किसी भी त्रुटि का समाधान करें: {0}"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "text": "अभिव्यक्ति में स्थिति नहीं पाई गई।"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
+      "text": "शर्त {0} के लिए {1} तर्कों की आवश्यकता है। {2} मिल गया।"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
+      "text": "शर्त अंत में रखनी होगी."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
+      "text": "सिंटैक्स त्रुटि के कारण अभिव्यक्ति को पार्स करने में त्रुटि।"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
+      "text": "पहले से मौजूद किसी शर्त को पंजीकृत नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
+      "text": "खाली स्थिति दर्ज नहीं की जा सकती."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
+      "text": "निर्दिष्ट डेटा प्रकार {0} अमान्य है."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
+      "text": "निर्दिष्ट प्लेटफ़ॉर्म {0} अमान्य है."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
+      "text": "स्रोत आदेश निष्पादन विफल हुआ."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
+      "text": "लक्ष्य कमांड निष्पादन विफल रहा। संभवतः सामग्री ठीक से पॉप्युलेट नहीं हुई है। कमांड निष्पादित किया गया"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
+      "text": "पाइप टूट गया है."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
+      "text": "कई बार अमान्य संख्या."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
+      "text": "स्वयं को दोहरा नहीं सकते."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
+      "text": "लपेटने योग्य आदेश:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
+      "text": "स्लैश कमांड के लिए अनुस्मारक"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
+      "text": "एक बाहरी प्रक्रिया निष्पादित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
+      "text": "प्रक्रिया का मार्ग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
+      "text": "प्रक्रिया में पास करने के लिए तर्क"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
+      "text": "शेल थ्रेड को बाधित किए बिना प्रक्रिया निष्पादित करता है। एक अलग विंडो बनाई जाएगी."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
+      "text": "सहायता प्रविष्टि दिखाने के लिए आदेश"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
+      "text": "शैल इतिहास लोड करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
+      "text": "कमांड आउटपुट को पैरामीटर के रूप में दूसरे कमांड में पाइप करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
+      "text": "स्रोत कमांड अपने आउटपुट को अंतिम पैरामीटर के रूप में लक्ष्य कमांड तक पहुंचाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "स्रोत कमांड आउटपुट के आधार पर बिल्डिंग तर्क पर निष्पादित करने के लिए लक्ष्य कमांड"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
+      "text": "स्रोत कमांड के आउटपुट को एक उद्धृत तर्क या गैर-उद्धृत तर्क के रूप में पास करना है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
+      "text": "अंतिम क्रिया या निर्दिष्ट आदेश को दोहराता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "स्रोत कमांड आउटपुट के आधार पर बिल्डिंग तर्क पर निष्पादित करने के लिए लक्ष्य कमांड"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
+      "text": "शेल इतिहास सहेजता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
+      "text": "कंसोल आउटपुट को लपेटता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
+      "text": "इसके आउटपुट को रैप करने का कमांड"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
+      "text": "स्क्रिप्ट निष्पादित करने में त्रुटि: {0}"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_DESC",
+      "text": "एक बार UESH के भाव संतुष्ट होने के बाद कमांड निष्पादित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
+      "text": "परीक्षण हेतु UESH अभिव्यक्ति"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
+      "text": "सफल मूल्यांकन के बाद निष्पादित करने का आदेश"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "text": "जहाँ <उत्तर> प्रश्न के एक-अक्षर वाले उत्तर को स्लैश में अलग किया जाता है"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "text": "आपको उस वेरिएबल के साथ -सेट स्विच पास करना होगा जिस पर आप यह मान सेट करना चाहते हैं।"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
+      "text": "उपयोगकर्ता की पसंद बनाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "स्लैश से विभाजित करने के उत्तर"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "स्क्रीन पर प्रिंट करने के लिए प्रश्न"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "प्रथम उत्तर शीर्षक"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "दूसरा उत्तर शीर्षक, और इसी तरह..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
+      "text": "एक पंक्ति चयन शैली"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
+      "text": "दो पंक्तियों की पसंद शैली"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
+      "text": "आधुनिक पसंद शैली"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
+      "text": "आउटपुट केवल एक अक्षर का हो सकता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
+      "text": "आउटपुट एक कैरेक्टर से अधिक हो सकता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CLS_DESC",
+      "text": "स्क्रीन को साफ करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
+      "text": "कंसोल में टेक्स्ट लिखता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
+      "text": "प्रिंट करने के लिए स्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
+      "text": "बिना किसी प्लेसहोल्डर पार्सिंग के टेक्स्ट को वैसे ही प्रिंट करता है जैसे वह है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FORK_DESC",
+      "text": "एक और उदाहरण बनाने के लिए यूईएसएच शेल को फोर्क करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
+      "text": "उपयोगकर्ता को इनपुट दर्ज करने की अनुमति देता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "स्क्रीन पर प्रिंट करने के लिए प्रश्न"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
+      "text": "उपयोगकर्ता को पासवर्ड के रूप में इनपुट दर्ज करने की अनुमति देता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
+      "text": "तारीख और समय दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
+      "text": "सिर्फ तारीख दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
+      "text": "सिर्फ समय दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
+      "text": "स्थानीय के बजाय यूटीसी का उपयोग करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
+      "text": "एक चयन विकल्प प्रदान करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "स्लैश से विभाजित करने के उत्तर"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "स्क्रीन पर प्रिंट करने के लिए प्रश्न"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "प्रथम उत्तर शीर्षक"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "दूसरा उत्तर शीर्षक, और इसी तरह..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_DESC",
+      "text": "एक चर को एक स्क्रिप्ट में एक मान पर सेट करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
+      "text": "निर्धारित करने हेतु मान"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
+      "text": "प्रदान किए गए मानों के साथ एक चर सरणी बनाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
+      "text": "पहला मान"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
+      "text": "दूसरा मान"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
+      "text": "तीसरा मान, और इसी प्रकार..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
+      "text": "निर्दिष्ट मिलीसेकेंड के लिए सोता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
+      "text": "सोने का अंतराल"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
+      "text": "UESH वेरिएबल सूची से एक वेरिएबल हटाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
+      "text": "चर का नाम"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
+      "text": "वैरिएबल मान को हटाए बिना बस उसे मिटा देता है"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
+      "text": "अब आप '{0}' को '{1}' के रूप में चला सकते हैं!"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
+      "text": "अमान्य प्रकार {0}।"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
+      "text": "सफलतापूर्वक निकाला गया उपनाम {0}।"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
+      "text": "ऐसी शर्त को अपंजीकृत नहीं किया जा सकता जो अस्तित्व में ही नहीं है।"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
+      "text": "उपनामों को आज्ञाओं में जोड़ता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
+      "text": "उपनाम जोड़ता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
+      "text": "कमांड प्राप्त करने के लिए शैल प्रकार"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
+      "text": "उपनाम नाम"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
+      "text": "शॉर्टकट के रूप में उपयोग किया जाने वाला कमांड"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
+      "text": "उपनाम हटाता है"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
+      "text": "कंसोल रैपर पहले से ही मिल गया है"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
+      "text": "कंसोल रैपर का नाम खाली नहीं हो सकता"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
+      "text": "कंसोल रैपर नहीं मिला"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
+      "text": "बिल्ट-इन कंसोल रैपर हटाया नहीं जा सकता"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
+      "text": "कंसोल रैपर हटाना विफल रहा"
     }
   ]
 }

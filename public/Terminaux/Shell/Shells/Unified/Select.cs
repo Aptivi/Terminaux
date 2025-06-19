@@ -59,7 +59,7 @@ namespace Terminaux.Shell.Shells.Unified
         }
 
         public override void HelpHelper() =>
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHOICE_HELPER"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_UESH_CHOICE_HELPER"));
 
     }
 }

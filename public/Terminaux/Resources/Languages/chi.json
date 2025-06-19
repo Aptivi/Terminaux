@@ -2549,6 +2549,402 @@
     {
       "loc": "T_COMMON_ERRORDESC",
       "text": "Cuòwù {0}:{1}"
+    },
+    {
+      "loc": "T_SHELL_BASE_OBSOLETECMD",
+      "text": "Cǐ mìnglìng yǐ guòshí, jiàng zài yǐhòu de bǎnběn zhōng shānchú."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
+      "text": "Zhǎo bù dào kě bāozhuāng mìnglìng."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
+      "text": "nín bù dé zài bāo zhuāng mó shì xià zhí jiē zhí xíng cǐ mìng líng 。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
+      "text": "gāi mìnglìng bùkě bāozhuāng. Zhèxiē mìnglìng shì kě bāozhuāng de:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
+      "text": "cháng shì bāo zhuāng mìng líng shū chū shí fā shēng cuò wù"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
+      "text": "Wúfǎ huǎnchōng wèi shèzhì wèi kě bāozhuāng de mìnglìng."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
+      "text": "zài fàng zhì zhī chí chuàng jiàn de biǎo dá shì （ lì rú tiáo jiàn huò xún huán ） zhī qián ， nín wú fǎ shēng míng xīn kuài 。 duī zhàn biān hào wéi {0}。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
+      "text": "kāi shǐ xīn kuài shí ， qǐng què bǎo duī zhàn suō jìn zhèng què 。 duī zhàn biān hào wéi {0}。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
+      "text": "jiǎo běn gé shì cuò wù 。 jiǎn chá jiǎo běn bìng jiě jué suǒ yǒu cuò wù 。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
+      "text": "jiǎoběn géshì bù zhèngquè. Jiǎnchá jiǎoběn bìng jiějué suǒyǒu cuòwù:{0}"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "text": "zài biǎodá shì zhōng zhǎo bù dào tiáojiàn."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
+      "text": "Tiáojiàn {0} xūyào {1} gè cānshù. Dédào {2}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
+      "text": "tiáo jiàn xū yào fàng zài zuì hòu 。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
+      "text": "Yóuyú yǔfǎ cuòwù, jiěxī biǎodá shì shí chūcuò."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
+      "text": "wú fǎ zhù cè yǐ cún zài de tiáo jiàn 。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
+      "text": "wú fǎ zhù cè kōng tiáo jiàn 。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
+      "text": "zhǐ dìng de shù jù lèi xíng {0} wú xiào 。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
+      "text": "zhǐ dìng de píng tái {0} wú xiào 。"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
+      "text": "yuán mìnglìng zhíxíng shībài."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
+      "text": "Mùbiāo mìnglìng zhíxíng shībài. Nèiróng kěnéng wèi zhèngquè tiánchōng. Zhíxíng de mìnglìng shì"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
+      "text": "guǎndào yǐ sǔnhuài."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
+      "text": "cì shù wú xiào 。"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
+      "text": "wú fǎ zhòng fù zì jǐ 。"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
+      "text": "Kě bāozhuāng mìnglìng:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
+      "text": "xié gàng mìng líng de tí xǐng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
+      "text": "zhí xíng wài bù jìn chéng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
+      "text": "jìnchéng lùjìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
+      "text": "chuándì gěi jìnchéng de cānshù"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
+      "text": "zhí xíng jìn chéng ér bù zhōng duàn shell xiàn chéng 。 jiāng chuàng jiàn yī gè dān dú de chuāng kǒu 。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
+      "text": "xiǎnshì bāngzhù tiáomù dì mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
+      "text": "jiā zài shell lì shǐ jì lù"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
+      "text": "jiāng mìnglìng shūchū zuòwéi cānshù tōngguò guǎndào chuánshū dào lìng yīgè mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
+      "text": "jiāng qí shūchū zuòwéi zuìhòu yīgè cānshù tōngguò guǎndào chuánshū dào mùbiāo mìnglìng de yuán mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "gēnjù yuán mìnglìng shūchū gòujiàn cānshù hòu yào zhíxíng de mùbiāo mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
+      "text": "shìfǒu jiāng yuán mìnglìng de shūchū zuòwéi yīgè dài yǐnhào de cānshù huò bù dài yǐnhào de cānshù chuándì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
+      "text": "zhòng fù shàng yī gè cāo zuò huò zhǐ dìng de mìng líng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "gēnjù yuán mìnglìng shūchū gòujiàn cānshù hòu yào zhíxíng de mùbiāo mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
+      "text": "bǎo cún shell lì shǐ jì lù"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
+      "text": "Bāozhuāng kòngzhì tái shūchū"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
+      "text": "bāozhuāng qí shūchū de mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
+      "text": "chángshì zhíxíng jiǎoběn shí chūcuò:{0}"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_DESC",
+      "text": "Yīdàn mǎnzú UESH biǎodá shì, jiù zhíxíng mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
+      "text": "yào cèshì de UESH biǎodá shì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
+      "text": "chénggōng pínggū hòu yào zhíxíng de mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "text": "Qízhōng <answers>shì yòng xié gāng fēngé de wèntí de zìmǔ dá'àn"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "text": "nín bì xū jiāng -set kāi guān yǔ yào shè zhì gāi zhí de biàn liáng yī qǐ chuán dì 。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
+      "text": "zuò chū yònghù xuǎnzé"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "yào yòng xié xiàn fēngé de dá'àn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "yào dǎyìn dào píngmù shàng de wèntí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "dì yī gè dá'àn biāotí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "dì èr gè dá'àn biāotí, yī cǐ lèituī..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
+      "text": "yī xíng xuǎn zé yàng shì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
+      "text": "liǎng xíng xuǎn zé yàng shì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
+      "text": "xiàn dài xuǎn zé fēng gé"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
+      "text": "shū chū zhī néng shì yī gè zì fú"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
+      "text": "shū chū kě yǐ chāo guò yī gè zì fú"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CLS_DESC",
+      "text": "qīngchú píngmù"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
+      "text": "Jiāng wénběn xiě rù kòngzhì tái"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
+      "text": "yào dǎyìn de zìfú chuàn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
+      "text": "àn yuán yàng dǎ yìn wén běn ， bù jìn xíng zhān wèi fú jiě xī"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FORK_DESC",
+      "text": "fēn chā UESH shell yǐ chuàng jiàn lìng yī gè shí lì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
+      "text": "Yǔnxǔ yònghù shūrù shūrù"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "yào dǎyìn dào píngmù shàng de wèntí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
+      "text": "yǔn xǔ yòng hù shū rù mì mǎ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
+      "text": "xiǎnshì rìqí hé shíjiān"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
+      "text": "jǐn xiǎn shì rì qī"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
+      "text": "jǐn xiǎn shì shí jiān"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
+      "text": "shǐ yòng UTC ér bù shì běn dì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
+      "text": "Tígōng xuǎnzé xuǎnxiàng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "yào yòng xié xiàn fēngé de dá'àn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "yào dǎyìn dào píngmù shàng de wèntí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "dì yī gè dá'àn biāotí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "dì èr gè dá'àn biāotí, yī cǐ lèituī..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_DESC",
+      "text": "Jiāng biàn liáng shèzhì wèi jiǎoběn zhōng de zhí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
+      "text": "yào shèzhì de zhí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
+      "text": "shǐyòng tígōng de zhí chuàngjiàn yīgè biànliàng shùzǔ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
+      "text": "dì yī gè zhí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
+      "text": "dì èr gè zhí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
+      "text": "dì sān gè zhí, yī cǐ lèituī..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
+      "text": "xiū mián zhǐ dìng háo miǎo"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
+      "text": "xiūmián jiàngé"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
+      "text": "cóng UESH biàn liáng liè biǎo zhōng shān chú biàn liáng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
+      "text": "biànliàng míngchēng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
+      "text": "zhī shì cā chú biàn liáng zhí ér bù shān chú tā"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
+      "text": "nín xiàn zài kě yǐ jiāng “{0}” zuò wéi “{1}” yùn xíng ！"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
+      "text": "Wúxiào de lèixíng {0}."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
+      "text": "chénggōng shānchú biémíng {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
+      "text": "wú fǎ qǔ xiāo zhù cè bù cún zài de tiáo jiàn 。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
+      "text": "xiàng mìnglìng tiānjiā biémíng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
+      "text": "tiānjiā biémíng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
+      "text": "cóngzhōng huòqǔ mìnglìng de Shell lèixíng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
+      "text": "biémíng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
+      "text": "yòng zuò kuàijié fāngshì de mìnglìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
+      "text": "shānchú biémíng"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
+      "text": "Yǐ zhǎodào kòngzhì tái bāozhuāng qì"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
+      "text": "kòngzhì tái bāozhuāng qì míngchēng bùnéng wéi kōng"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
+      "text": "wèi zhǎodào kòngzhì tái bāozhuāng qì"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
+      "text": "nèizhì kòngzhì tái bāozhuāng qì wúfǎ yí chú"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
+      "text": "kòngzhì tái bāozhuāng qì yí chú shībài"
     }
   ]
 }

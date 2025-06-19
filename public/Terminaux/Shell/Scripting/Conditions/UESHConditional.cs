@@ -213,7 +213,7 @@ namespace Terminaux.Shell.Scripting.Conditions
         public static void UnregisterCondition(string name)
         {
             if (!CustomConditions.ContainsKey(name))
-                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND"));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER"));
 
             // Add a custom condition
             CustomConditions.Remove(name);

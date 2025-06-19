@@ -51,7 +51,7 @@ namespace Terminaux.Shell.Shells
         public virtual bool SlashCommand => false;
         /// <inheritdoc/>
         public virtual CommandInfo NonSlashCommandInfo =>
-            new("slashreminder", LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC"), new SlashReminderCommand());
+            new("slashreminder", LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC"), new SlashReminderCommand());
         /// <inheritdoc/>
         public virtual BaseShell? ShellBase =>
             Activator.CreateInstance<BaseShell>();

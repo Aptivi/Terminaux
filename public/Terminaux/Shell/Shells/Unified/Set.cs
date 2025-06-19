@@ -37,7 +37,7 @@ namespace Terminaux.Shell.Shells.Unified
         {
             if (!parameters.SwitchSetPassed)
             {
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH"), ConsoleColors.Red);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH"), ConsoleColors.Red);
                 return 1;
             }
             variableValue = parameters.ArgumentsList[0];

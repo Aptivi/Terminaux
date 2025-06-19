@@ -57,7 +57,7 @@ namespace Terminaux.Shell.Shells.Unified
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Failed to satisfy condition. See above for more information: {0}", ex.Message);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE") + " {0}", true, ConsoleColors.Red, ex.Message);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE") + " {0}", true, ConsoleColors.Red, ex.Message);
                 return ex.GetHashCode();
             }
         }

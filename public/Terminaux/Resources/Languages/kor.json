@@ -2546,6 +2546,402 @@
     {
       "loc": "T_COMMON_ERRORDESC",
       "text": "olyu {0} : {1}"
+    },
+    {
+      "loc": "T_SHELL_BASE_OBSOLETECMD",
+      "text": "i myeonglyeong-eun deo isang sayongdoeji anh-eumyeo hyanghu lilliseueseo jegeo doel yejeong-ibnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
+      "text": "laebping ganeunghan myeonglyeong-eul chaj-eul su eobs-seubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
+      "text": "raepingdoen modeueseoneun i myeongryeongeul jikjeop silhaenghamyeon an doepnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
+      "text": "myeonglyeong-eun laeping hal su eobs-seubnida. da-eum myeonglyeong-eun laeping hal su issseubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
+      "text": "myeongryeong chullyeogeul raepinghaneun jung oryuga balsaenghaessseupnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
+      "text": "laeping ganeung-eulo seoljeongdoeji anh-eun myeonglyeong-eul beopeolinghal su eobs-seubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
+      "text": "jogeonina rupeuwa gati saengseongeul jiwonhaneun pyohyeonsigeul baechihagi jeoneneun sae beullogeul seoneonhal su eopsseupnida. seutaek beonhoneun {0}ipnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
+      "text": "sae beullogeul sijakhal ttae seutaegeul olbareuge deuryeosseugihaessneunji hwaginhaseyo. seutaek beonhoneun {0}ipnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
+      "text": "seukeuripteuui hyeongsigi jalmosdoeeossseupnida. seukeuripteureul hwaginhago oryureul haegyeolhaseyo."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
+      "text": "seukeulibteu hyeongsig-i jalmosdoeeossseubnida. seukeulibteuleul hwag-inhago olyuleul haegyeolhabnida. {0}"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "text": "pyohyeonsig-eseo jogeon-eul chaj-eul su eobs-seubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
+      "text": "jogeon {0}eneun {1} insuga pil-yohabnida. {2}eul(leul) eod-eossseubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
+      "text": "jogeoneun maen majimage neoheoya hapnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
+      "text": "gumun olyulo inhae pyohyeonsig-eul gumun bunseoghaneun dong-an olyuga balsaenghaessseubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
+      "text": "imi jonjaehaneun jogeoneun deungrokhal su eopsseupnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
+      "text": "bin jogeoneul deungrokhal su eopsseupnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
+      "text": "jijeongdoen deiteo yuhyeong {0}i(ga) jalmosdoeeossseupnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
+      "text": "jijeongdoen peullaespom {0}i(ga) jalmosdoeeossseupnida."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
+      "text": "soseu myeonglyeong silhaeng-i silpaehaessseubnida."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
+      "text": "daesang myeonglyeong silhaeng-i silpaehaessseubnida. naeyong-i jedaelo chaewojiji anh-ass-eul su issseubnida. silhaengdoen myeonglyeong-eun"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
+      "text": "paipeuga kkeunh-eojyeossseubnida."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
+      "text": "hoessuga jalmosdoeeossseupnida."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
+      "text": "jasineul banbokhal su eopsseupnida."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
+      "text": "laeping ganeunghan myeonglyeong :"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
+      "text": "seullaesi myeongryeonge daehan allim"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
+      "text": "oebu peuroseseureul silhaenghapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
+      "text": "peuloseseu gyeonglo"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
+      "text": "peuloseseue jeondalhal insu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
+      "text": "swel seuredeureul jungdanhaji anhgo peuroseseureul silhaenghapnida. byeoldoui changi saengseongdoepnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
+      "text": "doummal hangmog-eul pyosihaneun myeonglyeong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
+      "text": "swel girogeul rodeuhapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
+      "text": "myeonglyeong chullyeog-eul maegaebyeonsulo daleun myeonglyeong-eulo paipeuhabnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
+      "text": "majimag maegaebyeonsulo chullyeog-eul daesang myeonglyeong-eulo paipeuhal soseu myeonglyeong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "soseu myeonglyeong chullyeog-eul giban-eulo insuleul bildeuhal ttae silhaenghal daesang myeonglyeong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
+      "text": "soseu myeonglyeong-ui chullyeog-eul hanaui ttaompyolo mukk-eun insu ttoneun ttaompyolo mukkji anh-eun insulo jeondalhalji yeobu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
+      "text": "majimak jageobina jijeongdoen myeongryeongeul banbokhapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "soseu myeonglyeong chullyeog-eul giban-eulo insuleul bildeuhal ttae silhaenghal daesang myeonglyeong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
+      "text": "swel girogeul jeojanghapnida"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
+      "text": "konsol chullyeog-eul laepinghabnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
+      "text": "chullyeog-eul laepinghal myeonglyeong"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
+      "text": "seukeulibteuleul silhaenghaneun dong-an olyuga balsaenghaessseubnida : {0}"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_DESC",
+      "text": "UESH pyohyeonsig-i chungjogdoemyeon myeonglyeong-eul silhaenghabnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
+      "text": "teseuteuhal UESH pyohyeonsig"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
+      "text": "seong-gongjeog-in pyeong-ga si silhaenghal myeonglyeong"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "text": "yeogiseo <answers>neun seullaesilo gubun doen jilmun-e daehan hangeul dabbyeon-ibnida."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "text": "i gapseul seoljeongharyeoneun byeonsuwa hamkke -set seuwichireul jeondalhaeya hapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
+      "text": "sayongja seontaeg"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "seullaesilo nanul dabbyeon"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "hwamyeon-e inswaehal jilmun"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "cheos beonjjae dabbyeon jemog"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "du beonjjae dabbyeon jemog deung..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
+      "text": "han jul seontaek seutail"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
+      "text": "du jul seontaek seutail"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
+      "text": "hyeondaejeogin seontaek seutail"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
+      "text": "chullyeogeun han munjaman ganeunghapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
+      "text": "chullyeogeun munja isangil su issseupnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CLS_DESC",
+      "text": "hwamyeon-eul ji ubnida"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
+      "text": "konsol-e tegseuteuleul sseubnida"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
+      "text": "inswaehal munjayeol"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
+      "text": "jari pyosija gumun bunseok eopsi tekseuteureul issneun geudaero inswaehapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FORK_DESC",
+      "text": "UESH syereul pokeuhayeo dareun inseuteonseureul saengseonghapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
+      "text": "sayongjaga iblyeog-eul iblyeog hal su issseubnida"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "hwamyeon-e inswaehal jilmun"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
+      "text": "sayongjaga bimilbeonhoreul ipryeokhadorok heoyonghapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
+      "text": "naljjawa sigan-eul boyeojubnida"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
+      "text": "naljjaman pyosi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
+      "text": "siganman pyosi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
+      "text": "rokeol daesin UTCreul sayonghapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
+      "text": "seontaeg seontaeg-eul jegonghabnida"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "seullaesilo nanul dabbyeon"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "hwamyeon-e inswaehal jilmun"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "cheos beonjjae dabbyeon jemog"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "du beonjjae dabbyeon jemog deung..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_DESC",
+      "text": "byeonsuleul seukeulibteuui gabs-eulo seoljeong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
+      "text": "seoljeonghal gabs"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
+      "text": "jegongdoen gabs-eulo gabyeon baeyeol-eul saengseonghabnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
+      "text": "cheos beonjjae gabs"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
+      "text": "du beonjjae gabs"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
+      "text": "se beonjjae gabs deung..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
+      "text": "jijeongdoen millicho dongan jeoljeon modeuro jeonhwan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
+      "text": "hyumyeon gangyeog"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
+      "text": "UESH byeonsu mokrogeseo byeonsureul jegeohapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
+      "text": "byeonsu ileum"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
+      "text": "byeonsu gapseul jegeohaji anhgo jiugiman hamyeon doepnida."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
+      "text": "ije '{0}'eul(reul) '{1}'(eu)ro silhaenghal su issseupnida!"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
+      "text": "yuhyohaji anh-eun yuhyeong {0}."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
+      "text": "byeolching {0}eul (leul) jegeohaessseubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
+      "text": "jonjaehaji anhneun jogeoneul deungrok chwisohal su eopsseupnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
+      "text": "myeonglyeong-e byeolching-eul chugahabnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
+      "text": "byeolching chuga"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
+      "text": "myeonglyeong-eul gajyeool syel yuhyeong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
+      "text": "byeolching ileum"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
+      "text": "balogagilo sayonghal myeonglyeong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
+      "text": "byeolching jegeo"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
+      "text": "konsol laepeoga imi issseubnida."
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
+      "text": "konsol laepeo ileum-eun bieo iss-eul su eobs-seubnida."
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
+      "text": "konsol laepeoleul chaj-eul su eobs-seubnida."
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
+      "text": "gibon jegong konsol laepeoleul jegeohal su eobs-seubnida."
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
+      "text": "konsol laepeo jegeoe silpaehaessseubnida."
     }
   ]
 }

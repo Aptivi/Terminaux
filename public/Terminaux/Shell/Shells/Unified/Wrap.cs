@@ -44,7 +44,7 @@ namespace Terminaux.Shell.Shells.Unified
             var currentShell = ShellManager.ShellStack[ShellManager.ShellStack.Count - 1];
             var currentType = currentShell.ShellType;
             var WrappableCmds = CommandExecutor.GetWrappableCommands(currentType);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_COMMANDSHELPER"));
             for (int i = 0; i < WrappableCmds.Length; i++)
             {
                 string wrappableCmd = WrappableCmds[i];

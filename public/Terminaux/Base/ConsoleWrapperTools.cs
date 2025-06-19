@@ -79,7 +79,7 @@ namespace Terminaux.Base
         {
             if (!wrappers.TryGetValue(wrapperName, out var wrapper))
                 if (!customWrappers.TryGetValue(wrapperName, out wrapper))
-                    throw new TerminauxException("Console wrapper is not found");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND"));
             return wrapper;
         }
 
@@ -93,9 +93,9 @@ namespace Terminaux.Base
             where T : BaseConsoleWrapper
         {
             if (IsRegistered(wrapperName))
-                throw new TerminauxException("Console wrapper is already found");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND"));
             if (string.IsNullOrEmpty(wrapperName))
-                throw new TerminauxException("Console wrapper name may not be empty");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED"));
             customWrappers.Add(wrapperName, wrapper);
         }
 
@@ -107,13 +107,13 @@ namespace Terminaux.Base
         public static void UnregisterWrapper(string wrapperName)
         {
             if (!IsRegistered(wrapperName))
-                throw new TerminauxException("Console wrapper is not found");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND"));
             if (string.IsNullOrEmpty(wrapperName))
-                throw new TerminauxException("Console wrapper name may not be empty");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED"));
             if (IsBuiltin(wrapperName))
-                throw new TerminauxException("A built-in console wrapper may not be removed");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN"));
             if (!customWrappers.Remove(wrapperName))
-                throw new TerminauxException("Console wrapper removal failed");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED"));
         }
 
         /// <summary>
@@ -124,9 +124,9 @@ namespace Terminaux.Base
         public static void SetWrapper(string wrapperName)
         {
             if (!IsRegistered(wrapperName))
-                throw new TerminauxException("Console wrapper is not found");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND"));
             if (string.IsNullOrEmpty(wrapperName))
-                throw new TerminauxException("Console wrapper name may not be empty");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED"));
             currentWrapper = wrapperName;
         }
 
@@ -138,9 +138,9 @@ namespace Terminaux.Base
         public static void SetWrapperLocal(string wrapperName)
         {
             if (!IsRegistered(wrapperName))
-                throw new TerminauxException("Console wrapper is not found");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND"));
             if (string.IsNullOrEmpty(wrapperName))
-                throw new TerminauxException("Console wrapper name may not be empty");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED"));
             currentWrapperLocal = wrapperName;
             isOnLocal = true;
         }

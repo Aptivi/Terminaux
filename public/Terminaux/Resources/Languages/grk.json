@@ -2546,6 +2546,402 @@
     {
       "loc": "T_COMMON_ERRORDESC",
       "text": "Σφάλμα {0}: {1}"
+    },
+    {
+      "loc": "T_SHELL_BASE_OBSOLETECMD",
+      "text": "Αυτή η εντολή είναι ξεπερασμένη και θα αφαιρεθεί σε μελλοντική έκδοση."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
+      "text": "Η εντολή wappable δεν βρέθηκε."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
+      "text": "Δεν πρέπει να εκτελέσετε απευθείας αυτήν την εντολή σε κατάσταση αναδίπλωσης."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
+      "text": "Η εντολή δεν μπορεί να αναδιπλωθεί. Αυτές οι εντολές μπορούν να αναδιπλωθούν:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
+      "text": "Παρουσιάστηκε σφάλμα κατά την προσπάθεια αναδίπλωσης μιας εξόδου εντολής"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
+      "text": "Δεν είναι δυνατή η προσωρινή αποθήκευση μιας εντολής που δεν έχει οριστεί ως αναδιπλούμενη."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
+      "text": "Δεν μπορείτε να δηλώσετε το νέο μπλοκ πριν τοποθετήσετε εκφράσεις που υποστηρίζουν τη δημιουργία, όπως συνθήκες ή βρόχους. Ο αριθμός στοίβας είναι {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
+      "text": "Όταν ξεκινάτε ένα νέο μπλοκ, βεβαιωθείτε ότι έχετε τοποθετήσει σωστά τη στοίβα. Ο αριθμός στοίβας είναι {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
+      "text": "Το σενάριο είναι εσφαλμένο. Ελέγξτε το σενάριο και επιλύστε τυχόν σφάλματα."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
+      "text": "Το σενάριο είναι εσφαλμένο. Ελέγξτε το σενάριο και επιλύστε τυχόν σφάλματα: {0}"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "text": "Η συνθήκη δεν βρέθηκε στην έκφραση."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
+      "text": "Η συνθήκη {0} απαιτεί {1} ορίσματα. Πήρα {2}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
+      "text": "Η συνθήκη πρέπει να τοποθετηθεί στο τέλος."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
+      "text": "Σφάλμα ανάλυσης έκφρασης λόγω συντακτικού σφάλματος."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
+      "text": "Δεν είναι δυνατή η εγγραφή μιας συνθήκης που υπάρχει ήδη."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
+      "text": "Δεν είναι δυνατή η εγγραφή μιας κενή συνθήκης."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
+      "text": "Ο τύπος δεδομένων που καθορίστηκε {0} δεν είναι έγκυρος."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
+      "text": "Η πλατφόρμα {0} που καθορίστηκε δεν είναι έγκυρη."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
+      "text": "Η εκτέλεση της εντολής πηγής απέτυχε."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
+      "text": "Η εκτέλεση εντολής στόχου απέτυχε. Τα περιεχόμενα ενδέχεται να μην έχουν συμπληρωθεί σωστά. Η εντολή που εκτελέστηκε ήταν"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
+      "text": "Ο σωλήνας έχει σπάσει."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
+      "text": "Μη έγκυρος αριθμός φορών."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
+      "text": "Δεν μπορώ να επαναλάβω τον εαυτό μου."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
+      "text": "Εντολές με δυνατότητα αναδίπλωσης:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
+      "text": "Υπενθύμιση για τις εντολές κάθετο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
+      "text": "Εκτελεί μια εξωτερική διαδικασία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
+      "text": "Πορεία προς μια διαδικασία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
+      "text": "Επιχειρήματα για να περάσει σε μια διαδικασία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
+      "text": "Εκτελεί τη διαδικασία χωρίς να διακόπτει το νήμα του κελύφους. Θα δημιουργηθεί ένα ξεχωριστό παράθυρο."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
+      "text": "Εντολή για εμφάνιση καταχώρισης βοήθειας"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
+      "text": "Φορτώνει ιστορικά κελύφους"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
+      "text": "Διοχετεύει την έξοδο της εντολής σε άλλη εντολή ως παραμέτρους"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
+      "text": "Εντολή πηγής για τη διοχέτευση της εξόδου της στην εντολή προορισμού ως τελευταία παράμετρο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "Εντολή στόχου που θα εκτελεστεί κατά την κατασκευή του ορίσματος με βάση την έξοδο της εντολής πηγής"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
+      "text": "Είτε θα μεταβιβαστεί η έξοδος της εντολής πηγής ως ένα όρισμα σε εισαγωγικά ή ως όρισμα χωρίς εισαγωγικά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
+      "text": "Επαναλαμβάνει την τελευταία ενέργεια ή την καθορισμένη εντολή"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "Εντολή στόχου που θα εκτελεστεί κατά την κατασκευή του ορίσματος με βάση την έξοδο της εντολής πηγής"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
+      "text": "Αποθηκεύει ιστορικά κελύφους"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
+      "text": "Τυλίγει την έξοδο της κονσόλας"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
+      "text": "Εντολή για αναδίπλωση της εξόδου του"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
+      "text": "Σφάλμα κατά την εκτέλεση του σεναρίου: {0}"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_DESC",
+      "text": "Εκτελεί εντολές μόλις ικανοποιηθούν οι εκφράσεις UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
+      "text": "Έκφραση UESH για δοκιμή"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
+      "text": "Εντολή για εκτέλεση μετά την επιτυχή αξιολόγηση"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "text": "όπου <απαντήσεις> είναι οι απαντήσεις με ένα γράμμα της ερώτησης χωρισμένες σε κάθετες"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "text": "Πρέπει να περάσετε τον διακόπτη -set με τη μεταβλητή στην οποία θέλετε να ορίσετε αυτήν την τιμή."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
+      "text": "Κάνει τις επιλογές των χρηστών"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "Απαντήσεις σε διάσπαση με κάθετο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Ερώτηση για εκτύπωση στην οθόνη"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "Τίτλος πρώτης απάντησης"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "Τίτλος δεύτερης απάντησης και ούτω καθεξής..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
+      "text": "Στυλ επιλογής μίας γραμμής"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
+      "text": "Στυλ επιλογής δύο γραμμών"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
+      "text": "Μοντέρνο στυλ επιλογής"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
+      "text": "Η έξοδος μπορεί να είναι μόνο ένας χαρακτήρας"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
+      "text": "Η έξοδος μπορεί να είναι περισσότερο από έναν χαρακτήρα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CLS_DESC",
+      "text": "Καθαρίζει την οθόνη"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
+      "text": "Γράφει κείμενο στην κονσόλα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
+      "text": "Συμβολοσειρά για εκτύπωση"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
+      "text": "Εκτυπώνει το κείμενο ως έχει χωρίς ανάλυση κράτησης θέσης"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FORK_DESC",
+      "text": "Διχαλώνει το κέλυφος UESH για να δημιουργήσει ένα άλλο στιγμιότυπο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
+      "text": "Επιτρέπει στον χρήστη να εισάγει είσοδο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Ερώτηση για εκτύπωση στην οθόνη"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
+      "text": "Επιτρέπει στον χρήστη να εισαγάγει την είσοδο ως κωδικό πρόσβασης"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
+      "text": "Εμφανίζει ημερομηνία και ώρα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
+      "text": "Δείχνει μόνο την ημερομηνία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
+      "text": "Δείχνει μόνο την ώρα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
+      "text": "Χρησιμοποιεί UTC αντί για τοπικό"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
+      "text": "Παρέχει μια επιλογή επιλογής"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "Απαντήσεις σε διάσπαση με κάθετο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Ερώτηση για εκτύπωση στην οθόνη"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "Τίτλος πρώτης απάντησης"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "Τίτλος δεύτερης απάντησης και ούτω καθεξής..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_DESC",
+      "text": "Ορίζει μια μεταβλητή σε μια τιμή σε ένα σενάριο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
+      "text": "Τιμή προς ρύθμιση"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
+      "text": "Δημιουργεί έναν πίνακα μεταβλητών με τις παρεχόμενες τιμές"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
+      "text": "Πρώτη τιμή"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
+      "text": "Δεύτερη τιμή"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
+      "text": "Τρίτη τιμή και ούτω καθεξής..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
+      "text": "Λειτουργεί για καθορισμένα χιλιοστά του δευτερολέπτου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
+      "text": "Διάστημα για ύπνο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
+      "text": "Αφαιρεί μια μεταβλητή από τη λίστα μεταβλητών UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
+      "text": "Όνομα μεταβλητής"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
+      "text": "Απλώς σκουπίζει την τιμή της μεταβλητής χωρίς να την αφαιρέσει"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
+      "text": "Τώρα μπορείτε να εκτελέσετε το \"{0}\" ως \"{1}\"!"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
+      "text": "Μη έγκυρος τύπος {0}."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
+      "text": "Το ψευδώνυμο {0} καταργήθηκε με επιτυχία."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
+      "text": "Δεν είναι δυνατή η κατάργηση της εγγραφής μιας συνθήκης που δεν υπάρχει."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
+      "text": "Προσθέτει ψευδώνυμα στις εντολές"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
+      "text": "Προσθέτει ένα ψευδώνυμο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
+      "text": "Τύπος κελύφους για λήψη εντολών από"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
+      "text": "Ψευδώνυμο όνομα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
+      "text": "Εντολή που θα χρησιμοποιηθεί ως συντόμευση"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
+      "text": "Αφαιρεί ένα ψευδώνυμο"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
+      "text": "Το περιτύλιγμα της κονσόλας έχει ήδη βρεθεί"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
+      "text": "Το όνομα του περιτυλίγματος της κονσόλας ενδέχεται να μην είναι κενό"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
+      "text": "Το περιτύλιγμα της κονσόλας δεν βρέθηκε"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
+      "text": "Ένα ενσωματωμένο περιτύλιγμα κονσόλας ενδέχεται να μην αφαιρεθεί"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
+      "text": "Η αφαίρεση του περιτυλίγματος της κονσόλας απέτυχε"
     }
   ]
 }
