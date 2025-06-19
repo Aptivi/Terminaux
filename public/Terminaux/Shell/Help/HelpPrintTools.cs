@@ -59,7 +59,7 @@ namespace Terminaux.Shell.Help
                     string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
-                        Entry = "  - {0}{1}: ".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                        Entry = "  - {0}{1}".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
                         Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
                         Indicator = false,
                     }.Render() + "\n");
@@ -77,7 +77,7 @@ namespace Terminaux.Shell.Help
                     string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
-                        Entry = "  - {0}{1}: ".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                        Entry = "  - {0}{1}".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
                         Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
                         Indicator = false,
                     }.Render() + "\n");
@@ -95,7 +95,7 @@ namespace Terminaux.Shell.Help
                     string[] usages = [.. cmd.Value.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
-                        Entry = "  - {0} -> {1}{2}: ".FormatString(cmd.Key.Alias, cmd.Value.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                        Entry = "  - {0} -> {1}{2}".FormatString(cmd.Key.Alias, cmd.Value.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
                         Value = LanguageTools.GetLocalized(cmd.Value.HelpDefinition),
                         Indicator = false,
                     }.Render() + "\n");
@@ -113,7 +113,7 @@ namespace Terminaux.Shell.Help
                     string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
-                        Entry = "  - {0}{1}: ".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                        Entry = "  - {0}{1}".FormatString(cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
                         Value = LanguageTools.GetLocalized(cmd.HelpDefinition),
                         Indicator = false,
                     }.Render() + "\n");
