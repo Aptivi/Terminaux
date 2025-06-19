@@ -304,7 +304,7 @@ namespace Terminaux.Shell.Commands
             {
                 ConsoleLogger.Warning("Command {0} is being interrupted...", RequestedCommand);
                 TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_COMMANDINTERRUPT"), ConsoleColors.Red);
-                CancellationHandlers.CancelRequested = false;
+                CancellationHandlers.cancelRequested = false;
                 ShellInstance.LastErrorCode = -5;
             }
             catch (Exception ex)

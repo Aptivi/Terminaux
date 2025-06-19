@@ -36,7 +36,13 @@ namespace Terminaux.Shell.Commands
         internal static CancellationTokenSource cts = new();
         internal static bool canCancel = false;
         internal static bool installed;
-        internal static bool CancelRequested;
+        internal static bool cancelRequested;
+
+        /// <summary>
+        /// Whether cancellation is requested
+        /// </summary>
+        public static bool CancelRequested =>
+            cancelRequested;
 
         /// <summary>
         /// Allows cancelling the current command
@@ -76,7 +82,7 @@ namespace Terminaux.Shell.Commands
                 lock (syncLock)
                 {
                     ConsoleLogger.Debug("Locking to cancel...");
-                    CancelRequested = true;
+                    cancelRequested = true;
                     TextWriterRaw.Write();
                     ConsoleWrapperTools.SetWrapper(nameof(Null));
                     cts.Cancel();

@@ -93,7 +93,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
                 CommandProcess.BeginErrorReadLine();
 
                 // Wait for process exit
-                while (!HasProcessExited | !CancellationHandlers.CancelRequested)
+                while (!HasProcessExited | !CancellationHandlers.cancelRequested)
                 {
                     if (HasProcessExited)
                     {
@@ -102,7 +102,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
                         ConsoleLogger.Debug("Flushed as much as possible.");
                         break;
                     }
-                    else if (CancellationHandlers.CancelRequested)
+                    else if (CancellationHandlers.cancelRequested)
                     {
                         ConsoleLogger.Warning("Process killed! Output may not be complete!");
                         CommandProcess.Kill();
@@ -116,7 +116,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
             }
             catch (ThreadInterruptedException)
             {
-                CancellationHandlers.CancelRequested = false;
+                CancellationHandlers.cancelRequested = false;
                 return default;
             }
             catch (Exception ex)
@@ -188,7 +188,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
                     CommandProcess.BeginErrorReadLine();
 
                 // Wait for process exit
-                while (!HasProcessExited | !CancellationHandlers.CancelRequested)
+                while (!HasProcessExited | !CancellationHandlers.cancelRequested)
                 {
                     if (HasProcessExited)
                     {
@@ -197,7 +197,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
                         ConsoleLogger.Debug("Flushed as much as possible.");
                         break;
                     }
-                    else if (CancellationHandlers.CancelRequested)
+                    else if (CancellationHandlers.cancelRequested)
                     {
                         ConsoleLogger.Warning("Process killed! Output may not be complete!");
                         CommandProcess.Kill();
@@ -211,7 +211,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
             }
             catch (ThreadInterruptedException)
             {
-                CancellationHandlers.CancelRequested = false;
+                CancellationHandlers.cancelRequested = false;
                 exitCode = -1;
             }
             catch (Exception ex)
@@ -265,7 +265,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
             }
             catch (ThreadInterruptedException)
             {
-                CancellationHandlers.CancelRequested = false;
+                CancellationHandlers.cancelRequested = false;
             }
             catch (Exception ex)
             {
