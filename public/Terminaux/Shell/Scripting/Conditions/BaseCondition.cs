@@ -22,7 +22,7 @@ using Terminaux.Base;
 namespace Terminaux.Shell.Scripting.Conditions
 {
     /// <summary>
-    /// Base UESH scripting condition class
+    /// Base MESH scripting condition class
     /// </summary>
     public abstract class BaseCondition : ICondition
     {
@@ -45,8 +45,8 @@ namespace Terminaux.Shell.Scripting.Conditions
         /// <summary>
         /// Is the condition satisfied?
         /// </summary>
-        /// <param name="FirstVariable">The first UESH variable (can be unsanitized; can start without $)</param>
-        /// <param name="SecondVariable">The second UESH variable (can be unsanitized; can start without $)</param>
+        /// <param name="FirstVariable">The first MESH variable (can be unsanitized; can start without $)</param>
+        /// <param name="SecondVariable">The second MESH variable (can be unsanitized; can start without $)</param>
         /// <returns>True if satisfied; otherwise, false</returns>
         public virtual bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
@@ -57,7 +57,7 @@ namespace Terminaux.Shell.Scripting.Conditions
         /// <summary>
         /// Is the condition satisfied?
         /// </summary>
-        /// <param name="Variables">Array of UESH variables (can be unsanitized; can start without $)</param>
+        /// <param name="Variables">Array of MESH variables (can be unsanitized; can start without $)</param>
         /// <returns>True if satisfied; otherwise, false</returns>
         public bool IsConditionSatisfied(string[] Variables)
         {

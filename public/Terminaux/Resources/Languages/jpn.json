@@ -2532,7 +2532,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "出力の値を選択した UESH 変数に設定します"
+      "text": "出力の値を選択した MESH 変数に設定します"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2712,22 +2712,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "UESH式が満たされるとコマンドを実行します"
+      "text": "MESH式が満たされるとコマンドを実行します"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "テストするUESH式"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "テストするMESH式"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "評価が成功したときに実行するコマンド"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "<answers>は、スラッシュで区切られた質問の1文字の回答です。"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "この値を設定する変数を -set スイッチに渡す必要があります。"
     },
     {
@@ -2788,7 +2788,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "UESH シェルをフォークして別のインスタンスを作成します"
+      "text": "MESH シェルをフォークして別のインスタンスを作成します"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2872,7 +2872,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "UESH 変数リストから変数を削除します"
+      "text": "MESH 変数リストから変数を削除します"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

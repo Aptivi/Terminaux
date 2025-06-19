@@ -2533,7 +2533,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "chullyeok gapseul seontaekhan UESH byeonsuro seoljeonghapnida."
+      "text": "chullyeok gapseul seontaekhan MESH byeonsuro seoljeonghapnida."
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2713,22 +2713,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "UESH pyohyeonsig-i chungjogdoemyeon myeonglyeong-eul silhaenghabnida."
+      "text": "MESH pyohyeonsig-i chungjogdoemyeon myeonglyeong-eul silhaenghabnida."
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "teseuteuhal UESH pyohyeonsig"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "teseuteuhal MESH pyohyeonsig"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "seong-gongjeog-in pyeong-ga si silhaenghal myeonglyeong"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "yeogiseo <answers>neun seullaesilo gubun doen jilmun-e daehan hangeul dabbyeon-ibnida."
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "i gapseul seoljeongharyeoneun byeonsuwa hamkke -set seuwichireul jeondalhaeya hapnida."
     },
     {
@@ -2789,7 +2789,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "UESH syereul pokeuhayeo dareun inseuteonseureul saengseonghapnida."
+      "text": "MESH syereul pokeuhayeo dareun inseuteonseureul saengseonghapnida."
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2873,7 +2873,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "UESH byeonsu mokrogeseo byeonsureul jegeohapnida."
+      "text": "MESH byeonsu mokrogeseo byeonsureul jegeohapnida."
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

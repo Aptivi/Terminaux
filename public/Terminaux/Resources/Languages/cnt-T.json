@@ -2535,7 +2535,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "將輸出值設定為選定的 UESH 變數"
+      "text": "將輸出值設定為選定的 MESH 變數"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2715,22 +2715,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "一旦滿足 UESH 表達式，就執行命令"
+      "text": "一旦滿足 MESH 表達式，就執行命令"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "UESH 表達測試"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "MESH 表達測試"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "評估成功後執行的命令"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "其中 <answers> 是問題的單字母答案，以斜線分隔"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "您必須將 -set 開關與要設定該值的變數一起傳遞。"
     },
     {
@@ -2791,7 +2791,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "分叉 UESH shell 以建立另一個實例"
+      "text": "分叉 MESH shell 以建立另一個實例"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2875,7 +2875,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "從 UESH 變數清單中刪除變數"
+      "text": "從 MESH 變數清單中刪除變數"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

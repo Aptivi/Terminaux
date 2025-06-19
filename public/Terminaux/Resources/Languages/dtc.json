@@ -2538,7 +2538,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Stelt de waarde van de uitvoer in op de geselecteerde UESH-variabele"
+      "text": "Stelt de waarde van de uitvoer in op de geselecteerde MESH-variabele"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2718,22 +2718,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Voert opdrachten uit zodra aan de UESH-expressies is voldaan"
+      "text": "Voert opdrachten uit zodra aan de MESH-expressies is voldaan"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "UESH-expressie om te testen"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "MESH-expressie om te testen"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Opdracht om uit te voeren bij succesvolle evaluatie"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "waar <antwoorden> zijn antwoorden met één letter van de vraag, gescheiden door schuine strepen"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "U moet de schakeloptie -set doorgeven aan de variabele waarop u deze waarde wilt instellen."
     },
     {
@@ -2794,7 +2794,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Splitst de UESH-shell om een andere instantie te maken"
+      "text": "Splitst de MESH-shell om een andere instantie te maken"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2878,7 +2878,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Verwijdert een variabele uit de UESH-variabelenlijst"
+      "text": "Verwijdert een variabele uit de MESH-variabelenlijst"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

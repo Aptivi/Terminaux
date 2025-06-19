@@ -20,7 +20,7 @@
 namespace Terminaux.Shell.Scripting.Conditions.Types
 {
     /// <summary>
-    /// Checks to see if a UESH variable doesn't contain an expression
+    /// Checks to see if a MESH variable doesn't contain an expression
     /// </summary>
     public class NotContainsCondition : BaseCondition, ICondition
     {
@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Scripting.Conditions.Types
 
         /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable) =>
-            UESHOperators.UESHVariableNotContains(FirstVariable, SecondVariable);
+            MESHOperators.MESHVariableNotContains(FirstVariable, SecondVariable);
 
     }
 }

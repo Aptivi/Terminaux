@@ -2532,7 +2532,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Встановлює значення виведення для вибраної змінної UESH"
+      "text": "Встановлює значення виведення для вибраної змінної MESH"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2712,22 +2712,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Виконує команди після виконання виразів UESH"
+      "text": "Виконує команди після виконання виразів MESH"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Вираз UESH для перевірки"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Вираз MESH для перевірки"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Команда для виконання після успішного оцінювання"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "де <відповіді> однолітерні відповіді на запитання, розділені похилою рискою"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Ви повинні передати перемикач -set зі змінною, якій ви хочете встановити це значення."
     },
     {
@@ -2788,7 +2788,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Розгалужує оболонку UESH для створення іншого екземпляра"
+      "text": "Розгалужує оболонку MESH для створення іншого екземпляра"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",

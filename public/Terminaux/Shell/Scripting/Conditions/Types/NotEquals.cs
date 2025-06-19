@@ -20,7 +20,7 @@
 namespace Terminaux.Shell.Scripting.Conditions.Types
 {
     /// <summary>
-    /// Checks to see if the two UESH variables are different
+    /// Checks to see if the two MESH variables are different
     /// </summary>
     public class NotEqualsCondition : BaseCondition, ICondition
     {
@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Scripting.Conditions.Types
 
         /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable) =>
-            UESHOperators.UESHVariableNotEqual(FirstVariable, SecondVariable);
+            MESHOperators.MESHVariableNotEqual(FirstVariable, SecondVariable);
 
     }
 }

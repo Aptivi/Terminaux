@@ -20,7 +20,7 @@
 namespace Terminaux.Shell.Scripting.Conditions.Types
 {
     /// <summary>
-    /// Checks to see if one of the two UESH variables is less than the other or equal to each other
+    /// Checks to see if one of the two MESH variables is less than the other or equal to each other
     /// </summary>
     public class LessThanOrEqualCondition : BaseCondition, ICondition
     {
@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Scripting.Conditions.Types
 
         /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable) =>
-            UESHOperators.UESHVariableLessThanOrEqual(FirstVariable, SecondVariable);
+            MESHOperators.MESHVariableLessThanOrEqual(FirstVariable, SecondVariable);
 
     }
 }

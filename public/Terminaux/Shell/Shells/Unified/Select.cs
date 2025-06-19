@@ -30,7 +30,7 @@ namespace Terminaux.Shell.Shells.Unified
     /// Lets the user make a selection
     /// </summary>
     /// <remarks>
-    /// This command can be used in a scripting file that ends in .uesh file extension. It lets the user select the correct answers when answering this question and passes the chosen answer to the specified variable.
+    /// This command can be used in a scripting file that ends in .MESH file extension. It lets the user select the correct answers when answering this question and passes the chosen answer to the specified variable.
     /// </remarks>
     class SelectCommand : BaseCommand, ICommand
     {
@@ -59,7 +59,7 @@ namespace Terminaux.Shell.Shells.Unified
         }
 
         public override void HelpHelper() =>
-            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_UESH_CHOICE_HELPER"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_CHOICE_HELPER"));
 
     }
 }

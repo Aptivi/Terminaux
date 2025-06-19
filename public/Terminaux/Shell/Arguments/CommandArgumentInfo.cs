@@ -54,7 +54,7 @@ namespace Terminaux.Shell.Arguments
             new SwitchInfo("set", /* Localizable */ "T_SHELL_BASE_SWITCH_SET_DESC", false, true)
         ];
         /// <summary>
-        /// Whether to accept the -set switch to set the UESH variable value
+        /// Whether to accept the -set switch to set the MESH variable value
         /// </summary>
         public bool AcceptsSet { get; private set; }
         /// <summary>

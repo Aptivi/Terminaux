@@ -2533,7 +2533,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Socraíonn sé luach an aschuir chuig an athróg UESH roghnaithe"
+      "text": "Socraíonn sé luach an aschuir chuig an athróg MESH roghnaithe"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2713,22 +2713,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Feidhmíonn sé orduithe a luaithe a shásaítear na habairtí UESH"
+      "text": "Feidhmíonn sé orduithe a luaithe a shásaítear na habairtí MESH"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Slonn UESH le tástáil"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Slonn MESH le tástáil"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Ordú a fhorghníomhú ar mheastóireacht rathúil"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "áit a bhfuil <freagraí> freagraí aonlitreacha ar an gceist scartha i slais"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Caithfidh tú an lasc -set a chur ar aghaidh leis an athróg a dteastaíonn uait an luach seo a shocrú dó."
     },
     {
@@ -2789,7 +2789,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Forks an bhlaosc UESH chun sampla eile a chruthú"
+      "text": "Forks an bhlaosc MESH chun sampla eile a chruthú"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2873,7 +2873,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Baineann sé athróg ó liosta athróg UESH"
+      "text": "Baineann sé athróg ó liosta athróg MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

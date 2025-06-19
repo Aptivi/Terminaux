@@ -2558,7 +2558,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "يضبط قيمة الإخراج على متغير UESH المحدد"
+      "text": "يضبط قيمة الإخراج على متغير MESH المحدد"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2738,22 +2738,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "ينفذ الأوامر بمجرد إرضاء تعبيرات UESH"
+      "text": "ينفذ الأوامر بمجرد إرضاء تعبيرات MESH"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "تعبير UESH للاختبار"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "تعبير MESH للاختبار"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "أمر بالتنفيذ عند التقييم الناجح"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "حيث <الأجوبة> هي إجابات من حرف واحد للسؤال مفصولة بخط مائل"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "يجب عليك تمرير رمز التبديل -set مع المتغير الذي تريد تعيين هذه القيمة إليه."
     },
     {
@@ -2814,7 +2814,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "شوكات قذيفة UESH لإنشاء مثيل آخر"
+      "text": "شوكات قذيفة MESH لإنشاء مثيل آخر"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2898,7 +2898,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "إزالة متغير من قائمة متغيرات UESH"
+      "text": "إزالة متغير من قائمة متغيرات MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

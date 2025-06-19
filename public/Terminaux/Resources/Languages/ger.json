@@ -2541,7 +2541,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Legt den Wert der Ausgabe auf die ausgewählte UESH-Variable fest"
+      "text": "Legt den Wert der Ausgabe auf die ausgewählte MESH-Variable fest"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2721,22 +2721,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Führt Befehle aus, sobald die UESH-Ausdrücke erfüllt sind"
+      "text": "Führt Befehle aus, sobald die MESH-Ausdrücke erfüllt sind"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Zu testender UESH-Ausdruck"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Zu testender MESH-Ausdruck"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Befehl, der nach erfolgreicher Auswertung ausgeführt werden soll"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "Dabei sind <Antworten> Antworten mit einem Buchstaben auf die Frage, die durch Schrägstriche getrennt sind"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Sie müssen den Schalter -set mit der Variablen übergeben, auf die Sie diesen Wert festlegen möchten."
     },
     {
@@ -2797,7 +2797,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Verzweigt die UESH-Shell, um eine weitere Instanz zu erstellen"
+      "text": "Verzweigt die MESH-Shell, um eine weitere Instanz zu erstellen"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2881,7 +2881,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Entfernt eine Variable aus der UESH-Variablenliste"
+      "text": "Entfernt eine Variable aus der MESH-Variablenliste"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

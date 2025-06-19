@@ -2536,7 +2536,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Setter verdien på utgangen til den valgte UESH-variabelen"
+      "text": "Setter verdien på utgangen til den valgte MESH-variabelen"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2716,22 +2716,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Utfører kommandoer når UESH-uttrykkene er oppfylt"
+      "text": "Utfører kommandoer når MESH-uttrykkene er oppfylt"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "UESH uttrykk for å teste"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "MESH uttrykk for å teste"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Kommando for å utføre ved vellykket evaluering"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "der <answers> er enbokstavssvar på spørsmålet atskilt i skråstreker"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Du må sende -set-bryteren med variabelen du vil sette denne verdien til."
     },
     {
@@ -2792,7 +2792,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Gaffeler UESH-skallet for å lage en annen forekomst"
+      "text": "Gaffeler MESH-skallet for å lage en annen forekomst"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2876,7 +2876,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Fjerner en variabel fra UESH-variabellisten"
+      "text": "Fjerner en variabel fra MESH-variabellisten"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

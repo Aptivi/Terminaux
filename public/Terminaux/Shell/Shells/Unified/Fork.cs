@@ -22,10 +22,10 @@ using Terminaux.Shell.Commands;
 namespace Terminaux.Shell.Shells.Unified
 {
     /// <summary>
-    /// Opens the forked UESH shell
+    /// Opens the forked MESH shell
     /// </summary>
     /// <remarks>
-    /// If you want to open another UESH shell instance, this command forks this instance.
+    /// If you want to open another MESH shell instance, this command forks this instance.
     /// </remarks>
     class ForkCommand : BaseCommand, ICommand
     {

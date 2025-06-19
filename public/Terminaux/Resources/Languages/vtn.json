@@ -2532,7 +2532,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Đặt giá trị của đầu ra cho biến UESH đã chọn"
+      "text": "Đặt giá trị của đầu ra cho biến MESH đã chọn"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2712,22 +2712,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Thực hiện lệnh sau khi các biểu thức UESH được thỏa mãn"
+      "text": "Thực hiện lệnh sau khi các biểu thức MESH được thỏa mãn"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Biểu thức UESH để kiểm tra"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Biểu thức MESH để kiểm tra"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Lệnh thực hiện khi đánh giá thành công"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "trong đó <câu trả lời> là các câu trả lời một chữ cái của câu hỏi được phân tách bằng dấu gạch chéo"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Bạn phải truyền lệnh -set vào biến mà bạn muốn đặt giá trị này."
     },
     {
@@ -2788,7 +2788,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Phân nhánh shell UESH để tạo một phiên bản khác"
+      "text": "Phân nhánh shell MESH để tạo một phiên bản khác"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2872,7 +2872,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Xóa một biến khỏi danh sách biến UESH"
+      "text": "Xóa một biến khỏi danh sách biến MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

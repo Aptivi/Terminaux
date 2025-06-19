@@ -2535,7 +2535,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Imposta il valore dell'uscita sulla variabile UESH selezionata"
+      "text": "Imposta il valore dell'uscita sulla variabile MESH selezionata"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2715,22 +2715,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Esegue i comandi una volta che le espressioni UESH sono soddisfatte"
+      "text": "Esegue i comandi una volta che le espressioni MESH sono soddisfatte"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Espressione UESH da testare"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Espressione MESH da testare"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Comando da eseguire in caso di valutazione positiva"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "dove <risposte> sono le risposte di una lettera della domanda separate da barre"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "È necessario passare l'opzione -set con la variabile su cui si desidera impostare questo valore."
     },
     {
@@ -2791,7 +2791,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Effettua il fork della shell UESH per creare un'altra istanza"
+      "text": "Effettua il fork della shell MESH per creare un'altra istanza"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2875,7 +2875,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Rimuove una variabile dall'elenco delle variabili UESH"
+      "text": "Rimuove una variabile dall'elenco delle variabili MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

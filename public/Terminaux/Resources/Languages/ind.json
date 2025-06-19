@@ -2715,7 +2715,7 @@
       "text": "ek baar uaish ke bhaav santusht hone ke baad kamaand nishpaadit karata hai"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
       "text": "pareekshan karane ke lie uaish abhivyakti"
     },
     {
@@ -2723,11 +2723,11 @@
       "text": "saphal moolyaankan par nishpaadit karane ke lie kamaand"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "jahaan <uttar> prashn ke ek-akshar vaale uttar ko slaish mein alag kiya jaata hai"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "aapako us vairiebal ke saath -sait svich paas karana hoga jis par aap yah maan set karana chaahate hain."
     },
     {

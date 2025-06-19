@@ -2533,7 +2533,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Ορίζει την τιμή της εξόδου στην επιλεγμένη μεταβλητή UESH"
+      "text": "Ορίζει την τιμή της εξόδου στην επιλεγμένη μεταβλητή MESH"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2713,22 +2713,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Εκτελεί εντολές μόλις ικανοποιηθούν οι εκφράσεις UESH"
+      "text": "Εκτελεί εντολές μόλις ικανοποιηθούν οι εκφράσεις MESH"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Έκφραση UESH για δοκιμή"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Έκφραση MESH για δοκιμή"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Εντολή για εκτέλεση μετά την επιτυχή αξιολόγηση"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "όπου <απαντήσεις> είναι οι απαντήσεις με ένα γράμμα της ερώτησης χωρισμένες σε κάθετες"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Πρέπει να περάσετε τον διακόπτη -set με τη μεταβλητή στην οποία θέλετε να ορίσετε αυτήν την τιμή."
     },
     {
@@ -2789,7 +2789,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Διχαλώνει το κέλυφος UESH για να δημιουργήσει ένα άλλο στιγμιότυπο"
+      "text": "Διχαλώνει το κέλυφος MESH για να δημιουργήσει ένα άλλο στιγμιότυπο"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2873,7 +2873,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Αφαιρεί μια μεταβλητή από τη λίστα μεταβλητών UESH"
+      "text": "Αφαιρεί μια μεταβλητή από τη λίστα μεταβλητών MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

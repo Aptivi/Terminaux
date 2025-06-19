@@ -32,7 +32,7 @@ namespace Terminaux.Shell.Shells.Unified
     /// Tests the condition
     /// </summary>
     /// <remarks>
-    /// Executes commands once the UESH conditions are satisfied
+    /// Executes commands once the MESH conditions are satisfied
     /// </remarks>
     class IfCommand : BaseCommand, ICommand
     {
@@ -41,7 +41,7 @@ namespace Terminaux.Shell.Shells.Unified
         {
             try
             {
-                if (UESHConditional.ConditionSatisfied(parameters.ArgumentsList[0]))
+                if (MESHConditional.ConditionSatisfied(parameters.ArgumentsList[0]))
                 {
                     string CommandString = string.Join(" ", [.. parameters.ArgumentsList.Skip(1)]);
                     var AltThreads = ShellManager.ShellStack[ShellManager.ShellStack.Count - 1].AltCommandThreads;
@@ -57,7 +57,7 @@ namespace Terminaux.Shell.Shells.Unified
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Failed to satisfy condition. See above for more information: {0}", ex.Message);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE") + " {0}", true, ConsoleColors.Red, ex.Message);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE") + " {0}", true, ConsoleColors.Red, ex.Message);
                 return ex.GetHashCode();
             }
         }

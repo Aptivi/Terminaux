@@ -2558,7 +2558,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "īḍbṭ qīmẗ al-iẖrāǧ ʿli mtġīr UESH al-mḥdd"
+      "text": "īḍbṭ qīmẗ al-iẖrāǧ ʿli mtġīr MESH al-mḥdd"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2738,22 +2738,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "yunafadh al'awamir bimujarad 'iirda' taebirat UESH"
+      "text": "yunafadh al'awamir bimujarad 'iirda' taebirat MESH"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "taebir UESH liliakhtibar"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "taebir MESH liliakhtibar"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "'amr yatimu tanfidhuh eind altaqyim alnaajih"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "hayth <alajwbt> hi 'iijabat min harf wahid lilsuwal mafsulat bikhati mayil"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "īǧb ʿlīk tmrīr rmz al-tbdīl -set mʿ al-mtġīr al-ḏī trīd tʿyin hḏh al-qīmẗ ilīh."
     },
     {
@@ -2814,7 +2814,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "šūkāt qḏīfẗ UESH linšāʾ mṯīl aẖr"
+      "text": "šūkāt qḏīfẗ MESH linšāʾ mṯīl aẖr"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2898,7 +2898,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "izālẗ mtġīr mn qāʾimẗ mtġīrāt UESH"
+      "text": "izālẗ mtġīr mn qāʾimẗ mtġīrāt MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

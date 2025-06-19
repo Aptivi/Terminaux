@@ -23,7 +23,7 @@ using Terminaux.Base;
 namespace Terminaux.Shell.Scripting.Conditions.Types
 {
     /// <summary>
-    /// Checks to see if a UESH variable is not of the correct type
+    /// Checks to see if a MESH variable is not of the correct type
     /// </summary>
     public class IsNotCondition : BaseCondition, ICondition
     {

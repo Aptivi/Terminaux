@@ -20,7 +20,7 @@
 namespace Terminaux.Shell.Scripting.Conditions
 {
     /// <summary>
-    /// UESH scripting condition interface
+    /// MESH scripting condition interface
     /// </summary>
     public interface ICondition
     {

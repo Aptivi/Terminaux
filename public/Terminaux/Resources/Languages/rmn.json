@@ -2533,7 +2533,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Setează valoarea ieșirii la variabila UESH selectată"
+      "text": "Setează valoarea ieșirii la variabila MESH selectată"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2713,22 +2713,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Execută comenzi odată ce expresiile UESH sunt satisfăcute"
+      "text": "Execută comenzi odată ce expresiile MESH sunt satisfăcute"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Expresia UESH de testat"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Expresia MESH de testat"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Comanda de executat la evaluarea cu succes"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "unde <răspunsuri> sunt răspunsuri cu o literă la întrebare, separate prin bare oblice"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Trebuie să treceți comutatorul -set cu variabila la care doriți să setați această valoare."
     },
     {
@@ -2789,7 +2789,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Forkează shell-ul UESH pentru a crea o altă instanță"
+      "text": "Forkează shell-ul MESH pentru a crea o altă instanță"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2873,7 +2873,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Elimină o variabilă din lista de variabile UESH"
+      "text": "Elimină o variabilă din lista de variabile MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

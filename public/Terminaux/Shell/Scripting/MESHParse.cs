@@ -32,12 +32,12 @@ using Terminaux.Colors;
 namespace Terminaux.Shell.Scripting
 {
     /// <summary>
-    /// UESH script parser
+    /// MESH script parser
     /// </summary>
-    public static class UESHParse
+    public static class MESHParse
     {
         /// <summary>
-        /// Executes the UESH script
+        /// Executes the MESH script
         /// </summary>
         /// <param name="ScriptPath">Full path to script</param>
         /// <param name="ScriptArguments">Script arguments</param>
@@ -46,7 +46,7 @@ namespace Terminaux.Shell.Scripting
             Execute(ScriptPath, ScriptArguments, ShellManager.CurrentShellType, justLint);
 
         /// <summary>
-        /// Executes the UESH script
+        /// Executes the MESH script
         /// </summary>
         /// <param name="ScriptPath">Full path to script</param>
         /// <param name="ScriptArguments">Script arguments</param>
@@ -71,8 +71,8 @@ namespace Terminaux.Shell.Scripting
                     // If $variable is found in string, initialize it
                     var SplitWords = Line.Split(' ');
                     for (int i = 0; i <= SplitWords.Length - 1; i++)
-                        if (!UESHVariables.ShellVariables.ContainsKey(SplitWords[i]) & SplitWords[i].StartsWith("$"))
-                            UESHVariables.InitializeVariable(SplitWords[i]);
+                        if (!MESHVariables.ShellVariables.ContainsKey(SplitWords[i]) & SplitWords[i].StartsWith("$"))
+                            MESHVariables.InitializeVariable(SplitWords[i]);
                     LineNo++;
                 }
 
@@ -131,9 +131,9 @@ namespace Terminaux.Shell.Scripting
                         // Iterate every word
                         for (int i = 0; i <= SplitWords.Length - 1; i++)
                             // Every word that start with the $ sign means it's a variable that should be replaced with the
-                            // value from the UESH variable manager.
+                            // value from the MESH variable manager.
                             if (SplitWords[i].StartsWith("$"))
-                                Line = UESHVariables.GetVariableCommand(SplitWords[i], Line, commandType);
+                                Line = MESHVariables.GetVariableCommand(SplitWords[i], Line, commandType);
 
                     // See if the line contains argument placeholder, and replace every instance of it with its value
                     var SplitArguments = ScriptArguments.SplitEncloseDoubleQuotes();
@@ -161,7 +161,7 @@ namespace Terminaux.Shell.Scripting
                             {
                                 case "if":
                                 case "while":
-                                    satisfied = justLint || UESHConditional.ConditionSatisfied(Arguments);
+                                    satisfied = justLint || MESHConditional.ConditionSatisfied(Arguments);
                                     if (Command == "while")
                                     {
                                         if (!whilePlaces.Contains((l, commandStackNum)))
@@ -170,7 +170,7 @@ namespace Terminaux.Shell.Scripting
                                     }
                                     break;
                                 case "until":
-                                    satisfied = justLint || !UESHConditional.ConditionSatisfied(Arguments);
+                                    satisfied = justLint || !MESHConditional.ConditionSatisfied(Arguments);
                                     if (!whilePlaces.Contains((l, commandStackNum)))
                                         whilePlaces.Add((l, commandStackNum));
                                     retryLoopCondition = true;

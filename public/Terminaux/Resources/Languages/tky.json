@@ -2533,7 +2533,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Çıktının değerini seçili UESH değişkenine ayarlar"
+      "text": "Çıktının değerini seçili MESH değişkenine ayarlar"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2713,22 +2713,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "UESH ifadeleri karşılandığında komutları yürütür"
+      "text": "MESH ifadeleri karşılandığında komutları yürütür"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "UESH ifadesi test edilecek"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "MESH ifadesi test edilecek"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Başarılı değerlendirme sonrasında yürütülecek komut"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "<cevaplar> sorunun eğik çizgilerle ayrılmış tek harfli cevaplarıdır"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Bu değeri ayarlamak istediğiniz değişkene -set anahtarını geçirmelisiniz."
     },
     {
@@ -2789,7 +2789,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Başka bir örnek oluşturmak için UESH kabuğunu çatallandırır"
+      "text": "Başka bir örnek oluşturmak için MESH kabuğunu çatallandırır"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2873,7 +2873,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "UESH değişken listesinden bir değişkeni kaldırır"
+      "text": "MESH değişken listesinden bir değişkeni kaldırır"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

@@ -33,9 +33,9 @@ using Textify.Tools;
 namespace Terminaux.Shell.Scripting
 {
     /// <summary>
-    /// UESH shell variable manager
+    /// MESH shell variable manager
     /// </summary>
-    public static class UESHVariables
+    public static class MESHVariables
     {
 
         internal static Dictionary<string, string> ShellVariables = new()
@@ -202,7 +202,7 @@ namespace Terminaux.Shell.Scripting
         }
 
         /// <summary>
-        /// Parses the system environment variables and converts them to the UESH shell variables
+        /// Parses the system environment variables and converts them to the MESH shell variables
         /// </summary>
         public static void ConvertSystemEnvironmentVariables()
         {
@@ -212,9 +212,9 @@ namespace Terminaux.Shell.Scripting
         }
 
         /// <summary>
-        /// Initializes the UESH variables from the expression
+        /// Initializes the MESH variables from the expression
         /// </summary>
-        /// <param name="expression">UESH variable expressions in the form of $var=value</param>
+        /// <param name="expression">MESH variable expressions in the form of $var=value</param>
         public static void InitializeVariablesFrom(string expression)
         {
             // Get the variable keys and values
@@ -239,9 +239,9 @@ namespace Terminaux.Shell.Scripting
         }
 
         /// <summary>
-        /// Gets the UESH variables from the expression
+        /// Gets the MESH variables from the expression
         /// </summary>
-        /// <param name="expression">UESH variable expressions in the form of $var=value</param>
+        /// <param name="expression">MESH variable expressions in the form of $var=value</param>
         public static (string[] varStoreKeys, string[] varStoreValues) GetVariablesFrom(string expression)
         {
             // Get the variable keys and values

@@ -2532,7 +2532,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Valorem de output ad lectus UESH variabilis"
+      "text": "Valorem de output ad lectus MESH variabilis"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2712,22 +2712,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Imperat semel expressiones UESH satisfecit"
+      "text": "Imperat semel expressiones MESH satisfecit"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "UESH expressio test"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "MESH expressio test"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Mandatum facere in secunda aestimatione"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "where <responde> are one-epitter answers of question separata in slashes"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Transire -set transitum cum variabili quod vis ad hunc valorem mittere."
     },
     {
@@ -2788,7 +2788,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Furculas UESH testa creare aliud exempli gratia"
+      "text": "Furculas MESH testa creare aliud exempli gratia"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2872,7 +2872,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Varium removet a album variabilis UESH"
+      "text": "Varium removet a album variabilis MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

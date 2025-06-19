@@ -24,10 +24,10 @@ using Terminaux.Shell.Scripting;
 namespace Terminaux.Shell.Shells.Unified
 {
     /// <summary>
-    /// Removes a UESH variable from the list
+    /// Removes a MESH variable from the list
     /// </summary>
     /// <remarks>
-    /// You can remove a UESH variable from the list or wipe its variable value
+    /// You can remove a MESH variable from the list or wipe its variable value
     /// </remarks>
     class UnsetCommand : BaseCommand, ICommand
     {
@@ -35,9 +35,9 @@ namespace Terminaux.Shell.Shells.Unified
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool destructive = !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-justwipe");
-            UESHVariables.SetVariable(parameters.ArgumentsList[0], "");
+            MESHVariables.SetVariable(parameters.ArgumentsList[0], "");
             if (destructive)
-                UESHVariables.RemoveVariable(parameters.ArgumentsList[0]);
+                MESHVariables.RemoveVariable(parameters.ArgumentsList[0]);
             return 0;
         }
     }

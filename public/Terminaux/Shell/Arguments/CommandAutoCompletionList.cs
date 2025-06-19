@@ -33,7 +33,7 @@ namespace Terminaux.Shell.Arguments
     {
         private static readonly Dictionary<string, Func<string[], string[]>> completions = new()
         {
-            { "$variable",  (_) => UESHVariables.Variables.Keys.ToArray() },
+            { "$variable",  (_) => MESHVariables.Variables.Keys.ToArray() },
             { "cmd",        (_) => PopulateCommands() },
             { "command",    (_) => PopulateCommands() },
             { "shell",      (_) => ShellManager.AvailableShells.Keys.ToArray() },

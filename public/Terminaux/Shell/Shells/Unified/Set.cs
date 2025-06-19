@@ -25,10 +25,10 @@ using Terminaux.Writer.ConsoleWriters;
 namespace Terminaux.Shell.Shells.Unified
 {
     /// <summary>
-    /// Sets a UESH variable to a specified value
+    /// Sets a MESH variable to a specified value
     /// </summary>
     /// <remarks>
-    /// You can set a UESH variable to a specified value. This can be used in UESH scripts.
+    /// You can set a MESH variable to a specified value. This can be used in MESH scripts.
     /// </remarks>
     class SetCommand : BaseCommand, ICommand
     {
@@ -37,7 +37,7 @@ namespace Terminaux.Shell.Shells.Unified
         {
             if (!parameters.SwitchSetPassed)
             {
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH"), ConsoleColors.Red);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH"), ConsoleColors.Red);
                 return 1;
             }
             variableValue = parameters.ArgumentsList[0];

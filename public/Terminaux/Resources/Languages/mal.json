@@ -2535,7 +2535,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Menetapkan nilai output kepada pembolehubah UESH yang dipilih"
+      "text": "Menetapkan nilai output kepada pembolehubah MESH yang dipilih"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2715,22 +2715,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Melaksanakan arahan setelah ungkapan UESH berpuas hati"
+      "text": "Melaksanakan arahan setelah ungkapan MESH berpuas hati"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Ungkapan UESH untuk diuji"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Ungkapan MESH untuk diuji"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Perintah untuk melaksanakan apabila penilaian berjaya"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "di mana <answers> ialah jawapan satu huruf bagi soalan yang dipisahkan dalam garis miring"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Anda mesti lulus suis -set dengan pembolehubah yang anda mahu tetapkan nilai ini."
     },
     {
@@ -2791,7 +2791,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Memotong cangkerang UESH untuk mencipta contoh lain"
+      "text": "Memotong cangkerang MESH untuk mencipta contoh lain"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2875,7 +2875,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Mengalih keluar pembolehubah daripada senarai pembolehubah UESH"
+      "text": "Mengalih keluar pembolehubah daripada senarai pembolehubah MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

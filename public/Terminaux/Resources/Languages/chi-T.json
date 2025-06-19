@@ -2536,7 +2536,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "将输出值设置为选定的 UESH 变量"
+      "text": "将输出值设置为选定的 MESH 变量"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2716,22 +2716,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "一旦满足 UESH 表达式，就执行命令"
+      "text": "一旦满足 MESH 表达式，就执行命令"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "UESH 表达测试"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "MESH 表达测试"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "评估成功后执行的命令"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "其中<answers>是用斜杠分隔的问题的字母答案"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "您必须将 -set 开关与要设置该值的变量一起传递。"
     },
     {
@@ -2792,7 +2792,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "分叉 UESH shell 以创建另一个实例"
+      "text": "分叉 MESH shell 以创建另一个实例"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2876,7 +2876,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "从 UESH 变量列表中删除变量"
+      "text": "从 MESH 变量列表中删除变量"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

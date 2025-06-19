@@ -20,7 +20,7 @@
 namespace Terminaux.Shell.Scripting.Conditions.Types
 {
     /// <summary>
-    /// Checks to see if one of the two UESH variables is greater than the other
+    /// Checks to see if one of the two MESH variables is greater than the other
     /// </summary>
     public class GreaterThanCondition : BaseCondition, ICondition
     {
@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Scripting.Conditions.Types
 
         /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable) =>
-            UESHOperators.UESHVariableGreaterThan(FirstVariable, SecondVariable);
+            MESHOperators.MESHVariableGreaterThan(FirstVariable, SecondVariable);
 
     }
 }

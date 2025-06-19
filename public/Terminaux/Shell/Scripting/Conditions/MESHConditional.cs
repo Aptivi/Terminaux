@@ -27,9 +27,9 @@ using Textify.General;
 namespace Terminaux.Shell.Scripting.Conditions
 {
     /// <summary>
-    /// UESH condition manager
+    /// MESH condition manager
     /// </summary>
-    public static class UESHConditional
+    public static class MESHConditional
     {
 
         private readonly static Dictionary<string, BaseCondition> Conditions = new()
@@ -66,9 +66,9 @@ namespace Terminaux.Shell.Scripting.Conditions
             Conditions.Union(CustomConditions).ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
 
         /// <summary>
-        /// Checks if the UESH condition was satisfied
+        /// Checks if the MESH condition was satisfied
         /// </summary>
-        /// <param name="ConditionToSatisfy">The UESH condition to satisfy</param>
+        /// <param name="ConditionToSatisfy">The MESH condition to satisfy</param>
         public static bool ConditionSatisfied(string ConditionToSatisfy)
         {
             if (!string.IsNullOrWhiteSpace(ConditionToSatisfy))

@@ -26,7 +26,7 @@ using Textify.Tools;
 namespace Terminaux.Shell.Scripting.Conditions.Types
 {
     /// <summary>
-    /// Checks to see if a UESH variable is of the correct type
+    /// Checks to see if a MESH variable is of the correct type
     /// </summary>
     public class IsCondition : BaseCondition, ICondition
     {

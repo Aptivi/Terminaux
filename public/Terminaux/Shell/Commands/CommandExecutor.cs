@@ -267,7 +267,7 @@ namespace Terminaux.Shell.Commands
                     string value = "";
                     CommandDelegate(ShellInstance, CommandBase, parameters, ref value);
 
-                    // Set the error code and set the UESH variable as appropriate
+                    // Set the error code and set the MESH variable as appropriate
                     ConsoleLogger.Debug("Error code is {0}", ShellInstance.LastErrorCode);
                     if (containsSetSwitch)
                     {
@@ -277,7 +277,7 @@ namespace Terminaux.Shell.Commands
                             // Assume that we're setting an array.
                             ConsoleLogger.Debug("Array variable to set is {0}", variable);
                             string[] values = value.Replace((char)13, default).Split('\n');
-                            UESHVariables.SetVariables(variable, values);
+                            MESHVariables.SetVariables(variable, values);
                         }
                         else if (value.StartsWith("[") && value.EndsWith("]"))
                         {
@@ -285,12 +285,12 @@ namespace Terminaux.Shell.Commands
                             ConsoleLogger.Debug("Array variable to set is {0}", variable);
                             value = value.Substring(1, value.Length - 1);
                             string[] values = value.Split([", "], StringSplitOptions.None);
-                            UESHVariables.SetVariables(variable, values);
+                            MESHVariables.SetVariables(variable, values);
                         }
                         else
                         {
                             ConsoleLogger.Debug("Variable to set {0} is {1}", value, variable);
-                            UESHVariables.SetVariable(variable, value);
+                            MESHVariables.SetVariable(variable, value);
                         }
                     }
                 }

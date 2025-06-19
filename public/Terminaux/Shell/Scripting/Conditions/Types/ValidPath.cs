@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Scripting.Conditions.Types
 
         /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable) =>
-            UESHOperators.UESHVariableValidPath(FirstVariable);
+            MESHOperators.MESHVariableValidPath(FirstVariable);
 
     }
 }

@@ -2532,7 +2532,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "आउटपुट का मान चयनित UESH वेरिएबल पर सेट करता है"
+      "text": "आउटपुट का मान चयनित MESH वेरिएबल पर सेट करता है"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2712,22 +2712,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "एक बार UESH के भाव संतुष्ट होने के बाद कमांड निष्पादित करता है"
+      "text": "एक बार MESH के भाव संतुष्ट होने के बाद कमांड निष्पादित करता है"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "परीक्षण हेतु UESH अभिव्यक्ति"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "परीक्षण हेतु MESH अभिव्यक्ति"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "सफल मूल्यांकन के बाद निष्पादित करने का आदेश"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "जहाँ <उत्तर> प्रश्न के एक-अक्षर वाले उत्तर को स्लैश में अलग किया जाता है"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "आपको उस वेरिएबल के साथ -सेट स्विच पास करना होगा जिस पर आप यह मान सेट करना चाहते हैं।"
     },
     {
@@ -2872,7 +2872,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "UESH वेरिएबल सूची से एक वेरिएबल हटाता है"
+      "text": "MESH वेरिएबल सूची से एक वेरिएबल हटाता है"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

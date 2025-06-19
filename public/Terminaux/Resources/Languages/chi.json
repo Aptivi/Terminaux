@@ -2536,7 +2536,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "jiāng shū chū zhí shè zhì wéi xuǎn dìng de UESH biàn liáng"
+      "text": "jiāng shū chū zhí shè zhì wéi xuǎn dìng de MESH biàn liáng"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2716,22 +2716,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Yīdàn mǎnzú UESH biǎodá shì, jiù zhíxíng mìnglìng"
+      "text": "Yīdàn mǎnzú MESH biǎodá shì, jiù zhíxíng mìnglìng"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "yào cèshì de UESH biǎodá shì"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "yào cèshì de MESH biǎodá shì"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "chénggōng pínggū hòu yào zhíxíng de mìnglìng"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "Qízhōng <answers>shì yòng xié gāng fēngé de wèntí de zìmǔ dá'àn"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "nín bì xū jiāng -set kāi guān yǔ yào shè zhì gāi zhí de biàn liáng yī qǐ chuán dì 。"
     },
     {
@@ -2792,7 +2792,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "fēn chā UESH shell yǐ chuàng jiàn lìng yī gè shí lì"
+      "text": "fēn chā MESH shell yǐ chuàng jiàn lìng yī gè shí lì"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2876,7 +2876,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "cóng UESH biàn liáng liè biǎo zhōng shān chú biàn liáng"
+      "text": "cóng MESH biàn liáng liè biǎo zhōng shān chú biàn liáng"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

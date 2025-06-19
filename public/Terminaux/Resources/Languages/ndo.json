@@ -2532,7 +2532,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Mengatur nilai output ke variabel UESH yang dipilih"
+      "text": "Mengatur nilai output ke variabel MESH yang dipilih"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2712,22 +2712,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Menjalankan perintah setelah ekspresi UESH terpenuhi"
+      "text": "Menjalankan perintah setelah ekspresi MESH terpenuhi"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Ekspresi UESH untuk diuji"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Ekspresi MESH untuk diuji"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Perintah untuk dijalankan setelah evaluasi berhasil"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "di mana <jawaban> adalah jawaban satu huruf dari pertanyaan yang dipisahkan dengan garis miring"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Anda harus meneruskan sakelar -set dengan variabel yang ingin Anda tetapkan nilainya."
     },
     {
@@ -2788,7 +2788,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Membagi shell UESH untuk membuat instance lain"
+      "text": "Membagi shell MESH untuk membuat instance lain"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2872,7 +2872,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Menghapus variabel dari daftar variabel UESH"
+      "text": "Menghapus variabel dari daftar variabel MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

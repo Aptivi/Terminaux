@@ -2578,7 +2578,7 @@
     },
     {
       "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Définit la valeur de la sortie sur la variable UESH sélectionnée"
+      "text": "Définit la valeur de la sortie sur la variable MESH sélectionnée"
     },
     {
       "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
@@ -2758,22 +2758,22 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Exécute les commandes une fois que les expressions UESH sont satisfaites"
+      "text": "Exécute les commandes une fois que les expressions MESH sont satisfaites"
     },
     {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Expression UESH à tester"
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Expression MESH à tester"
     },
     {
       "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
       "text": "Commande à exécuter en cas d'évaluation réussie"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_CHOICE_HELPER",
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
       "text": "où <réponses> sont des réponses à une lettre de la question séparées par des barres obliques"
     },
     {
-      "loc": "T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
       "text": "Vous devez transmettre le commutateur -set avec la variable à laquelle vous souhaitez définir cette valeur."
     },
     {
@@ -2834,7 +2834,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Forks le shell UESH pour créer une autre instance"
+      "text": "Forks le shell MESH pour créer une autre instance"
     },
     {
       "loc": "T_SHELL_UNIFIED_INPUT_DESC",
@@ -2918,7 +2918,7 @@
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Supprime une variable de la liste des variables UESH"
+      "text": "Supprime une variable de la liste des variables MESH"
     },
     {
       "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",

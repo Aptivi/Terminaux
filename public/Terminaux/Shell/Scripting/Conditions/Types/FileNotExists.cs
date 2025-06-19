@@ -20,7 +20,7 @@
 namespace Terminaux.Shell.Scripting.Conditions.Types
 {
     /// <summary>
-    /// Checks to see if the value of the UESH variable is a file path and doesn't exist
+    /// Checks to see if the value of the MESH variable is a file path and doesn't exist
     /// </summary>
     public class FileNotExistsCondition : BaseCondition, ICondition
     {
@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Scripting.Conditions.Types
 
         /// <inheritdoc/>
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable) =>
-            UESHOperators.UESHVariableFileDoesNotExist(FirstVariable);
+            MESHOperators.MESHVariableFileDoesNotExist(FirstVariable);
 
     }
 }

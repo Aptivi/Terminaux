@@ -25,7 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 namespace Terminaux.Shell.Shells.Unified
 {
     /// <summary>
-    /// Makes a UESH array and sets their values
+    /// Makes a MESH array and sets their values
     /// </summary>
     /// <remarks>
     /// If you want to store a group of values in one variable, you can use this command to create arrays of values. Such variables will have the [n] suffix, for example, $values[1].
@@ -37,7 +37,7 @@ namespace Terminaux.Shell.Shells.Unified
         {
             if (!parameters.SwitchSetPassed)
             {
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_UESH_SET_NEEDSSWITCH"), ConsoleColors.Red);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH"), ConsoleColors.Red);
                 return 1;
             }
             variableValue = $"[{string.Join(", ", [.. parameters.ArgumentsList])}]";

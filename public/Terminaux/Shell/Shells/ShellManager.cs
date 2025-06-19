@@ -240,9 +240,9 @@ namespace Terminaux.Shell.Shells
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "ueshExpression", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "MESHExpression", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_IF_ARGUMENT_UESHEXPRESSION_DESC"
+                            ArgumentDescription = "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC"
                         }),
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
@@ -461,7 +461,7 @@ namespace Terminaux.Shell.Shells
                 if (ShellStack.Count == 0)
                 {
                     // We don't have any shell. Return Shell.
-                    ConsoleLogger.Warning("Trying to call LastShellType on empty shell stack. Assuming UESH...");
+                    ConsoleLogger.Warning("Trying to call LastShellType on empty shell stack. Assuming MESH...");
                     return "Shell";
                 }
                 else if (ShellStack.Count == 1)
@@ -652,22 +652,22 @@ namespace Terminaux.Shell.Shells
                     }
                 }
 
-                // Initialize local UESH variables (if found)
+                // Initialize local MESH variables (if found)
                 string localVarStoreMatchRegex = /* lang=regex */ @"^\((.+)\)\s+";
                 var localVarStoreMatch = RegexTools.Match(Command, localVarStoreMatchRegex);
                 string varStoreString = localVarStoreMatch.Groups[1].Value;
                 ConsoleLogger.Debug("varStoreString is: {0}", varStoreString);
                 string varStoreStringFull = localVarStoreMatch.Value;
-                var varStoreVars = UESHVariables.GetVariablesFrom(varStoreString);
+                var varStoreVars = MESHVariables.GetVariablesFrom(varStoreString);
 
                 // First, check to see if we already have that variable. If we do, get its old value.
                 List<(string, string)> oldVarValues = [];
                 foreach (string varStoreKey in varStoreVars.varStoreKeys)
                 {
-                    if (UESHVariables.Variables.ContainsKey(varStoreKey))
-                        oldVarValues.Add((varStoreKey, UESHVariables.GetVariable(varStoreKey)));
+                    if (MESHVariables.Variables.ContainsKey(varStoreKey))
+                        oldVarValues.Add((varStoreKey, MESHVariables.GetVariable(varStoreKey)));
                 }
-                UESHVariables.InitializeVariablesFrom(varStoreString);
+                MESHVariables.InitializeVariablesFrom(varStoreString);
                 Command = Command.Substring(varStoreStringFull.Length);
 
                 // Check to see if the command is a comment
@@ -731,13 +731,13 @@ namespace Terminaux.Shell.Shells
                                 ConsoleLogger.Debug("Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                 var Params = new CommandExecutorParameters(Command, cmdInfo, ShellType, ShellInstance);
                                 CommandExecutor.StartCommandThread(Params);
-                                UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
+                                MESHVariables.SetVariable("MESHErrorCode", $"{ShellInstance.LastErrorCode}");
                             }
                         }
                         else if (pathValid & ShellType == "Shell")
                         {
-                            // If we're in the UESH shell, parse the script file or executable file
-                            if (File.Exists(TargetFile) & !TargetFile.EndsWith(".uesh"))
+                            // If we're in the MESH shell, parse the script file or executable file
+                            if (File.Exists(TargetFile) & !TargetFile.EndsWith(".MESH"))
                             {
                                 ConsoleLogger.Debug("Cmd exec {0} succeeded because file is found.", commandName);
                                 try
@@ -752,14 +752,14 @@ namespace Terminaux.Shell.Shells
                                         ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
                                         ProcessExecutor.processExecutorThread.Start(Params);
                                         ProcessExecutor.processExecutorThread.Join();
-                                        UESHVariables.SetVariable("UESHErrorCode", "0");
+                                        MESHVariables.SetVariable("MESHErrorCode", "0");
                                     }
                                 }
                                 catch (Exception ex)
                                 {
                                     ConsoleLogger.Error(ex, "Failed to start process: {0}", ex.Message);
                                     TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR"), true, ConsoleColors.Red, commandName, ex.Message);
-                                    UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
+                                    MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
                                 }
                                 finally
                                 {
@@ -768,51 +768,51 @@ namespace Terminaux.Shell.Shells
                                     ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
                                 }
                             }
-                            else if (File.Exists(TargetFile) & TargetFile.EndsWith(".uesh"))
+                            else if (File.Exists(TargetFile) & TargetFile.EndsWith(".MESH"))
                             {
                                 try
                                 {
-                                    ConsoleLogger.Debug("Cmd exec {0} succeeded because it's a UESH script.", commandName);
-                                    UESHParse.Execute(TargetFile, arguments);
-                                    UESHVariables.SetVariable("UESHErrorCode", "0");
+                                    ConsoleLogger.Debug("Cmd exec {0} succeeded because it's a MESH script.", commandName);
+                                    MESHParse.Execute(TargetFile, arguments);
+                                    MESHVariables.SetVariable("MESHErrorCode", "0");
                                 }
                                 catch (Exception ex)
                                 {
                                     TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE"), true, ConsoleColors.Red, ex.Message);
-                                    UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
+                                    MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
                                 }
                             }
                             else
                             {
                                 ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found parsing target file", commandName);
                                 TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), true, ConsoleColors.Red, commandName);
-                                UESHVariables.SetVariable("UESHErrorCode", "-2");
+                                MESHVariables.SetVariable("MESHErrorCode", "-2");
                             }
                         }
                         else
                         {
                             ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found", commandName);
                             TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), true, ConsoleColors.Red, commandName);
-                            UESHVariables.SetVariable("UESHErrorCode", "-1");
+                            MESHVariables.SetVariable("MESHErrorCode", "-1");
                         }
                     }
                     catch (Exception ex)
                     {
                         TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2"), true, ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
-                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
+                        MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
                     }
                 }
 
                 // Fire an event of PostExecuteCommand and reset all local variables
                 var varStoreKeys = varStoreVars.varStoreKeys;
                 foreach (string varStoreKey in varStoreKeys)
-                    UESHVariables.RemoveVariable(varStoreKey);
+                    MESHVariables.RemoveVariable(varStoreKey);
                 foreach (var varStoreKeyOld in oldVarValues)
                 {
                     string key = varStoreKeyOld.Item1;
                     string value = varStoreKeyOld.Item2;
-                    UESHVariables.InitializeVariable(key);
-                    UESHVariables.SetVariable(key, value);
+                    MESHVariables.InitializeVariable(key);
+                    MESHVariables.SetVariable(key, value);
                 }
             }
 
