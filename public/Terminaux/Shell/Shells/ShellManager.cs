@@ -55,6 +55,72 @@ namespace Terminaux.Shell.Shells
 
         internal readonly static List<CommandInfo> unifiedCommandDict =
         [
+            new CommandInfo("choice", "T_SHELL_UNIFIED_CHOICE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "answers", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
+                        }),
+                        new CommandArgumentPart(true, "input", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "answertitle1", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
+                        }),
+                        new CommandArgumentPart(false, "answertitle2", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("o", "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["t", "m"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("t", "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["o", "m"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("m", "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["t", "o"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("single", "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["multiple"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("multiple", "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["single"],
+                            AcceptsValues = false
+                        })
+                    ], true, true)
+                ], new ChoiceCommand()),
+
+            new CommandInfo("cls", "T_SHELL_UNIFIED_CLS_DESC", new ClsCommand()),
+
+            new CommandInfo("echo", "T_SHELL_UNIFIED_ECHO_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("noparse", "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC", false, false, [], 0, false)
+                    ], true)
+                ], new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
             new CommandInfo("exec", "T_SHELL_UNIFIED_EXEC_DESC",
                 [
                     new CommandArgumentInfo(
@@ -88,6 +154,8 @@ namespace Terminaux.Shell.Shells
                         })
                     ], false)
                 ], new FindCmdsUnifiedCommand()),
+
+            new CommandInfo("fork", "T_SHELL_UNIFIED_FORK_DESC", new ForkCommand()),
 
             new CommandInfo("help", "T_SHELL_UNIFIED_HELP_HELP_DESC",
                 [
@@ -142,7 +210,54 @@ namespace Terminaux.Shell.Shells
                     ])
                 ], new IfCommand()),
 
+            new CommandInfo("input", "T_SHELL_UNIFIED_INPUT_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "question", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                        }),
+                    ], true)
+                ], new InputCommand()),
+
+            new CommandInfo("inputpass", "T_SHELL_UNIFIED_INPUTPASS_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "question", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                        }),
+                    ], true)
+                ], new InputPassCommand()),
+
             new CommandInfo("loadhistories", "T_SHELL_UNIFIED_LOADHISTORIES_DESC", new LoadHistoriesUnifiedCommand()),
+
+            new CommandInfo("now", "T_SHELL_UNIFIED_SHOWTD_DESC",
+                [
+                    new CommandArgumentInfo([
+                        new SwitchInfo("date", "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["time", "full"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("time", "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["date", "full"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("full", "T_SHELL_UNIFIED_SHOWTD_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["date", "time"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("utc", "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ], true)
+                ], new NowCommand(), CommandFlags.RedirectionSupported),
 
             new CommandInfo("pipe", "T_SHELL_UNIFIED_PIPE_DESC",
                 [
@@ -180,6 +295,87 @@ namespace Terminaux.Shell.Shells
                 ], new RepeatUnifiedCommand()),
 
             new CommandInfo("savehistories", "T_SHELL_UNIFIED_SAVEHISTORIES_DESC", new SaveHistoriesUnifiedCommand()),
+
+            new CommandInfo("select", "T_SHELL_UNIFIED_SELECT_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "answers", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
+                        }),
+                        new CommandArgumentPart(true, "input", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "answertitle1", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
+                        }),
+                        new CommandArgumentPart(false, "answertitle2", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
+                        }),
+                    ], true, true)
+                ], new SelectCommand()),
+
+            new CommandInfo("set", "T_SHELL_UNIFIED_SET_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "value", new()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC"
+                        }),
+                    ], true)
+                ], new SetCommand()),
+
+            new CommandInfo("setrange", "T_SHELL_UNIFIED_SETRANGE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC"
+                        }),
+                        new CommandArgumentPart(false, "value2", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC"
+                        }),
+                        new CommandArgumentPart(false, "value3", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC"
+                        }),
+                    ], true, true)
+                ], new SetRangeCommand()),
+
+            new CommandInfo("sleep", "T_SHELL_UNIFIED_SLEEP_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "ms", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC"
+                        }),
+                    ])
+                ], new SleepCommand()),
+
+            new CommandInfo("unset", "T_SHELL_UNIFIED_UNSET_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "$variable", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("justwipe", "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new UnsetCommand()),
 
             new CommandInfo("wrap", "T_SHELL_UNIFIED_WRAP_DESC",
                 [

@@ -27,6 +27,14 @@ namespace Terminaux.Inputs.Styles.Choice
     /// </summary>
     public class ChoiceStyleSettings
     {
+        private static readonly ChoiceStyleSettings globalSettings = new();
+
+        /// <summary>
+        /// Global choice style settings
+        /// </summary>
+        public static ChoiceStyleSettings GlobalSettings =>
+            globalSettings;
+
         /// <summary>
         /// Output type of choices
         /// </summary>
