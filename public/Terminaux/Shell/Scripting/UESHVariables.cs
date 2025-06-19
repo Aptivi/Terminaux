@@ -68,7 +68,7 @@ namespace Terminaux.Shell.Scripting
         public static void InitializeVariable(string var)
         {
             var = SanitizeVariableName(var);
-            if (ShellVariables.ContainsKey(var))
+            if (!ShellVariables.ContainsKey(var))
             {
                 ShellVariables.Add(var, "");
                 ConsoleLogger.Debug("Initialized variable {0}", var);

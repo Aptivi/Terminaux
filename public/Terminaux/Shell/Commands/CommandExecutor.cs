@@ -55,6 +55,7 @@ namespace Terminaux.Shell.Commands
                 if (ShellInstance.AltCommandThreads.Count > 0)
                 {
                     ConsoleLogger.Info("Using last alt command thread...");
+                    ShellInstance.AltCommandThreads[ShellInstance.AltCommandThreads.Count - 1] = ShellManager.RegenerateCommandThread(ShellInstance.ShellType);
                     StartCommandThread = ShellInstance.AltCommandThreads[ShellInstance.AltCommandThreads.Count - 1];
                 }
                 else
