@@ -35,6 +35,7 @@ namespace Terminaux.Shell.Commands
 
         internal static CancellationTokenSource cts = new();
         internal static bool canCancel = false;
+        internal static bool isOnLocal = false;
         internal static bool installed;
         internal static bool cancelRequested;
 
@@ -65,6 +66,32 @@ namespace Terminaux.Shell.Commands
             {
                 Console.CancelKeyPress += CancelCommand;
                 installed = true;
+            }
+        }
+
+        /// <summary>
+        /// Begins the local cancellation scope
+        /// </summary>
+        /// <param name="handler">Console cancel event handler to use locally</param>
+        public static void BeginLocalCancelScope(ConsoleCancelEventHandler handler)
+        {
+            if (installed && !isOnLocal)
+            {
+                Console.CancelKeyPress += handler;
+                Console.CancelKeyPress -= CancelCommand;
+            }
+        }
+
+        /// <summary>
+        /// Ends the local cancellation scope
+        /// </summary>
+        /// <param name="handler">Console cancel event handler to use locally</param>
+        public static void EndLocalCancelScope(ConsoleCancelEventHandler handler)
+        {
+            if (installed && isOnLocal)
+            {
+                Console.CancelKeyPress += CancelCommand;
+                Console.CancelKeyPress -= handler;
             }
         }
 
