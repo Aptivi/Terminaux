@@ -1013,6 +1013,21 @@ namespace Terminaux.Shell.Shells
         public static bool ShellTypeExists(string ShellType) =>
             AvailableShells.ContainsKey(ShellType);
 
+        /// <summary>
+        /// Adds the alternate shell command thread to the current shell
+        /// </summary>
+        public static void AddAlternateThread()
+        {
+            if (ShellStack.Count < 1)
+                return;
+            var AltThreads = ShellStack[ShellStack.Count - 1].AltCommandThreads;
+            if (AltThreads.Count == 0 || AltThreads[AltThreads.Count - 1].IsAlive)
+            {
+                var CommandThread = new Thread((cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
+                ShellStack[ShellStack.Count - 1].AltCommandThreads.Add(CommandThread);
+            }
+        }
+
         internal static void SaveHistories()
         {
             foreach (var historyInfo in HistoryTools.histories)

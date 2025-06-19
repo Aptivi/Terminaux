@@ -23,7 +23,7 @@ using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
-namespace Terminaux.Console.Fixtures.Cases.Shell.Shells
+namespace Terminaux.Tests.Shared.Shells
 {
     internal class TestShellInstance : BaseShell, IShell
     {

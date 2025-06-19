@@ -17,20 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Shells;
-using Terminaux.Tests.Shared.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Console.Fixtures.Cases.Shell
+namespace Terminaux.Tests.Shared.Shells.Commands
 {
-    internal class TestShell : IFixture
+    class WriteCommand : BaseCommand, ICommand
     {
-        public FixtureCategory Category => FixtureCategory.Shell;
-
-        public void RunFixture()
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ShellManager.RegisterShell("TestShell", new TestShellInfo());
-            ShellManager.StartShell("TestShell");
-            ShellManager.UnregisterShell("TestShell");
+            TextWriterColor.Write("Test text");
+            return 0;
         }
     }
 }

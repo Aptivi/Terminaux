@@ -20,7 +20,7 @@
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Console.Fixtures.Cases.Shell.Shells.Commands
+namespace Terminaux.Tests.Shared.Shells.Commands
 {
     class WriteArgCommand : BaseCommand, ICommand
     {

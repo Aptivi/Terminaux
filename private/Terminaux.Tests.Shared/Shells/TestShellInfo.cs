@@ -18,12 +18,14 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Console.Fixtures.Cases.Shell.Shells.Commands;
+using Terminaux.Tests.Shared.Shells.Commands;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Tests.Shared.Shells.Prompts;
 
-namespace Terminaux.Console.Fixtures.Cases.Shell.Shells
+namespace Terminaux.Tests.Shared.Shells
 {
     internal class TestShellInfo : BaseShellInfo<TestShellInstance>, IShellInfo
     {
@@ -42,5 +44,10 @@ namespace Terminaux.Console.Fixtures.Cases.Shell.Shells
                     ])
                 ], new WriteArgCommand()),
         ];
+
+        public override Dictionary<string, PromptPresetBase> ShellPresets => new()
+        {
+            { "TestPreset", new TestPreset() }
+        };
     }
 }

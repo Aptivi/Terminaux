@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>8d13659f-92b6-4559-b8b1-a9766abec46c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Terminaux.Tests.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Shells\Commands\Write.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shells\Commands\WriteArg.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shells\Presets\TestPreset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shells\TestShellInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shells\TestShellInstance.cs" />
+  </ItemGroup>
+</Project>

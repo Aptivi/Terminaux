@@ -56,6 +56,24 @@ namespace Terminaux.Shell.Commands
         public static void InhibitCancel() =>
             canCancel = false;
 
+        /// <summary>
+        /// Installs the cancellation handler
+        /// </summary>
+        public static void InstallHandler()
+        {
+            if (!installed)
+            {
+                Console.CancelKeyPress += CancelCommand;
+                installed = true;
+            }
+        }
+
+        /// <summary>
+        /// Dismisses the cancellation request
+        /// </summary>
+        public static void DismissRequest() =>
+            cancelRequested = false;
+
         internal static void CancelCommand(object? sender, ConsoleCancelEventArgs e)
         {
             // We can't cancel in a situation where there are no shells.
@@ -98,15 +116,6 @@ namespace Terminaux.Shell.Commands
                 ConsoleLogger.Error(ex, "Cannot cancel. {0}", ex.Message);
             }
             e.Cancel = true;
-        }
-
-        internal static void InstallHandler()
-        {
-            if (!installed)
-            {
-                Console.CancelKeyPress += CancelCommand;
-                installed = true;
-            }
         }
 
         internal static object GetCancelSyncLock(string ShellType) =>

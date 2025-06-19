@@ -84,18 +84,20 @@ namespace Terminaux.Shell.Scripting
         /// <returns>A command line in script that has a value of $variable</returns>
         public static string GetVariableCommand(string var, string cmd, string commandType)
         {
+            var = SanitizeVariableName(var);
             var CommandArgumentsInfo = ArgumentsParser.ParseShellCommandArguments(cmd, commandType).total[0];
             string NewCommand = $"{CommandArgumentsInfo.Command} ";
             var commands = CommandManager.GetCommands(commandType);
             if (!CommandManager.IsCommandFound(CommandArgumentsInfo.Command) ||
-                !ShellManager.GetShellInfo(commandType).Commands.Single((ci) => ci.Command == CommandArgumentsInfo.Command).CommandArgumentInfo.Any((cai) => cai.AcceptsSet))
+                !commands.Single((ci) => ci.Command == CommandArgumentsInfo.Command).CommandArgumentInfo.Any((cai) => cai.AcceptsSet))
             {
                 foreach (string Word in CommandArgumentsInfo.ArgumentsList)
                 {
                     string finalWord = Word;
                     if (finalWord.Contains(var) & finalWord.StartsWith("$"))
                     {
-                        finalWord = ShellVariables[var];
+                        if (ShellVariables.ContainsKey(var))
+                            finalWord = ShellVariables[var];
                     }
                     NewCommand += $"{finalWord} ";
                 }

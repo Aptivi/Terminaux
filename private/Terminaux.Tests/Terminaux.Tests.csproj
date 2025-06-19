@@ -36,4 +36,18 @@
     <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.14.0" />
   </ItemGroup>
 
+  <Import Project="..\Terminaux.Tests.Shared\Terminaux.Tests.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <None Include="TestData\ScriptValid.mesh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\ScriptInvalid.mesh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\ScriptEmpty.mesh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

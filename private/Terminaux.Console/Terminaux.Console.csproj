@@ -27,4 +27,6 @@
     <EmbeddedResource Include="Assets\vectors\*" />
   </ItemGroup>
 
+  <Import Project="..\Terminaux.Tests.Shared\Terminaux.Tests.Shared.projitems" Label="Shared" />
+
 </Project>
