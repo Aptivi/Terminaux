@@ -151,7 +151,7 @@ namespace Terminaux.Shell.Help
                     IsExtra || IsUnified ? command :
                     IsAlias ? AliasManager.GetAlias(command, commandType).Command :
                     command;
-                string HelpDefinition = FinalCommandList[FinalCommand].HelpDefinition;
+                string HelpDefinition = LanguageTools.GetLocalized(FinalCommandList[FinalCommand].HelpDefinition);
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
