@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -37,7 +38,21 @@ namespace Terminaux.Shell.Aliases
         /// <summary>
         /// Initializes aliases
         /// </summary>
-        public static void InitAliases(string aliasPath)
+        public static void InitAliases() =>
+            InitAliasesPath(ConsoleFilesystem.GetSubPath("Aliases") + $"/{ShellManager.CurrentShellType}.json");
+
+        /// <summary>
+        /// Initializes aliases
+        /// </summary>
+        /// <param name="shellType">The shell type</param>
+        public static void InitAliases(string shellType) =>
+            InitAliasesPath(ConsoleFilesystem.GetSubPath("Aliases") + $"/{shellType}.json");
+
+        /// <summary>
+        /// Initializes aliases
+        /// </summary>
+        /// <param name="aliasPath">Path to alias JSON file</param>
+        public static void InitAliasesPath(string aliasPath)
         {
             // Get all aliases from file
             if (!File.Exists(aliasPath))
@@ -54,7 +69,21 @@ namespace Terminaux.Shell.Aliases
         /// <summary>
         /// Saves aliases
         /// </summary>
-        public static void SaveAliases(string aliasPath)
+        public static void SaveAliases() =>
+            SaveAliasesPath(ConsoleFilesystem.GetSubPath("Aliases") + $"/{ShellManager.CurrentShellType}.json");
+
+        /// <summary>
+        /// Saves aliases
+        /// </summary>
+        /// <param name="shellType">The shell type</param>
+        public static void SaveAliases(string shellType) =>
+            SaveAliasesPath(ConsoleFilesystem.GetSubPath("Aliases") + $"/{shellType}.json");
+
+        /// <summary>
+        /// Saves aliases
+        /// </summary>
+        /// <param name="aliasPath">Path to alias JSON file</param>
+        public static void SaveAliasesPath(string aliasPath)
         {
             // Save all aliases
             ConsoleLogger.Debug("Saving aliases...");

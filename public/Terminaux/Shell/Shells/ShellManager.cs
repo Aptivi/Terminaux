@@ -42,6 +42,7 @@ using Terminaux.Shell.Commands.ProcessExecution;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using Terminaux.Base.Wrappers;
+using Terminaux.Shell.Aliases;
 
 namespace Terminaux.Shell.Shells
 {
@@ -55,6 +56,46 @@ namespace Terminaux.Shell.Shells
 
         internal readonly static List<CommandInfo> unifiedCommandDict =
         [
+            new CommandInfo("alias", "T_SHELL_UNIFIED_ALIAS_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "add", new()
+                        {
+                            ExactWording = ["add"],
+                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC"
+                        }),
+                        new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
+                        }),
+                        new CommandArgumentPart(true, "cmd", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC"
+                        }),
+                    ]),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "rem", new()
+                        {
+                            ExactWording = ["rem"],
+                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC"
+                        }),
+                        new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
+                        }),
+                    ]),
+                ], new AliasCommand()),
+
             new CommandInfo("choice", "T_SHELL_UNIFIED_CHOICE_DESC",
                 [
                     new CommandArgumentInfo(
@@ -447,7 +488,7 @@ namespace Terminaux.Shell.Shells
         /// <summary>
         /// Whether to enable input history
         /// </summary>
-        public static bool InputHistoryEnabled { get; set; }
+        public static bool InputHistoryEnabled { get; set; } = true;
 
         /// <summary>
         /// Initial console title
@@ -820,8 +861,14 @@ namespace Terminaux.Shell.Shells
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
                 ShellStack.Add(ShellInfo);
+
+                // Load the histories
                 if (!HistoryTools.IsHistoryRegistered(ShellType))
                     HistoryTools.LoadFromInstance(new HistoryInfo(ShellType, []));
+                LoadHistories();
+
+                // Load the aliases
+                AliasManager.InitAliases(ShellType);
 
                 // Reset title in case we're going to another shell
                 ConsoleMisc.SetTitle(InitialTitle);
@@ -850,6 +897,9 @@ namespace Terminaux.Shell.Shells
                 // Terminaux has introduced recent changes surrounding the history feature of the reader that allows it to save and load custom histories, so we
                 // need to make use of it to be able to save histories in one file.
                 SaveHistories();
+
+                // Save the aliases
+                AliasManager.SaveAliases(ShellType);
             }
         }
 
@@ -974,7 +1024,6 @@ namespace Terminaux.Shell.Shells
             var histories = Directory.GetFiles(ConsoleFilesystem.GetSubPath("Histories"), "*.json");
             foreach (string historyFile in histories)
             {
-                string history = Path.GetFileName(historyFile);
                 string historyJson = File.ReadAllText(historyFile);
                 var historyInstance = JsonConvert.DeserializeObject<HistoryInfo>(historyJson);
                 if (historyInstance is null)
