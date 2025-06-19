@@ -496,6 +496,12 @@ namespace Terminaux.Shell.Shells
         public static string InitialTitle { get; set; } = "";
 
         /// <summary>
+        /// Count of shells in a stack
+        /// </summary>
+        public static int ShellCount =>
+            ShellStack.Count;
+
+        /// <summary>
         /// Inputs for command then parses a specified command.
         /// </summary>
         /// <remarks>All shells should use this routine to allow effective and consistent line parsing.</remarks>
