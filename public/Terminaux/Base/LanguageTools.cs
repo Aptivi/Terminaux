@@ -30,7 +30,7 @@ namespace Terminaux.Base
         {
             if (!LanguageCommon.IsCustomActionDefined(localType))
                 LanguageCommon.AddCustomAction(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            return LanguageCommon.Translate(id, localType);
+            return LanguageCommon.Translate(id);
         }
     }
 }
