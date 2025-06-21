@@ -225,7 +225,12 @@ namespace Terminaux.Colors.Themes
                 }
 
                 // Set the extra color types
-
+                foreach (var themeType in ThemeInfo.themeExtraColors)
+                {
+                    var themeColor = ThemeInfo.GetColor(themeType);
+                    ConsoleLogger.Debug("Custom theme color type {0}, setting theme color {1}...", themeType, themeColor.PlainSequence);
+                    ThemeColorsTools.themeColors[themeType] = themeColor;
+                }
 
                 // Load the background
                 ThemeColorsTools.LoadBackground();
