@@ -365,7 +365,7 @@ namespace Terminaux.Shell.Commands
 
                 // Now, print the output
                 ConsoleLogger.Debug("Printing...");
-                WrappedWriter.WriteWrapped(wrapOutput, false);
+                WrappedWriter.WriteWrappedPlain(wrapOutput, false);
             }
             catch (Exception ex)
             {

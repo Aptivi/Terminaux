@@ -47,7 +47,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 congue mauris. Odio euismod lacinia at quis risus sed vulputate odio ut. Quis enim lobortis
                 scelerisque fermentum dui faucibus in ornare quam.
                 """;
-            WrappedWriter.WriteWrapped(toBeEdited);
+            WrappedWriter.OpenWrapped(toBeEdited, true);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
                 历史原因，一些重大变更注释仍然使用 KS 根命名空间，不应修改它们，因为它们列出了上一个版本和下一个版本之
                 间发生的更改历史记录。 您必须更新导入以指向新的根命名空间。
                 """;
-            WrappedWriter.WriteWrapped(toBeEdited);
+            WrappedWriter.OpenWrapped(toBeEdited, true);
         }
     }
 }

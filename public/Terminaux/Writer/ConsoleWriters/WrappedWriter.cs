@@ -36,40 +36,40 @@ namespace Terminaux.Writer.ConsoleWriters
     public static class WrappedWriter
     {
         /// <summary>
-        /// Writes the text in a pager similar to <c>less</c> and <c>more</c> commands on Unix
+        /// Opens the text viewer similar to <c>less</c> and <c>more</c> commands on Unix
         /// </summary>
         /// <param name="text">Text to write. If it's shorter than the console height, it just prints the text</param>
         /// <param name="force">Forces the text viewer to open, even if the text doesn't exceed the console height</param>
         /// <param name="args">Arguments to format the text</param>
-        public static void WriteWrapped(string text, bool force = false, params object?[]? args) =>
-            WriteWrapped(text, ColorTools.currentForegroundColor, force, args);
+        public static void OpenWrapped(string text, bool force = false, params object?[]? args) =>
+            OpenWrapped(text, ColorTools.currentForegroundColor, force, args);
 
         /// <summary>
-        /// Writes the text in a pager similar to <c>less</c> and <c>more</c> commands on Unix
+        /// Opens the text viewer similar to <c>less</c> and <c>more</c> commands on Unix
         /// </summary>
         /// <param name="text">Text to write. If it's shorter than the console height, it just prints the text</param>
         /// <param name="force">Forces the text viewer to open, even if the text doesn't exceed the console height</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="args">Arguments to format the text</param>
-        public static void WriteWrapped(string text, Color color, bool force = false, params object?[]? args) =>
-            WriteWrapped(text, color, ColorTools.currentBackgroundColor, force, args);
+        public static void OpenWrapped(string text, Color color, bool force = false, params object?[]? args) =>
+            OpenWrapped(text, color, ColorTools.currentBackgroundColor, force, args);
 
         /// <summary>
-        /// Writes the text in a pager similar to <c>less</c> and <c>more</c> commands on Unix
+        /// Opens the text viewer similar to <c>less</c> and <c>more</c> commands on Unix
         /// </summary>
         /// <param name="text">Text to write. If it's shorter than the console height, it just prints the text</param>
         /// <param name="force">Forces the text viewer to open, even if the text doesn't exceed the console height</param>
         /// <param name="foregroundColor">A foreground color that will be changed to.</param>
         /// <param name="backgroundColor">A background color that will be changed to.</param>
         /// <param name="args">Arguments to format the text</param>
-        public static void WriteWrapped(string text, Color foregroundColor, Color backgroundColor, bool force = false, params object?[]? args)
+        public static void OpenWrapped(string text, Color foregroundColor, Color backgroundColor, bool force = false, params object?[]? args)
         {
             try
             {
                 // Use the text viewer to avoid code repetition
                 text = text.FormatString(args);
                 var lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth).ToList();
-                if (force || lines.Count >= ConsoleWrapper.WindowHeight)
+                if (!ConsoleWrapper.IsDumb && (force || lines.Count >= ConsoleWrapper.WindowHeight))
                 {
                     TextEditInteractive.OpenInteractive(ref lines, new()
                     {
@@ -87,7 +87,7 @@ namespace Terminaux.Writer.ConsoleWriters
         }
 
         /// <summary>
-        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+        /// Writes the text in a pager similar to <c>less</c> and <c>more</c> commands on Unix
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -113,7 +113,7 @@ namespace Terminaux.Writer.ConsoleWriters
         }
 
         /// <summary>
-        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+        /// Writes the text in a pager similar to <c>less</c> and <c>more</c> commands on Unix
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -141,13 +141,20 @@ namespace Terminaux.Writer.ConsoleWriters
         }
 
         /// <summary>
-        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed.
+        /// Writes the text in a pager similar to <c>less</c> and <c>more</c> commands on Unix
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWrappedPlain(string Text, bool Line, params object[] vars)
         {
+            // Check for dumb console
+            if (ConsoleWrapper.IsDumb)
+            {
+                TextWriterColor.Write(Text, vars);
+                return;
+            }
+
             var LinesMade = 0;
             try
             {
