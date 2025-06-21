@@ -207,7 +207,7 @@ namespace Terminaux.Colors.Themes
         /// Generates a new theme info from theme resource JSON
         /// </summary>
         /// <param name="ThemeResourceJson">Theme resource JSON</param>
-        internal ThemeInfo(JToken ThemeResourceJson)
+        public ThemeInfo(JToken ThemeResourceJson)
         {
             // Parse the metadata
             var metadataObj = ThemeResourceJson["Metadata"] ??
