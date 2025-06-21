@@ -160,6 +160,14 @@ namespace Terminaux.Colors.Themes
                     if (!themeColors.ContainsKey(themeExtraColor))
                         themeColors.Add(themeExtraColor, Color.Empty);
                     themeColors[themeExtraColor] = new Color(colorToken.ToString());
+
+                    // Let the theme-based color tools know about this new type
+                    if (!ThemeColorsTools.themeColors.ContainsKey(themeExtraColor))
+                        ThemeColorsTools.themeColors.Add(themeExtraColor, themeColors[themeExtraColor]);
+                    if (!ThemeColorsTools.themeDefaultColors.ContainsKey(themeExtraColor))
+                        ThemeColorsTools.themeDefaultColors.Add(themeExtraColor, themeColors[themeExtraColor]);
+                    if (!ThemeColorsTools.themeEmptyColors.ContainsKey(themeExtraColor))
+                        ThemeColorsTools.themeEmptyColors.Add(themeExtraColor, Color.Empty);
                 }
 
                 // Apply accent color

@@ -31,8 +31,8 @@ namespace Terminaux.Colors.Themes.Colors
     {
         // Variables for theme colors
         internal static Dictionary<string, Color> themeColors = PopulateColorsDefault();
-        internal static Dictionary<string, Color>? themeDefaultColors = PopulateColorsCurrent();
-        internal static Dictionary<string, Color>? themeEmptyColors = PopulateColorsEmpty();
+        internal static Dictionary<string, Color> themeDefaultColors = PopulateColorsCurrent();
+        internal static Dictionary<string, Color> themeEmptyColors = PopulateColorsEmpty();
 
         // Variables for accent background and foreground colors
         internal static Color accentForegroundColor = GetColor(ThemeColorType.Warning);
@@ -122,9 +122,9 @@ namespace Terminaux.Colors.Themes.Colors
             ThemeInfo? themeInfo = default;
 
             // Check for cached default and empty colors
-            if (populationType == ThemeColorPopulationType.Empty && themeEmptyColors?.Count > 0)
+            if (populationType == ThemeColorPopulationType.Empty && themeEmptyColors.Count > 0)
                 return new(themeEmptyColors);
-            if (populationType == ThemeColorPopulationType.Default && themeDefaultColors?.Count > 0)
+            if (populationType == ThemeColorPopulationType.Default && themeDefaultColors.Count > 0)
                 return new(themeDefaultColors);
 
             // Select population type
