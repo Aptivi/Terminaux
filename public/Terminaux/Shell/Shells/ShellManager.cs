@@ -740,17 +740,32 @@ namespace Terminaux.Shell.Shells
                                 MESHVariables.SetVariable("MESHErrorCode", $"{ShellInstance.LastErrorCode}");
                             }
                         }
-                        else if (pathValid & ShellType == "Shell")
+                        else if (pathValid)
                         {
-                            // If we're in the MESH shell, parse the script file or executable file
-                            if (File.Exists(TargetFile) & !TargetFile.EndsWith(".MESH"))
+                            // Parse the script file or executable file
+                            if (File.Exists(TargetFile))
                             {
                                 ConsoleLogger.Debug("Cmd exec {0} succeeded because file is found.", commandName);
-                                try
+                                if (TargetFile.EndsWith(".mesh", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    // Create a new instance of process
-                                    if (pathValid)
+                                    // Run the script file
+                                    try
                                     {
+                                        ConsoleLogger.Debug("Cmd exec {0} succeeded because it's a MESH script.", commandName);
+                                        MESHParse.Execute(TargetFile, arguments, ShellType);
+                                        MESHVariables.SetVariable("MESHErrorCode", "0");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE"), true, ConsoleColors.Red, ex.Message);
+                                        MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
+                                    }
+                                }
+                                else
+                                {
+                                    try
+                                    {
+                                        // Create a new instance of process
                                         var targetCommand = Command.Replace(TargetFileName, "");
                                         targetCommand = targetCommand.TrimStart('\0', ' ');
                                         ConsoleLogger.Debug("Command: {0}, Arguments: {1}", TargetFile, targetCommand);
@@ -760,32 +775,18 @@ namespace Terminaux.Shell.Shells
                                         ProcessExecutor.processExecutorThread.Join();
                                         MESHVariables.SetVariable("MESHErrorCode", "0");
                                     }
-                                }
-                                catch (Exception ex)
-                                {
-                                    ConsoleLogger.Error(ex, "Failed to start process: {0}", ex.Message);
-                                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR"), true, ConsoleColors.Red, commandName, ex.Message);
-                                    MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
-                                }
-                                finally
-                                {
-                                    ProcessExecutor.processExecutorThread.Interrupt();
-                                    ProcessExecutor.processExecutorThread.Join();
-                                    ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
-                                }
-                            }
-                            else if (File.Exists(TargetFile) & TargetFile.EndsWith(".MESH"))
-                            {
-                                try
-                                {
-                                    ConsoleLogger.Debug("Cmd exec {0} succeeded because it's a MESH script.", commandName);
-                                    MESHParse.Execute(TargetFile, arguments);
-                                    MESHVariables.SetVariable("MESHErrorCode", "0");
-                                }
-                                catch (Exception ex)
-                                {
-                                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE"), true, ConsoleColors.Red, ex.Message);
-                                    MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
+                                    catch (Exception ex)
+                                    {
+                                        ConsoleLogger.Error(ex, "Failed to start process: {0}", ex.Message);
+                                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR"), true, ConsoleColors.Red, commandName, ex.Message);
+                                        MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
+                                    }
+                                    finally
+                                    {
+                                        ProcessExecutor.processExecutorThread.Interrupt();
+                                        ProcessExecutor.processExecutorThread.Join();
+                                        ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
+                                    }
                                 }
                             }
                             else
