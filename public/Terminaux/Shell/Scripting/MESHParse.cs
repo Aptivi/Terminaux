@@ -108,10 +108,10 @@ namespace Terminaux.Shell.Scripting
 
                         // If it still starts with the new stack indicator, throw an error
                         if (Line.StartsWith("|"))
-                            throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, GetLineHandle(ScriptPath, LineNo, commandStackNum, ConsoleColors.Red));
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, GetLineHandleString(ScriptPath, LineNo, commandStackNum));
                     }
                     else if (!Line.StartsWith(stackIndicator) && newCommandStackRequired)
-                        throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, GetLineHandle(ScriptPath, LineNo, commandStackNum, ConsoleColors.Red));
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, GetLineHandleString(ScriptPath, LineNo, commandStackNum));
                     else
                     {
                         if (retryLoopCondition && !justLint)
@@ -235,24 +235,24 @@ namespace Terminaux.Shell.Scripting
             catch (TerminauxException ex)
             {
                 ConsoleLogger.Error(ex, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
-                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED") + "\n{0}", ex, GetLineHandle(ScriptPath, LineNo, 0, ConsoleColors.Red));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED") + "\n{0}", ex, GetLineHandleString(ScriptPath, LineNo, 0));
             }
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
-                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED") + "\n{1}", ex, ex.Message, GetLineHandle(ScriptPath, LineNo, 0, ConsoleColors.Red));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED") + "\n{1}", ex, ex.Message, GetLineHandleString(ScriptPath, LineNo, 0));
             }
         }
 
-        internal static LineHandle GetLineHandle(string path, int line, int column, Color color)
+        internal static string GetLineHandleString(string path, int line, int column)
         {
             var lineHandle = new LineHandle(path)
             {
                 Position = line,
                 SourcePosition = column,
-                Color = color,
+                UseColors = false
             };
-            return lineHandle;
+            return lineHandle.Render();
         }
     }
 }
