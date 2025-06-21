@@ -36,6 +36,12 @@ namespace Terminaux.Base
             ConsoleWrapperTools.Wrapper.IsDumb;
 
         /// <summary>
+        /// Has the console moved? Should be set by Write*, Set*, and all console functions that have to do with moving the console.
+        /// </summary>
+        public static bool MovementDetected =>
+            ConsoleWrapperTools.Wrapper.MovementDetected;
+
+        /// <summary>
         /// The cursor left position
         /// </summary>
         public static int CursorLeft

@@ -38,10 +38,29 @@ namespace Terminaux.Base.Wrappers
     public class BaseConsoleWrapper
     {
         /// <summary>
+        /// Checks to see if the console has moved. Only set this to true if the console has really moved, for example, each call to
+        /// setting cursor position, key reading, writing text, etc.
+        /// </summary>
+        protected bool _moved = false;
+
+        /// <summary>
         /// Checks to see if the console is dumb
         /// </summary>
         public virtual bool IsDumb =>
             ConsoleChecker.IsDumb;
+
+        /// <summary>
+        /// Has the console moved? Should be set by Write*, Set*, and all console functions that have to do with moving the console.
+        /// </summary>
+        public virtual bool MovementDetected
+        {
+            get
+            {
+                bool moved = _moved;
+                _moved = false;
+                return moved;
+            }
+        }
 
         /// <summary>
         /// The cursor left position
@@ -197,7 +216,10 @@ namespace Terminaux.Base.Wrappers
         public virtual void SetCursorPosition(int left, int top)
         {
             if (!IsDumb)
+            {
                 Console.SetCursorPosition(left, top);
+                _moved = true;
+            }
         }
 
         /// <summary>
@@ -219,6 +241,7 @@ namespace Terminaux.Base.Wrappers
                     TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{height};{width}t");
                     Thread.Sleep(35);
                 }
+                _moved = true;
             }
         }
 
@@ -241,6 +264,7 @@ namespace Terminaux.Base.Wrappers
                     TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{height};{width}t");
                     Thread.Sleep(35);
                 }
+                _moved = true;
             }
         }
 
@@ -259,6 +283,7 @@ namespace Terminaux.Base.Wrappers
             }
             else
                 Console.CursorLeft = left;
+            _moved = true;
         }
 
         /// <summary>
@@ -276,6 +301,7 @@ namespace Terminaux.Base.Wrappers
             }
             else
                 Console.CursorTop = top;
+            _moved = true;
         }
 
         /// <summary>
@@ -293,6 +319,7 @@ namespace Terminaux.Base.Wrappers
                     TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{Console.WindowHeight};{width}t");
                     Thread.Sleep(35);
                 }
+                _moved = true;
             }
         }
 
@@ -311,6 +338,7 @@ namespace Terminaux.Base.Wrappers
                     TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{height};{Console.WindowWidth}t");
                     Thread.Sleep(35);
                 }
+                _moved = true;
             }
         }
 
@@ -329,6 +357,7 @@ namespace Terminaux.Base.Wrappers
                     TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{Console.WindowHeight};{width}t");
                     Thread.Sleep(35);
                 }
+                _moved = true;
             }
         }
 
@@ -347,6 +376,7 @@ namespace Terminaux.Base.Wrappers
                     TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{height};{Console.WindowWidth}t");
                     Thread.Sleep(35);
                 }
+                _moved = true;
             }
         }
 
@@ -399,9 +429,13 @@ namespace Terminaux.Base.Wrappers
         /// <param name="intercept">Whether to intercept</param>
         public virtual ConsoleKeyInfo ReadKey(bool intercept = false)
         {
+            ConsoleKeyInfo keyInfo;
             if (!ConsoleMode.IsRaw)
-                return Console.ReadKey(intercept);
-            return Input.ReadKey();
+                keyInfo = Console.ReadKey(intercept);
+            else
+                keyInfo = Input.ReadKey();
+            _moved = true;
+            return keyInfo;
         }
 
         /// <summary>
@@ -413,6 +447,7 @@ namespace Terminaux.Base.Wrappers
             lock (TextWriterRaw.WriteLock)
             {
                 Console.Write(value);
+                _moved = true;
             }
         }
 
@@ -425,6 +460,7 @@ namespace Terminaux.Base.Wrappers
             lock (TextWriterRaw.WriteLock)
             {
                 Console.Write(text);
+                _moved = true;
             }
         }
 
@@ -447,6 +483,7 @@ namespace Terminaux.Base.Wrappers
             lock (TextWriterRaw.WriteLock)
             {
                 Console.WriteLine();
+                _moved = true;
             }
         }
 
@@ -480,6 +517,7 @@ namespace Terminaux.Base.Wrappers
             lock (TextWriterRaw.WriteLock)
             {
                 Console.Error.Write(value);
+                _moved = true;
             }
         }
 
@@ -492,6 +530,7 @@ namespace Terminaux.Base.Wrappers
             lock (TextWriterRaw.WriteLock)
             {
                 Console.Error.Write(text);
+                _moved = true;
             }
         }
 
@@ -514,6 +553,7 @@ namespace Terminaux.Base.Wrappers
             lock (TextWriterRaw.WriteLock)
             {
                 Console.Error.WriteLine();
+                _moved = true;
             }
         }
 
