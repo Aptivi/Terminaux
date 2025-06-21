@@ -162,8 +162,8 @@ namespace Terminaux.Colors.Themes
                     themeColors[themeExtraColor] = new Color(colorToken.ToString());
 
                     // Let the theme-based color tools know about this new type
-                    if (!ThemeColorsTools.themeColors.ContainsKey(themeExtraColor))
-                        ThemeColorsTools.themeColors.Add(themeExtraColor, themeColors[themeExtraColor]);
+                    if (!ThemeColorsTools.themeColors?.ContainsKey(themeExtraColor) ?? false)
+                        ThemeColorsTools.themeColors?.Add(themeExtraColor, themeColors[themeExtraColor]);
                     if (!ThemeColorsTools.themeDefaultColors?.ContainsKey(themeExtraColor) ?? false)
                         ThemeColorsTools.themeDefaultColors?.Add(themeExtraColor, themeColors[themeExtraColor]);
                     if (!ThemeColorsTools.themeEmptyColors?.ContainsKey(themeExtraColor) ?? false)
