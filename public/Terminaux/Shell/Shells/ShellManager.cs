@@ -985,6 +985,8 @@ namespace Terminaux.Shell.Shells
                     // Add a default preset
                     if (presets.ContainsKey("Default"))
                         PromptPresetManager.CurrentPresets.Add(ShellType, "Default");
+                    else if (presets.Count > 0)
+                        PromptPresetManager.CurrentPresets.Add(ShellType, presets.ElementAt(0).Value.PresetName);
                     else
                         PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
                 }

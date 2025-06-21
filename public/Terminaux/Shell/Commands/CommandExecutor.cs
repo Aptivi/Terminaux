@@ -283,7 +283,7 @@ namespace Terminaux.Shell.Commands
                         {
                             // Assume that we're setting an array
                             ConsoleLogger.Debug("Array variable to set is {0}", variable);
-                            value = value.Substring(1, value.Length - 1);
+                            value = value.Substring(1, value.Length - 2);
                             string[] values = value.Split([", "], StringSplitOptions.None);
                             MESHVariables.SetVariables(variable, values);
                         }
