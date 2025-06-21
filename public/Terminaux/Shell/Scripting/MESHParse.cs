@@ -235,7 +235,7 @@ namespace Terminaux.Shell.Scripting
             catch (TerminauxException ex)
             {
                 ConsoleLogger.Error(ex, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
-                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED") + "\n{0}", ex, GetLineHandleString(ScriptPath, LineNo, 0));
+                throw;
             }
             catch (Exception ex)
             {
