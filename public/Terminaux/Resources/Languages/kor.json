@@ -2942,6 +2942,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "konsol laepeo jegeoe silpaehaessseubnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "gibon temaleul chaeuji moshaessseubnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "tema metadeiteoga jeong-uidoeji anh-assseubnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "metadeiteoleul yeogjiglyeolhwahal su eobs-seubnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "i temareul sayongharyeomyeon bonchega teurukeolleoreul jiwonhaeya hapnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "miribogi jongryo"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "temaneun da-eumgwa gatseubnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "jalmosdoen saegsang tempeullis {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "{0} temaneun ibenteureul ginyeomhajiman chamseokhagieneun neomu ireugeona neomu neujeossseupnida. maenyeon i temaneun {1}/{2}buteo {3}/{4}kkaji aekseseuhal su issseupnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "{0} temaeneun teuru keolleo jiwoni piryohajiman konsoreseo jiwonhaji anhseupnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "hana isang-ui saegsang-i yuhyohaji anhseubnida."
     }
   ]
 }

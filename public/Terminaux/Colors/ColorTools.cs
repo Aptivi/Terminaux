@@ -61,6 +61,11 @@ namespace Terminaux.Colors
             currentBackgroundColor;
 
         /// <summary>
+        /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
+        /// </summary>
+        public static bool ConsoleSupportsTrueColor { get; set; } = true;
+
+        /// <summary>
         /// Whether applications are allowed to set the current background color or not
         /// </summary>
         public static bool AllowBackground

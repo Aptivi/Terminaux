@@ -2966,6 +2966,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "Error al eliminar el contenedor de consola."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "No se pudo completar el tema predeterminado"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "No hay metadatos de tema definidos."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "No se pueden deserializar los metadatos."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "Su consola debe admitir colores verdaderos para usar este tema."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "Salir de la vista previa"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "Así es como se verá su tema:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Plantilla de color no válida {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "El tema {0} celebra un evento, pero es demasiado temprano o demasiado tarde para asistir. Cada año, se puede acceder a este tema desde el {1}/{2} hasta el {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "El tema {0} necesita compatibilidad con colores reales, pero tu consola no lo admite."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "Uno o más de los colores no son válidos."
     }
   ]
 }

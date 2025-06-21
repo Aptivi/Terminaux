@@ -2942,6 +2942,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "콘솔 래퍼 제거에 실패했습니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "기본 테마를 채우는 데 실패했습니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "테마 메타데이터가 정의되어 있지 않습니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "메타데이터를 역직렬화할 수 없습니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "이 테마를 사용하려면 본체가 트루컬러를 지원해야 합니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "미리보기 종료"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "테마는 다음과 같습니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "잘못된 색상 템플릿 {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "{0} 테마는 이벤트를 기념하지만 참석하기에는 너무 이르거나 너무 늦었습니다. 매년 이 테마는 {1}/{2}부터 {3}/{4}까지 액세스할 수 있습니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "{0} 테마에는 트루 컬러 지원이 필요하지만 콘솔에서 지원하지 않습니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "하나 이상의 색상이 유효하지 않습니다."
     }
   ]
 }

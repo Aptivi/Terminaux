@@ -2945,6 +2945,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "kòngzhì tái bāozhuāng qì yí chú shībài"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "Wúfǎ tiánchōng mòrèn zhǔtí"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "wèi dìngyì zhǔtí yuán shùjù."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "Wúfǎ fǎn xùliè huà yuán shùjù."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "nín de kòng zhì tái bì xū zhī chí zhēn cǎi sè cái néng shǐ yòng cǐ zhǔ tí 。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "tuì chū yù lǎn"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "Yǐxià shì nín de zhǔtí de wàiguān:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Wúxiào de yánsè múbǎn {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "zhǔ tí “{0}” qìng zhù yī xiàng huó dòng ， dàn nín yào me tài zǎo ， yào me tài wǎn ， wú fǎ cān jiā 。 měi nián ， cǐ zhǔ tí de fǎng wèn shí jiān wéi {1}/{2} zhì {3}/{4}。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "zhǔ tí {0} xū yào zhēn cǎi sè zhī chí ， dàn nín de kòng zhì tái bù zhī chí 。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "Yī zhǒng huò duō zhǒng yánsè wúxiào."
     }
   ]
 }

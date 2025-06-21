@@ -2941,6 +2941,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "Không xóa được trình bao bọc bảng điều khiển"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "Không thể điền chủ đề mặc định"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "Không có siêu dữ liệu chủ đề nào được xác định."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "Không thể hủy tuần tự hóa siêu dữ liệu."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "Máy chơi game của bạn phải hỗ trợ màu sắc trung thực để sử dụng chủ đề này."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "Thoát khỏi bản xem trước"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "Chủ đề của bạn sẽ trông như thế này:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Mẫu màu không hợp lệ {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "Chủ đề {0} kỷ niệm một sự kiện, nhưng bạn có thể đến quá sớm hoặc quá muộn để tham dự. Mỗi năm, chủ đề này có thể truy cập từ {1}/{2} đến {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "Chủ đề {0} cần hỗ trợ màu sắc thực nhưng máy chơi game của bạn không hỗ trợ."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "Một hoặc nhiều màu không hợp lệ."
     }
   ]
 }

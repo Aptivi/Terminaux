@@ -2941,6 +2941,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "Penghapusan pembungkus konsol gagal"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "Gagal mengisi tema default"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "Tidak ada metadata tema yang ditentukan."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "Tidak dapat melakukan deserialisasi metadata."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "Konsol Anda harus mendukung warna sebenarnya untuk menggunakan tema ini."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "Keluar dari pratinjau"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "Berikut tampilan tema Anda:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Template warna tidak valid {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "Tema {0} merayakan suatu acara, tetapi Anda datang terlalu awal atau terlambat untuk hadir. Setiap tahun, tema ini dapat diakses dari {1}/{2} hingga {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "Tema {0} memerlukan dukungan warna sebenarnya, tetapi konsol Anda tidak mendukungnya."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "Satu atau lebih warna tidak valid."
     }
   ]
 }

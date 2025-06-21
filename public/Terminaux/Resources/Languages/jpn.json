@@ -2941,6 +2941,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "コンソールラッパーの削除に失敗しました"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "デフォルトのテーマを設定できませんでした"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "テーマのメタデータが定義されていません。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "メタデータを逆シリアル化できません。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "このテーマを使用するには、本体が True Color をサポートしている必要があります。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "プレビューを終了する"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "テーマは次のようになります。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "無効なカラーテンプレート{0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "テーマ {0} はイベントを祝っていますが、参加するには早すぎるか遅すぎます。毎年、このテーマは {1}/{2} から {3}/{4} までアクセスできます。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "テーマ {0} には True Color のサポートが必要ですが、本体はそれをサポートしていません。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "1つ以上の色が無効です。"
     }
   ]
 }

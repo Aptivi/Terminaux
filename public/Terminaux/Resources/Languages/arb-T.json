@@ -2967,6 +2967,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "فشلت إزالة غلاف وحدة التحكم."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "فشل في ملء السمة الافتراضية"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "لم يتم تعريف بيانات تعريفية للموضوع."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "لا يمكن إلغاء تسلسل البيانات الوصفية."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "يجب أن تدعم وحدة التحكم الخاصة بك اللون الحقيقي لاستخدام هذا المظهر."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "الخروج من المعاينة"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "إليك كيف سيبدو المظهر الخاص بك:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "قالب ألوان غير صالح {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "يحتفل الموضوع {0} بحدث ما، ولكنك إما مبكر جدًا أو متأخر جدًا للحضور. كل عام، يمكن الوصول إلى هذا الموضوع من {1}/{2} إلى {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "السمة {0} تحتاج إلى دعم الألوان الحقيقية، لكن وحدة التحكم الخاصة بك لا تدعمها."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "واحد أو أكثر من الألوان غير صالح."
     }
   ]
 }

@@ -2967,6 +2967,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "fashilat 'iizalat ghilaf wahdat altahakumi."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "fashil mil' alsimat aliaftiradia"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "la tujad bayanat taerifiat lilsimati."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "la yumkin 'iilgha' tasalsul albayanat altaerifiati."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "īǧb an tdʿm ūḥdẗ al-tḥkm al-ẖāṣẗ bk al-lūn al-ḥqīqī lāstẖdām hḏā al-mẓhr."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "al-ẖrūǧ mn al-mʿāīnẗ"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "'iilayk kayf sayabdu almazhar alkhasu bika:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "qalib 'alwan ghayr salih {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "īḥtfl al-mūḍūʿ {0} bḥdṯ mā, ūlknk imā mbkr ǧddā aū mtʾaẖr ǧddā llḥḍūr. kl ʿām, īmkn al-ūṣūl ili hḏā al-mūḍūʿ mn {1}/{2} ili {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "al-smẗ {0} tḥtāǧ ili dʿm al-ʾalwān al-ḥqīqīẗ, lkn ūḥdẗ al-tḥkm al-ẖāṣẗ bk lā tdʿmhā."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "wahid 'aw 'akthar min al'alwan ghyr salihin."
     }
   ]
 }

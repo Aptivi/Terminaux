@@ -2947,6 +2947,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "Verwijderen console wrapper mislukt"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "Het is niet gelukt om het standaardthema in te vullen"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "Er zijn geen themametagegevens gedefinieerd."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "Metagegevens kunnen niet worden gedeserialiseerd."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "Je console moet True Color ondersteunen om dit thema te kunnen gebruiken."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "Sluit het voorbeeld af"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "Zo ziet je thema eruit:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Ongeldige kleurensjabloon {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "Het thema {0} viert een evenement, maar je bent te vroeg of te laat om aanwezig te zijn. Elk jaar is dit thema toegankelijk van {1}/{2} tot en met {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "Het thema {0} heeft ondersteuning voor echte kleuren nodig, maar je console ondersteunt dit niet."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "Een of meer van de kleuren is ongeldig."
     }
   ]
 }

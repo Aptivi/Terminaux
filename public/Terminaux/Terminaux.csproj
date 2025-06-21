@@ -55,6 +55,7 @@
     <EmbeddedResource Include="Resources\TermFiles\**\*" />
     <EmbeddedResource Include="Resources\Cues\*.mp3" />
     <EmbeddedResource Include="Resources\TermTabsets\*" />
+    <EmbeddedResource Include="Resources\Themes\*" />
   </ItemGroup>
 
   <ItemGroup>

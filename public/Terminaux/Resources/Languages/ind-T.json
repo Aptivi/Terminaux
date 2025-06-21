@@ -2941,6 +2941,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "कंसोल रैपर हटाना विफल रहा"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "डिफ़ॉल्ट थीम पॉप्युलेट करने में विफल"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "कोई थीम मेटाडेटा परिभाषित नहीं है."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "मेटाडेटा को डीसेरीलाइज़ नहीं किया जा सकता."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "इस थीम का उपयोग करने के लिए आपके कंसोल को सही रंग का समर्थन करना चाहिए।"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "पूर्वावलोकन से बाहर निकलें"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "यहां बताया गया है कि आपकी थीम कैसी दिखेगी:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "अमान्य रंग टेम्पलेट {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "थीम {0} एक कार्यक्रम का जश्न मनाती है, लेकिन आप इसमें भाग लेने के लिए या तो बहुत जल्दी हैं या बहुत देर से हैं। प्रत्येक वर्ष, यह थीम {1}/{2} से {3}/{4} तक पहुंच योग्य है।"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "थीम {0} को वास्तविक रंग समर्थन की आवश्यकता है, लेकिन आपका कंसोल इसका समर्थन नहीं करता है।"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "एक या अधिक रंग अमान्य हैं।"
     }
   ]
 }

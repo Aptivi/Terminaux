@@ -2942,6 +2942,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "Η αφαίρεση του περιτυλίγματος της κονσόλας απέτυχε"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "Αποτυχία συμπλήρωσης προεπιλεγμένου θέματος"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "Δεν έχουν οριστεί μεταδεδομένα θέματος."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "Δεν είναι δυνατή η αφαίρεση μεταδεδομένων."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "Η κονσόλα σας πρέπει να υποστηρίζει αληθινό χρώμα για να χρησιμοποιήσετε αυτό το θέμα."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "Έξοδος από την προεπισκόπηση"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "Δείτε πώς θα μοιάζει το θέμα σας:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Μη έγκυρο χρωματικό πρότυπο {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "Το θέμα {0} γιορτάζει μια εκδήλωση, αλλά είτε είστε πολύ νωρίς είτε πολύ αργά για να παρευρεθείτε. Κάθε χρόνο, αυτό το θέμα είναι προσβάσιμο από {1}/{2} έως {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "Το θέμα {0} χρειάζεται πραγματική υποστήριξη χρώματος, αλλά η κονσόλα σας δεν την υποστηρίζει."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "Ένα ή περισσότερα από τα χρώματα δεν είναι έγκυρα."
     }
   ]
 }

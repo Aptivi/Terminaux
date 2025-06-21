@@ -2950,6 +2950,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "Das Entfernen des Konsolen-Wrappers ist fehlgeschlagen."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "Das Standarddesign konnte nicht ausgefüllt werden."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "Es sind keine Themenmetadaten definiert."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "Metadaten können nicht deserialisiert werden."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "Um dieses Design verwenden zu können, muss Ihre Konsole True Color unterstützen."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "Verlassen Sie die Vorschau"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "So sieht Ihr Theme aus:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Ungültige Farbvorlage {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "Das Thema {0} feiert ein Ereignis, aber Sie sind entweder zu früh oder zu spät, um daran teilzunehmen. Dieses Thema ist jedes Jahr vom {1}/{2} bis {3}/{4} zugänglich."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "Das Design {0} benötigt True-Color-Unterstützung, Ihre Konsole unterstützt diese jedoch nicht."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "Eine oder mehrere Farben sind ungültig."
     }
   ]
 }

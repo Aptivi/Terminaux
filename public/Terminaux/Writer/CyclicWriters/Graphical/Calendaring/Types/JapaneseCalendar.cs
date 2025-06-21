@@ -17,16 +17,30 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors.Templates
+using System.Globalization;
+using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
+using DtfCalendar = System.Globalization.JapaneseCalendar;
+
+namespace Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types
 {
     /// <summary>
-    /// Specifies all the predefined component types required in all the templates
+    /// Japanese calendar
     /// </summary>
-    public enum PredefinedComponentType
+    public class JapaneseCalendar : BaseCalendar, ICalendar
     {
-        /// <summary>
-        /// Neutral text color
-        /// </summary>
-        Text,
+        /// <inheritdoc/>
+        public override string Name =>
+            "Japanese";
+
+        /// <inheritdoc/>
+        public override CultureInfo Culture
+        {
+            get
+            {
+                var Cult = new CultureInfo("ja-JP");
+                Cult.DateTimeFormat.Calendar = new DtfCalendar();
+                return Cult;
+            }
+        }
     }
 }

@@ -2941,6 +2941,46 @@
     {
       "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
       "text": "kansol raipar hataana viphal raha"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "difolt theem ko popyulet karane mein viphal"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "koee theem metaadeta paribhaashit nahin hai."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "metaadeta ko deeserielaiz nahin kiya ja sakata."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "is theem ka upayog karane ke lie aapake kansol ko troo kalar ka samarthan karana chaahie."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "poorvaavalokan se baahar nikalen"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "yahaan bataaya gaya hai ki aapakee theem kaisee dikhegee:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "amaany rang tempalet {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "theem {0} ek eevent manaatee hai, lekin aap bhaag lene ke lie ya to bahut jaldee ya bahut der se aate hain. pratyek varsh, yah theem {1}/{2} se {3}/{4} tak sulabh hai."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "theem {0} ko troo kalar samarthan kee aavashyakata hai, lekin aapaka kansol isaka samarthan nahin karata hai."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "rangon mein se ek ya adhik amaany hai. "
     }
   ]
 }
