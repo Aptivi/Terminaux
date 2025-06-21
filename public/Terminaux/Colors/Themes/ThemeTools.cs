@@ -82,21 +82,51 @@ namespace Terminaux.Colors.Themes
         }
 
         /// <summary>
+        /// Registers a theme
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        /// <param name="themeInfo">Theme info instance</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void RegisterTheme(string theme, ThemeInfo themeInfo)
+        {
+            if (IsThemeFound(theme))
+                throw new TerminauxException("Theme already exists");
+            if (string.IsNullOrEmpty(theme))
+                throw new TerminauxException("Theme name may not be empty");
+            themes.Add(theme, themeInfo);
+        }
+
+        /// <summary>
+        /// Unregisters a theme
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void UnregisterTheme(string theme)
+        {
+            if (!IsThemeFound(theme))
+                throw new TerminauxException("Theme doesn't exist");
+            if (string.IsNullOrEmpty(theme))
+                throw new TerminauxException("Theme name may not be empty");
+            if (themes.Remove(theme))
+                throw new TerminauxException("Theme removal failed");
+        }
+
+        /// <summary>
         /// Gets the colors from the theme
         /// </summary>
         /// <param name="theme">Theme name</param>
-        public static Dictionary<ThemeColorType, Color> GetColorsFromTheme(string theme) =>
+        public static Dictionary<string, Color> GetColorsFromTheme(string theme) =>
             GetColorsFromTheme(GetThemeInfo(theme));
 
         /// <summary>
         /// Gets the colors from the theme
         /// </summary>
         /// <param name="themeInfo">Theme instance</param>
-        public static Dictionary<ThemeColorType, Color> GetColorsFromTheme(ThemeInfo themeInfo)
+        public static Dictionary<string, Color> GetColorsFromTheme(ThemeInfo themeInfo)
         {
             if (themeInfo.UseAccentTypes.Length > 0)
                 themeInfo.UpdateColors();
-            return themeInfo.ThemeColors;
+            return themeInfo.themeColors;
         }
 
         /// <summary>
@@ -185,13 +215,19 @@ namespace Terminaux.Colors.Themes
             // Set the colors
             try
             {
+                // Set the built-in color types
                 for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
                 {
-                    ThemeColorType type = ThemeColorsTools.themeColors.Keys.ElementAt(typeIndex);
-                    var themeColor = ThemeInfo.ThemeColors[type];
+                    string type = ThemeColorsTools.themeColors.Keys.ElementAt(typeIndex);
+                    var themeColor = ThemeInfo.themeColors[type];
                     ConsoleLogger.Debug("Theme color type {0}, setting theme color {1}...", type.ToString(), themeColor.PlainSequence);
                     ThemeColorsTools.themeColors[type] = themeColor;
                 }
+
+                // Set the extra color types
+
+
+                // Load the background
                 ThemeColorsTools.LoadBackground();
             }
             catch (Exception ex)
@@ -244,7 +280,7 @@ namespace Terminaux.Colors.Themes
         /// <param name="colors">Dictionary of colors</param>
         /// <param name="type">Minimum required color type</param>
         /// <returns>If required, then true. Always false when <see cref="ColorType.FourBitColor"/> is passed.</returns>
-        public static bool MinimumTypeRequired(Dictionary<ThemeColorType, Color> colors, ColorType type)
+        public static bool MinimumTypeRequired(Dictionary<string, Color> colors, ColorType type)
         {
             if (type == ColorType.FourBitColor)
                 return false;

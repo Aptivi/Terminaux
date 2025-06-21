@@ -30,9 +30,9 @@ namespace Terminaux.Colors.Themes.Colors
     public static class ThemeColorsTools
     {
         // Variables for theme colors
-        internal static Dictionary<ThemeColorType, Color> themeColors = PopulateColorsDefault();
-        internal static Dictionary<ThemeColorType, Color>? themeDefaultColors = PopulateColorsCurrent();
-        internal static Dictionary<ThemeColorType, Color>? themeEmptyColors = PopulateColorsEmpty();
+        internal static Dictionary<string, Color> themeColors = PopulateColorsDefault();
+        internal static Dictionary<string, Color>? themeDefaultColors = PopulateColorsCurrent();
+        internal static Dictionary<string, Color>? themeEmptyColors = PopulateColorsEmpty();
 
         // Variables for accent background and foreground colors
         internal static Color accentForegroundColor = GetColor(ThemeColorType.Warning);
@@ -65,7 +65,14 @@ namespace Terminaux.Colors.Themes.Colors
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public static Color GetColor(ThemeColorType type)
+        public static Color GetColor(ThemeColorType type) =>
+            GetColor(type.ToString());
+
+        /// <summary>
+        /// Gets a color from the color type
+        /// </summary>
+        /// <param name="type">Color type</param>
+        public static Color GetColor(string type)
         {
             string plainColorSeq = themeColors[type].PlainSequence;
             ConsoleLogger.Debug("Getting color type {0}: {1}", type.ToString(), plainColorSeq);
@@ -77,7 +84,15 @@ namespace Terminaux.Colors.Themes.Colors
         /// </summary>
         /// <param name="type">Color type</param>
         /// <param name="color">Color to be set</param>
-        public static Color SetColor(ThemeColorType type, Color color)
+        public static Color SetColor(ThemeColorType type, Color color) =>
+            SetColor(type.ToString(), color);
+
+        /// <summary>
+        /// Sets a color from the color type
+        /// </summary>
+        /// <param name="type">Color type</param>
+        /// <param name="color">Color to be set</param>
+        public static Color SetColor(string type, Color color)
         {
             ConsoleLogger.Debug("Setting color type {0} to color sequence {1}...", type.ToString(), color.PlainSequence);
             return themeColors[type] = color;
@@ -86,24 +101,24 @@ namespace Terminaux.Colors.Themes.Colors
         /// <summary>
         /// Populate the empty color dictionary
         /// </summary>
-        public static Dictionary<ThemeColorType, Color> PopulateColorsEmpty() =>
+        public static Dictionary<string, Color> PopulateColorsEmpty() =>
             PopulateColors(ThemeColorPopulationType.Empty);
 
         /// <summary>
         /// Populate the default color dictionary
         /// </summary>
-        public static Dictionary<ThemeColorType, Color> PopulateColorsDefault() =>
+        public static Dictionary<string, Color> PopulateColorsDefault() =>
             PopulateColors(ThemeColorPopulationType.Default);
 
         /// <summary>
         /// Populate the current color dictionary
         /// </summary>
-        public static Dictionary<ThemeColorType, Color> PopulateColorsCurrent() =>
+        public static Dictionary<string, Color> PopulateColorsCurrent() =>
             PopulateColors(ThemeColorPopulationType.Current);
 
-        private static Dictionary<ThemeColorType, Color> PopulateColors(ThemeColorPopulationType populationType)
+        private static Dictionary<string, Color> PopulateColors(ThemeColorPopulationType populationType)
         {
-            Dictionary<ThemeColorType, Color> colors = [];
+            Dictionary<string, Color> colors = [];
             ThemeInfo? themeInfo = default;
 
             // Check for cached default and empty colors
@@ -141,7 +156,7 @@ namespace Terminaux.Colors.Themes.Colors
                         ConsoleLogger.Debug("[CURRENT] Adding color type {0} with color {1}...", type, color.PlainSequence);
                         break;
                 }
-                colors.Add(type, color);
+                colors.Add(type.ToString(), color);
             }
 
             // Return it
@@ -155,6 +170,23 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
         public static void SetConsoleColor(ThemeColorType colorType, bool resetBack = true) =>
+            SetConsoleColor(colorType.ToString(), false, resetBack);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="Background">Is the color a background color?</param>
+        /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
+        public static void SetConsoleColor(ThemeColorType colorType, bool Background, bool resetBack = true) =>
+            SetConsoleColor(colorType.ToString(), Background, resetBack);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
+        public static void SetConsoleColor(string colorType, bool resetBack = true) =>
             SetConsoleColor(colorType, false, resetBack);
 
         /// <summary>
@@ -163,7 +195,7 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="Background">Is the color a background color?</param>
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
-        public static void SetConsoleColor(ThemeColorType colorType, bool Background, bool resetBack = true)
+        public static void SetConsoleColor(string colorType, bool Background, bool resetBack = true)
         {
             ColorTools.SetConsoleColor(GetColor(colorType), Background);
             if (!Background && resetBack)
@@ -176,6 +208,23 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool TrySetConsoleColor(ThemeColorType colorType) =>
+            TrySetConsoleColor(colorType.ToString(), false);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="Background">Is the color a background color?</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TrySetConsoleColor(ThemeColorType colorType, bool Background) =>
+            TrySetConsoleColor(colorType.ToString(), Background);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TrySetConsoleColor(string colorType) =>
             TrySetConsoleColor(colorType, false);
 
         /// <summary>
@@ -184,7 +233,7 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="Background">Is the color a background color?</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TrySetConsoleColor(ThemeColorType colorType, bool Background)
+        public static bool TrySetConsoleColor(string colorType, bool Background)
         {
             try
             {
@@ -203,6 +252,23 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
         public static void SetConsoleColorDry(ThemeColorType colorType, bool resetBack = true) =>
+            SetConsoleColorDry(colorType.ToString(), false, resetBack);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="Background">Is the color a background color?</param>
+        /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
+        public static void SetConsoleColorDry(ThemeColorType colorType, bool Background, bool resetBack = true) =>
+            SetConsoleColorDry(colorType.ToString(), Background, resetBack);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
+        public static void SetConsoleColorDry(string colorType, bool resetBack = true) =>
             SetConsoleColorDry(colorType, false, resetBack);
 
         /// <summary>
@@ -211,7 +277,7 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="Background">Is the color a background color?</param>
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
-        public static void SetConsoleColorDry(ThemeColorType colorType, bool Background, bool resetBack = true)
+        public static void SetConsoleColorDry(string colorType, bool Background, bool resetBack = true)
         {
             ColorTools.SetConsoleColorDry(GetColor(colorType), Background);
             if (!Background && resetBack)
@@ -224,6 +290,23 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool TrySetConsoleColorDry(ThemeColorType colorType) =>
+            TrySetConsoleColorDry(colorType.ToString(), false);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="Background">Is the color a background color?</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TrySetConsoleColorDry(ThemeColorType colorType, bool Background) =>
+            TrySetConsoleColorDry(colorType.ToString(), Background);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TrySetConsoleColorDry(string colorType) =>
             TrySetConsoleColorDry(colorType, false);
 
         /// <summary>
@@ -232,7 +315,7 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="Background">Is the color a background color?</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TrySetConsoleColorDry(ThemeColorType colorType, bool Background)
+        public static bool TrySetConsoleColorDry(string colorType, bool Background)
         {
             try
             {
@@ -248,20 +331,20 @@ namespace Terminaux.Colors.Themes.Colors
         /// <summary>
         /// Resets the console colors without clearing screen
         /// </summary>
-        /// <param name="usethemeColors">Whether to use the theme colors or to use the default terminal colors</param>
-        public static void ResetColors(bool usethemeColors = false)
+        /// <param name="useThemeColors">Whether to use the theme colors or to use the default terminal colors</param>
+        public static void ResetColors(bool useThemeColors = false)
         {
-            ResetBackground(usethemeColors);
-            ResetForeground(usethemeColors);
+            ResetBackground(useThemeColors);
+            ResetForeground(useThemeColors);
         }
 
         /// <summary>
         /// Resets the background console color without clearing screen
         /// </summary>
-        /// <param name="usethemeColors">Whether to use the theme colors or to use the default terminal colors</param>
-        public static void ResetBackground(bool usethemeColors = false)
+        /// <param name="useThemeColors">Whether to use the theme colors or to use the default terminal colors</param>
+        public static void ResetBackground(bool useThemeColors = false)
         {
-            if (usethemeColors)
+            if (useThemeColors)
                 SetConsoleColor(ThemeColorType.Background, Background: true);
             else
                 ColorTools.ResetBackground();
@@ -270,10 +353,10 @@ namespace Terminaux.Colors.Themes.Colors
         /// <summary>
         /// Resets the foreground console color without clearing screen
         /// </summary>
-        /// <param name="usethemeColors">Whether to use the theme colors or to use the default terminal colors</param>
-        public static void ResetForeground(bool usethemeColors = false)
+        /// <param name="useThemeColors">Whether to use the theme colors or to use the default terminal colors</param>
+        public static void ResetForeground(bool useThemeColors = false)
         {
-            if (usethemeColors)
+            if (useThemeColors)
                 SetConsoleColor(ThemeColorType.NeutralText);
             else
                 ColorTools.ResetForeground();

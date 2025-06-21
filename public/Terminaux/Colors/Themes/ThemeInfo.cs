@@ -26,6 +26,7 @@ using Newtonsoft.Json.Linq;
 using Terminaux.Base;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
+using Textify.General;
 
 namespace Terminaux.Colors.Themes
 {
@@ -35,7 +36,8 @@ namespace Terminaux.Colors.Themes
     public class ThemeInfo
     {
 
-        internal readonly Dictionary<ThemeColorType, Color> ThemeColors = ThemeColorsTools.PopulateColorsEmpty();
+        internal readonly Dictionary<string, Color> themeColors = ThemeColorsTools.PopulateColorsEmpty();
+        internal readonly List<string> themeExtraColors = [];
         internal readonly DateTime start = DateTime.Today;
         internal readonly DateTime end = DateTime.Today;
         private string[] useAccentTypes = [];
@@ -109,16 +111,25 @@ namespace Terminaux.Colors.Themes
         /// </summary>
         /// <param name="type">Color type</param>
         public Color GetColor(ThemeColorType type) =>
-            ThemeColors[type];
+            GetColor(type.ToString());
+
+        /// <summary>
+        /// Gets a color from the color type
+        /// </summary>
+        /// <param name="type">Color type</param>
+        public Color GetColor(string type) =>
+            themeColors[type];
 
         internal void UpdateColors()
         {
             // Populate the colors
             ConsoleLogger.Debug($"Updating color according to theme info for {Name}...");
-            useAccentTypes = [.. metadata.UseAccentTypes.Where((type) => Enum.IsDefined(typeof(ThemeColorType), type.Remove(type.Length - 5)))];
+            useAccentTypes = [.. metadata.UseAccentTypes.Where((type) => Enum.IsDefined(typeof(ThemeColorType), type.Remove(type.Length - 5)) || themeExtraColors.Contains(type))];
+
+            // Deal with base color types
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
             {
-                ThemeColorType type = ThemeColors.Keys.ElementAt(typeIndex);
+                string type = themeColors.Keys.ElementAt(typeIndex);
 
                 // Get the color value and check to see if it's null
                 string fullTypeName = $"{type}Color";
@@ -126,13 +137,37 @@ namespace Terminaux.Colors.Themes
                 if (colorToken is null)
                 {
                     ConsoleLogger.Warning($"{fullTypeName} is not defined in the theme metadata. Using defaults...");
-                    ThemeColors[type] = ThemeColorsTools.PopulateColorsDefault()[type];
+                    themeColors[type] = ThemeColorsTools.PopulateColorsDefault()[type];
                 }
                 else
-                    ThemeColors[type] =
-                        UseAccentTypes.Contains(fullTypeName) && ThemeColorsTools.UseAccentColors ?
-                        fullTypeName.EndsWith("BackgroundColor") || fullTypeName.EndsWith("BackColor") ? new Color(ThemeColorsTools.AccentBackgroundColor) : new Color(ThemeColorsTools.AccentForegroundColor) :
-                        new Color(colorToken.ToString());
+                    themeColors[type] = new Color(colorToken.ToString());
+
+                // Apply accent color
+                if (UseAccentTypes.Contains(fullTypeName) && ThemeColorsTools.UseAccentColors)
+                    themeColors[type] =
+                        fullTypeName.EndsWith("BackgroundColor") || fullTypeName.EndsWith("BackColor") ?
+                        new Color(ThemeColorsTools.AccentBackgroundColor) :
+                        new Color(ThemeColorsTools.AccentForegroundColor);
+            }
+
+            // Deal with extra color types
+            foreach (string themeExtraColor in themeExtraColors)
+            {
+                // Get the color value and check to see if it's null
+                var colorToken = metadataToken.SelectToken(themeExtraColor);
+                if (colorToken is not null)
+                {
+                    if (!themeColors.ContainsKey(themeExtraColor))
+                        themeColors.Add(themeExtraColor, Color.Empty);
+                    themeColors[themeExtraColor] = new Color(colorToken.ToString());
+                }
+
+                // Apply accent color
+                if (UseAccentTypes.Contains(themeExtraColor) && ThemeColorsTools.UseAccentColors)
+                    themeColors[themeExtraColor] =
+                        themeExtraColor.EndsWith("BackgroundColor") || themeExtraColor.EndsWith("BackColor") ?
+                        new Color(ThemeColorsTools.AccentBackgroundColor) :
+                        new Color(ThemeColorsTools.AccentForegroundColor);
             }
         }
 
@@ -175,11 +210,19 @@ namespace Terminaux.Colors.Themes
 
             // Populate colors
             Name = metadata.Name;
+            foreach (JProperty token in ThemeResourceJson.Cast<JProperty>())
+            {
+                if (Enum.IsDefined(typeof(ThemeColorType), token.Name.RemoveSuffix("Color")))
+                    continue;
+                if (token.Name == "Metadata")
+                    continue;
+                themeExtraColors.Add(token.Name);
+            }
             UpdateColors();
 
             // Install some info to the class
             Description = metadata.Description;
-            TrueColorRequired = ThemeTools.MinimumTypeRequired(ThemeColors, ColorType.TrueColor);
+            TrueColorRequired = ThemeTools.MinimumTypeRequired(themeColors, ColorType.TrueColor);
             Category = metadata.Category;
 
             // Parse event-related info

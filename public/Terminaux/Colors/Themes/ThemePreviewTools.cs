@@ -49,7 +49,7 @@ namespace Terminaux.Colors.Themes
         /// Prepares the preview of the theme (wheel-based)
         /// </summary>
         /// <param name="colors">Dictionary of colors</param>
-        public static void PreviewTheme(Dictionary<ThemeColorType, Color> colors) =>
+        public static void PreviewTheme(Dictionary<string, Color> colors) =>
             PreviewTheme(colors, null);
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Terminaux.Colors.Themes
         /// </summary>
         /// <param name="colors">Dictionary of colors</param>
         /// <param name="theme">Theme instance</param>
-        internal static void PreviewTheme(Dictionary<ThemeColorType, Color> colors, ThemeInfo? theme)
+        internal static void PreviewTheme(Dictionary<string, Color> colors, ThemeInfo? theme)
         {
             // Check to see if we're trying to preview theme on non-true color console
             if (ThemeTools.MinimumTypeRequired(colors, ColorType.TrueColor) && !ColorTools.ConsoleSupportsTrueColor)

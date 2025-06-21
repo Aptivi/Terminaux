@@ -33,7 +33,7 @@ namespace Terminaux.Tests.Colors
     {
 
         /// <summary>
-        /// Tests initializing an instance of ThemeInfo from KS resources
+        /// Tests initializing an instance of ThemeInfo from resources
         /// </summary>
         [TestMethod]
         [Description("Initialization")]
@@ -43,16 +43,16 @@ namespace Terminaux.Tests.Colors
             var ThemeInfoInstance = new ThemeInfo();
 
             // Check for null
-            ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+            ThemeInfoInstance.themeColors.ShouldNotBeNull();
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length - 1; typeIndex++)
             {
-                ThemeColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
-                ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+                string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.themeColors[type].ShouldNotBeNull();
             }
         }
 
         /// <summary>
-        /// Tests initializing an instance of ThemeInfo from all KS resources
+        /// Tests initializing an instance of ThemeInfo from all resources
         /// </summary>
         [TestMethod]
         [Description("Initialization")]
@@ -65,11 +65,11 @@ namespace Terminaux.Tests.Colors
                 var ThemeInfoInstance = installedThemes[themeName];
 
                 // Check for null
-                ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+                ThemeInfoInstance.themeColors.ShouldNotBeNull();
                 for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length - 1; typeIndex++)
                 {
-                    ThemeColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
-                    ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+                    string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
+                    ThemeInfoInstance.themeColors[type].ShouldNotBeNull();
                 }
             }
         }
@@ -88,11 +88,11 @@ namespace Terminaux.Tests.Colors
             ThemeInfoStream.Close();
 
             // Check for null
-            ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+            ThemeInfoInstance.themeColors.ShouldNotBeNull();
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length - 1; typeIndex++)
             {
-                ThemeColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
-                ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+                string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.themeColors[type].ShouldNotBeNull();
             }
         }
 
@@ -108,11 +108,11 @@ namespace Terminaux.Tests.Colors
             var ThemeInfoInstance = new ThemeInfo(SourcePath);
 
             // Check for null
-            ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+            ThemeInfoInstance.themeColors.ShouldNotBeNull();
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length - 1; typeIndex++)
             {
-                ThemeColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
-                ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+                string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.themeColors[type].ShouldNotBeNull();
             }
         }
 
