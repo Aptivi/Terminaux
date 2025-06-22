@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences;
 using Textify.General;
 
@@ -83,8 +84,31 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ThemeColorType color = ThemeColorType.NeutralText, params object[] vars) =>
+            WriteSlowly(msg, Line, MsEachLetter, color, ThemeColorType.Background, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt slowly with color support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, params object[] vars) =>
+            WriteSlowlyColorBack(msg, Line, MsEachLetter, ThemeColorsTools.GetColor(ForegroundColor), ThemeColorsTools.GetColor(BackgroundColor), vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt slowly with color support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, Color color, params object[] vars) =>
-            WriteSlowlyColorBack(msg, Line, MsEachLetter, color, ColorTools.currentBackgroundColor, vars);
+            WriteSlowlyColorBack(msg, Line, MsEachLetter, color, ThemeColorsTools.GetColor(ThemeColorType.Background), vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt slowly with color support.

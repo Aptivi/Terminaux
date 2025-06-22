@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Terminaux.Reader;
 using SpecProbe.Software.Platform;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -57,7 +58,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WritePlain(string Text, params object[] vars) =>
-            WritePlain(Text, true, vars);
+            WritePlain(Text, true, true, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt plainly.
@@ -65,7 +66,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteRaw(string Text, params object[] vars) =>
-            WritePlain(Text, false, vars);
+            WritePlain(Text, false, false, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt plainly.
@@ -74,7 +75,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WritePlain(string Text, bool Line, params object[] vars) =>
-            WritePlain(Text, null, Line, vars);
+            WritePlain(Text, null, Line, true, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt plainly.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="useColors">Whether to use colors or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WritePlain(string Text, bool Line, bool useColors, params object[] vars) =>
+            WritePlain(Text, null, Line, useColors, vars);
 
         /// <summary>
         /// Outputs the new line into the terminal prompt (stderr).
@@ -100,7 +111,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteErrorPlain(string Text, params object[] vars) =>
-            WriteErrorPlain(Text, true, vars);
+            WriteErrorPlain(Text, true, true, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt (stderr) plainly.
@@ -108,7 +119,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteErrorRaw(string Text, params object[] vars) =>
-            WriteErrorPlain(Text, false, vars);
+            WriteErrorPlain(Text, false, false, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt (stderr) plainly.
@@ -117,7 +128,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteErrorPlain(string Text, bool Line, params object[] vars) =>
-            WriteInternal(Text, null, Line, true, vars);
+            WriteInternal(Text, null, Line, true, true, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt (stderr) plainly.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="useColors">Whether to use colors or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteErrorPlain(string Text, bool Line, bool useColors, params object[] vars) =>
+            WriteInternal(Text, null, Line, true, useColors, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt plainly with a newline terminator. Use for TermReader custom bindings.
@@ -126,7 +147,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WritePlain(string Text, TermReaderSettings? settings, params object[] vars) =>
-            WritePlain(Text, settings, true, vars);
+            WritePlain(Text, settings, true, true, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt plainly. Use for TermReader custom bindings.
@@ -135,7 +156,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteRaw(string Text, TermReaderSettings? settings, params object[] vars) =>
-            WritePlain(Text, settings, false, vars);
+            WritePlain(Text, settings, false, false, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt plainly. Use for TermReader custom bindings.
@@ -145,9 +166,20 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WritePlain(string Text, TermReaderSettings? settings, bool Line, params object[] vars) =>
-            WriteInternal(Text, settings, Line, false, vars);
+            WriteInternal(Text, settings, Line, false, true, vars);
 
-        internal static void WriteInternal(string Text, TermReaderSettings? settings, bool Line, bool stdErr, params object[] vars)
+        /// <summary>
+        /// Outputs the text into the terminal prompt plainly. Use for TermReader custom bindings.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="settings">Terminal reader settings</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="useColors">Whether to use colors or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WritePlain(string Text, TermReaderSettings? settings, bool Line, bool useColors, params object[] vars) =>
+            WriteInternal(Text, settings, Line, false, useColors, vars);
+
+        internal static void WriteInternal(string Text, TermReaderSettings? settings, bool Line, bool stdErr, bool useColors, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -165,6 +197,10 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Reverse all the RTL characters
                     if (settings is null)
                         Text = ConsoleMisc.ReverseRtl(Text);
+
+                    // Write the color setting sequences
+                    if (useColors)
+                        WriteRaw(ColorTools.RenderRevertColors());
 
                     // Actually write
                     if (Line)

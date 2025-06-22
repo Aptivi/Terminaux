@@ -22,6 +22,7 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Writer.ConsoleWriters
@@ -37,14 +38,15 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="entry">A list entry that will be listed to the terminal prompt.</param>
         /// <param name="value">A list value that will be listed to the terminal prompt.</param>
         /// <param name="indent">Indentation level</param>
-        public static void WriteListEntryPlain(string entry, string value, int indent = 0)
+        /// <param name="needsIndent">Whether to draw the indentation indicator or not</param>
+        public static void WriteListEntryPlain(string entry, string value, int indent = 0, bool needsIndent = true)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Write the list entry
-                    string buffered = RenderListEntry(entry, value, indent);
+                    string buffered = RenderListEntryPlain(entry, value, indent, needsIndent);
                     TextWriterRaw.WritePlain(buffered);
                 }
                 catch (Exception ex)
@@ -60,8 +62,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="entry">A list entry that will be listed to the terminal prompt.</param>
         /// <param name="value">A list value that will be listed to the terminal prompt.</param>
         /// <param name="indent">Indentation level</param>
-        public static void WriteListEntry(string entry, string value, int indent = 0) =>
-            WriteListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Silver, indent);
+        /// <param name="needsIndent">Whether to draw the indentation indicator or not</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        public static void WriteListEntry(string entry, string value, ThemeColorType ListKeyColor = ThemeColorType.ListEntry, ThemeColorType ListValueColor = ThemeColorType.ListValue, int indent = 0, bool needsIndent = true)
+        {
+            // Get the colors
+            var keyColor = ThemeColorsTools.GetColor(ListKeyColor);
+            var valueColor = ThemeColorsTools.GetColor(ListValueColor);
+
+            WriteListEntry(entry, value, keyColor, valueColor, indent, needsIndent);
+        }
 
         /// <summary>
         /// Outputs a list entry and value into the terminal prompt.
@@ -69,16 +80,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="entry">A list entry that will be listed to the terminal prompt.</param>
         /// <param name="value">A list value that will be listed to the terminal prompt.</param>
         /// <param name="indent">Indentation level</param>
+        /// <param name="needsIndent">Whether to draw the indentation indicator or not</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0)
+        public static void WriteListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0, bool needsIndent = true)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Write the list entry
-                    string buffered = RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent);
+                    string buffered = RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent, needsIndent);
                     TextWriterRaw.WritePlain(buffered);
                 }
                 catch (Exception ex)
@@ -94,9 +106,20 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="entry">A list entry that will be listed.</param>
         /// <param name="value">A list value that will be listed.</param>
         /// <param name="indent">Indentation level</param>
+        /// <param name="needsIndent">Whether to draw the indentation indicator or not</param>
         /// <returns>A list entry without the new line at the end</returns>
-        public static string RenderListEntry(string entry, string value, int indent = 0) =>
-            RenderListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Silver, indent, false);
+        public static string RenderListEntryPlain(string entry, string value, int indent = 0, bool needsIndent = true)
+        {
+            var listEntry = new ListEntry()
+            {
+                Entry = entry,
+                Value = value,
+                Indentation = indent,
+                Indicator = needsIndent,
+                UseColors = false
+            };
+            return listEntry.Render();
+        }
 
         /// <summary>
         /// Renders a list entry and value.
@@ -104,13 +127,30 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="entry">A list entry that will be listed.</param>
         /// <param name="value">A list value that will be listed.</param>
         /// <param name="indent">Indentation level</param>
+        /// <param name="needsIndent">Whether to draw the indentation indicator or not</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <returns>A list entry without the new line at the end</returns>
-        public static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0) =>
-            RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent, true);
+        public static string RenderListEntry(string entry, string value, ThemeColorType ListKeyColor = ThemeColorType.ListEntry, ThemeColorType ListValueColor = ThemeColorType.ListValue, int indent = 0, bool needsIndent = true)
+        {
+            // Get the colors
+            var keyColor = ThemeColorsTools.GetColor(ListKeyColor);
+            var valueColor = ThemeColorsTools.GetColor(ListValueColor);
 
-        internal static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent, bool needsIndent)
+            return RenderListEntry(entry, value, keyColor, valueColor, indent, needsIndent);
+        }
+
+        /// <summary>
+        /// Renders a list entry and value.
+        /// </summary>
+        /// <param name="entry">A list entry that will be listed.</param>
+        /// <param name="value">A list value that will be listed.</param>
+        /// <param name="indent">Indentation level</param>
+        /// <param name="needsIndent">Whether to draw the indentation indicator or not</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        /// <returns>A list entry without the new line at the end</returns>
+        public static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0, bool needsIndent = true)
         {
             var listEntry = new ListEntry()
             {

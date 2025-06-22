@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Textify.General;
 
 namespace Terminaux.Writer.ConsoleWriters
@@ -33,7 +34,7 @@ namespace Terminaux.Writer.ConsoleWriters
     public static class SeparatorWriterColor
     {
         /// <summary>
-        /// Draw a separator with text plainly
+        /// Draw a separator with text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="line">Whether to write a new line or not</param>
@@ -42,7 +43,7 @@ namespace Terminaux.Writer.ConsoleWriters
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderSeparator(Text, Vars));
+                TextWriterRaw.WriteRaw(RenderSeparatorPlain(Text, Vars));
                 if (line)
                     TextWriterRaw.WriteRaw("\n");
             }
@@ -58,19 +59,29 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool line = true, params object[] Vars)
-        {
-            try
-            {
-                TextWriterRaw.WriteRaw(RenderSeparator(Text, Vars));
-                if (line)
-                    TextWriterRaw.WriteRaw("\n");
-            }
-            catch (Exception ex)
-            {
-                ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
-            }
-        }
+        public static void WriteSeparator(string Text, bool line = true, params object[] Vars) =>
+            WriteSeparator(Text, ThemeColorType.NeutralText, line, Vars);
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="line">Whether to write a new line or not</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, ThemeColorType Color = ThemeColorType.NeutralText, bool line = true, params object[] Vars) =>
+            WriteSeparator(Text, Color, ThemeColorType.Background, line, Vars);
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="line">Whether to write a new line or not</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, bool line = true, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, ThemeColorsTools.GetColor(ForegroundColor), ThemeColorsTools.GetColor(BackgroundColor), line, Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -80,7 +91,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparatorColor(string Text, Color Color, bool line = true, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, Color, ColorTools.currentBackgroundColor, line, Vars);
+            WriteSeparatorColorBack(Text, Color, ThemeColorsTools.GetColor(ThemeColorType.Background), line, Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -109,8 +120,35 @@ namespace Terminaux.Writer.ConsoleWriters
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparatorPlain(string Text, params object[] Vars) =>
+            RenderSeparator(Text, ThemeColorsTools.GetColor(ThemeColorType.NeutralText), ThemeColorsTools.GetColor(ThemeColorType.Background), false, Vars);
+
+        /// <summary>
+        /// Renders a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderSeparator(string Text, params object[] Vars) =>
-            RenderSeparator(Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
+            RenderSeparator(Text, ThemeColorType.NeutralText, ThemeColorType.Background, Vars);
+
+        /// <summary>
+        /// Renders a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparator(string Text, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, params object[] Vars) =>
+            RenderSeparator(Text, ForegroundColor, ThemeColorType.Background, Vars);
+
+        /// <summary>
+        /// Renders a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparator(string Text, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, params object[] Vars) =>
+            RenderSeparator(Text, ThemeColorsTools.GetColor(ForegroundColor), ThemeColorsTools.GetColor(BackgroundColor), Vars);
 
         /// <summary>
         /// Renders a separator with text
@@ -119,7 +157,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderSeparator(string Text, Color ForegroundColor, params object[] Vars) =>
-            RenderSeparator(Text, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
+            RenderSeparator(Text, ForegroundColor, ThemeColorsTools.GetColor(ThemeColorType.Background), Vars);
 
         /// <summary>
         /// Renders a separator with text
@@ -131,14 +169,6 @@ namespace Terminaux.Writer.ConsoleWriters
         public static string RenderSeparator(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
             RenderSeparator(Text, ForegroundColor, BackgroundColor, true, Vars);
 
-        /// <summary>
-        /// Renders a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        /// <param name="useColor">Whether to use the color or not</param>
         internal static string RenderSeparator(string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             try

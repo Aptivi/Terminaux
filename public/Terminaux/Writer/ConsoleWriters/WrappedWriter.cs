@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Editor;
 using Terminaux.Sequences;
@@ -42,7 +43,28 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="force">Forces the text viewer to open, even if the text doesn't exceed the console height</param>
         /// <param name="args">Arguments to format the text</param>
         public static void OpenWrapped(string text, bool force = false, params object?[]? args) =>
-            OpenWrapped(text, ColorTools.currentForegroundColor, force, args);
+            OpenWrapped(text, ThemeColorType.NeutralText, force, args);
+
+        /// <summary>
+        /// Opens the text viewer similar to <c>less</c> and <c>more</c> commands on Unix
+        /// </summary>
+        /// <param name="text">Text to write. If it's shorter than the console height, it just prints the text</param>
+        /// <param name="force">Forces the text viewer to open, even if the text doesn't exceed the console height</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="args">Arguments to format the text</param>
+        public static void OpenWrapped(string text, ThemeColorType color = ThemeColorType.NeutralText, bool force = false, params object?[]? args) =>
+            OpenWrapped(text, color, ThemeColorType.Background, force, args);
+
+        /// <summary>
+        /// Opens the text viewer similar to <c>less</c> and <c>more</c> commands on Unix
+        /// </summary>
+        /// <param name="text">Text to write. If it's shorter than the console height, it just prints the text</param>
+        /// <param name="force">Forces the text viewer to open, even if the text doesn't exceed the console height</param>
+        /// <param name="foregroundColor">A foreground color that will be changed to.</param>
+        /// <param name="backgroundColor">A background color that will be changed to.</param>
+        /// <param name="args">Arguments to format the text</param>
+        public static void OpenWrapped(string text, ThemeColorType foregroundColor, ThemeColorType backgroundColor, bool force = false, params object?[]? args) =>
+            OpenWrapped(text, ThemeColorsTools.GetColor(foregroundColor), ThemeColorsTools.GetColor(backgroundColor), force, args);
 
         /// <summary>
         /// Opens the text viewer similar to <c>less</c> and <c>more</c> commands on Unix
@@ -52,7 +74,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="args">Arguments to format the text</param>
         public static void OpenWrapped(string text, Color color, bool force = false, params object?[]? args) =>
-            OpenWrapped(text, color, ColorTools.currentBackgroundColor, force, args);
+            OpenWrapped(text, color, ThemeColorsTools.GetColor(ThemeColorType.Background), force, args);
 
         /// <summary>
         /// Opens the text viewer similar to <c>less</c> and <c>more</c> commands on Unix
@@ -83,6 +105,48 @@ namespace Terminaux.Writer.ConsoleWriters
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWrapped(string Text, bool Line, ThemeColorType colorType = ThemeColorType.NeutralText, params object[] vars)
+        {
+            try
+            {
+                var foreground = ThemeColorsTools.GetColor(colorType);
+                WriteWrapped(Text, Line, foreground, vars);
+            }
+            catch (Exception ex)
+            {
+                ConsoleLogger.Error(ex, $"There is a serious error when printing wrapped text. {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWrapped(string Text, bool Line, ThemeColorType colorTypeForeground = ThemeColorType.NeutralText, ThemeColorType colorTypeBackground = ThemeColorType.Background, params object[] vars)
+        {
+            try
+            {
+                var foreground = ThemeColorsTools.GetColor(colorTypeForeground);
+                var background = ThemeColorsTools.GetColor(colorTypeBackground);
+                WriteWrapped(Text, Line, foreground, background, vars);
+            }
+            catch (Exception ex)
+            {
+                ConsoleLogger.Error(ex, $"There is a serious error when printing wrapped text. {ex.Message}");
             }
         }
 

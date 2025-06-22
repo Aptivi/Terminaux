@@ -26,6 +26,7 @@ using Textify.General;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Terminaux.Base.Checks;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -181,21 +182,95 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="RightMargin">The right margin</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
-        {
-            lock (TextWriterRaw.WriteLock)
-            {
-                try
-                {
-                    // Write text in another place slowly
-                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
-                }
-                catch (Exception ex)
-                {
-                    ConsoleLogger.Error(ex, $"There is a serious error when printing text. {ex.Message}");
-                }
-            }
-        }
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars) =>
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, ThemeColorType.NeutralText, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ThemeColorType color = ThemeColorType.NeutralText, params object[] vars) =>
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, color, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ThemeColorType color = ThemeColorType.NeutralText, params object[] vars) =>
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, 0, color, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ThemeColorType color = ThemeColorType.NeutralText, params object[] vars) =>
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, color, ThemeColorType.Background, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, params object[] vars) =>
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, ForegroundColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, params object[] vars) =>
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, 0, ForegroundColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, params object[] vars) =>
+            WriteWhereSlowlyColorBack(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, ThemeColorsTools.GetColor(ForegroundColor), ThemeColorsTools.GetColor(BackgroundColor), vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -237,7 +312,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereSlowlyColor(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, Color color, params object[] vars) =>
-            WriteWhereSlowlyColorBack(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, color, ColorTools.currentBackgroundColor, vars);
+            WriteWhereSlowlyColorBack(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, color, ThemeColorsTools.GetColor(ThemeColorType.Background), vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
