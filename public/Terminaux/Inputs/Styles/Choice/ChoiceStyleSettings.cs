@@ -19,6 +19,7 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Inputs.Styles.Choice
 {
@@ -48,26 +49,26 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <summary>
         /// The question color
         /// </summary>
-        public Color QuestionColor { get; set; } = ConsoleColors.Yellow;
+        public Color QuestionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Question);
 
         /// <summary>
         /// The input color
         /// </summary>
-        public Color InputColor { get; set; } = ConsoleColors.White;
+        public Color InputColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Input);
 
         /// <summary>
         /// The option color
         /// </summary>
-        public Color OptionColor { get; set; } = ConsoleColors.Olive;
+        public Color OptionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Option);
 
         /// <summary>
         /// The alternative option color
         /// </summary>
-        public Color AltOptionColor { get; set; } = ConsoleColors.Yellow;
+        public Color AltOptionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.AlternativeOption);
 
         /// <summary>
         /// The disabled option color
         /// </summary>
-        public Color DisabledOptionColor { get; set; } = ConsoleColors.Grey;
+        public Color DisabledOptionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.DisabledOption);
     }
 }

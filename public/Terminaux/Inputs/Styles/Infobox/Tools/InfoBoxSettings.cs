@@ -19,6 +19,7 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
@@ -32,8 +33,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         internal bool useColors = true;
         internal string title = "";
         internal BorderSettings borderSettings = BorderSettings.GlobalSettings;
-        internal Color foregroundColor = new(ConsoleColors.Silver);
-        internal Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        internal Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        internal Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Global infobox settings

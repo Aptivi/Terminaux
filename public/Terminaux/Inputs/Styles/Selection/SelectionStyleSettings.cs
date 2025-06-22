@@ -19,6 +19,7 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Inputs.Styles.Selection
 {
@@ -35,47 +36,47 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <summary>
         /// Question color
         /// </summary>
-        public Color QuestionColor { get; set; } = new(ConsoleColors.Yellow);
+        public Color QuestionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Question);
 
         /// <summary>
         /// Slider color
         /// </summary>
-        public Color SliderColor { get; set; } = new(ConsoleColors.Yellow);
+        public Color SliderColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Option);
 
         /// <summary>
         /// Input color
         /// </summary>
-        public Color InputColor { get; set; } = new(ConsoleColors.White);
+        public Color InputColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Input);
 
         /// <summary>
         /// Option color
         /// </summary>
-        public Color OptionColor { get; set; } = new(ConsoleColors.Olive);
+        public Color OptionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Option);
 
         /// <summary>
         /// Alternative option color
         /// </summary>
-        public Color AltOptionColor { get; set; } = new(ConsoleColors.Yellow);
+        public Color AltOptionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.AlternativeOption);
 
         /// <summary>
         /// Selected option color
         /// </summary>
-        public Color SelectedOptionColor { get; set; } = new(ConsoleColors.Aqua);
+        public Color SelectedOptionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.SelectedOption);
 
         /// <summary>
         /// Separator color
         /// </summary>
-        public Color SeparatorColor { get; set; } = new(ConsoleColors.Silver);
+        public Color SeparatorColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Separator);
 
         /// <summary>
         /// Text color
         /// </summary>
-        public Color TextColor { get; set; } = new(ConsoleColors.Silver);
+        public Color TextColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
 
         /// <summary>
         /// Disabled option color
         /// </summary>
-        public Color DisabledOptionColor { get; set; } = new(ConsoleColors.Grey);
+        public Color DisabledOptionColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.DisabledOption);
 
         /// <summary>
         /// Background color

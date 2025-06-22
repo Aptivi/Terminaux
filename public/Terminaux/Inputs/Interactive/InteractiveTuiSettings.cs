@@ -19,6 +19,7 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Interactive
@@ -29,21 +30,23 @@ namespace Terminaux.Inputs.Interactive
     public class InteractiveTuiSettings
     {
         private static readonly InteractiveTuiSettings globalSettings = new();
-        private Color backgroundColor = ConsoleColors.Black;
-        private Color foregroundColor = ConsoleColors.Yellow;
-        private Color paneBackgroundColor = ConsoleColors.Black;
-        private Color paneSeparatorColor = ConsoleColors.Green;
-        private Color paneSelectedSeparatorColor = ConsoleColors.Lime;
-        private Color paneSelectedItemForeColor = ConsoleColors.Black;
-        private Color paneSelectedItemBackColor = ConsoleColors.Olive;
-        private Color paneItemForeColor = ConsoleColors.Olive;
-        private Color paneItemBackColor = ConsoleColors.Black;
-        private Color optionBackgroundColor = ConsoleColors.Olive;
-        private Color keyBindingOptionColor = ConsoleColors.Black;
-        private Color optionForegroundColor = ConsoleColors.Yellow;
-        private Color keyBindingBuiltinBackgroundColor = ConsoleColors.Green;
-        private Color keyBindingBuiltinColor = ConsoleColors.Black;
-        private Color keyBindingBuiltinForegroundColor = ConsoleColors.Lime;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBackground);
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiForeground);
+        private Color paneBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneBackground);
+        private Color paneSeparatorColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
+        private Color paneSelectedSeparatorColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator);
+        private Color paneSelectedItemForeColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedItemFore);
+        private Color paneSelectedItemBackColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedItemBack);
+        private Color paneItemForeColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneItemFore);
+        private Color paneItemBackColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneItemBack);
+        private Color optionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground);
+        private Color keyBindingOptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption);
+        private Color optionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground);
+        private Color keyBindingBuiltinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground);
+        private Color keyBindingBuiltinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin);
+        private Color keyBindingBuiltinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground);
+        private Color boxBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground);
+        private Color boxForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxForeground);
         private InfoBoxSettings infoBoxSettings = new(InfoBoxSettings.GlobalSettings);
 
         /// <summary>
@@ -192,8 +195,8 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public Color BoxBackgroundColor
         {
-            get => InfoBoxSettings.BackgroundColor;
-            set => InfoBoxSettings.BackgroundColor = value;
+            get => boxBackgroundColor;
+            set => boxBackgroundColor = value;
         }
 
         /// <summary>
@@ -201,8 +204,8 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public Color BoxForegroundColor
         {
-            get => InfoBoxSettings.ForegroundColor;
-            set => InfoBoxSettings.ForegroundColor = value;
+            get => boxForegroundColor;
+            set => boxForegroundColor = value;
         }
 
         /// <summary>
@@ -241,9 +244,9 @@ namespace Terminaux.Inputs.Interactive
             PaneSelectedItemBackColor = settings.PaneSelectedItemBackColor;
             PaneSelectedSeparatorColor = settings.PaneSelectedSeparatorColor;
             PaneBackgroundColor = settings.PaneBackgroundColor;
-            InfoBoxSettings = settings.InfoBoxSettings;
             BoxBackgroundColor = settings.BoxBackgroundColor;
             BoxForegroundColor = settings.BoxForegroundColor;
+            InfoBoxSettings = settings.InfoBoxSettings;
         }
     }
 }
