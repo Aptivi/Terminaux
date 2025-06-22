@@ -33,7 +33,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         internal string title = "";
         internal BorderSettings borderSettings = BorderSettings.GlobalSettings;
         internal Color foregroundColor = new(ConsoleColors.Silver);
-        internal Color backgroundColor = ColorTools.currentBackgroundColor;
+        internal Color backgroundColor = ColorTools.CurrentBackgroundColor;
 
         /// <summary>
         /// Global infobox settings

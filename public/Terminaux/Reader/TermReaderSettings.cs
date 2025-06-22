@@ -128,7 +128,7 @@ namespace Terminaux.Reader
         /// </summary>
         public Color InputForegroundColor
         {
-            get => inputForegroundColor ?? ColorTools.currentForegroundColor;
+            get => inputForegroundColor ?? ColorTools.CurrentForegroundColor;
             set => inputForegroundColor = value;
         }
 
@@ -137,7 +137,7 @@ namespace Terminaux.Reader
         /// </summary>
         public Color InputBackgroundColor
         {
-            get => inputBackgroundColor ?? ColorTools.currentBackgroundColor;
+            get => inputBackgroundColor ?? ColorTools.CurrentBackgroundColor;
             set => inputBackgroundColor = value;
         }
 
@@ -155,7 +155,7 @@ namespace Terminaux.Reader
         /// </summary>
         public Color InputPromptForegroundColor
         {
-            get => inputPromptForegroundColor ?? ColorTools.currentForegroundColor;
+            get => inputPromptForegroundColor ?? ColorTools.CurrentForegroundColor;
             set => inputPromptForegroundColor = value;
         }
 

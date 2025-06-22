@@ -54,11 +54,11 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// The custom cell color
         /// </summary>
-        public Color CellColor { get; set; } = ColorTools.currentForegroundColor;
+        public Color CellColor { get; set; } = ColorTools.CurrentForegroundColor;
         /// <summary>
         /// The custom background cell color
         /// </summary>
-        public Color CellBackgroundColor { get; set; } = ColorTools.currentBackgroundColor;
+        public Color CellBackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
         /// <summary>
         /// Text settings for this cell
         /// </summary>

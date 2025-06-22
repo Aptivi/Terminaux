@@ -97,7 +97,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxModalColor(string text, Color InfoBoxModalColor, params object[] vars) =>
-            WriteInfoBoxModalColorBack(text, BorderSettings.GlobalSettings, InfoBoxModalColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxModalColorBack(text, BorderSettings.GlobalSettings, InfoBoxModalColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -118,7 +118,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxModal(string text, BorderSettings settings, params object[] vars) =>
-            WriteInfoBoxModalColorBack(text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxModalColorBack(text, settings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -129,7 +129,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxModalColor(string text, BorderSettings settings, Color InfoBoxModalColor, params object[] vars) =>
-            WriteInfoBoxModalColorBack(text, settings, InfoBoxModalColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxModalColorBack(text, settings, InfoBoxModalColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -162,7 +162,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxModalPlain(string title, string text, BorderSettings settings, params object[] vars) =>
-            WriteInfoBoxModalInternal(title, text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, vars);
+            WriteInfoBoxModalInternal(title, text, settings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, false, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -172,7 +172,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxModal(string title, string text, params object[] vars) =>
-            WriteInfoBoxModalColorBack(title, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxModalColorBack(title, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -183,7 +183,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxModalColor(string title, string text, Color InfoBoxModalTitledColor, params object[] vars) =>
-            WriteInfoBoxModalColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxModalTitledColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxModalColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxModalTitledColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -206,7 +206,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxModal(string title, string text, BorderSettings settings, params object[] vars) =>
-            WriteInfoBoxModalColorBack(title, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxModalColorBack(title, text, settings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -218,7 +218,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void WriteInfoBoxModalColor(string title, string text, BorderSettings settings, Color InfoBoxModalTitledColor, params object[] vars) =>
-            WriteInfoBoxModalColorBack(title, text, settings, InfoBoxModalTitledColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxModalColorBack(title, text, settings, InfoBoxModalTitledColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly

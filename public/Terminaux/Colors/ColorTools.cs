@@ -36,7 +36,7 @@ namespace Terminaux.Colors
     public static class ColorTools
     {
         internal static readonly Color _empty = new(0, new());
-        internal static Color currentForegroundColor = new(ConsoleColors.White);
+        internal static Color currentForegroundColor = new(ConsoleColors.Silver);
         internal static Color currentBackgroundColor = Color.Empty;
         internal static Random rng = new();
         private static readonly ColorSettings globalSettings = new();
@@ -78,7 +78,7 @@ namespace Terminaux.Colors
         /// Loads the background
         /// </summary>
         public static void LoadBack() =>
-            LoadBack(currentBackgroundColor);
+            LoadBack(CurrentBackgroundColor);
 
         /// <summary>
         /// Loads the background
@@ -103,7 +103,7 @@ namespace Terminaux.Colors
         /// Loads the background dryly
         /// </summary>
         public static void LoadBackDry() =>
-            LoadBackDry(currentBackgroundColor);
+            LoadBackDry(CurrentBackgroundColor);
 
         /// <summary>
         /// Loads the background dryly
@@ -128,7 +128,7 @@ namespace Terminaux.Colors
         /// </summary>
         /// <param name="contrastType">Contrast type</param>
         public static Color GetGray(ColorContrastType contrastType = ColorContrastType.Light) =>
-            GetGray(currentBackgroundColor, contrastType);
+            GetGray(CurrentBackgroundColor, contrastType);
 
         /// <summary>
         /// Gets the gray color according to the brightness of the specified color
@@ -493,13 +493,13 @@ namespace Terminaux.Colors
         /// Gets a sequence that reverts the foreground color without clearing screen
         /// </summary>
         public static string RenderRevertForeground() =>
-            RenderSetConsoleColor(currentForegroundColor);
+            RenderSetConsoleColor(CurrentForegroundColor);
 
         /// <summary>
         /// Gets a sequence that reverts the background color without clearing screen
         /// </summary>
         public static string RenderRevertBackground() =>
-            RenderSetConsoleColor(currentBackgroundColor, true);
+            RenderSetConsoleColor(CurrentBackgroundColor, true);
 
         /// <summary>
         /// Gets the RGB specifier from the color code
@@ -550,7 +550,7 @@ namespace Terminaux.Colors
             // Actually set the color
             TextWriterRaw.WriteRaw(sequence);
 
-            // Set current background color
+            // Set current color
             if (needsToSetCurrentColors)
             {
                 if (Background)

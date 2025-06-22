@@ -87,7 +87,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfoboxColor(Keybinding[] keybindings, Color InfoBoxColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(keybindings, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
+            ShowKeybindingInfoboxColorBack(keybindings, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -108,7 +108,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfobox(Keybinding[] keybindings, BorderSettings settings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            ShowKeybindingInfoboxColorBack(keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -119,7 +119,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfoboxColor(Keybinding[] keybindings, BorderSettings settings, Color InfoBoxColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(keybindings, settings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
+            ShowKeybindingInfoboxColorBack(keybindings, settings, InfoBoxColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -152,7 +152,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfoboxPlain(string title, Keybinding[] keybindings, BorderSettings settings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, false, vars);
+            ShowKeybindingInfoboxColorBack(title, keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, false, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -162,7 +162,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfobox(string title, Keybinding[] keybindings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            ShowKeybindingInfoboxColorBack(title, keybindings, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -173,7 +173,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfoboxColor(string title, Keybinding[] keybindings, Color InfoBoxTitledColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
+            ShowKeybindingInfoboxColorBack(title, keybindings, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -196,7 +196,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfobox(string title, Keybinding[] keybindings, BorderSettings settings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            ShowKeybindingInfoboxColorBack(title, keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -208,7 +208,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="vars">Variables to format the message before it's written.</param>
         [Obsolete("This legacy function is to be removed from the final release of Terminaux 7.0. While you can use this in Beta 3, please move all settings to InfoBoxSettings. This is done to clean up the legacy codebase.")]
         public static void ShowKeybindingInfoboxColor(string title, Keybinding[] keybindings, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, settings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
+            ShowKeybindingInfoboxColorBack(title, keybindings, settings, InfoBoxTitledColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly

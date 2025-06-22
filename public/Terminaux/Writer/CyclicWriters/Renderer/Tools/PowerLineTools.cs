@@ -34,7 +34,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// </summary>
         /// <param name="segments">List of segments to render</param>
         public static string RenderSegments(List<PowerLineSegment> segments) =>
-            RenderSegments(segments, ColorTools.currentBackgroundColor);
+            RenderSegments(segments, ColorTools.CurrentBackgroundColor);
 
         /// <summary>
         /// Renders the segments

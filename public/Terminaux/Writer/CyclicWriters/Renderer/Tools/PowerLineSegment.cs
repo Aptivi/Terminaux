@@ -29,12 +29,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// Foreground color of the segment
         /// </summary>
-        public Color SegmentForeground { get; } = ColorTools.currentForegroundColor;
+        public Color SegmentForeground { get; } = ColorTools.CurrentForegroundColor;
 
         /// <summary>
         /// Background color or next segment transition color of the segment
         /// </summary>
-        public Color SegmentBackground { get; } = ColorTools.currentBackgroundColor;
+        public Color SegmentBackground { get; } = ColorTools.CurrentBackgroundColor;
 
         /// <summary>
         /// Segment icon. This should be an iconic character.
