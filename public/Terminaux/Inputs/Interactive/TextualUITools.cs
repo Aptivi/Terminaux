@@ -112,7 +112,7 @@ namespace Terminaux.Inputs.Interactive
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_TEXTUAL_CRASH") + $"\n\n{ex}", new InfoBoxSettings()
                 {
-                    ForegroundColor = ConsoleColors.Red
+                    ForegroundColor = ConsoleColors.Red,
                 });
             }
             finally

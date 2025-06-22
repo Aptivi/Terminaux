@@ -33,8 +33,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         internal bool useColors = true;
         internal string title = "";
         internal BorderSettings borderSettings = BorderSettings.GlobalSettings;
-        internal Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        internal Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
+        private Color? foregroundColor;
+        private Color? backgroundColor;
 
         /// <summary>
         /// Global infobox settings
@@ -61,24 +61,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         }
 
         /// <summary>
-        /// Foreground color of the infobox 
-        /// </summary>
-        public Color ForegroundColor
-        {
-            get => foregroundColor;
-            set => foregroundColor = value;
-        }
-
-        /// <summary>
-        /// Background color of the infobox 
-        /// </summary>
-        public Color BackgroundColor
-        {
-            get => backgroundColor;
-            set => backgroundColor = value;
-        }
-
-        /// <summary>
         /// Whether to use the colors or not 
         /// </summary>
         public bool UseColors
@@ -91,6 +73,38 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         /// Use the radio buttons when dealing with selection infoboxes (single-choice)
         /// </summary>
         public bool RadioButtons { get; set; }
+
+        /// <summary>
+        /// Foreground color of the infobox 
+        /// </summary>
+        public Color ForegroundColor
+        {
+            get => foregroundColor ?? ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+            set => SetForegroundColor(value);
+        }
+
+        /// <summary>
+        /// Sets the foreground color of the infobox
+        /// </summary>
+        /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
+        public void SetForegroundColor(Color? color) =>
+            foregroundColor = color;
+
+        /// <summary>
+        /// Background color of the infobox 
+        /// </summary>
+        public Color BackgroundColor
+        {
+            get => backgroundColor ?? ThemeColorsTools.GetColor(ThemeColorType.Background);
+            set => SetBackgroundColor(value);
+        }
+
+        /// <summary>
+        /// Sets the background color of the infobox
+        /// </summary>
+        /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
+        public void SetBackgroundColor(Color? color) =>
+            backgroundColor = color;
 
         /// <summary>
         /// Makes a new instance of the infobox settings
@@ -106,10 +120,10 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         {
             title = settings.title;
             borderSettings = settings.borderSettings;
-            foregroundColor = settings.foregroundColor;
-            backgroundColor = settings.backgroundColor;
             useColors = settings.useColors;
             RadioButtons = settings.RadioButtons;
+            SetForegroundColor(settings.foregroundColor);
+            SetBackgroundColor(settings.backgroundColor);
         }
     }
 }
