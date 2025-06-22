@@ -26,6 +26,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
@@ -40,8 +41,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     public class BoxFrame : GraphicalCyclicWriter
     {
         private string text = "";
-        private Color boxFrameColor = ColorTools.CurrentForegroundColor;
-        private Color titleColor = ColorTools.CurrentForegroundColor;
+        private Color boxFrameColor = ThemeColorsTools.GetColor(ThemeColorType.Separator);
+        private Color titleColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private BorderSettings settings = new();
         private TextSettings titleSettings = new();

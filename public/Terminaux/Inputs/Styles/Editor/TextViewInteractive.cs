@@ -157,7 +157,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 builder.Append(
                     $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
                     $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
-                    $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
+                    $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
             });

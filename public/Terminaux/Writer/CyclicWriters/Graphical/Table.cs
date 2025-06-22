@@ -22,6 +22,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -35,9 +36,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     {
         private string[,]? rows;
         private bool header = false;
-        private Color separatorColor = ColorTools.CurrentForegroundColor;
-        private Color headerColor = ColorTools.CurrentForegroundColor;
-        private Color valueColor = ColorTools.CurrentForegroundColor;
+        private Color separatorColor = ThemeColorsTools.GetColor(ThemeColorType.TableSeparator);
+        private Color headerColor = ThemeColorsTools.GetColor(ThemeColorType.TableHeader);
+        private Color valueColor = ThemeColorsTools.GetColor(ThemeColorType.TableValue);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private List<CellOptions> settings = [];
         private BorderSettings borderSettings = new();
@@ -293,8 +294,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     else
                     {
                         tableBuilder.Append(
-                            TextWriterWhereColor.RenderWhere(spaces, positionsValues.Item1, positionsValues.Item2) +
-                            TextWriterWhereColor.RenderWhere(text, alignmentPosX, positionsValues.Item2)
+                            TextWriterWhereColor.RenderWherePlain(spaces, positionsValues.Item1, positionsValues.Item2) +
+                            TextWriterWhereColor.RenderWherePlain(text, alignmentPosX, positionsValues.Item2)
                         );
                     }
                 }

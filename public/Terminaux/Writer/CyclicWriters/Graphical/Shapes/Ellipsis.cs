@@ -24,6 +24,7 @@ using System;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Base;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
 {
@@ -86,7 +87,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             Left = left;
             Top = top;
             Filled = filled;
-            ShapeColor = shapeColor ?? ColorTools.CurrentForegroundColor;
+            ShapeColor = shapeColor ?? ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         }
     }
 }

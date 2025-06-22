@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -31,9 +32,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     public class StemLeafChart : SimpleCyclicWriter
     {
         private double[] elements = [];
-        private Color stemColor = ColorTools.CurrentForegroundColor;
-        private Color leafColor = ColorTools.CurrentForegroundColor;
-        private Color separatorColor = ColorTools.CurrentForegroundColor;
+        private Color stemColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color leafColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color separatorColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private bool useColors = true;
 
         /// <summary>

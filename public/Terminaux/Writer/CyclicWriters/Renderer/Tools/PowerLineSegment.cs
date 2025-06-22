@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
@@ -29,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// Foreground color of the segment
         /// </summary>
-        public Color SegmentForeground { get; } = ColorTools.CurrentForegroundColor;
+        public Color SegmentForeground { get; } = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
 
         /// <summary>
         /// Background color or next segment transition color of the segment

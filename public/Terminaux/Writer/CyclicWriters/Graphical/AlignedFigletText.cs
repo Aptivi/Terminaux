@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Figlet;
@@ -35,7 +36,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     {
         private FigletFont figletFont = FigletFonts.GetByName("small");
         private string text = "";
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private TextSettings settings = new();
         private bool useColors = true;

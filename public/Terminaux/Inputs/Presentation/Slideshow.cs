@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Presentation
@@ -47,7 +48,7 @@ namespace Terminaux.Inputs.Presentation
         /// <summary>
         /// Slideshow frame color
         /// </summary>
-        public Color FrameColor { get; set; } = new Color(ConsoleColors.Silver);
+        public Color FrameColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Separator);
 
         /// <summary>
         /// Slideshow background color

@@ -24,6 +24,7 @@ using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
@@ -45,7 +46,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private int columnIdx = 0;
         private int rowIdx = 0;
         private int incrementRate = 0;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private TextSettings settings = new();
         private bool customSize = false;

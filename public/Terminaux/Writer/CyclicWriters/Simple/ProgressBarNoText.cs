@@ -21,6 +21,8 @@ using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Builtins;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
@@ -36,8 +38,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private bool indeterminateBackwards = false;
         private bool useColors = true;
         private Spinner progressSpinner = BuiltinSpinners.Dots;
-        private Color progressForegroundColor = ConsoleColors.DarkGreen;
-        private Color progressActiveForegroundColor = ConsoleColors.Lime;
+        private Color progressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
+        private Color progressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
 
         /// <summary>
         /// Width of the progress bar

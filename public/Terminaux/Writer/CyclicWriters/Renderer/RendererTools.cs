@@ -156,7 +156,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// <param name="pos">Position to write to</param>
         /// <returns>A container representation that you can render with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderRenderable(SimpleCyclicWriter renderable, Coordinate pos) =>
-            TextWriterWhereColor.RenderWhere(renderable.Render(), pos.X, pos.Y);
+            TextWriterWhereColor.RenderWherePlain(renderable.Render(), pos.X, pos.Y);
 
         /// <summary>
         /// Renders the renderable
@@ -191,7 +191,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
 
             // Use RenderWhere anyways, in case the renderable doesn't respect the left and the top position set
             // by the Left and the Top properties above.
-            return TextWriterWhereColor.RenderWhere(renderable.Render(), pos.X, pos.Y);
+            return TextWriterWhereColor.RenderWherePlain(renderable.Render(), pos.X, pos.Y);
         }
     }
 }

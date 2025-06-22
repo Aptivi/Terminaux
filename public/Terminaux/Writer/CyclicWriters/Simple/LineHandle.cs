@@ -21,6 +21,7 @@ using System;
 using System.IO;
 using System.Text;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -30,7 +31,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     public class LineHandle : SimpleCyclicWriter
     {
         private string[] fileLines = [];
-        private Color color = ColorTools.CurrentForegroundColor;
+        private Color color = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private bool useColors = true;
 
         /// <summary>

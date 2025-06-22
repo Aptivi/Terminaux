@@ -22,6 +22,8 @@ using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -68,12 +70,12 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Slider foreground
         /// </summary>
-        public Color SliderForegroundColor { get; set; } = ConsoleColors.DarkGreen;
+        public Color SliderForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
 
         /// <summary>
         /// Slider active foreground
         /// </summary>
-        public Color SliderActiveForegroundColor { get; set; } = ConsoleColors.Lime;
+        public Color SliderActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Progress);
 
         /// <summary>
         /// Slider background

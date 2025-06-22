@@ -24,6 +24,7 @@ using System.IO;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
 
@@ -39,7 +40,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private string pathToHighlight = "";
         private int leftMargin = 0;
         private int rightMargin = 0;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private bool useColors = true;
 

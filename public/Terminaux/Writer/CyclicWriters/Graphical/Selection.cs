@@ -373,8 +373,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 else
                 {
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhere("▲", finalWidth, Top) +
-                        TextWriterWhereColor.RenderWhere("▼", finalWidth, Top + Height - 1)
+                        TextWriterWhereColor.RenderWherePlain("▲", finalWidth, Top) +
+                        TextWriterWhereColor.RenderWherePlain("▼", finalWidth, Top + Height - 1)
                     );
                 }
                 buffer.Append(

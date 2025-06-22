@@ -353,7 +353,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         string wrappedMessage = wrapped[i];
                         string spaces = new(' ', halfBoxWidth - wrappedMessage.Length);
                         selector.Append(
-                            TextWriterWhereColor.RenderWhere(wrappedMessage + spaces, x, y)
+                            TextWriterWhereColor.RenderWherePlain(wrappedMessage + spaces, x, y)
                         );
                     }
 

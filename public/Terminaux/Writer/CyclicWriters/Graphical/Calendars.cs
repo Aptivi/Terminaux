@@ -24,6 +24,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -39,10 +40,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private int year = 0;
         private int month = 0;
         private CultureInfo culture = new("en-US");
-        private Color headerColor = ColorTools.CurrentForegroundColor;
-        private Color weekendColor = ColorTools.CurrentForegroundColor;
-        private Color todayColor = ColorTools.CurrentForegroundColor;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
+        private Color headerColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color weekendColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color todayColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private BorderSettings borderSettings = new();
         private bool useColors = true;

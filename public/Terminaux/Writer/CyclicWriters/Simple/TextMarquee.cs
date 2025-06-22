@@ -20,6 +20,7 @@
 using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
@@ -38,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private int rightIdx = 0;
         private int textWidth = 0;
         private bool useColors = true;
-        private Color fgColor = ColorTools.CurrentForegroundColor;
+        private Color fgColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color bgColor = ColorTools.CurrentBackgroundColor;
 
         /// <summary>

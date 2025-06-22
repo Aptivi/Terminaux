@@ -21,6 +21,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
@@ -34,7 +35,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private int height = ConsoleWrapper.WindowHeight;
         private BorderSettings settings = new(BorderSettings.GlobalSettings);
         private TextAlignment alignment = TextAlignment.Left;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
 
         /// <summary>

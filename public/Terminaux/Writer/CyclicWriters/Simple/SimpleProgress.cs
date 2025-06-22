@@ -21,6 +21,8 @@ using System;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -34,8 +36,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private bool useColors = true;
         private int position = 0;
         private int maxPosition = 0;
-        private Color progressActiveForegroundColor = ConsoleColors.Lime;
-        private Color progressForegroundColor = ConsoleColors.DarkGreen;
+        private Color progressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
+        private Color progressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
 
         /// <summary>
         /// Width of the progress bar

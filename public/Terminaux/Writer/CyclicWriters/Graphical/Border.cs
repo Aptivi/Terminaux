@@ -24,6 +24,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -42,8 +43,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private string text = "";
         private int width = 0;
         private int height = 0;
-        private Color borderColor = ColorTools.CurrentForegroundColor;
-        private Color textColor = ColorTools.CurrentForegroundColor;
+        private Color borderColor = ThemeColorsTools.GetColor(ThemeColorType.Separator);
+        private Color textColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private BorderSettings settings = new();
         private TextSettings textSettings = new();
@@ -259,7 +260,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             break;
                         int leftPos = TextWriterTools.DetermineTextAlignment(sentence, Width, textSettings.Alignment, Left);
                         border.Append(
-                            TextWriterWhereColor.RenderWhere(sentence, leftPos + 1, Top + 1 + i)
+                            TextWriterWhereColor.RenderWherePlain(sentence, leftPos + 1, Top + 1 + i)
                         );
                     }
                 }

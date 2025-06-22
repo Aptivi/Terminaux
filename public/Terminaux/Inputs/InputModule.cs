@@ -20,6 +20,7 @@
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Inputs
 {
@@ -51,7 +52,7 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Foreground color
         /// </summary>
-        public Color Foreground { get; set; } = ColorTools.CurrentForegroundColor;
+        public Color Foreground { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Input);
 
         /// <summary>
         /// Blank foreground color

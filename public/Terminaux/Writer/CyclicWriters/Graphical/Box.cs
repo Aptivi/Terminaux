@@ -20,6 +20,7 @@
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
@@ -29,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Box : GraphicalCyclicWriter
     {
-        private Color boxColor = ColorTools.CurrentForegroundColor;
+        private Color boxColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private bool useColors = true;
 
         /// <summary>

@@ -21,6 +21,7 @@ using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -33,9 +34,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     {
         private Keybinding? shortcut;
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
-        private Color optionColor = ConsoleColors.Black;
-        private Color optionForegroundColor = ConsoleColors.Yellow;
-        private Color optionBackgroundColor = ConsoleColors.Olive;
+        private Color optionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption);
+        private Color optionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground);
+        private Color optionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground);
         private bool useColors = true;
         private bool writeLabel = true;
 

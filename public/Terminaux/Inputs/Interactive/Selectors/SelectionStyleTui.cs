@@ -172,8 +172,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         SliderBackgroundColor = settings.BackgroundColor,
                     };
                     selectionBuilder.Append(
-                        TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, 2) +
-                        TextWriterWhereColor.RenderWhere("▼", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage) +
+                        TextWriterWhereColor.RenderWherePlain("▲", interiorWidth + 3 + sidebarWidth, 2) +
+                        TextWriterWhereColor.RenderWherePlain("▼", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage) +
                         RendererTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, 3))
                     );
                 }

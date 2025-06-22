@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions.Data;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Reader.Highlighting;
 using Terminaux.Reader.History;
 
@@ -128,7 +129,7 @@ namespace Terminaux.Reader
         /// </summary>
         public Color InputForegroundColor
         {
-            get => inputForegroundColor ?? ColorTools.CurrentForegroundColor;
+            get => inputForegroundColor ?? ThemeColorsTools.GetColor(ThemeColorType.Input);
             set => inputForegroundColor = value;
         }
 
@@ -155,7 +156,7 @@ namespace Terminaux.Reader
         /// </summary>
         public Color InputPromptForegroundColor
         {
-            get => inputPromptForegroundColor ?? ColorTools.CurrentForegroundColor;
+            get => inputPromptForegroundColor ?? ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
             set => inputPromptForegroundColor = value;
         }
 

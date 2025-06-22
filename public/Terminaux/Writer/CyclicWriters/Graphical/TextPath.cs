@@ -22,6 +22,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 
@@ -34,10 +35,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     {
         private string pathText = "";
         private bool oneLine = false;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
-        private Color rootDriveColor = ColorTools.CurrentForegroundColor;
-        private Color separatorColor = ColorTools.CurrentForegroundColor;
-        private Color lastPathColor = ColorTools.CurrentForegroundColor;
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color rootDriveColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color separatorColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color lastPathColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private TextSettings settings = new();
         private bool useColors = true;

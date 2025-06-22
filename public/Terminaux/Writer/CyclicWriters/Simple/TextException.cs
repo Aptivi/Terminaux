@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Text;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -30,17 +31,17 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     public class TextException : SimpleCyclicWriter
     {
         private Exception exception;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
-        private Color exceptionNameColor = ColorTools.CurrentForegroundColor;
-        private Color exceptionMessageColor = ColorTools.CurrentForegroundColor;
-        private Color methodMemberColor = ColorTools.CurrentForegroundColor;
-        private Color methodColor = ColorTools.CurrentForegroundColor;
-        private Color parameterTypeColor = ColorTools.CurrentForegroundColor;
-        private Color parameterColor = ColorTools.CurrentForegroundColor;
-        private Color ilOffsetColor = ColorTools.CurrentForegroundColor;
-        private Color fileNameColor = ColorTools.CurrentForegroundColor;
-        private Color fileLineNumberColor = ColorTools.CurrentForegroundColor;
-        private Color fileColumnNumberColor = ColorTools.CurrentForegroundColor;
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color exceptionNameColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color exceptionMessageColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color methodMemberColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color methodColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color parameterTypeColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color parameterColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color ilOffsetColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color fileNameColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color fileLineNumberColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color fileColumnNumberColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private bool useFileInfo = true;
         private bool useColors = true;

@@ -19,6 +19,7 @@
 
 using System.Diagnostics;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
@@ -54,7 +55,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// The custom cell color
         /// </summary>
-        public Color CellColor { get; set; } = ColorTools.CurrentForegroundColor;
+        public Color CellColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         /// <summary>
         /// The custom background cell color
         /// </summary>

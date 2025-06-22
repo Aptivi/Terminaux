@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -38,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     {
         private string text = "";
         private bool oneLine = false;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
         private TextSettings settings = new();
         private bool useColors = true;
@@ -191,7 +192,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     aligned.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, top + i, false)
+                        TextWriterWhereColor.RenderWherePlain(finalSentence.ToString(), consoleInfoX, top + i, false)
                     );
                     finalSentence.Clear();
                 }

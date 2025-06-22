@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -29,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private string decorationStart = "";
         private string decorationEnd = "";
         private bool useColors = true;
-        private Color fgColor = ColorTools.CurrentForegroundColor;
+        private Color fgColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color bgColor = ColorTools.CurrentBackgroundColor;
 
         /// <summary>

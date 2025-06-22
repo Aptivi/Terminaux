@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
@@ -35,7 +36,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private Coordinate startPos = new();
         private Coordinate endPos = new();
         private bool antiAlias = false;
-        private Color lineColor = ColorTools.CurrentForegroundColor;
+        private Color lineColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
 
         /// <summary>
         /// Starting position

@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -36,12 +37,12 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private Keybinding[] keybindings = [];
         private Keybinding[] builtinKeybindings = [];
         private Color backgroundColor = ColorTools.CurrentBackgroundColor;
-        private Color builtinColor = ConsoleColors.Black;
-        private Color builtinForegroundColor = ConsoleColors.Lime;
-        private Color builtinBackgroundColor = ConsoleColors.Green;
-        private Color optionColor = ConsoleColors.Black;
-        private Color optionForegroundColor = ConsoleColors.Yellow;
-        private Color optionBackgroundColor = ConsoleColors.Olive;
+        private Color builtinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin);
+        private Color builtinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground);
+        private Color builtinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground);
+        private Color optionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption);
+        private Color optionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground);
+        private Color optionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground);
         private bool useColors = true;
         private bool writeLabels = true;
         private bool writeHelpKeyInfo = true;
