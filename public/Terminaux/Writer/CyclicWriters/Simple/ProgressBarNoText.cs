@@ -143,7 +143,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             // Check the width
             int spinnerWidth = 2 + ConsoleChar.EstimateCellWidth(progressSpinner.Peek());
             int percentageWidth = 6;
-            int progressWidth = Width - spinnerWidth - percentageWidth + 1;
             if (Width < spinnerWidth)
                 return "";
             if (Width < spinnerWidth + percentageWidth)
@@ -151,8 +150,10 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             // Render the spinner
             var rendered = new StringBuilder();
+            progressSpinner.UseColors = UseColors;
+            progressSpinner.ForegroundColor = ProgressSpinnerTextColor;
+            progressSpinner.BackgroundColor = ProgressBackgroundColor;
             rendered.Append(
-                (UseColors ? ColorTools.RenderSetConsoleColor(ProgressSpinnerTextColor) : "") +
                 $" {progressSpinner.Render()} "
             );
 
