@@ -87,6 +87,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Write the rendered content using the selected spinner
             var spinnerDisplay = new AlignedText()
             {
+                Top = ConsoleWrapper.WindowHeight / 2,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle
