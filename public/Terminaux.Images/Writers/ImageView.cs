@@ -21,6 +21,7 @@ using ImageMagick;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters;
 
@@ -37,7 +38,7 @@ namespace Terminaux.Images.Writers
         private int height = 0;
         private int columnOffset = 0;
         private int rowOffset = 0;
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// An image to render
@@ -140,7 +141,7 @@ namespace Terminaux.Images.Writers
                     int pixelX = (int)x;
                     int pixelY = (int)y;
                     var imageColor = imageColors[pixelX, pixelY];
-                    buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB && imageColor.RGB.A == 0 ? bgSeq : imageColor.VTSequenceBackgroundTrueColor) + " ");
+                    buffer.Append((imageColor.RGB == ThemeColorsTools.GetColor(ThemeColorType.Background).RGB && imageColor.RGB.A == 0 ? bgSeq : imageColor.VTSequenceBackgroundTrueColor) + " ");
                 }
 
                 // Add space if not using console positioning

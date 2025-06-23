@@ -28,6 +28,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
 using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Colors.Transformation.Formulas;
@@ -111,7 +112,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 int rgbRampBarY = grayRampBarY + boxHeight + 3;
                 int shadeTintRampBarY = rgbRampBarY + boxHeight + 4;
                 int infoRampBarY = shadeTintRampBarY + boxHeight + 3;
-                var initialBackground = ColorTools.CurrentBackgroundColor;
+                var initialBackground = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
                 // Buffer the hue ramp
                 if (ConsoleWrapper.WindowHeight - 2 > hslBarY + 2)

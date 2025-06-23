@@ -40,7 +40,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private int textWidth = 0;
         private bool useColors = true;
         private Color fgColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color bgColor = ColorTools.CurrentBackgroundColor;
+        private Color bgColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Text to render. All VT sequences and control characters are trimmed away.

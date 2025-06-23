@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
@@ -29,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     public class PowerLine : SimpleCyclicWriter
     {
         private List<PowerLineSegment> segments = [];
-        private Color endingColor = ColorTools.CurrentBackgroundColor;
+        private Color endingColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// PowerLine segments

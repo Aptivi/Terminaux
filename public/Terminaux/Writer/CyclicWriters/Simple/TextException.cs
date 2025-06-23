@@ -42,7 +42,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private Color fileNameColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color fileLineNumberColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color fileColumnNumberColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private bool useFileInfo = true;
         private bool useColors = true;
 

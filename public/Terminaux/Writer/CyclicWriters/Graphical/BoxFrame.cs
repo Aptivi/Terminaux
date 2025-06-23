@@ -43,7 +43,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private string text = "";
         private Color boxFrameColor = ThemeColorsTools.GetColor(ThemeColorType.Separator);
         private Color titleColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private BorderSettings settings = new();
         private TextSettings titleSettings = new();
         private bool useColors = true;

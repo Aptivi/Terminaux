@@ -20,6 +20,7 @@
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -30,7 +31,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Canvas : GraphicalCyclicWriter
     {
-        private Color canvasColor = ColorTools.CurrentBackgroundColor;
+        private Color canvasColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Canvas color

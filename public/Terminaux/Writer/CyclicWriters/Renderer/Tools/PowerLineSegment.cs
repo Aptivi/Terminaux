@@ -35,7 +35,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// Background color or next segment transition color of the segment
         /// </summary>
-        public Color SegmentBackground { get; } = ColorTools.CurrentBackgroundColor;
+        public Color SegmentBackground { get; } = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Segment icon. This should be an iconic character.

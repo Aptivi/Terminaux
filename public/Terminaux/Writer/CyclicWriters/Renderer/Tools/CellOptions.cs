@@ -59,7 +59,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// The custom background cell color
         /// </summary>
-        public Color CellBackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
+        public Color CellBackgroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Background);
         /// <summary>
         /// Text settings for this cell
         /// </summary>

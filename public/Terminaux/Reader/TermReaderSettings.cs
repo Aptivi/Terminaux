@@ -138,7 +138,7 @@ namespace Terminaux.Reader
         /// </summary>
         public Color InputBackgroundColor
         {
-            get => inputBackgroundColor ?? ColorTools.CurrentBackgroundColor;
+            get => inputBackgroundColor ?? ThemeColorsTools.GetColor(ThemeColorType.Background);
             set => inputBackgroundColor = value;
         }
 

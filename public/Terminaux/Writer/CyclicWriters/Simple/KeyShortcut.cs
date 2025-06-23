@@ -33,7 +33,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     public class KeyShortcut : SimpleCyclicWriter
     {
         private Keybinding? shortcut;
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private Color optionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption);
         private Color optionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground);
         private Color optionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground);

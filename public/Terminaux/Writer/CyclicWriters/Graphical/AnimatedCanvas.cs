@@ -19,6 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
@@ -29,7 +30,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     public class AnimatedCanvas : GraphicalCyclicWriter
     {
         private int frame = 0;
-        private Color canvasColor = ColorTools.CurrentBackgroundColor;
+        private Color canvasColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Canvas color

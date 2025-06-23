@@ -62,7 +62,7 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Background color
         /// </summary>
-        public Color Background { get; set; } = ColorTools.CurrentBackgroundColor;
+        public Color Background { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// If the input is provided or not

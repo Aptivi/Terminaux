@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
 {
@@ -38,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 Top = Top,
                 Width = Width,
                 Height = Height,
-                Color = ColorTools.CurrentBackgroundColor,
+                Color = ThemeColorsTools.GetColor(ThemeColorType.Background),
             };
             return box.Render();
         }

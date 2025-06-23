@@ -33,7 +33,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private readonly string[] spinners = [];
         private bool useColors = true;
         private Color fgColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color bgColor = ColorTools.CurrentBackgroundColor;
+        private Color bgColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Whether to use colors or not

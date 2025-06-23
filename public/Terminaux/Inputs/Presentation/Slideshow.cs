@@ -53,7 +53,7 @@ namespace Terminaux.Inputs.Presentation
         /// <summary>
         /// Slideshow background color
         /// </summary>
-        public Color BackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
+        public Color BackgroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Makes a new presentation

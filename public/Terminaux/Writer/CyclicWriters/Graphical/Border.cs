@@ -45,7 +45,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private int height = 0;
         private Color borderColor = ThemeColorsTools.GetColor(ThemeColorType.Separator);
         private Color textColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private BorderSettings settings = new();
         private TextSettings textSettings = new();
         private bool customPos = false;

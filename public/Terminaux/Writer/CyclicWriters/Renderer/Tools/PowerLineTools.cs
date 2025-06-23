@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
@@ -34,7 +35,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// </summary>
         /// <param name="segments">List of segments to render</param>
         public static string RenderSegments(List<PowerLineSegment> segments) =>
-            RenderSegments(segments, ColorTools.CurrentBackgroundColor);
+            RenderSegments(segments, ThemeColorsTools.GetColor(ThemeColorType.Background));
 
         /// <summary>
         /// Renders the segments

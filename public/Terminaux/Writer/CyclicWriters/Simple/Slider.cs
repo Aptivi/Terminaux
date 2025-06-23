@@ -81,7 +81,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Slider background
         /// </summary>
-        public Color SliderBackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
+        public Color SliderBackgroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Whether to use colors or not

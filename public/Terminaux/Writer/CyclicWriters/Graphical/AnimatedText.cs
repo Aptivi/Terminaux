@@ -37,7 +37,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private int frame = 0;
         private string[] frames = [];
         private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private TextSettings settings = new();
         private bool useColors = true;
         private bool rainbow = false;

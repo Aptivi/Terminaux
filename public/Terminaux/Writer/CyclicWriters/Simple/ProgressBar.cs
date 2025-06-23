@@ -108,7 +108,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Progress background
         /// </summary>
-        public Color ProgressBackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
+        public Color ProgressBackgroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Progress percentage text color

@@ -36,7 +36,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     {
         private Keybinding[] keybindings = [];
         private Keybinding[] builtinKeybindings = [];
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private Color builtinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin);
         private Color builtinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground);
         private Color builtinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground);

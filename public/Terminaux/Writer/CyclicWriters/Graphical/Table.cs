@@ -39,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private Color separatorColor = ThemeColorsTools.GetColor(ThemeColorType.TableSeparator);
         private Color headerColor = ThemeColorsTools.GetColor(ThemeColorType.TableHeader);
         private Color valueColor = ThemeColorsTools.GetColor(ThemeColorType.TableValue);
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private List<CellOptions> settings = [];
         private BorderSettings borderSettings = new();
         private bool useColors = true;

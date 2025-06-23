@@ -39,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private Color rootDriveColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color separatorColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color lastPathColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private TextSettings settings = new();
         private bool useColors = true;
         private bool rainbow = false;

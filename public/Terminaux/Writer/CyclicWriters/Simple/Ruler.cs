@@ -36,7 +36,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private BorderSettings settings = new(BorderSettings.GlobalSettings);
         private TextAlignment alignment = TextAlignment.Left;
         private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
         /// <summary>
         /// Whether this ruler is a vertical ruler or not

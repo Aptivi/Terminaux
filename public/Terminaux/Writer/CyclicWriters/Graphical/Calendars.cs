@@ -44,7 +44,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         private Color weekendColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color todayColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private BorderSettings borderSettings = new();
         private bool useColors = true;
 
