@@ -107,7 +107,7 @@ namespace Terminaux.Colors.Themes
                 throw new TerminauxException("Theme doesn't exist");
             if (string.IsNullOrEmpty(theme))
                 throw new TerminauxException("Theme name may not be empty");
-            if (themes.Remove(theme))
+            if (!themes.Remove(theme))
                 throw new TerminauxException("Theme removal failed");
         }
 
