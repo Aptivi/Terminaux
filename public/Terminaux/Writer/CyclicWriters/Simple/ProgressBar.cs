@@ -155,6 +155,26 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public char ProgressHorizontalActiveTrackChar { get; set; } = '━';
 
         /// <summary>
+        /// Progress vertical inactive track character for drawing (uncolored)
+        /// </summary>
+        public char ProgressUncoloredVerticalInactiveTrackChar { get; set; } = '▒';
+
+        /// <summary>
+        /// Progress vertical active track character for drawing (uncolored)
+        /// </summary>
+        public char ProgressUncoloredVerticalActiveTrackChar { get; set; } = '█';
+
+        /// <summary>
+        /// Progress horizontal inactive track character for drawing (uncolored)
+        /// </summary>
+        public char ProgressUncoloredHorizontalInactiveTrackChar { get; set; } = '▒';
+
+        /// <summary>
+        /// Progress horizontal active track character for drawing (uncolored)
+        /// </summary>
+        public char ProgressUncoloredHorizontalActiveTrackChar { get; set; } = '█';
+
+        /// <summary>
         /// Renders a scrolling text progress bar
         /// </summary>
         /// <returns>The result</returns>
@@ -213,6 +233,10 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 ProgressHorizontalInactiveTrackChar = ProgressHorizontalInactiveTrackChar,
                 ProgressVerticalActiveTrackChar = ProgressVerticalActiveTrackChar,
                 ProgressVerticalInactiveTrackChar = ProgressVerticalInactiveTrackChar,
+                ProgressUncoloredHorizontalActiveTrackChar = ProgressUncoloredHorizontalActiveTrackChar,
+                ProgressUncoloredHorizontalInactiveTrackChar = ProgressUncoloredHorizontalInactiveTrackChar,
+                ProgressUncoloredVerticalActiveTrackChar = ProgressUncoloredVerticalActiveTrackChar,
+                ProgressUncoloredVerticalInactiveTrackChar = ProgressUncoloredVerticalInactiveTrackChar,
                 indeterminateStep = indeterminateStep,
                 indeterminateBackwards = indeterminateBackwards,
                 UseColors = UseColors,

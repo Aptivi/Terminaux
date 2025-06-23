@@ -32,6 +32,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// </summary>
     public class Slider : SimpleCyclicWriter
     {
+        private bool useColors = true;
         private int position = 0;
         private int minPosition = 0;
         private int maxPosition = 0;
@@ -83,6 +84,15 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public Color SliderBackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
 
         /// <summary>
+        /// Whether to use colors or not
+        /// </summary>
+        public bool UseColors
+        {
+            get => useColors;
+            set => useColors = value;
+        }
+
+        /// <summary>
         /// Slider vertical inactive track character for drawing
         /// </summary>
         public char SliderVerticalInactiveTrackChar { get; set; } = '┃';
@@ -103,6 +113,26 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public char SliderHorizontalActiveTrackChar { get; set; } = '━';
 
         /// <summary>
+        /// Slider vertical inactive track character for drawing (uncolored)
+        /// </summary>
+        public char SliderUncoloredVerticalInactiveTrackChar { get; set; } = '▒';
+
+        /// <summary>
+        /// Slider vertical active track character for drawing (uncolored)
+        /// </summary>
+        public char SliderUncoloredVerticalActiveTrackChar { get; set; } = '█';
+
+        /// <summary>
+        /// Slider horizontal inactive track character for drawing (uncolored)
+        /// </summary>
+        public char SliderUncoloredHorizontalInactiveTrackChar { get; set; } = '▒';
+
+        /// <summary>
+        /// Slider horizontal active track character for drawing (uncolored)
+        /// </summary>
+        public char SliderUncoloredHorizontalActiveTrackChar { get; set; } = '█';
+
+        /// <summary>
         /// Renders a scrolling text slider
         /// </summary>
         /// <returns>The result</returns>
@@ -118,21 +148,18 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 times = times + one >= Height ? Height - one : times;
                 int rest = Height - (one + times);
                 rest = rest < 0 ? 0 : rest;
-                rendered.Append(
-                    ColorTools.RenderSetConsoleColor(SliderForegroundColor)
-                );
+                if (UseColors)
+                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderForegroundColor));
                 for (int i = 0; i < times; i++)
-                    rendered.AppendLine($"{SliderVerticalInactiveTrackChar}");
-                rendered.Append(
-                    ColorTools.RenderSetConsoleColor(SliderActiveForegroundColor)
-                );
+                    rendered.AppendLine($"{(UseColors ? SliderVerticalInactiveTrackChar : SliderUncoloredVerticalInactiveTrackChar)}");
+                if (UseColors)
+                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderActiveForegroundColor));
                 for (int i = 0; i < one; i++)
-                    rendered.AppendLine($"{SliderVerticalActiveTrackChar}");
-                rendered.Append(
-                    ColorTools.RenderSetConsoleColor(SliderForegroundColor)
-                );
+                    rendered.AppendLine($"{(UseColors ? SliderVerticalActiveTrackChar : SliderUncoloredVerticalActiveTrackChar)}");
+                if (UseColors)
+                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderForegroundColor));
                 for (int i = 0; i < rest; i++)
-                    rendered.AppendLine($"{SliderVerticalInactiveTrackChar}");
+                    rendered.AppendLine($"{(UseColors ? SliderVerticalInactiveTrackChar : SliderUncoloredVerticalInactiveTrackChar)}");
             }
             else
             {
@@ -143,19 +170,20 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 times = times + one >= Width ? Width - one : times;
                 int rest = Width - (one + times);
                 rest = rest < 0 ? 0 : rest;
-                rendered.Append(
-                    ColorTools.RenderSetConsoleColor(SliderForegroundColor) +
-                    new string(SliderHorizontalInactiveTrackChar, times) +
-                    ColorTools.RenderSetConsoleColor(SliderActiveForegroundColor) +
-                    new string(SliderHorizontalActiveTrackChar, one) +
-                    ColorTools.RenderSetConsoleColor(SliderForegroundColor) +
-                    new string(SliderHorizontalInactiveTrackChar, rest)
-                );
+                if (UseColors)
+                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderForegroundColor));
+                rendered.Append(new string(UseColors ? SliderHorizontalInactiveTrackChar : SliderUncoloredHorizontalInactiveTrackChar, times));
+                if (UseColors)
+                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderActiveForegroundColor));
+                rendered.Append(new string(UseColors ? SliderHorizontalActiveTrackChar : SliderUncoloredHorizontalActiveTrackChar, one));
+                if (UseColors)
+                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderForegroundColor));
+                rendered.Append(new string(UseColors ? SliderHorizontalInactiveTrackChar : SliderUncoloredHorizontalInactiveTrackChar, rest));
             }
 
             // Return the result
             rendered.Append(
-                ColorTools.RenderResetColors()
+                UseColors ? ColorTools.RenderResetColors() : ""
             );
             return rendered.ToString();
         }
