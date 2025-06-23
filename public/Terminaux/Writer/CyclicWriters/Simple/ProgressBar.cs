@@ -118,7 +118,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Progress spinner color
         /// </summary>
-        public Color ProgressSpinnerTextColor { get; set; } = ConsoleColors.Grey;
+        public Color ProgressSpinnerTextColor { get; set; } = ConsoleColors.Silver;
 
         /// <summary>
         /// Progress text color
@@ -194,8 +194,10 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             // Render the spinner
             var rendered = new StringBuilder();
+            progressSpinner.UseColors = UseColors;
+            progressSpinner.ForegroundColor = ProgressSpinnerTextColor;
+            progressSpinner.BackgroundColor = ProgressBackgroundColor;
             rendered.Append(
-                (UseColors ? ColorTools.RenderSetConsoleColor(ProgressSpinnerTextColor) : "") +
                 $" {progressSpinner.Render()} "
             );
 

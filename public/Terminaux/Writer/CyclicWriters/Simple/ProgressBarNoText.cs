@@ -103,7 +103,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Progress spinner color
         /// </summary>
-        public Color ProgressSpinnerTextColor { get; set; } = ConsoleColors.Grey;
+        public Color ProgressSpinnerTextColor { get; set; } = ConsoleColors.Silver;
 
         /// <summary>
         /// Whether to use colors or not
