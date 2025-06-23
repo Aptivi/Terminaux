@@ -24,6 +24,7 @@ using Terminaux.Shell.Switches;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -65,14 +66,14 @@ namespace Terminaux.Shell.Shells.Unified
                 if (buildingTarget)
                 {
                     ConsoleLogger.Error(ex, $"Execution of {sourceCommand} to the buffer failed.");
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_SOURCEFAILED"), ConsoleColors.Red);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_SOURCEFAILED"), ThemeColorType.Error);
                 }
                 else
                 {
                     ConsoleLogger.Error(ex, $"Execution of {targetCommandBuilder} failed.");
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_TARGETFAILED") + $"\n    {targetCommandBuilder}", ConsoleColors.Red);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_TARGETFAILED") + $"\n    {targetCommandBuilder}", ThemeColorType.Error);
                 }
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_FAILED"), ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_WRAP_FAILED"), ThemeColorType.Error);
                 ConsoleLogger.Error(ex, $"Reason for failure: {ex.Message}.");
                 return ex.GetHashCode();
             }

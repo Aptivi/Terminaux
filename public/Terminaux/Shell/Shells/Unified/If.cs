@@ -22,6 +22,7 @@ using System.Linq;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting.Conditions;
 using Terminaux.Writer.ConsoleWriters;
@@ -57,7 +58,7 @@ namespace Terminaux.Shell.Shells.Unified
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Failed to satisfy condition. See above for more information: {0}", ex.Message);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE") + " {0}", true, ConsoleColors.Red, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_IF_CONDITIONUNSATISFIABLE") + " {0}", true, ThemeColorType.Error, ex.Message);
                 return ex.GetHashCode();
             }
         }

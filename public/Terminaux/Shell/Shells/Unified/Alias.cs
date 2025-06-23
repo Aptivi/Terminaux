@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
@@ -57,17 +58,17 @@ namespace Terminaux.Shell.Shells.Unified
                     {
                         AliasManager.AddAlias(destCmd, aliasCmd, type);
                         shouldSave = true;
-                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_ALIAS_SUCCESS"), ConsoleColors.Lime, aliasCmd, destCmd);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_ALIAS_SUCCESS"), ThemeColorType.Success, aliasCmd, destCmd);
                     }
                     catch (Exception ex)
                     {
                         ConsoleLogger.Error(ex, "Failed to add alias. {0}", ex.Message);
-                        TextWriterColor.WriteColor(ex.Message, ConsoleColors.Red);
+                        TextWriterColor.Write(ex.Message, ThemeColorType.Error);
                     }
                 }
                 else
                 {
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE"), ConsoleColors.Red, type);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE"), ThemeColorType.Error, type);
                     return 1;
                 }
             }
@@ -80,17 +81,17 @@ namespace Terminaux.Shell.Shells.Unified
                     {
                         AliasManager.RemoveAlias(aliasCmd, type);
                         shouldSave = true;
-                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS"), ConsoleColors.Lime, aliasCmd);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS"), ThemeColorType.Success, aliasCmd);
                     }
                     catch (Exception ex)
                     {
                         ConsoleLogger.Error(ex, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", ex.Message);
-                        TextWriterColor.WriteColor(ex.Message, ConsoleColors.Red);
+                        TextWriterColor.Write(ex.Message, ThemeColorType.Error);
                     }
                 }
                 else
                 {
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE"), ConsoleColors.Red, type);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE"), ThemeColorType.Error, type);
                     return 1;
                 }
             }

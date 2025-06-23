@@ -26,6 +26,7 @@ using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Shell.Commands.ProcessExecution
 {
@@ -122,7 +123,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("T_COMMON_ERRORDESC"), true, ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, File);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("T_COMMON_ERRORDESC"), true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }
             return -1;
         }
@@ -217,7 +218,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("T_COMMON_ERRORDESC"), true, ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, File);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("T_COMMON_ERRORDESC"), true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
                 exitCode = -1;
             }
             return commandOutputBuilder.ToString();
@@ -270,7 +271,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("T_COMMON_ERRORDESC"), true, ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, File);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("T_COMMON_ERRORDESC"), true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }
         }
 

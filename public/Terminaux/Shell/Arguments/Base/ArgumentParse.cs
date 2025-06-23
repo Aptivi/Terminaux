@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
@@ -102,7 +103,7 @@ namespace Terminaux.Shell.Arguments.Base
                                 else if (isLast)
                                 {
                                     ConsoleLogger.Error("Not enough arguments {0}", ArgumentName);
-                                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS"), ConsoleColors.Red);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS"), ThemeColorType.Error);
                                 }
                             }
                         }
@@ -110,14 +111,14 @@ namespace Terminaux.Shell.Arguments.Base
                     else
                     {
                         ConsoleLogger.Error("No such argument {0}", ArgumentName);
-                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_UNKNOWNARG") + $" {Argument}", ConsoleColors.Red);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_UNKNOWNARG") + $" {Argument}", ThemeColorType.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Argument execution failed");
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR") + $": {ex.Message}", ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR") + $": {ex.Message}", ThemeColorType.Error);
             }
         }
 

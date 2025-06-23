@@ -32,6 +32,7 @@ using Terminaux.Shell.Scripting;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Switches;
 using Terminaux.Base.Wrappers;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Shell.Commands
 {
@@ -92,7 +93,7 @@ namespace Terminaux.Shell.Commands
                 if (satisfied is null)
                 {
                     ConsoleLogger.Warning("Arguments not satisfied.");
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST"), ConsoleColors.Red);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST"), ThemeColorType.Error);
                     for (int i = 0; i < total.Length; i++)
                     {
                         ProvidedArgumentsInfo unsatisfied = total[i];
@@ -110,34 +111,34 @@ namespace Terminaux.Shell.Commands
 
                         // Write usage number
                         string renderedUsage = !string.IsNullOrEmpty(argInfo.RenderedUsage) ? " " + argInfo.RenderedUsage : "";
-                        TextWriterColor.WriteColor($"- [{i + 1}] {command}{renderedUsage}", ConsoleColors.Yellow);
+                        TextWriterColor.Write($"- [{i + 1}] {command}{renderedUsage}", ThemeColorType.ListEntry);
 
                         // Check for required arguments
                         if (!unsatisfied.RequiredArgumentsProvided)
                         {
                             ConsoleLogger.Warning("User hasn't provided enough arguments for {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED"), ThemeColorType.ListValue);
                         }
 
                         // Check for required switches
                         if (!unsatisfied.RequiredSwitchesProvided)
                         {
                             ConsoleLogger.Warning("User hasn't provided enough switches for {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED"), ThemeColorType.ListValue);
                         }
 
                         // Check for required switch arguments
                         if (!unsatisfied.RequiredSwitchArgumentsProvided)
                         {
                             ConsoleLogger.Warning("User hasn't provided a value for one of the switches for {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE"), ThemeColorType.ListValue);
                         }
 
                         // Check for unknown switches
                         if (unsatisfied.UnknownSwitchesList.Length > 0)
                         {
                             ConsoleLogger.Warning("User has provided unknown switches {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES"), ThemeColorType.ListValue);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.UnknownSwitchesList,
@@ -148,7 +149,7 @@ namespace Terminaux.Shell.Commands
                         if (unsatisfied.ConflictingSwitchesList.Length > 0)
                         {
                             ConsoleLogger.Warning("User has provided conflicting switches for {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESCONFLICT"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESCONFLICT"), ThemeColorType.ListValue);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.ConflictingSwitchesList,
@@ -159,7 +160,7 @@ namespace Terminaux.Shell.Commands
                         if (unsatisfied.NoValueSwitchesList.Length > 0)
                         {
                             ConsoleLogger.Warning("User has provided switches that don't accept values for {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOVALUES"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOVALUES"), ThemeColorType.ListValue);
                             TextWriterRaw.WriteRaw(new Listing()
                             {
                                 Objects = unsatisfied.NoValueSwitchesList,
@@ -170,24 +171,24 @@ namespace Terminaux.Shell.Commands
                         if (!unsatisfied.NumberProvided)
                         {
                             ConsoleLogger.Warning("User has provided invalid number for one or more of the arguments for {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGNUMERIC"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGNUMERIC"), ThemeColorType.ListValue);
                         }
 
                         // Check for invalid exact wording
                         if (!unsatisfied.ExactWordingProvided)
                         {
                             ConsoleLogger.Warning("User has provided non-exact wording for {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGEXACT"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGEXACT"), ThemeColorType.ListValue);
                         }
 
                         // Check for invalid number in numeric switches
                         if (!unsatisfied.SwitchNumberProvided)
                         {
                             ConsoleLogger.Warning("User has provided invalid number for one or more of the switches for {0}", command);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHNUMERIC"), ConsoleColors.Olive);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHNUMERIC"), ThemeColorType.ListValue);
                         }
                     }
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CONSULTHELP"), ConsoleColors.Red);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CONSULTHELP"), ThemeColorType.Error);
                     ShellInstance.LastErrorCode = -6;
                     return;
                 }
@@ -207,7 +208,7 @@ namespace Terminaux.Shell.Commands
                 if (RequestedCommandInfo.Flags.HasFlag(CommandFlags.Obsolete))
                 {
                     ConsoleLogger.Debug("The command requested {0} is obsolete", Command);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_OBSOLETECMD"));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_OBSOLETECMD"), ThemeColorType.Warning);
                 }
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
@@ -303,14 +304,14 @@ namespace Terminaux.Shell.Commands
             catch (ThreadInterruptedException)
             {
                 ConsoleLogger.Warning("Command {0} is being interrupted...", RequestedCommand);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_COMMANDINTERRUPT"), ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_COMMANDINTERRUPT"), ThemeColorType.Error);
                 CancellationHandlers.cancelRequested = false;
                 ShellInstance.LastErrorCode = -5;
             }
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Failed to execute command {0}", RequestedCommand);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND1") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2") + " {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND1") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2") + " {0}: {1}", ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
                 ShellInstance.LastErrorCode = ex.GetHashCode();
             }
         }
@@ -330,7 +331,7 @@ namespace Terminaux.Shell.Commands
             if (!CommandManager.IsCommandFound(CommandToBeWrapped, currentType))
             {
                 ConsoleLogger.Error("Wrappable command {0} not found", Command);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND"), true, ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND"), true, ThemeColorType.Error);
                 return;
             }
 
@@ -338,7 +339,7 @@ namespace Terminaux.Shell.Commands
             if (!StartCommandThread.IsAlive)
             {
                 ConsoleLogger.Error("Can't directly execute command {0} in wrapped mode.", Command);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN"), true, ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN"), true, ThemeColorType.Error);
                 return;
             }
 
@@ -347,7 +348,7 @@ namespace Terminaux.Shell.Commands
             {
                 var WrappableCmds = GetWrappableCommands(currentType);
                 ConsoleLogger.Error("Unwrappable command {0}! Wrappable commands: [{1}]", Command, string.Join(", ", WrappableCmds));
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE"), true, ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE"), true, ThemeColorType.Error);
                 for (int i = 0; i < WrappableCmds.Length; i++)
                 {
                     string? wrappableCmd = WrappableCmds[i];
@@ -370,7 +371,7 @@ namespace Terminaux.Shell.Commands
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Failed to wrap command {0}: {1}", CommandToBeWrapped, ex.Message);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_WRAPFAILED") + ": {0}", true, ConsoleColors.Red, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_WRAPFAILED") + ": {0}", true, ThemeColorType.Error, ex.Message);
             }
 
             // In case error happens
@@ -468,7 +469,7 @@ namespace Terminaux.Shell.Commands
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, $"Command aborted: {ex.Message}");
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ABORTEXCEPTION") + $": {ex.Message}", ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ABORTEXCEPTION") + $": {ex.Message}", ThemeColorType.Error);
             }
         }
 

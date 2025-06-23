@@ -20,6 +20,7 @@
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
@@ -41,7 +42,7 @@ namespace Terminaux.Shell.Shells.Unified
             bool valid = uint.TryParse(timesString, out uint times);
             if (!valid)
             {
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_REPEAT_INVALIDTIMES"), true, ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_REPEAT_INVALIDTIMES"), true, ThemeColorType.Error);
                 return 18;
             }
 
@@ -54,7 +55,7 @@ namespace Terminaux.Shell.Shells.Unified
             var argumentInfo = ArgumentsParser.ParseShellCommandArguments(lastCommand, ShellManager.CurrentShellType).total[0];
             if (argumentInfo.Command == "repeat")
             {
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_REPEAT_REPEATSELF"), true, ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_REPEAT_REPEATSELF"), true, ThemeColorType.Error);
                 return 19;
             }
 

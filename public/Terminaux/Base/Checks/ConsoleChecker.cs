@@ -34,6 +34,7 @@ using Terminaux.Inputs;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Base.Checks
 {
@@ -191,12 +192,12 @@ namespace Terminaux.Base.Checks
                     );
                 }
                 else
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE"), ConsoleColors.Yellow);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE"), ThemeColorType.Error);
             }
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Checking against terminal {0} on {1} for positioning failed", TerminalType, TerminalEmulator);
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE"), ConsoleColors.Yellow);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE"), ThemeColorType.Error);
             }
 
             // Set the encoding

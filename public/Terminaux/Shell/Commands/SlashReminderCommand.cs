@@ -19,6 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Commands
@@ -28,8 +29,8 @@ namespace Terminaux.Shell.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.WriteColor(
-                "* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDNEEDSSLASH") + $" /{parameters.CommandText} {parameters.ArgumentsText}", ConsoleColors.Yellow);
+            TextWriterColor.Write(
+                "* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDNEEDSSLASH") + $" /{parameters.CommandText} {parameters.ArgumentsText}", ThemeColorType.Tip);
             return 0;
         }
 

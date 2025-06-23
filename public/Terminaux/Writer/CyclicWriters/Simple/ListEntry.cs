@@ -20,6 +20,7 @@
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -28,8 +29,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// </summary>
     public class ListEntry : SimpleCyclicWriter
     {
-        private Color keyColor = ConsoleColors.Yellow;
-        private Color valueColor = ConsoleColors.Olive;
+        private Color keyColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry);
+        private Color valueColor = ThemeColorsTools.GetColor(ThemeColorType.ListValue);
         private bool useColors = true;
 
         /// <summary>

@@ -19,6 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -37,7 +38,7 @@ namespace Terminaux.Shell.Shells.Unified
         {
             if (!parameters.SwitchSetPassed)
             {
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH"), ConsoleColors.Red);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH"), ThemeColorType.Error);
                 return 1;
             }
             variableValue = parameters.ArgumentsList[0];

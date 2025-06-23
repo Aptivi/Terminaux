@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
@@ -58,16 +59,16 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 bool result = FixtureRunner.RunGeneralTest(fixture, out var exc, fixture.initialParameters);
                 if (result)
                 {
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED"), ConsoleColors.Lime);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED"), ThemeColorType.Success);
                     if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
-                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH"), ConsoleColors.Lime);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH"), ThemeColorType.Success);
                 }
                 else
                 {
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED"), ConsoleColors.Red);
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE") + ": " + exc?.Message ?? LanguageTools.GetLocalized("T_EXCEPTION_UNKNOWNERROR3"), ConsoleColors.Red);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE") + ": " + exc?.Message ?? LanguageTools.GetLocalized("T_EXCEPTION_UNKNOWNERROR3"), ThemeColorType.Error);
                     if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
-                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH"), ConsoleColors.Red);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH"), ThemeColorType.Error);
                 }
                 statuses[selectedIndex - 1] = result ? 1 : 2;
                 Input.ReadKey();

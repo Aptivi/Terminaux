@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.History;
 using Terminaux.Reader.Tools;
@@ -431,8 +432,8 @@ namespace Terminaux.Reader
                 catch (Exception ex)
                 {
                     ConsoleLogger.Error(ex, LanguageTools.GetLocalized("T_READER_FAILED"));
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_READER_FAILED") + $": {ex.Message}", ConsoleColors.Red);
-                    TextWriterColor.WriteColor(ex.StackTrace, ConsoleColors.Red);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_READER_FAILED") + $": {ex.Message}", ThemeColorType.Error);
+                    TextWriterColor.Write(ex.StackTrace, ThemeColorType.Error);
                 }
                 finally
                 {

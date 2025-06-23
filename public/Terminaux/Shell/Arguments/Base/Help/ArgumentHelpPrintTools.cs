@@ -23,6 +23,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Base;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Shell.Arguments.Base.Help
 {
@@ -49,7 +50,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
             // Check to see if we have this argument
             if (!arguments.TryGetValue(argument, out ArgumentInfo? argInfo))
             {
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELP_ARG"), ConsoleColors.Red, argument);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELP_ARG"), ThemeColorType.Error, argument);
                 return;
             }
 
@@ -69,7 +70,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 if (Arguments.Length != 0 || Switches.Length != 0)
                 {
                     // Print the usage information holder
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE") + $": {argument}", false, ConsoleColors.Yellow);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE") + $": {argument}", false, ThemeColorType.ListEntry);
 
                     // Enumerate through the available switches first
                     foreach (var Switch in Switches)
@@ -78,7 +79,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                         string switchName = Switch.SwitchName;
                         string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
                         ConsoleLogger.Debug("Switch {0} ({1}) rendered as {2}", switchName, required, renderedSwitch);
-                        TextWriterColor.WriteColor(renderedSwitch, false, ConsoleColors.Yellow);
+                        TextWriterColor.Write(renderedSwitch, false, ThemeColorType.ListEntry);
                     }
 
                     // Enumerate through the available arguments
@@ -89,12 +90,12 @@ namespace Terminaux.Shell.Arguments.Base.Help
                         bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
                         string renderedArgument = required ? $" <{argumentPart.ArgumentExpression}>" : $" [{argumentPart.ArgumentExpression}]";
                         ConsoleLogger.Debug("Argument {0} ({1}) rendered as {2}", argumentPart.ArgumentExpression, required, renderedArgument);
-                        TextWriterColor.WriteColor(renderedArgument, false, ConsoleColors.Yellow);
+                        TextWriterColor.Write(renderedArgument, false, ThemeColorType.ListEntry);
                     }
                     TextWriterRaw.Write();
                 }
                 else
-                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE") + $": {argument}", true, ConsoleColors.Yellow);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE") + $": {argument}", true, ThemeColorType.ListEntry);
             }
 
             // Write the description now
@@ -103,7 +104,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 ConsoleLogger.Warning("No argument help description for {0}", argument);
                 HelpDefinition = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELPDESC_ARG");
             }
-            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC") + $": {HelpDefinition}", true, ConsoleColors.Olive);
+            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC") + $": {HelpDefinition}", true, ThemeColorType.ListValue);
             argInfo.ArgumentBase.HelpHelper();
         }
     }

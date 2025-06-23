@@ -43,6 +43,7 @@ using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using Terminaux.Base.Wrappers;
 using Terminaux.Shell.Aliases;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Shell.Shells
 {
@@ -577,7 +578,6 @@ namespace Terminaux.Shell.Shells
                 Suggestions = (text, index, _) => CommandAutoComplete.GetSuggestions(text, index),
                 SuggestionsDelimiters = [' '],
                 TreatCtrlCAsInput = true,
-                InputForegroundColor = ConsoleColors.Silver,
                 HistoryName = ShellType,
                 HistoryEnabled = enableInputHistory,
             };
@@ -757,7 +757,7 @@ namespace Terminaux.Shell.Shells
                                     }
                                     catch (Exception ex)
                                     {
-                                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE"), true, ConsoleColors.Red, ex.Message);
+                                        TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE"), true, ThemeColorType.Error, ex.Message);
                                         MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
                                     }
                                 }
@@ -778,7 +778,7 @@ namespace Terminaux.Shell.Shells
                                     catch (Exception ex)
                                     {
                                         ConsoleLogger.Error(ex, "Failed to start process: {0}", ex.Message);
-                                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR"), true, ConsoleColors.Red, commandName, ex.Message);
+                                        TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR"), true, ThemeColorType.Error, commandName, ex.Message);
                                         MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
                                     }
                                     finally
@@ -792,20 +792,20 @@ namespace Terminaux.Shell.Shells
                             else
                             {
                                 ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found parsing target file", commandName);
-                                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), true, ConsoleColors.Red, commandName);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), true, ThemeColorType.Error, commandName);
                                 MESHVariables.SetVariable("MESHErrorCode", "-2");
                             }
                         }
                         else
                         {
                             ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found", commandName);
-                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), true, ConsoleColors.Red, commandName);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), true, ThemeColorType.Error, commandName);
                             MESHVariables.SetVariable("MESHErrorCode", "-1");
                         }
                     }
                     catch (Exception ex)
                     {
-                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2"), true, ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2"), true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                         MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
                     }
                 }

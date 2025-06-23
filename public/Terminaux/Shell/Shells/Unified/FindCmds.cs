@@ -19,6 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -38,11 +39,11 @@ namespace Terminaux.Shell.Shells.Unified
             var commands = CommandManager.FindCommands(parameters.ArgumentsList[0], ShellManager.CurrentShellType);
             foreach (var command in commands)
             {
-                TextWriterColor.WriteColor("- ", false, ConsoleColors.Yellow);
-                TextWriterColor.WriteColor(command.Command, ConsoleColors.Olive);
+                TextWriterColor.Write("- ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(command.Command, ThemeColorType.ListValue);
             }
             if (commands.Length == 0)
-                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIND_NOTFOUND"), ConsoleColors.Grey);
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIND_NOTFOUND"), ThemeColorType.Error);
             return 0;
         }
 
