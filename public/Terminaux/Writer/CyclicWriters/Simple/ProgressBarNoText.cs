@@ -37,7 +37,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private int indeterminateStep = 0;
         private bool indeterminateBackwards = false;
         private bool useColors = true;
-        private Spinner progressSpinner = BuiltinSpinners.Dots;
+        private Spinner progressSpinner = BuiltinSpinners.SpinMore;
         private Color progressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
         private Color progressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
 
@@ -215,12 +215,12 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// </summary>
         /// <param name="position">Current position</param>
         /// <param name="maxPosition">Max position</param>
-        /// <param name="progressSpinner">Spinner instance to use, or <see cref="BuiltinSpinners.Dots"/></param>
+        /// <param name="progressSpinner">Spinner instance to use, or <see cref="BuiltinSpinners.SpinMore"/></param>
         public ProgressBarNoText(int position, int maxPosition, Spinner? progressSpinner = null)
         {
             this.position = position;
             this.maxPosition = maxPosition;
-            this.progressSpinner = progressSpinner ?? BuiltinSpinners.Dots;
+            this.progressSpinner = progressSpinner ?? BuiltinSpinners.SpinMore;
         }
     }
 }

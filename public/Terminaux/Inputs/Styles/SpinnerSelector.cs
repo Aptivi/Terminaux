@@ -61,7 +61,7 @@ namespace Terminaux.Inputs.Styles
         /// </summary>
         /// <returns>Selected spinner</returns>
         public static Spinner PromptForSpinner() =>
-            PromptForSpinner(nameof(BuiltinSpinners.Dots));
+            PromptForSpinner(nameof(BuiltinSpinners.SpinMore));
 
         /// <summary>
         /// Prompts the user for a spinner

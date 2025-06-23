@@ -40,7 +40,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private int indeterminateStep = 0;
         private bool indeterminateBackwards = false;
         private bool useColors = true;
-        private Spinner progressSpinner = BuiltinSpinners.Dots;
+        private Spinner progressSpinner = BuiltinSpinners.SpinMore;
         private TextMarquee progressMarquee = new("");
         private Color progressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
         private Color progressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
@@ -258,7 +258,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <param name="text">Text to render. All VT sequences and control characters are trimmed away.</param>
         /// <param name="position">Current position</param>
         /// <param name="maxPosition">Max position</param>
-        /// <param name="progressSpinner">Spinner instance to use, or <see cref="BuiltinSpinners.Dots"/></param>
+        /// <param name="progressSpinner">Spinner instance to use, or <see cref="BuiltinSpinners.SpinMore"/></param>
         /// <param name="progressMarquee">Marquee writer to use</param>
         /// <param name="args">Arguments to format the string with</param>
         public ProgressBar(Mark text, int position, int maxPosition, Spinner? progressSpinner = null, TextMarquee? progressMarquee = null, params object?[]? args)
@@ -266,7 +266,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             this.text = ((string)text).FormatString(args);
             this.position = position;
             this.maxPosition = maxPosition;
-            this.progressSpinner = progressSpinner ?? BuiltinSpinners.Dots;
+            this.progressSpinner = progressSpinner ?? BuiltinSpinners.SpinMore;
             this.progressMarquee = progressMarquee ?? new(Text);
         }
     }

@@ -38,19 +38,19 @@ namespace Terminaux.Inputs.Interactive.Selectors
     /// </summary>
     public class SpinnerSelectorTui : TextualUI
     {
-        private string spinner = nameof(BuiltinSpinners.Dots);
-        private int selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
+        private string spinner = nameof(BuiltinSpinners.SpinMore);
+        private int selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.SpinMore));
         private bool cancel = false;
         private bool invalidate = true;
-        private Spinner spinnerInstance = BuiltinSpinners.Dots;
-        private readonly int selectedSpinnerFallback = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
+        private Spinner spinnerInstance = BuiltinSpinners.SpinMore;
+        private readonly int selectedSpinnerFallback = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.SpinMore));
 
         /// <inheritdoc/>
         public override string Render()
         {
             // Some initial variables to populate spinners
             var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
-            string spinnerName = SpinnerSelector.spinners.Contains(spinner) ? spinner : nameof(BuiltinSpinners.Dots);
+            string spinnerName = SpinnerSelector.spinners.Contains(spinner) ? spinner : nameof(BuiltinSpinners.SpinMore);
 
             // Now, clear the console and let the user select a spinner while displaying a small text in the middle
             // of the console
@@ -106,7 +106,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var spinnerObject =
                 selectedSpinnerPropertyInfo?.GetGetMethod()?.Invoke(null, null) ??
                 fallbackSpinnerPropertyInfo.GetGetMethod()?.Invoke(null, null) ??
-                BuiltinSpinners.Dots;
+                BuiltinSpinners.SpinMore;
             return (Spinner)spinnerObject;
         }
 
@@ -170,7 +170,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
         internal SpinnerSelectorTui(string name)
         {
             spinner = name;
-            selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.Dots));
+            selectedSpinner = SpinnerSelector.DetermineSpinnerIndex(nameof(BuiltinSpinners.SpinMore));
 
             // Keyboard bindings
             Keybindings.Add((SpinnerSelector.Bindings[0], Previous));
