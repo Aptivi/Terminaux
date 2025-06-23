@@ -2990,6 +2990,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Eine oder mehrere Farben sind ungültig."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Das Standarddesign für den Kernel"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Überall Akzente!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Farblose, rauchende und stark ätzende Flüssigkeit"
     }
   ]
 }

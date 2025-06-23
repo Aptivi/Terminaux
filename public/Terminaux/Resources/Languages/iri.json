@@ -2982,6 +2982,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Tá ceann amháin nó níos mó de na dathanna neamhbhailí."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "An téama réamhshocraithe don eithne"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Accents i ngach áit!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Leacht gan dath, fuming, agus an-chreimneach"
     }
   ]
 }

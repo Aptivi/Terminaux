@@ -2981,6 +2981,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Один або кілька кольорів недійсні."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Стандартна тема для ядра"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Скрізь акценти!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Безбарвна, димляча та сильно корозійна рідина"
     }
   ]
 }

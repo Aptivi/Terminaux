@@ -3007,6 +3007,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "wahid 'aw 'akthar min al'alwan ghyr salihin."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "almawdue alaiftiradiu lilnawaa"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "yatamayaz bikuli shay'in!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "sayil eadim alluwn, dukhani, washadid altakl"
     }
   ]
 }

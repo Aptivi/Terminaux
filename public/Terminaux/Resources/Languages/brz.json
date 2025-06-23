@@ -2980,6 +2980,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Uma ou mais cores são inválidas."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "O tema padrão para o kernel"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Sotaques em todos os lugares!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Líquido incolor, fumegante e altamente corrosivo"
     }
   ]
 }

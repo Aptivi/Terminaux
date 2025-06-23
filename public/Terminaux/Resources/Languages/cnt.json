@@ -2984,6 +2984,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Yīzhǒng huò duōzhǒng yánsè wúxiào."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Nèihé de yù shè zhǔtí"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "dàochù dōu shì kǒuyīn!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Wúsè, fā yān, gāo fǔshí xìng yètǐ"
     }
   ]
 }

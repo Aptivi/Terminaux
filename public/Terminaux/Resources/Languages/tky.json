@@ -2982,6 +2982,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Renklerin biri veya birkaçı geçersiz."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Çekirdek için varsayılan tema"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Her yerde aksanlar!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Renksiz, dumanlı ve oldukça aşındırıcı sıvı"
     }
   ]
 }

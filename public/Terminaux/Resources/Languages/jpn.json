@@ -2981,6 +2981,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "1つ以上の色が無効です。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "カーネルのデフォルトテーマ"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "どこにでもアクセントがあります！"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "無色で発煙性があり、非常に腐食性の高い液体"
     }
   ]
 }

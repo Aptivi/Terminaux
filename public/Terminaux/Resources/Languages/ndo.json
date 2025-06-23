@@ -2981,6 +2981,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Satu atau lebih warna tidak valid."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Tema bawaan untuk kernel"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Aksen di mana-mana!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Cairan tidak berwarna, berasap, dan sangat korosif"
     }
   ]
 }

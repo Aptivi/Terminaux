@@ -2982,6 +2982,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "hana isang-ui saegsang-i yuhyohaji anhseubnida."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "keoneol-ui gibon tema"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "modeun gos-e agsenteuga issseubnida!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "musaeg, yeongiga nago busigseong-i ganghan aegche"
     }
   ]
 }

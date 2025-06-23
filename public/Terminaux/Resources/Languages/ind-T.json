@@ -2981,6 +2981,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "एक या अधिक रंग अमान्य हैं।"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "कर्नेल के लिए डिफ़ॉल्ट थीम"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "हर जगह उच्चारण!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "रंगहीन, धुआँदार और अत्यधिक संक्षारक तरल"
     }
   ]
 }

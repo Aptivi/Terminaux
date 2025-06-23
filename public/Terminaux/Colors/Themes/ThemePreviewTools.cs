@@ -83,7 +83,7 @@ namespace Terminaux.Colors.Themes
             // Give a prompt for theme preview
             while (true)
             {
-                int prev = SelectionStyle.PromptSelection((theme is not null ? $"{theme.Name}: {theme.Description}\n\n" : "") + LanguageTools.GetLocalized("T_COLORS_THEMES_THEMESHOWCASE"), [.. choices], [.. altChoices], true);
+                int prev = SelectionStyle.PromptSelection((theme is not null ? $"{theme.Name}: {LanguageTools.GetLocalized(theme.Description)}\n\n" : "") + LanguageTools.GetLocalized("T_COLORS_THEMES_THEMESHOWCASE"), [.. choices], [.. altChoices], true);
                 if (prev == choices.Count + 1)
                     break;
                 else

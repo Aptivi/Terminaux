@@ -2981,6 +2981,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Một hoặc nhiều màu không hợp lệ."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Chủ đề mặc định cho hạt nhân"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Giọng điệu ở khắp mọi nơi!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Chất lỏng không màu, bốc khói và có tính ăn mòn cao"
     }
   ]
 }

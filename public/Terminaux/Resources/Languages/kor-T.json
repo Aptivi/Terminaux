@@ -2982,6 +2982,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "하나 이상의 색상이 유효하지 않습니다."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "커널의 기본 테마"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "곳곳에 악센트가 있어요!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "무색, 연기가 나고 부식성이 강한 액체"
     }
   ]
 }

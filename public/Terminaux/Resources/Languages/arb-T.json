@@ -3007,6 +3007,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "واحد أو أكثر من الألوان غير صالح."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "الموضوع الافتراضي للنواة"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "لهجات في كل مكان!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "سائل عديم اللون، دخاني، وشديد التآكل"
     }
   ]
 }

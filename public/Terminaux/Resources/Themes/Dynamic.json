@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Dynamic",
-        "Description": "NKS_THEMES_DYNAMIC_DESC",
+        "Description": "T_COLORS_THEMES_DYNAMIC_DESC",
         "Category": "Exciting",
         "UseAccentTypes": [
             "HostNameShellColor",

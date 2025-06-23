@@ -2982,6 +2982,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Ένα ή περισσότερα από τα χρώματα δεν είναι έγκυρα."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Το προεπιλεγμένο θέμα για τον πυρήνα"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Προφορές παντού!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Άχρωμο, ατμίζον και εξαιρετικά διαβρωτικό υγρό"
     }
   ]
 }

@@ -2985,6 +2985,18 @@
     {
       "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
       "text": "Yī zhǒng huò duō zhǒng yánsè wúxiào."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Nèihé de mòrèn zhǔtí"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "wú chù bùzài de kǒuyīn!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Wú sè, mào yān qiě fǔshí xìng jí qiáng de yètǐ"
     }
   ]
 }
