@@ -271,7 +271,7 @@ namespace Terminaux.Inputs.Interactive
                     var finalBackColor = finalIndex == paneCurrentSelection - 1 ? interactiveTui.Settings.PaneSelectedItemBackColor : interactiveTui.Settings.PaneItemBackColor;
                     int leftPos = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                     int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                    finalEntry = (paneNum == 2 ? interactiveTui.GetEntryFromItemSecondary((TSecondary)dataObject) : interactiveTui.GetEntryFromItem((TPrimary)dataObject)).Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                    finalEntry = (paneNum == 2 ? interactiveTui.GetEntryFromItemSecondary((TSecondary)dataObject) : interactiveTui.GetEntryFromItem((TPrimary)dataObject)).Truncate(SeparatorHalfConsoleWidthInterior - 1);
                     int width = ConsoleChar.EstimateCellWidth(finalEntry);
                     string text =
                         $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
@@ -405,7 +405,7 @@ namespace Terminaux.Inputs.Interactive
 
             // Now, write info
             var builder = new StringBuilder();
-            builder.Append(TextWriterWhereColor.RenderWhereColorBack(interactiveTui.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, interactiveTui.Settings.ForegroundColor, interactiveTui.Settings.BackgroundColor));
+            builder.Append(TextWriterWhereColor.RenderWhereColorBack(interactiveTui.Status.Truncate(ConsoleWrapper.WindowWidth), 0, 0, interactiveTui.Settings.ForegroundColor, interactiveTui.Settings.BackgroundColor));
             builder.Append(ConsoleClearing.GetClearLineToRightSequence());
             return builder.ToString();
         }
