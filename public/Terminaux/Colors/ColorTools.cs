@@ -27,6 +27,7 @@ using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Colors.Models;
 using Terminaux.Sequences.Builder;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Colors
 {
@@ -157,7 +158,7 @@ namespace Terminaux.Colors
         /// <param name="ColorSequence">The color instance</param>
         /// <param name="Background">Whether to set background or not</param>
         public static void SetConsoleColor(Color ColorSequence, bool Background) =>
-            SetConsoleColorInternal(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, !Background || AllowBackground, true);
+            SetConsoleColorInternal(ColorSequence, Background, ColorSequence != CurrentBackgroundColor && ColorSequence != ThemeColorsTools.GetColor(ThemeColorType.Background), !Background || AllowBackground, true);
 
         /// <summary>
         /// Sets the console color
@@ -196,7 +197,7 @@ namespace Terminaux.Colors
         /// <param name="ColorSequence">The color instance</param>
         /// <param name="Background">Whether to set background or not</param>
         public static void SetConsoleColorDry(Color ColorSequence, bool Background) =>
-            SetConsoleColorInternal(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, !Background || AllowBackground, false);
+            SetConsoleColorInternal(ColorSequence, Background, ColorSequence != CurrentBackgroundColor && ColorSequence != ThemeColorsTools.GetColor(ThemeColorType.Background), !Background || AllowBackground, false);
 
         /// <summary>
         /// Sets the console color dryly
@@ -242,7 +243,7 @@ namespace Terminaux.Colors
         /// <param name="ColorSequence">The color instance</param>
         /// <param name="Background">Whether to set background or not</param>
         public static string RenderSetConsoleColor(Color ColorSequence, bool Background) =>
-            RenderSetConsoleColor(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, !Background || AllowBackground);
+            RenderSetConsoleColor(ColorSequence, Background, ColorSequence != CurrentBackgroundColor && ColorSequence != ThemeColorsTools.GetColor(ThemeColorType.Background), !Background || AllowBackground);
 
         /// <summary>
         /// Gets the console color setting sequence
