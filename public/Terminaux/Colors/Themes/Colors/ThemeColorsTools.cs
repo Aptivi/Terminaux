@@ -372,10 +372,13 @@ namespace Terminaux.Colors.Themes.Colors
 
         private static void UpdateColorList()
         {
-            if (ThemeTools.themes is null)
-                return;
-            foreach (var theme in ThemeTools.themes.Values)
-                theme.UpdateColorsTools();
+            lock (ThemeTools.themes)
+            {
+                if (ThemeTools.themes is null)
+                    return;
+                foreach (var theme in ThemeTools.themes.Values)
+                    theme.UpdateColorsTools();
+            }
         }
     }
 }

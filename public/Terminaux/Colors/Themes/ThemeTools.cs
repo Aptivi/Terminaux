@@ -89,11 +89,14 @@ namespace Terminaux.Colors.Themes
         /// <exception cref="TerminauxException"></exception>
         public static void RegisterTheme(string theme, ThemeInfo themeInfo)
         {
-            if (IsThemeFound(theme))
-                throw new TerminauxException("Theme already exists");
-            if (string.IsNullOrEmpty(theme))
-                throw new TerminauxException("Theme name may not be empty");
-            themes.Add(theme, themeInfo);
+            lock (themes)
+            {
+                if (IsThemeFound(theme))
+                    throw new TerminauxException("Theme already exists");
+                if (string.IsNullOrEmpty(theme))
+                    throw new TerminauxException("Theme name may not be empty");
+                themes.Add(theme, themeInfo);
+            }
         }
 
         /// <summary>
@@ -103,12 +106,15 @@ namespace Terminaux.Colors.Themes
         /// <exception cref="TerminauxException"></exception>
         public static void UnregisterTheme(string theme)
         {
-            if (!IsThemeFound(theme))
-                throw new TerminauxException("Theme doesn't exist");
-            if (string.IsNullOrEmpty(theme))
-                throw new TerminauxException("Theme name may not be empty");
-            if (!themes.Remove(theme))
-                throw new TerminauxException("Theme removal failed");
+            lock (themes)
+            {
+                if (!IsThemeFound(theme))
+                    throw new TerminauxException("Theme doesn't exist");
+                if (string.IsNullOrEmpty(theme))
+                    throw new TerminauxException("Theme name may not be empty");
+                if (!themes.Remove(theme))
+                    throw new TerminauxException("Theme removal failed");
+            }
         }
 
         /// <summary>
