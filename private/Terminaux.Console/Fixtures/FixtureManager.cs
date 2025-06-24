@@ -374,6 +374,7 @@ namespace Terminaux.Console.Fixtures
             new ClearKeepPosition(),
             new TermInfoPane(),
             new TermInfoTest(),
+            new TabsetTest(),
             new ConsoleConhostCheck(),
             new AlternateBuffers(),
             new Sizes(),

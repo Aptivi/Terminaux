@@ -20,30 +20,17 @@
 namespace Terminaux.Base.TermInfo.Tabsets
 {
     /// <summary>
-    /// Tabset class definition
+    /// Tabset type
     /// </summary>
-    public class Tabset
+    public enum TabsetType
     {
         /// <summary>
-        /// Tab stops
+        /// Numeric tabset parsing type
         /// </summary>
-        public int[] TabStops { get; } = [];
-
+        Numeric,
         /// <summary>
-        /// Initialization sequence
+        /// Escape sequence tabset parsing type
         /// </summary>
-        public string Initialization { get; } = "";
-
-        /// <summary>
-        /// Tabset type
-        /// </summary>
-        public TabsetType Type { get; }
-
-        internal Tabset(int[] tabStops, string initialization, TabsetType type)
-        {
-            TabStops = tabStops;
-            Initialization = initialization;
-            Type = type;
-        }
+        Escape,
     }
 }
