@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Commands;

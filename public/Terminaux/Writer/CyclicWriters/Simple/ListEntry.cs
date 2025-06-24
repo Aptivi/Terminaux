@@ -19,7 +19,6 @@
 
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Simple

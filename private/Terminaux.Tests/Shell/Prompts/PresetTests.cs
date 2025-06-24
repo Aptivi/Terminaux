@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Shell.Prompts;
-using Terminaux.Shell.Shells;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 

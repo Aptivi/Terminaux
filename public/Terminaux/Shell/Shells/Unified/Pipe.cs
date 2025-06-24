@@ -23,7 +23,6 @@ using System.Text;
 using Terminaux.Shell.Switches;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Shell.Shells.Unified

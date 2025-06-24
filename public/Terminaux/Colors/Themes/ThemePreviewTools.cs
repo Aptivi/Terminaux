@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs.Styles;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Base;
 
 namespace Terminaux.Colors.Themes

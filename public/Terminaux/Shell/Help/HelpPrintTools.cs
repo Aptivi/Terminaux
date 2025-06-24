@@ -21,7 +21,6 @@ using System;
 using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Commands;

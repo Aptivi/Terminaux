@@ -18,7 +18,6 @@
 //
 
 using System.Globalization;
-using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types
 {

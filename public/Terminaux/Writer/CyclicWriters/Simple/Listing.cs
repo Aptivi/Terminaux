@@ -23,7 +23,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Simple

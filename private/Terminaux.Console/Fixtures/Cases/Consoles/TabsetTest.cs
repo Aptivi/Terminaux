@@ -17,11 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Base.TermInfo;
 using Terminaux.Base.TermInfo.Tabsets;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
 {

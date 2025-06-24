@@ -24,7 +24,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;

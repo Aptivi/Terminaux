@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;

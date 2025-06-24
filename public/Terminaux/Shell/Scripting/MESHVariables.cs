@@ -26,7 +26,6 @@ using SpecProbe.Software.Platform;
 using Terminaux.Base;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using Textify.General;
 using Textify.Tools;
 

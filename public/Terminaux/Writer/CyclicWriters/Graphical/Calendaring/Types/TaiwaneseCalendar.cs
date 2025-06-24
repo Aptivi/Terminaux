@@ -18,7 +18,6 @@
 //
 
 using System.Globalization;
-using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
 using DtfCalendar = System.Globalization.TaiwanCalendar;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types

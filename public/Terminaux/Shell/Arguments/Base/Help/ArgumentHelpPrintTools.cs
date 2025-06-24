@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using System.Collections.Generic;
-using Terminaux.Colors.Data;
 using Terminaux.Shell.Switches;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Base;

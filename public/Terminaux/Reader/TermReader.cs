@@ -24,7 +24,6 @@ using System.Threading.Tasks;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.History;

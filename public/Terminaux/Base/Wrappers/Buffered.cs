@@ -18,11 +18,8 @@
 //
 
 using System;
-using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Text;
-using TextEncoding = System.Text.Encoding;
 using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Structures;

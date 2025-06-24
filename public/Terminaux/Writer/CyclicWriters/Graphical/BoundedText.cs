@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
-using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;

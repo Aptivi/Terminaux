@@ -20,14 +20,12 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using Terminaux.Colors.Data;
 using Terminaux.Shell.Scripting.Conditions;
 using Terminaux.Shell.Shells;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters.Simple;
 using System.IO;
 using Terminaux.Base;
-using Terminaux.Colors;
 
 namespace Terminaux.Shell.Scripting
 {

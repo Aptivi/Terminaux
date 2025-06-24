@@ -31,7 +31,6 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Switches;
 using Terminaux.Shell.Shells.Unified;
-using Terminaux.Colors.Data;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools;

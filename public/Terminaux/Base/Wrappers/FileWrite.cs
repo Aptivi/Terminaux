@@ -19,7 +19,6 @@
 
 using System;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using Terminaux.Base.Structures;
 using Terminaux.Sequences;

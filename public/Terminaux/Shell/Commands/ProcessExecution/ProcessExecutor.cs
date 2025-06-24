@@ -24,7 +24,6 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors.Themes.Colors;
 

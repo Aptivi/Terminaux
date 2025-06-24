@@ -19,7 +19,6 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.Sequences;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 

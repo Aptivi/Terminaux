@@ -18,7 +18,6 @@
 //
 
 using LocaleStation.Tools;
-using System;
 using System.Linq;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Choice;

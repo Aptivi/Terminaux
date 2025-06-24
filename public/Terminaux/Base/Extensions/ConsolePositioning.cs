@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Text.RegularExpressions;
 using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
