@@ -160,14 +160,6 @@ namespace Terminaux.Colors.Themes
                     if (!themeColors.ContainsKey(themeExtraColor))
                         themeColors.Add(themeExtraColor, Color.Empty);
                     themeColors[themeExtraColor] = new Color(colorToken.ToString());
-
-                    // Let the theme-based color tools know about this new type
-                    if (!ThemeColorsTools.themeColors?.ContainsKey(themeExtraColor) ?? false)
-                        ThemeColorsTools.themeColors?.Add(themeExtraColor, themeColors[themeExtraColor]);
-                    if (!ThemeColorsTools.themeDefaultColors?.ContainsKey(themeExtraColor) ?? false)
-                        ThemeColorsTools.themeDefaultColors?.Add(themeExtraColor, themeColors[themeExtraColor]);
-                    if (!ThemeColorsTools.themeEmptyColors?.ContainsKey(themeExtraColor) ?? false)
-                        ThemeColorsTools.themeEmptyColors?.Add(themeExtraColor, Color.Empty);
                 }
 
                 // Apply accent color
@@ -176,6 +168,22 @@ namespace Terminaux.Colors.Themes
                         themeExtraColor.EndsWith("BackgroundColor") || themeExtraColor.EndsWith("BackColor") ?
                         new Color(ThemeColorsTools.AccentBackgroundColor) :
                         new Color(ThemeColorsTools.AccentForegroundColor);
+            }
+
+            // Let the theme-based color tools know about this new type
+            UpdateColorsTools();
+        }
+
+        internal void UpdateColorsTools()
+        {
+            foreach (string themeExtraColor in themeExtraColors)
+            {
+                if (!ThemeColorsTools.themeColors?.ContainsKey(themeExtraColor) ?? false)
+                    ThemeColorsTools.themeColors?.Add(themeExtraColor, themeColors[themeExtraColor]);
+                if (!ThemeColorsTools.themeDefaultColors?.ContainsKey(themeExtraColor) ?? false)
+                    ThemeColorsTools.themeDefaultColors?.Add(themeExtraColor, themeColors[themeExtraColor]);
+                if (!ThemeColorsTools.themeEmptyColors?.ContainsKey(themeExtraColor) ?? false)
+                    ThemeColorsTools.themeEmptyColors?.Add(themeExtraColor, Color.Empty);
             }
         }
 

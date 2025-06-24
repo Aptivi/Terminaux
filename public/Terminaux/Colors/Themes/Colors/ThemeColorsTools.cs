@@ -74,6 +74,7 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="type">Color type</param>
         public static Color GetColor(string type)
         {
+            UpdateColorList();
             string plainColorSeq = themeColors[type].PlainSequence;
             ConsoleLogger.Debug("Getting color type {0}: {1}", type.ToString(), plainColorSeq);
             return new(plainColorSeq);
@@ -94,6 +95,7 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="color">Color to be set</param>
         public static Color SetColor(string type, Color color)
         {
+            UpdateColorList();
             ConsoleLogger.Debug("Setting color type {0} to color sequence {1}...", type.ToString(), color.PlainSequence);
             return themeColors[type] = color;
         }
@@ -367,5 +369,13 @@ namespace Terminaux.Colors.Themes.Colors
         /// </summary>
         public static void LoadBackground() =>
             ColorTools.LoadBack(GetColor(ThemeColorType.Background));
+
+        private static void UpdateColorList()
+        {
+            if (ThemeTools.themes is null)
+                return;
+            foreach (var theme in ThemeTools.themes.Values)
+                theme.UpdateColorsTools();
+        }
     }
 }
