@@ -372,7 +372,7 @@ namespace Terminaux.Colors.Themes.Colors
 
         private static void UpdateColorList()
         {
-            lock (ThemeTools.themes)
+            lock (ThemeTools.locker)
             {
                 if (ThemeTools.themes is null)
                     return;

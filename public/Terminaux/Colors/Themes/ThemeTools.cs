@@ -32,6 +32,7 @@ namespace Terminaux.Colors.Themes
     /// </summary>
     public static class ThemeTools
     {
+        internal readonly static object locker = new();
         internal readonly static Dictionary<string, ThemeInfo> themes = new()
         {
             { "Default", new ThemeInfo(JToken.Parse(GetThemeInfoJsonFromResources("Default"))) },
@@ -89,7 +90,7 @@ namespace Terminaux.Colors.Themes
         /// <exception cref="TerminauxException"></exception>
         public static void RegisterTheme(string theme, ThemeInfo themeInfo)
         {
-            lock (themes)
+            lock (locker)
             {
                 if (IsThemeFound(theme))
                     throw new TerminauxException("Theme already exists");
@@ -106,7 +107,7 @@ namespace Terminaux.Colors.Themes
         /// <exception cref="TerminauxException"></exception>
         public static void UnregisterTheme(string theme)
         {
-            lock (themes)
+            lock (locker)
             {
                 if (!IsThemeFound(theme))
                     throw new TerminauxException("Theme doesn't exist");
