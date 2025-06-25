@@ -207,18 +207,8 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Reads the next key from the console input stream
         /// </summary>
-        public static ConsoleKeyInfo ReadKey()
-        {
-            TermReaderTools.isWaitingForInput = true;
-            InputEventInfo data = new();
-            SpinWait.SpinUntil(() =>
-            {
-                data = ReadPointerOrKeyNoBlock();
-                return data.EventType == InputEventType.Keyboard;
-            });
-            TermReaderTools.isWaitingForInput = false;
-            return data.ConsoleKeyInfo ?? default;
-        }
+        public static ConsoleKeyInfo ReadKey() =>
+            ReadKeyTimeout(TimeSpan.FromMilliseconds(-1)).result;
 
         /// <summary>
         /// Reads the next key from the console input stream with the timeout
