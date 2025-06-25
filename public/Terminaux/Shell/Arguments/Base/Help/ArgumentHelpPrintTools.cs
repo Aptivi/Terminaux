@@ -32,7 +32,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
         {
             foreach (string arg in arguments.Keys)
             {
-                string entry = arguments[arg].HelpDefinition;
+                string entry = LanguageTools.GetLocalized(arguments[arg].HelpDefinition);
                 TextWriterRaw.WriteRaw(new ListEntry()
                 {
                     Entry = arg,
@@ -54,7 +54,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
             }
 
             // Now, populate usages for each argument
-            string HelpDefinition = argInfo.HelpDefinition;
+            string HelpDefinition = LanguageTools.GetLocalized(argInfo.HelpDefinition);
             var argumentInfos = argInfo.ArgArgumentInfo;
             ConsoleLogger.Debug("Showing usage of {0} with {1} argument info instances", argument, argumentInfos.Length);
             foreach (var argumentInfo in argumentInfos)
