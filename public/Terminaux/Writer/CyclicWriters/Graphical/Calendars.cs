@@ -178,6 +178,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             var calendarRendered = new StringBuilder();
             var calendarDays = culture.DateTimeFormat.DayNames;
+            var calendarAbbreviatedDays = culture.DateTimeFormat.AbbreviatedDayNames;
             var calendarMonths = culture.DateTimeFormat.MonthNames;
             var calendarWeek = culture.DateTimeFormat.FirstDayOfWeek;
             var maxDate = Calendar.GetDaysInMonth(year, month);
@@ -266,11 +267,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int dayIndicatorPosY = boxTop + 1;
             for (int i = 0; i < mappedDays.Count; i++)
             {
-                string dayName = $"{calendarDays[(int)mappedDays.Keys.ElementAt(i)]}";
-                if (ConsoleChar.EstimateCellWidth($"{dayName[0]}") == 2)
-                    dayName = $"{dayName[dayName.Length - 1]}";
-                else
-                    dayName = dayName.Truncate(3, false);
+                string dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}".Truncate(3, false);
+                if (Culture.EnglishName.Contains("Chinese"))
+                    dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}";
                 if (useColors)
                 {
                     calendarRendered.Append(
