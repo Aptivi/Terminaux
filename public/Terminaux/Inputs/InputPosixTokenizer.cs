@@ -613,7 +613,7 @@ namespace Terminaux.Inputs
             advance += 2;
 
             // Parse the sequence now
-            var cki = TryParseSingleCharacterCki(altChar, false);
+            var cki = TryParseSingleCharacterCki(altChar, true);
             evt = new(null, cki, null);
             return true;
         }
@@ -646,6 +646,8 @@ namespace Terminaux.Inputs
             // Determine the modifiers to pass to the constructor
             if (VtSequenceTokenTools.CharInRange(character, 'A', 'Z'))
                 isShift = true;
+            if (VtSequenceTokenTools.CheckChar(character, ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']))
+                isShift = true;
             isCtrl = ctrlLetterPressed || ctrlDigitPressed;
             if (character == '\b' || character == '\t' || character == '\n' || character == '\r')
                 isCtrl = false;
@@ -664,7 +666,6 @@ namespace Terminaux.Inputs
                 VtSequenceBasicChars.EscapeChar => ConsoleKey.Escape,
 
                 // Math operators and numeric digits
-                '*' => ConsoleKey.Multiply,
                 '/' => ConsoleKey.Divide,
                 '-' => ConsoleKey.Subtract,
                 '+' => ConsoleKey.Add,
@@ -683,9 +684,20 @@ namespace Terminaux.Inputs
                 _ when VtSequenceTokenTools.CharInRange(character, (char)28, (char)31) => ConsoleKey.D4 + character - 28,
                 '\0' => ConsoleKey.D2,
 
+                // Some common symbols
+                '!' => ConsoleKey.D1,
+                '@' => ConsoleKey.D2,
+                '#' => ConsoleKey.D3,
+                '$' => ConsoleKey.D4,
+                '%' => ConsoleKey.D5,
+                '^' => ConsoleKey.D6,
+                '&' => ConsoleKey.D7,
+                '*' => ConsoleKey.D8,
+                '(' => ConsoleKey.D9,
+                ')' => ConsoleKey.D0,
+                '=' => ConsoleKey.OemPlus,
+
                 // They default to 0
-                '!' or '@' or '#' or '$' or '%' or '^' or '&' or '&' or '*' or '(' or ')' => default,
-                '=' => default,
                 _ => default
             };
 
