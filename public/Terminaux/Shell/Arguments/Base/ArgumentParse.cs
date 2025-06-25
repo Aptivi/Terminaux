@@ -49,9 +49,9 @@ namespace Terminaux.Shell.Arguments.Base
 
                 // Parse them now
                 ConsoleLogger.Debug("{0} argument input strings [{1}]", ArgumentsInput.Length, string.Join(", ", ArgumentsInput));
-                for (int i = 0; i <= ArgumentsInput.Length - 1; i++)
+                for (int i = 0; i <= finalArguments.Length - 1; i++)
                 {
-                    string Argument = ArgumentsInput[i];
+                    string Argument = finalArguments[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
                     ConsoleLogger.Debug("Checking {0} from [{1}]", ArgumentName, string.Join(", ", arguments.Keys));
                     if (arguments.TryGetValue(ArgumentName, out ArgumentInfo? argInfoVal))
@@ -227,9 +227,9 @@ namespace Terminaux.Shell.Arguments.Base
 
                 // Parse them now
                 bool found = false;
-                for (int i = 0; i <= ArgumentsInput.Length - 1; i++)
+                for (int i = 0; i <= finalArguments.Length - 1; i++)
                 {
-                    string Argument = ArgumentsInput[i];
+                    string Argument = finalArguments[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
                     found = ArgumentName == argumentName && arguments.ContainsKey(ArgumentName);
                     if (found)
