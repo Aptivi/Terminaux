@@ -256,7 +256,7 @@ namespace Terminaux.Inputs
                         }
                     }
                     else if (
-                        VtSequenceTokenTools.CheckChar(charRead, secParam, ['5', '7', '8', '9']) &&
+                        VtSequenceTokenTools.CheckChar(charRead, idx + 3, ['5', '7', '8', '9']) &&
                         VtSequenceTokenTools.CheckChar(charRead, idx + 4, ['~', '^', '$', '@']))
                     {
                         // F5 to F8 has been pressed.
@@ -274,7 +274,7 @@ namespace Terminaux.Inputs
                         evt = new(null, cki, null);
                         return true;
                     }
-                    else if (VtSequenceTokenTools.CheckChar(charRead, secParam, ['~', '^', '$', '@']))
+                    else if (VtSequenceTokenTools.CheckChar(charRead, idx + 3, ['~', '^', '$', '@']))
                     {
                         var (shift, ctrl) = GetRxvtModifiers(secParam);
                         var cki = new ConsoleKeyInfo('\0', ConsoleKey.Home, shift, false, ctrl);
@@ -283,7 +283,7 @@ namespace Terminaux.Inputs
                         return true;
                     }
                 }
-                else if (VtSequenceTokenTools.CheckChar(charRead, param, ['2', '3', '5', '6']))
+                else if (VtSequenceTokenTools.CheckChar(charRead, idx + 2, ['2', '3', '5', '6']))
                 {
                     // Check for tilde mapped to Insert, Delete, PageUp, or PageDown
                     if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 3, out char secParam))
@@ -291,7 +291,7 @@ namespace Terminaux.Inputs
                     advance++;
 
                     // If this is a tilde, we assume that the key is Insert, Delete, PageUp, or PageDown
-                    if (VtSequenceTokenTools.CheckChar(charRead, secParam, ['~', '^', '$', '@']))
+                    if (VtSequenceTokenTools.CheckChar(charRead, idx + 3, ['~', '^', '$', '@']))
                     {
                         // User pressed Insert, Delete, PageUp, or PageDown. Add it.
                         ConsoleKey ck =
@@ -308,7 +308,7 @@ namespace Terminaux.Inputs
 
                     // Check for F9 to F16
                     if (param == '2' &&
-                        VtSequenceTokenTools.CheckChar(charRead, secParam, ['0', '1', '3', '4', '5', '6', '8', '9']) &&
+                        VtSequenceTokenTools.CheckChar(charRead, idx + 3, ['0', '1', '3', '4', '5', '6', '8', '9']) &&
                         VtSequenceTokenTools.CheckChar(charRead, idx + 4, ['~', '^', '$', '@']))
                     {
                         // F9 to F16 has been pressed.
@@ -331,7 +331,7 @@ namespace Terminaux.Inputs
                         return true;
                     }
                     else if (param == '3' &&
-                        VtSequenceTokenTools.CheckChar(charRead, secParam, ['1', '2', '3', '4']) &&
+                        VtSequenceTokenTools.CheckChar(charRead, idx + 3, ['1', '2', '3', '4']) &&
                         VtSequenceTokenTools.CheckChar(charRead, idx + 4, ['~', '^', '$', '@']))
                     {
                         // F17 to F20 has been pressed.
@@ -350,7 +350,7 @@ namespace Terminaux.Inputs
                         return true;
                     }
                 }
-                else if (VtSequenceTokenTools.CheckChar(charRead, param, ['7', '4', '8']))
+                else if (VtSequenceTokenTools.CheckChar(charRead, idx + 2, ['7', '4', '8']))
                 {
                     // Check for tilde mapped to Home or End
                     if (!VtSequenceTokenTools.TryGetChar(charRead, idx + 3, out char secParam))
@@ -358,7 +358,7 @@ namespace Terminaux.Inputs
                     advance++;
 
                     // If this is a tilde, we assume that the key is Home or End
-                    if (VtSequenceTokenTools.CheckChar(charRead, secParam, ['~', '^', '$', '@']))
+                    if (VtSequenceTokenTools.CheckChar(charRead, idx + 3, ['~', '^', '$', '@']))
                     {
                         // User pressed Home or End. Add it.
                         ConsoleKey ck =
