@@ -18,31 +18,31 @@
 //
 
 using Aptivestigate.CrashHandler;
-using Aptivestigate.Logging;
-using Aptivestigate.Serilog;
-using Serilog;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Console.Arguments;
 using Terminaux.Console.Fixtures;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Shell.Arguments.Base;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console
 {
     internal class Entry
     {
+        private static readonly Dictionary<string, ArgumentInfo> arguments = new()
+        {
+            { "verbose", new("verbose", "Enables verbose mode", new VerboseArgument()) }
+        };
+
         static void Main(string[] args)
         {
             // Initialize logging and crash logging
-            if (args.Contains("-verbose"))
-            {
-                ConsoleLogger.AbstractLogger = new SerilogLogger(new LoggerConfiguration().MinimumLevel.Debug().WriteTo.File(LogTools.GenerateLogFilePath(out _)));
-                ConsoleLogger.EnableLogging = true;
-            }
+            ArgumentParse.ParseArguments(args, arguments);
             CrashTools.InstallCrashHandler();
 
             // Run the resize listener

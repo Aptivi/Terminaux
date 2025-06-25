@@ -22,7 +22,9 @@ using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
 namespace Terminaux.Shell.Arguments.Base
@@ -71,41 +73,142 @@ namespace Terminaux.Shell.Arguments.Base
                         // Variables
                         var (satisfied, total) = ArgumentsParser.ParseArgumentArguments(Argument, arguments);
                         ConsoleLogger.Debug("Parsed argument {0} and found {1} total arguments.", Argument, total.Length);
-                        for (int j = 0; j < total.Length; j++)
+                        bool argSatisfied = satisfied is not null;
+                        if (satisfied is null)
                         {
-                            var ArgumentInfo = total[j];
-                            var Arg = argInfoVal;
-                            var Args = ArgumentInfo.ArgumentsList;
-                            var ArgOrig = ArgumentInfo.ArgumentsTextOrig;
-                            var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
-                            var Switches = ArgumentInfo.SwitchesList;
-                            string strArgs = ArgumentInfo.ArgumentsText;
-                            bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
-
-                            // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                            ConsoleLogger.Debug("Argument {0} [P: {1}] [S: {2}], {3} info instances.", ArgumentInfo.Command, string.Join(", ", Args), string.Join(", ", Switches), Arg.ArgArgumentInfo.Length);
-                            for (int idx = 0; idx < Arg.ArgArgumentInfo.Length; idx++)
+                            ConsoleLogger.Warning("Arguments not satisfied.");
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST"), ThemeColorType.Error);
+                            for (int t = 0; t < total.Length; t++)
                             {
-                                var argInfo = Arg.ArgArgumentInfo[idx];
-                                bool isLast = idx == Arg.ArgArgumentInfo.Length - 1 && j == total.Length - 1;
-                                ConsoleLogger.Debug("Info {0} / {1}: req: {2}, provided: {3}, last: {4}", idx + 1, Arg.ArgArgumentInfo.Length, argInfo.ArgumentsRequired, RequiredArgumentsProvided, isLast);
-                                if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
+                                ProvidedArgumentsInfo unsatisfied = total[t];
+                                string command = unsatisfied.Command;
+                                var argInfo = unsatisfied.ArgumentInfo;
+                                if (argInfo is null)
                                 {
-                                    // Prepare the argument parameter instance
-                                    var parameters = new ArgumentParameters(strArgs, Args, ArgOrig, ArgsOrig, Switches, Argument);
-
-                                    // Now, get the base command and execute it
-                                    var ArgumentBase = Arg.ArgumentBase;
-                                    ConsoleLogger.Debug("Got argument base resolving to {0}, executing...", ArgumentName);
-                                    ArgumentBase.Execute(parameters);
+                                    TextWriterRaw.WriteRaw(new ListEntry()
+                                    {
+                                        Entry = $"- [{t + 1}] {command}: ",
+                                        Value = LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_UNKNOWNARG")
+                                    }.Render() + "\n");
+                                    continue;
                                 }
-                                else if (isLast)
+
+                                // Write usage number
+                                string renderedUsage = !string.IsNullOrEmpty(argInfo.RenderedUsage) ? " " + argInfo.RenderedUsage : "";
+                                TextWriterColor.Write($"- [{i + 1}] {command}{renderedUsage}", ThemeColorType.ListEntry);
+
+                                // Check for required arguments
+                                if (!unsatisfied.RequiredArgumentsProvided)
                                 {
-                                    ConsoleLogger.Error("Not enough arguments {0}", ArgumentName);
-                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS"), ThemeColorType.Error);
+                                    ConsoleLogger.Warning("User hasn't provided enough arguments for {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED"), ThemeColorType.ListValue);
+                                }
+
+                                // Check for required switches
+                                if (!unsatisfied.RequiredSwitchesProvided)
+                                {
+                                    ConsoleLogger.Warning("User hasn't provided enough switches for {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED"), ThemeColorType.ListValue);
+                                }
+
+                                // Check for required switch arguments
+                                if (!unsatisfied.RequiredSwitchArgumentsProvided)
+                                {
+                                    ConsoleLogger.Warning("User hasn't provided a value for one of the switches for {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE"), ThemeColorType.ListValue);
+                                }
+
+                                // Check for unknown switches
+                                if (unsatisfied.UnknownSwitchesList.Length > 0)
+                                {
+                                    ConsoleLogger.Warning("User has provided unknown switches {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES"), ThemeColorType.ListValue);
+                                    TextWriterRaw.WriteRaw(new Listing()
+                                    {
+                                        Objects = unsatisfied.UnknownSwitchesList,
+                                    }.Render() + "\n");
+                                }
+
+                                // Check for conflicting switches
+                                if (unsatisfied.ConflictingSwitchesList.Length > 0)
+                                {
+                                    ConsoleLogger.Warning("User has provided conflicting switches for {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESCONFLICT"), ThemeColorType.ListValue);
+                                    TextWriterRaw.WriteRaw(new Listing()
+                                    {
+                                        Objects = unsatisfied.ConflictingSwitchesList,
+                                    }.Render() + "\n");
+                                }
+
+                                // Check for switches that don't accept values
+                                if (unsatisfied.NoValueSwitchesList.Length > 0)
+                                {
+                                    ConsoleLogger.Warning("User has provided switches that don't accept values for {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHESNOVALUES"), ThemeColorType.ListValue);
+                                    TextWriterRaw.WriteRaw(new Listing()
+                                    {
+                                        Objects = unsatisfied.NoValueSwitchesList,
+                                    }.Render() + "\n");
+                                }
+
+                                // Check for invalid number in numeric arguments
+                                if (!unsatisfied.NumberProvided)
+                                {
+                                    ConsoleLogger.Warning("User has provided invalid number for one or more of the arguments for {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGNUMERIC"), ThemeColorType.ListValue);
+                                }
+
+                                // Check for invalid exact wording
+                                if (!unsatisfied.ExactWordingProvided)
+                                {
+                                    ConsoleLogger.Warning("User has provided non-exact wording for {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ARGEXACT"), ThemeColorType.ListValue);
+                                }
+
+                                // Check for invalid number in numeric switches
+                                if (!unsatisfied.SwitchNumberProvided)
+                                {
+                                    ConsoleLogger.Warning("User has provided invalid number for one or more of the switches for {0}", command);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SWITCHNUMERIC"), ThemeColorType.ListValue);
                                 }
                             }
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CONSULTHELP"), ThemeColorType.Error);
+                            continue;
                         }
+
+                        // Now, assume that an argument is satisfied
+                        var ArgumentInfo = satisfied;
+                        var Arg = argInfoVal;
+                        var Args = ArgumentInfo.ArgumentsList;
+                        var ArgOrig = ArgumentInfo.ArgumentsTextOrig;
+                        var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
+                        var Switches = ArgumentInfo.SwitchesList;
+                        string strArgs = ArgumentInfo.ArgumentsText;
+
+                        // Prepare the command parameter instance and run the argument handler if any
+                        var argCheckerParameters = new CommandParameters(strArgs, Args, ArgOrig, ArgsOrig, Switches, Argument);
+                        int argCheckerReturnCode = 0;
+                        if (argSatisfied)
+                        {
+                            argCheckerReturnCode = satisfied.ArgumentInfo?.ArgChecker.Invoke(argCheckerParameters) ?? 0;
+                            ConsoleLogger.Debug("Argument {0} with args {1} argument checker returned {2}", Argument, strArgs, argCheckerReturnCode);
+                            argSatisfied = argCheckerReturnCode == 0;
+                        }
+                        if (!argSatisfied)
+                        {
+                            ConsoleLogger.Error("Not enough arguments {0}", ArgumentName);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS"), ThemeColorType.Error);
+                            continue;
+                        }
+
+                        // Prepare the argument parameter instance
+                        ConsoleLogger.Debug("Argument {0} [P: {1}] [S: {2}], {3} info instances.", Argument, string.Join(", ", Args), string.Join(", ", Switches), Arg.ArgArgumentInfo.Length);
+                        var parameters = new ArgumentParameters(strArgs, Args, ArgOrig, ArgsOrig, Switches, Argument);
+
+                        // Now, get the base command and execute it
+                        var ArgumentBase = Arg.ArgumentBase;
+                        ConsoleLogger.Debug("Got argument base resolving to {0}, executing...", ArgumentName);
+                        ArgumentBase.Execute(parameters);
                     }
                     else
                     {
@@ -176,14 +279,17 @@ namespace Terminaux.Shell.Arguments.Base
 
         private static string[] FinalizeArguments(string[] argumentsInput, Dictionary<string, ArgumentInfo> arguments)
         {
-            // Parse the arguments. Assume that unknown arguments are parameters of arguments
+            // Parse the arguments
             List<string> finalArguments = [];
             StringBuilder builder = new();
             foreach (var argInput in argumentsInput)
             {
-                if (arguments.TryGetValue(argInput, out ArgumentInfo? argInfoVal))
+                // Check to see if we're passing as value or as argument by the dash at the beginning of the word
+                bool isArg = argInput.StartsWith("--");
+                string argument = isArg ? argInput.RemovePrefix("--") : argInput;
+                if (isArg)
                 {
-                    // If we came across a valid argument, add the result and clear the builder
+                    // If we came across an argument, add the result and clear the builder
                     if (builder.Length > 0)
                     {
                         ConsoleLogger.Debug("Adding result \"{0}\" to final arguments list", builder.ToString());
@@ -193,14 +299,30 @@ namespace Terminaux.Shell.Arguments.Base
                 }
 
                 // Add the argument name
-                ConsoleLogger.Debug("Adding argument name {0}", argInput);
-                builder.Append(argInput + " ");
+                ConsoleLogger.Debug("Adding argument name {0}", argument);
+                builder.Append(argument + " ");
             }
             if (builder.Length > 0)
             {
                 ConsoleLogger.Debug("Adding final argument name {0}", builder.ToString());
                 finalArguments.Add(builder.ToString().Trim());
             }
+
+            // Verify the arguments
+            for (int i = finalArguments.Count - 1; i >= 0; i--)
+            {
+                // Split the arguments
+                string[] argumentSplit = finalArguments[i].Split(' ');
+                if (argumentSplit.Length == 0)
+                    continue;
+
+                // Get the argument and verify it
+                string argument = argumentSplit[0];
+                if (!arguments.TryGetValue(argument, out ArgumentInfo argInfo) || argInfo.Argument != argument)
+                    finalArguments.RemoveAt(i);
+            }
+
+            // Return the final arguments
             ConsoleLogger.Debug("Final argument count: {0}", finalArguments.Count);
             return [.. finalArguments];
         }

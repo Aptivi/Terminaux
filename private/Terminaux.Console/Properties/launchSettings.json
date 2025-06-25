@@ -5,7 +5,7 @@
     },
     "Terminaux.Console - Verbose": {
       "commandName": "Project",
-      "commandLineArgs": "-verbose"
+      "commandLineArgs": "--verbose"
     }
   }
 }
