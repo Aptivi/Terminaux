@@ -57,6 +57,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         public static void WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars) =>
             WriteInfoBoxProgressInternal(settings.Title, progress, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
 
+        // TODO: Remove in the final release
         #region To be removed
         /// <summary>
         /// Writes the info box plainly

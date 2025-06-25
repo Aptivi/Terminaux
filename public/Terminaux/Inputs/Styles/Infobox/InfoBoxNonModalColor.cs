@@ -52,6 +52,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         public static void WriteInfoBox(string text, InfoBoxSettings settings, params object[] vars) =>
             WriteInfoBoxInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
 
+        // TODO: Remove in the final release
         #region To be removed
         /// <summary>
         /// Writes the info box plainly

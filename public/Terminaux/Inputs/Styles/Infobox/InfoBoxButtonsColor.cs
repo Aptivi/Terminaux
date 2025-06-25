@@ -79,6 +79,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         public static int WriteInfoBoxButtons(InputChoiceInfo[] buttons, string text, InfoBoxSettings settings, params object[] vars) =>
             WriteInfoBoxButtonsInternal(settings.Title, buttons, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
 
+        // TODO: Remove in the final release
         #region To be removed
         /// <summary>
         /// Writes the info box plainly

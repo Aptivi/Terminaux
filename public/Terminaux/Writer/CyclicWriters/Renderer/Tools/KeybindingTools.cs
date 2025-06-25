@@ -59,6 +59,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             InfoBoxModalColor.WriteInfoBoxModal(keybindingsText, finalSettings, vars);
         }
 
+        // TODO: Remove in the final release
         #region To be removed
         /// <summary>
         /// Writes the info box plainly

@@ -115,7 +115,8 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars) =>
             WriteInfoBoxSelectionInternal(settings.Title, selections, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, settings.RadioButtons, vars);
-        
+
+        // TODO: Remove in the final release
         #region To be removed
         /// <summary>
         /// Writes the info box plainly

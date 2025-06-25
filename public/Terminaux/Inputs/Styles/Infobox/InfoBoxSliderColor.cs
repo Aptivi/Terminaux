@@ -81,6 +81,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, InfoBoxSettings settings, int minPos = 0, params object[] vars) =>
             WriteInfoBoxSliderInternal(settings.Title, currentPos, maxPos, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, minPos, vars);
 
+        // TODO: Remove in the final release
         #region To be removed
         /// <summary>
         /// Writes the info box plainly

@@ -44,6 +44,7 @@ namespace Terminaux.Inputs.Styles.Editor
     /// <summary>
     /// Interactive text viewer
     /// </summary>
+    // TODO: Remove in the final release
     [Obsolete("To avoid duplicate code, we've deprecated this class. Please use TextEditInteractive with \"edit\" set to false.")]
     public static class TextViewInteractive
     {
