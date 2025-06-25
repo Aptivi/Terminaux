@@ -229,6 +229,7 @@ namespace Terminaux.Base.Checks
                     ForegroundColor = ConsoleColors.Yellow,
                 }
             );
+            ConsoleWrapper.Clear();
         }
 
         /// <summary>
