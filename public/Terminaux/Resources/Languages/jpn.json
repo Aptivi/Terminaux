@@ -2993,6 +2993,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "無色で発煙性があり、非常に腐食性の高い液体"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "ConEmu または VT 処理を有効にした Windows 10 コマンド プロンプトを実行している必要があります。"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "あなたの端末は {1} の {0} です。"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "これらのスロープはあなたにぴったりだと思いますか? スムーズに移行できるはずです。"
     }
   ]
 }

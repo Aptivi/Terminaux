@@ -2996,6 +2996,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Cecair tidak berwarna, berasap dan sangat menghakis"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Anda mesti menjalankan sama ada ConEmu atau gesaan arahan Windows 10 dengan pemprosesan VT didayakan."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Terminal anda ialah {0} pada {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Adakah tanjakan ini kelihatan betul kepada anda? Mereka harus beralih dengan lancar."
     }
   ]
 }

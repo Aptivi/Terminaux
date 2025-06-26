@@ -2993,6 +2993,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "rangaheen, dhunaadhaar aur atyadhik sankshaarak taral"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "aapako vt prosesing saksham ke saath chonaimu ya windows 10 kamaand prompt chalaana hoga."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "aapaka tarminal {1} par {0} hai."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "kya ye raimp aapako sahee lagate hain? unhen suchaaroo roop se sankraman karana chaahie."
     }
   ]
 }

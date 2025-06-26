@@ -2999,6 +2999,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Kleurloze, dampende en zeer bijtende vloeistof"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "U moet ConEmu of een Windows 10-opdrachtprompt gebruiken waarbij VT-verwerking is ingeschakeld."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Uw terminal is {0} op {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Zien deze opritten er goed uit voor jou? Ze moeten soepel overgaan."
     }
   ]
 }

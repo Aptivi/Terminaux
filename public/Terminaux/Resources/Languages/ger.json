@@ -3002,6 +3002,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Farblose, rauchende und stark ätzende Flüssigkeit"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Sie müssen entweder ConEmu oder eine Windows 10-Eingabeaufforderung mit aktivierter VT-Verarbeitung ausführen."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Ihr Terminal ist {0} auf {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Sehen diese Rampen für Sie richtig aus? Der Übergang sollte reibungslos erfolgen."
     }
   ]
 }

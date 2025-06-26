@@ -2994,6 +2994,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Άχρωμο, ατμίζον και εξαιρετικά διαβρωτικό υγρό"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Πρέπει να εκτελείτε είτε το ConEmu είτε μια γραμμή εντολών των Windows 10 με ενεργοποιημένη την επεξεργασία VT."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Το τερματικό σας είναι {0} στις {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Σου φαίνονται σωστές αυτές οι ράμπες; Θα πρέπει να μεταβούν ομαλά."
     }
   ]
 }

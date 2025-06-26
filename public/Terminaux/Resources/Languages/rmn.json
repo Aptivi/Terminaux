@@ -2994,6 +2994,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Lichid incolor, fumos și foarte coroziv"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Trebuie să rulați fie ConEmu, fie un prompt de comandă Windows 10 cu procesarea VT activată."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Terminalul dvs. este {0} pe {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Aceste rampe vi se par corect? Ar trebui să tranzițieze fără probleme."
     }
   ]
 }

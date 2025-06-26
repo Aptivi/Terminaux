@@ -2993,6 +2993,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Безбарвна, димляча та сильно корозійна рідина"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Ви повинні запустити ConEmu або командний рядок Windows 10 із увімкненою обробкою VT."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Ваш термінал {0} на {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Ці пандуси здаються вам правильними? Вони повинні переходити плавно."
     }
   ]
 }

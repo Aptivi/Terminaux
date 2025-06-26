@@ -2994,6 +2994,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "무색, 연기가 나고 부식성이 강한 액체"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "VT 처리가 활성화된 ConEmu 또는 Windows 10 명령 프롬프트를 실행해야 합니다."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "귀하의 터미널은 {1}의 {0}입니다."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "이 경사로가 당신에게 딱 맞는 것 같나요? 원활하게 전환되어야 합니다."
     }
   ]
 }

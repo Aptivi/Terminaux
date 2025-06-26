@@ -2996,6 +2996,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "無色、發煙、高腐蝕性液體"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "您必須執行 ConEmu 或 Windows 10 命令提示字元並啟用 VT 處理。"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "您的終端位於 {1} 的 {0}。"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "這些坡道適合您嗎？他們應該順利過渡。"
     }
   ]
 }

@@ -2993,6 +2993,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "रंगहीन, धुआँदार और अत्यधिक संक्षारक तरल"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "आपको VT प्रोसेसिंग सक्षम होने के साथ ConEmu या Windows 10 कमांड प्रॉम्प्ट चलाना होगा।"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "आपका टर्मिनल {1} पर {0} है।"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "क्या ये रैंप आपको सही लगते हैं? उन्हें सुचारू रूप से परिवर्तन करना चाहिए।"
     }
   ]
 }

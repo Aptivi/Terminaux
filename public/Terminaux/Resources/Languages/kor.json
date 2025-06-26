@@ -2994,6 +2994,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "musaeg, yeongiga nago busigseong-i ganghan aegche"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "VT cheoriga hwalseonghwadoen ConEmu ttoneun Windowt 10 myeongryeong peurompeuteureul silhaenghaeya hapnida."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "gwihaui teomineoreun {1}ui {0}ipnida."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "i gyeongsaroga dangsinege ttak majneun geot gatnayo? wonhwalhage jeonhwandoeeoya hapnida."
     }
   ]
 }

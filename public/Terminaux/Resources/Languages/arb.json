@@ -3019,6 +3019,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "sayil eadim alluwn, dukhani, washadid altakl"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "īǧb an tqūm btšġīl ConEmu aū mūǧh awāmr Windows 10 mʿ tmkīn mʿālǧẗ VT."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "al-mḥṭẗ al-ṭrfīẗ al-ẖāṣẗ bk hī {0} fī {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "hl tbdū hḏh al-mnḥdrāt mnāsbẗ lk? īǧb an īntqlwā bslāsẗ."
     }
   ]
 }

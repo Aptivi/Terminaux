@@ -2994,6 +2994,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Renksiz, dumanlı ve oldukça aşındırıcı sıvı"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "VT işlemeyi etkinleştirmiş bir ConEmu veya Windows 10 komut istemi çalıştırıyor olmanız gerekir."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Terminaliniz {1} üzerinde {0}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Bu rampalar size doğru görünüyor mu? Sorunsuz bir şekilde geçiş yapmalılar."
     }
   ]
 }

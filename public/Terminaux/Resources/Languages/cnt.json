@@ -2996,6 +2996,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Wúsè, fā yān, gāo fǔshí xìng yètǐ"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "nín bì xū yùn xíng ConEmu huò Windows 10 mìng líng tí shì fú bìng qǐ yòng VT chǔ lǐ 。"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "nín de zhōng duān wèi yú {1} de {0}。"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "zhè xiē pō dào shì hé nín má ？ tā mén yīng gāi shùn lì guò dù 。"
     }
   ]
 }

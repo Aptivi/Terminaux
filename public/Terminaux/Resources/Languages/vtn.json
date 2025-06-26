@@ -2993,6 +2993,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Chất lỏng không màu, bốc khói và có tính ăn mòn cao"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Bạn phải chạy ConEmu hoặc dấu nhắc lệnh Windows 10 có bật xử lý VT."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Thiết bị đầu cuối của bạn là {0} trên {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Những đoạn đường dốc này có phù hợp với bạn không? Chúng phải chuyển tiếp một cách trơn tru."
     }
   ]
 }

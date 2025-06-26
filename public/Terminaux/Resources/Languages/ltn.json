@@ -2993,6 +2993,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Hyalina, fumans et liquida valde mordax"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Currere debes vel ConEmu vel Windows 10 mandatum promptum cum VT processui para."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Terminus tuus est {0} in {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Hos aggeres spectare tibi fas? Debent transitum blande."
     }
   ]
 }

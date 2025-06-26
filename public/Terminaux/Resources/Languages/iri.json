@@ -2994,6 +2994,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Leacht gan dath, fuming, agus an-chreimneach"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Ní mór duit a bheith ag rith ConEmu nó ordú Windows 10 leid le próiseáil VT cumasaithe."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Tá do teirminéal {0} ar {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "An bhfeiceann na rampaí seo ceart duitse? Ba chóir dóibh aistriú go réidh."
     }
   ]
 }

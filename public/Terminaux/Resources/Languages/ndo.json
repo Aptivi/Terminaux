@@ -2993,6 +2993,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Cairan tidak berwarna, berasap, dan sangat korosif"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Anda harus menjalankan ConEmu atau prompt perintah Windows 10 dengan pemrosesan VT diaktifkan."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Terminal Anda {0} pada {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Apakah jalur landai ini terlihat tepat menurut Anda? Jalur landai ini seharusnya dapat bergerak dengan lancar."
     }
   ]
 }

@@ -2997,6 +2997,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Fargeløs, rykende og sterkt etsende væske"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Du må kjøre enten ConEmu eller en Windows 10-ledetekst med VT-behandling aktivert."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Terminalen din er {0} på {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Ser disse rampene riktig ut for deg? De bør gå jevnt over."
     }
   ]
 }

@@ -2992,6 +2992,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Colourless, fuming, and highly corrosive liquid"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Your terminal is {0} on {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Do these ramps look right to you? They should transition smoothly."
     }
   ]
 }

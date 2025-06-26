@@ -3019,6 +3019,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "سائل عديم اللون، دخاني، وشديد التآكل"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "يجب أن تقوم بتشغيل ConEmu أو موجه أوامر Windows 10 مع تمكين معالجة VT."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "المحطة الطرفية الخاصة بك هي {0} في {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "هل تبدو هذه المنحدرات مناسبة لك؟ يجب أن ينتقلوا بسلاسة."
     }
   ]
 }

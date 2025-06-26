@@ -377,6 +377,7 @@ namespace Terminaux.Console.Fixtures
             new TabsetTest(),
             new ConsoleConhostCheck(),
             new AlternateBuffers(),
+            new AlternateBuffers2(),
             new Sizes(),
             new BeepTones(),
             new BeepSynth(),
@@ -389,6 +390,7 @@ namespace Terminaux.Console.Fixtures
             new ProgressDecrementTest(),
             new TestCursorCoord(),
             new AllowBackground(),
+            new DetermineTrueColorUser(),
 
             // Image
             new RenderImage(),

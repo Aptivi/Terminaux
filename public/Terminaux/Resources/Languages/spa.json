@@ -3018,6 +3018,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Líquido incoloro, humeante y altamente corrosivo."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Debe ejecutar ConEmu o un símbolo del sistema de Windows 10 con el procesamiento VT habilitado."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Su terminal está {0} en {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "¿Te parecen bien estas rampas? Deberían realizar una transición sin problemas."
     }
   ]
 }

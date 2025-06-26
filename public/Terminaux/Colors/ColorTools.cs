@@ -28,6 +28,11 @@ using Terminaux.Base.Checks;
 using Terminaux.Colors.Models;
 using Terminaux.Sequences.Builder;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Base.Buffered;
+using SpecProbe.Software.Platform;
+using Textify.General;
+using Terminaux.Inputs;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Terminaux.Colors
 {
@@ -531,6 +536,100 @@ namespace Terminaux.Colors
         /// <returns>The RGB specifier string</returns>
         public static (int R, int G, int B) GetRgbIntFromColorCode(int colorCode) =>
             ((colorCode) & 0xff, (colorCode >> 8) & 0xff, (colorCode >> 16) & 0xff);
+
+        /// <summary>
+        /// Asks the user to decide whether the terminal supports true color
+        /// </summary>
+        public static void DetermineTrueColorFromUser()
+        {
+            var screen = new Screen();
+            var rampPart = new ScreenPart();
+            ScreenTools.SetCurrent(screen);
+
+            // Show a tip
+            rampPart.AddDynamicText(() =>
+            {
+                string message =
+                    PlatformHelper.IsOnWindows() ?
+                    LanguageTools.GetLocalized("T_COLOR_COLORTEST_WARNING") + "\n" :
+                    LanguageTools.GetLocalized("T_COLOR_COLORTEST_INFO") + "\n";
+                return TextWriterWhereColor.RenderWhere(TextTools.FormatString(message, PlatformHelper.GetTerminalType(), PlatformHelper.GetTerminalEmulator()), 3, 1, ThemeColorType.Warning);
+            });
+
+            // Show three color bands
+            rampPart.AddDynamicText(() =>
+            {
+                var band = new StringBuilder();
+
+                // First, render a box
+                int times = ConsoleWrapper.WindowWidth - 10;
+                ConsoleLogger.Debug("Band length: {0} cells", times);
+                var rgbBand = new BoxFrame()
+                {
+                    Left = 3,
+                    Top = 3,
+                    Width = times + 1,
+                    Height = 3,
+                };
+                var hueBand = new BoxFrame()
+                {
+                    Left = 3,
+                    Top = 9,
+                    Width = times + 1,
+                    Height = 1,
+                };
+                band.Append(
+                    rgbBand.Render() +
+                    hueBand.Render()
+                );
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 5));
+
+                // Then, render the three bands, starting from the red color
+                double threshold = 255 / (double)times;
+                for (double i = 0; i <= times; i++)
+                    band.Append($"{new Color(Convert.ToInt32(i * threshold), 0, 0).VTSequenceBackground} ");
+                band.Append(RenderResetBackground());
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 6));
+
+                // The green color
+                for (double i = 0; i <= times; i++)
+                    band.Append($"{new Color(0, Convert.ToInt32(i * threshold), 0).VTSequenceBackground} ");
+                band.Append(RenderResetBackground());
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 7));
+
+                // The blue color
+                for (double i = 0; i <= times; i++)
+                    band.Append($"{new Color(0, 0, Convert.ToInt32(i * threshold)).VTSequenceBackground} ");
+                band.Append(RenderResetBackground());
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 11));
+
+                // Now, show the hue band
+                double hueThreshold = 360 / (double)times;
+                for (double h = 0; h <= times; h++)
+                    band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50").VTSequenceBackground} ");
+                band.AppendLine();
+                band.Append(RenderResetBackground());
+
+                // Render the result
+                return
+                    TextWriterWhereColor.RenderWhere(TextTools.FormatString(band.ToString(), PlatformHelper.GetTerminalType(), PlatformHelper.GetTerminalEmulator()), 3, 3) +
+                    TextWriterWhereColor.RenderWhere(LanguageTools.GetLocalized("T_COLOR_COLORTEST_QUESTION") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2, ThemeColorType.Question);
+            });
+            screen.AddBufferedPart("Ramp screen part", rampPart);
+
+            // Tell the user to select either Y or N
+            ConsoleKey answer = default;
+            ScreenTools.Render();
+            while (answer != ConsoleKey.N && answer != ConsoleKey.Y)
+                answer = Input.ReadKey().Key;
+
+            // Set the appropriate config
+            ConsoleSupportsTrueColor = answer == ConsoleKey.Y;
+
+            // Clear the screen and remove the screen
+            ScreenTools.UnsetCurrent(screen);
+            ThemeColorsTools.LoadBackground();
+        }
 
         internal static string GetColorIdStringFrom(ConsoleColors colorDef) =>
             GetColorIdStringFrom((int)colorDef);

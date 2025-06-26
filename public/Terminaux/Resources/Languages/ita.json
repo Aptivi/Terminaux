@@ -2996,6 +2996,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Liquido incolore, fumante e altamente corrosivo"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "È necessario eseguire ConEmu o un prompt dei comandi di Windows 10 con l'elaborazione VT abilitata."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Il tuo terminale è {0} su {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Queste rampe ti sembrano adatte? Dovrebbero passare senza intoppi."
     }
   ]
 }

@@ -3039,6 +3039,18 @@
     {
       "loc": "T_COLORS_THEMES_NITRICACID_DESC",
       "text": "Liquide incolore, fumant et hautement corrosif"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Vous devez exécuter ConEmu ou une invite de commande Windows 10 avec le traitement VT activé."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Votre terminal est à {0} sur {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Ces rampes vous conviennent-elles ? Ils devraient faire une transition en douceur."
     }
   ]
 }
