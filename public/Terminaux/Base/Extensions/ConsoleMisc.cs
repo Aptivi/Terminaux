@@ -436,6 +436,46 @@ namespace Terminaux.Base.Extensions
         }
 
         /// <summary>
+        /// Previews the main buffer (if the console is in the alternative buffer)
+        /// </summary>
+        public static void PreviewMainBuffer()
+        {
+            if (PlatformHelper.IsOnWindows())
+                return;
+            if (!IsOnAltBuffer)
+                return;
+
+            // Show the main buffer
+            ShowMainBuffer();
+
+            // Sleep for five seconds
+            Thread.Sleep(5000);
+
+            // Show the alternative buffer
+            ShowAltBuffer();
+        }
+
+        /// <summary>
+        /// Previews the alternative buffer (if the console is in the main buffer)
+        /// </summary>
+        public static void PreviewAltBuffer()
+        {
+            if (PlatformHelper.IsOnWindows())
+                return;
+            if (IsOnAltBuffer)
+                return;
+
+            // Show the alternative buffer
+            ShowAltBuffer();
+
+            // Sleep for five seconds
+            Thread.Sleep(5000);
+
+            // Show the main buffer
+            ShowMainBuffer();
+        }
+
+        /// <summary>
         /// Initializes the VT sequence handling for Windows systems.
         /// </summary>
         /// <returns>True if successful; false if not. Alays true on non-Windows systems.</returns>
