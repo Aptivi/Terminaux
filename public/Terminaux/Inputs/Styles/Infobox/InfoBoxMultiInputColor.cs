@@ -83,10 +83,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="modules">Input modules to represent their values.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxMultiInputInternal(modules, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
-
-        internal static bool WriteInfoBoxMultiInputInternal(InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
+        public static bool WriteInfoBoxMultiInput(InputModule[] modules, string text, InfoBoxSettings settings, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -111,7 +108,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(modules, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, vars)
+                        InfoBoxTools.RenderText(modules, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, false, vars)
                     );
 
                     // Buffer the selection box
@@ -121,10 +118,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Top = selectionBoxPosY - 1,
                         Width = maxSelectionWidth,
                         Height = selectionChoices,
-                        Settings = settings,
-                        UseColors = useColor,
-                        Color = InfoBoxTitledColor,
-                        BackgroundColor = BackgroundColor,
+                        Settings = settings.BorderSettings,
+                        UseColors = settings.UseColors,
+                        Color = settings.ForegroundColor,
+                        BackgroundColor = settings.BackgroundColor,
                     };
                     boxBuffer.Append(border.Render());
 
@@ -149,12 +146,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Width = maxSelectionWidth,
                         SwapSelectedColors = true,
                         Ellipsis = false,
-                        UseColors = useColor,
+                        UseColors = settings.UseColors,
                         Settings = new()
                         {
-                            OptionColor = InfoBoxTitledColor,
-                            SelectedOptionColor = InfoBoxTitledColor,
-                            BackgroundColor = BackgroundColor,
+                            OptionColor = settings.ForegroundColor,
+                            SelectedOptionColor = settings.ForegroundColor,
+                            BackgroundColor = settings.BackgroundColor,
                         }
                     };
                     boxBuffer.Append(
@@ -187,7 +184,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int arrowBottom = maxHeight + 1;
 
                     // Get positions for infobox buttons
-                    string infoboxButtons = InfoBoxTools.GetButtons(settings);
+                    string infoboxButtons = InfoBoxTools.GetButtons(settings.BorderSettings);
                     int infoboxButtonsWidth = ConsoleChar.EstimateCellWidth(infoboxButtons);
                     int infoboxButtonLeftHelpMin = maxWidth + borderX - infoboxButtonsWidth;
                     int infoboxButtonLeftHelpMax = infoboxButtonLeftHelpMin + 2;
@@ -400,7 +397,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
-                if (useColor)
+                if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
                         ColorTools.RenderRevertForeground() +

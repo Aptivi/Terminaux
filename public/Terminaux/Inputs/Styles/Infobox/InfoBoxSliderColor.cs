@@ -78,10 +78,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, InfoBoxSettings settings, int minPos = 0, params object[] vars) =>
-            WriteInfoBoxSliderInternal(settings.Title, currentPos, maxPos, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, minPos, vars);
-
-        internal static int WriteInfoBoxSliderInternal(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, bool useColor, int minPos = 0, params object[] vars)
+        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, InfoBoxSettings settings, int minPos = 0, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -103,7 +100,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(2, title, text, settings, InfoBoxTitledSliderColor, BackgroundColor, useColor, ref increment, currIdx, false, true, vars)
+                        InfoBoxTools.RenderText(2, text, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, false, true, vars)
                     );
 
                     // Now, write the current position on the border of the slider bar and the arrows
@@ -114,23 +111,23 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var slider = new Slider(selected, minPos, maxPos)
                     {
                         Width = maxSliderWidth,
-                        SliderActiveForegroundColor = InfoBoxTitledSliderColor,
-                        SliderForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledSliderColor),
-                        SliderBackgroundColor = BackgroundColor,
-                        SliderVerticalActiveTrackChar = settings.BorderRightFrameChar,
-                        SliderVerticalInactiveTrackChar = settings.BorderRightFrameChar,
+                        SliderActiveForegroundColor = settings.ForegroundColor,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(settings.ForegroundColor),
+                        SliderBackgroundColor = settings.BackgroundColor,
+                        SliderVerticalActiveTrackChar = settings.BorderSettings.BorderRightFrameChar,
+                        SliderVerticalInactiveTrackChar = settings.BorderSettings.BorderRightFrameChar,
                     };
-                    if (useColor)
+                    if (settings.UseColors)
                     {
-                        slider.SliderActiveForegroundColor = InfoBoxTitledSliderColor;
-                        slider.SliderForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledSliderColor);
-                        slider.SliderBackgroundColor = BackgroundColor;
+                        slider.SliderActiveForegroundColor = settings.ForegroundColor;
+                        slider.SliderForegroundColor = TransformationTools.GetDarkBackground(settings.ForegroundColor);
+                        slider.SliderBackgroundColor = settings.BackgroundColor;
                     }
                     boxBuffer.Append(
                         RendererTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 2)) +
-                        TextWriterWhereColor.RenderWhereColorBack(posText, sliderPosX - 1 + (maxWidth / 2 - ConsoleChar.EstimateCellWidth(posText) / 2), sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 2, InfoBoxTitledSliderColor, BackgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 2, InfoBoxTitledSliderColor, BackgroundColor)
+                        TextWriterWhereColor.RenderWhereColorBack(posText, sliderPosX - 1 + (maxWidth / 2 - ConsoleChar.EstimateCellWidth(posText) / 2), sliderPosY + 3, settings.ForegroundColor, settings.BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 2, settings.ForegroundColor, settings.BackgroundColor)
                     );
                     return boxBuffer.ToString();
                 });
@@ -160,7 +157,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int sliderArrowRight = sliderArrowLeft + maxSliderWidth + 1;
 
                     // Get positions for infobox buttons
-                    string infoboxButtons = InfoBoxTools.GetButtons(settings);
+                    string infoboxButtons = InfoBoxTools.GetButtons(settings.BorderSettings);
                     int infoboxButtonsWidth = ConsoleChar.EstimateCellWidth(infoboxButtons);
                     int infoboxButtonLeftHelpMin = maxWidth + borderX - infoboxButtonsWidth;
                     int infoboxButtonLeftHelpMax = infoboxButtonLeftHelpMin + 2;
@@ -268,7 +265,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
-                if (useColor)
+                if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
                         ColorTools.RenderRevertForeground() +

@@ -29,10 +29,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 
         public void RunFixture()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInputChar("Write your input character. You'll have to press ENTER before your input is submitted.", new InfoBoxSettings()
+            string answer = InfoBoxInputColor.WriteInfoBoxInput("Write your input character. You'll have to press ENTER before your input is submitted.", new InfoBoxSettings()
             {
                 Title = nameof(TestInputInfoBoxInputChar)
-            });
+            }, InfoBoxInputType.Character);
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

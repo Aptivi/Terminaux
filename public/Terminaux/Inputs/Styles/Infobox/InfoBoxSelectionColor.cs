@@ -91,8 +91,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             {
                 new("Selection infobox", [new("Available options", selections)])
             };
-            return WriteInfoBoxSelectionInternal(
-                settings.Title, category, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, settings.RadioButtons, vars);
+            return WriteInfoBoxSelection(category, text, settings, vars);
         }
 
         /// <summary>
@@ -113,10 +112,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxSelectionInternal(settings.Title, selections, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, settings.RadioButtons, vars);
-
-        internal static int WriteInfoBoxSelectionInternal(string title, InputChoiceCategoryInfo[] selections, string text, BorderSettings settings, Color InfoBoxTitledSelectionColor, Color BackgroundColor, bool useColor, bool radioButtons, params object[] vars)
+        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
         {
             int selectedChoice = -1;
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
@@ -145,7 +141,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 int currentSelected = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
                 var selectionsRendered = new Selections(selections)
                 {
-                    ShowRadioButtons = radioButtons,
+                    ShowRadioButtons = settings.RadioButtons,
                     CurrentSelection = currentSelection,
                     SelectedChoice = currentSelected,
                     Width = 42,
@@ -166,7 +162,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(selections, title, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, useColor, ref increment, currIdx, true, vars)
+                        InfoBoxTools.RenderText(selections, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, true, vars)
                     );
 
                     // Buffer the selection box
@@ -176,17 +172,17 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Top = selectionBoxPosY - 1,
                         Width = maxSelectionWidth,
                         Height = selectionChoices,
-                        Settings = settings,
-                        UseColors = useColor,
-                        Color = InfoBoxTitledSelectionColor,
-                        BackgroundColor = BackgroundColor,
+                        Settings = settings.BorderSettings,
+                        UseColors = settings.UseColors,
+                        Color = settings.ForegroundColor,
+                        BackgroundColor = settings.BackgroundColor,
                     };
                     boxBuffer.Append(border.Render());
 
                     // Now, render the selections
                     var selectionsRendered = new Selections(selections)
                     {
-                        ShowRadioButtons = radioButtons,
+                        ShowRadioButtons = settings.RadioButtons,
                         Left = selectionBoxPosX + 1,
                         Top = selectionBoxPosY,
                         CurrentSelection = currentSelection,
@@ -194,12 +190,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Height = selectionChoices,
                         Width = maxSelectionWidth,
                         SwapSelectedColors = true,
-                        UseColors = useColor,
+                        UseColors = settings.UseColors,
                         Settings = new()
                         {
-                            OptionColor = InfoBoxTitledSelectionColor,
-                            SelectedOptionColor = InfoBoxTitledSelectionColor,
-                            BackgroundColor = BackgroundColor,
+                            OptionColor = settings.ForegroundColor,
+                            SelectedOptionColor = settings.ForegroundColor,
+                            BackgroundColor = settings.BackgroundColor,
                         }
                     };
                     boxBuffer.Append(
@@ -231,7 +227,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int arrowBottom = maxHeight + 1;
 
                     // Get positions for infobox buttons
-                    string infoboxButtons = InfoBoxTools.GetButtons(settings);
+                    string infoboxButtons = InfoBoxTools.GetButtons(settings.BorderSettings);
                     int infoboxButtonsWidth = ConsoleChar.EstimateCellWidth(infoboxButtons);
                     int infoboxButtonLeftHelpMin = maxWidth + borderX - infoboxButtonsWidth;
                     int infoboxButtonLeftHelpMax = infoboxButtonLeftHelpMin + 2;
@@ -289,7 +285,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonHelpHitbox.ProcessPointer(mouse, out _);
                                 else if (infoboxButtonCloseHitbox.IsPointerWithin(mouse))
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
-                                else if (radioButtons)
+                                else if (settings.RadioButtons)
                                 {
                                     if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection))
                                         break;
@@ -420,7 +416,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 bail = true;
                                 break;
                             case ConsoleKey.Spacebar:
-                                if (radioButtons)
+                                if (settings.RadioButtons)
                                     currentSelected = currentSelection;
                                 break;
                             case ConsoleKey.Escape:
@@ -440,7 +436,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 }
                 if (!cancel)
                 {
-                    if (radioButtons)
+                    if (settings.RadioButtons)
                         selectedChoice = currentSelected;
                     else
                         selectedChoice = currentSelection;
@@ -452,7 +448,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
-                if (useColor)
+                if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
                         ColorTools.RenderRevertForeground() +

@@ -54,10 +54,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxProgressInternal(settings.Title, progress, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
-
-        internal static void WriteInfoBoxProgressInternal(string title, double progress, string text, BorderSettings settings, Color InfoBoxTitledProgressColor, Color BackgroundColor, bool useColor, params object[] vars)
+        public static void WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -78,7 +75,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(1, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
+                        InfoBoxTools.RenderText(1, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, false, false, vars)
                     );
 
                     // Render the final result and write the progress bar
@@ -89,12 +86,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                     {
                         Width = maxProgressWidth,
                     };
-                    if (useColor)
+                    if (settings.UseColors)
                     {
-                        progressBar.ProgressPercentageTextColor = InfoBoxTitledProgressColor;
-                        progressBar.ProgressActiveForegroundColor = InfoBoxTitledProgressColor;
-                        progressBar.ProgressForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledProgressColor);
-                        progressBar.ProgressBackgroundColor = BackgroundColor;
+                        progressBar.ProgressPercentageTextColor = settings.ForegroundColor;
+                        progressBar.ProgressActiveForegroundColor = settings.ForegroundColor;
+                        progressBar.ProgressForegroundColor = TransformationTools.GetDarkBackground(settings.ForegroundColor);
+                        progressBar.ProgressBackgroundColor = settings.BackgroundColor;
                     }
                     boxBuffer.Append(RendererTools.RenderRenderable(progressBar, new(progressPosX + 1, progressPosY + 3)));
                     return boxBuffer.ToString();
@@ -109,7 +106,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
-                if (useColor)
+                if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
                         ColorTools.RenderRevertForeground() +

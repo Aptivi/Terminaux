@@ -66,10 +66,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxModal(string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxModalInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, true, vars);
-
-        internal static void WriteInfoBoxModalInternal(string title, string text, BorderSettings settings, Color InfoBoxModalTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
+        public static void WriteInfoBoxModal(string text, InfoBoxSettings settings, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -86,7 +83,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool bail = false;
                 infoBoxModalScreenPart.AddDynamicText(() =>
                 {
-                    return InfoBoxTools.RenderText(0, title, text, settings, InfoBoxModalTitledColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars);
+                    return InfoBoxTools.RenderText(0, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, true, true, vars);
                 });
 
                 // Main loop
@@ -106,7 +103,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int arrowBottom = maxHeight + 1;
 
                     // Get positions for infobox buttons
-                    string infoboxButtons = InfoBoxTools.GetButtons(settings);
+                    string infoboxButtons = InfoBoxTools.GetButtons(settings.BorderSettings);
                     int infoboxButtonsWidth = ConsoleChar.EstimateCellWidth(infoboxButtons);
                     int infoboxButtonLeftHelpMin = maxWidth + borderX - infoboxButtonsWidth;
                     int infoboxButtonLeftHelpMax = infoboxButtonLeftHelpMin + 2;
@@ -194,7 +191,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
-                if (useColor)
+                if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
                         ColorTools.RenderRevertForeground() +

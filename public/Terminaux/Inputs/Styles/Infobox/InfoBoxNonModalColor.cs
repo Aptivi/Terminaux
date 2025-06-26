@@ -49,10 +49,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBox(string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
-
-        internal static void WriteInfoBoxInternal(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
+        public static void WriteInfoBox(string text, InfoBoxSettings settings, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -69,7 +66,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool bail = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    return InfoBoxTools.RenderText(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, true, false, vars);
+                    return InfoBoxTools.RenderText(0, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, true, false, vars);
                 });
 
                 // Main loop
@@ -101,7 +98,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
-                if (useColor)
+                if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
                         ColorTools.RenderRevertForeground() +

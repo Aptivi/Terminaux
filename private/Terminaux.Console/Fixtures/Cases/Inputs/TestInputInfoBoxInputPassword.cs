@@ -29,10 +29,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 
         public void RunFixture()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInputPassword("Write your password.", new InfoBoxSettings()
+            string answer = InfoBoxInputColor.WriteInfoBoxInput("Write your password.", new InfoBoxSettings()
             {
                 Title = nameof(TestInputInfoBoxInputPassword)
-            });
+            }, InfoBoxInputType.Password);
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

@@ -43,55 +43,22 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// Writes the input info box
         /// </summary>
         /// <param name="text">Text to be written.</param>
+        /// <param name="inputType">Input type</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInput(string text, params object[] vars) =>
-            WriteInfoBoxInput(text, InfoBoxSettings.GlobalSettings, vars);
+        public static string WriteInfoBoxInput(string text, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars) =>
+            WriteInfoBoxInput(text, InfoBoxSettings.GlobalSettings, inputType, vars);
 
         /// <summary>
         /// Writes the input info box
         /// </summary>
+        /// <param name="text">Text to be written.</param>
         /// <param name="settings">Infobox settings to use</param>
-        /// <param name="text">Text to be written.</param>
+        /// <param name="inputType">Input type</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInput(string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, false, false, vars);
-
-        /// <summary>
-        /// Writes the masked input info box
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputPassword(string text, params object[] vars) =>
-            WriteInfoBoxInputPassword(text, InfoBoxSettings.GlobalSettings, vars);
-
-        /// <summary>
-        /// Writes the masked input info box
-        /// </summary>
-        /// <param name="settings">Infobox settings to use</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputPassword(string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, true, false, vars);
-
-        /// <summary>
-        /// Writes the single-character input info box
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputChar(string text, params object[] vars) =>
-            WriteInfoBoxInputChar(text, InfoBoxSettings.GlobalSettings, vars);
-
-        /// <summary>
-        /// Writes the single-character input info box
-        /// </summary>
-        /// <param name="settings">Infobox settings to use</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputChar(string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxInputInternal(settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, false, true, vars);
-
-        internal static string WriteInfoBoxInputInternal(string title, string text, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, bool password, bool character, params object[] vars)
+        public static string WriteInfoBoxInput(string text, InfoBoxSettings settings, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars)
         {
+            bool password = inputType == InfoBoxInputType.Password;
+            bool character = inputType == InfoBoxInputType.Character;
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
@@ -112,7 +79,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(3, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
+                        InfoBoxTools.RenderText(3, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, false, false, vars)
                     );
 
                     // Write the input bar and set the cursor position
@@ -127,15 +94,15 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Top = inputPosY,
                         Width = maxInputWidth,
                         Height = 1,
-                        UseColors = useColor,
-                        Color = InfoBoxTitledColor,
-                        BackgroundColor = BackgroundColor,
+                        UseColors = settings.UseColors,
+                        Color = settings.ForegroundColor,
+                        BackgroundColor = settings.BackgroundColor,
                     };
                     boxBuffer.Append(
                         border.Render() +
                         CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2) +
-                        (useColor ? ColorTools.RenderSetConsoleColor(InfoBoxTitledColor) : "") +
-                        (useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "")
                     );
                     return boxBuffer.ToString();
                 });
@@ -148,10 +115,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     RightMargin = rightMargin,
                 };
-                if (useColor)
+                if (settings.UseColors)
                 {
-                    readerSettings.InputForegroundColor = InfoBoxTitledColor;
-                    readerSettings.InputBackgroundColor = BackgroundColor;
+                    readerSettings.InputForegroundColor = settings.ForegroundColor;
+                    readerSettings.InputBackgroundColor = settings.BackgroundColor;
                 }
                 string input = TermReader.Read("", "", readerSettings, password, true);
                 if (character)
@@ -170,7 +137,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
-                if (useColor)
+                if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
                         ColorTools.RenderRevertForeground() +

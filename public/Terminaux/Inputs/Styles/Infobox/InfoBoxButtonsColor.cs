@@ -76,28 +76,13 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtons(InputChoiceInfo[] buttons, string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxButtonsInternal(settings.Title, buttons, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, vars);
-
-        internal static int WriteInfoBoxButtonsInternal(string title, InputChoiceInfo[] buttons, string text, BorderSettings settings, Color InfoBoxTitledButtonsColor, Color BackgroundColor, bool useColor, params object[] vars)
+        public static int WriteInfoBoxButtons(InputChoiceInfo[] buttons, string text, InfoBoxSettings settings, params object[] vars)
         {
             // First, check the buttons count
             if (buttons is null || buttons.Length == 0)
                 return -1;
             if (buttons.Length > 3)
-            {
-                // Looks like that we have more than three buttons. Use the selection choice instead.
-                // TODO: Use InfoBoxSettings variable instead of reconstructing once we remove deprecated functions.
-                var finalSettings = new InfoBoxSettings()
-                {
-                    Title = title,
-                    BorderSettings = settings,
-                    ForegroundColor = InfoBoxTitledButtonsColor,
-                    BackgroundColor = BackgroundColor,
-                    UseColors = useColor,
-                };
-                return InfoBoxSelectionColor.WriteInfoBoxSelection(buttons, text, finalSettings);
-            }
+                return InfoBoxSelectionColor.WriteInfoBoxSelection(buttons, text, settings);
 
             // Now, the button selection
             int selectedButton = buttons.Any((ici) => ici.ChoiceDefault) ? buttons.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
@@ -121,7 +106,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(3, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
+                        InfoBoxTools.RenderText(3, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, true, true, vars)
                     );
 
                     // Get the button width list
@@ -142,8 +127,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                         // Determine whether it's a selected button or not
                         bool selected = i == selectedButton + 1;
-                        var buttonForegroundColor = selected ? BackgroundColor : InfoBoxTitledButtonsColor;
-                        var buttonBackgroundColor = selected ? InfoBoxTitledButtonsColor : BackgroundColor;
+                        var buttonForegroundColor = selected ? settings.BackgroundColor : settings.ForegroundColor;
+                        var buttonBackgroundColor = selected ? settings.ForegroundColor : settings.BackgroundColor;
 
                         // Render the button box
                         var border = new Border()
@@ -154,7 +139,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             Height = 1,
                             Text = buttonText,
                         };
-                        if (useColor)
+                        if (settings.UseColors)
                         {
                             border.Color = buttonForegroundColor;
                             border.BackgroundColor = buttonBackgroundColor;
@@ -164,7 +149,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
 
                     // Reset colors
-                    if (useColor)
+                    if (settings.UseColors)
                     {
                         boxBuffer.Append(
                             ColorTools.RenderRevertForeground() +
@@ -193,7 +178,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int arrowBottom = maxHeight + 1;
 
                     // Get positions for infobox buttons
-                    string infoboxButtons = InfoBoxTools.GetButtons(settings);
+                    string infoboxButtons = InfoBoxTools.GetButtons(settings.BorderSettings);
                     int infoboxButtonsWidth = ConsoleChar.EstimateCellWidth(infoboxButtons);
                     int infoboxButtonLeftHelpMin = maxWidth + borderX - infoboxButtonsWidth;
                     int infoboxButtonLeftHelpMax = infoboxButtonLeftHelpMin + 2;
@@ -344,7 +329,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
-                if (useColor)
+                if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
                         ColorTools.RenderRevertForeground() +

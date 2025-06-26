@@ -17,23 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Writer.ConsoleWriters;
-
-namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
+namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
-    internal class TestInputInfoBoxInputPasswordCjk : IFixture
+    /// <summary>
+    /// Informational box input type
+    /// </summary>
+    public enum InfoBoxInputType
     {
-        public FixtureCategory Category => FixtureCategory.InputCjk;
-
-        public void RunFixture()
-        {
-            string answer = InfoBoxInputColor.WriteInfoBoxInput("写下您的密码。", new InfoBoxSettings()
-            {
-                Title = nameof(TestInputInfoBoxInputPasswordCjk)
-            }, InfoBoxInputType.Password);
-            TextWriterWhereColor.WriteWhere(answer, 0, 0);
-        }
+        /// <summary>
+        /// Input a normal text
+        /// </summary>
+        Text,
+        /// <summary>
+        /// Input a password or other secret
+        /// </summary>
+        Password,
+        /// <summary>
+        /// Input a character
+        /// </summary>
+        Character,
     }
 }
