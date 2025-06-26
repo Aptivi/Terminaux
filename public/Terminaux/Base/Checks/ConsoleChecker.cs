@@ -212,24 +212,6 @@ namespace Terminaux.Base.Checks
             busy = false;
             acknowledged = true;
             ConsoleLogger.Info("This Terminaux application can now run!");
-
-            var version = typeof(ConsoleChecker).Assembly.GetName().Version;
-            InfoBoxModalColor.WriteInfoBoxModal(
-                "Welcome to the Terminaux Beta Program!\n\n" +
-                $"Terminaux {version.Major}.{version.Minor} (Beta 4 - July 31st, 2025)\n\n" +
-                "We are introducing you to this beta program to get an early taste of the upcoming " +
-                "version of Terminaux with its new features and improved existing features. You can " +
-                "report bugs or feature suggestions to the Terminaux project via GitHub. However, we " +
-                "can't guarantee that everything works flawlessly, and there may be some features that " +
-                "might not make it to the final version.\n\n" +
-                "To get started, please press any key.",
-                new InfoBoxSettings()
-                {
-                    Title = $"Terminaux {version.Major}.{version.Minor} Beta Program",
-                    ForegroundColor = ConsoleColors.Yellow,
-                }
-            );
-            ConsoleWrapper.Clear();
         }
 
         /// <summary>
