@@ -1,12 +1,21 @@
-Describe what happened since Beta 3
+Since Beta 3, we have done many more improvements in regards to many areas of Terminaux, including exciting additions that will make your console applications more powerful.
 
-You are testing the fourth beta version of Terminaux 7.0, which was released on TBD.
+In addition to that, localization support has been added to make sure that console applications are in your native language.
+
+You are testing the fourth beta version of Terminaux 7.0, which was released on July 31st.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` To be populated
+- `[+]` Added localization support
+- `[+]` Added tabset feature (tab stops)
+- `[+]` Added Nitrocid's shell features
+- `[+]` Added more powerful theme feature
+- `[+]` Added back the old wrapped writer (with no TUI)
+- `[*]` Improved performance of the CSI sequence parser
+- `[*]` Improved performance of the selection TUI for huge lists
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
@@ -14,7 +23,7 @@ Review the commit history if you want to get a deep insight about the changes.
 
 Due to the nature of this version of Terminaux, bugs might show up, and some of the features might not make it to the final release.
 
-We can't provide info as to when we're going to make either the next beta version or the final release of this version of Terminaux, but we'll provide them once confirmed.
+This is the final beta version of Terminaux 7.0 set to release on August 10th, 2025.
 
 Participation in the beta program is optional, so you can choose to either try out Terminaux 7.0, or to wait until the final release.
 
