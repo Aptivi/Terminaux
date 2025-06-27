@@ -17,8 +17,8 @@ REM This script replaces old version with new version.
 echo Replacing...
 
 REM Change the below files
-set "releaseFiles=%ROOTDIR%\Directory.Build.props %ROOTDIR%\CHANGES.TITLE"
+set "releaseFiles="%ROOTDIR%\Directory.Build.props" "%ROOTDIR%\CHANGES.TITLE""
 for %%f in (%releaseFiles%) do (
     echo Processing %%f...
-    powershell %ROOTDIR%\vnd\eng\incrementor.ps1 "%%f" "%oldVer%" "%newVer%"
+    powershell -Command "& %ROOTDIR%\vnd\eng\incrementor.ps1 '%%f' '%oldVer%' '%newVer%'"
 )
