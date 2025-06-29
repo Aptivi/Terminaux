@@ -93,18 +93,6 @@
       "text": "tadafuq alsuwrat ghayr mutawafiri."
     },
     {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
-      "text": "masar alsuwrat ghayr mutawafiri."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
-      "text": "bayanat alsuwrat ghayr mutawafiratin."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
-      "text": "tadafuq alsuwrat ghayr mutawafiri."
-    },
-    {
       "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
       "text": "alsuwrat ghayr mutawafiratin."
     }

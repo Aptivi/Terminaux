@@ -300,10 +300,6 @@
       "text": "Aceasta este o operație unară, dar numărul de argumente puse în coadă este {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Constanta întreagă nu este validă."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Reprezentarea condiționată {0} este invalidă."
     },
@@ -346,10 +342,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Culoarea este în afara intervalului."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Nu se pot obține date despre culoare."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -632,10 +624,6 @@
       "text": "Specificator de culoare CieLch nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "Valoarea L este în afara intervalului (0,0 -> 100,0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "Valoarea C este în afara intervalului (-128,0 -> 128,0)."
     },
@@ -650,10 +638,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Specificator de culoare CieLuv nevalid „{0}”. Asigurați-vă că are formatul corect."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "Valoarea L este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -692,26 +676,6 @@
       "text": "Specificator de culoare CMYK nevalid „{0}”. Asigurați-vă că este în formatul corect."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Nivelul de culoare cyan este în afara intervalului (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Nivelul de culoare magenta este în afara intervalului (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Nivelul culorii galbene este în afara intervalului (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Nivelul de culoare neagră este în afara intervalului (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Specificator de culoare CMYK nevalid „{0}”. Specificatorul nu poate avea mai mult de patru elemente. Asigurați-vă că are formatul corect."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Specificator de culoare HSL nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
@@ -736,14 +700,6 @@
       "text": "Specificator de culoare HSV nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Nivelul de nuanță este în afara intervalului (0' -> 360' grade)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Nivelul de saturație este în afara intervalului (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Nivelul valorii este în afara intervalului (0 -> 100)."
     },
@@ -754,10 +710,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Specificator de culoare HWB nevalid „{0}”. Asigurați-vă că are formatul corect."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Nivelul de nuanță este în afara intervalului (0' -> 360' grade)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -774,10 +726,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Specificator de culoare HunterLab nevalid „{0}”. Asigurați-vă că are formatul corect."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "Valoarea L este în afara intervalului (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -814,10 +762,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Specificator de culoare YIQ nevalid „{0}”. Asigurați-vă că are formatul corect."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Nivelul de luminanță este în afara intervalului (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -922,62 +866,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Specificator de culoare YXY „{0}” nevalid. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Nu a fost specificat niciun nume de componentă."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Nu a fost specificată nicio culoare pentru componenta {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Componenta {0} există deja."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Componenta {0} nu există."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Componenta {0} este predefinită și, prin urmare, nu poate fi eliminată."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Șablonul nu are componente."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Șablonul nu are componente predefinite care trebuie definite ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Nu a fost furnizat niciun nume al șablonului."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Nu se poate găsi șablonul {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Nu se poate găsi componenta {0} în șablonul {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Șablon nevalid."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Șablonul nu are nume."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Șablonul există deja."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Nu se poate elimina șablonul încorporat {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2116,10 +2004,6 @@
       "text": "Acest flux nu poate căuta."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Nu am reușit să generăm o secvență VT funcțională de tip {0} cu acțiunea {1}. Asigurați-vă că ați specificat corect valorile."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Nu se poate construi secvența VT pentru tipul inexistent {0}"
     },
@@ -2194,10 +2078,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Argumentele obligatorii nu sunt furnizate pentru toate utilizările de mai jos:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argument necunoscut"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2578,10 +2458,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Când începeți un bloc nou, asigurați-vă că ați indentat corect stiva. Numărul stivei este {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Scriptul este incorect. Verificați scriptul și rezolvați eventualele erori."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

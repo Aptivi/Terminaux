@@ -71,18 +71,6 @@
       "text": "Wèi tígōng túpiàn liú."
     },
     {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
-      "text": "Wèi tígōng túpiàn lùjìng."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
-      "text": "Wèi tígōng túpiàn shùjù."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
-      "text": "Wèi tígōng túpiàn liú."
-    },
-    {
       "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
       "text": "Wèi tígōng túpiàn."
     }

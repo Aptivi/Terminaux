@@ -299,10 +299,6 @@
       "text": "Haec operatio unaria est, sed numerus argumentorum in ordine positorum est {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Constans integra non valet."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Repraesentatio conditionalis {0} invalida est."
     },
@@ -345,10 +341,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Color extra ambitum est."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Data colorum accipere non possum."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -631,10 +623,6 @@
       "text": "Specificator coloris CieLch \"{0}\" invalidus. Fac ut in formato correcto sit."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "Valor L extra ambitum est (0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "Valor C extra ambitum est (-128.0 -> 128.0)."
     },
@@ -649,10 +637,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Specificator coloris CieLuv \"{0}\" invalidus. Fac ut in forma recta sit."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "Valor L extra ambitum est (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -691,26 +675,6 @@
       "text": "Specificator coloris CMYK \"{0}\" invalidus. Fac ut in formato correcto sit."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Gradus coloris caerulei extra limites (0 -> 100) est."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Gradus coloris purpurei extra limites (0 -> 100) est."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Gradus coloris flavi extra ambitum est (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Gradus coloris nigri extra ambitum est (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Specificator coloris CMYK \"{0}\" invalidus. Specificator non plus quam quattuor elementa continere potest. Fac ut in formato correcto sit."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Specificator coloris HSL invalidus \"{0}\". Fac ut in formato correcto sit."
     },
@@ -735,14 +699,6 @@
       "text": "Specificator coloris HSV invalidus \"{0}\". Fac ut in formato correcto sit."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Gradus coloris extra limites (0' -> 360' gradus) est."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Gradus saturationis extra limites (0 -> 100) est."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Gradus valoris extra ambitum est (0 -> 100)."
     },
@@ -753,10 +709,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Specificator coloris HWB \"{0}\" invalidus. Fac ut in formato correcto sit."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Gradus coloris extra limites (0' -> 360' gradus) est."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -773,10 +725,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Specificator coloris HunterLab \"{0}\" invalidus. Fac ut in forma recta sit."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "Valor L extra ambitum est (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -813,10 +761,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Specificator coloris YIQ \"{0}\" invalidus. Fac ut in formato correcto sit."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Gradus luminationis extra ambitum est (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -921,62 +865,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Specificator coloris YXY \"{0}\" invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Nullum nomen componentium specificatum est."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Nullus color pro componente {0} specificatus est."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Pars {0} iam exstat."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Pars {0} non exstat."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Pars {0} praefinita est et ideo removeri non potest."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Formula nullas partes habet."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Formula nullas partes praedefinitas habet quae definiendae sunt ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Nullum nomen exemplaris datum est."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Formulam {0} invenire non possum."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Pars {0} in forma {1} inveniri non potest."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Formula invalida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Formula nomen non habet."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Formula iam exstat."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Formulam inclusam {0} removere non possum."
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2115,10 +2003,6 @@
       "text": "Hic flumen quaerere non potest."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Series VT functionalis generis {0} cum actione {1} generare non potuimus. Fac ut valores recte specificaveris."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Series VT pro typo {0} non existente construere non potest."
     },
@@ -2193,10 +2077,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Argumenta necessaria non omnibus usibus infra praebentur:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argumentum ignotum"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2577,10 +2457,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Cum incipiens a novus obstructionum, fac quod tu indentata in acervum recte. ACERVUS numerus est {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Scriptum est deformis."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

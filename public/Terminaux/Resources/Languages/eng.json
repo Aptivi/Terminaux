@@ -405,10 +405,6 @@
       "text": "This is a unary operation, but enqueued argument count is {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Integer constant is not valid."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Conditional representation {0} is invalid."
     },
@@ -451,10 +447,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Color is out of range."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Can't get color data."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -737,10 +729,6 @@
       "text": "Invalid CieLch color specifier \"{0}\". Ensure that it's on the correct format"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "The L value is out of range (0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "The C value is out of range (-128.0 -> 128.0)."
     },
@@ -755,10 +743,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Invalid CieLuv color specifier \"{0}\". Ensure that it's on the correct format"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "The L value is out of range (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -797,26 +781,6 @@
       "text": "Invalid CMYK color specifier \"{0}\". Ensure that it's on the correct format"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "The cyan color level is out of range (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "The magenta color level is out of range (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "The yellow color level is out of range (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "The black color level is out of range (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Invalid CMYK color specifier \"{0}\". The specifier may not be more than four elements. Ensure that it's on the correct format"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Invalid HSL color specifier \"{0}\". Ensure that it's on the correct format"
     },
@@ -841,14 +805,6 @@
       "text": "Invalid HSV color specifier \"{0}\". Ensure that it's on the correct format"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "The hue level is out of range (0' -> 360' degrees)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "The saturation level is out of range (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "The value level is out of range (0 -> 100)."
     },
@@ -859,10 +815,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Invalid HWB color specifier \"{0}\". Ensure that it's on the correct format"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "The hue level is out of range (0' -> 360' degrees)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -879,10 +831,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Invalid HunterLab color specifier \"{0}\". Ensure that it's on the correct format"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "The L value is out of range (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -919,10 +867,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Invalid YIQ color specifier \"{0}\". Ensure that it's on the correct format"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "The luma level is out of range (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -1027,62 +971,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Invalid YXY color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "No component name specified."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "No color specified for component {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Component {0} already exists."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Component {0} doesn't exist."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Component {0} is predefined and thus cannot be removed."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Template has no components."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Template has no pre-defined components that must be defined ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "No name of the template provided."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Can't find template {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Can't find component {0} in template {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Invalid template."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Template has no name."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Template already exists."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Can't remove built-in template {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2221,10 +2109,6 @@
       "text": "This stream can't seek."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "We have failed to generate a working VT sequence of type {0} with action {1}. Make sure that you've specified values correctly."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Cannot build VT sequence for nonexistent type {0}"
     },
@@ -2299,10 +2183,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Required arguments are not provided for all usages below:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Unknown argument"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2683,10 +2563,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "The script is malformed. Check the script and resolve any errors."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

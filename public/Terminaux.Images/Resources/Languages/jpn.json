@@ -67,18 +67,6 @@
       "text": "画像ストリームが指定されていません。"
     },
     {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
-      "text": "画像パスが指定されていません。"
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
-      "text": "画像データが指定されていません。"
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
-      "text": "画像ストリームが指定されていません。"
-    },
-    {
       "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
       "text": "画像が指定されていません。"
     }

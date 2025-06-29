@@ -300,10 +300,6 @@
       "text": "이것은 단항 연산이지만, 큐에 추가된 인수 개수는 {0}입니다."
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "정수상수가 유효하지 않습니다."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "조건 표현 {0}이 잘못되었습니다."
     },
@@ -346,10 +342,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "색상이 범위를 벗어났습니다."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "색상 데이터를 가져올 수 없습니다."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -632,10 +624,6 @@
       "text": "CieLch 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "L 값이 범위를 벗어났습니다(0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "C 값이 범위를 벗어났습니다(-128.0 -> 128.0)."
     },
@@ -650,10 +638,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "CieLuv 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "L 값이 범위를 벗어났습니다(0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -692,26 +676,6 @@
       "text": "CMYK 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "청록색 레벨이 범위를 벗어났습니다(0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "마젠타 색상 레벨이 범위를 벗어났습니다(0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "노란색 레벨이 범위를 벗어났습니다(0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "검은색 레벨이 범위를 벗어났습니다(0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "CMYK 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 지정자는 4개 요소를 초과할 수 없습니다. 올바른 형식을 사용하고 있는지 확인하세요."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "HSL 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
     },
@@ -736,14 +700,6 @@
       "text": "HSV 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "색조 레벨이 범위를 벗어났습니다(0' -> 360'도)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "포화 수준이 범위를 벗어났습니다(0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "값 수준이 범위를 벗어났습니다(0 -> 100)."
     },
@@ -754,10 +710,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "HWB 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "색조 레벨이 범위를 벗어났습니다(0' -> 360'도)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -774,10 +726,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "HunterLab 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "L 값이 범위를 벗어났습니다(0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -814,10 +762,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "YIQ 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "루마 레벨이 범위를 벗어났습니다(0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -922,62 +866,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "YXY 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 지정자는 세 개 이상의 요소를 포함할 수 없습니다. 올바른 형식을 사용하고 있는지 확인하세요."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "구성 요소 이름이 지정되지 않았습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "구성 요소 {0}에 색상이 지정되지 않았습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "구성 요소 {0}이 이미 존재합니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "구성요소 {0}이(가) 존재하지 않습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "구성요소 {0}은 미리 정의되어 있으므로 제거할 수 없습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "템플릿에 구성 요소가 없습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "템플릿에는 정의해야 하는 사전 정의된 구성 요소가 없습니다({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "제공된 템플릿 이름이 없습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "템플릿 {0}을(를) 찾을 수 없습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "템플릿 {1}에서 구성 요소 {0}을(를) 찾을 수 없습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "잘못된 템플릿입니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "템플릿에 이름이 없습니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "템플릿이 이미 존재합니다."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "내장 템플릿 {0}을(를) 제거할 수 없습니다."
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2116,10 +2004,6 @@
       "text": "이 스트림은 검색할 수 없습니다."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "{1} 작업을 사용하여 {0} 유형의 작동하는 VT 시퀀스를 생성하지 못했습니다. 값을 올바르게 지정했는지 확인하세요."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "존재하지 않는 유형 {0}에 대한 VT 시퀀스를 빌드할 수 없습니다."
     },
@@ -2194,10 +2078,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "아래 모든 사용법에는 필수 인수가 제공되지 않습니다."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "알 수 없는 인수"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2578,10 +2458,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "새 블록을 시작할 때 스택을 올바르게 들여쓰기했는지 확인하세요. 스택 번호는 {0}입니다."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "스크립트의 형식이 잘못되었습니다. 스크립트를 확인하고 오류를 해결하세요."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

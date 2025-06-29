@@ -67,18 +67,6 @@
       "text": "छवि स्ट्रीम प्रदान नहीं की गई है।"
     },
     {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
-      "text": "छवि पथ प्रदान नहीं किया गया है।"
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
-      "text": "छवि डेटा प्रदान नहीं किया गया है।"
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
-      "text": "छवि स्ट्रीम प्रदान नहीं की गई है।"
-    },
-    {
       "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
       "text": "छवि प्रदान नहीं की गई है।"
     }

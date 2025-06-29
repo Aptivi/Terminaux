@@ -67,18 +67,6 @@
       "text": "Потік зображень не надається."
     },
     {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
-      "text": "Шлях до зображення не надано."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
-      "text": "Дані зображення не надаються."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
-      "text": "Потік зображень не надається."
-    },
-    {
       "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
       "text": "Зображення не надається."
     }

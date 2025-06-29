@@ -300,10 +300,6 @@
       "text": "danhang yeonsan-ijiman kyue chugadoen insu gaesuneun {0}ibnida."
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "jeongsu sangsuga yuhyohaji anhseubnida."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "jogeon pyohyeon {0}i(ga) yuhyohaji anhseubnida."
     },
@@ -346,10 +342,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "saegsang-i beom-wileul beos-eonassseubnida."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "saegsang deiteoleul gajyeool su eobs-seubnida."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -632,10 +624,6 @@
       "text": "CieLch saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "L gabs-i beom-wileul beos-eonassseubnida(0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "C gabs-i beom-wileul beos-eonassseubnida(-128.0 -> 128.0)."
     },
@@ -650,10 +638,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "CieLuv saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "L gabs-i beom-wileul beos-eonassseubnida(0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -692,26 +676,6 @@
       "text": "jalmosdoen CMYK saegsang jijeongja \"{0}\"ibnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "sian saegsang lebel-i beom-wileul beos-eonassseubnida(0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "majenta saegsang lebel-i beom-wileul beos-eonassseubnida(0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "nolansaeg saegsang lebel-i beom-wileul beos-eonassseubnida(0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "geom-eunsaeg saegsang lebel-i beom-wileul beos-eonassseubnida(0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "jalmosdoen CMYK saegsang jijeongja \"{0}\"ibnida. jijeongjaneun ne gae isang-ui yosoleul pohamhal su eobs-seubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "HSL saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
     },
@@ -736,14 +700,6 @@
       "text": "HSV saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "saegjo lebel-i beom-wileul beos-eonassseubnida(0' -> 360'do)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "chaedo lebel-i beom-wileul beos-eonassseubnida(0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "myeongdo lebel-i beom-wileul beos-eonassseubnida(0 -> 100)."
     },
@@ -754,10 +710,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "jalmosdoen HWB saegsang jijeongja \"{0}\"ibnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "saegjo lebel-i beom-wileul beos-eonassseubnida(0' -> 360'do)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -774,10 +726,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "HunterLab saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "L gabs-i beom-wileul beos-eonassseubnida(0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -814,10 +762,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "jalmosdoen YIQ saegsang jijeongja \"{0}\". olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "luma lebel-i beom-wileul beos-eonassseubnida(0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -922,62 +866,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "YXY saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. jijeongjaneun se gae isang-ui yosoleul pohamhal su eobs-seubnida. olbaleun hyeongsig-inji hwag-inhaseyo."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "guseong yoso ileum-i jijeongdoeji anh-assseubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "guseong yoso {0}e saegsang-i jijeongdoeji anh-assseubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "guseong yoso {0}i(ga) imi jonjaehabnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "guseong yoso {0}i(ga) jonjaehaji anhseubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "guseong yoso {0}i(ga) mili jeong-uidoeeo iss-eumeulo jegeohal su eobs-seubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "tempeullis-e guseong yosoga eobs-seubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "tempeullis-e mili jeong-uidoen guseong yosoga eobs-eumyeo, i guseong yosoneun jeong-uihaeya habnida({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "tempeullis ileum-i jegongdoeji anh-assseubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "tempeullis {0}eul(leul) chaj-eul su eobs-seubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "tempeullis {1}eseo guseong yoso {0}eul(leul) chaj-eul su eobs-seubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "jalmosdoen tempeullis-ibnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "tempeullis-e ileum-i eobs-seubnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "tempeullis-i imi jonjaehabnida."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "gibon jegong tempeullis {0}eul(leul) jegeohal su eobs-seubnida."
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2116,10 +2004,6 @@
       "text": "i seuteulim-eul geomsaeghal su eobs-seubnida."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "{1} jag-eob-eulo {0} yuhyeong-ui jagdonghaneun VT sikwonseuleul saengseonghaji moshaessseubnida. gabs-eul olbaleuge jijeonghaessneunji hwag-inhaseyo."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "jonjaehaji anhneun {0} yuhyeong-e daehan VT sikwonseuleul bildeuhal su eobs-seubnida."
     },
@@ -2194,10 +2078,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "alaeui modeun sayongbeob-e daehae pilsu insuga jegongdoeji anh-assseubnida."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "al su eobsneun insu"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2578,10 +2458,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "sae beullogeul sijakhal ttae seutaegeul olbareuge deuryeosseugihaessneunji hwaginhaseyo. seutaek beonhoneun {0}ipnida."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "seukeuripteuui hyeongsigi jalmosdoeeossseupnida. seukeuripteureul hwaginhago oryureul haegyeolhaseyo."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

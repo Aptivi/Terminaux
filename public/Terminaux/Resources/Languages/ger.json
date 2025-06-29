@@ -308,10 +308,6 @@
       "text": "Dies ist eine unäre Operation, aber die Anzahl der in die Warteschlange gestellten Argumente beträgt {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Die ganzzahlige Konstante ist ungültig."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Die bedingte Darstellung {0} ist ungültig."
     },
@@ -354,10 +350,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Die Farbe liegt außerhalb des Bereichs."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Farbdaten können nicht abgerufen werden."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -640,10 +632,6 @@
       "text": "Ungültiger CieLch-Farbspezifizierer \"{0}\". Stellen Sie sicher, dass er das richtige Format hat."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "Der L-Wert liegt außerhalb des Bereichs (0,0 -> 100,0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "Der C-Wert liegt außerhalb des Bereichs (-128,0 -> 128,0)."
     },
@@ -658,10 +646,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Ungültiger CieLuv-Farbspezifizierer \"{0}\". Stellen Sie sicher, dass er das richtige Format hat."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "Der L-Wert liegt außerhalb des Bereichs (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -700,26 +684,6 @@
       "text": "Ungültiger CMYK-Farbbezeichner \"{0}\". Stellen Sie sicher, dass das richtige Format verwendet wird."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Der Cyan-Farbpegel liegt außerhalb des Bereichs (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Der Magenta-Farbpegel liegt außerhalb des Bereichs (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Der Gelbfarbpegel liegt außerhalb des Bereichs (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Der Schwarzfarbpegel liegt außerhalb des Bereichs (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Ungültiger CMYK-Farbspezifizierer \"{0}\". Der Spezifizierer darf nicht mehr als vier Elemente umfassen. Stellen Sie sicher, dass er das richtige Format hat."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Ungültiger HSL-Farbbezeichner \"{0}\". Stellen Sie sicher, dass das richtige Format verwendet wird."
     },
@@ -744,14 +708,6 @@
       "text": "Ungültiger HSV-Farbbezeichner \"{0}\". Stellen Sie sicher, dass das richtige Format verwendet wird."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Der Farbton liegt außerhalb des Bereichs (0' -> 360' Grad)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Der Sättigungsgrad liegt außerhalb des Bereichs (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Der Wertebereich liegt außerhalb des Bereichs (0 -> 100)."
     },
@@ -762,10 +718,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Ungültiger HWB-Farbbezeichner \"{0}\". Stellen Sie sicher, dass das richtige Format verwendet wird."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Der Farbton liegt außerhalb des Bereichs (0' -> 360' Grad)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -782,10 +734,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Ungültiger HunterLab-Farbbezeichner \"{0}\". Stellen Sie sicher, dass das richtige Format verwendet wird."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "Der L-Wert liegt außerhalb des Bereichs (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -822,10 +770,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Ungültiger YIQ-Farbbezeichner \"{0}\". Stellen Sie sicher, dass das richtige Format verwendet wird."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Der Luma-Pegel liegt außerhalb des Bereichs (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -930,62 +874,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Ungültiger YXY-Farbspezifizierer \"{0}\". Der Spezifizierer darf nicht mehr als drei Elemente umfassen. Stellen Sie sicher, dass er das richtige Format hat."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Kein Komponentenname angegeben."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Für die Komponente {0} wurde keine Farbe angegeben."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Komponente {0} ist bereits vorhanden."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Komponente {0} existiert nicht."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Komponente {0} ist vordefiniert und kann daher nicht entfernt werden."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Die Vorlage hat keine Komponenten."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Die Vorlage hat keine vordefinierten Komponenten, die definiert werden müssen ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Kein Name der Vorlage angegeben."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Vorlage {0} kann nicht gefunden werden"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Komponente {0} kann in Vorlage {1} nicht gefunden werden"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Ungültige Vorlage."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Die Vorlage hat keinen Namen."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Vorlage ist bereits vorhanden."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Die integrierte Vorlage {0} kann nicht entfernt werden"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2124,10 +2012,6 @@
       "text": "Dieser Stream kann nicht suchen."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Es ist uns nicht gelungen, eine funktionierende VT-Sequenz vom Typ {0} mit der Aktion {1} zu generieren. Stellen Sie sicher, dass Sie die Werte korrekt angegeben haben."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Für den nicht vorhandenen Typ {0} kann keine VT-Sequenz erstellt werden."
     },
@@ -2202,10 +2086,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Nicht für alle der folgenden Verwendungszwecke sind erforderliche Argumente angegeben:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Unbekanntes Argument"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2586,10 +2466,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Stellen Sie beim Starten eines neuen Blocks sicher, dass Sie den Stapel richtig eingerückt haben. Die Stapelnummer ist {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Das Skript ist fehlerhaft. Überprüfen Sie das Skript und beheben Sie etwaige Fehler."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

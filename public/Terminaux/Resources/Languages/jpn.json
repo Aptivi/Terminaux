@@ -299,10 +299,6 @@
       "text": "これは単項演算ですが、キューに登録された引数の数は {0} です"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "整数定数が無効です。"
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "条件表現 {0} が無効です。"
     },
@@ -345,10 +341,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "色が範囲外です。"
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "色データを取得できません。"
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -631,10 +623,6 @@
       "text": "CieLchカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "L値が範囲外です（0.0 -> 100.0）。"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "C 値が範囲外です (-128.0 -> 128.0)。"
     },
@@ -649,10 +637,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "CieLuvカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "L値が範囲外です（0.0 -> 100.0）。"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -691,26 +675,6 @@
       "text": "CMYKカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "シアンの色レベルが範囲外です (0 -> 100)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "マゼンタの色レベルが範囲外です (0 -> 100)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "黄色の色レベルが範囲外です (0 -> 100)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "黒色レベルが範囲外です (0 -> 100)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "CMYKカラー指定子「{0}」が無効です。指定子は4要素以下にする必要があります。正しい形式であることを確認してください。"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "HSLカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
     },
@@ -735,14 +699,6 @@
       "text": "HSVカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "色相レベルが範囲外です (0' -> 360' 度)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "彩度レベルが範囲外です (0 -> 100)。"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "値のレベルが範囲外です (0 -> 100)。"
     },
@@ -753,10 +709,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "HWBカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "色相レベルが範囲外です (0' -> 360' 度)。"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -773,10 +725,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "HunterLabカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "L値が範囲外です（0.0 -> 100.0）。"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -813,10 +761,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "YIQカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "輝度レベルが範囲外です (0 -> 255)。"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -921,62 +865,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "YXYカラー指定子「{0}」が無効です。指定子は3要素以下にする必要があります。正しい形式であることを確認してください。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "コンポーネント名が指定されていません。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "コンポーネント {0} に色が指定されていません。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "コンポーネント {0} は既に存在します。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "コンポーネント {0} が存在しません。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "コンポーネント {0} は事前定義されているため削除できません。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "テンプレートにはコンポーネントがありません。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "テンプレートには定義する必要がある事前定義されたコンポーネントがありません ({0})。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "テンプレートの名前が指定されていません。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "テンプレート {0} が見つかりません"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "テンプレート {1} にコンポーネント {0} が見つかりません"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "無効なテンプレートです。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "テンプレートに名前がありません。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "テンプレートはすでに存在します。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "組み込みテンプレート {0} を削除できません"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2115,10 +2003,6 @@
       "text": "このストリームはシークできません。"
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "アクション{1}でタイプ{0}の有効なVTシーケンスを生成できませんでした。値が正しく指定されていることを確認してください。"
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "存在しないタイプ {0} の VT シーケンスを構築できません"
     },
@@ -2193,10 +2077,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "以下のすべての使用法では必須の引数は提供されません。"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "不明な引数"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2577,10 +2457,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "新しいブロックを開始するときは、スタックが正しくインデントされていることを確認してください。スタック番号は {0} です。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "スクリプトの形式が正しくありません。スクリプトを確認し、エラーがあれば解決します。"
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

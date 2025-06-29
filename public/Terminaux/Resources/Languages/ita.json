@@ -302,10 +302,6 @@
       "text": "Questa è un'operazione unaria, ma il numero di argomenti in coda è {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "La costante intera non è valida."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "La rappresentazione condizionale {0} non è valida."
     },
@@ -348,10 +344,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Il colore è fuori gamma."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Impossibile ottenere i dati sul colore."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -634,10 +626,6 @@
       "text": "Specificatore di colore CieLch non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "Il valore L è fuori intervallo (0,0 -> 100,0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "Il valore C è fuori intervallo (-128,0 -> 128,0)."
     },
@@ -652,10 +640,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Specificatore di colore CieLuv non valido \"{0}\". Assicurati che sia nel formato corretto."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "Il valore L è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -694,26 +678,6 @@
       "text": "Specificatore di colore CMYK non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Il livello del colore ciano è fuori intervallo (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Il livello del colore magenta è fuori intervallo (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Il livello del colore giallo è fuori intervallo (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Il livello del colore nero è fuori intervallo (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Specificatore di colore CMYK \"{0}\" non valido. Lo specificatore non può contenere più di quattro elementi. Assicurarsi che sia nel formato corretto."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Specificatore di colore HSL non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
@@ -738,14 +702,6 @@
       "text": "Specificatore di colore HSV non valido \"{0}\". Assicurarsi che sia nel formato corretto."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Il livello di tonalità è fuori intervallo (0' -> 360' gradi)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Il livello di saturazione è fuori intervallo (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Il livello del valore è fuori intervallo (0 -> 100)."
     },
@@ -756,10 +712,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Specificatore di colore HWB non valido \"{0}\". Assicurarsi che sia nel formato corretto."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Il livello di tonalità è fuori intervallo (0' -> 360' gradi)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -776,10 +728,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Specificatore di colore HunterLab non valido \"{0}\". Assicurati che sia nel formato corretto."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "Il valore L è fuori intervallo (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -816,10 +764,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Specificatore di colore YIQ non valido \"{0}\". Assicurati che sia nel formato corretto."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Il livello di luminanza è fuori intervallo (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -924,62 +868,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Specificatore di colore YXY \"{0}\" non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Nessun nome di componente specificato."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Nessun colore specificato per il componente {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Il componente {0} esiste già."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Il componente {0} non esiste."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Il componente {0} è predefinito e quindi non può essere rimosso."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Il modello non ha componenti."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Il modello non ha componenti predefiniti che devono essere definiti ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Nessun nome del modello fornito."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Impossibile trovare il modello {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Impossibile trovare il componente {0} nel modello {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Modello non valido."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Il modello non ha nome."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Il modello esiste già."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Impossibile rimuovere il modello incorporato {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2118,10 +2006,6 @@
       "text": "Questo flusso non può effettuare la ricerca."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Non siamo riusciti a generare una sequenza VT funzionante di tipo {0} con azione {1}. Assicurati di aver specificato i valori correttamente."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Impossibile creare la sequenza VT per il tipo inesistente {0}"
     },
@@ -2196,10 +2080,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Gli argomenti obbligatori non sono forniti per tutti gli utilizzi seguenti:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argomento sconosciuto"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2580,10 +2460,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Quando inizi un nuovo blocco, assicurati di aver rientrato correttamente lo stack. Il numero dello stack è {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Lo script non è valido. Controlla lo script e risolvi eventuali errori."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

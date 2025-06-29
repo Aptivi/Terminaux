@@ -305,10 +305,6 @@
       "text": "Dit is een unaire bewerking, maar het aantal in de wachtrij geplaatste argumenten is {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Gehele constante is niet geldig."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Voorwaardelijke weergave {0} is ongeldig."
     },
@@ -351,10 +347,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "De kleur valt buiten het bereik."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Kan geen kleurgegevens ophalen."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -637,10 +629,6 @@
       "text": "Ongeldige CieLch-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "De L-waarde ligt buiten het bereik (0,0 -> 100,0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "De C-waarde ligt buiten het bereik (-128,0 -> 128,0)."
     },
@@ -655,10 +643,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Ongeldige CieLuv-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "De L-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -697,26 +681,6 @@
       "text": "Ongeldige CMYK-kleurspecificatie \"{0}\". Zorg ervoor dat deze het juiste formaat heeft."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Het cyaankleurniveau ligt buiten het bereik (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Het kleurniveau magenta ligt buiten het bereik (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Het gele kleurniveau ligt buiten het bereik (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Het zwarte kleurniveau ligt buiten het bereik (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Ongeldige CMYK-kleurspecificatie \"{0}\". De specificatie mag niet meer dan vier elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Ongeldige HSL-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
@@ -741,14 +705,6 @@
       "text": "Ongeldige HSV-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Het tintniveau ligt buiten het bereik (0' -> 360' graden)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Het verzadigingsniveau ligt buiten het bereik (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "De waarde ligt buiten het bereik (0 -> 100)."
     },
@@ -759,10 +715,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Ongeldige HWB-kleurspecificatie \"{0}\". Zorg ervoor dat deze het juiste formaat heeft."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Het tintniveau ligt buiten het bereik (0' -> 360' graden)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -779,10 +731,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Ongeldige HunterLab-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "De L-waarde ligt buiten het bereik (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -819,10 +767,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Ongeldige YIQ-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Het luma-niveau ligt buiten het bereik (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -927,62 +871,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Ongeldige YXY-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Er is geen componentnaam opgegeven."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Er is geen kleur opgegeven voor onderdeel {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Onderdeel {0} bestaat al."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Component {0} bestaat niet."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Component {0} is vooraf gedefinieerd en kan dus niet worden verwijderd."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Sjabloon heeft geen componenten."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Sjabloon heeft geen vooraf gedefinieerde componenten die gedefinieerd moeten worden ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Er is geen naam voor de sjabloon opgegeven."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Kan sjabloon {0} niet vinden"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Kan component {0} niet vinden in sjabloon {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Ongeldige sjabloon."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Sjabloon heeft geen naam."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Sjabloon bestaat al."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Kan ingebouwde sjabloon {0} niet verwijderen"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2121,10 +2009,6 @@
       "text": "Deze stroom kan niet zoeken."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Het is ons niet gelukt een werkende VT-reeks van type {0} met actie {1} te genereren. Controleer of u de waarden correct hebt opgegeven."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Kan geen VT-sequentie bouwen voor niet-bestaand type {0}"
     },
@@ -2199,10 +2083,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Vereiste argumenten zijn niet voor alle onderstaande toepassingen beschikbaar:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Onbekend argument"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2583,10 +2463,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Wanneer u een nieuw blok start, zorg er dan voor dat u de stapel correct hebt ingesprongen. Het stapelnummer is {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Het script is verkeerd opgemaakt. Controleer het script en los eventuele fouten op."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

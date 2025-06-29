@@ -67,18 +67,6 @@
       "text": "chhavi streem pradaan nahin kee gaee hai."
     },
     {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
-      "text": "chhavi path pradaan nahin kiya gaya hai."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
-      "text": "chhavi deta pradaan nahin kiya gaya hai."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
-      "text": "chhavi streem pradaan nahin kee gaee hai."
-    },
-    {
       "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
       "text": "chhavi pradaan nahin kee gaee hai."
     }

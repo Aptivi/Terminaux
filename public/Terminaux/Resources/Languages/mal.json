@@ -302,10 +302,6 @@
       "text": "Ini ialah operasi unari, tetapi kiraan hujah beratur ialah {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Pemalar integer tidak sah."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Perwakilan bersyarat {0} adalah tidak sah."
     },
@@ -348,10 +344,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Warna di luar julat."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Tidak dapat data warna."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -634,10 +626,6 @@
       "text": "Penentu warna CieLch tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "Nilai L berada di luar julat (0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "Nilai C berada di luar julat (-128.0 -> 128.0)."
     },
@@ -652,10 +640,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Penentu warna CieLuv tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "Nilai L berada di luar julat (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -694,26 +678,6 @@
       "text": "Penentu warna CMYK tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Tahap warna cyan berada di luar julat (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Tahap warna magenta berada di luar julat (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Tahap warna kuning berada di luar julat (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Tahap warna hitam berada di luar julat (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Penentu warna CMYK tidak sah \"{0}\". Penentu mungkin tidak lebih daripada empat elemen. Pastikan ia berada pada format yang betul"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Penentu warna HSL tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
     },
@@ -738,14 +702,6 @@
       "text": "Penentu warna HSV tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Tahap rona di luar julat (0' -> 360' darjah)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Tahap ketepuan berada di luar julat (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Tahap nilai berada di luar julat (0 -> 100)."
     },
@@ -756,10 +712,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Penentu warna HWB tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Tahap rona di luar julat (0' -> 360' darjah)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -776,10 +728,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Penentu warna HunterLab tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "Nilai L berada di luar julat (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -816,10 +764,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Penentu warna YIQ tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Tahap luma berada di luar julat (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -924,62 +868,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Penentu warna YXY tidak sah \"{0}\". Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Tiada nama komponen dinyatakan."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Tiada warna ditentukan untuk komponen {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Komponen {0} sudah wujud."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Komponen {0} tidak wujud."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Komponen {0} dipratentukan dan oleh itu tidak boleh dialih keluar."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Templat tidak mempunyai komponen."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Templat tidak mempunyai komponen pratakrif yang mesti ditakrifkan ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Tiada nama templat disediakan."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Tidak dapat mencari templat {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Tidak dapat mencari komponen {0} dalam templat {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Templat tidak sah."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Templat tidak mempunyai nama."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Templat sudah wujud."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Tidak dapat mengalih keluar templat terbina dalam {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2118,10 +2006,6 @@
       "text": "Strim ini tidak boleh mencari."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Kami telah gagal menjana urutan VT yang berfungsi jenis {0} dengan tindakan {1}. Pastikan anda telah menetapkan nilai dengan betul."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Tidak boleh membina jujukan VT untuk jenis {0} yang tidak wujud"
     },
@@ -2196,10 +2080,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Argumen yang diperlukan tidak disediakan untuk semua penggunaan di bawah:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Hujah yang tidak diketahui"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2580,10 +2460,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Apabila memulakan blok baharu, pastikan anda telah mengesot tindanan dengan betul. Nombor tindanan ialah {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Skrip rosak. Semak skrip dan selesaikan sebarang ralat."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

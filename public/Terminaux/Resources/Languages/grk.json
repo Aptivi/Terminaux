@@ -300,10 +300,6 @@
       "text": "Αυτή είναι μια μοναδιαία λειτουργία, αλλά ο αριθμός των ορισμάτων στην ουρά είναι {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Η ακέραια σταθερά δεν είναι έγκυρη."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Η υπό όρους αναπαράσταση {0} δεν είναι έγκυρη."
     },
@@ -346,10 +342,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Το χρώμα είναι εκτός εύρους."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Δεν είναι δυνατή η λήψη δεδομένων χρώματος."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -632,10 +624,6 @@
       "text": "Μη έγκυρος προσδιοριστής χρώματος CieLch \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "Η τιμή L είναι εκτός εύρους (0,0 -> 100,0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "Η τιμή C είναι εκτός εύρους (-128,0 -> 128,0)."
     },
@@ -650,10 +638,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Μη έγκυρος προσδιοριστής χρώματος CieLuv \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "Η τιμή L είναι εκτός εύρους (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -692,26 +676,6 @@
       "text": "Μη έγκυρος προσδιοριστής χρώματος CMYK \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Το επίπεδο κυανού χρώματος είναι εκτός εύρους (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Το επίπεδο χρώματος ματζέντα είναι εκτός εύρους (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Το επίπεδο κίτρινου χρώματος είναι εκτός εύρους (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Η στάθμη μαύρου χρώματος είναι εκτός εύρους (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Μη έγκυρος προσδιοριστής χρώματος CMYK \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τέσσερα στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Μη έγκυρος προσδιοριστής χρώματος HSL \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
@@ -736,14 +700,6 @@
       "text": "Μη έγκυρος προσδιοριστής χρώματος HSV \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Η στάθμη απόχρωσης είναι εκτός εύρους (0' -> 360' μοίρες)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Το επίπεδο κορεσμού είναι εκτός εύρους (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Το επίπεδο τιμής είναι εκτός εύρους (0 -> 100)."
     },
@@ -754,10 +710,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Μη έγκυρος προσδιοριστής χρώματος HWB \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Η στάθμη απόχρωσης είναι εκτός εύρους (0' -> 360' μοίρες)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -774,10 +726,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Μη έγκυρος προσδιοριστής χρώματος HunterLab \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "Η τιμή L είναι εκτός εύρους (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -814,10 +762,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Μη έγκυρος προσδιοριστής χρώματος YIQ \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Η στάθμη φωτεινότητας είναι εκτός εύρους (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -922,62 +866,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Μη έγκυρος προσδιοριστής χρώματος YXY \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Δεν έχει καθοριστεί όνομα στοιχείου."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Δεν έχει καθοριστεί χρώμα για το στοιχείο {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Το στοιχείο {0} υπάρχει ήδη."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Το στοιχείο {0} δεν υπάρχει."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Το στοιχείο {0} είναι προκαθορισμένο και επομένως δεν μπορεί να αφαιρεθεί."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Το πρότυπο δεν έχει στοιχεία."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Το πρότυπο δεν έχει προκαθορισμένα στοιχεία που πρέπει να οριστούν ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Δεν παρέχεται όνομα για το πρότυπο."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Δεν είναι δυνατή η εύρεση του προτύπου {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Δεν είναι δυνατή η εύρεση του στοιχείου {0} στο πρότυπο {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Μη έγκυρο πρότυπο."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Το πρότυπο δεν έχει όνομα."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Το πρότυπο υπάρχει ήδη."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Δεν είναι δυνατή η κατάργηση του ενσωματωμένου προτύπου {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2116,10 +2004,6 @@
       "text": "Αυτή η ροή δεν μπορεί να αναζητήσει."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Αποτύχαμε να δημιουργήσουμε μια λειτουργική ακολουθία VT τύπου {0} με την ενέργεια {1}. Βεβαιωθείτε ότι έχετε καθορίσει σωστά τις τιμές."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Δεν είναι δυνατή η δημιουργία ακολουθίας VT για ανύπαρκτο τύπο {0}"
     },
@@ -2194,10 +2078,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Δεν παρέχονται απαιτούμενα ορίσματα για όλες τις παρακάτω χρήσεις:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Άγνωστο όρισμα"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2578,10 +2458,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Όταν ξεκινάτε ένα νέο μπλοκ, βεβαιωθείτε ότι έχετε τοποθετήσει σωστά τη στοίβα. Ο αριθμός στοίβας είναι {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Το σενάριο είναι εσφαλμένο. Ελέγξτε το σενάριο και επιλύστε τυχόν σφάλματα."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

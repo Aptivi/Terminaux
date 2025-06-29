@@ -56,26 +56,26 @@ namespace Terminaux.Shell.Shells
 
         internal readonly static List<CommandInfo> unifiedCommandDict =
         [
-            new CommandInfo("alias", "T_SHELL_UNIFIED_ALIAS_DESC",
+            new CommandInfo("alias", /* Localizable */ "T_SHELL_UNIFIED_ALIAS_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "add", new()
                         {
                             ExactWording = ["add"],
-                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC"
                         }),
                         new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
                         }),
                         new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
                         }),
                         new CommandArgumentPart(true, "cmd", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC"
                         }),
                     ]),
                     new CommandArgumentInfo(
@@ -83,62 +83,62 @@ namespace Terminaux.Shell.Shells
                         new CommandArgumentPart(true, "rem", new()
                         {
                             ExactWording = ["rem"],
-                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC"
                         }),
                         new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC"
                         }),
                         new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
                         }),
                     ]),
                 ], new AliasCommand()),
 
-            new CommandInfo("choice", "T_SHELL_UNIFIED_CHOICE_DESC",
+            new CommandInfo("choice", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "answers", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
                         }),
                         new CommandArgumentPart(true, "input", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
                         }),
                         new CommandArgumentPart(false, "answertitle1", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
                         }),
                         new CommandArgumentPart(false, "answertitle2", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("o", "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC", new SwitchOptions()
+                        new SwitchInfo("o", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["t", "m"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("t", "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC", new SwitchOptions()
+                        new SwitchInfo("t", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["o", "m"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("m", "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC", new SwitchOptions()
+                        new SwitchInfo("m", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["t", "o"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("single", "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC", new SwitchOptions()
+                        new SwitchInfo("single", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["multiple"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("multiple", "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC", new SwitchOptions()
+                        new SwitchInfo("multiple", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["single"],
                             AcceptsValues = false
@@ -146,286 +146,286 @@ namespace Terminaux.Shell.Shells
                     ], true, true)
                 ], new ChoiceCommand()),
 
-            new CommandInfo("cls", "T_SHELL_UNIFIED_CLS_DESC", new ClsCommand()),
+            new CommandInfo("cls", /* Localizable */ "T_SHELL_UNIFIED_CLS_DESC", new ClsCommand()),
 
-            new CommandInfo("echo", "T_SHELL_UNIFIED_ECHO_DESC",
+            new CommandInfo("echo", /* Localizable */ "T_SHELL_UNIFIED_ECHO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "text", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("noparse", "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC", false, false, [], 0, false)
+                        new SwitchInfo("noparse", /* Localizable */ "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC", false, false, [], 0, false)
                     ], true)
                 ], new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("exec", "T_SHELL_UNIFIED_EXEC_DESC",
+            new CommandInfo("exec", /* Localizable */ "T_SHELL_UNIFIED_EXEC_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "process", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC"
                         }),
                         new CommandArgumentPart(false, "args", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("forked", "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC", new SwitchOptions()
+                        new SwitchInfo("forked", /* Localizable */ "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ExecUnifiedCommand()),
 
-            new CommandInfo("exit", "T_SHELL_UNIFIED_EXIT_HELP_DESC", new ExitUnifiedCommand()),
+            new CommandInfo("exit", /* Localizable */ "T_SHELL_UNIFIED_EXIT_HELP_DESC", new ExitUnifiedCommand()),
 
-            new CommandInfo("findcmds", "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
+            new CommandInfo("findcmds", /* Localizable */ "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "search", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FINDCMDS_ARGUMENT_SWITCH_DESC"
                         })
                     ], false)
                 ], new FindCmdsUnifiedCommand()),
 
-            new CommandInfo("fork", "T_SHELL_UNIFIED_FORK_DESC", new ForkCommand()),
+            new CommandInfo("fork", /* Localizable */ "T_SHELL_UNIFIED_FORK_DESC", new ForkCommand()),
 
-            new CommandInfo("help", "T_SHELL_UNIFIED_HELP_HELP_DESC",
+            new CommandInfo("help", /* Localizable */ "T_SHELL_UNIFIED_HELP_HELP_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("general", "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC", new SwitchOptions()
+                        new SwitchInfo("general", /* Localizable */ "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("alias", "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC", new SwitchOptions()
+                        new SwitchInfo("alias", /* Localizable */ "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("unified", "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC", new SwitchOptions()
+                        new SwitchInfo("unified", /* Localizable */ "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("extra", "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC", new SwitchOptions()
+                        new SwitchInfo("extra", /* Localizable */ "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("all", "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC", new SwitchOptions()
+                        new SwitchInfo("all", /* Localizable */ "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("simplified", "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC", new SwitchOptions()
+                        new SwitchInfo("simplified", /* Localizable */ "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ], false)
                 ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("if", "T_SHELL_UNIFIED_IF_DESC",
+            new CommandInfo("if", /* Localizable */ "T_SHELL_UNIFIED_IF_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "MESHExpression", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC"
                         }),
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC"
                         }),
                     ])
                 ], new IfCommand()),
 
-            new CommandInfo("input", "T_SHELL_UNIFIED_INPUT_DESC",
+            new CommandInfo("input", /* Localizable */ "T_SHELL_UNIFIED_INPUT_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "question", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
                         }),
                     ], true)
                 ], new InputCommand()),
 
-            new CommandInfo("inputpass", "T_SHELL_UNIFIED_INPUTPASS_DESC",
+            new CommandInfo("inputpass", /* Localizable */ "T_SHELL_UNIFIED_INPUTPASS_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "question", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
                         }),
                     ], true)
                 ], new InputPassCommand()),
 
-            new CommandInfo("loadhistories", "T_SHELL_UNIFIED_LOADHISTORIES_DESC", new LoadHistoriesUnifiedCommand()),
+            new CommandInfo("loadhistories", /* Localizable */ "T_SHELL_UNIFIED_LOADHISTORIES_DESC", new LoadHistoriesUnifiedCommand()),
 
-            new CommandInfo("now", "T_SHELL_UNIFIED_SHOWTD_DESC",
+            new CommandInfo("now", /* Localizable */ "T_SHELL_UNIFIED_SHOWTD_DESC",
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("date", "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC", new SwitchOptions()
+                        new SwitchInfo("date", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["time", "full"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("time", "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC", new SwitchOptions()
+                        new SwitchInfo("time", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["date", "full"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("full", "T_SHELL_UNIFIED_SHOWTD_DESC", new SwitchOptions()
+                        new SwitchInfo("full", /* Localizable */ "T_SHELL_UNIFIED_SHOWTD_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["date", "time"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("utc", "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC", new SwitchOptions()
+                        new SwitchInfo("utc", /* Localizable */ "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ], true)
                 ], new NowCommand(), CommandFlags.RedirectionSupported),
 
-            new CommandInfo("pipe", "T_SHELL_UNIFIED_PIPE_DESC",
+            new CommandInfo("pipe", /* Localizable */ "T_SHELL_UNIFIED_PIPE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceCommand", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC"
                         }),
                         new CommandArgumentPart(true, "targetCommand", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("quoted", "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC")
+                        new SwitchInfo("quoted", /* Localizable */ "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC")
                     ], true)
                 ], new PipeUnifiedCommand()),
 
-            new CommandInfo("presets", "T_SHELL_UNIFIED_PRESETS_HELP_DESC", new PresetsUnifiedCommand()),
+            new CommandInfo("presets", /* Localizable */ "T_SHELL_UNIFIED_PRESETS_HELP_DESC", new PresetsUnifiedCommand()),
 
-            new CommandInfo("repeat", "T_SHELL_UNIFIED_REPEAT_DESC",
+            new CommandInfo("repeat", /* Localizable */ "T_SHELL_UNIFIED_REPEAT_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC"
                         }),
                         new CommandArgumentPart(false, "command"),
                     ])
                 ], new RepeatUnifiedCommand()),
 
-            new CommandInfo("savehistories", "T_SHELL_UNIFIED_SAVEHISTORIES_DESC", new SaveHistoriesUnifiedCommand()),
+            new CommandInfo("savehistories", /* Localizable */ "T_SHELL_UNIFIED_SAVEHISTORIES_DESC", new SaveHistoriesUnifiedCommand()),
 
-            new CommandInfo("select", "T_SHELL_UNIFIED_SELECT_DESC",
+            new CommandInfo("select", /* Localizable */ "T_SHELL_UNIFIED_SELECT_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "answers", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC"
                         }),
                         new CommandArgumentPart(true, "input", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC"
                         }),
                         new CommandArgumentPart(false, "answertitle1", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC"
                         }),
                         new CommandArgumentPart(false, "answertitle2", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC"
                         }),
                     ], true, true)
                 ], new SelectCommand()),
 
-            new CommandInfo("set", "T_SHELL_UNIFIED_SET_DESC",
+            new CommandInfo("set", /* Localizable */ "T_SHELL_UNIFIED_SET_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "value", new()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC"
                         }),
                     ], true)
                 ], new SetCommand()),
 
-            new CommandInfo("setrange", "T_SHELL_UNIFIED_SETRANGE_DESC",
+            new CommandInfo("setrange", /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC"
                         }),
                         new CommandArgumentPart(false, "value2", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC"
                         }),
                         new CommandArgumentPart(false, "value3", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC"
                         }),
                     ], true, true)
                 ], new SetRangeCommand()),
 
-            new CommandInfo("sleep", "T_SHELL_UNIFIED_SLEEP_DESC",
+            new CommandInfo("sleep", /* Localizable */ "T_SHELL_UNIFIED_SLEEP_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "ms", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC"
                         }),
                     ])
                 ], new SleepCommand()),
 
-            new CommandInfo("unset", "T_SHELL_UNIFIED_UNSET_DESC",
+            new CommandInfo("unset", /* Localizable */ "T_SHELL_UNIFIED_UNSET_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "$variable", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("justwipe", "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC", new SwitchOptions()
+                        new SwitchInfo("justwipe", /* Localizable */ "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new UnsetCommand()),
 
-            new CommandInfo("wrap", "T_SHELL_UNIFIED_WRAP_DESC",
+            new CommandInfo("wrap", /* Localizable */ "T_SHELL_UNIFIED_WRAP_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType),
-                            ArgumentDescription = "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC"
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC"
                         })
                     ])
                 ], new WrapUnifiedCommand()),

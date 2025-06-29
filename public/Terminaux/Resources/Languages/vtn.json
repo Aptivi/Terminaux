@@ -299,10 +299,6 @@
       "text": "Đây là một phép toán đơn, nhưng số lượng đối số được xếp hàng là {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Hằng số nguyên không hợp lệ."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Biểu diễn có điều kiện {0} không hợp lệ."
     },
@@ -345,10 +341,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Màu sắc nằm ngoài phạm vi."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Không lấy được dữ liệu màu."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -631,10 +623,6 @@
       "text": "Chỉ định màu CieLch không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "Giá trị L nằm ngoài phạm vi (0,0 -> 100,0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "Giá trị C nằm ngoài phạm vi (-128,0 -> 128,0)."
     },
@@ -649,10 +637,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Chỉ định màu CieLuv không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "Giá trị L nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -691,26 +675,6 @@
       "text": "Chỉ định màu CMYK không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Mức độ màu lục lam nằm ngoài phạm vi (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Mức màu đỏ tươi nằm ngoài phạm vi (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Mức độ màu vàng nằm ngoài phạm vi (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Mức độ màu đen nằm ngoài phạm vi (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Chỉ định màu CMYK không hợp lệ \"{0}\". Chỉ định màu không được quá bốn phần tử. Đảm bảo rằng nó ở đúng định dạng"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Chỉ định màu HSL không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
@@ -735,14 +699,6 @@
       "text": "Chỉ định màu HSV không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Mức độ màu sắc nằm ngoài phạm vi (0' -> 360' độ)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Mức độ bão hòa nằm ngoài phạm vi (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Mức giá trị nằm ngoài phạm vi (0 -> 100)."
     },
@@ -753,10 +709,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Chỉ định màu HWB không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Mức độ màu sắc nằm ngoài phạm vi (0' -> 360' độ)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -773,10 +725,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Chỉ định màu HunterLab không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "Giá trị L nằm ngoài phạm vi (0,0 -> 100,0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -813,10 +761,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Chỉ định màu YIQ không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Mức độ sáng nằm ngoài phạm vi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -921,62 +865,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Chỉ định màu YXY không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Không có tên thành phần nào được chỉ định."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Không có màu nào được chỉ định cho thành phần {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Thành phần {0} đã tồn tại."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Thành phần {0} không tồn tại."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Thành phần {0} được xác định trước và do đó không thể xóa được."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Mẫu không có thành phần nào."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Mẫu không có thành phần nào được xác định trước cần phải được xác định ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Không cung cấp tên mẫu."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Không tìm thấy mẫu {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Không tìm thấy thành phần {0} trong mẫu {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Mẫu không hợp lệ."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Mẫu không có tên."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Mẫu đã tồn tại."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Không thể xóa mẫu tích hợp {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2115,10 +2003,6 @@
       "text": "Luồng này không thể tìm kiếm."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Chúng tôi không thể tạo chuỗi VT hoạt động thuộc loại {0} với hành động {1}. Hãy đảm bảo rằng bạn đã chỉ định đúng giá trị."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Không thể xây dựng chuỗi VT cho loại không tồn tại {0}"
     },
@@ -2193,10 +2077,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Không cung cấp các đối số bắt buộc cho tất cả các cách sử dụng dưới đây:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Đối số chưa biết"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2577,10 +2457,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Khi bắt đầu một khối mới, hãy đảm bảo rằng bạn đã thụt lề ngăn xếp đúng cách. Số ngăn xếp là {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Tập lệnh bị lỗi. Kiểm tra tập lệnh và giải quyết bất kỳ lỗi nào."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

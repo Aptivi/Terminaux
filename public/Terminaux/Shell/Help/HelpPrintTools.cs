@@ -71,7 +71,7 @@ namespace Terminaux.Shell.Help
             {
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXTRACMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, ExtraCommandList.Count);
                 if (ExtraCommandList.Count == 0)
-                    TextWriterColor.Write("  - No extra commands.", ThemeColorType.ListTitle);
+                    TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in ExtraCommandList)
                 {
                     string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
@@ -89,7 +89,7 @@ namespace Terminaux.Shell.Help
             {
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ALIASCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
-                    TextWriterColor.Write("  - No alias commands.", ThemeColorType.ListTitle);
+                    TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in AliasedCommandList)
                 {
                     string[] usages = [.. cmd.Value.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
@@ -107,7 +107,7 @@ namespace Terminaux.Shell.Help
             {
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
-                    TextWriterColor.Write("  - No unified commands.", ThemeColorType.ListTitle);
+                    TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in unifiedCommandList)
                 {
                     string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];

@@ -325,10 +325,6 @@
       "text": "hadhih eamaliat 'uhadiatun, walakina eadad almueamlat almudrjt fi qayimat alaintizar hu {0}."
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "althaabit alsahih ghayr salihi."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "altamthil alshurtiu {0} ghayr salihi."
     },
@@ -371,10 +367,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "allawn kharij alnitaqi."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "la yumkin alhusul ealaa bayanat alluwni."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -657,10 +649,6 @@
       "text": "muhadad lawn CieLch ghayr salih \"{0}\". ta'akad min 'ana altansiq sahihun."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "qimat L kharij alnitaq (0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "qimat C kharij alnitaq (-128.0 -> 128.0)."
     },
@@ -675,10 +663,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "muhadad lawn CieLuv ghayr salih \"{0}\". ta'akad min 'ana altansiq sahihun."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "qimat L kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -717,26 +701,6 @@
       "text": "muhdid lawn CMYK ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "mustawaa allawn alsamawii kharij alnitaq (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "mustawaa allawn al'arjwanii kharij alnitaq (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "mustawaa allawn al'asfar kharij alnitaq (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "mustawaa allawn al'aswad kharij alnitaq (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "muhadad lawn CMYK ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad 'arbaeat eanasira. ta'akad min 'anah bialtansiq alsahihi."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "muhadad lawn HSL ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
@@ -761,14 +725,6 @@
       "text": "muhadad lawn HSV ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "mustawaa tadruj allawn kharij alnitaq (0' -> 360' darajatan)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "mustawaa altashabue kharij alnitaq (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "mustawaa alqimat kharij alnitaq (0 -> 100)."
     },
@@ -779,10 +735,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "muhdid lawn HWB ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "mustawaa altadaruj allawni kharij alnitaq (0' -> 360' darajatu)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -799,10 +751,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "muhdid lawn HunterLab ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "qimat L kharij alnitaq (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -839,10 +787,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "muhadad lawn YIQ ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "mustawaa alsutue kharij alnitaq (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -947,62 +891,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "muhdid lawn YXY \"{0}\" ghayr salihi. la yajib 'an yazid eadad eanasir almuhdid ean thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "lam yatima tahdid asm lilmukawini."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "lam yatima tahdid lawn lilmukawin {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "almukawan {0} mawjud msbqan."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "almukawan {0} ghayr mawjudi."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "almukawan {0} mueraf msbqan, wabialtaali la yumkin 'iizalatuhu."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "la yahtawi alqalib ealaa mukawinati."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "la yahtawi alqalib ealaa mukawinat mueraft msbqan yajib taerifuha ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "lam yatima taqdim asm lilqalibi."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "la yumkin aleuthur ealaa alqalab {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "la yumkin aleuthur ealaa almukawan {0} fi alqalab {1}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "qalab ghayr salihi."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "la yujad asm lilqalibi."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "alqalib mawjud msbqan."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "la yumkin 'iizalat alqalab almudmaj {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2141,10 +2029,6 @@
       "text": "la yumkin lihadha aldafq albahtha."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "fashilna fi 'iinsha' tasalsul VT eamil min alnawe {0} bial'iijra' {1}. ta'akad min tahdid alqiam bishakl sahihin."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "la yumkin bina' tasalsul VT linawe ghayr mawjud {0}"
     },
@@ -2219,10 +2103,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "lam yatima tawfir alwasayit almatlubat lijamie alaistikhdamat 'adnah:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "wasit ghayr maeruf"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2603,10 +2483,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "ʿnd bdʾ ktlẗ ǧdīdẗ, tʾakd mn ūḍʿ msāfẗ bādʾiẗ llmkds bškl ṣḥīḥ. rqm al-mkds hū {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "al-brnāmǧ al-nṣī ġīr ṣḥīḥ. tḥqq mn al-brnāmǧ al-nṣī ūḥl aī aẖṭāʾ."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

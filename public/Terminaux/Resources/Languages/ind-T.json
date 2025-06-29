@@ -299,10 +299,6 @@
       "text": "यह एकल ऑपरेशन है, लेकिन पंक्तिबद्ध तर्क संख्या {0} है"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "पूर्णांक स्थिरांक मान्य नहीं है."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "सशर्त प्रतिनिधित्व {0} अमान्य है."
     },
@@ -345,10 +341,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "रंग सीमा से बाहर है."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "रंग डेटा प्राप्त नहीं किया जा सका."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -631,10 +623,6 @@
       "text": "अमान्य CieLch रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "L मान सीमा से बाहर है (0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "C मान सीमा से बाहर है (-128.0 -> 128.0)."
     },
@@ -649,10 +637,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "CieLuv रंग विनिर्देशक \"{0}\" अमान्य है। सुनिश्चित करें कि यह सही प्रारूप पर है"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "L मान सीमा से बाहर है (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -691,26 +675,6 @@
       "text": "अमान्य CMYK रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप में है"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "सियान रंग स्तर सीमा से बाहर है (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "मैजेन्टा रंग स्तर सीमा से बाहर है (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "पीला रंग स्तर सीमा से बाहर है (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "काले रंग का स्तर सीमा से बाहर है (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "अमान्य CMYK रंग विनिर्देशक \"{0}\"। विनिर्देशक में चार तत्वों से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "अमान्य HSL रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
     },
@@ -735,14 +699,6 @@
       "text": "अमान्य HSV रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "रंग स्तर सीमा से बाहर है (0' -> 360' डिग्री)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "संतृप्ति स्तर सीमा से बाहर है (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "मान स्तर सीमा से बाहर है (0 -> 100)."
     },
@@ -753,10 +709,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "अमान्य HWB रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "रंग स्तर सीमा से बाहर है (0' -> 360' डिग्री)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -773,10 +725,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "हंटरलैब रंग विनिर्देशक \"{0}\" अमान्य है। सुनिश्चित करें कि यह सही प्रारूप पर है"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "L मान सीमा से बाहर है (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -813,10 +761,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "YIQ रंग विनिर्देशक \"{0}\" अमान्य है। सुनिश्चित करें कि यह सही प्रारूप पर है"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "ल्यूमा स्तर सीमा से बाहर है (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -921,62 +865,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "अमान्य YXY रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "कोई घटक नाम निर्दिष्ट नहीं किया गया."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "घटक {0} के लिए कोई रंग निर्दिष्ट नहीं किया गया है."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "घटक {0} पहले से मौजूद है."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "घटक {0} मौजूद नहीं है."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "घटक {0} पूर्वनिर्धारित है और इसलिए इसे हटाया नहीं जा सकता."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "टेम्पलेट में कोई घटक नहीं है."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "टेम्पलेट में कोई पूर्व-परिभाषित घटक नहीं है जिसे परिभाषित किया जाना आवश्यक हो ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "टेम्पलेट का कोई नाम उपलब्ध नहीं कराया गया है."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "टेम्पलेट {0} नहीं मिल सका"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "टेम्पलेट {1} में घटक {0} नहीं मिल सका"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "अमान्य टेम्पलेट."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "टेम्पलेट का कोई नाम नहीं है."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "टेम्पलेट पहले से मौजूद है."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "अंतर्निहित टेम्पलेट {0} को हटाया नहीं जा सकता"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2115,10 +2003,6 @@
       "text": "इस धारा की तलाश नहीं कर सकते."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "हम क्रिया {1} के साथ {0} प्रकार का कार्यशील VT अनुक्रम उत्पन्न करने में विफल रहे हैं। सुनिश्चित करें कि आपने मान सही ढंग से निर्दिष्ट किए हैं।"
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "गैर-मौजूद प्रकार {0} के लिए VT अनुक्रम नहीं बनाया जा सकता"
     },
@@ -2193,10 +2077,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "नीचे दिए गए सभी प्रयोगों के लिए आवश्यक तर्क उपलब्ध नहीं हैं:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "अज्ञात तर्क"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2577,10 +2457,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "नया ब्लॉक शुरू करते समय, सुनिश्चित करें कि आपने स्टैक को सही ढंग से इंडेंट किया है। स्टैक संख्या {0} है."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "स्क्रिप्ट ख़राब है. स्क्रिप्ट की जाँच करें और किसी भी त्रुटि का समाधान करें।"
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

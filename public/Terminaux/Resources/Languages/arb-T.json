@@ -325,10 +325,6 @@
       "text": "هذه عملية أحادية، لكن عدد الحجج المدرجة في قائمة الانتظار هو {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "الثابت الصحيح غير صالح."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "التمثيل الشرطي {0} غير صالح."
     },
@@ -371,10 +367,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "اللون خارج النطاق."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "لا يمكن الحصول على بيانات الألوان."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -657,10 +649,6 @@
       "text": "مُحدِّد لون CieLch غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "قيمة L خارج النطاق (0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "قيمة C خارج النطاق (-128.0 -> 128.0)."
     },
@@ -675,10 +663,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "مُحدِّد لون CieLuv \"{0}\" غير صالح. تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "قيمة L خارج النطاق (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -717,26 +701,6 @@
       "text": "مُحدِّد لون CMYK غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "مستوى اللون السماوي خارج النطاق (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "مستوى اللون الأرجواني خارج النطاق (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "مستوى اللون الأصفر خارج النطاق (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "مستوى اللون الأسود خارج النطاق (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "مُحدِّد لون CMYK غير صالح \"{0}\". لا يجب أن يتجاوز المُحدِّد أربعة عناصر. تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "مُحدِّد لون HSL غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
     },
@@ -761,14 +725,6 @@
       "text": "مُحدِّد لون HSV غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "مستوى اللون خارج النطاق (0' -> 360' درجة)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "مستوى التشبع خارج النطاق (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "مستوى القيمة خارج النطاق (0 -> 100)."
     },
@@ -779,10 +735,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "مُحدِّد لون HWB غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "مستوى اللون خارج النطاق (0' -> 360' درجة)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -799,10 +751,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "مُحدِّد لون HunterLab غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "قيمة L خارج النطاق (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -839,10 +787,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "مُحدِّد لون YIQ غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "مستوى الإضاءة خارج النطاق (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -947,62 +891,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "مُحدِّد لون YXY غير صالح \"{0}\". لا يجب أن يتجاوز المُحدِّد ثلاثة عناصر. تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "لم يتم تحديد اسم المكون."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "لم يتم تحديد لون للمكون {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "المكون {0} موجود بالفعل."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "المكون {0} غير موجود."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "المكون {0} محدد مسبقًا وبالتالي لا يمكن إزالته."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "القالب لا يحتوي على مكونات."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "لا يحتوي القالب على مكونات محددة مسبقًا يجب تعريفها ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "لم يتم تقديم اسم القالب."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "لا يمكن العثور على القالب {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "لا يمكن العثور على المكون {0} في القالب {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "قالب غير صالح."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "القالب ليس له اسم."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "القالب موجود بالفعل."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "لا يمكن إزالة القالب المدمج {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2141,10 +2029,6 @@
       "text": "هذا التيار لا يستطيع البحث."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "لم نتمكن من إنشاء تسلسل VT فعال من النوع {0} باستخدام الإجراء {1}. تأكد من صحة القيم المحددة."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "لا يمكن بناء تسلسل VT للنوع غير الموجود {0}"
     },
@@ -2219,10 +2103,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "لا يتم توفير الوسائط المطلوبة لجميع الاستخدامات أدناه:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "حجة غير معروفة"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2603,10 +2483,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "عند بدء كتلة جديدة، تأكد من وضع مسافة بادئة للمكدس بشكل صحيح. رقم المكدس هو {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "البرنامج النصي غير صحيح. تحقق من البرنامج النصي وحل أي أخطاء."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

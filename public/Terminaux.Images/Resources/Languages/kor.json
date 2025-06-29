@@ -68,18 +68,6 @@
       "text": "imiji seuteulim-i jegongdoeji anh-assseubnida."
     },
     {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLPATH",
-      "text": "imiji gyeongloga jegongdoeji anh-assseubnida."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLDATA",
-      "text": "imiji deiteoga jegongdoeji anh-assseubnida."
-    },
-    {
-      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLSTREAM",
-      "text": "imiji seuteulim-i jegongdoeji anh-assseubnida."
-    },
-    {
       "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
       "text": "imijiga jegongdoeji anh-assseubnida."
     }

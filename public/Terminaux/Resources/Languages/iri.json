@@ -300,10 +300,6 @@
       "text": "Is oibríocht aonarach í seo, ach is é {0} líon na n-argóintí atá curtha sa scuaine"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "Níl tairiseach slánuimhir bailí."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Tá an léiriú coinníollach {0} neamhbhailí."
     },
@@ -346,10 +342,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "Tá an dath lasmuigh den raon."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Ní féidir sonraí datha a fháil."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -632,10 +624,6 @@
       "text": "Sonraitheoir datha CieLch neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "Tá an luach L lasmuigh den raon (0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "Tá an luach C lasmuigh den raon (-128.0 -> 128.0)."
     },
@@ -650,10 +638,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "Sonraitheoir datha CieLuv neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "Tá an luach L lasmuigh den raon (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -692,26 +676,6 @@
       "text": "Sonraitheoir datha CMYK neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "Tá an leibhéal datha cian lasmuigh den raon (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Tá an leibhéal datha magenta lasmuigh den raon (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Tá an leibhéal datha buí lasmuigh den raon (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Tá an leibhéal datha dubh lasmuigh den raon (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "Sonraitheoir datha CMYK neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná ceithre eilimint a bheith sa shonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Sonraitheoir datha HSL neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
     },
@@ -736,14 +700,6 @@
       "text": "Sonraitheoir datha HSV neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Tá an leibhéal datha lasmuigh den raon (0' -> 360' céim)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Tá an leibhéal sáithiúcháin lasmuigh den raon (0 -> 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Tá an leibhéal luacha lasmuigh den raon (0 -> 100)."
     },
@@ -754,10 +710,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "Sonraitheoir datha HWB neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "Tá an leibhéal datha lasmuigh den raon (0' -> 360' céim)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -774,10 +726,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "Sonraitheoir datha HunterLab neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "Tá an luach L lasmuigh den raon (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -814,10 +762,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "Sonraitheoir datha YIQ neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Tá leibhéal an luma lasmuigh den raon (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -922,62 +866,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "Sonraitheoir datha YXY neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "Níor sonraíodh ainm comhpháirte."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Níor sonraíodh dath don chomhpháirt {0}."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Tá comhpháirt {0} ann cheana féin."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Níl an chomhpháirt {0} ann."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Tá comhpháirt {0} réamhshainithe agus dá bhrí sin ní féidir í a bhaint."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Níl aon chomhpháirteanna sa teimpléad."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Níl aon chomhpháirteanna réamhshainithe ag an teimpléad nach mór a shainiú ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Níor soláthraíodh ainm an teimpléid."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Ní féidir teimpléad {0} a aimsiú"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "Ní féidir comhpháirt {0} a aimsiú sa teimpléad {1}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "Teimpléad neamhbhailí."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Níl ainm ar an teimpléad."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Tá an teimpléad ann cheana féin."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Ní féidir an teimpléad ionsuite {0} a bhaint"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2116,10 +2004,6 @@
       "text": "Ní féidir leis an sruth seo cuardach a dhéanamh."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Theip orainn seicheamh VT oibre de chineál {0} a ghiniúint leis an ngníomh {1}. Déan cinnte go bhfuil na luachanna sonraithe agat i gceart."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Ní féidir seicheamh VT a thógáil don chineál neamhbheith {0}"
     },
@@ -2194,10 +2078,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Ní chuirtear argóintí riachtanacha ar fáil do gach úsáid thíos:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Argóint anaithnid"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2578,10 +2458,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "Agus bloc nua á thosú agat, cinntigh go bhfuil an chruach eangaithe i gceart agat. Is é {0} uimhir an chairn."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Tá an script míchumtha. Seiceáil an script agus réitigh aon earráidí."
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",

@@ -303,10 +303,6 @@
       "text": "Zhè shì yīgè yīyuán yùnsuàn, dàn rù duì cānshù shùliàng wèi {0}"
     },
     {
-      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTOPERANDINVALID",
-      "text": "zhěng xíng chángliàng wúxiào."
-    },
-    {
       "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
       "text": "Tiáojiàn biǎoshì {0} wúxiào."
     },
@@ -349,10 +345,6 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
       "text": "yánsè chāochū fànwéi."
-    },
-    {
-      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
-      "text": "Wúfǎ huòqǔ yánsè shùjù."
     },
     {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
@@ -635,10 +627,6 @@
       "text": "CieLch yánsè shuōmíng fú “{0}” wúxiào. Quèbǎo qí géshì zhèngquè"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHLLEVEL",
-      "text": "L zhí chāochū fànwéi (0.0 -> 100.0)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
       "text": "C zhí chāochū fànwéi (-128.0 -> 128.0)."
     },
@@ -653,10 +641,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
       "text": "CieLuv yánsè shuōmíng fú “{0}” wúxiào. Quèbǎo qí géshì zhèngquè."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVLLEVEL",
-      "text": "L zhí chāochū fànwéi (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
@@ -695,26 +679,6 @@
       "text": "CMYK yánsè shuōmíng fú “{0}” wúxiào. Qǐng quèbǎo qí géshì zhèngquè"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKCLEVEL",
-      "text": "qīngsè sè jiē chāochū fànwéi (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKMLEVEL",
-      "text": "Yáng hóngsè sè jiē chāochū fànwéi (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKYLEVEL",
-      "text": "Huángsè sè jiē chāochū fànwéi (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
-      "text": "Hēisè sè jiē chāochū fànwéi (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
-      "text": "CMYK yánsè shuōmíng fú “{0}” wúxiào. Shuōmíng fú bùdé chāoguò sì gè yuánsù. Qǐng quèbǎo qí géshì zhèngquè."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "HSL yánsè shuōmíng fú “{0}” wúxiào. Qǐng quèbǎo qí géshì zhèngquè."
     },
@@ -739,14 +703,6 @@
       "text": "HSV yánsè shuōmíng fú “{0}” wúxiào. Qǐng quèbǎo qí géshì zhèngquè."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVHLEVEL",
-      "text": "Sèxiàng jíbié chāochū fànwéi (0 dào 360 dù)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVSLEVEL",
-      "text": "Bǎohé dù jíbié chāochū fànwéi (0 dào 100)."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
       "text": "Liàngdù jíbié chāochū fànwéi (0 dào 100)."
     },
@@ -757,10 +713,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
       "text": "HWB yánsè shuōmíng fú “{0}” wúxiào. Qǐng quèbǎo qí géshì zhèngquè"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBHLEVEL",
-      "text": "sè tiáo jíbié chāochū fànwéi (0 dù -> 360 dù)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
@@ -777,10 +729,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
       "text": "HunterLab yánsè shuōmíng fú “{0}” wúxiào. Qǐng quèbǎo qí géshì zhèngquè."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABLLEVEL",
-      "text": "L zhí chāochū fànwéi (0.0 -> 100.0)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
@@ -817,10 +765,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
       "text": "YIQ yánsè shuōmíng fú “{0}” wúxiào. Qǐng quèbǎo qí géshì zhèngquè."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQYLEVEL",
-      "text": "Liàngdù jíbié chāochū fànwéi (0 -> 255)."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
@@ -925,62 +869,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
       "text": "YXY yánsè shuōmíng fú “{0}” wúxiào. Gāi shuōmíng fú yuánsù shǔ bùdé chāoguò sān gè. Quèbǎo géshì zhèngquè"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
-      "text": "wèi zhǐdìng zǔjiàn míngchēng."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
-      "text": "Wèi wèi zǔjiàn {0} zhǐdìng yánsè."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
-      "text": "Zǔjiàn {0} yǐ cúnzài."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
-      "text": "Zǔjiàn {0} bù cúnzài."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
-      "text": "Zǔjiàn {0} shì yù dìngyì de, yīncǐ wúfǎ shānchú."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
-      "text": "Múbǎn méiyǒu zǔjiàn."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
-      "text": "Múbǎn méiyǒu bìxū dìngyì de yù dìngyì zǔjiàn ({0})."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Wèi tígōng múbǎn míngchēng."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
-      "text": "Zhǎo bù dào múbǎn {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
-      "text": "zài múbǎn {1} zhōng zhǎo bù dào zǔjiàn {0}"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
-      "text": "múbǎn wúxiào."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
-      "text": "Múbǎn méiyǒu míngchēng."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
-      "text": "Múbǎn yǐ cúnzài."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
-      "text": "Wúfǎ shānchú nèizhì múbǎn {0}"
     },
     {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
@@ -2119,10 +2007,6 @@
       "text": "cǐ liú wúfǎ dìngwèi."
     },
     {
-      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
-      "text": "Wǒmen wúfǎ shǐyòng cāozuò {1} shēngchéng lèixíng wèi {0} de yǒuxiào VT xùliè. Qǐng quèbǎo nín yǐ zhèngquè zhǐdìng zhí."
-    },
-    {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
       "text": "Wúfǎ wéi bù cúnzài de lèixíng {0} gòujiàn VT xùliè"
     },
@@ -2197,10 +2081,6 @@
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
       "text": "Yǐxià suǒyǒu yòngfǎ jūn wèi tígōng bìxū cānshù:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNARG",
-      "text": "Wèizhī cānshù"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
@@ -2581,10 +2461,6 @@
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
       "text": "kāi shǐ xīn kuài shí ， qǐng què bǎo duī zhàn suō jìn zhèng què 。 duī zhàn biān hào wéi {0}。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "jiǎo běn gé shì cuò wù 。 jiǎn chá jiǎo běn bìng jiě jué suǒ yǒu cuò wù 。"
     },
     {
       "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
