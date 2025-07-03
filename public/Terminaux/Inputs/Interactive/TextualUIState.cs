@@ -41,7 +41,7 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         Busy,
         /// <summary>
-        /// This textual UI is about to exit and go back to the <see cref=LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_STATUS_READY")/> state.
+        /// This textual UI is about to exit and go back to the <see cref="Ready"/> state.
         /// </summary>
         Bailing,
     }

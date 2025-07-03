@@ -377,7 +377,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 Width = ConsoleWrapper.WindowWidth - 1,
                 Top = ConsoleWrapper.WindowHeight - 1,
-                KeybindingList = ColorSelector.bindings,
+                KeybindingList = ColorSelector.Bindings,
                 WriteHelpKeyInfo = false,
             };
             selector.Append(figletKeybindings.Render());
@@ -458,54 +458,54 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Clear();
 
             // General keybindings
-            Keybindings.Add((ColorSelector.bindings[0], (ui, _, _) => Exit(ui, false)));
-            Keybindings.Add((ColorSelector.bindings[1], (ui, _, _) => Exit(ui, true)));
-            Keybindings.Add((ColorSelector.bindings[2], Help));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[0], ShowColorInfo));
+            Keybindings.Add((ColorSelector.Bindings[0], (ui, _, _) => Exit(ui, false)));
+            Keybindings.Add((ColorSelector.Bindings[1], (ui, _, _) => Exit(ui, true)));
+            Keybindings.Add((ColorSelector.Bindings[2], Help));
+            Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[0], ShowColorInfo));
 
             // Simulation of color-blindness and transformations
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[1], (ui, _, _) => ChangeSimulation(ui, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[2], (ui, _, _) => ChangeSimulation(ui, true)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[3], (ui, _, _) => ChangeSimulationSeverity(ui, false)));
-            Keybindings.Add((ColorSelector.additionalBindingsGeneral[4], (ui, _, _) => ChangeSimulationSeverity(ui, true)));
+            Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[1], (ui, _, _) => ChangeSimulation(ui, false)));
+            Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[2], (ui, _, _) => ChangeSimulation(ui, true)));
+            Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[3], (ui, _, _) => ChangeSimulationSeverity(ui, false)));
+            Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[4], (ui, _, _) => ChangeSimulationSeverity(ui, true)));
 
             // These require write access
             if (!readOnly)
             {
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[5], SelectWebColor));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[6], (_, _, _) =>
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[5], SelectWebColor));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[6], (_, _, _) =>
                 {
                     finalSettings.Opacity++;
                     UpdateColor(ref selectedColor, type, finalSettings);
                 }));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[7], (_, _, _) =>
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[7], (_, _, _) =>
                 {
                     finalSettings.Opacity--;
                     UpdateColor(ref selectedColor, type, finalSettings);
                 }));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[8], (ui, _, _) => ChangeMode(ui, false)));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[9], (ui, _, _) => ChangeMode(ui, true)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[8], (ui, _, _) => ChangeMode(ui, false)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[9], (ui, _, _) => ChangeMode(ui, true)));
 
                 // Mouse bindings
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[10], (_, _, mouse) => ChangeValue(mouse, false)));
-                Keybindings.Add((ColorSelector.additionalBindingsReadWrite[11], (_, _, mouse) => ChangeValue(mouse, true)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[10], (_, _, mouse) => ChangeValue(mouse, false)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[11], (_, _, mouse) => ChangeValue(mouse, true)));
 
                 // Type-specific bindings
                 switch (type)
                 {
                     case ColorType.TrueColor:
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[12], (ui, _, _) => ChangeHue(ui, true)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[13], (ui, _, _) => ChangeLightness(ui, true)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[14], (ui, _, _) => ChangeSaturation(ui, true)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[15], (ui, _, _) => ChangeHue(ui, false)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[16], (ui, _, _) => ChangeLightness(ui, false)));
-                        Keybindings.Add((ColorSelector.additionalBindingsTrueColor[17], (ui, _, _) => ChangeSaturation(ui, false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[12], (ui, _, _) => ChangeHue(ui, true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[13], (ui, _, _) => ChangeLightness(ui, true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[14], (ui, _, _) => ChangeSaturation(ui, true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[15], (ui, _, _) => ChangeHue(ui, false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[16], (ui, _, _) => ChangeLightness(ui, false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[17], (ui, _, _) => ChangeSaturation(ui, false)));
                         break;
                     case ColorType.EightBitColor:
                     case ColorType.FourBitColor:
-                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[12], (ui, _, _) => ChangeColor(ui, true)));
-                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[13], (ui, _, _) => ChangeColor(ui, false)));
-                        Keybindings.Add((ColorSelector.additionalBindingsNormalColor[14], (ui, _, _) => ShowColorList(ui)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[12], (ui, _, _) => ChangeColor(ui, true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[13], (ui, _, _) => ChangeColor(ui, false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[14], (ui, _, _) => ShowColorList(ui)));
                         break;
                 }
             }
@@ -524,10 +524,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             Keybinding[] allBindings =
                 readOnly ?
-                [.. ColorSelector.bindings, ..ColorSelector.additionalBindingsGeneral] :
+                [.. ColorSelector.Bindings, ..ColorSelector.AdditionalBindingsGeneral] :
                 type == ColorType.TrueColor ?
-                [.. ColorSelector.bindings, ..ColorSelector.additionalBindingsTrueColor] :
-                [.. ColorSelector.bindings, ..ColorSelector.additionalBindingsNormalColor] ;
+                [.. ColorSelector.Bindings, ..ColorSelector.AdditionalBindingsTrueColor] :
+                [.. ColorSelector.Bindings, ..ColorSelector.AdditionalBindingsNormalColor] ;
             KeybindingTools.ShowKeybindingInfobox(allBindings);
             ui.RequireRefresh();
         }

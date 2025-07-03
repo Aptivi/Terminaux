@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Interactive.Selectors;
@@ -28,20 +29,22 @@ namespace Terminaux.Inputs.Styles.Selection
 {
     internal static class SelectionStyleBase
     {
-        internal static Keybinding[] showBindingsMultiple =
+        internal static Keybinding[] ShowBindingsMultiple =>
         [
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT"), ConsoleKey.Spacebar),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR"), ConsoleKey.S),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.K),
         ];
-        internal static Keybinding[] showBindings =
+
+        internal static Keybinding[] ShowBindings =>
         [
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR"), ConsoleKey.S),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.K),
         ];
-        internal static Keybinding[] bindings =
+
+        internal static Keybinding[] Bindings =>
         [
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS"), ConsoleKey.Escape),
@@ -59,15 +62,17 @@ namespace Terminaux.Inputs.Styles.Selection
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT"), ConsoleKey.P),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO"), ConsoleKey.Tab),
         ];
-        internal static Keybinding[] bindingsMultiple =
+
+        internal static Keybinding[] BindingsMultiple =>
         [
-            .. bindings,
+            .. Bindings,
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE"), ConsoleKey.Spacebar),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY"), ConsoleKey.A),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES"), ConsoleKey.A, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES"), ConsoleKey.A, ConsoleModifiers.Shift | ConsoleModifiers.Control),
         ];
-        internal static Keybinding[] bindingsMouse =
+
+        internal static Keybinding[] BindingsMouse =>
         [
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP"), PointerButton.WheelUp, PointerButtonPress.Scrolled),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN"), PointerButton.WheelDown, PointerButtonPress.Scrolled),

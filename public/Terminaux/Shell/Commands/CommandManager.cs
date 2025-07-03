@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Checks to see if the command is found in selected shell command type
         /// </summary>
-        /// <param name=LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD")>A command</param>
+        /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static bool IsCommandFound(string Command, string ShellType) =>
@@ -45,7 +45,7 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Checks to see if the command is found in all the shells
         /// </summary>
-        /// <param name=LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD")>A command</param>
+        /// <param name="Command">A command</param>
         /// <returns>True if found; False if not found.</returns>
         public static bool IsCommandFound(string Command)
         {
@@ -122,7 +122,7 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Gets a command, specified by the shell type
         /// </summary>
-        /// <param name=LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD")>A command</param>
+        /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static CommandInfo GetCommand(string Command, string ShellType)

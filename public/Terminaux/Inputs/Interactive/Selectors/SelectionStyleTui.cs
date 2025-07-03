@@ -191,7 +191,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Render keybindings
             var keybindingsRenderable = new Keybindings()
             {
-                KeybindingList = multiple ? SelectionStyleBase.showBindingsMultiple : SelectionStyleBase.showBindings,
+                KeybindingList = multiple ? SelectionStyleBase.ShowBindingsMultiple : SelectionStyleBase.ShowBindings,
                 Left = 0,
                 Top = ConsoleWrapper.WindowHeight - 1,
                 Width = ConsoleWrapper.WindowWidth - 1,
@@ -420,7 +420,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            Keybinding[] allBindings = multiple ? SelectionStyleBase.bindingsMultiple : SelectionStyleBase.bindings;
+            Keybinding[] allBindings = multiple ? SelectionStyleBase.BindingsMultiple : SelectionStyleBase.Bindings;
             KeybindingTools.ShowKeybindingInfobox(allBindings);
             ui.RequireRefresh();
         }
@@ -703,36 +703,36 @@ namespace Terminaux.Inputs.Interactive.Selectors
             highlightedAnswer = allAnswers.Any((ici) => ici.ChoiceDefault) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
 
             // Install keybindings
-            Keybindings.Add((SelectionStyleBase.bindings[0], (ui, _, _) => Exit(ui, false)));
-            Keybindings.Add((SelectionStyleBase.bindings[1], (ui, _, _) => Exit(ui, true)));
-            Keybindings.Add((SelectionStyleBase.bindings[2], GoUp));
-            Keybindings.Add((SelectionStyleBase.bindings[3], GoDown));
-            Keybindings.Add((SelectionStyleBase.bindings[4], GoFirst));
-            Keybindings.Add((SelectionStyleBase.bindings[5], GoLast));
-            Keybindings.Add((SelectionStyleBase.bindings[6], PreviousPage));
-            Keybindings.Add((SelectionStyleBase.bindings[7], NextPage));
-            Keybindings.Add((SelectionStyleBase.bindings[8], SearchPrompt));
-            Keybindings.Add((SelectionStyleBase.bindings[9], ShowcaseGoUp));
-            Keybindings.Add((SelectionStyleBase.bindings[10], ShowcaseGoDown));
-            Keybindings.Add((SelectionStyleBase.bindings[11], QuestionGoUp));
-            Keybindings.Add((SelectionStyleBase.bindings[12], QuestionGoDown));
-            Keybindings.Add((SelectionStyleBase.bindings[13], ShowCount));
-            Keybindings.Add((SelectionStyleBase.bindings[14], ShowItemInfo));
-            Keybindings.Add((SelectionStyleBase.showBindings[1], ShowSidebar));
-            Keybindings.Add((SelectionStyleBase.showBindings[2], Help));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[0], GoUp));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[1], GoDown));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[2], ProcessLeftClick));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[3], ShowItemInfo));
-            Keybindings.Add((SelectionStyleBase.bindingsMouse[4], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.Bindings[0], (ui, _, _) => Exit(ui, false)));
+            Keybindings.Add((SelectionStyleBase.Bindings[1], (ui, _, _) => Exit(ui, true)));
+            Keybindings.Add((SelectionStyleBase.Bindings[2], GoUp));
+            Keybindings.Add((SelectionStyleBase.Bindings[3], GoDown));
+            Keybindings.Add((SelectionStyleBase.Bindings[4], GoFirst));
+            Keybindings.Add((SelectionStyleBase.Bindings[5], GoLast));
+            Keybindings.Add((SelectionStyleBase.Bindings[6], PreviousPage));
+            Keybindings.Add((SelectionStyleBase.Bindings[7], NextPage));
+            Keybindings.Add((SelectionStyleBase.Bindings[8], SearchPrompt));
+            Keybindings.Add((SelectionStyleBase.Bindings[9], ShowcaseGoUp));
+            Keybindings.Add((SelectionStyleBase.Bindings[10], ShowcaseGoDown));
+            Keybindings.Add((SelectionStyleBase.Bindings[11], QuestionGoUp));
+            Keybindings.Add((SelectionStyleBase.Bindings[12], QuestionGoDown));
+            Keybindings.Add((SelectionStyleBase.Bindings[13], ShowCount));
+            Keybindings.Add((SelectionStyleBase.Bindings[14], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.ShowBindings[1], ShowSidebar));
+            Keybindings.Add((SelectionStyleBase.ShowBindings[2], Help));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[0], GoUp));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[1], GoDown));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[2], ProcessLeftClick));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[3], ShowItemInfo));
+            Keybindings.Add((SelectionStyleBase.BindingsMouse[4], ShowItemInfo));
 
             // Install mode-dependent keybindings
             if (multiple)
             {
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[15], ModifyChoice));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[16], (_, _, _) => ProcessSelectAll(1)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[17], (_, _, _) => ProcessSelectAll(2)));
-                Keybindings.Add((SelectionStyleBase.bindingsMultiple[18], (_, _, _) => ProcessSelectAll(3)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[15], ModifyChoice));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[16], (_, _, _) => ProcessSelectAll(1)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[17], (_, _, _) => ProcessSelectAll(2)));
+                Keybindings.Add((SelectionStyleBase.BindingsMultiple[18], (_, _, _) => ProcessSelectAll(3)));
             }
         }
     }

@@ -1,4 +1,4 @@
-//
+﻿//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -17,16 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using LocaleStation.Tools;
 using System;
-using Terminaux.Base;
+using System.Linq;
+using Terminaux.Localized;
+using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Shell.Commands
+namespace Terminaux.Console.Fixtures.Cases.Localization
 {
-    internal class UndefinedCommand : BaseCommand, ICommand
+    internal class Localize : IFixture
     {
-        public override void Execute(CommandParameters parameters)
+        public FixtureCategory Category => FixtureCategory.Localization;
+
+        public void RunFixture()
         {
-            throw new NotImplementedException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNDEFINED"));
+            TextWriterColor.Write("Selecting random language...");
+            var randomNumberGenerator = new Random();
+            int randomLangIdx = randomNumberGenerator.Next(LocalStrings.Languages.Count);
+            string language = LocalStrings.Languages.ElementAt(randomLangIdx).Key;
+            LanguageCommon.Language = language;
+            TextWriterColor.Write($"Selected language {language}");
         }
     }
 }

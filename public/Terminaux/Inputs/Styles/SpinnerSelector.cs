@@ -27,6 +27,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Interactive.Selectors;
 using Terminaux.Inputs.Interactive;
 using System.Reflection;
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -37,7 +38,8 @@ namespace Terminaux.Inputs.Styles
     {
         internal readonly static PropertyInfo[] builtinSpinners = typeof(BuiltinSpinners).GetProperties();
         internal readonly static string[] spinners = builtinSpinners.Select((pi) => pi.Name).ToArray();
-        internal readonly static Keybinding[] bindings =
+
+        internal static Keybinding[] Bindings =
         [
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV"), ConsoleKey.LeftArrow),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT"), ConsoleKey.RightArrow),
@@ -45,7 +47,8 @@ namespace Terminaux.Inputs.Styles
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL"), ConsoleKey.Escape),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H),
         ];
-        internal readonly static Keybinding[] additionalBindings =
+
+        internal static Keybinding[] AdditionalBindings =
         [
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT"), ConsoleKey.S),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT"), ConsoleKey.S, ConsoleModifiers.Shift),

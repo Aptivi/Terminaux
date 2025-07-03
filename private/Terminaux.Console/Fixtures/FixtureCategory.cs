@@ -34,5 +34,6 @@ namespace Terminaux.Console.Fixtures
         Image,
         Graphics,
         Shell,
+        Localization,
     }
 }

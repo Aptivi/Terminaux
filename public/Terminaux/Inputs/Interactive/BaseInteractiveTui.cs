@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.Interactive
 {

@@ -23,6 +23,7 @@ using Terminaux.Console.Fixtures.Cases.Graphics;
 using Terminaux.Console.Fixtures.Cases.Images;
 using Terminaux.Console.Fixtures.Cases.Inputs;
 using Terminaux.Console.Fixtures.Cases.Inputs.CJK;
+using Terminaux.Console.Fixtures.Cases.Localization;
 using Terminaux.Console.Fixtures.Cases.Presentations;
 using Terminaux.Console.Fixtures.Cases.Reader;
 using Terminaux.Console.Fixtures.Cases.Screens;
@@ -353,6 +354,12 @@ namespace Terminaux.Console.Fixtures
 
             // Shell
             new TestShell(),
+
+            // Localization
+            new Localize(),
+            new LocalizeDefault(),
+            new LocalizeInfer(),
+            new LocalizeManual(),
         ];
     }
 }

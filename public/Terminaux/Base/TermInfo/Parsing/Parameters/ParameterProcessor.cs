@@ -235,7 +235,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         replacements.Add((paramStrIdx, paramToken, ""));
                         string integerConstStr = paramToken.Substring(2, paramToken.Length - 3);
                         if (!int.TryParse(integerConstStr, out _))
-                            throw new TerminauxInternalException($LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST") + $" {integerConstStr}");
+                            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST") + $" {integerConstStr}");
                         popArgs.Enqueue(integerConstStr);
                         break;
                     case ParameterType.StringLength:

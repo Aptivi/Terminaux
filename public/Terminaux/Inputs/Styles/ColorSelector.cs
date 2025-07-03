@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -56,13 +57,14 @@ namespace Terminaux.Inputs.Styles
             { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta } },
         };
 
-        internal readonly static Keybinding[] bindings =
+        internal static Keybinding[] Bindings =>
         [
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL"), ConsoleKey.Escape),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H),
         ];
-        internal readonly static Keybinding[] additionalBindingsGeneral =
+
+        internal static Keybinding[] AdditionalBindingsGeneral =>
         [
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO"), ConsoleKey.I),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM"), ConsoleKey.N),
@@ -70,9 +72,10 @@ namespace Terminaux.Inputs.Styles
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ"), ConsoleKey.N, ConsoleModifiers.Control),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ"), ConsoleKey.M, ConsoleModifiers.Control),
         ];
-        internal readonly static Keybinding[] additionalBindingsReadWrite =
+
+        internal static Keybinding[] AdditionalBindingsReadWrite =>
         [
-            .. additionalBindingsGeneral,
+            .. AdditionalBindingsGeneral,
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR"), ConsoleKey.W),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS"), ConsoleKey.O),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY"), ConsoleKey.P),
@@ -81,9 +84,10 @@ namespace Terminaux.Inputs.Styles
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE"), PointerButton.WheelDown, PointerButtonPress.Scrolled),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE"), PointerButton.WheelUp, PointerButtonPress.Scrolled),
         ];
-        internal readonly static Keybinding[] additionalBindingsTrueColor =
+
+        internal static Keybinding[] AdditionalBindingsTrueColor =>
         [
-            .. additionalBindingsReadWrite,
+            .. AdditionalBindingsReadWrite,
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE"), ConsoleKey.LeftArrow),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS"), ConsoleKey.LeftArrow, ConsoleModifiers.Control),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION"), ConsoleKey.DownArrow),
@@ -91,9 +95,10 @@ namespace Terminaux.Inputs.Styles
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS"), ConsoleKey.RightArrow, ConsoleModifiers.Control),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION"), ConsoleKey.UpArrow),
         ];
-        internal readonly static Keybinding[] additionalBindingsNormalColor =
+
+        internal static Keybinding[] AdditionalBindingsNormalColor =>
         [
-            .. additionalBindingsReadWrite,
+            .. AdditionalBindingsReadWrite,
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR"), ConsoleKey.LeftArrow),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR"), ConsoleKey.RightArrow),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST"), ConsoleKey.L),

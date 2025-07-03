@@ -63,9 +63,9 @@ namespace Terminaux.Base.Extensions
                         if (split.Length != 2)
                             throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH").FormatString(i + 1, j + 1));
                         if (!int.TryParse(split[0], out int freq))
-                            throw new TerminauxException($LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY").FormatString(i + 1, j + 1));
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY").FormatString(i + 1, j + 1));
                         if (!int.TryParse(split[1], out int ms))
-                            throw new TerminauxException($LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION").FormatString(i + 1, j + 1));
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION").FormatString(i + 1, j + 1));
                         if (freq == 0)
                             Thread.Sleep(ms);
                         else

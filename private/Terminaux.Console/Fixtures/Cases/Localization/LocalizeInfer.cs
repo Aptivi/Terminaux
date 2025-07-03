@@ -1,4 +1,4 @@
-//
+﻿//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -17,16 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using Terminaux.Base;
+using LocaleStation.Tools;
+using System.Globalization;
+using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Shell.Commands
+namespace Terminaux.Console.Fixtures.Cases.Localization
 {
-    internal class UndefinedCommand : BaseCommand, ICommand
+    internal class LocalizeInfer : IFixture
     {
-        public override void Execute(CommandParameters parameters)
+        public FixtureCategory Category => FixtureCategory.Localization;
+
+        public void RunFixture()
         {
-            throw new NotImplementedException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_UNDEFINED"));
+            TextWriterColor.Write($"Selecting inferred language according to culture {CultureInfo.CurrentUICulture.Name}...");
+            string language = LanguageCommon.GetInferredLanguage("Terminaux");
+            LanguageCommon.Language = language;
+            TextWriterColor.Write($"Selected language {language}");
         }
     }
 }
