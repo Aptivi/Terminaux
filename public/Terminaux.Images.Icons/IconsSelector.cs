@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -39,20 +39,6 @@ namespace Terminaux.Images.Icons
     /// </summary>
     public static class IconsSelector
     {
-        private readonly static Keybinding[] bindings =
-        [
-            new("Previous", ConsoleKey.LeftArrow),
-            new("Next", ConsoleKey.RightArrow),
-            new("Submit", ConsoleKey.Enter),
-            new("Cancel", ConsoleKey.Escape),
-            new("Help", ConsoleKey.H),
-        ];
-        private readonly static Keybinding[] additionalBindings =
-        [
-            new("Select", ConsoleKey.S),
-            new("Manual Select", ConsoleKey.S, ConsoleModifiers.Shift),
-        ];
-
         /// <summary>
         /// Prompts the user for an icon
         /// </summary>
@@ -111,7 +97,7 @@ namespace Terminaux.Images.Icons
                         }.Render() +
                         new Keybindings()
                         {
-                            KeybindingList = bindings,
+                            KeybindingList = Bindings,
                             Left = 0,
                             Top = ConsoleWrapper.WindowHeight - 1,
                             Width = ConsoleWrapper.WindowWidth - 1,
@@ -184,21 +170,21 @@ namespace Terminaux.Images.Icons
                                 bool write = key.Modifiers.HasFlag(ConsoleModifiers.Shift);
                                 if (write)
                                 {
-                                    string promptedIconName = InfoBoxInputColor.WriteInfoBoxInput("Write the icon name. It'll be converted to lowercase.").ToLower();
+                                    string promptedIconName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT")).ToLower();
                                     if (!icons.Contains(promptedIconName))
-                                        InfoBoxModalColor.WriteInfoBoxModal("The icon doesn't exist.");
+                                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_NOICON"));
                                     else
                                         iconName = promptedIconName;
                                 }
                                 else
                                 {
-                                    selectedIcon = InfoBoxSelectionColor.WriteInfoBoxSelection("Icon selection", iconsSelections, "Select an icon from the list below");
+                                    selectedIcon = InfoBoxSelectionColor.WriteInfoBoxSelection(LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPTTITLE"), iconsSelections, LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPT"));
                                     iconName = icons[selectedIcon];
                                 }
                                 screen.RequireRefresh();
                                 break;
                             case ConsoleKey.H:
-                                Keybinding[] allBindings = [.. bindings, .. additionalBindings];
+                                Keybinding[] allBindings = [.. Bindings, .. AdditionalBindings];
                                 KeybindingTools.ShowKeybindingInfobox(allBindings);
                                 screen.RequireRefresh();
                                 break;
@@ -217,6 +203,21 @@ namespace Terminaux.Images.Icons
             }
             return cancel ? icon : iconName;
         }
+
+        private static Keybinding[] Bindings =>
+            [
+                new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_BINDINGS_PREVIOUS"), ConsoleKey.LeftArrow),
+                new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_BINDINGS_NEXT"), ConsoleKey.RightArrow),
+                new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_BINDINGS_SUBMIT"), ConsoleKey.Enter),
+                new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_BINDINGS_CANCEL"), ConsoleKey.Escape),
+                new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_BINDINGS_HELP"), ConsoleKey.H),
+            ];
+
+        private static Keybinding[] AdditionalBindings =>
+            [
+                new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_ADDITIONALBINDINGS_SELECT"), ConsoleKey.S),
+                new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_ADDITIONALBINDINGS_MANUALSELECT"), ConsoleKey.S, ConsoleModifiers.Shift),
+            ];
 
         static IconsSelector()
         {

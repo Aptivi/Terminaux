@@ -1,0 +1,29 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "wèi tígōng túpiàn lùjìng."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Wèi tígōng túpiàn zīliào."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Wèi tígōng túpiàn liú."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Wèi tígōng túpiàn."
+    }
+  ]
+}

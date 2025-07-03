@@ -1,0 +1,26 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Jalur gambar tidak disediakan."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Data gambar tidak disediakan."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Aliran gambar tidak disediakan."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Gambar tidak disediakan."
+    }
+  ]
+}

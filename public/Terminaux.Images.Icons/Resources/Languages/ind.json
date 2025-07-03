@@ -1,0 +1,62 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
+      "text": "aaikan {0} maujood nahin hai."
+    },
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
+      "text": "aaikan {0} maujood hai, lekin lod nahin ho paaya."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_PREVIOUS",
+      "text": "pichhala"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_NEXT",
+      "text": "agala"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_SUBMIT",
+      "text": "sabamit karen"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_CANCEL",
+      "text": "radd karen"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_HELP",
+      "text": "sahaayata"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_SELECT",
+      "text": "chunen"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_MANUALSELECT",
+      "text": "mainyual chayan karen"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT",
+      "text": "aaikan ka naam likhen. ise loarakes mein badal diya jaega."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_NOICON",
+      "text": "aaikan maujood nahin hai."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPT",
+      "text": "neeche dee gaee soochee se koee aaikan chunen"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPTTITLE",
+      "text": "aaikan chayan"
+    }
+  ]
+}

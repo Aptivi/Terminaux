@@ -1,0 +1,29 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Laluan imej tidak disediakan."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Data imej tidak disediakan."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Strim imej tidak disediakan."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Imej tidak disediakan."
+    }
+  ]
+}

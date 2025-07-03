@@ -1,0 +1,63 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
+      "text": "Níl an deilbhín {0} ann."
+    },
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
+      "text": "Tá an deilbhín {0} ann, ach níor éirigh leis a luchtú."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_PREVIOUS",
+      "text": "Roimhe Seo"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_NEXT",
+      "text": "Ar aghaidh"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_SUBMIT",
+      "text": "Cuir isteach"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_CANCEL",
+      "text": "Cealaigh"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_HELP",
+      "text": "Cabhrú"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_SELECT",
+      "text": "Roghnaigh"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_MANUALSELECT",
+      "text": "Roghnaigh Lámhleabhar"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT",
+      "text": "Scríobh an t-ainm deilbhín. Déanfar é a thiontú go cás íochtair."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_NOICON",
+      "text": "Níl an deilbhín ann."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPT",
+      "text": "Roghnaigh deilbhín ón liosta thíos"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPTTITLE",
+      "text": "Roghnú deilbhín"
+    }
+  ]
+}

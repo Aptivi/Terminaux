@@ -1,0 +1,32 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Afbeeldingspad is niet opgegeven."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Afbeeldingsgegevens zijn niet opgegeven."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Afbeeldingsstream is niet opgegeven."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Afbeelding is niet opgegeven."
+    }
+  ]
+}

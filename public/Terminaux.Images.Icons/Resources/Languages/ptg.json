@@ -1,0 +1,72 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
+      "text": "O ícone {0} não existe."
+    },
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
+      "text": "O ícone {0} existe, mas falhou o carregamento."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_PREVIOUS",
+      "text": "Anterior"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_NEXT",
+      "text": "Próximo"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_SUBMIT",
+      "text": "Enviar"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_CANCEL",
+      "text": "Cancelar"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_HELP",
+      "text": "Ajuda"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_SELECT",
+      "text": "Selecionar"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_MANUALSELECT",
+      "text": "Seleção Manual"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT",
+      "text": "Escreva o nome do ícone. Será convertido para letras minúsculas."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_NOICON",
+      "text": "O ícone não existe."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPT",
+      "text": "Selecione um ícone da lista abaixo"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPTTITLE",
+      "text": "Seleção de ícone"
+    }
+  ]
+}

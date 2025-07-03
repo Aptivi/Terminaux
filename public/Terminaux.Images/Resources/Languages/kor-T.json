@@ -1,0 +1,27 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "이미지 경로가 제공되지 않았습니다."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "이미지 데이터가 제공되지 않았습니다."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "이미지 스트림이 제공되지 않았습니다."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "이미지가 제공되지 않았습니다."
+    }
+  ]
+}

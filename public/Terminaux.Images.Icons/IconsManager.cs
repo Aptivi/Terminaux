@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -50,13 +50,13 @@ namespace Terminaux.Images.Icons
             // Check for icon
             string[] iconNames = GetIconNames(color);
             if (!iconNames.Contains(iconName))
-                throw new TerminauxException($"Icon {iconName} doesn't exist.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON"), iconName);
 
             // Now, get the fully qualified name of the icon and render it
             string iconFullyQualifiedName = BuildFullyQualifiedIconName(iconName, color);
             ConsoleLogger.Info("Got icon fully qualified name {0} from {1}, {2}, {3}", iconFullyQualifiedName, iconName, color);
             var stream = typeof(IconsManager).Assembly.GetManifestResourceStream(iconFullyQualifiedName) ??
-                throw new TerminauxException($"Icon {iconName} exists, but failed to load.");
+                throw new TerminauxException(LanguageTools.GetLocalized("TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR"), iconName);
             return ImageProcessor.RenderImage(stream, width, height, left, top, background);
         }
 

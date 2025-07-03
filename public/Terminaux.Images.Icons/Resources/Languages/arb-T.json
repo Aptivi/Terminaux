@@ -1,0 +1,88 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
+      "text": "الأيقونة {0} غير موجودة."
+    },
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
+      "text": "الأيقونة {0} موجودة، ولكن لم يتم تحميلها."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_PREVIOUS",
+      "text": "السابق"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_NEXT",
+      "text": "التالي"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_SUBMIT",
+      "text": "إرسال"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_CANCEL",
+      "text": "إلغاء"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_HELP",
+      "text": "مساعدة"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_SELECT",
+      "text": "اختيار"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_MANUALSELECT",
+      "text": "اختيار يدوي"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT",
+      "text": "اكتب اسم الأيقونة. سيتم تحويله إلى أحرف صغيرة."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_NOICON",
+      "text": "الأيقونة غير موجودة."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPT",
+      "text": "اختر أيقونة من القائمة أدناه"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPTTITLE",
+      "text": "اختيار الأيقونة"
+    }
+  ]
+}

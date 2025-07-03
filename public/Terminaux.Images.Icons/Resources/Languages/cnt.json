@@ -1,0 +1,65 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
+      "text": "Tú shì {0} bù cúnzài."
+    },
+    {
+      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
+      "text": "Tú shì {0} cúnzài, dàn zài rù shībài."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_PREVIOUS",
+      "text": "Shàng yīgè"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_NEXT",
+      "text": "xià yīgè"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_SUBMIT",
+      "text": "tíjiāo"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_CANCEL",
+      "text": "qǔxiāo"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_BINDINGS_HELP",
+      "text": "bāngzhù"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_SELECT",
+      "text": "xuǎnzé"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_ADDITIONALBINDINGS_MANUALSELECT",
+      "text": "shǒudòng xuǎnzé"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT",
+      "text": "qǐng shūrù tú shì míngchēng. Tā jiāng bèi zhuǎnhuàn wèi xiǎoxiě."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_NOICON",
+      "text": "Gāi tú shì bù cúnzài."
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPT",
+      "text": "Cóng yǐxià qīngdān zhòng xuǎnzé yīgè túbiāo"
+    },
+    {
+      "loc": "TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONPROMPTTITLE",
+      "text": "tú shì xuǎnzé"
+    }
+  ]
+}

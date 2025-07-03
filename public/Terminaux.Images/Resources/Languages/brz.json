@@ -1,0 +1,25 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLPATH",
+      "text": "Caminho da imagem não fornecido."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA",
+      "text": "Dados da imagem não fornecidos."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLSTREAM",
+      "text": "Fluxo de imagens não fornecido."
+    },
+    {
+      "loc": "TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE",
+      "text": "Imagem não fornecida."
+    }
+  ]
+}
