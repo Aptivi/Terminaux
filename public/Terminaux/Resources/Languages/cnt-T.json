@@ -2884,6 +2884,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "這些坡道適合您嗎？他們應該順利過渡。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "黑色等級超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "CMYK 顏色說明符「{0}」無效。該說明符不能超過四個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "無法取得顏色資料。"
     }
   ]
 }

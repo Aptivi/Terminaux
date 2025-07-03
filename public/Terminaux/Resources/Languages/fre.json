@@ -2927,6 +2927,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Ces rampes vous conviennent-elles ? Ils devraient faire une transition en douceur."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Le niveau de couleur noire est hors de portée (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Spécificateur de couleur CMJN « {0} » non valide. Ce spécificateur ne doit pas comporter plus de quatre éléments. Assurez-vous qu'il est au bon format."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Impossible d'obtenir les données de couleur."
     }
   ]
 }

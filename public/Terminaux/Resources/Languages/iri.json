@@ -2882,6 +2882,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "An bhfeiceann na rampaí seo ceart duitse? Ba chóir dóibh aistriú go réidh."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Tá an leibhéal datha dubh lasmuigh den raon (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Sonraitheoir datha CMYK neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná ceithre eilimint a bheith sa shonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Ní féidir sonraí datha a fháil."
     }
   ]
 }

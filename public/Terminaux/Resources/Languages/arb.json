@@ -2907,6 +2907,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "hl tbdū hḏh al-mnḥdrāt mnāsbẗ lk? īǧb an īntqlwā bslāsẗ."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "mustawaa allawn al'aswad kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "muhadad lawn CMYK ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad 'arbaeat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "la yumkin alhusul ealaa bayanat alluwni."
     }
   ]
 }

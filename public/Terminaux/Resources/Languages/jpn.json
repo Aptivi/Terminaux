@@ -2881,6 +2881,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "これらのスロープはあなたにぴったりだと思いますか? スムーズに移行できるはずです。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "黒色レベルが範囲外です (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "CMYKカラー指定子「{0}」が無効です。指定子は4要素以下にする必要があります。正しい形式であることを確認してください。"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "色データを取得できません。"
     }
   ]
 }

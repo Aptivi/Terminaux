@@ -2885,6 +2885,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "zhè xiē pō dào shì hé nín má ？ tā mén yīng gāi shùn lì guò dù 。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Hēisè sè jiē chāochū fànwéi (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "CMYK yánsè shuōmíng fú “{0}” wúxiào. Shuōmíng fú bùdé chāoguò sì gè yuánsù. Qǐng quèbǎo qí géshì zhèngquè."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Wúfǎ huòqǔ yánsè shùjù."
     }
   ]
 }

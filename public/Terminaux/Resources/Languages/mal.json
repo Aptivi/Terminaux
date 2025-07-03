@@ -2884,6 +2884,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Adakah tanjakan ini kelihatan betul kepada anda? Mereka harus beralih dengan lancar."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Tahap warna hitam berada di luar julat (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Penentu warna CMYK tidak sah \"{0}\". Penentu mungkin tidak lebih daripada empat elemen. Pastikan ia berada pada format yang betul"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Tidak dapat data warna."
     }
   ]
 }

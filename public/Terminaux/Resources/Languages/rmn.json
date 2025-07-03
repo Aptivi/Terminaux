@@ -2882,6 +2882,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Aceste rampe vi se par corect? Ar trebui să tranzițieze fără probleme."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Nivelul de culoare neagră este în afara intervalului (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Specificator de culoare CMYK nevalid „{0}”. Specificatorul nu poate avea mai mult de patru elemente. Asigurați-vă că are formatul corect."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Nu se pot obține date despre culoare."
     }
   ]
 }

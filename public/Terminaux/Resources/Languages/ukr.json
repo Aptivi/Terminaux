@@ -2881,6 +2881,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Ці пандуси здаються вам правильними? Вони повинні переходити плавно."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Рівень чорного кольору поза діапазоном (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Недійсний специфікатор кольору CMYK \"{0}\". Специфікатор не може містити більше чотирьох елементів. Переконайтеся, що він у правильному форматі."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Не вдається отримати дані про колір."
     }
   ]
 }

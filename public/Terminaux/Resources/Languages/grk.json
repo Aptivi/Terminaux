@@ -2882,6 +2882,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Σου φαίνονται σωστές αυτές οι ράμπες; Θα πρέπει να μεταβούν ομαλά."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Η στάθμη μαύρου χρώματος είναι εκτός εύρους (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Μη έγκυρος προσδιοριστής χρώματος CMYK \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τέσσερα στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Δεν είναι δυνατή η λήψη δεδομένων χρώματος."
     }
   ]
 }

@@ -2882,6 +2882,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "이 경사로가 당신에게 딱 맞는 것 같나요? 원활하게 전환되어야 합니다."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "검은색 레벨이 범위를 벗어났습니다(0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "CMYK 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 지정자는 4개 요소를 초과할 수 없습니다. 올바른 형식을 사용하고 있는지 확인하세요."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "색상 데이터를 가져올 수 없습니다."
     }
   ]
 }

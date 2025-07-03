@@ -2884,6 +2884,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Queste rampe ti sembrano adatte? Dovrebbero passare senza intoppi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Il livello del colore nero è fuori intervallo (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Specificatore di colore CMYK \"{0}\" non valido. Lo specificatore non può contenere più di quattro elementi. Assicurarsi che sia nel formato corretto."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Impossibile ottenere i dati sul colore."
     }
   ]
 }

@@ -21,6 +21,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 
+#if !GENERATOR
+using Terminaux.Base;
+#endif
+
 namespace Terminaux.Colors.Data
 {
     /// <summary>
@@ -62,7 +66,11 @@ namespace Terminaux.Colors.Data
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             var color = value as ConsoleColorData ??
+#if GENERATOR
                 throw new Exception("Can't get color data.");
+#else
+                throw new Exception(LanguageTools.GetLocalized("T_COLOR_DATA_EXCEPTION_COLORNODATA"));
+#endif
             serializer.Serialize(writer, $"{color.RGB.R};{color.RGB.G};{color.RGB.B}");
         }
     }

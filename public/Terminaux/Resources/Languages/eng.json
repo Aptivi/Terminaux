@@ -2987,6 +2987,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Do these ramps look right to you? They should transition smoothly."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "The black color level is out of range (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Invalid CMYK color specifier \"{0}\". The specifier may not be more than four elements. Ensure that it's on the correct format"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Can't get color data."
     }
   ]
 }

@@ -2882,6 +2882,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Bu rampalar size doğru görünüyor mu? Sorunsuz bir şekilde geçiş yapmalılar."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Siyah renk seviyesi aralık dışında (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Geçersiz CMYK renk belirteci \"{0}\". Belirteç dört öğeden fazla olamaz. Doğru biçimde olduğundan emin olun"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Renk verisi alınamıyor."
     }
   ]
 }

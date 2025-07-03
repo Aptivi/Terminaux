@@ -2881,6 +2881,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "kya ye raimp aapako sahee lagate hain? unhen suchaaroo roop se sankraman karana chaahie."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "kaala rang star seema se baahar hai (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "amaany chmyk rang vinirdeshak \"{0}\". vinirdeshak chaar tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "rang deta praapt nahin kiya ja sakata."
     }
   ]
 }

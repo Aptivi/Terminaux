@@ -2906,6 +2906,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "¿Te parecen bien estas rampas? Deberían realizar una transición sin problemas."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "El nivel de color negro está fuera de rango (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "El especificador de color CMYK \"{0}\" no es válido. El especificador no puede tener más de cuatro elementos. Asegúrese de que tenga el formato correcto."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "No se pueden obtener datos de color."
     }
   ]
 }

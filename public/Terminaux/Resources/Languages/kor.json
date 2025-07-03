@@ -2882,6 +2882,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "i gyeongsaroga dangsinege ttak majneun geot gatnayo? wonhwalhage jeonhwandoeeoya hapnida."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "geom-eunsaeg saegsang lebel-i beom-wileul beos-eonassseubnida(0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "jalmosdoen CMYK saegsang jijeongja \"{0}\"ibnida. jijeongjaneun ne gae isang-ui yosoleul pohamhal su eobs-seubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "saegsang deiteoleul gajyeool su eobs-seubnida."
     }
   ]
 }

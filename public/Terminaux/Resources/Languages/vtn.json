@@ -2881,6 +2881,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Những đoạn đường dốc này có phù hợp với bạn không? Chúng phải chuyển tiếp một cách trơn tru."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Mức độ màu đen nằm ngoài phạm vi (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Chỉ định màu CMYK không hợp lệ \"{0}\". Chỉ định màu không được quá bốn phần tử. Đảm bảo rằng nó ở đúng định dạng"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Không lấy được dữ liệu màu."
     }
   ]
 }

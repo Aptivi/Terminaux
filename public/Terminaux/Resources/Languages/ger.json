@@ -2890,6 +2890,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Sehen diese Rampen für Sie richtig aus? Der Übergang sollte reibungslos erfolgen."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Der Schwarzfarbpegel liegt außerhalb des Bereichs (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Ungültiger CMYK-Farbspezifizierer \"{0}\". Der Spezifizierer darf nicht mehr als vier Elemente umfassen. Stellen Sie sicher, dass er das richtige Format hat."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Farbdaten können nicht abgerufen werden."
     }
   ]
 }

@@ -2880,6 +2880,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Essas rampas parecem certas para você? Elas devem fazer uma transição suave."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "O nível da cor preta está fora do intervalo (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Especificador de cor CMYK inválido \"{0}\". O especificador não pode ter mais de quatro elementos. Certifique-se de que esteja no formato correto."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Não é possível obter dados de cores."
     }
   ]
 }

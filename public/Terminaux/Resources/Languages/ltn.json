@@ -2881,6 +2881,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Hos aggeres spectare tibi fas? Debent transitum blande."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Gradus coloris nigri extra ambitum est (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Specificator coloris CMYK \"{0}\" invalidus. Specificator non plus quam quattuor elementa continere potest. Fac ut in formato correcto sit."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Data colorum accipere non possum."
     }
   ]
 }

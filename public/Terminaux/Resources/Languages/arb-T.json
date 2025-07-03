@@ -2907,6 +2907,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "هل تبدو هذه المنحدرات مناسبة لك؟ يجب أن ينتقلوا بسلاسة."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "مستوى اللون الأسود خارج النطاق (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "مُحدِّد لون CMYK غير صالح \"{0}\". لا يجب أن يتجاوز المُحدِّد أربعة عناصر. تأكد من أنه بالتنسيق الصحيح."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "لا يمكن الحصول على بيانات الألوان."
     }
   ]
 }

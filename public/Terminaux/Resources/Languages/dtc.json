@@ -2887,6 +2887,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Zien deze opritten er goed uit voor jou? Ze moeten soepel overgaan."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Het zwarte kleurniveau ligt buiten het bereik (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Ongeldige CMYK-kleurspecificatie \"{0}\". De specificatie mag niet meer dan vier elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Kan geen kleurgegevens ophalen."
     }
   ]
 }

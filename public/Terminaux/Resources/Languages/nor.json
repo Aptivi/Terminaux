@@ -2885,6 +2885,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Ser disse rampene riktig ut for deg? De bør gå jevnt over."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Svartfargenivået er utenfor rekkevidden (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Ugyldig CMYK-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn fire elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Kan ikke hente fargedata."
     }
   ]
 }

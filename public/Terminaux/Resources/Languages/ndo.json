@@ -2881,6 +2881,18 @@
     {
       "loc": "T_COLOR_COLORTEST_QUESTION",
       "text": "Apakah jalur landai ini terlihat tepat menurut Anda? Jalur landai ini seharusnya dapat bergerak dengan lancar."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Tingkat warna hitam berada di luar rentang (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Penentu warna CMYK \"{0}\" tidak valid. Penentu tidak boleh lebih dari empat elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Tidak bisa mendapatkan data warna."
     }
   ]
 }
