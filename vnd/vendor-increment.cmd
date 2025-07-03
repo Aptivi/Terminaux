@@ -20,5 +20,5 @@ REM Change the below files
 set "releaseFiles="%ROOTDIR%\Directory.Build.props" "%ROOTDIR%\CHANGES.TITLE""
 for %%f in (%releaseFiles%) do (
     echo Processing %%f...
-    powershell -Command "& %ROOTDIR%\vnd\eng\incrementor.ps1 '%%f' '%oldVer%' '%newVer%'"
+    powershell -Command "& '%ROOTDIR%\vnd\eng\incrementor.ps1' '%%f' '%oldVer%' '%newVer%'"
 )
