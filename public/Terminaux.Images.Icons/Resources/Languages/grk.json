@@ -8,10 +8,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "Το εικονίδιο {0} δεν υπάρχει."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "Το εικονίδιο {0} υπάρχει, αλλά απέτυχε να φορτώσει."
     },

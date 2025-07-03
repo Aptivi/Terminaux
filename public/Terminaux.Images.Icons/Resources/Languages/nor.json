@@ -11,10 +11,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "Ikonet {0} eksisterer ikke."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "Ikonet {0} finnes, men kunne ikke lastes inn."
     },

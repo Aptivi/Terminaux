@@ -318,7 +318,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // Now, prompt for the replacement line
-            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a byte or a group of bytes separated by whitespaces. It can be from 00 to FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInputColorBack(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT") + " 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
             byte[] refBytes;
 
             // See if we have a cached find if the user didn't provide any string to find
@@ -547,7 +547,7 @@ namespace Terminaux.Inputs.Styles.Editor
             else if (EndByte > FileByte.LongLength)
                 throw new ArgumentOutOfRangeException(nameof(EndByte), EndByte, LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1"));
             else
-                throw new ArgumentOutOfRangeException($"The specified byte number is invalid. {StartByte}, {EndByte}");
+                throw new ArgumentOutOfRangeException(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER") + $" {StartByte}, {EndByte}");
         }
     }
 }

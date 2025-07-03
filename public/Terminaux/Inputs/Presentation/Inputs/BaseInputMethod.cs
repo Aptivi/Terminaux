@@ -74,6 +74,6 @@ namespace Terminaux.Inputs.Presentation.Inputs
         /// </summary>
         /// <exception cref="TerminauxException"></exception>
         public virtual void PromptInput() =>
-            throw new TerminauxInternalException("Not implemented yet");
+            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_EXCEPTION_NOTIMPLEMENTED"));
     }
 }

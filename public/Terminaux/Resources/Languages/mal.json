@@ -78,10 +78,6 @@
       "text": "Aplikasi ini menggunakan ciri konsol lanjutan yang disediakan oleh Terminaux yang memerlukan ciri yang tidak disokong oleh terminal \"bodoh\"."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Penyelesaian yang mungkin: Gunakan emulator terminal yang sesuai atau rujuk tetapan terminal anda untuk menetapkan jenis terminal kepada sesuatu selain daripada \"bodoh\". Kami mengesyorkan menggunakan emulator terminal \"vt100\" untuk memanfaatkan sepenuhnya aplikasi ini."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
       "text": "Pengguna cuba menjalankan aplikasi Terminaux pada jenis terminal yang disenaraihitamkan."
     },
@@ -168,22 +164,6 @@
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
       "text": "Tiada ungkapan dalam penapis konsol."
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "Tidak dapat memulihkan atribut termios baharu untuk mod mentah: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "Tidak boleh mendapatkan bendera deskriptor fail: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "Tidak dapat menetapkan bendera deskriptor fail kepada bacaan tidak menyekat: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "Tidak dapat menetapkan bendera deskriptor fail kepada menyekat bacaan: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
@@ -346,6 +326,10 @@
       "text": "Warna di luar julat."
     },
     {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Tidak dapat data warna."
+    },
+    {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
       "text": "Adakah anda pasti bahawa kecerunan ini bukan nol?"
     },
@@ -442,10 +426,6 @@
       "text": "Tidak boleh menukar kepada CieLch."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "Tidak boleh menukar kepada HWB."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
       "text": "Tidak boleh menukar daripada RGB."
     },
@@ -502,10 +482,6 @@
       "text": "Tidak boleh menukar contoh RGB null kepada CieLch!"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "Tidak boleh menukar contoh RGB nol kepada HWB!"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
       "text": "Tidak dapat menukar contoh CMYK nol kepada RGB!"
     },
@@ -556,10 +532,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
       "text": "Tidak boleh menukar contoh CieLch nol kepada RGB!"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "Tidak boleh menukar contoh HWB nol kepada RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
@@ -678,6 +650,14 @@
       "text": "Penentu warna CMYK tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
     },
     {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Tahap warna hitam berada di luar julat (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Penentu warna CMYK tidak sah \"{0}\". Penentu mungkin tidak lebih daripada empat elemen. Pastikan ia berada pada format yang betul"
+    },
+    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Penentu warna HSL tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
     },
@@ -708,22 +688,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
       "text": "Penentu warna HSV tidak sah \"{0}\". Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "Penentu warna HWB tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "Tahap keputihan berada di luar julat (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "Tahap kehitaman berada di luar julat (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "Penentu warna HWB tidak sah \"{0}\". Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
@@ -870,6 +834,62 @@
       "text": "Penentu warna YXY tidak sah \"{0}\". Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul"
     },
     {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
+      "text": "Tiada nama komponen dinyatakan."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
+      "text": "Tiada warna ditentukan untuk komponen {0}."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
+      "text": "Komponen {0} sudah wujud."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
+      "text": "Komponen {0} tidak wujud."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
+      "text": "Komponen {0} dipratentukan dan oleh itu tidak boleh dialih keluar."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
+      "text": "Templat tidak mempunyai komponen."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
+      "text": "Templat tidak mempunyai komponen pratakrif yang mesti ditakrifkan ({0})."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "Tiada nama templat disediakan."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
+      "text": "Tidak dapat mencari templat {0}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
+      "text": "Tidak dapat mencari komponen {0} dalam templat {1}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
+      "text": "Templat tidak sah."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
+      "text": "Templat tidak mempunyai nama."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
+      "text": "Templat sudah wujud."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
+      "text": "Tidak dapat mengalih keluar templat terbina dalam {0}"
+    },
+    {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
       "text": "Jenis warna tidak sah"
     },
@@ -914,48 +934,24 @@
       "text": "Cari Seterusnya"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "Bergerak Ke Atas"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
       "text": "Naik satu elemen"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "Bergerak ke Bawah"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
       "text": "Turun satu elemen"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "Halaman Sebelumnya"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
       "text": "Pergi ke halaman sebelumnya"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "Halaman Seterusnya"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
       "text": "Pergi ke halaman seterusnya"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "Pergi ke Permulaan"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
       "text": "Pergi ke elemen pertama"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "Pergi ke Ending"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
@@ -1170,10 +1166,6 @@
       "text": "Maju"
     },
     {
-      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "Halaman pembentangan ini memerlukan input berikut untuk dipenuhi sebelum boleh maju ke halaman seterusnya."
-    },
-    {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
       "text": "Input diperlukan"
     },
@@ -1208,14 +1200,6 @@
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
       "text": "jawapan salah. Sila cuba lagi."
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "Bergerak ke Kiri"
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "Bergerak Kanan"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
@@ -1302,10 +1286,6 @@
       "text": "Maklumat nombor"
     },
     {
-      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "Kandungan kosong"
-    },
-    {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
       "text": "Nombor bait permulaan yang ditentukan mungkin tidak lebih besar daripada saiz fail."
     },
@@ -1360,14 +1340,6 @@
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
       "text": "Talian Baharu"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "Ruang belakang"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "Padam"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
@@ -1446,26 +1418,6 @@
       "text": "Ditutup tanpa menyerahkan nilai"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "Melakukan tindakan atau memilih pilihan"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "Mengurangkan nilai atau mengalihkan tiga baris teks ke atas"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "Menambah nilai atau memindahkan tiga baris teks ke bawah"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "Pilihan sebelumnya atau tiga baris teks sebelumnya"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "Pilihan seterusnya atau tiga baris teks seterusnya"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
       "text": "Mengurangkan nilai semasa"
     },
@@ -1482,28 +1434,12 @@
       "text": "Menetapkan nilai kepada nilai maksimum"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "Menetapkan fokus semasa kepada elemen nilai seterusnya"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "Menetapkan fokus semasa kepada elemen nilai sebelumnya"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
       "text": "Pergi ke butang sebelumnya"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
       "text": "Pergi ke butang seterusnya"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "Butang sebelumnya atau tiga baris teks sebelumnya"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "Butang seterusnya atau tiga baris teks seterusnya"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
@@ -1520,34 +1456,6 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
       "text": "Menutup kotak maklumat modal"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "Melakukan sesuatu tindakan"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "Tiga baris teks sebelumnya"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "Tiga baris teks seterusnya"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "Pergi ke halaman input sebelumnya"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "Pergi ke halaman input seterusnya"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "Mencari input"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "Menukar nilai input yang dipilih"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
@@ -1606,16 +1514,8 @@
       "text": "Bar sisi"
     },
     {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "Lagi"
-    },
-    {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
       "text": "Mengesahkan pilihan"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "Menukar nilai yang dipilih (butang radio)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
@@ -1688,14 +1588,6 @@
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
       "text": "Memilih semua elemen dalam semua kumpulan dalam semua kategori"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "Pergi ke barisan satu elemen atau pameran"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "Menurun satu elemen atau baris pameran"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
@@ -2015,7 +1907,7 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
-      "text": "Alias tidak boleh sama dengan nama perintah."
+      "text": "Alias ​​tidak boleh sama dengan nama perintah."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
@@ -2023,15 +1915,15 @@
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
-      "text": "Alias sudah jumpa"
+      "text": "Alias ​​sudah jumpa"
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
-      "text": "Alias {0} tidak didapati dialih keluar."
+      "text": "Alias ​​{0} tidak didapati dialih keluar."
     },
     {
       "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
-      "text": "Alias {0} tidak ditemui untuk ditanya."
+      "text": "Alias ​​{0} tidak ditemui untuk ditanya."
     },
     {
       "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
@@ -2203,7 +2095,7 @@
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
-      "text": "Alias memerintahkan:"
+      "text": "Alias ​​memerintahkan:"
     },
     {
       "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
@@ -2334,26 +2226,6 @@
       "text": "Format awal tidak boleh mencetak sebarang teks; ia mesti mengandungi hanya pemformatan urutan VT."
     },
     {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "Tiada fail Asciicast"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "Tidak boleh menyahsiri perwakilan Asciicast asas"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "Tidak boleh menyahsiri perwakilan Asciicast v1"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "Tidak dapat menyahsiri perwakilan Asciicast v2"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "Tidak boleh mendapatkan maklumat acara"
-    },
-    {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
       "text": "Ikatan kekunci yang tersedia"
     },
@@ -2398,492 +2270,40 @@
       "text": "Semua pemutar harus mempunyai lebar yang sama."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
-      "text": "Menaikkan satu elemen input"
+      "loc": "T_INPUT_EXCEPTION_READPOINTERFAILED",
+      "text": "Gagal membaca penunjuk."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
-      "text": "Menurunkan satu elemen input"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION",
+      "text": "Soalan belum diberikan."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
-      "text": "Pergi ke input pertama"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
+      "text": "Pilihan tidak dinyatakan"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
-      "text": "Pergi ke input terakhir"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "Nama templat tidak diberikan"
     },
     {
-      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Menetapkan nilai output kepada pembolehubah MESH yang dipilih"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",
+      "text": "Komponen tidak disediakan, tetapi senarai ini boleh kosong untuk penambahan dinamik."
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "Tidak boleh mendapatkan parameter benang untuk pelaksanaan proses."
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER",
+      "text": "Tanda papan kekunci untuk masuk tidak wujud dalam manifes"
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
-      "text": "Ralat semasa cuba melaksanakan arahan"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT",
+      "text": "Petunjuk papan kekunci untuk rubout tidak wujud dalam manifes"
     },
     {
-      "loc": "T_COMMON_ERRORDESC",
-      "text": "Ralat {0}: {1}"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING",
+      "text": "Tanda papan kekunci untuk menulis tidak wujud dalam manifes"
     },
     {
-      "loc": "T_SHELL_BASE_OBSOLETECMD",
-      "text": "Perintah ini sudah lapuk dan akan dialih keluar dalam keluaran akan datang."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Perintah wrappable tidak dijumpai."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "Anda tidak boleh langsung melaksanakan arahan ini dalam mod berbalut."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
-      "text": "Perintah itu tidak boleh dibalut. Perintah ini boleh dibalut:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Ralat berlaku semasa cuba membungkus output arahan"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Tidak dapat menimbal perintah yang tidak ditetapkan sebagai boleh dibalut."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "Anda tidak boleh mengisytiharkan blok baharu sebelum anda meletakkan ungkapan yang menyokong penciptaan, seperti syarat atau gelung. Nombor tindanan ialah {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Apabila memulakan blok baharu, pastikan anda telah mengesot tindanan dengan betul. Nombor tindanan ialah {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "Skrip rosak. Semak skrip dan selesaikan sebarang ralat: {0}"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "Keadaan itu tidak ditemui dalam ungkapan."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "Syarat {0} memerlukan {1} argumen. Mendapat {2}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "Syarat itu perlu diletakkan pada akhirnya."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Ralat menghuraikan ungkapan kerana ralat sintaks."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "Tidak dapat mendaftarkan syarat yang telah wujud."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "Tidak boleh mendaftar syarat kosong."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "Jenis data {0} yang dinyatakan adalah tidak sah."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "Platform {0} yang ditentukan adalah tidak sah."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Pelaksanaan arahan sumber gagal."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Pelaksanaan arahan sasaran gagal. Kandungan mungkin tidak diisi dengan betul. Perintah dilaksanakan ialah"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
-      "text": "Paip rosak."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Bilangan kali tidak sah."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "Tidak boleh mengulangi diri sendiri."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Perintah yang boleh dibalut:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Peringatan untuk arahan slash"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
-      "text": "Melaksanakan proses luaran"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Laluan ke proses"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Hujah untuk diteruskan ke proses"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
-      "text": "Melaksanakan proses tanpa mengganggu benang shell. Tetingkap berasingan akan dibuat."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Perintah untuk menunjukkan kemasukan bantuan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
-      "text": "Memuatkan sejarah cangkang"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
-      "text": "Paipkan output arahan ke arahan lain sebagai parameter"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Perintah sumber untuk menyalurkan outputnya ke arahan sasaran sebagai parameter terakhir"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Arahan sasaran untuk dilaksanakan semasa membina hujah berdasarkan output arahan sumber"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Sama ada untuk meluluskan output arahan sumber sebagai satu hujah yang dipetik atau hujah yang tidak disebut"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
-      "text": "Mengulangi tindakan terakhir atau arahan yang ditentukan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Arahan sasaran untuk dilaksanakan semasa membina hujah berdasarkan output arahan sumber"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
-      "text": "Menyimpan sejarah shell"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
-      "text": "Membungkus output konsol"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Perintah untuk membalut keluarannya"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
-      "text": "Ralat semasa cuba melaksanakan skrip: {0}"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Melaksanakan arahan setelah ungkapan MESH berpuas hati"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
-      "text": "Ungkapan MESH untuk diuji"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Perintah untuk melaksanakan apabila penilaian berjaya"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
-      "text": "di mana <answers> ialah jawapan satu huruf bagi soalan yang dipisahkan dalam garis miring"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
-      "text": "Anda mesti lulus suis -set dengan pembolehubah yang anda mahu tetapkan nilai ini."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
-      "text": "Membuat pilihan pengguna"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Jawapan untuk berpecah dengan garis miring"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Soalan untuk dicetak ke skrin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Tajuk jawapan pertama"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Tajuk jawapan kedua, dan seterusnya..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
-      "text": "Gaya pilihan satu baris"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
-      "text": "Gaya pilihan dua baris"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
-      "text": "Gaya pilihan moden"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "Output hanya boleh menjadi satu aksara"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "Output boleh lebih daripada satu aksara"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CLS_DESC",
-      "text": "Membersihkan skrin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
-      "text": "Menulis teks ke dalam konsol"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "Rentetan untuk dicetak"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "Mencetak teks seperti sedia ada tanpa penghuraian pemegang tempat"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Memotong cangkerang MESH untuk mencipta contoh lain"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
-      "text": "Membenarkan pengguna memasukkan input"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Soalan untuk dicetak ke skrin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
-      "text": "Membenarkan pengguna memasukkan input sebagai kata laluan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
-      "text": "Menunjukkan tarikh dan masa"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
-      "text": "Hanya menunjukkan tarikh"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
-      "text": "Menunjukkan masa sahaja"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
-      "text": "Menggunakan UTC dan bukannya tempatan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
-      "text": "Menyediakan pilihan pilihan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Jawapan untuk berpecah dengan garis miring"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Soalan untuk dicetak ke skrin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Tajuk jawapan pertama"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Tajuk jawapan kedua, dan seterusnya..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_DESC",
-      "text": "Menetapkan pembolehubah kepada nilai dalam skrip"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
-      "text": "Nilai untuk ditetapkan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
-      "text": "Mencipta tatasusunan pembolehubah dengan nilai yang disediakan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "Nilai pertama"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "Nilai kedua"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "Nilai ketiga, dan seterusnya..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
-      "text": "Tidur untuk milisaat tertentu"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Selang untuk tidur"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Mengalih keluar pembolehubah daripada senarai pembolehubah MESH"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Nama boleh ubah"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Hanya lap nilai pembolehubah tanpa mengeluarkannya"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
-      "text": "Anda kini boleh menjalankan '{0}' sebagai '{1}'!"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Jenis tidak sah {0}."
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
-      "text": "Alias {0} berjaya dialih keluar."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "Tidak boleh menyahdaftar syarat yang tidak wujud."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
-      "text": "Menambah alias pada arahan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Menambah alias"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Jenis Shell untuk mengambil arahan daripada"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Nama alias"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Perintah untuk digunakan sebagai jalan pintas"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Mengalih keluar alias"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
-      "text": "Pembalut konsol sudah ditemui"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
-      "text": "Nama pembungkus konsol mungkin tidak kosong"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
-      "text": "Pembalut konsol tidak ditemui"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
-      "text": "Pembalut konsol terbina dalam tidak boleh dialih keluar"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
-      "text": "Pengalihan keluar pembalut konsol gagal"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Gagal mengisi tema lalai"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "Tiada metadata tema ditentukan."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Tidak boleh menyahsiri metadata."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Konsol anda mesti menyokong warna sebenar untuk menggunakan tema ini."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
-      "text": "Keluar dari pratonton"
-    },
-    {
-      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
-      "text": "Begini rupa tema anda:"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Templat warna tidak sah {0}"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "Tema {0} meraikan acara, tetapi anda sama ada terlalu awal atau terlambat untuk hadir. Setiap tahun, tema ini boleh diakses dari {1}/{2} hingga {3}/{4}."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "Tema {0} memerlukan sokongan warna sebenar, tetapi konsol anda tidak menyokongnya."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Satu atau beberapa warna tidak sah."
-    },
-    {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "Tema lalai untuk kernel"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Aksen di mana-mana!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Cecair tidak berwarna, berasap dan sangat menghakis"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_WARNING",
-      "text": "Anda mesti menjalankan sama ada ConEmu atau gesaan arahan Windows 10 dengan pemprosesan VT didayakan."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_INFO",
-      "text": "Terminal anda ialah {0} pada {1}."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_QUESTION",
-      "text": "Adakah tanjakan ini kelihatan betul kepada anda? Mereka harus beralih dengan lancar."
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
+      "text": "Tidak dapat menentukan jenis daripada jujukan ini. Pastikan anda telah menyatakannya dengan betul."
     }
   ]
 }

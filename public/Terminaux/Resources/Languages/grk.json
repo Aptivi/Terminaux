@@ -76,10 +76,6 @@
       "text": "Αυτή η εφαρμογή χρησιμοποιεί εκτεταμένες λειτουργίες κονσόλας που παρέχονται από την Terminaux και απαιτούν λειτουργίες που δεν υποστηρίζονται από \"χαζά\" τερματικά."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Πιθανή λύση: Χρησιμοποιήστε έναν κατάλληλο εξομοιωτή τερματικού ή συμβουλευτείτε τις ρυθμίσεις του τερματικού σας για να ορίσετε τον τύπο τερματικού σε κάτι διαφορετικό από \"dumb\". Συνιστούμε να χρησιμοποιήσετε τους εξομοιωτές τερματικού \"vt100\" για να αξιοποιήσετε στο έπακρο αυτήν την εφαρμογή."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
       "text": "Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux σε έναν τύπο τερματικού που βρίσκεται στη μαύρη λίστα."
     },
@@ -166,22 +162,6 @@
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
       "text": "Δεν υπάρχει έκφραση στο φίλτρο κονσόλας."
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "Δεν είναι δυνατή η επαναφορά νέων χαρακτηριστικών termios για την ακατέργαστη λειτουργία: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "Δεν είναι δυνατή η λήψη σημαιών περιγραφής αρχείου: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "Δεν είναι δυνατός ο ορισμός της σημαίας περιγραφής αρχείου σε μη αποκλεισμένη ανάγνωση: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "Δεν είναι δυνατός ο ορισμός της σημαίας περιγραφής αρχείου σε αποκλεισμό ανάγνωσης: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
@@ -344,6 +324,10 @@
       "text": "Το χρώμα είναι εκτός εύρους."
     },
     {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Δεν είναι δυνατή η λήψη δεδομένων χρώματος."
+    },
+    {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
       "text": "Είστε σίγουροι ότι αυτή η διαβάθμιση δεν είναι μηδενική;"
     },
@@ -440,10 +424,6 @@
       "text": "Δεν είναι δυνατή η μετατροπή σε CieLch."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "Δεν είναι δυνατή η μετατροπή σε HWB."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
       "text": "Δεν είναι δυνατή η μετατροπή από RGB."
     },
@@ -500,10 +480,6 @@
       "text": "Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε CieLch!"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας RGB σε HWB!"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
       "text": "Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας CMYK σε RGB!"
     },
@@ -554,10 +530,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
       "text": "Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας CieLch σε RGB!"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας HWB σε RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
@@ -676,6 +648,14 @@
       "text": "Μη έγκυρος προσδιοριστής χρώματος CMYK \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
     {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Η στάθμη μαύρου χρώματος είναι εκτός εύρους (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Μη έγκυρος προσδιοριστής χρώματος CMYK \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τέσσερα στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
+    },
+    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Μη έγκυρος προσδιοριστής χρώματος HSL \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
@@ -706,22 +686,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
       "text": "Μη έγκυρος προσδιοριστής χρώματος HSV \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "Μη έγκυρος προσδιοριστής χρώματος HWB \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "Το επίπεδο λευκότητας είναι εκτός εύρους (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "Το επίπεδο μαυρίσματος είναι εκτός εύρους (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "Μη έγκυρος προσδιοριστής χρώματος HWB \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
@@ -868,6 +832,62 @@
       "text": "Μη έγκυρος προσδιοριστής χρώματος YXY \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
     {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
+      "text": "Δεν έχει καθοριστεί όνομα στοιχείου."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
+      "text": "Δεν έχει καθοριστεί χρώμα για το στοιχείο {0}."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
+      "text": "Το στοιχείο {0} υπάρχει ήδη."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
+      "text": "Το στοιχείο {0} δεν υπάρχει."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
+      "text": "Το στοιχείο {0} είναι προκαθορισμένο και επομένως δεν μπορεί να αφαιρεθεί."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
+      "text": "Το πρότυπο δεν έχει στοιχεία."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
+      "text": "Το πρότυπο δεν έχει προκαθορισμένα στοιχεία που πρέπει να οριστούν ({0})."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "Δεν παρέχεται όνομα για το πρότυπο."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
+      "text": "Δεν είναι δυνατή η εύρεση του προτύπου {0}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
+      "text": "Δεν είναι δυνατή η εύρεση του στοιχείου {0} στο πρότυπο {1}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
+      "text": "Μη έγκυρο πρότυπο."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
+      "text": "Το πρότυπο δεν έχει όνομα."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
+      "text": "Το πρότυπο υπάρχει ήδη."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
+      "text": "Δεν είναι δυνατή η κατάργηση του ενσωματωμένου προτύπου {0}"
+    },
+    {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
       "text": "Ο τύπος χρώματος δεν είναι έγκυρος"
     },
@@ -912,48 +932,24 @@
       "text": "Εύρεση επόμενου"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "Μετακίνηση προς τα πάνω"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
       "text": "Πηγαίνετε ένα στοιχείο προς τα πάνω"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "Μετακίνηση προς τα κάτω"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
       "text": "Πηγαίνετε ένα στοιχείο προς τα κάτω"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "Προηγούμενη σελίδα"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
       "text": "Μετάβαση στην προηγούμενη σελίδα"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "Επόμενη σελίδα"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
       "text": "Μετάβαση στην επόμενη σελίδα"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "Μετάβαση στην αρχή"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
       "text": "Μετάβαση στο πρώτο στοιχείο"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "Μετάβαση στο Τέλος"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
@@ -1168,10 +1164,6 @@
       "text": "Προκαταβολή"
     },
     {
-      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "Αυτή η σελίδα παρουσίασης απαιτεί την εκπλήρωση των ακόλουθων εισροών πριν να είναι δυνατή η μετάβαση στην επόμενη σελίδα."
-    },
-    {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
       "text": "Απαιτείται εισαγωγή"
     },
@@ -1206,14 +1198,6 @@
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
       "text": "Λάθος απάντηση. Παρακαλώ προσπαθήστε ξανά."
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "Μετακίνηση αριστερά"
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "Μετακίνηση δεξιά"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
@@ -1300,10 +1284,6 @@
       "text": "Πληροφορίες αριθμού"
     },
     {
-      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "Κενό περιεχόμενο"
-    },
-    {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
       "text": "Ο καθορισμένος αριθμός byte έναρξης δεν μπορεί να είναι μεγαλύτερος από το μέγεθος του αρχείου."
     },
@@ -1358,14 +1338,6 @@
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
       "text": "Νέα Γραμμή"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "Backspace"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "Διαγράφω"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
@@ -1444,26 +1416,6 @@
       "text": "Κλείνει χωρίς να υποβάλει τις τιμές"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "Εκτελεί μια ενέργεια ή επιλέγει μια επιλογή"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "Μειώνει την τιμή ή μετακινεί τρεις γραμμές κειμένου προς τα πάνω"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "Αυξάνει την τιμή ή μετακινεί τρεις γραμμές κειμένου προς τα κάτω"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "Προηγούμενη επιλογή ή προηγούμενες τρεις γραμμές κειμένου"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "Επόμενη επιλογή ή επόμενες τρεις γραμμές κειμένου"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
       "text": "Μειώνει την τρέχουσα τιμή"
     },
@@ -1480,28 +1432,12 @@
       "text": "Ορίζει την τιμή στη μέγιστη τιμή"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "Ορίζει την τρέχουσα εστίαση στο επόμενο στοιχείο τιμής"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "Ορίζει την τρέχουσα εστίαση στο προηγούμενο στοιχείο τιμής"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
       "text": "Μεταβαίνει στο προηγούμενο κουμπί"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
       "text": "Μετάβαση στο επόμενο κουμπί"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "Κουμπί \"Προηγούμενο\" ή προηγούμενες τρεις γραμμές κειμένου"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "Κουμπί \"Επόμενο\" ή επόμενες τρεις γραμμές κειμένου"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
@@ -1518,34 +1454,6 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
       "text": "Κλείνει το πλαίσιο πληροφοριών modal"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "Εκτελεί μια ενέργεια"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "Προηγούμενες τρεις γραμμές κειμένου"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "Οι επόμενες τρεις γραμμές κειμένου"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "Μεταβαίνει στην προηγούμενη σελίδα εισόδων"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "Μεταβαίνει στην επόμενη σελίδα εισόδων"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "Αναζητά μια εισαγωγή"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "Αλλάζει την επιλεγμένη τιμή εισόδου"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
@@ -1604,16 +1512,8 @@
       "text": "Πλαϊνή μπάρα"
     },
     {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "Περισσότερο"
-    },
-    {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
       "text": "Επιβεβαιώνει την επιλογή/ές"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "Αλλάζει την επιλεγμένη τιμή (κουμπιά επιλογής)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
@@ -1686,14 +1586,6 @@
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
       "text": "Επιλέγει όλα τα στοιχεία σε όλες τις ομάδες σε όλες τις κατηγορίες"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "Πηγαίνει σε ένα στοιχείο ή σε μια σειρά βιτρίνας"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "Πηγαίνει ένα στοιχείο ή μια γραμμή βιτρίνας προς τα κάτω"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
@@ -2332,26 +2224,6 @@
       "text": "Η αρχική μορφή δεν πρέπει να εκτυπώνει κείμενο. Πρέπει να περιέχει μόνο ακολουθίες VT μορφοποίησης."
     },
     {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "Δεν υπάρχει αρχείο Asciicast"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "Δεν είναι δυνατή η αποσειριοποίηση της βασικής αναπαράστασης Asciicast"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "Δεν είναι δυνατή η αποσειριοποίηση της αναπαράστασης Asciicast v1"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "Δεν είναι δυνατή η αποσειριοποίηση της αναπαράστασης Asciicast v2"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "Δεν είναι δυνατή η λήψη πληροφοριών συμβάντος"
-    },
-    {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
       "text": "Διαθέσιμες συνδυασμοί πλήκτρων"
     },
@@ -2396,492 +2268,40 @@
       "text": "Όλοι οι περιστρεφόμενοι τροχοί πρέπει να έχουν το ίδιο πλάτος."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
-      "text": "Πηγαίνει ένα στοιχείο εισόδου προς τα πάνω"
+      "loc": "T_INPUT_EXCEPTION_READPOINTERFAILED",
+      "text": "Αποτυχία ανάγνωσης του δείκτη."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
-      "text": "Πηγαίνει ένα στοιχείο εισόδου προς τα κάτω"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION",
+      "text": "Η ερώτηση δεν έχει παρασχεθεί."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
-      "text": "Πηγαίνει στην πρώτη είσοδο"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
+      "text": "Δεν έχουν καθοριστεί επιλογές"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
-      "text": "Πηγαίνει στην τελευταία είσοδο"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "Δεν παρέχεται όνομα του προτύπου"
     },
     {
-      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Ορίζει την τιμή της εξόδου στην επιλεγμένη μεταβλητή MESH"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",
+      "text": "Δεν παρέχονται στοιχεία, αλλά αυτή η λίστα μπορεί να είναι κενή για δυναμική προσθήκη."
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "Δεν είναι δυνατή η λήψη παραμέτρων νήματος για την εκτέλεση της διαδικασίας."
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER",
+      "text": "Το keyboard sign για enter δεν υπάρχει στο μανιφέστο"
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
-      "text": "Σφάλμα κατά την εκτέλεση της εντολής"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT",
+      "text": "Το keyboard sign για rubout δεν υπάρχει στο μανιφέστο"
     },
     {
-      "loc": "T_COMMON_ERRORDESC",
-      "text": "Σφάλμα {0}: {1}"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING",
+      "text": "Το keyboard sign για εγγραφή δεν υπάρχει στο μανιφέστο"
     },
     {
-      "loc": "T_SHELL_BASE_OBSOLETECMD",
-      "text": "Αυτή η εντολή είναι ξεπερασμένη και θα αφαιρεθεί σε μελλοντική έκδοση."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Η εντολή wappable δεν βρέθηκε."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "Δεν πρέπει να εκτελέσετε απευθείας αυτήν την εντολή σε κατάσταση αναδίπλωσης."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
-      "text": "Η εντολή δεν μπορεί να αναδιπλωθεί. Αυτές οι εντολές μπορούν να αναδιπλωθούν:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Παρουσιάστηκε σφάλμα κατά την προσπάθεια αναδίπλωσης μιας εξόδου εντολής"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Δεν είναι δυνατή η προσωρινή αποθήκευση μιας εντολής που δεν έχει οριστεί ως αναδιπλούμενη."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "Δεν μπορείτε να δηλώσετε το νέο μπλοκ πριν τοποθετήσετε εκφράσεις που υποστηρίζουν τη δημιουργία, όπως συνθήκες ή βρόχους. Ο αριθμός στοίβας είναι {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Όταν ξεκινάτε ένα νέο μπλοκ, βεβαιωθείτε ότι έχετε τοποθετήσει σωστά τη στοίβα. Ο αριθμός στοίβας είναι {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "Το σενάριο είναι εσφαλμένο. Ελέγξτε το σενάριο και επιλύστε τυχόν σφάλματα: {0}"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "Η συνθήκη δεν βρέθηκε στην έκφραση."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "Η συνθήκη {0} απαιτεί {1} ορίσματα. Πήρα {2}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "Η συνθήκη πρέπει να τοποθετηθεί στο τέλος."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Σφάλμα ανάλυσης έκφρασης λόγω συντακτικού σφάλματος."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "Δεν είναι δυνατή η εγγραφή μιας συνθήκης που υπάρχει ήδη."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "Δεν είναι δυνατή η εγγραφή μιας κενή συνθήκης."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "Ο τύπος δεδομένων που καθορίστηκε {0} δεν είναι έγκυρος."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "Η πλατφόρμα {0} που καθορίστηκε δεν είναι έγκυρη."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Η εκτέλεση της εντολής πηγής απέτυχε."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Η εκτέλεση εντολής στόχου απέτυχε. Τα περιεχόμενα ενδέχεται να μην έχουν συμπληρωθεί σωστά. Η εντολή που εκτελέστηκε ήταν"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
-      "text": "Ο σωλήνας έχει σπάσει."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Μη έγκυρος αριθμός φορών."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "Δεν μπορώ να επαναλάβω τον εαυτό μου."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Εντολές με δυνατότητα αναδίπλωσης:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Υπενθύμιση για τις εντολές κάθετο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
-      "text": "Εκτελεί μια εξωτερική διαδικασία"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Πορεία προς μια διαδικασία"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Επιχειρήματα για να περάσει σε μια διαδικασία"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
-      "text": "Εκτελεί τη διαδικασία χωρίς να διακόπτει το νήμα του κελύφους. Θα δημιουργηθεί ένα ξεχωριστό παράθυρο."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Εντολή για εμφάνιση καταχώρισης βοήθειας"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
-      "text": "Φορτώνει ιστορικά κελύφους"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
-      "text": "Διοχετεύει την έξοδο της εντολής σε άλλη εντολή ως παραμέτρους"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Εντολή πηγής για τη διοχέτευση της εξόδου της στην εντολή προορισμού ως τελευταία παράμετρο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Εντολή στόχου που θα εκτελεστεί κατά την κατασκευή του ορίσματος με βάση την έξοδο της εντολής πηγής"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Είτε θα μεταβιβαστεί η έξοδος της εντολής πηγής ως ένα όρισμα σε εισαγωγικά ή ως όρισμα χωρίς εισαγωγικά"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
-      "text": "Επαναλαμβάνει την τελευταία ενέργεια ή την καθορισμένη εντολή"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Εντολή στόχου που θα εκτελεστεί κατά την κατασκευή του ορίσματος με βάση την έξοδο της εντολής πηγής"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
-      "text": "Αποθηκεύει ιστορικά κελύφους"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
-      "text": "Τυλίγει την έξοδο της κονσόλας"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Εντολή για αναδίπλωση της εξόδου του"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
-      "text": "Σφάλμα κατά την εκτέλεση του σεναρίου: {0}"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Εκτελεί εντολές μόλις ικανοποιηθούν οι εκφράσεις MESH"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
-      "text": "Έκφραση MESH για δοκιμή"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Εντολή για εκτέλεση μετά την επιτυχή αξιολόγηση"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
-      "text": "όπου <απαντήσεις> είναι οι απαντήσεις με ένα γράμμα της ερώτησης χωρισμένες σε κάθετες"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
-      "text": "Πρέπει να περάσετε τον διακόπτη -set με τη μεταβλητή στην οποία θέλετε να ορίσετε αυτήν την τιμή."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
-      "text": "Κάνει τις επιλογές των χρηστών"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Απαντήσεις σε διάσπαση με κάθετο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ερώτηση για εκτύπωση στην οθόνη"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Τίτλος πρώτης απάντησης"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Τίτλος δεύτερης απάντησης και ούτω καθεξής..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
-      "text": "Στυλ επιλογής μίας γραμμής"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
-      "text": "Στυλ επιλογής δύο γραμμών"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
-      "text": "Μοντέρνο στυλ επιλογής"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "Η έξοδος μπορεί να είναι μόνο ένας χαρακτήρας"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "Η έξοδος μπορεί να είναι περισσότερο από έναν χαρακτήρα"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CLS_DESC",
-      "text": "Καθαρίζει την οθόνη"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
-      "text": "Γράφει κείμενο στην κονσόλα"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "Συμβολοσειρά για εκτύπωση"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "Εκτυπώνει το κείμενο ως έχει χωρίς ανάλυση κράτησης θέσης"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Διχαλώνει το κέλυφος MESH για να δημιουργήσει ένα άλλο στιγμιότυπο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
-      "text": "Επιτρέπει στον χρήστη να εισάγει είσοδο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ερώτηση για εκτύπωση στην οθόνη"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
-      "text": "Επιτρέπει στον χρήστη να εισαγάγει την είσοδο ως κωδικό πρόσβασης"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
-      "text": "Εμφανίζει ημερομηνία και ώρα"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
-      "text": "Δείχνει μόνο την ημερομηνία"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
-      "text": "Δείχνει μόνο την ώρα"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
-      "text": "Χρησιμοποιεί UTC αντί για τοπικό"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
-      "text": "Παρέχει μια επιλογή επιλογής"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Απαντήσεις σε διάσπαση με κάθετο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ερώτηση για εκτύπωση στην οθόνη"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Τίτλος πρώτης απάντησης"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Τίτλος δεύτερης απάντησης και ούτω καθεξής..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_DESC",
-      "text": "Ορίζει μια μεταβλητή σε μια τιμή σε ένα σενάριο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
-      "text": "Τιμή προς ρύθμιση"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
-      "text": "Δημιουργεί έναν πίνακα μεταβλητών με τις παρεχόμενες τιμές"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "Πρώτη τιμή"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "Δεύτερη τιμή"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "Τρίτη τιμή και ούτω καθεξής..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
-      "text": "Λειτουργεί για καθορισμένα χιλιοστά του δευτερολέπτου"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Διάστημα για ύπνο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Αφαιρεί μια μεταβλητή από τη λίστα μεταβλητών MESH"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Όνομα μεταβλητής"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Απλώς σκουπίζει την τιμή της μεταβλητής χωρίς να την αφαιρέσει"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
-      "text": "Τώρα μπορείτε να εκτελέσετε το \"{0}\" ως \"{1}\"!"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Μη έγκυρος τύπος {0}."
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
-      "text": "Το ψευδώνυμο {0} καταργήθηκε με επιτυχία."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "Δεν είναι δυνατή η κατάργηση της εγγραφής μιας συνθήκης που δεν υπάρχει."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
-      "text": "Προσθέτει ψευδώνυμα στις εντολές"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Προσθέτει ένα ψευδώνυμο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Τύπος κελύφους για λήψη εντολών από"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Ψευδώνυμο όνομα"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Εντολή που θα χρησιμοποιηθεί ως συντόμευση"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Αφαιρεί ένα ψευδώνυμο"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
-      "text": "Το περιτύλιγμα της κονσόλας έχει ήδη βρεθεί"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
-      "text": "Το όνομα του περιτυλίγματος της κονσόλας ενδέχεται να μην είναι κενό"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
-      "text": "Το περιτύλιγμα της κονσόλας δεν βρέθηκε"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
-      "text": "Ένα ενσωματωμένο περιτύλιγμα κονσόλας ενδέχεται να μην αφαιρεθεί"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
-      "text": "Η αφαίρεση του περιτυλίγματος της κονσόλας απέτυχε"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Αποτυχία συμπλήρωσης προεπιλεγμένου θέματος"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "Δεν έχουν οριστεί μεταδεδομένα θέματος."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Δεν είναι δυνατή η αφαίρεση μεταδεδομένων."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Η κονσόλα σας πρέπει να υποστηρίζει αληθινό χρώμα για να χρησιμοποιήσετε αυτό το θέμα."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
-      "text": "Έξοδος από την προεπισκόπηση"
-    },
-    {
-      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
-      "text": "Δείτε πώς θα μοιάζει το θέμα σας:"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Μη έγκυρο χρωματικό πρότυπο {0}"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "Το θέμα {0} γιορτάζει μια εκδήλωση, αλλά είτε είστε πολύ νωρίς είτε πολύ αργά για να παρευρεθείτε. Κάθε χρόνο, αυτό το θέμα είναι προσβάσιμο από {1}/{2} έως {3}/{4}."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "Το θέμα {0} χρειάζεται πραγματική υποστήριξη χρώματος, αλλά η κονσόλα σας δεν την υποστηρίζει."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Ένα ή περισσότερα από τα χρώματα δεν είναι έγκυρα."
-    },
-    {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "Το προεπιλεγμένο θέμα για τον πυρήνα"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Προφορές παντού!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Άχρωμο, ατμίζον και εξαιρετικά διαβρωτικό υγρό"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_WARNING",
-      "text": "Πρέπει να εκτελείτε είτε το ConEmu είτε μια γραμμή εντολών των Windows 10 με ενεργοποιημένη την επεξεργασία VT."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_INFO",
-      "text": "Το τερματικό σας είναι {0} στις {1}."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_QUESTION",
-      "text": "Σου φαίνονται σωστές αυτές οι ράμπες; Θα πρέπει να μεταβούν ομαλά."
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
+      "text": "Δεν είναι δυνατός ο προσδιορισμός του τύπου από αυτήν την ακολουθία. Βεβαιωθείτε ότι τον έχετε καθορίσει σωστά."
     }
   ]
 }

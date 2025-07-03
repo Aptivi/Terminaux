@@ -79,10 +79,6 @@
       "text": "此应用程序利用 Terminaux 提供的扩展控制台功能，这些功能需要“哑”终端不支持的功能。"
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "可能的解决方案：使用合适的终端仿真器，或查看终端设置，将终端类型设置为“dumb”以外的其他类型。我们建议使用“vt100”终端仿真器，以充分利用此应用程序。"
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
       "text": "用户尝试在黑名单终端类型上运行 Terminaux 应用程序。"
     },
@@ -169,22 +165,6 @@
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
       "text": "控制台过滤器中没有表达式。"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "无法恢复原始模式的新 termios 属性：{0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "无法获取文件描述符标志：{0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "无法将文件描述符标志设置为非阻塞读取：{0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "无法将文件描述符标志设置为阻止读取：{0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
@@ -347,6 +327,10 @@
       "text": "颜色超出范围。"
     },
     {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "无法获取颜色数据。"
+    },
+    {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
       "text": "你确定这个梯度不为空吗？"
     },
@@ -443,10 +427,6 @@
       "text": "无法转换为 CieLch。"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "无法转换为 HWB。"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
       "text": "无法从 RGB 转换。"
     },
@@ -503,10 +483,6 @@
       "text": "无法将空 RGB 实例转换为 CieLch！"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "无法将空 RGB 实例转换为 HWB！"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
       "text": "无法将空的 CMYK 实例转换为 RGB！"
     },
@@ -557,10 +533,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
       "text": "无法将空的 CieLch 实例转换为 RGB！"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "无法将空的 HWB 实例转换为 RGB！"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
@@ -679,6 +651,14 @@
       "text": "CMYK 颜色说明符“{0}”无效。请确保其格式正确"
     },
     {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "黑色级别超出范围 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "CMYK 颜色说明符“{0}”无效。该说明符不能超过四个元素。请确保其格式正确"
+    },
+    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "HSL 颜色说明符“{0}”无效。请确保其格式正确"
     },
@@ -709,22 +689,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
       "text": "HSV 颜色说明符“{0}”无效。该说明符不能超过三个元素。请确保其格式正确"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "HWB 颜色说明符“{0}”无效。请确保其格式正确"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "白度超出范围 (0 -> 100)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "黑度超出范围 (0 -> 100)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "HWB 颜色说明符“{0}”无效。该说明符不能超过三个元素。请确保其格式正确"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
@@ -871,6 +835,62 @@
       "text": "YXY 颜色说明符“{0}”无效。该说明符不能超过三个元素。请确保其格式正确"
     },
     {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
+      "text": "未指定组件名称。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
+      "text": "没有为组件 {0} 指定颜色。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
+      "text": "组件 {0} 已存在。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
+      "text": "组件 {0} 不存在。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
+      "text": "组件 {0} 是预定义的，因此无法删除。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
+      "text": "模板没有组件。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
+      "text": "模板没有必须定义的预定义组件 ({0})。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "未提供模板名称。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
+      "text": "找不到模板 {0}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
+      "text": "在模板 {1} 中找不到组件 {0}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
+      "text": "模板无效。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
+      "text": "模板没有名称。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
+      "text": "模板已存在。"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
+      "text": "无法删除内置模板 {0}"
+    },
+    {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
       "text": "颜色类型无效"
     },
@@ -915,48 +935,24 @@
       "text": "查找下一个"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "上移"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
       "text": "向上移动一个元素"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "下移"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
       "text": "向下移动一个元素"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "上一页"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
       "text": "转至上一页"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "下一页"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
       "text": "转至下一页"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "转至开头"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
       "text": "转到第一个元素"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "前往结尾"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
@@ -1171,10 +1167,6 @@
       "text": "进步"
     },
     {
-      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "此演示页面需要完成以下输入才能进入下一页。"
-    },
-    {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
       "text": "需要输入"
     },
@@ -1209,14 +1201,6 @@
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
       "text": "答案错误。请重试。"
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "向左移动"
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "右移"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
@@ -1303,10 +1287,6 @@
       "text": "号码信息"
     },
     {
-      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "内容为空"
-    },
-    {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
       "text": "指定的起始字节数不能大于文件大小。"
     },
@@ -1361,14 +1341,6 @@
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
       "text": "新线"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "退格键"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "删除"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
@@ -1447,26 +1419,6 @@
       "text": "关闭而不提交值"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "执行操作或选择选项"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "减少值或将文本向上移动三行"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "增加值或向下移动三行文本"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "先前的选择或前三行文本"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "下一个选择或接下来的三行文本"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
       "text": "减少当前值"
     },
@@ -1483,28 +1435,12 @@
       "text": "将值设置为最大值"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "将当前焦点设置到下一个值元素"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "将当前焦点设置为前一个值元素"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
       "text": "转到上一个按钮"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
       "text": "转到下一个按钮"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "上一个按钮或前三行文本"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "下一个按钮或接下来的三行文本"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
@@ -1521,34 +1457,6 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
       "text": "关闭模态信息框"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "执行操作"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "前三行文字"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "接下来的三行文字"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "转到上一页输入"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "转至下一页输入"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "搜索输入"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "更改选定的输入值"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
@@ -1607,16 +1515,8 @@
       "text": "侧边栏"
     },
     {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "更多的"
-    },
-    {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
       "text": "确认选择"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "更改选定的值（单选按钮）"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
@@ -1689,14 +1589,6 @@
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
       "text": "选择所有类别的所有组中的所有元素"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "进入一个元素或展示线"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "向下移动一个元素或展示行"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
@@ -2335,26 +2227,6 @@
       "text": "初始格式不得打印任何文本；它必须仅包含格式化 VT 序列。"
     },
     {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "没有 Asciicast 文件"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "无法反序列化基本 Asciicast 表示"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "无法反序列化 Asciicast v1 表示"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "无法反序列化 Asciicast v2 表示"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "无法获取活动信息"
-    },
-    {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
       "text": "可用的按键绑定"
     },
@@ -2399,492 +2271,40 @@
       "text": "所有旋转器应具有相同的宽度。"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
-      "text": "向上移动一个输入元素"
+      "loc": "T_INPUT_EXCEPTION_READPOINTERFAILED",
+      "text": "读取指针失败。"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
-      "text": "向下移动一个输入元素"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION",
+      "text": "未提供问题。"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
-      "text": "转到第一个输入"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
+      "text": "未指定选项"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
-      "text": "转到最后一个输入"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "未提供模板名称"
     },
     {
-      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "将输出值设置为选定的 MESH 变量"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",
+      "text": "未提供组件，但此列表可以为空以便动态添加。"
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "无法获取进程执行的线程参数。"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER",
+      "text": "清单中不存在 Enter 键的键盘提示"
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
-      "text": "尝试执行命令时出错"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT",
+      "text": "清单中不存在 Rubout 键的键盘提示"
     },
     {
-      "loc": "T_COMMON_ERRORDESC",
-      "text": "错误{0}：{1}"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING",
+      "text": "清单中不存在书写键的键盘提示"
     },
     {
-      "loc": "T_SHELL_BASE_OBSOLETECMD",
-      "text": "该命令已过时，将在以后的版本中删除。"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "找不到可包装命令。"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "您不得在包装模式下直接执行此命令。"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
-      "text": "该命令不可包装。这些命令是可包装的："
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "尝试包装命令输出时发生错误"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "无法缓冲未设置为可包装的命令。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "在放置支持创建的表达式（例如条件或循环）之前，您无法声明新块。堆栈编号为{0}。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "开始新块时，请确保堆栈缩进正确。堆栈编号为{0}。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "脚本格式不正确。检查脚本并解决所有错误：{0}"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "在表达式中找不到条件。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "条件 {0} 需要 {1} 个参数。得到{2}。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "条件需要放在最后。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "由于语法错误，解析表达式时出错。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "无法注册已存在的条件。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "无法注册空条件。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "指定的数据类型 {0} 无效。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "指定的平台 {0} 无效。"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "源命令执行失败。"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "目标命令执行失败。内容可能未正确填充。执行的命令是"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
-      "text": "管子破了。"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "次数无效。"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "无法重复自己。"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "可包装命令："
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "斜杠命令的提醒"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
-      "text": "执行外部进程"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
-      "text": "流程路径"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "传递给进程的参数"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
-      "text": "执行进程而不中断 shell 线程。将创建一个单独的窗口。"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "显示帮助条目的命令"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
-      "text": "加载 shell 历史记录"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
-      "text": "将命令输出作为参数通过管道传送给另一个命令"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "源命令将其输出作为最后一个参数传递给目标命令"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "根据源命令输出构建参数后执行的目标命令"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
-      "text": "是否将源命令的输出作为一个带引号的参数或不带引号的参数传递"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
-      "text": "重复上一个操作或指定的命令"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "根据源命令输出构建参数后执行的目标命令"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
-      "text": "保存 shell 历史记录"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
-      "text": "包装控制台输出"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "包装其输出的命令"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
-      "text": "尝试执行脚本时出错：{0}"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "一旦满足 MESH 表达式，就执行命令"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
-      "text": "MESH 表达测试"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
-      "text": "评估成功后执行的命令"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
-      "text": "其中<answers>是用斜杠分隔的问题的字母答案"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
-      "text": "您必须将 -set 开关与要设置该值的变量一起传递。"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
-      "text": "做出用户选择"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "用斜线分割的答案"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "打印到屏幕上的问题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "第一个答案标题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "第二个答案标题，等等......"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
-      "text": "一行选择样式"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
-      "text": "两行选择样式"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
-      "text": "现代选择风格"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "输出只能是一个字符"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "输出可以超过一个字符"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CLS_DESC",
-      "text": "清除屏幕"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
-      "text": "将文本写入控制台"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "要打印的字符串"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "按原样打印文本，不进行占位符解析"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "分叉 MESH shell 以创建另一个实例"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
-      "text": "允许用户输入输入"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "打印到屏幕上的问题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
-      "text": "允许用户输入密码"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
-      "text": "显示日期和时间"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
-      "text": "仅显示日期"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
-      "text": "仅显示时间"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
-      "text": "使用 UTC 而不是本地"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
-      "text": "提供选择选项"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "用斜线分割的答案"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "打印到屏幕上的问题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "第一个答案标题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "第二个答案标题，等等......"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_DESC",
-      "text": "将变量设置为脚本中的值"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
-      "text": "要设置的值"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
-      "text": "使用提供的值创建一个变量数组"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "第一个值"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "第二个值"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "第三个值，依此类推......"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
-      "text": "休眠指定毫秒"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
-      "text": "睡眠间隔"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "从 MESH 变量列表中删除变量"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "变量名"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "只是擦除变量值而不删除它"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
-      "text": "您现在可以将“{0}”作为“{1}”运行！"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "无效的类型{0}。"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
-      "text": "成功删除别名{0}。"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "无法取消注册不存在的条件。"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
-      "text": "向命令添加别名"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "添加别名"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "从中获取命令的 Shell 类型"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "别名"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "用作快捷方式的命令"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
-      "text": "删除别名"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
-      "text": "已找到控制台包装器"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
-      "text": "控制台包装器名称不能为空"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
-      "text": "未找到控制台包装器"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
-      "text": "内置控制台包装器无法移除"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
-      "text": "控制台包装器移除失败"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "无法填充默认主题"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "没有定义主题元数据。"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "无法反序列化元数据。"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "您的控制台必须支持真彩色才能使用此主题。"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
-      "text": "退出预览"
-    },
-    {
-      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
-      "text": "以下是您的主题的外观："
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "无效的颜色模板{0}"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "主题“{0}”庆祝一项活动，但您要么太早，要么太晚，无法参加。每年，此主题的访问时间为 {1}/{2} 至 {3}/{4}。"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "主题 {0} 需要真彩色支持，但您的控制台不支持。"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
-      "text": "一种或多种颜色无效。"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "内核的默认主题"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "到处都是口音！"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "无色、发烟、强腐蚀性液体"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_WARNING",
-      "text": "您必须运行 ConEmu 或 Windows 10 命令提示符并启用 VT 处理。"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_INFO",
-      "text": "您的终端位于 {1} 的 {0}。"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_QUESTION",
-      "text": "这些坡道适合您吗？他们应该顺利过渡。"
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
+      "text": "无法根据此序列确定类型。请确保您已正确指定。"
     }
   ]
 }

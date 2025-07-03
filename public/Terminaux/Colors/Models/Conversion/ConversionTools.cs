@@ -327,13 +327,13 @@ namespace Terminaux.Colors.Models.Conversion
                         throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED"));
                 else if (targetType == typeof(CieLabFull))
                     return ToCieLabFull(source) ??
-                        throw new TerminauxException("Can't convert to CieLabFull.");
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED"));
                 else if (targetType == typeof(CieLuvFull))
                     return ToCieLuvFull(source) ??
-                        throw new TerminauxException("Can't convert to CieLuvFull.");
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED"));
                 else if (targetType == typeof(CieLchFull))
                     return ToCieLchFull(source) ??
-                        throw new TerminauxException("Can't convert to CieLchFull.");
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED"));
                 else
                     throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED"));
             }

@@ -76,10 +76,6 @@
       "text": "Baineann an feidhmchlár seo úsáid as gnéithe consóil leathnaithe arna soláthar ag Terminaux a éilíonn gnéithe nach dtacaítear leo ag críochfoirt \"amaideacha\"."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "Réiteach féideartha: Bain úsáid as aithriseoir críochfoirt cuí nó féach ar shocruithe do chríochfoirt chun an cineál críochfoirt a shocrú i rud éigin seachas \"balbh\". Molaimid na haithriseoirí críochfoirt \"vt100\" a úsáid chun an leas is fearr a bhaint as an bhfeidhmchlár seo."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
       "text": "Rinne an t-úsáideoir iarracht feidhmchlár Terminaux a rith ar chineál críochfoirt atá ar liosta dubh."
     },
@@ -166,22 +162,6 @@
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
       "text": "Níl aon léiriú sa scagaire consól."
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "Ní féidir tréithe nua termios a athbhunú don mhodh amh: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "Ní féidir bratacha tuairisceora comhaid a fháil: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "Ní féidir bratach tuairisceora comhaid a shocrú go léamh neamhbhlocálach: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "Ní féidir bratach tuairisceora comhaid a shocrú chun léamh a bhac: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
@@ -344,6 +324,10 @@
       "text": "Tá an dath lasmuigh den raon."
     },
     {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "Ní féidir sonraí datha a fháil."
+    },
+    {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
       "text": "An bhfuil tú cinnte nach bhfuil an grádán seo nialasach?"
     },
@@ -440,10 +424,6 @@
       "text": "Ní féidir é a thiontú go CieLch."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "Ní féidir é a thiontú go HWB."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
       "text": "Ní féidir tiontú ó RGB."
     },
@@ -500,10 +480,6 @@
       "text": "Ní féidir sampla RGB nialasach a thiontú go CieLch!"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "Ní féidir sampla RGB nialasach a thiontú go HWB!"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
       "text": "Ní féidir sampla CMYK nialasach a thiontú go RGB!"
     },
@@ -554,10 +530,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
       "text": "Ní féidir sampla nialasach CieLch a thiontú go RGB!"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "Ní féidir sampla HWB nialasach a thiontú go RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
@@ -676,6 +648,14 @@
       "text": "Sonraitheoir datha CMYK neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
     },
     {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "Tá an leibhéal datha dubh lasmuigh den raon (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "Sonraitheoir datha CMYK neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná ceithre eilimint a bheith sa shonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
+    },
+    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "Sonraitheoir datha HSL neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
     },
@@ -706,22 +686,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
       "text": "Sonraitheoir datha HSV neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná trí eilimint a bheith sa shonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "Sonraitheoir datha HWB neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "Tá an leibhéal bánachta lasmuigh den raon (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "Tá an leibhéal dubhachta lasmuigh den raon (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "Sonraitheoir datha HWB neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
@@ -868,6 +832,62 @@
       "text": "Sonraitheoir datha YXY neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
     },
     {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
+      "text": "Níor sonraíodh ainm comhpháirte."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
+      "text": "Níor sonraíodh dath don chomhpháirt {0}."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
+      "text": "Tá comhpháirt {0} ann cheana féin."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
+      "text": "Níl an chomhpháirt {0} ann."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
+      "text": "Tá comhpháirt {0} réamhshainithe agus dá bhrí sin ní féidir í a bhaint."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
+      "text": "Níl aon chomhpháirteanna sa teimpléad."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
+      "text": "Níl aon chomhpháirteanna réamhshainithe ag an teimpléad nach mór a shainiú ({0})."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "Níor soláthraíodh ainm an teimpléid."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
+      "text": "Ní féidir teimpléad {0} a aimsiú"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
+      "text": "Ní féidir comhpháirt {0} a aimsiú sa teimpléad {1}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
+      "text": "Teimpléad neamhbhailí."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
+      "text": "Níl ainm ar an teimpléad."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
+      "text": "Tá an teimpléad ann cheana féin."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
+      "text": "Ní féidir an teimpléad ionsuite {0} a bhaint"
+    },
+    {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
       "text": "Tá an cineál datha neamhbhailí"
     },
@@ -912,48 +932,24 @@
       "text": "Aimsigh an Chéad Chéad"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "Bog Suas"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
       "text": "Téigh eilimint amháin suas"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "Bog Síos"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
       "text": "Téigh eilimint amháin síos"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "Leathanach Roimhe Seo"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
       "text": "Téigh go dtí an leathanach roimhe seo"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "An Leathanach Eile"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
       "text": "Téigh go dtí an chéad leathanach eile"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "Téigh go dtí an Tús"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
       "text": "Téigh go dtí an chéad eilimint"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "Téigh go dtí an Deireadh"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
@@ -1168,10 +1164,6 @@
       "text": "Dul Chun Cinn"
     },
     {
-      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "Éilíonn an leathanach cur i láthair seo go gcomhlíonfar na hionchuir seo a leanas sula bhféadfar dul ar aghaidh go dtí an chéad leathanach eile."
-    },
-    {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
       "text": "Ionchur ag teastáil"
     },
@@ -1206,14 +1198,6 @@
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
       "text": "Freagra mícheart. Déan iarracht arís."
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "Bog ar Chlé"
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "Bog ar Dheis"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
@@ -1300,10 +1284,6 @@
       "text": "Eolas uimhreach"
     },
     {
-      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "Ábhar folamh"
-    },
-    {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
       "text": "Ní fhéadfaidh an uimhir tosaigh beart sonraithe a bheith níos mó ná méid an chomhaid."
     },
@@ -1358,14 +1338,6 @@
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
       "text": "Líne Nua"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "Cúlspás"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "Scrios"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
@@ -1444,26 +1416,6 @@
       "text": "Dúnann gan na luachanna a chur isteach"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "Déanann gníomh nó roghnaíonn rogha"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "Laghdaíonn sé luach nó bogann sé trí líne téacs suas"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "Méadaíonn sé luach nó bogann sé trí líne téacs síos"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "Rogha roimhe seo nó trí líne téacs roimhe seo"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "An chéad rogha eile nó na trí líne téacs eile"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
       "text": "Laghdaíonn sé an luach reatha"
     },
@@ -1480,28 +1432,12 @@
       "text": "Socraíonn an luach go dtí an luach uasta"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "Socraíonn an fócas reatha go dtí an chéad eilimint luacha eile"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "Socraíonn an fócas reatha go dtí an eilimint luacha roimhe seo"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
       "text": "Téann sé go dtí an cnaipe roimhe seo"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
       "text": "Téann sé go dtí an chéad chnaipe eile"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "Cnaipe roimhe seo nó trí líne téacs roimhe seo"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "An cnaipe seo chugainn nó na trí líne téacs seo chugainn"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
@@ -1518,34 +1454,6 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
       "text": "Dúnann sé an bosca faisnéise módúil"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "Déanann gníomh"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "Trí líne téacs roimhe seo"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "Trí líne téacs eile"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "Téann sé go dtí an leathanach ionchuir roimhe seo"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "Téann sé go dtí an chéad leathanach eile d'ionchuir"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "Cuardaíonn ionchur"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "Athraíonn an luach ionchuir roghnaithe"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
@@ -1604,16 +1512,8 @@
       "text": "Barra taobh"
     },
     {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "Tuilleadh"
-    },
-    {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
       "text": "Deimhníonn rogha(cháin)"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "Athraíonn an luach roghnaithe (cnaipí raidió)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
@@ -1686,14 +1586,6 @@
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
       "text": "Roghnaíonn sé na heilimintí uile i ngach grúpa i ngach catagóir"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "Téann eilimint amháin nó líne taispeántais suas"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "Téann eilimint amháin nó líne taispeántais síos"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
@@ -2332,26 +2224,6 @@
       "text": "Ní fhéadfaidh aon téacs a phriontáil sa fhormáid tosaigh; ní fhéadfaidh ach seichimh VT formáidithe a bheith ann."
     },
     {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "Níl aon chomhad Asciicast ann"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "Ní féidir ionadaíocht bhunúsach Asciicast a dhíshraithiú"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "Ní féidir ionadaíocht Asciicast v1 a dhíshraithiú"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "Ní féidir ionadaíocht Asciicast v2 a dhíshraithiú"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "Ní féidir faisnéis imeachta a fháil"
-    },
-    {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
       "text": "Ceangail eochracha atá ar fáil"
     },
@@ -2396,492 +2268,40 @@
       "text": "Ba chóir go mbeadh an leithead céanna ag gach sníomhaire."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
-      "text": "Téann eilimint ionchuir amháin suas"
+      "loc": "T_INPUT_EXCEPTION_READPOINTERFAILED",
+      "text": "Theip ar an pointeoir a léamh."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
-      "text": "Téann eilimint ionchuir amháin síos"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION",
+      "text": "Níor soláthraíodh an cheist."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
-      "text": "Téann sé go dtí an chéad ionchur"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
+      "text": "Níor sonraíodh roghanna."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
-      "text": "Téigh go dtí an t-ionchur deiridh"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "Níor soláthraíodh ainm an teimpléid."
     },
     {
-      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Socraíonn sé luach an aschuir chuig an athróg MESH roghnaithe"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",
+      "text": "Níor soláthraíodh comhpháirteanna, ach is féidir an liosta seo a bheith folamh le haghaidh suimiú dinimiciúil."
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "Ní féidir paraiméadair snáithe a fháil chun an próiseas a chur i gcrích."
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER",
+      "text": "Níl leid méarchláir le haghaidh iontrála ann sa léirshamhlú."
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
-      "text": "Earráid agus iarracht á déanamh an t-ordú a rith"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT",
+      "text": "Níl leid méarchláir le haghaidh rubout ann sa léirshamhlú."
     },
     {
-      "loc": "T_COMMON_ERRORDESC",
-      "text": "Earráid {0}: {1}"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING",
+      "text": "Níl leid méarchláir le haghaidh scríbhneoireachta ann sa léirshamhlú."
     },
     {
-      "loc": "T_SHELL_BASE_OBSOLETECMD",
-      "text": "Tá an t-ordú seo imithe i léig agus bainfear é i scaoileadh amach anseo."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Ní bhfuarthas an t-ordú infhillte."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "Níl cead agat an t-ordú seo a fhorghníomhú go díreach i mód fillte."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
-      "text": "Níl an t-ordú fillte. Tá na horduithe seo infhillte:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Tharla earráid agus iarracht á déanamh aschur ordaithe a fhilleadh"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Ní féidir ordú a mhaolánú nach bhfuil socraithe mar infhillte."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "Ní féidir leat an bloc nua a dhearbhú sula gcuireann tú slonn a thacaíonn leis an gcruthú, amhail coinníollacha nó lúba. Is é {0} uimhir an chairn."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Agus bloc nua á thosú agat, cinntigh go bhfuil an chruach eangaithe i gceart agat. Is é {0} uimhir an chairn."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "Tá an script míchumtha. Seiceáil an script agus réitigh aon earráidí: {0}"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "Níor aimsíodh an riocht san abairt."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "Éilíonn riocht {0} {1} argóint. Fuair {2}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "Is gá an coinníoll a chur sa deireadh."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Earráid agus slonn á pharsáil mar gheall ar earráid chomhréire."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "Ní féidir coinníoll atá ann cheana a chlárú."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "Ní féidir riocht folamh a chlárú."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "Tá an cineál sonraí {0} sonraithe neamhbhailí."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "Tá an t-ardán sonraithe {0} neamhbhailí."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Theip ar fhorghníomhú an ordaithe foinse."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Theip ar fheidhmiú an ordaithe sprice. Seans nach bhfuil an t-ábhar líonta i gceart. Ba é an t-ordú a cuireadh chun báis"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
-      "text": "Tá píopa briste."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Líon neamhbhailí uaireanta."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "Ní féidir é féin a athdhéanamh."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Orduithe infhillte:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Meabhrúchán do na horduithe slais"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
-      "text": "Déanann sé próiseas seachtrach"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Conair chuig próiseas"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Argóintí le cur ar aghaidh chuig próiseas"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
-      "text": "Déanann sé an próiseas gan cur isteach ar an snáithe bhlaosc. Cruthófar fuinneog ar leith."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Ordú chun iontráil cabhrach a thaispeáint"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
-      "text": "Íoslódáil an stair de na sliogáin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
-      "text": "Píopaí an t-aschur ordaithe chuig ordú eile mar pharaiméadair"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Ordú foinse chun a aschur a phíobáil go dtí an sprioc-ordú mar an paraiméadar deiridh"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Sprioc-ordú a fhorghníomhú ar argóint tógála bunaithe ar an aschur ordú foinse"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Cibé ar cheart aschur an bhunordaithe a chur ar aghaidh mar argóint luaite amháin nó argóint neamhluaite"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
-      "text": "Athdhéantar seo an gníomh deireanach nó an t-ordú sonraithe"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Sprioc-ordú a fhorghníomhú ar argóint tógála bunaithe ar an aschur ordú foinse"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
-      "text": "Sábhálann sé stair bhlaosc"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
-      "text": "Wraps an t-aschur consól"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Ordú chun a aschur a fhilleadh"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
-      "text": "Earráid agus an script a rith: {0}"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "Feidhmíonn sé orduithe a luaithe a shásaítear na habairtí MESH"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
-      "text": "Slonn MESH le tástáil"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Ordú a fhorghníomhú ar mheastóireacht rathúil"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
-      "text": "áit a bhfuil <freagraí> freagraí aonlitreacha ar an gceist scartha i slais"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
-      "text": "Caithfidh tú an lasc -set a chur ar aghaidh leis an athróg a dteastaíonn uait an luach seo a shocrú dó."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
-      "text": "Déanann sé roghanna úsáideora"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Freagraí ar scoilt le slais"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ceist le priontáil ar an scáileán"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Teideal an chéad fhreagra"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Teideal an dara freagra, agus mar sin de..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
-      "text": "Stíl rogha líne amháin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
-      "text": "Stíl rogha dhá líne"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
-      "text": "Stíl rogha nua-aimseartha"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "Ní féidir leis an aschur a bheith ach carachtar amháin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "Is féidir leis an aschur a bheith níos mó ná carachtar"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CLS_DESC",
-      "text": "Glanann an scáileán"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
-      "text": "Scríobhann sé téacs isteach sa chonsól"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "Teaghrán le priontáil"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "Priontaí an téacs mar atá sé gan aon pharsáil sealbhóra áite"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "Forks an bhlaosc MESH chun sampla eile a chruthú"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
-      "text": "Ligeann sé don úsáideoir ionchur a chur isteach"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ceist le priontáil ar an scáileán"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
-      "text": "Ligeann sé don úsáideoir ionchur a chur isteach mar phasfhocal"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
-      "text": "Léiríonn dáta agus am"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
-      "text": "Taispeáin ach an dáta"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
-      "text": "Léiríonn díreach an t-am"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
-      "text": "Úsáideann sé UTC in ionad áitiúil"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
-      "text": "Soláthraíonn rogha rogha"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Freagraí ar scoilt le slais"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ceist le priontáil ar an scáileán"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Teideal an chéad fhreagra"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Teideal an dara freagra, agus mar sin de..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_DESC",
-      "text": "Socraíonn sé athróg ar luach i script"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
-      "text": "Luach a shocrú"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
-      "text": "Cruthaítear eagar athraitheach leis na luachanna a chuirtear ar fáil"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "An chéad luach"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "An dara luach"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "An tríú luach, agus mar sin de ..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
-      "text": "Codlaíonn sé ar feadh milleasoicindí sonraithe"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Eatramh chun codlata"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "Baineann sé athróg ó liosta athróg MESH"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Ainm athróg"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Just a wipes an luach athraitheach gan é a bhaint"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
-      "text": "Is féidir leat '{0}' a rith mar '{1}' anois!"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Cineál neamhbhailí {0}."
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
-      "text": "Baineadh ailias {0} go rathúil."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "Ní féidir coinníoll nach ann a dhíchlárú."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
-      "text": "Cuireann ailiasanna le horduithe"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Cuireann ailias leis"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Cineál bhlaosc chun orduithe a fháil uaidh"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Ainm ailias"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Ordú le húsáid mar aicearra"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Baineann sé ailias"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
-      "text": "Tá fillteán console le fáil cheana féin"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
-      "text": "Seans nach bhfuil ainm fillteáin consóil folamh"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
-      "text": "Ní aimsítear fillteán consól"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
-      "text": "Seans nach mbainfear clúdach consól ionsuite"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
-      "text": "Theip ar bhaint an fhillteáin chonsóil"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Theip ar an téama réamhshocraithe a líonadh"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "Níl aon meiteashonraí téama sainithe."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Ní féidir meiteashonraí a dhíshraithiú."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Caithfidh do chonsól tacú le fíor dhath chun an téama seo a úsáid."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
-      "text": "Scoir an réamhamharc"
-    },
-    {
-      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
-      "text": "Seo mar a bheidh do théama cosúil:"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Teimpléad datha neamhbhailí {0}"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "Déanann an téama {0} ceiliúradh ar imeacht, ach tá tú ró-luath nó ró-dhéanach le bheith i láthair. Gach bliain, tá an téama seo inrochtana ó {1}/{2} go {3}/{4}."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "Teastaíonn tacaíocht fíor dhathanna don téama {0}, ach ní thacaíonn do chonsól leis."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Tá ceann amháin nó níos mó de na dathanna neamhbhailí."
-    },
-    {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "An téama réamhshocraithe don eithne"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "Accents i ngach áit!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "Leacht gan dath, fuming, agus an-chreimneach"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_WARNING",
-      "text": "Ní mór duit a bheith ag rith ConEmu nó ordú Windows 10 leid le próiseáil VT cumasaithe."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_INFO",
-      "text": "Tá do teirminéal {0} ar {1}."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_QUESTION",
-      "text": "An bhfeiceann na rampaí seo ceart duitse? Ba chóir dóibh aistriú go réidh."
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
+      "text": "Ní féidir an cineál a chinneadh ón seicheamh seo. Déan cinnte go bhfuil sé sonraithe agat i gceart."
     }
   ]
 }

@@ -7,10 +7,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "アイコン {0} は存在しません。"
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "アイコン {0} は存在しますが、読み込みに失敗しました。"
     },

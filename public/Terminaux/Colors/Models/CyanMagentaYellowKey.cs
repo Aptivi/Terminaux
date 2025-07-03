@@ -71,16 +71,16 @@ namespace Terminaux.Colors.Models
                 // We got the CMYK whole values! First, check to see if we need to filter the color for the color-blind
                 int c = Convert.ToInt32(specifierArray[0]);
                 if (c < 0 || c > 100)
-                    throw new TerminauxException("The cyan color level is out of range (0 -> 100)" + $". {c}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL") + $" {c}");
                 int m = Convert.ToInt32(specifierArray[1]);
                 if (m < 0 || m > 100)
-                    throw new TerminauxException("The magenta color level is out of range (0 -> 100)" + $". {m}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL") + $" {m}");
                 int y = Convert.ToInt32(specifierArray[2]);
                 if (y < 0 || y > 100)
-                    throw new TerminauxException("The yellow color level is out of range (0 -> 100)" + $". {y}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL") + $" {y}");
                 int k = Convert.ToInt32(specifierArray[3]);
                 if (k < 0 || k > 100)
-                    throw new TerminauxException("The black key level is out of range (0 -> 100)" + $". {k}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL") + $" {k}");
 
                 // First, we need to convert from CMYK to RGB
                 double cPart = (double)c / 100;
@@ -91,7 +91,7 @@ namespace Terminaux.Colors.Models
                 return cmyk;
             }
             else
-                throw new TerminauxException("Invalid CMY color specifier \"{0}\". The specifier may not be more than four elements. Ensure that it's on the correct format".FormatString(specifier) + ": cmyk:<C>;<M>;<Y>;<K>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED").FormatString(specifier) + ": cmyk:<C>;<M>;<Y>;<K>");
         }
 
         /// <summary>

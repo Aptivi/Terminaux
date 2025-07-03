@@ -7,10 +7,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "aaikan {0} maujood nahin hai."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "aaikan {0} maujood hai, lekin lod nahin ho paaya."
     },

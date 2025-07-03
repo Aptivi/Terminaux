@@ -7,10 +7,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "Значок {0} не існує."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "Значок {0} існує, але не вдалося завантажити."
     },

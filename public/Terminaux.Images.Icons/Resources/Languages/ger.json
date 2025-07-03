@@ -16,10 +16,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "Symbol {0} existiert nicht."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "Symbol {0} existiert, konnte aber nicht geladen werden."
     },

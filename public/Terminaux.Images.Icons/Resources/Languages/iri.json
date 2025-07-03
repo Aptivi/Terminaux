@@ -8,10 +8,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "Níl an deilbhín {0} ann."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "Tá an deilbhín {0} ann, ach níor éirigh leis a luchtú."
     },

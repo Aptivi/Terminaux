@@ -75,10 +75,6 @@
       "text": "yah eplikeshan tarminoks dvaara pradaan kee gaee vistaarit kansol suvidhaon ka upayog karata hai jisake lie \"damb\" tarminalon dvaara samarthit suvidhaon kee aavashyakata nahin hotee hai."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "sambhaavit samaadhaan: tarminal prakaar ko \"damb\" ke alaava kisee any prakaar mein set karane ke lie upayukt tarminal emuletar ka upayog karen ya apanee tarminal seting se paraamarsh len. ham is eplikeshan se adhikatam laabh uthaane ke lie \"vt100\" tarminal emuletar ka upayog karane kee salaah dete hain."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
       "text": "upayogakarta ne blaikalisted tarminal prakaar par tarminoks eplikeshan chalaane kee koshish kee."
     },
@@ -165,22 +161,6 @@
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
       "text": "kansol filtar mein koee abhivyakti nahin hai."
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "ro mod ke lie nae tarmiyos etribyoot ko punarsthaapit nahin kiya ja sakata: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "fail diskriptar flaig praapt nahin kiya ja sakata: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "fail diskriptar flaig ko non-bloking reed par set nahin kiya ja sakata: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "fail diskriptar flaig ko bloking reed par set nahin kiya ja sakata: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
@@ -343,6 +323,10 @@
       "text": "rang seema se baahar hai."
     },
     {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "rang deta praapt nahin kiya ja sakata."
+    },
+    {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
       "text": "kya aap sunishchit hain ki yah gredient shoony nahin hai?"
     },
@@ -439,10 +423,6 @@
       "text": "chiailchh mein kanavart nahin kiya ja sakata."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "hwb mein kanavart nahin kiya ja sakata."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
       "text": "rgb se kanavart nahin kiya ja sakata."
     },
@@ -499,10 +479,6 @@
       "text": "shoony rgb instens ko chiailchh mein nahin badala ja sakata!"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "shoony rgb instens ko hwb mein nahin badala ja sakata!"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
       "text": "shoony chmyk instens ko rgb mein nahin badala ja sakata!"
     },
@@ -553,10 +529,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
       "text": "shoony chiailchh instens ko rgb mein nahin badala ja sakata!"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "shoony hwb instens ko rgb mein nahin badala ja sakata!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
@@ -675,6 +647,14 @@
       "text": "amaany chmyk rang vinirdeshak \"{0}\". sunishchit karen ki yah sahee praaroop par hai"
     },
     {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "kaala rang star seema se baahar hai (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "amaany chmyk rang vinirdeshak \"{0}\". vinirdeshak chaar tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai"
+    },
+    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "amaany hsl rang vinirdeshak \"{0}\". sunishchit karen ki yah sahee praaroop par hai"
     },
@@ -705,22 +685,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
       "text": "amaany hsv rang vinirdeshak \"{0}\". vinirdeshak mein teen se zyaada tatv nahin ho sakate. sunishchit karen ki yah sahee formet par hai"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "amaany hwb rang vinirdeshak \"{0}\". sunishchit karen ki yah sahee formet par hai"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "safedee star seema se baahar hai (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "kaalaapan star seema se baahar hai (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "amaany hwb rang vinirdeshak \"{0}\". vinirdeshak mein teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
@@ -867,6 +831,62 @@
       "text": "amaany yxy rang vinirdeshak \"{0}\". vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai"
     },
     {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
+      "text": "koee ghatak naam nirdisht nahin hai."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
+      "text": "ghatak {0} ke lie koee rang nirdisht nahin hai."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
+      "text": "ghatak {0} pahale se maujood hai."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
+      "text": "ghatak {0} maujood nahin hai."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
+      "text": "ghatak {0} poorvanirdhaarit hai aur isalie ise hataaya nahin ja sakata."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
+      "text": "tempalet mein koee ghatak nahin hai."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
+      "text": "tempalet mein koee poorv-nirdhaarit ghatak nahin hai jise paribhaashit kiya jaana chaahie ({0})."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "pradaan kie gae tempalet ka koee naam nahin hai."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
+      "text": "tempalet {0} nahin mil raha"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
+      "text": "tempalet {1} mein ghatak {0} nahin mil raha"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
+      "text": "amaany tempalet."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
+      "text": "tempalet ka koee naam nahin hai."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
+      "text": "tempalet pahale se maujood hai."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
+      "text": "antarnihit tempalet {0} ko hataaya nahin ja sakata"
+    },
+    {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
       "text": "rang prakaar amaany hai"
     },
@@ -911,48 +931,24 @@
       "text": "agala khojen"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "oopar jaen"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
       "text": "ek tatv oopar jaen"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "neeche jaen"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
       "text": "ek tatv neeche jaen"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "pichhala prshth"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
       "text": "pichhale prshth par jaen"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "agala prshth"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
       "text": "agale prshth par jaen"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "shuruaat par jaen"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
       "text": "pahale tatv par jaen"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "ant par jaen"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
@@ -1167,10 +1163,6 @@
       "text": "unnat"
     },
     {
-      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "is prastuti prshth ko agale prshth par aage badhane mein saksham hone se pahale nimnalikhit inaput ko poora karane kee aavashyakata hai."
-    },
-    {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
       "text": "inaput aavashyak hai"
     },
@@ -1205,14 +1197,6 @@
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
       "text": "galat uttar. krpaya punah prayaas karen."
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "baen le jaen"
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "daen le jaen"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
@@ -1299,10 +1283,6 @@
       "text": "sankhya jaanakaaree"
     },
     {
-      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "khaalee saamagree"
-    },
-    {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
       "text": "nirdisht aarambh bait sankhya fail aakaar se badee nahin ho sakatee."
     },
@@ -1357,14 +1337,6 @@
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
       "text": "naee pankti"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "baikaspes"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "mitaen"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
@@ -1443,26 +1415,6 @@
       "text": "maan sabamit kie bina band ho jaata hai"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "koee kaarravaee karata hai ya koee vikalp chunata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "maan ghataata hai ya tekst kee teen panktiyaan oopar le jaata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "maan badhaata hai ya tekst kee teen panktiyaan neeche le jaata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "pichhala vikalp ya tekst kee pichhalee teen panktiyaan"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "agala vikalp ya tekst kee agalee teen panktiyaan"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
       "text": "vartamaan maan ghataata hai"
     },
@@ -1479,28 +1431,12 @@
       "text": "maan ko adhikatam maan par set karata hai"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "vartamaan fokas ko agale maan tatv par set karata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "vartamaan fokas ko pichhale maan tatv par set karata hai"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
       "text": "pichhale batan par jaata hai"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
       "text": "agale batan par jaata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "pichhala batan ya tekst kee pichhalee teen panktiyaan"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "agala batan ya tekst kee agalee teen panktiyaan"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
@@ -1517,34 +1453,6 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
       "text": "modal soochana boks ko band karata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "kriya karata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "paath kee pichhalee teen panktiyaan"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "paath kee agalee teen panktiyaan"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "inaput ke pichhale prshth par jaata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "inaput ke agale prshth par jaata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "inaput khojata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "chayanit inaput maan badalata hai"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
@@ -1603,16 +1511,8 @@
       "text": "saidabaar"
     },
     {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "adhik"
-    },
-    {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
       "text": "chayan kee pushti karata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "chayanit maan badalata hai (rediyo batan)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
@@ -1685,14 +1585,6 @@
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
       "text": "sabhee shreniyon mein sabhee samoohon mein sabhee tatvon ka chayan karata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "ek tatv ya shokes lain oopar jaata hai"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "ek tatv ya shokes lain neeche jaata hai"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
@@ -2331,26 +2223,6 @@
       "text": "praarambhik praaroop mein koee paath nahin chhapana chaahie; isamen keval svaroopan vt anukram hona chaahie."
     },
     {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "koee aschiichast fail nahin hai"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "bes aschiichast pratinidhitv ko deeseriyalaiz nahin kiya ja sakata"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "aschiichast v1 pratinidhitv ko deeseriyalaiz nahin kiya ja sakata"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "aschiichast v2 pratinidhitv ko deeseriyalaiz nahin kiya ja sakata"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "eevent jaanakaaree praapt nahin kee ja sakatee"
-    },
-    {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
       "text": "upalabdh keebainding"
     },
@@ -2395,492 +2267,40 @@
       "text": "sabhee spinar kee chaudaee samaan honee chaahie."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
-      "text": "ek inaput tatv oopar jaata hai"
+      "loc": "T_INPUT_EXCEPTION_READPOINTERFAILED",
+      "text": "pointar padhane mein viphal."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
-      "text": "ek inaput tatv neeche chala jaata hai"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION",
+      "text": "prashn pradaan nahin kiya gaya hai."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
-      "text": "pahale inaput par jaata hai"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
+      "text": "vikalp nirdisht nahin hain"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
-      "text": "antim inaput par jaata hai"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "tempalet ka naam pradaan nahin kiya gaya hai"
     },
     {
-      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "aautaput ke maan ko chayanit uaish vairiebal par set karata hai"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",
+      "text": "ghatak pradaan nahin kie gae hain, lekin gatisheel jod ke lie yah soochee khaalee ho sakatee hai."
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "prakriya nishpaadan ke lie thred pairaameetar nahin mil sakate."
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER",
+      "text": "entar ke lie keebord kyoo mainiphest mein maujood nahin hai"
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
-      "text": "kamaand  nishpaadit karane ka prayaas karane mein truti"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT",
+      "text": "rabaut ke lie keebord kyoo mainiphest mein maujood nahin hai"
     },
     {
-      "loc": "T_COMMON_ERRORDESC",
-      "text": "truti {0}: {1}"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING",
+      "text": "lekhan ke lie keebord kyoo mainiphest mein maujood nahin hai"
     },
     {
-      "loc": "T_SHELL_BASE_OBSOLETECMD",
-      "text": "yah kamaand aprachalit hai aur bhavishy ke rileez mein hata dee jaegee."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "lapetane yogy aadesh nahin mila hai."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "aapako is kamaand ko seedhe raipd mod mein nishpaadit nahin karana chaahie."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
-      "text": "aadesh lapetane yogy nahin hai. ye aadesh lapetane yogy hain:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "kamaand aautaput ko raip karane ka prayaas karate samay ek truti huee"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "aisee kamaand ko baphar nahin kiya ja sakata jo raip karane yogy ke roop mein set na ho."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "aap nirmaan ka samarthan karane vaale eksapreshan, jaise ki sharten ya loop rakhane se pahale naya blok ghoshit nahin kar sakate. staik nambar {0} hai."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "naya blok shuroo karate samay, sunishchit karen ki aapane staik ko sahee dhang se indent kiya hai. staik nambar {0} hai."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "skript vikrt hai. skript kee jaanch karen aur kisee bhee truti ka samaadhaan karen: {0}"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "abhivyakti mein sthiti nahin paee gaee."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "shart {0} ke lie {1} tarkon kee aavashyakata hai. {2} mil gaya."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "shart ko ant mein rakha jaana chaahie."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "sintaiks truti ke kaaran abhivyakti ko paars karane mein truti."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "aisee shart ko panjeekrt nahin kiya ja sakata jo pahale se maujood hai."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "khaalee shart ko panjeekrt nahin kiya ja sakata."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "nirdisht deta prakaar {0} amaany hai."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "nirdisht pletaform {0} amaany hai."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "srot kamaand nishpaadan viphal raha."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "lakshy kamaand nishpaadan viphal raha. saamagree theek se popyulet nahin huee ho sakatee hai. nishpaadit kamaand thee"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
-      "text": "paip toot gaya hai."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "baar-baar amaany sankhya."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "khud ko doharaaya nahin ja sakata."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "lapetane yogy aadesh:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "slaish kamaand ke lie anusmaarak"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
-      "text": "baaharee prakriya nishpaadit karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
-      "text": "prakriya ka path"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "prakriya ko paas karane ke lie tark"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
-      "text": "shel thred ko baadhit kie bina prakriya nishpaadit karata hai. ek alag vindo banaee jaegee."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "sahaayata pravishti dikhaane ke lie kamaand"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
-      "text": "shel itihaas lod karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
-      "text": "pairaameetar ke roop mein kamaand aautaput ko doosare kamaand mein paip karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "antim pairaameetar ke roop mein lakshy kamaand ko isake aautaput ko paip karane ke lie srot kamaand"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "srot kamaand aautaput ke aadhaar par bilding tark par nishpaadit karane ke lie lakshy kamaand"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
-      "text": "srot kamaand ke aautaput ko ek uddhrt tark ya bina uddhrt tark ke roop mein paas karana hai ya nahin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
-      "text": "antim kriya ya nirdisht kamaand ko doharaata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "srot kamaand aautaput ke aadhaar par bilding tark par nishpaadit karane ke lie lakshy kamaand"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
-      "text": "shel itihaas sahejata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
-      "text": "kansol aautaput ko lapetata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "isake aautaput ko lapetane ke lie kamaand"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
-      "text": "skript nishpaadit karane mein truti: {0}"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "ek baar uaish ke bhaav santusht hone ke baad kamaand nishpaadit karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
-      "text": "pareekshan karane ke lie uaish abhivyakti"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
-      "text": "saphal moolyaankan par nishpaadit karane ke lie kamaand"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
-      "text": "jahaan <uttar> prashn ke ek-akshar vaale uttar ko slaish mein alag kiya jaata hai"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
-      "text": "aapako us vairiebal ke saath -sait svich paas karana hoga jis par aap yah maan set karana chaahate hain."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
-      "text": "upayogakarta kee pasand banaata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "slaish ke saath vibhaajit karane ke lie uttar"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "skreen par print karane ke lie prashn"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "pahala uttar sheershak"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "doosara uttar sheershak, aur isee tarah..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
-      "text": "ek pankti vikalp shailee"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
-      "text": "do panktiyon vikalp shailee"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
-      "text": "aadhunik vikalp shailee"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "aautaput keval ek varn ho sakata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "aautaput ek varn se adhik ho sakata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CLS_DESC",
-      "text": "skreen saaf karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
-      "text": "kansol mein tekst likhata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "print karane ke lie string"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "tekst ko bina plesaholdar paarsing ke vaise hee print karata hai jaise vah hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "ek aur udaaharan banaane ke lie uaish shel ko phork karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
-      "text": "upayogakarta ko inaput darj karane kee anumati deta hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "skreen par print karane ke lie prashn"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
-      "text": "upayogakarta ko paasavard ke roop mein inaput darj karane kee anumati deta hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
-      "text": "dinaank aur samay dikhaata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
-      "text": "sirph taareekh dikhaata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
-      "text": "sirph samay dikhaata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
-      "text": "sthaaneey ke bajaay utch ka upayog karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
-      "text": "ek chayan vikalp pradaan karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "slaish ke saath vibhaajit karane ke lie uttar"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "skreen par print karane ke lie prashn"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "pahala uttar sheershak"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "doosara uttar sheershak, aur isee tarah..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_DESC",
-      "text": "ek char ko ek skript mein ek maan par set karata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
-      "text": "set karane ke lie maan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
-      "text": "pradaan kie gae maanon ke saath ek char saranee banaata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "pahala maan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "doosara maan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "teesara maan, aur isee tarah..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
-      "text": "nirdisht mileesekand ke lie sota hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
-      "text": "sone ke lie antaraal"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "uaish char soochee se ek char ko hataata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "char naam"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "bas ise hatae bina char maan ko mita deta hai"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
-      "text": "ab aap {0} ko {1} ke roop mein chala sakate hain!"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "amaany prakaar {0}."
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
-      "text": "saphalataapoorvak nikaala gaya upanaam {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "aisee shart ko apanjeekrt nahin kiya ja sakata jo maujood nahin hai."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
-      "text": "upanaamon ko aagyaon mein jodata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "ek upanaam jodata hai"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "kamaand laane ke lie shel prakaar"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "upanaam naam"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "shortakat ke roop mein upayog kee jaane vaalee kamaand"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
-      "text": "upanaam hataata hai"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
-      "text": "kansol raipar pahale se hee mil gaya hai"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
-      "text": "kansol raipar ka naam khaalee nahin ho sakata"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
-      "text": "kansol raipar nahin mila"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
-      "text": "bilt-in kansol raipar hataaya nahin ja sakata"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
-      "text": "kansol raipar hataana viphal raha"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "difolt theem ko popyulet karane mein viphal"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "koee theem metaadeta paribhaashit nahin hai."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "metaadeta ko deeserielaiz nahin kiya ja sakata."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "is theem ka upayog karane ke lie aapake kansol ko troo kalar ka samarthan karana chaahie."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
-      "text": "poorvaavalokan se baahar nikalen"
-    },
-    {
-      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
-      "text": "yahaan bataaya gaya hai ki aapakee theem kaisee dikhegee:"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "amaany rang tempalet {0}"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "theem {0} ek eevent manaatee hai, lekin aap bhaag lene ke lie ya to bahut jaldee ya bahut der se aate hain. pratyek varsh, yah theem {1}/{2} se {3}/{4} tak sulabh hai."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "theem {0} ko troo kalar samarthan kee aavashyakata hai, lekin aapaka kansol isaka samarthan nahin karata hai."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
-      "text": "rangon mein se ek ya adhik amaany hai. "
-    },
-    {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "karnel ke lie difolt theem"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "har jagah uchchaaran!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "rangaheen, dhunaadhaar aur atyadhik sankshaarak taral"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_WARNING",
-      "text": "aapako vt prosesing saksham ke saath chonaimu ya windows 10 kamaand prompt chalaana hoga."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_INFO",
-      "text": "aapaka tarminal {1} par {0} hai."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_QUESTION",
-      "text": "kya ye raimp aapako sahee lagate hain? unhen suchaaroo roop se sankraman karana chaahie."
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
+      "text": "is anukram se prakaar nirdhaarit nahin kiya ja sakata. sunishchit karen ki aapane ise sahee dhang se nirdisht kiya hai."
     }
   ]
 }

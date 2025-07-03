@@ -68,7 +68,7 @@ namespace Terminaux.Shell.Help
             {
                 TextWriterColor.WriteColor(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXTRACMDS") + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, ExtraCommandList.Count);
                 if (ExtraCommandList.Count == 0)
-                    TextWriterColor.WriteColor("  - No extra commands.", ConsoleColors.Silver);
+                    TextWriterColor.WriteColor("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS"), ConsoleColors.Silver);
                 foreach (var cmd in ExtraCommandList)
                 {
                     TextWriterRaw.WriteRaw(new ListEntry()
@@ -84,7 +84,7 @@ namespace Terminaux.Shell.Help
             {
                 TextWriterColor.WriteColor(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ALIASCMDS") + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
-                    TextWriterColor.WriteColor("  - No alias commands.", ConsoleColors.Silver);
+                    TextWriterColor.WriteColor("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS"), ConsoleColors.Silver);
                 foreach (var cmd in AliasedCommandList)
                 {
                     TextWriterRaw.WriteRaw(new ListEntry()
@@ -100,7 +100,7 @@ namespace Terminaux.Shell.Help
             {
                 TextWriterColor.WriteColor(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS") + (showCount ? " [{0}]" : ""), ConsoleColors.Silver, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
-                    TextWriterColor.WriteColor("  - No unified commands.", ConsoleColors.Silver);
+                    TextWriterColor.WriteColor("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS"), ConsoleColors.Silver);
                 foreach (var cmd in unifiedCommandList)
                 {
                     TextWriterRaw.WriteRaw(new ListEntry()

@@ -7,10 +7,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "आइकन {0} मौजूद नहीं है।"
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "आइकन {0} मौजूद है, लेकिन लोड नहीं हो पाया।"
     },

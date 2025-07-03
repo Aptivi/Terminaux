@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -44,9 +44,9 @@ namespace Terminaux.Inputs.Presentation.Inputs
         public override void PromptInput()
         {
             if (Choices is null || Choices.Length == 0)
-                throw new TerminauxException("Choices are not specified");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES"));
             if (Question is null || string.IsNullOrEmpty(Question))
-                throw new TerminauxException("The question has not been provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION"));
 
             // Now, open the infobox
             int index = InfoBoxSelectionColor.WriteInfoBoxSelection(Choices, Question);

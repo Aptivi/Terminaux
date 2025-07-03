@@ -8,10 +8,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "aikon {0}i(ga) jonjaehaji anhseubnida."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "aikon {0}i(ga) jonjaehajiman lodeuhaji moshaessseubnida."
     },

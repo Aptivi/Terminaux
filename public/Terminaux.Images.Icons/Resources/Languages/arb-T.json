@@ -33,10 +33,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "الأيقونة {0} غير موجودة."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "الأيقونة {0} موجودة، ولكن لم يتم تحميلها."
     },

@@ -11,10 +11,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "Túbiāo {0} bù cúnzài."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "Túbiāo {0} cúnzài, dàn jiā zǎi shībài."
     },

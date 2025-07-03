@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -256,7 +256,7 @@ namespace Terminaux.Inputs
                 uint numRead = 0;
                 int result = NativeMethods.ioctl(0, ctl, ref numRead);
                 if (result == -1)
-                    throw new TerminauxException("Failed to read the pointer.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_EXCEPTION_READPOINTERFAILED"));
                 bool error = false;
 
                 // Functions to help get output
@@ -297,7 +297,7 @@ namespace Terminaux.Inputs
                 byte y = 0;
                 int _ = Read(ref chars, ref error);
                 if (error)
-                    throw new TerminauxException("Failed to read the pointer.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_EXCEPTION_READPOINTERFAILED"));
                 if (chars[0] == VtSequenceBasicChars.EscapeChar)
                 {
                     // Now, read the button, X, and Y positions

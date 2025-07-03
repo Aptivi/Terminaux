@@ -24,6 +24,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
 using Terminaux.Colors.Transformation;
+using Textify.General;
 
 namespace Terminaux.Colors.Models
 {
@@ -132,7 +133,7 @@ namespace Terminaux.Colors.Models
         public static CieLabFull ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". Ensure that it's on the correct format: cielab:<red>;<yellow>;<blue>;<observer>;<illuminant>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER").FormatString(specifier) + ": cielab:<l>;<a>;<b>;<observer>;<illuminant>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(7).Split(';');
@@ -141,26 +142,26 @@ namespace Terminaux.Colors.Models
                 // We got the CieLab whole values! First, check to see if we need to filter the color for the color-blind
                 double l = Convert.ToDouble(specifierArray[0]);
                 if (l < 0 || l > 100)
-                    throw new TerminauxException($"The L value is out of range (0.0 -> 100.0). {l}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL") + $" {l}");
                 double a = Convert.ToDouble(specifierArray[1]);
                 if (a < -128 || a > 128)
-                    throw new TerminauxException($"The A value is out of range (-128.0 -> 128.0). {a}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL") + $" {a}");
                 double b = Convert.ToDouble(specifierArray[2]);
                 if (b < -128 || b > 128)
-                    throw new TerminauxException($"The B value is out of range (-128.0 -> 128.0). {b}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL") + $" {b}");
                 int observer = Convert.ToInt32(specifierArray[3]);
                 if (observer != 2 && observer != 10)
-                    throw new TerminauxException($"Observer must be either 2 or 10. {observer}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER") + $": {observer}");
                 IlluminantType illuminant = (IlluminantType)Convert.ToInt32(specifierArray[4]);
                 if (illuminant < IlluminantType.A || illuminant > IlluminantType.F12)
-                    throw new TerminauxException($"Illuminant is invalid. {(int)illuminant}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT") + $": {(int)illuminant}");
 
                 // First, we need to convert from CieLab to RGB
                 var CieLab = new CieLabFull(l, a, b, observer, illuminant);
                 return CieLab;
             }
             else
-                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cielab:<red>;<yellow>;<blue>;<observer>;<illuminant>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED").FormatString(specifier) + ": cielab:<l>;<a>;<b>;<observer>;<illuminant>");
         }
 
         /// <inheritdoc/>

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -79,11 +79,11 @@ namespace Terminaux.Colors.Templates
         public void AddComponent(string componentName, Color? color)
         {
             if (string.IsNullOrEmpty(componentName))
-                throw new TerminauxException("No component name specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME"));
             if (color is null)
-                throw new TerminauxException("No color specified for component {0}.".FormatString(componentName));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT").FormatString(componentName));
             if (ComponentExists(componentName))
-                throw new TerminauxException("Component {0} already exists.".FormatString(componentName));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS").FormatString(componentName));
 
             // Now, add a component
             components.Add(componentName, color);
@@ -96,11 +96,11 @@ namespace Terminaux.Colors.Templates
         public void RemoveComponent(string componentName)
         {
             if (string.IsNullOrEmpty(componentName))
-                throw new TerminauxException("No component name specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME"));
             if (!ComponentExists(componentName))
-                throw new TerminauxException("Component {0} doesn't exist.".FormatString(componentName));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT").FormatString(componentName));
             if (ComponentPredefined(componentName))
-                throw new TerminauxException("Component {0} is predefined and thus cannot be removed.".FormatString(componentName));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED").FormatString(componentName));
 
             // Now, add a component
             components.Remove(componentName);
@@ -114,11 +114,11 @@ namespace Terminaux.Colors.Templates
         public void EditComponent(string componentName, Color? color)
         {
             if (string.IsNullOrEmpty(componentName))
-                throw new TerminauxException("No component name specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME"));
             if (color is null)
-                throw new TerminauxException("No color specified for component {0}.".FormatString(componentName));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT").FormatString(componentName));
             if (!ComponentExists(componentName))
-                throw new TerminauxException("Component {0} doesn't exist.".FormatString(componentName));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT").FormatString(componentName));
 
             // Now, add a component
             components[componentName] = color;
@@ -150,15 +150,15 @@ namespace Terminaux.Colors.Templates
                 string name = kvp.Key;
                 Color? color = kvp.Value;
                 if (string.IsNullOrEmpty(name))
-                    throw new TerminauxException("No component name specified.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME"));
                 if (color is null)
-                    throw new TerminauxException("No color specified for component {0}.".FormatString(name));
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT").FormatString(name));
                 if (components.Count == 0)
-                    throw new TerminauxException("Template has no components.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS"));
                 finalComponents.Add(name, color);
             }
             if (!TemplateComponentValidation(finalComponents))
-                throw new TerminauxException("Template has no pre-defined components that must be defined ({0}).", string.Join(", ", Enum.GetNames(typeof(PredefinedComponentType))));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS"), string.Join(", ", Enum.GetNames(typeof(PredefinedComponentType))));
             return finalComponents;
         }
 
@@ -174,9 +174,9 @@ namespace Terminaux.Colors.Templates
         public TemplateInfo(string name, Dictionary<string, Color?>? components)
         {
             if (string.IsNullOrEmpty(name))
-                throw new TerminauxException("Name of the template not provided");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME"));
             if (components is null)
-                throw new TerminauxException("Components are not provided, but this list can be empty for dynamic addition.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR"));
             var finalComponents = VerifyComponentsCtor(components);
             this.name = name;
             this.components = finalComponents;

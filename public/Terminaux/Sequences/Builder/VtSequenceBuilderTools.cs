@@ -77,7 +77,7 @@ namespace Terminaux.Sequences.Builder
             }
 
             // If still not found, then throw
-            throw new TerminauxException("Can't determine type from this sequence. Make sure that you've specified it correctly.");
+            throw new TerminauxException(LanguageTools.GetLocalized("T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE"));
         }
     }
 }

@@ -33,10 +33,6 @@
   ],
   "locs": [
     {
-      "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_NOICON",
-      "text": "al'ayquna {0} ghayr mawjudatin."
-    },
-    {
       "loc": "TII_ICONSMANAGER_RENDERICON_EXCEPTION_ICONLOADERROR",
       "text": "al'ayquna {0} mawjudatun, walakin lam yatima tahmiluha."
     },

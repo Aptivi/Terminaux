@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -61,7 +61,7 @@ namespace Terminaux.Colors.Templates
         public static bool Exists(string template)
         {
             if (string.IsNullOrWhiteSpace(template))
-                throw new TerminauxException("No name of the template provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME"));
             return TemplateNames.Contains(template);
         }
 
@@ -73,7 +73,7 @@ namespace Terminaux.Colors.Templates
         public static bool ExistsBuiltin(string template)
         {
             if (string.IsNullOrWhiteSpace(template))
-                throw new TerminauxException("No name of the template provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME"));
             return baseTemplates.Any((templateInfo) => templateInfo.Name == template);
         }
 
@@ -86,7 +86,7 @@ namespace Terminaux.Colors.Templates
         {
             // Check to see if we have this template
             if (!Exists(template))
-                throw new TerminauxException("Can't find template {0}", template);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE"), template);
 
             // Now, set the default template
             defaultTemplate = template;
@@ -115,7 +115,7 @@ namespace Terminaux.Colors.Templates
         {
             // Check to see if we have this template
             if (!Exists(template))
-                throw new TerminauxException("Can't find template {0}", template);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE"), template);
 
             // Now, get the template
             int idx = GetTemplateIndexFrom(template);
@@ -157,12 +157,12 @@ namespace Terminaux.Colors.Templates
         {
             // Check to see if we have this template
             if (!Exists(template))
-                throw new TerminauxException("Can't find template {0}", template);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE"), template);
 
             // Now, get the template
             var templateInfo = GetTemplate(template);
             if (!templateInfo.Components.TryGetValue(componentName, out Color componentColor))
-                throw new TerminauxException("Can't find component {0} in template {1}", componentName, template);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE"), componentName, template);
             return componentColor;
         }
 
@@ -205,7 +205,7 @@ namespace Terminaux.Colors.Templates
         {
             // Check to see if we have this template
             if (!Exists(template))
-                throw new TerminauxException("Can't find template {0}", template);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE"), template);
 
             // Now, set the template
             var templateInfo = GetTemplate(template);
@@ -220,15 +220,15 @@ namespace Terminaux.Colors.Templates
         {
             // Check the template
             if (template is null)
-                throw new TerminauxException("Invalid template.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID"));
             if (string.IsNullOrWhiteSpace(template.Name))
-                throw new TerminauxException("Template has no name.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME"));
             if (Exists(template.Name))
-                throw new TerminauxException("Template already exists.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS"));
             if (template.Components is null || template.Components.Count == 0)
-                throw new TerminauxException("Template has no components.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS"));
             if (!template.TemplateComponentValidation())
-                throw new TerminauxException("Template has no pre-defined components that must be defined ({0}).", string.Join(", ", Enum.GetNames(typeof(PredefinedComponentType))));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS"), string.Join(", ", Enum.GetNames(typeof(PredefinedComponentType))));
 
             // Now, actually register the template
             customTemplates.Add(template);
@@ -242,9 +242,9 @@ namespace Terminaux.Colors.Templates
         {
             // Check to see if we have this template
             if (!Exists(template))
-                throw new TerminauxException("Can't find template {0}", template);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE"), template);
             if (ExistsBuiltin(template))
-                throw new TerminauxException("Can't remove built-in template {0}", template);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE"), template);
 
             // Now, remove the template
             var templateInfo = GetTemplate(template);
@@ -269,7 +269,7 @@ namespace Terminaux.Colors.Templates
         {
             // Check to see if we have this template
             if (!Exists(template))
-                throw new TerminauxException("Can't find template {0}", template);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE"), template);
 
             // Now, get the template JSON
             var templateInfo = GetTemplate(template);

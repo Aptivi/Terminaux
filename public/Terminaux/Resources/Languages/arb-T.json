@@ -101,10 +101,6 @@
       "text": "يستفيد هذا التطبيق من ميزات وحدة التحكم الموسعة التي توفرها Terminaux والتي تتطلب ميزات لا تدعمها المحطات \"الغبية\"."
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "الحل المُحتمل: استخدم مُحاكي طرفية مُناسبًا أو راجع إعدادات الطرفية لديك لضبط نوع الطرفية إلى نوع آخر غير \"dumb\". نوصي باستخدام مُحاكيات الطرفية \"vt100\" لتحقيق أقصى استفادة من هذا التطبيق."
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
       "text": "حاول المستخدم تشغيل تطبيق Terminaux على نوع محطة طرفية مدرج في القائمة السوداء."
     },
@@ -191,22 +187,6 @@
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
       "text": "لا يوجد تعبير في مرشح وحدة التحكم."
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "لا يمكن استعادة سمات termios الجديدة لوضع raw: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "لا يمكن الحصول على علامات وصف الملف: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "لا يمكن تعيين علامة وصف الملف على القراءة غير الحظرية: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "لا يمكن تعيين علامة وصف الملف لمنع القراءة: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
@@ -369,6 +349,10 @@
       "text": "اللون خارج النطاق."
     },
     {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "لا يمكن الحصول على بيانات الألوان."
+    },
+    {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
       "text": "هل أنت متأكد من أن هذا التدرج ليس فارغا؟"
     },
@@ -465,10 +449,6 @@
       "text": "لا يمكن التحويل إلى CieLch."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "لا يمكن التحويل إلى HWB."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
       "text": "لا يمكن التحويل من RGB."
     },
@@ -525,10 +505,6 @@
       "text": "لا يمكن تحويل مثيل RGB فارغ إلى CieLch!"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "لا يمكن تحويل مثيل RGB فارغ إلى HWB!"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
       "text": "لا يمكن تحويل نسخة CMYK فارغة إلى RGB!"
     },
@@ -579,10 +555,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
       "text": "لا يمكن تحويل مثيل CieLch فارغًا إلى RGB!"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "لا يمكن تحويل مثيل HWB فارغ إلى RGB!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
@@ -701,6 +673,14 @@
       "text": "مُحدِّد لون CMYK غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
     },
     {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "مستوى اللون الأسود خارج النطاق (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "مُحدِّد لون CMYK غير صالح \"{0}\". لا يجب أن يتجاوز المُحدِّد أربعة عناصر. تأكد من أنه بالتنسيق الصحيح."
+    },
+    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "مُحدِّد لون HSL غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
     },
@@ -731,22 +711,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
       "text": "مُحدِّد لون HSV غير صالح \"{0}\". لا يجب أن يتجاوز المُحدِّد ثلاثة عناصر. تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "مُحدِّد لون HWB غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "مستوى البياض خارج النطاق (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "مستوى السواد خارج النطاق (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "مُحدِّد لون HWB غير صالح \"{0}\". يجب ألا يتجاوز المُحدِّد ثلاثة عناصر. تأكد من أنه بالتنسيق الصحيح."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
@@ -893,6 +857,62 @@
       "text": "مُحدِّد لون YXY غير صالح \"{0}\". لا يجب أن يتجاوز المُحدِّد ثلاثة عناصر. تأكد من أنه بالتنسيق الصحيح."
     },
     {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
+      "text": "لم يتم تحديد اسم المكون."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
+      "text": "لم يتم تحديد لون للمكون {0}."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
+      "text": "المكون {0} موجود بالفعل."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
+      "text": "المكون {0} غير موجود."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
+      "text": "المكون {0} محدد مسبقًا وبالتالي لا يمكن إزالته."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
+      "text": "القالب لا يحتوي على مكونات."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
+      "text": "لا يحتوي القالب على مكونات محددة مسبقًا يجب تعريفها ({0})."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "لم يتم تقديم اسم القالب."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
+      "text": "لا يمكن العثور على القالب {0}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
+      "text": "لا يمكن العثور على المكون {0} في القالب {1}"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
+      "text": "قالب غير صالح."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
+      "text": "القالب ليس له اسم."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
+      "text": "القالب موجود بالفعل."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
+      "text": "لا يمكن إزالة القالب المدمج {0}"
+    },
+    {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
       "text": "نوع اللون غير صالح"
     },
@@ -937,48 +957,24 @@
       "text": "البحث عن التالي"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "تحرك للأعلى"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
       "text": "انتقل إلى عنصر واحد لأعلى"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "التحرك للأسفل"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
       "text": "انتقل إلى عنصر واحد لأسفل"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "الصفحة السابقة"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
       "text": "انتقل إلى الصفحة السابقة"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "الصفحة التالية"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
       "text": "انتقل إلى الصفحة التالية"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "انتقل إلى البداية"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
       "text": "انتقل إلى العنصر الأول"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "انتقل إلى النهاية"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
@@ -1193,10 +1189,6 @@
       "text": "يتقدم"
     },
     {
-      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "تتطلب صفحة العرض التقديمي هذه استيفاء المدخلات التالية قبل أن تتمكن من الانتقال إلى الصفحة التالية."
-    },
-    {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
       "text": "مطلوب إدخال"
     },
@@ -1231,14 +1223,6 @@
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
       "text": "إجابة خاطئة. يُرجى المحاولة مرة أخرى."
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "التحرك إلى اليسار"
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "تحرك إلى اليمين"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
@@ -1325,10 +1309,6 @@
       "text": "معلومات الرقم"
     },
     {
-      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "محتوى فارغ"
-    },
-    {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
       "text": "لا يجوز أن يكون رقم البايت الأولي المحدد أكبر من حجم الملف."
     },
@@ -1383,14 +1363,6 @@
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
       "text": "خط جديد"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "مسافة للخلف"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "يمسح"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
@@ -1469,26 +1441,6 @@
       "text": "يغلق دون إرسال القيم"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "يقوم بتنفيذ إجراء أو تحديد خيار"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "يقلل القيمة أو يحرك ثلاثة أسطر من النص لأعلى"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "يزيد القيمة أو يحرك ثلاثة أسطر من النص لأسفل"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "الاختيار السابق أو الأسطر الثلاثة السابقة من النص"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "الاختيار التالي أو الأسطر الثلاثة التالية من النص"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
       "text": "يقلل القيمة الحالية"
     },
@@ -1505,28 +1457,12 @@
       "text": "تعيين القيمة إلى الحد الأقصى للقيمة"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "تعيين التركيز الحالي على عنصر القيمة التالي"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "تعيين التركيز الحالي على عنصر القيمة السابق"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
       "text": "ينتقل إلى الزر السابق"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
       "text": "ينتقل إلى الزر التالي"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "الزر السابق أو الأسطر الثلاثة السابقة من النص"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "الزر التالي أو الأسطر الثلاثة التالية من النص"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
@@ -1543,34 +1479,6 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
       "text": "يغلق مربع المعلومات النموذجي"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "يقوم بعمل ما"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "الأسطر الثلاثة السابقة من النص"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "الأسطر الثلاثة التالية من النص"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "ينتقل إلى الصفحة السابقة من المدخلات"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "ينتقل إلى الصفحة التالية من المدخلات"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "البحث عن المدخلات"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "تغيير قيمة الإدخال المحددة"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
@@ -1629,16 +1537,8 @@
       "text": "الشريط الجانبي"
     },
     {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "أكثر"
-    },
-    {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
       "text": "يؤكد الاختيارات"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "تغيير القيمة المحددة (أزرار الاختيار)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
@@ -1711,14 +1611,6 @@
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
       "text": "تحديد جميع العناصر في جميع المجموعات في جميع الفئات"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "يذهب عنصر واحد أو تشكيلة عرض"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "ينزل عنصر واحد أو خط العرض إلى الأسفل"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
@@ -2357,26 +2249,6 @@
       "text": "يجب ألا يطبع التنسيق الأولي أي نص؛ بل يجب أن يحتوي فقط على تسلسلات تنسيق VT."
     },
     {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "لا يوجد ملف Asciicast"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "لا يمكن إلغاء تسلسل تمثيل Asciicast الأساسي"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "لا يمكن إلغاء تسلسل تمثيل Asciicast v1"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "لا يمكن إلغاء تسلسل تمثيل Asciicast v2"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "لا يمكن الحصول على معلومات الحدث"
-    },
-    {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
       "text": "اختصارات المفاتيح المتاحة"
     },
@@ -2421,492 +2293,40 @@
       "text": "يجب أن يكون لجميع الغزالات نفس العرض."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
-      "text": "يذهب عنصر إدخال واحد لأعلى"
+      "loc": "T_INPUT_EXCEPTION_READPOINTERFAILED",
+      "text": "تعذّر قراءة المؤشر."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
-      "text": "يذهب عنصر إدخال واحد لأسفل"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION",
+      "text": "لم يُقدّم السؤال."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
-      "text": "يذهب إلى الإدخال الأول"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
+      "text": "الخيارات غير مُحدّدة."
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
-      "text": "يذهب إلى آخر الإدخالات"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "اسم القالب غير مُتوفّر."
     },
     {
-      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "يضبط قيمة الإخراج على متغير MESH المحدد"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",
+      "text": "المكونات غير مُتوفّرة، ولكن يُمكن ترك هذه القائمة فارغةً للإضافة الديناميكية."
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "لا يمكن الحصول على معلمات الخيط لتنفيذ العملية."
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER",
+      "text": "تلميح لوحة المفاتيح للإدخال غير موجود في ملف البيان."
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
-      "text": "خطأ في محاولة تنفيذ الأمر"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT",
+      "text": "تلميح لوحة المفاتيح للإبعاد غير موجود في ملف البيان."
     },
     {
-      "loc": "T_COMMON_ERRORDESC",
-      "text": "الخطأ {0}: {1}"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING",
+      "text": "تلميح لوحة المفاتيح للكتابة غير موجود في ملف البيان."
     },
     {
-      "loc": "T_SHELL_BASE_OBSOLETECMD",
-      "text": "هذا الأمر قديم وسيتم إزالته في إصدار مستقبلي."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "لم يتم العثور على أمر الالتفاف."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "لا يجب عليك تنفيذ هذا الأمر مباشرة في الوضع الملتف."
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
-      "text": "الأمر غير قابل للالتفاف. هذه الأوامر قابلة للالتفاف:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "حدث خطأ أثناء محاولة التفاف إخراج الأمر"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "لا يمكن تخزين أمر غير مضبوط على أنه قابل للتغليف في المخزن المؤقت."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "لا يمكنك الإعلان عن الكتلة الجديدة قبل وضع التعبيرات التي تدعم الإنشاء، مثل الشروط أو الحلقات. رقم المكدس هو {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "عند بدء كتلة جديدة، تأكد من وضع مسافة بادئة للمكدس بشكل صحيح. رقم المكدس هو {0}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "النص غير صحيح. افحص النص البرمجي وأصلح أية أخطاء: {0}"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "لم يتم العثور على الشرط في التعبير."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "يتطلب الشرط {0} وسيطات {1}. حصلت على {2}."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "يجب وضع الشرط في النهاية."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "خطأ في تحليل التعبير بسبب خطأ في بناء الجملة."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "لا يمكن تسجيل شرط موجود بالفعل."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "لا يمكن تسجيل حالة فارغة."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "نوع البيانات المحدد {0} غير صالح."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "النظام الأساسي {0} المحدد غير صالح."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "فشل تنفيذ أمر المصدر."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "فشل تنفيذ الأمر المستهدف. ربما لم يتم ملء المحتويات بشكل صحيح. تم تنفيذ الأمر"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
-      "text": "الأنبوب مكسور."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "عدد غير صالح من المرات."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "لا يمكن تكرار الذات."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "أوامر قابلة للالتفاف:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "تذكير لأوامر القطع"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
-      "text": "ينفذ عملية خارجية"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
-      "text": "المسار إلى العملية"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "الحجج التي يجب تمريرها إلى العملية"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
-      "text": "ينفذ العملية دون مقاطعة خيط الصدفة. سيتم إنشاء نافذة منفصلة."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "أمر لإظهار إدخال المساعدة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
-      "text": "يقوم بتحميل تاريخ الصدفة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
-      "text": "يقوم بنقل إخراج الأمر إلى أمر آخر كمعلمات"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "أمر المصدر لتوجيه مخرجاته إلى الأمر المستهدف كمعلمة أخيرة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "أمر الهدف الذي سيتم تنفيذه عند بناء الحجة بناءً على إخراج الأمر المصدر"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
-      "text": "ما إذا كان سيتم تمرير مخرجات الأمر المصدر كحجة واحدة مقتبسة أو حجة غير مقتبسة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
-      "text": "يكرر الإجراء الأخير أو الأمر المحدد"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "أمر الهدف الذي سيتم تنفيذه عند بناء الحجة بناءً على إخراج الأمر المصدر"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
-      "text": "يحفظ تاريخ الصدفة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
-      "text": "يلف إخراج وحدة التحكم"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "أمر لتغليف مخرجاته"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
-      "text": "خطأ في محاولة تنفيذ البرنامج النصي: {0}"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "ينفذ الأوامر بمجرد إرضاء تعبيرات MESH"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
-      "text": "تعبير MESH للاختبار"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
-      "text": "أمر بالتنفيذ عند التقييم الناجح"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
-      "text": "حيث <الأجوبة> هي إجابات من حرف واحد للسؤال مفصولة بخط مائل"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
-      "text": "يجب عليك تمرير رمز التبديل -set مع المتغير الذي تريد تعيين هذه القيمة إليه."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
-      "text": "يجعل خيارات المستخدم"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "إجابات على التقسيم بالشرطة المائلة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "سؤال للطباعة على الشاشة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "عنوان الاجابة الاولى"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "عنوان الإجابة الثانية، وهكذا..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
-      "text": "أسلوب اختيار سطر واحد"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
-      "text": "أسلوب اختيار سطرين"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
-      "text": "أسلوب الاختيار الحديث"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "يمكن أن يكون الإخراج حرفًا واحدًا فقط"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "يمكن أن يكون الإخراج أكثر من حرف"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CLS_DESC",
-      "text": "مسح الشاشة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
-      "text": "يكتب النص في وحدة التحكم"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "سلسلة للطباعة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "يطبع النص كما هو بدون تحليل العنصر النائب"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "شوكات قذيفة MESH لإنشاء مثيل آخر"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
-      "text": "يسمح للمستخدم بإدخال الإدخال"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "سؤال للطباعة على الشاشة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
-      "text": "يسمح للمستخدم بإدخال الإدخال ككلمة مرور"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
-      "text": "يظهر التاريخ والوقت"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
-      "text": "يظهر التاريخ فقط"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
-      "text": "يظهر الوقت فقط"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
-      "text": "يستخدم UTC بدلاً من المحلي"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
-      "text": "يوفر اختيار الاختيار"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "إجابات على التقسيم بالشرطة المائلة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "سؤال للطباعة على الشاشة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "عنوان الاجابة الاولى"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "عنوان الإجابة الثانية، وهكذا..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_DESC",
-      "text": "يعيّن متغيرًا إلى قيمة في نص برمجي"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
-      "text": "القيمة المطلوب تعيينها"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
-      "text": "ينشئ مصفوفة متغيرة بالقيم المتوفرة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "القيمة الأولى"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "القيمة الثانية"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "القيمة الثالثة، وهكذا..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
-      "text": "ينام لمدة ميلي ثانية محددة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
-      "text": "فترة النوم"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "إزالة متغير من قائمة متغيرات MESH"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "اسم المتغير"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "فقط يمسح القيمة المتغيرة دون إزالتها"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
-      "text": "يمكنك الآن تشغيل '{0}' كـ '{1}'!"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "نوع غير صالح {0}."
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
-      "text": "تمت إزالة الاسم المستعار {0} بنجاح."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "لا يمكن إلغاء تسجيل شرط غير موجود."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
-      "text": "يضيف أسماء مستعارة إلى الأوامر"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "يضيف اسم مستعار"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "نوع shell لجلب الأوامر منه"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "الاسم المستعار"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "الأمر الذي سيتم استخدامه كاختصار"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
-      "text": "إزالة الاسم المستعار"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
-      "text": "تم العثور على غلاف وحدة التحكم."
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
-      "text": "قد لا يكون اسم غلاف وحدة التحكم فارغًا."
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
-      "text": "لم يتم العثور على غلاف وحدة التحكم."
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
-      "text": "قد لا تتم إزالة غلاف وحدة التحكم المدمج."
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
-      "text": "فشلت إزالة غلاف وحدة التحكم."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "فشل في ملء السمة الافتراضية"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "لم يتم تعريف بيانات تعريفية للموضوع."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "لا يمكن إلغاء تسلسل البيانات الوصفية."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "يجب أن تدعم وحدة التحكم الخاصة بك اللون الحقيقي لاستخدام هذا المظهر."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
-      "text": "الخروج من المعاينة"
-    },
-    {
-      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
-      "text": "إليك كيف سيبدو المظهر الخاص بك:"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "قالب ألوان غير صالح {0}"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "يحتفل الموضوع {0} بحدث ما، ولكنك إما مبكر جدًا أو متأخر جدًا للحضور. كل عام، يمكن الوصول إلى هذا الموضوع من {1}/{2} إلى {3}/{4}."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "السمة {0} تحتاج إلى دعم الألوان الحقيقية، لكن وحدة التحكم الخاصة بك لا تدعمها."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
-      "text": "واحد أو أكثر من الألوان غير صالح."
-    },
-    {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "الموضوع الافتراضي للنواة"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "لهجات في كل مكان!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "سائل عديم اللون، دخاني، وشديد التآكل"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_WARNING",
-      "text": "يجب أن تقوم بتشغيل ConEmu أو موجه أوامر Windows 10 مع تمكين معالجة VT."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_INFO",
-      "text": "المحطة الطرفية الخاصة بك هي {0} في {1}."
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_QUESTION",
-      "text": "هل تبدو هذه المنحدرات مناسبة لك؟ يجب أن ينتقلوا بسلاسة."
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
+      "text": "لا يُمكن تحديد النوع من هذا التسلسل. تأكد من تحديده بشكل صحيح."
     }
   ]
 }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -20,6 +20,10 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+
+#if !GENERATOR
+using Terminaux.Base;
+#endif
 
 namespace Terminaux.Colors.Data
 {
@@ -62,10 +66,11 @@ namespace Terminaux.Colors.Data
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             var color = value as ConsoleColorData ??
-                throw new Exception("Can't get color data.");
 #if GENERATOR
+                throw new Exception("Can't get color data.");
             serializer.Serialize(writer, $"{color.RGB.r};{color.RGB.g};{color.RGB.b}");
 #else
+                throw new Exception(LanguageTools.GetLocalized("T_COLOR_DATA_EXCEPTION_COLORNODATA"));
             serializer.Serialize(writer, $"{color.RGB.R};{color.RGB.G};{color.RGB.B}");
 #endif
         }

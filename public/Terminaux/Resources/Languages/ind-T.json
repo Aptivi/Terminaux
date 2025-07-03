@@ -75,10 +75,6 @@
       "text": "यह अनुप्रयोग टर्मिनॉक्स द्वारा प्रदान की गई विस्तारित कंसोल सुविधाओं का उपयोग करता है, जिसके लिए उन सुविधाओं की आवश्यकता होती है जो \"डम्ब\" टर्मिनलों द्वारा समर्थित नहीं होती हैं।"
     },
     {
-      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
-      "text": "संभावित समाधान: टर्मिनल प्रकार को \"डंब\" के अलावा किसी अन्य प्रकार में सेट करने के लिए उपयुक्त टर्मिनल एमुलेटर का उपयोग करें या अपनी टर्मिनल सेटिंग से परामर्श करें। हम इस एप्लिकेशन से अधिकतम लाभ उठाने के लिए \"vt100\" टर्मिनल एमुलेटर का उपयोग करने की सलाह देते हैं।"
-    },
-    {
       "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
       "text": "उपयोगकर्ता ने ब्लैकलिस्टेड टर्मिनल प्रकार पर टर्मिनॉक्स अनुप्रयोग चलाने का प्रयास किया।"
     },
@@ -165,22 +161,6 @@
     {
       "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
       "text": "कंसोल फ़िल्टर में कोई अभिव्यक्ति नहीं है."
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
-      "text": "रॉ मोड के लिए नई टर्मियोस विशेषताएँ पुनर्स्थापित नहीं की जा सकतीं: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
-      "text": "फ़ाइल डिस्क्रिप्टर फ़्लैग प्राप्त नहीं किए जा सके: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
-      "text": "फ़ाइल डिस्क्रिप्टर फ़्लैग को नॉन-ब्लॉकिंग रीड पर सेट नहीं किया जा सकता: {0}"
-    },
-    {
-      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
-      "text": "फ़ाइल डिस्क्रिप्टर फ़्लैग को पढ़ने को रोकने के लिए सेट नहीं किया जा सकता: {0}"
     },
     {
       "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
@@ -343,6 +323,10 @@
       "text": "रंग सीमा से बाहर है."
     },
     {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
+      "text": "रंग डेटा प्राप्त नहीं किया जा सका."
+    },
+    {
       "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
       "text": "क्या आप निश्चित हैं कि यह ग्रेडिएंट शून्य नहीं है?"
     },
@@ -439,10 +423,6 @@
       "text": "CieLch में परिवर्तित नहीं किया जा सकता."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
-      "text": "HWB में परिवर्तित नहीं किया जा सकता."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
       "text": "RGB से रूपांतरण नहीं किया जा सकता."
     },
@@ -499,10 +479,6 @@
       "text": "शून्य RGB इंस्टैंस को CieLch में परिवर्तित नहीं किया जा सकता!"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
-      "text": "शून्य RGB इंस्टैंस को HWB में परिवर्तित नहीं किया जा सकता!"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
       "text": "शून्य CMYK इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
     },
@@ -553,10 +529,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
       "text": "शून्य CieLch इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
-      "text": "शून्य HWB इंस्टैंस को RGB में परिवर्तित नहीं किया जा सकता!"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
@@ -675,6 +647,14 @@
       "text": "अमान्य CMYK रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप में है"
     },
     {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL",
+      "text": "काले रंग का स्तर सीमा से बाहर है (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED",
+      "text": "अमान्य CMYK रंग विनिर्देशक \"{0}\"। विनिर्देशक में चार तत्वों से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
+    },
+    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
       "text": "अमान्य HSL रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
     },
@@ -705,22 +685,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
       "text": "अमान्य HSV रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
-      "text": "अमान्य HWB रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
-      "text": "सफेदी का स्तर सीमा से बाहर है (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
-      "text": "कालापन स्तर सीमा से बाहर है (0 -> 100)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
-      "text": "अमान्य HWB रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट पर है"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
@@ -867,6 +831,62 @@
       "text": "अमान्य YXY रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
     },
     {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME",
+      "text": "कोई घटक नाम निर्दिष्ट नहीं किया गया."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT",
+      "text": "घटक {0} के लिए कोई रंग निर्दिष्ट नहीं किया गया है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS",
+      "text": "घटक {0} पहले से मौजूद है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT",
+      "text": "घटक {0} मौजूद नहीं है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED",
+      "text": "घटक {0} पूर्वनिर्धारित है और इसलिए इसे हटाया नहीं जा सकता."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS",
+      "text": "टेम्पलेट में कोई घटक नहीं है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS",
+      "text": "टेम्पलेट में कोई पूर्व-परिभाषित घटक नहीं है जिसे परिभाषित किया जाना आवश्यक हो ({0})."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "टेम्पलेट का कोई नाम उपलब्ध नहीं कराया गया है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE",
+      "text": "टेम्पलेट {0} नहीं मिल सका"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE",
+      "text": "टेम्पलेट {1} में घटक {0} नहीं मिल सका"
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID",
+      "text": "अमान्य टेम्पलेट."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME",
+      "text": "टेम्पलेट का कोई नाम नहीं है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS",
+      "text": "टेम्पलेट पहले से मौजूद है."
+    },
+    {
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE",
+      "text": "अंतर्निहित टेम्पलेट {0} को हटाया नहीं जा सकता"
+    },
+    {
       "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
       "text": "रंग प्रकार अमान्य है"
     },
@@ -911,48 +931,24 @@
       "text": "दूसरा खोजो"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
-      "text": "बढ़ाना"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
       "text": "एक तत्व ऊपर जाएँ"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
-      "text": "नीचे की ओर"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
       "text": "एक तत्व नीचे जाएँ"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
-      "text": "पिछला पृष्ठ"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
       "text": "पिछले पृष्ठ पर जाएँ"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
-      "text": "अगला पृष्ठ"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
       "text": "अगले पेज पर जाएँ"
     },
     {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
-      "text": "आरंभ पर जाएँ"
-    },
-    {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
       "text": "पहले तत्व पर जाएँ"
-    },
-    {
-      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
-      "text": "अंत पर जाएँ"
     },
     {
       "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
@@ -1167,10 +1163,6 @@
       "text": "अग्रिम"
     },
     {
-      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
-      "text": "इस प्रस्तुति पृष्ठ पर अगले पृष्ठ पर जाने से पहले निम्नलिखित इनपुटों की पूर्ति आवश्यक है।"
-    },
-    {
       "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
       "text": "इनपुट आवश्यक"
     },
@@ -1205,14 +1197,6 @@
     {
       "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
       "text": "ग़लत जवाब. कृपया पुनः प्रयास करें."
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
-      "text": "बाएं खिसको"
-    },
-    {
-      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
-      "text": "सही कदम"
     },
     {
       "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
@@ -1299,10 +1283,6 @@
       "text": "संख्या की जानकारी"
     },
     {
-      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
-      "text": "खाली सामग्री"
-    },
-    {
       "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
       "text": "निर्दिष्ट आरंभ बाइट संख्या फ़ाइल आकार से बड़ी नहीं हो सकती।"
     },
@@ -1357,14 +1337,6 @@
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
       "text": "नई लाइन"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
-      "text": "बैकस्पेस"
-    },
-    {
-      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
-      "text": "मिटाना"
     },
     {
       "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
@@ -1443,26 +1415,6 @@
       "text": "मान सबमिट किए बिना बंद हो जाता है"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
-      "text": "कोई कार्रवाई करता है या कोई विकल्प चुनता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
-      "text": "मान घटाता है या पाठ की तीन पंक्तियाँ ऊपर ले जाता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
-      "text": "मान बढ़ाता है या पाठ की तीन पंक्तियाँ नीचे ले जाता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
-      "text": "पिछला विकल्प या पाठ की पिछली तीन पंक्तियाँ"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
-      "text": "अगला विकल्प या पाठ की अगली तीन पंक्तियाँ"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
       "text": "वर्तमान मूल्य घटाता है"
     },
@@ -1479,28 +1431,12 @@
       "text": "मान को अधिकतम मान पर सेट करता है"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
-      "text": "वर्तमान फ़ोकस को अगले मान तत्व पर सेट करता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
-      "text": "वर्तमान फ़ोकस को पिछले मान तत्व पर सेट करता है"
-    },
-    {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
       "text": "पिछले बटन पर जाता है"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
       "text": "अगले बटन पर जाता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
-      "text": "पिछला बटन या पाठ की पिछली तीन पंक्तियाँ"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
-      "text": "अगला बटन या पाठ की अगली तीन पंक्तियाँ"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
@@ -1517,34 +1453,6 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
       "text": "मोडल सूचना बॉक्स बंद करता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
-      "text": "कोई कार्रवाई करता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
-      "text": "पाठ की पिछली तीन पंक्तियाँ"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
-      "text": "पाठ की अगली तीन पंक्तियाँ"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
-      "text": "इनपुट के पिछले पृष्ठ पर जाता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
-      "text": "इनपुट के अगले पृष्ठ पर जाता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
-      "text": "इनपुट खोजता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
-      "text": "चयनित इनपुट मान बदलता है"
     },
     {
       "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
@@ -1603,16 +1511,8 @@
       "text": "साइड बार"
     },
     {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
-      "text": "अधिक"
-    },
-    {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
       "text": "चयन की पुष्टि करता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
-      "text": "चयनित मान परिवर्तित करता है (रेडियो बटन)"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
@@ -1685,14 +1585,6 @@
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
       "text": "सभी श्रेणियों के सभी समूहों में सभी तत्वों का चयन करता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
-      "text": "एक तत्व या शोकेस लाइन अप चला जाता है"
-    },
-    {
-      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
-      "text": "एक तत्व या शोकेस लाइन नीचे चला जाता है"
     },
     {
       "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
@@ -2331,26 +2223,6 @@
       "text": "प्रारंभिक प्रारूप में कोई पाठ मुद्रित नहीं होना चाहिए; इसमें केवल प्रारूपण VT अनुक्रम ही होना चाहिए।"
     },
     {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
-      "text": "कोई Asciicast फ़ाइल नहीं है"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
-      "text": "आधार Asciicast प्रतिनिधित्व को डिसेरीलाइज़ नहीं किया जा सकता"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
-      "text": "Asciicast v1 प्रतिनिधित्व को डिसेरीलाइज़ नहीं किया जा सकता"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
-      "text": "Asciicast v2 प्रतिनिधित्व को डिसेरीलाइज़ नहीं किया जा सकता"
-    },
-    {
-      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
-      "text": "ईवेंट की जानकारी प्राप्त नहीं की जा सकी"
-    },
-    {
       "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
       "text": "उपलब्ध कीबाइंडिंग"
     },
@@ -2395,492 +2267,40 @@
       "text": "सभी स्पिनरों की चौड़ाई समान होनी चाहिए।"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
-      "text": "एक इनपुट तत्व ऊपर जाता है"
+      "loc": "T_INPUT_EXCEPTION_READPOINTERFAILED",
+      "text": "पॉइंटर पढ़ने में विफल।"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
-      "text": "एक इनपुट तत्व नीचे चला जाता है"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION",
+      "text": "प्रश्न प्रदान नहीं किया गया है।"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
-      "text": "पहले इनपुट पर जाता है"
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
+      "text": "विकल्प निर्दिष्ट नहीं हैं"
     },
     {
-      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
-      "text": "अंतिम इनपुट पर जाता है"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
+      "text": "टेम्पलेट का नाम प्रदान नहीं किया गया है"
     },
     {
-      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "आउटपुट का मान चयनित MESH वेरिएबल पर सेट करता है"
+      "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",
+      "text": "घटक प्रदान नहीं किए गए हैं, लेकिन गतिशील जोड़ के लिए यह सूची खाली हो सकती है।"
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "प्रक्रिया निष्पादन के लिए थ्रेड पैरामीटर प्राप्त नहीं किया जा सकता."
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER",
+      "text": "एंटर के लिए कीबोर्ड क्यू मैनिफेस्ट में मौजूद नहीं है"
     },
     {
-      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
-      "text": "कमांड निष्पादित करने में त्रुटि"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT",
+      "text": "रबआउट के लिए कीबोर्ड क्यू मैनिफेस्ट में मौजूद नहीं है"
     },
     {
-      "loc": "T_COMMON_ERRORDESC",
-      "text": "त्रुटि {0}: {1}"
+      "loc": "T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING",
+      "text": "लेखन के लिए कीबोर्ड क्यू मैनिफेस्ट में मौजूद नहीं है"
     },
     {
-      "loc": "T_SHELL_BASE_OBSOLETECMD",
-      "text": "यह कमांड अप्रचलित है और भविष्य के रिलीज़ में हटा दी जाएगी।"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "लपेटने योग्य आदेश नहीं मिला है।"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "आपको इस कमांड को रैप्ड मोड में सीधे निष्पादित नहीं करना चाहिए।"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
-      "text": "आदेश लपेटने योग्य नहीं है। ये आदेश लपेटने योग्य हैं:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "कमांड आउटपुट को लपेटने का प्रयास करते समय एक त्रुटि उत्पन्न हुई"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "उस कमांड को बफर नहीं किया जा सकता जो रैप करने योग्य के रूप में सेट नहीं है।"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "आप शर्तों या लूप जैसे निर्माण का समर्थन करने वाले भाव डालने से पहले नए ब्लॉक की घोषणा नहीं कर सकते। स्टैक संख्या {0} है."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "नया ब्लॉक शुरू करते समय, सुनिश्चित करें कि आपने स्टैक को सही ढंग से इंडेंट किया है। स्टैक संख्या {0} है."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "स्क्रिप्ट विकृत है। स्क्रिप्ट की जाँच करें और किसी भी त्रुटि का समाधान करें: {0}"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "अभिव्यक्ति में स्थिति नहीं पाई गई।"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "शर्त {0} के लिए {1} तर्कों की आवश्यकता है। {2} मिल गया।"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "शर्त अंत में रखनी होगी."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "सिंटैक्स त्रुटि के कारण अभिव्यक्ति को पार्स करने में त्रुटि।"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "पहले से मौजूद किसी शर्त को पंजीकृत नहीं किया जा सकता."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "खाली स्थिति दर्ज नहीं की जा सकती."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "निर्दिष्ट डेटा प्रकार {0} अमान्य है."
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "निर्दिष्ट प्लेटफ़ॉर्म {0} अमान्य है."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "स्रोत आदेश निष्पादन विफल हुआ."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "लक्ष्य कमांड निष्पादन विफल रहा। संभवतः सामग्री ठीक से पॉप्युलेट नहीं हुई है। कमांड निष्पादित किया गया"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
-      "text": "पाइप टूट गया है."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "कई बार अमान्य संख्या."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "स्वयं को दोहरा नहीं सकते."
-    },
-    {
-      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "लपेटने योग्य आदेश:"
-    },
-    {
-      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "स्लैश कमांड के लिए अनुस्मारक"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
-      "text": "एक बाहरी प्रक्रिया निष्पादित करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
-      "text": "प्रक्रिया का मार्ग"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "प्रक्रिया में पास करने के लिए तर्क"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
-      "text": "शेल थ्रेड को बाधित किए बिना प्रक्रिया निष्पादित करता है। एक अलग विंडो बनाई जाएगी."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "सहायता प्रविष्टि दिखाने के लिए आदेश"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
-      "text": "शैल इतिहास लोड करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
-      "text": "कमांड आउटपुट को पैरामीटर के रूप में दूसरे कमांड में पाइप करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "स्रोत कमांड अपने आउटपुट को अंतिम पैरामीटर के रूप में लक्ष्य कमांड तक पहुंचाता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "स्रोत कमांड आउटपुट के आधार पर बिल्डिंग तर्क पर निष्पादित करने के लिए लक्ष्य कमांड"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
-      "text": "स्रोत कमांड के आउटपुट को एक उद्धृत तर्क या गैर-उद्धृत तर्क के रूप में पास करना है या नहीं"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
-      "text": "अंतिम क्रिया या निर्दिष्ट आदेश को दोहराता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "स्रोत कमांड आउटपुट के आधार पर बिल्डिंग तर्क पर निष्पादित करने के लिए लक्ष्य कमांड"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
-      "text": "शेल इतिहास सहेजता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
-      "text": "कंसोल आउटपुट को लपेटता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "इसके आउटपुट को रैप करने का कमांड"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
-      "text": "स्क्रिप्ट निष्पादित करने में त्रुटि: {0}"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_DESC",
-      "text": "एक बार MESH के भाव संतुष्ट होने के बाद कमांड निष्पादित करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
-      "text": "परीक्षण हेतु MESH अभिव्यक्ति"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
-      "text": "सफल मूल्यांकन के बाद निष्पादित करने का आदेश"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
-      "text": "जहाँ <उत्तर> प्रश्न के एक-अक्षर वाले उत्तर को स्लैश में अलग किया जाता है"
-    },
-    {
-      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
-      "text": "आपको उस वेरिएबल के साथ -सेट स्विच पास करना होगा जिस पर आप यह मान सेट करना चाहते हैं।"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
-      "text": "उपयोगकर्ता की पसंद बनाता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "स्लैश से विभाजित करने के उत्तर"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "स्क्रीन पर प्रिंट करने के लिए प्रश्न"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "प्रथम उत्तर शीर्षक"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "दूसरा उत्तर शीर्षक, और इसी तरह..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
-      "text": "एक पंक्ति चयन शैली"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
-      "text": "दो पंक्तियों की पसंद शैली"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
-      "text": "आधुनिक पसंद शैली"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "आउटपुट केवल एक अक्षर का हो सकता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "आउटपुट एक कैरेक्टर से अधिक हो सकता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CLS_DESC",
-      "text": "स्क्रीन को साफ करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
-      "text": "कंसोल में टेक्स्ट लिखता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "प्रिंट करने के लिए स्ट्रिंग"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "बिना किसी प्लेसहोल्डर पार्सिंग के टेक्स्ट को वैसे ही प्रिंट करता है जैसे वह है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_FORK_DESC",
-      "text": "एक और उदाहरण बनाने के लिए यूईएसएच शेल को फोर्क करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
-      "text": "उपयोगकर्ता को इनपुट दर्ज करने की अनुमति देता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "स्क्रीन पर प्रिंट करने के लिए प्रश्न"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
-      "text": "उपयोगकर्ता को पासवर्ड के रूप में इनपुट दर्ज करने की अनुमति देता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
-      "text": "तारीख और समय दिखाता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
-      "text": "सिर्फ तारीख दिखाता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
-      "text": "सिर्फ समय दिखाता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
-      "text": "स्थानीय के बजाय यूटीसी का उपयोग करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
-      "text": "एक चयन विकल्प प्रदान करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "स्लैश से विभाजित करने के उत्तर"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "स्क्रीन पर प्रिंट करने के लिए प्रश्न"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "प्रथम उत्तर शीर्षक"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "दूसरा उत्तर शीर्षक, और इसी तरह..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_DESC",
-      "text": "एक चर को एक स्क्रिप्ट में एक मान पर सेट करता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
-      "text": "निर्धारित करने हेतु मान"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
-      "text": "प्रदान किए गए मानों के साथ एक चर सरणी बनाता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "पहला मान"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "दूसरा मान"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "तीसरा मान, और इसी प्रकार..."
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
-      "text": "निर्दिष्ट मिलीसेकेंड के लिए सोता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
-      "text": "सोने का अंतराल"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
-      "text": "MESH वेरिएबल सूची से एक वेरिएबल हटाता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "चर का नाम"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "वैरिएबल मान को हटाए बिना बस उसे मिटा देता है"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
-      "text": "अब आप '{0}' को '{1}' के रूप में चला सकते हैं!"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "अमान्य प्रकार {0}।"
-    },
-    {
-      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
-      "text": "सफलतापूर्वक निकाला गया उपनाम {0}।"
-    },
-    {
-      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "ऐसी शर्त को अपंजीकृत नहीं किया जा सकता जो अस्तित्व में ही नहीं है।"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
-      "text": "उपनामों को आज्ञाओं में जोड़ता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "उपनाम जोड़ता है"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "कमांड प्राप्त करने के लिए शैल प्रकार"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "उपनाम नाम"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "शॉर्टकट के रूप में उपयोग किया जाने वाला कमांड"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
-      "text": "उपनाम हटाता है"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
-      "text": "कंसोल रैपर पहले से ही मिल गया है"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
-      "text": "कंसोल रैपर का नाम खाली नहीं हो सकता"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
-      "text": "कंसोल रैपर नहीं मिला"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
-      "text": "बिल्ट-इन कंसोल रैपर हटाया नहीं जा सकता"
-    },
-    {
-      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
-      "text": "कंसोल रैपर हटाना विफल रहा"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "डिफ़ॉल्ट थीम पॉप्युलेट करने में विफल"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "कोई थीम मेटाडेटा परिभाषित नहीं है."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "मेटाडेटा को डीसेरीलाइज़ नहीं किया जा सकता."
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "इस थीम का उपयोग करने के लिए आपके कंसोल को सही रंग का समर्थन करना चाहिए।"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
-      "text": "पूर्वावलोकन से बाहर निकलें"
-    },
-    {
-      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
-      "text": "यहां बताया गया है कि आपकी थीम कैसी दिखेगी:"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "अमान्य रंग टेम्पलेट {0}"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "थीम {0} एक कार्यक्रम का जश्न मनाती है, लेकिन आप इसमें भाग लेने के लिए या तो बहुत जल्दी हैं या बहुत देर से हैं। प्रत्येक वर्ष, यह थीम {1}/{2} से {3}/{4} तक पहुंच योग्य है।"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "थीम {0} को वास्तविक रंग समर्थन की आवश्यकता है, लेकिन आपका कंसोल इसका समर्थन नहीं करता है।"
-    },
-    {
-      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
-      "text": "एक या अधिक रंग अमान्य हैं।"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
-      "text": "कर्नेल के लिए डिफ़ॉल्ट थीम"
-    },
-    {
-      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
-      "text": "हर जगह उच्चारण!"
-    },
-    {
-      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
-      "text": "रंगहीन, धुआँदार और अत्यधिक संक्षारक तरल"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_WARNING",
-      "text": "आपको VT प्रोसेसिंग सक्षम होने के साथ ConEmu या Windows 10 कमांड प्रॉम्प्ट चलाना होगा।"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_INFO",
-      "text": "आपका टर्मिनल {1} पर {0} है।"
-    },
-    {
-      "loc": "T_COLOR_COLORTEST_QUESTION",
-      "text": "क्या ये रैंप आपको सही लगते हैं? उन्हें सुचारू रूप से परिवर्तन करना चाहिए।"
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
+      "text": "इस अनुक्रम से प्रकार निर्धारित नहीं किया जा सकता। सुनिश्चित करें कि आपने इसे सही ढंग से निर्दिष्ट किया है।"
     }
   ]
 }

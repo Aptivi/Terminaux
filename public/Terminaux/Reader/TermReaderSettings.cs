@@ -34,11 +34,11 @@ namespace Terminaux.Reader
     public class TermReaderSettings
     {
         internal static Stream cueEnterFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-enter.mp3") ??
-            throw new TerminauxInternalException("Keyboard cue for enter doesn't exist in the manifest");
+            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER"));
         internal static Stream cueRuboutFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-backspace.mp3") ??
-            throw new TerminauxInternalException("Keyboard cue for rubout doesn't exist in the manifest");
+            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT"));
         internal static Stream cueWriteFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-type.mp3") ??
-            throw new TerminauxInternalException("Keyboard cue for writing doesn't exist in the manifest");
+            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING"));
 
         internal TermReaderState? state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => [];

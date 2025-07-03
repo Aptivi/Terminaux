@@ -258,7 +258,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             // We need not to run the selection style when everything is disabled
             bool allDisabled = selections.All((ici) => ici.ChoiceDisabled);
             if (allDisabled)
-                throw new TerminauxException("The infobox selection style requires that there is at least one choice enabled.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM"));
 
             // Now, some logic to get the informational box ready
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
