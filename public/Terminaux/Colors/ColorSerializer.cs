@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -43,8 +43,8 @@ namespace Terminaux.Colors
             else
             {
                 if (reader.ValueType?.Name is not null)
-                    throw new TerminauxException("Can't determine how to convert a(n) {0} of {1} to a color.", reader.TokenType, reader.ValueType?.Name ?? "");
-                throw new TerminauxException("Can't determine how to convert a(n) {0} of an unknown type to a color.", reader.TokenType);
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_SERIALIZER_EXCEPTION_READERROR1"), reader.TokenType, reader.ValueType?.Name ?? "");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_SERIALIZER_EXCEPTION_READERROR2"), reader.TokenType);
             }
             return color;
         }
@@ -53,7 +53,7 @@ namespace Terminaux.Colors
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             var color = value as Color ??
-                throw new TerminauxInternalException("Can't get color.");
+                throw new TerminauxInternalException(LanguageTools.GetLocalized("T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR"));
             serializer.Serialize(writer, color.ToString());
         }
     }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -62,7 +62,7 @@ namespace Terminaux.Colors.Models
         public static CyanMagentaYellowKey ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException("Invalid CMYK color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": cmyk:<C>;<M>;<Y>;<K>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER").FormatString(specifier) + ": cmyk:<C>;<M>;<Y>;<K>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(5).Split(';');

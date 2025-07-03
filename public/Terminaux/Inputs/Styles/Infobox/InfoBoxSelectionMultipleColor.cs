@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -47,22 +47,22 @@ namespace Terminaux.Inputs.Styles.Infobox
     {
         private static readonly Keybinding[] keybindings =
         [
-            new Keybinding("Goes one choice up (next choice)", ConsoleKey.UpArrow),
-            new Keybinding("Goes one choice down (previous choice)", ConsoleKey.DownArrow),
-            new Keybinding("Goes to the first choice", ConsoleKey.Home),
-            new Keybinding("Goes to the last choice", ConsoleKey.End),
-            new Keybinding("Goes to the previous page of choices", ConsoleKey.PageUp),
-            new Keybinding("Goes to the next page of choices", ConsoleKey.PageDown),
-            new Keybinding("Shows more info in an infobox", ConsoleKey.Tab),
-            new Keybinding("Searches for a choice", ConsoleKey.F),
-            new Keybinding("Goes one line up", ConsoleKey.W),
-            new Keybinding("Goes one line down", ConsoleKey.S),
-            new Keybinding("Goes to the previous page of text", ConsoleKey.E),
-            new Keybinding("Goes to the next page of text", ConsoleKey.D),
-            new Keybinding("Selects or deselects all choices", ConsoleKey.A),
-            new Keybinding("Selects or deselects a choice", ConsoleKey.Spacebar),
-            new Keybinding("Submits the values", ConsoleKey.Enter),
-            new Keybinding("Closes without submitting the values", ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP"), ConsoleKey.UpArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN"), ConsoleKey.DownArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST"), ConsoleKey.Home),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST"), ConsoleKey.End),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES"), ConsoleKey.PageUp),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES"), ConsoleKey.PageDown),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO"), ConsoleKey.Tab),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES"), ConsoleKey.F),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP"), ConsoleKey.W),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN"), ConsoleKey.S),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT"), ConsoleKey.E),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT"), ConsoleKey.D),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES"), ConsoleKey.A),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE"), ConsoleKey.Spacebar),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL"), ConsoleKey.Enter),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL"), ConsoleKey.Escape),
         ];
 
         /// <summary>
@@ -636,10 +636,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (selectionChoices <= 0)
                                     break;
                                 var entriesString = selections.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
-                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)");
+                                string keyword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT"));
                                 if (!RegexTools.IsValidRegex(keyword))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");
+                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                     break;
                                 }
@@ -650,13 +650,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (resultEntries.Length > 0)
                                 {
                                     var choices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
-                                    int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
+                                    int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("T_INPUT_COMMON_ENTRYPROMPT"));
                                     if (answer < 0)
                                         break;
                                     currentSelection = resultEntries[answer].idx;
                                 }
                                 else
-                                    InfoBoxModalColor.WriteInfoBoxModal("No item found.");
+                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"));
                                 ScreenTools.CurrentScreen?.RequireRefresh();
                                 break;
                             case ConsoleKey.E:

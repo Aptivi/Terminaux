@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -36,7 +36,7 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Checks to see if the command is found in selected shell command type
         /// </summary>
-        /// <param name="Command">A command</param>
+        /// <param name=LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD")>A command</param>
         /// <param name="ShellType">The shell type name</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static bool IsCommandFound(string Command, string ShellType) =>
@@ -45,7 +45,7 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Checks to see if the command is found in all the shells
         /// </summary>
-        /// <param name="Command">A command</param>
+        /// <param name=LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD")>A command</param>
         /// <returns>True if found; False if not found.</returns>
         public static bool IsCommandFound(string Command)
         {
@@ -107,7 +107,7 @@ namespace Terminaux.Shell.Commands
         {
             // Verify that the provided regex is valid
             if (!RegexTools.IsValidRegex(namePattern))
-                throw new TerminauxException("Invalid command pattern provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_INVALIDPATTERN"));
 
             // Get all the commands first
             var allCommands = GetCommands(ShellType);
@@ -122,14 +122,14 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Gets a command, specified by the shell type
         /// </summary>
-        /// <param name="Command">A command</param>
+        /// <param name=LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD")>A command</param>
         /// <param name="ShellType">The shell type name</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static CommandInfo GetCommand(string Command, string ShellType)
         {
             var commandList = GetCommands(ShellType);
             if (!IsCommandFound(Command, ShellType))
-                throw new TerminauxException("Command not found.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_COMMANDNOTFOUND"));
             return commandList.Single((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
         }
 
@@ -142,20 +142,20 @@ namespace Terminaux.Shell.Commands
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))
-                throw new TerminauxException("Shell type {0} doesn't exist.", ShellType);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND"), ShellType);
             if (commandBase is null)
-                throw new TerminauxException("You must provide the command base.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDBASENULL"));
             string command = commandBase.Command;
 
             // Check the command name
             if (string.IsNullOrEmpty(command))
-                throw new TerminauxException("You must provide the command.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDNAMENULL"));
 
             // Check to see if the command conflicts with pre-existing shell commands
             if (IsCommandFound(command, ShellType))
             {
                 ConsoleLogger.Error("Command {0} conflicts with available shell commands.", command);
-                throw new TerminauxException("The command specified is already added.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDALREADYADDED"));
             }
 
             // Check to see if the help definition is full
@@ -191,7 +191,7 @@ namespace Terminaux.Shell.Commands
                 }
             }
             if (failedCommands.Count > 0)
-                throw new TerminauxException("Some of the custom commands can't be loaded." + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
         }
 
         /// <summary>
@@ -203,13 +203,13 @@ namespace Terminaux.Shell.Commands
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))
-                throw new TerminauxException("Shell type {0} doesn't exist.", ShellType);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND"), ShellType);
             if (string.IsNullOrEmpty(commandName))
-                throw new TerminauxException("You must provide the command.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDNAMENULL"));
 
             // Check to see if we have this command
             if (!GetCommandNames(ShellType).Contains(commandName))
-                throw new TerminauxException("The custom command specified is not found.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND"));
             else
             {
                 // We have the command. Remove it.
@@ -239,7 +239,7 @@ namespace Terminaux.Shell.Commands
                 }
             }
             if (failedCommands.Count > 0)
-                throw new TerminauxException("Some of the custom commands can't be unloaded." + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
         }
     }
 }

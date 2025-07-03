@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -79,11 +79,11 @@ namespace Terminaux.Inputs.Interactive
 
         /// <inheritdoc/>
         public virtual string GetInfoFromItem(TPrimary item) =>
-            item is not null ? "No info." : "";
+            item is not null ? LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_BASE_NOINFO") : "";
 
         /// <inheritdoc/>
         public virtual string GetStatusFromItem(TPrimary item) =>
-            !string.IsNullOrEmpty(GetEntryFromItem(item)) ? GetEntryFromItem(item) : "No status";
+            !string.IsNullOrEmpty(GetEntryFromItem(item)) ? GetEntryFromItem(item) : LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_BASE_NOSTATUS");
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItemSecondary(TSecondary item) =>
@@ -91,11 +91,11 @@ namespace Terminaux.Inputs.Interactive
 
         /// <inheritdoc/>
         public virtual string GetInfoFromItemSecondary(TSecondary item) =>
-            item is not null ? "No info." : "";
+            item is not null ? LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_BASE_NOINFO") : "";
 
         /// <inheritdoc/>
         public virtual string GetStatusFromItemSecondary(TSecondary item) =>
-            !string.IsNullOrEmpty(GetEntryFromItemSecondary(item)) ? GetEntryFromItemSecondary(item) : "No status";
+            !string.IsNullOrEmpty(GetEntryFromItemSecondary(item)) ? GetEntryFromItemSecondary(item) : LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_BASE_NOSTATUS");
 
         /// <inheritdoc/>
         public virtual void HandleExit() { }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -39,7 +39,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
         {
             // Check if we have fixtures or not
             if (fixtures is null || fixtures.Length == 0)
-                throw new TerminauxException("No fixtures here. Insert one.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES"));
 
             // Now, make choices out of them and present it to the user as a selection choice
             int[] statuses = new int[fixtures.Length];
@@ -48,7 +48,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 var choices = FlattenFixturesIntoChoices(fixtures, statuses);
 
                 // Let the user select a test fixture
-                int selectedIndex = SelectionStyle.PromptSelection("Choose a test fixture.", choices, [new InputChoiceInfo("Exit", "Exits the test fixture selector")]);
+                int selectedIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT"), choices, [new InputChoiceInfo(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION"))]);
                 if (selectedIndex == -1 || selectedIndex == choices.Length + 1)
                     break;
 
@@ -57,16 +57,16 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 bool result = FixtureRunner.RunGeneralTest(fixture, out var exc, fixture.initialParameters);
                 if (result)
                 {
-                    TextWriterColor.WriteColor("This test has succeeded!", ConsoleColors.Lime);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED"), ConsoleColors.Lime);
                     if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
-                        TextWriterColor.WriteColor("Expected value matches actual value.", ConsoleColors.Lime);
+                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH"), ConsoleColors.Lime);
                 }
                 else
                 {
-                    TextWriterColor.WriteColor("This test has failed.", ConsoleColors.Red);
-                    TextWriterColor.WriteColor("Message" + ": " + exc?.Message ?? "Unknown error", ConsoleColors.Red);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED"), ConsoleColors.Red);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE") + ": " + exc?.Message ?? LanguageTools.GetLocalized("T_EXCEPTION_UNKNOWNERROR3"), ConsoleColors.Red);
                     if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
-                        TextWriterColor.WriteColor("Expected value doesn't match actual value.", ConsoleColors.Red);
+                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH"), ConsoleColors.Red);
                 }
                 statuses[selectedIndex - 1] = result ? 1 : 2;
                 Input.ReadKey();

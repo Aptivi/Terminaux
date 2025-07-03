@@ -1,0 +1,2890 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR1",
+      "text": "Generell Terminaux-feil!"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR2",
+      "text": "Intern feil i Terminalen!"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR3",
+      "text": "Ukjent feil"
+    },
+    {
+      "loc": "T_EXCEPTION_NOTIMPLEMENTED",
+      "text": "Ikke implementert ennå."
+    },
+    {
+      "loc": "T_COMMON_CANTCONTINUE",
+      "text": "Dette programmet kan ikke fortsette."
+    },
+    {
+      "loc": "T_COMMON_ANYKEY",
+      "text": "Trykk på en hvilken som helst tast for å fortsette..."
+    },
+    {
+      "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
+      "text": "Ugyldig type"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
+      "text": "Du må spesifisere skjermdelen."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
+      "text": "Du må oppgi skjermnavnet."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
+      "text": "Den angitte delindeksen er utenfor rekkevidde."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
+      "text": "Det angitte delnavnet ble ikke funnet."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
+      "text": "Den angitte delen ble ikke funnet."
+    },
+    {
+      "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
+      "text": "Bufferindeksen kan ikke være mindre enn null eller større enn {0} buffere."
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
+      "text": "Skjerm er ikke spesifisert."
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
+      "text": "Skjermen er ikke syklisk."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
+      "text": "Brukeren prøvde å kjøre et Terminaux-program med en dum terminal."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
+      "text": "Denne applikasjonen bruker utvidede konsollfunksjoner levert av Terminaux som krever funksjoner som ikke støttes av \"dumme\" terminaler."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
+      "text": "Mulig løsning: Bruk en passende terminalemulator eller se i terminalinnstillingene for å angi terminaltypen til noe annet enn «dum». Vi anbefaler å bruke terminalemulatorene «vt100» for å få mest mulig ut av dette programmet."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
+      "text": "Brukeren prøvde å kjøre et Terminaux-program på en svartelistet terminaltype."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
+      "text": "Konsolltypen du bruker for øyeblikket, {0}, er svartelistet: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
+      "text": "Konsolltypen du bruker for øyeblikket, {0}, er grålistet: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
+      "text": "Brukeren prøvde å kjøre et Terminaux-program på en svartelistet terminalemulator."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
+      "text": "Terminalemulatoren du bruker for øyeblikket, {0}, er svartelistet: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
+      "text": "Terminalemulatoren du bruker for øyeblikket, {0}, er grålistet: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
+      "text": "Terminaltypen {0} støtter ikke 256 farger i følge terminfo."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
+      "text": "Brukeren prøvde å kjøre et Terminaux-program på Git Bashs MinTTY uten winpty."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
+      "text": "Du må bruke winpty for å kunne bruke dette programmet. Hvis du er sikker på at du ikke kjører Git Bash, må du sørge for at du bruker en riktig Windows-terminal."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
+      "text": "Konsollposisjoneringen fungerer ikke på grunn av en I/O-feil, så dette programmet kan oppføre seg uregelmessig."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
+      "text": "Konsollposisjoneringen fungerer ikke som den skal, så denne applikasjonen kan oppføre seg uregelmessig."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
+      "text": "Konsollen din er for liten til å kjøre ordentlig: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
+      "text": "For å få en bedre opplevelse, endre størrelsen på konsollvinduet mens du fortsatt er på denne skjermen. Trykk på en hvilken som helst tast for å fortsette ..."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
+      "text": "Montering ikke inkludert."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
+      "text": "{0} Kan ikke fortsette."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
+      "text": "Konsolltypen støtter bare grunnleggende skriving."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
+      "text": "Konsolltypen er av ukjent art."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
+      "text": "Denne applikasjonen bruker VT-escape-sekvenser, men Terminal.app har ødelagt støtte for 255 og true colors."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
+      "text": "Konsolltypen støtter ikke 256 farger."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
+      "text": "Kan ikke filtrere uten noen spørring."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
+      "text": "Kan ikke filtrere med en ugyldig spørring."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
+      "text": "Det finnes ikke noe uttrykk i konsollfilteret."
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
+      "text": "Kan ikke gjenopprette nye termios-attributter for råmodus: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
+      "text": "Kan ikke hente filbeskrivelsesflagg: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
+      "text": "Kan ikke sette filbeskrivelsesflagget til ikke-blokkerende lesing: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
+      "text": "Kan ikke sette filbeskrivelsesflagget til å blokkere lesing: {0}"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
+      "text": "Kan ikke hente synth-informasjon fra den oppgitte representasjonen."
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
+      "text": "Syntrepresentasjonen er ugyldig ved [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
+      "text": "Frekvensen er ugyldig ved [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
+      "text": "Varigheten er ugyldig på [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
+      "text": "Målet kan være ugyldig"
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
+      "text": "Maksimalverdien [{0}] skal ikke være mindre enn fremdriftsverdien [{1}]"
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
+      "text": "Fremdriftsverdien [{0}] må være mellom 0 og maksimumsverdien på {1}."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
+      "text": "Denne betegnelsen kan ikke plasseres på slutten av strengen uten å spesifisere én parameter"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
+      "text": "Denne betegnelsen kan bare ta et tall som parameter."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
+      "text": "Denne betegnelsen kan bare ha et tall fra 1 til 9."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
+      "text": "Denne betegnelsen kan bare ta en bokstav som parameter."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
+      "text": "Denne betegnelsen trenger en heltallskonstant"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
+      "text": "Denne betegnelsen inneholder en ugyldig heltallskonstant"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
+      "text": "Denne betegnelsen kan ikke plasseres på slutten av strengen uten å spesifisere en tegnkonstant"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
+      "text": "Du kan ikke legge til mer enn ett tegn"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
+      "text": "Denne betegnelsen trenger en tegnsamling"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
+      "text": "Bredden er ikke gyldig"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
+      "text": "Denne betegnelsen kan ikke plasseres på slutten av strengen uten å spesifisere en type"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
+      "text": "Kan ikke behandle nullsekvensen."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
+      "text": "Kan ikke behandle nullparametere."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
+      "text": "Dette flagget må representere et minustegn"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
+      "text": "Det finnes fortsatt flere data etter indeks {0} av {1} for formatering"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
+      "text": "Heltallskonstanten for tegnet er ikke gyldig."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
+      "text": "Heltallskonstanten er ikke gyldig."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
+      "text": "Kan ikke sende ikke-eksisterende variabel."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
+      "text": "Dette er en binær operasjon, men antallet argumenter i køen er {0}"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
+      "text": "Heltallskonstanten for den første operanden er ikke gyldig."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
+      "text": "Heltallskonstanten for den andre operanden er ikke gyldig."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
+      "text": "Dette er en unær operasjon, men antallet argumenter i køen er {0}"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
+      "text": "Betinget representasjon {0} er ugyldig."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
+      "text": "Kunne ikke lese det forespurte antallet byte."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
+      "text": "Ugyldig strengtabell!"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
+      "text": "Ugyldig header-magi"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
+      "text": "Kan ikke behandle parameter på verdier som ikke er strenger. Enum er {0} og typen er {1}."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
+      "text": "Forsinkelsesbetegnelsen ble avsluttet for tidlig."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
+      "text": "Ugyldig forsinkelsesbetegnelse."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
+      "text": "Forsinkelsesverdien er ikke et tall."
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
+      "text": "Ukjent funksjonstype '{0}'"
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
+      "text": "Kan ikke laste inn {0}"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
+      "text": "Fargen er utenfor rekkevidde."
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
+      "text": "Er du sikker på at denne gradienten ikke er null?"
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
+      "text": "Angi minst én farge."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
+      "text": "Kan ikke konvertere nullkilden."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
+      "text": "Kan ikke konvertere til null-type."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
+      "text": "Du bør spesifisere en spesifikk kildefargemodell, ikke basisfargen."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
+      "text": "Ikke en fargemodell."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
+      "text": "Du bør spesifisere en spesifikk målfargemodell, ikke basisfargen."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
+      "text": "Ikke en målfargemodell."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
+      "text": "Kan ikke konvertere samme fargemodell."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
+      "text": "Kan ikke konvertere til RGB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
+      "text": "Kan ikke konvertere fra basisfargemodellen."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
+      "text": "Kan ikke konvertere til CMYK."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
+      "text": "Kan ikke konvertere til CMY."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
+      "text": "Kan ikke konvertere til HSL."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
+      "text": "Kan ikke konvertere til HSV."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
+      "text": "Kan ikke konvertere til RYB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
+      "text": "Kan ikke konvertere til YIQ."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
+      "text": "Kan ikke konvertere til YUV."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
+      "text": "Kan ikke konvertere til XYZ."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
+      "text": "Kan ikke konvertere til YXY."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
+      "text": "Kan ikke konvertere til HunterLab."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
+      "text": "Kan ikke konvertere til CieLab."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
+      "text": "Kan ikke konvertere til CieLuv."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
+      "text": "Kan ikke konvertere til CieLch."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
+      "text": "Kan ikke konvertere til HWB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
+      "text": "Kan ikke konvertere fra RGB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til CMYK!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til CMY!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til HSL!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til HSV!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til RYB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til YIQ!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til YUV!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til XYZ!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til YXY!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til HunterLab!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til CieLab!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til CieLuv!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til CieLch!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
+      "text": "Kan ikke konvertere en null RGB-instans til HWB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
+      "text": "Kan ikke konvertere en null CMYK-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
+      "text": "Kan ikke konvertere en null CMY-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
+      "text": "Kan ikke konvertere en null HSL-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
+      "text": "Kan ikke konvertere en null HSV-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
+      "text": "Kan ikke konvertere en null RYB-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
+      "text": "Kan ikke konvertere en null YIQ-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
+      "text": "Kan ikke konvertere en null YUV-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
+      "text": "Kan ikke konvertere en null XYZ-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
+      "text": "Kan ikke konvertere en null YXY-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
+      "text": "Kan ikke konvertere en null HunterLab-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
+      "text": "Kan ikke konvertere en null CieLab-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
+      "text": "Kan ikke konvertere en null CieLuv-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
+      "text": "Kan ikke konvertere en null CieLch-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
+      "text": "Kan ikke konvertere en null HWB-instans til RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
+      "text": "Observatøren må være enten 2 eller 10"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
+      "text": "Lyskilden er ugyldig"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
+      "text": "Kan ikke hente referanser fra tabellen"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
+      "text": "Ugyldig fargespesifikator «{0}». Hvis du bruker 256 farger, må du angi en positiv verdi fra 0 til 255 eller et gyldig fargenavn. Hvis du bruker ekte farger, må du enten skrive en gyldig fargespesifikator, for eksempel RRR;GGG;BBB, eller en fargekode opptil 16777215."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
+      "text": "Det røde fargenivået er utenfor rekkevidden (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
+      "text": "Grønnfargenivået er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
+      "text": "Blåfargenivået er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
+      "text": "Ugyldig heksadesimal fargespesifikasjon «{0}». Denne spesifiseringen må starte med hashtaggen. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
+      "text": "Ugyldig heksadesimal fargelengde «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
+      "text": "Kan ikke løse fargeheksadesimalen «{0}»."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
+      "text": "Ugyldig CieLab-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
+      "text": "L-verdien er utenfor området (0,0 -> 100,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
+      "text": "A-verdien er utenfor rekkevidden (-128,0 -> 128,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
+      "text": "B-verdien er utenfor rekkevidden (-128,0 -> 128,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
+      "text": "Ugyldig CieLab-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
+      "text": "Ugyldig CieLch-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
+      "text": "C-verdien er utenfor området (-128,0 -> 128,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
+      "text": "H-verdien er utenfor området (-128,0 -> 128,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
+      "text": "Ugyldig CieLch-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
+      "text": "Ugyldig CieLuv-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
+      "text": "U-verdien er utenfor området (-134,0 -> 220,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
+      "text": "V-verdien er utenfor rekkevidde (-140,0 -> 122,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
+      "text": "Ugyldig CieLuv-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
+      "text": "Ugyldig CMY-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
+      "text": "Cyanfargenivået er utenfor rekkevidden (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
+      "text": "Fargenivået for magenta er utenfor rekkevidden (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
+      "text": "Gulfargenivået er utenfor rekkevidde (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
+      "text": "Ugyldig CMY-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
+      "text": "Ugyldig CMYK-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
+      "text": "Ugyldig HSL-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
+      "text": "Fargenivået er utenfor rekkevidde (0' -> 360' grader)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
+      "text": "Metningsnivået er utenfor rekkevidden (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
+      "text": "Lysstyrkenivået er utenfor rekkevidden (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
+      "text": "Ugyldig HSL-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
+      "text": "Ugyldig HSV-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
+      "text": "Verdinivået er utenfor rekkevidden (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
+      "text": "Ugyldig HSV-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
+      "text": "Ugyldig HWB-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
+      "text": "Hvithetsnivået er utenfor rekkevidden (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
+      "text": "Svarthetsnivået er utenfor rekkevidden (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
+      "text": "Ugyldig HWB-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
+      "text": "Ugyldig HunterLab-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
+      "text": "A-verdien er utenfor rekkevidden (-128,0 -> 127,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
+      "text": "B-verdien er utenfor rekkevidden (-128,0 -> 127,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
+      "text": "Ugyldig HunterLab-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
+      "text": "Ugyldig YUV-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
+      "text": "Lumanivået er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
+      "text": "Kromanivået (U) er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
+      "text": "Kromanivået (V) er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
+      "text": "Ugyldig YUV-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
+      "text": "Ugyldig YIQ-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
+      "text": "Fasenivået er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
+      "text": "Kvadraturnivået er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
+      "text": "Ugyldig YIQ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
+      "text": "Ugyldig fargespesifikator «{0}». Sørg for at den er i riktig format, som betyr et tall fra 0–255 hvis du bruker 255 farger, eller en VT-sekvens hvis du bruker ekte farger, som følger."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
+      "text": "Ugyldig fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
+      "text": "Denne fargen er allerede en originalfarge."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
+      "text": "Ugyldig RYB-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
+      "text": "Det røde nivået er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
+      "text": "Gulnivået er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
+      "text": "Blånivået er utenfor rekkevidde (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
+      "text": "Ugyldig RYB-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "Ugyldig XYZ-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "X-verdien er utenfor området (0,0 -> 95,047)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "Y-verdien er utenfor området (0,0 -> 100,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "Z-verdien er utenfor området (0,0 -> 108,883)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "Ugyldig XYZ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "Ugyldig XYZ-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "X-verdien er utenfor området (0,0 -> 95,047)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "Y-verdien er utenfor området (0,0 -> 100,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "Z-verdien er utenfor området (0,0 -> 108,883)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "Ugyldig XYZ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
+      "text": "Ugyldig YXY-fargespesifikator «{0}». Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
+      "text": "Y1-verdien er utenfor området (0,0 -> 100,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
+      "text": "X-verdien er utenfor området (0,0 -> 1,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
+      "text": "Y2-verdien er utenfor området (0,0 -> 1,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
+      "text": "Ugyldig YXY-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
+      "text": "Fargetypen er ugyldig"
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
+      "text": "Fargespesifikasjonen for synlighet er ugyldig"
+    },
+    {
+      "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
+      "text": "Ugyldig monokromatisk type"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
+      "text": "Kan ikke finne ut hvordan man konverterer a(n) {0} av {1} til en farge."
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
+      "text": "Kan ikke finne ut hvordan man konverterer a(n) {0} av en ukjent type til en farge."
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
+      "text": "Får ikke farge."
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
+      "text": "Kunne ikke angi bakgrunn"
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_COLORISNULL",
+      "text": "Fargeeksempel er ikke oppgitt."
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
+      "text": "Gå"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
+      "text": "Tastebindinger"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
+      "text": "Finn neste"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
+      "text": "Flytt opp"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
+      "text": "Gå ett element opp"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
+      "text": "Flytt ned"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
+      "text": "Gå ett element ned"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
+      "text": "Forrige side"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
+      "text": "Gå til forrige side"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
+      "text": "Neste side"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
+      "text": "Gå til neste side"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
+      "text": "Gå til begynnelsen"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
+      "text": "Gå til det første elementet"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
+      "text": "Gå til slutt"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
+      "text": "Gå til det siste elementet"
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT",
+      "text": "Skriv et søkeord (støtter regulære uttrykk)"
+    },
+    {
+      "loc": "T_INPUT_COMMON_INVALIDQUERY",
+      "text": "Spørringen din er ikke et gyldig regulært uttrykk."
+    },
+    {
+      "loc": "T_INPUT_COMMON_ENTRYPROMPT",
+      "text": "Velg én av oppføringene:"
+    },
+    {
+      "loc": "T_INPUT_COMMON_NOITEMS",
+      "text": "Ingen gjenstand funnet."
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
+      "text": "Søk etter et element"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
+      "text": "Gå én linje opp (informativt)"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
+      "text": "Gå én linje ned (informativt)"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
+      "text": "Bryter"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
+      "text": "Liste over {0} forhåndsdefinerte farger"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
+      "text": "Grå"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
+      "text": "Åpenhet"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
+      "text": "Skygge og fargetone"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
+      "text": "Fargeinformasjon"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
+      "text": "Transform"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
+      "text": "Ugyldig fargetype i fargevelgeren"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
+      "text": "Skriv skriftnavnet. Det vil bli konvertert til små bokstaver."
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_NOFONT",
+      "text": "Skriften finnes ikke."
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
+      "text": "Velg en figlet-skrifttype fra listen nedenfor"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
+      "text": "Valg av skrifttype"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
+      "text": "Velger er ikke spesifisert"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
+      "text": "Les mer..."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
+      "text": "Liste over tastebindinger"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
+      "text": "Beveg deg rundt"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
+      "text": "Avslutter den interaktive brukergrensesnittet"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
+      "text": "Vareinformasjon"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "Utvalgsstilen krever at minst ett alternativ er aktivert."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
+      "text": "Skriv navnet på spinneren. Det vil bli konvertert til små bokstaver."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
+      "text": "Spinneren finnes ikke."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
+      "text": "Velg en spinner fra listen nedenfor"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
+      "text": "Spinnervalg"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
+      "text": "Ingen informasjon."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
+      "text": "Ingen status"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
+      "text": "Forsøkte å gjengi interaktive TUI-elementer for den sekundære ruten på en interaktiv TUI som bare tillater interaksjon fra én rute."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
+      "text": "Prøvde å gjengi informasjon i den sekundære ruten i et interaktivt brukergrensesnitt som tillater interaksjon fra to ruter, noe som rotet til gjengivelsen av valgene der."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
+      "text": "Forsøkte å gjengi informasjon om nulldata"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
+      "text": "Klarte ikke å hente informasjon."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
+      "text": "Utfør en handling på det valgte elementet"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
+      "text": "Vennligst oppgi en grunnleggende interaktiv TUI-klasse og prøv på nytt."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
+      "text": "Den interaktive TUI-en {0} inneholder ingen datakilde."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
+      "text": "Den interaktive TUI-en {0} har motstridende tastatur- eller musebindinger."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
+      "text": "Følgende tastebindinger eller musebindinger er i konflikt:"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
+      "text": "Tekstgrensesnittet har krasjet. Det er vanligvis et problem i applikasjonsdelen."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
+      "text": "Tekstlig brukergrensesnitt er ikke spesifisert"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
+      "text": "Dette tekstlige brukergrensesnittet [{0}] er ikke klart fordi tilstanden er {1}"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
+      "text": "Det er {0} motstridende tastebindinger i det tekstlige brukergrensesnittet [{1}]"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
+      "text": "Pekerhendelseskontekst er ikke spesifisert"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
+      "text": "Startposisjonen kan ikke være mindre enn null"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
+      "text": "Endeposisjonen kan ikke være mindre enn null"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
+      "text": "Start X-posisjonen kan ikke være større enn slutt X-posisjonen"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
+      "text": "Start Y-posisjonen kan ikke være større enn slutt Y-posisjonen"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
+      "text": "Inndatanavn er ikke spesifisert"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
+      "text": "Avansere"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
+      "text": "Denne presentasjonssiden krever at følgende inndata oppfylles før man kan gå videre til neste side."
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
+      "text": "Inndata kreves"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
+      "text": "En eller flere av følgende felt er ikke riktig utfylt:"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
+      "text": "Feil inndata"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
+      "text": "Nødvendige inndata er ikke oppgitt. Du må fylle ut verdiene for følgende inndata:"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
+      "text": "Inndata ikke oppgitt"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
+      "text": "Kan ikke vise valg uten svar og uten alternative svar."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "Valgstilen krever at minst ett valg er aktivert."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
+      "text": "Du kan ikke oppgi svar med mer enn ett tegn i enkelttegnmodus."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
+      "text": "Feil svar. Prøv igjen."
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
+      "text": "Flytt til venstre"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
+      "text": "Flytt til høyre"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
+      "text": "Sett inn"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
+      "text": "Erstatt"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
+      "text": "Erstatt alle"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
+      "text": "Ferdig"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
+      "text": "Ikke funnet. Sjekk syntaksen din eller utvid søket ditt."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
+      "text": "Nummerinfo"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
+      "text": "Fjerne"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
+      "text": "Erstatt alt"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
+      "text": "Skriv bytenummeret med den heksadesimale verdien."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
+      "text": "Det angitte bytenummeret er ikke gyldig."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
+      "text": "Ugyldig byte {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
+      "text": "Skriv bytenummeret med den heksadesimale verdien som skal erstattes med {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
+      "text": "Skriv bytenummeret med den heksadesimale verdien som skal erstattes."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
+      "text": "Skriv en byte eller en gruppe byte atskilt med mellomrom."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
+      "text": "Det kreves byte for å finne, men du har ikke oppgitt noen."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
+      "text": "Posisjon"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
+      "text": "Heksadesimal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
+      "text": "Oktal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
+      "text": "Tall"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
+      "text": "Binær"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
+      "text": "Nummerinformasjon"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
+      "text": "Tomt innhold"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
+      "text": "Det angitte startbytenummeret kan ikke være større enn filstørrelsen."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
+      "text": "Det angitte sluttbytetallet kan ikke være større enn filstørrelsen."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
+      "text": "Det angitte bytenummeret er ugyldig."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
+      "text": "Det angitte bytetallet kan ikke være større enn {0} eller mindre enn 1."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
+      "text": "Det angitte bytetallet kan ikke være større enn {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
+      "text": "Kan ikke utføre denne operasjonen på en null-array."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
+      "text": "Bytenummeret må starte med 1."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
+      "text": "Det angitte startbytenummeret kan ikke være større enn {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
+      "text": "Det angitte sluttbytetallet kan ikke være større enn {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
+      "text": "Gå..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
+      "text": "Slett her"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
+      "text": "Fjern linje"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
+      "text": "Stopp å gå inn"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
+      "text": "Ny linje"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
+      "text": "Tilbake"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
+      "text": "Slett"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
+      "text": "Skriv strengen for å finne"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
+      "text": "Skriv erstatningsstrengen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
+      "text": "Skriv en streng for å finne. Støtter regulære uttrykk."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
+      "text": "En streng er nødvendig for å finne, men du har ikke oppgitt noen."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
+      "text": "Denne strengen som skal søkes etter er ikke et gyldig regulært uttrykk."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
+      "text": "Linjer"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
+      "text": "Søyle"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
+      "text": "Rad"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
+      "text": "Det angitte linjenummeret kan ikke være større enn {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
+      "text": "Kan ikke utføre denne operasjonen på listen med nulllinjer."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
+      "text": "Viser mer informasjon i en infoboks"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
+      "text": "Går én linje opp"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
+      "text": "Går én linje ned"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
+      "text": "Går til forrige side med tekst"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
+      "text": "Går til neste side med tekst"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
+      "text": "Sender inn verdien"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
+      "text": "Sender inn verdiene"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
+      "text": "Lukker uten å sende inn verdien"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
+      "text": "Lukker uten å sende inn verdiene"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
+      "text": "Utfører en handling eller velger et alternativ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
+      "text": "Reduserer verdien eller flytter tre tekstlinjer opp"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
+      "text": "Øker verdien eller flytter tre tekstlinjer ned"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
+      "text": "Forrige valg eller forrige tre tekstlinjer"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
+      "text": "Neste valg eller de neste tre tekstlinjene"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
+      "text": "Reduserer gjeldende verdi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
+      "text": "Øker gjeldende verdi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
+      "text": "Setter verdien til minimumsverdien"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
+      "text": "Setter verdien til maksimumsverdien"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
+      "text": "Setter gjeldende fokus til neste verdielement"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
+      "text": "Setter gjeldende fokus til det forrige verdielementet"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
+      "text": "Går til forrige knapp"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
+      "text": "Går til neste knapp"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
+      "text": "Forrige knapp eller forrige tre tekstlinjer"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
+      "text": "Neste-knapp eller de neste tre tekstlinjene"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
+      "text": "Går til den første tekstlinjen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
+      "text": "Går til siste tekstlinje"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
+      "text": "Går til neste tekstside, eller lukker den modale informasjonsboksen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
+      "text": "Lukker den modale informasjonsboksen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
+      "text": "Utfører en handling"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
+      "text": "De tre foregående tekstlinjene"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
+      "text": "De neste tre tekstlinjene"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
+      "text": "Går til forrige side med inndata"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
+      "text": "Går til neste side med inndata"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
+      "text": "Søker etter en inngang"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
+      "text": "Endrer den valgte inngangsverdien"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
+      "text": "Går ett valg opp (neste valg)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
+      "text": "Går ett valg ned (forrige valg)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
+      "text": "Går til førstevalget"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
+      "text": "Går til det siste valget"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
+      "text": "Går til forrige side med valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
+      "text": "Går til neste side med valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
+      "text": "Søker etter et valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
+      "text": "Merker eller fjerner merkingen av alle valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
+      "text": "Kan ikke hente kategori og gruppe i valgnummer {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
+      "text": "Generelle valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
+      "text": "Tilgjengelige valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
+      "text": "Alternative valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
+      "text": "Bekrefte"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
+      "text": "Sidefelt"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
+      "text": "Flere"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
+      "text": "Bekrefter valg(er)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
+      "text": "Endrer den valgte verdien (radioknapper)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
+      "text": "Avbryt valg(er)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
+      "text": "Går ett element opp"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
+      "text": "Går ett element ned"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
+      "text": "Går til det første elementet"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
+      "text": "Går til det siste elementet"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
+      "text": "Går til forrige side"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
+      "text": "Går til neste side"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
+      "text": "Søker etter et element"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
+      "text": "Gå opp i en sidefelt"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
+      "text": "Gå ned i en sidefelt"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
+      "text": "Gå opp i en spørsmålsboks"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
+      "text": "Gå ned i en spørsmålsboks"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
+      "text": "Vis antall sider og valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
+      "text": "Vis vareinformasjon"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
+      "text": "Merker eller fjerner merkingen av et valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
+      "text": "Velger alle elementene i samme gruppe og kategori"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
+      "text": "Velger alle elementene i alle gruppene i samme kategori"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
+      "text": "Velger alle elementene i alle grupper i alle kategorier"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
+      "text": "Går ett element eller en utstillingsrekke opp"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
+      "text": "Går ett element eller en presentasjonslinje ned"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
+      "text": "Oppdater posisjon"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
+      "text": "Tidligere"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
+      "text": "Neste"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
+      "text": "Send inn"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
+      "text": "Kansellere"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
+      "text": "Hjelp"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
+      "text": "Ferdig"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
+      "text": "Velge"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
+      "text": "Manuell valg"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
+      "text": "Fargeinformasjon"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
+      "text": "Neste simulering av fargeblindhet"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
+      "text": "Forrige simulering av fargeblindhet"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
+      "text": "Øk transformasjonsfrekvensen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
+      "text": "Reduser transformasjonsfrekvensen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
+      "text": "Velg nettfarge"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
+      "text": "Øk ugjennomsiktigheten"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
+      "text": "Øk åpenheten"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
+      "text": "Neste fargemodus"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
+      "text": "Forrige fargemodus"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
+      "text": "Øk verdien"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
+      "text": "Reduser verdien"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
+      "text": "Reduser fargetone"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
+      "text": "Øk fargenyansen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
+      "text": "Reduser fargelyshet"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
+      "text": "Øk fargelysheten"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
+      "text": "Reduser metning"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
+      "text": "Øk metningen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
+      "text": "Forrige farge"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
+      "text": "Neste farge"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
+      "text": "Vis og skjul fargeliste"
+    },
+    {
+      "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
+      "text": "Karakterutstilling"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
+      "text": "Denne fixturen er kanskje ikke en basis-fixturklasse. Spesifiser en ubetinget fixtur."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
+      "text": "Denne fixturen er kanskje ikke en basis-fixturklasse. Spesifiser en betinget fixtur."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
+      "text": "Returnert verdi {0} samsvarer ikke med forventet verdi {1}"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
+      "text": "Denne innsatsen er ikke betinget."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
+      "text": "Denne armaturtypen er ugyldig."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
+      "text": "Ingen inventar her. Sett inn ett."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
+      "text": "Velg en testanordning."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
+      "text": "Går ut av testutstyrsvelgeren"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
+      "text": "Denne testen har vært vellykket!"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
+      "text": "Forventet verdi samsvarer med faktisk verdi."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
+      "text": "Denne testen har mislyktes."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
+      "text": "Beskjed"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
+      "text": "Forventet verdi samsvarer ikke med faktisk verdi."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
+      "text": "Metoden i denne delegaten kan ikke returnere void"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
+      "text": "Metoden i denne delegaten må returnere void"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
+      "text": "Komponentens regulære uttrykk er ugyldig"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
+      "text": "Regulært uttrykk for komponenter er ikke oppgitt"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
+      "text": "Forgrunnsfarge for komponenten er ikke oppgitt"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
+      "text": "Bakgrunnsfarge for komponenten er ikke oppgitt"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
+      "text": "Ikke oppgitt navn på markeringspennen."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
+      "text": "Ingen navn på basismarkøren er oppgitt."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
+      "text": "Finner ikke markeringspennen {0}"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
+      "text": "Finner ikke markeringspennen"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
+      "text": "Finner ikke komponent {0} i markeringspenn {1}"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
+      "text": "Ugyldig merkepenn."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
+      "text": "Markeringspennen har ikke noe navn."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
+      "text": "Markeringspennen finnes allerede."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
+      "text": "Markeringspennen har ingen komponenter."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
+      "text": "Kan ikke fjerne innebygd merkepenn {0}"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
+      "text": "Historikknavn er ikke spesifisert"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
+      "text": "Historikkoppføringer er ikke spesifisert"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
+      "text": "Stien til historikkfilen er ikke oppgitt."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
+      "text": "Historikk-JSON-representasjon er ikke oppgitt."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
+      "text": "JSON analysert, men historisk JSON-representasjon er ikke oppgitt."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
+      "text": "Historikkinformasjon er ikke oppgitt."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
+      "text": "Historikknavn er ikke oppgitt. Er du sikker på at du har angitt navnet i JSON-representasjonen din?"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
+      "text": "Historikkoppføringer er ikke oppgitt. Er du sikker på at du har spesifisert oppføringene i JSON-representasjonen din?"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
+      "text": "Historikk {0} ikke funnet."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
+      "text": "Generell historikk kan ikke fjernes, men den kan tømmes."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
+      "text": "Historie er ikke en del av de registrerte historiene."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
+      "text": "Kunne ikke slette historikken."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
+      "text": "Historikkoppføring er ikke tilgjengelig."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
+      "text": "Liste over historiske oppføringer er ikke oppgitt."
+    },
+    {
+      "loc": "T_READER_EXCEPTION_PRINTWRITE",
+      "text": "Det er en konflikt mellom {0} og {1}."
+    },
+    {
+      "loc": "T_READER_FAILED",
+      "text": "Inndataleseren har feilet"
+    },
+    {
+      "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
+      "text": "Denne strømmen kan ikke søke."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
+      "text": "Kan ikke bygge VT-sekvens for ikke-eksisterende type {0}"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
+      "text": "Kan ikke bygge VT-sekvens med manglende argumenter. Forventet {0} argumenter, mottok {1} argumenter."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
+      "text": "Alias kan ikke være det samme navnet som en kommando."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
+      "text": "Kommandoen til alias til {0} ble ikke funnet."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
+      "text": "Aliaset er allerede funnet"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
+      "text": "Aliaset {0} ble ikke funnet å være fjernet."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
+      "text": "Aliaset {0} ble ikke funnet for å bli søkt."
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
+      "text": "Bruk"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
+      "text": "Kommando"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
+      "text": "Beskrivelse"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
+      "text": "Ingen hjelp for argumentet «{0}»."
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
+      "text": "Ingen beskrivelse av argumenthjelp"
+    },
+    {
+      "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
+      "text": "Dette argumentet er ikke implementert ennå."
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
+      "text": "Det var ikke nok argumenter."
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
+      "text": "Ukjent argument"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
+      "text": "Uopprettelig feil i argumentet"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
+      "text": "Kan ikke hente argumentinformasjon for kommando eller argument"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
+      "text": "Trådparametere er ikke spesifisert."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
+      "text": "Obligatoriske argumenter er ikke oppgitt for alle bruksområder nedenfor:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
+      "text": "Nødvendige argumenter er ikke oppgitt."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
+      "text": "Nødvendige brytere er ikke inkludert."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
+      "text": "En av bryterne krever en verdi som ikke er oppgitt."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
+      "text": "Bryterne som er oppført nedenfor er ukjente."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
+      "text": "Bryterne som er oppført nedenfor er i konflikt med hverandre."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
+      "text": "Bryterne nedenfor godtar ikke verdier."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
+      "text": "Ett eller flere av argumentene forventer en numerisk verdi, men du oppga et ugyldig tall."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
+      "text": "Ett eller flere av argumentene forventer en nøyaktig ordlyd, men du oppga et ugyldig ord."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
+      "text": "En eller flere av bryterne forventer en numerisk verdi, men du oppga et ugyldig tall."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
+      "text": "Se hjelpeoppføringen for denne kommandoen for mer informasjon"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
+      "text": "Kommandoen blir avbrutt ..."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
+      "text": "Feil ved forsøk på å utføre kommandoen {2}."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
+      "text": "Feil"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
+      "text": "Kommandoen ble avbrutt av følgende grunn"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
+      "text": "Ugyldig kommandomønster oppgitt."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
+      "text": "Kommandoen ble ikke funnet."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
+      "text": "Skalltypen {0} finnes ikke."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
+      "text": "Du må oppgi kommandobasen."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
+      "text": "Du må oppgi kommandoen."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
+      "text": "Den angitte kommandoen er allerede lagt til."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
+      "text": "Noen av de tilpassede kommandoene kan ikke lastes inn."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
+      "text": "Den angitte egendefinerte kommandoen ble ikke funnet."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
+      "text": "Noen av de tilpassede kommandoene kan ikke fjernes."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
+      "text": "Dette skallet bruker skråstrekekommandoer for å utføre kommandoene. Vennligst legg til skråstreketegnet '/' i begynnelsen av kommandoen for å komme i gang. For eksempel:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
+      "text": "Denne kommandoen er ikke definert."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
+      "text": "Tilgjengelige kommandoer:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
+      "text": "Generelle kommandoer:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
+      "text": "Ingen skallkommandoer."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
+      "text": "Ekstra kommandoer:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
+      "text": "Ingen ekstra kommandoer."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
+      "text": "Alias-kommandoer:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
+      "text": "Ingen aliaskommandoer."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
+      "text": "Enhetlige kommandoer:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
+      "text": "Ingen enhetlige kommandoer."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
+      "text": "Kommando definert av"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
+      "text": "Denne kommandoen har argumentene nedenfor som endrer hvordan den fungerer:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
+      "text": "Uspesifisert argumentbeskrivelse"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
+      "text": "Denne kommandoen har følgende brytere som endrer hvordan den fungerer:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
+      "text": "Uspesifisert bryterbeskrivelse"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
+      "text": "Ingen hjelp for kommandoen «{0}»."
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
+      "text": "Den angitte forhåndsinnstillingen {0} ble ikke funnet."
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
+      "text": "Velg forhåndsinnstilling for {0}:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
+      "text": "Ingen kommandoer funnet."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
+      "text": "Avslutter skallet hvis det kjører på et underskall"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
+      "text": "Finner de tilgjengelige kommandoene i gjeldende skalltype"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
+      "text": "Hjelpeside"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
+      "text": "Viser generelle kommandoer (standard)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
+      "text": "Viser aliaserte kommandoer"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
+      "text": "Viser enhetlige kommandoer"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
+      "text": "Viser ekstra kommandoer"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
+      "text": "Viser alle kommandoer"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
+      "text": "Bruker forenklet hjelp"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
+      "text": "Åpner biblioteket med forhåndsinnstilte skall"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
+      "text": "Shell-melding: Den forespurte kommandoen {0} ble ikke funnet. Se 'hjelp' for tilgjengelige kommandoer."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
+      "text": "Feil ved forsøk på å utføre kommandoen."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
+      "text": "Kan ikke hente skallutfører for {0}"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
+      "text": "Mislyktes ved forsøk på å initialisere skallet"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
+      "text": "Kan ikke avgjøre om valginngangen er én eller flere"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
+      "text": "Markering er ikke spesifisert."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
+      "text": "Ugyldig spesifikator for slutttagg."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
+      "text": "Det finnes ingen køsekvenser å avslutte taggen med."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
+      "text": "Det mangler {0} sluttkoder."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
+      "text": "Opprinnelig format må ikke skrive ut tekst; det må bare inneholde formaterende VT-sekvenser."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
+      "text": "Det finnes ingen Asciicast-fil"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
+      "text": "Kan ikke deserialisere grunnleggende Asciicast-representasjon"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
+      "text": "Kan ikke deserialisere Asciicast v1-representasjonen"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
+      "text": "Kan ikke deserialisere Asciicast v2-representasjonen"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
+      "text": "Kan ikke hente informasjon om hendelsen"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
+      "text": "Tilgjengelige tastebindinger"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
+      "text": "Ingen bindinger definert i denne konteksten."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
+      "text": "Tastaturbindinger"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
+      "text": "Musebindinger"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
+      "text": "Ugyldig tegnnavn for Nerd Fonts {0} i typen {1}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
+      "text": "Ugyldig Nerd Fonts-tegnrepresentasjon {0} fra {1} i typen {2}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
+      "text": "Ugyldig Nerd-fonttype {0}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
+      "text": "Nerd-fonter av typen {0} har ingen tegn"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
+      "text": "Renderbar er allerede registrert"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
+      "text": "Gjengivelsesfunksjonen er ikke registrert"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
+      "text": "Alle spinnere skal ha samme bredde."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
+      "text": "Går ett inngangselement opp"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
+      "text": "Går ett inngangselement ned"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
+      "text": "Går til første inngang"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
+      "text": "Går til siste inngang"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Setter verdien på utgangen til den valgte MESH-variabelen"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Kan ikke hente trådparametere for prosesskjøring."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Feil under forsøk på å utføre kommandoen"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Feil {0}: {1}"
+    },
+    {
+      "loc": "T_SHELL_BASE_OBSOLETECMD",
+      "text": "Denne kommandoen er foreldet og vil bli fjernet i en fremtidig utgivelse."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
+      "text": "Den pakkebare kommandoen ble ikke funnet."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
+      "text": "Du må ikke utføre denne kommandoen direkte i pakket modus."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
+      "text": "Kommandoen kan ikke pakkes inn. Disse kommandoene kan pakkes inn:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
+      "text": "Det oppstod en feil under forsøk på å bryte en kommandoutgang"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
+      "text": "Kan ikke buffere en kommando som ikke er angitt som pakkebar."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
+      "text": "Du kan ikke deklarere den nye blokken før du plasserer uttrykk som støtter opprettelsen, som betingelser eller løkker. Stabelnummeret er {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
+      "text": "Når du starter en ny blokk, sørg for at du har rykket inn stabelen riktig. Stabelnummeret er {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
+      "text": "Skriptet er feil utformet. Sjekk skriptet og løs eventuelle feil: {0}"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "text": "Tilstanden ble ikke funnet i uttrykket."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
+      "text": "Betingelse {0} krever {1} argumenter. Fikk {2}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
+      "text": "Tilstanden må plasseres til slutt."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
+      "text": "Feil ved analyse av uttrykk på grunn av syntaksfeil."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
+      "text": "Kan ikke registrere en tilstand som allerede eksisterer."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
+      "text": "Kan ikke registrere en tom tilstand."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
+      "text": "Datatypen {0} spesifisert er ugyldig."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
+      "text": "Oppgitt plattform {0} er ugyldig."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
+      "text": "Utførelse av kildekommando mislyktes."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
+      "text": "Utførelse av målkommando mislyktes. Innholdet er kanskje ikke fylt ut på riktig måte. Kommando utført var"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
+      "text": "Røret er ødelagt."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
+      "text": "Ugyldig antall ganger."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
+      "text": "Kan ikke gjenta seg selv."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
+      "text": "Kommandoer som kan pakkes inn:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
+      "text": "Påminnelse for skråstrek-kommandoene"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
+      "text": "Utfører en ekstern prosess"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
+      "text": "Veien til en prosess"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
+      "text": "Argumenter for å gå over i en prosess"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
+      "text": "Utfører prosessen uten å avbryte skalltråden. Et eget vindu vil bli opprettet."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
+      "text": "Kommando for å vise hjelpeoppføring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
+      "text": "Laster inn skallhistorier"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
+      "text": "Sender kommandoutgangen til en annen kommando som parametere"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
+      "text": "Kildekommando for å sende utdata til målkommandoen som siste parameter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "Målkommando som skal utføres ved byggeargument basert på kildekommandoutgangen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
+      "text": "Om utdata fra kildekommandoen skal sendes som ett sitert argument eller et argument uten anførselstegn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
+      "text": "Gjentar den siste handlingen eller den angitte kommandoen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "Målkommando som skal utføres ved byggeargument basert på kildekommandoutgangen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
+      "text": "Lagrer skallhistorier"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
+      "text": "Omslutter konsollutgangen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
+      "text": "Kommando for å pakke utdataene"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
+      "text": "Feil ved forsøk på å kjøre skript: {0}"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_DESC",
+      "text": "Utfører kommandoer når MESH-uttrykkene er oppfylt"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "MESH uttrykk for å teste"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
+      "text": "Kommando for å utføre ved vellykket evaluering"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
+      "text": "der <answers> er enbokstavssvar på spørsmålet atskilt i skråstreker"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
+      "text": "Du må sende -set-bryteren med variabelen du vil sette denne verdien til."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
+      "text": "Tar brukervalg"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "Svar å dele med en skråstrek"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Spørsmål å skrive ut på skjermen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "Første svartittel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "Andre svartittel, og så videre..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
+      "text": "En linje valg stil"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
+      "text": "To linjers valg stil"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
+      "text": "Moderne valg stil"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
+      "text": "Utgangen kan bare være ett tegn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
+      "text": "Utdataene kan være mer enn et tegn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CLS_DESC",
+      "text": "Tømmer skjermen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
+      "text": "Skriver tekst inn i konsollen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
+      "text": "String for å skrive ut"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
+      "text": "Skriver ut teksten som den er uten plassholderparsing"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FORK_DESC",
+      "text": "Gaffeler MESH-skallet for å lage en annen forekomst"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
+      "text": "Lar brukeren legge inn input"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Spørsmål å skrive ut på skjermen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
+      "text": "Lar brukeren angi inndata som passord"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
+      "text": "Viser dato og klokkeslett"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
+      "text": "Viser bare datoen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
+      "text": "Viser bare tiden"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
+      "text": "Bruker UTC i stedet for lokalt"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
+      "text": "Gir et utvalg valg"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "Svar å dele med en skråstrek"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Spørsmål å skrive ut på skjermen"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "Første svartittel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "Andre svartittel, og så videre..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_DESC",
+      "text": "Setter en variabel til en verdi i et skript"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
+      "text": "Verdi å angi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
+      "text": "Oppretter en variabel matrise med de angitte verdiene"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
+      "text": "Første verdi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
+      "text": "Andre verdi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
+      "text": "Tredje verdi, og så videre..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
+      "text": "Sover i spesifiserte millisekunder"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
+      "text": "Intervall for å sove"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
+      "text": "Fjerner en variabel fra MESH-variabellisten"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
+      "text": "Variabelnavn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
+      "text": "Bare tørker variabelverdien uten å fjerne den"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
+      "text": "Du kan nå kjøre '{0}' som '{1}'!"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
+      "text": "Ugyldig type {0}."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
+      "text": "Fjernet aliaset {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
+      "text": "Kan ikke avregistrere en tilstand som ikke eksisterer."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
+      "text": "Legger til aliaser til kommandoer"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
+      "text": "Legger til et alias"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
+      "text": "Skalltype for å hente kommandoer fra"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
+      "text": "Alias navn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
+      "text": "Kommando som skal brukes som en snarvei"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
+      "text": "Fjerner et alias"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
+      "text": "Konsoll-omslaget er allerede funnet"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
+      "text": "Navnet på konsollomslaget er kanskje ikke tomt"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
+      "text": "Finner ikke konsollomslag"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
+      "text": "En innebygd konsollomslag kan ikke fjernes"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
+      "text": "Fjerning av konsollomslag mislyktes"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "Kunne ikke fylle ut standardtema"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "Det er ingen temametadata definert."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "Kan ikke deserialisere metadata."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "Konsollen din må støtte ekte farger for å bruke dette temaet."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "Avslutt forhåndsvisningen"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "Slik vil temaet ditt se ut:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Ugyldig fargemal {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "Temaet {0} feirer en begivenhet, men du er enten for tidlig eller for sent til å delta. Hvert år er dette temaet tilgjengelig fra {1}/{2} til {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "Temaet {0} trenger støtte for ekte farger, men konsollen din støtter det ikke."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "En eller flere av fargene er ugyldige."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Standardtemaet for kjernen"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Aksenter overalt!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Fargeløs, rykende og sterkt etsende væske"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Du må kjøre enten ConEmu eller en Windows 10-ledetekst med VT-behandling aktivert."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Terminalen din er {0} på {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Ser disse rampene riktig ut for deg? De bør gå jevnt over."
+    }
+  ]
+}

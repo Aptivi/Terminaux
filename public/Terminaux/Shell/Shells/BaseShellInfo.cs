@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -32,7 +32,7 @@ namespace Terminaux.Shell.Shells
         internal List<CommandInfo> extraCommands = [];
         internal Dictionary<string, PromptPresetBase> customShellPresets = [];
         internal static CommandInfo fallbackNonSlashCommand =
-            new("slashreminder", "Reminder for the slash commands",
+            new("slashreminder", LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC"),
                 [
                     new CommandArgumentInfo()
                 ], new SlashReminderCommand());

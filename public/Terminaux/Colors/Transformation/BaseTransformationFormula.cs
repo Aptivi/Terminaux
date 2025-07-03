@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -34,6 +34,6 @@ namespace Terminaux.Colors.Transformation
 
         /// <inheritdoc/>
         public virtual (int r, int g, int b) Transform(int r, int g, int b) =>
-            throw new TerminauxException("Not implemented yet.", new NotImplementedException());
+            throw new TerminauxException(LanguageTools.GetLocalized("T_EXCEPTION_NOTIMPLEMENTED"), new NotImplementedException());
     }
 }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -34,7 +34,7 @@ namespace Terminaux.Shell.Arguments.Base
         /// <param name="parameters">Argument parameters including passed arguments and switches information</param>
         /// <exception cref="InvalidOperationException"></exception>
         public virtual void Execute(ArgumentParameters parameters) =>
-            throw new TerminauxException("This argument is not implemented yet.");
+            throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED"));
 
         /// <summary>
         /// The help helper

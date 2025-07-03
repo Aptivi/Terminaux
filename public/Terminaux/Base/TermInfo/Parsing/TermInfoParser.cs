@@ -154,7 +154,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             else if (magic == 542)
                 return BitWidth.FourBytes;
 
-            throw new InvalidOperationException("Invalid header magic");
+            throw new InvalidOperationException(LanguageTools.GetLocalized("T_CT_PARSING_EXCEPTION_HEADERMAGIC"));
         }
 
         private static string[] ReadNames(ByteReader reader, int size)
@@ -260,7 +260,7 @@ namespace Terminaux.Base.TermInfo.Parsing
                     last = end + 1;
                 }
                 else
-                    throw new InvalidOperationException("Invalid string table!");
+                    throw new InvalidOperationException(LanguageTools.GetLocalized("T_CT_PARSING_EXCEPTION_STRINGTABLE"));
             }
 
             return (result, last);

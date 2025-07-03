@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -71,7 +71,7 @@ namespace Terminaux.Shell.Switches
         /// <summary>
         /// Installs a new instance of switch info class
         /// </summary>
-        /// <param name="Switch">Switch (without the dash)</param>
+        /// <param name=LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SWITCH")>Switch (without the dash)</param>
         /// <param name="HelpDefinition">Switch help definition</param>
         public SwitchInfo(string Switch, string HelpDefinition)
         {
@@ -83,7 +83,7 @@ namespace Terminaux.Shell.Switches
         /// <summary>
         /// Installs a new instance of switch info class
         /// </summary>
-        /// <param name="Switch">Switch (without the dash)</param>
+        /// <param name=LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SWITCH")>Switch (without the dash)</param>
         /// <param name="HelpDefinition">Switch help definition</param>
         /// <param name="options">Switch options</param>
         public SwitchInfo(string Switch, string HelpDefinition, SwitchOptions options)
@@ -96,7 +96,7 @@ namespace Terminaux.Shell.Switches
         /// <summary>
         /// Installs a new instance of switch info class
         /// </summary>
-        /// <param name="Switch">Switch (without the dash)</param>
+        /// <param name=LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SWITCH")>Switch (without the dash)</param>
         /// <param name="HelpDefinition">Switch help definition</param>
         /// <param name="IsRequired">Is the switch required?</param>
         /// <param name="ArgumentsRequired">Whether the switch requires a value to be set</param>

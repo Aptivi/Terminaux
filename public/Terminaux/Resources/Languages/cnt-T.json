@@ -1,0 +1,2889 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR1",
+      "text": "常規終端錯誤！"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR2",
+      "text": "Terminaux 內部錯誤！"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR3",
+      "text": "未知錯誤"
+    },
+    {
+      "loc": "T_EXCEPTION_NOTIMPLEMENTED",
+      "text": "尚未實施。"
+    },
+    {
+      "loc": "T_COMMON_CANTCONTINUE",
+      "text": "該程式無法繼續。"
+    },
+    {
+      "loc": "T_COMMON_ANYKEY",
+      "text": "按任意鍵繼續..."
+    },
+    {
+      "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
+      "text": "類型無效"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
+      "text": "您必須指定螢幕部分。"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
+      "text": "您必須指定螢幕名稱。"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
+      "text": "指定的部件索引超出範圍。"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
+      "text": "未找到指定的部件名稱。"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
+      "text": "未找到指定的部件。"
+    },
+    {
+      "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
+      "text": "緩衝區索引不能小於零或大於 {0} 個緩衝區。"
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
+      "text": "未指定螢幕。"
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
+      "text": "螢幕不是循環的。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
+      "text": "使用者嘗試使用啞終端運行 Terminaux 應用程式。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
+      "text": "此應用程式利用 Terminaux 提供的擴充控制台功能，這些功能需要「啞」終端不支援的功能。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
+      "text": "可能的解決方案：使用合適的終端模擬器，或查看終端設置，將終端類型設定為「dumb」以外的其他類型。我們建議使用“vt100”終端模擬器，以充分利用此應用程式。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
+      "text": "使用者嘗試在黑名單終端機類型上執行 Terminaux 應用程式。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
+      "text": "您目前使用的控制台類型 {0} 已被列入黑名單：{1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
+      "text": "您目前使用的控制台類型 {0} 已列入灰名單：{1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
+      "text": "使用者嘗試在黑名單終端模擬器上執行 Terminaux 應用程式。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
+      "text": "您目前使用的終端機模擬器 {0} 已被列入黑名單：{1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
+      "text": "您目前使用的終端機模擬器 {0} 已列入灰名單：{1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
+      "text": "根據 terminfo，終端類型 {0} 不支援 256 種顏色"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
+      "text": "用戶嘗試在沒有 winpty 的情況下在 Git Bash 的 MinTTY 上執行 Terminaux 應用程式。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
+      "text": "您需要使用 winpty 才能使用此程式。如果您確定沒有執行 Git Bash，請確保您使用的是合適的 Windows 終端。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
+      "text": "由於 I/O 錯誤，控制台定位無法運作，因此該應用程式可能會行為異常。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
+      "text": "控制台定位無法正常工作，因此該應用程式可能會行為異常。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
+      "text": "您的控制台太小，無法正常運作：{0}x{1} | buff：{2}x{3} | min：{4}x{5}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
+      "text": "為了獲得更好的體驗，請在目前螢幕停留期間調整控制台視窗的大小。按任意鍵繼續…"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
+      "text": "未提供組裝。"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
+      "text": "{0} 無法繼續。"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
+      "text": "控制台類型僅支援基本寫入。"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
+      "text": "控制台類型未知。"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
+      "text": "該應用程式使用 VT 轉義序列，但 Terminal.app 不再支援 255 和真彩色。"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
+      "text": "控制台類型不支援 256 色。"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
+      "text": "沒有任何查詢就無法過濾。"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
+      "text": "無法使用無效查詢進行過濾。"
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
+      "text": "控制台過濾器中沒有表達式。"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
+      "text": "無法恢復原始模式的新 termios 屬性：{0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
+      "text": "無法取得檔案描述符標誌：{0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
+      "text": "無法將檔案描述符標誌設為非阻塞讀取：{0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
+      "text": "無法將檔案描述符標誌設定為阻止讀取：{0}"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
+      "text": "無法從提供的表示中獲取合成資訊。"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
+      "text": "合成器表示在 [{0}.{1}] 處無效"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
+      "text": "頻率無效，為 [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
+      "text": "持續時間無效，為 [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
+      "text": "目標不能為空"
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
+      "text": "最大值 [{0}] 不小於進度值 [{1}]"
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
+      "text": "進度值 [{0}] 必須介於 0 和最大值 {1} 之間。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
+      "text": "如果不指定一個參數，此指示符可能無法位於字串的末尾"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
+      "text": "此指示符只能接受數字作為參數。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
+      "text": "此指示器只能採用 1 至 9 之間的數字。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
+      "text": "此指示符只能以字母作為參數。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
+      "text": "此指示符需要一個整數常數"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
+      "text": "此指示器包含無效的整數常數"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
+      "text": "如果不指定字元常數，則指示符就不能位於字串的末尾"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
+      "text": "不能附加多個字符"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
+      "text": "此指示器需要字元集合"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
+      "text": "寬度無效"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
+      "text": "如果不指定類型，此指示符可能無法位於字串的末尾"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
+      "text": "無法處理空序列。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
+      "text": "無法處理空參數。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
+      "text": "該標誌需要代表減號"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
+      "text": "索引 {0} 之後仍有 {1} 個資料需要格式化"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
+      "text": "字元的整數常數無效。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
+      "text": "整數常數無效。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
+      "text": "無法推送不存在的變數。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
+      "text": "這是一個二元運算，但入隊參數數量為 {0}"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
+      "text": "第一個操作數的整數常數無效。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
+      "text": "第二個操作數的整數常數無效。"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
+      "text": "這是一個一元運算，但入隊參數數量為 {0}"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
+      "text": "條件表示 {0} 無效。"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
+      "text": "無法讀取請求的位元組數。"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
+      "text": "無效的字串表！"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
+      "text": "無效的標頭魔法"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
+      "text": "無法處理非字串值類型的參數。枚舉為 {0}，類型為 {1}。"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
+      "text": "延遲指示器提前結束。"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
+      "text": "無效的延遲指示符。"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
+      "text": "延遲值不是一個數字。"
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
+      "text": "未知功能類型“{0}”"
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
+      "text": "無法載入{0}"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
+      "text": "顏色超出範圍。"
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
+      "text": "你確定這個梯度不為空嗎？"
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
+      "text": "指定至少一種顏色。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
+      "text": "無法轉換空源。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
+      "text": "無法轉換為空類型。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
+      "text": "您應該指定特定的來源色彩模型，而不是基本模型。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
+      "text": "不是彩色模型。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
+      "text": "您應該指定特定的目標顏色模型，而不是基本模型。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
+      "text": "不是目標顏色模型。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
+      "text": "無法轉換相同的色彩模型。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
+      "text": "無法轉換為 RGB。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
+      "text": "無法從基本色彩模型轉換。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
+      "text": "無法轉換為 CMYK。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
+      "text": "無法轉換為 CMY。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
+      "text": "無法轉換為 HSL。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
+      "text": "無法轉換為 HSV。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
+      "text": "無法轉換為 RYB。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
+      "text": "無法轉換為 YIQ。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
+      "text": "無法轉換為 YUV。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
+      "text": "無法轉換為 XYZ。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
+      "text": "無法轉換為 YXY。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
+      "text": "無法轉換為 HunterLab。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
+      "text": "無法轉換為 CieLab。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
+      "text": "無法轉換為 CieLuv。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
+      "text": "無法轉換為 CieLch。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
+      "text": "無法轉換為 HWB。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
+      "text": "無法從 RGB 轉換。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 CMYK！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 CMY！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 HSL！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 HSV！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 RYB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 YIQ！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 YUV！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
+      "text": "空 RGB 實例無法轉換為 XYZ！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 YXY！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
+      "text": "無法將空 RGB 執行個體轉換為 HunterLab！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 CieLab！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 CieLuv！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
+      "text": "無法將空 RGB 實例轉換為 CieLch！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
+      "text": "無法將空 RGB 執行個體轉換為 HWB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
+      "text": "無法將空的 CMYK 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
+      "text": "無法將空的 CMY 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
+      "text": "無法將空 HSL 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
+      "text": "無法將空的 HSV 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
+      "text": "無法將空白 RYB 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
+      "text": "無法將空的 YIQ 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
+      "text": "無法將空 YUV 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
+      "text": "無法將空的 XYZ 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
+      "text": "無法將空的 YXY 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
+      "text": "無法將空的 HunterLab 執行個體轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
+      "text": "無法將空的 CieLab 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
+      "text": "無法將空的 CieLuv 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
+      "text": "無法將空的 CieLch 實例轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
+      "text": "無法將空的 HWB 執行個體轉換為 RGB！"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
+      "text": "觀察者必須是 2 或 10"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
+      "text": "光源無效"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
+      "text": "無法從表中取得引用"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
+      "text": "顏色說明符“{0}”無效。如果您使用的是 256 色，則需要輸入 0 到 255 之間的正值或有效的顏色名稱。如果您使用的是真彩色，則需要輸入有效的顏色說明符（例如 RRR;GGG;BBB）或最大為 16777215 的顏色代碼。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
+      "text": "紅色等級超出範圍 (0 -> 255)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
+      "text": "綠色等級超出範圍 (0 -> 255)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
+      "text": "藍色等級超出範圍 (0 -> 255)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
+      "text": "顏色十六進位說明符「{0}」無效。此說明符必須以井號標籤開頭。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
+      "text": "顏色十六進位長度「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
+      "text": "無法解析顏色十六進位“{0}”。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
+      "text": "CieLab 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
+      "text": "L 值超出範圍 (0.0 -> 100.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
+      "text": "A 值超出範圍 (-128.0 -> 128.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
+      "text": "B 值超出範圍 (-128.0 -> 128.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
+      "text": "CieLab 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
+      "text": "CieLch 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
+      "text": "C 值超出範圍 (-128.0 -> 128.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
+      "text": "H 值超出範圍 (-128.0 -> 128.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
+      "text": "CieLch 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
+      "text": "CieLuv 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
+      "text": "U 值超出範圍 (-134.0 -> 220.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
+      "text": "V 值超出範圍 (-140.0 -> 122.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
+      "text": "CieLuv 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
+      "text": "CMY 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
+      "text": "青色顏色等級超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
+      "text": "洋紅色色階超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
+      "text": "黃色等級超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
+      "text": "CMY 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
+      "text": "CMYK 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
+      "text": "HSL 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
+      "text": "色調等級超出範圍（0' -> 360' 度）。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
+      "text": "飽和度超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
+      "text": "亮度等級超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
+      "text": "HSL 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
+      "text": "HSV 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
+      "text": "值等級超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
+      "text": "HSV 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
+      "text": "HWB 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
+      "text": "白度超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
+      "text": "黑度超出範圍 (0 -> 100)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
+      "text": "HWB 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
+      "text": "HunterLab 顏色說明符「{0}」無效。請確保其格式正確。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
+      "text": "A 值超出範圍 (-128.0 -> 127.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
+      "text": "B 值超出範圍 (-128.0 -> 127.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
+      "text": "HunterLab 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
+      "text": "YUV 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
+      "text": "亮度等級超出範圍（0 -> 255）。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
+      "text": "色度（U）等級超出範圍（0 -> 255）。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
+      "text": "色度（V）等級超出範圍（0 -> 255）。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
+      "text": "YUV 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
+      "text": "YIQ 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
+      "text": "同相等級超出範圍 (0 -> 255)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
+      "text": "正交等級超出範圍 (0 -> 255)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
+      "text": "YIQ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
+      "text": "顏色說明符“{0}”無效。請確保其格式正確，即如果使用 255 種顏色，則為 0-255 之間的數字；如果使用真彩色，則為 VT 序列，如下所示"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
+      "text": "顏色說明符“{0}”無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
+      "text": "這個顏色已經是原來的顏色了。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
+      "text": "RYB 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
+      "text": "紅色等級超出範圍 (0 -> 255)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
+      "text": "黃色等級超出範圍（0 -> 255）。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
+      "text": "藍色等級超出範圍 (0 -> 255)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
+      "text": "RYB 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "XYZ 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "X 值超出範圍 (0.0 -> 95.047)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "Y 值超出範圍 (0.0 -> 100.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "Z 值超出範圍 (0.0 -> 108.883)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "XYZ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "XYZ 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "X 值超出範圍 (0.0 -> 95.047)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "Y 值超出範圍 (0.0 -> 100.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "Z 值超出範圍 (0.0 -> 108.883)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "XYZ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
+      "text": "YXY 顏色說明符「{0}」無效。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
+      "text": "Y1 值超出範圍 (0.0 -> 100.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
+      "text": "X 值超出範圍 (0.0 -> 1.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
+      "text": "Y2 值超出範圍 (0.0 -> 1.0)。"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
+      "text": "YXY 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
+      "text": "顏色類型無效"
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
+      "text": "可見性的顏色說明符無效"
+    },
+    {
+      "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
+      "text": "單色類型無效"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
+      "text": "無法確定如何將 {1} 中的 {0} 轉換為顏色。"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
+      "text": "無法確定如何將未知類型的 {0} 轉換為顏色。"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
+      "text": "無法取得顏色。"
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
+      "text": "設定背景失敗"
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_COLORISNULL",
+      "text": "未提供顏色實例。"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
+      "text": "出口"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
+      "text": "按鍵綁定"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
+      "text": "尋找下一個"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
+      "text": "上移"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
+      "text": "向上移動一個元素"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
+      "text": "下移"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
+      "text": "向下移動一個元素"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
+      "text": "上一頁"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
+      "text": "轉至上一頁"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
+      "text": "下一頁"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
+      "text": "轉至下一頁"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
+      "text": "轉至開頭"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
+      "text": "轉到第一個元素"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
+      "text": "前往結尾"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
+      "text": "轉到最後一個元素"
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT",
+      "text": "輸入搜尋字詞（支援正規表示式）"
+    },
+    {
+      "loc": "T_INPUT_COMMON_INVALIDQUERY",
+      "text": "您的查詢不是有效的正規表示式。"
+    },
+    {
+      "loc": "T_INPUT_COMMON_ENTRYPROMPT",
+      "text": "選擇以下條目之一："
+    },
+    {
+      "loc": "T_INPUT_COMMON_NOITEMS",
+      "text": "未找到任何商品。"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
+      "text": "搜尋元素"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
+      "text": "向上一行（資訊性）"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
+      "text": "向下一行（訊息）"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
+      "text": "轉變"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
+      "text": "{0} 個預定義顏色列表"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
+      "text": "灰色的"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
+      "text": "透明度"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
+      "text": "陰影和色調"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
+      "text": "顏色訊息"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
+      "text": "轉換"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
+      "text": "顏色選擇器中的顏色類型無效"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
+      "text": "輸入字體名稱。它將被轉換為小寫。"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_NOFONT",
+      "text": "該字體不存在。"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
+      "text": "從下面的清單中選擇一個 figlet 字體"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
+      "text": "字體選擇"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
+      "text": "未指定選擇器"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
+      "text": "閱讀更多..."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
+      "text": "列出鍵綁定"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
+      "text": "四處走動"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
+      "text": "退出互動式 TUI"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
+      "text": "商品資訊"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "選擇樣式要求至少有一個啟用的選項。"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
+      "text": "寫下微調器的名稱。它將被轉換為小寫。"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
+      "text": "旋轉器不存在。"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
+      "text": "從下面的清單中選擇一個旋轉器"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
+      "text": "微調器選擇"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
+      "text": "沒有資訊。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
+      "text": "無狀態"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
+      "text": "嘗試在僅允許從一個窗格進行互動的互動式 TUI 上為輔助窗格呈現互動式 TUI 專案。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
+      "text": "嘗試在允許兩個窗格互動的互動式 TUI 中的輔助窗格上呈現訊息，從而弄亂那裡的選擇渲染。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
+      "text": "嘗試渲染有關空數據的信息"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
+      "text": "無法獲取資訊。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
+      "text": "對選定項目執行操作"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
+      "text": "請提供一個基本互動式 TUI 類別並重試。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
+      "text": "互動式 TUI {0} 不包含任何資料來源。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
+      "text": "互動式 TUI {0} 的鍵盤或滑鼠綁定有衝突。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
+      "text": "以下鍵綁定或滑鼠綁定發生衝突："
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
+      "text": "文字 UI 崩潰了。這通常是應用程式端的問題。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
+      "text": "未指定文字 UI"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
+      "text": "此文字 UI [{0}] 尚未準備好，因為狀態為 {1}"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
+      "text": "[{1}] 文字 UI 中存在 {0} 個衝突的鍵綁定"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
+      "text": "未指定指標事件上下文"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
+      "text": "起始位置不得小於零"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
+      "text": "結束位置不得小於零"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
+      "text": "起始 X 位置不得大於結束 X 位置"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
+      "text": "起始 Y 位置不得大於結束 Y 位置"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
+      "text": "未指定輸入名稱"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
+      "text": "進步"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
+      "text": "此示範頁面需要完成以下輸入才能進入下一頁。"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
+      "text": "需要輸入"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
+      "text": "以下一個或多個輸入未正確填寫："
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
+      "text": "輸入錯誤"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
+      "text": "尚未提供必需的輸入。您需要填寫以下輸入的值："
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
+      "text": "未提供輸入"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
+      "text": "無法顯示沒有答案且沒有替代答案的選項。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "選擇樣式要求至少有一個啟用的選擇。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
+      "text": "在單字元模式下，您無法提供包含多個字元的答案。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
+      "text": "答案錯誤。請重試。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
+      "text": "向左移動"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
+      "text": "右移"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
+      "text": "插入"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
+      "text": "代替"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
+      "text": "全部替換"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
+      "text": "準備好"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
+      "text": "未找到。請檢查語法或擴大搜尋範圍。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
+      "text": "號碼訊息"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
+      "text": "消除"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
+      "text": "全部替換"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
+      "text": "用十六進制值寫入位元組數。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
+      "text": "指定的位元組數無效。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
+      "text": "無效位元組 {0}。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
+      "text": "用十六進位值寫入要取代 {0} 的位元組數。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
+      "text": "用十六進制值寫入要替換的位元組數。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
+      "text": "寫入一個位元組或一組以空格分隔的位元組。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
+      "text": "需要位元組來查找，但您尚未提供。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
+      "text": "位置"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
+      "text": "十六進位"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
+      "text": "八進位"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
+      "text": "數位"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
+      "text": "二進位"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
+      "text": "號碼訊息"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
+      "text": "內容為空"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
+      "text": "指定的起始位元組數不能大於檔案大小。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
+      "text": "指定的結束位元組數不能大於檔案大小。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
+      "text": "指定的位元組數無效。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
+      "text": "指定的位元組數不能大於{0}或小於1。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
+      "text": "指定的位元組數不能大於{0}。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
+      "text": "無法對空數組執行此操作。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
+      "text": "位元組數必須以 1 開頭。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
+      "text": "指定的起始位元組數不能大於{0}。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
+      "text": "指定的結束位元組數不能大於{0}。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
+      "text": "進入..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
+      "text": "刪除此處"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
+      "text": "刪除線"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
+      "text": "停止進入"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
+      "text": "新線"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
+      "text": "退格鍵"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
+      "text": "刪除"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
+      "text": "寫入要查找的字串"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
+      "text": "寫入替換字串"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
+      "text": "寫一個字串進行查找。支援正規表達式。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
+      "text": "查找時需要字串，但您尚未提供。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
+      "text": "要查找的字串不是有效的正規表示式。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
+      "text": "線條"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
+      "text": "柱子"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
+      "text": "排"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
+      "text": "指定的行號不能大於{0}。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
+      "text": "無法對空白行清單執行此操作。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
+      "text": "在資訊框中顯示更多信息"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
+      "text": "向上一行"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
+      "text": "向下一行"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
+      "text": "前往上一頁文本"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
+      "text": "前往下一頁文本"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
+      "text": "提交值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
+      "text": "提交值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
+      "text": "關閉而不提交值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
+      "text": "關閉而不提交值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
+      "text": "執行操作或選擇選項"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
+      "text": "減少值或將文字向上移動三行"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
+      "text": "增加值或向下移動三行文本"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
+      "text": "先前的選擇或前三行文本"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
+      "text": "下一個選擇或接下來的三行文本"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
+      "text": "減少當前值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
+      "text": "增加當前值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
+      "text": "將值設為最小值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
+      "text": "將值設為最大值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
+      "text": "將目前焦點設定到下一個值元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
+      "text": "將目前焦點設定為前一個值元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
+      "text": "轉到上一個按鈕"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
+      "text": "轉到下一個按鈕"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
+      "text": "上一個按鈕或前三行文本"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
+      "text": "下一個按鈕或接下來的三行文本"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
+      "text": "轉到文字的第一行"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
+      "text": "轉到文字的最後一行"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
+      "text": "轉到下一頁文本，或關閉模態訊息框"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
+      "text": "關閉模態資訊框"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
+      "text": "執行操作"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
+      "text": "前三行文字"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
+      "text": "接下來的三行文字"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
+      "text": "前往上一頁輸入"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
+      "text": "轉至下一頁輸入"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
+      "text": "搜尋輸入"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
+      "text": "變更選定的輸入值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
+      "text": "向上選擇（下一個選擇）"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
+      "text": "向下選擇一項（上一項）"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
+      "text": "前往第一選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
+      "text": "轉到最後一個選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
+      "text": "轉至上一頁選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
+      "text": "進入下一頁選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
+      "text": "尋找選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
+      "text": "選擇或取消選擇所有選項"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
+      "text": "無法取得選項編號 {0} 中的類別和群組。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
+      "text": "常規選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
+      "text": "可用選項"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
+      "text": "其他選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
+      "text": "確認"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
+      "text": "側邊欄"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
+      "text": "更多的"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
+      "text": "確認選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
+      "text": "變更選定的值（單選按鈕）"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
+      "text": "取消選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
+      "text": "向上移動一個元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
+      "text": "向下移動一個元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
+      "text": "轉到第一個元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
+      "text": "轉到最後一個元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
+      "text": "轉至上一頁"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
+      "text": "轉到下一頁"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
+      "text": "搜尋元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
+      "text": "在側邊欄中向上移動"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
+      "text": "進入側邊欄"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
+      "text": "進入問題箱"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
+      "text": "進入問題箱"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
+      "text": "顯示頁面和選擇計數"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
+      "text": "顯示商品資訊"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
+      "text": "選擇或取消選擇一個選項"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
+      "text": "選擇同一組和類別中的所有元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
+      "text": "選擇同一類別的所有群組中的所有元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
+      "text": "選擇所有類別的所有群組中的所有元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
+      "text": "進入一個元素或展示線"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
+      "text": "向下移動一個元素或展示行"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
+      "text": "更新位置"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
+      "text": "以前的"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
+      "text": "下一個"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
+      "text": "提交"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
+      "text": "取消"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
+      "text": "幫助"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
+      "text": "完畢"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
+      "text": "選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
+      "text": "手動選擇"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
+      "text": "顏色訊息"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
+      "text": "下一個色盲模擬"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
+      "text": "先前的色盲模擬"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
+      "text": "增加轉換頻率"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
+      "text": "降低變換頻率"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
+      "text": "選擇網頁顏色"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
+      "text": "增加不透明度"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
+      "text": "提高透明度"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
+      "text": "下一個顏色模式"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
+      "text": "先前的顏色模式"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
+      "text": "增加價值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
+      "text": "減少價值"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
+      "text": "降低色調"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
+      "text": "增加色調"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
+      "text": "降低顏色亮度"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
+      "text": "增加顏色亮度"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
+      "text": "降低飽和度"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
+      "text": "增加飽和度"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
+      "text": "以前的顏色"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
+      "text": "下一個顏色"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
+      "text": "顯示和隱藏顏色列表"
+    },
+    {
+      "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
+      "text": "角色展示"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
+      "text": "此 Fixture 可能不是基底 Fixture 類別。請指定一個無條件 Fixture。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
+      "text": "此 Fixture 可能不是基底 Fixture 類別。請指定一個條件 Fixture。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
+      "text": "傳回值 {0} 與預期值 {1} 不匹配"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
+      "text": "此裝置無條件。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
+      "text": "此裝置類型無效。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
+      "text": "此處沒有固定裝置。請插入一個。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
+      "text": "選擇測試夾具。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
+      "text": "退出測試夾具選擇器"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
+      "text": "本次測試成功！"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
+      "text": "預期值與實際值相符。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
+      "text": "這次測試失敗了。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
+      "text": "訊息"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
+      "text": "預期值與實際值不符。"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
+      "text": "此委託中的方法不得回傳 void"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
+      "text": "此委託中的方法需要傳回 void"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
+      "text": "組件正規表示式無效"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
+      "text": "未提供組件正規表示式"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
+      "text": "未提供組件前景色"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
+      "text": "未提供組件背景顏色"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
+      "text": "沒有提供螢光筆的名稱。"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
+      "text": "沒有提供基本螢光筆的名稱。"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
+      "text": "找不到螢光筆 {0}"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
+      "text": "找不到螢光筆"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
+      "text": "在螢光筆 {1} 中找不到組件 {0}"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
+      "text": "螢光筆無效。"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
+      "text": "螢光筆沒有名字。"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
+      "text": "螢光筆已存在。"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
+      "text": "螢光筆沒有組件。"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
+      "text": "無法刪除內建螢光筆 {0}"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
+      "text": "未指定歷史記錄名稱"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
+      "text": "未指定歷史記錄條目"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
+      "text": "未提供歷史文件路徑。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
+      "text": "未提供歷史記錄 JSON 表示。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
+      "text": "JSON 已解析，但未提供歷史 JSON 表示。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
+      "text": "未提供歷史資訊。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
+      "text": "未提供歷史記錄名稱。您確定已在 JSON 表示中指定名稱嗎？"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
+      "text": "未提供歷史記錄條目。您確定已在 JSON 表示中指定了這些條目嗎？"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
+      "text": "未找到歷史記錄 {0}。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
+      "text": "一般歷史記錄無法刪除，但可以清除。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
+      "text": "歷史不屬於已登記的歷史。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
+      "text": "刪除歷史記錄失敗。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
+      "text": "不提供歷史記錄。"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
+      "text": "未提供歷史條目清單。"
+    },
+    {
+      "loc": "T_READER_EXCEPTION_PRINTWRITE",
+      "text": "{0} 和 {1} 之間有衝突。"
+    },
+    {
+      "loc": "T_READER_FAILED",
+      "text": "輸入讀取器發生故障"
+    },
+    {
+      "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
+      "text": "此串流無法尋找。"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
+      "text": "無法為不存在的類型 {0} 建立 VT 序列"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
+      "text": "無法建構缺少參數的 VT 序列。預期有 {0} 個參數，實際上只有 {1} 個參數。"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
+      "text": "別名不能與指令同名。"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
+      "text": "未找到別名為 {0} 的指令。"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
+      "text": "別名已找到"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
+      "text": "未發現要刪除的別名 {0}。"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
+      "text": "未找到要查詢的別名 {0}。"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
+      "text": "用法"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
+      "text": "命令"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
+      "text": "描述"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
+      "text": "沒有參數「{0}」的幫助。"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
+      "text": "無參數幫助說明"
+    },
+    {
+      "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
+      "text": "此論點尚未實現。"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
+      "text": "沒有足夠的論點。"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
+      "text": "未知參數"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
+      "text": "參數中存在無法恢復的錯誤"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
+      "text": "無法取得命令或參數的參數訊息"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
+      "text": "未指定線程參數。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
+      "text": "以下所有用法均未提供必要參數："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
+      "text": "未提供必需的參數。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
+      "text": "未提供所需的開關。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
+      "text": "其中一個開關需要未提供的值。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
+      "text": "下面列出的開關是未知的。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
+      "text": "下面列出的開關相互衝突。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
+      "text": "以下開關不接受值。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
+      "text": "一個或多個參數需要一個數值，但您提供了無效的數字。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
+      "text": "一個或多個參數需要精確的措辭，但您提供了無效的單字。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
+      "text": "一個或多個開關需要一個數字值，但您提供了無效的數字。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
+      "text": "查閱此命令的幫助條目以獲取更多信息"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
+      "text": "命令被中斷..."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
+      "text": "嘗試執行指令 {2} 時發生錯誤。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
+      "text": "錯誤"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
+      "text": "命令因以下原因中止"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
+      "text": "提供的命令模式無效。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
+      "text": "未找到命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
+      "text": "Shell 類型 {0} 不存在。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
+      "text": "您必須提供命令基礎。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
+      "text": "您必須提供命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
+      "text": "指定的命令已新增。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
+      "text": "某些自訂命令無法載入。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
+      "text": "未找到指定的自訂命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
+      "text": "部分自訂命令無法卸載。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
+      "text": "此 shell 使用斜線指令來執行指令。請在指令開頭附加斜線符號“/”即可開始執行。例如："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
+      "text": "該命令未定義。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
+      "text": "可用指令："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
+      "text": "常規命令："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
+      "text": "沒有 shell 指令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
+      "text": "額外命令："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
+      "text": "沒有額外的命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
+      "text": "別名命令："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
+      "text": "沒有別名命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
+      "text": "統一命令："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
+      "text": "沒有統一的命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
+      "text": "命令定義"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
+      "text": "此命令具有以下改變其工作方式的參數："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
+      "text": "未指定的參數描述"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
+      "text": "此命令具有以下可改變其工作方式的開關："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
+      "text": "未指定的開關描述"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
+      "text": "沒有指令「{0}」的幫助。"
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
+      "text": "未找到指定的預設 {0}。"
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
+      "text": "為 {0} 選擇預設："
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
+      "text": "未找到命令。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
+      "text": "如果在子 shell 中運行，則退出 shell"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
+      "text": "尋找目前 shell 類型中可用的命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
+      "text": "幫助頁面"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
+      "text": "顯示常規命令（預設）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
+      "text": "顯示別名指令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
+      "text": "顯示統一指令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
+      "text": "顯示額外命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
+      "text": "顯示所有命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
+      "text": "使用簡化的幫助"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
+      "text": "開啟 Shell 預設函式庫"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
+      "text": "Shell 訊息：未找到請求的指令 {0}。請參閱「說明」以了解可用指令。"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
+      "text": "嘗試執行命令時出錯。"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
+      "text": "無法取得 {0} 的 shell 執行程式"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
+      "text": "嘗試初始化 shell 失敗"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
+      "text": "無法確定選擇輸入是單一或多個"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
+      "text": "未指定標記。"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
+      "text": "無效的結束標記說明符。"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
+      "text": "沒有排隊序列來結束標籤。"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
+      "text": "缺少 {0} 個結束標記。"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
+      "text": "初始格式不得列印任何文字；它必須只包含格式化 VT 序列。"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
+      "text": "沒有 Asciicast 文件"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
+      "text": "無法反序列化基本 Asciicast 表示"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
+      "text": "無法反序列化 Asciicast v1 表示"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
+      "text": "無法反序列化 Asciicast v2 表示"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
+      "text": "無法取得活動資訊"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
+      "text": "可用的按鍵綁定"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
+      "text": "此上下文中未定義綁定。"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
+      "text": "鍵盤綁定"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
+      "text": "滑鼠綁定"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
+      "text": "Nerd Fonts 字元名稱 {0} 在類型 {1} 中無效"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
+      "text": "來自 {1} 的 Nerd Fonts 字元表示 {0} 無效，類型為 {2}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
+      "text": "Nerd 字型類型 {0} 無效"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
+      "text": "Nerd Fonts 類型 {0} 沒有字符"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
+      "text": "Renderable 已註冊"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
+      "text": "Renderable 未註冊"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
+      "text": "所有旋轉器應具有相同的寬度。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
+      "text": "向上移動一個輸入元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
+      "text": "向下移動一個輸入元素"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
+      "text": "轉到第一個輸入"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
+      "text": "轉到最後一個輸入"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "將輸出值設定為選定的 MESH 變數"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "無法取得進程執行的執行緒參數。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "嘗試執行命令時出錯"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "錯誤 {0}：{1}"
+    },
+    {
+      "loc": "T_SHELL_BASE_OBSOLETECMD",
+      "text": "此命令已過時，將在未來版本中刪除。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
+      "text": "找不到可包裝命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
+      "text": "您不得在包裝模式下直接執行此命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
+      "text": "該命令不可包裝。這些命令是可包裝的："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
+      "text": "嘗試包裝指令輸出時發生錯誤"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
+      "text": "無法緩衝未設定為可包裝的命令。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
+      "text": "在放置支援建立的表達式（例如條件或循環）之前，您無法聲明新區塊。堆疊編號為{0}。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
+      "text": "開始新區塊時，請確保堆疊縮排正確。堆疊編號為{0}。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
+      "text": "腳本格式不正確。檢查腳本並解決所有錯誤：{0}"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "text": "在表達式中找不到條件。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
+      "text": "條件 {0} 需要 {1} 個參數。得到{2}。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
+      "text": "條件需要放在最後。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
+      "text": "由於語法錯誤，解析表達式時出錯。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
+      "text": "無法註冊已存在的條件。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
+      "text": "無法註冊空條件。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
+      "text": "指定的資料類型 {0} 無效。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
+      "text": "指定的平台 {0} 無效。"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
+      "text": "源命令執行失敗。"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
+      "text": "目標命令執行失敗。內容可能未正確填充。執行的命令是"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
+      "text": "管子破了。"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
+      "text": "次數無效。"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
+      "text": "無法重複自己。"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
+      "text": "可包裝命令："
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
+      "text": "斜杠命令的提醒"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
+      "text": "執行外部流程"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
+      "text": "流程路徑"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
+      "text": "傳遞給進程的參數"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
+      "text": "執行行程而不中斷 shell 執行緒。將創建一個單獨的視窗。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
+      "text": "顯示幫助條目的命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
+      "text": "載入 shell 歷史記錄"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
+      "text": "將命令輸出作為參數透過管道傳送給另一個命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
+      "text": "來源命令將其輸出作為最後一個參數傳遞給目標命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "根據來源命令輸出建置參數後執行的目標命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
+      "text": "是否將來源命令的輸出作為一個帶引號的參數或不帶引號的參數傳遞"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
+      "text": "重複上一個動作或指定的命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "根據來源命令輸出建置參數後執行的目標命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
+      "text": "保存 shell 歷史記錄"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
+      "text": "包裝控制台輸出"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
+      "text": "包裝其輸出的命令"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
+      "text": "嘗試執行腳本時出錯：{0}"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_DESC",
+      "text": "一旦滿足 MESH 表達式，就執行命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "MESH 表達測試"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
+      "text": "評估成功後執行的命令"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
+      "text": "其中 <answers> 是問題的單字母答案，以斜線分隔"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
+      "text": "您必須將 -set 開關與要設定該值的變數一起傳遞。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
+      "text": "做出用戶選擇"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "用斜線分割的答案"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "列印到螢幕上的問題"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "第一個答案標題"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "第二個答案標題，等等......"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
+      "text": "一行選擇樣式"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
+      "text": "兩行選擇樣式"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
+      "text": "現代選擇風格"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
+      "text": "輸出只能是一個字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
+      "text": "輸出可以超過一個字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CLS_DESC",
+      "text": "清除屏幕"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
+      "text": "將文本寫入控制台"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
+      "text": "要列印的字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
+      "text": "按原樣列印文本，不進行佔位符解析"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FORK_DESC",
+      "text": "分叉 MESH shell 以建立另一個實例"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
+      "text": "允許用戶輸入"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "列印到螢幕上的問題"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
+      "text": "允許使用者輸入密碼"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
+      "text": "顯示日期和時間"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
+      "text": "僅顯示日期"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
+      "text": "僅顯示時間"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
+      "text": "使用 UTC 而不是本地"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
+      "text": "提供選擇選項"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "用斜線分割的答案"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "列印到螢幕上的問題"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "第一個答案標題"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "第二個答案標題，等等......"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_DESC",
+      "text": "將變量設置為腳本中的值"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
+      "text": "要設定的值"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
+      "text": "使用提供的值創建一個變量數組"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
+      "text": "第一個值"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
+      "text": "第二個值"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
+      "text": "第三個值，依此類推......"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
+      "text": "休眠指定毫秒"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
+      "text": "睡眠間隔"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
+      "text": "從 MESH 變數清單中刪除變數"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
+      "text": "變數名"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
+      "text": "只是擦除變數值而不刪除它"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
+      "text": "現在您可以將“{0}”作為“{1}”運行！"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
+      "text": "無效的類型 {0}。"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
+      "text": "成功刪除別名 {0}。"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
+      "text": "無法取消註冊不存在的條件。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
+      "text": "為命令添加別名"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
+      "text": "新增別名"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
+      "text": "從中取得命令的 Shell 類型"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
+      "text": "別名"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
+      "text": "用作快捷方式的命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
+      "text": "刪除別名"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
+      "text": "已找到控制台包裝器"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
+      "text": "控制台包裝器名稱不能為空"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
+      "text": "未找到控制台包裝器"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
+      "text": "內建控制台包裝器無法移除"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
+      "text": "控制台包裝器移除失敗"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "無法填入預設主題"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "沒有定義主題元資料。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "無法反序列化元資料。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "您的控制台必須支援真彩色才能使用此主題。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "退出預覽"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "以下是您的主題的外觀："
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "無效的顏色模板 {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "主題「{0}」慶祝一項活動，但您要么太早，要么太晚，無法參加。每年，此主題的造訪時間為 {1}/{2} 至 {3}/{4}。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "主題 {0} 需要真彩色支持，但您的控制台不支援。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "一種或多種顏色無效。"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "內核的預設主題"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "到處都是口音！"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "無色、發煙、高腐蝕性液體"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "您必須執行 ConEmu 或 Windows 10 命令提示字元並啟用 VT 處理。"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "您的終端位於 {1} 的 {0}。"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "這些坡道適合您嗎？他們應該順利過渡。"
+    }
+  ]
+}

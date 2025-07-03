@@ -1,0 +1,2886 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR1",
+      "text": "Kesalahan Umum Terminaux!"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR2",
+      "text": "Kesalahan internal Terminaux!"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR3",
+      "text": "Kesalahan tidak diketahui"
+    },
+    {
+      "loc": "T_EXCEPTION_NOTIMPLEMENTED",
+      "text": "Belum diimplementasikan."
+    },
+    {
+      "loc": "T_COMMON_CANTCONTINUE",
+      "text": "Program ini tidak dapat dilanjutkan."
+    },
+    {
+      "loc": "T_COMMON_ANYKEY",
+      "text": "Tekan tombol apa saja untuk melanjutkan..."
+    },
+    {
+      "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
+      "text": "Tipe tidak valid"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
+      "text": "Anda harus menentukan bagian layar."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
+      "text": "Anda harus menentukan nama layar."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
+      "text": "Indeks bagian yang ditentukan berada di luar jangkauan."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
+      "text": "Nama bagian yang ditentukan tidak ditemukan."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
+      "text": "Bagian yang ditentukan tidak ditemukan."
+    },
+    {
+      "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
+      "text": "Indeks penyangga tidak boleh kurang dari nol atau lebih besar dari {0} penyangga."
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
+      "text": "Layar tidak ditentukan."
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
+      "text": "Layar tidak siklik."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
+      "text": "Pengguna mencoba menjalankan aplikasi Terminaux menggunakan terminal bodoh."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
+      "text": "Aplikasi ini memanfaatkan fitur konsol tambahan yang disediakan oleh Terminaux yang memerlukan fitur yang tidak didukung oleh terminal \"bodoh\"."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
+      "text": "Solusi yang memungkinkan: Gunakan emulator terminal yang sesuai atau lihat pengaturan terminal Anda untuk menyetel jenis terminal menjadi sesuatu selain \"dumb\". Kami sarankan untuk menggunakan emulator terminal \"vt100\" untuk mendapatkan hasil maksimal dari aplikasi ini."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
+      "text": "Pengguna mencoba menjalankan aplikasi Terminaux pada jenis terminal yang masuk daftar hitam."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
+      "text": "Tipe konsol yang Anda gunakan saat ini, {0}, masuk daftar hitam: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
+      "text": "Tipe konsol yang Anda gunakan saat ini, {0}, masuk daftar abu-abu: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
+      "text": "Pengguna mencoba menjalankan aplikasi Terminaux pada emulator terminal yang masuk daftar hitam."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
+      "text": "Emulator terminal yang Anda gunakan saat ini, {0}, masuk daftar hitam: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
+      "text": "Emulator terminal yang Anda gunakan saat ini, {0}, masuk daftar abu-abu: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
+      "text": "Tipe terminal {0} tidak mendukung 256 warna menurut terminfo"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
+      "text": "Pengguna mencoba menjalankan aplikasi Terminaux pada MinTTY Git Bash tanpa winpty."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
+      "text": "Anda perlu menggunakan winpty untuk dapat menggunakan program ini. Jika Anda yakin tidak menjalankan Git Bash, pastikan Anda menggunakan terminal Windows yang tepat."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
+      "text": "Penempatan konsol tidak berfungsi karena kesalahan I/O, sehingga aplikasi ini mungkin berperilaku tidak menentu."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
+      "text": "Penempatan konsol tidak berfungsi dengan baik, sehingga aplikasi ini mungkin berperilaku tidak menentu."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
+      "text": "Konsol Anda terlalu kecil untuk berjalan dengan baik: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
+      "text": "Untuk mendapatkan pengalaman yang lebih baik, ubah ukuran jendela konsol Anda saat masih berada di layar ini. Tekan tombol apa saja untuk melanjutkan..."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
+      "text": "Perakitan tidak disediakan."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
+      "text": "{0} Tidak dapat melanjutkan."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
+      "text": "Tipe konsol hanya mendukung penulisan dasar."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
+      "text": "Jenis konsol tidak diketahui sifatnya."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
+      "text": "Aplikasi ini memanfaatkan rangkaian escape VT, tetapi Terminal.app telah merusak dukungan untuk 255 dan warna sebenarnya."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
+      "text": "Jenis konsol tidak mendukung 256 warna."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
+      "text": "Tidak dapat memfilter tanpa kueri apa pun."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
+      "text": "Tidak dapat memfilter dengan kueri yang tidak valid."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
+      "text": "Tidak ada ekspresi dalam filter konsol."
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
+      "text": "Tidak dapat mengembalikan atribut termios baru untuk mode mentah: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
+      "text": "Tidak bisa mendapatkan tanda deskriptor file: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
+      "text": "Tidak dapat menyetel tanda deskriptor file ke pembacaan non-pemblokiran: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
+      "text": "Tidak dapat menyetel tanda deskriptor file ke pemblokiran baca: {0}"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
+      "text": "Tidak dapat memperoleh info synth dari representasi yang disediakan."
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
+      "text": "Representasi synth tidak valid pada [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
+      "text": "Frekuensi tidak valid pada [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
+      "text": "Durasi tidak valid pada [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
+      "text": "Targetnya mungkin tidak nol"
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
+      "text": "Nilai maksimum [{0}] tidak boleh lebih kecil dari nilai kemajuan [{1}]"
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
+      "text": "Nilai kemajuan [{0}] harus berada di antara 0 dan nilai maksimum {1}."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
+      "text": "Penanda ini tidak boleh ditempatkan di akhir string tanpa menentukan satu parameter"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
+      "text": "Penanda ini hanya dapat mengambil angka sebagai parameter."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
+      "text": "Penanda ini hanya dapat mengambil angka dari 1 hingga 9."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
+      "text": "Penanda ini hanya dapat mengambil sebuah huruf sebagai parameter."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
+      "text": "Penanda ini memerlukan konstanta integer"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
+      "text": "Penanda ini berisi konstanta integer yang tidak valid"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
+      "text": "Penanda ini tidak boleh ditempatkan di akhir string tanpa menentukan konstanta karakter"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
+      "text": "Anda tidak dapat menambahkan lebih dari satu karakter"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
+      "text": "Penanda ini memerlukan koleksi karakter"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
+      "text": "Lebar tidak valid"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
+      "text": "Penanda ini tidak boleh ditempatkan di akhir string tanpa menentukan jenisnya"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
+      "text": "Tidak dapat memproses urutan nol."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
+      "text": "Tidak dapat memproses parameter nol."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
+      "text": "Bendera ini harus mewakili tanda minus"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
+      "text": "Masih ada data lebih lanjut setelah indeks {0} dari {1} untuk pemformatan"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
+      "text": "Konstanta integer untuk karakter tidak valid."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
+      "text": "Konstanta integer tidak valid."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
+      "text": "Tidak dapat mendorong variabel yang tidak ada."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
+      "text": "Ini adalah operasi biner, tetapi jumlah argumen yang diantrekan adalah {0}"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
+      "text": "Konstanta integer untuk operan pertama tidak valid."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
+      "text": "Konstanta integer untuk operan kedua tidak valid."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
+      "text": "Ini adalah operasi unary, tetapi jumlah argumen yang diantrekan adalah {0}"
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
+      "text": "Representasi bersyarat {0} tidak valid."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
+      "text": "Tidak dapat membaca jumlah byte yang diminta."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
+      "text": "Tabel string tidak valid!"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
+      "text": "Header ajaib tidak valid"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
+      "text": "Tidak dapat memproses parameter pada tipe nilai non-string. Enum adalah {0} dan tipenya adalah {1}."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
+      "text": "Penunjuk penundaan berakhir sebelum waktunya."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
+      "text": "Penanda penundaan tidak valid."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
+      "text": "Nilai penundaan bukanlah angka."
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
+      "text": "Tipe kemampuan tidak diketahui '{0}'"
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
+      "text": "Tidak dapat memuat {0}"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
+      "text": "Warna di luar jangkauan."
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
+      "text": "Apakah Anda yakin gradien ini tidak nol?"
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
+      "text": "Tentukan setidaknya satu warna."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
+      "text": "Tidak dapat mengonversi sumber nol."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
+      "text": "Tidak dapat mengonversi ke tipe null."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
+      "text": "Anda harus menentukan model warna sumber tertentu, bukan model warna dasar."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
+      "text": "Bukan model berwarna."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
+      "text": "Anda harus menentukan model warna target yang spesifik, bukan yang dasar."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
+      "text": "Bukan model warna target."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
+      "text": "Tidak dapat mengonversi model warna yang sama."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
+      "text": "Tidak dapat mengonversi ke RGB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
+      "text": "Tidak dapat mengonversi dari model warna dasar."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
+      "text": "Tidak dapat mengonversi ke CMYK."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
+      "text": "Tidak dapat mengonversi ke CMY."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
+      "text": "Tidak dapat mengonversi ke HSL."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
+      "text": "Tidak dapat mengonversi ke HSV."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
+      "text": "Tidak dapat mengonversi ke RYB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
+      "text": "Tidak dapat mengonversi ke YIQ."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
+      "text": "Tidak dapat mengonversi ke YUV."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
+      "text": "Tidak dapat mengonversi ke XYZ."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
+      "text": "Tidak dapat mengonversi ke YXY."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
+      "text": "Tidak dapat mengonversi ke HunterLab."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
+      "text": "Tidak dapat mengonversi ke CieLab."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
+      "text": "Tidak dapat mengonversi ke CieLuv."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
+      "text": "Tidak dapat mengonversi ke CieLch."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
+      "text": "Tidak dapat mengonversi ke HWB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
+      "text": "Tidak dapat mengonversi dari RGB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke CMYK!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke CMY!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke HSL!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke HSV!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke RYB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke YIQ!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke YUV!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke XYZ!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke YXY!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke HunterLab!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke CieLab!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke CieLuv!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke CieLch!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
+      "text": "Tidak dapat mengonversi instance RGB null ke HWB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
+      "text": "Tidak dapat mengonversi contoh CMYK nol ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
+      "text": "Tidak dapat mengonversi instance CMY null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
+      "text": "Tidak dapat mengonversi instance HSL null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
+      "text": "Tidak dapat mengonversi instance HSV null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
+      "text": "Tidak dapat mengonversi instance RYB null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
+      "text": "Tidak dapat mengonversi instance YIQ null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
+      "text": "Tidak dapat mengonversi instance YUV null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
+      "text": "Tidak dapat mengonversi instance XYZ null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
+      "text": "Tidak dapat mengonversi instance YXY null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
+      "text": "Tidak dapat mengonversi instance HunterLab null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
+      "text": "Tidak dapat mengonversi instance CieLab null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
+      "text": "Tidak dapat mengonversi instance CieLuv null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
+      "text": "Tidak dapat mengonversi instance CieLch null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
+      "text": "Tidak dapat mengonversi instance HWB null ke RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
+      "text": "Pengamat harus 2 atau 10"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
+      "text": "Iluminan tidak valid"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
+      "text": "Tidak bisa mendapatkan referensi dari tabel"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
+      "text": "Penentu warna tidak valid \"{0}\". Jika Anda menggunakan 256 warna, Anda harus memasukkan nilai positif dari 0 hingga 255 atau nama warna yang valid. Jika Anda menggunakan warna asli, Anda harus menulis penentu warna yang valid, seperti RRR;GGG;BBB, atau kode warna hingga 16777215."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
+      "text": "Tingkat warna merah berada di luar kisaran (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
+      "text": "Tingkat warna hijau berada di luar rentang (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
+      "text": "Tingkat warna biru berada di luar rentang (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
+      "text": "Penentu heksadesimal warna \"{0}\" tidak valid. Penentu ini harus diawali dengan tagar. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
+      "text": "Panjang heksadesimal warna \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
+      "text": "Tidak dapat menyelesaikan hex warna \"{0}\"."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
+      "text": "Penentu warna CieLab \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
+      "text": "Nilai L berada di luar kisaran (0,0 -> 100,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
+      "text": "Nilai A berada di luar rentang (-128,0 -> 128,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
+      "text": "Nilai B berada di luar kisaran (-128,0 -> 128,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
+      "text": "Penentu warna CieLab \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
+      "text": "Penentu warna CieLch \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
+      "text": "Nilai C berada di luar kisaran (-128,0 -> 128,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
+      "text": "Nilai H berada di luar kisaran (-128,0 -> 128,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
+      "text": "Penentu warna CieLch \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
+      "text": "Penentu warna CieLuv \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
+      "text": "Nilai U berada di luar kisaran (-134,0 -> 220,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
+      "text": "Nilai V berada di luar kisaran (-140,0 -> 122,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
+      "text": "Penentu warna CieLuv \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
+      "text": "Penentu warna CMY \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
+      "text": "Tingkat warna cyan berada di luar rentang (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
+      "text": "Tingkat warna magenta berada di luar rentang (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
+      "text": "Tingkat warna kuning berada di luar kisaran (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
+      "text": "Penentu warna CMY \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
+      "text": "Penentu warna CMYK \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
+      "text": "Penentu warna HSL \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
+      "text": "Tingkat rona berada di luar rentang (0' -> 360' derajat)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
+      "text": "Tingkat saturasi berada di luar kisaran (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
+      "text": "Tingkat kecerahan berada di luar kisaran (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
+      "text": "Penentu warna HSL \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
+      "text": "Penentu warna HSV \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
+      "text": "Tingkat nilai berada di luar kisaran (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
+      "text": "Penentu warna HSV \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
+      "text": "Penentu warna HWB \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
+      "text": "Tingkat keputihan berada di luar kisaran (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
+      "text": "Tingkat kegelapan berada di luar kisaran (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
+      "text": "Penentu warna HWB \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
+      "text": "Penentu warna HunterLab \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
+      "text": "Nilai A berada di luar rentang (-128,0 -> 127,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
+      "text": "Nilai B berada di luar kisaran (-128,0 -> 127,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
+      "text": "Penentu warna HunterLab \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
+      "text": "Penentu warna YUV \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
+      "text": "Tingkat luma berada di luar kisaran (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
+      "text": "Tingkat kroma (U) berada di luar kisaran (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
+      "text": "Tingkat kroma (V) berada di luar kisaran (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
+      "text": "Penentu warna YUV \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
+      "text": "Penentu warna YIQ \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
+      "text": "Level sefase berada di luar jangkauan (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
+      "text": "Level kuadratur berada di luar jangkauan (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
+      "text": "Penentu warna YIQ \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
+      "text": "Penentu warna tidak valid \"{0}\". Pastikan formatnya benar, yang berarti angka dari 0-255 jika menggunakan 255 warna atau urutan VT jika menggunakan warna asli seperti berikut"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
+      "text": "Penentu warna \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
+      "text": "Warna ini sudah merupakan warna asli."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
+      "text": "Penentu warna RYB \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
+      "text": "Level merah berada di luar rentang (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
+      "text": "Level kuning berada di luar rentang (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
+      "text": "Level biru berada di luar rentang (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
+      "text": "Penentu warna RYB \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "Penentu warna XYZ \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "Nilai X berada di luar rentang (0,0 -> 95,047)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "Nilai Y berada di luar kisaran (0,0 -> 100,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "Nilai Z berada di luar rentang (0,0 -> 108,883)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "Penentu warna XYZ \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "Penentu warna XYZ \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "Nilai X berada di luar rentang (0,0 -> 95,047)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "Nilai Y berada di luar kisaran (0,0 -> 100,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "Nilai Z berada di luar rentang (0,0 -> 108,883)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "Penentu warna XYZ \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
+      "text": "Penentu warna YXY \"{0}\" tidak valid. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
+      "text": "Nilai Y1 berada di luar kisaran (0,0 -> 100,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
+      "text": "Nilai X berada di luar rentang (0,0 -> 1,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
+      "text": "Nilai Y2 berada di luar kisaran (0,0 -> 1,0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
+      "text": "Penentu warna YXY \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
+      "text": "Jenis warna tidak valid"
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
+      "text": "Spesifikasi warna untuk visibilitas tidak valid"
+    },
+    {
+      "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
+      "text": "Jenis monokromasi tidak valid"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
+      "text": "Tidak dapat menentukan cara mengonversi {0} dari {1} menjadi warna."
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
+      "text": "Tidak dapat menentukan cara mengonversi {0} yang jenisnya tidak diketahui menjadi suatu warna."
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
+      "text": "Tidak bisa mendapatkan warna."
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
+      "text": "Gagal mengatur latar belakang"
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_COLORISNULL",
+      "text": "Contoh warna tidak disediakan."
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
+      "text": "KELUAR"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
+      "text": "Pengikatan tombol"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
+      "text": "Temukan Selanjutnya"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
+      "text": "Naik ke Atas"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
+      "text": "Naik satu elemen ke atas"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
+      "text": "Pindah ke Bawah"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
+      "text": "Turunkan satu elemen"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
+      "text": "Halaman Sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
+      "text": "Pergi ke halaman sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
+      "text": "Halaman Berikutnya"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
+      "text": "Pergi ke halaman berikutnya"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
+      "text": "Pergi ke Awal"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
+      "text": "Pergi ke elemen pertama"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
+      "text": "Pergi ke Akhir"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
+      "text": "Pergi ke elemen terakhir"
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT",
+      "text": "Tulis istilah pencarian (mendukung ekspresi reguler)"
+    },
+    {
+      "loc": "T_INPUT_COMMON_INVALIDQUERY",
+      "text": "Kueri Anda bukan ekspresi reguler yang valid."
+    },
+    {
+      "loc": "T_INPUT_COMMON_ENTRYPROMPT",
+      "text": "Pilih salah satu entri:"
+    },
+    {
+      "loc": "T_INPUT_COMMON_NOITEMS",
+      "text": "Tidak ada item yang ditemukan."
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
+      "text": "Cari elemen"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
+      "text": "Naik satu baris ke atas (informasional)"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
+      "text": "Turun satu baris (informasional)"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
+      "text": "Mengalihkan"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
+      "text": "Daftar {0} warna yang telah ditentukan sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
+      "text": "Abu-abu"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
+      "text": "Transparansi"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
+      "text": "Bayangan dan Warna"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
+      "text": "Info warna"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
+      "text": "Mengubah"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
+      "text": "Jenis warna tidak valid dalam pemilih warna"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
+      "text": "Tuliskan nama font. Nama tersebut akan diubah menjadi huruf kecil."
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_NOFONT",
+      "text": "Fontnya tidak ada."
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
+      "text": "Pilih font figlet dari daftar di bawah ini"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
+      "text": "Pemilihan font"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
+      "text": "Pemilih tidak ditentukan"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
+      "text": "Baca selengkapnya..."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
+      "text": "Daftar pengikatan tombol"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
+      "text": "Bergerak"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
+      "text": "Keluar dari TUI interaktif"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
+      "text": "Informasi barang"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "Gaya pemilihan mengharuskan setidaknya ada satu pilihan yang diaktifkan."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
+      "text": "Tuliskan nama pemutar. Nama tersebut akan diubah menjadi huruf kecil."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
+      "text": "Pemutar tidak ada."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
+      "text": "Pilih pemintal dari daftar di bawah ini"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
+      "text": "Pemilihan pemintal"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
+      "text": "Tidak ada informasi."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
+      "text": "Tidak ada status"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
+      "text": "Mencoba merender item TUI interaktif untuk panel sekunder pada TUI interaktif yang hanya memungkinkan interaksi dari satu panel."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
+      "text": "Mencoba menyajikan informasi di panel sekunder dalam TUI interaktif yang memperbolehkan interaksi dari dua panel, mengacaukan penyajian pilihan di sana."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
+      "text": "Mencoba untuk membuat info tentang data null"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
+      "text": "Gagal mendapatkan informasi."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
+      "text": "Lakukan tindakan pada item yang dipilih"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
+      "text": "Harap sediakan kelas TUI Interaktif dasar dan coba lagi."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
+      "text": "TUI interaktif {0} tidak berisi sumber data apa pun."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
+      "text": "TUI interaktif {0} memiliki ikatan keyboard atau mouse yang saling konflik."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
+      "text": "Pengikatan tombol atau pengikatan tetikus berikut ini saling bertentangan:"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
+      "text": "Antarmuka pengguna tekstual mengalami gangguan. Biasanya ini merupakan masalah pada sisi aplikasi."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
+      "text": "UI tekstual tidak ditentukan"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
+      "text": "UI tekstual ini [{0}] belum siap karena statusnya adalah {1}"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
+      "text": "Ada {0} pengikatan tombol yang saling bertentangan di UI tekstual [{1}]"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
+      "text": "Konteks peristiwa penunjuk tidak ditentukan"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
+      "text": "Posisi awal tidak boleh kurang dari nol"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
+      "text": "Posisi akhir tidak boleh kurang dari nol"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
+      "text": "Posisi X awal tidak boleh lebih besar dari posisi X akhir"
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
+      "text": "Posisi Y awal tidak boleh lebih besar dari posisi Y akhir"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
+      "text": "Nama input tidak ditentukan"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
+      "text": "Maju"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
+      "text": "Halaman presentasi ini mengharuskan masukan berikut dipenuhi sebelum dapat berlanjut ke halaman berikutnya."
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
+      "text": "Masukan diperlukan"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
+      "text": "Satu atau lebih masukan berikut belum diisi dengan benar:"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
+      "text": "Masukan Salah"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
+      "text": "Input yang diperlukan belum diberikan. Anda harus mengisi nilai input berikut:"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
+      "text": "Masukan tidak diberikan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
+      "text": "Tidak dapat menunjukkan pilihan tanpa jawaban dan tidak ada jawaban alternatif."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "Gaya pilihan mengharuskan setidaknya ada satu pilihan yang diaktifkan."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
+      "text": "Anda tidak dapat memberikan jawaban dengan lebih dari satu karakter dalam mode karakter tunggal."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
+      "text": "Jawaban salah. Silakan coba lagi."
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
+      "text": "Pindah ke Kiri"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
+      "text": "Pindah ke Kanan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
+      "text": "Menyisipkan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
+      "text": "Mengganti"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
+      "text": "Ganti Semua"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
+      "text": "Siap"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
+      "text": "Tidak ditemukan. Periksa sintaksis atau perluas pencarian Anda."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
+      "text": "Info Nomor"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
+      "text": "Menghapus"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
+      "text": "Ganti Semua Apa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
+      "text": "Tulis nomor byte dengan nilai heksadesimal."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
+      "text": "Nomor byte yang ditentukan tidak valid."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
+      "text": "Byte {0} tidak valid."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
+      "text": "Tulis nomor byte dengan nilai heksadesimal untuk menggantikan {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
+      "text": "Tulis nomor byte dengan nilai heksadesimal yang akan diganti."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
+      "text": "Tulis satu byte atau sekelompok byte yang dipisahkan dengan spasi."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
+      "text": "Byte diperlukan untuk menemukannya, tetapi Anda belum menyediakannya."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
+      "text": "Posisi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
+      "text": "Heksadesimal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
+      "text": "Oktal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
+      "text": "Nomor"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
+      "text": "Biner"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
+      "text": "Informasi nomor"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
+      "text": "Konten kosong"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
+      "text": "Nomor byte awal yang ditentukan tidak boleh lebih besar dari ukuran file."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
+      "text": "Nomor byte akhir yang ditentukan tidak boleh lebih besar dari ukuran file."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
+      "text": "Nomor byte yang ditentukan tidak valid."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
+      "text": "Nomor byte yang ditentukan tidak boleh lebih besar dari {0} atau lebih kecil dari 1."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
+      "text": "Nomor byte yang ditentukan tidak boleh lebih besar dari {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
+      "text": "Tidak dapat melakukan operasi ini pada array null."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
+      "text": "Nomor byte harus dimulai dengan 1."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
+      "text": "Nomor byte awal yang ditentukan tidak boleh lebih besar dari {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
+      "text": "Nomor byte akhir yang ditentukan tidak boleh lebih besar dari {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
+      "text": "Memasuki..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
+      "text": "Hapus di sini"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
+      "text": "Hapus Garis"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
+      "text": "Berhenti Masuk"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
+      "text": "Garis Baru"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
+      "text": "spasi mundur"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
+      "text": "Menghapus"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
+      "text": "Tuliskan string untuk menemukan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
+      "text": "Tuliskan string pengganti"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
+      "text": "Tulis string yang ingin ditemukan. Mendukung ekspresi reguler."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
+      "text": "String diperlukan untuk menemukan, tetapi Anda belum menyediakannya."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
+      "text": "String yang ingin ditemukan ini bukan ekspresi reguler yang valid."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
+      "text": "Garis"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
+      "text": "Kolom"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
+      "text": "Baris"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
+      "text": "Nomor baris yang ditentukan tidak boleh lebih besar dari {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
+      "text": "Tidak dapat melakukan operasi ini pada daftar baris nol."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
+      "text": "Menampilkan informasi lebih lanjut di kotak info"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
+      "text": "Naik satu baris ke atas"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
+      "text": "Turun satu baris"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
+      "text": "Pergi ke halaman teks sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
+      "text": "Beralih ke halaman teks berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
+      "text": "Menyerahkan nilai"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
+      "text": "Menyerahkan nilai-nilai"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
+      "text": "Ditutup tanpa mengirimkan nilai"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
+      "text": "Ditutup tanpa mengirimkan nilai"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
+      "text": "Melakukan tindakan atau memilih pilihan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
+      "text": "Mengurangi nilai atau memindahkan tiga baris teks ke atas"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
+      "text": "Menambah nilai atau memindahkan tiga baris teks ke bawah"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
+      "text": "Pilihan sebelumnya atau tiga baris teks sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
+      "text": "Pilihan berikutnya atau tiga baris teks berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
+      "text": "Mengurangi nilai saat ini"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
+      "text": "Meningkatkan nilai saat ini"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
+      "text": "Mengatur nilai ke nilai minimum"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
+      "text": "Mengatur nilai ke nilai maksimum"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
+      "text": "Mengatur fokus saat ini ke elemen nilai berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
+      "text": "Mengatur fokus saat ini ke elemen nilai sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
+      "text": "Pergi ke tombol sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
+      "text": "Pergi ke tombol berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
+      "text": "Tombol sebelumnya atau tiga baris teks sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
+      "text": "Tombol berikutnya atau tiga baris teks berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
+      "text": "Pergi ke baris pertama teks"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
+      "text": "Pergi ke baris teks terakhir"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
+      "text": "Beralih ke halaman teks berikutnya, atau menutup kotak informasi modal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
+      "text": "Menutup kotak informasi modal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
+      "text": "Melakukan suatu tindakan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
+      "text": "Tiga baris teks sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
+      "text": "Tiga baris teks berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
+      "text": "Beralih ke halaman input sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
+      "text": "Beralih ke halaman input berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
+      "text": "Mencari input"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
+      "text": "Mengubah nilai input yang dipilih"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
+      "text": "Naik satu pilihan (pilihan berikutnya)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
+      "text": "Turun satu pilihan (pilihan sebelumnya)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
+      "text": "Pergi ke pilihan pertama"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
+      "text": "Menuju pilihan terakhir"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
+      "text": "Pergi ke halaman pilihan sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
+      "text": "Beralih ke halaman pilihan berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
+      "text": "Pencarian untuk sebuah pilihan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
+      "text": "Memilih atau membatalkan pilihan semua pilihan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
+      "text": "Tidak bisa mendapatkan kategori dan grup pada pilihan nomor {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
+      "text": "Pilihan umum"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
+      "text": "Pilihan yang tersedia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
+      "text": "Pilihan alternatif"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
+      "text": "Mengonfirmasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
+      "text": "Bilah Samping"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
+      "text": "Lagi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
+      "text": "Konfirmasi pilihan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
+      "text": "Mengubah nilai yang dipilih (tombol radio)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
+      "text": "Batalkan pilihan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
+      "text": "Naik satu elemen ke atas"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
+      "text": "Turun satu elemen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
+      "text": "Menuju ke elemen pertama"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
+      "text": "Menuju ke elemen terakhir"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
+      "text": "Pergi ke halaman sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
+      "text": "Pergi ke halaman berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
+      "text": "Pencarian elemen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
+      "text": "Naik ke bilah sisi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
+      "text": "Turun di sidebar"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
+      "text": "Naik ke kotak pertanyaan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
+      "text": "Turun ke kotak pertanyaan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
+      "text": "Tampilkan halaman dan jumlah pilihan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
+      "text": "Tampilkan info item"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
+      "text": "Memilih atau membatalkan pilihan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
+      "text": "Memilih semua elemen dalam grup dan kategori yang sama"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
+      "text": "Memilih semua elemen di semua grup dalam kategori yang sama"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
+      "text": "Memilih semua elemen di semua grup di semua kategori"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
+      "text": "Melanjutkan satu elemen atau menampilkan jajaran"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
+      "text": "Turunkan satu elemen atau garis pamer ke bawah"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
+      "text": "Perbarui posisi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
+      "text": "Sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
+      "text": "Berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
+      "text": "Kirim"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
+      "text": "Membatalkan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
+      "text": "Membantu"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
+      "text": "Selesai"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
+      "text": "Memilih"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
+      "text": "Pemilihan Manual"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
+      "text": "Informasi warna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
+      "text": "Simulasi buta warna berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
+      "text": "Simulasi buta warna sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
+      "text": "Meningkatkan frekuensi transformasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
+      "text": "Kurangi frekuensi transformasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
+      "text": "Pilih warna web"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
+      "text": "Meningkatkan keburaman"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
+      "text": "Meningkatkan transparansi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
+      "text": "Mode warna berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
+      "text": "Mode warna sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
+      "text": "Meningkatkan nilai"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
+      "text": "Menurunkan nilai"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
+      "text": "Mengurangi rona warna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
+      "text": "Meningkatkan rona warna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
+      "text": "Mengurangi kecerahan warna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
+      "text": "Meningkatkan kecerahan warna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
+      "text": "Mengurangi saturasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
+      "text": "Meningkatkan saturasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
+      "text": "Warna sebelumnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
+      "text": "Warna berikutnya"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
+      "text": "Menampilkan dan menyembunyikan daftar warna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
+      "text": "Pameran Karakter"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
+      "text": "Fixture ini mungkin bukan kelas Fixture dasar. Tentukan fixture tanpa syarat."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
+      "text": "Fixture ini mungkin bukan kelas Fixture dasar. Tentukan fixture bersyarat."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
+      "text": "Nilai yang dikembalikan {0} tidak sesuai dengan nilai yang diharapkan {1}"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
+      "text": "Perlengkapan ini tidak bersyarat."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
+      "text": "Jenis perlengkapan ini tidak valid."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
+      "text": "Tidak ada perlengkapan di sini. Masukkan satu."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
+      "text": "Pilih perlengkapan uji."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
+      "text": "Keluar dari pemilih perlengkapan uji"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
+      "text": "Uji coba ini berhasil!"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
+      "text": "Nilai yang diharapkan sesuai dengan nilai sebenarnya."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
+      "text": "Tes ini gagal."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
+      "text": "Pesan"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
+      "text": "Nilai yang diharapkan tidak sesuai dengan nilai sebenarnya."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
+      "text": "Metode dalam delegasi ini tidak boleh mengembalikan void"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
+      "text": "Metode dalam delegasi ini perlu mengembalikan void"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
+      "text": "Ekspresi reguler komponen tidak valid"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
+      "text": "Ekspresi reguler komponen tidak disediakan"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
+      "text": "Warna latar depan komponen tidak disediakan"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
+      "text": "Warna latar belakang komponen tidak disediakan"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
+      "text": "Tidak disebutkan nama stabilonya."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
+      "text": "Tidak ada nama stabilo dasar yang diberikan."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
+      "text": "Tidak dapat menemukan stabilo {0}"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
+      "text": "Tidak dapat menemukan stabilo"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
+      "text": "Tidak dapat menemukan komponen {0} di stabilo {1}"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
+      "text": "Stabilo tidak valid."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
+      "text": "Stabilo tidak memiliki nama."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
+      "text": "Stabilo sudah ada."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
+      "text": "Stabilo tidak memiliki komponen."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
+      "text": "Tidak dapat menghapus stabilo bawaan {0}"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
+      "text": "Nama sejarah tidak ditentukan"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
+      "text": "Entri riwayat tidak ditentukan"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
+      "text": "Jalur berkas riwayat tidak disediakan."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
+      "text": "Representasi JSON dalam sejarah tidak disediakan."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
+      "text": "JSON diurai, tetapi representasi JSON riwayat tidak disediakan."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
+      "text": "Info riwayat tidak disediakan."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
+      "text": "Nama riwayat tidak diberikan. Apakah Anda yakin telah menentukan nama dalam representasi JSON Anda?"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
+      "text": "Entri riwayat tidak disediakan. Apakah Anda yakin telah menentukan entri dalam representasi JSON Anda?"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
+      "text": "Riwayat {0} tidak ditemukan."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
+      "text": "Riwayat umum tidak dapat dihapus, tetapi dapat dihapus."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
+      "text": "Sejarah bukan bagian dari sejarah yang tercatat."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
+      "text": "Gagal menghapus riwayat."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
+      "text": "Entri riwayat tidak disediakan."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
+      "text": "Daftar entri riwayat tidak disediakan."
+    },
+    {
+      "loc": "T_READER_EXCEPTION_PRINTWRITE",
+      "text": "Ada konflik antara {0} dan {1}."
+    },
+    {
+      "loc": "T_READER_FAILED",
+      "text": "Pembaca input telah gagal"
+    },
+    {
+      "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
+      "text": "Aliran ini tidak dapat mencari."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
+      "text": "Tidak dapat membangun urutan VT untuk tipe {0} yang tidak ada"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
+      "text": "Tidak dapat membangun urutan VT dengan argumen yang hilang. Diharapkan {0} argumen, didapatkan {1} argumen."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
+      "text": "Alias tidak dapat sama dengan nama perintah."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
+      "text": "Perintah tidak ditemukan untuk alias ke {0}."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
+      "text": "Alias sudah ditemukan"
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
+      "text": "Alias {0} tidak ditemukan untuk dihapus."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
+      "text": "Alias {0} tidak ditemukan untuk ditanyakan."
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
+      "text": "Penggunaan"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
+      "text": "Memerintah"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
+      "text": "Keterangan"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
+      "text": "Tidak ada bantuan untuk argumen \"{0}\"."
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
+      "text": "Tidak ada argumen yang membantu deskripsi"
+    },
+    {
+      "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
+      "text": "Argumen ini belum diimplementasikan."
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
+      "text": "Tidak ada cukup argumen."
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
+      "text": "Argumen tidak diketahui"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
+      "text": "Kesalahan yang tidak dapat dipulihkan dalam argumen"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
+      "text": "Tidak bisa mendapatkan info argumen untuk perintah atau argumen"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
+      "text": "Parameter benang tidak ditentukan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
+      "text": "Argumen yang diperlukan tidak disediakan untuk semua penggunaan di bawah ini:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
+      "text": "Argumen yang diperlukan tidak disediakan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
+      "text": "Sakelar yang diperlukan tidak disediakan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
+      "text": "Salah satu sakelar memerlukan nilai yang tidak disediakan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
+      "text": "Sakelar yang tercantum di bawah ini tidak diketahui."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
+      "text": "Sakelar yang tercantum di bawah ini saling bentrok."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
+      "text": "Sakelar di bawah ini tidak menerima nilai."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
+      "text": "Satu atau lebih argumen mengharapkan nilai numerik, tetapi Anda memberikan angka yang tidak valid."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
+      "text": "Satu atau lebih argumen mengharapkan kata-kata yang tepat, tetapi Anda memberikan kata yang tidak valid."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
+      "text": "Satu atau beberapa sakelar mengharapkan nilai numerik, tetapi Anda memberikan angka yang tidak valid."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
+      "text": "Konsultasikan entri bantuan untuk perintah ini untuk informasi lebih lanjut"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
+      "text": "Perintah sedang diganggu..."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
+      "text": "Terjadi kesalahan saat mencoba menjalankan perintah {2}."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
+      "text": "Kesalahan"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
+      "text": "Perintah dibatalkan karena alasan berikut"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
+      "text": "Pola perintah yang diberikan tidak valid."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
+      "text": "Perintah tidak ditemukan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
+      "text": "Tipe shell {0} tidak ada."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
+      "text": "Anda harus menyediakan basis perintah."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
+      "text": "Anda harus memberikan perintah."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
+      "text": "Perintah yang ditentukan sudah ditambahkan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
+      "text": "Beberapa perintah khusus tidak dapat dimuat."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
+      "text": "Perintah khusus yang ditentukan tidak ditemukan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
+      "text": "Beberapa perintah khusus tidak dapat diunggah."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
+      "text": "Shell ini menggunakan perintah slash untuk menjalankan perintah. Harap tambahkan simbol slash '/' di awal perintah untuk memulai. Misalnya:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
+      "text": "Perintah ini tidak didefinisikan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
+      "text": "Perintah yang tersedia:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
+      "text": "Perintah umum:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
+      "text": "Tidak ada perintah shell."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
+      "text": "Perintah tambahan:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
+      "text": "Tidak ada perintah tambahan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
+      "text": "Perintah alias:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
+      "text": "Tidak ada perintah alias."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
+      "text": "Perintah terpadu:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
+      "text": "Tidak ada perintah terpadu."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
+      "text": "Perintah yang didefinisikan oleh"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
+      "text": "Perintah ini memiliki argumen di bawah ini yang mengubah cara kerjanya:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
+      "text": "Deskripsi argumen tidak ditentukan"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
+      "text": "Perintah ini memiliki tombol-tombol di bawah ini yang mengubah cara kerjanya:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
+      "text": "Deskripsi sakelar tidak ditentukan"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
+      "text": "Tidak ada bantuan untuk perintah \"{0}\"."
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
+      "text": "Preset yang ditentukan {0} tidak ditemukan."
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
+      "text": "Pilih prasetel untuk {0}:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
+      "text": "Tidak ada perintah yang ditemukan."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
+      "text": "Keluar dari shell jika berjalan pada subshell"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
+      "text": "Menemukan perintah yang tersedia dalam tipe shell saat ini"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
+      "text": "Halaman bantuan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
+      "text": "Menampilkan perintah umum (default)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
+      "text": "Menampilkan perintah alias"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
+      "text": "Menampilkan perintah terpadu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
+      "text": "Menampilkan perintah tambahan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
+      "text": "Menampilkan semua perintah"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
+      "text": "Menggunakan bantuan yang disederhanakan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
+      "text": "Membuka pustaka preset shell"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
+      "text": "Pesan shell: Perintah yang diminta {0} tidak ditemukan. Lihat 'help' untuk perintah yang tersedia."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
+      "text": "Terjadi kesalahan saat mencoba menjalankan perintah."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
+      "text": "Tidak bisa mendapatkan eksekutor shell untuk {0}"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
+      "text": "Gagal saat mencoba menginisialisasi shell"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
+      "text": "Tidak dapat menentukan apakah input pilihannya tunggal atau jamak"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
+      "text": "Markup tidak ditentukan."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
+      "text": "Penentu tag akhir tidak valid."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
+      "text": "Tidak ada urutan yang antri untuk mengakhiri tag."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
+      "text": "Ada {0} tag akhir yang hilang."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
+      "text": "Format awal tidak boleh mencetak teks apa pun; format tersebut hanya boleh berisi urutan VT pemformatan."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
+      "text": "Tidak ada file Asciicast"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
+      "text": "Tidak dapat melakukan deserialisasi representasi Asciicast dasar"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
+      "text": "Tidak dapat melakukan deserialisasi representasi Asciicast v1"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
+      "text": "Tidak dapat melakukan deserialisasi representasi Asciicast v2"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
+      "text": "Tidak dapat memperoleh informasi acara"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
+      "text": "Pengikatan tombol yang tersedia"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
+      "text": "Tidak ada ikatan yang didefinisikan dalam konteks ini."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
+      "text": "Pengikat keyboard"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
+      "text": "Pengikatan mouse"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
+      "text": "Nama karakter Nerd Fonts tidak valid {0} dalam tipe {1}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
+      "text": "Representasi karakter Nerd Fonts tidak valid {0} dari {1} dalam tipe {2}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
+      "text": "Jenis Font Nerd Tidak Valid {0}"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
+      "text": "Font Nerd tipe {0} tidak memiliki karakter"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
+      "text": "Renderable sudah terdaftar"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
+      "text": "Renderable tidak terdaftar"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
+      "text": "Semua pemintal harus memiliki lebar yang sama."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
+      "text": "Naik satu elemen input ke atas"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
+      "text": "Menurunkan satu elemen input"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
+      "text": "Pergi ke input pertama"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
+      "text": "Pergi ke input terakhir"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "Mengatur nilai output ke variabel MESH yang dipilih"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "Tidak dapat memperoleh parameter thread untuk eksekusi proses."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "Terjadi kesalahan saat mencoba menjalankan perintah"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "Kesalahan {0}: {1}"
+    },
+    {
+      "loc": "T_SHELL_BASE_OBSOLETECMD",
+      "text": "Perintah ini sudah usang dan akan dihapus pada rilis mendatang."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
+      "text": "Perintah yang dapat dibungkus tidak ditemukan."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
+      "text": "Anda tidak boleh langsung menjalankan perintah ini dalam mode terbungkus."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
+      "text": "Perintah ini tidak dapat dibungkus. Perintah berikut dapat dibungkus:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
+      "text": "Terjadi kesalahan saat mencoba membungkus output perintah"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
+      "text": "Tidak dapat menyangga perintah yang tidak ditetapkan sebagai dapat dibungkus."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
+      "text": "Anda tidak dapat mendeklarasikan blok baru sebelum Anda menempatkan ekspresi yang mendukung pembuatannya, seperti kondisi atau loop. Nomor tumpukannya adalah {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
+      "text": "Saat memulai blok baru, pastikan Anda telah membuat indentasi tumpukan dengan benar. Nomor tumpukan adalah {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
+      "text": "Skripnya tidak terbentuk dengan benar. Periksa skripnya dan atasi semua kesalahan: {0}"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "text": "Kondisi tidak ditemukan dalam ekspresi."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
+      "text": "Kondisi {0} memerlukan {1} argumen. Mendapat {2}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
+      "text": "Kondisi perlu ditempatkan di akhir."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
+      "text": "Terjadi kesalahan saat mengurai ekspresi akibat kesalahan sintaksis."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
+      "text": "Tidak dapat mendaftarkan kondisi yang sudah ada."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
+      "text": "Tidak dapat mendaftarkan kondisi kosong."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
+      "text": "Tipe data {0} yang ditentukan tidak valid."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
+      "text": "Platform {0} yang ditentukan tidak valid."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
+      "text": "Eksekusi perintah sumber gagal."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
+      "text": "Eksekusi perintah target gagal. Konten mungkin tidak terisi dengan benar. Perintah yang dieksekusi"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
+      "text": "Pipa rusak."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
+      "text": "Jumlah kali tidak valid."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
+      "text": "Tidak dapat mengulang dirinya sendiri."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
+      "text": "Perintah yang dapat dibungkus:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
+      "text": "Pengingat untuk perintah garis miring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
+      "text": "Menjalankan proses eksternal"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
+      "text": "Jalan menuju suatu proses"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
+      "text": "Argumen untuk diteruskan ke suatu proses"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
+      "text": "Menjalankan proses tanpa mengganggu thread shell. Jendela terpisah akan dibuat."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
+      "text": "Perintah untuk menampilkan entri bantuan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
+      "text": "Memuat riwayat shell"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
+      "text": "Menyalurkan output perintah ke perintah lain sebagai parameter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
+      "text": "Perintah sumber untuk menyalurkan outputnya ke perintah target sebagai parameter terakhir"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "Perintah target untuk dieksekusi setelah membangun argumen berdasarkan output perintah sumber"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
+      "text": "Apakah akan meneruskan output perintah sumber sebagai satu argumen yang dikutip atau argumen yang tidak dikutip"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
+      "text": "Mengulang tindakan terakhir atau perintah yang ditentukan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "Perintah target untuk dieksekusi setelah membangun argumen berdasarkan output perintah sumber"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
+      "text": "Menyimpan riwayat shell"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
+      "text": "Membungkus output konsol"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
+      "text": "Perintah untuk membungkus outputnya"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
+      "text": "Terjadi kesalahan saat mencoba menjalankan skrip: {0}"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_DESC",
+      "text": "Menjalankan perintah setelah ekspresi MESH terpenuhi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "Ekspresi MESH untuk diuji"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
+      "text": "Perintah untuk dijalankan setelah evaluasi berhasil"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
+      "text": "di mana <jawaban> adalah jawaban satu huruf dari pertanyaan yang dipisahkan dengan garis miring"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
+      "text": "Anda harus meneruskan sakelar -set dengan variabel yang ingin Anda tetapkan nilainya."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
+      "text": "Membuat pilihan bagi pengguna"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "Jawaban untuk split dengan garis miring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Pertanyaan untuk dicetak ke layar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "Judul jawaban pertama"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "Judul jawaban kedua, dan seterusnya..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
+      "text": "Gaya pilihan satu baris"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
+      "text": "Gaya pilihan dua garis"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
+      "text": "Gaya pilihan modern"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
+      "text": "Outputnya hanya bisa satu karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
+      "text": "Outputnya bisa lebih dari satu karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CLS_DESC",
+      "text": "Membersihkan layar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
+      "text": "Menulis teks ke konsol"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
+      "text": "String untuk dicetak"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
+      "text": "Mencetak teks apa adanya tanpa penguraian placeholder"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FORK_DESC",
+      "text": "Membagi shell MESH untuk membuat instance lain"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
+      "text": "Memungkinkan pengguna untuk memasukkan input"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Pertanyaan untuk dicetak ke layar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
+      "text": "Memungkinkan pengguna untuk memasukkan input sebagai kata sandi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
+      "text": "Menunjukkan tanggal dan waktu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
+      "text": "Hanya menampilkan tanggal"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
+      "text": "Hanya menunjukkan waktu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
+      "text": "Menggunakan UTC bukan lokal"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
+      "text": "Memberikan pilihan pilihan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "Jawaban untuk split dengan garis miring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "Pertanyaan untuk dicetak ke layar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "Judul jawaban pertama"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "Judul jawaban kedua, dan seterusnya..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_DESC",
+      "text": "Mengatur variabel ke nilai dalam skrip"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
+      "text": "Nilai untuk ditetapkan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
+      "text": "Membuat array variabel dengan nilai yang disediakan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
+      "text": "Nilai pertama"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
+      "text": "Nilai kedua"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
+      "text": "Nilai ketiga, dan seterusnya..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
+      "text": "Tidur selama milidetik tertentu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
+      "text": "Interval untuk tidur"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
+      "text": "Menghapus variabel dari daftar variabel MESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
+      "text": "Nama variabel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
+      "text": "Hanya menghapus nilai variabel tanpa menghapusnya"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
+      "text": "Anda sekarang dapat menjalankan '{0}' sebagai '{1}'!"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
+      "text": "Tipe tidak valid {0}."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
+      "text": "Alias ​​​​{0} berhasil dihapus."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
+      "text": "Tidak dapat membatalkan pendaftaran kondisi yang tidak ada."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
+      "text": "Menambahkan alias ke perintah"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
+      "text": "Menambahkan alias"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
+      "text": "Jenis shell untuk mengambil perintah dari"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
+      "text": "Nama alias"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
+      "text": "Perintah yang akan digunakan sebagai jalan pintas"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
+      "text": "Menghapus alias"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
+      "text": "Pembungkus konsol sudah ditemukan"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
+      "text": "Nama pembungkus konsol tidak boleh kosong"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
+      "text": "Pembungkus konsol tidak ditemukan"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
+      "text": "Pembungkus konsol bawaan mungkin tidak dapat dihapus"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
+      "text": "Penghapusan pembungkus konsol gagal"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "Gagal mengisi tema default"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "Tidak ada metadata tema yang ditentukan."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "Tidak dapat melakukan deserialisasi metadata."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "Konsol Anda harus mendukung warna sebenarnya untuk menggunakan tema ini."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "Keluar dari pratinjau"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "Berikut tampilan tema Anda:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "Template warna tidak valid {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "Tema {0} merayakan suatu acara, tetapi Anda datang terlalu awal atau terlambat untuk hadir. Setiap tahun, tema ini dapat diakses dari {1}/{2} hingga {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "Tema {0} memerlukan dukungan warna sebenarnya, tetapi konsol Anda tidak mendukungnya."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "Satu atau lebih warna tidak valid."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "Tema bawaan untuk kernel"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "Aksen di mana-mana!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "Cairan tidak berwarna, berasap, dan sangat korosif"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "Anda harus menjalankan ConEmu atau prompt perintah Windows 10 dengan pemrosesan VT diaktifkan."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "Terminal Anda {0} pada {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "Apakah jalur landai ini terlihat tepat menurut Anda? Jalur landai ini seharusnya dapat bergerak dengan lancar."
+    }
+  ]
+}

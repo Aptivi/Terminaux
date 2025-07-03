@@ -45,7 +45,7 @@ namespace Terminaux.Base.TermInfo.Parsing
                 }
                 else
                 {
-                    throw new InvalidOperationException("Invalid string table!");
+                    throw new InvalidOperationException(LanguageTools.GetLocalized("T_CT_PARSING_EXCEPTION_STRINGTABLE"));
                 }
             }
 

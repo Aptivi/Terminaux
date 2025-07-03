@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -70,9 +70,9 @@ namespace Terminaux.Base.Buffered
         public void AddBufferedPart(string name, ScreenPart part)
         {
             if (part is null)
-                throw new TerminauxException("You must specify the screen part.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_NOSCREENPART"));
             if (string.IsNullOrEmpty(name))
-                throw new TerminauxException("You must specify the screen name.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_NOSCREENNAME"));
             while (screenParts.ContainsKey(name))
                 name += $" [{screenParts.Count}]";
 
@@ -90,9 +90,9 @@ namespace Terminaux.Base.Buffered
         public void EditBufferedPart(int idx, ScreenPart part)
         {
             if (idx < 0 || idx >= screenParts.Count)
-                throw new TerminauxException("The specified part index is out of range.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE"));
             if (part is null)
-                throw new TerminauxException("You must specify the screen part.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_NOSCREENPART"));
 
             // Now, edit the buffered part
             var kvp = screenParts.ElementAt(idx);
@@ -109,9 +109,9 @@ namespace Terminaux.Base.Buffered
         public void EditBufferedPart(string name, ScreenPart part)
         {
             if (!screenParts.ContainsKey(name))
-                throw new TerminauxException("The specified part name is not found.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME"));
             if (part is null)
-                throw new TerminauxException("You must specify the screen part.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_NOSCREENPART"));
 
             // Now, edit the buffered part
             ConsoleLogger.Info("Editing screen part {0} from id...", name);
@@ -128,9 +128,9 @@ namespace Terminaux.Base.Buffered
         {
             var partSource = screenParts.FirstOrDefault((part) => part.Value.Id == id);
             if (partSource.Value is null)
-                throw new TerminauxException("The specified part is not found.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND"));
             if (part is null)
-                throw new TerminauxException("You must specify the screen part.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_NOSCREENPART"));
 
             // Now, edit the buffered part
             ConsoleLogger.Info("Editing screen part {0} from id...", partSource.Key);
@@ -145,7 +145,7 @@ namespace Terminaux.Base.Buffered
         public void RemoveBufferedPart(int idx)
         {
             if (idx < 0 || idx >= screenParts.Count)
-                throw new TerminauxException("The specified part index is out of range.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE"));
 
             // Now, remove the buffered part
             var kvp = screenParts.ElementAt(idx);
@@ -161,7 +161,7 @@ namespace Terminaux.Base.Buffered
         public void RemoveBufferedPart(string name)
         {
             if (!screenParts.ContainsKey(name))
-                throw new TerminauxException("The specified part name is not found.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME"));
 
             // Now, remove the buffered part
             ConsoleLogger.Info("Removing screen part {0} from id...", name);
@@ -177,7 +177,7 @@ namespace Terminaux.Base.Buffered
         {
             var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
             if (part.Value is null)
-                throw new TerminauxException("The specified part is not found.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND"));
             ConsoleLogger.Info("Removing screen part {0} from id...", part.Key);
             RemoveBufferedPart(part.Key);
         }
@@ -190,7 +190,7 @@ namespace Terminaux.Base.Buffered
         public ScreenPart GetBufferedPart(int idx)
         {
             if (idx < 0 || idx >= screenParts.Count)
-                throw new TerminauxException("The specified part index is out of range.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE"));
 
             // Now, get the buffered part
             var kvp = screenParts.ElementAt(idx);
@@ -205,7 +205,7 @@ namespace Terminaux.Base.Buffered
         public ScreenPart GetBufferedPart(string name)
         {
             if (!screenParts.TryGetValue(name, out ScreenPart part))
-                throw new TerminauxException("The specified part name is not found.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME"));
 
             // Now, get the buffered part
             ConsoleLogger.Info("Returning screen part {0}...", name);
@@ -221,7 +221,7 @@ namespace Terminaux.Base.Buffered
         {
             var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
             if (part.Value is null)
-                throw new TerminauxException("The specified part is not found.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND"));
 
             // Now, get the buffered part
             ConsoleLogger.Info("Returning screen part {0} from id...", part.Key);

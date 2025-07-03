@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -92,9 +92,9 @@ namespace Terminaux.Colors.Transformation.Contrast
         {
             // First, check the values
             if (type < ColorType.TrueColor || type > ColorType.FourBitColor)
-                throw new TerminauxException("Color type is invalid");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE"));
             if (!ColorTools.TryParseColor(type == ColorType.TrueColor ? $"{colorR};{colorG};{colorB}" : $"{colorLevel}", settings))
-                throw new TerminauxException("Color specifier for seeability is invalid");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER"));
 
             // Forbid setting these colors as they're considered too dark
             bool seeable = true;

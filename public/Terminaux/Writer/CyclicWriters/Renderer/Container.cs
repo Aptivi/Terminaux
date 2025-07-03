@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -48,7 +48,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         public void AddRenderable(string name, IStaticRenderable renderable)
         {
             if (IsRegistered(name))
-                throw new TerminauxException("Renderable is already registered");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE"));
             renderables.Add(name, (renderable, new()));
         }
 
@@ -60,7 +60,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         public void RemoveRenderable(string name)
         {
             if (!IsRegistered(name))
-                throw new TerminauxException("Renderable is not registered");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE"));
             renderables.Remove(name);
         }
 
@@ -73,7 +73,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         public IStaticRenderable GetRenderable(string name)
         {
             if (!renderables.TryGetValue(name, out var renderable))
-                throw new TerminauxException("Renderable is not registered");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE"));
             return renderable.Item1;
         }
 
@@ -86,7 +86,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         public Coordinate GetRenderablePosition(string name)
         {
             if (!renderables.TryGetValue(name, out var renderable))
-                throw new TerminauxException("Renderable is not registered");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE"));
             return renderable.Item2;
         }
 
@@ -99,7 +99,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         public void SetRenderablePosition(string name, Coordinate position)
         {
             if (!IsRegistered(name))
-                throw new TerminauxException("Renderable is not registered");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE"));
             renderables[name] = (renderables[name].Item1, position);
         }
 

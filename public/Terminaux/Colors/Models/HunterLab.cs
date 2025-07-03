@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -118,7 +118,7 @@ namespace Terminaux.Colors.Models
         public static HunterLab ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException("Invalid HunterLab color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": hunterlab:<l>;<a>;<b>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER").FormatString(specifier) + ": hunterlab:<l>;<a>;<b>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(10).Split(';');
@@ -127,20 +127,20 @@ namespace Terminaux.Colors.Models
                 // We got the HunterLab whole values! First, check to see if we need to filter the color for the color-blind
                 double l = Convert.ToDouble(specifierArray[0]);
                 if (l < 0 || l > 100)
-                    throw new TerminauxException("The L value is out of range (0.0 -> 100.0)." + $" {l}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL") + $" {l}");
                 double a = Convert.ToDouble(specifierArray[1]);
                 if (a < -128 || a > 127)
-                    throw new TerminauxException("The A value is out of range (-128.0 -> 127.0)." + $" {a}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL") + $" {a}");
                 double b = Convert.ToDouble(specifierArray[2]);
                 if (b < -128 || b > 127)
-                    throw new TerminauxException("The B value is out of range (-128.0 -> 127.0)." + $" {b}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL") + $" {b}");
 
                 // First, we need to convert from HunterLab to RGB
                 var HunterLab = new HunterLab(l, a, b);
                 return HunterLab;
             }
             else
-                throw new TerminauxException("Invalid HunterLab color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": hunterlab:<l>;<a>;<b>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED").FormatString(specifier) + ": hunterlab:<l>;<a>;<b>");
         }
 
         /// <inheritdoc/>

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -310,7 +310,7 @@ namespace Terminaux.Base.Extensions
         public static string Truncate(this string target, int threshold, bool ellipsis = true)
         {
             if (target is null)
-                throw new TerminauxException("The target may not be null");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_CE_MISC_EXCEPTION_NULLTARGET"));
             if (threshold < 0)
                 threshold = 0;
             if (threshold == 0 || target.Length == 0)

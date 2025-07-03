@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -32,10 +32,10 @@ namespace Terminaux.Base.Checks
     {
         internal static List<ConsoleFilterInfo> baseFilters =
         [
-            new(new("dumb"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, "Console type only supports basic writing."),
-            new(new("unknown"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, "Console type is of unknown nature."),
-            new(new("Apple_Terminal"), ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist, "This application makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors."),
-            new(new(@"^((?!-256col).)*$"), ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist, "Console type doesn't support 256 colors."),
+            new(new("dumb"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION")),
+            new(new("unknown"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION")),
+            new(new("Apple_Terminal"), ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist, LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION")),
+            new(new(@"^((?!-256col).)*$"), ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist, LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION")),
         ];
         internal static List<ConsoleFilterInfo> customFilters = [];
 
@@ -60,9 +60,9 @@ namespace Terminaux.Base.Checks
         {
             // Check the query first
             if (query is null)
-                throw new TerminauxException("Can't filter without any query.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY"));
             if (!RegexTools.IsValidRegex(query))
-                throw new TerminauxException("Can't filter with an invalid query.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY"));
 
             // Now, add the query and the justification to the list
             if (!IsInFilter(query, type, severity, out _))
@@ -88,9 +88,9 @@ namespace Terminaux.Base.Checks
         {
             // Check the query first
             if (query is null)
-                throw new TerminauxException("Can't filter without any query.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY"));
             if (!RegexTools.IsValidRegex(query))
-                throw new TerminauxException("Can't filter with an invalid query.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY"));
 
             // Now, remove the query from the list
             if (IsInFilter(query, type, severity, out var queryInfo))
@@ -122,9 +122,9 @@ namespace Terminaux.Base.Checks
         {
             // Check the query first
             if (query is null)
-                throw new TerminauxException("Can't filter without any query.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY"));
             if (!RegexTools.IsValidRegex(query))
-                throw new TerminauxException("Can't filter with an invalid query.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY"));
 
             // Now, check the list for the query
             var queries = GetFilteredQueries();

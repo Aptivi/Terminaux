@@ -77,7 +77,7 @@ namespace Terminaux.Base.TermInfo
                 TermInfoValueType.Boolean => new List<string>(_booleans.Keys),
                 TermInfoValueType.Integer => new List<string>(_nums.Keys),
                 TermInfoValueType.String => new List<string>(_strings.Keys),
-                _ => throw new NotSupportedException("Unknown capability type '{0}'".FormatString(kind)),
+                _ => throw new NotSupportedException(LanguageTools.GetLocalized("T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE").FormatString(kind)),
             };
 
         /// <summary>

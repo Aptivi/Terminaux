@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -30,50 +30,50 @@ namespace Terminaux.Inputs.Styles.Selection
     {
         internal static Keybinding[] showBindingsMultiple =
         [
-            new("Confirm", ConsoleKey.Enter),
-            new("Select", ConsoleKey.Spacebar),
-            new("Sidebar", ConsoleKey.S),
-            new("Help", ConsoleKey.K),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM"), ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT"), ConsoleKey.Spacebar),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR"), ConsoleKey.S),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.K),
         ];
         internal static Keybinding[] showBindings =
         [
-            new("Select", ConsoleKey.Enter),
-            new("Sidebar", ConsoleKey.S),
-            new("Help", ConsoleKey.K),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT"), ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR"), ConsoleKey.S),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.K),
         ];
         internal static Keybinding[] bindings =
         [
-            new("Confirms selection(s)", ConsoleKey.Enter),
-            new("Cancel selection(s)", ConsoleKey.Escape),
-            new("Goes one element up", ConsoleKey.UpArrow),
-            new("Goes one element down", ConsoleKey.DownArrow),
-            new("Goes to the first element", ConsoleKey.Home),
-            new("Goes to the last element", ConsoleKey.End),
-            new("Goes to the previous page", ConsoleKey.PageUp),
-            new("Goes to the next page", ConsoleKey.PageDown),
-            new("Searches for an element", ConsoleKey.F),
-            new("Go up in a sidebar", ConsoleKey.E, ConsoleModifiers.Shift),
-            new("Go down in a sidebar", ConsoleKey.D, ConsoleModifiers.Shift),
-            new("Go up in a question box", ConsoleKey.E),
-            new("Go down in a question box", ConsoleKey.D),
-            new("Show page and choice count", ConsoleKey.P),
-            new("Show item info", ConsoleKey.Tab),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS"), ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP"), ConsoleKey.UpArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN"), ConsoleKey.DownArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT"), ConsoleKey.Home),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT"), ConsoleKey.End),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE"), ConsoleKey.PageUp),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE"), ConsoleKey.PageDown),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH"), ConsoleKey.F),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR"), ConsoleKey.E, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR"), ConsoleKey.D, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION"), ConsoleKey.E),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION"), ConsoleKey.D),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT"), ConsoleKey.P),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO"), ConsoleKey.Tab),
         ];
         internal static Keybinding[] bindingsMultiple =
         [
             .. bindings,
-            new("Selects or deselects a choice", ConsoleKey.Spacebar),
-            new("Selects all the elements in the same group and category", ConsoleKey.A),
-            new("Selects all the elements in all groups in the same category", ConsoleKey.A, ConsoleModifiers.Shift),
-            new("Selects all the elements in all groups in all categories", ConsoleKey.A, ConsoleModifiers.Shift | ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE"), ConsoleKey.Spacebar),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY"), ConsoleKey.A),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES"), ConsoleKey.A, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES"), ConsoleKey.A, ConsoleModifiers.Shift | ConsoleModifiers.Control),
         ];
         internal static Keybinding[] bindingsMouse =
         [
-            new("Goes one element up", PointerButton.WheelUp, PointerButtonPress.Scrolled),
-            new("Goes one element down", PointerButton.WheelDown, PointerButtonPress.Scrolled),
-            new("Select", PointerButton.Left, PointerButtonPress.Released),
-            new("Show item info", PointerButton.Right, PointerButtonPress.Released),
-            new("Update position", PointerButton.None, PointerButtonPress.Moved),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP"), PointerButton.WheelUp, PointerButtonPress.Scrolled),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN"), PointerButton.WheelDown, PointerButtonPress.Scrolled),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT"), PointerButton.Left, PointerButtonPress.Released),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO"), PointerButton.Right, PointerButtonPress.Released),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION"), PointerButton.None, PointerButtonPress.Moved),
         ];
 
         internal static int[] PromptSelection(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple)

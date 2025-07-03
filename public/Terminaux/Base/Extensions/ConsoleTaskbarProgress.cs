@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -65,9 +65,9 @@ namespace Terminaux.Base.Extensions
 
             // Check the progress value range
             if (maximum < progressValue)
-                throw new ArgumentOutOfRangeException(nameof(maximum), "Maximum value [{0}] should not be smaller than the progress value [{1}]".FormatString(maximum, progressValue));
+                throw new ArgumentOutOfRangeException(nameof(maximum), LanguageTools.GetLocalized("T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS").FormatString(maximum, progressValue));
             if (progressValue < 0 || progressValue > maximum)
-                throw new ArgumentOutOfRangeException(nameof(progressValue), "The progress value [{0}] must be between 0 and the maximum value of {1}.".FormatString(progressValue, maximum));
+                throw new ArgumentOutOfRangeException(nameof(progressValue), LanguageTools.GetLocalized("T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX").FormatString(progressValue, maximum));
             
             // Set the value and the state
             taskbarCom.SetState(state);

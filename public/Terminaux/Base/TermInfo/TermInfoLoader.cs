@@ -89,7 +89,7 @@ namespace Terminaux.Base.TermInfo
             }
 
             // We're totally screwed
-            throw new TerminauxException("Can't load {0}".FormatString(name));
+            throw new TerminauxException(LanguageTools.GetLocalized("T_CT_TERMINFO_EXCEPTION_LOADERFAILED").FormatString(name));
         }
 
         public static TermInfoDesc Load(Stream stream)

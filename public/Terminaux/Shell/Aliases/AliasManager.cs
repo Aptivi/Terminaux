@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -44,18 +44,18 @@ namespace Terminaux.Shell.Aliases
             if (ShellManager.ShellTypeExists(Type))
             {
                 if (SourceAlias == Destination)
-                    throw new TerminauxException("Alias can't be the same name as a command.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME"));
                 else if (!CommandManager.IsCommandFound(SourceAlias, Type))
-                    throw new TerminauxException("Command not found to alias to {0}.", Destination);
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND"), Destination);
                 else if (DoesAliasExist(Destination, Type))
-                    throw new TerminauxException("Alias already found" + ": {0}", SourceAlias);
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_ALIAS_EXCEPTION_ALIASFOUND") + ": {0}", SourceAlias);
                 ConsoleLogger.Info("Adding alias {0} pointing to {1} under type {2}...", SourceAlias, Destination, Type);
                 var aliasInstance = new AliasInfo(Destination, SourceAlias, Type);
                 aliases.Add(aliasInstance);
                 return true;
             }
             else
-                throw new TerminauxException("Invalid type" + " {0}.", Type);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COMMON_EXCEPTION_INVALIDTYPE") + " {0}.", Type);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Terminaux.Shell.Aliases
                 return aliases.Remove(AliasInfo);
             }
             else
-                throw new TerminauxException("Alias {0} is not found to be removed.", TargetAlias);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE"), TargetAlias);
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Terminaux.Shell.Aliases
         public static AliasInfo GetAlias(string TargetAlias, string Type)
         {
             if (!DoesAliasExist(TargetAlias, Type))
-                throw new TerminauxException("Alias {0} is not found to be queried.", TargetAlias);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY"), TargetAlias);
 
             // Get the list of available aliases and get an alias matching the target alias
             var aliases = GetAliasListFromType(Type);

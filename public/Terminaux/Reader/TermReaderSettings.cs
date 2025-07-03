@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -199,7 +199,7 @@ namespace Terminaux.Reader
         public SyntaxHighlighting? SyntaxHighlighter
         {
             get => syntaxHighlighter;
-            set => syntaxHighlighter = value ?? SyntaxHighlightingTools.GetHighlighter("Command");
+            set => syntaxHighlighter = value ?? SyntaxHighlightingTools.GetHighlighter(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD"));
         }
 
         /// <summary>
@@ -334,7 +334,7 @@ namespace Terminaux.Reader
             set
             {
                 if (!value.CanSeek)
-                    throw new TerminauxException("This stream can't seek.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_READER_CUE_EXCEPTION_UNSEEKABLE"));
                 cueEnter = value;
             }
         }
@@ -352,7 +352,7 @@ namespace Terminaux.Reader
             set
             {
                 if (!value.CanSeek)
-                    throw new TerminauxException("This stream can't seek.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_READER_CUE_EXCEPTION_UNSEEKABLE"));
                 cueRubout = value;
             }
         }
@@ -370,7 +370,7 @@ namespace Terminaux.Reader
             set
             {
                 if (!value.CanSeek)
-                    throw new TerminauxException("This stream can't seek.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_READER_CUE_EXCEPTION_UNSEEKABLE"));
                 cueWrite = value;
             }
         }

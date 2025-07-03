@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -35,25 +35,25 @@ namespace Terminaux.Inputs.Styles
         internal readonly static string[] fonts = [.. FigletTools.GetFigletFonts().Keys];
         internal readonly static Keybinding[] bindings =
         [
-            new("Previous", ConsoleKey.LeftArrow),
-            new("Next", ConsoleKey.RightArrow),
-            new("Submit", ConsoleKey.Enter),
-            new("Cancel", ConsoleKey.Escape),
-            new("Help", ConsoleKey.H),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV"), ConsoleKey.LeftArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT"), ConsoleKey.RightArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT"), ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H),
         ];
         internal readonly static Keybinding[] additionalBindings =
         [
-            new("Select", ConsoleKey.S),
-            new("Manual Select", ConsoleKey.S, ConsoleModifiers.Shift),
-            new("Character Showcase", ConsoleKey.C),
-            new("Previous", PointerButton.WheelUp, PointerButtonPress.Scrolled),
-            new("Next", PointerButton.WheelDown, PointerButtonPress.Scrolled),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT"), ConsoleKey.S),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT"), ConsoleKey.S, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE"), ConsoleKey.C),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV"), PointerButton.WheelUp, PointerButtonPress.Scrolled),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT"), PointerButton.WheelDown, PointerButtonPress.Scrolled),
         ];
         internal readonly static Keybinding[] charSelectBindings =
         [
-            new("Previous", ConsoleKey.LeftArrow),
-            new("Next", ConsoleKey.RightArrow),
-            new("Done", ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV"), ConsoleKey.LeftArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT"), ConsoleKey.RightArrow),
+            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE"), ConsoleKey.Enter),
         ];
 
         /// <summary>

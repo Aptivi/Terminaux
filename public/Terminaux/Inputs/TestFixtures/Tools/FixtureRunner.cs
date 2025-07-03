@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -45,7 +45,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             if (fixture is null)
                 throw new TerminauxException(nameof(fixture));
             if (fixture.GetType() == typeof(Fixture))
-                throw new TerminauxException("This fixture may not be a base Fixture class. Specify an unconditional fixture.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL"));
             args ??= fixture.initialParameters;
 
             // Run the fixture
@@ -78,7 +78,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             if (fixture is null)
                 throw new TerminauxException(nameof(fixture));
             if (fixture.GetType() == typeof(Fixture))
-                throw new TerminauxException("This fixture may not be a base Fixture class. Specify an unconditional fixture.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL"));
             args ??= fixture.initialParameters;
 
             // Run the fixture
@@ -114,7 +114,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             if (fixture is null)
                 throw new TerminauxException(nameof(fixture));
             if (fixture.GetType() == typeof(Fixture))
-                throw new TerminauxException("This fixture may not be a base Fixture class. Specify a conditional fixture.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL"));
             args ??= fixture.initialParameters;
 
             // Run the fixture
@@ -124,7 +124,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 var returned = (TValue)fixture.fixtureDelegate.DynamicInvoke(args);
                 var expected = (TValue?)fixture.expectedValue;
                 if (!returned.Equals(expected))
-                    throw new TerminauxException("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue ?? "");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL"), returned, fixture.expectedValue ?? "");
             }
             catch (Exception exc)
             {
@@ -151,7 +151,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             if (fixture is null)
                 throw new TerminauxException(nameof(fixture));
             if (fixture.GetType() == typeof(Fixture))
-                throw new TerminauxException("This fixture may not be a base Fixture class. Specify a conditional fixture.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL"));
             args ??= fixture.initialParameters;
 
             // Run the fixture
@@ -161,7 +161,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 var returned = (TValue)fixture.fixtureDelegate.DynamicInvoke(args);
                 var expected = (TValue?)fixture.expectedValue;
                 if (!returned.Equals(expected))
-                    throw new TerminauxException("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue ?? "");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL"), returned, fixture.expectedValue ?? "");
             }
             catch (Exception exc)
             {
@@ -184,14 +184,14 @@ namespace Terminaux.Inputs.TestFixtures.Tools
             if (fixture is null)
                 throw new TerminauxException(nameof(fixture));
             if (fixture.GetType() == typeof(Fixture))
-                throw new TerminauxException("This fixture is not conditional.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL"));
             args ??= fixture.initialParameters;
             if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
                 return RunConditionalTest<object>((FixtureConditional?)fixture, out ex, args);
             else if (fixture.GetType() == typeof(FixtureUnconditional) || fixture.GetType().BaseType == typeof(FixtureUnconditional))
                 return RunUnconditionalTest((FixtureUnconditional)fixture, out ex, args);
             else
-                throw new TerminauxException("This fixture type is invalid.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE"));
         }
     }
 }

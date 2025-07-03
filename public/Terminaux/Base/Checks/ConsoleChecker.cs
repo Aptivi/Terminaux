@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -116,8 +116,8 @@ namespace Terminaux.Base.Checks
             {
                 ConsoleLogger.Fatal("Terminal {0} on {1} is dumb!", TerminalType, TerminalEmulator);
                 FastFail(
-                    "User tried to run a Terminaux application using a dumb terminal.",
-                    "This application makes use of extended console features provided by Terminaux that require features not supported by \"dumb\" terminals." + Environment.NewLine +
+                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE"),
+                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1") + Environment.NewLine +
                     "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\". " +
                     "We recommend using the \"vt100\" terminal emulators to get the most out of this application."
                 );
@@ -130,14 +130,14 @@ namespace Terminaux.Base.Checks
             {
                 ConsoleLogger.Fatal("Terminal {0} on {1} is blacklisted!", TerminalType, TerminalEmulator);
                 FastFail(
-                    "User tried to run a Terminaux application on a blacklisted terminal type.",
-                    "The console type you're currently using, {0}, is blacklisted: {1}".FormatString(TerminalType, justification)
+                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE"),
+                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1").FormatString(TerminalType, justification)
                 );
             }
             if (graylisted)
             {
                 ConsoleLogger.Warning("Terminal {0} on {1} is graylisted!", TerminalType, TerminalEmulator);
-                TextWriterRaw.WritePlain("The console type you're currently using, {0}, is graylisted: {1}".FormatString(TerminalType, justification2));
+                TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE").FormatString(TerminalType, justification2));
             }
 
             // Check the blacklist and the graylist for the terminal emulator
@@ -147,19 +147,19 @@ namespace Terminaux.Base.Checks
             {
                 ConsoleLogger.Fatal("Emulator {0} is blacklisted!", TerminalEmulator);
                 FastFail(
-                    "User tried to run a Terminaux application on a blacklisted terminal emulator.",
-                    "The terminal emulator you're currently using, {0}, is blacklisted: {1}".FormatString(TerminalEmulator, emuJustification)
+                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE"),
+                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1").FormatString(TerminalEmulator, emuJustification)
                 );
             }
             if (emuGraylisted)
             {
                 ConsoleLogger.Warning("Emulator {0} is graylisted!", TerminalEmulator);
-                TextWriterRaw.WritePlain("The terminal emulator you're currently using, {0}, is graylisted: {1}".FormatString(TerminalEmulator, emuJustification2));
+                TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE").FormatString(TerminalEmulator, emuJustification2));
             }
 
             // Check for 256 colors
             if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
-                TextWriterRaw.WritePlain("Terminal type {0} doesn't support 256 colors according to terminfo".FormatString(TerminalType));
+                TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE").FormatString(TerminalType));
 
             // Check to see if we can call cursor info without errors
             try
@@ -173,18 +173,18 @@ namespace Terminaux.Base.Checks
                 {
                     ConsoleLogger.Fatal("It may be running in Git Bash's MinTTY!");
                     FastFail(
-                        "User tried to run a Terminaux application on Git Bash's MinTTY without winpty.",
-                        "You'll need to use winpty to be able to use this program. If you are sure that you're not running Git Bash, ensure that you're using a proper Windows terminal.",
+                        LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE"),
+                        LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1"),
                         ex
                     );
                 }
                 else
-                    TextWriterColor.WriteColor("Console positioning is not working due to an I/O error, so this application might behave erratically.", ConsoleColors.Yellow);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE"), ConsoleColors.Yellow);
             }
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Checking against terminal {0} on {1} for positioning failed", TerminalType, TerminalEmulator);
-                TextWriterColor.WriteColor("Console positioning is not working properly, so this application might behave erratically.", ConsoleColors.Yellow);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE"), ConsoleColors.Yellow);
             }
 
             // Set the encoding
@@ -302,11 +302,11 @@ namespace Terminaux.Base.Checks
             // Check for the minimum console window requirements (80x24)
             while (!CheckConsoleSize(minimumWidth, minimumHeight))
             {
-                TextWriterRaw.WritePlain("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
+                TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1"),
                     ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight,
                     ConsoleWrapper.BufferWidth, ConsoleWrapper.BufferHeight,
                     minimumWidth, minimumHeight);
-                TextWriterRaw.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
+                TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2"));
                 Input.ReadKey();
             }
         }
@@ -345,7 +345,7 @@ namespace Terminaux.Base.Checks
         public static void AddToCheckWhitelist(Assembly asm)
         {
             if (asm is null)
-                throw new TerminauxException("Assembly not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY"));
 
             // Add the partial name for the assembly to the whitelist
             if (!customWhitelist.Contains(asm.FullName))
@@ -359,7 +359,7 @@ namespace Terminaux.Base.Checks
         public static void RemoveFromCheckWhitelist(Assembly asm)
         {
             if (asm is null)
-                throw new TerminauxException("Assembly not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY"));
 
             // Add the partial name for the assembly to the whitelist
             if (customWhitelist.Contains(asm.FullName))
@@ -368,7 +368,7 @@ namespace Terminaux.Base.Checks
 
         internal static void FastFail(string eventMessage, string description, Exception? ex = null)
         {
-            TextWriterColor.WriteColor("{0} Can't continue.".FormatString(description), ConsoleColors.Red);
+            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT").FormatString(description), ConsoleColors.Red);
             if (ex is null)
                 Environment.FailFast(eventMessage);
             else

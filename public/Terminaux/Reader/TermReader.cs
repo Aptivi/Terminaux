@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -400,7 +400,7 @@ namespace Terminaux.Reader
                 {
                     // Sanity checks
                     if (settings.PrintDefaultValue && settings.WriteDefaultValue)
-                        throw new TerminauxException("There's a conflict between {0} and {1}.", nameof(settings.PrintDefaultValue), nameof(settings.WriteDefaultValue));
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_READER_EXCEPTION_PRINTWRITE"), nameof(settings.PrintDefaultValue), nameof(settings.WriteDefaultValue));
 
                     // Initialize some of the state variables
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
@@ -514,7 +514,7 @@ namespace Terminaux.Reader
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteColor("Input reader has failed" + $": {ex.Message}", ConsoleColors.Red);
+                    TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_READER_FAILED") + $": {ex.Message}", ConsoleColors.Red);
                     TextWriterColor.WriteColor(ex.StackTrace, ConsoleColors.Red);
                 }
                 finally

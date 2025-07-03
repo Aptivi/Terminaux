@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -103,7 +103,7 @@ namespace Terminaux.Colors.Gradients
         {
             // Sanity check
             if (colors.Length == 0)
-                throw new TerminauxException("Specify at least one color.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED"));
 
             // Some variables
             ColorGradients gradients = new();

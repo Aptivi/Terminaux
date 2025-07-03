@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -41,7 +41,7 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         Busy,
         /// <summary>
-        /// This textual UI is about to exit and go back to the <see cref="Ready"/> state.
+        /// This textual UI is about to exit and go back to the <see cref=LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_STATUS_READY")/> state.
         /// </summary>
         Bailing,
     }

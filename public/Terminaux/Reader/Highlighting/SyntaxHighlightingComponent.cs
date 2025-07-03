@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -91,17 +91,17 @@ namespace Terminaux.Reader.Highlighting
             this(new Regex(componentMatch, RegexOptions.Compiled), componentForegroundColor, componentBackgroundColor, useBackgroundColor, useForegroundColor)
         {
             if (!RegexTools.IsValidRegex(componentMatch))
-                throw new TerminauxException("Component regular expression is invalid");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID"));
         }
 
         internal SyntaxHighlightingComponent(Regex componentMatch, Color componentForegroundColor, Color componentBackgroundColor, bool useBackgroundColor, bool useForegroundColor)
         {
             this.componentMatch = componentMatch ??
-                throw new TerminauxException("Component regular expression not provided");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED"));
             this.componentForegroundColor = componentForegroundColor ??
-                throw new TerminauxException("Component foreground color not provided");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED"));
             this.componentBackgroundColor = componentBackgroundColor ??
-                throw new TerminauxException("Component background color not provided");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED"));
             this.useBackgroundColor = useBackgroundColor;
             this.useForegroundColor = useForegroundColor;
         }

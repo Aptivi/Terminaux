@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -49,12 +49,12 @@ namespace Terminaux.Inputs.Presentation
     {
         private readonly static Keybinding[] bindings =
         [
-            new("Advance", ConsoleKey.Enter)
+            new(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_KEYBINDING_ADVANCE"), ConsoleKey.Enter)
         ];
         private readonly static Keybinding[] nonKioskBindings =
         [
             .. bindings,
-            new("Exit", ConsoleKey.Escape)
+            new(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape)
         ];
 
         /// <summary>
@@ -404,12 +404,12 @@ namespace Terminaux.Inputs.Presentation
                         InputInfo? input = page.Inputs[inputIdx];
                         choices.Add(new InputChoiceInfo($"[{(input.InputRequired ? "*" : " ")}] {inputIdx + 1}", $"{input.InputName} [{input.InputMethod.DisplayInput}]", input.InputDescription));
                     }
-                    choices.Add(new InputChoiceInfo($"    {page.Inputs.Length + 1}", "Submit", "Submits the required fields to the presentation"));
-                    choices.Add(new InputChoiceInfo($"    {page.Inputs.Length + 2}", "Exit", "Goes back to this presentation"));
+                    choices.Add(new InputChoiceInfo($"    {page.Inputs.Length + 1}", LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT"), "Submits the required fields to the presentation"));
+                    choices.Add(new InputChoiceInfo($"    {page.Inputs.Length + 2}", LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), "Goes back to this presentation"));
 
                     // Let the user select an option, then process the input
                     screen.RequireRefresh();
-                    int selected = InfoBoxSelectionColor.WriteInfoBoxSelection("Input required", [.. choices], "This presentation page requires the following inputs to be fulfilled before being able to advance to the next page. The asterisk next to each step indicates a required input that should be filled before being able to proceed.");
+                    int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE"), [.. choices], "This presentation page requires the following inputs to be fulfilled before being able to advance to the next page. The asterisk next to each step indicates a required input that should be filled before being able to proceed.");
                     if (selected >= page.Inputs.Length)
                     {
                         // Either submit or exit has been selected.
@@ -425,13 +425,13 @@ namespace Terminaux.Inputs.Presentation
                                 inputBail = processedRequiredInputs.Length == filledRequiredInputs.Length;
                                 if (!inputBail)
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal("Incorrect Input", "One or more of the following inputs have not been filled correctly:" + $"\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE"), LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY") + $"\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
                                 }
                             }
                             else
                             {
                                 screen.RequireRefresh();
-                                InfoBoxModalColor.WriteInfoBoxModal("Input not provided", "Required inputs have not been provided. You'll need to fill in the values of the following inputs:" + $"\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE"), LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTNOTPROVIDED") + $"\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
                             }
                         }
                         else

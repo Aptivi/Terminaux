@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -76,7 +76,7 @@ namespace Terminaux.Colors.Models
         public static CyanMagentaYellow ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException("Invalid CMY color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": cmy:<C>;<M>;<Y>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER").FormatString(specifier) + ": cmy:<C>;<M>;<Y>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -85,13 +85,13 @@ namespace Terminaux.Colors.Models
                 // We got the CMY whole values! First, check to see if we need to filter the color for the color-blind
                 int c = Convert.ToInt32(specifierArray[0]);
                 if (c < 0 || c > 100)
-                    throw new TerminauxException("The cyan color level is out of range (0 -> 100)." + $" {c}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL") + $" {c}");
                 int m = Convert.ToInt32(specifierArray[1]);
                 if (m < 0 || m > 100)
-                    throw new TerminauxException("The magenta color level is out of range (0 -> 100)." + $" {m}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL") + $" {m}");
                 int y = Convert.ToInt32(specifierArray[2]);
                 if (y < 0 || y > 100)
-                    throw new TerminauxException("The yellow color level is out of range (0 -> 100)." + $" {y}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL") + $" {y}");
 
                 // First, we need to convert from CMY to RGB
                 double cPart = (double)c / 100;
@@ -101,7 +101,7 @@ namespace Terminaux.Colors.Models
                 return cmy;
             }
             else
-                throw new TerminauxException("Invalid CMY color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": cmy:<C>;<M>;<Y>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED").FormatString(specifier) + ": cmy:<C>;<M>;<Y>");
         }
 
         /// <summary>

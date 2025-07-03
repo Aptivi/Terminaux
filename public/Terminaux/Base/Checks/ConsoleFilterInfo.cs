@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -35,7 +35,7 @@ namespace Terminaux.Base.Checks
         /// Expression to filter consoles
         /// </summary>
         public Regex Expression =>
-            expression ?? throw new TerminauxException("There is no expression in the console filter.");
+            expression ?? throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION"));
 
         /// <summary>
         /// Console filter type (console type or emulator)
@@ -58,7 +58,7 @@ namespace Terminaux.Base.Checks
         internal ConsoleFilterInfo(Regex? expression, ConsoleFilterType filterType, ConsoleFilterSeverity severity, string justification)
         {
             this.expression = expression ??
-                throw new TerminauxException("There is no expression in the console filter.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION"));
             this.filterType = filterType;
             this.severity = severity;
             this.justification = justification ??

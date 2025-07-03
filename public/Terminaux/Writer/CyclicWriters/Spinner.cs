@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -98,7 +98,7 @@ namespace Terminaux.Writer.CyclicWriters
             {
                 int width = ConsoleChar.EstimateCellWidth(spinner);
                 if (width != lastWidth && !first)
-                    throw new TerminauxException("All spinners should have the same width.");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH"));
                 lastWidth = width;
                 first = false;
             }

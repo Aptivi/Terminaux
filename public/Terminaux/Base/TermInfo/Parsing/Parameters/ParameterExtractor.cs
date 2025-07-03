@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -76,7 +76,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                     {
                         isParam = true;
                         if (i + 1 >= value.Length)
-                            throw new TerminauxException("This designator may not be located at the end of the string without specifying one parameter");
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM"));
                         char parameter = value[i + 1];
                         if (parameter == ';')
                         {
@@ -208,9 +208,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         {
                             char arg = value[i + 1];
                             if (!int.TryParse($"{arg}", out int num))
-                                throw new TerminauxException("This designator may only take a number as a parameter.");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM"));
                             if (num < 1 || num > 9)
-                                throw new TerminauxException("This designator may only take a number from 1 to 9.");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT"));
                             parameterBuilder.Append(c);
                             parameterBuilder.Append(arg);
                         }
@@ -234,7 +234,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                                 parameterBuilder.Append(arg);
                             }
                             else
-                                throw new TerminauxException("This designator may only take a letter as a parameter.");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR"));
                         }
                         i++;
                         isParam = false;
@@ -257,7 +257,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             int offset = 1;
                             char arg = value[i + offset];
                             if (arg == '}')
-                                throw new TerminauxException("This designator needs an integer constant");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST"));
                             while (arg != '}')
                             {
                                 integerBuilder.Append(arg);
@@ -266,7 +266,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             }
                             i += offset;
                             if (!int.TryParse(integerBuilder.ToString(), out _))
-                                throw new TerminauxException("This designator contains invalid integer constant");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST"));
                         }
                         parameterType = ParameterType.IntConst;
                         parameterBuilder.Append($"{{{integerBuilder}}}");
@@ -275,11 +275,11 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                     case '\'':
                         // Character constant
                         if (i + 1 >= value.Length || i + 2 >= value.Length)
-                            throw new TerminauxException("This designator may not be located at the end of the string without specifying a character constant");
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST"));
                         char character = value[i + 1];
                         char ending = value[i + 2];
                         if (ending != '\'')
-                            throw new TerminauxException("You can't append more than one character");
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR"));
                         i += 2;
                         parameterType = ParameterType.CharConst;
                         parameterBuilder.Append($"{ending}{character}{ending}");
@@ -301,7 +301,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         int offset = 1;
                         char arg = value[i + offset];
                         if (i + 1 == ']')
-                            throw new TerminauxException("This designator needs a character collection");
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY"));
                         while (arg != ']')
                         {
                             collectionBuilder.Append(arg);
@@ -366,7 +366,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                                 default:
                                     // Look for width or precision designators
                                     if (!int.TryParse($"{arg}", out _) && arg != '.' && arg != '-')
-                                        throw new TerminauxException("Width is not valid");
+                                        throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH"));
                                     {                                   
                                         StringBuilder widthBuilder = new();
                                         int offset = 1;
@@ -381,10 +381,10 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                                             widthBuilder.Insert(0, 0);
                                         i += offset;
                                         if (i >= value.Length)
-                                            throw new TerminauxException("This designator may not be located at the end of the string without specifying a type");
+                                            throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE"));
                                         char finalType = value[i];
                                         if (finalType != 'd' && finalType != 'o' && finalType != 'X' && finalType != 'x' && finalType != 's')
-                                            throw new TerminauxException("Invalid type");
+                                            throw new TerminauxException(LanguageTools.GetLocalized("T_COMMON_EXCEPTION_INVALIDTYPE"));
                                         parameterBuilder.Append(c);
                                         parameterBuilder.Append(widthBuilder);
                                         parameterBuilder.Append(finalType);
@@ -415,10 +415,10 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                                 widthBuilder.Insert(0, 0);
                             i += offset;
                             if (i >= value.Length)
-                                throw new TerminauxException("This designator may not be located at the end of the string without specifying a type");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE"));
                             char finalType = value[i];
                             if (finalType != 'd' && finalType != 'o' && finalType != 'X' && finalType != 'x' && finalType != 's')
-                                throw new TerminauxException("Invalid type");
+                                throw new TerminauxException(LanguageTools.GetLocalized("T_COMMON_EXCEPTION_INVALIDTYPE"));
                             parameterBuilder.Append(widthBuilder);
                             parameterBuilder.Append(finalType);
                         }

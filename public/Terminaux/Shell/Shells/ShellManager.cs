@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -47,12 +47,12 @@ namespace Terminaux.Shell.Shells
 
         internal readonly static List<CommandInfo> unifiedCommandDict =
         [
-            new CommandInfo("exit", "Exits the shell if running on subshell",
+            new CommandInfo("exit", LanguageTools.GetLocalized("T_SHELL_UNIFIED_EXIT_HELP_DESC"),
                 [
                     new CommandArgumentInfo()
                 ], new ExitUnifiedCommand()),
 
-            new CommandInfo("findcmds", "Finds the available commands in the current shell type",
+            new CommandInfo("findcmds", LanguageTools.GetLocalized("T_SHELL_UNIFIED_FINDCMDS_HELP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
@@ -60,7 +60,7 @@ namespace Terminaux.Shell.Shells
                     ], false)
                 ], new FindCmdsUnifiedCommand()),
 
-            new CommandInfo("help", "Help page",
+            new CommandInfo("help", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_HELP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
@@ -70,34 +70,34 @@ namespace Terminaux.Shell.Shells
                         })
                     ],
                     [
-                        new SwitchInfo("general", "Shows general commands (default)", new SwitchOptions()
+                        new SwitchInfo("general", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("alias", "Shows aliased commands", new SwitchOptions()
+                        new SwitchInfo("alias", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("unified", "Shows unified commands", new SwitchOptions()
+                        new SwitchInfo("unified", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("extra", "Shows extra commands", new SwitchOptions()
+                        new SwitchInfo("extra", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("all", "Shows all commands", new SwitchOptions()
+                        new SwitchInfo("all", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("simplified", "Uses simplified help", new SwitchOptions()
+                        new SwitchInfo("simplified", LanguageTools.GetLocalized("T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ], false)
                 ], new HelpUnifiedCommand()),
 
-            new CommandInfo("presets", "Opens the shell preset library",
+            new CommandInfo("presets", LanguageTools.GetLocalized("T_SHELL_UNIFIED_PRESETS_HELP_DESC"),
                 [
                     new CommandArgumentInfo()
                 ], new PresetsUnifiedCommand()),
@@ -290,13 +290,13 @@ namespace Terminaux.Shell.Shells
                         }
                         {
                             ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found", commandName);
-                            TextWriterColor.WriteColor("Shell message: The requested command {0} is not found. See 'help' for available commands.", ConsoleColors.Red, commandName);
+                            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), ConsoleColors.Red, commandName);
                         }
                     }
                     catch (Exception ex)
                     {
                         ConsoleLogger.Error(ex, "Cmd exec {0} failed: an error occurred", commandName);
-                        TextWriterColor.WriteColor("Error trying to execute command." + CharManager.NewLine + "Error" + " {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
+                        TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2") + " {0}: {1}", ConsoleColors.Red, ex.GetType().FullName ?? "<null>", ex.Message);
                     }
                 }
             }
@@ -323,7 +323,7 @@ namespace Terminaux.Shell.Shells
                 // Make a shell executor based on shell type to select a specific executor (if the shell type is not MESH, and if the new shell isn't a mother shell)
                 // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
                 var ShellExecute = GetShellExecutor(ShellType) ??
-                    throw new TerminauxException("Can't get shell executor for {0}", ShellType.ToString());
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR"), ShellType.ToString());
 
                 // Make a new instance of shell information
                 var ShellCommandThread = RegenerateCommandThread(ShellType);
@@ -343,7 +343,7 @@ namespace Terminaux.Shell.Shells
                 ConsoleLogger.Error("Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
                 ConsoleLogger.Error("Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
                 ConsoleLogger.Error(ex, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
-                throw new TerminauxException("Failed trying to initialize shell", ex);
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT"), ex);
             }
             finally
             {

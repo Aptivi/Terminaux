@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -40,14 +40,14 @@ namespace Terminaux.Inputs.Styles.Infobox
     {
         private static readonly Keybinding[] keybindings =
         [
-            new Keybinding("Goes one line up", ConsoleKey.UpArrow),
-            new Keybinding("Goes one line down", ConsoleKey.DownArrow),
-            new Keybinding("Goes to the first line of text", ConsoleKey.Home),
-            new Keybinding("Goes to the last line of text", ConsoleKey.End),
-            new Keybinding("Goes to the previous page of text", ConsoleKey.PageUp),
-            new Keybinding("Goes to the next page of text", ConsoleKey.PageDown),
-            new Keybinding("Goes to the next page of text, or closes the modal informational box", ConsoleKey.Enter),
-            new Keybinding("Closes the modal informational box", ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP"), ConsoleKey.UpArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN"), ConsoleKey.DownArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE"), ConsoleKey.Home),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE"), ConsoleKey.End),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT"), ConsoleKey.PageUp),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT"), ConsoleKey.PageDown),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE"), ConsoleKey.Enter),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE"), ConsoleKey.Escape),
         ];
 
         /// <summary>

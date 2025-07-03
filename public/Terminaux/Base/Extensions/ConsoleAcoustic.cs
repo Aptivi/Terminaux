@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -40,7 +40,7 @@ namespace Terminaux.Base.Extensions
         public static SynthInfo GetSynthInfo(string synthJson)
         {
             var synthInfo = JsonConvert.DeserializeObject<SynthInfo>(synthJson) ??
-                throw new TerminauxException("Can't get synth info from the provided representation.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO"));
             return synthInfo;
         }
 
@@ -61,11 +61,11 @@ namespace Terminaux.Base.Extensions
                         string synth = chapter.Synths[j];
                         var split = synth.Split(' ');
                         if (split.Length != 2)
-                            throw new TerminauxException("Synth representation is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
+                            throw new TerminauxException(LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH").FormatString(i + 1, j + 1));
                         if (!int.TryParse(split[0], out int freq))
-                            throw new TerminauxException($"Frequency is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
+                            throw new TerminauxException($LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY").FormatString(i + 1, j + 1));
                         if (!int.TryParse(split[1], out int ms))
-                            throw new TerminauxException($"Duration is invalid at [{0}.{1}]".FormatString(i + 1, j + 1));
+                            throw new TerminauxException($LanguageTools.GetLocalized("T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION").FormatString(i + 1, j + 1));
                         if (freq == 0)
                             Thread.Sleep(ms);
                         else

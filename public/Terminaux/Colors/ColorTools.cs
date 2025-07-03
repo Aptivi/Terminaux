@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -90,7 +90,7 @@ namespace Terminaux.Colors
             }
             catch (Exception ex)
             {
-                throw new TerminauxException("Failed to set background" + $": {ex.Message}");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_EXCEPTION_SETBACKGROUND") + $": {ex.Message}");
             }
         }
 
@@ -114,7 +114,7 @@ namespace Terminaux.Colors
             }
             catch (Exception ex)
             {
-                throw new TerminauxException("Failed to set background" + $": {ex.Message}");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_EXCEPTION_SETBACKGROUND") + $": {ex.Message}");
             }
         }
 
@@ -249,7 +249,7 @@ namespace Terminaux.Colors
         public static string RenderSetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false, bool canSet = true)
         {
             if (ColorSequence is null)
-                throw new TerminauxException("Color instance is not provided.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_EXCEPTION_COLORISNULL"));
 
             // Define reset background sequence
             string resetBgSequence = RenderResetBackground();

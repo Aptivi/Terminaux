@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -41,7 +41,7 @@ namespace Terminaux.Shell.Shells.Unified
                 TextWriterColor.WriteColor(command.Command, ConsoleColors.Olive);
             }
             if (commands.Length == 0)
-                TextWriterColor.WriteColor("No commands found.", ConsoleColors.Grey);
+                TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_UNIFIED_FIND_NOTFOUND"), ConsoleColors.Grey);
         }
 
     }

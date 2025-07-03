@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -61,7 +61,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
         public static string ParseMarkup(Mark? mark, Color? foregroundColor = null, Color? backgroundColor = null, string initialFormat = "")
         {
             if (mark is null)
-                throw new TerminauxException("Markup is not specified.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED"));
             return ParseMarkup(mark.Markup, foregroundColor, backgroundColor, initialFormat);
         }
 
@@ -131,7 +131,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                 {
                     WideChar nextTwoChar = i + 2 < markup.Length ? markup[i + 2] : (WideChar)'\0';
                     if (nextTwoChar != ']')
-                        throw new TerminauxException("Invalid end tag specifier.");
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID"));
                     if (queuedSequences.Count > 0)
                     {
                         nestLevel--;
@@ -141,14 +141,14 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                         sequences.Add(queued);
                     }
                     else
-                        throw new TerminauxException("There are no queued sequences to end the tag with.");
+                        throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS"));
                     i += 2;
                     continue;
                 }
                 if (queuedSequences.Count > 0 && i == markup.Length - 1)
                 {
                     ConsoleLogger.Warning("When reaching end of sequence, queued sequences: {0}", queuedSequences.Count);
-                    throw new TerminauxException("There are {0} missing end tags.", queuedSequences.Count);
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS"), queuedSequences.Count);
                 }
 
                 // Add a character
@@ -171,7 +171,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             if (useInitialFormat && VtSequenceTools.FilterVTSequences(initialFormat).Length != 0)
             {
                 ConsoleLogger.Warning("Formatting should not have anything other than VT sequences");
-                throw new TerminauxException("Initial format must not print any text; it must contain only formatting VT sequences.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT"));
             }
             string finalFormat =
                 useInitialFormat ? initialFormat :

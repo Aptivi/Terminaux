@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -232,7 +232,7 @@ namespace Terminaux.Inputs.Interactive
         {
             // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
             if (!interactiveTui.SecondPaneInteractable && paneNum > 1)
-                throw new TerminauxInternalException("Tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
+                throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE"));
 
             // Check the pane number
             if (paneNum < 1)
@@ -315,7 +315,7 @@ namespace Terminaux.Inputs.Interactive
         {
             // Check to make sure that we're not rendering the information pane on the both-panes interactive TUI
             if (interactiveTui.SecondPaneInteractable)
-                throw new TerminauxInternalException("Tried to render information on the secondary pane in an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
+                throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES"));
 
             // Populate some colors
             var ForegroundColor = interactiveTui.Settings.ForegroundColor;
@@ -427,27 +427,27 @@ namespace Terminaux.Inputs.Interactive
                     if (dataCount > 0)
                     {
                         TSecondary selectedData = (TSecondary)(dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1) ??
-                            throw new TerminauxInternalException("Attempted to render info about null data"));
+                            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA")));
                         finalInfoRendered = interactiveTui.GetInfoFromItemSecondary(selectedData);
                     }
                     else
-                        finalInfoRendered = "No info.";
+                        finalInfoRendered = LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_BASE_NOINFO");
                 }
                 else
                 {
                     if (dataCount > 0)
                     {
                         TPrimary selectedData = (TPrimary)(dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1) ??
-                            throw new TerminauxInternalException("Attempted to render info about null data"));
+                            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA")));
                         finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
                     }
                     else
-                        finalInfoRendered = "No info.";
+                        finalInfoRendered = LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_BASE_NOINFO");
                 }
             }
             catch
             {
-                finalInfoRendered = "Failed to get information.";
+                finalInfoRendered = LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_INFOFAILED");
             }
             return finalInfoRendered;
         }
@@ -486,14 +486,14 @@ namespace Terminaux.Inputs.Interactive
             // Populate appropriate bindings, depending on the SecondPaneInteractable value
             List<InteractiveTuiBinding<TPrimary, TSecondary>> finalBindings =
             [
-                new InteractiveTuiBinding<TPrimary, TSecondary>("Keybindings", ConsoleKey.K, null),
-                new InteractiveTuiBinding<TPrimary, TSecondary>("Exit", ConsoleKey.Escape, null),
+                new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K, null),
+                new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape, null),
             ];
 
             // Populate switch as needed
             if (interactiveTui.SecondPaneInteractable)
                 finalBindings.Add(
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Switch", ConsoleKey.Tab, null)
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SWITCH"), ConsoleKey.Tab, null)
                 );
 
             // Now, check to see if we need to add additional base bindings
@@ -501,19 +501,19 @@ namespace Terminaux.Inputs.Interactive
             {
                 finalBindings.AddRange(
                 [
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go one element up", ConsoleKey.UpArrow, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go one element down", ConsoleKey.DownArrow, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go to the first element", ConsoleKey.Home, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go to the last element", ConsoleKey.End, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go to the previous page", ConsoleKey.PageUp, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go to the next page", ConsoleKey.PageDown, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Search for an element", ConsoleKey.F, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go one line up (informational)", ConsoleKey.W, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go one line down (informational)", ConsoleKey.S, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Read more...", ConsoleKey.I, ConsoleModifiers.Shift, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? "Go one element down" : "Go one element up", PointerButton.WheelUp, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? "Go one element up" : "Go one element down", PointerButton.WheelDown, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>("Do an action on the selected item", PointerButton.Left, PointerButtonPress.Released, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2"), ConsoleKey.UpArrow, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2"), ConsoleKey.DownArrow, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOFIRST2"), ConsoleKey.Home, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOLAST2"), ConsoleKey.End, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2"), ConsoleKey.PageUp, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2"), ConsoleKey.PageDown, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCH"), ConsoleKey.F, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO"), ConsoleKey.W, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO"), ConsoleKey.S, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_READMORE"), ConsoleKey.I, ConsoleModifiers.Shift, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2") : LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2"), PointerButton.WheelUp, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2") : LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2"), PointerButton.WheelDown, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_KEYBINDING_DOACTION"), PointerButton.Left, PointerButtonPress.Released, null),
                 ]);
             }
 
@@ -546,16 +546,16 @@ namespace Terminaux.Inputs.Interactive
         private static bool VerifyInteractiveTui<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             if (interactiveTui is null)
-                throw new TerminauxException("Please provide a base Interactive TUI class and try again.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS"));
 
             // First, check to see if the interactive TUI has no data source
             if ((interactiveTui.PrimaryDataSource is null || interactiveTui.SecondaryDataSource is null ||
                 (interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0)) && !interactiveTui.AcceptsEmptyData)
             {
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(
-                    "The interactive TUI {0} doesn't contain any data source." + "\n\n" +
-                    "This program can't continue." + "\n" +
-                    "Press any key to continue...",
+                    LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE") + "\n\n" +
+                    LanguageTools.GetLocalized("T_COMMON_CANTCONTINUE") + "\n" +
+                    LanguageTools.GetLocalized("T_COMMON_ANYKEY"),
                     interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name);
                 return false;
             }
@@ -573,11 +573,11 @@ namespace Terminaux.Inputs.Interactive
             if (conflicts.Count > 0)
             {
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(
-                    "The interactive TUI {0} has conflicting keyboard or mouse bindings." + "\n\n" +
-                    "The following keybindings or mouse bindings conflict:" + "\n" +
+                    LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1") + "\n\n" +
+                    LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2") + "\n" +
                     "  - {1}" + "\n\n" +
-                    "This program can't continue." + "\n" +
-                    "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
+                    LanguageTools.GetLocalized("T_COMMON_CANTCONTINUE") + "\n" +
+                    LanguageTools.GetLocalized("T_COMMON_ANYKEY"), interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
                 return false;
             }
             return true;

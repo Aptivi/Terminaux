@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -56,7 +56,7 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Installs a new instance of command info class
         /// </summary>
-        /// <param name="Command">Command</param>
+        /// <param name=LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD")>Command</param>
         /// <param name="HelpDefinition">Command help definition</param>
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
@@ -71,7 +71,7 @@ namespace Terminaux.Shell.Commands
         /// <summary>
         /// Installs a new instance of an empty command info class
         /// </summary>
-        /// <param name="Command">Command</param>
+        /// <param name=LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD")>Command</param>
         /// <param name="HelpDefinition">Command help definition</param>
         internal CommandInfo(string Command, string HelpDefinition) :
             this(Command, HelpDefinition, null, null)

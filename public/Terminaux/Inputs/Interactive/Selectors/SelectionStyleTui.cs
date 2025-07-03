@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -306,10 +306,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             // Prompt the user for search term
             var entriesString = allAnswers.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
-            string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)");
+            string keyword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_COMMON_SEARCHPROMPT"));
             if (!RegexTools.IsValidRegex(keyword))
             {
-                InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
                 ui.RequireRefresh();
                 return;
             }
@@ -325,7 +325,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (resultEntries.Length > 1)
             {
                 var choices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
-                idx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
+                idx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("T_INPUT_COMMON_ENTRYPROMPT"));
                 if (idx < 0)
                 {
                     ui.RequireRefresh();
@@ -335,7 +335,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else if (resultEntries.Length == 1)
                 idx = 0;
             else
-                InfoBoxModalColor.WriteInfoBoxModal("No item found.");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"));
 
             // Change the highlighted answer number
             var resultNum = idx >= resultEntries.Length ? highlightedAnswer : resultEntries[idx].itemNum;
@@ -407,7 +407,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (!string.IsNullOrWhiteSpace(choiceDesc))
             {
                 string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
-                InfoBoxModalColor.WriteInfoBoxModal("Item info", finalSidebarText);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_IS_SELECTION_ITEMINFO"), finalSidebarText);
                 ui.RequireRefresh();
             }
         }
@@ -685,7 +685,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             categories = [.. answers, .. altAnswers];
             allAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
             if (allAnswers.All((ici) => ici.ChoiceDisabled))
-                throw new TerminauxException("The selection style requires that there is at least one choice enabled.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM"));
 
             // Install values
             this.question = question;

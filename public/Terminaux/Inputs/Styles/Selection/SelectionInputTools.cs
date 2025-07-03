@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -131,9 +131,9 @@ namespace Terminaux.Inputs.Styles.Selection
         {
             InputChoiceCategoryInfo[] selectionsCategory =
             [
-                new InputChoiceCategoryInfo("General choices",
+                new InputChoiceCategoryInfo(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_GENERALCHOICES"),
                 [
-                    new InputChoiceGroupInfo("Available choices", selections)
+                    new InputChoiceGroupInfo(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_AVAILABLECHOICES"), selections)
                 ])
             ];
             return RenderSelectionsInternal(selectionsCategory, left, top, currentSelection, currentSelections, selectionChoices, width, sliderInside, altChoicePos, swapSelectedColors, foregroundColor, backgroundColor, selectedForegroundColor, selectedBackgroundColor, altForegroundColor, altBackgroundColor, altSelectedForegroundColor, altSelectedBackgroundColor, disabledForegroundColor, disabledBackgroundColor);
@@ -394,7 +394,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
                 }
             }
-            throw new TerminauxInternalException("Can't get category and group in choice number {0}.", choiceNum);
+            throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR"), choiceNum);
         }
     }
 }

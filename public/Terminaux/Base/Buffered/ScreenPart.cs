@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -119,7 +119,7 @@ namespace Terminaux.Base.Buffered
         public bool GetBufferVisibility(int buffer)
         {
             if (buffer < 0 || buffer >= dynamicBuffers.Count)
-                throw new TerminauxException("Buffer index may not be less than zero or greater than {0} buffers.".FormatString(dynamicBuffers));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE").FormatString(dynamicBuffers));
             return dynamicBuffers[buffer].visible;
         }
 
@@ -132,7 +132,7 @@ namespace Terminaux.Base.Buffered
         public void SetBufferVisibility(int buffer, bool visible)
         {
             if (buffer < 0 || buffer >= dynamicBuffers.Count)
-                throw new TerminauxException("Buffer index may not be less than zero or greater than {0} buffers.".FormatString(dynamicBuffers));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE").FormatString(dynamicBuffers));
             dynamicBuffers[buffer] = (visible, dynamicBuffers[buffer].buffer);
         }
 

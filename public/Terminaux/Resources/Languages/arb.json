@@ -1,0 +1,2912 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR1",
+      "text": "khata eam fi Terminaux!"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR2",
+      "text": "khata dakhili fi Terminaux!"
+    },
+    {
+      "loc": "T_EXCEPTION_UNKNOWNERROR3",
+      "text": "khata ghayr maeruf"
+    },
+    {
+      "loc": "T_EXCEPTION_NOTIMPLEMENTED",
+      "text": "lam yatima altanfidh biedu."
+    },
+    {
+      "loc": "T_COMMON_CANTCONTINUE",
+      "text": "la yumkin lihadha albarnamaj almutabieatu."
+    },
+    {
+      "loc": "T_COMMON_ANYKEY",
+      "text": "adghat ealaa 'ayi miftah lilmutabaeati..."
+    },
+    {
+      "loc": "T_COMMON_EXCEPTION_INVALIDTYPE",
+      "text": "nawe ghayr salih"
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPART",
+      "text": "yajib tahdid juz' alshaashati."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENNAME",
+      "text": "yajib tahdid asm alshaashati."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE",
+      "text": "faharas aljuz' almuhadad kharij alnitaqi."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME",
+      "text": "asm aljuz' almuhadad ghayr mawjudi."
+    },
+    {
+      "loc": "T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND",
+      "text": "aljuz' almuhadad ghayr mawjudi."
+    },
+    {
+      "loc": "T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE",
+      "text": "yajib 'alaa yakun fahras almakhzan almuaqat 'aqala min sifr 'aw 'akbar min {0} min almakhazin almuaqatati."
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN",
+      "text": "alshaashat ghayr muhadadatin."
+    },
+    {
+      "loc": "T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC",
+      "text": "alshaashat ghayr dawriatin."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE",
+      "text": "hawil almustakhdim tashghil tatbiq Terminaux biastikhdam tarafiat ghayr mutawafiqatin."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1",
+      "text": "yustakhdam hadha altatbiq mizat wahdat altahakum almuasaeat alati tuafiruha Terminaux walati tatatalab mizat ghayr madeumat min qibal almahataat ghayr altawafuqiati."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2",
+      "text": "alhalu almuhtamali: aistakhdim muhaki tarafiatan mnasban 'aw rajie 'iiedadat almahatat litaeyin nawe almahatat 'iilaa nawe mukhtalif ean \"ghayr altawafuqiati\". nusi biaistikhdam muhakayat altarafia \"vt100\" litahqiq 'aqsaa aistifadatan min hadha altatbiqi."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE",
+      "text": "hawal almustakhdam tashghil tatbiq Terminaux ealaa nawe tarafiat mahzura."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1",
+      "text": "nawe wahdat altahakum alati tastakhdimuha halyan, {0}, mahzuru: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE",
+      "text": "nawe wahdat altahakum alati tastakhdimuha halyan, {0}, mahzuru: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE",
+      "text": "hawal almustakhdim tashghil tatbiq Terminaux ealaa mahaki tarafiat mahzuri."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1",
+      "text": "muhaki altarafiat aladhi tastakhdimuh halyan, {0}, mahzuru: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE",
+      "text": "muhaki altarafiat aladhi tastakhdimuh halyan, {0}, mahzuru: {1}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE",
+      "text": "nawe altarafia {0} la yadeam 256 lwnan wfqan li terminfo"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE",
+      "text": "hawil almustakhdim tashghil tatbiq Terminaux ealaa MinTTY alkhasi bi Git Bash bidun winpty."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1",
+      "text": "satahtaj 'iilaa astikhdam winpty litatamakan min astikhdam hadha albarnamaji. 'iidha kunt mtakdan min 'anak la tastakhdam Git Bash, fata'akad min astikhdam tarafiat Windows munasibatin."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE",
+      "text": "la yaemal tahdid mawdie wahdat altahakum bisabab khata fi al'iidkhali/al'iikhraji, lidha qad yatasaraf hadha altatbiq bishakl ghayr sahihin."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE",
+      "text": "la yaemal tahdid mawdie wahdat altahakum bishakl sahihin, lidha qad yatasaraf hadha altatbiq bishakl ghayr sahihin."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1",
+      "text": "wahdat altahakum ladayk saghirat jdan bihayth la taemal bishakl sahihin: {0}x{1} | buff: {2}x{3} | min: {4}x{5}"
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2",
+      "text": "litajribat 'afdala, ghyr hajm nafidhat wahdat altahakum 'athna' wujudik ealaa hadhih alshaashati. adghat ealaa 'ayi miftah lilmutabaeati..."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY",
+      "text": "altajmie ghayr mutawafiri."
+    },
+    {
+      "loc": "T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT",
+      "text": "{0} la yumkin almutabaeatu."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION",
+      "text": "nawe wahdat altahakum yadeam alkitabat al'asasiat faqat."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION",
+      "text": "tabieat nawe wahdat altahakum ghayr maerufatin."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION",
+      "text": "yustakhdam hadha altatbiq tasalsilat hurub VT, walakin Terminal.app la yadeam 'alwan 255 wal'alwan alhaqiqiatu."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION",
+      "text": "nawe wahdat altahakum la yadeam 'alwan 256."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY",
+      "text": "la yumkin altasfiat bidun 'ayi astielami."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY",
+      "text": "la yumkin altasfiat biastikhdam astielam ghayr salihi."
+    },
+    {
+      "loc": "T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION",
+      "text": "la yujad taebir fi murashah wahdat altahakumi."
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED",
+      "text": "la yumkin astieadat simat termios aljadidat liwade raw: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED",
+      "text": "la yumkin alhusul ealaa ealamat wasif almilafa: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED",
+      "text": "la yumkin dabt ealamat wasif almilafa ealaa qira'at ghayr hazri: {0}"
+    },
+    {
+      "loc": "T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED",
+      "text": "la yumkin dabt ealamat wasif almilafa ealaa qira'at hazri: {0}"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO",
+      "text": "la yumkin alhusul ealaa maelumat almurkib min altamthil almuqdam."
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH",
+      "text": "tamthil almurkib ghayr salih eind [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY",
+      "text": "altaradud ghayr salih eind [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION",
+      "text": "almudat ghayr salihat eind [{0}.{1}]"
+    },
+    {
+      "loc": "T_CE_MISC_EXCEPTION_NULLTARGET",
+      "text": "la yajib 'an yakun alhadaf farghan."
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS",
+      "text": "yajib 'alaa takun alqimat alquswaa [{0}] 'asghar min qimat altaqadum [{1}]."
+    },
+    {
+      "loc": "T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX",
+      "text": "yajib 'an takun qimat altaqadum [{0}] bayn 0 waqima {1}."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM",
+      "text": "la yumkin wade hadha almueyin fi nihayat alsilsilat dun tahdid mueaml wahidi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM",
+      "text": "la yumkin 'an yakhudh hadha almueyin rqman faqat kamaeamila."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT",
+      "text": "la yumkin 'an yakhudh hadha almueyin rqman min 1 'iilaa 9."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR",
+      "text": "la yumkin 'an yakhudh hadha almueyin hrfan faqat kamaeamil."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST",
+      "text": "hadha almueayin yahtaj 'iilaa thabit eadad sahihin."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST",
+      "text": "hadha almueayin yahtawi ealaa thabit eadad sahih ghayr salihi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST",
+      "text": "la yumkn wade hadha almueayin fi nihayat alsilsilat dun tahdid thabit harafa."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR",
+      "text": "la yumkn 'iidafat 'akthar min harf wahidi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY",
+      "text": "hadha almueayin yahtaj 'iilaa majmueat 'ahrufu."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH",
+      "text": "aleard ghayr salihin."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE",
+      "text": "la yumkn wade hadha almueayin fi nihayat alsilsilat dun tahdid nawea."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE",
+      "text": "la yumkn muealajat tasalsul fargh."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS",
+      "text": "la yumkn muealajat mueamlat farighatin."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED",
+      "text": "yajib 'an yumthl hadha aleilm ealamat naqisin."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA",
+      "text": "la tazal hunak bayanat 'iidafiat baed alfahras {0} min {1} liltansiqi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR",
+      "text": "althaabit alsahih lilharf ghayr salihi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST",
+      "text": "althaabit alsahih ghayr salihi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR",
+      "text": "la yumkn dafe mutghyr ghayr mawjudi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO",
+      "text": "hadhih eamaliat thunayiyatun, walakina eadad almueamlat almudrjt fi qayimat alaintizar hu {0}."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID",
+      "text": "althaabit alsahih llmueaml al'awal ghayr salihi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID",
+      "text": "althaabit alsahih llmueaml althaani ghayr salihi."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE",
+      "text": "hadhih eamaliat 'uhadiatun, walakina eadad almueamlat almudrjt fi qayimat alaintizar hu {0}."
+    },
+    {
+      "loc": "T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID",
+      "text": "altamthil alshurtiu {0} ghayr salihi."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_BYTESREAD",
+      "text": "taeadhir qira'at eadad albayitat almatlubi."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_STRINGTABLE",
+      "text": "jadwal nisiyin ghayr salihi!"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_HEADERMAGIC",
+      "text": "sahar ras ghayr salih"
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_PARAMONNONSTRING",
+      "text": "la yumkin muealajat almuealimat ealaa nawe qimat ghayr nasiyatin. qimat altiedad hi {0} walnawe hu {1}."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED",
+      "text": "antahaa muerrf altaakhir qabl 'awanihi."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID",
+      "text": "muerrf altaakhir ghayr salihin."
+    },
+    {
+      "loc": "T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER",
+      "text": "qimat altaakhir laysat rqman."
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE",
+      "text": "nawe alqudrat ghayr maeruf '{0}'"
+    },
+    {
+      "loc": "T_CT_TERMINFO_EXCEPTION_LOADERFAILED",
+      "text": "la yumkin tahmil {0}"
+    },
+    {
+      "loc": "T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE",
+      "text": "allawn kharij alnitaqi."
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL",
+      "text": "hal 'ant muta'akid min 'ana hadha altadaruj lays farghan?"
+    },
+    {
+      "loc": "T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED",
+      "text": "hadid lwnan wahdan ealaa al'aqala."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOSOURCE",
+      "text": "la yumkin tahwil masdar farghi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTYPE",
+      "text": "la yumkin altahwil 'iilaa nawe farghin."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL",
+      "text": "yajib tahdid namudhaj lawn masdar muhadadun, walays alnumudhaj al'asasiu."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL",
+      "text": "lays namudhaj lun."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL",
+      "text": "yajib tahdid namudhaj lawn hadaf muhadadin, walays alnumudhaj al'asasiu."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL",
+      "text": "lays namudhaj lawn hadafun."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_SAMEMODEL",
+      "text": "la yumkin tahwil namudhaj allawn nafsihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBFAILED",
+      "text": "la yumkin altahwil 'iilaa RGB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED",
+      "text": "la yumkin altahwil min namudhaj allawn al'asasii."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED",
+      "text": "la yumkin altahwil 'iilaa CMYK."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYFAILED",
+      "text": "la yumkin altahwil 'iilaa CMY."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLFAILED",
+      "text": "la yumkin altahwil 'iilaa HSL."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVFAILED",
+      "text": "la yumkin altahwil 'iilaa HSV."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBFAILED",
+      "text": "la yumkin altahwil 'iilaa RYB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQFAILED",
+      "text": "la yumkin altahwil 'iilaa YIQ."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVFAILED",
+      "text": "la yumkin altahwil 'iilaa YUV."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZFAILED",
+      "text": "la yumkin altahwil 'iilaa XYZ."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYFAILED",
+      "text": "la yumkin altahwil 'iilaa YXY."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED",
+      "text": "la yumkin altahwil 'iilaa HunterLab."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED",
+      "text": "la yumkin altahwil 'iilaa CieLab."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED",
+      "text": "la yumkin altahwil 'iilaa CieLuv."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED",
+      "text": "la yumkin altahwil 'iilaa CieLch."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBFAILED",
+      "text": "la yumkin altahwil 'iilaa HWB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED",
+      "text": "la yumkin altahwil min RGB."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CMYK!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CMY!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa HSL!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa HSV!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa RYB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa YIQ!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa YUV!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa XYZ!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa YXY!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa HunterLab!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CieLab!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CieLuv!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa CieLch!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB",
+      "text": "la yumkin tahwil namudhaj RGB farigh 'iilaa HWB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK",
+      "text": "la yumkin tahwil namudhaj CMYK farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY",
+      "text": "la yumkin tahwil namudhaj CMY farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL",
+      "text": "la yumkin tahwil namudhaj HSL farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV",
+      "text": "la yumkin tahwil namudhaj HSV farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB",
+      "text": "la yumkin tahwil namudhaj RYB farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ",
+      "text": "la yumkin tahwil namudhaj YIQ farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV",
+      "text": "la yumkin tahwil namudhaj YUV farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ",
+      "text": "la yumkin tahwil namudhaj XYZ farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY",
+      "text": "la yumkin tahwil namudhaj YXY farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB",
+      "text": "la yumkin tahwil namudhaj HunterLab farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB",
+      "text": "la yumkin tahwil namudhaj CieLab farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV",
+      "text": "la yumkin tahwil namudhaj CieLuv farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH",
+      "text": "la yumkin tahwil namudhaj CieLch farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB",
+      "text": "la yumkin tahwil namudhaj HWB farigh 'iilaa RGB!"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER",
+      "text": "yajib 'an yakun almuraqib 'iimaa 2 'aw 10"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT",
+      "text": "almisbah ghayr salih"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE",
+      "text": "la yumkin alhusul ealaa marajie min aljadwal"
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER",
+      "text": "muhadad lawn ghayr salih \"{0}\". 'iidha kunt tustakhdam 256 lwnan, fasatahtaj 'iilaa 'iidkhal qimat mujabat min 0 'iilaa 255 'aw asm lawn salihi. 'iidha kunt tustakhdam lwnan hqyqyan, fasatahtaj 'iimaa 'iilaa kitabat muhadad lawn salihin, mithl RRR;GGG;BBB, 'aw ramz lawn yasil 'iilaa 16777215."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL",
+      "text": "mustawaa allawn al'ahmar kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL",
+      "text": "mustawaa allawn al'akhdar kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL",
+      "text": "mustawaa allawn al'azraq kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER",
+      "text": "muhdid allawn alsudasii eashri \"{0}\" ghayr salihin. yajib 'an yabda hadha almuhdid bialwasam. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH",
+      "text": "tul allawn alsudasii eashari \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE",
+      "text": "la yumkin tahlil allawn alsudasii eashri \"{0}\"."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER",
+      "text": "muhdid lawn CieLab \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL",
+      "text": "qimat L kharij alnitaq (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL",
+      "text": "qimat A kharij alnitaq (-128.0 -> 128.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL",
+      "text": "qimat B kharij alnitaq (-128.0 -> 128.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED",
+      "text": "muhdid lawn CieLab \"{0}\" ghayr salihi. la yumkin 'an yazid eadad eanasir almuhdid ean thalathati. ta'akad min 'ana altansiq sahihun."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER",
+      "text": "muhadad lawn CieLch ghayr salih \"{0}\". ta'akad min 'ana altansiq sahihun."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL",
+      "text": "qimat C kharij alnitaq (-128.0 -> 128.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL",
+      "text": "qimat H kharij alnitaq (-128.0 -> 128.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED",
+      "text": "muhadad lawn CieLch ghayr salih \"{0}\". yajib 'alaa yazid eadad eanasir almuhadad ean thalathati. ta'akad min 'ana altansiq sahihun."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER",
+      "text": "muhadad lawn CieLuv ghayr salih \"{0}\". ta'akad min 'ana altansiq sahihun."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL",
+      "text": "qimat U kharij alnitaq (-134.0 -> 220.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL",
+      "text": "qimat V kharij alnitaq (-140.0 -> 122.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED",
+      "text": "muhdid lawn CieLuv ghayr salih \"{0}\". yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER",
+      "text": "muhdid lawn CMY ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL",
+      "text": "mustawaa allawn alsamawii kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL",
+      "text": "mustawaa allawn al'arjwanii kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL",
+      "text": "mustawaa allawn al'asfar kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED",
+      "text": "muhdid lawn CMY ghayr salih \"{0}\". yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER",
+      "text": "muhdid lawn CMYK ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER",
+      "text": "muhadad lawn HSL ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL",
+      "text": "mustawaa tadruj allawn kharij alnitaq (0' -> 360' darajatan)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL",
+      "text": "mustawaa altashabue kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL",
+      "text": "mustawaa al'iida'at kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED",
+      "text": "muhadad lawn HSL ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER",
+      "text": "muhadad lawn HSV ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL",
+      "text": "mustawaa alqimat kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED",
+      "text": "muhdid lawn HSV ghayr salih \"{0}\". la yajib 'an yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER",
+      "text": "muhdid lawn HWB ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL",
+      "text": "mustawaa albayad kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL",
+      "text": "mustawaa alsawad kharij alnitaq (0 -> 100)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED",
+      "text": "muhdid lawn HWB ghayr salih \"{0}\". yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER",
+      "text": "muhdid lawn HunterLab ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL",
+      "text": "qimat A kharij alnitaq (-128.0 -> 127.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL",
+      "text": "qimat B kharij alnitaq (-128.0 -> 127.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED",
+      "text": "muhdid lawn HunterLab ghayr salih \"{0}\". yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER",
+      "text": "muhdid lawn YUV ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL",
+      "text": "mustawaa alsutue kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL",
+      "text": "mustawaa allawn (U) kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL",
+      "text": "mustawaa allawn (V) kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED",
+      "text": "muhadad lawn YUV ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER",
+      "text": "muhadad lawn YIQ ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL",
+      "text": "mustawaa altawr almutazamin kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL",
+      "text": "mustawaa altarbie kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED",
+      "text": "muhadad lawn YIQ ghayr salih \"{0}\". yajib 'alaa yatajawaz hadha almuhadad thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER",
+      "text": "muhadad lawn ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi, 'ay raqm min 0 'iilaa 255 'iidha kunt tustakhdam 255 lwnan 'aw tasalsul VT 'iidha kunt tustakhdam lwnan hqyqyan kama yali."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED",
+      "text": "muhadad lawn ghayr salih \"{0}\". la yajuz 'an yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR",
+      "text": "hadha allawn lawn 'usaliy bialfieli."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER",
+      "text": "muhdid lawn RYB ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL",
+      "text": "mustawaa allawn al'ahmar kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL",
+      "text": "mustawaa allawn al'asfar kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL",
+      "text": "mustawaa allawn al'azraq kharij alnitaq (0 -> 255)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
+      "text": "muhdid lawn RYB ghayr salih \"{0}\". la yajuz 'an yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "muhdid lawn XYZ ghayr salih \"{0}\". ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "qimat X kharij alnitaq (0.0 -> 95.047)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "qimat Y kharij alnitaq (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "qimat Z kharij alnitaq (0.0 -> 108.883)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "muhdid lawn XYZ \"{0}\" ghayr salihin. yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
+      "text": "muhdid lawn XYZ \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
+      "text": "qimat X kharij alnitaq (0.0 -> 95.047)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
+      "text": "qimat Y kharij alnitaq (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
+      "text": "qimat Z kharij alnitaq (0.0 -> 108.883)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
+      "text": "muhdid lawn XYZ \"{0}\" ghayr salihin. yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
+      "text": "muhdid lawn YXY \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL",
+      "text": "qimat Y1 kharij alnitaq (0.0 -> 100.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL",
+      "text": "qimat X kharij alnitaq (0.0 -> 1.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL",
+      "text": "qimat Y2 kharij alnitaq (0.0 -> 1.0)."
+    },
+    {
+      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED",
+      "text": "muhdid lawn YXY \"{0}\" ghayr salihi. la yajib 'an yazid eadad eanasir almuhdid ean thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE",
+      "text": "nawe allawn ghayr salih"
+    },
+    {
+      "loc": "T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER",
+      "text": "muhadad allawn liqabiliat alruwyat ghayr salih"
+    },
+    {
+      "loc": "T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE",
+      "text": "nawe 'uhadii allawn ghayr salih"
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR1",
+      "text": "la yumkin tahdid kayfiat tahwil {0} min {1} 'iilaa lun."
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_READERROR2",
+      "text": "la yumkin tahdid kayfiat tahwil {0} min nawe ghayr maeruf 'iilaa lun."
+    },
+    {
+      "loc": "T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR",
+      "text": "la yumkin alhusul ealaa alluwni."
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_SETBACKGROUND",
+      "text": "fashil fi taeyin alkhalfia"
+    },
+    {
+      "loc": "T_COLOR_EXCEPTION_COLORISNULL",
+      "text": "lam yatima tawfir mathil alluwn."
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_EXIT",
+      "text": "khuruj"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_KEYBINDINGS",
+      "text": "rawabit almafatih"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_FINDNEXT",
+      "text": "bahath ean altaali"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP1",
+      "text": "tahrik li'aelaa"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOUP2",
+      "text": "aintiqal eunsur wahid li'aelaa"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN1",
+      "text": "tahrik li'asfal"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GODOWN2",
+      "text": "aintiqal eunsur wahid li'asfal"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1",
+      "text": "alsafhat alsaabiqa"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2",
+      "text": "aintiqal 'iilaa alsafhat alsaabiqa"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1",
+      "text": "alsafhat altaalia"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2",
+      "text": "aintiqal 'iilaa alsafhat altaalia"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST1",
+      "text": "aintiqal 'iilaa albidaya"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOFIRST2",
+      "text": "aintiqal 'iilaa aleunsur al'awal"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST1",
+      "text": "aintiqal 'iilaa alnihaya"
+    },
+    {
+      "loc": "T_INPUT_COMMON_KEYBINDING_GOLAST2",
+      "text": "aintiqal 'iilaa aleunsur al'akhir"
+    },
+    {
+      "loc": "T_INPUT_COMMON_SEARCHPROMPT",
+      "text": "aktub mustalah bahth (yadeam altaebirat alnamatiata)."
+    },
+    {
+      "loc": "T_INPUT_COMMON_INVALIDQUERY",
+      "text": "astielamuk lays tebyran nmtyan salhan."
+    },
+    {
+      "loc": "T_INPUT_COMMON_ENTRYPROMPT",
+      "text": "aikhtar 'ahad al'iidkhalati:"
+    },
+    {
+      "loc": "T_INPUT_COMMON_NOITEMS",
+      "text": "lam yatima aleuthur ealaa eunsur."
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SEARCH",
+      "text": "albahth ean eunsur"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO",
+      "text": "aintaqal stran wahdan li'aelaa (maelumati)"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO",
+      "text": "aintaqal stran wahdan li'asfal (maelumati)"
+    },
+    {
+      "loc": "T_INPUT_IS_COMMON_KEYBINDING_SWITCH",
+      "text": "tabdil"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS",
+      "text": "qayimat min {0} 'alwan muhadadat msbqan"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_GRAY",
+      "text": "ramadi"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY",
+      "text": "shafaafia"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_SHADETINTFRAME",
+      "text": "tazlil watudraj"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_COLORINFOFRAME",
+      "text": "maelumat allawn"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_TRANSFORMFRAME",
+      "text": "tahwil"
+    },
+    {
+      "loc": "T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE",
+      "text": "nawe lawn ghayr salih fi muhadad al'alwan"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTNAMEPROMPT",
+      "text": "aktub asm alkhata. sayatimu tahwiluh 'iilaa 'ahruf saghiratin."
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_NOFONT",
+      "text": "alkhatu ghayr mawjudi."
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPT",
+      "text": "akhtar khata figlet min alqayimat 'adnah"
+    },
+    {
+      "loc": "T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE",
+      "text": "aikhtiar alkhati"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR",
+      "text": "almuhadad ghayr muhadad"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_READMORE",
+      "text": "aqra almazida..."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS",
+      "text": "rawabit mafatih alqayima"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND",
+      "text": "altanaqul"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_KEYBINDING_EXIT",
+      "text": "alkhuruj min wajihat almustakhdim altafaeulia (TUI)"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_ITEMINFO",
+      "text": "maelumat aleunsur"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "yatatalab namat aliaikhtiar tafeil khiar wahid ealaa al'aqala."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT",
+      "text": "aktub asm 'adat altadwiri. sayatimu tahwiluh 'iilaa 'ahruf saghiratin."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_NOSPINNER",
+      "text": "'adat altadwir ghayr mawjudatin."
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT",
+      "text": "akhtar 'adat tadwir min alqayimat 'adnah"
+    },
+    {
+      "loc": "T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE",
+      "text": "aikhtiar 'adaat altadwir"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOINFO",
+      "text": "la tujad maelumatun."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_BASE_NOSTATUS",
+      "text": "la tujad hala"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE",
+      "text": "hawalt eard eanasir wajihat almustakhdim altafaeulia (TUI) liljuz' althaanawii ealaa wajihat mustakhdim tafaeulia (TUI) tasmah bialtafaeul min juz' wahid faqat."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES",
+      "text": "hawlt eard maelumat ealaa allawhat althaanawiat fi wajihat mustakhdim tafaeuliat tasmah bialtafaeul min lwhin, mimaa 'adaa 'iilaa 'iifsad eard altahdid hunaka."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA",
+      "text": "hawlt eard maelumat hawl bayanat farighatin."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_INFOFAILED",
+      "text": "fshlt fi alhusul ealaa almaelumati."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_KEYBINDING_DOACTION",
+      "text": "nffdh 'ijra'an ealaa aleunsur almuhadadi."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS",
+      "text": "yurjaa tawfir fiat wajihat almustakhdim altafaeuliat al'asasiat walmuhawalat maratan 'ukhraa."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE",
+      "text": "la tahtawi wajihat almustakhdim altafaeulia {0} ealaa 'ayi masdar bayanatin."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1",
+      "text": "tahtawi wajihat almustakhdim altafaeulia {0} ealaa rawabit mutaearidat lilawhat almafatih 'aw almaws."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2",
+      "text": "tataearad rawabit almafatih 'aw rawabit almawis altaaliati:"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_CRASH",
+      "text": "taeatalat wajihat almustakhdim alnasiyata. eadtan ma takun almushkilat fi altatbiqi."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED",
+      "text": "lam yatima tahdid wajihat almustakhdim alnasiyati."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY",
+      "text": "wajihat almustakhdim alnasiyat hadhih [{0}] ghayr jahizat li'ana halataha hi {1}."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS",
+      "text": "yujad {0} rabit miftah mutaearid fi wajihat almustakhdim alnasiya [{1}]."
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_NOEVENTCTX",
+      "text": "lam yatima tahdid siaq hadath almuashiri."
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW",
+      "text": "la yajuz 'an yakun mawdie albidayat 'aqala min alsafri."
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW",
+      "text": "la yajuz 'an yakun mawdie alnihayat 'aqala min alsafri."
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND",
+      "text": "la yajuz 'an yakun mawdie albidayat s 'akbar min mawdie alnihayat si."
+    },
+    {
+      "loc": "T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND",
+      "text": "la yajuz 'an yakun mawdie albidayat s 'akbar min mawdie alnihayat sa."
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME",
+      "text": "lam yatima tahdid aism al'iidkhali."
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_KEYBINDING_ADVANCE",
+      "text": "altaqadumu."
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPT",
+      "text": "tatatalab safhat aleard altaqdimii hadhih aistifa' almadkhalat altaaliat qabl alaintiqal 'iilaa alsafhat altaaliati."
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE",
+      "text": "matlub 'iidkhal"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY",
+      "text": "lam yatima 'iidkhal wahid 'aw 'akthar min almadkhalat altaaliat bishakl sahihin:"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE",
+      "text": "madkhal ghayr sahih"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDED",
+      "text": "lam yatima taqdim almadkhalat almatlubati. satahtaj 'iilaa 'iidkhal qiam almadkhalat altaaliati:"
+    },
+    {
+      "loc": "T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE",
+      "text": "lam yatima taqdim almadkhal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS",
+      "text": "la yumkin eard khiar bidun 'iijabat wabidun 'iijabat badilatin."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM",
+      "text": "yatatalab namat aliaikhtiar tafeil khiar wahid ealaa al'aqala."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES",
+      "text": "la yumkinuk taqdim 'iijabat bi'akthar min harf wahid fi wade alhiraf alwahidi."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_WRONGANSWER",
+      "text": "'iijabat khatiatun. yurja almuhawalat maratan 'ukhraa."
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT",
+      "text": "naql lilysar"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT",
+      "text": "naql lilyamin"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT",
+      "text": "'iidraj"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE",
+      "text": "aistibdal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL",
+      "text": "aistibdal alkuli"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_STATUS_READY",
+      "text": "jahiz"
+    },
+    {
+      "loc": "T_INPUT_STYLES_EDITORS_NOTFOUND",
+      "text": "ghayr mawjudi. tahaqaq min bina' aljumlat 'aw wsse nitaq bahthika."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO",
+      "text": "maelumat alraqm"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE",
+      "text": "'iizala"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT",
+      "text": "aistibdal alkuli"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT",
+      "text": "aktub raqm albayit bialqimat alsudasiat eishriatan."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1",
+      "text": "raqm albayit almuhadad ghayr salihi."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2",
+      "text": "bayat {0} ghayr salihi."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE",
+      "text": "aktub raqm albayit bialqimat alsudasiat eishriatan liastibdal {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED",
+      "text": "aktub raqm albayit bialqimat alsudasiat eashriatan liastibdal {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT",
+      "text": "aktub baytan 'aw majmueat baytat mafsulatan bimasafati."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED",
+      "text": "albaytat matlubat lilbahthi, walakinak lam tudkhl wahdan."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION",
+      "text": "almawdie"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL",
+      "text": "sit eashri"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL",
+      "text": "thamani"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER",
+      "text": "alraqm"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY",
+      "text": "thunayiy"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE",
+      "text": "maelumat alraqm"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT",
+      "text": "muhtawaa farigh"
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1",
+      "text": "la yajuz 'an yakun raqm bayat albidayat almuhadad 'akbar min hajm almilafa."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1",
+      "text": "la yajuz 'an yakun raqm bayat alnihayat almuhadad 'akbar min hajm almilafa."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER",
+      "text": "raqm albayit almuhadad ghayr salihi."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1",
+      "text": "la yajuz 'an yakun raqm albayit almuhadad 'akbar min {0} 'aw 'asghar man 1."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2",
+      "text": "la yajuz 'an yakun raqm albayit almuhadad 'akbar min {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL",
+      "text": "la yumkin 'iijra' hadhih aleamaliat ealaa masfufat farigha."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER",
+      "text": "yajib 'an yabda raqm albayit bialraqm 1."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2",
+      "text": "la yajuz 'an yakun raqm bayt albidayat almuhadad 'akbar min {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2",
+      "text": "la yajuz 'an yakun raqm bayat alnihayat almuhadad 'akbar min {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER",
+      "text": "'adkhil..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE",
+      "text": "aihdhaf huna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE",
+      "text": "hadhf satr"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING",
+      "text": "'iiqaf al'iidkhal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE",
+      "text": "satr jadid"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE",
+      "text": "masafatan lilkhalf"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE",
+      "text": "hadhf"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT",
+      "text": "kitabat alsilsilat alnasiyat lilbahth"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT",
+      "text": "kitabat alsilsilat alnasiyat albadila"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT",
+      "text": "kitabat silsilat nasiyat lilbahth. yadeam hadha altaebirat alnamatiata."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED",
+      "text": "alsilsilat alnasiyat matlubat lilbahthi, walakinak lam tudkhl wahidatan."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID",
+      "text": "hadhih alsilsilat alnasiyat lilbahth laysat tebyran nmtyan salhan."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES",
+      "text": "'astur"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN",
+      "text": "eamuwd"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW",
+      "text": "saf"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER",
+      "text": "la yajuz 'an yakun raqm alsatr almuhadad 'akbar min {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL",
+      "text": "la yumkin 'iijra' hadhih aleamaliat ealaa qayimat al'astur alfarighati."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO",
+      "text": "yaerid almazid min almaelumat fi murabae almaelumat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP",
+      "text": "yantaqil stran wahdan li'aelaa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN",
+      "text": "yantaqil stran wahdan li'asfal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT",
+      "text": "yantaqil 'iilaa alsafhat alsaabiqat min alnasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT",
+      "text": "yantaqil 'iilaa alsafhat altaaliat min alnasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR",
+      "text": "yursl alqima"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL",
+      "text": "yursl alqiam"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR",
+      "text": "yughlq bidun 'iirsal alqima"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL",
+      "text": "yughlq bidun 'iirsal alqiam"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT",
+      "text": "yunfdh 'ijra'an 'aw yuhdd khyaran"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP",
+      "text": "yunqs alqimat 'aw yuhrk thalathat 'astur min alnasi li'aelaa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN",
+      "text": "yazid alqimat 'aw yuhrk thalathat 'astur min alnasi li'asfal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE",
+      "text": "alkhiar alsaabiq 'aw al'astur althalathat alsaabiqat min alnasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE",
+      "text": "alkhiar altaali 'aw al'astur althalathat altaaliat min alnasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE",
+      "text": "yunqs alqimat alhalia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE",
+      "text": "yazid alqimat alhalia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE",
+      "text": "yudbt alqimat ealaa alhadi al'adnaa lilqima"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE",
+      "text": "yudbt alqimat ealaa alhadi al'aqsaa lilqima"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT",
+      "text": "yudbt altarkiz alhaliu ealaa eunsur alqimat altaali"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT",
+      "text": "yudbt altarkiz alhaliu ealaa eunsur alqimat alsaabiq"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON",
+      "text": "yuntql 'iilaa alziri alsaabiq"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON",
+      "text": "yuntql 'iilaa alziri altaali"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP",
+      "text": "alziru alsaabiq 'aw al'astur althalathat alsaabiqat min alnasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN",
+      "text": "alzaru altaali 'aw al'astur althalathat altaaliat min alnasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE",
+      "text": "yuntql 'iilaa alsatr al'awal min alnasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE",
+      "text": "yuntql 'iilaa alsatr al'akhir min alnasi"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE",
+      "text": "yuntql 'iilaa alsafhat altaaliat min alnas, 'aw 'iighlaq nafidhat almaelumat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE",
+      "text": "'iighlaq nafidhat almaelumat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION",
+      "text": "tanfidh 'iijra'"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP",
+      "text": "al'astur althalathat alsaabiqa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN",
+      "text": "al'astur althalathat altaalia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS",
+      "text": "alaintiqal 'iilaa alsafhat alsaabiqat min almadkhalat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS",
+      "text": "alaintiqal 'iilaa alsafhat altaaliat min almadkhalat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS",
+      "text": "albahth ean mudkhl"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE",
+      "text": "taghyir qimat almudkhl almuhdd"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP",
+      "text": "alaintiqal 'iilaa khiar wahid lil'aelaa (alkhiar altaali)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN",
+      "text": "alaintiqal 'iilaa khiar wahid lil'asfal (alkhiar alsaabiqi)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST",
+      "text": "alaintiqal 'iilaa alkhiar al'awal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST",
+      "text": "alaintiqal 'iilaa alkhiar al'akhir"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES",
+      "text": "alaintiqal 'iilaa alsafhat alsaabiqat min alkhiarat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES",
+      "text": "alaintiqal 'iilaa alsafhat altaaliat min alkhiarat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES",
+      "text": "albahth ean khiar"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES",
+      "text": "tahdid 'aw 'iilgha' tahdid jamie alkhiarat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR",
+      "text": "la yumkin alhusul ealaa alfiat walmajmueat fi raqm alkhiar {0}."
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_GENERALCHOICES",
+      "text": "khiarat eama"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_AVAILABLECHOICES",
+      "text": "alkhiarat almutaha"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES",
+      "text": "khiarat badila"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM",
+      "text": "takid"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR",
+      "text": "alsharit aljanibiu"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_MORE",
+      "text": "almazid"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS",
+      "text": "takid alaikhtiarat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO",
+      "text": "taghyir alqimat almuhadada ('azrar aliakhtiari)"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS",
+      "text": "'iilgha' alaikhtiarat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP",
+      "text": "alaintiqal 'iilaa eunsur wahid li'aelaa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN",
+      "text": "alaintiqal 'iilaa eunsur wahid li'asfal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT",
+      "text": "alaintiqal 'iilaa aleunsur al'awal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT",
+      "text": "alaintiqal 'iilaa aleunsur al'akhir"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE",
+      "text": "alaintiqal 'iilaa alsafhat alsaabiqa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE",
+      "text": "alaintiqal 'iilaa alsafhat altaalia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH",
+      "text": "albahth ean eunsur"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR",
+      "text": "aliantiqal 'iilaa sharit janibiin"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR",
+      "text": "alantiqal 'iilaa 'asfal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION",
+      "text": "alaintiqal 'iilaa 'aelaa fi murabae suaal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION",
+      "text": "alantiqal 'iilaa 'asfal fi murabae suaal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT",
+      "text": "'iizhar eadad alsafahat walkhiarat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO",
+      "text": "'iizhar maelumat aleunsur"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE",
+      "text": "tahdid 'aw 'iilgha' tahdid khiar"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY",
+      "text": "tahdid jamie aleanasir fi nafs almajmueat walfia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES",
+      "text": "tahdid jamie aleanasir fi jamie almajmueat fi nafs alfia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES",
+      "text": "tahdid jamie aleanasir fi jamie almajmueat fi jamie alfiat"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP",
+      "text": "rafe eunsur wahid 'aw khata eard"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN",
+      "text": "khafd eunsur wahid 'aw khati eard"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION",
+      "text": "tahdith almawdie"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV",
+      "text": "alsaabiq"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT",
+      "text": "altaali"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT",
+      "text": "'iirsal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL",
+      "text": "'iilgha'"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP",
+      "text": "musaeida"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE",
+      "text": "tama"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT",
+      "text": "tahdid"
+    },
+    {
+      "loc": "T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT",
+      "text": "tahdid yadawiun"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO",
+      "text": "maelumat allawn"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM",
+      "text": "muhakaat eamaa al'alwan altaalia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM",
+      "text": "muhakat eamaa al'alwan alsaabiqa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ",
+      "text": "ziadat mueadal altahwil"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ",
+      "text": "khafd mueadal altahwil"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR",
+      "text": "tahdid lawn alwib"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS",
+      "text": "ziadat altaetim"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY",
+      "text": "ziadat alshafaafia"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE",
+      "text": "wadae allawn altaali"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE",
+      "text": "wade allawn alsaabiq"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE",
+      "text": "ziadat alqima"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE",
+      "text": "khafd alqima"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE",
+      "text": "khafd tadraj allawn"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE",
+      "text": "ziadat tadruj allawn"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS",
+      "text": "khafd sutue allawn"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS",
+      "text": "ziadat sutue allawn"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION",
+      "text": "khafd altashabue"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION",
+      "text": "ziadat altashabue"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR",
+      "text": "allawn alsaabiq"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR",
+      "text": "allawn altaali"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST",
+      "text": "'iizhar wa'iikhfa' qayimat al'alwan"
+    },
+    {
+      "loc": "T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE",
+      "text": "eard al'ahruf"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL",
+      "text": "qad la takun hadhih altarkibat fiat tarkib 'asasiatin. hadid trkyban ghayr mashruta."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL",
+      "text": "qad la takun hadhih altarkibat fiat tarkib 'asasiatin. hadad trkyban mshrwtan."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL",
+      "text": "alqimat almuead {0} la tutabq alqimat almutawaqaea {1}"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL",
+      "text": "hadhih altarkibat ghayr mashrutatin."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE",
+      "text": "nawe altarkibat hadha ghayr salihi."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES",
+      "text": "la tujad tarkibat huna. 'udrij wahidatan."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT",
+      "text": "akhtar trkyban tjrybyan."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION",
+      "text": "alkhuruj min muhdd tarkibat aliakhtibari."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
+      "text": "najah hadha alaikhtibari!"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
+      "text": "alqimat almutawaqaeat tutabq alqimat alfieliati."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
+      "text": "fashil hadha aliakhtibari."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
+      "text": "alrisala"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
+      "text": "alqimat almutawaqaeat la tutabq alqimat alfieliati."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID",
+      "text": "qad la turje altariqat fi hadha almufwwd qimatan void"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID",
+      "text": "altariqat fi hadha almufwwd yajib 'an turje qimat void"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID",
+      "text": "altaebir alnamatiu lilmukawin ghayr salihi."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED",
+      "text": "altaebir alnamatiu lilmukawin ghayr mutah."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED",
+      "text": "lawn muqadimat almukawin ghayr mutah."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED",
+      "text": "lawn khalfiat almukawin ghayr mutah."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME",
+      "text": "asm 'adat altamyiz ghayr mutah."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME",
+      "text": "asm 'adat altamyiz al'asasiat ghayr mutah."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1",
+      "text": "la yumkn aleuthur ealaa 'adat altamyiz {0}"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2",
+      "text": "la yumkn aleuthur ealaa 'adat altamyiz"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND",
+      "text": "la yumkn aleuthur ealaa almukwwn {0} fi 'adat altamyiiz {1}"
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID",
+      "text": "'adat altamyiz ghayr salihatin."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME",
+      "text": "asm 'adat altamyiz ghayr mutah."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS",
+      "text": "'adat altamyiz mawjudat musbqan."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS",
+      "text": "la tahtawi 'adat altamyiz ealaa 'ayi mukwnat."
+    },
+    {
+      "loc": "T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER",
+      "text": "la yumkin 'iizalat 'adat altamyiz almudmaja {0}"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED",
+      "text": "aism alsijili ghayr muhadad"
+    },
+    {
+      "loc": "T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED",
+      "text": "madkhalat alsijili ghayr muhadada"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED",
+      "text": "masar milafi alsijili ghayr mutawafiri."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED",
+      "text": "tamthil alsijil bisighat JSON ghayr mutawafiri."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED",
+      "text": "tama tahlil JSON, walakina tamthil alsijil bisighat JSON ghayr mutawafiri."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED",
+      "text": "maelumat alsijili ghayr mutawafiratin."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND",
+      "text": "asm alsijili ghayr mutawafiri. hal 'ant muta'akid min tahdid aliasm fi tamthil JSON?"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND",
+      "text": "madkhalat alsijili ghayr mutawafiratin. hal 'ant muta'akid min tahdid almadkhalat fi tamthil JSON?"
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED",
+      "text": "alsijalu {0} ghayr mawjudi."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY",
+      "text": "la yumkin 'iizalat alsijili aleama, walakin yumkin mashahu."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED",
+      "text": "alsijil lays jz'an min alsijilaat almusajalati."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED",
+      "text": "fashil hadhf alsijili."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED",
+      "text": "madkhal alsijili ghayr mutawafiri."
+    },
+    {
+      "loc": "T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED",
+      "text": "qayimat madkhalat alsijili ghayr mutawafiratin."
+    },
+    {
+      "loc": "T_READER_EXCEPTION_PRINTWRITE",
+      "text": "hunak taearud bayn {0} wa{1}."
+    },
+    {
+      "loc": "T_READER_FAILED",
+      "text": "fashil qari al'iidkhali."
+    },
+    {
+      "loc": "T_READER_CUE_EXCEPTION_UNSEEKABLE",
+      "text": "la yumkin lihadha aldafq albahtha."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND",
+      "text": "la yumkin bina' tasalsul VT linawe ghayr mawjud {0}"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING",
+      "text": "la yumkin bina' tasalsul VT mae wasayit mafqudatin. tama tawaque {0} wasitata, watama alhusul ealaa {1} wasitati."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME",
+      "text": "la yumkin 'an yakun aliasm almustaear hu nafs asm al'amra."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND",
+      "text": "lam yatima aleuthur ealaa al'amr liliasm almustaear {0}."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASFOUND",
+      "text": "tama aleuthur ealaa asm mustaear msbqan."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE",
+      "text": "lam yatima aleuthur ealaa aliasm almustaear {0} liatima 'iizalatuhu."
+    },
+    {
+      "loc": "T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY",
+      "text": "lam yatima aleuthur ealaa aliasm almustaear {0} liatima aliastielam eanhu."
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_USAGE",
+      "text": "aliastikhdam"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD",
+      "text": "al'amr"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_USAGEINFO_DESC",
+      "text": "alwasf"
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELP_ARG",
+      "text": "la tujad musaeadat lilwasit \"{0}\"."
+    },
+    {
+      "loc": "T_SHELL_BASE_HELP_NOHELPDESC_ARG",
+      "text": "la yujad wusf limusaeadat alwasitati."
+    },
+    {
+      "loc": "T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED",
+      "text": "lam yatima tanfidh hadhih alwasitat bieda."
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS",
+      "text": "lam takun hunak wasayit kafiatun."
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNKNOWNARG",
+      "text": "wasitat ghayr maerufa"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR",
+      "text": "khata ghayr qabil lil'iislah fi alwasita"
+    },
+    {
+      "loc": "T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO",
+      "text": "la yumkin alhusul ealaa maelumat alwasitat lil'amr 'aw alwasitati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS",
+      "text": "lam yatima tahdid muealimat silsilat aleamaliaati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST",
+      "text": "lam yatima tawfir alwasayit almatlubat lijamie alaistikhdamat 'adnah:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED",
+      "text": "lam yatima tawfir alwasayit almatlubati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED",
+      "text": "lam yatima tawfir almafatih almatlubati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE",
+      "text": "yatatalab 'ahad almafatih qimatan ghayr mutawafiratin."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES",
+      "text": "almafatih almudrajat 'adnah ghayr maerufatin."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESCONFLICT",
+      "text": "almafatih almudrajat 'adnaah tataearad mae baediha albaed."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHESNOVALUES",
+      "text": "almafatih 'adnah la taqbal alqima."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGNUMERIC",
+      "text": "yatawaqae wasit wahid 'aw 'akthar qimat raqmiatan, walakinak 'udkhilt rqman ghayr sahihin."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ARGEXACT",
+      "text": "yatawaqae wasit wahid 'aw 'akthar siaghatan daqiqatan, walakinak 'udkhilat kalimat ghayr sahihatin."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SWITCHNUMERIC",
+      "text": "yatawaqae wasit wahid 'aw 'akthar qimat raqmiatan, walakinak 'udkhilt rqman ghayr sahihin."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CONSULTHELP",
+      "text": "rajie madkhal almusaeadat lihadha al'amr limazid min almaelumati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDINTERRUPT",
+      "text": "tamat muqataeat al'amri..."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND1",
+      "text": "khata 'athna' muhawalat tanfidh al'amr {2}."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ERRORCOMMAND2",
+      "text": "khata"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_ABORTEXCEPTION",
+      "text": "tama 'iilgha' al'amr lilsabab altaali:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_INVALIDPATTERN",
+      "text": "namat 'amr ghayr salihin."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_COMMANDNOTFOUND",
+      "text": "al'amr ghayr mawjudi."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND",
+      "text": "nawe shell {0} ghayr mawjudi."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDBASENULL",
+      "text": "yajib ealayk tawfir qaeidat al'awamir."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNAMENULL",
+      "text": "yajib ealayk tawfir al'amri."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDALREADYADDED",
+      "text": "al'amr almuhadad mudaf bialfieli."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD",
+      "text": "la yumkin tahmil baed al'awamir almukhasasati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND",
+      "text": "al'amr almukhasas almuhadad ghayr mawjudi."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD",
+      "text": "la yumkin 'iilgha' tahmil baed al'awamir almukhasasati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_CMDNEEDSSLASH",
+      "text": "yustakhdam hadha al'amr 'awamir alshurtat almayilat litanfidhiha. yurja 'iidafat ramz alshurtat almayila '/' 'iilaa bidayat al'amr lilbad'i. ealaa sabil almithali:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_UNDEFINED",
+      "text": "hadha al'amr ghayr muerrf."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS",
+      "text": "al'awamir almutahatu:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_GENERALCMDS",
+      "text": "al'awamir aleamatu:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS",
+      "text": "la tujad 'awamir sudfatin."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXTRACMDS",
+      "text": "al'awamir al'iidafiatu:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS",
+      "text": "la tujad 'awamir 'iidafiatun."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ALIASCMDS",
+      "text": "al'awamir albadilatu:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS",
+      "text": "la tujad 'awamir badilatun."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS",
+      "text": "al'awamir almuahadatu:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS",
+      "text": "la tujad 'awamir muahadatun."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY",
+      "text": "al'amr muerrf biwasita"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGSLIST",
+      "text": "yahtawi hadha al'amr ealaa alwasaytat altaaliat alati tughyr tariqat eamalihi:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED",
+      "text": "wasf wasitat ghayr muhdd"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST",
+      "text": "yahtawi hadha al'amr ealaa almufatyh altaaliat alati tughyr tariqat eamalihi:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED",
+      "text": "wasaf muftah ghayr muhdd"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_CMDNOHELP",
+      "text": "la tujad musaeadat lil'amr \"{0}\"."
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND",
+      "text": "al'iiedad almusbq almuhdd {0} ghayr mawjudi."
+    },
+    {
+      "loc": "T_SHELL_PROMPTS_PRESETS_SELECTPRESET",
+      "text": "tahdid al'iiedad almusbq la {0}:"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIND_NOTFOUND",
+      "text": "la tujad 'awamir."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXIT_HELP_DESC",
+      "text": "yughlq alsudfat 'iidha kan yaemal ealaa sudfat fareiatin."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
+      "text": "albahth ean al'awamir almutahat fi nawe shell alhali"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HELP_DESC",
+      "text": "safhat almusaeada"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC",
+      "text": "eard al'awamir aleama (aftiradi)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC",
+      "text": "eard al'awamir almustaeara"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC",
+      "text": "eard al'awamir almuahada"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC",
+      "text": "eard al'awamir al'iidafia"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC",
+      "text": "eard jamie al'awamir"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC",
+      "text": "aistikhdam taelimat mubasata"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRESETS_HELP_DESC",
+      "text": "fath maktabat al'iiedadat almusbaqat li shell"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDNOTFOUND",
+      "text": "risalat shell: lam yatima aleuthur ealaa al'amr almatlub {0}. rajie \"almusaeadati\" liliatilae ealaa al'awamir almutahati."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_CMDEXECUTEERROR",
+      "text": "khataan fi muhawalat tanfidh al'amr."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR",
+      "text": "taeadhur alhusul ealaa munfidh shell la {0}"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT",
+      "text": "fashilat muhawalat tahyiat shell"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE",
+      "text": "taeadhur tahdid ma 'iidha kan 'iidkhal altahdid mfrdan 'am mteddan"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED",
+      "text": "lam yatima tahdid alealamati."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID",
+      "text": "muhdid wasam nihayat ghayr salihi."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS",
+      "text": "la tujad tasalsilat fi qayimat alaintizar li'iinha' alwasm bha."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS",
+      "text": "hunak {0} wasam nihayat mafqudi."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT",
+      "text": "yajib 'alaa yatbae altansiq al'awaliu 'ayu nas; yajib 'an yahtawi faqat ealaa tasalsilat VT liltansiqi."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND",
+      "text": "la yujad milafun Asciicast."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE",
+      "text": "taeadhur 'iilgha' tasalsul tamthil Asciicast al'asasi."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE",
+      "text": "taeadhur 'iilgha' tasalsul tamthil Asciicast al'iisdar 1."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE",
+      "text": "taeadhur 'iilgha' tasalsul tamthil Asciicast al'iisdar 2."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO",
+      "text": "taeadhar alhusul ealaa maelumat alhadathi."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
+      "text": "rawabit almafatih almutahati."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS",
+      "text": "la tujad rawabit muerrft fi hadha alsiyaqi."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS",
+      "text": "rawabit lawhat almafatihi."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS",
+      "text": "rawabit almawsi."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID",
+      "text": "asm harf Nerd Fonts ghayr salih {0} fi alnawe {1}."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID",
+      "text": "tamthil harf Nerd Fonts ghayr salih {0} min {1} fi alnawe {2}."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID",
+      "text": "nawe Nerd Fonts ghayr salih {0}."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS",
+      "text": "la yahtawi nawe Nerd Fonts {0} ealaa 'ayi 'ahrufu."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE",
+      "text": "qabil lileard musjjl musbqan."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE",
+      "text": "qabil lileard ghayr musjjl."
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH",
+      "text": "yajib 'an yakun eard jamie aldwwarat mtsawyan."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP",
+      "text": "yadhhab eunsur 'iidkhal wahid li'aelaa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN",
+      "text": "yadhhab eunsur 'iidkhal wahid li'asfal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST",
+      "text": "yadhhab 'iilaa al'iidkhal al'awal"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST",
+      "text": "yadhhab 'iilaa akhar al'iidkhalat"
+    },
+    {
+      "loc": "T_SHELL_BASE_SWITCH_SET_DESC",
+      "text": "īḍbṭ qīmẗ al-iẖrāǧ ʿli mtġīr MESH al-mḥdd"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
+      "text": "la yumkin alhusul ealaa muealimat alkhayt litanfidh aleamaliati."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_ERROREXECUTE1",
+      "text": "khata fi muhawalat tanfidh al'amr"
+    },
+    {
+      "loc": "T_COMMON_ERRORDESC",
+      "text": "alkhata {0}: {1}"
+    },
+    {
+      "loc": "T_SHELL_BASE_OBSOLETECMD",
+      "text": "hadha al'amr qadim wasayatim 'iizalatah fi 'iisdar mustaqbali."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
+      "text": "lam yatima aleuthur ealaa 'amr alaltafafu."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
+      "text": "lā īǧb ʿlīk tnfīḏ hḏā al-ʾamr mbāšrẗ fī al-ūḍʿ al-mltf."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE",
+      "text": "al'amr ghayr qabil lilaltafafu. hadhih al'awamir qabilat lilaltafafu:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_WRAPFAILED",
+      "text": "ḥdṯ ẖṭʾa aṯnāʾ mḥāūlẗ al-tfāf iẖrāǧ al-ʾamr"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
+      "text": "la yumkin takhzin 'amr ghayr madbut ealaa 'anah qabil liltaghlifi."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
+      "text": "lā īmknk al-iʿlān ʿn al-ktlẗ al-ǧdīdẗ qbl ūḍʿ al-tʿbīrāt al-tī tdʿm al-inšāʾ, mṯl al-šrūṭ aū al-ḥlqāt. rqm al-mkds hū {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
+      "text": "ʿnd bdʾ ktlẗ ǧdīdẗ, tʾakd mn ūḍʿ msāfẗ bādʾiẗ llmkds bškl ṣḥīḥ. rqm al-mkds hū {0}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
+      "text": "alnasu ghayr sahihin. afhas alnasu albarmajia wa'aslih 'ayat 'akhta'i: {0}"
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "text": "lam yatima aleuthur ealaa alshart fi altaebiri."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
+      "text": "yatatalab alshart {0} wasitat {1}. hasalat ealaa {2}."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
+      "text": "īǧb ūḍʿ al-šrṭ fī al-nhāīẗ."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
+      "text": "khataan fi tahlil altaebir bisabab khata fi bina' aljumlati."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
+      "text": "lā īmkn tsǧīl šrṭ mūǧūd bālfʿl."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
+      "text": "lā īmkn tsǧīl ḥālẗ fārġẗ."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
+      "text": "nūʿ al-bīānāt al-mḥdd {0} ġīr ṣālḥ."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
+      "text": "al-nẓām al-ʾasāsī {0} al-mḥdd ġīr ṣālḥ."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_SOURCEFAILED",
+      "text": "fashal tanfidh al'amr almusadari."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_TARGETFAILED",
+      "text": "fashil tanfidh al'amr almustahdafi. rubama lam yatima mil' almuhtawayat bishakl sahihi. al'amr aladhi tama tanfidhuh kan"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_FAILED",
+      "text": "al'unbub mueatala."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_INVALIDTIMES",
+      "text": "ʿdd ġīr ṣālḥ mn al-mrāt."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_REPEAT_REPEATSELF",
+      "text": "lā īmkn tkrār al-ḏāt."
+    },
+    {
+      "loc": "T_SHELL_SHELLS_WRAP_COMMANDSHELPER",
+      "text": "'awamir qabilat lilaltafafu:"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
+      "text": "tḏkīr lʾawāmr al-qṭʿ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_DESC",
+      "text": "īnfḏ ʿmlīẗ ẖārǧīẗ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC",
+      "text": "almasar 'iilaa eamalia"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC",
+      "text": "alhujaj alati yajib tamriruha 'iilaa eamalia"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC",
+      "text": "īnfḏ al-ʿmlīẗ dūn mqāṭʿẗ ẖīṭ al-ṣdfẗ. sītm inšāʾ nāfḏẗ mnfṣlẗ."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC",
+      "text": "'amr li'iizhar 'iidkhal almusaeada"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOADHISTORIES_DESC",
+      "text": "īqūm btḥmīl tārīẖ al-ṣdfẗ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_DESC",
+      "text": "yuajih 'iikhraj al'amr 'iilaa 'amr akhar kamuealimat"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC",
+      "text": "'amar almasdar litawjih 'iikhrajih 'iilaa al'amr almustahdaf kamuealimat 'akhira"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "'amar alhadaf litanfidhih eind bina' alhujat bna'an ealaa 'iikhraj al'amr almasdar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC",
+      "text": "sawa' kan litamrir 'iikhraj al'amr almasdar kahujat wahidat muqtabasat 'aw hujat ghayr muqtabasa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPEAT_DESC",
+      "text": "īkrr al-iǧrāʾ al-ʾaẖīr aū al-ʾamr al-mḥdd"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
+      "text": "'amar alhadaf litanfidhih eind bina' alhujat bna'an ealaa 'iikhraj al'amr almasdar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
+      "text": "īḥfẓ tārīẖ al-ṣdfẗ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_DESC",
+      "text": "yalufu 'iikhraj wahdat altahakum"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC",
+      "text": "'amr litaghlif 'iikhrajih"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE",
+      "text": "khata fi muhawalat tanfidh albarnamaj alnasi: {0}"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_DESC",
+      "text": "yunafadh al'awamir bimujarad 'iirda' taebirat MESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC",
+      "text": "taebir MESH liliakhtibar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC",
+      "text": "'amr yatimu tanfidhuh eind altaqyim alnaajih"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_CHOICE_HELPER",
+      "text": "hayth <alajwbt> hi 'iijabat min harf wahid lilsuwal mafsulat bikhati mayil"
+    },
+    {
+      "loc": "T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH",
+      "text": "īǧb ʿlīk tmrīr rmz al-tbdīl -set mʿ al-mtġīr al-ḏī trīd tʿyin hḏh al-qīmẗ ilīh."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_DESC",
+      "text": "yajeal khiarat almustakhdam"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "'iijabat liltaqsim bishurtat mayila"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "sual liltibaeat ealaa alshaasha"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "eunwan al'iijabat al'uwlaa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "eunwan al'iijabat althaaniati, wahakadha..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC",
+      "text": "aslūb aẖtīār sṭr wāḥd"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC",
+      "text": "aslūb aẖtīār sṭrīn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC",
+      "text": "aslūb al-āẖtīār al-ḥdīṯ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC",
+      "text": "īmkn an īkūn al-iẖrāǧ ḥrfًā wāḥddā fqṭ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC",
+      "text": "īmkn an īkūn al-iẖrāǧ akṯr mn ḥrf"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CLS_DESC",
+      "text": "masah alshshasha"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_DESC",
+      "text": "yaktub alnasi fi wahdat altahakum"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC",
+      "text": "silsilat liltibaea"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC",
+      "text": "īṭbʿ al-nṣ kmā hū bdūn tḥlīl al-ʿnṣr al-nāʾib"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FORK_DESC",
+      "text": "šūkāt qḏīfẗ MESH linšāʾ mṯīl aẖr"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUT_DESC",
+      "text": "yasmah lilmustakhdam bi'iidkhal al'iidkhal"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "sual liltibaeat ealaa alshaasha"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
+      "text": "īsmḥ llmstẖdm bidẖāl al-idẖāl kklmẗ mrūr"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHOWTD_DESC",
+      "text": "yuzhir alttarikh walwaqt"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC",
+      "text": "īẓhr al-tārīẖ fqṭ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC",
+      "text": "īẓhr al-ūqt fqṭ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC",
+      "text": "īstẖdm UTC bdlāً mn al-mḥlī"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SELECT_DESC",
+      "text": "yuafir aikhtiar alaikhtiar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
+      "text": "'iijabat liltaqsim bishurtat mayila"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
+      "text": "sual liltibaeat ealaa alshaasha"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
+      "text": "eunwan al'iijabat al'uwlaa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
+      "text": "eunwan al'iijabat althaaniati, wahakadha..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_DESC",
+      "text": "yeyn mtghyrana 'iilaa qimat fi nasin barmajiin"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC",
+      "text": "alqimat almurad taeyinuha"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_DESC",
+      "text": "yunshi masfufat mutaghayirat bialqiam almutawafira"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC",
+      "text": "alqimat al'uwlaa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC",
+      "text": "alqimat althaania"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC",
+      "text": "alqimat althaalithatu, wahakadha..."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_DESC",
+      "text": "īnām lmdẗ mīlī ṯānīẗ mḥddẗ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC",
+      "text": "alfatrat alzamaniat lilnawm"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_DESC",
+      "text": "izālẗ mtġīr mn qāʾimẗ mtġīrāt MESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC",
+      "text": "aism almutaghayir"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC",
+      "text": "fqṭ īmsḥ al-qīmẗ al-mtġīrẗ dūn izālthā"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_SUCCESS",
+      "text": "īmknk al-ʾān tšġīl '{0}' k. '{1}'!"
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE",
+      "text": "nawe ghayr salih {0}."
+    },
+    {
+      "loc": "T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS",
+      "text": "tamat 'iizalat aliasm almustaear {0} binajahi."
+    },
+    {
+      "loc": "T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
+      "text": "lā īmkn ilġāʾ tsǧīl šrṭ ġīr mūǧūd."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_DESC",
+      "text": "yudif 'asma' mustaearatan 'iilaa al'awamir"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC",
+      "text": "'iidafatan aism mustaear"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC",
+      "text": "nawe Shell lijalb al'awamir minh"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
+      "text": "asm mustaear"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC",
+      "text": "'amr yustakhdam kiakhtisar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC",
+      "text": "'iizalat aism mustaear"
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND",
+      "text": "tama aleuthur ealaa ghilaf wahdat altahakumi."
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED",
+      "text": "qad la yakun asm ghilaf wahdat altahakum farghan."
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND",
+      "text": "lam yatima aleuthur ealaa ghilaf wahdat altahakumi."
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN",
+      "text": "qad la tatima 'iizalat ghilaf wahdat altahakum almudmaji."
+    },
+    {
+      "loc": "T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED",
+      "text": "fashilat 'iizalat ghilaf wahdat altahakumi."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
+      "text": "fashil mil' alsimat aliaftiradia"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA",
+      "text": "la tujad bayanat taerifiat lilsimati."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID",
+      "text": "la yumkin 'iilgha' tasalsul albayanat altaerifiati."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR",
+      "text": "īǧb an tdʿm ūḥdẗ al-tḥkm al-ẖāṣẗ bk al-lūn al-ḥqīqī lāstẖdām hḏā al-mẓhr."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXITPREVIEW_DESC",
+      "text": "al-ẖrūǧ mn al-mʿāīnẗ"
+    },
+    {
+      "loc": "T_COLORS_THEMES_THEMESHOWCASE",
+      "text": "'iilayk kayf sayabdu almazhar alkhasu bika:"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID",
+      "text": "qalib 'alwan ghayr salih {0}"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME",
+      "text": "īḥtfl al-mūḍūʿ {0} bḥdṯ mā, ūlknk imā mbkr ǧddā aū mtʾaẖr ǧddā llḥḍūr. kl ʿām, īmkn al-ūṣūl ili hḏā al-mūḍūʿ mn {1}/{2} ili {3}/{4}."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR",
+      "text": "al-smẗ {0} tḥtāǧ ili dʿm al-ʾalwān al-ḥqīqīẗ, lkn ūḥdẗ al-tḥkm al-ẖāṣẗ bk lā tdʿmhā."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_COLORINVALID",
+      "text": "wahid 'aw 'akthar min al'alwan ghyr salihin."
+    },
+    {
+      "loc": "T_COLORS_THEMES_DEFAULT_DESC",
+      "text": "almawdue alaiftiradiu lilnawaa"
+    },
+    {
+      "loc": "T_COLORS_THEMES_DYNAMIC_DESC",
+      "text": "yatamayaz bikuli shay'in!"
+    },
+    {
+      "loc": "T_COLORS_THEMES_NITRICACID_DESC",
+      "text": "sayil eadim alluwn, dukhani, washadid altakl"
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_WARNING",
+      "text": "īǧb an tqūm btšġīl ConEmu aū mūǧh awāmr Windows 10 mʿ tmkīn mʿālǧẗ VT."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_INFO",
+      "text": "al-mḥṭẗ al-ṭrfīẗ al-ẖāṣẗ bk hī {0} fī {1}."
+    },
+    {
+      "loc": "T_COLOR_COLORTEST_QUESTION",
+      "text": "hl tbdū hḏh al-mnḥdrāt mnāsbẗ lk? īǧb an īntqlwā bslāsẗ."
+    }
+  ]
+}

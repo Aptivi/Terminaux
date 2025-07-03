@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -133,7 +133,7 @@ namespace Terminaux.Colors.Models
         public static RedYellowBlue ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException("Invalid RYB color specifier \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": ryb:<red>;<yellow>;<blue>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER").FormatString(specifier) + ": ryb:<red>;<yellow>;<blue>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -142,20 +142,20 @@ namespace Terminaux.Colors.Models
                 // We got the RYB whole values! First, check to see if we need to filter the color for the color-blind
                 int r = Convert.ToInt32(specifierArray[0]);
                 if (r < 0 || r > 255)
-                    throw new TerminauxException("The red level is out of range (0 -> 255)." + $" {r}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL") + $" {r}");
                 int y = Convert.ToInt32(specifierArray[1]);
                 if (y < 0 || y > 255)
-                    throw new TerminauxException("The yellow level is out of range (0 -> 255)." + $" {y}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL") + $" {y}");
                 int b = Convert.ToInt32(specifierArray[2]);
                 if (b < 0 || b > 255)
-                    throw new TerminauxException("The blue level is out of range (0 -> 255)." + $" {b}");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL") + $" {b}");
 
                 // First, we need to convert from RYB to RGB
                 var ryb = new RedYellowBlue(r, y, b);
                 return ryb;
             }
             else
-                throw new TerminauxException("Invalid RYB color specifier \"{0}\". The specifier may not be more than three elements. Ensure that it's on the correct format".FormatString(specifier) + ": ryb:<red>;<yellow>;<blue>");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED").FormatString(specifier) + ": ryb:<red>;<yellow>;<blue>");
         }
 
         /// <inheritdoc/>

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -42,7 +42,7 @@ namespace Terminaux.Colors.Data
         public static ConsoleColorData GetColorData(ConsoleColors colors)
         {
             if (colors < ConsoleColors.Black || colors > ConsoleColors.Grey93)
-                throw new TerminauxException("Color is out of range.");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE"));
             return GetColorData()[(int)colors];
         }
     }

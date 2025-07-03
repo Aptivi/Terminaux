@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -140,7 +140,7 @@ namespace Terminaux.Colors.Models.Parsing
         public static RedGreenBlue ParseSpecifierRgbName(string specifier, ColorSettings? settings = null)
         {
             if (!IsSpecifierConsoleColors(specifier))
-                throw new TerminauxException("Invalid color specifier \"{0}\". If you're using 256 colors, you'll need to enter a positive value from 0 to 255 or a valid color name. If you're using true color, you'll either need to write a valid color specifier, such as RRR;GGG;BBB, or a color code up to 16777215.".FormatString(specifier));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER").FormatString(specifier));
 
             // Form the sequences using the information from the color details
             ConsoleColorData data;
@@ -158,13 +158,13 @@ namespace Terminaux.Colors.Models.Parsing
             // Check to see if we need to transform color. Else, be sane.
             int r = Convert.ToInt32(data.RGB.R);
             if (r < 0 || r > 255)
-                throw new TerminauxException("The red color level is out of range (0 -> 255)." + $" {r}");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL") + $" {r}");
             int g = Convert.ToInt32(data.RGB.G);
             if (g < 0 || g > 255)
-                throw new TerminauxException("The green color level is out of range (0 -> 255)." + $" {g}");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL") + $" {g}");
             int b = Convert.ToInt32(data.RGB.B);
             if (b < 0 || b > 255)
-                throw new TerminauxException("The blue color level is out of range (0 -> 255)." + $" {b}");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL") + $" {b}");
 
             // Now, transform
             settings ??= new(ColorTools.GlobalSettings);
@@ -184,7 +184,7 @@ namespace Terminaux.Colors.Models.Parsing
         public static RedGreenBlue ParseSpecifierRgbHash(string specifier, ColorSettings? settings = null)
         {
             if (!IsSpecifierValidRgbHash(specifier))
-                throw new TerminauxException("Invalid color hex specifier \"{0}\". This specifier must start with the hash tag. Ensure that it's on the correct format".FormatString(specifier) + ": #RRGGBB");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER").FormatString(specifier) + ": #RRGGBB");
 
             // Get the integral value of the total color
             string finalSpecifier = specifier.Substring(1);
@@ -196,11 +196,11 @@ namespace Terminaux.Colors.Models.Parsing
                 finalSpecifier = $"{first}{first}{second}{second}{third}{third}";
             }
             else if (finalSpecifier.Length != 6)
-                throw new TerminauxException("Invalid color hex length \"{0}\". Ensure that it's on the correct format".FormatString(specifier) + ": #RRGGBB");
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH").FormatString(specifier) + ": #RRGGBB");
 
             bool valid = int.TryParse(finalSpecifier, NumberStyles.HexNumber, null, out int ColorDecimal);
             if (!valid)
-                throw new TerminauxException("Can't resolve color hex \"{0}\".".FormatString(specifier));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE").FormatString(specifier));
 
             // Convert the RGB values to numbers
             int r = (byte)((ColorDecimal & 0xFF0000) >> 0x10);

@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -44,16 +44,16 @@ namespace Terminaux.Inputs.Styles.Infobox
     {
         private static readonly Keybinding[] keybindings =
         [
-            new Keybinding("Decrements the current value", ConsoleKey.UpArrow),
-            new Keybinding("Increments the current value", ConsoleKey.DownArrow),
-            new Keybinding("Sets the value to the minimum value", ConsoleKey.Home),
-            new Keybinding("Sets the value to the maximum value", ConsoleKey.End),
-            new Keybinding("Goes one line up", ConsoleKey.W),
-            new Keybinding("Goes one line down", ConsoleKey.S),
-            new Keybinding("Goes to the previous page of text", ConsoleKey.E),
-            new Keybinding("Goes to the next page of text", ConsoleKey.D),
-            new Keybinding("Submits the value", ConsoleKey.Enter),
-            new Keybinding("Closes without submitting the value", ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE"), ConsoleKey.UpArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE"), ConsoleKey.DownArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE"), ConsoleKey.Home),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE"), ConsoleKey.End),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP"), ConsoleKey.W),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN"), ConsoleKey.S),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT"), ConsoleKey.E),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT"), ConsoleKey.D),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR"), ConsoleKey.Enter),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR"), ConsoleKey.Escape),
         ];
 
         /// <summary>

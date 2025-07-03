@@ -1,4 +1,4 @@
-﻿//
+//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -39,7 +39,7 @@ namespace Terminaux.Colors.Gradients
             get
             {
                 var gradient = gradients[pos] ??
-                    throw new TerminauxInternalException("Are you sure that this gradient is not null?");
+                    throw new TerminauxInternalException(LanguageTools.GetLocalized("T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL"));
                 return gradient;
             }
         }
