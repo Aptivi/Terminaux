@@ -2305,6 +2305,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "Kan ikke bestemme typen fra denne sekvensen. Sørg for at du har angitt den riktig."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Vi klarte ikke å generere en fungerende VT-sekvens av typen {0} med handling {1}. Sørg for at du har angitt verdiene riktig."
     }
   ]
 }

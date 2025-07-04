@@ -2347,6 +2347,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "Impossible de déterminer le type à partir de cette séquence. Assurez-vous de l'avoir spécifié correctement."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Nous n'avons pas réussi à générer une séquence VT fonctionnelle de type {0} avec l'action {1}. Assurez-vous d'avoir correctement spécifié les valeurs."
     }
   ]
 }

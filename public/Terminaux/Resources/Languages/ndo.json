@@ -2301,6 +2301,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "Tidak dapat menentukan jenis dari urutan ini. Pastikan Anda telah menentukannya dengan benar."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Kami gagal membuat rangkaian VT yang berfungsi dengan tipe {0} dengan tindakan {1}. Pastikan Anda telah menentukan nilai dengan benar."
     }
   ]
 }

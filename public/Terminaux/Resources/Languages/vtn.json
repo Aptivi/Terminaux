@@ -2301,6 +2301,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "Không thể xác định loại từ chuỗi này. Hãy đảm bảo rằng bạn đã chỉ định đúng."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Chúng tôi không thể tạo chuỗi VT hoạt động thuộc loại {0} với hành động {1}. Hãy đảm bảo rằng bạn đã chỉ định đúng giá trị."
     }
   ]
 }

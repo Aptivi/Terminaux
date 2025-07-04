@@ -2302,6 +2302,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "i sikwonseueseo yuhyeong-eul hwag-inhal su eobs-seubnida. olbaleuge jijeonghaessneunji hwag-inhaseyo."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "{1} jag-eob-eulo {0} yuhyeong-ui jagdonghaneun VT sikwonseuleul saengseonghaji moshaessseubnida. gabs-eul olbaleuge jijeonghaessneunji hwag-inhaseyo."
     }
   ]
 }

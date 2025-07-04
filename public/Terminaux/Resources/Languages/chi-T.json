@@ -2305,6 +2305,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "无法根据此序列确定类型。请确保您已正确指定。"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "我们无法生成类型为 {0} 且操作为 {1} 的有效 VT 序列。请确保您已正确指定值。"
     }
   ]
 }

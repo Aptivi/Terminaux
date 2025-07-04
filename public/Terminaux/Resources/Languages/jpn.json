@@ -2301,6 +2301,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "このシーケンスから型を判別できません。正しく指定されていることを確認してください。"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "アクション{1}でタイプ{0}の有効なVTシーケンスを生成できませんでした。値が正しく指定されていることを確認してください。"
     }
   ]
 }

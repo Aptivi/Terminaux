@@ -2302,6 +2302,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "Ní féidir an cineál a chinneadh ón seicheamh seo. Déan cinnte go bhfuil sé sonraithe agat i gceart."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Theip orainn seicheamh VT oibre de chineál {0} a ghiniúint leis an ngníomh {1}. Déan cinnte go bhfuil na luachanna sonraithe agat i gceart."
     }
   ]
 }

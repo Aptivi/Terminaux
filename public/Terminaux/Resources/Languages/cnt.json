@@ -2304,6 +2304,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "wúfǎ gēnjù cǐ xùliè quèdìng lèixíng. Qǐng quèbǎo nín yǐ zhèngquè zhǐdìng."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Wǒmen wúfǎ shǐyòng cāozuò {1} chǎnshēng lèixíng wèi {0} de yǒuxiào VT xùliè. Qǐng quèbǎo nín yǐ zhèngquè zhǐdìng zhí."
     }
   ]
 }

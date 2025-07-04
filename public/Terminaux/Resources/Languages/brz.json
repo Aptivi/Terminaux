@@ -2300,6 +2300,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "Não é possível determinar o tipo desta sequência. Certifique-se de que você a especificou corretamente."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Não conseguimos gerar uma sequência VT funcional do tipo {0} com a ação {1}. Certifique-se de ter especificado os valores corretamente."
     }
   ]
 }

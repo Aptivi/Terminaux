@@ -2307,6 +2307,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "Het type kan niet worden bepaald aan de hand van deze reeks. Controleer of u het correct hebt opgegeven."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Het is ons niet gelukt een werkende VT-reeks van type {0} met actie {1} te genereren. Controleer of u de waarden correct hebt opgegeven."
     }
   ]
 }

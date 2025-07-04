@@ -2301,6 +2301,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "Typus ex hac serie determinari non potest. Fac ut recte specificaveris."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Series VT functionalis generis {0} cum actione {1} generare non potuimus. Fac ut valores recte specificaveris."
     }
   ]
 }

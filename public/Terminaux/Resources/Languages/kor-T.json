@@ -2302,6 +2302,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "이 시퀀스에서 유형을 확인할 수 없습니다. 올바르게 지정했는지 확인하세요."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "{1} 작업을 사용하여 {0} 유형의 작동하는 VT 시퀀스를 생성하지 못했습니다. 값을 올바르게 지정했는지 확인하세요."
     }
   ]
 }

@@ -2326,6 +2326,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE",
       "text": "No se puede determinar el tipo de esta secuencia. Asegúrese de haberlo especificado correctamente."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "No se ha podido generar una secuencia VT funcional del tipo {0} con la acción {1}. Asegúrese de haber especificado los valores correctamente."
     }
   ]
 }
