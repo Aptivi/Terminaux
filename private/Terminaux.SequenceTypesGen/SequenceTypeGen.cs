@@ -212,8 +212,10 @@ namespace Terminaux.SequenceTypesGen
                                 public static string Generate{{seqName}}({{seqParamsBuilder}})
                                 {
                                     string result = $"{{seqFormat}}";
-                                    var regexParser = {{seqName}}SequenceRegex;
-                                    if (!regexParser.IsMatch(result))
+                                    ConsoleLogger.Debug("Parsing sequence format for type {{typeNameUpper}} with action {{seqName}}: {0}", result);
+                                    var tokenizer = new VtSequenceTokenizer(result.ToCharArray());
+                                    var tokens = tokenizer.Parse();
+                                    if (tokens.Length <= 0)
                                         throw new TerminauxException(LanguageTools.GetLocalized("T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED"), "{{typeNameUpper}}", "{{seqName}}");
                                     return result;
                                 }
