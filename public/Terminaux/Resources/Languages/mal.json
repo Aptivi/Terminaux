@@ -2896,6 +2896,10 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
       "text": "Tidak dapat data warna."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Kami telah gagal menjana urutan VT yang berfungsi jenis {0} dengan tindakan {1}. Pastikan anda telah menetapkan nilai dengan betul."
     }
   ]
 }

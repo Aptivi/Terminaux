@@ -2896,6 +2896,10 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
       "text": "無法取得顏色資料。"
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "我們無法產生類型為 {0} 且操作為 {1} 的有效 VT 序列。請確保您已正確指定值。"
     }
   ]
 }

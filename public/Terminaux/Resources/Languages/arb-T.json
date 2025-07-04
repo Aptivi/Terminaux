@@ -2919,6 +2919,10 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
       "text": "لا يمكن الحصول على بيانات الألوان."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "لم نتمكن من إنشاء تسلسل VT فعال من النوع {0} باستخدام الإجراء {1}. تأكد من صحة القيم المحددة."
     }
   ]
 }

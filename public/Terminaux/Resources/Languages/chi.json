@@ -2897,6 +2897,10 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
       "text": "Wúfǎ huòqǔ yánsè shùjù."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Wǒmen wúfǎ shǐyòng cāozuò {1} shēngchéng lèixíng wèi {0} de yǒuxiào VT xùliè. Qǐng quèbǎo nín yǐ zhèngquè zhǐdìng zhí."
     }
   ]
 }

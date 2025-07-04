@@ -2919,6 +2919,10 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
       "text": "la yumkin alhusul ealaa bayanat alluwni."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "fashilna fi 'iinsha' tasalsul VT eamil min alnawe {0} bial'iijra' {1}. ta'akad min tahdid alqiam bishakl sahihin."
     }
   ]
 }

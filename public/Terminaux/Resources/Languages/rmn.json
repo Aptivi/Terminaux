@@ -2894,6 +2894,10 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
       "text": "Nu se pot obține date despre culoare."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Nu am reușit să generăm o secvență VT funcțională de tip {0} cu acțiunea {1}. Asigurați-vă că ați specificat corect valorile."
     }
   ]
 }

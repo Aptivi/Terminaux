@@ -2893,6 +2893,10 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
       "text": "रंग डेटा प्राप्त नहीं किया जा सका."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "हम क्रिया {1} के साथ {0} प्रकार का कार्यशील VT अनुक्रम उत्पन्न करने में विफल रहे हैं। सुनिश्चित करें कि आपने मान सही ढंग से निर्दिष्ट किए हैं।"
     }
   ]
 }

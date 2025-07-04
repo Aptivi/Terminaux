@@ -2899,6 +2899,10 @@
     {
       "loc": "T_COLOR_DATA_EXCEPTION_COLORNODATA",
       "text": "Kan geen kleurgegevens ophalen."
+    },
+    {
+      "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
+      "text": "Het is ons niet gelukt een werkende VT-reeks van type {0} met actie {1} te genereren. Controleer of u de waarden correct hebt opgegeven."
     }
   ]
 }
