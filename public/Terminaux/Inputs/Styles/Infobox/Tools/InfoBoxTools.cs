@@ -111,16 +111,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         }
 
         internal static string RenderText(
-            InputChoiceCategoryInfo[] choices, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, params object[] vars
-        )
-        {
-            // Deal with the lines to actually fit text in the infobox
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensions(choices, splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, true, vars);
-        }
-
-        internal static string RenderText(
             InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, params object[] vars
         )
         {
