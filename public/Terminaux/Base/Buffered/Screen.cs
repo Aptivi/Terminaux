@@ -53,6 +53,12 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
+        /// Whether the screen needs refreshing
+        /// </summary>
+        public bool NeedsRefresh =>
+            needsRefresh;
+
+        /// <summary>
         /// Specifies the amount of milliseconds of cyclic screen frequency
         /// </summary>
         public int CycleFrequency
