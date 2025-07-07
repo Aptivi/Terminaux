@@ -141,7 +141,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             int selectionReservedHeight = 2 + selectionChoices;
             var infoBox = new InfoBox()
             {
-                Settings = new(settings),
+                Settings = new(settings)
+                {
+                    Positioning = new(InfoBoxPositioning.GlobalSettings)
+                },
                 Text = text.FormatString(vars),
             };
             infoBox.Settings.Positioning.ExtraHeight = selectionReservedHeight;
