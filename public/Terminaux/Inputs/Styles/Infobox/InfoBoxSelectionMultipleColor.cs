@@ -246,8 +246,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                         int infoboxButtonsTop = borderY;
 
                         // Make hitboxes for arrow and button presses
-                        var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                        var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => InfoBoxTools.GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => InfoBoxTools.GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                         var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                         var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                         var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(Keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
@@ -258,8 +258,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
-                                if (IsMouseWithinText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, mouse))
-                                    GoUp(ref currIdx, 3);
+                                if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
+                                    InfoBoxTools.GoUp(ref currIdx, 3);
                                 else if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
                                 {
                                     goingUp = true;
@@ -267,8 +267,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 break;
                             case PointerButton.WheelDown:
-                                if (IsMouseWithinText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, mouse))
-                                    GoDown(ref currIdx, infoBox, 3);
+                                if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
+                                    InfoBoxTools.GoDown(ref currIdx, infoBox, 3);
                                 else if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
                                     SelectionGoDown(ref currentSelection, choices);
                                 break;
@@ -437,16 +437,16 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 ScreenTools.CurrentScreen?.RequireRefresh();
                                 break;
                             case ConsoleKey.E:
-                                GoUp(ref currIdx, maxHeight);
+                                InfoBoxTools.GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.D:
-                                GoDown(ref currIdx, infoBox, increment);
+                                InfoBoxTools.GoDown(ref currIdx, infoBox, increment);
                                 break;
                             case ConsoleKey.W:
-                                GoUp(ref currIdx);
+                                InfoBoxTools.GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.S:
-                                GoDown(ref currIdx, infoBox);
+                                InfoBoxTools.GoDown(ref currIdx, infoBox);
                                 break;
                             case ConsoleKey.Enter:
                                 bail = true;
@@ -493,35 +493,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             return [.. selectedChoices];
         }
 
-        private static bool IsMouseWithinText(int maxWidth, int maxHeight, int borderX, int borderY, int reservedHeight, PointerEventContext mouse)
-        {
-            maxHeight -= reservedHeight;
-
-            // Check the dimensions
-            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
-        }
-
         private static bool IsMouseWithinInputBox(int selectionBoxPosX, int selectionBoxPosY, int maxSelectionWidth, int reservedHeight, PointerEventContext mouse)
         {
             // Check the dimensions
             return PointerTools.PointerWithinRange(mouse, (selectionBoxPosX + 1, selectionBoxPosY), (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + reservedHeight - 3));
-        }
-
-        private static void GoUp(ref int currIdx, int level = 1)
-        {
-            currIdx -= level;
-            if (currIdx < 0)
-                currIdx = 0;
-        }
-
-        private static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
-        {
-            var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
-            currIdx += level;
-            if (currIdx > linesLength - maxTextHeight)
-                currIdx = linesLength - maxTextHeight;
-            if (currIdx < 0)
-                currIdx = 0;
         }
 
         private static void SelectionGoUp(ref int currentSelection, InputChoiceInfo[] selections)

@@ -315,6 +315,31 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             }
         }
 
+        internal static bool IsMouseWithinText(InfoBox infoBox, PointerEventContext mouse)
+        {
+            var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
+
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxTextHeight));
+        }
+
+        internal static void GoUp(ref int currIdx, int level = 1)
+        {
+            currIdx -= level;
+            if (currIdx < 0)
+                currIdx = 0;
+        }
+
+        internal static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
+        {
+            var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
+            currIdx += level;
+            if (currIdx > linesLength - maxTextHeight)
+                currIdx = linesLength - maxTextHeight;
+            if (currIdx < 0)
+                currIdx = 0;
+        }
+
         private static bool DetermineClear(List<int> indexes, List<int> selectedAnswers)
         {
             int found = 0;

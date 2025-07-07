@@ -179,8 +179,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int timeArrowDaysRight = timeArrowYearsLeft + maxTimePartWidth * 3 + 8;
 
                     // Make hitboxes for arrow and button presses
-                    var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => InfoBoxTools.GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => InfoBoxTools.GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowTimeDecreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.YearsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowTimeIncreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.YearsModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowTimeDecreaseMonthsHitbox = new PointerHitbox(new(timeArrowMonthsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.MonthsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
@@ -196,8 +196,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
-                                if (IsMouseWithinText(infoBox, mouse))
-                                    GoUp(ref currIdx, 3);
+                                if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
+                                    InfoBoxTools.GoUp(ref currIdx, 3);
                                 else if (IsMouseWithinTime(infoBox, mouse))
                                 {
                                     if (IsMouseWithinYears(infoBox, mouse))
@@ -209,8 +209,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 break;
                             case PointerButton.WheelDown:
-                                if (IsMouseWithinText(infoBox, mouse))
-                                    GoDown(ref currIdx, infoBox, 3);
+                                if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
+                                    InfoBoxTools.GoDown(ref currIdx, infoBox, 3);
                                 else if (IsMouseWithinTime(infoBox, mouse))
                                 {
                                     if (IsMouseWithinYears(infoBox, mouse))
@@ -268,16 +268,16 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 TimeDateInputTools.ValueLast(ref selected, inputMode);
                                 break;
                             case ConsoleKey.E:
-                                GoUp(ref currIdx, maxHeight);
+                                InfoBoxTools.GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.D:
-                                GoDown(ref currIdx, infoBox, increment);
+                                InfoBoxTools.GoDown(ref currIdx, infoBox, increment);
                                 break;
                             case ConsoleKey.W:
-                                GoUp(ref currIdx);
+                                InfoBoxTools.GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.S:
-                                GoDown(ref currIdx, infoBox);
+                                InfoBoxTools.GoDown(ref currIdx, infoBox);
                                 break;
                             case ConsoleKey.Tab:
                                 if (cki.Modifiers.HasFlag(ConsoleModifiers.Shift))
@@ -321,14 +321,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.UnsetCurrent(screen);
             }
             return selected;
-        }
-
-        private static bool IsMouseWithinText(InfoBox infoBox, PointerEventContext mouse)
-        {
-            var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
-
-            // Check the dimensions
-            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxTextHeight));
         }
 
         private static bool IsMouseWithinTime(InfoBox infoBox, PointerEventContext mouse)
@@ -382,23 +374,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             int timeDaysLeft = timeYearsLeft + maxTimePartWidth * 2 + 6;
             int timeDaysRight = timeYearsLeft + maxTimePartWidth * 3 + 6;
             return PointerTools.PointerWithinRange(mouse, (timeDaysLeft, timeTop), (timeDaysRight, timeTop));
-        }
-
-        private static void GoUp(ref int currIdx, int level = 1)
-        {
-            currIdx -= level;
-            if (currIdx < 0)
-                currIdx = 0;
-        }
-
-        private static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
-        {
-            var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
-            currIdx += level;
-            if (currIdx > linesLength - maxTextHeight)
-                currIdx = linesLength - maxTextHeight;
-            if (currIdx < 0)
-                currIdx = 0;
         }
 
         static InfoBoxDateColor()

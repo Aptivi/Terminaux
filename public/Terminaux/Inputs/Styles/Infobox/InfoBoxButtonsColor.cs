@@ -180,8 +180,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int infoboxButtonsTop = borderY;
 
                     // Make hitboxes for arrow and button presses
-                    var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => InfoBoxTools.GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => InfoBoxTools.GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(Keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => cancel = bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var buttonHitboxes = GetButtonHitboxes(infoBox, buttons);
@@ -239,8 +239,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 break;
                             case PointerButton.WheelUp:
-                                if (IsMouseWithinText(infoBox, mouse))
-                                    GoUp(ref currIdx, 3);
+                                if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
+                                    InfoBoxTools.GoUp(ref currIdx, 3);
                                 else if (IsMouseWithinButtons(buttonHitboxes, mouse))
                                 {
                                     selectedButton--;
@@ -249,8 +249,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 break;
                             case PointerButton.WheelDown:
-                                if (IsMouseWithinText(infoBox, mouse))
-                                    GoDown(ref currIdx, infoBox, 3);
+                                if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
+                                    InfoBoxTools.GoDown(ref currIdx, infoBox, 3);
                                 else if (IsMouseWithinButtons(buttonHitboxes, mouse))
                                 {
                                     selectedButton++;
@@ -289,16 +289,16 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 }
                                 break;
                             case ConsoleKey.E:
-                                GoUp(ref currIdx, maxTextHeight);
+                                InfoBoxTools.GoUp(ref currIdx, maxTextHeight);
                                 break;
                             case ConsoleKey.D:
-                                GoDown(ref currIdx, infoBox, increment);
+                                InfoBoxTools.GoDown(ref currIdx, infoBox, increment);
                                 break;
                             case ConsoleKey.W:
-                                GoUp(ref currIdx);
+                                InfoBoxTools.GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.S:
-                                GoDown(ref currIdx, infoBox);
+                                InfoBoxTools.GoDown(ref currIdx, infoBox);
                                 break;
                             case ConsoleKey.Enter:
                                 bail = true;
@@ -341,23 +341,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             return selectedButton;
         }
 
-        private static void GoUp(ref int currIdx, int level = 1)
-        {
-            currIdx -= level;
-            if (currIdx < 0)
-                currIdx = 0;
-        }
-
-        private static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
-        {
-            var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
-            currIdx += level;
-            if (currIdx > linesLength - maxTextHeight)
-                currIdx = linesLength - maxTextHeight;
-            if (currIdx < 0)
-                currIdx = 0;
-        }
-
         private static PointerHitbox[] GetButtonHitboxes(InfoBox infoBox, InputChoiceInfo[] buttons)
         {
             var (maxWidth, maxHeight, _, borderX, borderY, _, _) = infoBox.Dimensions;
@@ -380,14 +363,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 hitboxes.Add(hitbox);
             }
             return [.. hitboxes];
-        }
-
-        private static bool IsMouseWithinText(InfoBox infoBox, PointerEventContext mouse)
-        {
-            var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
-
-            // Check the dimensions
-            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxTextHeight));
         }
 
         private static bool IsMouseWithinButtons(PointerHitbox[] buttonHitboxes, PointerEventContext mouse) =>

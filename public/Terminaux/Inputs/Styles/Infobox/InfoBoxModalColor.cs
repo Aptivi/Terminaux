@@ -122,8 +122,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int infoboxButtonsTop = borderY;
 
                     // Make hitboxes for arrow and button presses
-                    var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => InfoBoxTools.GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => InfoBoxTools.GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(Keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
@@ -149,12 +149,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 break;
                             case PointerButton.WheelUp:
-                                if (IsMouseWithinText(infoBox, mouse))
-                                    GoUp(ref currIdx, 3);
+                                if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
+                                    InfoBoxTools.GoUp(ref currIdx, 3);
                                 break;
                             case PointerButton.WheelDown:
-                                if (IsMouseWithinText(infoBox, mouse))
-                                    GoDown(ref currIdx, infoBox, 3);
+                                if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
+                                    InfoBoxTools.GoDown(ref currIdx, infoBox, 3);
                                 break;
                         }
                     }
@@ -166,18 +166,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 bail = true;
                                 break;
                             case ConsoleKey.PageUp:
-                                GoUp(ref currIdx, maxHeight);
+                                InfoBoxTools.GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.PageDown:
                             case ConsoleKey.Enter:
                                 bail = cki.Key == ConsoleKey.Enter && currIdx >= linesLength - maxHeight;
-                                GoDown(ref currIdx, infoBox, increment);
+                                InfoBoxTools.GoDown(ref currIdx, infoBox, increment);
                                 break;
                             case ConsoleKey.UpArrow:
-                                GoUp(ref currIdx);
+                                InfoBoxTools.GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.DownArrow:
-                                GoDown(ref currIdx, infoBox);
+                                InfoBoxTools.GoDown(ref currIdx, infoBox);
                                 break;
                             case ConsoleKey.Home:
                                 currIdx = 0;
@@ -213,31 +213,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
-        }
-
-        private static bool IsMouseWithinText(InfoBox infoBox, PointerEventContext mouse)
-        {
-            var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
-
-            // Check the dimensions
-            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxTextHeight));
-        }
-
-        private static void GoUp(ref int currIdx, int level = 1)
-        {
-            currIdx -= level;
-            if (currIdx < 0)
-                currIdx = 0;
-        }
-
-        private static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
-        {
-            var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
-            currIdx += level;
-            if (currIdx > linesLength - maxTextHeight)
-                currIdx = linesLength - maxTextHeight;
-            if (currIdx < 0)
-                currIdx = 0;
         }
 
         static InfoBoxModalColor()
