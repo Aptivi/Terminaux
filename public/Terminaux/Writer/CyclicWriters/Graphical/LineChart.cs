@@ -107,7 +107,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }]).ToArray();
                 int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value:0.00}".Length);
                 nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                showcaseLength = nameLength + 3;
+                showcaseLength = nameLength + 2;
                 lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
                 for (int i = 0; i < elementsWithRun.Length; i++)
                 {
@@ -136,7 +136,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     Coordinate separatorCoord = new(Left + nameLength, Top + h);
                     lineChart.Append(
                         ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
-                        " ┃ "
+                        " ▐"
                     );
                 }
             }

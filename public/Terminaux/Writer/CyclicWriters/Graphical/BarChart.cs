@@ -88,7 +88,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
                 nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                showcaseLength = nameLength + 3;
+                showcaseLength = nameLength + 2;
                 wholeLength = Width - showcaseLength;
                 for (int i = 0; i < shownElements.Length; i++)
                 {
@@ -108,7 +108,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
                         (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                         element.Value +
-                        " ┃ "
+                        " ▐"
                     );
                 }
             }

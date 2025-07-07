@@ -86,7 +86,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.win.Value}/{element.loss.Value}".Length);
                 nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                showcaseLength = nameLength + 3;
+                showcaseLength = nameLength + 2;
                 stickWidth = (double)(Width - (showcaseLength + 3)) / elements.Length / 2;
                 for (int i = 0; i < elements.Length; i++)
                 {
@@ -120,7 +120,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     Coordinate separatorCoord = new(Left + nameLength, Top + h);
                     winsLosses.Append(
                         ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
-                        " ┃ "
+                        " ▐"
                     );
                 }
 
@@ -129,8 +129,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 winsLosses.Append(
                     ConsolePositioning.RenderChangePosition(winLossSeparatorCoord.X, winLossSeparatorCoord.Y) +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                    " ┣━" +
-                    new string('━', Width - showcaseLength - 1)
+                    " ▐" +
+                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
+                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red, true) : "") +
+                    "▀" +
+                    new string('▀', Width - showcaseLength - 1)
                 );
             }
 

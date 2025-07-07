@@ -89,7 +89,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
                 nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                showcaseLength = nameLength + 3;
+                showcaseLength = nameLength + 2;
                 stickWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
                 for (int i = 0; i < shownElements.Length; i++)
                 {
@@ -118,7 +118,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     Coordinate separatorCoord = new(Left + nameLength, Top + h);
                     stickChart.Append(
                         ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
-                        " ┃ "
+                        " ▐"
                     );
                 }
             }
