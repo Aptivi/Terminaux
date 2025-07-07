@@ -243,6 +243,7 @@ namespace Terminaux.Console.Fixtures
             new TestInputInfoBoxMultiInputSelect(),
             new TestInputInfoBoxTime(),
             new TestInputInfoBoxDate(),
+            new TestInfoBoxPositioning(),
             new ColorSelectorTest(),
             new ColorSelectorNoPaletteTest(),
             new ColorSelectorNoWriteTest(),
