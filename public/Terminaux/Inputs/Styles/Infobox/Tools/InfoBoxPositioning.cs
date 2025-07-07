@@ -24,6 +24,14 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
     /// </summary>
     public class InfoBoxPositioning
     {
+        private static readonly InfoBoxPositioning globalSettings = new();
+
+        /// <summary>
+        /// Global infobox positioning settings
+        /// </summary>
+        public static InfoBoxPositioning GlobalSettings =>
+            globalSettings;
+
         /// <summary>
         /// Whether to automatically fit the elements or not
         /// </summary>
@@ -53,5 +61,25 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         /// Reserved height for elements that will be placed after the information text
         /// </summary>
         public int ExtraHeight { get; set; } = 0;
+
+        /// <summary>
+        /// Creates a new instance of infobox positioning class with default settings
+        /// </summary>
+        public InfoBoxPositioning()
+        { }
+
+        /// <summary>
+        /// Creates a new instance of infobox positioning class with copied settings
+        /// </summary>
+        /// <param name="positioning">Positioning settings to copy from</param>
+        public InfoBoxPositioning(InfoBoxPositioning positioning)
+        {
+            Autofit = positioning.Autofit;
+            Left = positioning.Left;
+            Top = positioning.Top;
+            Width = positioning.Width;
+            Height = positioning.Height;
+            ExtraHeight = positioning.ExtraHeight;
+        }
     }
 }

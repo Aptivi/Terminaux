@@ -87,13 +87,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Make a new infobox instance
             var infoBox = new InfoBox()
             {
-                Positioning = new()
-                {
-                    ExtraHeight = 1,
-                },
-                Settings = settings,
+                Settings = new(settings),
                 Text = text.FormatString(vars),
             };
+            infoBox.Settings.Positioning.ExtraHeight = 1;
 
             // Render it
             DateTimeOffset selected = initialTime;

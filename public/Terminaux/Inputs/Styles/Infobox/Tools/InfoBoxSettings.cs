@@ -34,6 +34,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         internal BorderSettings borderSettings = BorderSettings.GlobalSettings;
         private Color? foregroundColor;
         private Color? backgroundColor;
+        private InfoBoxPositioning positioning = InfoBoxPositioning.GlobalSettings;
 
         /// <summary>
         /// Global infobox settings
@@ -99,6 +100,15 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         }
 
         /// <summary>
+        /// Positioning settings
+        /// </summary>
+        public InfoBoxPositioning Positioning
+        {
+            get => positioning;
+            set => positioning = value;
+        }
+
+        /// <summary>
         /// Sets the background color of the infobox
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
@@ -121,6 +131,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             borderSettings = settings.borderSettings;
             useColors = settings.useColors;
             RadioButtons = settings.RadioButtons;
+            Positioning = settings.Positioning;
             SetForegroundColor(settings.foregroundColor);
             SetBackgroundColor(settings.backgroundColor);
         }

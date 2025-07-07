@@ -33,7 +33,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         /// <summary>
         /// Positioning settings
         /// </summary>
-        public InfoBoxPositioning Positioning { get; set; } = new();
+        public InfoBoxPositioning Positioning =>
+            Settings.Positioning;
 
         /// <summary>
         /// Text that will be rendered inside the informational box

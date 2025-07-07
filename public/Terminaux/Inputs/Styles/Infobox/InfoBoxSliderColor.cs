@@ -94,13 +94,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Make a new infobox instance
             var infoBox = new InfoBox()
             {
-                Positioning = new()
-                {
-                    ExtraHeight = 2,
-                },
-                Settings = settings,
+                Settings = new(settings),
                 Text = text.FormatString(vars),
             };
+            infoBox.Settings.Positioning.ExtraHeight = 2;
 
             // Render it
             try
