@@ -170,7 +170,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case ConsoleKey.PageDown:
                             case ConsoleKey.Enter:
-                                bail = cki.Key == ConsoleKey.Enter && currIdx == linesLength - maxHeight;
+                                bail = cki.Key == ConsoleKey.Enter && currIdx >= linesLength - maxHeight;
                                 GoDown(ref currIdx, infoBox, increment);
                                 break;
                             case ConsoleKey.UpArrow:

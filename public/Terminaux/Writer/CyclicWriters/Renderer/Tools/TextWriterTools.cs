@@ -74,9 +74,6 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             return x;
         }
 
-        internal static string[] GetFinalLines(string text, params object[] vars) =>
-            GetFinalLines(text, ConsoleWrapper.WindowWidth - 6, vars);
-
         internal static string[] GetFinalLines(string text, int width, params object[] vars)
         {
             // Deal with the lines to actually fit text in the infobox

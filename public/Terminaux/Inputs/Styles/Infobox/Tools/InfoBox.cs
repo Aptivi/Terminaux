@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -59,10 +60,12 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             get
             {
                 // Deal with the lines to actually fit text in the infobox
-                string[] splitFinalLines = TextWriterTools.GetFinalLines(Text);
+                string[] splitFinalLines = TextWriterTools.GetFinalLines(Text, ConsoleWrapper.WindowWidth - 6);
                 var (maxWidth, maxHeight, maxRenderWidth, borderX, borderY) = !Positioning.Autofit ?
                     InfoBoxTools.GetDimensions(Positioning.Width, Positioning.Height, Positioning.Left, Positioning.Top, Positioning.ExtraHeight) :
                     InfoBoxTools.GetDimensions(splitFinalLines, Positioning.ExtraHeight);
+                if (!Positioning.Autofit)
+                    splitFinalLines = TextWriterTools.GetFinalLines(Text, maxWidth + 1);
                 int maxTextHeight = maxHeight - Positioning.ExtraHeight;
                 return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, splitFinalLines.Length);
             }
