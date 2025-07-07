@@ -30,6 +30,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -56,6 +57,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars)
         {
+            // Prepare the screen
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
@@ -63,19 +65,30 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxProgressColor), infoBoxScreenPart);
+
+            // Make a new infobox instance
+            var infoBox = new InfoBox()
+            {
+                Positioning = new()
+                {
+                    ExtraHeight = 1,
+                },
+                Settings = settings,
+                Text = text.FormatString(vars),
+            };
+
+            // Render it
             try
             {
                 int currIdx = 0;
                 int increment = 0;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
-
                     // Fill the info box with text inside it
+                    infoBox.Elements.Clear();
+                    var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(1, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, false, false, vars)
+                        infoBox.Render(ref increment, currIdx, false, false)
                     );
 
                     // Render the final result and write the progress bar

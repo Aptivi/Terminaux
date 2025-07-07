@@ -36,6 +36,7 @@ using Selections = Terminaux.Writer.CyclicWriters.Graphical.Selection;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Structures;
 using Terminaux.Inputs.Styles.Selection;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -126,7 +127,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (allDisabled)
                 throw new TerminauxException("The infobox selection style requires that there is at least one choice enabled.");
 
-            // Now, some logic to get the informational box ready
+            // Prepare the screen
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
@@ -134,15 +135,28 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxSelectionColor), infoBoxScreenPart);
+
+            // Make a new infobox instance
+            var selectionsRendered = new Selections(selections);
+            var related = selectionsRendered.GetRelatedHeights();
+            int selectionChoices = related.Count > 10 ? 10 : related.Count;
+            int selectionReservedHeight = 2 + selectionChoices;
+            var infoBox = new InfoBox()
+            {
+                Positioning = new()
+                {
+                    ExtraHeight = selectionReservedHeight,
+                },
+                Settings = settings,
+                Text = text.FormatString(vars),
+            };
+
+            // Now, some logic to get the informational box ready
             try
             {
                 // Modify the current selection according to the default
                 int currentSelection = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
                 int currentSelected = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
-                var selectionsRendered = new Selections(selections);
-                var related = selectionsRendered.GetRelatedHeights();
-                int selectionChoices = related.Count > 10 ? 10 : related.Count;
-                int selectionReservedHeight = 2 + selectionChoices;
 
                 // Edge case: We need to check to see if the current highlight is disabled
                 InfoBoxTools.VerifyDisabled(ref currentSelection, choices);
@@ -151,20 +165,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                 int increment = 0;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxTools.GetDimensions(selections, splitFinalLines);
-
                     // Fill the info box with text inside it
-                    var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, true, true, vars)
-                    );
+                    infoBox.Elements.Clear();
+                    var (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
+                    int selectionBoxPosX = borderX + 2;
+                    int selectionBoxPosY = borderY + maxTextHeight + 1;
+                    int maxSelectionWidth = maxWidth - 4;
 
                     // Buffer the selection box
                     var border = new Border()
                     {
                         Left = selectionBoxPosX,
-                        Top = selectionBoxPosY - 1,
+                        Top = selectionBoxPosY,
                         Width = maxSelectionWidth,
                         Height = selectionChoices,
                         Settings = settings.BorderSettings,
@@ -172,14 +184,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Color = settings.ForegroundColor,
                         BackgroundColor = settings.BackgroundColor,
                     };
-                    boxBuffer.Append(border.Render());
+                    infoBox.Elements.Add(border);
 
                     // Now, render the selections
                     var selectionsRendered = new Selections(selections)
                     {
                         ShowRadioButtons = settings.RadioButtons,
                         Left = selectionBoxPosX + 1,
-                        Top = selectionBoxPosY,
+                        Top = selectionBoxPosY + 1,
                         CurrentSelection = currentSelection,
                         SelectedChoice = currentSelected,
                         Height = selectionChoices,
@@ -193,12 +205,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             BackgroundColor = settings.BackgroundColor,
                         }
                     };
-                    boxBuffer.Append(
-                        selectionsRendered.Render()
-                    );
-
-                    // Return the buffer
-                    return boxBuffer.ToString();
+                    infoBox.Elements.Add(selectionsRendered);
+                    return infoBox.Render(ref increment, currIdx, true, true);
                 });
 
                 // Wait for input
@@ -211,20 +219,21 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Handle keypress
                     InputEventInfo data = Input.ReadPointerOrKey();
-                    bool goingUp = false;
+                    var (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, linesLength) = infoBox.Dimensions;
+                    int selectionBoxPosX = borderX + 2;
+                    int selectionBoxPosY = borderY + maxTextHeight + 1;
+                    int maxSelectionWidth = maxWidth - 4;
+                    int arrowSelectLeft = selectionBoxPosX + maxWidth - 3;
 
                     // Handle input
+                    bool goingUp = false;
                     var mouse = data.PointerEventContext;
                     if (mouse is not null)
                     {
-                        string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                        var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, arrowSelectLeft, _) = InfoBoxTools.GetDimensions(selections, splitFinalLines);
-                        maxHeight -= selectionReservedHeight;
-
                         // Get positions for arrows
                         int arrowLeft = maxWidth + borderX + 1;
                         int arrowTop = 2;
-                        int arrowBottom = maxHeight + 1;
+                        int arrowBottom = maxTextHeight + 1;
 
                         // Get positions for infobox buttons
                         string infoboxButtons = InfoBoxTools.GetButtons(settings.BorderSettings);
@@ -237,7 +246,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                         // Make hitboxes for arrow and button presses
                         var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                        var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars, selections))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                         var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                         var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                         var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(Keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
@@ -258,14 +267,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case PointerButton.WheelDown:
                                 if (IsMouseWithinText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, mouse))
-                                    GoDown(ref currIdx, text, vars, selections, 3);
+                                    GoDown(ref currIdx, infoBox, 3);
                                 else if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
                                     SelectionGoDown(ref currentSelection, choices);
                                 break;
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && splitFinalLines.Length > maxHeight)
+                                if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && linesLength > maxHeight)
                                 {
                                     arrowUpHitbox.ProcessPointer(mouse, out bool done);
                                     if (!done)
@@ -283,19 +292,19 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 else if (settings.RadioButtons)
                                 {
-                                    if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection))
+                                    if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, infoBox, out hitboxType, ref currentSelection))
                                         break;
                                     if (hitboxType != ChoiceHitboxType.Choice)
                                         break;
                                     currentSelected = currentSelection;
                                 }
                                 else
-                                    bail = InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection) && hitboxType == ChoiceHitboxType.Choice;
+                                    bail = InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, infoBox, out hitboxType, ref currentSelection) && hitboxType == ChoiceHitboxType.Choice;
                                 break;
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection))
+                                if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, infoBox, out hitboxType, ref currentSelection))
                                     break;
                                 if (hitboxType != ChoiceHitboxType.Choice)
                                     break;
@@ -315,14 +324,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.None:
                                 if (mouse.ButtonPress != PointerButtonPress.Moved)
                                     break;
-                                InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, text, vars, out hitboxType, ref currentSelection);
+                                InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, infoBox, out hitboxType, ref currentSelection);
                                 break;
                         }
                     }
                     else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
-                        string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                        (_, int maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, selectionReservedHeight);
                         switch (cki.Key)
                         {
                             case ConsoleKey.UpArrow:
@@ -402,13 +409,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.D:
-                                GoDown(ref currIdx, text, vars, selections, increment);
+                                GoDown(ref currIdx, infoBox, increment);
                                 break;
                             case ConsoleKey.W:
                                 GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.S:
-                                GoDown(ref currIdx, text, vars, selections);
+                                GoDown(ref currIdx, infoBox);
                                 break;
                             case ConsoleKey.Enter:
                                 bail = true;
@@ -484,14 +491,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                 currIdx = 0;
         }
 
-        private static void GoDown(ref int currIdx, string text, object[] vars, InputChoiceCategoryInfo[] choices, int level = 1)
+        private static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, _, _, _, _, _, _, reservedHeight) = InfoBoxTools.GetDimensions(choices, splitFinalLines);
-            maxHeight -= reservedHeight;
+            var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
             currIdx += level;
-            if (currIdx > splitFinalLines.Length - maxHeight)
-                currIdx = splitFinalLines.Length - maxHeight;
+            if (currIdx > linesLength - maxTextHeight)
+                currIdx = linesLength - maxTextHeight;
             if (currIdx < 0)
                 currIdx = 0;
         }

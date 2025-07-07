@@ -29,6 +29,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -74,29 +75,39 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static DateTimeOffset WriteInfoBoxDate(DateTimeOffset initialDate, string text, InfoBoxSettings settings, params object[] vars)
         {
+            // Prepare the screen
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
             var screen = new Screen();
-            DateTimeOffset selected = initialDate;
-            DateInputMode inputMode = DateInputMode.Years;
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxDateColor), infoBoxScreenPart);
+
+            // Make a new infobox instance
+            var infoBox = new InfoBox()
+            {
+                Positioning = new()
+                {
+                    ExtraHeight = 1,
+                },
+                Settings = settings,
+                Text = text.FormatString(vars),
+            };
+
+            // Render it
+            DateTimeOffset selected = initialDate;
+            DateInputMode inputMode = DateInputMode.Years;
             try
             {
                 int currIdx = 0;
                 int increment = 0;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 1);
-
                     // Fill the info box with text inside it
-                    var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(1, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, false, true, vars)
-                    );
+                    infoBox.Elements.Clear();
+                    var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
+                    var boxBuffer = new StringBuilder(infoBox.Render(ref increment, currIdx, true, true));
 
                     // Now, get the necessary positions and widths for the time parts
                     int timePosX = borderX + 2;
@@ -152,13 +163,12 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Handle keypress
                     InputEventInfo data = Input.ReadPointerOrKey();
-                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+                    var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, linesLength) = infoBox.Dimensions;
 
                     // Get positions for arrows
                     int arrowLeft = maxWidth + borderX + 1;
                     int arrowTop = 2;
-                    int arrowBottom = maxHeight + 1;
+                    int arrowBottom = maxTextHeight + 1;
 
                     // Get positions for time buttons
                     int maxTimeWidth = maxWidth - 4;
@@ -173,7 +183,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Make hitboxes for arrow and button presses
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowTimeDecreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.YearsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowTimeIncreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.YearsModify(ref selected, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowTimeDecreaseMonthsHitbox = new PointerHitbox(new(timeArrowMonthsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.MonthsModify(ref selected, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
@@ -189,35 +199,35 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
-                                if (IsMouseWithinText(text, vars, mouse))
+                                if (IsMouseWithinText(infoBox, mouse))
                                     GoUp(ref currIdx, 3);
-                                else if (IsMouseWithinTime(text, vars, mouse))
+                                else if (IsMouseWithinTime(infoBox, mouse))
                                 {
-                                    if (IsMouseWithinYears(text, vars, mouse))
+                                    if (IsMouseWithinYears(infoBox, mouse))
                                         TimeDateInputTools.YearsModify(ref selected, ref inputMode, true);
-                                    else if (IsMouseWithinMonths(text, vars, mouse))
+                                    else if (IsMouseWithinMonths(infoBox, mouse))
                                         TimeDateInputTools.MonthsModify(ref selected, ref inputMode, true);
-                                    else if (IsMouseWithinDays(text, vars, mouse))
+                                    else if (IsMouseWithinDays(infoBox, mouse))
                                         TimeDateInputTools.DaysModify(ref selected, ref inputMode, true);
                                 }
                                 break;
                             case PointerButton.WheelDown:
-                                if (IsMouseWithinText(text, vars, mouse))
-                                    GoDown(ref currIdx, text, vars, 3);
-                                else if (IsMouseWithinTime(text, vars, mouse))
+                                if (IsMouseWithinText(infoBox, mouse))
+                                    GoDown(ref currIdx, infoBox, 3);
+                                else if (IsMouseWithinTime(infoBox, mouse))
                                 {
-                                    if (IsMouseWithinYears(text, vars, mouse))
+                                    if (IsMouseWithinYears(infoBox, mouse))
                                         TimeDateInputTools.YearsModify(ref selected, ref inputMode);
-                                    else if (IsMouseWithinMonths(text, vars, mouse))
+                                    else if (IsMouseWithinMonths(infoBox, mouse))
                                         TimeDateInputTools.MonthsModify(ref selected, ref inputMode);
-                                    else if (IsMouseWithinDays(text, vars, mouse))
+                                    else if (IsMouseWithinDays(infoBox, mouse))
                                         TimeDateInputTools.DaysModify(ref selected, ref inputMode);
                                 }
                                 break;
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && splitFinalLines.Length > maxHeight)
+                                if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && linesLength > maxHeight)
                                 {
                                     arrowUpHitbox.ProcessPointer(mouse, out bool done);
                                     if (!done)
@@ -264,13 +274,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 GoUp(ref currIdx, maxHeight);
                                 break;
                             case ConsoleKey.D:
-                                GoDown(ref currIdx, text, vars, increment);
+                                GoDown(ref currIdx, infoBox, increment);
                                 break;
                             case ConsoleKey.W:
                                 GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.S:
-                                GoDown(ref currIdx, text, vars);
+                                GoDown(ref currIdx, infoBox);
                                 break;
                             case ConsoleKey.Tab:
                                 if (cki.Modifiers.HasFlag(ConsoleModifiers.Shift))
@@ -316,20 +326,17 @@ namespace Terminaux.Inputs.Styles.Infobox
             return selected;
         }
 
-        private static bool IsMouseWithinText(string text, object[] vars, PointerEventContext mouse)
+        private static bool IsMouseWithinText(InfoBox infoBox, PointerEventContext mouse)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
-            maxHeight -= 2;
+            var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
 
             // Check the dimensions
-            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
+            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxTextHeight));
         }
 
-        private static bool IsMouseWithinTime(string text, object[] vars, PointerEventContext mouse)
+        private static bool IsMouseWithinTime(InfoBox infoBox, PointerEventContext mouse)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _) = infoBox.Dimensions;
 
             // Check the dimensions
             int maxTimeWidth = maxWidth - 4;
@@ -339,10 +346,9 @@ namespace Terminaux.Inputs.Styles.Infobox
             return PointerTools.PointerWithinRange(mouse, (timeArrowLeft, timeArrowTop), (timeArrowRight, timeArrowTop));
         }
 
-        private static bool IsMouseWithinYears(string text, object[] vars, PointerEventContext mouse)
+        private static bool IsMouseWithinYears(InfoBox infoBox, PointerEventContext mouse)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _) = infoBox.Dimensions;
 
             // Check the dimensions
             int maxTimeWidth = maxWidth - 4;
@@ -353,10 +359,9 @@ namespace Terminaux.Inputs.Styles.Infobox
             return PointerTools.PointerWithinRange(mouse, (timeYearsLeft, timeTop), (timeYearsRight, timeTop));
         }
 
-        private static bool IsMouseWithinMonths(string text, object[] vars, PointerEventContext mouse)
+        private static bool IsMouseWithinMonths(InfoBox infoBox, PointerEventContext mouse)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _) = infoBox.Dimensions;
 
             // Check the dimensions
             int maxTimeWidth = maxWidth - 4;
@@ -368,10 +373,9 @@ namespace Terminaux.Inputs.Styles.Infobox
             return PointerTools.PointerWithinRange(mouse, (timeMonthsLeft, timeTop), (timeMonthsRight, timeTop));
         }
 
-        private static bool IsMouseWithinDays(string text, object[] vars, PointerEventContext mouse)
+        private static bool IsMouseWithinDays(InfoBox infoBox, PointerEventContext mouse)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _) = infoBox.Dimensions;
 
             // Check the dimensions
             int maxTimeWidth = maxWidth - 4;
@@ -390,13 +394,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                 currIdx = 0;
         }
 
-        private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
+        private static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
+            var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
             currIdx += level;
-            if (currIdx > splitFinalLines.Length - maxHeight)
-                currIdx = splitFinalLines.Length - maxHeight;
+            if (currIdx > linesLength - maxTextHeight)
+                currIdx = linesLength - maxTextHeight;
             if (currIdx < 0)
                 currIdx = 0;
         }

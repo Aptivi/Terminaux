@@ -27,6 +27,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -51,6 +52,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, InfoBoxSettings settings, params object[] vars)
         {
+            // Prepare the screen
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
@@ -58,6 +60,15 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxNonModalColor), infoBoxScreenPart);
+
+            // Make a new infobox instance
+            var infoBox = new InfoBox()
+            {
+                Settings = settings,
+                Text = text.FormatString(vars),
+            };
+
+            // Render it
             try
             {
                 // Draw the border and the text
@@ -66,7 +77,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool bail = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    return InfoBoxTools.RenderText(0, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, true, false, vars);
+                    return infoBox.Render(ref increment, currIdx, true, false);
                 });
 
                 // Main loop
@@ -76,17 +87,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Wait until the user presses any key to close the box
-                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (_, maxHeightOut, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines);
-                    if (currIdx < splitFinalLines.Length - maxHeightOut)
+                    var (_, maxHeight, _, _, _, _, linesLength) = infoBox.Dimensions;
+                    if (currIdx < linesLength - maxHeight)
                     {
                         Thread.Sleep(5000);
-                        splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                        var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines);
-                        bail = currIdx == splitFinalLines.Length - maxHeight;
+                        bail = currIdx == linesLength - maxHeight;
                         currIdx += increment;
-                        if (currIdx > splitFinalLines.Length - maxHeight)
-                            currIdx = splitFinalLines.Length - maxHeight;
+                        if (currIdx > linesLength - maxHeight)
+                            currIdx = linesLength - maxHeight;
                     }
                     else
                         bail = true;

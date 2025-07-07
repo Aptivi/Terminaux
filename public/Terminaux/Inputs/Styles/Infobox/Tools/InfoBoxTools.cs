@@ -41,83 +41,38 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
     {
         internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(string[] splitFinalLines, int extraHeight = 0)
         {
+            int windowWidth = ConsoleWrapper.WindowWidth;
+            int windowHeight = ConsoleWrapper.WindowHeight;
             int maxWidth = splitFinalLines.Length > 0 ? splitFinalLines.Max(ConsoleChar.EstimateCellWidth) : 0;
-            if (maxWidth < 30)
-                maxWidth = 30;
-            if (maxWidth > ConsoleWrapper.WindowWidth - 4)
-                maxWidth = ConsoleWrapper.WindowWidth - 4;
+            if (maxWidth < 50)
+                maxWidth = 50;
+            if (maxWidth > windowWidth - 4)
+                maxWidth = windowWidth - 4;
             int maxHeight = splitFinalLines.Length + extraHeight;
-            if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
-                maxHeight = ConsoleWrapper.WindowHeight - 4;
-            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+            if (maxHeight >= windowHeight - 3)
+                maxHeight = windowHeight - 4;
+            int maxRenderWidth = windowWidth - 6;
+            int borderX = windowWidth / 2 - maxWidth / 2 - 1;
+            int borderY = windowHeight / 2 - maxHeight / 2 - 1;
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY);
         }
-
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputChoiceCategoryInfo[] selections, string[] splitFinalLines)
+        
+        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(int width, int height, int left, int top, int extraHeight = 0)
         {
-            var selectionsRendered = new Selections(selections);
-            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
-            var related = selectionsRendered.GetRelatedHeights();
-            int selectionChoices = related.Count > 10 ? 10 : related.Count;
-            int selectionReservedHeight = 2 + selectionChoices;
-            (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
-
-            // Fill in some selection properties
-            int selectionBoxPosX = borderX + 2;
-            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
-            int leftPos = selectionBoxPosX + 1;
-            int AnswerTitleLeft = choices.Max(x => ConsoleChar.EstimateCellWidth(selections.Length > 1 ? $"    {x.ChoiceName}) " : $"  {x.ChoiceName}) "));
-            int maxSelectionWidth = choices.Max((ici) => ConsoleChar.EstimateCellWidth($" {ici.ChoiceTitle}") + AnswerTitleLeft);
-            maxSelectionWidth = maxSelectionWidth > maxWidth - 4 ? maxSelectionWidth : maxWidth - 4;
-            maxSelectionWidth = maxSelectionWidth >= ConsoleWrapper.WindowWidth - 8 ? ConsoleWrapper.WindowWidth - 8 : maxSelectionWidth;
-            int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;
-            maxWidth = maxSelectionWidth + 4;
-            borderX -= (int)Math.Round(diff / 2d);
-            selectionBoxPosX -= (int)Math.Round(diff / 2d);
-            int left = selectionBoxPosX + maxWidth - 3;
-            return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, left, selectionReservedHeight);
-        }
-
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputModule[] modules, string[] splitFinalLines)
-        {
-            int selectionChoices = modules.Length > 10 ? 10 : modules.Length;
-            int selectionReservedHeight = 2 + selectionChoices;
-            (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
-
-            // Fill in some selection properties
-            int selectionBoxPosX = borderX + 2;
-            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
-            int leftPos = selectionBoxPosX + 1;
-            int maxSelectionWidth = maxRenderWidth;
-            int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;
-            maxWidth = maxSelectionWidth;
-            maxSelectionWidth -= 4;
-            borderX -= (int)Math.Round(diff / 2d);
-            selectionBoxPosX -= (int)Math.Round(diff / 2d);
-            int left = selectionBoxPosX + maxWidth - 3;
-            return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, left, selectionReservedHeight);
-        }
-
-        internal static string RenderText(
-            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, bool writeBinding, params object[] vars
-        )
-        {
-            // Deal with the lines to actually fit text in the infobox
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines, maxHeightOffset);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, writeBinding, vars);
-        }
-
-        internal static string RenderText(
-            InputModule[] modules, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, params object[] vars
-        )
-        {
-            // Deal with the lines to actually fit text in the infobox
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensions(modules, splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, true, vars);
+            int windowWidth = ConsoleWrapper.WindowWidth;
+            int windowHeight = ConsoleWrapper.WindowHeight;
+            int maxWidth = width;
+            if (maxWidth < 50)
+                maxWidth = 50;
+            if (maxWidth > windowWidth - 4)
+                maxWidth = windowWidth - 4;
+            int maxHeight = height + extraHeight;
+            if (maxHeight >= windowHeight - 3)
+                maxHeight = windowHeight - 4;
+            int maxRenderWidth = windowWidth - 6;
+            int borderX = left;
+            int borderY = top;
+            return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY);
         }
 
         internal static string GetButtons(BorderSettings settings) =>
@@ -234,7 +189,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             }
         }
 
-        internal static bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse, InputChoiceCategoryInfo[] selections, string text, object[] vars, out ChoiceHitboxType hitboxType, ref int currentSelection, bool checkPos = true)
+        internal static bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse, InputChoiceCategoryInfo[] selections, InfoBox infoBox, out ChoiceHitboxType hitboxType, ref int currentSelection, bool checkPos = true)
         {
             hitboxType = ChoiceHitboxType.Choice;
             if (mouse is null)
@@ -244,8 +199,10 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             var selectionsRendered = new Selections(selections);
             var related = selectionsRendered.GetRelatedHeights();
             int selectionChoices = related.Count > 10 ? 10 : related.Count;
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, _, _, _, _, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = GetDimensions(selections, splitFinalLines);
+            var (_, _, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
+            int selectionBoxPosX = borderX + 2;
+            int selectionBoxPosY = borderY + maxTextHeight;
+            int maxSelectionWidth = maxRenderWidth - 4;
 
             // Now, translate coordinates to the selected index
             if (mouse.Coordinates.x <= selectionBoxPosX || mouse.Coordinates.x > selectionBoxPosX + maxSelectionWidth)

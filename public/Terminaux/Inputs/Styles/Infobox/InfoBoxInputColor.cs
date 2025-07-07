@@ -31,6 +31,7 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.General.Structures;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -57,8 +58,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text, InfoBoxSettings settings, InfoBoxInputType inputType = InfoBoxInputType.Text, params object[] vars)
         {
-            bool password = inputType == InfoBoxInputType.Password;
-            bool character = inputType == InfoBoxInputType.Character;
+            // Prepare the screen
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
@@ -66,6 +66,21 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxInputColor), infoBoxScreenPart);
+
+            // Make a new infobox instance
+            var infoBox = new InfoBox()
+            {
+                Positioning = new()
+                {
+                    ExtraHeight = 3,
+                },
+                Settings = settings,
+                Text = text.FormatString(vars),
+            };
+
+            // Render it
+            bool password = inputType == InfoBoxInputType.Password;
+            bool character = inputType == InfoBoxInputType.Character;
             try
             {
                 int rightMargin = 0;
@@ -73,16 +88,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 int increment = 0;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 3);
-
                     // Fill the info box with text inside it
-                    var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(3, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, false, false, vars)
-                    );
+                    infoBox.Elements.Clear();
+                    var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
 
-                    // Write the input bar and set the cursor position
+                    // Prepare the input bar
                     int maxInputWidth = maxWidth - 4;
                     int inputPosX = borderX + 2;
                     int inputEndPosX = inputPosX + maxInputWidth;
@@ -98,8 +108,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Color = settings.ForegroundColor,
                         BackgroundColor = settings.BackgroundColor,
                     };
+                    infoBox.Elements.Add(border);
+
+                    // Write the input bar and set the cursor position
+                    var boxBuffer = new StringBuilder(infoBox.Render(ref increment, currIdx, false, false));
                     boxBuffer.Append(
-                        border.Render() +
                         CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2) +
                         (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
                         (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "")

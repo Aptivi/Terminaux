@@ -29,6 +29,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Base.Structures;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -68,22 +69,32 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxModal(string text, InfoBoxSettings settings, params object[] vars)
         {
+            // Prepare the screen
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
-            var infoBoxModalScreenPart = new ScreenPart();
+            var infoBoxScreenPart = new ScreenPart();
             var screen = new Screen();
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
-            ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxModalColor), infoBoxModalScreenPart);
+            ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxModalColor), infoBoxScreenPart);
+
+            // Make a new infobox instance
+            var infoBox = new InfoBox()
+            {
+                Settings = settings,
+                Text = text.FormatString(vars),
+            };
+
+            // Render it
             try
             {
                 // Draw the border and the text
                 int currIdx = 0;
                 int increment = 0;
                 bool bail = false;
-                infoBoxModalScreenPart.AddDynamicText(() =>
+                infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    return InfoBoxTools.RenderText(0, settings.Title, text, settings.BorderSettings, settings.ForegroundColor, settings.BackgroundColor, settings.UseColors, ref increment, currIdx, true, true, vars);
+                    return infoBox.Render(ref increment, currIdx, true, true);
                 });
 
                 // Main loop
@@ -94,13 +105,12 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Wait until the user presses any key to close the box
                     InputEventInfo data = Input.ReadPointerOrKey();
-                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, linesLength) = infoBox.Dimensions;
 
                     // Get positions for arrows
                     int arrowLeft = maxWidth + borderX + 1;
                     int arrowTop = 2;
-                    int arrowBottom = maxHeight + 1;
+                    int arrowBottom = maxTextHeight + 1;
 
                     // Get positions for infobox buttons
                     string infoboxButtons = InfoBoxTools.GetButtons(settings.BorderSettings);
@@ -113,7 +123,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Make hitboxes for arrow and button presses
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, text, vars))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(Keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
@@ -127,7 +137,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && splitFinalLines.Length > maxHeight)
+                                if ((arrowUpHitbox.IsPointerWithin(mouse) || arrowDownHitbox.IsPointerWithin(mouse)) && linesLength > maxHeight)
                                 {
                                     arrowUpHitbox.ProcessPointer(mouse, out bool done);
                                     if (!done)
@@ -139,12 +149,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 break;
                             case PointerButton.WheelUp:
-                                if (IsMouseWithinText(text, vars, mouse))
+                                if (IsMouseWithinText(infoBox, mouse))
                                     GoUp(ref currIdx, 3);
                                 break;
                             case PointerButton.WheelDown:
-                                if (IsMouseWithinText(text, vars, mouse))
-                                    GoDown(ref currIdx, text, vars, 3);
+                                if (IsMouseWithinText(infoBox, mouse))
+                                    GoDown(ref currIdx, infoBox, 3);
                                 break;
                         }
                     }
@@ -160,20 +170,20 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case ConsoleKey.PageDown:
                             case ConsoleKey.Enter:
-                                bail = cki.Key == ConsoleKey.Enter && currIdx == splitFinalLines.Length - maxHeight;
-                                GoDown(ref currIdx, text, vars, increment);
+                                bail = cki.Key == ConsoleKey.Enter && currIdx == linesLength - maxHeight;
+                                GoDown(ref currIdx, infoBox, increment);
                                 break;
                             case ConsoleKey.UpArrow:
                                 GoUp(ref currIdx);
                                 break;
                             case ConsoleKey.DownArrow:
-                                GoDown(ref currIdx, text, vars);
+                                GoDown(ref currIdx, infoBox);
                                 break;
                             case ConsoleKey.Home:
                                 currIdx = 0;
                                 break;
                             case ConsoleKey.End:
-                                currIdx = splitFinalLines.Length - maxHeight;
+                                currIdx = linesLength - maxHeight;
                                 if (currIdx < 0)
                                     currIdx = 0;
                                 break;
@@ -199,19 +209,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxModalScreenPart.Id);
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxScreenPart.Id);
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
         }
 
-        private static bool IsMouseWithinText(string text, object[] vars, PointerEventContext mouse)
+        private static bool IsMouseWithinText(InfoBox infoBox, PointerEventContext mouse)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+            var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
 
             // Check the dimensions
-            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxHeight));
+            return PointerTools.PointerWithinRange(mouse, (borderX + 1, borderY + 1), (borderX + maxWidth, borderY + maxTextHeight));
         }
 
         private static void GoUp(ref int currIdx, int level = 1)
@@ -221,13 +230,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                 currIdx = 0;
         }
 
-        private static void GoDown(ref int currIdx, string text, object[] vars, int level = 1)
+        private static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
         {
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines);
+            var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
             currIdx += level;
-            if (currIdx > splitFinalLines.Length - maxHeight)
-                currIdx = splitFinalLines.Length - maxHeight;
+            if (currIdx > linesLength - maxTextHeight)
+                currIdx = linesLength - maxTextHeight;
             if (currIdx < 0)
                 currIdx = 0;
         }
