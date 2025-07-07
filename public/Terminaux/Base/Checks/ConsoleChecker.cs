@@ -32,8 +32,6 @@ using System.Text;
 using System.Threading;
 using Terminaux.Inputs;
 using Terminaux.Base.Extensions.Native;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Base.Checks

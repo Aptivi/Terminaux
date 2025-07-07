@@ -20,11 +20,9 @@
 using System;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
-using System.Text;
 using System.Linq;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;

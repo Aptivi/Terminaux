@@ -20,10 +20,8 @@
 using System;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
-using System.Text;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -430,7 +428,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         private static bool IsMouseWithinInputBox(InfoBox infoBox, PointerEventContext mouse)
         {
-            var (maxWidth, _, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
+            var (_, _, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
             int selectionBoxPosX = borderX + 2;
             int selectionBoxPosY = borderY + maxTextHeight + 1;
             int maxSelectionWidth = maxRenderWidth - 4;
