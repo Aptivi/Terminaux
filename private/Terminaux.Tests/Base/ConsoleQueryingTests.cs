@@ -202,7 +202,7 @@ namespace Terminaux.Tests.Base
         [DataRow('*', (CharWidthType)(-1))]
         [DataRow('你', CharWidthType.DoubleWidth)]
         [DataRow('！', CharWidthType.DoubleWidth)]
-        [DataRow('\u200b', CharWidthType.NonPrinting)] // ZERO-WIDTH SPACE character
+        [DataRow('\u200b', CharWidthType.Formatting)] // ZERO-WIDTH SPACE character
         [Description("Querying")]
         public void TestUnicodeCharWidthTypes(char c, CharWidthType expected)
         {
