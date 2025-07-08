@@ -65,6 +65,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         }
 
         /// <summary>
+        /// Removes all renderables from the list
+        /// </summary>
+        public void RemoveRenderables() =>
+            renderables.Clear();
+
+        /// <summary>
         /// Gets a renderable
         /// </summary>
         /// <param name="name">Renderable name</param>

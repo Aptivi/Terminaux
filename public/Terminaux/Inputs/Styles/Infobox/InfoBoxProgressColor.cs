@@ -83,7 +83,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Fill the info box with text inside it
-                    infoBox.Elements.Clear();
+                    infoBox.Elements.RemoveRenderables();
                     var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
                     var boxBuffer = new StringBuilder(
                         infoBox.Render(ref increment, currIdx, false, false)

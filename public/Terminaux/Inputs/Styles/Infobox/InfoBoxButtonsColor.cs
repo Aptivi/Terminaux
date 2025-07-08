@@ -115,7 +115,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Fill the info box with text inside it
-                    infoBox.Elements.Clear();
+                    infoBox.Elements.RemoveRenderables();
                     var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
 
                     // Get the button width list
@@ -152,7 +152,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             BackgroundColor = buttonBackgroundColor,
                             TextColor = buttonForegroundColor
                         };
-                        infoBox.Elements.Add(border);
+                        infoBox.Elements.AddRenderable($"Button box [{i}]", border);
                     }
                     return infoBox.Render(ref increment, currIdx, true, true);
                 });

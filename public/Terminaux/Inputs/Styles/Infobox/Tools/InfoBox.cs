@@ -22,6 +22,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
@@ -48,9 +49,9 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         public InfoBoxSettings Settings { get; set; } = InfoBoxSettings.GlobalSettings;
 
         /// <summary>
-        /// A list of graphical cyclic writers
+        /// A list of renderable elements in a container
         /// </summary>
-        public List<GraphicalCyclicWriter> Elements { get; set; } = [];
+        public Container Elements { get; set; } = new();
 
         /// <summary>
         /// Processed dimensions of the infobox
@@ -89,8 +90,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             );
 
             // Render the elements
-            foreach (var element in Elements)
-                boxBuffer.Append(element.Render());
+            boxBuffer.Append(ContainerTools.RenderContainer(Elements));
 
             // Reset colors
             if (Settings.UseColors)

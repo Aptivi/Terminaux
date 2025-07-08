@@ -87,7 +87,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Fill the info box with text inside it
-                    infoBox.Elements.Clear();
+                    infoBox.Elements.RemoveRenderables();
                     var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
 
                     // Prepare the input bar
@@ -106,7 +106,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Color = settings.ForegroundColor,
                         BackgroundColor = settings.BackgroundColor,
                     };
-                    infoBox.Elements.Add(border);
+                    infoBox.Elements.AddRenderable("Input box", border);
 
                     // Write the input bar and set the cursor position
                     var boxBuffer = new StringBuilder(infoBox.Render(ref increment, currIdx, false, false));

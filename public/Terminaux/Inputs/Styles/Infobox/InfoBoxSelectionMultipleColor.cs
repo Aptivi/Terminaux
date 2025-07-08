@@ -168,7 +168,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Fill the info box with text inside it
-                    infoBox.Elements.Clear();
+                    infoBox.Elements.RemoveRenderables();
                     var (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
                     int selectionBoxPosX = borderX + 2;
                     int selectionBoxPosY = borderY + maxTextHeight + 1;
@@ -186,7 +186,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Color = settings.ForegroundColor,
                         BackgroundColor = settings.BackgroundColor,
                     };
-                    infoBox.Elements.Add(border);
+                    infoBox.Elements.AddRenderable("Selection box", border);
 
                     // Now, render the selections
                     var selectionsRendered = new Selections(selections)
@@ -206,7 +206,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             BackgroundColor = settings.BackgroundColor,
                         }
                     };
-                    infoBox.Elements.Add(selectionsRendered);
+                    infoBox.Elements.AddRenderable("Rendered selections", selectionsRendered);
                     return infoBox.Render(ref increment, currIdx, true, true);
                 });
 
