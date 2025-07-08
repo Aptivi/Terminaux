@@ -64,11 +64,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
 
             // Get choice numbers and some positions
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
@@ -140,7 +141,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Left = interiorWidth + 6,
                     Top = 2,
                     Width = sidebarWidth - 3,
-                    Height = answersPerPage + totalHeight + 1,
+                    Height = answersPerPage + listStartPosition - 1,
                     ForegroundColor = settings.TextColor,
                     BackgroundColor = settings.BackgroundColor,
                     Line = showcaseLine,
@@ -151,7 +152,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Left = interiorWidth + 5,
                     Top = 1,
                     Width = sidebarWidth - 3,
-                    Height = answersPerPage + totalHeight + 1,
+                    Height = answersPerPage + listStartPosition - 1,
                     Color = settings.SeparatorColor,
                     BackgroundColor = settings.BackgroundColor,
                 };
@@ -159,7 +160,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     sidebarBorder.Render() +
                     boundedSidebar.Render()
                 );
-                if (lines.Length > answersPerPage + totalHeight + 1)
+                if (lines.Length > answersPerPage + listStartPosition - 1)
                 {
                     var dataSlider = new Slider(showcaseLine, 0, lines.Length - answersPerPage + totalHeight - 2)
                     {
@@ -270,9 +271,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
@@ -289,9 +291,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
             var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
@@ -366,9 +369,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
@@ -387,7 +391,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             if (sentenceLineCount <= 5)
                 return;
             questionLine--;
@@ -401,7 +406,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             if (sentenceLineCount <= 5)
                 return;
             questionLine++;
@@ -470,9 +476,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
@@ -491,7 +498,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     arrowDownHitbox.ProcessPointer(mouse, out done);
                 showcaseLine = 0;
             }
-            else if ((sidebarArrowUpHitbox.IsPointerWithin(mouse) || sidebarArrowDownHitbox.IsPointerWithin(mouse)) && lines.Length > answersPerPage + totalHeight + 1 && sidebarEnabled)
+            else if ((sidebarArrowUpHitbox.IsPointerWithin(mouse) || sidebarArrowDownHitbox.IsPointerWithin(mouse)) && lines.Length > answersPerPage + listStartPosition - 1 && sidebarEnabled)
             {
                 sidebarArrowUpHitbox.ProcessPointer(mouse, out bool done);
                 if (!done)
@@ -546,9 +553,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
             var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
@@ -596,9 +604,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             int sidebarWidth = sidebarEnabled ? 30 : 0;
             int interiorWidth = wholeWidth - sidebarWidth;
-            int sentenceLineCount = ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length;
+            int questionWidth = ConsoleChar.EstimateCellWidth(question);
+            int sentenceLineCount = questionWidth > 0 ? ConsoleMisc.GetWrappedSentencesByWords(question, interiorWidth).Length : 0;
             int totalHeight = sentenceLineCount > 5 ? 5 : sentenceLineCount;
-            int listStartPosition = ConsoleChar.EstimateCellWidth(question) > 0 ? totalHeight + 2 : 1;
+            int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 4;
 
