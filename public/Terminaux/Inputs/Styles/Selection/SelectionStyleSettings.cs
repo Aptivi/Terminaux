@@ -49,6 +49,11 @@ namespace Terminaux.Inputs.Styles.Selection
         public bool RadioButtons { get; set; }
 
         /// <summary>
+        /// Title of the selection style
+        /// </summary>
+        public string Title { get; set; } = "";
+
+        /// <summary>
         /// Question color
         /// </summary>
         public Color QuestionColor

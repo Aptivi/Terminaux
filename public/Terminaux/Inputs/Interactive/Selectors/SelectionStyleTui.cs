@@ -79,6 +79,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 Left = 2,
                 Top = 1,
+                Text = settings.Title,
                 Width = interiorWidth,
                 Height = answersPerPage + listStartPosition - 1,
                 FrameColor = settings.SeparatorColor,

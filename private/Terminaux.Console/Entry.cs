@@ -88,7 +88,10 @@ namespace Terminaux.Console
             // Prompt for fixtures
             while (true)
             {
-                int selected = SelectionStyle.PromptSelection("Choose a fixture", [.. choices], [.. altChoices], true);
+                int selected = SelectionStyle.PromptSelection("", [.. choices], [.. altChoices], new()
+                {
+                    Title = "Choose a fixture"
+                }, true);
                 if (selected == fixtureNames.Length + 1)
                     break;
 
