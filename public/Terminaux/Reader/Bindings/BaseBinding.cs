@@ -123,8 +123,6 @@ namespace Terminaux.Reader.Bindings
                 if (isHighSurrogate)
                 {
                     // Get all the input, or discard the surrogate because it's a zero width character
-                    textBuilder.Append(RenderChar(pressed.KeyChar));
-                    pressed = Input.ReadKey();
                     bool isNextKeySurrogate = char.IsLowSurrogate(pressed.KeyChar);
                     if (!ConditionalTools.ShouldNot(TextTools.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate, state))
                     {
