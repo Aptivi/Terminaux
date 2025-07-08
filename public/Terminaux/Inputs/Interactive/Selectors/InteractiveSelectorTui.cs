@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -214,72 +215,37 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
-        {
-            int dataCount = GetDataCount();
-            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-            if (dataCount <= SeparatorMaximumHeightInterior)
-                return;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
-            int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
-            int paneArrowTop = 2;
-            int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
-            if (mouse.Coordinates.y == paneArrowTop)
-            {
-                if (mouse.Coordinates.x == leftPaneArrowLeft)
-                {
-                    selectorTui.CurrentPane = 1;
-                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection - 1);
-                }
-                else if (mouse.Coordinates.x == rightPaneArrowLeft)
-                {
-                    if (selectorTui.SecondPaneInteractable)
-                    {
-                        selectorTui.CurrentPane = 2;
-                        InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.SecondPaneCurrentSelection - 1);
-                    }
-                    else
-                        InteractiveTuiTools.InfoScrollUp(selectorTui);
-                }
-            }
-            else if (mouse.Coordinates.y == paneArrowBottom)
-            {
-                if (mouse.Coordinates.x == leftPaneArrowLeft)
-                {
-                    selectorTui.CurrentPane = 1;
-                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection + 1);
-                }
-                else if (mouse.Coordinates.x == rightPaneArrowLeft)
-                {
-                    if (selectorTui.SecondPaneInteractable)
-                    {
-                        selectorTui.CurrentPane = 2;
-                        InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.SecondPaneCurrentSelection + 1);
-                    }
-                    else
-                        InteractiveTuiTools.InfoScrollDown(selectorTui);
-                }
-            }
-        }
-
         private void Act(ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             if (mouse is not null)
             {
-                int dataCount = GetDataCount();
+                // First, determine the arrow positions
+                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-                if (dataCount > SeparatorMaximumHeightInterior)
+                int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
+                int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
+                int paneArrowTop = 2;
+                int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
+
+                // Generate the arrow hitboxes
+                var leftArrowUpHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowTop), (_) => GoUp()) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                var leftArrowDownHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowBottom), (_) => GoDown()) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                var rightArrowUpHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowTop), selectorTui.SecondPaneInteractable ? (_) => GoUp() : (_) => InteractiveTuiTools.InfoScrollUp(selectorTui)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                var rightArrowDownHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowBottom), selectorTui.SecondPaneInteractable ? (_) => GoDown() : (_) => InteractiveTuiTools.InfoScrollDown(selectorTui)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+
+                // Test for pane to get the correct data count
+                int paneNum = 1;
+                if (rightArrowUpHitbox.IsPointerWithin(mouse) || rightArrowDownHitbox.IsPointerWithin(mouse))
+                    paneNum = 2;
+                if (selectorTui.SecondPaneInteractable)
+                    selectorTui.CurrentPane = paneNum;
+                int dataCount = GetDataCount();
+
+                // Now, process the pointer
+                string finalInfoRendered = InteractiveTuiTools.RenderFinalInfo(selectorTui);
+                string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+                if (dataCount > SeparatorMaximumHeightInterior || (!selectorTui.SecondPaneInteractable && paneNum == 2 && finalInfoStrings.Length > SeparatorMaximumHeightInterior))
                 {
-                    int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-                    int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
-                    int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 4 : 3);
-                    int paneArrowTop = 2;
-                    int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
-                    var leftArrowUpHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowTop), UpdatePositionBasedOnArrowPress) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var leftArrowDownHitbox = new PointerHitbox(new(leftPaneArrowLeft, paneArrowBottom), UpdatePositionBasedOnArrowPress) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var rightArrowUpHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowTop), UpdatePositionBasedOnArrowPress) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var rightArrowDownHitbox = new PointerHitbox(new(rightPaneArrowLeft, paneArrowBottom), UpdatePositionBasedOnArrowPress) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     leftArrowUpHitbox.ProcessPointer(mouse, out bool done);
                     if (done)
                         return;
