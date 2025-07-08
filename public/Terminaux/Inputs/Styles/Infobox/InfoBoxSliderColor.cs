@@ -158,7 +158,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Get positions for arrows
                     int arrowLeft = maxWidth + borderX + 1;
-                    int arrowTop = 2;
+                    int arrowTop = borderY + 1;
                     int arrowBottom = maxHeight + 1;
 
                     // Get positions for slider buttons

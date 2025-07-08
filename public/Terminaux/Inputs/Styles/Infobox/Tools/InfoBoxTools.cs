@@ -147,9 +147,9 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             };
             if (splitFinalLines.Length > maxHeight - maxHeightOffset && drawBar)
             {
-                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, 2, InfoBoxColor, BackgroundColor));
-                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));
-                boxBuffer.Append(RendererTools.RenderRenderable(slider, new(left, 3)));
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, borderY + 1, InfoBoxColor, BackgroundColor));
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, borderY + maxHeight - maxHeightOffset, InfoBoxColor, BackgroundColor));
+                boxBuffer.Append(RendererTools.RenderRenderable(slider, new(left, borderY + 2)));
             }
 
             // Render a keybinding that points to the help page

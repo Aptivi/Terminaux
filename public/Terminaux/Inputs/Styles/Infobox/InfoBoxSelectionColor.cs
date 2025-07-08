@@ -230,8 +230,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     {
                         // Get positions for arrows
                         int arrowLeft = maxWidth + borderX + 1;
-                        int arrowTop = 2;
-                        int arrowBottom = maxTextHeight + 1;
+                        int arrowTop = borderY + 1;
+                        int arrowBottom = borderY + maxTextHeight;
 
                         // Get positions for infobox buttons
                         string infoboxButtons = InfoBoxTools.GetButtons(settings.BorderSettings);
