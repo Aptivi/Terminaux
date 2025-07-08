@@ -183,7 +183,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     InputEventInfo data = Input.ReadPointerOrKey();
                     var (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, linesLength) = infoBox.Dimensions;
                     int selectionBoxPosX = borderX + 2;
-                    int selectionBoxPosY = borderY + maxTextHeight + 1;
+                    int selectionBoxPosY = borderY + maxTextHeight + 2;
                     int maxSelectionWidth = maxWidth - 4;
                     int arrowSelectLeft = selectionBoxPosX + maxWidth - 3;
 
@@ -205,7 +205,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var arrowUpHitbox = new PointerHitbox(new(arrowLeft, arrowTop), new Action<PointerEventContext>((_) => InfoBoxTools.GoUp(ref currIdx))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowDownHitbox = new PointerHitbox(new(arrowLeft, arrowBottom), new Action<PointerEventContext>((_) => InfoBoxTools.GoDown(ref currIdx, infoBox))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                    var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, ConsoleWrapper.WindowHeight - selectionChoices), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, modules))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                    var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY + selectionChoices - 1), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, modules))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonHelpHitbox = new PointerHitbox(new(infoboxButtonLeftHelpMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftHelpMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => KeybindingTools.ShowKeybindingInfobox(Keybindings))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                     var infoboxButtonCloseHitbox = new PointerHitbox(new(infoboxButtonLeftCloseMin, infoboxButtonsTop), new Coordinate(infoboxButtonLeftCloseMax, infoboxButtonsTop), new Action<PointerEventContext>((_) => cancel = bail = true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
@@ -266,11 +266,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonHelpHitbox.ProcessPointer(mouse, out _);
                                 else if (infoboxButtonCloseHitbox.IsPointerWithin(mouse))
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
-                                else
-                                {
-                                    UpdatePositionBasedOnMouse(mouse);
+                                else if (UpdatePositionBasedOnMouse(mouse))
                                     modules[currentSelection].ProcessInput();
-                                }
                                 break;
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
@@ -423,10 +420,10 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         private static bool IsMouseWithinInputBox(InfoBox infoBox, PointerEventContext mouse)
         {
-            var (_, _, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
+            var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
             int selectionBoxPosX = borderX + 2;
-            int selectionBoxPosY = borderY + maxTextHeight + 1;
-            int maxSelectionWidth = maxRenderWidth - 4;
+            int selectionBoxPosY = borderY + maxTextHeight + 2;
+            int maxSelectionWidth = maxWidth - 4;
 
             // Check the dimensions
             return PointerTools.PointerWithinRange(mouse, (selectionBoxPosX + 1, selectionBoxPosY), (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + infoBox.Positioning.ExtraHeight - 3));

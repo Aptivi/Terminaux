@@ -198,10 +198,10 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             var selectionsRendered = new Selections(selections);
             var related = selectionsRendered.GetRelatedHeights();
             int selectionChoices = related.Count > 10 ? 10 : related.Count;
-            var (_, _, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
+            var (maxWidth, _, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
             int selectionBoxPosX = borderX + 2;
-            int selectionBoxPosY = borderY + maxTextHeight;
-            int maxSelectionWidth = maxRenderWidth - 4;
+            int selectionBoxPosY = borderY + maxTextHeight + 2;
+            int maxSelectionWidth = maxWidth - 4;
 
             // Now, translate coordinates to the selected index
             if (mouse.Coordinates.x <= selectionBoxPosX || mouse.Coordinates.x > selectionBoxPosX + maxSelectionWidth)

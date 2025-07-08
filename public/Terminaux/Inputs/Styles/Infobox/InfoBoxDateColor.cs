@@ -173,7 +173,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Get positions for time buttons
                     int maxTimeWidth = maxWidth - 4;
                     int maxTimePartWidth = maxTimeWidth / 3 - 2;
-                    int timeArrowTop = borderY + maxHeight - 1;
+                    int timeArrowTop = borderY + maxHeight;
                     int timeArrowYearsLeft = borderX + 2;
                     int timeArrowYearsRight = timeArrowYearsLeft + maxTimePartWidth + 1;
                     int timeArrowMonthsLeft = timeArrowYearsLeft + maxTimePartWidth + 3;
