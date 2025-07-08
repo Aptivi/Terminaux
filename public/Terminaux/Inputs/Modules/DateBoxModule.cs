@@ -39,7 +39,7 @@ namespace Terminaux.Inputs.Modules
         {
             // Render an input text box with selected value and blanks as underscores.
             DateTimeOffset value = Value is DateTimeOffset valueDate ? valueDate : DateTimeOffset.Now;
-            string valueString = $"{value}";
+            string valueString = $"{value:D}";
             string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($" ◎ {valueString}", width);
             valueString = wrappedValue[0];
 
