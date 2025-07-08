@@ -345,20 +345,18 @@ namespace Terminaux.Inputs.Interactive
 
             // Split the information string
             string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-            int top = 0;
-            for (int infoIndex = interactiveTui.CurrentInfoLine; infoIndex < finalInfoStrings.Length; infoIndex++, top++)
+            var bounded = new BoundedText()
             {
-                // Check to see if the info is overpopulated
-                if (top >= SeparatorMaximumHeightInterior)
-                {
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("[W|S|SHIFT + I]", ConsoleWrapper.WindowWidth - "[W|S|SHIFT + I]".Length - 2, SeparatorMaximumHeightInterior + 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
-                    break;
-                }
-
-                // Now, render the info
-                string finalInfo = finalInfoStrings[infoIndex];
-                builder.Append(TextWriterWhereColor.RenderWhereColorBack(finalInfo, SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + top, ForegroundColor, PaneItemBackColor));
-            }
+                Left = SeparatorHalfConsoleWidth + 1,
+                Top = SeparatorMinimumHeightInterior,
+                Line = interactiveTui.CurrentInfoLine,
+                Height = SeparatorMaximumHeightInterior,
+                Width = SeparatorHalfConsoleWidthInterior,
+                ForegroundColor = ForegroundColor,
+                BackgroundColor = PaneItemBackColor,
+                Text = finalInfoRendered
+            };
+            builder.Append(bounded.Render());
 
             // Render the vertical bar
             int left = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2);
@@ -374,6 +372,7 @@ namespace Terminaux.Inputs.Interactive
                     SliderVerticalActiveTrackChar = interactiveTui.Settings.InfoBoxSettings.BorderSettings.BorderRightFrameChar,
                     SliderVerticalInactiveTrackChar = interactiveTui.Settings.InfoBoxSettings.BorderSettings.BorderRightFrameChar,
                 };
+                builder.Append(TextWriterWhereColor.RenderWhereColorBack("[W|S|SHIFT + I]", ConsoleWrapper.WindowWidth - "[W|S|SHIFT + I]".Length - 2, SeparatorMaximumHeightInterior + 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                 builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                 builder.Append(RendererTools.RenderRenderable(dataSlider, new(left + 1, 3)));
