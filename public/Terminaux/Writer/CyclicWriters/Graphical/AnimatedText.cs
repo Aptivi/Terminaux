@@ -119,6 +119,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 string text = frames[frame];
                 ConsoleLogger.Debug("Rendering animated text frame {0} / {1}", frame, frames.Length);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, Width);
+                if (UseColors)
+                {
+                    animated.Append(
+                        ColorTools.RenderSetConsoleColor(ForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                    );
+                }
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
@@ -142,11 +149,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     }
                     else
                         finalSentence.Append(sentence);
-                    animated.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWherePlain(finalSentence.ToString(), consoleInfoX, Top + i, false, Settings.Alignment == TextAlignment.Left ? Left + Width : 0)
-                    );
+                    animated.Append(TextWriterWhereColor.RenderWherePlain(finalSentence.ToString(), consoleInfoX, Top + i, false, Settings.Alignment == TextAlignment.Left ? Left + Width : 0));
                     finalSentence.Clear();
                 }
 

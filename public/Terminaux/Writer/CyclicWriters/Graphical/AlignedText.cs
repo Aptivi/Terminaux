@@ -156,9 +156,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     decoratedText.Insert(0,
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}"
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
+                        decoration.RenderStart()
                     );
-                    decoratedText.Insert(0, decoration.RenderStart());
                     decoratedText.Append(decoration.RenderEnd());
                 }
                 Text = decoratedText.ToString();
@@ -166,6 +166,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 // Process the sentences
                 var aligned = new StringBuilder();
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, width);
+                if (useColor)
+                {
+                    aligned.Append(
+                        ColorTools.RenderSetConsoleColor(ForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                    );
+                }
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
@@ -189,11 +196,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     }
                     else
                         finalSentence.Append(sentence);
-                    aligned.Append(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWherePlain(finalSentence.ToString(), consoleInfoX, top + i, false)
-                    );
+                    aligned.Append(TextWriterWhereColor.RenderWherePlain(finalSentence.ToString(), consoleInfoX, top + i, false));
                     finalSentence.Clear();
                 }
 

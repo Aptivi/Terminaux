@@ -26,6 +26,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
@@ -209,10 +210,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     increment = linesMade;
                     break;
                 }
-                buffer.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + linesMade % height + 1)}" +
-                    $"{line}"
-                );
+                buffer.Append(TextWriterWhereColor.RenderWherePlain(line, posX, top + linesMade % height, false));
                 linesMade++;
             }
             if (useColor)
@@ -240,6 +238,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Get the lines and highlight the selection
             int count = 0;
             var sels = new StringBuilder();
+            if (useColor)
+            {
+                sels.Append(
+                    $"{ColorTools.RenderSetConsoleColor(textColor)}" +
+                    $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
+                );
+            }
             for (int i = startIndex; i <= endIndex; i++)
             {
                 // Get a line
@@ -281,25 +286,15 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Change the color depending on the highlighted line and column
                 int posX = TextWriterTools.DetermineTextAlignment(lineBuilder.ToString(), settings.Alignment, left);
-                if (useColor)
-                {
-                    sels.Append(
-                        $"{ColorTools.RenderSetConsoleColor(textColor)}" +
-                        $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
-                    );
-                }
-                sels.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + count + 1)}" +
-                    lineBuilder
-                );
-                if (useColor)
-                {
-                    sels.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
-                    );
-                }
+                sels.Append(TextWriterWhereColor.RenderWherePlain(lineBuilder.ToString(), posX, top + count, false));
                 count++;
+            }
+            if (useColor)
+            {
+                sels.Append(
+                    ColorTools.RenderRevertForeground() +
+                    ColorTools.RenderRevertBackground()
+                );
             }
             return sels.ToString();
         }
