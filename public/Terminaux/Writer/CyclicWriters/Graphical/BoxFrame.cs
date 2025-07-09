@@ -138,6 +138,18 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 StringBuilder frameBuilder = new();
                 ConsoleLogger.Debug("Box width: {0}, height: {1}", Width, Height);
 
+                // Text title
+                int finalWidth = Width - 7 - (titleSettings.TitleOffset.Left + titleSettings.TitleOffset.Right);
+                string finalText = "";
+                if (!string.IsNullOrEmpty(text) && finalWidth > 3)
+                {
+                    finalText =
+                        $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
+                        text.Truncate(finalWidth) +
+                        $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "")}";
+                }
+                int textWidth = ConsoleChar.EstimateCellWidth(finalText);
+
                 // Colors
                 if (UseColors)
                 {
@@ -177,14 +189,33 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     );
                 }
 
-                // Upper frame
+                // Upper frame (and optionally a title)
                 if (settings.BorderUpperFrameEnabled)
                 {
-                    frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 1)}" +
-                        $"{new string(settings.BorderUpperFrameChar, Width)}"
-                    );
+                    frameBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 1));
+                    for (int w = 0; w < Width; w++)
+                    {
+                        if (w == 1 && textWidth > 3)
+                        {
+                            var titleWriter = new AlignedText()
+                            {
+                                Text = finalText,
+                                Left = Left + 2,
+                                Top = Top,
+                                Width = Width - titleSettings.TitleOffset.Right,
+                                ForegroundColor = TitleColor,
+                                BackgroundColor = BackgroundColor,
+                                Settings = TitleSettings,
+                            };
+                            frameBuilder.Append(titleWriter.Render());
+                            w += textWidth - 1;
+                        }
+                        else
+                            frameBuilder.Append(settings.BorderUpperFrameChar);
+                    }
                 }
+
+                // Lower frame
                 if (settings.BorderLowerFrameEnabled)
                 {
                     frameBuilder.Append(
@@ -350,27 +381,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             $"{new string(' ', Width + 2)}"
                         );
                     }
-                }
-
-                // Text title
-                int finalWidth = Width - 7 - (titleSettings.TitleOffset.Left + titleSettings.TitleOffset.Right);
-                if (!string.IsNullOrEmpty(text) && finalWidth > 3)
-                {
-                    string finalText =
-                        $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
-                        text.Truncate(finalWidth) +
-                        $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "")}";
-                    var titleWriter = new AlignedText()
-                    {
-                        Text = finalText,
-                        Left = Left + 2,
-                        Top = Top,
-                        Width = Width - titleSettings.TitleOffset.Right,
-                        ForegroundColor = TitleColor,
-                        BackgroundColor = BackgroundColor,
-                        Settings = TitleSettings,
-                    };
-                    frameBuilder.Append(titleWriter.Render());
                 }
 
                 // Write the resulting buffer
