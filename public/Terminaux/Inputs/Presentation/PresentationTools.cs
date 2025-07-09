@@ -98,13 +98,12 @@ namespace Terminaux.Inputs.Presentation
                     var builder = new StringBuilder();
 
                     // Populate some variables
-                    int presentationUpperBorderLeft = 2;
-                    int presentationUpperBorderTop = 1;
+                    int presentationUpperBorderLeft = 0;
+                    int presentationUpperBorderTop = 0;
                     int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
                     int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
                     int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
                     int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
-                    int presentationInformationalTop = ConsoleWrapper.WindowHeight - 2;
 
                     // Make a border
                     var frame = new BoxFrame()
@@ -141,7 +140,7 @@ namespace Terminaux.Inputs.Presentation
                     builder.Append(RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
 
                     // Clear the presentation screen
-                    for (int y = presentationUpperInnerBorderTop; y <= presentationLowerInnerBorderTop + 1; y++)
+                    for (int y = presentationUpperInnerBorderTop; y <= presentationLowerInnerBorderTop; y++)
                         builder.Append(TextWriterWhereColor.RenderWhereColorBack(new string(' ', presentationLowerInnerBorderLeft), presentationUpperInnerBorderLeft, y, presentation.FrameColor, presentation.BackgroundColor));
 
                     // Generate the final string
@@ -172,13 +171,12 @@ namespace Terminaux.Inputs.Presentation
                     string[] splitFinalLines = GetFinalLines(rendered);
 
                     // Populate some variables
-                    int presentationUpperBorderLeft = 2;
-                    int presentationUpperBorderTop = 1;
+                    int presentationUpperBorderLeft = 0;
+                    int presentationUpperBorderTop = 0;
                     int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
                     int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
                     int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
                     int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
-                    int presentationInformationalTop = ConsoleWrapper.WindowHeight - 2;
                     var boxBuffer = new StringBuilder();
                     int linesMade = 0;
                     for (int i = currIdx; i < splitFinalLines.Length; i++)
@@ -195,7 +193,7 @@ namespace Terminaux.Inputs.Presentation
                     }
 
                     // Render the vertical bar
-                    int left = presentationLowerInnerBorderLeft + 3;
+                    int left = presentationLowerInnerBorderLeft + 1;
                     if (splitFinalLines.Length > presentationLowerInnerBorderTop)
                     {
                         var dataSlider = new Slider((int)((double)currIdx / (splitFinalLines.Length - presentationLowerInnerBorderTop) * splitFinalLines.Length), 0, splitFinalLines.Length)
@@ -208,9 +206,9 @@ namespace Terminaux.Inputs.Presentation
                             SliderVerticalActiveTrackChar = presentation.BorderSettings.BorderRightFrameChar,
                             SliderVerticalInactiveTrackChar = presentation.BorderSettings.BorderRightFrameChar,
                         };
-                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, 2, presentation.FrameColor, presentation.BackgroundColor));
-                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, presentationLowerInnerBorderTop + 1, presentation.FrameColor, presentation.BackgroundColor));
-                        boxBuffer.Append(RendererTools.RenderRenderable(dataSlider, new(left, 3)));
+                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, 1, presentation.FrameColor, presentation.BackgroundColor));
+                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, presentationLowerInnerBorderTop, presentation.FrameColor, presentation.BackgroundColor));
+                        boxBuffer.Append(RendererTools.RenderRenderable(dataSlider, new(left, 2)));
                     }
                     return boxBuffer.ToString();
                 });
@@ -226,15 +224,15 @@ namespace Terminaux.Inputs.Presentation
 
                     // Get the lines and the positions
                     string[] splitFinalLines = GetFinalLines(rendered);
-                    int presentationUpperBorderLeft = 2;
-                    int presentationUpperBorderTop = 1;
+                    int presentationUpperBorderLeft = 0;
+                    int presentationUpperBorderTop = 0;
                     int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
                     int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
                     int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
                     int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
-                    int arrowLeft = presentationLowerInnerBorderLeft + 3;
-                    int arrowTop = 2;
-                    int arrowBottom = presentationLowerInnerBorderTop + 1;
+                    int arrowLeft = presentationLowerInnerBorderLeft + 1;
+                    int arrowTop = 1;
+                    int arrowBottom = presentationLowerInnerBorderTop;
 
                     // Then, determine if the pointer or the keypress is available
                     var mouse = data.PointerEventContext;
@@ -319,7 +317,7 @@ namespace Terminaux.Inputs.Presentation
         private static string[] GetFinalLines(string rendered)
         {
             // Deal with the lines to actually fit text in the infobox
-            int presentationUpperBorderLeft = 2;
+            int presentationUpperBorderLeft = 0;
             int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
             int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
             string[] splitLines = rendered.SplitNewLines();
@@ -342,7 +340,7 @@ namespace Terminaux.Inputs.Presentation
 
         private static void GoDown(string rendered, ref int currIdx, int level = 1)
         {
-            int presentationUpperBorderTop = 1;
+            int presentationUpperBorderTop = 0;
             int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
             string[] splitFinalLines = GetFinalLines(rendered);
             currIdx += level;
@@ -357,7 +355,7 @@ namespace Terminaux.Inputs.Presentation
 
         private static void GoLast(string rendered, ref int currIdx)
         {
-            int presentationUpperBorderTop = 1;
+            int presentationUpperBorderTop = 0;
             int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
             string[] splitFinalLines = GetFinalLines(rendered);
             currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
