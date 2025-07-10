@@ -116,7 +116,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
 
                     // Now, write the current position on the border of the slider bar and the arrows
-                    string posText = $"[  {minPos}  <=  {selected}  <=  {maxPos} ]";
+                    string posText = $"[  {minPos}  <=  {selected}  <=  {maxPos}  ]";
                     int sliderPosX = borderX + 2;
                     int sliderPosY = borderY + maxHeight - 3;
                     int maxSliderWidth = maxWidth - 4;
