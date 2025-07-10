@@ -273,13 +273,44 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int finalIndex = i + startIndex;
                 if (finalIndex >= relatedHeights.Count)
                     break;
-                int optionTop = Top + finalIndex - startIndex;
+                int optionTop = Top + finalIndex - startIndex - 1;
                 Coordinate start = new(Left, optionTop);
                 Coordinate end = new(Left + Width, optionTop);
                 (var type, int related) = relatedHeights[finalIndex];
                 hitboxes.Add((new(start, end, null), type, related));
             }
             return [.. hitboxes];
+        }
+
+        /// <summary>
+        /// Gets the hitbox index from the selection index
+        /// </summary>
+        /// <returns>Hitbox index that represents the selection index</returns>
+        public int GetHitboxIndex() =>
+            GetHitboxIndex(CurrentSelection);
+
+        /// <summary>
+        /// Gets the hitbox index from the selection index
+        /// </summary>
+        /// <param name="selectionIdx">Selection index from all choices</param>
+        /// <returns>Hitbox index that represents the selection index</returns>
+        public int GetHitboxIndex(int selectionIdx)
+        {
+            // Get the choice parameters
+            List<int> selectionHeights = GetSelectionHeights();
+
+            // Get the choice hitboxes
+            int selectionHeight = selectionHeights[selectionIdx];
+            int currentPage = (selectionHeight - 1) / Height;
+            int startIndex = Height * currentPage;
+            for (int i = 0; i <= Height - 1; i++)
+            {
+                // Populate the selection box
+                int finalIndex = i + startIndex;
+                if (finalIndex == selectionIdx)
+                    return i;
+            }
+            return 0;
         }
 
         /// <summary>

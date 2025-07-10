@@ -75,6 +75,11 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         public bool RadioButtons { get; set; }
 
         /// <summary>
+        /// Use popover for multi-input selections
+        /// </summary>
+        public bool UsePopover { get; set; } = true;
+
+        /// <summary>
         /// Foreground color of the infobox 
         /// </summary>
         public Color ForegroundColor
