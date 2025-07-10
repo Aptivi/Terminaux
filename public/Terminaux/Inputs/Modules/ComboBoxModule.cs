@@ -62,7 +62,7 @@ namespace Terminaux.Inputs.Modules
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
             InputChoiceInfo? choice = Value is not null ? choices[(int)Value] : null;
             string valueString = choice?.ChoiceName ?? "";
-            string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($" ▼ {valueString}", width);
+            string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($"▼ {valueString}", width);
             valueString = wrappedValue[0];
 
             // Determine how many underscores we need to render

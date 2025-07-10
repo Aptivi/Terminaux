@@ -51,7 +51,7 @@ namespace Terminaux.Inputs.Modules
             // Render an input text box with selected value and blanks as underscores.
             int value = Value is int valueInt ? valueInt : MinPos;
             string valueString = $"{value} of {MinPos}/{MaxPos}";
-            string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($" ◎ {valueString}", width);
+            string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($"▼ {valueString}", width);
             valueString = wrappedValue[0];
 
             // Determine how many underscores we need to render

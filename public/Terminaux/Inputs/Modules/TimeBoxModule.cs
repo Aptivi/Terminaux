@@ -40,7 +40,7 @@ namespace Terminaux.Inputs.Modules
             // Render an input text box with selected value and blanks as underscores.
             DateTimeOffset value = Value is DateTimeOffset valueTime ? valueTime : DateTimeOffset.Now;
             string valueString = $"{value:T}";
-            string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($" ◎ {valueString}", width);
+            string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($"▼ {valueString}", width);
             valueString = wrappedValue[0];
 
             // Determine how many underscores we need to render

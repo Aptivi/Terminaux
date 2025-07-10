@@ -62,7 +62,7 @@ namespace Terminaux.Inputs.Modules
             // Render an input text box with selected value and blanks as underscores.
             int[] indexes = Value is not null ? (int[])Value : [];
             string valueString = $"{indexes.Length} items selected";
-            string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($" ▼ {valueString}", width);
+            string[] wrappedValue = ConsoleMisc.GetWrappedSentencesByWords($"▼ {valueString}", width);
             valueString = wrappedValue[0];
 
             // Determine how many underscores we need to render
