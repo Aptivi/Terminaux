@@ -67,7 +67,7 @@ namespace Terminaux.Inputs.Modules
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                Value = InfoBoxInputColor.WriteInfoBoxInput(Description, new InfoBoxSettings()
+                Value = InfoBoxInputColor.WriteInfoBoxInput(value, Description, new InfoBoxSettings()
                 {
                     Title = Name,
                     ForegroundColor = Foreground,
