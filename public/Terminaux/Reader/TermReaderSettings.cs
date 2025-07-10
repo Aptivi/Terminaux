@@ -70,7 +70,7 @@ namespace Terminaux.Reader
         private Stream cueEnter = cueEnterFallback;
         private Stream cueRubout = cueRuboutFallback;
         private Stream cueWrite = cueWriteFallback;
-        private int initialPosition = 0;
+        private int initialPosition = -1;
         private ConsoleBell bell = ConsoleBell.Audible;
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace Terminaux.Reader
         /// </summary>
         public int InitialPosition
         {
-            get => initialPosition;
+            get => initialPosition < 0 ? state?.CurrentText.Length ?? 0 : initialPosition;
             set => initialPosition = value;
         }
 
