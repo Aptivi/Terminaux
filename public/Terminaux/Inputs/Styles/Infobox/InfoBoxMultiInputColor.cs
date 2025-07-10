@@ -212,32 +212,35 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Determine whether we need to use the popover
                     Coordinate popoverPos = default;
                     Size popoverSize = default;
-                    if (settings.UsePopover)
+                    void UpdatePopoverParameters()
                     {
-                        // Prepare the selections
-                        int maxModuleWidth = maxSelectionWidth - maxModuleSelectWidth;
-                        List<InputChoiceInfo> choices = [];
-                        foreach (var module in modules)
+                        if (settings.UsePopover)
                         {
-                            var moduleChoice = new InputChoiceInfo(module.Name, module.RenderInput(maxModuleWidth));
-                            choices.Add(moduleChoice);
-                        }
+                            // Prepare the selections
+                            int maxModuleWidth = maxSelectionWidth - maxModuleSelectWidth;
+                            List<InputChoiceInfo> choices = [];
+                            foreach (var module in modules)
+                            {
+                                var moduleChoice = new InputChoiceInfo(module.Name, module.RenderInput(maxModuleWidth));
+                                choices.Add(moduleChoice);
+                            }
 
-                        // Make a selection renderable to get the hitbox index and to get the popover parameters
-                        InputChoiceInfo[] choicesArray = [.. choices];
-                        var selectionsRendered = new Selections(choicesArray)
-                        {
-                            Left = selectionBoxPosX + 1,
-                            Top = selectionBoxPosY + 1,
-                            CurrentSelection = currentSelection,
-                            Height = selectionChoices,
-                            Width = maxSelectionWidth,
-                            Ellipsis = false,
-                        };
-                        int hitboxIdx = selectionsRendered.GetHitboxIndex();
-                        var hitbox = selectionsRendered.GenerateSelectionHitbox(hitboxIdx);
-                        popoverPos = new(hitbox.hitbox.Start.X + maxModuleSelectWidth, hitbox.hitbox.Start.Y);
-                        popoverSize = new(hitbox.hitbox.Size.Width - maxModuleSelectWidth - 1, hitbox.hitbox.Size.Height);
+                            // Make a selection renderable to get the hitbox index and to get the popover parameters
+                            InputChoiceInfo[] choicesArray = [.. choices];
+                            var selectionsRendered = new Selections(choicesArray)
+                            {
+                                Left = selectionBoxPosX + 1,
+                                Top = selectionBoxPosY + 1,
+                                CurrentSelection = currentSelection,
+                                Height = selectionChoices,
+                                Width = maxSelectionWidth,
+                                Ellipsis = false,
+                            };
+                            int hitboxIdx = selectionsRendered.GetHitboxIndex();
+                            var hitbox = selectionsRendered.GenerateSelectionHitbox(hitboxIdx);
+                            popoverPos = new(hitbox.hitbox.Start.X + maxModuleSelectWidth, hitbox.hitbox.Start.Y);
+                            popoverSize = new(hitbox.hitbox.Size.Width - maxModuleSelectWidth - 1, hitbox.hitbox.Size.Height);
+                        }
                     }
 
                     // Handle input
@@ -298,7 +301,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 else if (infoboxButtonCloseHitbox.IsPointerWithin(mouse))
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
                                 else if (UpdatePositionBasedOnMouse(mouse))
+                                {
+                                    if (!Input.EnableMovementEvents)
+                                        ScreenTools.Render();
+                                    UpdatePopoverParameters();
                                     modules[currentSelection].ProcessInput(popoverPos, popoverSize);
+                                }
                                 break;
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
@@ -410,6 +418,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 InfoBoxTools.GoDown(ref currIdx, infoBox);
                                 break;
                             case ConsoleKey.Spacebar:
+                                UpdatePopoverParameters();
                                 selectedInstance.ProcessInput(popoverPos, popoverSize);
                                 break;
                             case ConsoleKey.Enter:
