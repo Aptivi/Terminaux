@@ -70,6 +70,11 @@ namespace Terminaux.Inputs
         public bool Provided { get; protected set; }
 
         /// <summary>
+        /// Extra popover height to add
+        /// </summary>
+        public virtual int ExtraPopoverHeight { get; protected set; }
+
+        /// <summary>
         /// Gets a strongly-typed value
         /// </summary>
         /// <typeparam name="T">Target value type</typeparam>

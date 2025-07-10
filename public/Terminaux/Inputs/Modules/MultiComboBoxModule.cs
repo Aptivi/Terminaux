@@ -57,6 +57,9 @@ namespace Terminaux.Inputs.Modules
         }
 
         /// <inheritdoc/>
+        public override int ExtraPopoverHeight { get; protected set; } = 10;
+
+        /// <inheritdoc/>
         public override string RenderInput(int width)
         {
             // Render an input text box with selected value and blanks as underscores.

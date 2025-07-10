@@ -219,6 +219,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             // Prepare the selections
                             int maxModuleWidth = maxSelectionWidth - maxModuleSelectWidth;
                             List<InputChoiceInfo> choices = [];
+                            InputModule chosenModule = modules[currentSelection];
                             foreach (var module in modules)
                             {
                                 var moduleChoice = new InputChoiceInfo(module.Name, module.RenderInput(maxModuleWidth));
@@ -239,7 +240,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int hitboxIdx = selectionsRendered.GetHitboxIndex();
                             var hitbox = selectionsRendered.GenerateSelectionHitbox(hitboxIdx);
                             popoverPos = new(hitbox.hitbox.Start.X + maxModuleSelectWidth, hitbox.hitbox.Start.Y);
-                            popoverSize = new(hitbox.hitbox.Size.Width - maxModuleSelectWidth - 1, hitbox.hitbox.Size.Height);
+                            popoverSize = new(hitbox.hitbox.Size.Width - maxModuleSelectWidth - 1, chosenModule.ExtraPopoverHeight > 0 ? chosenModule.ExtraPopoverHeight : hitbox.hitbox.Size.Height);
                         }
                     }
 
