@@ -395,6 +395,11 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
+        /// When input is empty, use default value
+        /// </summary>
+        public bool UseDefaultValueOnEmpty { get; set; }
+
+        /// <summary>
         /// Initializes an empty reader settings instance
         /// </summary>
         public TermReaderSettings()

@@ -295,7 +295,7 @@ namespace Terminaux.Reader
 
                     // Helper function
                     string GetFinalInput() =>
-                        readState.CurrentText.Length == 0 ?
+                        readState.CurrentText.Length == 0 && settings.UseDefaultValueOnEmpty ?
                         defaultValue :
                         readState.CurrentText.ToString();
 
