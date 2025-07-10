@@ -203,6 +203,13 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int selectionBoxPosY = borderY + maxTextHeight + 2;
             int maxSelectionWidth = maxWidth - 4;
 
+            // Determine the hitbox types
+            selectionsRendered.Left = selectionBoxPosX;
+            selectionsRendered.Top = selectionBoxPosY;
+            selectionsRendered.Height = selectionChoices;
+            selectionsRendered.Width = maxSelectionWidth;
+            selectionsRendered.CurrentSelection = currentSelection;
+
             // Now, translate coordinates to the selected index
             if (mouse.Coordinates.x <= selectionBoxPosX || mouse.Coordinates.x > selectionBoxPosX + maxSelectionWidth)
                 return false;
