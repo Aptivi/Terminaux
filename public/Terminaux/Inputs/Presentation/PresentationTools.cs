@@ -149,24 +149,25 @@ namespace Terminaux.Inputs.Presentation
 
                 // All the elements will be dynamically rendered. Make a presentation grid buffer and the final element rendered string builder.
                 var gridBuffer = new ScreenPart();
-                var renderedElements = new StringBuilder();
-
-                // Render all elements
-                var pageElements = page.Elements;
-                for (int elementIdx = 0; elementIdx < pageElements.Length; elementIdx++)
-                {
-                    IElement? element = pageElements[elementIdx];
-                    renderedElements.Append(element.RenderToString());
-                    if (elementIdx < pageElements.Length - 1)
-                        renderedElements.Append("\n\n");
-                }
-                string rendered = renderedElements.ToString();
 
                 // Then, the text
+                string rendered = "";
                 int currIdx = 0;
                 int increment = 0;
                 gridBuffer.AddDynamicText(() =>
                 {
+                    // Render all elements
+                    var renderedElements = new StringBuilder();
+                    var pageElements = page.Elements;
+                    for (int elementIdx = 0; elementIdx < pageElements.Length; elementIdx++)
+                    {
+                        IElement? element = pageElements[elementIdx];
+                        renderedElements.Append(element.RenderToString());
+                        if (elementIdx < pageElements.Length - 1)
+                            renderedElements.Append("\n\n");
+                    }
+                    string rendered = renderedElements.ToString();
+
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = GetFinalLines(rendered);
 
@@ -219,6 +220,10 @@ namespace Terminaux.Inputs.Presentation
                 while (!pageExit)
                 {
                     // Get the keypress or mouse press
+                    screen.CycleFrequency = page.CycleFrequency;
+                    ScreenTools.StopCyclicScreen();
+                    if (screen.CycleFrequency > 0)
+                        ScreenTools.StartCyclicScreen(screen);
                     ScreenTools.Render();
                     InputEventInfo data = Input.ReadPointerOrKey();
 
@@ -304,6 +309,7 @@ namespace Terminaux.Inputs.Presentation
                         }
                     }
                 }
+                ScreenTools.StopCyclicScreen();
                 screen.RemoveBufferedPart(gridBuffer.Id);
                 screen.RemoveBufferedPart(buffer.Id);
             }

@@ -349,6 +349,23 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                         ]
                     ),
                     #endregion
+
+                    #region Eighth page - Debugging dynamic text with cyclic screen
+                    new PresentationPage("Eighth page - Debugging dynamic text with cyclic screen",
+                        [
+                            new DynamicTextElement()
+                            {
+                                Arguments = [
+                                    () =>
+                                    DateTime.Now.ToString(),
+                                ]
+                            }
+                        ]
+                    )
+                    {
+                        CycleFrequency = 1000,
+                    },
+                    #endregion
                 ]
             );
 

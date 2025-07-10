@@ -42,6 +42,11 @@ namespace Terminaux.Inputs.Presentation
         public PresentationInputInfo[] Inputs { get; }
 
         /// <summary>
+        /// Specifies the amount of milliseconds of cycle frequency
+        /// </summary>
+        public int CycleFrequency { get; set; }
+
+        /// <summary>
         /// Makes a new presentation page
         /// </summary>
         /// <param name="name">Page name</param>
