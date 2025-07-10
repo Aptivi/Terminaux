@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
@@ -116,6 +117,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         }
 
         /// <summary>
+        /// Whether to render the figlet text in one line or not
+        /// </summary>
+        public bool OneLine { get; set; } = true;
+
+        /// <summary>
         /// Renders an aligned figlet text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
@@ -137,13 +143,19 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int markedEndFallY = markedY + figHeightFallback;
 
                 // Determine whether to use the selected figlet font or resort to fallbacks
-                if (markedEndFallX >= Width && markedEndFallY >= Height)
+                if (markedEndFallX >= Width && (OneLine || (!OneLine && markedEndFallY >= Height)))
                 {
                     // The fallback figlet won't fit, so use smaller text
+                    string text = Text;
+                    if (OneLine)
+                    {
+                        string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, Width);
+                        text = sentences[0].Truncate(Width - 4);
+                    }
                     ConsoleLogger.Warning("Fallback figlet exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndFallX, markedEndFallY, Width, Height);
-                    return AlignedText.RenderAligned(markedX, markedY, Width, Text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
+                    return AlignedText.RenderAligned(markedX, markedY, Width, text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
-                else if (markedEndX >= Width && markedEndY >= Height)
+                else if (markedEndX >= Width && (OneLine || (!OneLine && markedEndY >= Height)))
                 {
                     // The figlet won't fit, so use small text
                     ConsoleLogger.Warning("Figlet exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndX, markedEndY, Width, Height);
