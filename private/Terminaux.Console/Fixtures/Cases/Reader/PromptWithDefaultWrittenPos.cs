@@ -28,7 +28,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 
         public void RunFixture()
         {
-            string input = TermReader.Read(">> ", "Hello World!", new() { WriteDefaultValue = true, InitialPosition = 5 }, false, false, false);
+            string input = TermReader.Read(">> ", "Hello World!", new() { WriteDefaultValue = true, InitialPosition = 5, UseDefaultValueOnEmpty = true }, false, false, false);
             TextWriterColor.Write("You said: " + input);
         }
     }
