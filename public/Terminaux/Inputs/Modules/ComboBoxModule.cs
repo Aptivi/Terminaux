@@ -125,9 +125,10 @@ namespace Terminaux.Inputs.Modules
                     selection.Width = inputPopoverSize.Width - 2;
                     selection.Height = finalPopoverHeight;
                     selection.CurrentSelection = currentSelection;
+                    selection.SwapSelectedColors = true;
                     selection.Settings = new()
                     {
-                        OptionColor = TransformationTools.GetDarkBackground(Foreground),
+                        OptionColor = Foreground,
                         SelectedOptionColor = Foreground,
                         BackgroundColor = Background,
                     };
