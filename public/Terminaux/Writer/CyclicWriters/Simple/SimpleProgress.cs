@@ -215,49 +215,45 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 Width = Width,
             };
 
-            // Check to see if we need a vertical progress bar or the horizontal one
-            if (Vertical)
+            if (Indeterminate)
+            {
+                // Step the indeterminate steps
+                if (State != ProgressState.Failed && State != ProgressState.Paused)
+                {
+                    if (indeterminateBackwards)
+                    {
+                        indeterminateStep--;
+                        if (indeterminateStep == 0)
+                            indeterminateBackwards = false;
+                    }
+                    else
+                    {
+                        indeterminateStep++;
+                        if (indeterminateStep == 50)
+                            indeterminateBackwards = true;
+                    }
+                }
+
+                // Render the slider that indicates indeterminate progress
+                indeterminateSlider.Position = indeterminateStep;
+                rendered.Append(indeterminateSlider.Render());
+            }
+            else if (Vertical)
             {
                 // Estimate how many cells the progress bar takes
-                if (Indeterminate)
-                {
-                    // Step the indeterminate steps
-                    if (State != ProgressState.Failed && State != ProgressState.Paused)
-                    {
-                        if (indeterminateBackwards)
-                        {
-                            indeterminateStep--;
-                            if (indeterminateStep == 0)
-                                indeterminateBackwards = false;
-                        }
-                        else
-                        {
-                            indeterminateStep++;
-                            if (indeterminateStep == 50)
-                                indeterminateBackwards = true;
-                        }
-                    }
-
-                    // Render the slider that indicates indeterminate progress
-                    indeterminateSlider.Position = indeterminateStep;
-                    rendered.Append(indeterminateSlider.Render());
-                }
-                else
-                {
-                    int cells = (int)Math.Round(position * Height / (double)maxPosition);
-                    cells = cells > Height ? Height : cells;
-                    int remaining = Height - cells;
-                    rendered.Append(
-                        UseColors ? ColorTools.RenderSetConsoleColor(activeProgressColor) : ""
-                    );
-                    for (int i = 0; i < cells; i++)
-                        rendered.AppendLine($"{(UseColors ? ProgressVerticalActiveTrackChar : ProgressUncoloredVerticalActiveTrackChar)}");
-                    rendered.Append(
-                        UseColors ? ColorTools.RenderSetConsoleColor(progressColor) : ""
-                    );
-                    for (int i = 0; i < remaining; i++)
-                        rendered.AppendLine($"{(UseColors ? ProgressVerticalInactiveTrackChar : ProgressUncoloredVerticalInactiveTrackChar)}");
-                }
+                int cells = (int)Math.Round(position * Height / (double)maxPosition);
+                cells = cells > Height ? Height : cells;
+                int remaining = Height - cells;
+                rendered.Append(
+                    UseColors ? ColorTools.RenderSetConsoleColor(activeProgressColor) : ""
+                );
+                for (int i = 0; i < cells; i++)
+                    rendered.AppendLine($"{(UseColors ? ProgressVerticalActiveTrackChar : ProgressUncoloredVerticalActiveTrackChar)}");
+                rendered.Append(
+                    UseColors ? ColorTools.RenderSetConsoleColor(progressColor) : ""
+                );
+                for (int i = 0; i < remaining; i++)
+                    rendered.AppendLine($"{(UseColors ? ProgressVerticalInactiveTrackChar : ProgressUncoloredVerticalInactiveTrackChar)}");
             }
             else
             {
@@ -268,49 +264,23 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     return "";
 
                 // Estimate how many cells the progress bar takes
-                if (Indeterminate)
-                {
-                    // Step the indeterminate steps
-                    if (State != ProgressState.Failed && State != ProgressState.Paused)
-                    {
-                        if (indeterminateBackwards)
-                        {
-                            indeterminateStep--;
-                            if (indeterminateStep == 0)
-                                indeterminateBackwards = false;
-                        }
-                        else
-                        {
-                            indeterminateStep++;
-                            if (indeterminateStep == 50)
-                                indeterminateBackwards = true;
-                        }
-                    }
+                int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
+                cells = cells > progressWidth ? progressWidth : cells;
+                rendered.Append(
+                    (UseColors ? ColorTools.RenderSetConsoleColor(activeProgressColor) : "") +
+                    new string(UseColors ? ProgressHorizontalActiveTrackChar : ProgressUncoloredHorizontalActiveTrackChar, cells) +
+                    (UseColors ? ColorTools.RenderSetConsoleColor(progressColor) : "") +
+                    new string(UseColors ? ProgressHorizontalInactiveTrackChar : ProgressUncoloredHorizontalInactiveTrackChar, progressWidth - cells)
+                );
 
-                    // Render the slider that indicates indeterminate progress
-                    indeterminateSlider.Position = indeterminateStep;
-                    rendered.Append(indeterminateSlider.Render());
-                }
-                else
+                // Write a progress percentage
+                if (ShowPercentage)
                 {
-                    int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
-                    cells = cells > progressWidth ? progressWidth : cells;
+                    int percentage = (int)(position * 100 / (double)maxPosition);
                     rendered.Append(
-                        (UseColors ? ColorTools.RenderSetConsoleColor(activeProgressColor) : "") +
-                        new string(UseColors ? ProgressHorizontalActiveTrackChar : ProgressUncoloredHorizontalActiveTrackChar, cells) +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(progressColor) : "") +
-                        new string(UseColors ? ProgressHorizontalInactiveTrackChar : ProgressUncoloredHorizontalInactiveTrackChar, progressWidth - cells)
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ProgressPercentageTextColor) : "") +
+                        $" {percentage,3}%"
                     );
-
-                    // Write a progress percentage
-                    if (ShowPercentage)
-                    {
-                        int percentage = (int)(position * 100 / (double)maxPosition);
-                        rendered.Append(
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ProgressPercentageTextColor) : "") +
-                            $" {percentage,3}%"
-                        );
-                    }
                 }
             }
 
