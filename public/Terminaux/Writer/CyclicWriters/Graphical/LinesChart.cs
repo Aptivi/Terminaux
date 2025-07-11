@@ -83,52 +83,30 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 Color = tuple.Item2[0].Color,
             }).ToArray();
 
-            // Some variables
-            int maxNameLength = Width / 4;
-            var shownElements = namesAsElements.Where((ce) => !ce.Hidden).ToArray();
-            double maxValue = shownElements.Max((element) => element.Value);
+            // Showcase variables
+            var showcase = new ValueShowcase()
+            {
+                Left = Left,
+                Top = Top,
+                Width = Width / 4,
+                Height = Height,
+                UseColors = UseColors,
+                Elements = namesAsElements,
+            };
             int showcaseLength = 0;
-            double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
 
-            // Fill the lines chart with the showcase first
+            // Fill the lines chart with the elements first
             StringBuilder linesChart = new();
             if (Showcase)
             {
-                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
-                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                showcaseLength = nameLength + 2;
-                lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
-                for (int i = 0; i < shownElements.Length; i++)
-                {
-                    // Get the element showcase position and write it there
-                    bool canShow = Height > i;
-                    if (!canShow)
-                        break;
-                    Coordinate coord = new(Left, Top + i);
-                    var element = shownElements[i];
-
-                    // Now, write it at the selected position
-                    linesChart.Append(
-                        ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
-                        " ■ " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        element.Value
-                    );
-                }
-
-                // Show the separator
-                for (int h = 0; h < Height; h++)
-                {
-                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
-                    linesChart.Append(
-                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
-                        " ▐"
-                    );
-                }
+                showcaseLength = showcase.Length;
+                linesChart.Append(showcase.Render());
             }
+
+            // Some variables
+            var shownElements = namesAsElements.Where((ce) => !ce.Hidden).ToArray();
+            double maxValue = shownElements.Max((element) => element.Value);
+            double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
 
             // Show the actual chart
             foreach (var element in elements)

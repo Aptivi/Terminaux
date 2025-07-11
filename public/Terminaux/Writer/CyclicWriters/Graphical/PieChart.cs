@@ -82,51 +82,30 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            // Some variables
-            int maxNameLength = Width / 4;
-            var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
-            double maxValue = shownElements.Max((element) => element.Value);
-            double maxValueAngles = shownElements.Sum((element) => element.Value);
+            // Showcase variables
+            var showcase = new ValueShowcase()
+            {
+                Left = Left,
+                Top = Top,
+                Width = Width / 4,
+                Height = Height,
+                UseColors = UseColors,
+                Elements = Elements,
+            };
             int showcaseLength = 0;
 
-            // Fill the pie chart with the showcase first
+            // Fill the pie chart with the elements first
             StringBuilder pieChart = new();
             if (Showcase)
             {
-                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
-                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                showcaseLength = nameLength + 2;
-                for (int i = 0; i < shownElements.Length; i++)
-                {
-                    // Get the element showcase position and write it there
-                    bool canShow = Height > i;
-                    if (!canShow)
-                        break;
-                    Coordinate coord = new(Left, Top + i);
-                    var element = shownElements[i];
-
-                    // Now, write it at the selected position
-                    pieChart.Append(
-                        ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
-                        " ■ " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        element.Value
-                    );
-                }
-
-                // Show the separator
-                for (int h = 0; h < Height; h++)
-                {
-                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
-                    pieChart.Append(
-                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
-                        " ▐"
-                    );
-                }
+                showcaseLength = showcase.Length;
+                pieChart.Append(showcase.Render());
             }
+
+            // Some variables
+            var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
+            double maxValue = shownElements.Max((element) => element.Value);
+            double maxValueAngles = shownElements.Sum((element) => element.Value);
 
             // Get the appropriate start and sweep angles, depending on the element
             int startAngle = 0;

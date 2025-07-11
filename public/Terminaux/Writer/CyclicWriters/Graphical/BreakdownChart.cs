@@ -89,52 +89,30 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             StringBuilder breakdownChart = new();
             if (vertical)
             {
-                // Some variables
-                int maxNameLength = Width / 4;
-                var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
-                double maxValue = elements.Sum((element) => element.Value);
-                double maxValueDisplay = shownElements.Max((element) => element.Value);
-                var shownElementHeightsSelect = shownElements.Select((ce) => (ce, (int)Math.Round(ce.Value * Height / maxValue)));
-                var shownElementHeights = (UpsideDown ? shownElementHeightsSelect.OrderBy((ce) => ce.Item2) : shownElementHeightsSelect.OrderByDescending((ce) => ce.Item2)).ToArray();
+                // Showcase variables
+                var showcase = new ValueShowcase()
+                {
+                    Left = Left,
+                    Top = Top,
+                    Width = Width / 4,
+                    Height = Height,
+                    UseColors = UseColors,
+                    Elements = Elements,
+                };
                 int showcaseLength = 0;
 
-                // Fill the breakdown chart with the showcase first
+                // Fill the breakdown chart with the elements first
                 if (Showcase)
                 {
-                    int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
-                    nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                    showcaseLength = nameLength + 2;
-                    for (int i = 0; i < shownElements.Length; i++)
-                    {
-                        // Get the element showcase position and write it there
-                        bool canShow = Height > i;
-                        if (!canShow)
-                            break;
-                        Coordinate coord = new(Left, Top + i);
-                        var element = shownElements[i];
-
-                        // Now, write it at the selected position
-                        breakdownChart.Append(
-                            ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
-                            " ■ " +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                            element.Name.Truncate(nameLength - 4 - $"{maxValueDisplay}".Length) + "  " +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                            element.Value
-                        );
-                    }
-
-                    // Show the separator
-                    for (int h = 0; h < Height; h++)
-                    {
-                        Coordinate separatorCoord = new(Left + nameLength, Top + h);
-                        breakdownChart.Append(
-                            ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
-                            " ▐"
-                        );
-                    }
+                    showcaseLength = showcase.Length;
+                    breakdownChart.Append(showcase.Render());
                 }
+
+                // Some variables
+                var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
+                double maxValue = elements.Sum((element) => element.Value);
+                var shownElementHeightsSelect = shownElements.Select((ce) => (ce, (int)Math.Round(ce.Value * Height / maxValue)));
+                var shownElementHeights = (UpsideDown ? shownElementHeightsSelect.OrderBy((ce) => ce.Item2) : shownElementHeightsSelect.OrderByDescending((ce) => ce.Item2)).ToArray();
 
                 // Show the actual bar
                 int processedY = 0;
@@ -184,7 +162,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
 
                 // Then, if we're told to showcase the values and the names, write them below the breakdown chart
-                if (showcase)
+                if (Showcase)
                 {
                     // Render the showcase elements
                     int maxElementLength = Width / 4;

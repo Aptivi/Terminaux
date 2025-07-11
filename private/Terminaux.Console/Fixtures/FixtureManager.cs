@@ -196,6 +196,8 @@ namespace Terminaux.Console.Fixtures
             new TestBoxFrame(),
             new TestRulers(),
             new TestRulers2(),
+            new TestValueShowcaseSingle(),
+            new TestValueShowcaseDouble(),
 
             // Input
             new TestInputSelection(),

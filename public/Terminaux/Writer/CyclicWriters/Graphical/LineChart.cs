@@ -84,62 +84,40 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
-            // Some variables
-            int maxNameLength = Width / 4;
+            // Showcase variables
             var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
-            double maxValue = shownElements.Max((element) => element.Value);
-            var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * Height / maxValue))).ToArray();
-            int showcaseLength = 0;
-            double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
             double median = shownElements.Average((element) => element.Value);
-            int medianPosition = (int)(median * Height / maxValue);
-            int inverseMedianPosition = Height - medianPosition;
-
-            // Fill the line chart with the showcase first
-            StringBuilder lineChart = new();
-            if (Showcase)
+            var showcase = new ValueShowcase()
             {
-                var elementsWithRun = shownElements.Union([new ChartElement()
+                Left = Left,
+                Top = Top,
+                Width = Width / 4,
+                Height = Height,
+                UseColors = UseColors,
+                Elements = [.. Elements.Union([new ChartElement()
                 {
                     Name = "Average Run",
                     Value = median,
                     Color = ConsoleColors.Fuchsia,
-                }]).ToArray();
-                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value:0.00}".Length);
-                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                showcaseLength = nameLength + 2;
-                lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
-                for (int i = 0; i < elementsWithRun.Length; i++)
-                {
-                    // Get the element showcase position and write it there
-                    bool canShow = Height > i;
-                    if (!canShow)
-                        break;
-                    Coordinate coord = new(Left, Top + i);
-                    var element = elementsWithRun[i];
+                }])],
+            };
+            int showcaseLength = 0;
 
-                    // Now, write it at the selected position
-                    lineChart.Append(
-                        ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
-                        " ■ " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        $"{element.Value:0.00}"
-                    );
-                }
-
-                // Show the separator
-                for (int h = 0; h < Height; h++)
-                {
-                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
-                    lineChart.Append(
-                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
-                        " ▐"
-                    );
-                }
+            // Fill the line chart with the elements first
+            StringBuilder lineChart = new();
+            if (Showcase)
+            {
+                showcaseLength = showcase.Length;
+                lineChart.Append(showcase.Render());
             }
+
+            // Some variables
+            double maxValue = shownElements.Max((element) => element.Value);
+            var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * Height / maxValue))).ToArray();
+            double lineWidth = (double)(Width - (showcaseLength + 3)) / shownElements.Length / 2;
+            int medianPosition = (int)(median * Height / maxValue);
+            int inverseMedianPosition = Height - medianPosition;
+            var elementsWithRun = shownElements;
 
             // Show the actual chart
             for (int e = 0; e < shownElementHeights.Length; e++)

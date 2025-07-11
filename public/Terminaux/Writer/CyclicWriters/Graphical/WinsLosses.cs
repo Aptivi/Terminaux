@@ -70,61 +70,35 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
         {
+            // Showcase variables
+            var showcase = new ValueShowcaseDouble()
+            {
+                Left = Left,
+                Top = Top,
+                Width = Width / 4,
+                Height = Height,
+                UseColors = UseColors,
+                Elements = Elements,
+            };
+            int showcaseLength = 0;
+
             // Some variables
-            int maxNameLength = Width / 4;
             int wholeLength = Height - 1;
             double maxWinValue = elements.Max((element) => element.win.Value);
             double maxLossValue = elements.Max((element) => element.loss.Value);
             var shownWinElementHeights = elements.Select((ce) => (ce.win, (int)(ce.win.Value * wholeLength / 2 / maxWinValue))).ToArray();
             var shownLossElementHeights = elements.Select((ce) => (ce.loss, (int)(ce.loss.Value * wholeLength / 2 / maxLossValue))).ToArray();
-            int showcaseLength = 0;
-            double stickWidth = (double)(Width - (showcaseLength + 3)) / elements.Length / 2;
 
-            // Fill the stick chart with the showcase first
+            // Fill the wins/losses chart with the showcase first
             StringBuilder winsLosses = new();
             if (Showcase)
             {
-                int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.win.Value}/{element.loss.Value}".Length);
-                nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-                showcaseLength = nameLength + 2;
-                stickWidth = (double)(Width - (showcaseLength + 3)) / elements.Length / 2;
-                for (int i = 0; i < elements.Length; i++)
-                {
-                    // Get the element showcase position and write it there
-                    bool canShow = Height > i;
-                    if (!canShow)
-                        break;
-                    Coordinate coord = new(Left, Top + i);
-                    var element = elements[i];
-
-                    // Now, write it at the selected position
-                    winsLosses.Append(
-                        ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(element.win.Color) : "") +
-                        " ■ " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                        element.Item1.Truncate(nameLength - 4 - $"{maxWinValue}/{maxLossValue}".Length) + "  " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
-                        $"{element.win.Value}" +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        "/" +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red) : "") +
-                        $"{element.loss.Value}" +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "")
-                    );
-                }
-
-                // Show the separator
-                for (int h = 0; h < Height; h++)
-                {
-                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
-                    winsLosses.Append(
-                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
-                        " ▐"
-                    );
-                }
+                showcaseLength = showcase.Length;
+                winsLosses.Append(showcase.Render());
 
                 // Write a separator between wins and losses
+                int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.win.Value:0.00}/{element.loss.Value:0.00}".Length);
+                nameLength = nameLength > Width ? Width : nameLength;
                 Coordinate winLossSeparatorCoord = new(Left + nameLength, Top + (Height / 2));
                 winsLosses.Append(
                     ConsolePositioning.RenderChangePosition(winLossSeparatorCoord.X, winLossSeparatorCoord.Y) +
@@ -138,6 +112,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             }
 
             // Show the actual win-loss chart
+            double stickWidth = (double)(Width - (showcaseLength + 3)) / elements.Length / 2;
             for (int e = 0; e < elements.Length; e++)
             {
                 // Win element
