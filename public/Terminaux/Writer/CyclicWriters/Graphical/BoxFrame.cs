@@ -139,14 +139,29 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 ConsoleLogger.Debug("Box width: {0}, height: {1}", Width, Height);
 
                 // Text title
-                int finalWidth = Width - 7 - (titleSettings.TitleOffset.Left + titleSettings.TitleOffset.Right);
+                int finalWidth = Width - 6 - (titleSettings.TitleOffset.Left + titleSettings.TitleOffset.Right);
                 string finalText = "";
                 if (!string.IsNullOrEmpty(text) && finalWidth > 3)
                 {
-                    finalText =
-                        $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
-                        text.Truncate(finalWidth) +
-                        $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "")}";
+                    var textBuilder = new StringBuilder();
+                    textBuilder.Append(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "");
+                    if (UseColors)
+                    {
+                        textBuilder.Append(
+                            ColorTools.RenderSetConsoleColor(TitleColor) +
+                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                        );
+                    }
+                    textBuilder.Append(text.Truncate(finalWidth));
+                    if (UseColors)
+                    {
+                        textBuilder.Append(
+                            ColorTools.RenderSetConsoleColor(FrameColor) +
+                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                        );
+                    }
+                    textBuilder.Append(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "");
+                    finalText = textBuilder.ToString();
                 }
                 int textWidth = ConsoleChar.EstimateCellWidth(finalText);
 
@@ -203,8 +218,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                 Left = Left + 2,
                                 Top = Top,
                                 Width = Width - titleSettings.TitleOffset.Right,
-                                ForegroundColor = TitleColor,
-                                BackgroundColor = BackgroundColor,
+                                UseColors = false,
                                 Settings = TitleSettings,
                             };
                             frameBuilder.Append(titleWriter.Render());
