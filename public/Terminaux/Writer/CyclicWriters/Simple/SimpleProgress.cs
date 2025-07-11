@@ -23,6 +23,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -36,8 +37,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private bool useColors = true;
         private int position = 0;
         private int maxPosition = 0;
-        private Color progressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
-        private Color progressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
 
         /// <summary>
         /// Width of the progress bar
@@ -76,6 +75,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public bool ShowPercentage { get; set; } = true;
 
         /// <summary>
+        /// State of the progress bar
+        /// </summary>
+        public ProgressState State { get; set; }
+
+        /// <summary>
         /// Specifies whether the progress bar is vertical or horizontal
         /// </summary>
         public bool Vertical { get; set; }
@@ -83,20 +87,42 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Progress foreground
         /// </summary>
-        public Color ProgressForegroundColor
-        {
-            get => progressForegroundColor;
-            set => progressForegroundColor = value;
-        }
+        public Color ProgressForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
 
         /// <summary>
         /// Progress active foreground
         /// </summary>
-        public Color ProgressActiveForegroundColor
-        {
-            get => progressActiveForegroundColor;
-            set => progressActiveForegroundColor = value;
-        }
+        public Color ProgressActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Progress);
+
+        /// <summary>
+        /// Progress failed foreground
+        /// </summary>
+        public Color ProgressFailedForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.ProgressFailed));
+
+        /// <summary>
+        /// Progress failed active foreground
+        /// </summary>
+        public Color ProgressFailedActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.ProgressFailed);
+
+        /// <summary>
+        /// Progress paused foreground
+        /// </summary>
+        public Color ProgressPausedForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.ProgressPaused));
+
+        /// <summary>
+        /// Progress paused active foreground
+        /// </summary>
+        public Color ProgressPausedActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.ProgressPaused);
+
+        /// <summary>
+        /// Progress warning foreground
+        /// </summary>
+        public Color ProgressWarningForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.ProgressWarning));
+
+        /// <summary>
+        /// Progress warning active foreground
+        /// </summary>
+        public Color ProgressWarningActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.ProgressWarning);
 
         /// <summary>
         /// Progress background
@@ -164,33 +190,52 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public override string Render()
         {
             var rendered = new StringBuilder();
+
+            // Choose the color, depending on the progress state
+            var activeProgressColor =
+                State == ProgressState.Failed ? ProgressFailedActiveForegroundColor :
+                State == ProgressState.Paused ? ProgressPausedActiveForegroundColor :
+                State == ProgressState.Warning ? ProgressWarningActiveForegroundColor :
+                ProgressActiveForegroundColor;
+            var progressColor =
+                State == ProgressState.Failed ? ProgressFailedForegroundColor :
+                State == ProgressState.Paused ? ProgressPausedForegroundColor :
+                State == ProgressState.Warning ? ProgressWarningForegroundColor :
+                ProgressForegroundColor;
+
+            // Make an indeterminate slider in case we need it
             var indeterminateSlider = new Slider(0, 0, 50)
             {
-                SliderActiveForegroundColor = ProgressActiveForegroundColor,
-                SliderForegroundColor = ProgressForegroundColor,
+                SliderActiveForegroundColor = activeProgressColor,
+                SliderForegroundColor = progressColor,
                 SliderBackgroundColor = ProgressBackgroundColor,
                 UseColors = UseColors,
                 Vertical = Vertical,
                 Height = Height,
                 Width = Width,
             };
+
+            // Check to see if we need a vertical progress bar or the horizontal one
             if (Vertical)
             {
                 // Estimate how many cells the progress bar takes
                 if (Indeterminate)
                 {
                     // Step the indeterminate steps
-                    if (indeterminateBackwards)
+                    if (State != ProgressState.Failed && State != ProgressState.Paused)
                     {
-                        indeterminateStep--;
-                        if (indeterminateStep == 0)
-                            indeterminateBackwards = false;
-                    }
-                    else
-                    {
-                        indeterminateStep++;
-                        if (indeterminateStep == 50)
-                            indeterminateBackwards = true;
+                        if (indeterminateBackwards)
+                        {
+                            indeterminateStep--;
+                            if (indeterminateStep == 0)
+                                indeterminateBackwards = false;
+                        }
+                        else
+                        {
+                            indeterminateStep++;
+                            if (indeterminateStep == 50)
+                                indeterminateBackwards = true;
+                        }
                     }
 
                     // Render the slider that indicates indeterminate progress
@@ -203,12 +248,12 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     cells = cells > Height ? Height : cells;
                     int remaining = Height - cells;
                     rendered.Append(
-                        UseColors ? ColorTools.RenderSetConsoleColor(ProgressActiveForegroundColor) : ""
+                        UseColors ? ColorTools.RenderSetConsoleColor(activeProgressColor) : ""
                     );
                     for (int i = 0; i < cells; i++)
                         rendered.AppendLine($"{(UseColors ? ProgressVerticalActiveTrackChar : ProgressUncoloredVerticalActiveTrackChar)}");
                     rendered.Append(
-                        UseColors ? ColorTools.RenderSetConsoleColor(ProgressForegroundColor) : ""
+                        UseColors ? ColorTools.RenderSetConsoleColor(progressColor) : ""
                     );
                     for (int i = 0; i < remaining; i++)
                         rendered.AppendLine($"{(UseColors ? ProgressVerticalInactiveTrackChar : ProgressUncoloredVerticalInactiveTrackChar)}");
@@ -226,17 +271,20 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 if (Indeterminate)
                 {
                     // Step the indeterminate steps
-                    if (indeterminateBackwards)
+                    if (State != ProgressState.Failed && State != ProgressState.Paused)
                     {
-                        indeterminateStep--;
-                        if (indeterminateStep == 0)
-                            indeterminateBackwards = false;
-                    }
-                    else
-                    {
-                        indeterminateStep++;
-                        if (indeterminateStep == 50)
-                            indeterminateBackwards = true;
+                        if (indeterminateBackwards)
+                        {
+                            indeterminateStep--;
+                            if (indeterminateStep == 0)
+                                indeterminateBackwards = false;
+                        }
+                        else
+                        {
+                            indeterminateStep++;
+                            if (indeterminateStep == 50)
+                                indeterminateBackwards = true;
+                        }
                     }
 
                     // Render the slider that indicates indeterminate progress
@@ -248,9 +296,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
                     cells = cells > progressWidth ? progressWidth : cells;
                     rendered.Append(
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ProgressActiveForegroundColor) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(activeProgressColor) : "") +
                         new string(UseColors ? ProgressHorizontalActiveTrackChar : ProgressUncoloredHorizontalActiveTrackChar, cells) +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ProgressForegroundColor) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(progressColor) : "") +
                         new string(UseColors ? ProgressHorizontalInactiveTrackChar : ProgressUncoloredHorizontalInactiveTrackChar, progressWidth - cells)
                     );
 

@@ -24,6 +24,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Builtins;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -38,8 +39,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private bool indeterminateBackwards = false;
         private bool useColors = true;
         private Spinner progressSpinner = BuiltinSpinners.SpinMore;
-        private Color progressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
-        private Color progressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
 
         /// <summary>
         /// Width of the progress bar
@@ -73,22 +72,49 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public bool ShowPercentage { get; set; } = true;
 
         /// <summary>
+        /// State of the progress bar
+        /// </summary>
+        public ProgressState State { get; set; }
+
+        /// <summary>
         /// Progress foreground
         /// </summary>
-        public Color ProgressForegroundColor
-        {
-            get => progressForegroundColor;
-            set => progressForegroundColor = value;
-        }
+        public Color ProgressForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
 
         /// <summary>
         /// Progress active foreground
         /// </summary>
-        public Color ProgressActiveForegroundColor
-        {
-            get => progressActiveForegroundColor;
-            set => progressActiveForegroundColor = value;
-        }
+        public Color ProgressActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Progress);
+
+        /// <summary>
+        /// Progress failed foreground
+        /// </summary>
+        public Color ProgressFailedForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.ProgressFailed));
+
+        /// <summary>
+        /// Progress failed active foreground
+        /// </summary>
+        public Color ProgressFailedActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.ProgressFailed);
+
+        /// <summary>
+        /// Progress paused foreground
+        /// </summary>
+        public Color ProgressPausedForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.ProgressPaused));
+
+        /// <summary>
+        /// Progress paused active foreground
+        /// </summary>
+        public Color ProgressPausedActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.ProgressPaused);
+
+        /// <summary>
+        /// Progress warning foreground
+        /// </summary>
+        public Color ProgressWarningForegroundColor { get; set; } = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.ProgressWarning));
+
+        /// <summary>
+        /// Progress warning active foreground
+        /// </summary>
+        public Color ProgressWarningActiveForegroundColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.ProgressWarning);
 
         /// <summary>
         /// Progress background
@@ -183,10 +209,17 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 Indeterminate = Indeterminate,
                 Width = Width - spinnerWidth,
                 ShowPercentage = ShowPercentage,
+                State = State,
                 ProgressPercentageTextColor = ProgressPercentageTextColor,
-                ProgressActiveForegroundColor = ProgressActiveForegroundColor,
-                ProgressBackgroundColor = ProgressBackgroundColor,
                 ProgressForegroundColor = ProgressForegroundColor,
+                ProgressActiveForegroundColor = ProgressActiveForegroundColor,
+                ProgressFailedForegroundColor = ProgressFailedForegroundColor,
+                ProgressFailedActiveForegroundColor = ProgressFailedActiveForegroundColor,
+                ProgressPausedForegroundColor = ProgressPausedForegroundColor,
+                ProgressPausedActiveForegroundColor = ProgressPausedActiveForegroundColor,
+                ProgressWarningForegroundColor = ProgressWarningForegroundColor,
+                ProgressWarningActiveForegroundColor = ProgressWarningActiveForegroundColor,
+                ProgressBackgroundColor = ProgressBackgroundColor,
                 ProgressHorizontalActiveTrackChar = ProgressHorizontalActiveTrackChar,
                 ProgressHorizontalInactiveTrackChar = ProgressHorizontalInactiveTrackChar,
                 ProgressVerticalActiveTrackChar = ProgressVerticalActiveTrackChar,

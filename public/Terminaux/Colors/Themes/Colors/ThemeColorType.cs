@@ -212,5 +212,17 @@ namespace Terminaux.Colors.Themes.Colors
         /// Interactive TUI builtin key binding foreground color
         /// </summary>
         TuiKeyBindingBuiltinForeground,
+        /// <summary>
+        /// Progress failed text
+        /// </summary>
+        ProgressFailed,
+        /// <summary>
+        /// Progress paused text
+        /// </summary>
+        ProgressPaused,
+        /// <summary>
+        /// Progress warning text
+        /// </summary>
+        ProgressWarning,
     }
 }
