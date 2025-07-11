@@ -26,12 +26,14 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Modules
 {
@@ -143,7 +145,95 @@ namespace Terminaux.Inputs.Modules
 
                     // Prompt user for choice selection
                     InputEventInfo data = Input.ReadPointerOrKey();
-                    if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
+                    var related = selection.GetRelatedHeights();
+                    int selectionBoxPosX = inputPopoverPos.X + 1;
+                    int selectionBoxPosY = inputPopoverPos.Y + 1;
+                    int maxSelectionWidth = inputPopoverSize.Width - 2;
+                    int arrowSelectLeft = selectionBoxPosX + maxSelectionWidth;
+                    int selectionReservedHeight = finalPopoverHeight - 1;
+                    var mouse = data.PointerEventContext;
+                    if (mouse is not null)
+                    {
+                        // Make hitboxes for arrow presses
+                        var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY), new Action<PointerEventContext>((_) => SelectionGoUp(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, selectionBoxPosY + selectionReservedHeight), new Action<PointerEventContext>((_) => SelectionGoDown(ref currentSelection, choices))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+
+                        // Mouse input received.
+                        ChoiceHitboxType hitboxType = ChoiceHitboxType.Choice;
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
+                                {
+                                    goingUp = true;
+                                    SelectionGoUp(ref currentSelection, choices);
+                                }
+                                break;
+                            case PointerButton.WheelDown:
+                                if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
+                                    SelectionGoDown(ref currentSelection, choices);
+                                break;
+                            case PointerButton.Left:
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
+                                    break;
+                                if ((arrowSelectUpHitbox.IsPointerWithin(mouse) || arrowSelectDownHitbox.IsPointerWithin(mouse)) && related.Count > selectionReservedHeight)
+                                {
+                                    arrowSelectUpHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowSelectDownHitbox.ProcessPointer(mouse, out done);
+                                }
+                                else
+                                {
+                                    int oldIndex = currentSelection;
+                                    if (InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, Choices, selectionBoxPosX - 1, selectionBoxPosY, maxSelectionWidth, finalPopoverHeight, out hitboxType, ref currentSelection, false))
+                                    {
+                                        switch (hitboxType)
+                                        {
+                                            case ChoiceHitboxType.Category:
+                                                InfoBoxTools.ProcessSelectionRequest(2, currentSelection + 1, Choices, ref selectedChoices);
+                                                currentSelection = oldIndex;
+                                                break;
+                                            case ChoiceHitboxType.Group:
+                                                InfoBoxTools.ProcessSelectionRequest(1, currentSelection + 1, Choices, ref selectedChoices);
+                                                currentSelection = oldIndex;
+                                                break;
+                                            case ChoiceHitboxType.Choice:
+                                                InfoBoxTools.VerifyDisabled(ref currentSelection, choices, goingUp);
+                                                if (!selectedChoices.Remove(currentSelection))
+                                                    selectedChoices.Add(currentSelection);
+                                                break;
+                                        }
+                                    }
+                                }
+                                break;
+                            case PointerButton.Right:
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
+                                    break;
+                                if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, Choices, selectionBoxPosX - 1, selectionBoxPosY, maxSelectionWidth, finalPopoverHeight, out hitboxType, ref currentSelection))
+                                    break;
+                                if (hitboxType != ChoiceHitboxType.Choice)
+                                    break;
+                                var selectedInstance = choices[currentSelection];
+                                string choiceName = selectedInstance.ChoiceName;
+                                string choiceTitle = selectedInstance.ChoiceTitle;
+                                string choiceDesc = selectedInstance.ChoiceDescription;
+                                if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                {
+                                    InfoBoxModalColor.WriteInfoBoxModal(choiceDesc, new InfoBoxSettings()
+                                    {
+                                        Title = $"[{choiceName}] {choiceTitle}",
+                                    });
+                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                }
+                                break;
+                            case PointerButton.None:
+                                if (mouse.ButtonPress != PointerButtonPress.Moved)
+                                    break;
+                                InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, Choices, selectionBoxPosX - 1, selectionBoxPosY, maxSelectionWidth, finalPopoverHeight, out hitboxType, ref currentSelection);
+                                break;
+                        }
+                    }
+                    else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         switch (cki.Key)
                         {
@@ -220,6 +310,26 @@ namespace Terminaux.Inputs.Modules
                     Value = selectedChoices.ToArray();
             }
             Provided = true;
+        }
+
+        private static bool IsMouseWithinInputBox(int selectionBoxPosX, int selectionBoxPosY, int maxSelectionWidth, int reservedHeight, PointerEventContext mouse)
+        {
+            // Check the dimensions
+            return PointerTools.PointerWithinRange(mouse, (selectionBoxPosX, selectionBoxPosY), (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + reservedHeight));
+        }
+
+        private static void SelectionGoUp(ref int currentSelection, InputChoiceInfo[] selections)
+        {
+            currentSelection--;
+            if (currentSelection < 0)
+                currentSelection = selections.Length - 1;
+        }
+
+        private static void SelectionGoDown(ref int currentSelection, InputChoiceInfo[] selections)
+        {
+            currentSelection++;
+            if (currentSelection > selections.Length - 1)
+                currentSelection = 0;
         }
     }
 }

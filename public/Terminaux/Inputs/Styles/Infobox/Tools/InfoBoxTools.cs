@@ -202,13 +202,24 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int selectionBoxPosX = borderX + 2;
             int selectionBoxPosY = borderY + maxTextHeight + 2;
             int maxSelectionWidth = maxWidth - 4;
+            return UpdateSelectedIndexWithMousePos(mouse, selections, selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionChoices, out hitboxType, ref currentSelection, checkPos);
+        }
 
-            // Determine the hitbox types
-            selectionsRendered.Left = selectionBoxPosX;
-            selectionsRendered.Top = selectionBoxPosY;
-            selectionsRendered.Height = selectionChoices;
-            selectionsRendered.Width = maxSelectionWidth;
-            selectionsRendered.CurrentSelection = currentSelection;
+        internal static bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse, InputChoiceCategoryInfo[] selections, int selectionBoxPosX, int selectionBoxPosY, int maxSelectionWidth, int selectionChoices, out ChoiceHitboxType hitboxType, ref int currentSelection, bool checkPos = true)
+        {
+            hitboxType = ChoiceHitboxType.Choice;
+            if (mouse is null)
+                return false;
+
+            // Make a temporary selection renderer
+            var selectionsRendered = new Selections(selections)
+            {
+                Left = selectionBoxPosX,
+                Top = selectionBoxPosY,
+                Height = selectionChoices,
+                Width = maxSelectionWidth,
+                CurrentSelection = currentSelection
+            };
 
             // Now, translate coordinates to the selected index
             if (mouse.Coordinates.x <= selectionBoxPosX || mouse.Coordinates.x > selectionBoxPosX + maxSelectionWidth)
