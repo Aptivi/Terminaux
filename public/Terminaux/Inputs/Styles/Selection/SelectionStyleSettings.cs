@@ -74,7 +74,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// </summary>
         public Color SliderColor
         {
-            get => sliderColor ?? ThemeColorsTools.GetColor(ThemeColorType.Option);
+            get => sliderColor ?? ThemeColorsTools.GetColor(ThemeColorType.Separator);
             set => SetSliderColor(value);
         }
 

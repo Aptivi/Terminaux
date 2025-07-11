@@ -184,6 +184,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             Settings.BackgroundColor;
 
         /// <summary>
+        /// Slider foreground color
+        /// </summary>
+        public Color SliderColor =>
+            Settings.SliderColor;
+
+        /// <summary>
         /// Whether to use colors or not
         /// </summary>
         public bool UseColors { get; set; } = true;
@@ -393,12 +399,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 };
                 if (UseColors)
                 {
-                    slider.SliderActiveForegroundColor = ForegroundColor;
-                    slider.SliderForegroundColor = TransformationTools.GetDarkBackground(ForegroundColor);
+                    slider.SliderActiveForegroundColor = SliderColor;
+                    slider.SliderForegroundColor = TransformationTools.GetDarkBackground(SliderColor);
                     slider.SliderBackgroundColor = BackgroundColor;
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhereColorBack("▲", finalWidth, Top, ForegroundColor, BackgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("▼", finalWidth, Top + Height - 1, ForegroundColor, BackgroundColor)
+                        TextWriterWhereColor.RenderWhereColorBack("▲", finalWidth, Top, SliderColor, BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("▼", finalWidth, Top + Height - 1, SliderColor, BackgroundColor)
                     );
                 }
                 else

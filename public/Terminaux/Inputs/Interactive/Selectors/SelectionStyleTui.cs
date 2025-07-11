@@ -168,8 +168,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         Height = answersPerPage + totalHeight - 1,
                         SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                         SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
-                        SliderActiveForegroundColor = settings.SeparatorColor,
-                        SliderForegroundColor = TransformationTools.GetDarkBackground(settings.SeparatorColor),
+                        SliderActiveForegroundColor = settings.SliderColor,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(settings.SliderColor),
                         SliderBackgroundColor = settings.BackgroundColor,
                     };
                     selectionBuilder.Append(
