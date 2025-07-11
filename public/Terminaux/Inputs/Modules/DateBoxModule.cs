@@ -23,6 +23,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
@@ -122,7 +123,74 @@ namespace Terminaux.Inputs.Modules
 
                     // Handle keypress
                     InputEventInfo data = Input.ReadPointerOrKey();
-                    if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
+                    int timeArrowTop = inputPopoverPos.Y;
+                    int timeArrowYearsLeft = inputPopoverPos.X;
+                    int timeArrowYearsRight = timeArrowYearsLeft + maxTimePartWidth + 1;
+                    int timeArrowMonthsLeft = timeArrowYearsLeft + maxTimePartWidth + 3;
+                    int timeArrowMonthsRight = timeArrowYearsLeft + maxTimePartWidth * 2 + 4;
+                    int timeArrowDaysLeft = timeArrowYearsLeft + maxTimePartWidth * 2 + 6;
+                    int timeArrowDaysRight = timeArrowYearsLeft + maxTimePartWidth * 3 + 8;
+                    var mouse = data.PointerEventContext;
+                    if (mouse is not null)
+                    {
+                        // Make hitboxes for arrow presses
+                        var arrowTimeDecreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.YearsModify(ref value, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeIncreaseYearsHitbox = new PointerHitbox(new(timeArrowYearsRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.YearsModify(ref value, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeDecreaseMonthsHitbox = new PointerHitbox(new(timeArrowMonthsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.MonthsModify(ref value, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeIncreaseMonthsHitbox = new PointerHitbox(new(timeArrowMonthsRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.MonthsModify(ref value, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeDecreaseDaysHitbox = new PointerHitbox(new(timeArrowDaysLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.DaysModify(ref value, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeIncreaseDaysHitbox = new PointerHitbox(new(timeArrowDaysRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.DaysModify(ref value, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+
+                        // Mouse input received.
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                if (PointerTools.PointerWithinRange(mouse, (timeArrowYearsLeft, timeArrowTop), (timeArrowDaysRight, timeArrowTop)))
+                                {
+                                    if (PointerTools.PointerWithinRange(mouse, (timeArrowYearsLeft, timeArrowTop), (timeArrowYearsRight, timeArrowTop)))
+                                        TimeDateInputTools.YearsModify(ref value, ref inputMode, true);
+                                    else if (PointerTools.PointerWithinRange(mouse, (timeArrowMonthsLeft, timeArrowTop), (timeArrowMonthsRight, timeArrowTop)))
+                                        TimeDateInputTools.MonthsModify(ref value, ref inputMode, true);
+                                    else if (PointerTools.PointerWithinRange(mouse, (timeArrowDaysLeft, timeArrowTop), (timeArrowDaysRight, timeArrowTop)))
+                                        TimeDateInputTools.DaysModify(ref value, ref inputMode, true);
+                                }
+                                break;
+                            case PointerButton.WheelDown:
+                                if (PointerTools.PointerWithinRange(mouse, (timeArrowYearsLeft, timeArrowTop), (timeArrowDaysRight, timeArrowTop)))
+                                {
+                                    if (PointerTools.PointerWithinRange(mouse, (timeArrowYearsLeft, timeArrowTop), (timeArrowYearsRight, timeArrowTop)))
+                                        TimeDateInputTools.YearsModify(ref value, ref inputMode);
+                                    else if (PointerTools.PointerWithinRange(mouse, (timeArrowMonthsLeft, timeArrowTop), (timeArrowMonthsRight, timeArrowTop)))
+                                        TimeDateInputTools.MonthsModify(ref value, ref inputMode);
+                                    else if (PointerTools.PointerWithinRange(mouse, (timeArrowDaysLeft, timeArrowTop), (timeArrowDaysRight, timeArrowTop)))
+                                        TimeDateInputTools.DaysModify(ref value, ref inputMode);
+                                }
+                                break;
+                            case PointerButton.Left:
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
+                                    break;
+                                if ((arrowTimeIncreaseYearsHitbox.IsPointerWithin(mouse) || arrowTimeDecreaseYearsHitbox.IsPointerWithin(mouse)))
+                                {
+                                    arrowTimeIncreaseYearsHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowTimeDecreaseYearsHitbox.ProcessPointer(mouse, out done);
+                                }
+                                else if ((arrowTimeIncreaseMonthsHitbox.IsPointerWithin(mouse) || arrowTimeDecreaseMonthsHitbox.IsPointerWithin(mouse)))
+                                {
+                                    arrowTimeIncreaseMonthsHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowTimeDecreaseMonthsHitbox.ProcessPointer(mouse, out done);
+                                }
+                                else if ((arrowTimeIncreaseDaysHitbox.IsPointerWithin(mouse) || arrowTimeDecreaseDaysHitbox.IsPointerWithin(mouse)))
+                                {
+                                    arrowTimeIncreaseDaysHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowTimeDecreaseDaysHitbox.ProcessPointer(mouse, out done);
+                                }
+                                break;
+                        }
+                    }
+                    else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         switch (cki.Key)
                         {

@@ -22,6 +22,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
@@ -109,7 +110,41 @@ namespace Terminaux.Inputs.Modules
 
                     // Handle keypress
                     InputEventInfo data = Input.ReadPointerOrKey();
-                    if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
+                    int maxSliderWidth = inputPopoverSize.Width - 4;
+                    int sliderArrowTop = inputPopoverPos.Y;
+                    int sliderArrowLeft = inputPopoverPos.X;
+                    int sliderArrowRight = inputPopoverPos.X + inputPopoverSize.Width - 1;
+                    var mouse = data.PointerEventContext;
+                    if (mouse is not null)
+                    {
+                        // Make hitboxes for arrow presses
+                        var arrowSliderDecreaseHitbox = new PointerHitbox(new(sliderArrowLeft, sliderArrowTop), new Action<PointerEventContext>((_) => ValueGoUp(ref value, MinPos, MaxPos))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowSliderIncreaseHitbox = new PointerHitbox(new(sliderArrowRight, sliderArrowTop), new Action<PointerEventContext>((_) => ValueGoDown(ref value, MinPos, MaxPos))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+
+                        // Mouse input received.
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                if (PointerTools.PointerWithinRange(mouse, (sliderArrowLeft, sliderArrowTop), (sliderArrowRight, sliderArrowTop)))
+                                    ValueGoUp(ref value, MinPos, MaxPos);
+                                break;
+                            case PointerButton.WheelDown:
+                                if (PointerTools.PointerWithinRange(mouse, (sliderArrowLeft, sliderArrowTop), (sliderArrowRight, sliderArrowTop)))
+                                    ValueGoDown(ref value, MinPos, MaxPos);
+                                break;
+                            case PointerButton.Left:
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
+                                    break;
+                                if (arrowSliderIncreaseHitbox.IsPointerWithin(mouse) || arrowSliderDecreaseHitbox.IsPointerWithin(mouse))
+                                {
+                                    arrowSliderIncreaseHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowSliderDecreaseHitbox.ProcessPointer(mouse, out done);
+                                }
+                                break;
+                        }
+                    }
+                    else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         switch (cki.Key)
                         {
@@ -143,6 +178,20 @@ namespace Terminaux.Inputs.Modules
                     Value = value;
             }
             Provided = true;
+        }
+
+        private static void ValueGoUp(ref int selected, int minPos, int maxPos)
+        {
+            selected--;
+            if (selected < minPos)
+                selected = maxPos;
+        }
+
+        private static void ValueGoDown(ref int selected, int minPos, int maxPos)
+        {
+            selected++;
+            if (selected > maxPos)
+                selected = minPos;
         }
     }
 }

@@ -23,6 +23,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
@@ -122,7 +123,74 @@ namespace Terminaux.Inputs.Modules
 
                     // Handle keypress
                     InputEventInfo data = Input.ReadPointerOrKey();
-                    if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
+                    int timeArrowTop = inputPopoverPos.Y;
+                    int timeArrowHoursLeft = inputPopoverPos.X;
+                    int timeArrowHoursRight = timeArrowHoursLeft + maxTimePartWidth + 1;
+                    int timeArrowMinutesLeft = timeArrowHoursLeft + maxTimePartWidth + 3;
+                    int timeArrowMinutesRight = timeArrowHoursLeft + maxTimePartWidth * 2 + 4;
+                    int timeArrowSecondsLeft = timeArrowHoursLeft + maxTimePartWidth * 2 + 6;
+                    int timeArrowSecondsRight = timeArrowHoursLeft + maxTimePartWidth * 3 + 8;
+                    var mouse = data.PointerEventContext;
+                    if (mouse is not null)
+                    {
+                        // Make hitboxes for arrow presses
+                        var arrowTimeDecreaseHoursHitbox = new PointerHitbox(new(timeArrowHoursLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.HoursModify(ref value, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeIncreaseHoursHitbox = new PointerHitbox(new(timeArrowHoursRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.HoursModify(ref value, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeDecreaseMinutesHitbox = new PointerHitbox(new(timeArrowMinutesLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.MinutesModify(ref value, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeIncreaseMinutesHitbox = new PointerHitbox(new(timeArrowMinutesRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.MinutesModify(ref value, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeDecreaseSecondsHitbox = new PointerHitbox(new(timeArrowSecondsLeft, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.SecondsModify(ref value, ref inputMode))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowTimeIncreaseSecondsHitbox = new PointerHitbox(new(timeArrowSecondsRight, timeArrowTop), new Action<PointerEventContext>((_) => TimeDateInputTools.SecondsModify(ref value, ref inputMode, true))) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+
+                        // Mouse input received.
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                if (PointerTools.PointerWithinRange(mouse, (timeArrowHoursLeft, timeArrowTop), (timeArrowSecondsRight, timeArrowTop)))
+                                {
+                                    if (PointerTools.PointerWithinRange(mouse, (timeArrowHoursLeft, timeArrowTop), (timeArrowHoursRight, timeArrowTop)))
+                                        TimeDateInputTools.HoursModify(ref value, ref inputMode, true);
+                                    else if (PointerTools.PointerWithinRange(mouse, (timeArrowMinutesLeft, timeArrowTop), (timeArrowMinutesRight, timeArrowTop)))
+                                        TimeDateInputTools.MinutesModify(ref value, ref inputMode, true);
+                                    else if (PointerTools.PointerWithinRange(mouse, (timeArrowSecondsLeft, timeArrowTop), (timeArrowSecondsRight, timeArrowTop)))
+                                        TimeDateInputTools.SecondsModify(ref value, ref inputMode, true);
+                                }
+                                break;
+                            case PointerButton.WheelDown:
+                                if (PointerTools.PointerWithinRange(mouse, (timeArrowHoursLeft, timeArrowTop), (timeArrowSecondsRight, timeArrowTop)))
+                                {
+                                    if (PointerTools.PointerWithinRange(mouse, (timeArrowHoursLeft, timeArrowTop), (timeArrowHoursRight, timeArrowTop)))
+                                        TimeDateInputTools.HoursModify(ref value, ref inputMode);
+                                    else if (PointerTools.PointerWithinRange(mouse, (timeArrowMinutesLeft, timeArrowTop), (timeArrowMinutesRight, timeArrowTop)))
+                                        TimeDateInputTools.MinutesModify(ref value, ref inputMode);
+                                    else if (PointerTools.PointerWithinRange(mouse, (timeArrowSecondsLeft, timeArrowTop), (timeArrowSecondsRight, timeArrowTop)))
+                                        TimeDateInputTools.SecondsModify(ref value, ref inputMode);
+                                }
+                                break;
+                            case PointerButton.Left:
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
+                                    break;
+                                if ((arrowTimeIncreaseHoursHitbox.IsPointerWithin(mouse) || arrowTimeDecreaseHoursHitbox.IsPointerWithin(mouse)))
+                                {
+                                    arrowTimeIncreaseHoursHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowTimeDecreaseHoursHitbox.ProcessPointer(mouse, out done);
+                                }
+                                else if ((arrowTimeIncreaseMinutesHitbox.IsPointerWithin(mouse) || arrowTimeDecreaseMinutesHitbox.IsPointerWithin(mouse)))
+                                {
+                                    arrowTimeIncreaseMinutesHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowTimeDecreaseMinutesHitbox.ProcessPointer(mouse, out done);
+                                }
+                                else if ((arrowTimeIncreaseSecondsHitbox.IsPointerWithin(mouse) || arrowTimeDecreaseSecondsHitbox.IsPointerWithin(mouse)))
+                                {
+                                    arrowTimeIncreaseSecondsHitbox.ProcessPointer(mouse, out bool done);
+                                    if (!done)
+                                        arrowTimeDecreaseSecondsHitbox.ProcessPointer(mouse, out done);
+                                }
+                                break;
+                        }
+                    }
+                    else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
                         switch (cki.Key)
                         {
