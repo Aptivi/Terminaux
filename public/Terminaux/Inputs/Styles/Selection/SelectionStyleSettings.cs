@@ -63,7 +63,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the question color of the seelction style
+        /// Sets the question color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetQuestionColor(Color? color) =>
@@ -79,7 +79,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the slider color of the seelction style
+        /// Sets the slider color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetSliderColor(Color? color) =>
@@ -95,7 +95,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the input color of the seelction style
+        /// Sets the input color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetInputColor(Color? color) =>
@@ -111,7 +111,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the option color of the seelction style
+        /// Sets the option color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetOptionColor(Color? color) =>
@@ -127,7 +127,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the alternative option color of the seelction style
+        /// Sets the alternative option color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetAltOptionColor(Color? color) =>
@@ -143,7 +143,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the selected option color of the seelction style
+        /// Sets the selected option color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetSelectedOptionColor(Color? color) =>
@@ -159,7 +159,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the separator color of the seelction style
+        /// Sets the separator color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetSeparatorColor(Color? color) =>
@@ -175,7 +175,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the text color of the seelction style
+        /// Sets the text color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetTextColor(Color? color) =>
@@ -191,7 +191,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the disabled option color of the seelction style
+        /// Sets the disabled option color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetDisabledOptionColor(Color? color) =>
@@ -207,7 +207,7 @@ namespace Terminaux.Inputs.Styles.Selection
         }
 
         /// <summary>
-        /// Sets the background color of the seelction style
+        /// Sets the background color of the selection style
         /// </summary>
         /// <param name="color">Color to set. If null, inherits the color from the theme.</param>
         public void SetBackgroundColor(Color? color) =>
