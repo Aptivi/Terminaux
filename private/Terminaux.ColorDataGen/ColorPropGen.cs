@@ -137,13 +137,11 @@ namespace Terminaux.ColorDataGen
             }
             builder.AppendLine();
 
-            // Then, populate a partial function that gets all this data
+            // Then, populate a field and a partial function that gets all this data
             builder.AppendLine(
                 """
-                        public static partial ConsoleColorData[] GetColorData()
-                        {
-                            return
-                            [
+                        private static ConsoleColorData[] colorDataArray =
+                        [
                 """
             );
             foreach (var colorData in list)
@@ -152,14 +150,19 @@ namespace Terminaux.ColorDataGen
                 string propName = names[colorId];
                 builder.AppendLine(
                     $$"""
-                                    {{propName}},
+                                {{propName}},
                     """
                 );
             }
             builder.AppendLine(
                 """
-                            ];
-                        }
+                        ];
+                """
+            );
+            builder.AppendLine(
+                """
+                        public static partial ConsoleColorData[] GetColorData() =>
+                            colorDataArray;
                 """
             );
 

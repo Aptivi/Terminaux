@@ -122,7 +122,7 @@ namespace Terminaux.Colors.Data
         public static ConsoleColorData GetNearestColor(int r, int g, int b)
         {
             // We need to get a color map representing RGB values and their names
-            var data = OrderColorData();
+            var data = GetColorData();
 
             // Now, using the three-dimensional vector instance, we need to calculate the nearest color
             // by getting the distance between our current color and the target color by calculating it
