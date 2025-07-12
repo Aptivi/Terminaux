@@ -76,7 +76,17 @@ namespace Terminaux.Base.TermInfo
                     return desc;
             }
 
-            // Last resort (builtins tracked from https://archlinux.org/packages/core/x86_64/ncurses/)
+            // Last resort (builtins tracked from https://github.com/ThomasDickey/ncurses-snapshots.git)
+            //
+            // To update, "git clone" the source code linked above and run the following commands:
+            //
+            //   $ configure_options=(--prefix=/home/USERNAME/ncursesinstall/usr --disable-root-access --disable-root-environ --disable-setuid-environ --enable-widec --enable-pc-files --mandir=/home/USERNAME/ncursesinstall/usr/share/man --with-cxx-binding --with-cxx-shared --with-manpage-format=normal --with-pkg-config-libdir=/usr/lib/pkgconfig --with-shared --with-versioned-syms --with-xterm-kbs=del --without-ada)
+            //   $ ./configure "${configure_options[@]}"
+            //   $ make
+            //   $ cd misc ; make install.data
+            //
+            // After that, find terminfo files under /home/USERNAME/ncursesinstall/usr/share/terminfo and
+            // copy contents to public/Terminaux/Resources/TermFiles.
             ConsoleLogger.Warning("All {0} directories led to nonexistent terminfo file when finding {1}", directories.Count, name);
             var builtins = TermInfoDesc.GetBuiltinPaths();
             foreach (string builtin in builtins)
