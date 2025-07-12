@@ -155,9 +155,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (decoration is not null)
                 {
                     decoratedText.Insert(0,
+                        decoration.RenderStart() +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        decoration.RenderStart()
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}"
                     );
                     decoratedText.Append(decoration.RenderEnd());
                 }
