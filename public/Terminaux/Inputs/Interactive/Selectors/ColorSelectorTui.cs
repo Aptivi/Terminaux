@@ -471,44 +471,45 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[2], (_, _, _) => ChangeSimulation(true)));
             Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[3], (_, _, _) => ChangeSimulationSeverity(false)));
             Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[4], (_, _, _) => ChangeSimulationSeverity(true)));
+            Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[5], (_, _, mouse) => ChangeValue(mouse, false)));
 
             // These require write access
             if (!readOnly)
             {
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[5], SelectWebColor));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[6], (_, _, _) =>
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[6], SelectWebColor));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[7], (_, _, _) =>
                 {
                     finalSettings.Opacity++;
                     UpdateColor(ref selectedColor, type, finalSettings);
                 }));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[7], (_, _, _) =>
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[8], (_, _, _) =>
                 {
                     finalSettings.Opacity--;
                     UpdateColor(ref selectedColor, type, finalSettings);
                 }));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[8], (_, _, _) => ChangeMode(false)));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[9], (_, _, _) => ChangeMode(true)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[9], (_, _, _) => ChangeMode(false)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[10], (_, _, _) => ChangeMode(true)));
 
                 // Mouse bindings
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[10], (_, _, mouse) => ChangeValue(mouse, false)));
-                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[11], (_, _, mouse) => ChangeValue(mouse, true)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[11], (_, _, mouse) => ChangeValue(mouse, false)));
+                Keybindings.Add((ColorSelector.AdditionalBindingsReadWrite[12], (_, _, mouse) => ChangeValue(mouse, true)));
 
                 // Type-specific bindings
                 switch (type)
                 {
                     case ColorType.TrueColor:
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[12], (_, _, _) => ChangeHue(true)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[13], (_, _, _) => ChangeLightness(true)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[14], (_, _, _) => ChangeSaturation(true)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[15], (_, _, _) => ChangeHue(false)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[16], (_, _, _) => ChangeLightness(false)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[17], (_, _, _) => ChangeSaturation(false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[13], (_, _, _) => ChangeHue(true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[14], (_, _, _) => ChangeLightness(true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[15], (_, _, _) => ChangeSaturation(true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[16], (_, _, _) => ChangeHue(false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[17], (_, _, _) => ChangeLightness(false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsTrueColor[18], (_, _, _) => ChangeSaturation(false)));
                         break;
                     case ColorType.EightBitColor:
                     case ColorType.FourBitColor:
-                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[12], (_, _, _) => ChangeColor(true)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[13], (_, _, _) => ChangeColor(false)));
-                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[14], (_, _, _) => ShowColorList()));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[13], (_, _, _) => ChangeColor(true)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[14], (_, _, _) => ChangeColor(false)));
+                        Keybindings.Add((ColorSelector.AdditionalBindingsNormalColor[15], (_, _, _) => ShowColorList()));
                         break;
                 }
             }
@@ -673,6 +674,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int colorBoxX = 2, colorBoxY = 1;
             int colorBoxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
             int grayRampBarY = colorBoxY + 9;
+            int halfBoxWidth = boxWidth / 2 - 2;
+            int otherHalfLeft = generalX + 1 + boxWidth / 2 + 2;
+            int infoRampBarY = colorBoxY + 25;
 
             // Make pointer hitboxes to detect boundaries
             var colorBoxHitbox = new PointerHitbox(new(colorBoxX + 1, colorBoxY + 1), new Coordinate(colorBoxWidth + colorBoxX, boxHeight + colorBoxY), (pec) => ChangeColor(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
@@ -681,6 +685,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             var colorSaturationBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 3), new Coordinate(generalX + boxWidth, colorBoxY + 4), (pec) => ChangeSaturation(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
             var colorLightnessBarHitbox = new PointerHitbox(new(generalX + 1, colorBoxY + 5), new Coordinate(generalX + boxWidth, colorBoxY + 6), (pec) => ChangeLightness(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
             var colorTransparencyBarHitbox = new PointerHitbox(new(generalX + 1, grayRampBarY + 1), new Coordinate(generalX + boxWidth - 6, grayRampBarY + 2), (pec) => ChangeTransparency(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorBlindnessSelectionHitbox = new PointerHitbox(new(otherHalfLeft, infoRampBarY + 1), new Coordinate(otherHalfLeft + halfBoxWidth - 1, infoRampBarY + 4), (pec) => ChangeSimulation(goBack)) { Button = PointerButton.WheelUp | PointerButton.WheelDown, ButtonPress = PointerButtonPress.Scrolled };
+            var colorBlindnessSelectionArrowUpHitbox = new PointerHitbox(new(otherHalfLeft + halfBoxWidth, infoRampBarY + 1), new Coordinate(otherHalfLeft + halfBoxWidth, infoRampBarY + 1), (pec) => ChangeSimulation(true)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+            var colorBlindnessSelectionArrowDownHitbox = new PointerHitbox(new(otherHalfLeft + halfBoxWidth, infoRampBarY + 4), new Coordinate(otherHalfLeft + halfBoxWidth, infoRampBarY + 4), (pec) => ChangeSimulation(false)) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
             // Detect the boundaries and do the action!
             if (colorBoxHitbox.IsPointerWithin(mouse))
@@ -697,6 +704,12 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     colorLightnessBarHitbox.ProcessPointer(mouse, out _);
                 else if (colorTransparencyBarHitbox.IsPointerWithin(mouse))
                     colorTransparencyBarHitbox.ProcessPointer(mouse, out _);
+                else if (colorBlindnessSelectionHitbox.IsPointerWithin(mouse))
+                    colorBlindnessSelectionHitbox.ProcessPointer(mouse, out _);
+                else if (colorBlindnessSelectionArrowUpHitbox.IsPointerWithin(mouse))
+                    colorBlindnessSelectionArrowUpHitbox.ProcessPointer(mouse, out _);
+                else if (colorBlindnessSelectionArrowDownHitbox.IsPointerWithin(mouse))
+                    colorBlindnessSelectionArrowDownHitbox.ProcessPointer(mouse, out _);
             }
             UpdateColor(ref selectedColor, type, finalSettings);
         }
