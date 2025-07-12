@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
@@ -30,6 +31,8 @@ namespace Terminaux.Colors.Models.Parsing
     /// </summary>
     public static class ParsingTools
     {
+        private static readonly HashSet<string> colorNames = [.. Enum.GetNames(typeof(ConsoleColors))];
+
         /// <summary>
         /// Does the string specifier represent a valid model-agnostic specifier?
         /// </summary>
@@ -55,7 +58,7 @@ namespace Terminaux.Colors.Models.Parsing
         {
             if (double.TryParse(specifier, out double specifierNum))
                 return specifierNum >= 0;
-            return Enum.IsDefined(typeof(ConsoleColors), specifier);
+            return colorNames.Contains(specifier);
         }
 
         /// <summary>

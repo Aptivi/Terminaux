@@ -41,6 +41,13 @@ namespace Terminaux.Colors
     [JsonConverter(typeof(ColorSerializer))]
     public class Color : IEquatable<Color>
     {
+        private ConsoleColorData? colorId;
+        private string? vtSeqForeground;
+        private string? vtSeqBackground;
+        private readonly string hex = "";
+        private readonly string seqTrueColor = "";
+        private readonly string vtSeqForegroundTrue = "";
+        private readonly string vtSeqBackgroundTrue = "";
         private readonly ColorSettings settings;
 
         /// <summary>
@@ -51,7 +58,14 @@ namespace Terminaux.Colors
         /// <summary>
         /// The color ID for 256- and 16-color modes.
         /// </summary>
-        public ConsoleColorData ColorId { get; private set; }
+        public ConsoleColorData ColorId
+        {
+            get
+            {
+                colorId ??= ConsoleColorData.GetNearestColor(RGB);
+                return colorId;
+            }
+        }
 
         /// <summary>
         /// Empty color singleton
@@ -80,8 +94,16 @@ namespace Terminaux.Colors
         /// <summary>
         /// Parsable VT sequence (Foreground, original)
         /// </summary>
-        public string VTSequenceForegroundOriginal =>
-            Type == ColorType.TrueColor ? $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequence}m" : $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
+        public string VTSequenceForegroundOriginal
+        {
+            get
+            {
+                if (Type == ColorType.TrueColor)
+                    return VTSequenceForegroundTrueColor;
+                vtSeqForeground ??= $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
+                return vtSeqForeground;
+            }
+        }
 
         /// <summary>
         /// Parsable VT sequence (Background)
@@ -92,8 +114,16 @@ namespace Terminaux.Colors
         /// <summary>
         /// Parsable VT sequence (Background, original)
         /// </summary>
-        public string VTSequenceBackgroundOriginal =>
-            Type == ColorType.TrueColor ? $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequence}m" : $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
+        public string VTSequenceBackgroundOriginal
+        {
+            get
+            {
+                if (Type == ColorType.TrueColor)
+                    return VTSequenceBackgroundTrueColor;
+                vtSeqBackground ??= $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
+                return vtSeqBackground;
+            }
+        }
 
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
@@ -269,7 +299,10 @@ namespace Terminaux.Colors
 
             // Now, parse the output
             RGB = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
-            ColorId = ConsoleColorData.GetNearestColor(RGB);
+            hex = $"#{RGB.R:X2}{RGB.G:X2}{RGB.B:X2}";
+            seqTrueColor = $"{RGB.R};{RGB.G};{RGB.B}";
+            vtSeqForegroundTrue = $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequenceTrueColor}m";
+            vtSeqBackgroundTrue = $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequenceTrueColor}m";
         }
 
         /// <summary>
@@ -281,8 +314,12 @@ namespace Terminaux.Colors
         {
             var result = SystemColorConverter.FromDrawingColor(color);
             settings = result.settings;
-            ColorId = result.ColorId;
+            colorId = result.ColorId;
             RGB = result.RGB;
+            hex = $"#{RGB.R:X2}{RGB.G:X2}{RGB.B:X2}";
+            seqTrueColor = $"{RGB.R};{RGB.G};{RGB.B}";
+            vtSeqForegroundTrue = $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequenceTrueColor}m";
+            vtSeqBackgroundTrue = $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequenceTrueColor}m";
         }
 
         /// <summary>
