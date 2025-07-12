@@ -81,7 +81,7 @@ namespace Terminaux.Colors.Data
         {
             if (cachedOrderedColorDataAscending.Length > 0 && !descending)
                 return cachedOrderedColorDataAscending;
-            else if (cachedOrderedColorDataDescending.Length > 0 && !descending)
+            else if (cachedOrderedColorDataDescending.Length > 0 && descending)
                 return cachedOrderedColorDataDescending;
             var data = GetColorData();
             ConsoleLogger.Debug("Sorting {0} colors (desc: {1})", data.Length, descending);
@@ -142,7 +142,7 @@ namespace Terminaux.Colors.Data
                 ConsoleColorData? colorData = data[i];
 
                 // Calculate the distance using the formula above.
-                float distance = Vector3.Distance(vector, colorData.Vector);
+                float distance = Vector3.DistanceSquared(vector, colorData.Vector);
                 if (distance < minimum)
                 {
                     // Keep getting distance until we find the correct color.
