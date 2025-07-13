@@ -208,20 +208,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (settings.BorderUpperFrameEnabled)
                 {
                     frameBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 1));
+                    int alignmentStart = TextWriterTools.DetermineTextAlignment(finalText, Width - titleSettings.TitleOffset.Right - 2, TitleSettings.Alignment, 1);
                     for (int w = 0; w < Width; w++)
                     {
-                        if (w == 1 && textWidth > 3)
+                        if (w == alignmentStart && textWidth > 3)
                         {
-                            var titleWriter = new AlignedText()
-                            {
-                                Text = finalText,
-                                Left = Left + 2,
-                                Top = Top,
-                                Width = Width - titleSettings.TitleOffset.Right,
-                                UseColors = false,
-                                Settings = TitleSettings,
-                            };
-                            frameBuilder.Append(titleWriter.Render());
+                            frameBuilder.Append(finalText);
                             w += textWidth - 1;
                         }
                         else
