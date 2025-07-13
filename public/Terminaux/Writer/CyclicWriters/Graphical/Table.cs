@@ -264,7 +264,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                     // Process them according to both the cell width and the cell options
                     string spaces = new(' ', maxCellWidth - 1);
-                    text = text.Truncate(maxCellWidth - 4);
+                    text = text.Truncate(maxCellWidth - 1);
                     var alignment = TextAlignment.Left;
                     if (Settings is not null && Settings.Count > 0)
                     {
