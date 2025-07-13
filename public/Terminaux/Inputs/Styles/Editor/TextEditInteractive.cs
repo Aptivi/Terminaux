@@ -37,6 +37,7 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using System.Collections.ObjectModel;
+using Magico.Enumeration;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -229,7 +230,9 @@ namespace Terminaux.Inputs.Styles.Editor
             for (int i = startIndex; i <= endIndex; i++)
             {
                 // Get a line
-                string source = lines[i - 1].Replace("\t", ">");
+                string source = lines[i - 1].Replace("\t", new string(' ', ConsoleMisc.TabWidth));
+                string current = lines[lineIdx].Replace("\t", new string(' ', ConsoleMisc.TabWidth));
+                int tabWidths = current.Length - lines[lineIdx].Length;
                 if (source.Length == 0)
                     source = " ";
                 var sequencesCollections = VtSequenceTools.MatchVTSequences(source);
@@ -237,7 +240,6 @@ namespace Terminaux.Inputs.Styles.Editor
 
                 // Seek through the whole string to find unprintable characters
                 var sourceBuilder = new StringBuilder();
-                int width = ConsoleChar.EstimateCellWidth(source);
                 for (int l = 0; l < source.Length; l++)
                 {
                     string sequence = ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
@@ -253,7 +255,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 if (source.Length > 0)
                 {
                     int charsPerPage = SeparatorConsoleWidthInterior;
-                    int currentCharPage = lineColIdx / charsPerPage;
+                    int currentCharPage = (lineColIdx + tabWidths) / charsPerPage;
                     int startLineIndex = charsPerPage * currentCharPage;
                     int endLineIndex = charsPerPage * (currentCharPage + 1);
                     if (startLineIndex > absolutes.Length)
@@ -270,14 +272,19 @@ namespace Terminaux.Inputs.Styles.Editor
                 if (i == lineIdx + 1)
                 {
                     bool overflown = lineColIdx >= lines[i - 1].Length;
-                    int adjustedIdx = lineColIdx % SeparatorConsoleWidthInterior;
-                    int finalPos = overflown ? adjustedIdx + 1 : 1;
-                    for (int a = adjustedIdx; a > 0 && !overflown; a--)
-                        finalPos += TextTools.GetCharWidth(lines[i - 1][lineColIdx - a]);
+                    char finalChar = overflown ? ' ' : lines[i - 1][lineColIdx];
+                    int finalPos = 1;
+                    for (int a = 0; a < lineColIdx; a++)
+                    {
+                        char targetChar = lines[i - 1][a];
+                        finalPos += targetChar == '\t' ? ConsoleMisc.TabWidth : TextTools.GetCharWidth(targetChar);
+                        if (finalPos > SeparatorConsoleWidthInterior)
+                            finalPos -= SeparatorConsoleWidthInterior;
+                    }
                     lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
                     lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
                     lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
-                    lineBuilder.Append(overflown ? ' ' : lines[i - 1][lineColIdx]);
+                    lineBuilder.Append(finalChar == '\t' ? ' ' : finalChar);
                     lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
                     lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
                     lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(SeparatorConsoleWidthInterior + 3 - (SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source)), SeparatorMinimumHeightInterior + count + 1));
