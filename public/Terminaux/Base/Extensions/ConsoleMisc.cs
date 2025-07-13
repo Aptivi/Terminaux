@@ -42,6 +42,7 @@ namespace Terminaux.Base.Extensions
     public static class ConsoleMisc
     {
         private static bool isOnAltBuffer = false;
+        private static int tabWidth = 4;
 
         /// <summary>
         /// Specifies whether your terminal emulator reverses the RTL text automatically or not
@@ -53,6 +54,15 @@ namespace Terminaux.Base.Extensions
         /// </summary>
         public static bool IsOnAltBuffer =>
             isOnAltBuffer;
+
+        /// <summary>
+        /// Tab width to set
+        /// </summary>
+        public static int TabWidth
+        {
+            get => tabWidth;
+            set => tabWidth = value >= 0 ? value : 4;
+        }
 
         /// <summary>
         /// Sets the console title
@@ -131,8 +141,8 @@ namespace Terminaux.Base.Extensions
             // Make the text look like it came from Linux
             text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
 
-            // Convert tabs to four spaces
-            text = text.Replace("\t", "    ");
+            // Convert tabs to spaces
+            text = text.Replace("\t", new string(' ', TabWidth));
 
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
@@ -223,8 +233,8 @@ namespace Terminaux.Base.Extensions
             // Make the text look like it came from Linux
             text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
 
-            // Convert tabs to four spaces
-            text = text.Replace("\t", "    ");
+            // Convert tabs to spaces
+            text = text.Replace("\t", new string(' ', TabWidth));
 
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
