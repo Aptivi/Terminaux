@@ -203,34 +203,20 @@ namespace Terminaux.Inputs.Styles.Editor
                 // Get the lines and highlight the selection
                 int count = 0;
                 var sels = new StringBuilder();
-                for (int i = startIndex; i <= endIndex; i++)
+                for (int i = startIndex; i <= endIndex && lines.Count != 0; i++)
                 {
                     // Get a line
-                    string source = lines[i - 1].Replace("\t", "    ");
-                    if (source.Length == 0)
-                        source = " ";
+                    string source = lines[i - 1];
                     var sequencesCollections = VtSequenceTools.MatchVTSequences(source);
-                    int vtSeqIdx = 0;
-
-                    // Seek through the whole string to find unprintable characters
-                    var sourceBuilder = new StringBuilder();
-                    for (int l = 0; l < source.Length; l++)
-                    {
-                        string sequence = ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
-                        bool unprintable = ConsoleChar.EstimateCellWidth(sequence) == 0;
-                        string rendered = unprintable && !isVtSequence ? "." : sequence;
-                        sourceBuilder.Append(rendered);
-                    }
-                    source = sourceBuilder.ToString();
 
                     // Now, get the line range
                     var lineBuilder = new StringBuilder();
                     var absolutes = GetAbsoluteSequences(source, sequencesCollections);
+                    int finalPos = 1;
                     if (source.Length > 0)
                     {
                         int charsPerPage = SeparatorConsoleWidthInterior;
                         int currentCharPage = 0;
-                        int finalPos = 1;
                         for (int a = 0; a < lineColIdx; a++)
                         {
                             char targetChar = lines[lineIdx][a];
@@ -247,24 +233,24 @@ namespace Terminaux.Inputs.Styles.Editor
                             startLineIndex = absolutes.Length;
                         if (endLineIndex > absolutes.Length)
                             endLineIndex = absolutes.Length;
-                        source = "";
                         for (int a = startLineIndex; a < endLineIndex; a++)
-                            lineBuilder.Append(absolutes[a]);
-
-                        // Highlight the selection
-                        if (i == lineIdx + 1)
-                        {
-                            bool overflown = lineColIdx >= lines[i - 1].Length;
-                            char finalChar = overflown ? ' ' : lines[i - 1][lineColIdx];
-                            lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
-                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
-                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
-                            lineBuilder.Append(finalChar == '\t' ? ' ' : finalChar);
-                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
-                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
-                        }
+                            lineBuilder.Append(absolutes[a].Item2);
                     }
 
+                    // Highlight the selection
+                    if (i == lineIdx + 1)
+                    {
+                        bool overflown = lines[i - 1].Length == 0 || lineColIdx >= absolutes.Length;
+                        char finalChar = overflown ? ' ' : lines[i - 1][absolutes[lineColIdx].Item1];
+                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
+                        lineBuilder.Append(finalChar == '\t' ? ' ' : finalChar);
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
+                    }
+
+                    // Reset the colors
                     lineBuilder.Append(
                         ColorTools.RenderRevertForeground() +
                         ColorTools.RenderRevertBackground()
@@ -446,7 +432,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
             var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
             var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
-            var currChar = absolutes[lineColIdx];
+            var currChar = absolutes[lineColIdx].Item2;
             if (ConsoleChar.EstimateCellWidth(currChar) == 0)
                 status += " | Bin";
             if (currChar == "\t")
@@ -505,18 +491,15 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = 0;
         }
 
-        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
+        private static (int, string)[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
         {
             int vtSeqIdx = 0;
-            List<string> sequences = [];
-            string sequence = "";
+            List<(int, string)> sequences = [];
             for (int l = 0; l < source.Length; l++)
             {
-                sequence += ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
-                if (isVtSequence)
-                    continue;
-                sequences.Add(sequence);
-                sequence = "";
+                var seqTuple = (index: l, sequence: "");
+                seqTuple.sequence = ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out _);
+                sequences.Add(seqTuple);
             }
             return [.. sequences];
         }
