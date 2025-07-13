@@ -188,7 +188,10 @@ namespace Terminaux.Base.Extensions
                 }
             }
             isVtSequence = vtSeq;
-            return !string.IsNullOrEmpty(seq) ? seq : ch.ToString();
+            return
+                !string.IsNullOrEmpty(seq) ? seq :
+                ch == '\t' ? new string(' ', ConsoleMisc.TabWidth) :
+                ch.ToString();
         }
 
         static ConsolePositioning()

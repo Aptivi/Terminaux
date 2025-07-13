@@ -18,6 +18,7 @@
 //
 
 using System.Linq;
+using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Editor;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -31,8 +32,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
         public void RunFixture()
         {
             string toBeEdited =
-                """
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                $"""
+                Lorem ipsum dol{ColorTools.RenderResetForeground()}or sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Quam lacus suspendisse faucibus interdum. Fermentum odio eu
                 feugiat pretium nibh ipsum consequat nisl. Purus in mollis nunc sed id semper. Ultrices sagittis
                 orci a scelerisque purus. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel.
