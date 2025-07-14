@@ -494,17 +494,22 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             // Insert a line
             if (lines.Count == 0 || lines[lineIdx].Length == 0)
-                lines.Add("");
+                lines.Insert(lineIdx, "");
             else
             {
                 // Check to see if the current position is not at the end of the line
                 var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
                 var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
-                int colIdx = absolutes[lineColIdx].Item1;
-                string substringNewLine = lines[lineIdx].Substring(colIdx);
-                string substringOldLine = lines[lineIdx].Substring(0, colIdx);
-                lines[lineIdx] = substringOldLine;
-                lines.Insert(lineIdx + 1, substringNewLine);
+                if (lineColIdx <= absolutes.Length - 1)
+                {
+                    int colIdx = absolutes[lineColIdx].Item1;
+                    string substringNewLine = lines[lineIdx].Substring(colIdx);
+                    string substringOldLine = lines[lineIdx].Substring(0, colIdx);
+                    lines[lineIdx] = substringOldLine;
+                    lines.Insert(lineIdx + 1, substringNewLine);
+                }
+                else
+                    lines.Insert(lineIdx + 1, "");
             }
 
             MoveDown(lines, screen);
