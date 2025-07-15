@@ -523,10 +523,7 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
             int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
-            int currentSelection = byteIdx / 16;
-            int currentPage = currentSelection / byteLinesPerPage;
-            int startIndex = byteLinesPerPage * currentPage;
-            int startByte = startIndex * 16;
+            int startByte = byteIdx - (byteLinesPerPage * 16);
             if (startByte > bytes.Length - 1)
                 startByte = bytes.Length - 1;
             if (startByte < 0)
@@ -539,10 +536,7 @@ namespace Terminaux.Inputs.Styles.Editor
         {
             int SeparatorMinimumHeightInterior = fullscreen ? 0 : 2;
             int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior) + (fullscreen ? 1 : 0);
-            int currentSelection = byteIdx / 16;
-            int currentPage = currentSelection / byteLinesPerPage;
-            int endIndex = byteLinesPerPage * (currentPage + 1);
-            int startByte = endIndex * 16;
+            int startByte = byteIdx + (byteLinesPerPage * 16);
             if (startByte > bytes.Length - 1)
                 startByte = bytes.Length - 1;
             if (startByte < 0)
