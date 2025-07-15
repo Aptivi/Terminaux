@@ -302,7 +302,20 @@ namespace Terminaux.Inputs.Styles.Editor
             // Insert a character
             var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
             var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
-            lines[lineIdx] = lines[lineIdx].Insert(lines[lineIdx].Length == 0 ? 0 : lineColIdx > absolutes.Length - 1 ? lineColIdx : absolutes[lineColIdx].Item1, $"{keyChar}");
+            int newColumnIdx = 0;
+            if (lines[lineIdx].Length > 0)
+            {
+                if (lineColIdx > absolutes.Length - 1)
+                {
+                    if (absolutes.Length > 0)
+                        newColumnIdx = absolutes[absolutes.Length - 1].Item1 + 1;
+                    else
+                        newColumnIdx = lineColIdx;
+                }
+                else
+                    newColumnIdx = absolutes[lineColIdx].Item1;
+            }
+            lines[lineIdx] = lines[lineIdx].Insert(newColumnIdx, $"{keyChar}");
             MoveForward();
         }
 
