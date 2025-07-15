@@ -416,23 +416,21 @@ namespace Terminaux.Inputs.Styles.Editor
 
         private static void PreviousPage(byte[] bytes)
         {
-            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
-            int currentSelection = byteIdx / 16;
-            int currentPage = currentSelection / byteLinesPerPage;
-            int startIndex = byteLinesPerPage * currentPage;
-            int startByte = startIndex * 16;
-            if (startByte > bytes.Length)
-                startByte = bytes.Length;
-            byteIdx = startByte - 1 < 0 ? 0 : startByte - 1;
+            int SeparatorMinimumHeightInterior = 2;
+            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior);
+            int startByte = byteIdx - (byteLinesPerPage * 16);
+            if (startByte > bytes.Length - 1)
+                startByte = bytes.Length - 1;
+            if (startByte < 0)
+                startByte = 0;
+            byteIdx = startByte;
         }
 
         private static void NextPage(byte[] bytes)
         {
-            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
-            int currentSelection = byteIdx / 16;
-            int currentPage = currentSelection / byteLinesPerPage;
-            int endIndex = byteLinesPerPage * (currentPage + 1);
-            int startByte = endIndex * 16;
+            int SeparatorMinimumHeightInterior = 2;
+            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4 + (2 - SeparatorMinimumHeightInterior);
+            int startByte = byteIdx + (byteLinesPerPage * 16);
             if (startByte > bytes.Length - 1)
                 startByte = bytes.Length - 1;
             byteIdx = startByte;
