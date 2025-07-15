@@ -157,5 +157,16 @@ namespace Terminaux.Inputs.Styles.Selection
             }
             throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR"), choiceNum);
         }
+
+        internal static int[] SelectDefaults(InputChoiceCategoryInfo[] selections)
+        {
+            InputChoiceInfo[] choices = [.. GetChoicesFromCategories(selections)];
+            return SelectDefaults(choices);
+        }
+
+        internal static int[] SelectDefaults(InputChoiceInfo[] choices) =>
+            choices.Any((ici) => ici.ChoiceDefaultSelected) ?
+            choices.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx).ToArray() :
+            [];
     }
 }

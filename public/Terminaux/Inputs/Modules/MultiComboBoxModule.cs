@@ -89,10 +89,14 @@ namespace Terminaux.Inputs.Modules
         /// <inheritdoc/>
         public override void ProcessInput(Coordinate inputPopoverPos = default, Size inputPopoverSize = default)
         {
+            // Determine selected choices
+            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
+            int[] indexes = Value is not null ? (int[])Value : SelectionInputTools.SelectDefaults(choices);
+
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                Value = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(Choices, Description, new InfoBoxSettings()
+                Value = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(indexes, Choices, Description, new InfoBoxSettings()
                 {
                     Title = Name,
                     ForegroundColor = Foreground,
@@ -101,13 +105,11 @@ namespace Terminaux.Inputs.Modules
             }
             else
             {
-                List<int> selectedChoices = [];
-                InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
+                List<int> selectedChoices = [.. indexes];
                 int currentSelection = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
 
                 // Make selected choices from the ChoiceDefaultSelected value.
                 InfoBoxTools.VerifyDisabled(ref currentSelection, choices);
-                selectedChoices = choices.Any((ici) => ici.ChoiceDefaultSelected) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx).ToList() : [];
                 int finalPopoverHeight = inputPopoverSize.Height > ConsoleWrapper.WindowHeight - inputPopoverPos.Y - 2 ? ConsoleWrapper.WindowHeight - inputPopoverPos.Y - 2 : inputPopoverSize.Height;
                 bool goingUp = false;
                 bool bail = false;

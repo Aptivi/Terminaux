@@ -642,9 +642,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
             return true;
         }
 
-        internal SelectionStyleTui(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple)
+        internal SelectionStyleTui(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple, int[]? initialChoices)
         {
             // Check values
+            initialChoices ??= [];
+            selectedAnswers = [.. initialChoices];
             categories = [.. answers, .. altAnswers];
             allAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
             if (allAnswers.All((ici) => ici.ChoiceDisabled))
@@ -664,9 +666,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Settings = this.settings,
             };
-
-            // Make selected choices from the ChoiceDefaultSelected value.
-            selectedAnswers = allAnswers.Any((ici) => ici.ChoiceDefaultSelected) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx + 1).ToList() : [];
 
             // Before we proceed, we need to check the highlighted answer number
             if (highlightedAnswer > allAnswers.Count)

@@ -161,7 +161,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false)
         {
-            var answers = SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, false);
+            var answers = SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, false, null);
             if (answers.Length == 0)
                 return -1;
             return answers[0] + 1;
@@ -178,7 +178,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false)
         {
-            var answers = SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, false);
+            var answers = SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, false, null);
             if (answers.Length == 0)
                 return -1;
             return answers[0] + 1;

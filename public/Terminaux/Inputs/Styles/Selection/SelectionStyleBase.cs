@@ -84,12 +84,12 @@ namespace Terminaux.Inputs.Styles.Selection
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION"), PointerButton.None, PointerButtonPress.Moved),
         ];
 
-        internal static int[] PromptSelection(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple)
+        internal static int[] PromptSelection(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple, int[]? initialChoices)
         {
             settings ??= SelectionStyleSettings.GlobalSettings;
 
             // Make a new TUI instance
-            var tui = new SelectionStyleTui(question, answers, altAnswers, settings, kiosk, multiple);
+            var tui = new SelectionStyleTui(question, answers, altAnswers, settings, kiosk, multiple, initialChoices);
             TextualUITools.RunTui(tui);
             return tui.GetResultingChoices();
         }
