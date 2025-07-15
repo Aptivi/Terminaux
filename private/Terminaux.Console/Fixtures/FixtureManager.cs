@@ -403,6 +403,9 @@ namespace Terminaux.Console.Fixtures
             new RenderImage(),
             new RenderImageSvg(),
             new RenderImageBuiltin(),
+            new RenderImageNoResize(),
+            new RenderImageSvgNoResize(),
+            new RenderImageBuiltinNoResize(),
             new TestImageViewInteractive(),
 
             // Graphics
