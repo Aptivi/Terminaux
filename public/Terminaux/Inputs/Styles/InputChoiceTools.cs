@@ -46,8 +46,8 @@ namespace Terminaux.Inputs.Styles
             // Now, populate choice information from the arrays
             for (int i = 0; i < Answers.Length; i++)
             {
-                string answer = string.IsNullOrEmpty(Answers[i].Item1) ? $"[{i + 1}]" : Answers[i].Item1;
-                string title = string.IsNullOrEmpty(Answers[i].Item2) ? $"Untitled answer #{i + 1}" : Answers[i].Item2;
+                string answer = string.IsNullOrEmpty(Answers[i].Item1) ? $"{i + 1}" : Answers[i].Item1;
+                string title = string.IsNullOrEmpty(Answers[i].Item2) ? "Untitled answer" + $" #{i + 1}" : Answers[i].Item2;
                 finalChoices.Add(new InputChoiceInfo(answer, title));
             }
             return [.. finalChoices];
