@@ -66,8 +66,10 @@ namespace Terminaux.Inputs.Styles.Editor
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT"), ConsoleKey.RightArrow),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1"), ConsoleKey.PageUp),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1"), ConsoleKey.PageDown),
-            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOFIRST1"), ConsoleKey.Home),
-            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOLAST1"), ConsoleKey.End),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE"), ConsoleKey.Home),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE"), ConsoleKey.End),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOFIRST1"), ConsoleKey.Home, ConsoleModifiers.Shift),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOLAST1"), ConsoleKey.End, ConsoleModifiers.Shift),
         ];
 
         private static Keybinding[] EditorBindings =>
@@ -603,13 +605,23 @@ namespace Terminaux.Inputs.Styles.Editor
         private void Beginning()
         {
             UpdateLineIndex(0);
-            UpdateColumnIndex(0);
+            LineBeginning();
         }
 
         private void End()
         {
             UpdateLineIndex(lines.Count - 1);
-            int maxLen = lines[lineIdx].Length;
+            LineEnd();
+        }
+
+        private void LineBeginning() =>
+            UpdateColumnIndex(0);
+
+        private void LineEnd()
+        {
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+            var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+            int maxLen = absolutes.Length;
             maxLen -= entering ? 0 : 1;
             UpdateColumnIndex(maxLen);
         }
@@ -632,7 +644,9 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = 0;
                 return;
             }
-            int maxLen = lines[lineIdx].Length;
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+            var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+            int maxLen = absolutes.Length;
             maxLen -= entering ? 0 : 1;
             if (lineColIdx > maxLen)
                 lineColIdx = maxLen;
@@ -716,8 +730,10 @@ namespace Terminaux.Inputs.Styles.Editor
             Keybindings.Add((Bindings[6], (ui, _, _) => ((TextEditInteractive)ui).MoveForward()));
             Keybindings.Add((Bindings[7], (ui, _, _) => ((TextEditInteractive)ui).PreviousPage()));
             Keybindings.Add((Bindings[8], (ui, _, _) => ((TextEditInteractive)ui).NextPage()));
-            Keybindings.Add((Bindings[9], (ui, _, _) => ((TextEditInteractive)ui).Beginning()));
-            Keybindings.Add((Bindings[10], (ui, _, _) => ((TextEditInteractive)ui).End()));
+            Keybindings.Add((Bindings[9], (ui, _, _) => ((TextEditInteractive)ui).LineBeginning()));
+            Keybindings.Add((Bindings[10], (ui, _, _) => ((TextEditInteractive)ui).LineEnd()));
+            Keybindings.Add((Bindings[11], (ui, _, _) => ((TextEditInteractive)ui).Beginning()));
+            Keybindings.Add((Bindings[12], (ui, _, _) => ((TextEditInteractive)ui).End()));
 
             // Add mode-specific keybindings
             if (entering)
@@ -741,14 +757,14 @@ namespace Terminaux.Inputs.Styles.Editor
                 // Assign edit keybindings
                 if (editable)
                 {
-                    Keybindings.Add((EditorBindings[11], (ui, _, _) => ((TextEditInteractive)ui).SwitchEnter()));
-                    Keybindings.Add((EditorBindings[12], (ui, _, _) => ((TextEditInteractive)ui).DeleteChar()));
-                    Keybindings.Add((EditorBindings[13], (ui, _, _) => ((TextEditInteractive)ui).Insert()));
-                    Keybindings.Add((EditorBindings[14], (ui, _, _) => ((TextEditInteractive)ui).RemoveLine()));
-                    Keybindings.Add((EditorBindings[15], (ui, _, _) => ((TextEditInteractive)ui).InsertNoMove()));
-                    Keybindings.Add((EditorBindings[16], (ui, _, _) => ((TextEditInteractive)ui).RemoveLineNoMove()));
-                    Keybindings.Add((EditorBindings[17], (ui, _, _) => ((TextEditInteractive)ui).Replace()));
-                    Keybindings.Add((EditorBindings[18], (ui, _, _) => ((TextEditInteractive)ui).ReplaceAll()));
+                    Keybindings.Add((EditorBindings[13], (ui, _, _) => ((TextEditInteractive)ui).SwitchEnter()));
+                    Keybindings.Add((EditorBindings[14], (ui, _, _) => ((TextEditInteractive)ui).DeleteChar()));
+                    Keybindings.Add((EditorBindings[15], (ui, _, _) => ((TextEditInteractive)ui).Insert()));
+                    Keybindings.Add((EditorBindings[16], (ui, _, _) => ((TextEditInteractive)ui).RemoveLine()));
+                    Keybindings.Add((EditorBindings[17], (ui, _, _) => ((TextEditInteractive)ui).InsertNoMove()));
+                    Keybindings.Add((EditorBindings[18], (ui, _, _) => ((TextEditInteractive)ui).RemoveLineNoMove()));
+                    Keybindings.Add((EditorBindings[19], (ui, _, _) => ((TextEditInteractive)ui).Replace()));
+                    Keybindings.Add((EditorBindings[20], (ui, _, _) => ((TextEditInteractive)ui).ReplaceAll()));
                 }
             }
         }
