@@ -120,7 +120,6 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Get the button width list
                     int maxButtonPanelWidth = maxWidth - 4;
-                    int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
                     var buttonWidths = GetButtonWidths(infoBox, buttons);
 
                     // Place the buttons from the right for familiarity
@@ -350,7 +349,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             int buttonPanelPosX = borderX + 2;
             int buttonPanelPosY = borderY + maxHeight - 2;
             int maxButtonPanelWidth = maxWidth - 4;
-            int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+            int maxButtonWidth = maxButtonPanelWidth / 4;
             List<PointerHitbox> hitboxes = [];
             var buttonWidths = GetButtonWidths(infoBox, buttons);
             for (int i = 1; i <= buttons.Length; i++)
@@ -386,7 +385,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         {
             var (maxWidth, _, _, _, _, _, _) = infoBox.Dimensions;
             int maxButtonPanelWidth = maxWidth - 4;
-            int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+            int maxButtonWidth = maxButtonPanelWidth / 4;
             List<int> buttonWidths = [];
             for (int i = 1; i <= buttons.Length; i++)
             {
