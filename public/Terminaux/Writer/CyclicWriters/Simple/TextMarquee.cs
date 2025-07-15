@@ -32,7 +32,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
     /// </summary>
     public class TextMarquee : SimpleCyclicWriter
     {
-        private string text = "";
+        internal string text = "";
         private bool pausing = false;
         private int delayCount = 0;
         private int leftIdx = 0;
