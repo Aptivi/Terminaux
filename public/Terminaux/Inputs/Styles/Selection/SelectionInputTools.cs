@@ -168,5 +168,16 @@ namespace Terminaux.Inputs.Styles.Selection
             choices.Any((ici) => ici.ChoiceDefaultSelected) ?
             choices.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx).ToArray() :
             [];
+
+        internal static int GetDefaultChoice(InputChoiceCategoryInfo[] selections)
+        {
+            InputChoiceInfo[] choices = [.. GetChoicesFromCategories(selections)];
+            return GetDefaultChoice(choices);
+        }
+
+        internal static int GetDefaultChoice(InputChoiceInfo[] choices) =>
+            choices.Any((ici) => ici.ChoiceDefault) ?
+            choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx :
+            0;
     }
 }

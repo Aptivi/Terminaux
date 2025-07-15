@@ -89,10 +89,15 @@ namespace Terminaux.Inputs.Modules
         /// <inheritdoc/>
         public override void ProcessInput(Coordinate inputPopoverPos = default, Size inputPopoverSize = default)
         {
+            // Determine selected choice
+            InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
+            int currentSelection = Value is not null ? (int)Value : SelectionInputTools.GetDefaultChoice(choices);
+
+            // Check to see if we need a popover
             if (inputPopoverPos == default || inputPopoverSize == default)
             {
                 // Use the input info box, since the caller needs to provide info about the popover, which doesn't exist
-                Value = InfoBoxSelectionColor.WriteInfoBoxSelection(Choices, Description, new InfoBoxSettings()
+                Value = InfoBoxSelectionColor.WriteInfoBoxSelection(currentSelection, currentSelection, Choices, Description, new InfoBoxSettings()
                 {
                     Title = Name,
                     ForegroundColor = Foreground,
@@ -102,8 +107,6 @@ namespace Terminaux.Inputs.Modules
             }
             else
             {
-                InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
-                int currentSelection = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : Value is not null ? (int)Value : 0;
                 int finalPopoverHeight = inputPopoverSize.Height > ConsoleWrapper.WindowHeight - inputPopoverPos.Y - 2 ? ConsoleWrapper.WindowHeight - inputPopoverPos.Y - 2 : inputPopoverSize.Height;
                 InfoBoxTools.VerifyDisabled(ref currentSelection, choices);
                 bool goingUp = false;

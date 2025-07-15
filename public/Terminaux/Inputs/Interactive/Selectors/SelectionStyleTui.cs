@@ -642,13 +642,17 @@ namespace Terminaux.Inputs.Interactive.Selectors
             return true;
         }
 
-        internal SelectionStyleTui(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple, int[]? initialChoices)
+        internal SelectionStyleTui(string question, InputChoiceCategoryInfo[] answers, InputChoiceCategoryInfo[] altAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple, int[]? initialChoices, int? currentSelection, int? currentSelected)
         {
             // Check values
             initialChoices ??= [];
             selectedAnswers = [.. initialChoices];
             categories = [.. answers, .. altAnswers];
             allAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
+            currentSelection ??= SelectionInputTools.GetDefaultChoice(categories) + 1;
+            currentSelected ??= SelectionInputTools.GetDefaultChoice(categories) + 1;
+            highlightedAnswer = currentSelection ?? 1;
+            selectedAnswer = currentSelected ?? 1;
             if (allAnswers.All((ici) => ici.ChoiceDisabled))
                 throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM"));
 
@@ -657,6 +661,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
             this.settings = settings ?? SelectionStyleSettings.GlobalSettings;
             this.kiosk = kiosk;
             this.multiple = multiple;
+
+            // Before we proceed, we need to check the highlighted answer number
+            if (highlightedAnswer > allAnswers.Count)
+                highlightedAnswer = 1;
+            if (selectedAnswer > allAnswers.Count)
+                selectedAnswer = 1;
+
+            // Set up the selection renderer instance
             selection = new Selection(categories)
             {
                 Left = 1,
@@ -666,14 +678,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Settings = this.settings,
             };
-
-            // Before we proceed, we need to check the highlighted answer number
-            if (highlightedAnswer > allAnswers.Count)
-                highlightedAnswer = 1;
-            highlightedAnswer = allAnswers.Any((ici) => ici.ChoiceDefault) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
-            if (selectedAnswer > allAnswers.Count)
-                selectedAnswer = 1;
-            selectedAnswer = allAnswers.Any((ici) => ici.ChoiceDefault) ? allAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
 
             // Install keybindings
             Keybindings.Add((SelectionStyleBase.Bindings[0], (ui, _, _) => Exit(ui, false)));

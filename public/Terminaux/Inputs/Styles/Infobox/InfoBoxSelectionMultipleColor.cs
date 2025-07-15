@@ -76,7 +76,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultiple(InputChoiceInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelectionMultiple(SelectionInputTools.SelectDefaults(selections), selections, text, InfoBoxSettings.GlobalSettings, vars);
+            WriteInfoBoxSelectionMultiple(SelectionInputTools.SelectDefaults(selections), SelectionInputTools.GetDefaultChoice(selections), selections, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
         /// Writes the multiple-choice selection info box
@@ -87,35 +87,37 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultiple(InputChoiceInfo[] selections, string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxSelectionMultiple(SelectionInputTools.SelectDefaults(selections), selections, text, settings, vars);
+            WriteInfoBoxSelectionMultiple(SelectionInputTools.SelectDefaults(selections), SelectionInputTools.GetDefaultChoice(selections), selections, text, settings, vars);
 
         /// <summary>
         /// Writes the multiple-choice selection info box
         /// </summary>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="selections">List of choices</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultiple(int[] initialChoices, InputChoiceInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelectionMultiple(initialChoices, selections, text, InfoBoxSettings.GlobalSettings, vars);
+        public static int[] WriteInfoBoxSelectionMultiple(int[] initialChoices, int currentSelection, InputChoiceInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelectionMultiple(initialChoices, currentSelection, selections, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
         /// Writes the multiple-choice selection info box
         /// </summary>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="selections">List of choices</param>
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultiple(int[] initialChoices, InputChoiceInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
+        public static int[] WriteInfoBoxSelectionMultiple(int[] initialChoices, int currentSelection, InputChoiceInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
         {
             var category = new InputChoiceCategoryInfo[]
             {
                 new("Selection infobox", [new("Available options", selections)])
             };
-            return WriteInfoBoxSelectionMultiple(initialChoices, category, text, settings, vars);
+            return WriteInfoBoxSelectionMultiple(initialChoices, currentSelection, category, text, settings, vars);
         }
 
         /// <summary>
@@ -126,7 +128,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultiple(InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelectionMultiple(SelectionInputTools.SelectDefaults(selections), selections, text, InfoBoxSettings.GlobalSettings, vars);
+            WriteInfoBoxSelectionMultiple(SelectionInputTools.SelectDefaults(selections), SelectionInputTools.GetDefaultChoice(selections), selections, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
         /// Writes the multiple-choice selection info box
@@ -137,29 +139,31 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultiple(InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars) =>
-            WriteInfoBoxSelectionMultiple(SelectionInputTools.SelectDefaults(selections), selections, text, settings, vars);
+            WriteInfoBoxSelectionMultiple(SelectionInputTools.SelectDefaults(selections), SelectionInputTools.GetDefaultChoice(selections), selections, text, settings, vars);
 
         /// <summary>
         /// Writes the multiple-choice selection info box
         /// </summary>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="selections">List of choices</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultiple(int[] initialChoices, InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelectionMultiple(initialChoices, selections, text, InfoBoxSettings.GlobalSettings, vars);
+        public static int[] WriteInfoBoxSelectionMultiple(int[] initialChoices, int currentSelection, InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelectionMultiple(initialChoices, currentSelection, selections, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
         /// Writes the multiple-choice selection info box
         /// </summary>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="selections">List of choices</param>
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultiple(int[] initialChoices, InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
+        public static int[] WriteInfoBoxSelectionMultiple(int[] initialChoices, int currentSelection, InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
         {
             List<int> selectedChoices = [.. initialChoices];
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
@@ -200,9 +204,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Now, some logic to get the informational box ready
             try
             {
-                // Modify the current selection according to the default
-                int currentSelection = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
-
                 // Edge case: We need to check to see if the current highlight is disabled
                 InfoBoxTools.VerifyDisabled(ref currentSelection, choices);
 

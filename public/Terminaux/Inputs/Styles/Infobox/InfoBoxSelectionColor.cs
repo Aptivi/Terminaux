@@ -73,8 +73,11 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelection(selections, text, InfoBoxSettings.GlobalSettings, vars);
+        public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text, params object[] vars)
+        {
+            int defaultSelection = SelectionInputTools.GetDefaultChoice(selections);
+            return WriteInfoBoxSelection(defaultSelection, defaultSelection, selections, text, InfoBoxSettings.GlobalSettings, vars);
+        }
 
         /// <summary>
         /// Writes the single-choice selection info box
@@ -86,11 +89,39 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
         {
+            int defaultSelection = SelectionInputTools.GetDefaultChoice(selections);
+            return WriteInfoBoxSelection(defaultSelection, defaultSelection, selections, text, settings, vars);
+        }
+
+        /// <summary>
+        /// Writes the single-choice selection info box
+        /// </summary>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
+        /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(int currentSelection, int currentSelected, InputChoiceInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelection(currentSelection, currentSelected, selections, text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the single-choice selection info box
+        /// </summary>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
+        /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(int currentSelection, int currentSelected, InputChoiceInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
+        {
             var category = new InputChoiceCategoryInfo[]
             {
                 new("Selection infobox", [new("Available options", selections)])
             };
-            return WriteInfoBoxSelection(category, text, settings, vars);
+            return WriteInfoBoxSelection(currentSelection, currentSelected, category, text, settings, vars);
         }
 
         /// <summary>
@@ -100,8 +131,11 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelection(selections, text, InfoBoxSettings.GlobalSettings, vars);
+        public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, params object[] vars)
+        {
+            int defaultSelection = SelectionInputTools.GetDefaultChoice(selections);
+            return WriteInfoBoxSelection(defaultSelection, defaultSelection, selections, text, InfoBoxSettings.GlobalSettings, vars);
+        }
 
         /// <summary>
         /// Writes the single-choice selection info box
@@ -112,6 +146,34 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelection(InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
+        {
+            int defaultSelection = SelectionInputTools.GetDefaultChoice(selections);
+            return WriteInfoBoxSelection(defaultSelection, defaultSelection, selections, text, settings, vars);
+        }
+
+        /// <summary>
+        /// Writes the single-choice selection info box
+        /// </summary>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
+        /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(int currentSelection, int currentSelected, InputChoiceCategoryInfo[] selections, string text, params object[] vars) =>
+            WriteInfoBoxSelection(currentSelection, currentSelected, selections, text, InfoBoxSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Writes the single-choice selection info box
+        /// </summary>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
+        /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
+        /// <param name="selections">List of choices</param>
+        /// <param name="settings">Infobox settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
+        public static int WriteInfoBoxSelection(int currentSelection, int currentSelected, InputChoiceCategoryInfo[] selections, string text, InfoBoxSettings settings, params object[] vars)
         {
             int selectedChoice = -1;
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
@@ -152,10 +214,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Now, some logic to get the informational box ready
             try
             {
-                // Modify the current selection according to the default
-                int currentSelection = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
-                int currentSelected = choices.Any((ici) => ici.ChoiceDefault) ? choices.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
-
                 // Edge case: We need to check to see if the current highlight is disabled
                 InfoBoxTools.VerifyDisabled(ref currentSelection, choices);
 

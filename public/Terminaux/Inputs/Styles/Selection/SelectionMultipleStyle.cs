@@ -33,9 +33,10 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, Answers, [], kiosk, initialChoices);
+        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, Answers, [], kiosk, initialChoices, currentSelection);
 
         /// <summary>
         /// Prompts user for selection
@@ -45,9 +46,10 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="AlternateAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), kiosk, initialChoices);
+        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), kiosk, initialChoices, currentSelection);
 
         /// <summary>
         /// Prompts user for selection
@@ -56,32 +58,10 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, Answers, [], kiosk, initialChoices);
-
-        /// <summary>
-        /// Prompts user for selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers.</param>
-        /// <param name="AltAnswers">Set of alternate answers.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
-        /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, Answers, AltAnswers, SelectionStyleSettings.GlobalSettings, kiosk, initialChoices);
-
-        /// <summary>
-        /// Prompts user for selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
-        /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, InputChoiceCategoryInfo[] Answers, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, Answers, [], kiosk, initialChoices);
+        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, Answers, [], kiosk, initialChoices, currentSelection);
 
         /// <summary>
         /// Prompts user for selection
@@ -91,9 +71,35 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, Answers, AltAnswers, SelectionStyleSettings.GlobalSettings, kiosk, initialChoices);
+        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, Answers, AltAnswers, SelectionStyleSettings.GlobalSettings, kiosk, initialChoices, currentSelection);
+
+        /// <summary>
+        /// Prompts user for selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
+        /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
+        public static int[] PromptMultipleSelection(string Question, InputChoiceCategoryInfo[] Answers, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, Answers, [], kiosk, initialChoices, currentSelection);
+
+        /// <summary>
+        /// Prompts user for selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AltAnswers">Set of alternate answers.</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
+        /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
+        public static int[] PromptMultipleSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, Answers, AltAnswers, SelectionStyleSettings.GlobalSettings, kiosk, initialChoices, currentSelection);
 
         /// <summary>
         /// Prompts user for selection
@@ -103,9 +109,10 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk, initialChoices);
+        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk, initialChoices, currentSelection);
 
         /// <summary>
         /// Prompts user for selection
@@ -116,9 +123,10 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), settings ?? SelectionStyleSettings.GlobalSettings, kiosk, initialChoices);
+        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), settings ?? SelectionStyleSettings.GlobalSettings, kiosk, initialChoices, currentSelection);
 
         /// <summary>
         /// Prompts user for selection
@@ -128,9 +136,10 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null) =>
-            PromptMultipleSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk, initialChoices);
+        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null) =>
+            PromptMultipleSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk, initialChoices, currentSelection);
 
         /// <summary>
         /// Prompts user for selection
@@ -141,8 +150,9 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null)
+        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null)
         {
             InputChoiceCategoryInfo[] answersCategory =
             [
@@ -158,7 +168,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     new InputChoiceGroupInfo(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_AVAILABLECHOICES"), AltAnswers)
                 ])
             ];
-            return PromptMultipleSelection(Question, answersCategory, altAnswersCategory, settings, kiosk, initialChoices);
+            return PromptMultipleSelection(Question, answersCategory, altAnswersCategory, settings, kiosk, initialChoices, currentSelection);
         }
 
         /// <summary>
@@ -169,12 +179,14 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, InputChoiceCategoryInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null)
+        public static int[] PromptMultipleSelection(string Question, InputChoiceCategoryInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null)
         {
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Answers)];
             initialChoices ??= SelectionInputTools.SelectDefaults(choices);
-            return SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, true, initialChoices);
+            currentSelection ??= SelectionInputTools.GetDefaultChoice(choices);
+            return SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, true, initialChoices, currentSelection, currentSelection);
         }
 
         /// <summary>
@@ -186,12 +198,14 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="initialChoices">Zero-based index numbers of selected choices</param>
+        /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <returns>An array of zero-based choice indexes, or an empty array if the user has cancelled the input</returns>
-        public static int[] PromptMultipleSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null)
+        public static int[] PromptMultipleSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false, int[]? initialChoices = null, int? currentSelection = null)
         {
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Answers), .. SelectionInputTools.GetChoicesFromCategories(AltAnswers)];
             initialChoices ??= SelectionInputTools.SelectDefaults(choices);
-            return SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, true, initialChoices);
+            currentSelection ??= SelectionInputTools.GetDefaultChoice(choices);
+            return SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, true, initialChoices, currentSelection, currentSelection);
         }
     }
 }
