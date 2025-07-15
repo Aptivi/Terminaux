@@ -72,7 +72,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Get the showcase length
                 StringBuilder showcase = new();
-                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value:0.00}".Length);
+                int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value:0.##}".Length);
                 nameLength = nameLength > Width ? Width : nameLength;
                 return nameLength + (ShowSeparator ? 2 : 0);
             }
@@ -90,7 +90,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
             // Fill the showcase panel with the elements first
             StringBuilder showcase = new();
-            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value:0.00}".Length);
+            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value:0.##}".Length);
             nameLength = nameLength > Width ? Width : nameLength;
             for (int i = 0; i < shownElements.Length; i++)
             {
@@ -107,9 +107,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
                     " ■ " +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                    element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
+                    element.Name.Truncate(nameLength - 4 - $"{maxValue:0.##}".Length) + "  " +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                    $"{element.Value:0.00}"
+                    $"{element.Value:0.##}"
                 );
             }
 

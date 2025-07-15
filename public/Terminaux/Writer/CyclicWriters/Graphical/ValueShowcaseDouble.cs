@@ -74,7 +74,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 var shownLossElementHeights = elements.Select((ce) => (ce.element2, (int)(ce.element2.Value * wholeLength / 2 / maxLossValue))).ToArray();
 
                 // Fill the showcase panel with the elements first
-                int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.element1.Value:0.00}/{element.element2.Value:0.00}".Length);
+                int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.element1.Value:0.##}/{element.element2.Value:0.##}".Length);
                 nameLength = nameLength > Width ? Width : nameLength;
                 return nameLength + (ShowSeparator ? 2 : 0);
             }
@@ -95,7 +95,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             var shownSecondGroupElementHeights = elements.Select((ce) => (ce.element2, (int)(ce.element2.Value * wholeLength / 2 / maxSecondGroupValue))).ToArray();
 
             // Fill the showcase panel with the elements first
-            int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.element1.Value:0.00}/{element.element2.Value:0.00}".Length);
+            int nameLength = elements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Item1) + $"  {element.element1.Value:0.##}/{element.element2.Value:0.##}".Length);
             nameLength = nameLength > Width ? Width : nameLength;
             for (int i = 0; i < elements.Length; i++)
             {
@@ -112,13 +112,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     (UseColors ? ColorTools.RenderSetConsoleColor(element.element1.Color) : "") +
                     " ■ " +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                    element.Item1.Truncate(nameLength - 4 - $"{maxFirstGroupValue:0.00}/{maxSecondGroupValue:0.00}".Length) + "  " +
+                    element.Item1.Truncate(nameLength - 4 - $"{maxFirstGroupValue:0.##}/{maxSecondGroupValue:0.##}".Length) + "  " +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
-                    $"{element.element1.Value:0.00}" +
+                    $"{element.element1.Value:0.##}" +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                     "/" +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red) : "") +
-                    $"{element.element2.Value:0.00}" +
+                    $"{element.element2.Value:0.##}" +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "")
                 );
             }
