@@ -585,7 +585,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
+                    builder.Append($"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8}  ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
@@ -604,7 +604,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
                     // Pad the remaining ASCII byte display
                     int remaining = (int)(16 - byteNum);
-                    int padTimes = remaining * 3;
+                    int padTimes = remaining * 3 + 1;
                     string padded = new(' ', padTimes);
                     builder.Append(padded);
 
