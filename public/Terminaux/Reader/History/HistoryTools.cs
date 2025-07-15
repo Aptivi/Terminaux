@@ -146,20 +146,6 @@ namespace Terminaux.Reader.History
         }
 
         /// <summary>
-        /// Clears the history entries
-        /// </summary>
-        /// <param name="historyName">History name</param>
-        /// <exception cref="TerminauxException"></exception>
-        public static void Clear(string historyName)
-        {
-            if (!IsHistoryRegistered(historyName))
-                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
-            int idx = GetHistoryIndexFrom(historyName);
-            ConsoleLogger.Debug("Clearing {0} entries from {1}", histories[idx].HistoryEntries.Count, historyName);
-            histories[idx].HistoryEntries.Clear();
-        }
-
-        /// <summary>
         /// Appends an entry at the end of the history entry list
         /// </summary>
         /// <param name="historyName">History name</param>
@@ -174,6 +160,53 @@ namespace Terminaux.Reader.History
             int idx = GetHistoryIndexFrom(historyName);
             ConsoleLogger.Debug("Adding {0} to {1}", entry, historyName);
             histories[idx].HistoryEntries.Add(entry);
+        }
+
+        /// <summary>
+        /// Inserts an entry somewhere in the history entry list
+        /// </summary>
+        /// <param name="historyName">History name</param>
+        /// <param name="entry">Entry to insert</param>
+        /// <param name="entryIdx">Index of the history entry to insert this entry to</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void Insert(string historyName, string entry, int entryIdx)
+        {
+            if (!IsHistoryRegistered(historyName))
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
+            if (entry is null)
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED"));
+            int idx = GetHistoryIndexFrom(historyName);
+            ConsoleLogger.Debug("Adding {0} to {1}", entry, historyName);
+            histories[idx].HistoryEntries.Insert(entryIdx, entry);
+        }
+
+        /// <summary>
+        /// Removes an entry somewhere in the history entry list
+        /// </summary>
+        /// <param name="historyName">History name</param>
+        /// <param name="entryIdx">Index of the history entry to remove</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void Remove(string historyName, int entryIdx)
+        {
+            if (!IsHistoryRegistered(historyName))
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
+            int idx = GetHistoryIndexFrom(historyName);
+            ConsoleLogger.Debug("Removing entry index [{0}] from {1}", entryIdx, historyName);
+            histories[idx].HistoryEntries.RemoveAt(entryIdx);
+        }
+
+        /// <summary>
+        /// Clears the history entries
+        /// </summary>
+        /// <param name="historyName">History name</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void Clear(string historyName)
+        {
+            if (!IsHistoryRegistered(historyName))
+                throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED"), historyName);
+            int idx = GetHistoryIndexFrom(historyName);
+            ConsoleLogger.Debug("Clearing {0} entries from {1}", histories[idx].HistoryEntries.Count, historyName);
+            histories[idx].HistoryEntries.Clear();
         }
 
         /// <summary>
