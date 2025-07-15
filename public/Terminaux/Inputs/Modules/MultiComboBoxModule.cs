@@ -41,6 +41,7 @@ namespace Terminaux.Inputs.Modules
     /// </summary>
     public class MultiComboBoxModule : InputModule
     {
+        private int selectedChoice = -1;
         private Selection selection = new();
         private InputChoiceCategoryInfo[] choices = [];
 
@@ -54,6 +55,7 @@ namespace Terminaux.Inputs.Modules
             {
                 choices = value;
                 selection = new Selection(Choices);
+                selectedChoice = -1;
             }
         }
 
@@ -92,7 +94,8 @@ namespace Terminaux.Inputs.Modules
             // Determine selected choices
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Choices)];
             int[] indexes = Value is not null ? (int[])Value : SelectionInputTools.SelectDefaults(choices);
-            int currentSelection = SelectionInputTools.GetDefaultChoice(choices);
+            int currentSelection = selectedChoice < 0 ? SelectionInputTools.GetDefaultChoice(choices) : selectedChoice;
+            selectedChoice = currentSelection;
 
             // Check to see if we need a popover
             if (inputPopoverPos == default || inputPopoverSize == default)
@@ -310,6 +313,7 @@ namespace Terminaux.Inputs.Modules
                 }
                 if (!cancel)
                     Value = selectedChoices.ToArray();
+                selectedChoice = currentSelection;
             }
             Provided = true;
         }
