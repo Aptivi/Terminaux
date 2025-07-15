@@ -43,7 +43,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int windowWidth = ConsoleWrapper.WindowWidth;
             int windowHeight = ConsoleWrapper.WindowHeight;
             int maxWidth = splitFinalLines.Length > 0 ? splitFinalLines.Max(ConsoleChar.EstimateCellWidth) : 0;
-            if (maxWidth < 50)
+            if (maxWidth < 50 && extraHeight > 0)
                 maxWidth = 50;
             if (maxWidth > windowWidth - 4)
                 maxWidth = windowWidth - 4;
@@ -61,7 +61,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int windowWidth = ConsoleWrapper.WindowWidth;
             int windowHeight = ConsoleWrapper.WindowHeight;
             int maxWidth = width;
-            if (maxWidth < 50)
+            if (maxWidth < 50 && extraHeight > 0)
                 maxWidth = 50;
             if (maxWidth > windowWidth - 4)
                 maxWidth = windowWidth - 4;
