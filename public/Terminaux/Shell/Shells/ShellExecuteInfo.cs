@@ -37,17 +37,26 @@ namespace Terminaux.Shell.Shells
         /// <summary>
         /// Shell type
         /// </summary>
-        public string ShellType => shellType;
+        public string ShellType =>
+            shellType;
 
         /// <summary>
         /// Shell base class
         /// </summary>
-        public BaseShell? ShellBase => shellBase;
+        public BaseShell? ShellBase =>
+            shellBase;
 
         /// <summary>
         /// Shell command thread
         /// </summary>
-        public Thread ShellCommandThread => shellCommandThread;
+        public Thread ShellCommandThread =>
+            shellCommandThread;
+
+        /// <summary>
+        /// Last error code for this shell
+        /// </summary>
+        public int LastErrorCode =>
+            lastErrorCode;
 
         /// <summary>
         /// Installs the values to a new instance of ShellInfo
