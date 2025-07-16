@@ -126,20 +126,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             int paneCurrentSelection = selectorTui.CurrentPane == 2 ? selectorTui.SecondPaneCurrentSelection : selectorTui.FirstPaneCurrentSelection;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-            int answersPerPage = SeparatorMaximumHeightInterior;
-            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
-            int startIndex = answersPerPage * currentPage;
-            InteractiveTuiTools.SelectionMovement(selectorTui, startIndex);
+            int targetItemNum = paneCurrentSelection - SeparatorMaximumHeightInterior;
+            InteractiveTuiTools.SelectionMovement(selectorTui, targetItemNum);
         }
 
         private void NextPage()
         {
             int paneCurrentSelection = selectorTui.CurrentPane == 2 ? selectorTui.SecondPaneCurrentSelection : selectorTui.FirstPaneCurrentSelection;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-            int answersPerPage = SeparatorMaximumHeightInterior;
-            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
-            int startIndex = answersPerPage * (currentPage + 1) + 1;
-            InteractiveTuiTools.SelectionMovement(selectorTui, startIndex);
+            int targetItemNum = paneCurrentSelection + SeparatorMaximumHeightInterior;
+            InteractiveTuiTools.SelectionMovement(selectorTui, targetItemNum);
         }
 
         private void More()

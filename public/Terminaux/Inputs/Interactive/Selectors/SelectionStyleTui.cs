@@ -277,11 +277,19 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 2;
-            var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
-            int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer) - 1;
-            highlightedAnswer -= currentPage != -1 ? choiceNums[currentPage] : choiceNums[0];
-            if (highlightedAnswer < 1)
-                highlightedAnswer = 1;
+
+            // Use the rendered selection heights to go to the previous page
+            var heights = selection.GetSelectionHeights();
+            int processedHeight = 0;
+            for (int h = highlightedAnswer - 1; h > 0 && processedHeight < answersPerPage; h--)
+            {
+                int height = heights[h];
+                int prevHeight = h - 1 < heights.Count ? heights[h - 1] : 0;
+                highlightedAnswer--;
+                if (highlightedAnswer < 1)
+                    highlightedAnswer = 1;
+                processedHeight += height - prevHeight;
+            }
             Update(true);
         }
 
@@ -297,11 +305,19 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 2;
-            var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
-            int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer);
-            highlightedAnswer += choiceNums[currentPage];
-            if (highlightedAnswer > allAnswers.Count)
-                highlightedAnswer = allAnswers.Count;
+
+            // Use the rendered selection heights to go to the next page
+            var heights = selection.GetSelectionHeights();
+            int processedHeight = 0;
+            for (int h = highlightedAnswer; h < heights.Count && processedHeight < answersPerPage; h++)
+            {
+                int height = heights[h];
+                int nextHeight = h + 1 < heights.Count ? heights[h + 1] : 0;
+                highlightedAnswer++;
+                if (highlightedAnswer > allAnswers.Count)
+                    highlightedAnswer = allAnswers.Count;
+                processedHeight += nextHeight - height > 0 ? nextHeight - height : 1;
+            }
             Update(false);
         }
 
