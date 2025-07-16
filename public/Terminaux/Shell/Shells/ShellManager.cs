@@ -762,15 +762,16 @@ namespace Terminaux.Shell.Shells
                                 }
                                 else
                                 {
+                                    int processExitCode = 0;
                                     try
                                     {
                                         // Create a new instance of process
                                         ConsoleLogger.Debug("Command: {0}, Arguments: {1}", TargetFile, arguments);
                                         var Params = new ExecuteProcessThreadParameters(TargetFile, arguments);
-                                        ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
+                                        ProcessExecutor.processExecutorThread = new Thread((processParams) => processExitCode = ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
                                         ProcessExecutor.processExecutorThread.Start(Params);
                                         ProcessExecutor.processExecutorThread.Join();
-                                        MESHVariables.SetVariable("MESHErrorCode", "0");
+                                        MESHVariables.SetVariable("MESHErrorCode", $"{processExitCode}");
                                     }
                                     catch (Exception ex)
                                     {
@@ -782,7 +783,7 @@ namespace Terminaux.Shell.Shells
                                     {
                                         ProcessExecutor.processExecutorThread.Interrupt();
                                         ProcessExecutor.processExecutorThread.Join();
-                                        ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
+                                        ProcessExecutor.processExecutorThread = new Thread((processParams) => processExitCode = ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
                                     }
                                 }
                             }

@@ -36,14 +36,11 @@ namespace Terminaux.Shell.Commands.ProcessExecution
     {
         internal static Thread processExecutorThread = new((processParams) => ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
 
-        /// <summary>
-        /// Executes a file with specified arguments
-        /// </summary>
-        internal static void ExecuteProcess(ExecuteProcessThreadParameters? ThreadParams)
+        internal static int ExecuteProcess(ExecuteProcessThreadParameters? ThreadParams)
         {
             if (ThreadParams is null)
                 throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION"));
-            ExecuteProcess(ThreadParams.File, ThreadParams.Args);
+            return ExecuteProcess(ThreadParams.File, ThreadParams.Args);
         }
 
         /// <summary>
