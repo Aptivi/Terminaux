@@ -197,7 +197,20 @@ namespace Terminaux.Inputs.Styles.Infobox
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxSelectionColor), infoBoxScreenPart);
 
             // Make a new infobox instance
-            var selectionsRendered = new Selections(selections);
+            var selectionsRendered = new Selections(selections)
+            {
+                ShowRadioButtons = settings.RadioButtons,
+                CurrentSelection = currentSelection,
+                SelectedChoice = currentSelected,
+                SwapSelectedColors = true,
+                UseColors = settings.UseColors,
+                Settings = new()
+                {
+                    OptionColor = settings.ForegroundColor,
+                    SelectedOptionColor = settings.ForegroundColor,
+                    BackgroundColor = settings.BackgroundColor,
+                }
+            };
             var related = selectionsRendered.GetRelatedHeights();
             int selectionChoices = related.Count > 10 ? 10 : related.Count;
             int selectionReservedHeight = 2 + selectionChoices;
@@ -243,24 +256,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                     infoBox.Elements.AddRenderable("Selection box", border);
 
                     // Now, render the selections
-                    var selectionsRendered = new Selections(selections)
-                    {
-                        ShowRadioButtons = settings.RadioButtons,
-                        Left = selectionBoxPosX + 1,
-                        Top = selectionBoxPosY + 1,
-                        CurrentSelection = currentSelection,
-                        SelectedChoice = currentSelected,
-                        Height = selectionChoices,
-                        Width = maxSelectionWidth,
-                        SwapSelectedColors = true,
-                        UseColors = settings.UseColors,
-                        Settings = new()
-                        {
-                            OptionColor = settings.ForegroundColor,
-                            SelectedOptionColor = settings.ForegroundColor,
-                            BackgroundColor = settings.BackgroundColor,
-                        }
-                    };
+                    selectionsRendered.Left = selectionBoxPosX + 1;
+                    selectionsRendered.Top = selectionBoxPosY + 1;
+                    selectionsRendered.Width = maxSelectionWidth;
+                    selectionsRendered.Height = selectionChoices;
+                    selectionsRendered.CurrentSelection = currentSelection;
+                    selectionsRendered.SelectedChoice = currentSelected;
                     infoBox.Elements.AddRenderable("Rendered selections", selectionsRendered);
                     return infoBox.Render(ref increment, currIdx, true, true);
                 });
@@ -405,16 +406,38 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case ConsoleKey.PageUp:
                                 goingUp = true;
                                 {
-                                    int currentPageMove = (currentSelection - 1) / selectionChoices;
-                                    int startIndexMove = selectionChoices * currentPageMove;
-                                    SelectionSet(ref currentSelection, choices, startIndexMove);
+                                    // Use the rendered selection heights to go to the previous page
+                                    int projectedSelection = currentSelection;
+                                    int processedHeight = 0;
+                                    var heights = selectionsRendered.GetSelectionHeights();
+                                    for (int h = projectedSelection; h > 0 && processedHeight < selectionChoices; h--)
+                                    {
+                                        int height = heights[h];
+                                        int prevHeight = h - 1 < heights.Count ? heights[h - 1] : 0;
+                                        projectedSelection--;
+                                        if (projectedSelection < 0)
+                                            projectedSelection = 0;
+                                        processedHeight += height - prevHeight;
+                                    }
+                                    SelectionSet(ref currentSelection, choices, projectedSelection);
                                 }
                                 break;
                             case ConsoleKey.PageDown:
                                 {
-                                    int currentPageMove = currentSelection / selectionChoices;
-                                    int startIndexMove = selectionChoices * (currentPageMove + 1);
-                                    SelectionSet(ref currentSelection, choices, startIndexMove);
+                                    // Use the rendered selection heights to go to the next page
+                                    int projectedSelection = currentSelection;
+                                    int processedHeight = 0;
+                                    var heights = selectionsRendered.GetSelectionHeights();
+                                    for (int h = projectedSelection; h < heights.Count && processedHeight < selectionChoices; h++)
+                                    {
+                                        int height = heights[h];
+                                        int nextHeight = h + 1 < heights.Count ? heights[h + 1] : 0;
+                                        projectedSelection++;
+                                        if (currentSelection > selections.Length - 1)
+                                            currentSelection = selections.Length - 1;
+                                        processedHeight += nextHeight - height > 0 ? nextHeight - height : 1;
+                                    }
+                                    SelectionSet(ref currentSelection, choices, projectedSelection);
                                 }
                                 break;
                             case ConsoleKey.Tab:
