@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Shell.Shells;
 
 namespace Terminaux.Shell.Prompts
 {
@@ -52,7 +53,7 @@ namespace Terminaux.Shell.Prompts
         internal virtual string PresetPromptBuilder()
         {
             ConsoleLogger.Warning("Tried to call prompt builder on base.");
-            return "> ";
+            return $"[{ShellManager.ShellStack[ShellManager.ShellStack.Count - 1].LastErrorCode}] > ";
         }
 
         string IPromptPreset.PresetPromptBuilder() =>
@@ -70,7 +71,7 @@ namespace Terminaux.Shell.Prompts
         internal virtual string PresetPromptBuilderShowcase()
         {
             ConsoleLogger.Warning("Tried to call prompt builder on base.");
-            return "> ";
+            return "[0] > ";
         }
 
         string IPromptPreset.PresetPromptBuilderShowcase() =>
