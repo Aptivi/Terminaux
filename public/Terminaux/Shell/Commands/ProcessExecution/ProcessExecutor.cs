@@ -51,7 +51,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
         /// </summary>
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
-        /// <returns>Application exit code. -1 if internal error occurred.</returns>
+        /// <returns>Application exit code. -1 if internal error occurred, or -2 if interrupted.</returns>
         public static int ExecuteProcess(string File, string Args) =>
             ExecuteProcess(File, Args, ConsoleFilesystem.CurrentDir);
 
@@ -61,70 +61,31 @@ namespace Terminaux.Shell.Commands.ProcessExecution
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
         /// <param name="WorkingDirectory">Specifies the working directory</param>
-        /// <returns>Application exit code. -1 if internal error occurred.</returns>
+        /// <returns>Application exit code. -1 if internal error occurred, or -2 if interrupted.</returns>
         public static int ExecuteProcess(string File, string Args, string WorkingDirectory)
         {
-            try
-            {
-                bool HasProcessExited = false;
-                var CommandProcess = new Process();
-                var CommandProcessStart = new ProcessStartInfo()
-                {
-                    RedirectStandardInput = true,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    FileName = File,
-                    Arguments = Args,
-                    WorkingDirectory = WorkingDirectory,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    UseShellExecute = false
-                };
-                CommandProcess.StartInfo = CommandProcessStart;
-                CommandProcess.EnableRaisingEvents = true;
-                CommandProcess.OutputDataReceived += ExecutableOutput;
-                CommandProcess.ErrorDataReceived += ExecutableOutput;
-                CommandProcess.Exited += (sender, args) => HasProcessExited = true;
+            // Execute the process
+            int exitCode = -1;
+            ExecuteProcessInternal(File, Args, WorkingDirectory, ref exitCode, true, true, out _, out var exc);
 
-                // Start the process
-                ConsoleLogger.Info("Starting process {0} with working directory {1} and arguments {2}...", File, WorkingDirectory, Args);
-                CommandProcess.Start();
-                CommandProcess.BeginOutputReadLine();
-                CommandProcess.BeginErrorReadLine();
+            // Check for exception (general to set exit code)
+            if (exc is not null)
+                exitCode = -1;
 
-                // Wait for process exit
-                while (!HasProcessExited | !CancellationHandlers.cancelRequested)
-                {
-                    if (HasProcessExited)
-                    {
-                        ConsoleLogger.Warning("Process exited! Output may not be complete!");
-                        CommandProcess.WaitForExit();
-                        ConsoleLogger.Debug("Flushed as much as possible.");
-                        break;
-                    }
-                    else if (CancellationHandlers.cancelRequested)
-                    {
-                        ConsoleLogger.Warning("Process killed! Output may not be complete!");
-                        CommandProcess.Kill();
-                        CommandProcess.WaitForExit();
-                        ConsoleLogger.Debug("Flushed as much as possible.");
-                        break;
-                    }
-                }
-                ConsoleLogger.Debug("Process exited with exit code {0}.", CommandProcess.ExitCode);
-                return CommandProcess.ExitCode;
-            }
-            catch (ThreadInterruptedException)
+            // Check to see if we've been interrupted or not
+            if (exc is ThreadInterruptedException)
             {
                 CancellationHandlers.cancelRequested = false;
-                return default;
+                exitCode = -2;
             }
-            catch (Exception ex)
+            else if (exc is Exception ex)
             {
                 ConsoleLogger.Error(ex, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("T_COMMON_ERRORDESC"), true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }
-            return -1;
+
+            // Return the exit code
+            return exitCode;
         }
 
         /// <summary>
@@ -132,7 +93,7 @@ namespace Terminaux.Shell.Commands.ProcessExecution
         /// </summary>
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
-        /// <param name="exitCode">Application exit code. -1 if internal error occurred</param>
+        /// <param name="exitCode">Application exit code. -1 if internal error occurred, or -2 if interrupted</param>
         /// <param name="includeStdErr">Include output printed to StdErr</param>
         /// <returns>Output of a command from stdout</returns>
         public static string ExecuteProcessToString(string File, string Args, ref int exitCode, bool includeStdErr) =>
@@ -144,83 +105,32 @@ namespace Terminaux.Shell.Commands.ProcessExecution
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
         /// <param name="WorkingDirectory">Specifies the working directory</param>
-        /// <param name="exitCode">Application exit code. -1 if internal error occurred</param>
+        /// <param name="exitCode">Application exit code. -1 if internal error occurred, or -2 if interrupted</param>
         /// <param name="includeStdErr">Include output printed to StdErr</param>
         /// <returns>Output of a command from stdout</returns>
         public static string ExecuteProcessToString(string File, string Args, string WorkingDirectory, ref int exitCode, bool includeStdErr)
         {
-            var commandOutputBuilder = new StringBuilder();
-            try
-            {
-                bool HasProcessExited = false;
-                var CommandProcess = new Process();
-                var CommandProcessStart = new ProcessStartInfo()
-                {
-                    RedirectStandardInput = true,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = includeStdErr,
-                    FileName = File,
-                    Arguments = Args,
-                    WorkingDirectory = WorkingDirectory,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    UseShellExecute = false
-                };
-                CommandProcess.StartInfo = CommandProcessStart;
+            // Execute the process
+            ExecuteProcessInternal(File, Args, WorkingDirectory, ref exitCode, includeStdErr, false, out string output, out var exc);
 
-                // Set events up
-                void DataReceivedHandler(object _, DataReceivedEventArgs data)
-                {
-                    if (data.Data is not null)
-                        commandOutputBuilder.Append(data.Data);
-                }
-                CommandProcess.EnableRaisingEvents = true;
-                CommandProcess.OutputDataReceived += DataReceivedHandler;
-                if (includeStdErr)
-                    CommandProcess.ErrorDataReceived += DataReceivedHandler;
-                CommandProcess.Exited += (sender, args) => HasProcessExited = true;
+            // Check for exception (general to set exit code)
+            if (exc is not null)
+                exitCode = -1;
 
-                // Start the process
-                ConsoleLogger.Debug("Starting process {0} with working directory {1} and arguments {2}...", File, WorkingDirectory, Args);
-                CommandProcess.Start();
-                CommandProcess.BeginOutputReadLine();
-                if (includeStdErr)
-                    CommandProcess.BeginErrorReadLine();
-
-                // Wait for process exit
-                while (!HasProcessExited | !CancellationHandlers.cancelRequested)
-                {
-                    if (HasProcessExited)
-                    {
-                        ConsoleLogger.Warning("Process exited! Output may not be complete!");
-                        CommandProcess.WaitForExit();
-                        ConsoleLogger.Debug("Flushed as much as possible.");
-                        break;
-                    }
-                    else if (CancellationHandlers.cancelRequested)
-                    {
-                        ConsoleLogger.Warning("Process killed! Output may not be complete!");
-                        CommandProcess.Kill();
-                        CommandProcess.WaitForExit();
-                        ConsoleLogger.Debug("Flushed as much as possible.");
-                        break;
-                    }
-                }
-                ConsoleLogger.Debug("Process exited with exit code {0}.", CommandProcess.ExitCode);
-                exitCode = CommandProcess.ExitCode;
-            }
-            catch (ThreadInterruptedException)
+            // Check to see if we've been interrupted or not
+            if (exc is ThreadInterruptedException)
             {
                 CancellationHandlers.cancelRequested = false;
-                exitCode = -1;
+                exitCode = -2;
             }
-            catch (Exception ex)
+            else if (exc is Exception ex)
             {
                 ConsoleLogger.Error(ex, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("T_COMMON_ERRORDESC"), true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
-                exitCode = -1;
             }
-            return commandOutputBuilder.ToString();
+
+            // Return the output
+            return output;
         }
 
         /// <summary>
@@ -234,7 +144,6 @@ namespace Terminaux.Shell.Commands.ProcessExecution
         /// </summary>
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
-        /// <returns>Application exit code. -1 if internal error occurred.</returns>
         public static void ExecuteProcessForked(string File, string Args) =>
             ExecuteProcessForked(File, Args, ConsoleFilesystem.CurrentDir);
 
@@ -244,7 +153,6 @@ namespace Terminaux.Shell.Commands.ProcessExecution
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
         /// <param name="WorkingDirectory">Specifies the working directory</param>
-        /// <returns>Application exit code. -1 if internal error occurred.</returns>
         public static void ExecuteProcessForked(string File, string Args, string WorkingDirectory)
         {
             try
@@ -274,18 +182,94 @@ namespace Terminaux.Shell.Commands.ProcessExecution
             }
         }
 
-        /// <summary>
-        /// Handles executable output
-        /// </summary>
-        /// <param name="sendingProcess">Sender</param>
-        /// <param name="outLine">Output</param>
-        private static void ExecutableOutput(object sendingProcess, DataReceivedEventArgs outLine)
+        internal static void ExecuteProcessInternal(string File, string Args, string WorkingDirectory, ref int exitCode, bool includeStdErr, bool useTerminal, out string output, out Exception? exception)
         {
-            if (outLine.Data is null)
-                return;
-            ConsoleLogger.Debug(outLine.Data);
-            TextWriterColor.Write(outLine.Data);
+            var commandOutputBuilder = new StringBuilder();
+            exception = null;
+            try
+            {
+                bool HasProcessExited = false;
+                var CommandProcess = new Process();
+                var CommandProcessStart = new ProcessStartInfo()
+                {
+                    RedirectStandardInput = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = includeStdErr,
+                    FileName = File,
+                    Arguments = Args,
+                    WorkingDirectory = WorkingDirectory,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    UseShellExecute = false
+                };
+                CommandProcess.StartInfo = CommandProcessStart;
+
+                // Set events up
+                void DataReceivedHandler(object _, DataReceivedEventArgs data)
+                {
+                    if (data.Data is not null)
+                    {
+                        commandOutputBuilder.Append(data.Data);
+                        if (useTerminal)
+                            HandleExecutableOutput(data.Data);
+                    }
+                }
+                CommandProcess.EnableRaisingEvents = true;
+                CommandProcess.OutputDataReceived += DataReceivedHandler;
+                if (includeStdErr)
+                    CommandProcess.ErrorDataReceived += DataReceivedHandler;
+                CommandProcess.Exited += (sender, args) => HasProcessExited = true;
+
+                // Start the process
+                CommandProcess.Start();
+                CommandProcess.BeginOutputReadLine();
+                if (includeStdErr)
+                    CommandProcess.BeginErrorReadLine();
+
+                // Wait for process exit
+                while (!HasProcessExited | !CancellationHandlers.cancelRequested)
+                {
+                    if (HasProcessExited)
+                    {
+                        ConsoleLogger.Warning("Process exited! Output may not be complete!");
+                        CommandProcess.WaitForExit();
+                        ConsoleLogger.Debug("Flushed as much as possible.");
+                        break;
+                    }
+                    else if (CancellationHandlers.cancelRequested)
+                    {
+                        ConsoleLogger.Warning("Process killed! Output may not be complete!");
+                        CommandProcess.Kill();
+                        CommandProcess.WaitForExit();
+                        ConsoleLogger.Debug("Flushed as much as possible.");
+                        break;
+                    }
+                }
+                exitCode = CommandProcess.ExitCode;
+            }
+            catch (ThreadInterruptedException tie)
+            {
+                exception = tie;
+                exitCode = -1;
+            }
+            catch (Exception ex)
+            {
+                exception = ex;
+                ConsoleLogger.Error(ex, $"Error trying to execute command {File}. Error {ex.GetType().FullName}: {ex.Message}");
+                exitCode = -1;
+            }
+            output = commandOutputBuilder.ToString();
         }
 
+        private static void ExecutableOutput(object sendingProcess, DataReceivedEventArgs outLine) =>
+            HandleExecutableOutput(outLine.Data);
+
+        private static void HandleExecutableOutput(string outLine)
+        {
+            if (outLine is null)
+                return;
+            ConsoleLogger.Debug(outLine);
+            TextWriterColor.Write(outLine);
+        }
     }
 }

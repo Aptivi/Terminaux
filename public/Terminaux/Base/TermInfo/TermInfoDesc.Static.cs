@@ -187,8 +187,8 @@ namespace Terminaux.Base.TermInfo
         /// <returns></returns>
         public static string[] GetBuiltins()
         {
-            // Builtins tracked from Debian's NCurses: https://packages.debian.org/sid/all/ncurses-base/download
-            // and https://packages.debian.org/sid/all/ncurses-term/download
+            // Builtins tracked from https://github.com/ThomasDickey/ncurses-snapshots.git. To learn more, consult
+            // TermInfoLoader.cs, function Load(string).
             string[] builtins = GetBuiltinPaths();
             List<string> names = [];
             foreach (string builtin in builtins)

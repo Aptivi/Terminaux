@@ -33,6 +33,7 @@ using System.Threading;
 using Terminaux.Inputs;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Shell.Commands.ProcessExecution;
 
 namespace Terminaux.Base.Checks
 {
@@ -261,7 +262,7 @@ namespace Terminaux.Base.Checks
                     string shellPath = "/bin/sh";
                     int exitCode = -1;
                     FileExistsInPath("sh", ref shellPath);
-                    string output = ExecuteProcessToString(shellPath, "-c \"tmux show-options -v -g status | sed 's/on/1/g' | sed 's/off/0/g'\"", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exitCode, false);
+                    ProcessExecutor.ExecuteProcessInternal(shellPath, "-c \"tmux show-options -v -g status | sed 's/on/1/g' | sed 's/off/0/g'\"", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exitCode, false, false, out string output, out _);
                     ConsoleLogger.Debug("tmux show-options... exited with status {0} and with output {1}", exitCode, output);
 
                     // If we couldn't get this variable, assume that the status height is 1.
@@ -427,68 +428,6 @@ namespace Terminaux.Base.Checks
                 }
             }
             return false;
-        }
-
-        internal static string ExecuteProcessToString(string File, string Args, string WorkingDirectory, ref int exitCode, bool includeStdErr)
-        {
-            var commandOutputBuilder = new StringBuilder();
-            try
-            {
-                bool HasProcessExited = false;
-                var CommandProcess = new Process();
-                var CommandProcessStart = new ProcessStartInfo()
-                {
-                    RedirectStandardInput = false,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = includeStdErr,
-                    FileName = File,
-                    Arguments = Args,
-                    WorkingDirectory = WorkingDirectory,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    UseShellExecute = false
-                };
-                CommandProcess.StartInfo = CommandProcessStart;
-
-                // Set events up
-                void DataReceivedHandler(object _, DataReceivedEventArgs data)
-                {
-                    if (data.Data is not null)
-                        commandOutputBuilder.Append(data.Data);
-                }
-                CommandProcess.EnableRaisingEvents = true;
-                CommandProcess.OutputDataReceived += DataReceivedHandler;
-                if (includeStdErr)
-                    CommandProcess.ErrorDataReceived += DataReceivedHandler;
-                CommandProcess.Exited += (sender, args) => HasProcessExited = true;
-
-                // Start the process
-                CommandProcess.Start();
-                CommandProcess.BeginOutputReadLine();
-                if (includeStdErr)
-                    CommandProcess.BeginErrorReadLine();
-
-                // Wait for process exit
-                while (!HasProcessExited)
-                {
-                    if (HasProcessExited)
-                    {
-                        CommandProcess.WaitForExit();
-                        break;
-                    }
-                }
-                exitCode = CommandProcess.ExitCode;
-            }
-            catch (ThreadInterruptedException)
-            {
-                exitCode = -1;
-            }
-            catch (Exception ex)
-            {
-                ConsoleLogger.Error(ex, $"Error trying to execute command {File}. Error {ex.GetType().FullName}: {ex.Message}");
-                exitCode = -1;
-            }
-            return commandOutputBuilder.ToString();
         }
     }
 }
