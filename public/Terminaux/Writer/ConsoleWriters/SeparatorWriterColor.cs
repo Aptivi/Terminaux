@@ -181,7 +181,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 if (!string.IsNullOrWhiteSpace(Text))
                 {
                     // Render the text accordingly
-                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 10) : Text;
+                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 8) : Text;
                     if (useColor)
                     {
                         separator.Append(
