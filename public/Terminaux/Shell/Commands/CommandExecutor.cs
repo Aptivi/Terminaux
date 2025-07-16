@@ -187,7 +187,7 @@ namespace Terminaux.Shell.Commands
                         }
                     }
                     TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_CONSULTHELP"), ThemeColorType.Error);
-                    ShellInstance.LastErrorCode = -6;
+                    ShellInstance.lastErrorCode = -6;
                     return;
                 }
 
@@ -267,7 +267,7 @@ namespace Terminaux.Shell.Commands
                     CommandDelegate(ShellInstance, CommandBase, parameters, ref value);
 
                     // Set the error code and set the MESH variable as appropriate
-                    ConsoleLogger.Debug("Error code is {0}", ShellInstance.LastErrorCode);
+                    ConsoleLogger.Debug("Error code is {0}", ShellInstance.lastErrorCode);
                     if (containsSetSwitch)
                     {
                         // Check to see if the value contains newlines
@@ -296,7 +296,7 @@ namespace Terminaux.Shell.Commands
                 else
                 {
                     ConsoleLogger.Warning("Arguments not satisfied.");
-                    ShellInstance.LastErrorCode = argCheckerReturnCode != 0 ? argCheckerReturnCode : -6;
+                    ShellInstance.lastErrorCode = argCheckerReturnCode != 0 ? argCheckerReturnCode : -6;
                 }
             }
             catch (ThreadInterruptedException)
@@ -304,13 +304,13 @@ namespace Terminaux.Shell.Commands
                 ConsoleLogger.Warning("Command {0} is being interrupted...", RequestedCommand);
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_COMMANDINTERRUPT"), ThemeColorType.Error);
                 CancellationHandlers.cancelRequested = false;
-                ShellInstance.LastErrorCode = -5;
+                ShellInstance.lastErrorCode = -5;
             }
             catch (Exception ex)
             {
                 ConsoleLogger.Error(ex, "Failed to execute command {0}", RequestedCommand);
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND1") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2") + " {0}: {1}", ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
-                ShellInstance.LastErrorCode = ex.GetHashCode();
+                ShellInstance.lastErrorCode = ex.GetHashCode();
             }
         }
         /// <summary>
@@ -460,9 +460,9 @@ namespace Terminaux.Shell.Commands
             try
             {
                 if (ConsoleWrapperTools.Wrapper.IsDumb)
-                    ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
+                    ShellInstance.lastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
                 else
-                    ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
+                    ShellInstance.lastErrorCode = CommandBase.Execute(parameters, ref value);
             }
             catch (Exception ex)
             {

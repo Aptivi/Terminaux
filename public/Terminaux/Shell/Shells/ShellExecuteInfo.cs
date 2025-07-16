@@ -27,7 +27,7 @@ namespace Terminaux.Shell.Shells
     /// </summary>
     public class ShellExecuteInfo
     {
-        internal int LastErrorCode = 0;
+        internal int lastErrorCode = 0;
         internal readonly List<Thread> AltCommandThreads = [];
         internal bool interrupting = false;
         internal Thread shellCommandThread;

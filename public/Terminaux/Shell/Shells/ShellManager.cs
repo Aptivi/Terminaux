@@ -570,6 +570,7 @@ namespace Terminaux.Shell.Shells
 
             // Get the shell info
             var shellInfo = GetShellInfo(ShellType);
+            var ShellInstance = ShellStack[ShellStack.Count - 1];
 
             // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
             var settings = new TermReaderSettings()
@@ -624,7 +625,6 @@ namespace Terminaux.Shell.Shells
 
                 // There are cases when the kernel panics or reboots in the middle of the command input. If reboot is requested,
                 // ensure that we're really gone.
-                var ShellInstance = ShellStack[ShellStack.Count - 1];
                 if (ShellInstance.interrupting)
                     return;
             }
@@ -644,7 +644,6 @@ namespace Terminaux.Shell.Shells
                     if (!Command.StartsWith("/"))
                     {
                         // Not a slash command. Do things differently
-                        var ShellInstance = ShellStack[ShellStack.Count - 1];
                         ConsoleLogger.Debug("Non-slash cmd exec succeeded. Running with {0}", Command);
                         var Params = new CommandExecutorParameters(Command, shellInfo.NonSlashCommandInfo, ShellType, ShellInstance);
                         CommandExecutor.StartCommandThread(Params);
@@ -732,11 +731,10 @@ namespace Terminaux.Shell.Shells
                             if (!string.IsNullOrEmpty(commandName) || !commandName.StartsWithAnyOf([" ", "#"]))
                             {
                                 // Check the command before starting
-                                var ShellInstance = ShellStack[ShellStack.Count - 1];
                                 ConsoleLogger.Debug("Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                 var Params = new CommandExecutorParameters(Command, cmdInfo, ShellType, ShellInstance);
                                 CommandExecutor.StartCommandThread(Params);
-                                MESHVariables.SetVariable("MESHErrorCode", $"{ShellInstance.LastErrorCode}");
+                                MESHVariables.SetVariable("MESHErrorCode", $"{ShellInstance.lastErrorCode}");
                             }
                         }
                         else if (pathValid)
@@ -753,11 +751,13 @@ namespace Terminaux.Shell.Shells
                                         ConsoleLogger.Debug("Cmd exec {0} succeeded because it's a MESH script.", commandName);
                                         MESHParse.Execute(TargetFile, arguments, ShellType);
                                         MESHVariables.SetVariable("MESHErrorCode", "0");
+                                        ShellInstance.lastErrorCode = 0;
                                     }
                                     catch (Exception ex)
                                     {
                                         TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE"), true, ThemeColorType.Error, ex.Message);
                                         MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
+                                        ShellInstance.lastErrorCode = ex.GetHashCode();
                                     }
                                 }
                                 else
@@ -772,12 +772,14 @@ namespace Terminaux.Shell.Shells
                                         ProcessExecutor.processExecutorThread.Start(Params);
                                         ProcessExecutor.processExecutorThread.Join();
                                         MESHVariables.SetVariable("MESHErrorCode", $"{processExitCode}");
+                                        ShellInstance.lastErrorCode = processExitCode;
                                     }
                                     catch (Exception ex)
                                     {
                                         ConsoleLogger.Error(ex, "Failed to start process: {0}", ex.Message);
                                         TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR"), true, ThemeColorType.Error, commandName, ex.Message);
                                         MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
+                                        ShellInstance.lastErrorCode = ex.GetHashCode();
                                     }
                                     finally
                                     {
@@ -792,6 +794,7 @@ namespace Terminaux.Shell.Shells
                                 ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found parsing target file", commandName);
                                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), true, ThemeColorType.Error, commandName);
                                 MESHVariables.SetVariable("MESHErrorCode", "-2");
+                                ShellInstance.lastErrorCode = -2;
                             }
                         }
                         else
@@ -799,12 +802,14 @@ namespace Terminaux.Shell.Shells
                             ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found", commandName);
                             TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), true, ThemeColorType.Error, commandName);
                             MESHVariables.SetVariable("MESHErrorCode", "-1");
+                            ShellInstance.lastErrorCode = -1;
                         }
                     }
                     catch (Exception ex)
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDEXECUTEERROR") + CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_ERRORCOMMAND2"), true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                         MESHVariables.SetVariable("MESHErrorCode", $"{ex.GetHashCode()}");
+                        ShellInstance.lastErrorCode = ex.GetHashCode();
                     }
                 }
 
