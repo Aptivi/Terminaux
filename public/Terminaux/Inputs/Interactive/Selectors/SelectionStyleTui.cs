@@ -207,13 +207,19 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 {
                     highlightedAnswer--;
                     if (highlightedAnswer == 0)
-                        highlightedAnswer = allAnswers.Count;
+                    {
+                        highlightedAnswer = 1;
+                        goingUp = !goingUp;
+                    }
                 }
                 else
                 {
                     highlightedAnswer++;
                     if (highlightedAnswer > allAnswers.Count)
-                        highlightedAnswer = 1;
+                    {
+                        highlightedAnswer = allAnswers.Count;
+                        goingUp = !goingUp;
+                    }
                 }
             }
             showcaseLine = 0;

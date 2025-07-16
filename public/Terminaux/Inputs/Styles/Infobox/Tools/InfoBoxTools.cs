@@ -176,13 +176,19 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                     {
                         currentSelection--;
                         if (currentSelection < 0)
-                            currentSelection = selections.Length - 1;
+                        {
+                            currentSelection = 0;
+                            goingUp = !goingUp;
+                        }
                     }
                     else
                     {
                         currentSelection++;
                         if (currentSelection > selections.Length - 1)
-                            currentSelection = 0;
+                        {
+                            currentSelection = selections.Length - 1;
+                            goingUp = !goingUp;
+                        }
                     }
                 }
             }
