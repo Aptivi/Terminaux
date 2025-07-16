@@ -2922,6 +2922,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "No se ha podido generar una secuencia VT funcional del tipo {0} con la acción {1}. Asegúrese de haber especificado los valores correctamente."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Respuesta sin título"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "Ejemplo sin título"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "Espere mientras se procesa la operación actual..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "Ir al primer carácter de la línea actual"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "Ir al último carácter de la línea actual"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "Cambiar la frecuencia de transformación"
     }
   ]
 }

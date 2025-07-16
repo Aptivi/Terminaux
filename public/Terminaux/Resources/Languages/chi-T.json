@@ -2901,6 +2901,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "我们无法生成类型为 {0} 且操作为 {1} 的有效 VT 序列。请确保您已正确指定值。"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "无标题答案"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "无标题夹具"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "当前操作正在处理中，请等待..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "转到当前行的第一个字符"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "转到当前行的最后一个字符"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "更改转换频率"
     }
   ]
 }

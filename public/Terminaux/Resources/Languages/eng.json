@@ -3003,6 +3003,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "We have failed to generate a working VT sequence of type {0} with action {1}. Make sure that you've specified values correctly."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Untitled answer"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "Untitled fixture"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "Please wait while the current operation is being processed..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "Go to the first character in the current line"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "Go to the last character in the current line"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "Change the transformation frequency"
     }
   ]
 }

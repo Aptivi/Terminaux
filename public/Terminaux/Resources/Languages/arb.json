@@ -2923,6 +2923,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "fashilna fi 'iinsha' tasalsul VT eamil min alnawe {0} bial'iijra' {1}. ta'akad min tahdid alqiam bishakl sahihin."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "'iijabatan bidun eunwan"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "tarkibat bidun eunwan"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "yurjaa aliantizar 'athna' muealajat aleamaliat alhaliati..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "alantiqal 'iilaa 'awal harf fi alsatr alhalii"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "alantiqal 'iilaa akhar harf fi alsatr alhalii"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "taghyir taradud altahwil"
     }
   ]
 }

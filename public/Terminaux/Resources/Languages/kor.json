@@ -2898,6 +2898,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "{1} jag-eob-eulo {0} yuhyeong-ui jagdonghaneun VT sikwonseuleul saengseonghaji moshaessseubnida. gabs-eul olbaleuge jijeonghaessneunji hwag-inhaseyo."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "jemog eobsneun dabbyeon"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "jemog eobsneun gojeongmul"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "hyeonjae jag-eob-i cheolidoeneun dong-an jamsi gidalyeo juseyo..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "hyeonjae jul-ui cheos beonjjae munjalo idong"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "hyeonjae jul-ui majimag munjalo idong"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "byeonhwan bindo byeongyeong"
     }
   ]
 }

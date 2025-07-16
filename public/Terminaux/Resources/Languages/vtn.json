@@ -2897,6 +2897,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "Chúng tôi không thể tạo chuỗi VT hoạt động thuộc loại {0} với hành động {1}. Hãy đảm bảo rằng bạn đã chỉ định đúng giá trị."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Câu trả lời chưa có tiêu đề"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "Đồ đạc chưa có tiêu đề"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "Vui lòng đợi trong khi thao tác hiện tại đang được xử lý..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "Đi đến ký tự đầu tiên trong dòng hiện tại"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "Đi đến ký tự cuối cùng trong dòng hiện tại"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "Thay đổi tần số biến đổi"
     }
   ]
 }

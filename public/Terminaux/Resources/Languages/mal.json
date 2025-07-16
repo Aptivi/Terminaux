@@ -2900,6 +2900,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "Kami telah gagal menjana urutan VT yang berfungsi jenis {0} dengan tindakan {1}. Pastikan anda telah menetapkan nilai dengan betul."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Jawapan tanpa tajuk"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "Perlawanan tanpa tajuk"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "Sila tunggu sementara operasi semasa sedang diproses..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "Pergi ke aksara pertama dalam baris semasa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "Pergi ke aksara terakhir dalam baris semasa"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "Tukar kekerapan transformasi"
     }
   ]
 }

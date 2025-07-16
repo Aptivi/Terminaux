@@ -2923,6 +2923,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "لم نتمكن من إنشاء تسلسل VT فعال من النوع {0} باستخدام الإجراء {1}. تأكد من صحة القيم المحددة."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "إجابة بدون عنوان"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "تركيبة بدون عنوان"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "يرجى الانتظار أثناء معالجة العملية الحالية..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "الانتقال إلى أول حرف في السطر الحالي"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "الانتقال إلى آخر حرف في السطر الحالي"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "تغيير تردد التحويل"
     }
   ]
 }

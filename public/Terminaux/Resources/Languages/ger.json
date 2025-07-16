@@ -2906,6 +2906,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "Es ist uns nicht gelungen, eine funktionierende VT-Sequenz vom Typ {0} mit der Aktion {1} zu generieren. Stellen Sie sicher, dass Sie die Werte korrekt angegeben haben."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Unbenannte Antwort"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "Unbenannte Vorrichtung"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "Bitte warten Sie, während die aktuelle Operation ausgeführt wird..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "Zum ersten Zeichen der aktuellen Zeile springen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "Zum letzten Zeichen der aktuellen Zeile springen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "Transformationsfrequenz ändern"
     }
   ]
 }

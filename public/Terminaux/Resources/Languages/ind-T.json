@@ -2897,6 +2897,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "हम क्रिया {1} के साथ {0} प्रकार का कार्यशील VT अनुक्रम उत्पन्न करने में विफल रहे हैं। सुनिश्चित करें कि आपने मान सही ढंग से निर्दिष्ट किए हैं।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "शीर्षकहीन उत्तर"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "शीर्षकहीन फिक्सचर"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "कृपया वर्तमान ऑपरेशन के संसाधित होने तक प्रतीक्षा करें..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "वर्तमान पंक्ति के पहले वर्ण पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "वर्तमान पंक्ति के अंतिम वर्ण पर जाएँ"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "परिवर्तन आवृत्ति बदलें"
     }
   ]
 }

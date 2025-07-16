@@ -2897,6 +2897,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "ham {1} kriya ke saath {0} prakaar ka ek kaaryasheel vt anukram utpann karane mein viphal rahe hain. sunishchit karen ki aapane maan sahee dhang se nirdisht kie hain."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "sheershakaheen uttar"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "sheershakaheen phiksachar"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "krpaya vartamaan opareshan ke sansaadhit hone tak prateeksha karen..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "vartamaan pankti ke pahale varn par jaen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "vartamaan pankti ke antim varn par jaen"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "parivartan aavrtti badalen"
     }
   ]
 }

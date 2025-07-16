@@ -18,6 +18,7 @@
 //
 
 using System.Diagnostics;
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.TestFixtures
 {
@@ -52,7 +53,7 @@ namespace Terminaux.Inputs.TestFixtures
         public Fixture(string fixtureName, string fixtureDesc, params object?[]? initialParameters)
         {
             // Install values
-            this.fixtureName = fixtureName ?? "Untitled fixture";
+            this.fixtureName = fixtureName ?? LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE");
             this.fixtureDesc = fixtureDesc ?? "";
             this.initialParameters = initialParameters;
         }

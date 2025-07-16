@@ -2898,6 +2898,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "Theip orainn seicheamh VT oibre de chineál {0} a ghiniúint leis an ngníomh {1}. Déan cinnte go bhfuil na luachanna sonraithe agat i gceart."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Freagra gan Teideal"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "Daingneán gan Teideal"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "Fan le do thoil fad atá an oibríocht reatha á próiseáil..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "Téigh go dtí an chéad charachtar sa líne reatha"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "Téigh go dtí an carachtar deireanach sa líne reatha"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "Athraigh an mhinicíocht chlaochlaithe"
     }
   ]
 }

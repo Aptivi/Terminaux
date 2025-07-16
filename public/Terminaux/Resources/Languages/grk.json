@@ -2898,6 +2898,30 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "Αποτύχαμε να δημιουργήσουμε μια λειτουργική ακολουθία VT τύπου {0} με την ενέργεια {1}. Βεβαιωθείτε ότι έχετε καθορίσει σωστά τις τιμές."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Απάντηση χωρίς τίτλο"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE",
+      "text": "Στοιχείο χωρίς τίτλο"
+    },
+    {
+      "loc": "T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING",
+      "text": "Παρακαλώ περιμένετε όσο γίνεται η επεξεργασία της τρέχουσας λειτουργίας..."
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE",
+      "text": "Μετάβαση στον πρώτο χαρακτήρα της τρέχουσας γραμμής"
+    },
+    {
+      "loc": "T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE",
+      "text": "Μετάβαση στον τελευταίο χαρακτήρα της τρέχουσας γραμμής"
+    },
+    {
+      "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
+      "text": "Αλλαγή της συχνότητας μετασχηματισμού"
     }
   ]
 }
