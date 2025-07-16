@@ -765,10 +765,8 @@ namespace Terminaux.Shell.Shells
                                     try
                                     {
                                         // Create a new instance of process
-                                        var targetCommand = Command.Replace(TargetFileName, "");
-                                        targetCommand = targetCommand.TrimStart('\0', ' ');
-                                        ConsoleLogger.Debug("Command: {0}, Arguments: {1}", TargetFile, targetCommand);
-                                        var Params = new ExecuteProcessThreadParameters(TargetFile, targetCommand);
+                                        ConsoleLogger.Debug("Command: {0}, Arguments: {1}", TargetFile, arguments);
+                                        var Params = new ExecuteProcessThreadParameters(TargetFile, arguments);
                                         ProcessExecutor.processExecutorThread = new Thread((processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
                                         ProcessExecutor.processExecutorThread.Start(Params);
                                         ProcessExecutor.processExecutorThread.Join();
