@@ -2489,6 +2489,85 @@ namespace Terminaux.Writer.CyclicWriters.Builtins
                 @"⠀⠀⠀⠀⠀⠀⠀⠀",
                 @"⠀⠀⠀⠀⠀⠀⠀⠀",
             ]);
+
+        /// <summary>
+        /// The O letter that grows and shrinks
+        /// </summary>
+        public static Spinner Os =>
+            new([
+                @"O o o",
+                @"o O o",
+                @"o o O",
+                @"o O o",
+                @"O o o",
+            ]);
+
+        /// <summary>
+        /// Simple mathematical operators starting from division sign that grows up to multiplication
+        /// </summary>
+        public static Spinner MathOperators =>
+            new([
+                @"/",
+                @"-",
+                @"=",
+                @"+",
+                @"*",
+            ]);
+
+        /// <summary>
+        /// Shows four characters that represent pi digits and moves like a marquee
+        /// </summary>
+        public static Spinner PiDigits =>
+            new([
+                @"   3",
+                @"  3.",
+                @" 3.1",
+                @"3.14",
+                @"3.14",
+                @"3.14",
+                @"3.14",
+                @"3.14",
+                @"3.14",
+                @"3.14",
+                @"3.14",
+                @"3.14",
+                @".141",
+                @"1415",
+                @"4159",
+                @"1592",
+                @"5926",
+                @"9265",
+                @"2653",
+                @"6535",
+                @"5358",
+                @"3589",
+                @"5897",
+                @"8979",
+                @"9793",
+                @"7932",
+                @"9323",
+                @"3238",
+                @"2384",
+                @"3846",
+                @"8462",
+                @"4626",
+                @"6264",
+                @"2643",
+                @"6433",
+                @"4338",
+                @"3383",
+                @"3832",
+                @"8327",
+                @"3279",
+                @"2795",
+                @"7950",
+                @"9502",
+                @"5028",
+                @"0288",
+                @"288 ",
+                @"88  ",
+                @"8   ",
+            ]);
         #endregion
     }
 }
