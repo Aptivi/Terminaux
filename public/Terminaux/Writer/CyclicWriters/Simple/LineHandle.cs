@@ -20,6 +20,7 @@
 using System;
 using System.IO;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 
@@ -111,7 +112,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             // Place the line and the column handle
             int RepeatBlanks = startPos - 1;
             int RepeatMarkers = endPos - startPos;
-            int digits = GetDigits(LineNumber);
+            int digits = ConsoleMisc.GetDigits(LineNumber);
             if (RepeatBlanks < 0)
                 RepeatBlanks = 0;
             if (RepeatMarkers < 0)
@@ -129,9 +130,6 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             }
             return builder.ToString();
         }
-
-        internal static int GetDigits(int Number) =>
-            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
 
         /// <summary>
         /// Makes a new instance of the line handle renderer

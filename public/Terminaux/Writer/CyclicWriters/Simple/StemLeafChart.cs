@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 
@@ -123,12 +124,12 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             }
 
             // Render the stems and the leafs
-            int maxStemWidth = stemLeafs.Max((kvp) => LineHandle.GetDigits(kvp.Key));
+            int maxStemWidth = stemLeafs.Max((kvp) => ConsoleMisc.GetDigits(kvp.Key));
             foreach (var stem in stemLeafs.Keys)
             {
                 // Write the stem
                 var leafs = stemLeafs[stem];
-                int stemWidth = LineHandle.GetDigits(stem);
+                int stemWidth = ConsoleMisc.GetDigits(stem);
                 int maxSpaces = maxStemWidth - stemWidth;
                 stemLeafChart.Append(
                     $"{(UseColors ? ColorTools.RenderSetConsoleColor(StemColor) : "")}" +

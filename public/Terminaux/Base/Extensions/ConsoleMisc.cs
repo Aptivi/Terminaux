@@ -561,6 +561,9 @@ namespace Terminaux.Base.Extensions
             }
         }
 
+        internal static int GetDigits(int Number) =>
+            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
+
         private static bool HasRtl(string text)
         {
             if (string.IsNullOrEmpty(text))
