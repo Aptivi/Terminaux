@@ -116,7 +116,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
 
                     // Now, write the current position on the border of the slider bar and the arrows
-                    string posText = $"[  {minPos}  <=  {selected}  <=  {maxPos}  ]";
                     int sliderPosX = borderX + 2;
                     int sliderPosY = borderY + maxHeight - 3;
                     int maxSliderWidth = maxWidth - 4;
@@ -137,9 +136,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
                     boxBuffer.Append(
                         RendererTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 2)) +
-                        TextWriterWhereColor.RenderWhereColorBack(posText, sliderPosX - 1 + (maxWidth / 2 - ConsoleChar.EstimateCellWidth(posText) / 2), sliderPosY + 3, settings.ForegroundColor, settings.BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack($"{selected}", sliderPosX - 1 + (maxWidth / 2 - ConsoleChar.EstimateCellWidth($"{selected}") / 2), sliderPosY + 3, settings.ForegroundColor, settings.BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 2, settings.ForegroundColor, settings.BackgroundColor)
+                        TextWriterWhereColor.RenderWhereColorBack($"{minPos}", sliderPosX + 1, sliderPosY + 3, settings.ForegroundColor, settings.BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack($"{maxPos}", sliderPosX + maxSliderWidth + 1 - ConsoleChar.EstimateCellWidth($"{maxPos}"), sliderPosY + 3, settings.ForegroundColor, settings.BackgroundColor)
                     );
                     return boxBuffer.ToString();
                 });
