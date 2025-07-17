@@ -44,7 +44,6 @@ jobs:
         with:
           body: ${{ steps.release-asset.outputs.BODY }}
           name: ${{ steps.release-asset.outputs.SUBJECT }}
-          prerelease: true
           files: |
             tools/*.zip
       - name: Package Publication

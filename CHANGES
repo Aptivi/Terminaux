@@ -1,10 +1,37 @@
-TBD...
+For the first time ever in Terminaux's history, we've released a version of this library that will completely transform your whole console app development experience in terms of both performance and ease of use. You will be able to deliver console applications that will be faster than ever to satisfy even the biggest demands: performance.
+
+We have been working very hard since the beginning of 2025, and this is when we finally declare the beginning of the new era with a clean and serene version that will be introduced to you.
+
+Performance of our libraries and our projects matters, along with many other factors, such as purpose, and Terminaux is no exception. We have been working hard to make sure that your console applications work faster than never before. Since 2022, we've been working hard to craft Terminaux and to improve it from small pieces, like TermRead, to a console powerhouse.
+
+We are proud to announce this version of Terminaux, starting from August 10th, 2025, and this version is...
+
+# Terminaux 7.0
+
+For five months, new features and performance improvements mattered during the whole development, but we've always been working hard to make sure that we achieve our goals!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` To be populated
+- `[+]` Added localization support
+- `[+]` Added Nitrocid's shell features
+- `[+]` Added more powerful theme feature
+- `[+]` Added back the old wrapped writer (with no TUI)
+- `[+]` Added Sepia and Cyanotype color filters
+- `[+]` Added Spectre.Console translation library
+- `[+]` Added radio button support for selection and infoboxes
+- `[+]` Added more infoboxes and input modules
+- `[+]` Added categorized cyclic writers
+- `[+]` Added support for Asciinema
+- `[+]` Added multi-input infoboxes with input modules
+- `[+]` Added padding and margins
+- `[*]` Made significant improvements to the input system
+- `[*]` Made TUIs more mouse friendly
+- `[*]` Improved performance of the selection TUIs
+- `[*]` Improved RTL logical-to-visual mapping
+- `[*]` General improvements and bug fixes
+- `[-]` Removed obsolete features
 
 Review the commit history if you want to get a deep insight about the changes.
 
