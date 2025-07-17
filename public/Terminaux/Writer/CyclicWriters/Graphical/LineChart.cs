@@ -94,7 +94,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 Width = Width / 4,
                 Height = Height,
                 UseColors = UseColors,
-                Elements = [.. Elements.Union([new ChartElement()
+                Elements = !RunChart ? Elements : [.. Elements.Union([new ChartElement()
                 {
                     Name = "Average Run",
                     Value = median,
