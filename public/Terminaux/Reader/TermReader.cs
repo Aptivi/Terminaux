@@ -310,7 +310,7 @@ namespace Terminaux.Reader
                     readState.writingPrompt = true;
                     string finalInputPrompt = !string.IsNullOrEmpty(readState.InputPromptText) ? readState.InputPromptText + (settings.PrintDefaultValue ? settings.DefaultValueFormat : "") : "";
                     object[] finalInputArguments = settings.PrintDefaultValue && settings.DefaultValueFormat.Contains("{0}") ? [defaultValue] : [];
-                    ConsoleLogger.Debug("Writing prompt in {0} bytes with {1} arguments (def: {2})", finalInputPrompt, finalInputArguments.Length, settings.PrintDefaultValue);
+                    ConsoleLogger.Debug("Writing prompt in {0} bytes with {1} arguments (def: {2}, {3})", finalInputPrompt, finalInputArguments.Length, settings.PrintDefaultValue, settings.WriteDefaultValue);
                     TextWriterColor.WriteForReaderColor(finalInputPrompt, settings, false, settings.InputPromptForegroundColor, finalInputArguments);
                     readState.writingPrompt = false;
 
@@ -405,6 +405,7 @@ namespace Terminaux.Reader
 
                         // Cursor is visible
                         ConsoleWrapper.CursorVisible = true;
+                        ConsoleLogger.Debug("Terminate set to {0}", terminate);
                     }
 
                     // Seek to the end of the text and write a new line
