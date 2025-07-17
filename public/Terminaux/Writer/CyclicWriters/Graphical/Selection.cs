@@ -522,7 +522,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             int relatedIdx = -1;
             var tristates = isMultiple ? SelectionInputTools.GetCategoryTristates(Selections, CurrentSelections, ref startIndexTristates) : [];
             string prefix = isMultiple ? "  [ ] " : ShowRadioButtons ? "  ( ) " : "  ";
-            int AnswerTitleLeft = choices.Count > 5000 ? 0 : choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) "));
+            int AnswerTitleLeft = choices.Count > 5000 ? 0 : choices.Max(x => ConsoleChar.EstimateCellWidth(Selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $" {prefix}{x.ChoiceName}) "));
             for (int categoryIdx = 0; categoryIdx < Selections.Length; categoryIdx++)
             {
                 InputChoiceCategoryInfo? category = Selections[categoryIdx];
@@ -556,10 +556,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                         // Get the option
                         string selectedIndicator = isMultiple ? $"  [ ]" : ShowRadioButtons ? $"  ( )" : " ";
-                        string AnswerOption = Selections.Length > 1 ? $"  {selectedIndicator} {choice.ChoiceName}) {AnswerTitle}" : $"{selectedIndicator} {choice.ChoiceName}) {AnswerTitle}";
+                        string AnswerOption = Selections.Length > 1 ? $"  {selectedIndicator} {choice.ChoiceName}) {AnswerTitle}" : $" {selectedIndicator} {choice.ChoiceName}) {AnswerTitle}";
                         if (choices.Count <= 5000 && AnswerTitleLeft < Width)
                         {
-                            string renderedChoice = Selections.Length > 1 ? $"  {selectedIndicator} {choice.ChoiceName}) " : $"{selectedIndicator} {choice.ChoiceName}) ";
+                            string renderedChoice = Selections.Length > 1 ? $"  {selectedIndicator} {choice.ChoiceName}) " : $" {selectedIndicator} {choice.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - ConsoleChar.EstimateCellWidth(renderedChoice);
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                         }
@@ -662,7 +662,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         string selectedIndicator =
                             isMultiple ? $" [{(multipleSelected ? "*" : " ")}]" :
                             ShowRadioButtons ? $" ({(radioSelected ? "*" : " ")})" : "";
-                        string modifiers = Selections.Length > 1 ? $"  {selectionIndicator}{selectedIndicator}" : $"{selectionIndicator}{selectedIndicator}";
+                        string modifiers = Selections.Length > 1 ? $"  {selectionIndicator}{selectedIndicator}" : $" {selectionIndicator}{selectedIndicator}";
 
                         // Render an entry
                         var finalForeColor =
