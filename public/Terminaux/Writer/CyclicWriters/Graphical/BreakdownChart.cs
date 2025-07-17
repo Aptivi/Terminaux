@@ -191,9 +191,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         breakdownChart.Append(
                             (UseColors ? ColorTools.RenderSetConsoleColor(color) : "") +
                             " ■ " +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                            name + "  " +
                             (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                            name + "  " +
+                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                             value +
                             spaces
                         );

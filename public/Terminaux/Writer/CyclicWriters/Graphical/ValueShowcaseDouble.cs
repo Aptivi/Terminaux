@@ -111,21 +111,21 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
                     (UseColors ? ColorTools.RenderSetConsoleColor(element.element1.Color) : "") +
                     " ■ " +
-                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                     element.Item1.Truncate(nameLength - 4 - $"{maxFirstGroupValue:0.##}/{maxSecondGroupValue:0.##}".Length) + "  " +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
                     $"{element.element1.Value:0.##}" +
-                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                     "/" +
                     (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red) : "") +
-                    $"{element.element2.Value:0.##}" +
-                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "")
+                    $"{element.element2.Value:0.##}"
                 );
             }
 
             // Show the separator
             if (ShowSeparator)
             {
+                showcase.Append(UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "");
                 for (int h = 0; h < Height; h++)
                 {
                     Coordinate separatorCoord = new(Left + nameLength, Top + h);
