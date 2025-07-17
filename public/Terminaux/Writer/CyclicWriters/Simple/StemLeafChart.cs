@@ -92,19 +92,16 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             StringBuilder stemLeafChart = new();
             Dictionary<int, List<int>> stemLeafs = [];
 
-            // First, sort the numeric elements
+            // First, sort the numeric elements and check for decimals
             Array.Sort(Elements);
+            bool hasDecimal = Elements.Any((value) => value != (int)Math.Floor(value) && value != (int)Math.Ceiling(value));
 
             // Get the digits and split it according to the conditions.
             foreach (var element in Elements)
             {
-                // If this number describes a decimal, then we need to split the numeric part into the stem and the
-                // decimal part into the leaf.
-                int floor = (int)Math.Floor(element);
-                int ceiling = (int)Math.Ceiling(element);
-                bool isDecimal = element != floor && element != ceiling;
+                // Determine how to split the parts into stem and leafs
                 int stem = 0, leaf = 0;
-                if (isDecimal)
+                if (hasDecimal)
                 {
                     // The stem is a numeric part and the leaf is a fractional part as a whole number.
                     stem = (int)Math.Truncate(element);
@@ -142,7 +139,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 {
                     stemLeafChart.Append(
                         $"{(UseColors ? ColorTools.RenderSetConsoleColor(LeafColor) : "")}" +
-                        leaf + " "
+                        (hasDecimal ? "." : "") + leaf + " "
                     );
                 }
 

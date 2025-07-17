@@ -183,6 +183,7 @@ namespace Terminaux.Console.Fixtures
             new TestException(),
             new TestExceptionInner(),
             new TestStemLeafChart(),
+            new TestStemLeafChartNatural(),
             new TestSyntaxText(),
             new TestLineChart(),
             new TestLineChartWithAvg(),
