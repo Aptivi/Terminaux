@@ -200,28 +200,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void Update(bool goingUp)
         {
-            // Edge case: We need to check to see if the current highlight is disabled
-            while (allAnswers[highlightedAnswer - 1].ChoiceDisabled)
-            {
-                if (goingUp)
-                {
-                    highlightedAnswer--;
-                    if (highlightedAnswer == 0)
-                    {
-                        highlightedAnswer = 1;
-                        goingUp = !goingUp;
-                    }
-                }
-                else
-                {
-                    highlightedAnswer++;
-                    if (highlightedAnswer > allAnswers.Count)
-                    {
-                        highlightedAnswer = allAnswers.Count;
-                        goingUp = !goingUp;
-                    }
-                }
-            }
+            InfoBoxTools.VerifyDisabled(ref highlightedAnswer, categories, goingUp, true);
             showcaseLine = 0;
         }
 

@@ -158,35 +158,37 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return boxBuffer.ToString();
         }
 
-        internal static void VerifyDisabled(ref int currentSelection, InputChoiceCategoryInfo[] selections, bool goingUp = false)
+        internal static void VerifyDisabled(ref int currentSelection, InputChoiceCategoryInfo[] selections, bool goingUp = false, bool addOneMax = false)
         {
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
-            VerifyDisabled(ref currentSelection, choices, goingUp);
+            VerifyDisabled(ref currentSelection, choices, goingUp, addOneMax);
         }
 
-        internal static void VerifyDisabled(ref int currentSelection, InputChoiceInfo[] selections, bool goingUp = false)
+        internal static void VerifyDisabled(ref int currentSelection, InputChoiceInfo[] selections, bool goingUp = false, bool addOneMax = false)
         {
-            if (currentSelection < 0 || currentSelection > selections.Length - 1)
-                currentSelection = 0;
-            if (currentSelection >= 0)
+            int minSelectionIdx = addOneMax ? 1 : 0;
+            int maxSelectionIdx = addOneMax ? selections.Length : selections.Length - 1;
+            if (currentSelection < minSelectionIdx || currentSelection > maxSelectionIdx)
+                currentSelection = minSelectionIdx;
+            if (currentSelection >= minSelectionIdx)
             {
-                while (selections[currentSelection].ChoiceDisabled)
+                while (selections[currentSelection - minSelectionIdx].ChoiceDisabled)
                 {
                     if (goingUp)
                     {
                         currentSelection--;
-                        if (currentSelection < 0)
+                        if (currentSelection < minSelectionIdx)
                         {
-                            currentSelection = 0;
+                            currentSelection = minSelectionIdx;
                             goingUp = !goingUp;
                         }
                     }
                     else
                     {
                         currentSelection++;
-                        if (currentSelection > selections.Length - 1)
+                        if (currentSelection > maxSelectionIdx)
                         {
-                            currentSelection = selections.Length - 1;
+                            currentSelection = maxSelectionIdx;
                             goingUp = !goingUp;
                         }
                     }
