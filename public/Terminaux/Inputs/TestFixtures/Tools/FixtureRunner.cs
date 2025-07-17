@@ -130,7 +130,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 var expected = (TValue?)fixture.expectedValue;
                 if (!returned.Equals(expected))
                 {
-                    ConsoleLogger.Error(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL"), returned, fixture.expectedValue);
+                    ConsoleLogger.Error("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue);
                     throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL"), returned, fixture.expectedValue ?? "");
                 }
             }
@@ -172,7 +172,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                 var expected = (TValue?)fixture.expectedValue;
                 if (!returned.Equals(expected))
                 {
-                    ConsoleLogger.Error(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL"), returned, fixture.expectedValue);
+                    ConsoleLogger.Error("Returned value {0} doesn't match expected value {1}", returned, fixture.expectedValue);
                     throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL"), returned, fixture.expectedValue ?? "");
                 }
             }

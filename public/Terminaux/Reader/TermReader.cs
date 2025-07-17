@@ -430,7 +430,7 @@ namespace Terminaux.Reader
                 }
                 catch (Exception ex)
                 {
-                    ConsoleLogger.Error(ex, LanguageTools.GetLocalized("T_READER_FAILED"));
+                    ConsoleLogger.Error(ex, "Input reader has failed");
                     TextWriterColor.Write(LanguageTools.GetLocalized("T_READER_FAILED") + $": {ex.Message}", ThemeColorType.Error);
                     TextWriterColor.Write(ex.StackTrace, ThemeColorType.Error);
                 }
