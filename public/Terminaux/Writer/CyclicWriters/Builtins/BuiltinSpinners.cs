@@ -2568,6 +2568,21 @@ namespace Terminaux.Writer.CyclicWriters.Builtins
                 @"88  ",
                 @"8   ",
             ]);
+
+        /// <summary>
+        /// Two dotted bars that grow and return to their original size
+        /// </summary>
+        public static Spinner BarGrowReturn =>
+            new([
+                @"⣾",
+                @"⣤",
+                @"⣦",
+                @"⣰",
+                @"⣼",
+                @"⣦",
+                @"⣰",
+                @"⣴",
+            ]);
         #endregion
     }
 }
