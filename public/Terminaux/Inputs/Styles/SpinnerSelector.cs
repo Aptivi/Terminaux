@@ -81,20 +81,6 @@ namespace Terminaux.Inputs.Styles
             return spinnerSelectorTui.GetResultingSpinner();
         }
 
-        internal static int DetermineSpinnerIndex(string name)
-        {
-            var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
-            string[] spinners = builtinSpinners.Select((pi) => pi.Name).ToArray();
-            int selectedSpinner;
-            for (selectedSpinner = 0; selectedSpinner < spinners.Length; selectedSpinner++)
-            {
-                string queriedSpinner = spinners[selectedSpinner];
-                if (queriedSpinner == name)
-                    break;
-            }
-            return selectedSpinner;
-        }
-
         static SpinnerSelector()
         {
             if (!ConsoleChecker.busy)
