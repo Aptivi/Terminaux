@@ -99,6 +99,16 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             var listBuilder = new StringBuilder();
             int EntryNumber = 1;
+
+            // Get the dictionary keys first in case we got a dictionary
+            object[] keys = [];
+            if (Objects is IDictionary dict)
+            {
+                keys = new object[dict.Count];
+                dict.Keys.CopyTo(keys, 0);
+            }
+
+            // Process each list entry
             foreach (var ListEntry in Objects)
             {
                 if (ListEntry is IEnumerable enums && ListEntry is not string)
@@ -118,10 +128,10 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         }.Render()
                     );
                 }
-                else if (Objects is IDictionary dict)
+                else if (Objects is IDictionary dictionary)
                 {
-                    var key = dict.Keys.GetElementFromIndex(EntryNumber - 1);
-                    var value = dict.Values.GetElementFromIndex(EntryNumber - 1);
+                    var key = keys[EntryNumber - 1];
+                    var value = dictionary[key];
                     listBuilder.AppendLine(
                         new ListEntry()
                         {
