@@ -294,7 +294,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Get the button width list
                     int maxButtonPanelWidth = maxWidth - 4;
-                    int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+                    int maxButtonWidth = maxButtonPanelWidth / 4;
                     List<int> buttonWidths = [];
                     for (int i = 1; i <= buttons.Length; i++)
                     {
@@ -409,7 +409,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             if (mouse.Coordinates.y < buttonPanelPosY || mouse.Coordinates.y > buttonPanelPosY + 2)
                                 return;
                             int maxButtonPanelWidth = maxWidth - 4;
-                            int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+                            int maxButtonWidth = maxButtonPanelWidth / 4;
                             for (int i = 1; i <= buttons.Length; i++)
                             {
                                 // Get the button position
