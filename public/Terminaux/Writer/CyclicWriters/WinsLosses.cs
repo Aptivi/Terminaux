@@ -140,21 +140,21 @@ namespace Terminaux.Writer.CyclicWriters
                         ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
                         (UseColors ? ColorTools.RenderSetConsoleColor(element.win.Color) : "") +
                         " ■ " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                         element.Item1.Truncate(nameLength - 4 - $"{maxWinValue}/{maxLossValue}".Length) + "  " +
                         (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
                         $"{element.win.Value}" +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                         "/" +
                         (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red) : "") +
-                        $"{element.loss.Value}" +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "")
+                        $"{element.loss.Value}"
                     );
                 }
 
                 // Show the separator
                 for (int h = 0; h < InteriorHeight; h++)
                 {
+                    winsLosses.Append(UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "");
                     Coordinate separatorCoord = new(Left + nameLength, Top + h);
                     winsLosses.Append(
                         ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +

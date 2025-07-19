@@ -143,9 +143,9 @@ namespace Terminaux.Writer.CyclicWriters
                         ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
                         (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
                         " ■ " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
                         (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                         element.Value
                     );
                 }
@@ -153,6 +153,7 @@ namespace Terminaux.Writer.CyclicWriters
                 // Show the separator
                 for (int h = 0; h < InteriorHeight; h++)
                 {
+                    stickChart.Append(UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "");
                     Coordinate separatorCoord = new(Left + nameLength, Top + h);
                     stickChart.Append(
                         ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +

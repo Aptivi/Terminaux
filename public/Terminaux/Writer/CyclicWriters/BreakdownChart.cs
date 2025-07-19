@@ -157,9 +157,9 @@ namespace Terminaux.Writer.CyclicWriters
                             ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
                             (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
                             " ■ " +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                            element.Name.Truncate(nameLength - 4 - $"{maxValueDisplay}".Length) + "  " +
                             (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                            element.Name.Truncate(nameLength - 4 - $"{maxValueDisplay}".Length) + "  " +
+                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                             element.Value
                         );
                     }
@@ -167,6 +167,7 @@ namespace Terminaux.Writer.CyclicWriters
                     // Show the separator
                     for (int h = 0; h < InteriorHeight; h++)
                     {
+                        breakdownChart.Append(UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "");
                         Coordinate separatorCoord = new(Left + nameLength, Top + h);
                         breakdownChart.Append(
                             ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
@@ -251,9 +252,9 @@ namespace Terminaux.Writer.CyclicWriters
                         breakdownChart.Append(
                             (UseColors ? ColorTools.RenderSetConsoleColor(color) : "") +
                             " ■ " +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                            name + "  " +
                             (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                            name + "  " +
+                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                             value +
                             spaces
                         );

@@ -142,10 +142,20 @@ namespace Terminaux.Writer.CyclicWriters
                         ConsolePositioning.RenderChangePosition(coord.X, coord.Y) +
                         (UseColors ? ColorTools.RenderSetConsoleColor(element.Color) : "") +
                         " ■ " +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
-                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
                         (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
-                        element.Value +
+                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
+                        (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                        element.Value
+                    );
+                }
+
+                // Show the separator
+                for (int h = 0; h < InteriorHeight; h++)
+                {
+                    barChart.Append(UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "");
+                    Coordinate separatorCoord = new(Left + nameLength, Top + h);
+                    barChart.Append(
+                        ConsolePositioning.RenderChangePosition(separatorCoord.X, separatorCoord.Y) +
                         " ┃ "
                     );
                 }
