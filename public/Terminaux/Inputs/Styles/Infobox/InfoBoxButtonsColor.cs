@@ -301,7 +301,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                     for (int i = 1; i <= buttons.Length; i++)
                     {
                         // Get the text and the button position
-                        string buttonText = buttons[i - 1].ChoiceTitle;
                         int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
 
                         // Determine whether it's a selected button or not
@@ -310,7 +309,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         var buttonBackgroundColor = selected ? InfoBoxTitledButtonsColor : BackgroundColor;
 
                         // Trim the button text to the max button width
-                        buttonText = buttonText.Truncate(maxButtonWidth - 7);
+                        string buttonText = buttons[i - 1].ChoiceTitle.Truncate(maxButtonWidth - 7);
                         int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
