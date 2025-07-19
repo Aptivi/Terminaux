@@ -330,10 +330,16 @@ namespace Terminaux.Inputs.Styles.Editor
                     NextPage(lines, screen, fullscreen);
                     return;
                 case ConsoleKey.Home:
-                    Beginning(lines, screen);
+                    if (key.Modifiers == ConsoleModifiers.Shift)
+                        Beginning(lines, screen);
+                    else
+                        LineBeginning(lines, screen);
                     return;
                 case ConsoleKey.End:
-                    End(lines, screen);
+                    if (key.Modifiers == ConsoleModifiers.Shift)
+                        End(lines, screen);
+                    else
+                        LineEnd(lines, screen);
                     return;
             }
             if (entering)
@@ -412,7 +418,20 @@ namespace Terminaux.Inputs.Styles.Editor
             // Insert a character
             var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
             var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
-            lines[lineIdx] = lines[lineIdx].Insert(lines[lineIdx].Length == 0 ? 0 : lineColIdx > absolutes.Length - 1 ? lineColIdx : absolutes[lineColIdx].Item1, $"{keyChar}");
+            int newColumnIdx = 0;
+            if (lines[lineIdx].Length > 0)
+            {
+                if (lineColIdx > absolutes.Length - 1)
+                {
+                    if (absolutes.Length > 0)
+                        newColumnIdx = absolutes[absolutes.Length - 1].Item1 + 1;
+                    else
+                        newColumnIdx = lineColIdx;
+                }
+                else
+                    newColumnIdx = absolutes[lineColIdx].Item1;
+            }
+            lines[lineIdx] = lines[lineIdx].Insert(newColumnIdx, $"{keyChar}");
             MoveForward(lines, screen);
         }
 
@@ -705,11 +724,29 @@ namespace Terminaux.Inputs.Styles.Editor
             UpdateLineIndex(endIndex, lines, screen);
         }
 
-        private static void Beginning(List<string> lines, Screen screen) =>
+        private static void Beginning(List<string> lines, Screen screen)
+        {
             UpdateLineIndex(0, lines, screen);
+            LineBeginning(lines, screen);
+        }
 
-        private static void End(List<string> lines, Screen screen) =>
+        private static void End(List<string> lines, Screen screen)
+        {
             UpdateLineIndex(lines.Count - 1, lines, screen);
+            LineEnd(lines, screen);
+        }
+
+        private static void LineBeginning(List<string> lines, Screen screen) =>
+            UpdateColumnIndex(0, lines, screen);
+
+        private static void LineEnd(List<string> lines, Screen screen)
+        {
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+            var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+            int maxLen = absolutes.Length;
+            maxLen -= entering ? 0 : 1;
+            UpdateColumnIndex(maxLen, lines, screen);
+        }
 
         private static void UpdateLineIndex(int lnIdx, List<string> lines, Screen screen)
         {
@@ -729,7 +766,9 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = 0;
                 return;
             }
-            int maxLen = lines[lineIdx].Length;
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+            var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+            int maxLen = absolutes.Length;
             maxLen -= entering ? 0 : 1;
             if (lineColIdx > maxLen)
                 lineColIdx = maxLen;

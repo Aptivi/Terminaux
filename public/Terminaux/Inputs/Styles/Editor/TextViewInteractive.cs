@@ -316,10 +316,16 @@ namespace Terminaux.Inputs.Styles.Editor
                     NextPage(lines, ref screen, fullscreen);
                     return;
                 case ConsoleKey.Home:
-                    Beginning(lines, ref screen);
+                    if (key.Modifiers == ConsoleModifiers.Shift)
+                        Beginning(lines, ref screen);
+                    else
+                        LineBeginning(lines, ref screen);
                     return;
                 case ConsoleKey.End:
-                    End(lines, ref screen);
+                    if (key.Modifiers == ConsoleModifiers.Shift)
+                        End(lines, ref screen);
+                    else
+                        LineEnd(lines, ref screen);
                     return;
                 case ConsoleKey.Escape:
                     bail = true;
@@ -486,11 +492,28 @@ namespace Terminaux.Inputs.Styles.Editor
             UpdateLineIndex(endIndex, lines, ref screen);
         }
 
-        private static void Beginning(List<string> lines, ref Screen screen) =>
+        private static void Beginning(List<string> lines, ref Screen screen)
+        {
             UpdateLineIndex(0, lines, ref screen);
+            LineBeginning(lines, ref screen);
+        }
 
-        private static void End(List<string> lines, ref Screen screen) =>
+        private static void End(List<string> lines, ref Screen screen)
+        {
             UpdateLineIndex(lines.Count - 1, lines, ref screen);
+            LineEnd(lines, ref screen);
+        }
+
+        private static void LineBeginning(List<string> lines, ref Screen screen) =>
+            UpdateColumnIndex(0, lines, ref screen);
+
+        private static void LineEnd(List<string> lines, ref Screen screen)
+        {
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+            var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+            int maxLen = absolutes.Length - 1;
+            UpdateColumnIndex(maxLen, lines, ref screen);
+        }
 
         private static void UpdateLineIndex(int lnIdx, List<string> lines, ref Screen screen)
         {
@@ -510,8 +533,9 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = 0;
                 return;
             }
-            int maxLen = lines[lineIdx].Length;
-            maxLen--;
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+            var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+            int maxLen = absolutes.Length - 1;
             if (lineColIdx > maxLen)
                 lineColIdx = maxLen;
             if (lineColIdx < 0)
