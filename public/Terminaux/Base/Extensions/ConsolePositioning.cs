@@ -189,7 +189,7 @@ namespace Terminaux.Base.Extensions
             isVtSequence = vtSeq;
             return
                 !string.IsNullOrEmpty(seq) ? seq :
-                ch == '\t' ? new string(' ', ConsoleMisc.TabWidth) :
+                ch == '\t' ? "    " :
                 ch.ToString();
         }
 

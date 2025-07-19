@@ -2309,6 +2309,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "Wǒmen wúfǎ shǐyòng cāozuò {1} shēngchéng lèixíng wèi {0} de yǒuxiào VT xùliè. Qǐng quèbǎo nín yǐ zhèngquè zhǐdìng zhí."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Wú biāotí dá'àn"
     }
   ]
 }

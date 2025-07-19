@@ -2306,6 +2306,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "{1} eylemiyle {0} türünde çalışan bir VT dizisi oluşturmayı başaramadık. Değerleri doğru şekilde belirttiğinizden emin olun."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Başlıksız cevap"
     }
   ]
 }

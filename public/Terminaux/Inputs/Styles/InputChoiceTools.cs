@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -47,7 +48,7 @@ namespace Terminaux.Inputs.Styles
             for (int i = 0; i < Answers.Length; i++)
             {
                 string answer = string.IsNullOrEmpty(Answers[i].Item1) ? $"{i + 1}" : Answers[i].Item1;
-                string title = string.IsNullOrEmpty(Answers[i].Item2) ? "Untitled answer" + $" #{i + 1}" : Answers[i].Item2;
+                string title = string.IsNullOrEmpty(Answers[i].Item2) ? LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_UNTITLEDANSWER") + $" #{i + 1}" : Answers[i].Item2;
                 finalChoices.Add(new InputChoiceInfo(answer, title));
             }
             return [.. finalChoices];

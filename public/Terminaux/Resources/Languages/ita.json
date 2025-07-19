@@ -2308,6 +2308,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "Non siamo riusciti a generare una sequenza VT funzionante di tipo {0} con azione {1}. Assicurati di aver specificato i valori correttamente."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "Risposta senza titolo"
     }
   ]
 }

@@ -2306,6 +2306,10 @@
     {
       "loc": "T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED",
       "text": "{1} jag-eob-eulo {0} yuhyeong-ui jagdonghaneun VT sikwonseuleul saengseonghaji moshaessseubnida. gabs-eul olbaleuge jijeonghaessneunji hwag-inhaseyo."
+    },
+    {
+      "loc": "T_INPUT_STYLES_CHOICE_UNTITLEDANSWER",
+      "text": "jemog eobsneun dabbyeon"
     }
   ]
 }
