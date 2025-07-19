@@ -310,10 +310,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     for (int i = 1; i <= buttons.Length; i++)
                     {
                         // Get the text and the button position
-                        string buttonText = buttons[i - 1].ChoiceTitle;
                         int sumWidth = buttonWidths.Take(i).Sum();
                         int finalWidth = buttonWidths[i - 1];
                         int buttonX = buttonPanelPosX + maxButtonPanelWidth - sumWidth - ((i - 1) * 3);
+                        string buttonText = buttons[i - 1].ChoiceTitle.Truncate(finalWidth);
 
                         // Determine whether it's a selected button or not
                         bool selected = i == selectedButton + 1;
