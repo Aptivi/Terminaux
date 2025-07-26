@@ -82,7 +82,7 @@ pushall() {
     done < <(find "$ROOTDIR" -type f -path "*/bin/$releaseconf/*.nupkg")
     for pkg in "${packages[@]}"; do
         echo "$pkg"
-        dotnet nuget push "$pkg" --api-key "$NUGET_APIKEY" --source "$nugetsource"
+        dotnet nuget push "$pkg" --api-key "$NUGET_APIKEY" --source "$nugetsource" --skip-duplicate
         push_result=$?
         if [ $push_result -ne 0 ]; then
             checkvendorerror $push_result
