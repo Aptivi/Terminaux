@@ -8,6 +8,7 @@ gh-pages:
   script:
     - git fetch --all
     - export PATH="$PATH:/root/.dotnet/tools"
+    - apt update
     - apt -y install make
     - dotnet tool install --global docfx
     - make rel-ci
