@@ -7,6 +7,8 @@ gh-pages:
   image: "mcr.microsoft.com/dotnet/sdk:8.0-noble"
   script:
     - git fetch --all
+    - export PATH="$PATH:/root/.dotnet/tools"
+    - apt -y install make
     - dotnet tool install --global docfx
     - make rel-ci
     - make doc
