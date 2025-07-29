@@ -1,7 +1,7 @@
 stages:
+  - release
   - apidocverify
   - apidoc
-  - release
 
 include:
   - '.gitlab/workflows/release.yml'
