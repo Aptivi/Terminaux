@@ -1,0 +1,20 @@
+gh-pages:
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  image: "mcr.microsoft.com/dotnet/sdk:8.0-noble"
+  script:
+    - git fetch --all
+    - make doc
+    - git checkout gh-pages
+    - mv docs ..
+    - git rm -rf .
+    - cp -a ../docs/* .
+    - touch .nojekyll
+    - git add .
+    - git config user.email "ceo@aptivi.anonaddy.com"
+    - git config user.name "Aptivi"
+    - git commit -m "Deployed from $CI_COMMIT_SHA"
+    - 'git remote add github https://AptiviCEO:${GH_APIKEY}@github.com/Aptivi/Aptivestigate'
+    - git push github
