@@ -1,12 +1,12 @@
 gh-pages-branch-verification:
   stage: apidocverify
   rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_TAG
   image: "mcr.microsoft.com/dotnet/sdk:8.0-noble"
   script:
     - git fetch --all
     - 'export COMMITISH=$(git branch -r --contains $CI_COMMIT_TAG | grep -v HEAD | head -n1 | sed ''s/^[[:space:]]*origin\///'')'
-    - '[ $COMMITISH == "main" ] && echo Test succeeded! || echo Test failed!'
+    - '[ $COMMITISH == "main" ] && echo Test succeeded! || exit 1'
 
 gh-pages:
   stage: apidoc
