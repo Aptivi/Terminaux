@@ -31,9 +31,10 @@ prepare_job:
     - 'response=$(curl -s https://api.github.com/repos/Aptivi/Terminaux/releases/tags/$CI_COMMIT_TAG)'
     - 'eval $(echo "$response" | grep -m 1 "id.:" | grep -w id | tr : = | tr -cd ''[[:alnum:]]='')'
     - '[ "$id" ] || { echo "Release id for tag $CI_COMMIT_TAG not found"; echo "$response\n" >&2; exit 1; }'
+    - 'shopt -s nullglob'
     - 'files=(tools/*.zip)'
     - |
-      for file in $files; do
+      for file in "${files[@]}"; do
         filename=$(basename "$file")
         curl -L \
           -X POST \
@@ -41,9 +42,10 @@ prepare_job:
           -H "Authorization: Bearer $GH_APIKEY" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           -H "Content-Type: application/octet-stream" \
-          "https://uploads.github.com/repos/Aptivi/Terminaux/releases/$id/assets?name=$filename" \
+          "https://uploads.github.com/repos/Aptivi/VisualCard/releases/$id/assets?name=$filename" \
           --data-binary @"$file"
       done
+    - 'shopt -u nullglob'
     - 'glab auth login --hostname $CI_SERVER_HOST --job-token $CI_JOB_TOKEN'
     - 'glab release create $CI_COMMIT_TAG --name "$SUBJECT" --notes "$BODY"'
     - 'NUGET_APIKEY=$NUGET_APIKEY ./tools/push.sh'
