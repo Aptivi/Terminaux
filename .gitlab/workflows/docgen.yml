@@ -16,6 +16,7 @@ gh-pages:
     - git checkout gh-pages
     - mv docs ..
     - git rm -rf .
+    - git clean -xdf
     - cp -a ../docs/* .
     - touch .nojekyll
     - git add .
