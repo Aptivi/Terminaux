@@ -42,7 +42,7 @@ prepare_job:
           -H "Authorization: Bearer $GH_APIKEY" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           -H "Content-Type: application/octet-stream" \
-          "https://uploads.github.com/repos/Aptivi/VisualCard/releases/$id/assets?name=$filename" \
+          "https://uploads.github.com/repos/Aptivi/Terminaux/releases/$id/assets?name=$filename" \
           --data-binary @"$file"
       done
     - 'shopt -u nullglob'
