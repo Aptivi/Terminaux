@@ -1,4 +1,5 @@
 gh-pages:
+  stage: apidoc
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
   rules:
