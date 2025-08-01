@@ -332,7 +332,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
             // Check the dimensions
             int maxTimeWidth = maxWidth - 4;
-            int timeArrowTop = borderY + maxHeight - 1;
+            int timeArrowTop = borderY + maxHeight;
             int timeArrowLeft = borderX + 2;
             int timeArrowRight = timeArrowLeft + maxTimeWidth + 1;
             return PointerTools.PointerWithinRange(mouse, (timeArrowLeft, timeArrowTop), (timeArrowRight, timeArrowTop));
@@ -345,7 +345,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Check the dimensions
             int maxTimeWidth = maxWidth - 4;
             int maxTimePartWidth = maxTimeWidth / 3 - 2;
-            int timeTop = borderY + maxHeight - 1;
+            int timeTop = borderY + maxHeight;
             int timeHoursLeft = borderX + 3;
             int timeHoursRight = timeHoursLeft + maxTimePartWidth - 1;
             return PointerTools.PointerWithinRange(mouse, (timeHoursLeft, timeTop), (timeHoursRight, timeTop));
@@ -358,7 +358,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Check the dimensions
             int maxTimeWidth = maxWidth - 4;
             int maxTimePartWidth = maxTimeWidth / 3 - 2;
-            int timeTop = borderY + maxHeight - 1;
+            int timeTop = borderY + maxHeight;
             int timeHoursLeft = borderX + 3;
             int timeMinutesLeft = timeHoursLeft + maxTimePartWidth + 3;
             int timeMinutesRight = timeHoursLeft + maxTimePartWidth * 2 + 2;
@@ -372,7 +372,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Check the dimensions
             int maxTimeWidth = maxWidth - 4;
             int maxTimePartWidth = maxTimeWidth / 3 - 2;
-            int timeTop = borderY + maxHeight - 1;
+            int timeTop = borderY + maxHeight;
             int timeHoursLeft = borderX + 3;
             int timeSecondsLeft = timeHoursLeft + maxTimePartWidth * 2 + 6;
             int timeSecondsRight = timeHoursLeft + maxTimePartWidth * 3 + 6;
