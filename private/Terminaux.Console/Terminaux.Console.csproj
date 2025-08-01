@@ -12,7 +12,7 @@
     <ProjectReference Include="..\..\public\Terminaux.Spectre\Terminaux.Spectre.csproj" />
     <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
 
-    <PackageReference Remove="Microsoft.SourceLink.GitHub" />
+    <PackageReference Remove="Microsoft.SourceLink.GitLab" />
   </ItemGroup>
 
   <ItemGroup>
