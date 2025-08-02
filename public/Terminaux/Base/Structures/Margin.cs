@@ -70,6 +70,13 @@ namespace Terminaux.Base.Structures
             return hashCode;
         }
 
+        /// <summary>
+        /// Generates a string containing margin values
+        /// </summary>
+        /// <returns>Margin values in a string</returns>
+        public override string ToString() =>
+            $"Margin (H: {horizontalMargin}, V: {verticalMargin})";
+
         /// <inheritdoc/>
         public static bool operator ==(Margin left, Margin right) =>
             left.Equals(right);

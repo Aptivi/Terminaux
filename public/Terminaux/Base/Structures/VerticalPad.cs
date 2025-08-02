@@ -64,6 +64,13 @@ namespace Terminaux.Base.Structures
             return hashCode;
         }
 
+        /// <summary>
+        /// Generates a string containing padding values
+        /// </summary>
+        /// <returns>Padding values in a string</returns>
+        public override string ToString() =>
+            $"(pad t: {top}, pad b: {bottom})";
+
         /// <inheritdoc/>
         public static bool operator ==(VerticalPad left, VerticalPad right) =>
             left.Equals(right);

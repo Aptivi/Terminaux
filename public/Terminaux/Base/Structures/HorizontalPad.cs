@@ -55,6 +55,13 @@ namespace Terminaux.Base.Structures
                 right == other.right;
         }
 
+        /// <summary>
+        /// Generates a string containing padding values
+        /// </summary>
+        /// <returns>Padding values in a string</returns>
+        public override string ToString() =>
+            $"(pad l: {left}, pad r: {right})";
+
         /// <inheritdoc/>
         public override int GetHashCode()
         {

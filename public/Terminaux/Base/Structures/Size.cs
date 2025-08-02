@@ -64,6 +64,13 @@ namespace Terminaux.Base.Structures
             return hashCode;
         }
 
+        /// <summary>
+        /// Generates a string containing sizes
+        /// </summary>
+        /// <returns>Width and height in a string</returns>
+        public override string ToString() =>
+            $"{Width}x{Height}";
+
         /// <inheritdoc/>
         public static bool operator ==(Size left, Size right) =>
             left.Equals(right);
