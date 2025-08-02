@@ -8,9 +8,9 @@
     <AssemblyName>Terminaux</AssemblyName>
     <PackageId>Terminaux</PackageId>
     <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
-    <PackageProjectUrl>https://github.com/Aptivi/Terminaux</PackageProjectUrl>
+    <PackageProjectUrl>https://gitlab.com/aptivi/main/Terminaux</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Aptivi/Terminaux</RepositoryUrl>
+    <RepositoryUrl>https://gitlab.com/aptivi/main/Terminaux</RepositoryUrl>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>

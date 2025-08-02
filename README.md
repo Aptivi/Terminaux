@@ -21,10 +21,6 @@
 <br>
 <br>
 
-[![Badge Main]][Main]   
-[![Badge Main Release]][Main Release]
-
-[![Badge Latest]][Latest]   
 [![Badge NuGet]][NuGet]
 
 ![Badge Size]   
@@ -42,12 +38,8 @@
 
 <!----------------------------------------------------------------------------->
 
-[Releases]: https://github.com/Aptivi/Terminaux/releases
-[Latest]: https://github.com/Aptivi/Terminaux/releases/latest
+[Releases]: https://gitlab.com/aptivi/main/Terminaux/-/releases
 [NuGet]: https://www.nuget.org/packages/Terminaux/
-
-[Main]: https://github.com/Aptivi/Terminaux/actions/workflows/build.yml
-[Main Release]: https://github.com/Aptivi/Terminaux/actions/workflows/build-rel.yml
 
 [Libraries]: https://aptivi.gitbook.io/terminaux-manual/project-dependencies
 [Manual]: https://aptivi.gitbook.io/terminaux-manual/
@@ -55,12 +47,8 @@
 <!----------------------------------[ Badges ]--------------------------------->
 
 [Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/Terminaux/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
-[Badge Latest]: https://img.shields.io/github/v/release/Aptivi/Terminaux?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
 [Badge NuGet]: https://img.shields.io/nuget/vpre/Terminaux?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
 [Badge Size]: https://img.shields.io/github/repo-size/Aptivi/Terminaux?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
-
-[Badge Main]: https://github.com/Aptivi/Terminaux/actions/workflows/build.yml/badge.svg
-[Badge Main Release]: https://github.com/Aptivi/Terminaux/actions/workflows/build-rel.yml/badge.svg
 
 
 <!---------------------------------[ Buttons ]--------------------------------->
