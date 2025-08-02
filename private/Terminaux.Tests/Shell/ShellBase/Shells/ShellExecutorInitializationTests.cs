@@ -41,14 +41,14 @@ namespace Terminaux.Tests.Shell.ShellBase.Shells
             ShellInstance.ShouldNotBeNull();
 
             ShellManager.RegisterShell("TestShell", new TestShellInfo());
-            testContext.WriteLine("Created new test shell " + testContext.TestName);
+            testContext.WriteLine("Created new test shell " + testContext.FullyQualifiedTestClassName);
         }
 
         [ClassCleanup(ClassCleanupBehavior.EndOfClass)]
         public static void CleanTests(TestContext testContext)
         {
             ShellManager.RegisterShell("TestShell", new TestShellInfo());
-            testContext.WriteLine("Removed test shell " + testContext.TestName);
+            testContext.WriteLine("Removed test shell " + testContext.FullyQualifiedTestClassName);
         }
 
         /// <summary>
