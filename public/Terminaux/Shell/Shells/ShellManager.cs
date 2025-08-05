@@ -43,6 +43,7 @@ using System.Text.RegularExpressions;
 using Terminaux.Base.Wrappers;
 using Terminaux.Shell.Aliases;
 using Terminaux.Colors.Themes.Colors;
+using Textify.Tools.Placeholder;
 
 namespace Terminaux.Shell.Shells
 {
@@ -879,6 +880,9 @@ namespace Terminaux.Shell.Shells
 
                 // Load the aliases
                 AliasManager.InitAliases(ShellType);
+
+                // Load the placeholder for an MESH variable, unless it's already defined
+                PlaceParse.RegisterCustomPlaceholder("$", MESHVariables.GetVariable);
 
                 // Reset title in case we're going to another shell
                 ConsoleMisc.SetTitle(InitialTitle);
