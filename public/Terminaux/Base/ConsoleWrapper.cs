@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Base.Structures;
 using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Base
 {
@@ -269,86 +270,146 @@ namespace Terminaux.Base
         /// Writes a character to console (stdout)
         /// </summary>
         /// <param name="value">A character</param>
-        public static void Write(char value) =>
-            ConsoleWrapperTools.Wrapper.Write(value);
+        public static void Write(char value)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.Write(value);
+            }
+        }
 
         /// <summary>
         /// Writes text to console (stdout)
         /// </summary>
         /// <param name="text">The text to write</param>
-        public static void Write(string text) =>
-            ConsoleWrapperTools.Wrapper.Write(text);
+        public static void Write(string text)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.Write(text);
+            }
+        }
 
         /// <summary>
         /// Writes text to console (stdout)
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
-        public static void Write(string text, params object[] args) =>
-            ConsoleWrapperTools.Wrapper.Write(text, args);
+        public static void Write(string text, params object[] args)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.Write(text, args);
+            }
+        }
 
         /// <summary>
         /// Writes new line to console (stdout)
         /// </summary>
-        public static void WriteLine() =>
-            ConsoleWrapperTools.Wrapper.WriteLine();
+        public static void WriteLine()
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteLine();
+            }
+        }
 
         /// <summary>
         /// Writes text to console (stdout) with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
-        public static void WriteLine(string text) =>
-            ConsoleWrapperTools.Wrapper.WriteLine(text);
+        public static void WriteLine(string text)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteLine(text);
+            }
+        }
 
         /// <summary>
         /// Writes text to console (stdout) with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
-        public static void WriteLine(string text, params object[] args) =>
-            ConsoleWrapperTools.Wrapper.WriteLine(text, args);
+        public static void WriteLine(string text, params object[] args)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteLine(text, args);
+            }
+        }
 
         /// <summary>
         /// Writes a character to console (stderr)
         /// </summary>
         /// <param name="value">A character</param>
-        public static void WriteError(char value) =>
-            ConsoleWrapperTools.Wrapper.WriteError(value);
+        public static void WriteError(char value)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteError(value);
+            }
+        }
 
         /// <summary>
         /// Writes text to console (stderr)
         /// </summary>
         /// <param name="text">The text to write</param>
-        public static void WriteError(string text) =>
-            ConsoleWrapperTools.Wrapper.WriteError(text);
+        public static void WriteError(string text)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteError(text);
+            }
+        }
 
         /// <summary>
         /// Writes text to console (stderr)
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
-        public static void WriteError(string text, params object[] args) =>
-            ConsoleWrapperTools.Wrapper.WriteError(text, args);
+        public static void WriteError(string text, params object[] args)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteError(text, args);
+            }
+        }
 
         /// <summary>
         /// Writes new line to console (stderr)
         /// </summary>
-        public static void WriteLineError() =>
-            ConsoleWrapperTools.Wrapper.WriteErrorLine();
+        public static void WriteLineError()
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteErrorLine();
+            }
+        }
 
         /// <summary>
         /// Writes text to console (stderr) with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
-        public static void WriteLineError(string text) =>
-            ConsoleWrapperTools.Wrapper.WriteErrorLine(text);
+        public static void WriteLineError(string text)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteErrorLine(text);
+            }
+        }
 
         /// <summary>
         /// Writes text to console (stderr) with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
-        public static void WriteLineError(string text, params object[] args) =>
-            ConsoleWrapperTools.Wrapper.WriteErrorLine(text, args);
+        public static void WriteLineError(string text, params object[] args)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                ConsoleWrapperTools.Wrapper.WriteErrorLine(text, args);
+            }
+        }
     }
 }
