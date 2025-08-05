@@ -827,7 +827,7 @@ namespace Terminaux.Shell.Shells
             }
 
             // Restore console output to its original state if any
-            if (ConsoleWrapperTools.Wrapper is not BaseConsoleWrapper && restoreDriver)
+            if (restoreDriver)
             {
                 if (ConsoleWrapperTools.Wrapper is FileWrite writer)
                     writer.FilterVT = false;
