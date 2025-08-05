@@ -41,8 +41,8 @@ namespace Terminaux.Shell.Shells.Unified
                 SwitchManager.ContainsSwitch(parameters.SwitchesList, "-general") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
             bool showAlias = parameters.SwitchesList.Length > 0 &&
                 (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-alias") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
-            bool showUnified = parameters.SwitchesList.Length > 0 &&
-                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-unified") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
+            bool showUnified = parameters.SwitchesList.Length == 0 ||
+                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-unified") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
             bool showExtra = parameters.SwitchesList.Length > 0 &&
                 (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-extra") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
 

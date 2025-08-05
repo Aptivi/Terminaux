@@ -34,7 +34,7 @@ namespace Terminaux.Shell.Help
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showExtra">Shows all kernel extra commands</param>
-        public static void ShowHelp(bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+        public static void ShowHelp(bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false) =>
             ShowHelpExtended("", ShellManager.CurrentShellType, false, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Terminaux.Shell.Help
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showExtra">Shows all kernel extra commands</param>
-        public static void ShowHelp(string command, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+        public static void ShowHelp(string command, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false) =>
             ShowHelpExtended(command, ShellManager.CurrentShellType, false, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Terminaux.Shell.Help
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showExtra">Shows all kernel extra commands</param>
-        public static void ShowHelp(string command, string commandType, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+        public static void ShowHelp(string command, string commandType, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false) =>
             ShowHelpExtended(command, commandType, false, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Terminaux.Shell.Help
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showExtra">Shows all kernel extra commands</param>
-        public static void ShowHelpExtended(bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+        public static void ShowHelpExtended(bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false) =>
             ShowHelpExtended("", ShellManager.CurrentShellType, simplified, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Terminaux.Shell.Help
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showExtra">Shows all kernel extra commands</param>
-        public static void ShowHelpExtended(string command, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false) =>
+        public static void ShowHelpExtended(string command, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false) =>
             ShowHelpExtended(command, ShellManager.CurrentShellType, simplified, showGeneral, showAlias, showUnified, showExtra, showCount);
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Terminaux.Shell.Help
         /// <param name="showAlias">Shows all aliased commands</param>
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showExtra">Shows all kernel extra commands</param>
-        public static void ShowHelpExtended(string command, string commandType, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)
+        public static void ShowHelpExtended(string command, string commandType, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false)
         {
             // Check to see if command exists
             if (!string.IsNullOrWhiteSpace(command))
