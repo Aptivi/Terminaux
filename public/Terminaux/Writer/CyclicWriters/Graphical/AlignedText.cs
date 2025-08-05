@@ -187,9 +187,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             string filteredString = stringInfo.SubstringByTextElements(l, 1);
                             double hueWidth = (double)l / length;
                             int hue = (int)(360 * hueWidth);
+                            var color = new Color($"hsl:{hue};100;50", new()
+                            {
+                                UseTerminalPalette = false,
+                            });
                             finalSentence.Append(
-                                ColorTools.RenderSetConsoleColor(rainbowState == 1 ? new Color($"hsl:{hue};100;50") : ForegroundColor) +
-                                ColorTools.RenderSetConsoleColor(rainbowState == 2 ? new Color($"hsl:{hue};100;50") : BackgroundColor, true) +
+                                ColorTools.RenderSetConsoleColor(rainbowState == 1 ? color : ForegroundColor) +
+                                ColorTools.RenderSetConsoleColor(rainbowState == 2 ? color : BackgroundColor, true) +
                                 $"{filteredString}"
                             );
                         }
