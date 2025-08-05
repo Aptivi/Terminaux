@@ -22,6 +22,7 @@ using Terminaux.Shell.Commands;
 using System.Linq;
 using System;
 using System.Globalization;
+using System.Text;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -49,37 +50,25 @@ namespace Terminaux.Shell.Shells.Unified
                     showDate = showTime = true;
             }
 
-            // Now, show the date and the time
+            // Render the date/time string
+            StringBuilder builder = new();
+            var dateTime = useUtc ? DateTime.UtcNow : DateTime.Now;
             if (showDate)
             {
-                if (useUtc)
-                {
-                    string rendered = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture.DateTimeFormat.ShortDatePattern, CultureInfo.InvariantCulture);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
-                else
-                {
-                    string rendered = DateTime.Now.ToString(CultureInfo.InvariantCulture.DateTimeFormat.ShortDatePattern, CultureInfo.InvariantCulture);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                string rendered = dateTime.ToString(CultureInfo.InvariantCulture.DateTimeFormat.ShortDatePattern, CultureInfo.InvariantCulture);
+                builder.Append(rendered);
+                if (showTime)
+                    builder.Append(" ");
             }
             if (showTime)
             {
-                if (useUtc)
-                {
-                    string rendered = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture.DateTimeFormat.LongTimePattern, CultureInfo.InvariantCulture);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
-                else
-                {
-                    string rendered = DateTime.Now.ToString(CultureInfo.InvariantCulture.DateTimeFormat.LongTimePattern, CultureInfo.InvariantCulture);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                string rendered = dateTime.ToString(CultureInfo.InvariantCulture.DateTimeFormat.LongTimePattern, CultureInfo.InvariantCulture);
+                builder.Append(rendered);
             }
+
+            // Now, show the date and the time
+            variableValue = builder.ToString();
+            TextWriterColor.Write(variableValue);
             return 0;
         }
     }
