@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting;
 using Terminaux.Shell.Shells;
@@ -38,6 +39,52 @@ namespace Terminaux.Shell.Arguments
             { "command",    (_) => PopulateCommands() },
             { "shell",      (_) => ShellManager.AvailableShells.Keys.ToArray() },
         };
+        private static readonly Dictionary<string, Func<string[], string[]>> customCompletions = [];
+
+        // TODO: Please localize those once 7.0.1 stabilizes.
+
+        /// <summary>
+        /// Registers the completion function
+        /// </summary>
+        /// <param name="expression">An expression to add (usually an argument name)</param>
+        /// <param name="completionFunction">Completion function that returns suggestions</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void RegisterCompletionFunction(string expression, Func<string[], string[]> completionFunction)
+        {
+            if (IsCompletionFunctionRegistered(expression))
+                throw new TerminauxException(LanguageTools.GetLocalized("The completion function is already registered."));
+            customCompletions.Add(expression, completionFunction);
+        }
+
+        /// <summary>
+        /// Unregisters the completion function
+        /// </summary>
+        /// <param name="expression">An expression to add (usually an argument name)</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void UnregisterCompletionFunction(string expression)
+        {
+            if (!IsCompletionFunctionRegistered(expression))
+                throw new TerminauxException(LanguageTools.GetLocalized("The completion function is not registered."));
+            if (IsCompletionFunctionBuiltin(expression))
+                throw new TerminauxException(LanguageTools.GetLocalized("The built-in completion function can't be removed."));
+            customCompletions.Remove(expression);
+        }
+
+        /// <summary>
+        /// Checks to see if the completion function is registered or not
+        /// </summary>
+        /// <param name="expression">An expression to query</param>
+        /// <returns>True if registered; false otherwise.</returns>
+        public static bool IsCompletionFunctionRegistered(string expression) =>
+            GetCompletionFunction(expression) is not null;
+
+        /// <summary>
+        /// Checks to see if the completion function is builtin or not
+        /// </summary>
+        /// <param name="expression">An expression to query</param>
+        /// <returns>True if builtin; false otherwise.</returns>
+        public static bool IsCompletionFunctionBuiltin(string expression) =>
+            customCompletions.ContainsKey(expression);
 
         /// <summary>
         /// Gets a completion function for a known expression
@@ -48,7 +95,8 @@ namespace Terminaux.Shell.Arguments
         {
             expression = expression.ToLower();
             if (!completions.TryGetValue(expression, out Func<string[], string[]>? func))
-                return null;
+                if (!customCompletions.TryGetValue(expression, out func))
+                    return null;
             return func;
         }
 

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Shells;
 using Terminaux.Tests.Shared.Shells;
 
@@ -28,9 +29,11 @@ namespace Terminaux.Console.Fixtures.Cases.Shell
 
         public void RunFixture()
         {
+            CommandAutoCompletionList.RegisterCompletionFunction("text", (_) => { return ["Hello", "Hi"]; });
             ShellManager.RegisterShell("TestShell", new TestShellInfo());
             ShellManager.StartShell("TestShell");
             ShellManager.UnregisterShell("TestShell");
+            CommandAutoCompletionList.UnregisterCompletionFunction("text");
         }
     }
 }
