@@ -881,9 +881,6 @@ namespace Terminaux.Shell.Shells
                 // Load the aliases
                 AliasManager.InitAliases(ShellType);
 
-                // Load the placeholder for an MESH variable, unless it's already defined
-                PlaceParse.RegisterCustomPlaceholder("$", MESHVariables.GetVariable);
-
                 // Reset title in case we're going to another shell
                 ConsoleMisc.SetTitle(InitialTitle);
                 ShellExecute.InitializeShell(ShellArgs);
