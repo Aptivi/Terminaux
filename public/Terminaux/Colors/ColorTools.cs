@@ -574,7 +574,7 @@ namespace Terminaux.Colors
                 var hueBand = new BoxFrame()
                 {
                     Left = 3,
-                    Top = 9,
+                    Top = 8,
                     Width = times + 1,
                     Height = 1,
                 };
@@ -587,26 +587,38 @@ namespace Terminaux.Colors
                 // Then, render the three bands, starting from the red color
                 double threshold = 255 / (double)times;
                 for (double i = 0; i <= times; i++)
-                    band.Append($"{new Color(Convert.ToInt32(i * threshold), 0, 0).VTSequenceBackground} ");
+                    band.Append($"{new Color(Convert.ToInt32(i * threshold), 0, 0, new()
+                    {
+                        UseTerminalPalette = false,
+                    }).VTSequenceBackground} ");
                 band.Append(RenderResetBackground());
                 band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 6));
 
                 // The green color
                 for (double i = 0; i <= times; i++)
-                    band.Append($"{new Color(0, Convert.ToInt32(i * threshold), 0).VTSequenceBackground} ");
+                    band.Append($"{new Color(0, Convert.ToInt32(i * threshold), 0, new()
+                    {
+                        UseTerminalPalette = false,
+                    }).VTSequenceBackground} ");
                 band.Append(RenderResetBackground());
                 band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 7));
 
                 // The blue color
                 for (double i = 0; i <= times; i++)
-                    band.Append($"{new Color(0, 0, Convert.ToInt32(i * threshold)).VTSequenceBackground} ");
+                    band.Append($"{new Color(0, 0, Convert.ToInt32(i * threshold), new()
+                    {
+                        UseTerminalPalette = false,
+                    }).VTSequenceBackground} ");
                 band.Append(RenderResetBackground());
-                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 11));
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 10));
 
                 // Now, show the hue band
                 double hueThreshold = 360 / (double)times;
                 for (double h = 0; h <= times; h++)
-                    band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50").VTSequenceBackground} ");
+                    band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50", new()
+                    {
+                        UseTerminalPalette = false,
+                    }).VTSequenceBackground} ");
                 band.AppendLine();
                 band.Append(RenderResetBackground());
 
