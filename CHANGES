@@ -30,6 +30,7 @@ This release contains a variety of changes, including, but not limited to:
 - `[*]` Made TUIs more mouse friendly
 - `[*]` Improved performance of the selection TUIs
 - `[*]` Improved RTL logical-to-visual mapping
+- `[*]` Don't use color palette for RGB ramps
 - `[*]` General improvements and bug fixes
 - `[-]` Removed obsolete features
 
