@@ -29,7 +29,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
         public void RunFixture()
         {
             TextWriterColor.Write("Write \"exit\" to get out of here.");
-            var settings = new TermReaderSettings(TermReader.GlobalReaderSettings)
+            var settings = new TermReaderSettings()
             {
                 LeftMargin = 4,
                 RightMargin = 4

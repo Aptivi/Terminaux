@@ -45,7 +45,7 @@ namespace Terminaux.Colors
         internal static Color currentForegroundColor = new(ConsoleColors.Silver);
         internal static Color currentBackgroundColor = Color.Empty;
         internal static Random rng = new();
-        private static readonly ColorSettings globalSettings = new();
+        internal static readonly ColorSettings globalSettings = new();
         private static bool allowBackground;
 
         /// <summary>

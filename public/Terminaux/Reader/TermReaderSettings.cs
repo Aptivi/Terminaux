@@ -402,7 +402,8 @@ namespace Terminaux.Reader
         /// <summary>
         /// Initializes an empty reader settings instance
         /// </summary>
-        public TermReaderSettings()
+        public TermReaderSettings() :
+            this(TermReader.globalSettings)
         { }
 
         /// <summary>

@@ -123,7 +123,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         /// <summary>
         /// Makes a new instance of the infobox settings
         /// </summary>
-        public InfoBoxSettings()
+        public InfoBoxSettings() :
+            this(globalSettings)
         { }
 
         /// <summary>
@@ -132,6 +133,9 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         /// <param name="settings">Settings instance to copy settings from</param>
         public InfoBoxSettings(InfoBoxSettings settings)
         {
+            if (settings is null)
+                return;
+
             title = settings.title;
             borderSettings = settings.borderSettings;
             useColors = settings.useColors;

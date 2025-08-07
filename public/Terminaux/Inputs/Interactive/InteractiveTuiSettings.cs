@@ -338,7 +338,8 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Makes a new instance of the interactive TUI settings
         /// </summary>
-        public InteractiveTuiSettings()
+        public InteractiveTuiSettings() :
+            this(globalSettings)
         { }
 
         /// <summary>
@@ -347,6 +348,9 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="settings">Settings instance to copy settings from</param>
         public InteractiveTuiSettings(InteractiveTuiSettings settings)
         {
+            if (settings is null)
+                return;
+
             InfoBoxSettings = settings.InfoBoxSettings;
             SetBackgroundColor(settings.backgroundColor);
             SetForegroundColor(settings.foregroundColor);

@@ -87,7 +87,8 @@ namespace Terminaux.Colors
         /// <summary>
         /// Makes a new instance of color settings
         /// </summary>
-        public ColorSettings()
+        public ColorSettings() :
+            this(ColorTools.globalSettings)
         { }
 
         /// <summary>

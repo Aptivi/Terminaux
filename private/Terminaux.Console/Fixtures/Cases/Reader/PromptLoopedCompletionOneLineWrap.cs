@@ -32,7 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
             string input = "";
             while (input != "exit")
             {
-                var settings = new TermReaderSettings(TermReader.GlobalReaderSettings)
+                var settings = new TermReaderSettings()
                 {
                     Suggestions = GetSuggestions,
                     HistoryEnabled = true

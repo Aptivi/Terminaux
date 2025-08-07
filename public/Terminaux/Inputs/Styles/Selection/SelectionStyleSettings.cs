@@ -37,11 +37,13 @@ namespace Terminaux.Inputs.Styles.Selection
         private Color? textColor;
         private Color? disabledOptionColor;
         private Color? backgroundColor;
+        private static readonly SelectionStyleSettings globalSettings = new();
 
         /// <summary>
         /// Global selection style settings
         /// </summary>
-        public static SelectionStyleSettings GlobalSettings { get; } = new();
+        public static SelectionStyleSettings GlobalSettings =>
+            globalSettings;
 
         /// <summary>
         /// Use the radio buttons when dealing with selection style (single-choice)
@@ -216,7 +218,8 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <summary>
         /// Makes a new instance of the selection style settings
         /// </summary>
-        public SelectionStyleSettings()
+        public SelectionStyleSettings() :
+            this(globalSettings)
         { }
 
         /// <summary>
@@ -225,6 +228,9 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="settings">Settings instance to copy settings from</param>
         public SelectionStyleSettings(SelectionStyleSettings settings)
         {
+            if (settings is null)
+                return;
+
             RadioButtons = settings.RadioButtons;
             SetQuestionColor(settings.questionColor);
             SetSliderColor(settings.sliderColor);

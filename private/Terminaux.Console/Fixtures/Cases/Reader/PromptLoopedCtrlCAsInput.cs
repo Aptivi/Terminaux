@@ -28,7 +28,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 
         public void RunFixture()
         {
-            var settings = new TermReaderSettings(TermReader.GlobalReaderSettings)
+            var settings = new TermReaderSettings()
             {
                 TreatCtrlCAsInput = true
             };

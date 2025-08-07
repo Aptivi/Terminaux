@@ -133,7 +133,8 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <summary>
         /// Makes a new instance of the choice style settings
         /// </summary>
-        public ChoiceStyleSettings()
+        public ChoiceStyleSettings() :
+            this(globalSettings)
         { }
 
         /// <summary>
@@ -142,6 +143,9 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="choiceStyleSettings">Settings to copy from</param>
         public ChoiceStyleSettings(ChoiceStyleSettings choiceStyleSettings)
         {
+            if (choiceStyleSettings is null)
+                return;
+
             OutputType = choiceStyleSettings.OutputType;
             PressEnter = choiceStyleSettings.PressEnter;
             SetQuestionColor(choiceStyleSettings.questionColor);

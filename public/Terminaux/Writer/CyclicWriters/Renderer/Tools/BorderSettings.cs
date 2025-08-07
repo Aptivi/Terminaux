@@ -307,7 +307,8 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// Makes a new instance of the border settings
         /// </summary>
-        public BorderSettings()
+        public BorderSettings() :
+            this(globalSettings)
         { }
 
         /// <summary>
@@ -316,6 +317,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <param name="settings">Settings instance to copy settings from</param>
         public BorderSettings(BorderSettings settings)
         {
+            if (settings is null)
+                return;
+
             BorderUpperLeftCornerChar = settings.BorderUpperLeftCornerChar;
             BorderUpperRightCornerChar = settings.BorderUpperRightCornerChar;
             BorderLowerLeftCornerChar = settings.BorderLowerLeftCornerChar;
