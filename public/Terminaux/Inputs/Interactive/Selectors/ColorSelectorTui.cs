@@ -396,13 +396,23 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int boxY = 1;
             int boxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
             int boxHeight = ConsoleWrapper.WindowHeight - 5;
-            Color finalColor = selectedColor;
+            var settings = new ColorSettings()
+            {
+                UseTerminalPalette = finalSettings.UseTerminalPalette && type != ColorType.TrueColor
+            };
+            Color originalColor = new(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, settings);
+            Color finalColor = originalColor;
             if (colorBlindnessSimulationIdx > 0)
             {
                 var formula = (TransformationFormula)(colorBlindnessSimulationIdx - 1);
                 var formulas = new BaseTransformationFormula[] { ColorSelector.transformationFormulas[formula] };
                 formulas[0].Frequency = colorBlindnessSeverity;
-                var transformed = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new() { Transformations = formulas });
+                var transformedSettings = new ColorSettings()
+                {
+                    Transformations = formulas,
+                    UseTerminalPalette = finalSettings.UseTerminalPalette && type != ColorType.TrueColor
+                };
+                var transformed = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, transformedSettings);
                 finalColor = transformed;
             }
 
@@ -423,7 +433,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Top = boxY + 1,
                 Width = boxWidth,
                 Height = boxHeight / 2,
-                Color = selectedColor,
+                Color = originalColor,
             };
             var transformedBox = new Box()
             {
