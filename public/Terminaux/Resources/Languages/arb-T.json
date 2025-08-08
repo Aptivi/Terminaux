@@ -2947,6 +2947,18 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
       "text": "تغيير تردد التحويل"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED",
+      "text": "دالة الإكمال مُسجَّلة مُسبقًا."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED",
+      "text": "دالة الإكمال غير مُسجَّلة."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
+      "text": "لا يُمكن إزالة دالة الإكمال المُضمَّنة."
     }
   ]
 }

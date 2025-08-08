@@ -2921,6 +2921,18 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
       "text": "変換頻度を変更します"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED",
+      "text": "補完機能は既に登録されています。"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED",
+      "text": "補完機能は登録されていません。"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
+      "text": "組み込み補完機能は削除できません。"
     }
   ]
 }

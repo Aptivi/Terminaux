@@ -2925,6 +2925,18 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
       "text": "更改转换频率"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED",
+      "text": "完成函数已注册。"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED",
+      "text": "完成函数未注册。"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
+      "text": "内置完成函数无法移除。"
     }
   ]
 }

@@ -2921,6 +2921,18 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
       "text": "Змінити частоту перетворення"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED",
+      "text": "Функцію автодоповнення вже зареєстровано."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED",
+      "text": "Функцію автодоповнення не зареєстровано."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
+      "text": "Вбудовану функцію автодоповнення неможливо видалити."
     }
   ]
 }

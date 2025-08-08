@@ -2922,6 +2922,18 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
       "text": "변환 빈도 변경"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED",
+      "text": "완료 함수가 이미 등록되어 있습니다."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED",
+      "text": "완료 함수가 등록되지 않았습니다."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
+      "text": "기본 제공 완료 함수는 제거할 수 없습니다."
     }
   ]
 }

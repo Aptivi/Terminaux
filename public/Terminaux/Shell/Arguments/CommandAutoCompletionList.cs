@@ -41,8 +41,6 @@ namespace Terminaux.Shell.Arguments
         };
         private static readonly Dictionary<string, Func<string[], string[]>> customCompletions = [];
 
-        // TODO: Please localize those once 7.0.1 stabilizes.
-
         /// <summary>
         /// Registers the completion function
         /// </summary>
@@ -52,7 +50,7 @@ namespace Terminaux.Shell.Arguments
         public static void RegisterCompletionFunction(string expression, Func<string[], string[]> completionFunction)
         {
             if (IsCompletionFunctionRegistered(expression))
-                throw new TerminauxException(LanguageTools.GetLocalized("The completion function is already registered."));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED"));
             customCompletions.Add(expression, completionFunction);
         }
 
@@ -64,9 +62,9 @@ namespace Terminaux.Shell.Arguments
         public static void UnregisterCompletionFunction(string expression)
         {
             if (!IsCompletionFunctionRegistered(expression))
-                throw new TerminauxException(LanguageTools.GetLocalized("The completion function is not registered."));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED"));
             if (IsCompletionFunctionBuiltin(expression))
-                throw new TerminauxException(LanguageTools.GetLocalized("The built-in completion function can't be removed."));
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN"));
             customCompletions.Remove(expression);
         }
 

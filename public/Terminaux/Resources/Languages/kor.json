@@ -2922,6 +2922,18 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
       "text": "byeonhwan bindo byeongyeong"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED",
+      "text": "wanlyo hamsuga imi deunglogdoeeo issseubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED",
+      "text": "wanlyo hamsuga deunglogdoeji anh-assseubnida."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
+      "text": "gibon jegong wanlyo hamsuneun jegeohal su eobs-seubnida."
     }
   ]
 }

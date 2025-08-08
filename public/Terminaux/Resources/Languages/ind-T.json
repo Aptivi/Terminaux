@@ -2921,6 +2921,18 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
       "text": "परिवर्तन आवृत्ति बदलें"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED",
+      "text": "पूर्णता फ़ंक्शन पहले से ही पंजीकृत है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED",
+      "text": "पूर्णता फ़ंक्शन पंजीकृत नहीं है।"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
+      "text": "अंतर्निहित पूर्णता फ़ंक्शन को हटाया नहीं जा सकता।"
     }
   ]
 }

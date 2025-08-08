@@ -2922,6 +2922,18 @@
     {
       "loc": "T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM",
       "text": "Athraigh an mhinicíocht chlaochlaithe"
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED",
+      "text": "Tá an fheidhm chomhlánaithe cláraithe cheana féin."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED",
+      "text": "Níl an fheidhm chomhlánaithe cláraithe."
+    },
+    {
+      "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
+      "text": "Ní féidir an fheidhm chomhlánaithe ionsuite a bhaint."
     }
   ]
 }
