@@ -269,15 +269,17 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 (mouse is not null && binding.BindingPointerButton == mouse.Button && binding.BindingPointerButtonPress == mouse.ButtonPress && binding.BindingPointerModifiers == mouse.Modifiers));
             var dataPrimary = selectorTui.PrimaryDataSource;
             var dataSecondary = selectorTui.SecondaryDataSource;
-            TPrimary? selectedData = (TPrimary?)dataPrimary.GetElementFromIndex(selectorTui.FirstPaneCurrentSelection - 1);
-            TSecondary? selectedDataSecondary = (TSecondary?)dataSecondary.GetElementFromIndex(selectorTui.SecondPaneCurrentSelection - 1);
+            object? selectedData = dataPrimary.GetElementFromIndex(selectorTui.FirstPaneCurrentSelection - 1);
+            object? selectedDataSecondary = dataSecondary.GetElementFromIndex(selectorTui.SecondPaneCurrentSelection - 1);
+            TPrimary? selectedDataCasted = selectedData is not null ? (TPrimary?)selectedData : default;
+            TSecondary? selectedDataSecondaryCasted = selectedDataSecondary is not null ? (TSecondary?)selectedDataSecondary : default;
             object? finalData = selectorTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
             foreach (var implementedBinding in implementedBindings)
             {
                 var binding = implementedBinding.BindingAction;
                 if (binding is null || (finalData is null && !implementedBinding.BindingCanRunWithoutItems))
                     continue;
-                binding.Invoke(selectedData, selectorTui.FirstPaneCurrentSelection - 1, selectedDataSecondary, selectorTui.SecondPaneCurrentSelection - 1);
+                binding.Invoke(selectedDataCasted, selectorTui.FirstPaneCurrentSelection - 1, selectedDataSecondaryCasted, selectorTui.SecondPaneCurrentSelection - 1);
             }
         }
 
