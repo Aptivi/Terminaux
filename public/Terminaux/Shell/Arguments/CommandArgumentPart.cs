@@ -40,6 +40,26 @@ namespace Terminaux.Shell.Arguments
         /// </summary>
         public CommandArgumentPartOptions Options { get; private set; }
 
+        private Func<string[], string[]>? ObtainAutoCompleterFromExpression(string argumentExpression)
+        {
+            // Check to see if the expression points to a known auto completion function
+            if (!string.IsNullOrEmpty(argumentExpression))
+            {
+                // The known auto complete lists
+                var completion = CommandAutoCompletionList.GetCompletionFunction(argumentExpression);
+                if (completion is not null)
+                    return completion;
+
+                // The split by the slash (/) characters
+                if (argumentExpression.Contains("/"))
+                {
+                    string[] expressions = argumentExpression.Split('/');
+                    return (_) => [.. expressions];
+                }
+            }
+            return null;
+        }
+
         /// <summary>
         /// Installs a new instance of the command argument part class
         /// </summary>
@@ -51,7 +71,11 @@ namespace Terminaux.Shell.Arguments
             // Install some values
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
-            Options = options ?? new CommandArgumentPartOptions();
+
+            // Populate the options
+            var finalOptions = options ?? new CommandArgumentPartOptions();
+            finalOptions.AutoCompleter ??= ObtainAutoCompleterFromExpression(argumentExpression);
+            Options = finalOptions;
         }
 
         /// <summary>
@@ -67,32 +91,7 @@ namespace Terminaux.Shell.Arguments
         {
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
-
-            // Check to see if the expression points to a known auto completion function
-            if (!string.IsNullOrEmpty(argumentExpression))
-            {
-                bool done = false;
-
-                // First, check to see if the auto completion is not null
-                if (autoCompleter is not null)
-                    done = true;
-
-                // Then, the known auto complete lists
-                var completion = CommandAutoCompletionList.GetCompletionFunction(argumentExpression);
-                if (!done && completion is not null)
-                {
-                    autoCompleter = completion;
-                    done = true;
-                }
-
-                // Then, the split by the slash (/) characters
-                if (!done && argumentExpression.Contains("/"))
-                {
-                    string[] expressions = argumentExpression.Split('/');
-                    autoCompleter = (_) => [.. expressions];
-                    done = true;
-                }
-            }
+            autoCompleter ??= ObtainAutoCompleterFromExpression(argumentExpression);
 
             // Populate options
             Options = new CommandArgumentPartOptions()
