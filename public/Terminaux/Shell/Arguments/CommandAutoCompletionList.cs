@@ -82,7 +82,7 @@ namespace Terminaux.Shell.Arguments
         /// <param name="expression">An expression to query</param>
         /// <returns>True if builtin; false otherwise.</returns>
         public static bool IsCompletionFunctionBuiltin(string expression) =>
-            customCompletions.ContainsKey(expression);
+            completions.ContainsKey(expression);
 
         /// <summary>
         /// Gets a completion function for a known expression
