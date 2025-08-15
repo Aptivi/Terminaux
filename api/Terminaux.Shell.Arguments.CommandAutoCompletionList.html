@@ -99,13 +99,8 @@
   </div>
   <h3 id="methods">Methods
 </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandAutoCompletionList_GetCompletionFunction_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandAutoCompletionList.GetCompletionFunction(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandAutoCompletionList.cs/#L45">View Source</a>
-  </span>
+
+
   <a id="Terminaux_Shell_Arguments_CommandAutoCompletionList_GetCompletionFunction_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.GetCompletionFunction*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandAutoCompletionList_GetCompletionFunction_System_String_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.GetCompletionFunction(System.String)">GetCompletionFunction(string)</h4>
   <div class="markdown level1 summary"><p>Gets a completion function for a known expression</p>
@@ -150,6 +145,190 @@
     </tbody>
   </table>
 
+
+  <a id="Terminaux_Shell_Arguments_CommandAutoCompletionList_IsCompletionFunctionBuiltin_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.IsCompletionFunctionBuiltin*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandAutoCompletionList_IsCompletionFunctionBuiltin_System_String_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.IsCompletionFunctionBuiltin(System.String)">IsCompletionFunctionBuiltin(string)</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the completion function is builtin or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsCompletionFunctionBuiltin(string expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>An expression to query</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><p>True if builtin; false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Terminaux_Shell_Arguments_CommandAutoCompletionList_IsCompletionFunctionRegistered_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.IsCompletionFunctionRegistered*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandAutoCompletionList_IsCompletionFunctionRegistered_System_String_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.IsCompletionFunctionRegistered(System.String)">IsCompletionFunctionRegistered(string)</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the completion function is registered or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsCompletionFunctionRegistered(string expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>An expression to query</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><p>True if registered; false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Terminaux_Shell_Arguments_CommandAutoCompletionList_RegisterCompletionFunction_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.RegisterCompletionFunction*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandAutoCompletionList_RegisterCompletionFunction_System_String_System_Func_System_String___System_String____" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.RegisterCompletionFunction(System.String,System.Func{System.String[],System.String[]})">RegisterCompletionFunction(string, Func&lt;string[], string[]&gt;)</h4>
+  <div class="markdown level1 summary"><p>Registers the completion function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RegisterCompletionFunction(string expression, Func&lt;string[], string[]&gt; completionFunction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>An expression to add (usually an argument name)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">string</span>[], <span class="xref">string</span>[]&gt;</td>
+        <td><span class="parametername">completionFunction</span></td>
+        <td><p>Completion function that returns suggestions</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Terminaux_Shell_Arguments_CommandAutoCompletionList_UnregisterCompletionFunction_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.UnregisterCompletionFunction*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandAutoCompletionList_UnregisterCompletionFunction_System_String_" data-uid="Terminaux.Shell.Arguments.CommandAutoCompletionList.UnregisterCompletionFunction(System.String)">UnregisterCompletionFunction(string)</h4>
+  <div class="markdown level1 summary"><p>Unregisters the completion function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void UnregisterCompletionFunction(string expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>An expression to add (usually an argument name)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
 </article>
           </div>
 
@@ -157,12 +336,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandAutoCompletionList.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandAutoCompletionList%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandAutoCompletionList.cs/#L31" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
