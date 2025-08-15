@@ -443,6 +443,9 @@ namespace Terminaux.Reader
                     // Reset the CTRL + C state and the cursor visibility state
                     ConsoleWrapper.TreatCtrlCAsInput = ctrlCAsInput;
                     ConsoleWrapper.CursorVisible = initialVisible;
+
+                    // Remove the hold for input in case failure occurred during read
+                    TermReaderTools.isWaitingForInput = false;
                 }
                 state = null;
                 ConsoleLogger.Debug("Attempting to transform input string of {0} bytes to {1}...", input.Length, typeof(T).FullName);
