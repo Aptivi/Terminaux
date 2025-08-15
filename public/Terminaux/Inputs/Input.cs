@@ -178,29 +178,32 @@ namespace Terminaux.Inputs
         /// <param name="eventType">Event types to wait for (None implies all events)</param>
         public static InputEventInfo ReadPointerOrKeyNoBlock(InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard)
         {
-            // Enqueue the events
-            var genericEvent = new InputEventInfo();
-            EnqueueEvents();
-
-            // Return the enqueued event itself
-            switch (eventType)
+            lock (Console.In)
             {
-                case InputEventType.None:
-                    if (mouseEventQueue.Count > 0)
-                        return mouseEventQueue.Dequeue();
-                    if (keyboardEventQueue.Count > 0)
-                        return keyboardEventQueue.Dequeue();
-                    if (positionEventQueue.Count > 0)
-                        return positionEventQueue.Dequeue();
-                    return genericEvent;
-                default:
-                    if (mouseEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Mouse))
-                        return mouseEventQueue.Dequeue();
-                    if (keyboardEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Keyboard))
-                        return keyboardEventQueue.Dequeue();
-                    if (positionEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Position))
-                        return positionEventQueue.Dequeue();
-                    return genericEvent;
+                // Enqueue the events
+                var genericEvent = new InputEventInfo();
+                EnqueueEvents();
+
+                // Return the enqueued event itself
+                switch (eventType)
+                {
+                    case InputEventType.None:
+                        if (mouseEventQueue.Count > 0)
+                            return mouseEventQueue.Dequeue();
+                        if (keyboardEventQueue.Count > 0)
+                            return keyboardEventQueue.Dequeue();
+                        if (positionEventQueue.Count > 0)
+                            return positionEventQueue.Dequeue();
+                        return genericEvent;
+                    default:
+                        if (mouseEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Mouse))
+                            return mouseEventQueue.Dequeue();
+                        if (keyboardEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Keyboard))
+                            return keyboardEventQueue.Dequeue();
+                        if (positionEventQueue.Count > 0 && eventType.HasFlag(InputEventType.Position))
+                            return positionEventQueue.Dequeue();
+                        return genericEvent;
+                }
             }
         }
 
