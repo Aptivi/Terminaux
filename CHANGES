@@ -1,10 +1,10 @@
-Since the release of Terminaux 7.0, we've released this patch version to fix input bugs.
+Since the release of Terminaux 7.0, we've released this patch version to fix security bugs.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed some input bugs
+- `[*]` Fixed CVEs: CVE-2025-53015, CVE-2025-55004, CVE-2025-55154, CVE-2025-55298, CVE-2025-57803
 
 Review the commit history if you want to get a deep insight about the changes.
 
