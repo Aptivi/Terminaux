@@ -1,6 +1,5 @@
 stages:
   - release
-  - apidocverify
   - apidoc
 
 include:
