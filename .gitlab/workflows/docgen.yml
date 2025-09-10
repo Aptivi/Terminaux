@@ -4,8 +4,6 @@ gh-pages:
     GIT_SUBMODULE_STRATEGY: recursive
   rules:
     - if: $CI_COMMIT_TAG
-  needs:
-    - job: gh-pages-branch-verification
   image: "mcr.microsoft.com/dotnet/sdk:8.0-noble"
   script:
     - git fetch --all
