@@ -1,7 +1,5 @@
 stages:
   - release
-  - apidoc
 
 include:
   - '.gitlab/workflows/release.yml'
-  - '.gitlab/workflows/docgen.yml'
