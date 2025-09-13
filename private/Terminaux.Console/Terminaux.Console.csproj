@@ -11,7 +11,7 @@
     <ProjectReference Include="..\..\public\Terminaux.Images.Icons\Terminaux.Images.Icons.csproj" />
     <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
 
-    <PackageReference Remove="Microsoft.SourceLink.GitLab" />
+    <PackageReference Remove="Microsoft.SourceLink.GitHub" />
   </ItemGroup>
 
   <ItemGroup>
