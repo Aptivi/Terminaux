@@ -21,10 +21,12 @@ using SpecProbe.Software.Platform;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Reader;
@@ -42,6 +44,13 @@ namespace Terminaux.Inputs
         private const uint ENABLE_MOUSE_INPUT = 0x0010;
         private const uint ENABLE_QUICK_EDIT_MODE = 0x0040;
 
+        internal static Stream cueEnterFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-enter.mp3") ??
+            throw new TerminauxInternalException("Keyboard cue for enter doesn't exist in the manifest");
+        internal static Stream cueRuboutFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-backspace.mp3") ??
+            throw new TerminauxInternalException("Keyboard cue for rubout doesn't exist in the manifest");
+        internal static Stream cueWriteFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-type.mp3") ??
+            throw new TerminauxInternalException("Keyboard cue for writing doesn't exist in the manifest");
+
         internal static PointerEventContext? context = null;
         private static PointerButton draggingButton = PointerButton.None;
         private static PointerEncoding encoding = PointerEncoding.SGR;
@@ -49,6 +58,12 @@ namespace Terminaux.Inputs
         private static int clickTier = 1;
         private static PointerEventContext? tieredContext = null;
         private static bool enableMouse;
+        private static Stream cueEnter = cueEnterFallback;
+        private static Stream cueRubout = cueRuboutFallback;
+        private static Stream cueWrite = cueWriteFallback;
+        private static double cueVolume = 1;
+        private static bool cueVolumeBoost;
+        private static string bassBoomLibraryRoot = "";
         private static readonly Stopwatch inputTimeout = new();
         private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? NativeMethods.GetStdHandle(-10) : IntPtr.Zero;
         private static readonly Queue<InputEventInfo> mouseEventQueue = [];
@@ -158,6 +173,104 @@ namespace Terminaux.Inputs
         }
 
         /// <summary>
+        /// Play keyboard cues for each keypress (a global switch)
+        /// </summary>
+        public static bool KeyboardCues { get; set; }
+
+        /// <summary>
+        /// Keyboard cue volume
+        /// </summary>
+        public static double CueVolume
+        {
+            get => cueVolume;
+            set
+            {
+                cueVolume = value;
+                if (cueVolume < 0)
+                    cueVolume = 0;
+                if (cueVolume > 1)
+                {
+                    if (CueVolumeBoost && cueVolume > 3)
+                        cueVolume = 3;
+                    else if (!CueVolumeBoost)
+                        cueVolume = 1;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Whether to boost cue volume up to 3.0 or not
+        /// </summary>
+        public static bool CueVolumeBoost
+        {
+            get => cueVolumeBoost;
+            set => cueVolumeBoost = value;
+        }
+
+        /// <summary>
+        /// A stream for the submission key press keyboard cue
+        /// </summary>
+        public static Stream CueEnter
+        {
+            get
+            {
+                cueEnter.Seek(0, SeekOrigin.Begin);
+                return cueEnter;
+            }
+            set
+            {
+                if (!value.CanSeek)
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_READER_CUE_EXCEPTION_UNSEEKABLE"));
+                cueEnter = value;
+            }
+        }
+
+        /// <summary>
+        /// A stream for the backspace key press keyboard cue
+        /// </summary>
+        public static Stream CueRubout
+        {
+            get
+            {
+                cueRubout.Seek(0, SeekOrigin.Begin);
+                return cueRubout;
+            }
+            set
+            {
+                if (!value.CanSeek)
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_READER_CUE_EXCEPTION_UNSEEKABLE"));
+                cueRubout = value;
+            }
+        }
+
+        /// <summary>
+        /// A stream for the key press keyboard cue
+        /// </summary>
+        public static Stream CueWrite
+        {
+            get
+            {
+                cueWrite.Seek(0, SeekOrigin.Begin);
+                return cueWrite;
+            }
+            set
+            {
+                if (!value.CanSeek)
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_READER_CUE_EXCEPTION_UNSEEKABLE"));
+                cueWrite = value;
+            }
+        }
+
+        /// <summary>
+        /// Root path to BassBoom's library path
+        /// </summary>
+        public static string BassBoomLibraryPath
+        {
+            get => bassBoomLibraryRoot ?? "";
+            set => bassBoomLibraryRoot = value;
+        }
+
+        /// <summary>
         /// Reads either a pointer or a key (blocking)
         /// </summary>
         /// <param name="eventType">Event types to wait for (None implies all events)</param>
@@ -227,6 +340,12 @@ namespace Terminaux.Inputs
                 return data.EventType == InputEventType.Keyboard;
             }, Timeout);
             TermReaderTools.isWaitingForInput = false;
+
+            // Play audio cue when required
+            if (KeyboardCues && ConsoleAcoustic.cueSupported && data.ConsoleKeyInfo is ConsoleKeyInfo cki)
+                ConsoleAcoustic.PlayKeyAudioCue(null, cki.Key == ConsoleKey.Backspace ? ConsoleKeyAudioCue.Backspace : cki.Key == ConsoleKey.Enter ? ConsoleKeyAudioCue.Enter : ConsoleKeyAudioCue.Type);
+            
+            // Return the result
             return (!result ? default : data.ConsoleKeyInfo ?? default, result);
         }
 

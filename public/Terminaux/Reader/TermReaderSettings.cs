@@ -24,6 +24,7 @@ using Terminaux.Base.Extensions.Data;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Inputs;
 using Terminaux.Reader.Highlighting;
 using Terminaux.Reader.History;
 
@@ -34,13 +35,6 @@ namespace Terminaux.Reader
     /// </summary>
     public class TermReaderSettings
     {
-        internal static Stream cueEnterFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-enter.mp3") ??
-            throw new TerminauxInternalException("Keyboard cue for enter doesn't exist in the manifest");
-        internal static Stream cueRuboutFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-backspace.mp3") ??
-            throw new TerminauxInternalException("Keyboard cue for rubout doesn't exist in the manifest");
-        internal static Stream cueWriteFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-type.mp3") ??
-            throw new TerminauxInternalException("Keyboard cue for writing doesn't exist in the manifest");
-
         internal TermReaderState? state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => [];
         internal char[] suggestionsDelims = [' '];
@@ -66,10 +60,9 @@ namespace Terminaux.Reader
         private bool printDefaultValue;
         private bool writeDefaultValue;
         private string defaultValueFormat = "[{0}] ";
-        private string bassBoomLibraryRoot = "";
-        private Stream cueEnter = cueEnterFallback;
-        private Stream cueRubout = cueRuboutFallback;
-        private Stream cueWrite = cueWriteFallback;
+        private Stream cueEnter = Input.cueEnterFallback;
+        private Stream cueRubout = Input.cueRuboutFallback;
+        private Stream cueWrite = Input.cueWriteFallback;
         private int initialPosition = -1;
         private ConsoleBell bell = ConsoleBell.Audible;
 
@@ -257,15 +250,6 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
-        /// Root path to BassBoom's library path
-        /// </summary>
-        public string BassBoomLibraryPath
-        {
-            get => bassBoomLibraryRoot ?? "";
-            set => bassBoomLibraryRoot = value;
-        }
-
-        /// <summary>
         /// Play keyboard cues for character insertion and other actions
         /// </summary>
         public bool PlayWriteCue
@@ -434,7 +418,6 @@ namespace Terminaux.Reader
             DefaultValueFormat = settings.DefaultValueFormat;
             PlaceholderText = settings.PlaceholderText;
             KeyboardCues = settings.KeyboardCues;
-            BassBoomLibraryPath = settings.BassBoomLibraryPath;
             PlayWriteCue = settings.PlayWriteCue;
             PlayRuboutCue = settings.PlayRuboutCue;
             PlayEnterCue = settings.PlayEnterCue;

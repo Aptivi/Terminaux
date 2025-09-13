@@ -24,6 +24,8 @@ using System.Text;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
@@ -86,6 +88,10 @@ namespace Terminaux.Inputs.Interactive
                     });
                     if (timedOut)
                         continue;
+
+                    // Play audio cue when required
+                    if (Input.KeyboardCues && ConsoleAcoustic.cueSupported && input.ConsoleKeyInfo is ConsoleKeyInfo cki)
+                        ConsoleAcoustic.PlayKeyAudioCue(null, cki.Key == ConsoleKey.Backspace ? ConsoleKeyAudioCue.Backspace : cki.Key == ConsoleKey.Enter ? ConsoleKeyAudioCue.Enter : ConsoleKeyAudioCue.Type);
 
                     // Process the user input
                     ui.state = TextualUIState.Busy;

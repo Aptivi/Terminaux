@@ -24,7 +24,9 @@ using System.Threading.Tasks;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Inputs;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.History;
 using Terminaux.Reader.Tools;
@@ -40,7 +42,6 @@ namespace Terminaux.Reader
     {
         internal static TermReaderSettings globalSettings = new();
         internal static TermReaderState? state = null;
-        private static bool cueSupported = true;
         private static readonly object readLock = new();
 
         /// <summary>
@@ -370,7 +371,7 @@ namespace Terminaux.Reader
                         readState.pressedKey = struckKey;
 
                         // Play keyboard cue if enabled
-                        if (settings.KeyboardCues && cueSupported)
+                        if (Input.KeyboardCues && settings.KeyboardCues && ConsoleAcoustic.cueSupported)
                             HandleCue(settings, struckKey);
 
                         // Handle it
@@ -450,38 +451,23 @@ namespace Terminaux.Reader
                 state = null;
                 ConsoleLogger.Debug("Attempting to transform input string of {0} bytes to {1}...", input.Length, typeof(T).FullName);
                 object changed = Convert.ChangeType(input, typeof(T));
-                cueSupported = true;
+                ConsoleAcoustic.cueSupported = true;
                 return (T)changed;
             }
         }
 
         private static void HandleCue(TermReaderSettings settings, ConsoleKeyInfo struckKey)
         {
-            if (settings.KeyboardCues && cueSupported)
-            {
-                try
-                {
-                    var cueStream =
-                        BindingsTools.IsTerminate(struckKey) && settings.PlayEnterCue ? settings.CueEnter :
-                        struckKey.Key == ConsoleKey.Backspace && settings.PlayRuboutCue ? settings.CueRubout :
-                        settings.PlayWriteCue ? settings.CueWrite : null;
-                    if (cueStream is not null)
-                    {
-                        // Copy the stream prior to playing
-                        ConsoleLogger.Debug("Calling BassBoom to play cue stream of {0} bytes (vol: {1}, boost: {2}, libpath: {3})...", cueStream.Length, settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
-                        var copiedStream = new MemoryStream();
-                        var cueSettings = new PlayForgetSettings(settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
-                        cueStream.CopyTo(copiedStream);
-                        copiedStream.Seek(0, SeekOrigin.Begin);
-                        Task.Run(() => PlayForget.PlayStream(copiedStream, cueSettings));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ConsoleLogger.Error(ex, $"Handling cue failed. {ex.Message}");
-                    cueSupported = false;
-                }
-            }
+            // Select the audio cue and check it
+            var audioCue =
+                BindingsTools.IsTerminate(struckKey) && settings.PlayEnterCue ? ConsoleKeyAudioCue.Enter :
+                struckKey.Key == ConsoleKey.Backspace && settings.PlayRuboutCue ? ConsoleKeyAudioCue.Backspace :
+                settings.PlayWriteCue ? ConsoleKeyAudioCue.Type : (ConsoleKeyAudioCue)(-1);
+            if (audioCue == (ConsoleKeyAudioCue)(-1))
+                return;
+
+            // Now, call the audio cue handler
+            ConsoleAcoustic.PlayKeyAudioCue(settings, audioCue);
         }
 
         static TermReader()
