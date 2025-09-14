@@ -38,7 +38,7 @@
 
 <!----------------------------------------------------------------------------->
 
-[Releases]: https://gitlab.com/aptivi/main/Terminaux/-/releases
+[Releases]: https://github.com/Aptivi/Terminaux/releases
 [NuGet]: https://www.nuget.org/packages/Terminaux/
 
 [Libraries]: https://aptivi.gitbook.io/terminaux-manual/project-dependencies
