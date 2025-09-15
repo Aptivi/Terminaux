@@ -64,6 +64,7 @@ namespace Terminaux.Inputs
         private static double cueVolume = 1;
         private static bool cueVolumeBoost;
         private static string bassBoomLibraryRoot = "";
+        private static char passwordMaskChar = '*';
         private static readonly Stopwatch inputTimeout = new();
         private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? NativeMethods.GetStdHandle(-10) : IntPtr.Zero;
         private static readonly Queue<InputEventInfo> mouseEventQueue = [];
@@ -268,6 +269,15 @@ namespace Terminaux.Inputs
         {
             get => bassBoomLibraryRoot ?? "";
             set => bassBoomLibraryRoot = value;
+        }
+
+        /// <summary>
+        /// Password mask character
+        /// </summary>
+        public static char PasswordMaskChar
+        {
+            get => passwordMaskChar;
+            set => passwordMaskChar = value;
         }
 
         /// <summary>

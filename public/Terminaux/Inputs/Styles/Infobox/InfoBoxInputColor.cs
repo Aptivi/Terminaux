@@ -147,6 +147,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     RightMargin = rightMargin,
                     WriteDefaultValue = true,
+                    PasswordMaskChar = settings.PasswordMaskChar,
                 };
                 if (settings.UseColors)
                 {

@@ -35,6 +35,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         private Color? foregroundColor;
         private Color? backgroundColor;
         private InfoBoxPositioning positioning = InfoBoxPositioning.GlobalSettings;
+        private char passwordMaskChar = Input.PasswordMaskChar;
 
         /// <summary>
         /// Global infobox settings
@@ -121,6 +122,15 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             backgroundColor = color;
 
         /// <summary>
+        /// Password mask character
+        /// </summary>
+        public char PasswordMaskChar
+        {
+            get => passwordMaskChar;
+            set => passwordMaskChar = value;
+        }
+
+        /// <summary>
         /// Makes a new instance of the infobox settings
         /// </summary>
         public InfoBoxSettings() :
@@ -141,6 +151,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             useColors = settings.useColors;
             RadioButtons = settings.RadioButtons;
             Positioning = settings.Positioning;
+            PasswordMaskChar = settings.PasswordMaskChar;
             SetForegroundColor(settings.foregroundColor);
             SetBackgroundColor(settings.backgroundColor);
         }

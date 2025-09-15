@@ -37,7 +37,7 @@ namespace Terminaux.Inputs.Modules
         /// <summary>
         /// Password mask character
         /// </summary>
-        public char Mask { get; set; } = TermReader.GlobalReaderSettings.PasswordMaskChar;
+        public char Mask { get; set; } = Input.PasswordMaskChar;
 
         /// <inheritdoc/>
         public override string RenderInput(int width)
@@ -77,6 +77,7 @@ namespace Terminaux.Inputs.Modules
                     Title = Name,
                     ForegroundColor = Foreground,
                     BackgroundColor = Background,
+                    PasswordMaskChar = Mask,
                 }, InfoBoxInputType.Password);
             }
             else
@@ -93,6 +94,7 @@ namespace Terminaux.Inputs.Modules
                 var readerSettings = new TermReaderSettings()
                 {
                     RightMargin = ConsoleWrapper.WindowWidth - (inputPopoverPos.X + inputPopoverSize.Width) - 1,
+                    PasswordMaskChar = Mask,
                 };
                 if (UseColor)
                 {

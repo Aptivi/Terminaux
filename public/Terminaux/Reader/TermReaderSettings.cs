@@ -38,7 +38,7 @@ namespace Terminaux.Reader
         internal TermReaderState? state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => [];
         internal char[] suggestionsDelims = [' '];
-        private char passwordMaskChar = '*';
+        private char passwordMaskChar = Input.PasswordMaskChar;
         private bool historyEnabled = true;
         private string historyName = HistoryTools.generalHistory;
         private bool treatCtrlCAsInput;
@@ -428,6 +428,7 @@ namespace Terminaux.Reader
             CueWrite = settings.CueWrite;
             InitialPosition = settings.InitialPosition;
             Bell = settings.Bell;
+            PasswordMaskChar = settings.PasswordMaskChar;
         }
     }
 }
