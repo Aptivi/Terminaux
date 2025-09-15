@@ -26,6 +26,9 @@ jobs:
       - name: Setup Mono (Unix)
         if: matrix.runs-on == 'ubuntu-latest'
         run: sudo apt install mono-complete
+      - name: Setup Mono (macOS)
+        if: matrix.runs-on == 'macos-latest'
+        run: brew install mono
       - name: Solution Compilation (Windows)
         if: matrix.runs-on == 'windows-latest'
         run: ./tools/build.cmd Release -p:ContinuousIntegrationBuild=true
