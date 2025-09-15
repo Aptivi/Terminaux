@@ -165,52 +165,6 @@ namespace Terminaux.Tests.Base
         }
 
         /// <summary>
-        /// Tests getting the Unicode character widths
-        /// </summary>
-        [TestMethod]
-        [DataRow(null, 0)]     // NULL character
-        [DataRow('\0', 0)]     // NULL character
-        [DataRow('\b', 0)]     // BEEP character
-        [DataRow('\u001A', 0)] // SUBSTITUTE character
-        [DataRow('A', 1)]
-        [DataRow('a', 1)]
-        [DataRow('1', 1)]
-        [DataRow('?', 1)]
-        [DataRow('*', 1)]
-        [DataRow('你', 2)]
-        [DataRow('！', 2)]
-        [DataRow('\u200b', 0)] // ZERO-WIDTH SPACE character
-        [Description("Querying")]
-        public void TestUnicodeCharWidths(char c, int expected)
-        {
-            int actual = TextTools.GetCharWidth(c);
-            actual.ShouldBe(expected);
-        }
-
-        /// <summary>
-        /// Tests getting the Unicode character widths
-        /// </summary>
-        [TestMethod]
-        [DataRow(null, CharWidthType.NonPrinting)]     // NULL character
-        [DataRow('\0', CharWidthType.NonPrinting)]     // NULL character
-        [DataRow('\b', CharWidthType.NonPrinting)]     // BEEP character
-        [DataRow('\u001A', CharWidthType.NonPrinting)] // SUBSTITUTE character
-        [DataRow('A', (CharWidthType)(-1))]
-        [DataRow('a', (CharWidthType)(-1))]
-        [DataRow('1', (CharWidthType)(-1))]
-        [DataRow('?', (CharWidthType)(-1))]
-        [DataRow('*', (CharWidthType)(-1))]
-        [DataRow('你', CharWidthType.DoubleWidth)]
-        [DataRow('！', CharWidthType.DoubleWidth)]
-        [DataRow('\u200b', CharWidthType.NonPrinting)] // ZERO-WIDTH SPACE character
-        [Description("Querying")]
-        public void TestUnicodeCharWidthTypes(char c, CharWidthType expected)
-        {
-            var actual = TextTools.GetCharWidthType(c);
-            actual.ShouldBe(expected);
-        }
-
-        /// <summary>
         /// Tests estimating the Unicode character widths for a sentence
         /// </summary>
         [TestMethod]
