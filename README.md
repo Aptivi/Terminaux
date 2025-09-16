@@ -14,7 +14,9 @@
 
 # Terminaux
     
-*A library that allows you to manipulate with the console*
+***WARNING: We have stopped development of Terminaux 5.4.x***
+
+*Graphical console tools, VT sequence manipulation tools, console mouse tools, and much more...*
 
 *All emojis designed by [OpenMoji](https://openmoji.org/) – the open-source emoji and icon project. License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
 
@@ -38,7 +40,7 @@
 
 <!----------------------------------------------------------------------------->
 
-[Releases]: https://gitlab.com/aptivi/main/Terminaux/-/releases
+[Releases]: https://github.com/Aptivi/Terminaux/releases
 [NuGet]: https://www.nuget.org/packages/Terminaux/
 
 [Libraries]: https://aptivi.gitbook.io/terminaux-manual/project-dependencies
