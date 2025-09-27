@@ -3,6 +3,10 @@
   "name": "Chinese (Simplified)",
   "cultures": [
     "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
     "zh-Hans",
     "zh-Hans-CN",
     "zh-Hans-HK",
@@ -809,26 +813,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED",
       "text": "RYB 颜色说明符“{0}”无效。该说明符不能超过三个元素。请确保其格式正确"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "XYZ 颜色说明符“{0}”无效。请确保其格式正确"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X 值超出范围 (0.0 -> 95.047)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y 值超出范围 (0.0 -> 100.0)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z 值超出范围 (0.0 -> 108.883)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "XYZ 颜色说明符“{0}”无效。该说明符不能超过三个元素。请确保其格式正确"
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
@@ -2571,10 +2555,6 @@
       "text": "重复上一个操作或指定的命令"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "根据源命令输出构建参数后执行的目标命令"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "保存 shell 历史记录"
     },
@@ -2675,10 +2655,6 @@
       "text": "允许用户输入输入"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "打印到屏幕上的问题"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "允许用户输入密码"
     },
@@ -2701,22 +2677,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "提供选择选项"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "用斜线分割的答案"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "打印到屏幕上的问题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "第一个答案标题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "第二个答案标题，等等......"
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2937,6 +2897,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "内置完成函数无法移除。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "名字查找器"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "搜索词"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "要搜索的名称前缀"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "要搜索的名称后缀"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "生成名称标签（目前不支持变音符号）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "使用男性姓名列表生成姓名"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "使用女性姓名列表生成姓名"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "使用统一姓名列表生成姓名"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "姓氏查找器"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "要搜索的姓氏前缀"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "要搜索的姓氏后缀"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "姓名和姓氏生成器"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "要生成多少个名称？"
     }
   ]
 }

@@ -831,26 +831,6 @@
       "text": "Ugyldig XYZ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Ugyldig XYZ-fargespesifikator «{0}». Sørg for at den er i riktig format."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X-verdien er utenfor området (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y-verdien er utenfor området (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z-verdien er utenfor området (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Ugyldig XYZ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Ugyldig YXY-fargespesifikator «{0}». Sørg for at den er i riktig format."
     },
@@ -2571,10 +2551,6 @@
       "text": "Gjentar den siste handlingen eller den angitte kommandoen"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Målkommando som skal utføres ved byggeargument basert på kildekommandoutgangen"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Lagrer skallhistorier"
     },
@@ -2675,10 +2651,6 @@
       "text": "Lar brukeren legge inn input"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Spørsmål å skrive ut på skjermen"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Lar brukeren angi inndata som passord"
     },
@@ -2701,22 +2673,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Gir et utvalg valg"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Svar å dele med en skråstrek"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Spørsmål å skrive ut på skjermen"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Første svartittel"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Andre svartittel, og så videre..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2937,6 +2893,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "Den innebygde fullføringsfunksjonen kan ikke fjernes."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "Fornavnsøker"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "Søkeord"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Navneprefiks for å søke"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Navnesuffiks for å søke"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "Generer navnemerker (omlyd støttes for øyeblikket ikke)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "Generer navn ved å bruke listen over mannlige navn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "Generer navn ved å bruke kvinnenavnlisten"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "Generer navn ved å bruke den enhetlige navnelisten"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "Etternavn finner"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Etternavnsprefiks for å søke"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Etternavnssuffiks for å søke"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "Navne- og etternavnsgenerator"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Hvor mange navn skal genereres?"
     }
   ]
 }

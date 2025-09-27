@@ -830,26 +830,6 @@
       "text": "Penentu warna XYZ tidak sah \"{0}\". Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Penentu warna XYZ tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Nilai X berada di luar julat (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Nilai Y berada di luar julat (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Nilai Z berada di luar julat (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Penentu warna XYZ tidak sah \"{0}\". Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Penentu warna YXY tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
     },
@@ -2570,10 +2550,6 @@
       "text": "Mengulangi tindakan terakhir atau arahan yang ditentukan"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Arahan sasaran untuk dilaksanakan semasa membina hujah berdasarkan output arahan sumber"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Menyimpan sejarah shell"
     },
@@ -2674,10 +2650,6 @@
       "text": "Membenarkan pengguna memasukkan input"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Soalan untuk dicetak ke skrin"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Membenarkan pengguna memasukkan input sebagai kata laluan"
     },
@@ -2700,22 +2672,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Menyediakan pilihan pilihan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Jawapan untuk berpecah dengan garis miring"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Soalan untuk dicetak ke skrin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Tajuk jawapan pertama"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Tajuk jawapan kedua, dan seterusnya..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2936,6 +2892,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "Fungsi penyiapan terbina dalam tidak boleh dialih keluar."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "Pencari nama pertama"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "Istilah carian"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Awalan nama untuk mencari"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Akhiran nama untuk dicari"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "Hasilkan tag nama (umlaut pada masa ini tidak disokong)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "Hasilkan nama menggunakan senarai nama lelaki"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "Hasilkan nama menggunakan senarai nama perempuan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "Hasilkan nama menggunakan senarai nama bersatu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "Pencari nama keluarga"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Awalan nama keluarga untuk mencari"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Akhiran nama keluarga untuk mencari"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "Penjana nama dan nama keluarga"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Berapa banyak nama untuk dijana?"
     }
   ]
 }

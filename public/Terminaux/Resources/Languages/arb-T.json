@@ -853,26 +853,6 @@
       "text": "مُحدِّد لون XYZ غير صالح \"{0}\". لا يجب أن يتجاوز المُحدِّد ثلاثة عناصر. تأكد من أنه بالتنسيق الصحيح."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "مُحدِّد لون XYZ غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "قيمة X خارج النطاق (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "قيمة Y خارج النطاق (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "قيمة Z خارج النطاق (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "مُحدِّد لون XYZ غير صالح \"{0}\". لا يجب أن يتجاوز المُحدِّد ثلاثة عناصر. تأكد من أنه بالتنسيق الصحيح."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "مُحدِّد لون YXY غير صالح \"{0}\". تأكد من أنه بالتنسيق الصحيح."
     },
@@ -2593,10 +2573,6 @@
       "text": "يكرر الإجراء الأخير أو الأمر المحدد"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "أمر الهدف الذي سيتم تنفيذه عند بناء الحجة بناءً على إخراج الأمر المصدر"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "يحفظ تاريخ الصدفة"
     },
@@ -2697,10 +2673,6 @@
       "text": "يسمح للمستخدم بإدخال الإدخال"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "سؤال للطباعة على الشاشة"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "يسمح للمستخدم بإدخال الإدخال ككلمة مرور"
     },
@@ -2723,22 +2695,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "يوفر اختيار الاختيار"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "إجابات على التقسيم بالشرطة المائلة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "سؤال للطباعة على الشاشة"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "عنوان الاجابة الاولى"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "عنوان الإجابة الثانية، وهكذا..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2959,6 +2915,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "لا يُمكن إزالة دالة الإكمال المُضمَّنة."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "مكتشف الاسم الأول"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "مصطلح البحث"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "اسم البادئة للبحث"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "اسم لاحقة للبحث"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "إنشاء علامات الأسماء (لا يتم دعم علامات التشكيل حاليًا)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "توليد الأسماء باستخدام قائمة أسماء الذكور"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "توليد الأسماء باستخدام قائمة أسماء الإناث"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "توليد الأسماء باستخدام قائمة الأسماء الموحدة"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "مكتشف اللقب"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "بادئة اللقب للبحث"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "لاحقة اللقب للبحث"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "مولد الاسم واللقب"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "كم عدد الأسماء التي يجب توليدها؟"
     }
   ]
 }

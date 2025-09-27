@@ -853,26 +853,6 @@
       "text": "muhdid lawn XYZ \"{0}\" ghayr salihin. yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "muhdid lawn XYZ \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "qimat X kharij alnitaq (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "qimat Y kharij alnitaq (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "qimat Z kharij alnitaq (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "muhdid lawn XYZ \"{0}\" ghayr salihin. yajib 'alaa yatajawaz almuhdid thalathat eanasira. ta'akad min 'anah bialtansiq alsahihi."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "muhdid lawn YXY \"{0}\" ghayr salihi. ta'akad min 'anah bialtansiq alsahihi."
     },
@@ -2593,10 +2573,6 @@
       "text": "īkrr al-iǧrāʾ al-ʾaẖīr aū al-ʾamr al-mḥdd"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "'amar alhadaf litanfidhih eind bina' alhujat bna'an ealaa 'iikhraj al'amr almasdar"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "īḥfẓ tārīẖ al-ṣdfẗ"
     },
@@ -2697,10 +2673,6 @@
       "text": "yasmah lilmustakhdam bi'iidkhal al'iidkhal"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "sual liltibaeat ealaa alshaasha"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "īsmḥ llmstẖdm bidẖāl al-idẖāl kklmẗ mrūr"
     },
@@ -2723,22 +2695,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "yuafir aikhtiar alaikhtiar"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "'iijabat liltaqsim bishurtat mayila"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "sual liltibaeat ealaa alshaasha"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "eunwan al'iijabat al'uwlaa"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "eunwan al'iijabat althaaniati, wahakadha..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2959,6 +2915,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "la yumkn 'iizalat dalat al'iikmal almudman."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "mktšf al-āsm al-ʾaūl"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "mustalah albahth"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "badiat aliasm lilbahth"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "lahiqat aliasm lilbahth"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "'iinsha' ealamat al'asma' (la yatimu daem ealamat altashkil halyan)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "tūlīd al-ʾasmāʾ bāstẖdām qāʾimẗ asmāʾ al-ḏkūr"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "tūlīd al-ʾasmāʾ bāstẖdām qāʾimẗ asmāʾ al-ināṯ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "tūlīd al-ʾasmāʾ bāstẖdām qāʾimẗ al-ʾasmāʾ al-mūḥdẗ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "mktšf al-lqb"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "badiat allaqab lilbahth"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "allaqab lahiqat lilbahth"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "mawlid aliasm wallaqab"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "kam eadad al'asma' almurad 'iinshawuha?"
     }
   ]
 }

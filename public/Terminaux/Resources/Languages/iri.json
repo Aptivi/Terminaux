@@ -828,26 +828,6 @@
       "text": "Sonraitheoir datha XYZ neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Sonraitheoir datha XYZ neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Tá an luach X lasmuigh den raon (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Tá an luach Y lasmuigh den raon (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Tá an luach Z lasmuigh den raon (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Sonraitheoir datha XYZ neamhbhailí \"{0}\". Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Sonraitheoir datha YXY neamhbhailí \"{0}\". Cinntigh go bhfuil sé san fhormáid cheart."
     },
@@ -2568,10 +2548,6 @@
       "text": "Athdhéantar seo an gníomh deireanach nó an t-ordú sonraithe"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Sprioc-ordú a fhorghníomhú ar argóint tógála bunaithe ar an aschur ordú foinse"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Sábhálann sé stair bhlaosc"
     },
@@ -2672,10 +2648,6 @@
       "text": "Ligeann sé don úsáideoir ionchur a chur isteach"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ceist le priontáil ar an scáileán"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Ligeann sé don úsáideoir ionchur a chur isteach mar phasfhocal"
     },
@@ -2698,22 +2670,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Soláthraíonn rogha rogha"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Freagraí ar scoilt le slais"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ceist le priontáil ar an scáileán"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Teideal an chéad fhreagra"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Teideal an dara freagra, agus mar sin de..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2934,6 +2890,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "Ní féidir an fheidhm chomhlánaithe ionsuite a bhaint."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "Aimsitheoir céad ainm"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "Téarma cuardaigh"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Réimír ainm le cuardach"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Iarmhír ainm le cuardach"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "Gin clibeanna ainm (ní thacaítear le umlauts faoi láthair)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "Gin ainmneacha ag baint úsáide as an liosta ainmneacha fireanna"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "Gin ainmneacha ag baint úsáide as an liosta ainmneacha baineanna"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "Gin ainmneacha ag baint úsáide as an liosta ainmneacha aontaithe"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "Aimsitheoir sloinne"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Réimír sloinne le cuardach"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Iarmhír sloinne le cuardach"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "Gineadóir ainm agus sloinne"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Cé mhéad ainm atá le giniúint?"
     }
   ]
 }

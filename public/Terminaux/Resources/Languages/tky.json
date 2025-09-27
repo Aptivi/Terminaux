@@ -828,26 +828,6 @@
       "text": "Geçersiz XYZ renk belirteci \"{0}\". Belirteç üçten fazla öğeden oluşamaz. Doğru biçimde olduğundan emin olun"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Geçersiz XYZ renk belirteci \"{0}\". Doğru biçimde olduğundan emin olun"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X değeri aralık dışında (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y değeri aralık dışında (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z değeri aralık dışında (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Geçersiz XYZ renk belirteci \"{0}\". Belirteç üçten fazla öğeden oluşamaz. Doğru biçimde olduğundan emin olun"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Geçersiz YXY renk belirteci \"{0}\". Doğru biçimde olduğundan emin olun"
     },
@@ -2568,10 +2548,6 @@
       "text": "Son eylemi veya belirtilen komutu tekrarlar"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Kaynak komut çıktısına dayalı olarak argüman oluştururken yürütülecek hedef komut"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Kabuk geçmişlerini kaydeder"
     },
@@ -2672,10 +2648,6 @@
       "text": "Kullanıcının girdi girmesine izin verir"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ekrana yazdırılacak soru"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Kullanıcının şifre olarak girdi girmesine izin verir"
     },
@@ -2698,22 +2670,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Bir seçim seçeneği sunar"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Eğik çizgiyle bölmeye cevaplar"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ekrana yazdırılacak soru"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "İlk cevap başlığı"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "İkinci cevap başlığı, ve benzeri..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2934,6 +2890,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "Yerleşik tamamlama işlevi kaldırılamaz."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "İsim bulucu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "Arama terimi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Aranacak isim öneki"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Aranacak isim eki"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "İsim etiketleri oluşturun (umlautlar şu anda desteklenmiyor)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "Erkek isimleri listesini kullanarak isim üretin"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "Kadın isimleri listesini kullanarak isimler üretin"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "Birleştirilmiş adlar listesini kullanarak adlar oluşturun"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "Soyadı bulucu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Aranacak soyadı öneki"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Aranacak soyadı eki"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "Ad ve soyad üreteci"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Kaç tane isim üretilecek?"
     }
   ]
 }

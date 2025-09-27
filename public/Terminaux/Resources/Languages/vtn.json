@@ -827,26 +827,6 @@
       "text": "Chỉ định màu XYZ không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Chỉ định màu XYZ không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Giá trị X nằm ngoài phạm vi (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Giá trị Y nằm ngoài phạm vi (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Giá trị Z nằm ngoài phạm vi (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Chỉ định màu XYZ không hợp lệ \"{0}\". Chỉ định màu không được quá ba phần tử. Đảm bảo rằng nó ở đúng định dạng"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Chỉ định màu YXY không hợp lệ \"{0}\". Đảm bảo rằng nó ở đúng định dạng"
     },
@@ -2567,10 +2547,6 @@
       "text": "Lặp lại hành động cuối cùng hoặc lệnh đã chỉ định"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Lệnh mục tiêu để thực thi khi xây dựng đối số dựa trên đầu ra của lệnh nguồn"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Lưu lịch sử shell"
     },
@@ -2671,10 +2647,6 @@
       "text": "Cho phép người dùng nhập dữ liệu đầu vào"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Câu hỏi in ra màn hình"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Cho phép người dùng nhập dữ liệu đầu vào dưới dạng mật khẩu"
     },
@@ -2697,22 +2669,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Cung cấp một lựa chọn lựa chọn"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Trả lời để chia tách bằng dấu gạch chéo"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Câu hỏi in ra màn hình"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Tiêu đề câu trả lời đầu tiên"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Tiêu đề câu trả lời thứ hai, v.v..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2933,6 +2889,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "Không thể xóa chức năng hoàn thành tích hợp."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "Tìm tên đầu tiên"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "Thuật ngữ tìm kiếm"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Tên tiền tố để tìm kiếm"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Tên hậu tố để tìm kiếm"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "Tạo thẻ tên (hiện tại không hỗ trợ dấu chấm phẩy)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "Tạo tên bằng cách sử dụng danh sách tên nam"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "Tạo tên bằng cách sử dụng danh sách tên nữ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "Tạo tên bằng cách sử dụng danh sách tên thống nhất"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "Tìm họ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Tiền tố họ để tìm kiếm"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Hậu tố họ để tìm kiếm"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "Máy phát tên và họ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Cần tạo bao nhiêu tên?"
     }
   ]
 }

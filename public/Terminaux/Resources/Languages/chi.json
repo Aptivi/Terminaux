@@ -3,6 +3,10 @@
   "name": "Chinese (Simplified)",
   "cultures": [
     "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
     "zh-Hans",
     "zh-Hans-CN",
     "zh-Hans-HK",
@@ -829,26 +833,6 @@
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
       "text": "XYZ yánsè shuōmíng fú “{0}” wúxiào. Gāi shuōmíng fú yuánsù shǔ bùdé chāoguò sān gè. Quèbǎo qí géshì zhèngquè"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "XYZ yánsè shuōmíng fú “{0}” wúxiào. Qǐng quèbǎo qí géshì zhèngquè."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X zhí chāochū fànwéi (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y zhí chāochū fànwéi (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z zhí chāochū fànwéi (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "XYZ yánsè shuōmíng fú “{0}” wúxiào. Gāi shuōmíng fú yuánsù shǔ bùdé chāoguò sān gè. Qǐng quèbǎo qí géshì zhèngquè."
     },
     {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
@@ -2571,10 +2555,6 @@
       "text": "zhòng fù shàng yī gè cāo zuò huò zhǐ dìng de mìng líng"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "gēnjù yuán mìnglìng shūchū gòujiàn cānshù hòu yào zhíxíng de mùbiāo mìnglìng"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "bǎo cún shell lì shǐ jì lù"
     },
@@ -2675,10 +2655,6 @@
       "text": "Yǔnxǔ yònghù shūrù shūrù"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "yào dǎyìn dào píngmù shàng de wèntí"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "yǔn xǔ yòng hù shū rù mì mǎ"
     },
@@ -2701,22 +2677,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Tígōng xuǎnzé xuǎnxiàng"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "yào yòng xié xiàn fēngé de dá'àn"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "yào dǎyìn dào píngmù shàng de wèntí"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "dì yī gè dá'àn biāotí"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "dì èr gè dá'àn biāotí, yī cǐ lèituī..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2937,6 +2897,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "Nèizhì wánchéng hánshù wúfǎ yí chú."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "míng zì chá zhǎo qì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "sōusuǒ cí"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "yào sōusuǒ de míngchēng qiánzhuì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "yào sōusuǒ de míngchēng hòuzhuì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "shēngchéng xìngmíng biāoqiān (mùqián bù zhīchí biàn yīn fúhào)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "shǐ yòng nán xìng xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "shǐ yòng nǚ xìng xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "shǐ yòng tǒng yī xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "xìng shì chá zhǎo qì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "yào sōusuǒ de xìngshì qiánzhuì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "yào sōusuǒ de xìngshì hòuzhuì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "xìngmíng hé xìngshì shēngchéng qì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "duōshǎo yào shēngchéng de míngchēng?"
     }
   ]
 }

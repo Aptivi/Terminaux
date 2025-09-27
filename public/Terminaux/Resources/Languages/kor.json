@@ -828,26 +828,6 @@
       "text": "jalmosdoen XYZ saegsang jijeongja \"{0}\"ibnida. jijeongjaneun se gae isang-ui yosoleul pohamhal su eobs-seubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "XYZ saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X gabs-i beom-wileul beos-eonassseubnida(0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y gabs-i beom-wileul beos-eonassseubnida(0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z gabs-i beom-wileul beos-eonassseubnida(0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "XYZ saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. jijeongjaneun se gae isang-ui yosoleul pohamhal su eobs-seubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "YXY saegsang jijeongja \"{0}\"i(ga) jalmosdoeeossseubnida. olbaleun hyeongsig-eul sayonghago issneunji hwag-inhaseyo."
     },
@@ -2568,10 +2548,6 @@
       "text": "majimak jageobina jijeongdoen myeongryeongeul banbokhapnida."
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "soseu myeonglyeong chullyeog-eul giban-eulo insuleul bildeuhal ttae silhaenghal daesang myeonglyeong"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "swel girogeul jeojanghapnida"
     },
@@ -2672,10 +2648,6 @@
       "text": "sayongjaga iblyeog-eul iblyeog hal su issseubnida"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "hwamyeon-e inswaehal jilmun"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "sayongjaga bimilbeonhoreul ipryeokhadorok heoyonghapnida."
     },
@@ -2698,22 +2670,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "seontaeg seontaeg-eul jegonghabnida"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "seullaesilo nanul dabbyeon"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "hwamyeon-e inswaehal jilmun"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "cheos beonjjae dabbyeon jemog"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "du beonjjae dabbyeon jemog deung..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2934,6 +2890,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "gibon jegong wanlyo hamsuneun jegeohal su eobs-seubnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "ireum chajgi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "geomsaeg-eo"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "geomsaeghal ileum jeobdusa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "geomsaeghal ileum jeobmisa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "ileum taegeu saengseong(umlauteuneun hyeonjae jiwondoeji anh-eum)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "namseong ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "yeoseong ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "tonghap ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "seong chajgi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "geomsaeghal seong jeobdusa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "geomsaeghal seong jeobmisa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "ileum mich seong saengseong-gi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "saengseonghal ileum su?"
     }
   ]
 }

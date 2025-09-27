@@ -873,26 +873,6 @@
       "text": "Spécificateur de couleur XYZ « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu'il est au bon format."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Spécificateur de couleur XYZ « {0} » non valide. Assurez-vous qu'il est au bon format."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "La valeur X est hors plage (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "La valeur Y est hors plage (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "La valeur Z est hors plage (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Spécificateur de couleur XYZ « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu'il est au bon format."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Spécificateur de couleur YXY « {0} » non valide. Assurez-vous qu'il est au bon format."
     },
@@ -2613,10 +2593,6 @@
       "text": "Répète la dernière action ou la commande spécifiée"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Commande cible à exécuter lors de la création d'un argument basé sur la sortie de la commande source"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Enregistre les historiques de shell"
     },
@@ -2717,10 +2693,6 @@
       "text": "Permet à l'utilisateur d'entrer une entrée"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Question à imprimer à l'écran"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Permet à l'utilisateur de saisir une entrée comme mot de passe"
     },
@@ -2743,22 +2715,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Fournit un choix de sélection"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Réponses à la question \"séparer avec une barre oblique\""
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Question à imprimer à l'écran"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Titre de la première réponse"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Deuxième titre de réponse, et ainsi de suite..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",
@@ -2979,6 +2935,58 @@
     {
       "loc": "T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN",
       "text": "La fonction de complétion intégrée ne peut pas être supprimée."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+      "text": "Recherche de prénom"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC",
+      "text": "Terme de recherche"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Préfixe du nom à rechercher"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Suffixe de nom à rechercher"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC",
+      "text": "Générer des étiquettes de nom (les trémas ne sont actuellement pas pris en charge)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC",
+      "text": "Générez des noms à l'aide de la liste des noms masculins"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC",
+      "text": "Générez des noms à l'aide de la liste des prénoms féminins"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC",
+      "text": "Générez des noms à l'aide de la liste de noms unifiée"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
+      "text": "Recherche de nom de famille"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Préfixe de nom de famille à rechercher"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Suffixe de nom de famille à rechercher"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
+      "text": "Générateur de nom et prénom"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Combien de noms générer ?"
     }
   ]
 }
