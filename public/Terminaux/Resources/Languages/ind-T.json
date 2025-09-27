@@ -2941,6 +2941,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "कितने नाम उत्पन्न करने हैं?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "BASE64 प्रतिनिधित्व से पाठ को डिकोड करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "एनकोडेड BASE64 स्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "टेक्स्ट को BASE64 प्रतिनिधित्व में एनकोड करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "एनकोड करने के लिए स्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "सिंटैक्स त्रुटियों के लिए यूईएसएच स्क्रिप्ट की जाँच करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "UESH स्क्रिप्ट का पथ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "स्क्रिप्ट लिंट सफल रही."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "स्क्रिप्ट लिंट विफल. सबसे अधिक संभावना है कि कोई सिंटैक्स त्रुटि है. त्रुटियों के लिए अपनी स्क्रिप्ट की जाँच करें और लिंटर चलाने का पुनः प्रयास करें।"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "स्क्रिप्ट लिंटर आपकी स्क्रिप्ट को पार्स करने का प्रयास करने में अप्रत्याशित रूप से विफल रहा।"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "उपलब्ध UESH चरों की सूचियाँ"
     }
   ]
 }

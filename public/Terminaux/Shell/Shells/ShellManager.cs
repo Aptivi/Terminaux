@@ -149,6 +149,17 @@ namespace Terminaux.Shell.Shells
 
             new CommandInfo("cls", /* Localizable */ "T_SHELL_UNIFIED_CLS_DESC", new ClsCommand()),
 
+            new CommandInfo("decodebase64", /* Localizable */ "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "encoded", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC"
+                        })
+                    ])
+                ], new DecodeBase64Command()),
+
             new CommandInfo("echo", /* Localizable */ "T_SHELL_UNIFIED_ECHO_DESC",
                 [
                     new CommandArgumentInfo(
@@ -162,6 +173,17 @@ namespace Terminaux.Shell.Shells
                         new SwitchInfo("noparse", /* Localizable */ "T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC", false, false, [], 0, false)
                     ], true)
                 ], new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
+            new CommandInfo("encodebase64", /* Localizable */ "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "string", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC"
+                        })
+                    ])
+                ], new EncodeBase64Command()),
 
             new CommandInfo("exec", /* Localizable */ "T_SHELL_UNIFIED_EXEC_DESC",
                 [
@@ -382,7 +404,20 @@ namespace Terminaux.Shell.Shells
                     ], true)
                 ], new InputPassCommand()),
 
+            new CommandInfo("lintscript", /* Localizable */ "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "script", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC"
+                        }),
+                    ], true)
+                ], new LintScriptCommand()),
+
             new CommandInfo("loadhistories", /* Localizable */ "T_SHELL_UNIFIED_LOADHISTORIES_DESC", new LoadHistoriesUnifiedCommand()),
+
+            new CommandInfo("lsvars", /* Localizable */ "T_SHELL_UNIFIED_LSVARS_DESC", new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("now", /* Localizable */ "T_SHELL_UNIFIED_SHOWTD_DESC",
                 [

@@ -2944,6 +2944,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "Berapa banyak nama untuk dijana?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "Menyahkod teks daripada perwakilan BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "Rentetan BASE64 yang dikodkan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "Mengekodkan teks kepada perwakilan BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "Rentetan untuk mengekod"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "Menyemak skrip UESH untuk ralat sintaks"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "Laluan ke skrip UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "Skrip lint berjaya."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "Lintasan skrip gagal. Kemungkinan besar terdapat ralat sintaks. Semak skrip anda untuk mengesan ralat dan cuba jalankan semula linter."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "Linter skrip gagal tanpa diduga cuba menghuraikan skrip anda."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "Menyenaraikan pembolehubah UESH yang tersedia"
     }
   ]
 }

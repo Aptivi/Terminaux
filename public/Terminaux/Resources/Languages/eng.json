@@ -3047,6 +3047,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "How many names to generate?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "Decodes the text from the BASE64 representation"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "Encoded BASE64 string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "Encodes the text to a BASE64 representation"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "String to encode"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "Checks a UESH script for syntax errors"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "Path to UESH script"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "Script lint succeeded."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "Script lint failed. Most likely there is a syntax error. Check your script for errors and retry running the linter."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "Script linter failed unexpectedly trying to parse your script."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "Lists available UESH variables"
     }
   ]
 }

@@ -2942,6 +2942,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "Πόσα ονόματα να δημιουργήσετε;"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "Αποκωδικοποιεί το κείμενο από την αναπαράσταση BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "Κωδικοποιημένη συμβολοσειρά BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "Κωδικοποιεί το κείμενο σε μια αναπαράσταση BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "Συμβολοσειρά για κωδικοποίηση"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "Ελέγχει μια δέσμη ενεργειών UESH για συντακτικά σφάλματα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "Διαδρομή προς το σενάριο UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "Το σενάριο πέτυχε."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "Το σενάριο απέτυχε. Το πιο πιθανό είναι να υπάρχει συντακτικό σφάλμα. Ελέγξτε το σενάριό σας για σφάλματα και δοκιμάστε ξανά να εκτελέσετε το linter."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "Η δέσμη σεναρίων απέτυχε απροσδόκητα προσπαθώντας να αναλύσει το σενάριό σας."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "Εμφανίζει τις διαθέσιμες μεταβλητές UESH"
     }
   ]
 }

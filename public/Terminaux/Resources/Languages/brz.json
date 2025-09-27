@@ -2940,6 +2940,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "Quantos nomes gerar?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "Decodifica o texto da representação BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "Cadeia de caracteres BASE64 codificada"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "Codifica o texto para uma representação BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "String para codificar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "Verifica se há erros de sintaxe em um script UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "Caminho para o script UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "O script lint foi executado com sucesso."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "Falha no script lint. Provavelmente há um erro de sintaxe. Verifique se há erros no script e tente executar o linter novamente."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "O script linter falhou inesperadamente ao tentar analisar seu script."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "Lista as variáveis UESH disponíveis"
     }
   ]
 }

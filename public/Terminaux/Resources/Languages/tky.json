@@ -2942,6 +2942,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "Kaç tane isim üretilecek?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "BASE64 gösteriminden metni çözer"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "Kodlanmış BASE64 dizesi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "Metni bir BASE64 gösterimine kodlar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "Kodlanacak dize"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "Bir UESH betiğini sözdizimi hataları açısından kontrol eder"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "UESH betiğine giden yol"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "Komut dosyası ayıklaması başarılı oldu."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "Komut dosyası lint başarısız oldu. Büyük olasılıkla bir sözdizimi hatası var. Komut dosyanızda hata olup olmadığını kontrol edin ve linter'ı tekrar çalıştırmayı deneyin."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "Komut dosyanızı ayrıştırmaya çalışırken komut dosyası tarama aracı beklenmedik bir şekilde başarısız oldu."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "Mevcut UESH değişkenlerini listeler"
     }
   ]
 }

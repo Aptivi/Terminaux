@@ -2941,6 +2941,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "kitane naam utpann karane hain?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "basai64 pratinidhitv se tekst ko dikod karata hai"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "enkoded basai64 string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "tekst ko basai64 pratinidhitv mein enakod karata hai"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "enkod karane ke lie string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "sintaiks trutiyon ke lie uaish skript kee jaanch karata hai"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "uaish skript ka path"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "skript lint saphal hua."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "skript lint viphal hua. sabase adhik sambhaavana hai ki koee sintaiks truti hai. trutiyon ke lie apanee skript kee jaanch karen aur lintar ko phir se chalaane ka prayaas karen."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "skript lintar aapakee skript ko paars karane ka prayaas karate samay apratyaashit roop se viphal ho gaya."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "upalabdh uaish charon kee soochiyaan"
     }
   ]
 }

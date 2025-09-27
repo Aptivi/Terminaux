@@ -2967,6 +2967,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "kam eadad al'asma' almurad 'iinshawuha?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "īqūm bfk tšfīr al-nṣ mn tmṯīl BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "BASE64 mushfir silsila"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "īšfr al-nṣ ili tmṯīl BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "silsilat liltarmiz"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "al-tḥqq mn al-brnāmǧ al-nṣī UESH bḥṯًā ʿn aẖṭāʾ fī bnāʾ al-ǧmlẗ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "masar nasi UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "nǧḥ al-ūbr al-nṣī."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "fšl ẖṭ al-brnāmǧ al-nṣī. ʿli al-ʾarǧḥ hnāk ẖṭʾa fī bnāʾ al-ǧmlẗ. tḥqq mn al-brnāmǧ al-nṣī al-ẖāṣ bk bḥṯًā ʿn al-ʾaẖṭāʾ ūʾaʿd mḥāūlẗ tšġīl linter."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "fšl al-brnāmǧ al-nṣī linter bškl ġīr mtūqʿ fī mḥāūlẗ tḥlīl al-brnāmǧ al-nṣī al-ẖāṣ bk."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "yasrud mutaghayirat UESH almutaha"
     }
   ]
 }

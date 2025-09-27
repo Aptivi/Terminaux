@@ -2942,6 +2942,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "saengseonghal ileum su?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "pASE64 pyohyeonui tekseuteureul dikodinghapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "inkodingdoen BASE64 munjayeol"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "tekseuteureul pASE64 pyohyeoneuro inkodinghapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "inkodinghal munjayeol"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "UESH seukeuripteueseo gumun oryureul hwaginhapnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "UESH seukeulibteu gyeonglo"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "seukeuripteu rinteuga seonggonghaessseupnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "seukeuripteu rinteue silpaehaessseupnida. gumun oryuga isseul ganeungseongi nopseupnida. seukeuripteue oryuga issneunji hwaginhago lintelleul dasi silhaenghae boseyo."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "seukeuripteureul gumun bunseokhaneun dongan seukeuripteu rinteoga yegichi anhge silpaehaessseupnida."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "sayong ganeunghan UESH byeonsuleul nayeolhabnida."
     }
   ]
 }

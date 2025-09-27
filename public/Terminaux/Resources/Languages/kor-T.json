@@ -2942,6 +2942,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "몇 개의 이름을 생성해야 하나요?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "BASE64 표현의 텍스트를 디코딩합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "인코딩된 BASE64 문자열"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "텍스트를 BASE64 표현으로 인코딩합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "인코딩할 문자열"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "UESH 스크립트에서 구문 오류를 확인합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "UESH 스크립트 경로"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "스크립트 린트가 성공했습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "스크립트 린트에 실패했습니다. 구문 오류가 있을 가능성이 높습니다. 스크립트에 오류가 있는지 확인하고 linter를 다시 실행해 보세요."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "스크립트를 구문 분석하는 동안 스크립트 린터가 예기치 않게 실패했습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "사용 가능한 UESH 변수를 나열합니다."
     }
   ]
 }

@@ -2950,6 +2950,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "Wie viele Namen sollen generiert werden?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "Dekodiert den Text aus der BASE64-Darstellung"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "Codierte BASE64-Zeichenfolge"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "Kodiert den Text in eine BASE64-Darstellung"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "Zu kodierender String"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "Überprüft ein UESH-Skript auf Syntaxfehler"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "Pfad zum UESH-Skript"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "Script-Lint war erfolgreich."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "Skript-Lint ist fehlgeschlagen. Höchstwahrscheinlich liegt ein Syntaxfehler vor. Überprüfen Sie Ihr Skript auf Fehler und versuchen Sie erneut, den Linter auszuführen."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "Der Skript-Linter ist beim Versuch, Ihr Skript zu analysieren, unerwartet fehlgeschlagen."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "Listet verfügbare UESH-Variablen auf"
     }
   ]
 }

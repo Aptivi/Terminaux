@@ -2949,6 +2949,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "duōshǎo yào shēngchéng de míngchēng?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "cóng BASE64 biǎo shì xíng shì jiě mǎ wén běn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "biānmǎ de BASE64 zìfú chuàn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "jiāng wén běn biān mǎ wéi BASE64 biǎo shì xíng shì"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "yào biānmǎ de zìfú chuàn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "jiǎn chá UESH jiǎo běn shì fǒu cún zài yǔ fǎ cuò wù"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "UESH jiǎoběn de lùjìng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "jiǎo běn lint chéng gōng 。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "jiǎo běn lint shī bài 。 zuì yǒu kě néng de shì cún zài yǔ fǎ cuò wù 。 jiǎn chá jiǎo běn shì fǒu yǒu cuò wù bìng zhòng shì yùn xíng linter。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "jiǎo běn linter cháng shì jiě xī nín de jiǎo běn shí yì wài shī bài 。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "liè chū kěyòng de UESH biànliàng"
     }
   ]
 }

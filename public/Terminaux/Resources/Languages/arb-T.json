@@ -2967,6 +2967,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "كم عدد الأسماء التي يجب توليدها؟"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "يقوم بفك تشفير النص من تمثيل BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "سلسلة مشفرة بتنسيق BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "يشفر النص إلى تمثيل BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "سلسلة للترميز"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "التحقق من البرنامج النصي UESH بحثًا عن أخطاء في بناء الجملة"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "المسار إلى البرنامج النصي UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "نجح الوبر النصي."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "فشل خط البرنامج النصي. على الأرجح هناك خطأ في بناء الجملة. تحقق من البرنامج النصي الخاص بك بحثًا عن الأخطاء وأعد محاولة تشغيل linter."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "فشل البرنامج النصي linter بشكل غير متوقع في محاولة تحليل البرنامج النصي الخاص بك."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "يسرد متغيرات UESH المتاحة"
     }
   ]
 }

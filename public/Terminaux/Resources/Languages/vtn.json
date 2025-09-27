@@ -2941,6 +2941,46 @@
     {
       "loc": "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC",
       "text": "Cần tạo bao nhiêu tên?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_DESC",
+      "text": "Giải mã văn bản từ biểu diễn BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC",
+      "text": "Chuỗi BASE64 được mã hóa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODEBASE64_DESC",
+      "text": "Mã hóa văn bản thành dạng biểu diễn BASE64"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC",
+      "text": "Chuỗi để mã hóa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
+      "text": "Kiểm tra lỗi cú pháp của tập lệnh UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
+      "text": "Đường dẫn đến tập lệnh UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS",
+      "text": "Kiểm tra lỗi tập lệnh đã thành công."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_FAILED",
+      "text": "Kiểm tra lỗi tập lệnh không thành công. Nhiều khả năng là có lỗi cú pháp. Kiểm tra lỗi tập lệnh của bạn và thử chạy lại trình kiểm tra lỗi."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR",
+      "text": "Trình kiểm tra tập lệnh đã thất bại bất ngờ khi cố gắng phân tích tập lệnh của bạn."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
+      "text": "Liệt kê các biến UESH có sẵn"
     }
   ]
 }
