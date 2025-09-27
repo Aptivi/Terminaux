@@ -197,6 +197,114 @@ namespace Terminaux.Shell.Shells
                     ], false)
                 ], new FindCmdsUnifiedCommand()),
 
+            new CommandInfo("firstnames", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC"
+                        }),
+                        new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC"
+                        }),
+                        new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("t", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("male", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["female", "both"],
+                            AcceptsValues = false,
+                        }),
+                        new SwitchInfo("female", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["male", "both"],
+                            AcceptsValues = false,
+                        }),
+                        new SwitchInfo("both", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["female", "male"],
+                            AcceptsValues = false,
+                        }),
+                    ], true)
+                ], new FirstNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
+            new CommandInfo("lastnames", /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TERM_DESC"
+                        }),
+                        new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC"
+                        }),
+                        new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC"
+                        }),
+                    ], true)
+                ], new LastNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
+            new CommandInfo("gennames", /* Localizable */ "T_SHELL_UNIFIED_GENNAMES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "namescount", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC"
+                        }),
+                        new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC"
+                        }),
+                        new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC"
+                        }),
+                        new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("t", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("male", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["female", "both"],
+                            AcceptsValues = false,
+                        }),
+                        new SwitchInfo("female", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["male", "both"],
+                            AcceptsValues = false,
+                        }),
+                        new SwitchInfo("both", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["female", "male"],
+                            AcceptsValues = false,
+                        }),
+                    ], true)
+                ], new GenNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
             new CommandInfo("fork", /* Localizable */ "T_SHELL_UNIFIED_FORK_DESC", new ForkCommand()),
 
             new CommandInfo("help", /* Localizable */ "T_SHELL_UNIFIED_HELP_HELP_DESC",
