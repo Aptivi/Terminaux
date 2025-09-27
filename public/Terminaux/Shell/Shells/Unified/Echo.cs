@@ -35,7 +35,7 @@ namespace Terminaux.Shell.Shells.Unified
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool parsePlaces = !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-noparse");
+            bool parsePlaces = !parameters.ContainsSwitch("-noparse");
             if (parameters.SwitchesList.Length == 0)
                 parsePlaces = true;
             string result = parsePlaces ? PlaceParse.ProbePlaces(parameters.ArgumentsText) : parameters.ArgumentsText;

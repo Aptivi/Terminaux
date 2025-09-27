@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using System.Diagnostics;
+using Terminaux.Shell.Switches;
 
 namespace Terminaux.Shell.Commands
 {
@@ -68,6 +70,34 @@ namespace Terminaux.Shell.Commands
         /// Whether the <c>-set=var</c> switch has been passed to the command or not
         /// </summary>
         public bool SwitchSetPassed { get; internal set; }
+
+        /// <summary>
+        /// Gets the switch values
+        /// </summary>
+        /// <returns>The list of switches, which start with a dash, with values supplied</returns>
+        public List<(string, string)> GetSwitchValues(bool includeNonValueSwitches = false) =>
+            SwitchManager.GetSwitchValues(SwitchesList, includeNonValueSwitches);
+
+        /// <summary>
+        /// Gets the switch value
+        /// </summary>
+        /// <param name="switchKey">Switch key. Must begin with the dash before the switch name.</param>
+        public string GetSwitchValue(string switchKey) =>
+            SwitchManager.GetSwitchValue(SwitchesList, switchKey);
+
+        /// <summary>
+        /// Checks to see if the switch list contains a switch
+        /// </summary>
+        /// <param name="switchKey">Switch key. Must begin with the dash before the switch name.</param>
+        public bool ContainsSwitch(string switchKey) =>
+            SwitchManager.ContainsSwitch(SwitchesList, switchKey);
+
+        /// <summary>
+        /// Checks to see if the switch value of a specific switch is numeric
+        /// </summary>
+        /// <param name="switchKey">Switch key. Must begin with the dash before the switch name.</param>
+        public bool IsSwitchValueNumeric(string switchKey) =>
+            SwitchManager.IsSwitchValueNumeric(SwitchesList, switchKey);
 
         internal CommandParameters(string stringArgs, string[] listArgsOnly, string stringArgsOrig, string[] listArgsOnlyOrig, string[] listSwitchesOnly, string commandName)
         {

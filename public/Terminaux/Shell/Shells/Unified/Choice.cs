@@ -69,9 +69,9 @@ namespace Terminaux.Shell.Shells.Unified
             var Titles = new List<(string, string)>();
             var PressEnter = false;
             var OutputType = ChoiceStyleSettings.GlobalSettings.OutputType;
-            if (parameters.SwitchesList.Contains("-multiple"))
+            if (parameters.ContainsSwitch("-multiple"))
                 PressEnter = true;
-            if (parameters.SwitchesList.Contains("-single"))
+            if (parameters.ContainsSwitch("-single"))
                 PressEnter = false;
 
             // Add the provided working titles

@@ -35,16 +35,16 @@ namespace Terminaux.Shell.Shells.Unified
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Determine which type to show
-            bool useSimplified = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-simplified");
-            bool showCount = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-count");
+            bool useSimplified = parameters.ContainsSwitch("-simplified");
+            bool showCount = parameters.ContainsSwitch("-count");
             bool showGeneral = parameters.SwitchesList.Length == 0 ||
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-general") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
+                parameters.ContainsSwitch("-general") || parameters.ContainsSwitch("-all");
             bool showAlias = parameters.SwitchesList.Length > 0 &&
-                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-alias") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
+                (parameters.ContainsSwitch("-alias") || parameters.ContainsSwitch("-all"));
             bool showUnified = parameters.SwitchesList.Length == 0 ||
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-unified") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
+                parameters.ContainsSwitch("-unified") || parameters.ContainsSwitch("-all");
             bool showExtra = parameters.SwitchesList.Length > 0 &&
-                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-extra") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
+                (parameters.ContainsSwitch("-extra") || parameters.ContainsSwitch("-all"));
 
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))

@@ -40,7 +40,7 @@ namespace Terminaux.Shell.Shells.Unified
         {
             string sourceCommand = parameters.ArgumentsList[0];
             StringBuilder targetCommandBuilder = new(parameters.ArgumentsList[1] + " ");
-            bool quoted = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-quoted");
+            bool quoted = parameters.ContainsSwitch("-quoted");
 
             // First, get the source command output
             var currentShell = ShellManager.ShellStack[ShellManager.ShellStack.Count - 1];

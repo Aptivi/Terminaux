@@ -37,7 +37,7 @@ namespace Terminaux.Shell.Shells.Unified
         {
             string command = parameters.ArgumentsList[0];
             string arguments = string.Join(" ", [.. parameters.ArgumentsList.Skip(1)]);
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-forked"))
+            if (parameters.ContainsSwitch("-forked"))
             {
                 ProcessExecutor.ExecuteProcessForked(command, arguments);
                 return 0;

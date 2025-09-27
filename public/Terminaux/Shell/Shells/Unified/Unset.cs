@@ -34,7 +34,7 @@ namespace Terminaux.Shell.Shells.Unified
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool destructive = !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-justwipe");
+            bool destructive = !parameters.ContainsSwitch("-justwipe");
             MESHVariables.SetVariable(parameters.ArgumentsList[0], "");
             if (destructive)
                 MESHVariables.RemoveVariable(parameters.ArgumentsList[0]);
