@@ -236,7 +236,25 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Fill the info box with text inside it
                     infoBox.Elements.RemoveRenderables();
+                    infoBox.Settings.Positioning.Autofit = true;
                     var (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
+                    infoBox.Settings.Positioning.Autofit = false;
+                    if (selectionsRendered.choiceTexts.Count == 0)
+                        selectionsRendered.choiceTexts = selectionsRendered.GetChoiceParameters();
+                    int maxChoiceTextsWidth = selectionsRendered.choiceTexts.Max((ct) => ConsoleChar.EstimateCellWidth(ct) + 4);
+                    int windowWidth = ConsoleWrapper.WindowWidth;
+                    int windowHeight = ConsoleWrapper.WindowHeight;
+                    if (maxWidth < maxChoiceTextsWidth)
+                        maxWidth = maxChoiceTextsWidth;
+                    if (maxWidth < 50)
+                        maxWidth = 50;
+                    if (maxWidth > windowWidth - 4)
+                        maxWidth = windowWidth - 4;
+                    infoBox.Settings.Positioning.Width = maxWidth;
+                    borderX = windowWidth / 2 - maxWidth / 2 - 1;
+                    borderY = windowHeight / 2 - maxHeight / 2 - 1;
+                    infoBox.Settings.Positioning.Left = borderX;
+                    infoBox.Settings.Positioning.Top = borderY;
                     int selectionBoxPosX = borderX + 2;
                     int selectionBoxPosY = borderY + maxTextHeight + 1;
                     int maxSelectionWidth = maxWidth - 4;

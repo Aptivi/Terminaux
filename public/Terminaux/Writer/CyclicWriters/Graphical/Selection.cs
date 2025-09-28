@@ -43,9 +43,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Selection : GraphicalCyclicWriter
     {
+        internal List<string> choiceTexts = [];
         private int selectedChoice;
         private bool cached;
-        private List<string> choiceTexts = [];
         private InputChoiceCategoryInfo[] selections = [];
 
         /// <summary>
