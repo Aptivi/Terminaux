@@ -680,6 +680,14 @@ namespace Terminaux.Shell.Shells
                         {
                             AcceptsValues = false
                         }),
+                        new SwitchInfo("hidden", /* Localizable */ "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("count", /* Localizable */ "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
                     ], false)
                 ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
 

@@ -37,6 +37,7 @@ namespace Terminaux.Shell.Shells.Unified
             // Determine which type to show
             bool useSimplified = parameters.ContainsSwitch("-simplified");
             bool showCount = parameters.ContainsSwitch("-count");
+            bool showHidden = parameters.ContainsSwitch("-hidden");
             bool showGeneral = parameters.SwitchesList.Length == 0 ||
                 parameters.ContainsSwitch("-general") || parameters.ContainsSwitch("-all");
             bool showAlias = parameters.SwitchesList.Length > 0 &&
@@ -48,7 +49,7 @@ namespace Terminaux.Shell.Shells.Unified
 
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
-                HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showAlias, showUnified, showExtra, showCount);
+                HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showAlias, showUnified, showExtra, showCount, showHidden);
             else
                 HelpPrint.ShowHelpExtended(parameters.ArgumentsList[0], useSimplified);
             return 0;

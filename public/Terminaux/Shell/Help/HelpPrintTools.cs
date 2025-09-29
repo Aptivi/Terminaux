@@ -34,7 +34,7 @@ namespace Terminaux.Shell.Help
 {
     internal static class HelpPrintTools
     {
-        internal static void ShowCommandList(string commandType, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)
+        internal static void ShowCommandList(string commandType, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false, bool showHidden = false)
         {
             // Get general commands
             var shellInfo = ShellManager.GetShellInfo(commandType);
@@ -57,7 +57,7 @@ namespace Terminaux.Shell.Help
                     TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in commandList)
                 {
-                    if (cmd.Flags.HasFlag(CommandFlags.Hidden))
+                    if (cmd.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
                     {
                         hiddenProcessed++;
                         continue;
@@ -83,7 +83,7 @@ namespace Terminaux.Shell.Help
                     TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in ExtraCommandList)
                 {
-                    if (cmd.Flags.HasFlag(CommandFlags.Hidden))
+                    if (cmd.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
                     {
                         hiddenProcessed++;
                         continue;
@@ -109,7 +109,7 @@ namespace Terminaux.Shell.Help
                     TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in AliasedCommandList)
                 {
-                    if (cmd.Value.Flags.HasFlag(CommandFlags.Hidden))
+                    if (cmd.Value.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
                     {
                         hiddenProcessed++;
                         continue;
@@ -135,7 +135,7 @@ namespace Terminaux.Shell.Help
                     TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in unifiedCommandList)
                 {
-                    if (cmd.Flags.HasFlag(CommandFlags.Hidden))
+                    if (cmd.Flags.HasFlag(CommandFlags.Hidden) && !showHidden)
                     {
                         hiddenProcessed++;
                         continue;
@@ -153,10 +153,10 @@ namespace Terminaux.Shell.Help
             }
         }
 
-        internal static void ShowCommandListSimplified(string commandType)
+        internal static void ShowCommandListSimplified(string commandType, bool showHidden = false)
         {
             // Get visible commands
-            string[] commands = [.. CommandManager.GetCommands(commandType).Where((ci) => !ci.Flags.HasFlag(CommandFlags.Hidden)).Select((ci) => ci.Command)];
+            string[] commands = [.. CommandManager.GetCommands(commandType).Where((ci) => !ci.Flags.HasFlag(CommandFlags.Hidden) && !showHidden).Select((ci) => ci.Command)];
             TextWriterColor.Write(string.Join(", ", commands), ThemeColorType.ListTitle);
         }
 
