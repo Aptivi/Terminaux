@@ -58,7 +58,12 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         public int Height { get; set; } = 5;
 
         /// <summary>
-        /// Reserved height for elements that will be placed after the information text
+        /// Reserved width to make the infobox wider (added to the total width)
+        /// </summary>
+        public int ExtraWidth { get; set; } = 0;
+
+        /// <summary>
+        /// Reserved width to make the infobox taller (added to the total height)
         /// </summary>
         public int ExtraHeight { get; set; } = 0;
 
