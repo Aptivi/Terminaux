@@ -80,7 +80,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new AddPrefixCommand()),
+                ], new AddPrefixCommand(), CommandFlags.Hidden),
             
             new CommandInfo("addsuffix", /* Localizable */ "T_SHELL_UNIFIED_ADDSUFFIX_DESC",
                 [
@@ -105,7 +105,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new AddSuffixCommand()),
+                ], new AddSuffixCommand(), CommandFlags.Hidden),
 
             new CommandInfo("alias", /* Localizable */ "T_SHELL_UNIFIED_ALIAS_DESC",
                 [
@@ -166,7 +166,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new ChkPrefixCommand()),
+                ], new ChkPrefixCommand(), CommandFlags.Hidden),
 
             new CommandInfo("chksuffix", /* Localizable */ "T_SHELL_UNIFIED_CHKSUFFIX_DESC",
                 [
@@ -187,7 +187,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new ChkSuffixCommand()),
+                ], new ChkSuffixCommand(), CommandFlags.Hidden),
 
             new CommandInfo("choice", /* Localizable */ "T_SHELL_UNIFIED_CHOICE_DESC",
                 [
@@ -260,7 +260,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new ContainsAllCharsCommand()),
+                ], new ContainsAllCharsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("containsallstrs", /* Localizable */ "T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC",
                 [
@@ -281,7 +281,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true, true)
-                ], new ContainsAllStrsCommand()),
+                ], new ContainsAllStrsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("containsanychars", /* Localizable */ "T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC",
                 [
@@ -302,7 +302,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new ContainsAnyCharsCommand()),
+                ], new ContainsAnyCharsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("containsanystrs", /* Localizable */ "T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC",
                 [
@@ -323,7 +323,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true, true)
-                ], new ContainsAnyStrsCommand()),
+                ], new ContainsAnyStrsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("contains", /* Localizable */ "T_SHELL_UNIFIED_CONTAINS_DESC",
                 [
@@ -348,7 +348,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new ContainsCommand()),
+                ], new ContainsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("decodebase64", /* Localizable */ "T_SHELL_UNIFIED_DECODEBASE64_DESC",
                 [
@@ -359,7 +359,7 @@ namespace Terminaux.Shell.Shells
                             ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC"
                         })
                     ])
-                ], new DecodeBase64Command()),
+                ], new DecodeBase64Command(), CommandFlags.Hidden),
 
             new CommandInfo("echo", /* Localizable */ "T_SHELL_UNIFIED_ECHO_DESC",
                 [
@@ -384,7 +384,7 @@ namespace Terminaux.Shell.Shells
                             ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ENCODEBASE64_ARGUMENT_STRING_DESC"
                         })
                     ])
-                ], new EncodeBase64Command()),
+                ], new EncodeBase64Command(), CommandFlags.Hidden),
 
             new CommandInfo("endswithallchars", /* Localizable */ "T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC",
                 [
@@ -405,7 +405,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new EndsWithAllCharsCommand()),
+                ], new EndsWithAllCharsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("endswithallstrs", /* Localizable */ "T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC",
                 [
@@ -426,7 +426,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new EndsWithAllStrsCommand()),
+                ], new EndsWithAllStrsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("endswithanychars", /* Localizable */ "T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC",
                 [
@@ -447,7 +447,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new EndsWithAnyCharsCommand()),
+                ], new EndsWithAnyCharsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("endswithanystrs", /* Localizable */ "T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC",
                 [
@@ -468,7 +468,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new EndsWithAnyStrsCommand()),
+                ], new EndsWithAnyStrsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("endswith", /* Localizable */ "T_SHELL_UNIFIED_ENDSWITH_DESC",
                 [
@@ -493,7 +493,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new EndsWithCommand()),
+                ], new EndsWithCommand(), CommandFlags.Hidden),
 
             new CommandInfo("equals", /* Localizable */ "T_SHELL_UNIFIED_EQUALS_DESC",
                 [
@@ -518,7 +518,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new EqualsCommand()),
+                ], new EqualsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("exec", /* Localizable */ "T_SHELL_UNIFIED_EXEC_DESC",
                 [
@@ -592,7 +592,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false,
                         }),
                     ], true)
-                ], new FirstNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+                ], new FirstNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable | CommandFlags.Hidden),
 
             new CommandInfo("gennames", /* Localizable */ "T_SHELL_UNIFIED_GENNAMES_DESC",
                 [
@@ -641,7 +641,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false,
                         }),
                     ], true)
-                ], new GenNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+                ], new GenNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable | CommandFlags.Hidden),
 
             new CommandInfo("fork", /* Localizable */ "T_SHELL_UNIFIED_FORK_DESC", new ForkCommand()),
 
@@ -745,7 +745,7 @@ namespace Terminaux.Shell.Shells
                             ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC"
                         }),
                     ], true)
-                ], new LastNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+                ], new LastNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable | CommandFlags.Hidden),
 
             new CommandInfo("lintscript", /* Localizable */ "T_SHELL_UNIFIED_LINTSCRIPT_DESC",
                 [
@@ -785,7 +785,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new LowercaseCommand()),
+                ], new LowercaseCommand(), CommandFlags.Hidden),
 
             new CommandInfo("lsvars", /* Localizable */ "T_SHELL_UNIFIED_LSVARS_DESC", new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
@@ -855,7 +855,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new RemPrefixCommand()),
+                ], new RemPrefixCommand(), CommandFlags.Hidden),
 
             new CommandInfo("remsuffix", /* Localizable */ "T_SHELL_UNIFIED_REMSUFFIX_DESC",
                 [
@@ -876,7 +876,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new RemSuffixCommand()),
+                ], new RemSuffixCommand(), CommandFlags.Hidden),
 
             new CommandInfo("repeat", /* Localizable */ "T_SHELL_UNIFIED_REPEAT_DESC",
                 [
@@ -976,7 +976,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new StartsWithAllCharsCommand()),
+                ], new StartsWithAllCharsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("startswithallstrs", /* Localizable */ "T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC",
                 [
@@ -997,7 +997,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new StartsWithAllStrsCommand()),
+                ], new StartsWithAllStrsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("startswithanychars", /* Localizable */ "T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC",
                 [
@@ -1018,7 +1018,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new StartsWithAnyCharsCommand()),
+                ], new StartsWithAnyCharsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("startswithanystrs", /* Localizable */ "T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC",
                 [
@@ -1039,7 +1039,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ], true)
-                ], new StartsWithAnyStrsCommand()),
+                ], new StartsWithAnyStrsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("startswith", /* Localizable */ "T_SHELL_UNIFIED_STARTSWITH_DESC",
                 [
@@ -1064,7 +1064,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new StartsWithCommand()),
+                ], new StartsWithCommand(), CommandFlags.Hidden),
 
             new CommandInfo("titlecase", /* Localizable */ "T_SHELL_UNIFIED_TITLECASE_DESC",
                 [
@@ -1081,7 +1081,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new TitlecaseCommand()),
+                ], new TitlecaseCommand(), CommandFlags.Hidden),
 
             new CommandInfo("unset", /* Localizable */ "T_SHELL_UNIFIED_UNSET_DESC",
                 [
@@ -1125,7 +1125,7 @@ namespace Terminaux.Shell.Shells
                             AcceptsValues = false
                         }),
                     ])
-                ], new UppercaseCommand()),
+                ], new UppercaseCommand(), CommandFlags.Hidden),
 
             new CommandInfo("wrap", /* Localizable */ "T_SHELL_UNIFIED_WRAP_DESC",
                 [
