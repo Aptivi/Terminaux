@@ -38,14 +38,10 @@ namespace Terminaux.Shell.Shells.Unified
             bool useSimplified = parameters.ContainsSwitch("-simplified");
             bool showCount = parameters.ContainsSwitch("-count");
             bool showHidden = parameters.ContainsSwitch("-hidden");
-            bool showGeneral = parameters.SwitchesList.Length == 0 ||
-                parameters.ContainsSwitch("-general") || parameters.ContainsSwitch("-all");
-            bool showAlias = parameters.SwitchesList.Length > 0 &&
-                (parameters.ContainsSwitch("-alias") || parameters.ContainsSwitch("-all"));
-            bool showUnified = parameters.SwitchesList.Length == 0 ||
-                parameters.ContainsSwitch("-unified") || parameters.ContainsSwitch("-all");
-            bool showExtra = parameters.SwitchesList.Length > 0 &&
-                (parameters.ContainsSwitch("-extra") || parameters.ContainsSwitch("-all"));
+            bool showGeneral = parameters.SwitchesList.Length == 0 || !parameters.ContainsAnySwitches(["-general", "-unified", "-alias", "-extra"]) || parameters.ContainsAnySwitches(["-general", "-all"]);
+            bool showAlias = parameters.SwitchesList.Length > 0 && parameters.ContainsAnySwitches(["-alias", "-all"]);
+            bool showUnified = parameters.SwitchesList.Length == 0 || !parameters.ContainsAnySwitches(["-general", "-unified", "-alias", "-extra"]) || parameters.ContainsAnySwitches(["-unified", "-all"]);
+            bool showExtra = parameters.SwitchesList.Length > 0 && parameters.ContainsAnySwitches(["-extra", "-all"]);
 
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))

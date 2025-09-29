@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using System.Linq;
 using Textify.General;
 
 namespace Terminaux.Shell.Switches
@@ -89,6 +90,46 @@ namespace Terminaux.Shell.Switches
         {
             var switchValues = GetSwitchValues(switches, true);
             return switchValues.Exists((tuple) => tuple.Item1 == switchKey);
+        }
+
+        /// <summary>
+        /// Checks to see if the switch list contains all of the switches
+        /// </summary>
+        /// <param name="switches">List of switches that start with the dash</param>
+        /// <param name="switchKeys">Switch keys. Must begin with the dash before the switch name.</param>
+        public static bool ContainsAllSwitches(string[] switches, string[] switchKeys)
+        {
+            if (switches.Length == 0 || switchKeys.Length == 0)
+                return false;
+            bool allSatisfied = true;
+            var switchValues = GetSwitchValues(switches, true);
+            foreach (var switchKey in switchValues)
+            {
+                string targetKey = switchKey.Item1;
+                if (!switchKeys.Contains(targetKey))
+                    allSatisfied = false;
+            }
+            return allSatisfied;
+        }
+
+        /// <summary>
+        /// Checks to see if the switch list contains any of the switches
+        /// </summary>
+        /// <param name="switches">List of switches that start with the dash</param>
+        /// <param name="switchKeys">Switch keys. Must begin with the dash before the switch name.</param>
+        public static bool ContainsAnySwitches(string[] switches, string[] switchKeys)
+        {
+            if (switches.Length == 0 || switchKeys.Length == 0)
+                return false;
+            bool allSatisfied = false;
+            var switchValues = GetSwitchValues(switches, true);
+            foreach (var switchKey in switchValues)
+            {
+                string targetKey = switchKey.Item1;
+                if (switchKeys.Contains(targetKey))
+                    allSatisfied = true;
+            }
+            return allSatisfied;
         }
 
         /// <summary>

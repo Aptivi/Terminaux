@@ -93,6 +93,20 @@ namespace Terminaux.Shell.Commands
             SwitchManager.ContainsSwitch(SwitchesList, switchKey);
 
         /// <summary>
+        /// Checks to see if the switch list contains all of the switches
+        /// </summary>
+        /// <param name="switchKeys">Switch keys. Must begin with the dash before the switch name.</param>
+        public bool ContainsAllSwitches(string[] switchKeys) =>
+            SwitchManager.ContainsAllSwitches(SwitchesList, switchKeys);
+
+        /// <summary>
+        /// Checks to see if the switch list contains any of the switches
+        /// </summary>
+        /// <param name="switchKeys">Switch keys. Must begin with the dash before the switch name.</param>
+        public bool ContainsAnySwitches(string[] switchKeys) =>
+            SwitchManager.ContainsAnySwitches(SwitchesList, switchKeys);
+
+        /// <summary>
         /// Checks to see if the switch value of a specific switch is numeric
         /// </summary>
         /// <param name="switchKey">Switch key. Must begin with the dash before the switch name.</param>
