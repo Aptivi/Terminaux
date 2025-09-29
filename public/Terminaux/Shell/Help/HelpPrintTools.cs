@@ -51,11 +51,17 @@ namespace Terminaux.Shell.Help
             // The built-in commands
             if (showGeneral)
             {
+                int hiddenProcessed = 0;
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_GENERALCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, commandList.Count);
                 if (commandList.Count == 0)
                     TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in commandList)
                 {
+                    if (cmd.Flags.HasFlag(CommandFlags.Hidden))
+                    {
+                        hiddenProcessed++;
+                        continue;
+                    }
                     string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
@@ -64,16 +70,24 @@ namespace Terminaux.Shell.Help
                         Indicator = false,
                     }.Render() + "\n");
                 }
+                if (hiddenProcessed > 0 && showCount)
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
             }
 
             // The extra commands
             if (showExtra)
             {
+                int hiddenProcessed = 0;
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_EXTRACMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, ExtraCommandList.Count);
                 if (ExtraCommandList.Count == 0)
                     TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in ExtraCommandList)
                 {
+                    if (cmd.Flags.HasFlag(CommandFlags.Hidden))
+                    {
+                        hiddenProcessed++;
+                        continue;
+                    }
                     string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
@@ -82,16 +96,24 @@ namespace Terminaux.Shell.Help
                         Indicator = false,
                     }.Render() + "\n");
                 }
+                if (hiddenProcessed > 0 && showCount)
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
             }
 
             // The alias commands
             if (showAlias)
             {
+                int hiddenProcessed = 0;
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ALIASCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
                     TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in AliasedCommandList)
                 {
+                    if (cmd.Value.Flags.HasFlag(CommandFlags.Hidden))
+                    {
+                        hiddenProcessed++;
+                        continue;
+                    }
                     string[] usages = [.. cmd.Value.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
@@ -100,16 +122,24 @@ namespace Terminaux.Shell.Help
                         Indicator = false,
                     }.Render() + "\n");
                 }
+                if (hiddenProcessed > 0 && showCount)
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
             }
 
             // The unified commands
             if (showUnified)
             {
+                int hiddenProcessed = 0;
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS") + (showCount ? " [{0}]" : ""), ThemeColorType.ListTitle, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
                     TextWriterColor.Write("  - " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS"), ThemeColorType.ListTitle);
                 foreach (var cmd in unifiedCommandList)
                 {
+                    if (cmd.Flags.HasFlag(CommandFlags.Hidden))
+                    {
+                        hiddenProcessed++;
+                        continue;
+                    }
                     string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                     TextWriterRaw.WriteRaw(new ListEntry()
                     {
@@ -118,13 +148,15 @@ namespace Terminaux.Shell.Help
                         Indicator = false,
                     }.Render() + "\n");
                 }
+                if (hiddenProcessed > 0 && showCount)
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS"), ThemeColorType.Tip, hiddenProcessed);
             }
         }
 
         internal static void ShowCommandListSimplified(string commandType)
         {
             // Get visible commands
-            var commands = CommandManager.GetCommandNames(commandType);
+            string[] commands = [.. CommandManager.GetCommands(commandType).Where((ci) => !ci.Flags.HasFlag(CommandFlags.Hidden)).Select((ci) => ci.Command)];
             TextWriterColor.Write(string.Join(", ", commands), ThemeColorType.ListTitle);
         }
 

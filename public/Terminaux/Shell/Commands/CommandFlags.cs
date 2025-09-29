@@ -40,5 +40,9 @@ namespace Terminaux.Shell.Commands
         /// This command is wrappable to pages.
         /// </summary>
         Wrappable = 4,
+        /// <summary>
+        /// This command is hidden from the help page
+        /// </summary>
+        Hidden = 8,
     }
 }
