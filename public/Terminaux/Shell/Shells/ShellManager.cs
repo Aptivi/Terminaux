@@ -594,6 +594,63 @@ namespace Terminaux.Shell.Shells
                     ], true)
                 ], new FirstNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable | CommandFlags.Hidden),
 
+            new CommandInfo("genfirstnames", /* Localizable */ "T_SHELL_UNIFIED_GENFIRSTNAMES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "firstnamescount", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC"
+                        }),
+                        new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("male", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["female", "both"],
+                            AcceptsValues = false,
+                        }),
+                        new SwitchInfo("female", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["male", "both"],
+                            AcceptsValues = false,
+                        }),
+                        new SwitchInfo("both", /* Localizable */ "T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["female", "male"],
+                            AcceptsValues = false,
+                        }),
+                    ], true)
+                ], new GenFirstNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable | CommandFlags.Hidden),
+
+            new CommandInfo("genlastnames", /* Localizable */ "T_SHELL_UNIFIED_GENLASTNAMES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "surnamescount", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC"
+                        }),
+                        new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC"
+                        }),
+                    ], true)
+                ], new GenLastNamesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable | CommandFlags.Hidden),
+
             new CommandInfo("gennames", /* Localizable */ "T_SHELL_UNIFIED_GENNAMES_DESC",
                 [
                     new CommandArgumentInfo(
