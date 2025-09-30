@@ -688,6 +688,10 @@ namespace Terminaux.Shell.Shells
                         {
                             AcceptsValues = false
                         }),
+                        new SwitchInfo("markdown", /* Localizable */ "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
                     ], false)
                 ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
 

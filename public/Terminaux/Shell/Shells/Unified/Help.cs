@@ -20,6 +20,7 @@
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Help;
 using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified
 {
@@ -38,16 +39,38 @@ namespace Terminaux.Shell.Shells.Unified
             bool useSimplified = parameters.ContainsSwitch("-simplified");
             bool showCount = parameters.ContainsSwitch("-count");
             bool showHidden = parameters.ContainsSwitch("-hidden");
+            bool showMarkdown = parameters.ContainsSwitch("-markdown");
             bool showGeneral = parameters.SwitchesList.Length == 0 || !parameters.ContainsAnySwitches(["-general", "-unified", "-alias", "-extra"]) || parameters.ContainsAnySwitches(["-general", "-all"]);
             bool showAlias = parameters.SwitchesList.Length > 0 && parameters.ContainsAnySwitches(["-alias", "-all"]);
             bool showUnified = parameters.SwitchesList.Length == 0 || !parameters.ContainsAnySwitches(["-general", "-unified", "-alias", "-extra"]) || parameters.ContainsAnySwitches(["-unified", "-all"]);
             bool showExtra = parameters.SwitchesList.Length > 0 && parameters.ContainsAnySwitches(["-extra", "-all"]);
 
-            // Now, show the help
-            if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
-                HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showAlias, showUnified, showExtra, showCount, showHidden);
+            // Check to see if we're in markdown mode
+            if (showMarkdown)
+            {
+                // Prepare the appropriate flags
+                HelpCommandType commandTypes = HelpCommandType.None;
+                if (showGeneral)
+                    commandTypes |= HelpCommandType.General;
+                if (showAlias)
+                    commandTypes |= HelpCommandType.Aliases;
+                if (showUnified)
+                    commandTypes |= HelpCommandType.Unified;
+                if (showExtra)
+                    commandTypes |= HelpCommandType.Extras;
+
+                // Show the markdown representation
+                string exported = HelpExporter.ExportToMarkdown(ShellManager.CurrentShellType, commandTypes, showCount, showHidden);
+                TextWriterRaw.WritePlain(exported);
+            }
             else
-                HelpPrint.ShowHelpExtended(parameters.ArgumentsList[0], useSimplified);
+            {
+                // Now, show the help
+                if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
+                    HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showAlias, showUnified, showExtra, showCount, showHidden);
+                else
+                    HelpPrint.ShowHelpExtended(parameters.ArgumentsList[0], useSimplified);
+            }
             return 0;
         }
 
