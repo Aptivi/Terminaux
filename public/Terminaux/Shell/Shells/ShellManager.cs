@@ -148,6 +148,31 @@ namespace Terminaux.Shell.Shells
                     ]),
                 ], new AliasCommand()),
 
+            new CommandInfo("bgcolor", /* Localizable */ "T_SHELL_UNIFIED_BGCOLOR_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "specifier", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("plain", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("truevt", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new BgColorCommand(), CommandFlags.Hidden),
+
             new CommandInfo("chkprefix", /* Localizable */ "T_SHELL_UNIFIED_CHKPREFIX_DESC",
                 [
                     new CommandArgumentInfo(
@@ -241,6 +266,11 @@ namespace Terminaux.Shell.Shells
                 ], new ChoiceCommand()),
 
             new CommandInfo("cls", /* Localizable */ "T_SHELL_UNIFIED_CLS_DESC", new ClsCommand()),
+
+            new CommandInfo("consoledimensions", /* Localizable */ "T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC",
+                [
+                    new CommandArgumentInfo(true)
+                ], new ConsoleDimensionsCommand(), CommandFlags.Hidden),
 
             new CommandInfo("containsallchars", /* Localizable */ "T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC",
                 [
@@ -544,6 +574,31 @@ namespace Terminaux.Shell.Shells
 
             new CommandInfo("exit", /* Localizable */ "T_SHELL_UNIFIED_EXIT_HELP_DESC", new ExitUnifiedCommand()),
 
+            new CommandInfo("fgcolor", /* Localizable */ "T_SHELL_UNIFIED_FGCOLOR_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "specifier", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("plain", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("truevt", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new FgColorCommand(), CommandFlags.Hidden),
+
             new CommandInfo("findcmds", /* Localizable */ "T_SHELL_UNIFIED_FINDCMDS_HELP_DESC",
                 [
                     new CommandArgumentInfo(
@@ -752,6 +807,11 @@ namespace Terminaux.Shell.Shells
                         }),
                     ], false)
                 ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("history", /* Localizable */ "T_SHELL_UNIFIED_HISTORY_DESC",
+                [
+                    new CommandArgumentInfo(true)
+                ], new HistoryCommand(), CommandFlags.Hidden),
 
             new CommandInfo("if", /* Localizable */ "T_SHELL_UNIFIED_IF_DESC",
                 [
@@ -1050,6 +1110,21 @@ namespace Terminaux.Shell.Shells
                         }),
                     ], true)
                 ], new NumericCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("printf", /* Localizable */ "T_SHELL_UNIFIED_PRINTF_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "parameters", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC"
+                        }),
+                    ], true, true)
+                ], new PrintFCommand(), CommandFlags.Hidden),
 
             new CommandInfo("replace", /* Localizable */ "T_SHELL_UNIFIED_REPLACE_DESC",
                 [
