@@ -44,7 +44,7 @@ namespace Terminaux.Shell.Shells.Unified
 
             // Text to process
             string text = parameters.ArgumentsList[0];
-            string profanityType = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[1] : "Shallow";
+            string profanityType = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "Shallow";
             if (!Enum.TryParse(profanityType, out ProfanitySearchType profanitySearchType))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID"), ThemeColorType.Error);
