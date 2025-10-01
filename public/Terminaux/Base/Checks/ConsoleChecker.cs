@@ -76,20 +76,6 @@ namespace Terminaux.Base.Checks
         }
 
         /// <summary>
-        /// Platform-dependent home path
-        /// </summary>
-        public static string HomePath
-        {
-            get
-            {
-                if (PlatformHelper.IsOnUnix())
-                    return Environment.GetEnvironmentVariable("HOME");
-                else
-                    return Environment.GetEnvironmentVariable("USERPROFILE").Replace(@"\", "/");
-            }
-        }
-
-        /// <summary>
         /// Does the console support 256 colors?
         /// </summary>
         public static bool IsConsole256Colors()
@@ -167,8 +153,14 @@ namespace Terminaux.Base.Checks
             }
             else if (PlatformHelper.IsRunningFromScreen())
             {
+                string homePath = "";
+                if (PlatformHelper.IsOnUnix())
+                    homePath = Environment.GetEnvironmentVariable("HOME");
+                else
+                    homePath = Environment.GetEnvironmentVariable("USERPROFILE").Replace(@"\", "/");
+
                 // The status bar for GNU screen is always one row long.
-                string confPath = HomePath + "/.screenrc";
+                string confPath = homePath + "/.screenrc";
                 string statusKey = "hardstatus";
                 string[] screenRcLines = File.ReadAllLines(confPath);
                 foreach (string line in screenRcLines)
