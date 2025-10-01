@@ -381,6 +381,24 @@ namespace Terminaux.Shell.Shells
                     ])
                 ], new ContainsCommand(), CommandFlags.Hidden),
 
+            new CommandInfo("degrees", /* Localizable */ "T_SHELL_UNIFIED_DEGREES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "radians", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ])
+                ], new DegreesCommand()),
+
             new CommandInfo("decodebase64", /* Localizable */ "T_SHELL_UNIFIED_DECODEBASE64_DESC",
                 [
                     new CommandArgumentInfo(
@@ -391,6 +409,52 @@ namespace Terminaux.Shell.Shells
                         })
                     ])
                 ], new DecodeBase64Command(), CommandFlags.Hidden),
+
+            new CommandInfo("dpi", /* Localizable */ "T_SHELL_UNIFIED_DPI_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "pixels", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(true, "lengthinches", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+                            IsNumeric = true,
+                        })
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ])
+                ], new DpiCommand()),
+
+            new CommandInfo("pixels", /* Localizable */ "T_SHELL_UNIFIED_PIXELS_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "width", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(true, "height", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ])
+                ], new PixelsCommand()),
 
             new CommandInfo("echo", /* Localizable */ "T_SHELL_UNIFIED_ECHO_DESC",
                 [
@@ -957,6 +1021,24 @@ namespace Terminaux.Shell.Shells
                 ], new PipeUnifiedCommand()),
 
             new CommandInfo("presets", /* Localizable */ "T_SHELL_UNIFIED_PRESETS_HELP_DESC", new PresetsUnifiedCommand()),
+
+            new CommandInfo("radians", /* Localizable */ "T_SHELL_UNIFIED_RADIANS_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "degrees", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ])
+                ], new RadiansCommand()),
 
             new CommandInfo("remprefix", /* Localizable */ "T_SHELL_UNIFIED_REMPREFIX_DESC",
                 [
