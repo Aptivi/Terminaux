@@ -577,5 +577,10 @@ namespace Terminaux.Base.Wrappers
             WriteError(text, args);
             WriteErrorLine();
         }
+
+        static BaseConsoleWrapper()
+        {
+            ConsoleMisc.PrepareCodepage();
+        }
     }
 }

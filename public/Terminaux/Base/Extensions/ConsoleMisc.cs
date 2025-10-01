@@ -41,6 +41,7 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleMisc
     {
+        private static bool codepageReady = false;
         private static bool isOnAltBuffer = false;
         private static int tabWidth = 4;
 
@@ -563,6 +564,19 @@ namespace Terminaux.Base.Extensions
 
         internal static int GetDigits(int Number) =>
             Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
+
+        internal static void PrepareCodepage()
+        {
+            if (codepageReady || ConsoleChecker.IsDumb)
+                return;
+            if (PlatformHelper.IsOnWindows())
+            {
+                ConsoleLogger.Debug("Setting codepage...");
+                Console.InputEncoding = Encoding.Unicode;
+                Console.OutputEncoding = Encoding.Unicode;
+                codepageReady = true;
+            }
+        }
 
         private static bool HasRtl(string text)
         {

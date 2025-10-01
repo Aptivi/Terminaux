@@ -52,8 +52,8 @@ namespace Terminaux.Base.Checks
                     if (!_dumbSet)
                     {
                         _dumbSet = true;
-                        int _ = ConsoleWrapper.CursorLeft;
-                        _ = ConsoleWrapper.WindowWidth;
+                        int _ = Console.CursorLeft;
+                        _ = Console.WindowWidth;
 
                         // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
                         var filtered = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
