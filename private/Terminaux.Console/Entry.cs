@@ -36,7 +36,8 @@ namespace Terminaux.Console
     {
         private static readonly Dictionary<string, ArgumentInfo> arguments = new()
         {
-            { "verbose", new("verbose", "Enables verbose mode", new VerboseArgument()) }
+            { "verbose", new("verbose", "Enables verbose mode", new VerboseArgument()) },
+            { "testredirect", new("testredirect", "Tests redirection mode", new TestRedirectArgument()) }
         };
 
         static void Main(string[] args)

@@ -67,6 +67,7 @@ namespace Terminaux.Base.Checks
                     {
                         _dumbSet = true;
                         int _ = ConsoleWrapper.CursorLeft;
+                        _ = ConsoleWrapper.WindowWidth;
 
                         // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
                         var filtered = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
@@ -76,6 +77,10 @@ namespace Terminaux.Base.Checks
                         // Additionally, check the isatty output
                         if (PlatformHelper.IsOnUnix())
                             _dumb = NativeMethods.isatty(0) != 1;
+
+                        // Check for output redirection
+                        if (Console.IsOutputRedirected || Console.IsErrorRedirected)
+                            _dumb = true;
                     }
                 }
                 catch { }
@@ -123,17 +128,6 @@ namespace Terminaux.Base.Checks
             string TerminalEmulator = PlatformHelper.GetTerminalEmulator();
             ConsoleLogger.Debug("Checking against terminal {0} on {1}", TerminalType, TerminalEmulator);
 
-            // Check if the terminal type is "dumb".
-            if (IsDumb)
-            {
-                ConsoleLogger.Fatal("Terminal {0} on {1} is dumb!", TerminalType, TerminalEmulator);
-                FastFail(
-                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE"),
-                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1") + Environment.NewLine +
-                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2")
-                );
-            }
-
             // Check the blacklist and the graylist for the console type
             var (blacklisted, justification) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
             var (graylisted, justification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist);
@@ -175,32 +169,6 @@ namespace Terminaux.Base.Checks
             // Check for 256 colors
             if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
                 TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE").FormatString(TerminalType));
-
-            // Check to see if we can call cursor info without errors
-            try
-            {
-                int _ = ConsoleWrapper.WindowWidth;
-            }
-            catch (IOException ex)
-            {
-                ConsoleLogger.Error(ex, "Checking against terminal {0} on {1} for positioning failed with an I/O error", TerminalType, TerminalEmulator);
-                if (PlatformHelper.IsOnWindows())
-                {
-                    ConsoleLogger.Fatal("It may be running in Git Bash's MinTTY!");
-                    FastFail(
-                        LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE"),
-                        LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1"),
-                        ex
-                    );
-                }
-                else
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE"), ThemeColorType.Error);
-            }
-            catch (Exception ex)
-            {
-                ConsoleLogger.Error(ex, "Checking against terminal {0} on {1} for positioning failed", TerminalType, TerminalEmulator);
-                TextWriterColor.Write(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE"), ThemeColorType.Error);
-            }
 
             // Set the encoding
             if (PlatformHelper.IsOnWindows())
