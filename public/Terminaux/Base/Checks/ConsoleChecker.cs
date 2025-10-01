@@ -55,11 +55,6 @@ namespace Terminaux.Base.Checks
                         int _ = Console.CursorLeft;
                         _ = Console.WindowWidth;
 
-                        // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
-                        var filtered = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
-                        if (!filtered.filtered)
-                            _dumb = false;
-
                         // Additionally, check the isatty output
                         if (PlatformHelper.IsOnUnix())
                             _dumb = NativeMethods.isatty(0) != 1;
