@@ -44,6 +44,7 @@ using Terminaux.Base.Wrappers;
 using Terminaux.Shell.Aliases;
 using Terminaux.Colors.Themes.Colors;
 using Textify.Tools.Placeholder;
+using Textify.Data.Words.Profanity;
 
 namespace Terminaux.Shell.Shells
 {
@@ -951,6 +952,625 @@ namespace Terminaux.Shell.Shells
                         new CommandArgumentPart(false, "command"),
                     ])
                 ], new RepeatUnifiedCommand()),
+
+            new CommandInfo("charwidth", /* Localizable */ "T_SHELL_UNIFIED_CHARWIDTH_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "char", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new CharWidthCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("strwidth", /* Localizable */ "T_SHELL_UNIFIED_STRWIDTH_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new StrWidthCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("wrapsentences", /* Localizable */ "T_SHELL_UNIFIED_WRAPSENTENCES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "width", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("charwise", /* Localizable */ "T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new WrapSentencesCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("palindrome", /* Localizable */ "T_SHELL_UNIFIED_PALINDROME_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("ignorecase", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new PalindromeCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("numeric", /* Localizable */ "T_SHELL_UNIFIED_NUMERIC_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new NumericCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("replace", /* Localizable */ "T_SHELL_UNIFIED_REPLACE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "toreplace", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "replacewith", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("regex", /* Localizable */ "T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ReplaceCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("replaceall", /* Localizable */ "T_SHELL_UNIFIED_REPLACEALL_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "replacewith", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC"
+                        }),
+                        new CommandArgumentPart(true, "toreplace", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true, true)
+                ], new ReplaceAllCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("replaceallrange", /* Localizable */ "T_SHELL_UNIFIED_REPLACEALLRANGE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "toreplace", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "strings", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true, true)
+                ], new ReplaceAllRangeCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("replacechar", /* Localizable */ "T_SHELL_UNIFIED_REPLACECHAR_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "charIdx", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(true, "toreplace", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ReplaceCharCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("replacelastocc", /* Localizable */ "T_SHELL_UNIFIED_REPLACELASTOCC_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "toreplace", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "replacewith", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ReplaceLastOccCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("replaceocc", /* Localizable */ "T_SHELL_UNIFIED_REPLACEOCC_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "toreplace", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "replacewith", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC"
+                        }),
+                        new CommandArgumentPart(true, "occurrencenum", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ReplaceOccCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("reverse", /* Localizable */ "T_SHELL_UNIFIED_REVERSE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ReverseCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("shift", /* Localizable */ "T_SHELL_UNIFIED_SHIFT_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "shift", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ShiftCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("split", /* Localizable */ "T_SHELL_UNIFIED_SPLIT_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "delimiter", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new SplitCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("splitnewlines", /* Localizable */ "T_SHELL_UNIFIED_SPLITNEWLINES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new SplitNewLinesCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("splitdq", /* Localizable */ "T_SHELL_UNIFIED_SPLITDQ_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "delimiter", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new SplitdqCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("truncate", /* Localizable */ "T_SHELL_UNIFIED_TRUNCATE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(true, "threshold", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("noellipsis", /* Localizable */ "T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new TruncateCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("escapestr", /* Localizable */ "T_SHELL_UNIFIED_ESCAPESTR_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new EscapeStrCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("unescapestr", /* Localizable */ "T_SHELL_UNIFIED_UNESCAPESTR_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new UnescapeStrCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("tobraille", /* Localizable */ "T_SHELL_UNIFIED_TOBRAILLE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ToBrailleCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("tofiglet", /* Localizable */ "T_SHELL_UNIFIED_TOFIGlET_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "font", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "width", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ToFigletCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("figletmetrics", /* Localizable */ "T_SHELL_UNIFIED_FIGlETMETRICS_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "font", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "width", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("detailed", /* Localizable */ "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new FigletMetricsCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("reversertl", /* Localizable */ "T_SHELL_UNIFIED_REVERSERTL_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new ReverseRtlCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("randomword", /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORD_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new RandomWordCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("randomwordcond", /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(false, "maxLength", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "startsWith", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC"
+                        }),
+                        new CommandArgumentPart(false, "endsWith", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC"
+                        }),
+                        new CommandArgumentPart(false, "exactLength", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new RandomWordCondCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("findprofanity", /* Localizable */ "T_SHELL_UNIFIED_FINDPROFANITY_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "profanitytype", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+                            AutoCompleter = (_) => Enum.GetNames(typeof(ProfanitySearchType)),
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new FindProfanityCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("filterprofanity", /* Localizable */ "T_SHELL_UNIFIED_FILTERPROFANITY_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                        new CommandArgumentPart(false, "profanitytype", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+                            AutoCompleter = (_) => Enum.GetNames(typeof(ProfanitySearchType)),
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("quiet", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_QUIET_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new FilterProfanityCommand(), CommandFlags.Hidden),
+
+            new CommandInfo("normalizespaces", /* Localizable */ "T_SHELL_UNIFIED_NORMALIZESPACES_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("simple", /* Localizable */ "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["analytical"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("analytical", /* Localizable */ "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["simple"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("verbose", /* Localizable */ "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], true)
+                ], new NormalizeSpacesCommand(), CommandFlags.Hidden),
 
             new CommandInfo("savehistories", /* Localizable */ "T_SHELL_UNIFIED_SAVEHISTORIES_DESC", new SaveHistoriesUnifiedCommand()),
 
