@@ -230,11 +230,5 @@ namespace Terminaux.Writer.ConsoleWriters
             }
             return "";
         }
-
-        static SeparatorWriterColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

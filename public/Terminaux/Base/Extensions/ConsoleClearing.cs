@@ -55,11 +55,5 @@ namespace Terminaux.Base.Extensions
             ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.EscFullReset));
             ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
         }
-
-        static ConsoleClearing()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

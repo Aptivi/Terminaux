@@ -677,11 +677,5 @@ namespace Terminaux.Colors
                 }
             }
         }
-
-        static ColorTools()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

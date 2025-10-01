@@ -378,11 +378,5 @@ namespace Terminaux.Inputs.Styles.Infobox
             int timeSecondsRight = timeHoursLeft + maxTimePartWidth * 3 + 6;
             return PointerTools.PointerWithinRange(mouse, (timeSecondsLeft, timeTop), (timeSecondsRight, timeTop));
         }
-
-        static InfoBoxTimeColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

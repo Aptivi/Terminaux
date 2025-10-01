@@ -24,19 +24,10 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Extensions;
 using SpecProbe.Software.Platform;
 using Terminaux.Base.TermInfo;
-using Terminaux.Colors.Data;
-using System.Diagnostics;
 using System.Collections.Generic;
-using Textify.General;
-using System.Text;
-using System.Threading;
 using Terminaux.Inputs;
 using Terminaux.Base.Extensions.Native;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands.ProcessExecution;
-using Textify.Tools.Placeholder;
-using Terminaux.Shell.Scripting;
-using Terminaux.Colors;
 
 namespace Terminaux.Base.Checks
 {
@@ -45,13 +36,8 @@ namespace Terminaux.Base.Checks
     /// </summary>
     public static class ConsoleChecker
     {
-
-        internal static bool busy = false;
-        private static bool acknowledged = false;
         private static bool _dumbSet = false;
         private static bool _dumb = true;
-        private static readonly string[] whitelist = ["testhost", "Terminaux.Tests"];
-        private static readonly List<string> customWhitelist = [];
 
         /// <summary>
         /// Is the console a dumb console?
@@ -101,90 +87,6 @@ namespace Terminaux.Base.Checks
                 else
                     return Environment.GetEnvironmentVariable("USERPROFILE").Replace(@"\", "/");
             }
-        }
-
-        /// <summary>
-        /// Checks the running console for sanity, like the incompatible consoles, insane console types, etc.
-        /// </summary>
-        public static void CheckConsole()
-        {
-            if (acknowledged)
-                return;
-            busy = true;
-            ConsoleLogger.Info("Checking for console");
-
-            // First, get the assembly for whitelist
-            var asm = Assembly.GetEntryAssembly();
-            if (asm is null || asm.FullName.ContainsAnyOf(whitelist) || asm.FullName.ContainsAnyOf([.. customWhitelist]))
-            {
-                ConsoleLogger.Debug("Not going to check console due to assembly being whitelisted (B: {0}, C: {1}) or null", whitelist.Length, customWhitelist.Count);
-                busy = false;
-                acknowledged = true;
-                return;
-            }
-
-            // Now, check the type
-            string TerminalType = PlatformHelper.GetTerminalType();
-            string TerminalEmulator = PlatformHelper.GetTerminalEmulator();
-            ConsoleLogger.Debug("Checking against terminal {0} on {1}", TerminalType, TerminalEmulator);
-
-            // Check the blacklist and the graylist for the console type
-            var (blacklisted, justification) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
-            var (graylisted, justification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist);
-            ConsoleLogger.Debug("Terminal {0} on {1} blacklisted: {2}: {3}", TerminalType, TerminalEmulator, blacklisted, justification);
-            ConsoleLogger.Debug("Terminal {0} on {1} graylisted: {2}: {3}", TerminalType, TerminalEmulator, graylisted, justification2);
-            if (blacklisted)
-            {
-                ConsoleLogger.Fatal("Terminal {0} on {1} is blacklisted!", TerminalType, TerminalEmulator);
-                FastFail(
-                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE"),
-                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1").FormatString(TerminalType, justification)
-                );
-            }
-            if (graylisted)
-            {
-                ConsoleLogger.Warning("Terminal {0} on {1} is graylisted!", TerminalType, TerminalEmulator);
-                TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE").FormatString(TerminalType, justification2));
-            }
-
-            // Check the blacklist and the graylist for the terminal emulator
-            var (emuBlacklisted, emuJustification) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist);
-            var (emuGraylisted, emuJustification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Emulator, ConsoleFilterSeverity.Graylist);
-            ConsoleLogger.Debug("Emulator {0} blacklisted: {1}: {2}", TerminalEmulator, emuBlacklisted, emuJustification);
-            ConsoleLogger.Debug("Emulator {0} graylisted: {1}: {2}", TerminalEmulator, emuGraylisted, emuJustification2);
-            if (emuBlacklisted)
-            {
-                ConsoleLogger.Fatal("Emulator {0} is blacklisted!", TerminalEmulator);
-                FastFail(
-                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE"),
-                    LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1").FormatString(TerminalEmulator, emuJustification)
-                );
-            }
-            if (emuGraylisted)
-            {
-                ConsoleLogger.Warning("Emulator {0} is graylisted!", TerminalEmulator);
-                TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE").FormatString(TerminalEmulator, emuJustification2));
-            }
-
-            // Check for 256 colors
-            if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
-                TextWriterRaw.WritePlain(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE").FormatString(TerminalType));
-
-            // Set the encoding
-            if (PlatformHelper.IsOnWindows())
-            {
-                ConsoleLogger.Debug("Setting codepage...");
-                Console.InputEncoding = Encoding.Unicode;
-                Console.OutputEncoding = Encoding.Unicode;
-            }
-
-            // Don't check again.
-            busy = false;
-            acknowledged = true;
-            ConsoleLogger.Info("This Terminaux application can now run!");
-
-            // Initialize some of the components
-            InitializeComponents();
         }
 
         /// <summary>
@@ -334,51 +236,6 @@ namespace Terminaux.Base.Checks
             return conHost;
         }
 
-        /// <summary>
-        /// Adds the assembly to the check whitelist
-        /// </summary>
-        /// <param name="asm">Assembly to add</param>
-        public static void AddToCheckWhitelist(Assembly asm)
-        {
-            if (asm is null)
-                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY"));
-
-            // Add the partial name for the assembly to the whitelist
-            if (!customWhitelist.Contains(asm.FullName))
-            {
-                customWhitelist.Add(asm.FullName);
-                ConsoleLogger.Debug("Added assembly {0} to check whitelist", asm.FullName);
-            }
-        }
-
-        /// <summary>
-        /// Removes the assembly from the check whitelist
-        /// </summary>
-        /// <param name="asm">Assembly to remove</param>
-        public static void RemoveFromCheckWhitelist(Assembly asm)
-        {
-            if (asm is null)
-                throw new TerminauxException(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY"));
-
-            // Add the partial name for the assembly to the whitelist
-            if (customWhitelist.Contains(asm.FullName))
-            {
-                customWhitelist.Remove(asm.FullName);
-                ConsoleLogger.Debug("Removed assembly {0} from check whitelist", asm.FullName);
-            }
-        }
-
-        internal static void FastFail(string eventMessage, string description, Exception? ex = null)
-        {
-            TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT").FormatString(description), ConsoleColors.Red);
-            ConsoleLogger.Fatal("Event: {0}, desc: {1}", eventMessage, description);
-            ConsoleLogger.Fatal("Rude exit");
-            if (ex is null)
-                Environment.FailFast(eventMessage);
-            else
-                Environment.FailFast(eventMessage, ex);
-        }
-
         internal static string PathLookupDelimiter =>
             Convert.ToString(Path.PathSeparator);
 
@@ -402,23 +259,6 @@ namespace Terminaux.Base.Checks
                 }
             }
             return false;
-        }
-
-        private static void InitializeComponents()
-        {
-            // Load the placeholder for an MESH variable, unless it's already defined
-            PlaceParse.RegisterCustomPlaceholder("$", MESHVariables.GetVariable);
-
-            // Now, load the color placeholders
-            PlaceParse.RegisterCustomPlaceholder("f", (c) => new Color(c).VTSequenceForeground);
-            PlaceParse.RegisterCustomPlaceholder("b", (c) => new Color(c).VTSequenceBackground);
-            PlaceParse.RegisterCustomPlaceholder("fgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground);
-            PlaceParse.RegisterCustomPlaceholder("bgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground);
-
-            // Load the platform placeholders
-            PlaceParse.RegisterCustomPlaceholder("ridgeneric", (_) => PlatformHelper.GetCurrentGenericRid());
-            PlaceParse.RegisterCustomPlaceholder("termemu", (_) => PlatformHelper.GetTerminalEmulator());
-            PlaceParse.RegisterCustomPlaceholder("termtype", (_) => PlatformHelper.GetTerminalType());
         }
     }
 }

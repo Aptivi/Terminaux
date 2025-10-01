@@ -179,11 +179,5 @@ namespace Terminaux.Base.Buffered
                 ConsoleLogger.Error(ex, $"Failed to render cyclic screen: {ex.Message}");
             }
         }
-
-        static ScreenTools()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

@@ -134,11 +134,5 @@ namespace Terminaux.Inputs.Styles
             ConsoleLogger.Debug("Result color: {0}", result);
             return result;
         }
-
-        static ColorSelector()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

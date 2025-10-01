@@ -580,11 +580,5 @@ namespace Terminaux.Inputs.Interactive
             }
             return true;
         }
-
-        static InteractiveTuiTools()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

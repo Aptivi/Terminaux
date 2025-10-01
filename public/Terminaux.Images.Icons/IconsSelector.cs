@@ -225,11 +225,5 @@ namespace Terminaux.Images.Icons
                 new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_ADDITIONALBINDINGS_SELECT"), ConsoleKey.S),
                 new(LanguageTools.GetLocalized("TII_ICONSSELECTOR_ADDITIONALBINDINGS_MANUALSELECT"), ConsoleKey.S, ConsoleModifiers.Shift),
             ];
-
-        static IconsSelector()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

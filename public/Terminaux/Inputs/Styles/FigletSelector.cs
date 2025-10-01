@@ -93,11 +93,5 @@ namespace Terminaux.Inputs.Styles
             }
             return selectedFont;
         }
-
-        static FigletSelector()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

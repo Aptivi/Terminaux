@@ -418,11 +418,5 @@ namespace Terminaux.Inputs.Presentation
             else
                 return true;
         }
-
-        static PresentationTools()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

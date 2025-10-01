@@ -377,7 +377,6 @@ namespace Terminaux.Console.Fixtures
 
             // Console
             new ConsoleSizeCheck(),
-            new ConsoleCheck(),
             new TestCursorStyles(),
             new TestFormatting(),
             new ClearKeepPosition(),

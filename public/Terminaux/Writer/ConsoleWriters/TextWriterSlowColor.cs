@@ -140,11 +140,5 @@ namespace Terminaux.Writer.ConsoleWriters
                 }
             }
         }
-
-        static TextWriterSlowColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

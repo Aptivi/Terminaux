@@ -396,11 +396,5 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             return [.. buttonWidths];
         }
-
-        static InfoBoxButtonsColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

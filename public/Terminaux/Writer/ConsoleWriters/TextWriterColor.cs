@@ -337,11 +337,5 @@ namespace Terminaux.Writer.ConsoleWriters
                 return "";
             }
         }
-
-        static TextWriterColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

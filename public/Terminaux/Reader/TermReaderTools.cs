@@ -553,11 +553,5 @@ namespace Terminaux.Reader
             }
             return "";
         }
-
-        static TermReaderTools()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

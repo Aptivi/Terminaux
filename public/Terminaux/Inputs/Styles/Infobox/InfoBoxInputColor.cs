@@ -185,11 +185,5 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             return "";
         }
-
-        static InfoBoxInputColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

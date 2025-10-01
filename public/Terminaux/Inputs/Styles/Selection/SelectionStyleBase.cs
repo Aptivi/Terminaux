@@ -93,11 +93,5 @@ namespace Terminaux.Inputs.Styles.Selection
             TextualUITools.RunTui(tui);
             return tui.GetResultingChoices();
         }
-
-        static SelectionStyleBase()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

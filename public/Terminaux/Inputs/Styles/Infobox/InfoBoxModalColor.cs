@@ -217,11 +217,5 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.UnsetCurrent(screen);
             }
         }
-
-        static InfoBoxModalColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

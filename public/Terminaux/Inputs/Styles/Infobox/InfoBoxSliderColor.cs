@@ -320,11 +320,5 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         private static void SelectionSet(ref int selected, int value) =>
             selected = value;
-
-        static InfoBoxSliderColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

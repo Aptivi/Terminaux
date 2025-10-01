@@ -130,11 +130,5 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.UnsetCurrent(screen);
             }
         }
-
-        static InfoBoxProgressColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

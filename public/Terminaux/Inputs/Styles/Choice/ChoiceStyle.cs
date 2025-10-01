@@ -148,11 +148,5 @@ namespace Terminaux.Inputs.Styles.Choice
                     TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_STYLES_CHOICE_WRONGANSWER"));
             }
         }
-
-        static ChoiceStyle()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

@@ -603,11 +603,5 @@ namespace Terminaux.Writer.ConsoleWriters
                 return "";
             }
         }
-
-        static TextWriterWhereColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

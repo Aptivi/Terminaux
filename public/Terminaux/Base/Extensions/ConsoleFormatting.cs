@@ -126,11 +126,5 @@ namespace Terminaux.Base.Extensions
             formatting = ConsoleFormattingType.Default;
             ConsoleLogger.Debug("Formatting reset");
         }
-
-        static ConsoleFormatting()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

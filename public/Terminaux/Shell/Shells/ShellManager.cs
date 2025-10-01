@@ -45,6 +45,8 @@ using Terminaux.Shell.Aliases;
 using Terminaux.Colors.Themes.Colors;
 using Textify.Tools.Placeholder;
 using Textify.Data.Words.Profanity;
+using Terminaux.Colors;
+using SpecProbe.Software.Platform;
 
 namespace Terminaux.Shell.Shells
 {
@@ -2418,6 +2420,20 @@ namespace Terminaux.Shell.Shells
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
                 ShellStack.Add(ShellInfo);
+
+                // Load the placeholder for an MESH variable, unless it's already defined
+                PlaceParse.RegisterCustomPlaceholder("$", MESHVariables.GetVariable);
+
+                // Now, load the color placeholders
+                PlaceParse.RegisterCustomPlaceholder("f", (c) => new Color(c).VTSequenceForeground);
+                PlaceParse.RegisterCustomPlaceholder("b", (c) => new Color(c).VTSequenceBackground);
+                PlaceParse.RegisterCustomPlaceholder("fgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground);
+                PlaceParse.RegisterCustomPlaceholder("bgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground);
+
+                // Load the platform placeholders
+                PlaceParse.RegisterCustomPlaceholder("ridgeneric", (_) => PlatformHelper.GetCurrentGenericRid());
+                PlaceParse.RegisterCustomPlaceholder("termemu", (_) => PlatformHelper.GetTerminalEmulator());
+                PlaceParse.RegisterCustomPlaceholder("termtype", (_) => PlatformHelper.GetTerminalType());
 
                 // Load the histories
                 if (!HistoryTools.IsHistoryRegistered(ShellType))

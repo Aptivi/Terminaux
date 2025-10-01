@@ -193,11 +193,5 @@ namespace Terminaux.Base.Extensions
                 ch == '\t' ? new string(' ', ConsoleMisc.TabWidth) :
                 ch.ToString();
         }
-
-        static ConsolePositioning()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

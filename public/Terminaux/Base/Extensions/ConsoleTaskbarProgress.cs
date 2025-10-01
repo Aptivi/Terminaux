@@ -100,11 +100,7 @@ namespace Terminaux.Base.Extensions
         {
             bool supported = PlatformHelper.IsOnWindows() && Environment.OSVersion.Version >= new Version(6, 1);
             if (supported)
-            {
-                if (!ConsoleChecker.busy)
-                    ConsoleChecker.CheckConsole();
                 taskbarCom = NativeComClasses.TaskbarCom.Create(ConsoleTaskbarProgressEnum.NoProgress);
-            }
         }
     }
 }

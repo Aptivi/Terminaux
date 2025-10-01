@@ -587,11 +587,5 @@ namespace Terminaux.Base.Extensions
 
         private static bool WideCharInRange(WideChar ch, WideChar start, WideChar end) =>
             ch >= start && ch <= end;
-
-        static ConsoleMisc()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

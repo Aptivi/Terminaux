@@ -68,11 +68,5 @@ namespace Terminaux.Base.Extensions
                 }
             }
         }
-
-        static ConsoleCursor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

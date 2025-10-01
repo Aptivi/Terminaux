@@ -80,11 +80,5 @@ namespace Terminaux.Inputs.Styles
             ConsoleLogger.Debug("Result spinner: {0}", result);
             return spinnerSelectorTui.GetResultingSpinner();
         }
-
-        static SpinnerSelector()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

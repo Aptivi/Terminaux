@@ -162,11 +162,5 @@ namespace Terminaux.Writer.ConsoleWriters
             };
             return listEntry.Render();
         }
-
-        static ListEntryWriterColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

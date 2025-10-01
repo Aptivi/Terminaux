@@ -583,11 +583,5 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (currentSelection < 0)
                 currentSelection = 0;
         }
-
-        static InfoBoxSelectionColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

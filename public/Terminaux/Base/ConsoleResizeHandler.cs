@@ -68,7 +68,7 @@ namespace Terminaux.Base
         /// <param name="customHandler">Specifies the custom console resize handler that will be called if resize is detected</param>
         public static void StartResizeListener(Action<int, int, int, int>? customHandler = null)
         {
-            if (IsListening)
+            if (IsListening || ConsoleChecker.IsDumb)
                 return;
 
             SetCachedWindowDimensions(Console.WindowWidth, Console.WindowHeight);
@@ -162,12 +162,6 @@ namespace Terminaux.Base
             {
                 ConsoleLogger.Error(ex, $"Failed to detect console resize: {ex.Message}");
             }
-        }
-
-        static ConsoleResizeHandler()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
         }
     }
 }

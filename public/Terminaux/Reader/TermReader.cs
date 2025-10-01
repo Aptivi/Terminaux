@@ -469,11 +469,5 @@ namespace Terminaux.Reader
             // Now, call the audio cue handler
             ConsoleAcoustic.PlayKeyAudioCue(settings, audioCue);
         }
-
-        static TermReader()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }

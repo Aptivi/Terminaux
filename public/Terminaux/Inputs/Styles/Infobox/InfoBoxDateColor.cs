@@ -378,11 +378,5 @@ namespace Terminaux.Inputs.Styles.Infobox
             int timeDaysRight = timeYearsLeft + maxTimePartWidth * 3 + 6;
             return PointerTools.PointerWithinRange(mouse, (timeDaysLeft, timeTop), (timeDaysRight, timeTop));
         }
-
-        static InfoBoxDateColor()
-        {
-            if (!ConsoleChecker.busy)
-                ConsoleChecker.CheckConsole();
-        }
     }
 }
