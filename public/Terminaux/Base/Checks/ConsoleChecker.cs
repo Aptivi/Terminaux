@@ -37,7 +37,7 @@ namespace Terminaux.Base.Checks
     public static class ConsoleChecker
     {
         private static bool _dumbSet = false;
-        private static bool _dumb = true;
+        private static bool _dumb = false;
 
         /// <summary>
         /// Is the console a dumb console?
@@ -64,7 +64,11 @@ namespace Terminaux.Base.Checks
                             _dumb = true;
                     }
                 }
-                catch { }
+                catch
+                {
+                    // Assume console is dumb
+                    _dumb = true;
+                }
                 ConsoleLogger.Debug("Dumb is {0}", _dumb);
                 return _dumb;
             }
