@@ -261,6 +261,8 @@ namespace Terminaux.Colors
         {
             if (ColorSequence is null)
                 throw new TerminauxException(LanguageTools.GetLocalized("T_COLOR_EXCEPTION_COLORISNULL"));
+            if (ConsoleChecker.IsDumb)
+                return "";
 
             // Define reset background sequence
             string resetBgSequence = RenderResetBackground();
