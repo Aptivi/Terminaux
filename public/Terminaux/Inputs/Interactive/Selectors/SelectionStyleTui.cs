@@ -681,6 +681,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             };
 
             // Install keybindings
+            Keybindings.RemoveAt(0);
             Keybindings.Add((SelectionStyleBase.Bindings[0], (ui, _, _) => Exit(ui, false)));
             Keybindings.Add((SelectionStyleBase.Bindings[1], (_, _, _) => ProcessSelect()));
             Keybindings.Add((SelectionStyleBase.Bindings[2], (ui, _, _) => Exit(ui, true)));

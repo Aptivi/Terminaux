@@ -145,15 +145,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered, selectorTui.Settings.InfoBoxSettings);
         }
 
-        private void ListBindings()
-        {
-            var bindings = InteractiveTuiTools.GetAllBindings(selectorTui, true);
-            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings(selectorTui.Settings.InfoBoxSettings)
-            {
-                Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS")
-            });
-        }
-
         private void UpdateSelectionBasedOnMouse(PointerEventContext? mouse)
         {
             if (mouse is null)
@@ -350,7 +341,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2"), ConsoleKey.PageUp), (_, _, _) => PreviousPage()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2"), ConsoleKey.PageDown), (_, _, _) => NextPage()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_READMORE"), ConsoleKey.I, ConsoleModifiers.Shift), (_, _, _) => More()));
-            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS"), ConsoleKey.K), (_, _, _) => ListBindings()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND"), PointerButton.None, PointerButtonPress.Moved), (_, _, mouse) => UpdateSelectionBasedOnMouse(mouse)));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCH"), ConsoleKey.F), (ui, _, _) => LaunchFinder(ui)));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_EXIT"), ConsoleKey.Escape), (ui, _, _) => Exit(ui)));
