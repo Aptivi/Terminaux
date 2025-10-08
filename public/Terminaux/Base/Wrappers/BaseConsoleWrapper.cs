@@ -24,11 +24,14 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Shell.Scripting;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Textify.Tools.Placeholder;
 
 namespace Terminaux.Base.Wrappers
 {
@@ -581,6 +584,20 @@ namespace Terminaux.Base.Wrappers
         static BaseConsoleWrapper()
         {
             ConsoleMisc.PrepareCodepage();
+
+            // Load the placeholder for an MESH variable, unless it's already defined
+            PlaceParse.RegisterCustomPlaceholder("$", MESHVariables.GetVariable);
+
+            // Now, load the color placeholders
+            PlaceParse.RegisterCustomPlaceholder("f", (c) => new Color(c).VTSequenceForeground);
+            PlaceParse.RegisterCustomPlaceholder("b", (c) => new Color(c).VTSequenceBackground);
+            PlaceParse.RegisterCustomPlaceholder("fgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground);
+            PlaceParse.RegisterCustomPlaceholder("bgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground);
+
+            // Load the platform placeholders
+            PlaceParse.RegisterCustomPlaceholder("ridgeneric", (_) => PlatformHelper.GetCurrentGenericRid());
+            PlaceParse.RegisterCustomPlaceholder("termemu", (_) => PlatformHelper.GetTerminalEmulator());
+            PlaceParse.RegisterCustomPlaceholder("termtype", (_) => PlatformHelper.GetTerminalType());
         }
     }
 }
