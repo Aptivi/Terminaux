@@ -48,8 +48,3 @@ jobs:
             tools/*.zip
       - name: Package Publication
         run: NUGET_APIKEY=${{ secrets.NUGET_APIKEY }} ./tools/push.sh
-      - name: Notify build
-        uses: tsickert/discord-webhook@v6.0.0
-        with:
-          webhook-url: ${{ secrets.WEBHOOK_URL }}
-          content: "<:terminaux:1305819644824911872> ${{ steps.release-asset.outputs.SUBJECT }} <:terminaux:1305819644824911872>\n\n${{ steps.release-asset.outputs.BODY }}"
