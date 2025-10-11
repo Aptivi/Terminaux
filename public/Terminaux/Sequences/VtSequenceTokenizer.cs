@@ -151,7 +151,7 @@ namespace Terminaux.Sequences
 
             // If it's ESC, we need to check the '[' prefix.
             int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
-            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != '[')
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != VtSequenceBasicChars.CsiPrefixChar)
                 return false;
             advance++;
 
@@ -205,7 +205,8 @@ namespace Terminaux.Sequences
             string finalSeq = new(finalChars);
 
             // Make a VT sequence instance
-            seq = new VtSequenceInfo(VtSequenceType.Csi, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}[" : $"{VtSequenceBasicChars.CsiChar}", parameters.ToString(), intermediates.ToString(), finalSeq, ending, idx);
+            string finalPrefix = offset == 1 ? VtSequenceBasicChars.CsiSequencePrefix : $"{VtSequenceBasicChars.CsiChar}";
+            seq = new VtSequenceInfo(VtSequenceType.Csi, sequenceType, finalPrefix, parameters.ToString(), intermediates.ToString(), finalSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -224,7 +225,7 @@ namespace Terminaux.Sequences
 
             // If it's ESC, we need to check the ']' prefix.
             int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
-            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != ']')
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != VtSequenceBasicChars.OSCPrefixChar)
                 return false;
             advance++;
 
@@ -269,7 +270,8 @@ namespace Terminaux.Sequences
             string finalSeq = new(finalChars);
 
             // Make a VT sequence instance
-            seq = new VtSequenceInfo(VtSequenceType.Osc, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}]" : $"{VtSequenceBasicChars.OSCChar}", parameters.ToString(), "", finalSeq, ending, idx);
+            string finalPrefix = offset == 1 ? VtSequenceBasicChars.OSCSequencePrefix : $"{VtSequenceBasicChars.OSCChar}";
+            seq = new VtSequenceInfo(VtSequenceType.Osc, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -351,7 +353,7 @@ namespace Terminaux.Sequences
 
             // If it's ESC, we need to check the '_' prefix.
             int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
-            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != '_')
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != VtSequenceBasicChars.APCPrefixChar)
                 return false;
             advance++;
 
@@ -396,7 +398,8 @@ namespace Terminaux.Sequences
             string finalSeq = new(finalChars);
 
             // Make a VT sequence instance
-            seq = new VtSequenceInfo(VtSequenceType.Apc, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}]" : $"{VtSequenceBasicChars.APCChar}", parameters.ToString(), "", finalSeq, ending, idx);
+            string finalPrefix = offset == 1 ? VtSequenceBasicChars.APCSequencePrefix : $"{VtSequenceBasicChars.APCChar}";
+            seq = new VtSequenceInfo(VtSequenceType.Apc, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -415,7 +418,7 @@ namespace Terminaux.Sequences
 
             // If it's ESC, we need to check the 'P' prefix.
             int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
-            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != 'P')
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != VtSequenceBasicChars.DCSPrefixChar)
                 return false;
             advance++;
 
@@ -460,7 +463,8 @@ namespace Terminaux.Sequences
             string finalSeq = new(finalChars);
 
             // Make a VT sequence instance
-            seq = new VtSequenceInfo(VtSequenceType.Dcs, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}]" : $"{VtSequenceBasicChars.DCSChar}", parameters.ToString(), "", finalSeq, ending, idx);
+            string finalPrefix = offset == 1 ? VtSequenceBasicChars.DCSSequencePrefix : $"{VtSequenceBasicChars.DCSChar}";
+            seq = new VtSequenceInfo(VtSequenceType.Dcs, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, ending, idx);
             advance += increment - 1;
             return true;
         }
@@ -479,7 +483,7 @@ namespace Terminaux.Sequences
 
             // If it's ESC, we need to check the '^' prefix.
             int offset = prefix == VtSequenceBasicChars.EscapeChar ? 1 : 0;
-            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != '^')
+            if (!VtSequenceTokenTools.TryGetChar(charRead, idx + offset, out char param) || param != VtSequenceBasicChars.PMPrefixChar)
                 return false;
             advance++;
 
@@ -524,7 +528,8 @@ namespace Terminaux.Sequences
             string finalSeq = new(finalChars);
 
             // Make a VT sequence instance
-            seq = new VtSequenceInfo(VtSequenceType.Pm, sequenceType, offset == 1 ? $"{VtSequenceBasicChars.EscapeChar}]" : $"{VtSequenceBasicChars.PMChar}", parameters.ToString(), "", finalSeq, ending, idx);
+            string finalPrefix = offset == 1 ? VtSequenceBasicChars.PMSequencePrefix : $"{VtSequenceBasicChars.PMChar}";
+            seq = new VtSequenceInfo(VtSequenceType.Pm, sequenceType, finalPrefix, parameters.ToString(), "", finalSeq, ending, idx);
             advance += increment - 1;
             return true;
         }

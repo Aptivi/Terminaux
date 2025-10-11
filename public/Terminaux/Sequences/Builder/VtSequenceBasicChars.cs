@@ -143,9 +143,29 @@ namespace Terminaux.Sequences.Builder
         public const char CsiChar = '\x9B';
 
         /// <summary>
+        /// Gets the CSI prefix character
+        /// </summary>
+        public const char CsiPrefixChar = '[';
+
+        /// <summary>
+        /// Gets the CSI escape sequence prefix
+        /// </summary>
+        public static readonly string CsiSequencePrefix = $"{EscapeChar}{CsiPrefixChar}";
+
+        /// <summary>
         /// Gets the OSC character
         /// </summary>
         public const char OSCChar = '\x9D';
+
+        /// <summary>
+        /// Gets the OSC prefix character
+        /// </summary>
+        public const char OSCPrefixChar = ']';
+
+        /// <summary>
+        /// Gets the OSC escape sequence prefix
+        /// </summary>
+        public static readonly string OSCSequencePrefix = $"{EscapeChar}{OSCPrefixChar}";
 
         /// <summary>
         /// Gets the APC character
@@ -153,13 +173,43 @@ namespace Terminaux.Sequences.Builder
         public const char APCChar = '\x9F';
 
         /// <summary>
+        /// Gets the APC prefix character
+        /// </summary>
+        public const char APCPrefixChar = '_';
+
+        /// <summary>
+        /// Gets the APC escape sequence prefix
+        /// </summary>
+        public static readonly string APCSequencePrefix = $"{EscapeChar}{APCPrefixChar}";
+
+        /// <summary>
         /// Gets the DCS character
         /// </summary>
         public const char DCSChar = '\x90';
 
         /// <summary>
+        /// Gets the DCS prefix character
+        /// </summary>
+        public const char DCSPrefixChar = 'P';
+
+        /// <summary>
+        /// Gets the DCS escape sequence prefix
+        /// </summary>
+        public static readonly string DCSSequencePrefix = $"{EscapeChar}{DCSPrefixChar}";
+
+        /// <summary>
         /// Gets the PM character
         /// </summary>
         public const char PMChar = '\x9E';
+
+        /// <summary>
+        /// Gets the PM prefix character
+        /// </summary>
+        public const char PMPrefixChar = '^';
+
+        /// <summary>
+        /// Gets the PM escape sequence prefix
+        /// </summary>
+        public static readonly string PMSequencePrefix = $"{EscapeChar}{PMPrefixChar}";
     }
 }
