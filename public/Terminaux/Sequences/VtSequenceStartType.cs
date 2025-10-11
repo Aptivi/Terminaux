@@ -20,7 +20,7 @@
 namespace Terminaux.Sequences
 {
     /// <summary>
-    /// VT sequence type
+    /// VT sequence start type
     /// </summary>
     public enum VtSequenceStartType
     {

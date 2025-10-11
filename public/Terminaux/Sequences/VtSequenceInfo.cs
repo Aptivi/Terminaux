@@ -18,6 +18,7 @@
 //
 
 using System.Diagnostics;
+using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Sequences
 {
@@ -31,7 +32,13 @@ namespace Terminaux.Sequences
         /// VT sequence type
         /// </summary>
         public VtSequenceType Type { get; }
-        
+
+        /// <summary>
+        /// VT sequence specific type
+        /// </summary>
+        public VtSequenceSpecificType SpecificType =>
+            GetSpecificType();
+
         /// <summary>
         /// VT sequence start type
         /// </summary>
@@ -72,6 +79,41 @@ namespace Terminaux.Sequences
         /// </summary>
         public int End =>
             Start + FullSequence.Length - 1;
+
+        private VtSequenceSpecificType GetSpecificType()
+        {
+            var specificType = (VtSequenceSpecificType)(-1);
+            switch (Type)
+            {
+                case VtSequenceType.Csi:
+                    // TODO: Populate this
+                    break;
+                case VtSequenceType.Osc:
+                    if (FinalChar == VtSequenceBasicChars.BellChar)
+                        specificType = VtSequenceSpecificType.OscOperatingSystemCommand;
+                    if (FinalChar == VtSequenceBasicChars.StChar)
+                        specificType = VtSequenceSpecificType.OscOperatingSystemCommandAlt;
+                    break;
+                case VtSequenceType.Esc:
+                    // TODO: Populate this
+                    break;
+                case VtSequenceType.Apc:
+                    if (FinalChar == VtSequenceBasicChars.StChar)
+                        specificType = VtSequenceSpecificType.ApcApplicationProgramCommand;
+                    break;
+                case VtSequenceType.Dcs:
+                    // TODO: Populate this
+                    break;
+                case VtSequenceType.Pm:
+                    if (FinalChar == VtSequenceBasicChars.StChar)
+                        specificType = VtSequenceSpecificType.PmPrivacyMessage;
+                    break;
+                case VtSequenceType.C1:
+                    // TODO: Populate this
+                    break;
+            }
+            return specificType;
+        }
 
         internal VtSequenceInfo()
         { }
