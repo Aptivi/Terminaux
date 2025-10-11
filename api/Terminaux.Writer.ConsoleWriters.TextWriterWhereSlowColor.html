@@ -104,7 +104,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L184">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L185">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, bool, int, params object[])</h4>
@@ -177,10 +177,180 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CSystem.Int32%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L227">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Themes.Colors.ThemeColorType,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, bool, int, ThemeColorType, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with location support, and sets colors as needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ThemeColorType color = ThemeColorType.NeutralText, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">msg</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Line</span></td>
+        <td><p>Whether to print a new line or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Left</span></td>
+        <td><p>Column number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Top</span></td>
+        <td><p>Row number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td><span class="parametername">MsEachLetter</span></td>
+        <td><p>Time in milliseconds to delay writing</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Return</span></td>
+        <td><p>Whether or not to return to old position</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">RightMargin</span></td>
+        <td><p>The right margin</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>A color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Themes_Colors_ThemeColorType_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CSystem.Int32%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L272">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Themes_Colors_ThemeColorType_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Themes.Colors.ThemeColorType,Terminaux.Colors.Themes.Colors.ThemeColorType,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, bool, int, ThemeColorType, ThemeColorType, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with location support, and sets colors as needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">msg</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Line</span></td>
+        <td><p>Whether to print a new line or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Left</span></td>
+        <td><p>Column number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Top</span></td>
+        <td><p>Row number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td><span class="parametername">MsEachLetter</span></td>
+        <td><p>Time in milliseconds to delay writing</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Return</span></td>
+        <td><p>Whether or not to return to old position</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">RightMargin</span></td>
+        <td><p>The right margin</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">ForegroundColor</span></td>
+        <td><p>A foreground color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">BackgroundColor</span></td>
+        <td><p>A background color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L170">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L171">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, bool, params object[])</h4>
@@ -247,10 +417,168 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L212">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Themes.Colors.ThemeColorType,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, bool, ThemeColorType, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with location support, and sets colors as needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ThemeColorType color = ThemeColorType.NeutralText, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">msg</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Line</span></td>
+        <td><p>Whether to print a new line or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Left</span></td>
+        <td><p>Column number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Top</span></td>
+        <td><p>Row number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td><span class="parametername">MsEachLetter</span></td>
+        <td><p>Time in milliseconds to delay writing</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Return</span></td>
+        <td><p>Whether or not to return to old position</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>A color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Themes_Colors_ThemeColorType_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L256">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Themes_Colors_ThemeColorType_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Themes.Colors.ThemeColorType,Terminaux.Colors.Themes.Colors.ThemeColorType,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, bool, ThemeColorType, ThemeColorType, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with location support, and sets colors as needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">msg</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Line</span></td>
+        <td><p>Whether to print a new line or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Left</span></td>
+        <td><p>Column number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Top</span></td>
+        <td><p>Row number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td><span class="parametername">MsEachLetter</span></td>
+        <td><p>Time in milliseconds to delay writing</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Return</span></td>
+        <td><p>Whether or not to return to old position</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">ForegroundColor</span></td>
+        <td><p>A foreground color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">BackgroundColor</span></td>
+        <td><p>A background color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L157">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L158">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, params object[])</h4>
@@ -311,10 +639,156 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L198">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Themes.Colors.ThemeColorType,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, ThemeColorType, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with location support, and sets colors as needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ThemeColorType color = ThemeColorType.NeutralText, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">msg</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Line</span></td>
+        <td><p>Whether to print a new line or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Left</span></td>
+        <td><p>Column number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Top</span></td>
+        <td><p>Row number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td><span class="parametername">MsEachLetter</span></td>
+        <td><p>Time in milliseconds to delay writing</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>A color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Themes_Colors_ThemeColorType_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CTerminaux.Colors.Themes.Colors.ThemeColorType%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L241">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Themes_Colors_ThemeColorType_Terminaux_Colors_Themes_Colors_ThemeColorType_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Themes.Colors.ThemeColorType,Terminaux.Colors.Themes.Colors.ThemeColorType,System.Object[])">WriteWhereSlowly(string, bool, int, int, double, ThemeColorType, ThemeColorType, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with location support, and sets colors as needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ThemeColorType ForegroundColor = ThemeColorType.NeutralText, ThemeColorType BackgroundColor = ThemeColorType.Background, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">msg</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">Line</span></td>
+        <td><p>Whether to print a new line or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Left</span></td>
+        <td><p>Column number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">Top</span></td>
+        <td><p>Row number in console</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td><span class="parametername">MsEachLetter</span></td>
+        <td><p>Time in milliseconds to delay writing</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">ForegroundColor</span></td>
+        <td><p>A foreground color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Themes.Colors.ThemeColorType.html">ThemeColorType</a></td>
+        <td><span class="parametername">BackgroundColor</span></td>
+        <td><p>A background color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L239">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L314">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,System.Object[])">WriteWhereSlowlyColor(string, bool, int, int, double, bool, int, Color, params object[])</h4>
@@ -396,7 +870,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L224">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L299">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,System.Object[])">WriteWhereSlowlyColor(string, bool, int, int, double, bool, Color, params object[])</h4>
@@ -472,7 +946,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L210">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L285">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,System.Object[])">WriteWhereSlowlyColor(string, bool, int, int, double, Color, params object[])</h4>
@@ -542,7 +1016,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CSystem.Int32%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L284">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L359">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, int, Color, Color, params object[])</h4>
@@ -630,7 +1104,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L268">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L343">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, Color, Color, params object[])</h4>
@@ -712,7 +1186,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L253">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L328">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteWhereSlowlyColorBack(string, bool, int, int, double, Color, Color, params object[])</h4>
@@ -788,7 +1262,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L73">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L74">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])">WriteWhereSlowlyPlain(string, bool, int, int, double, bool, int, params object[])</h4>
@@ -864,7 +1338,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Boolean%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L59">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L60">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])">WriteWhereSlowlyPlain(string, bool, int, int, double, bool, params object[])</h4>
@@ -934,7 +1408,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.Int32%2CSystem.Double%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L46">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L47">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])">WriteWhereSlowlyPlain(string, bool, int, int, double, params object[])</h4>
@@ -1005,7 +1479,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L35" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/ConsoleWriters/TextWriterWhereSlowColor.cs/#L36" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
