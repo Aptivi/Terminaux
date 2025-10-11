@@ -38,7 +38,7 @@ namespace Terminaux.Tests.Shell.ShellBase.Scripting
             testContext.WriteLine("Created new test shell " + testContext.FullyQualifiedTestClassName);
         }
 
-        [ClassCleanup(ClassCleanupBehavior.EndOfClass)]
+        [ClassCleanup]
         public static void CleanTests(TestContext testContext)
         {
             ShellManager.RegisterShell("TestShell", new TestShellInfo());
