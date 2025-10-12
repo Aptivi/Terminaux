@@ -19,6 +19,8 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using System.Linq;
+using Terminaux.Sequences;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 
@@ -2121,6 +2123,90 @@ namespace Terminaux.Tests.Sequences
         {
             string actual = "";
             Should.NotThrow(() => actual = VtSequenceBuilderTools.BuildVtSequence(specificType));
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Determines the type from the sequence
+        /// </summary>
+        [TestMethod]
+        public void TestDetermineTypeFromSequenceEsc()
+        {
+            (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Esc, VtSequenceSpecificTypes.EscInvokeG1CharacterSetGr);
+            (VtSequenceType, VtSequenceSpecificTypes) actual = default;
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypesFromSequence($"{VtSequenceBasicChars.EscapeChar}~").Single());
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Determines the type from the sequence
+        /// </summary>
+        [TestMethod]
+        public void TestDetermineTypeFromSequenceC1()
+        {
+            (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.C1, VtSequenceSpecificTypes.C1ReturnTerminalId);
+            (VtSequenceType, VtSequenceSpecificTypes) actual = default;
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypesFromSequence($"{VtSequenceBasicChars.EscapeChar}Z").Single());
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Determines the type from the sequence
+        /// </summary>
+        [TestMethod]
+        public void TestDetermineTypeFromSequenceCsi()
+        {
+            (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Csi, VtSequenceSpecificTypes.CsiEraseRectangularArea);
+            (VtSequenceType, VtSequenceSpecificTypes) actual = default;
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypesFromSequence($"{VtSequenceBasicChars.EscapeChar}[1;3;3;7$z").Single());
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Determines the type from the sequence
+        /// </summary>
+        [TestMethod]
+        public void TestDetermineTypeFromSequencePm()
+        {
+            (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Pm, VtSequenceSpecificTypes.PmPrivacyMessage);
+            (VtSequenceType, VtSequenceSpecificTypes) actual = default;
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypesFromSequence($"{VtSequenceBasicChars.EscapeChar}^Kermit\x9c").Single());
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Determines the type from the sequence
+        /// </summary>
+        [TestMethod]
+        public void TestDetermineTypeFromSequenceOsc()
+        {
+            (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Osc, VtSequenceSpecificTypes.OscOperatingSystemCommand);
+            (VtSequenceType, VtSequenceSpecificTypes) actual = default;
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypesFromSequence($"{VtSequenceBasicChars.EscapeChar}]0;Hello\x07").Single());
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Determines the type from the sequence
+        /// </summary>
+        [TestMethod]
+        public void TestDetermineTypeFromSequenceDcs()
+        {
+            (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Dcs, VtSequenceSpecificTypes.DcsRequestResourceValues);
+            (VtSequenceType, VtSequenceSpecificTypes) actual = default;
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypesFromSequence($"{VtSequenceBasicChars.EscapeChar}P+Q776964654368617273\x9c").Single());
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Determines the type from the sequence
+        /// </summary>
+        [TestMethod]
+        public void TestDetermineTypeFromSequenceApc()
+        {
+            (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Apc, VtSequenceSpecificTypes.ApcApplicationProgramCommand);
+            (VtSequenceType, VtSequenceSpecificTypes) actual = default;
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypesFromSequence($"{VtSequenceBasicChars.EscapeChar}_Kermit\x9c").Single());
             actual.ShouldBe(expected);
         }
     }

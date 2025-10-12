@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using Terminaux.Base;
 using Textify.General;
 
@@ -51,6 +52,29 @@ namespace Terminaux.Sequences.Builder
             // Now, get the sequence and statically give arguments for performance to try to escape from DynamicInvoke
             var sequenceRegexGenerator = sequenceBuilders[specificType].generator;
             return DeterministicExecution(sequenceRegexGenerator, arguments);
+        }
+
+        /// <summary>
+        /// Determines the VT sequence types from the given sequence
+        /// </summary>
+        /// <param name="sequence">The sequence to query</param>
+        /// <returns>An array of a tuple of (<see cref="VtSequenceType"/>, <see cref="VtSequenceSpecificTypes"/>) containing information about a sequence type and a sequence command type, or an empty array if nothing is found</returns>
+        public static IEnumerable<(VtSequenceType, VtSequenceSpecificTypes)> DetermineTypesFromSequence(string sequence)
+        {
+            // Get the sequence matches
+            var matches = VtSequenceTools.MatchVTSequences(sequence);
+
+            // Iterate through all matches to make a new tuple containing info that we'll need to add to an array
+            foreach (var match in matches)
+            {
+                var seqType = match.Key;
+                var sequences = match.Value;
+                foreach (var sequenceInstance in sequences)
+                {
+                    var seqSpecificType = sequenceInstance.SpecificType;
+                    yield return (seqType, seqSpecificType);
+                }
+            }
         }
     }
 }
