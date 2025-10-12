@@ -334,13 +334,23 @@ namespace Terminaux.Base.Extensions
             //
             // The problem here is that we're dealing with the console, so we need to estimate the cell width and not the
             // string length to handle characters that occupy two cells.
-            int newLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(target));
+            int newLength = ConsoleChar.EstimateCellWidth(target);
             if (newLength > threshold)
             {
-                var targetBuilder = new StringBuilder(target);
+                var sequences = VtSequenceTools.MatchVTSequences(target);
+                var targetBuilder = new StringBuilder();
                 string ellipsisMark = ellipsis ? "..." : "";
-                while (ConsoleChar.EstimateCellWidth(targetBuilder.ToString()) > threshold - ellipsisMark.Length)
-                    targetBuilder.Remove(targetBuilder.Length - 1, 1);
+                int length = 0;
+                int idx = 0;
+                int vtSeqIdx = 0;
+                while (length < threshold - ellipsisMark.Length)
+                {
+                    string charString = ConsolePositioning.BufferChar(target, sequences, ref idx, ref vtSeqIdx, out bool isVtSequence);
+                    targetBuilder.Append(charString);
+                    if (!isVtSequence)
+                        length += ConsoleChar.EstimateCellWidth(charString);
+                    idx++;
+                }
                 return $"{targetBuilder}{ellipsisMark}";
             }
             else
