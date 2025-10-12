@@ -40,6 +40,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = ApcSequences.GenerateApcApplicationProgramCommand(proprietaryCommand));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Apc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.ApcApplicationProgramCommand);
         }
 
         /// <summary>
@@ -52,6 +56,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1Index());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1Index);
         }
 
         /// <summary>
@@ -64,6 +72,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1NextLine());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1NextLine);
         }
 
         /// <summary>
@@ -76,6 +88,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1TabSet());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1TabSet);
         }
 
         /// <summary>
@@ -88,6 +104,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1ReverseIndex());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1ReverseIndex);
         }
 
         /// <summary>
@@ -100,6 +120,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1SingleShiftSelectG2CharacterSet());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1SingleShiftSelectG2CharacterSet);
         }
 
         /// <summary>
@@ -112,6 +136,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1SingleShiftSelectG3CharacterSet());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1SingleShiftSelectG3CharacterSet);
         }
 
         /// <summary>
@@ -124,6 +152,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1DeviceControlString());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1DeviceControlString);
         }
 
         /// <summary>
@@ -136,6 +168,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1StartOfGuardedArea());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1StartOfGuardedArea);
         }
 
         /// <summary>
@@ -148,6 +184,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1EndOfGuardedArea());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1EndOfGuardedArea);
         }
 
         /// <summary>
@@ -160,6 +200,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1StartOfString());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1StartOfString);
         }
 
         /// <summary>
@@ -172,6 +216,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1ReturnTerminalId());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1ReturnTerminalId);
         }
 
         /// <summary>
@@ -184,6 +232,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1ControlSequenceIndicator());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1ControlSequenceIndicator);
         }
 
         /// <summary>
@@ -196,6 +248,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1StringTerminator());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1StringTerminator);
         }
 
         /// <summary>
@@ -208,6 +264,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1OperatingSystemCommand());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1OperatingSystemCommand);
         }
 
         /// <summary>
@@ -220,6 +280,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1PrivacyMessage());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1PrivacyMessage);
         }
 
         /// <summary>
@@ -232,6 +296,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = C1Sequences.GenerateC1ApplicationProgramCommand());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.C1);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.C1ApplicationProgramCommand);
         }
 
         /// <summary>
@@ -245,6 +313,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiInsertBlankCharacters(blanks));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiInsertBlankCharacters);
         }
 
         /// <summary>
@@ -258,6 +330,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiShiftLeftColumns(columns));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiShiftLeftColumns);
         }
 
         /// <summary>
@@ -271,6 +347,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiMoveCursorUp(times));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiMoveCursorUp);
         }
 
         /// <summary>
@@ -284,6 +364,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiShiftRightColumns(columns));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiShiftRightColumns);
         }
 
         /// <summary>
@@ -297,6 +381,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiMoveCursorDown(times));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiMoveCursorDown);
         }
 
         /// <summary>
@@ -310,6 +398,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiMoveCursorRight(times));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiMoveCursorRight);
         }
 
         /// <summary>
@@ -323,6 +415,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiMoveCursorLeft(times));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiMoveCursorLeft);
         }
 
         /// <summary>
@@ -336,6 +432,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiMoveCursorNextLine(times));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiMoveCursorNextLine);
         }
 
         /// <summary>
@@ -349,6 +449,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiMoveCursorPreviousLine(times));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiMoveCursorPreviousLine);
         }
 
         /// <summary>
@@ -362,6 +466,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiCursorCharacterAbsoluteLine(column));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiCursorCharacterAbsoluteLine);
         }
 
         /// <summary>
@@ -375,6 +483,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiCursorPosition(column, row));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiCursorPosition);
         }
 
         /// <summary>
@@ -388,6 +500,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiCursorForwardTabulation(stops));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiCursorForwardTabulation);
         }
 
         /// <summary>
@@ -401,6 +517,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiEraseInDisplay(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiEraseInDisplay);
         }
 
         /// <summary>
@@ -414,6 +534,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiEraseInDisplayDecsed(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiEraseInDisplayDecsed);
         }
 
         /// <summary>
@@ -427,6 +551,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiEraseInLine(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiEraseInLine);
         }
 
         /// <summary>
@@ -440,6 +568,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiEraseInLineDecsel(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiEraseInLineDecsel);
         }
 
         /// <summary>
@@ -453,6 +585,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiInsertLine(lines));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiInsertLine);
         }
 
         /// <summary>
@@ -466,6 +602,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiDeleteLine(lines));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiDeleteLine);
         }
 
         /// <summary>
@@ -479,6 +619,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiDeleteChars(chars));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiDeleteChars);
         }
 
         /// <summary>
@@ -491,6 +635,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushColorToStack());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPushColorToStack);
         }
 
         /// <summary>
@@ -504,6 +652,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushColorToStackWithArgs(parameters));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPushColorToStackWithArgs);
         }
 
         /// <summary>
@@ -516,6 +668,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPopColorFromStack());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPopColorFromStack);
         }
 
         /// <summary>
@@ -529,6 +685,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPopColorFromStackWithArgs(parameters));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPopColorFromStackWithArgs);
         }
 
         /// <summary>
@@ -541,6 +701,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiReportPaletteStack());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiReportPaletteStack);
         }
 
         /// <summary>
@@ -554,6 +718,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiScrollUp(lines));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiScrollUp);
         }
 
         /// <summary>
@@ -567,6 +735,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetGraphicsAttribute(itemType, attributeManager, geometry));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetGraphicsAttribute);
         }
 
         /// <summary>
@@ -580,6 +752,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiScrollDown(lines));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiScrollDown);
         }
 
         /// <summary>
@@ -593,6 +769,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiInitiateHighlightMouseTracking(func, startX, startY, firstRow, lastRow));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiInitiateHighlightMouseTracking);
         }
 
         /// <summary>
@@ -606,6 +786,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiResetTitleModeFeatures(resetOptions));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiResetTitleModeFeatures);
         }
 
         /// <summary>
@@ -619,6 +803,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiEraseCharacters(chars));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiEraseCharacters);
         }
 
         /// <summary>
@@ -632,6 +820,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiCursorBackwardTabulation(stops));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiCursorBackwardTabulation);
         }
 
         /// <summary>
@@ -645,6 +837,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiScrollDownOriginal(lines));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiScrollDownOriginal);
         }
 
         /// <summary>
@@ -658,6 +854,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiCursorPositionAbsolute(column));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiCursorPositionAbsolute);
         }
 
         /// <summary>
@@ -671,6 +871,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiCursorPositionRelative(column));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiCursorPositionRelative);
         }
 
         /// <summary>
@@ -684,6 +888,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRepeatGraphicCharacter(times));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRepeatGraphicCharacter);
         }
 
         /// <summary>
@@ -697,6 +905,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSendDeviceAttributesPrimary(attributes));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSendDeviceAttributesPrimary);
         }
 
         /// <summary>
@@ -710,6 +922,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSendDeviceAttributesSecondary(attributes));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSendDeviceAttributesSecondary);
         }
 
         /// <summary>
@@ -723,6 +939,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSendDeviceAttributesTertiary(attributes));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSendDeviceAttributesTertiary);
         }
 
         /// <summary>
@@ -736,6 +956,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiLinePositionAbsolute(row));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiLinePositionAbsolute);
         }
 
         /// <summary>
@@ -749,6 +973,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiLinePositionRelative(row));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiLinePositionRelative);
         }
 
         /// <summary>
@@ -762,6 +990,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiLeftTopPosition(column, row));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiLeftTopPosition);
         }
 
         /// <summary>
@@ -775,6 +1007,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiTabClear(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiTabClear);
         }
 
         /// <summary>
@@ -788,6 +1024,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetMode(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetMode);
         }
 
         /// <summary>
@@ -801,6 +1041,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetPrivateMode(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetPrivateMode);
         }
 
         /// <summary>
@@ -814,6 +1058,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiMediaCopy(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiMediaCopy);
         }
 
         /// <summary>
@@ -827,6 +1075,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiMediaCopyPrivate(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiMediaCopyPrivate);
         }
 
         /// <summary>
@@ -840,6 +1092,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiResetMode(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiResetMode);
         }
 
         /// <summary>
@@ -853,6 +1109,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiResetPrivateMode(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiResetPrivateMode);
         }
 
         /// <summary>
@@ -866,6 +1126,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiCharacterAttributes(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiCharacterAttributes);
         }
 
         /// <summary>
@@ -879,6 +1143,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetKeyModifierOptions(resource, modify));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetKeyModifierOptions);
         }
 
         /// <summary>
@@ -892,6 +1160,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiResetKeyModifierOptions(resource));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiResetKeyModifierOptions);
         }
 
         /// <summary>
@@ -905,6 +1177,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiQueryKeyModifierOptions(resource));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiQueryKeyModifierOptions);
         }
 
         /// <summary>
@@ -918,6 +1194,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiDeviceStatusReport(report));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiDeviceStatusReport);
         }
 
         /// <summary>
@@ -931,6 +1211,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiDisableKeyModifierOptions(report));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiDisableKeyModifierOptions);
         }
 
         /// <summary>
@@ -944,6 +1228,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiDeviceStatusReportDec(report));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiDeviceStatusReportDec);
         }
 
         /// <summary>
@@ -957,6 +1245,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetPointerModeXterm(hideMode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetPointerModeXterm);
         }
 
         /// <summary>
@@ -969,6 +1261,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSoftTerminalReset());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSoftTerminalReset);
         }
 
         /// <summary>
@@ -982,6 +1278,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetConformanceLevel(level, conformance));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetConformanceLevel);
         }
 
         /// <summary>
@@ -995,6 +1295,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRequestAnsiMode(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRequestAnsiMode);
         }
 
         /// <summary>
@@ -1008,6 +1312,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRequestDecPrivateMode(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRequestDecPrivateMode);
         }
 
         /// <summary>
@@ -1020,6 +1328,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushVideoAttributesToStack());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPushVideoAttributesToStack);
         }
 
         /// <summary>
@@ -1033,6 +1345,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs(args));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPushVideoAttributesToStackWithArgs);
         }
 
         /// <summary>
@@ -1046,6 +1362,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiReportXtermVersion(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiReportXtermVersion);
         }
 
         /// <summary>
@@ -1059,6 +1379,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiLoadLeds(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiLoadLeds);
         }
 
         /// <summary>
@@ -1072,6 +1396,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetCursorStyle(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetCursorStyle);
         }
 
         /// <summary>
@@ -1085,6 +1413,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectCharacterProtectionAttribute(mode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectCharacterProtectionAttribute);
         }
 
         /// <summary>
@@ -1097,6 +1429,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPopVideoAttributesFromStack());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPopVideoAttributesFromStack);
         }
 
         /// <summary>
@@ -1110,6 +1446,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetScrollingRegion(top, bottom));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetScrollingRegion);
         }
 
         /// <summary>
@@ -1123,6 +1463,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRestoreDecPrivateModeValues(values));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRestoreDecPrivateModeValues);
         }
 
         /// <summary>
@@ -1136,6 +1480,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiChangeAttributesInRectangularArea(pt, pl, pb, pr, attributes));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiChangeAttributesInRectangularArea);
         }
 
         /// <summary>
@@ -1148,6 +1496,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSaveCursor());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSaveCursor);
         }
 
         /// <summary>
@@ -1161,6 +1513,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetLeftRightMargins(left, right));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetLeftRightMargins);
         }
 
         /// <summary>
@@ -1174,6 +1530,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetShiftEscapeOptions(option));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetShiftEscapeOptions);
         }
 
         /// <summary>
@@ -1187,6 +1547,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiDecPrivateModeValues(values));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiDecPrivateModeValues);
         }
 
         /// <summary>
@@ -1200,6 +1564,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiWindowManipulation(windowAction, windowAction2, windowAction3));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiWindowManipulation);
         }
 
         /// <summary>
@@ -1213,6 +1581,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetTitleModeXterm(modes));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetTitleModeXterm);
         }
 
         /// <summary>
@@ -1226,6 +1598,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetWarningBellVolume(level));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetWarningBellVolume);
         }
 
         /// <summary>
@@ -1239,6 +1615,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiReverseAttributesInRectangularArea(pt, pl, pb, pr, attributes));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiReverseAttributesInRectangularArea);
         }
 
         /// <summary>
@@ -1251,6 +1631,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRestoreCursor());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRestoreCursor);
         }
 
         /// <summary>
@@ -1264,6 +1648,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSetMarginBellVolume(level));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSetMarginBellVolume);
         }
 
         /// <summary>
@@ -1277,6 +1665,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiCopyRectangularArea(ptSrc, plSrc, pbSrc, prSrc, sourcePage, ptTarget, plTarget, targetPage));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiCopyRectangularArea);
         }
 
         /// <summary>
@@ -1290,6 +1682,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRequestPresentationStateReport(state));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRequestPresentationStateReport);
         }
 
         /// <summary>
@@ -1303,6 +1699,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiEnableFilterRectangle(pt, pl, pb, pr));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiEnableFilterRectangle);
         }
 
         /// <summary>
@@ -1316,6 +1716,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRequestTerminalParameters(parameter));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRequestTerminalParameters);
         }
 
         /// <summary>
@@ -1329,6 +1733,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectAttributeChangeExtent(extent));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectAttributeChangeExtent);
         }
 
         /// <summary>
@@ -1342,6 +1750,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiFillRectangularArea(character, pt, pl, pb, pr));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiFillRectangularArea);
         }
 
         /// <summary>
@@ -1355,6 +1767,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectChecksumExtension(modifier));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectChecksumExtension);
         }
 
         /// <summary>
@@ -1368,6 +1784,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRectangularAreaChecksum(requestId, pageNumber, pt, pl, pb, pr));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRectangularAreaChecksum);
         }
 
         /// <summary>
@@ -1381,6 +1801,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiLocatorReporting(locatorMode, measurement));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiLocatorReporting);
         }
 
         /// <summary>
@@ -1394,6 +1818,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiEraseRectangularArea(pt, pl, pb, pr));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiEraseRectangularArea);
         }
 
         /// <summary>
@@ -1407,6 +1835,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectLocatorEvents(parameters));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectLocatorEvents);
         }
 
         /// <summary>
@@ -1419,6 +1851,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushVideoAttributesToStackXterm());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPushVideoAttributesToStackXterm);
         }
 
         /// <summary>
@@ -1432,6 +1868,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs(parameters));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPushVideoAttributesToStackXtermWithArgs);
         }
 
         /// <summary>
@@ -1445,6 +1885,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectiveEraseRectangularArea(pt, pl, pb, pr));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectiveEraseRectangularArea);
         }
 
         /// <summary>
@@ -1458,6 +1902,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiReportGraphicsRenditionRectangularArea(pt, pl, pb, pr));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiReportGraphicsRenditionRectangularArea);
         }
 
         /// <summary>
@@ -1471,6 +1919,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectColumnsPerPage(columnMode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectColumnsPerPage);
         }
 
         /// <summary>
@@ -1484,6 +1936,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiRequestLocatorPosition(transmit));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiRequestLocatorPosition);
         }
 
         /// <summary>
@@ -1497,6 +1953,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectNumberOfLinesPerScreen(lines));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectNumberOfLinesPerScreen);
         }
 
         /// <summary>
@@ -1509,6 +1969,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiPopVideoAttributesFromStackXterm());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiPopVideoAttributesFromStackXterm);
         }
 
         /// <summary>
@@ -1522,6 +1986,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiInsertColumns(columns));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiInsertColumns);
         }
 
         /// <summary>
@@ -1535,6 +2003,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectActiveStatusDisplay(displayMode));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectActiveStatusDisplay);
         }
 
         /// <summary>
@@ -1548,6 +2020,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiDeleteColumns(columns));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiDeleteColumns);
         }
 
         /// <summary>
@@ -1561,6 +2037,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = CsiSequences.GenerateCsiSelectStatusLineType(type));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Csi);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.CsiSelectStatusLineType);
         }
 
         /// <summary>
@@ -1574,6 +2054,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = DcsSequences.GenerateDcsUserDefinedKeys(clearUdkDefinitions, dontLockKeys, keybindings));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Dcs);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.DcsUserDefinedKeys);
         }
 
         /// <summary>
@@ -1587,6 +2071,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = DcsSequences.GenerateDcsRequestStatusString(status));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Dcs);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.DcsRequestStatusString);
         }
 
         /// <summary>
@@ -1600,6 +2088,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = DcsSequences.GenerateDcsRestorePresentationStatus(controlConvert, status));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Dcs);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.DcsRestorePresentationStatus);
         }
 
         /// <summary>
@@ -1613,6 +2105,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = DcsSequences.GenerateDcsRequestResourceValues(xtermResourceNames));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Dcs);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.DcsRequestResourceValues);
         }
 
         /// <summary>
@@ -1626,6 +2122,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = DcsSequences.GenerateDcsSetTermInfoData(termName));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Dcs);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.DcsSetTermInfoData);
         }
 
         /// <summary>
@@ -1639,6 +2139,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = DcsSequences.GenerateDcsRequestTermInfoData(termName));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Dcs);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.DcsRequestTermInfoData);
         }
 
         /// <summary>
@@ -1651,6 +2155,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEsc7BitControls());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.Esc7BitControls);
         }
 
         /// <summary>
@@ -1663,6 +2171,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEsc8BitControls());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.Esc8BitControls);
         }
 
         /// <summary>
@@ -1675,6 +2187,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscAnsiConformanceLevel1());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscAnsiConformanceLevel1);
         }
 
         /// <summary>
@@ -1687,6 +2203,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscAnsiConformanceLevel2());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscAnsiConformanceLevel2);
         }
 
         /// <summary>
@@ -1699,6 +2219,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscAnsiConformanceLevel3());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscAnsiConformanceLevel3);
         }
 
         /// <summary>
@@ -1711,6 +2235,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDecDoubleHeightLineTopHalf());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDecDoubleHeightLineTopHalf);
         }
 
         /// <summary>
@@ -1723,6 +2251,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDecDoubleHeightLineBottomHalf());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDecDoubleHeightLineBottomHalf);
         }
 
         /// <summary>
@@ -1735,6 +2267,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDecSingleWidthLine());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDecSingleWidthLine);
         }
 
         /// <summary>
@@ -1747,6 +2283,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDecDoubleWidthLine());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDecDoubleWidthLine);
         }
 
         /// <summary>
@@ -1759,6 +2299,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDecScreenAlignmentTest());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDecScreenAlignmentTest);
         }
 
         /// <summary>
@@ -1771,6 +2315,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscSelectDefaultCharacterSet());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscSelectDefaultCharacterSet);
         }
 
         /// <summary>
@@ -1783,6 +2331,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscSelectUtf8CharacterSet());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscSelectUtf8CharacterSet);
         }
 
         /// <summary>
@@ -1796,6 +2348,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDesignateG0CharacterSet(charSet));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDesignateG0CharacterSet);
         }
 
         /// <summary>
@@ -1809,6 +2365,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDesignateG1CharacterSet(charSet));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDesignateG1CharacterSet);
         }
 
         /// <summary>
@@ -1822,6 +2382,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDesignateG2CharacterSet(charSet));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDesignateG2CharacterSet);
         }
 
         /// <summary>
@@ -1835,6 +2399,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDesignateG3CharacterSet(charSet));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDesignateG3CharacterSet);
         }
 
         /// <summary>
@@ -1848,6 +2416,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDesignateG1CharacterSetAlt(charSet));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDesignateG1CharacterSetAlt);
         }
 
         /// <summary>
@@ -1861,6 +2433,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDesignateG2CharacterSetAlt(charSet));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDesignateG2CharacterSetAlt);
         }
 
         /// <summary>
@@ -1874,6 +2450,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscDesignateG3CharacterSetAlt(charSet));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscDesignateG3CharacterSetAlt);
         }
 
         /// <summary>
@@ -1886,6 +2466,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscBackIndex());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscBackIndex);
         }
 
         /// <summary>
@@ -1898,6 +2482,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscSaveCursor());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscSaveCursor);
         }
 
         /// <summary>
@@ -1910,6 +2498,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscRestoreCursor());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscRestoreCursor);
         }
 
         /// <summary>
@@ -1922,6 +2514,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscForwardIndex());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscForwardIndex);
         }
 
         /// <summary>
@@ -1934,6 +2530,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscApplicationKeypad());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscApplicationKeypad);
         }
 
         /// <summary>
@@ -1946,6 +2546,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscNormalKeypad());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscNormalKeypad);
         }
 
         /// <summary>
@@ -1958,6 +2562,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscCursorToLowerLeftCorner());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscCursorToLowerLeftCorner);
         }
 
         /// <summary>
@@ -1970,6 +2578,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscFullReset());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscFullReset);
         }
 
         /// <summary>
@@ -1982,6 +2594,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscMemoryLock());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscMemoryLock);
         }
 
         /// <summary>
@@ -1994,6 +2610,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscMemoryUnlock());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscMemoryUnlock);
         }
 
         /// <summary>
@@ -2006,6 +2626,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscInvokeG2CharacterSetGl());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscInvokeG2CharacterSetGl);
         }
 
         /// <summary>
@@ -2018,6 +2642,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscInvokeG3CharacterSetGl());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscInvokeG3CharacterSetGl);
         }
 
         /// <summary>
@@ -2030,6 +2658,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscInvokeG3CharacterSetGr());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscInvokeG3CharacterSetGr);
         }
 
         /// <summary>
@@ -2042,6 +2674,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscInvokeG2CharacterSetGr());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscInvokeG2CharacterSetGr);
         }
 
         /// <summary>
@@ -2054,19 +2690,27 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = EscSequences.GenerateEscInvokeG1CharacterSetGr());
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Esc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.EscInvokeG1CharacterSetGr);
         }
 
         /// <summary>
         /// [OSC Ps ; Pt BEL] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow($"0;Hello\x9c")]
+        [DataRow($"0;Hello")]
         public void TestGenerateOscOperatingSystemCommand(string proprietaryCommands)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}]{proprietaryCommands}{VtSequenceBasicChars.BellChar}";
             string actual = "";
             Should.NotThrow(() => actual = OscSequences.GenerateOscOperatingSystemCommand(proprietaryCommands));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Osc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.OscOperatingSystemCommand);
         }
 
         /// <summary>
@@ -2080,6 +2724,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = OscSequences.GenerateOscOperatingSystemCommandAlt(proprietaryCommands));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Osc);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.OscOperatingSystemCommandAlt);
         }
 
         /// <summary>
@@ -2093,6 +2741,10 @@ namespace Terminaux.Tests.Sequences
             string actual = "";
             Should.NotThrow(() => actual = PmSequences.GeneratePmPrivacyMessage(proprietaryCommands));
             actual.ShouldBe(result);
+            (VtSequenceType type, VtSequenceSpecificTypes specificType) tuple = default;
+            Should.NotThrow(() => tuple = VtSequenceBuilderTools.DetermineTypesFromSequence(actual).Single());
+            tuple.type.ShouldBe(VtSequenceType.Pm);
+            tuple.specificType.ShouldBe(VtSequenceSpecificTypes.PmPrivacyMessage);
         }
 
         /// <summary>

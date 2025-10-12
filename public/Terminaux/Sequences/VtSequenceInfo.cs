@@ -285,7 +285,7 @@ namespace Terminaux.Sequences
                         else
                             specificType = Parameters[0] == '?' ?
                                 VtSequenceSpecificTypes.CsiDecPrivateModeValues :
-                                Parameters[0] == '?' ?
+                                Parameters[0] == '>' ?
                                 VtSequenceSpecificTypes.CsiSetShiftEscapeOptions :
                                 VtSequenceSpecificTypes.CsiSetLeftRightMargins;
                     }
