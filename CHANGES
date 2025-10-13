@@ -1,10 +1,21 @@
-We are very excited to announce the availability of Terminaux 8.0, where we add more useful features to Terminaux and its components.
+We are very excited to announce the availability of Terminaux 8.0, where we add more useful features to Terminaux and its components!
+
+**Please note that the documentation will be released later than expected due to the amount of work that we have to refine the documentation.**
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` To be populated later
+- `[+]` Added audio cues
+- `[+]` Added global password mask
+- `[+]` Added a wide assortment of hidden commands
+- `[+]` Added support for hidden commands
+- `[+]` Added markdown export for commands
+- `[+]` Added back specific VT sequence type getter
+- `[*]` Improved redirection support
+- `[*]` Performance improvements for string truncation
+- `[*]` General improvements and bug fixes
+- `[-]` Removed console checker
 
 Review the commit history if you want to get a deep insight about the changes.
 
