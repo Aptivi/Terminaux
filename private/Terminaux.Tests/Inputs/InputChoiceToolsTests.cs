@@ -59,7 +59,7 @@ namespace Terminaux.Tests.Inputs
             choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
-            choices[2].ChoiceName.ShouldBe("[3]");
+            choices[2].ChoiceName.ShouldBe("3");
             choices[0].ChoiceTitle.ShouldBe("Yes");
             choices[1].ChoiceTitle.ShouldBe("No");
             choices[2].ChoiceTitle.ShouldBe("Cancel");
