@@ -2980,6 +2980,594 @@
     {
       "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
       "text": "Lists available UESH variables"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDPREFIX_DESC",
+      "text": "Adds prefix to the string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC",
+      "text": "Text to process"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC",
+      "text": "Prefix of a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX",
+      "text": "Checks the prefix"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC",
+      "text": "Prints output to the console"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDSUFFIX_DESC",
+      "text": "Adds suffix to the string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC",
+      "text": "Suffix of a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX",
+      "text": "Checks the suffix"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKPREFIX_DESC",
+      "text": "Checks the prefix in the string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKSUFFIX_DESC",
+      "text": "Checks the suffix in the string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC",
+      "text": "Checks whether the string contains all of characters"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC",
+      "text": "Sequence of characters"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC",
+      "text": "Checks whether the string contains all of substrings"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC",
+      "text": "Sequence of strings delimited by spaces"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC",
+      "text": "Checks whether the string contains any of characters"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC",
+      "text": "Checks whether the string contains any of substrings"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINS_DESC",
+      "text": "Checks whether the string contains a substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC",
+      "text": "A substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC",
+      "text": "Ignore the case"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC",
+      "text": "Checks whether a string ends with all of characters"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC",
+      "text": "Checks whether a string ends with all of strings"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC",
+      "text": "Checks whether a string ends with any of characters"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC",
+      "text": "Checks whether a string ends with any of strings"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITH_DESC",
+      "text": "Checks whether a string ends with a substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EQUALS_DESC",
+      "text": "Checks whether a string is equal to another string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TERM_DESC",
+      "text": "Search term"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOWERCASE_DESC",
+      "text": "Lowercases a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC",
+      "text": "Process the whole string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC",
+      "text": "Process just the first character of a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMPREFIX_DESC",
+      "text": "Removes a prefix from a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMSUFFIX_DESC",
+      "text": "Removes a suffix from a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC",
+      "text": "Checks whether a string starts with all of characters"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC",
+      "text": "Checks whether a string starts with all of strings"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC",
+      "text": "Checks whether a string starts with any of characters"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC",
+      "text": "Checks whether a string starts with any of strings"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITH_DESC",
+      "text": "Checks whether a string starts with a substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TITLECASE_DESC",
+      "text": "Titlecases a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UPPERCASE_DESC",
+      "text": "Uppercases a string"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS",
+      "text": "There are {0} hidden commands. You can show them using -hidden."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC",
+      "text": "Shows the hidden commands"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC",
+      "text": "Shows the command count"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND",
+      "text": "Command"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS",
+      "text": "Alias"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE",
+      "text": "Usage"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION",
+      "text": "Description"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS",
+      "text": "Flags"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS",
+      "text": "General commands for"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS",
+      "text": "Unified commands for"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS",
+      "text": "Aliased commands for"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS",
+      "text": "Extra commands for"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC",
+      "text": "Show a list of commands as Markdown (for documentation and LLMs)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_DESC",
+      "text": "Generates first names"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC",
+      "text": "Number of first names to generate"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_DESC",
+      "text": "Generates last names"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC",
+      "text": "Number of last names to generate"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID",
+      "text": "Figlet width is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID",
+      "text": "Profanity type is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID",
+      "text": "Maximum word length is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID",
+      "text": "Exact word length is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID",
+      "text": "Character index is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID",
+      "text": "Occurrence index is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID",
+      "text": "Shift threshold is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID",
+      "text": "Truncation threshold is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH",
+      "text": "Sentence width is invalid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHARWIDTH_DESC",
+      "text": "Gets the character width (how many cells are needed)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STRWIDTH_DESC",
+      "text": "Gets the string width (how many cells are needed)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC",
+      "text": "Character to process"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_DESC",
+      "text": "Wraps a long string to a group of sentences"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC",
+      "text": "Maximum width of a sentence"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC",
+      "text": "Split a long string character-wise"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PALINDROME_DESC",
+      "text": "Checks whether a string is a palindrome"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NUMERIC_DESC",
+      "text": "Checks whether a string is numeric"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_DESC",
+      "text": "Replaces a substring in a string with another substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC",
+      "text": "A substring to be replaced"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC",
+      "text": "A substring to replace with"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC",
+      "text": "Use regular expressions for replacement"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_DESC",
+      "text": "Replaces all substrings in a string with another substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC",
+      "text": "A group of substrings to be replaced delimited with spaces"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_DESC",
+      "text": "Replaces all substrings in a string with a range of substrings"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC",
+      "text": "A group of substrings to be replaced delimited with a pipe character"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC",
+      "text": "Strings separated by a space"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_DESC",
+      "text": "Replaces a character in a string with another character"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC",
+      "text": "Character index to process"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC",
+      "text": "A character to replace with"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACELASTOCC_DESC",
+      "text": "Replaces last occurrence of a substring in a string with another substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_DESC",
+      "text": "Replaces a specified occurrence of a substring in a string with another substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+      "text": "Substring occurrence index"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSE_DESC",
+      "text": "Reverses a sequence of characters in a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_DESC",
+      "text": "Shifts characters in a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC",
+      "text": "Shift threshold"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_DESC",
+      "text": "Splits a string with a delimiter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC",
+      "text": "Delimiter to split a string with"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITNEWLINES_DESC",
+      "text": "Splits a string with a new line"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITDQ_DESC",
+      "text": "Splits a string with a delimiter (double quotes support)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_DESC",
+      "text": "Truncates a long string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC",
+      "text": "Truncation threshold"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC",
+      "text": "Disable ellipsis in truncated string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ESCAPESTR_DESC",
+      "text": "Escapes a sequence of special characters in a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNESCAPESTR_DESC",
+      "text": "Unescapes a sequence of special characters in a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOBRAILLE_DESC",
+      "text": "Converts a string to a Braille sequence"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_DESC",
+      "text": "Converts a string to a rendered Figlet text"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC",
+      "text": "Figlet font name"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+      "text": "Maximum figlet width (0 to disable)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_DESC",
+      "text": "Shows figlet metrics"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC",
+      "text": "Shows detailed figlet metrics"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSERTL_DESC",
+      "text": "Reverses a sequence of characters for RTL"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORD_DESC",
+      "text": "Returns a random word"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_DESC",
+      "text": "Returns a random word (conditional)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+      "text": "Maximum word length"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC",
+      "text": "Word should start with"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC",
+      "text": "Word should end with"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+      "text": "Exact word length"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_DESC",
+      "text": "Finds profanity in a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+      "text": "Profanity type"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FILTERPROFANITY_DESC",
+      "text": "Filters profanity in a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_DESC",
+      "text": "Normalises the spaces in a string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC",
+      "text": "Simple space search"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC",
+      "text": "Analytical space search"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_COLORINVALID",
+      "text": "Invalid background colour"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_COLORINVALID",
+      "text": "Invalid foreground colour"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_DESC",
+      "text": "Returns a background colour sequence"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC",
+      "text": "Colour specifier to process"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC",
+      "text": "Plain sequence without VT sequences"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC",
+      "text": "True colour VT sequence"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC",
+      "text": "Returns console dimensions"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_DESC",
+      "text": "Returns a foreground colour sequence"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HISTORY_DESC",
+      "text": "Returns a list of recent commands"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_DESC",
+      "text": "Prints a string with format support"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC",
+      "text": "Parameters to use as formatting"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ANGLEINVALID",
+      "text": "Invalid angle"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_PIXELSINVALID",
+      "text": "Invalid number of pixels"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_INCHESINVALID",
+      "text": "Invalid inches"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_WIDTHINVALID",
+      "text": "Invalid width in pixels"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID",
+      "text": "Invalid height in pixels"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_DESC",
+      "text": "Converts angle in degrees to radians"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC",
+      "text": "Angle in radians to convert"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_DESC",
+      "text": "Gets the DPI from pixels"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+      "text": "How many pixels per inch?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+      "text": "Length in inches"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_DESC",
+      "text": "Gets the total amount of pixels"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+      "text": "Width in pixels"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+      "text": "Height in pixels"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_DESC",
+      "text": "Converts angle in radians to degrees"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+      "text": "Angle in degrees to convert"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPTITLE",
+      "text": "Help page title"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPDESC",
+      "text": "Help page description"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
+      "text": "Help page body. This means that the application is not providing the help article that you may need."
     }
   ]
 }

@@ -2981,6 +2981,594 @@
     {
       "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
       "text": "Liệt kê các biến UESH có sẵn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDPREFIX_DESC",
+      "text": "Thêm tiền tố vào chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC",
+      "text": "Văn bản cần xử lý"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC",
+      "text": "Tiền tố của chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX",
+      "text": "Kiểm tra tiền tố"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC",
+      "text": "In kết quả ra bảng điều khiển"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDSUFFIX_DESC",
+      "text": "Thêm hậu tố vào chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC",
+      "text": "Hậu tố của chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX",
+      "text": "Kiểm tra hậu tố"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKPREFIX_DESC",
+      "text": "Kiểm tra tiền tố trong chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKSUFFIX_DESC",
+      "text": "Kiểm tra hậu tố trong chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC",
+      "text": "Kiểm tra xem chuỗi có chứa tất cả các ký tự không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC",
+      "text": "Chuỗi ký tự không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC",
+      "text": "Kiểm tra xem chuỗi có chứa tất cả các chuỗi con không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC",
+      "text": "Chuỗi chuỗi được phân cách bằng dấu cách không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC",
+      "text": "Kiểm tra xem chuỗi có chứa bất kỳ ký tự nào không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC",
+      "text": "Kiểm tra xem chuỗi có chứa bất kỳ chuỗi con nào không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINS_DESC",
+      "text": "Kiểm tra xem chuỗi có chứa chuỗi con không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC",
+      "text": "Chuỗi con không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC",
+      "text": "Bỏ qua phân biệt chữ hoa và chữ thường"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC",
+      "text": "Kiểm tra xem chuỗi có kết thúc bằng tất cả các ký tự không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC",
+      "text": "Kiểm tra xem chuỗi có kết thúc bằng tất cả các chuỗi không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC",
+      "text": "Kiểm tra xem chuỗi có kết thúc bằng bất kỳ ký tự nào không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC",
+      "text": "Kiểm tra xem chuỗi có kết thúc bằng bất kỳ chuỗi nào không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITH_DESC",
+      "text": "Kiểm tra xem chuỗi có kết thúc bằng chuỗi con không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EQUALS_DESC",
+      "text": "Kiểm tra xem chuỗi có bằng một chuỗi khác không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TERM_DESC",
+      "text": "Thuật ngữ tìm kiếm"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOWERCASE_DESC",
+      "text": "Viết thường một chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC",
+      "text": "Xử lý toàn bộ chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC",
+      "text": "Chỉ xử lý ký tự đầu tiên của chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMPREFIX_DESC",
+      "text": "Xóa tiền tố khỏi chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMSUFFIX_DESC",
+      "text": "Xóa hậu tố khỏi chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC",
+      "text": "Kiểm tra xem chuỗi có bắt đầu bằng tất cả các ký tự không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC",
+      "text": "Kiểm tra xem chuỗi có bắt đầu bằng tất cả các chuỗi không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC",
+      "text": "Kiểm tra xem chuỗi có bắt đầu bằng bất kỳ ký tự nào không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC",
+      "text": "Kiểm tra xem chuỗi có bắt đầu bằng bất kỳ chuỗi nào không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITH_DESC",
+      "text": "Kiểm tra xem chuỗi có bắt đầu bằng một chuỗi con không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TITLECASE_DESC",
+      "text": "Viết tiêu đề cho chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UPPERCASE_DESC",
+      "text": "Viết hoa cho chuỗi"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS",
+      "text": "Có {0} lệnh ẩn. Bạn có thể hiển thị chúng bằng cách sử dụng -hidden."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC",
+      "text": "Hiển thị các lệnh ẩn"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC",
+      "text": "Hiển thị số lượng lệnh"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND",
+      "text": "Lệnh"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS",
+      "text": "Bí danh"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE",
+      "text": "Cách sử dụng"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION",
+      "text": "Mô tả"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS",
+      "text": "Cờ"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS",
+      "text": "Lệnh chung cho"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS",
+      "text": "Lệnh hợp nhất cho"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS",
+      "text": "Lệnh bí danh cho"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS",
+      "text": "Lệnh bổ sung cho"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC",
+      "text": "Hiển thị danh sách lệnh dưới dạng Markdown (dành cho tài liệu và LLM)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_DESC",
+      "text": "Tạo tên"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC",
+      "text": "Số lượng tên cần tạo"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_DESC",
+      "text": "Tạo họ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC",
+      "text": "Số lượng họ cần tạo"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID",
+      "text": "Độ rộng Figlet không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID",
+      "text": "Kiểu tục tĩu không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID",
+      "text": "Độ dài từ tối đa không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID",
+      "text": "Độ dài từ chính xác không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID",
+      "text": "Chỉ mục ký tự không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID",
+      "text": "Chỉ mục xuất hiện không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID",
+      "text": "Ngưỡng dịch chuyển không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID",
+      "text": "Ngưỡng cắt bớt không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH",
+      "text": "Độ rộng câu không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHARWIDTH_DESC",
+      "text": "Lấy độ rộng ký tự (số lượng ô cần thiết)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STRWIDTH_DESC",
+      "text": "Lấy chiều rộng chuỗi (cần bao nhiêu ô)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC",
+      "text": "Ký tự cần xử lý"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_DESC",
+      "text": "Ngắt một chuỗi dài thành một nhóm câu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC",
+      "text": "Độ rộng tối đa của một câu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC",
+      "text": "Tách một chuỗi dài theo từng ký tự"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PALINDROME_DESC",
+      "text": "Kiểm tra xem một chuỗi có phải là chuỗi palindrome không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NUMERIC_DESC",
+      "text": "Kiểm tra xem một chuỗi có phải là số không"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_DESC",
+      "text": "Thay thế một chuỗi con trong một chuỗi bằng một chuỗi con khác"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC",
+      "text": "Một chuỗi con cần đã thay thế"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC",
+      "text": "Một chuỗi con cần thay thế bằng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC",
+      "text": "Sử dụng biểu thức chính quy để thay thế"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_DESC",
+      "text": "Thay thế tất cả các chuỗi con trong một chuỗi bằng một chuỗi con khác"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC",
+      "text": "Một nhóm các chuỗi con cần thay thế được phân cách bằng dấu cách"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_DESC",
+      "text": "Thay thế tất cả các chuỗi con trong một chuỗi bằng một dải các chuỗi con"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC",
+      "text": "Một nhóm các chuỗi con cần thay thế được phân cách bằng dấu gạch đứng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC",
+      "text": "Các chuỗi được phân cách bằng dấu cách"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_DESC",
+      "text": "Thay thế một ký tự trong một chuỗi bằng một ký tự khác"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC",
+      "text": "Chỉ mục ký tự cần xử lý"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC",
+      "text": "Một ký tự cần thay thế bằng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACELASTOCC_DESC",
+      "text": "Thay thế lần xuất hiện cuối cùng của một chuỗi con trong một chuỗi bằng một chuỗi con khác"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_DESC",
+      "text": "Thay thế một lần xuất hiện được chỉ định của một chuỗi con trong một chuỗi bằng một chuỗi con khác"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+      "text": "Chỉ mục xuất hiện của chuỗi con"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSE_DESC",
+      "text": "Đảo ngược chuỗi ký tự trong một chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_DESC",
+      "text": "Dịch chuyển các ký tự trong một chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC",
+      "text": "Ngưỡng dịch chuyển"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_DESC",
+      "text": "Tách chuỗi bằng dấu phân cách"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC",
+      "text": "Dấu phân cách để tách chuỗi bằng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITNEWLINES_DESC",
+      "text": "Tách chuỗi bằng dòng mới"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITDQ_DESC",
+      "text": "Tách chuỗi bằng dấu phân cách (hỗ trợ dấu ngoặc kép)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_DESC",
+      "text": "Cắt bớt một chuỗi dài"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC",
+      "text": "Ngưỡng cắt bớt"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC",
+      "text": "Tắt dấu ba chấm trong chuỗi bị cắt bớt"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ESCAPESTR_DESC",
+      "text": "Thoát khỏi Chuỗi ký tự đặc biệt trong một chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNESCAPESTR_DESC",
+      "text": "Hủy bỏ ký tự đặc biệt trong một chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOBRAILLE_DESC",
+      "text": "Chuyển đổi một chuỗi thành chuỗi chữ nổi Braille"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_DESC",
+      "text": "Chuyển đổi một chuỗi thành văn bản Figlet được hiển thị"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC",
+      "text": "Tên phông chữ Figlet"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+      "text": "Chiều rộng Figlet tối đa (0 để tắt)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_DESC",
+      "text": "Hiển thị số liệu Figlet"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC",
+      "text": "Hiển thị số liệu Figlet chi tiết"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSERTL_DESC",
+      "text": "Đảo ngược chuỗi ký tự cho RTL"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORD_DESC",
+      "text": "Trả về một từ ngẫu nhiên"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_DESC",
+      "text": "Trả về một từ ngẫu nhiên (có điều kiện)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+      "text": "Độ dài từ tối đa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC",
+      "text": "Từ phải bắt đầu bằng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC",
+      "text": "Từ phải kết thúc bằng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+      "text": "Độ dài từ chính xác"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_DESC",
+      "text": "Tìm từ tục tĩu trong một chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+      "text": "Kiểu từ tục tĩu"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FILTERPROFANITY_DESC",
+      "text": "Lọc từ tục tĩu trong một chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_DESC",
+      "text": "Chuẩn hóa khoảng trắng trong một chuỗi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC",
+      "text": "Tìm kiếm khoảng trắng đơn giản"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC",
+      "text": "Tìm kiếm khoảng trắng phân tích"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_COLORINVALID",
+      "text": "Màu nền không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_COLORINVALID",
+      "text": "Màu nền trước không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_DESC",
+      "text": "Trả về chuỗi màu nền"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC",
+      "text": "Chỉ định màu để xử lý"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC",
+      "text": "Chuỗi đơn giản không có chuỗi VT"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC",
+      "text": "Chuỗi VT màu thực"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC",
+      "text": "Trả về kích thước bảng điều khiển"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_DESC",
+      "text": "Trả về chuỗi màu nền trước"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HISTORY_DESC",
+      "text": "Trả về danh sách các lệnh gần đây"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_DESC",
+      "text": "In một chuỗi có định dạng Hỗ trợ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC",
+      "text": "Các tham số dùng để định dạng"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ANGLEINVALID",
+      "text": "Góc không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_PIXELSINVALID",
+      "text": "Số pixel không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_INCHESINVALID",
+      "text": "Inch không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_WIDTHINVALID",
+      "text": "Chiều rộng (pixel) không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID",
+      "text": "Chiều cao (pixel) không hợp lệ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_DESC",
+      "text": "Chuyển đổi góc (độ) sang radian"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC",
+      "text": "Góc (radian) cần chuyển đổi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_DESC",
+      "text": "Lấy DPI từ pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+      "text": "Bao nhiêu pixel trên một inch?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+      "text": "Chiều dài (inch)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_DESC",
+      "text": "Lấy tổng số pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+      "text": "Chiều rộng (pixel)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+      "text": "Chiều cao (pixel)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_DESC",
+      "text": "Chuyển đổi góc (radian) sang độ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+      "text": "Góc (độ) cần chuyển đổi"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPTITLE",
+      "text": "Tiêu đề trang trợ giúp"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPDESC",
+      "text": "Mô tả trang trợ giúp"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
+      "text": "Nội dung trang trợ giúp. Điều này có nghĩa là ứng dụng không cung cấp bài viết trợ giúp mà bạn có thể cần."
     }
   ]
 }

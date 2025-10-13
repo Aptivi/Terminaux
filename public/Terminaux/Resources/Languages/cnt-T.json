@@ -2984,6 +2984,594 @@
     {
       "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
       "text": "列出可用的 UESH 變量"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDPREFIX_DESC",
+      "text": "為字串添加前綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC",
+      "text": "待處理的文本"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC",
+      "text": "字串的前綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX",
+      "text": "檢查前綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC",
+      "text": "將輸出列印到控制台"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDSUFFIX_DESC",
+      "text": "為字串添加後綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC",
+      "text": "字串的後綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX",
+      "text": "檢查後綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKPREFIX_DESC",
+      "text": "檢查字串的前綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKSUFFIX_DESC",
+      "text": "檢查字串的後綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC",
+      "text": "檢查字串是否包含所有字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC",
+      "text": "字元序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC",
+      "text": "檢查字串是否包含所有子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC",
+      "text": "空格分隔的字串序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC",
+      "text": "檢查字串是否包含任何字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC",
+      "text": "檢查字串是否包含任何子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINS_DESC",
+      "text": "檢查字串是否包含子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC",
+      "text": "子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC",
+      "text": "忽略大寫"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC",
+      "text": "檢查字串是否以所有字元結尾"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC",
+      "text": "檢查字串是否以所有字串結尾"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC",
+      "text": "檢查字串是否以任何字元結尾"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC",
+      "text": "檢查字串是否以任何字串結尾"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITH_DESC",
+      "text": "檢查字串是否以子字串結尾"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EQUALS_DESC",
+      "text": "檢查一個字串是否與另一個字串相等"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TERM_DESC",
+      "text": "搜尋詞"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOWERCASE_DESC",
+      "text": "將字串小寫"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC",
+      "text": "處理整個字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC",
+      "text": "僅處理字串的第一個字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMPREFIX_DESC",
+      "text": "從字串中刪除前綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMSUFFIX_DESC",
+      "text": "從字串中刪除後綴"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC",
+      "text": "檢查字串是否以所有字元開頭"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC",
+      "text": "檢查字串是否以所有字串開頭"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC",
+      "text": "檢查字串是否以任意字元開頭"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC",
+      "text": "檢查字串是否以任意字串開頭"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITH_DESC",
+      "text": "檢查字串是否以子字串開頭"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TITLECASE_DESC",
+      "text": "將字串轉換為標題大寫"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UPPERCASE_DESC",
+      "text": "將字串轉換為大寫"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS",
+      "text": "共有 {0} 個隱藏指令。您可以使用 -hidden 命令顯示它們。"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC",
+      "text": "顯示隱藏命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC",
+      "text": "顯示命令計數"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND",
+      "text": "命令"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS",
+      "text": "別名"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE",
+      "text": "用法"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION",
+      "text": "描述"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS",
+      "text": "標誌"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS",
+      "text": "通用命令"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS",
+      "text": "統一命令"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS",
+      "text": "別名命令"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS",
+      "text": "額外命令"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC",
+      "text": "以 Markdown 格式顯示命令清單（用於文件和法學碩士）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_DESC",
+      "text": "生成名字"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC",
+      "text": "要生成的名字數量"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_DESC",
+      "text": "產生姓氏"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC",
+      "text": "要產生的姓氏數量"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID",
+      "text": "Figlet 寬度無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID",
+      "text": "髒話類型無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID",
+      "text": "最大字長無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID",
+      "text": "精確字長無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID",
+      "text": "字元索引無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID",
+      "text": "出現索引無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID",
+      "text": "移位閾值無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID",
+      "text": "截斷閾值無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH",
+      "text": "句子寬度無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHARWIDTH_DESC",
+      "text": "取得字元寬度（需要多少個儲存格）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STRWIDTH_DESC",
+      "text": "取得字串寬度（需要多少個單元格）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC",
+      "text": "待處理的字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_DESC",
+      "text": "將長字串包裝成一組句子"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC",
+      "text": "句子的最大寬度"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC",
+      "text": "按字元拆分長字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PALINDROME_DESC",
+      "text": "檢查字串是否為回文"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NUMERIC_DESC",
+      "text": "檢查字串是否為數字"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_DESC",
+      "text": "將字串中的子字串替換為另一個子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC",
+      "text": "A待替換的子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC",
+      "text": "要替換的子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC",
+      "text": "使用正規表示式進行替換"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_DESC",
+      "text": "將字串中的所有子字串替換為另一個子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC",
+      "text": "一組要替換的子字串（用空格分隔）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_DESC",
+      "text": "將字串中的所有子字串替換為一定範圍的子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC",
+      "text": "一組要替換的子字串（用垂直線分隔）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC",
+      "text": "用空格分隔的字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_DESC",
+      "text": "將字串中的某個字元替換為另一個字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC",
+      "text": "要處理的字元索引"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC",
+      "text": "要替換的字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACELASTOCC_DESC",
+      "text": "將字串中最後一次出現的子字串替換為另一個子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_DESC",
+      "text": "將字串中指定的子字串替換為另一個子字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+      "text": "子字串出現索引"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSE_DESC",
+      "text": "反轉字串中的字元序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_DESC",
+      "text": "移動字串中的字符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC",
+      "text": "移動閾值"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_DESC",
+      "text": "使用分隔符號拆分字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC",
+      "text": "用於拆分字串的分隔符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITNEWLINES_DESC",
+      "text": "使用換行符拆分字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITDQ_DESC",
+      "text": "使用分隔符號拆分字串（支援雙引號）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_DESC",
+      "text": "截斷長字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC",
+      "text": "截斷閾值"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC",
+      "text": "禁用省略號截斷字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ESCAPESTR_DESC",
+      "text": "轉義字串中的特殊字元序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNESCAPESTR_DESC",
+      "text": "取消轉義字串中的特殊字元序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOBRAILLE_DESC",
+      "text": "將字串轉換為點字序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_DESC",
+      "text": "將字串轉換為渲染的 Figlet 文本"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC",
+      "text": "Figlet 字體名稱"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+      "text": "最大 Figlet 寬度（0 為停用）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_DESC",
+      "text": "顯示 Figlet 指標"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC",
+      "text": "顯示詳細的 Figlet 指標"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSERTL_DESC",
+      "text": "反轉 RTL 字元序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORD_DESC",
+      "text": "回傳隨機單字"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_DESC",
+      "text": "傳回隨機單字（有條件）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+      "text": "最大單字長度"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC",
+      "text": "單字開頭應為"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC",
+      "text": "單字結尾應為"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+      "text": "精確單字長度"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_DESC",
+      "text": "查找字串中的髒話"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+      "text": "髒話類型"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FILTERPROFANITY_DESC",
+      "text": "過濾字串中的髒話"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_DESC",
+      "text": "規範化字串中的空格"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC",
+      "text": "簡單空格搜尋"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC",
+      "text": "分析空格搜尋"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_COLORINVALID",
+      "text": "無效背景色"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_COLORINVALID",
+      "text": "無效前景色"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_DESC",
+      "text": "返回背景色序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC",
+      "text": "要處理的顏色說明符"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC",
+      "text": "不含 VT 序列的純文字序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC",
+      "text": "真彩色 VT 序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC",
+      "text": "返回控制台尺寸"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_DESC",
+      "text": "返回前景色序列"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HISTORY_DESC",
+      "text": "返回最近命令列表"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_DESC",
+      "text": "列印支援格式的字串"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC",
+      "text": "用於格式化的參數"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ANGLEINVALID",
+      "text": "角度無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_PIXELSINVALID",
+      "text": "像素數無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_INCHESINVALID",
+      "text": "英吋無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_WIDTHINVALID",
+      "text": "寬度（像素）無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID",
+      "text": "高度（像素）無效"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_DESC",
+      "text": "將角度（度）轉換為弧度"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC",
+      "text": "要轉換的角度（弧度）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_DESC",
+      "text": "從像素取得 DPI"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+      "text": "每英吋像素數？"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+      "text": "長度（英吋）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_DESC",
+      "text": "取得像素總數"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+      "text": "寬度（像素）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+      "text": "高度（像素）"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_DESC",
+      "text": "將角度（弧度）轉換為度"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+      "text": "要轉換的角度（度數）"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPTITLE",
+      "text": "幫助頁面標題"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPDESC",
+      "text": "幫助頁面描述"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
+      "text": "幫助頁面正文。這意味著該應用程式未提供您可能需要的幫助文章。"
     }
   ]
 }

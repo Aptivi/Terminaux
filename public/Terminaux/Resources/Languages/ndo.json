@@ -2981,6 +2981,594 @@
     {
       "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
       "text": "Mencantumkan variabel UESH yang tersedia"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDPREFIX_DESC",
+      "text": "Menambahkan awalan ke string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC",
+      "text": "Teks yang akan diproses"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC",
+      "text": "Awalan string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX",
+      "text": "Memeriksa awalan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC",
+      "text": "Mencetak keluaran ke konsol"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDSUFFIX_DESC",
+      "text": "Menambahkan akhiran ke string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC",
+      "text": "Akhiran string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX",
+      "text": "Memeriksa akhiran"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKPREFIX_DESC",
+      "text": "Memeriksa awalan dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKSUFFIX_DESC",
+      "text": "Memeriksa akhiran dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC",
+      "text": "Memeriksa apakah string berisi semua karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC",
+      "text": "Urutan karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC",
+      "text": "Memeriksa apakah string berisi semua substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC",
+      "text": "Urutan string yang dibatasi spasi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC",
+      "text": "Memeriksa apakah string berisi salah satu karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC",
+      "text": "Memeriksa apakah string berisi salah satu substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINS_DESC",
+      "text": "Memeriksa apakah string berisi substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC",
+      "text": "Substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC",
+      "text": "Abaikan huruf besar/kecil"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC",
+      "text": "Memeriksa apakah string diakhiri dengan semua karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC",
+      "text": "Memeriksa apakah string diakhiri dengan semua string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC",
+      "text": "Memeriksa apakah string diakhiri dengan salah satu karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC",
+      "text": "Memeriksa apakah string diakhiri dengan salah satu string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITH_DESC",
+      "text": "Memeriksa apakah string diakhiri dengan substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EQUALS_DESC",
+      "text": "Memeriksa apakah string sama dengan string lainnya"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TERM_DESC",
+      "text": "Istilah pencarian"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOWERCASE_DESC",
+      "text": "Mengubah string menjadi huruf kecil"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC",
+      "text": "Memproses seluruh string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC",
+      "text": "Memproses hanya karakter pertama dari string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMPREFIX_DESC",
+      "text": "Menghapus awalan dari string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMSUFFIX_DESC",
+      "text": "Menghapus akhiran dari string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC",
+      "text": "Memeriksa apakah string dimulai dengan semua karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC",
+      "text": "Memeriksa apakah string dimulai dengan semua string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC",
+      "text": "Memeriksa apakah string dimulai dengan salah satu karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC",
+      "text": "Memeriksa apakah string dimulai dengan salah satu string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITH_DESC",
+      "text": "Memeriksa apakah string dimulai dengan substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TITLECASE_DESC",
+      "text": "Mengubah string menjadi huruf besar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UPPERCASE_DESC",
+      "text": "Mengubah string menjadi huruf kapital"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS",
+      "text": "Ada {0} perintah tersembunyi. Anda dapat menampilkannya menggunakan -hidden."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC",
+      "text": "Menampilkan perintah tersembunyi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC",
+      "text": "Menampilkan jumlah perintah"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND",
+      "text": "Perintah"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS",
+      "text": "Alias"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE",
+      "text": "Penggunaan"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION",
+      "text": "Deskripsi"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS",
+      "text": "Bendera"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS",
+      "text": "Perintah umum untuk"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS",
+      "text": "Perintah terpadu untuk"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS",
+      "text": "Perintah alias untuk"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS",
+      "text": "Perintah tambahan untuk"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC",
+      "text": "Menampilkan daftar perintah sebagai Markdown (untuk dokumentasi dan LLM)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_DESC",
+      "text": "Menghasilkan nama depan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC",
+      "text": "Jumlah nama depan yang akan dihasilkan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_DESC",
+      "text": "Menghasilkan nama belakang"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC",
+      "text": "Jumlah nama belakang yang akan dihasilkan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID",
+      "text": "Lebar Figlet tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID",
+      "text": "Jenis kata tidak senonoh tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID",
+      "text": "Panjang kata maksimum tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID",
+      "text": "Panjang kata pasti tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID",
+      "text": "Indeks karakter tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID",
+      "text": "Indeks kemunculan tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID",
+      "text": "Ambang batas pergeseran tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID",
+      "text": "Ambang batas pemotongan tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH",
+      "text": "Lebar kalimat tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHARWIDTH_DESC",
+      "text": "Mendapatkan lebar karakter (berapa banyak sel yang dibutuhkan)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STRWIDTH_DESC",
+      "text": "Mendapatkan lebar string (berapa banyak sel yang dibutuhkan)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC",
+      "text": "Karakter yang akan diproses"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_DESC",
+      "text": "Membungkus string panjang ke dalam sekelompok kalimat"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC",
+      "text": "Lebar maksimum kalimat"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC",
+      "text": "Membagi string panjang per karakter"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PALINDROME_DESC",
+      "text": "Memeriksa apakah string merupakan palindrom"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NUMERIC_DESC",
+      "text": "Memeriksa apakah string numerik"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_DESC",
+      "text": "Mengganti substring dalam string dengan substring lain"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC",
+      "text": "Substring yang akan diganti"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC",
+      "text": "Substring yang akan diganti"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC",
+      "text": "Gunakan ekspresi reguler untuk penggantian"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_DESC",
+      "text": "Mengganti semua substring dalam string dengan substring lain"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC",
+      "text": "Sekelompok substring yang akan diganti, dibatasi spasi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_DESC",
+      "text": "Mengganti semua substring dalam string dengan rentang substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC",
+      "text": "Sekelompok substring yang akan diganti, dibatasi karakter pipa"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC",
+      "text": "String dipisahkan spasi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_DESC",
+      "text": "Mengganti karakter dalam string dengan karakter lain"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC",
+      "text": "Indeks karakter yang akan diproses"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC",
+      "text": "Karakter yang akan diganti"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACELASTOCC_DESC",
+      "text": "Mengganti kemunculan terakhir substring dalam string dengan substring lain"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_DESC",
+      "text": "Mengganti kemunculan substring tertentu dalam string dengan substring lain"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+      "text": "Indeks kemunculan substring"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSE_DESC",
+      "text": "Membalikkan urutan karakter dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_DESC",
+      "text": "Menggeser karakter dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC",
+      "text": "Ambang batas pergeseran"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_DESC",
+      "text": "Memisahkan string dengan pembatas"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC",
+      "text": "Pembatas yang akan dibagi string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITNEWLINES_DESC",
+      "text": "Memisahkan string dengan baris baru"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITDQ_DESC",
+      "text": "Memisahkan string dengan pembatas (tanda kutip ganda) (dukungan)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_DESC",
+      "text": "Memotong string yang panjang"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC",
+      "text": "Ambang batas pemotongan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC",
+      "text": "Nonaktifkan elipsis pada string yang terpotong"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ESCAPESTR_DESC",
+      "text": "Mengeluarkan urutan karakter khusus dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNESCAPESTR_DESC",
+      "text": "Membatalkan pengelupasan urutan karakter khusus dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOBRAILLE_DESC",
+      "text": "Mengonversi string menjadi urutan Braille"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_DESC",
+      "text": "Mengonversi string menjadi teks Figlet yang telah dirender"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC",
+      "text": "Nama fon Figlet"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+      "text": "Lebar figlet maksimum (0 untuk menonaktifkan)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_DESC",
+      "text": "Menampilkan metrik figlet"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC",
+      "text": "Menampilkan metrik figlet terperinci"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSERTL_DESC",
+      "text": "Membalikkan urutan karakter untuk RTL"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORD_DESC",
+      "text": "Mengembalikan kata acak"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_DESC",
+      "text": "Mengembalikan kata acak (bersyarat)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+      "text": "Panjang kata maksimum"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC",
+      "text": "Kata harus dimulai dengan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC",
+      "text": "Kata harus diakhiri dengan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+      "text": "Panjang kata yang tepat"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_DESC",
+      "text": "Menemukan kata-kata kasar dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+      "text": "Jenis kata kasar"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FILTERPROFANITY_DESC",
+      "text": "Memfilter kata-kata kasar dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_DESC",
+      "text": "Menormalkan spasi dalam string"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC",
+      "text": "Pencarian spasi sederhana"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC",
+      "text": "Pencarian spasi analitis"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_COLORINVALID",
+      "text": "Warna latar belakang tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_COLORINVALID",
+      "text": "Warna latar depan tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_DESC",
+      "text": "Mengembalikan urutan warna latar belakang"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC",
+      "text": "Penentu warna untuk diproses"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC",
+      "text": "Urutan polos tanpa VT Urutan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC",
+      "text": "Urutan VT warna asli"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC",
+      "text": "Mengembalikan dimensi konsol"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_DESC",
+      "text": "Mengembalikan urutan warna latar depan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HISTORY_DESC",
+      "text": "Mengembalikan daftar perintah terbaru"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_DESC",
+      "text": "Mencetak string dengan dukungan format"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC",
+      "text": "Parameter yang digunakan sebagai pemformatan"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ANGLEINVALID",
+      "text": "Sudut tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_PIXELSINVALID",
+      "text": "Jumlah piksel tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_INCHESINVALID",
+      "text": "Inci tidak valid"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_WIDTHINVALID",
+      "text": "Lebar tidak valid dalam piksel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID",
+      "text": "Tinggi tidak valid dalam piksel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_DESC",
+      "text": "Mengonversi sudut dalam derajat ke radian"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC",
+      "text": "Sudut dalam radian yang akan dikonversi"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_DESC",
+      "text": "Mendapatkan DPI dari piksel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+      "text": "Berapa banyak piksel per inci?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+      "text": "Panjang dalam inci"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_DESC",
+      "text": "Mendapatkan jumlah total piksel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+      "text": "Lebar dalam piksel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+      "text": "Tinggi dalam piksel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_DESC",
+      "text": "Mengonversi sudut dalam radian ke derajat"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+      "text": "Sudut dalam derajat yang akan dikonversi"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPTITLE",
+      "text": "Judul halaman bantuan"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPDESC",
+      "text": "Deskripsi halaman bantuan"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
+      "text": "Isi halaman bantuan. Ini berarti aplikasi tidak menyediakan artikel bantuan yang mungkin Anda butuhkan."
     }
   ]
 }

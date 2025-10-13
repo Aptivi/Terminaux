@@ -2982,6 +2982,594 @@
     {
       "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
       "text": "사용 가능한 UESH 변수를 나열합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDPREFIX_DESC",
+      "text": "문자열에 접두사 추가"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC",
+      "text": "처리할 텍스트"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC",
+      "text": "문자열의 접두사"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX",
+      "text": "접두사 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC",
+      "text": "콘솔에 출력"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDSUFFIX_DESC",
+      "text": "문자열에 접미사 추가"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC",
+      "text": "문자열의 접미사"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX",
+      "text": "접미사 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKPREFIX_DESC",
+      "text": "문자열의 접두사 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKSUFFIX_DESC",
+      "text": "문자열의 접미사 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC",
+      "text": "문자열에 모든 문자가 포함되어 있는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC",
+      "text": "문자열 시퀀스"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC",
+      "text": "문자열에 모든 부분 문자열이 포함되어 있는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC",
+      "text": "공백으로 구분된 문자열 시퀀스"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC",
+      "text": "문자열에 문자가 포함되어 있는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC",
+      "text": "문자열에 부분 문자열이 포함되어 있는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINS_DESC",
+      "text": "문자열에 부분 문자열이 포함되어 있는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC",
+      "text": "부분 문자열"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC",
+      "text": "대소문자 구분 없음"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC",
+      "text": "문자열이 모든 문자로 끝나는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC",
+      "text": "문자열이 모든 문자열로 끝나는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC",
+      "text": "문자열이 모든 문자로 끝나는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC",
+      "text": "문자열이 문자열로 끝나는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITH_DESC",
+      "text": "문자열이 부분 문자열로 끝나는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EQUALS_DESC",
+      "text": "문자열이 다른 문자열과 같은지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TERM_DESC",
+      "text": "검색어"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOWERCASE_DESC",
+      "text": "문자열 소문자화"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC",
+      "text": "전체 문자열 처리"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC",
+      "text": "문자열의 첫 글자만 처리"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMPREFIX_DESC",
+      "text": "문자열에서 접두사 제거"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMSUFFIX_DESC",
+      "text": "문자열에서 접미사 제거"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC",
+      "text": "문자열이 모든 문자로 시작하는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC",
+      "text": "문자열이 모든 문자열로 시작하는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC",
+      "text": "문자열이 문자로 시작하는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC",
+      "text": "문자열이 문자열로 시작하는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITH_DESC",
+      "text": "문자열이 부분 문자열로 시작하는지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TITLECASE_DESC",
+      "text": "문자열 제목을 대문자로 변환"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UPPERCASE_DESC",
+      "text": "문자열을 제목 케이스로 처리합니다."
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS",
+      "text": "{0}개의 숨겨진 명령이 있습니다. -hidden 옵션을 사용하여 표시할 수 있습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC",
+      "text": "숨겨진 명령 표시"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC",
+      "text": "명령어 개수 표시"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND",
+      "text": "명령어"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS",
+      "text": "별칭"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE",
+      "text": "용도"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION",
+      "text": "설명"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS",
+      "text": "플래그"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS",
+      "text": "일반 명령"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS",
+      "text": "통합 명령"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS",
+      "text": "별칭 명령"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS",
+      "text": "추가 명령"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC",
+      "text": "마크다운 형식으로 명령 목록 표시(문서 및 LLM용)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_DESC",
+      "text": "이름 생성"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC",
+      "text": "생성할 이름 개수"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_DESC",
+      "text": "성 생성"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC",
+      "text": "생성할 성 개수"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID",
+      "text": "Figlet 너비가 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID",
+      "text": "욕설 유형이 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID",
+      "text": "최대 단어 길이가 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID",
+      "text": "정확한 단어 길이가 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID",
+      "text": "문자 색인이 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID",
+      "text": "발생 색인이 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID",
+      "text": "이동 임계값이 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID",
+      "text": "잘림 임계값이 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH",
+      "text": "문장 너비가 잘못되었습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHARWIDTH_DESC",
+      "text": "문자 너비(필요한 셀 수)를 가져옵니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STRWIDTH_DESC",
+      "text": "문자열 너비(필요한 셀 수)를 가져옵니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC",
+      "text": "처리할 문자"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_DESC",
+      "text": "긴 문자열을 문장 그룹으로 줄 바꿈"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC",
+      "text": "문장의 최대 너비"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC",
+      "text": "긴 문자열을 문자별로 분할"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PALINDROME_DESC",
+      "text": "문자열이 팰린드롬인지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NUMERIC_DESC",
+      "text": "문자열이 숫자인지 확인"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_DESC",
+      "text": "문자열의 하위 문자열을 다른 하위 문자열로 바꿉니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC",
+      "text": "하위 문자열을 바꿀 부분 문자열"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC",
+      "text": "바꿀 부분 문자열"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC",
+      "text": "바꿀 정규 표현식 사용"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_DESC",
+      "text": "문자열의 모든 부분 문자열을 다른 부분 문자열로 바꿉니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC",
+      "text": "공백으로 구분된 부분 문자열 그룹"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_DESC",
+      "text": "문자열의 모든 부분 문자열을 특정 범위의 부분 문자열로 바꿉니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC",
+      "text": "파이프 문자로 구분된 부분 문자열 그룹"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC",
+      "text": "공백으로 구분된 문자열"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_DESC",
+      "text": "문자열의 문자를 다른 문자로 바꿉니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC",
+      "text": "처리할 문자 인덱스"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC",
+      "text": "바꿀 문자"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACELASTOCC_DESC",
+      "text": "문자열의 마지막 부분 문자열을 다른 부분 문자열로 바꿉니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_DESC",
+      "text": "문자열의 지정된 부분 문자열을 다른 부분 문자열로 바꿉니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+      "text": "부분 문자열 발생 인덱스"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSE_DESC",
+      "text": "문자열의 문자 시퀀스를 반전합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_DESC",
+      "text": "문자열의 문자를 이동합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC",
+      "text": "이동 임계값"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_DESC",
+      "text": "구분 기호를 사용하여 문자열을 나눕니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC",
+      "text": "문자열을 나눌 구분 기호"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITNEWLINES_DESC",
+      "text": "문자열을 새 줄로 나눕니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITDQ_DESC",
+      "text": "구분 기호를 사용하여 문자열을 나눕니다(큰따옴표 지원)."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_DESC",
+      "text": "긴 문자열을 자릅니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC",
+      "text": "잘라내기 임계값"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC",
+      "text": "줄임표 비활성화 잘린 문자열"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ESCAPESTR_DESC",
+      "text": "문자열에서 특수 문자 시퀀스를 이스케이프합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNESCAPESTR_DESC",
+      "text": "문자열에서 특수 문자 시퀀스를 이스케이프 해제합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOBRAILLE_DESC",
+      "text": "문자열을 점자 시퀀스로 변환합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_DESC",
+      "text": "문자열을 렌더링된 Figlet 텍스트로 변환합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC",
+      "text": "Figlet 글꼴 이름"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+      "text": "최대 Figlet 너비(0으로 설정하면 비활성화됨)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_DESC",
+      "text": "Figlet 메트릭을 표시합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC",
+      "text": "자세한 Figlet 메트릭을 표시합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSERTL_DESC",
+      "text": "RTL 문자열을 반전합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORD_DESC",
+      "text": "임의의 단어를 반환합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_DESC",
+      "text": "임의의 단어를 반환합니다(조건부)."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+      "text": "최대 단어 길이"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC",
+      "text": "단어의 시작 문자"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC",
+      "text": "단어의 끝 문자"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+      "text": "정확한 단어 길이"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_DESC",
+      "text": "문자열에서 욕설을 찾습니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+      "text": "욕설 유형"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FILTERPROFANITY_DESC",
+      "text": "문자열에서 욕설을 필터링합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_DESC",
+      "text": "문자열의 공백을 정규화합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC",
+      "text": "간단한 공백 검색"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC",
+      "text": "분석적 공백 검색"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_COLORINVALID",
+      "text": "잘못된 배경색"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_COLORINVALID",
+      "text": "잘못된 전경색"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_DESC",
+      "text": "배경색 시퀀스를 반환합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC",
+      "text": "처리할 색상 지정자"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC",
+      "text": "VT 시퀀스가 ​​없는 일반 시퀀스"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC",
+      "text": "트루 컬러 VT 시퀀스"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC",
+      "text": "콘솔 크기를 반환합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_DESC",
+      "text": "전경색 시퀀스를 반환합니다."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HISTORY_DESC",
+      "text": "다음을 반환합니다. 최근 명령 목록"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_DESC",
+      "text": "서식 지원 문자열 출력"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC",
+      "text": "서식에 사용할 매개변수"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ANGLEINVALID",
+      "text": "잘못된 각도"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_PIXELSINVALID",
+      "text": "잘못된 픽셀 수"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_INCHESINVALID",
+      "text": "잘못된 인치"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_WIDTHINVALID",
+      "text": "잘못된 픽셀 너비"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID",
+      "text": "잘못된 픽셀 높이"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_DESC",
+      "text": "각도(도)를 라디안으로 변환"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC",
+      "text": "변환할 각도(라디안)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_DESC",
+      "text": "픽셀에서 DPI 가져오기"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+      "text": "인치당 픽셀 수"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+      "text": "길이(인치)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_DESC",
+      "text": "총 픽셀 수 가져오기"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+      "text": "너비(픽셀)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+      "text": "높이(픽셀)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_DESC",
+      "text": "각도(라디안)를 도(도로)로 변환"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+      "text": "변환할 각도(도)"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPTITLE",
+      "text": "도움말 페이지 제목"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPDESC",
+      "text": "도움말 페이지 설명"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
+      "text": "도움말 페이지 본문. 이는 애플리케이션이 필요한 도움말을 제공하지 않음을 의미합니다."
     }
   ]
 }

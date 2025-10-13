@@ -1545,7 +1545,7 @@ namespace Terminaux.Shell.Shells
                     ], true)
                 ], new ToBrailleCommand(), CommandFlags.Hidden),
 
-            new CommandInfo("tofiglet", /* Localizable */ "T_SHELL_UNIFIED_TOFIGlET_DESC",
+            new CommandInfo("tofiglet", /* Localizable */ "T_SHELL_UNIFIED_TOFIGLET_DESC",
                 [
                     new CommandArgumentInfo(
                     [
@@ -1571,7 +1571,7 @@ namespace Terminaux.Shell.Shells
                     ], true)
                 ], new ToFigletCommand(), CommandFlags.Hidden),
 
-            new CommandInfo("figletmetrics", /* Localizable */ "T_SHELL_UNIFIED_FIGlETMETRICS_DESC",
+            new CommandInfo("figletmetrics", /* Localizable */ "T_SHELL_UNIFIED_FIGLETMETRICS_DESC",
                 [
                     new CommandArgumentInfo(
                     [

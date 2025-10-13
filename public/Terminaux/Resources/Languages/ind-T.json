@@ -2981,6 +2981,594 @@
     {
       "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
       "text": "उपलब्ध UESH चरों की सूचियाँ"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDPREFIX_DESC",
+      "text": "स्ट्रिंग में उपसर्ग जोड़ता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC",
+      "text": "प्रोसेस करने के लिए टेक्स्ट"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC",
+      "text": "स्ट्रिंग का उपसर्ग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX",
+      "text": "उपसर्ग की जाँच करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC",
+      "text": "कंसोल पर आउटपुट प्रिंट करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDSUFFIX_DESC",
+      "text": "स्ट्रिंग में प्रत्यय जोड़ता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC",
+      "text": "स्ट्रिंग का प्रत्यय"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX",
+      "text": "प्रत्यय की जाँच करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKPREFIX_DESC",
+      "text": "स्ट्रिंग में उपसर्ग की जाँच करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKSUFFIX_DESC",
+      "text": "स्ट्रिंग में प्रत्यय की जाँच करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग में सभी वर्ण हैं या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC",
+      "text": "वर्णों का क्रम"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग में सभी उपस्ट्रिंग हैं या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC",
+      "text": "रिक्त स्थान द्वारा सीमांकित स्ट्रिंग का क्रम"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग में कोई वर्ण है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग में कोई उपस्ट्रिंग है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग में कोई उपस्ट्रिंग है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC",
+      "text": "एक उपस्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC",
+      "text": "केस को अनदेखा करें"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग सभी वर्णों पर समाप्त होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग सभी स्ट्रिंग्स पर समाप्त होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग किसी वर्ण पर समाप्त होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग किसी स्ट्रिंग पर समाप्त होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITH_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग किसी उपस्ट्रिंग पर समाप्त होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EQUALS_DESC",
+      "text": "जाँच ​​करता है कि स्ट्रिंग किसी अन्य स्ट्रिंग के बराबर है या नहीं स्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TERM_DESC",
+      "text": "खोज शब्द"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOWERCASE_DESC",
+      "text": "स्ट्रिंग को छोटे अक्षरों में लिखता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC",
+      "text": "पूरी स्ट्रिंग को प्रोसेस करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC",
+      "text": "स्ट्रिंग के केवल पहले अक्षर को प्रोसेस करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMPREFIX_DESC",
+      "text": "स्ट्रिंग से उपसर्ग हटाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMSUFFIX_DESC",
+      "text": "स्ट्रिंग से प्रत्यय हटाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC",
+      "text": "जाँचता है कि स्ट्रिंग सभी अक्षरों से शुरू होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC",
+      "text": "जाँचता है कि स्ट्रिंग सभी स्ट्रिंग से शुरू होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC",
+      "text": "जाँचता है कि स्ट्रिंग इनमें से किसी भी अक्षर से शुरू होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC",
+      "text": "जाँचता है कि स्ट्रिंग इनमें से किसी भी स्ट्रिंग से शुरू होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITH_DESC",
+      "text": "जाँचता है कि स्ट्रिंग सबस्ट्रिंग से शुरू होती है या नहीं"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TITLECASE_DESC",
+      "text": "स्ट्रिंग को छोटे अक्षरों में लिखता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UPPERCASE_DESC",
+      "text": "स्ट्रिंग को बड़े अक्षरों में लिखता है"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS",
+      "text": "{0} छिपे हुए कमांड हैं। आप उन्हें -hidden का उपयोग करके दिखा सकते हैं।"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC",
+      "text": "छिपे हुए कमांड दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC",
+      "text": "कमांड की संख्या दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND",
+      "text": "कमांड"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS",
+      "text": "उपनाम"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE",
+      "text": "उपयोग"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION",
+      "text": "विवरण"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS",
+      "text": "फ़्लैग"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS",
+      "text": "सामान्य कमांड"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS",
+      "text": "एकीकृत कमांड"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS",
+      "text": "उपनाम कमांड"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS",
+      "text": "अतिरिक्त कमांड"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC",
+      "text": "मार्कडाउन के रूप में कमांड की सूची दिखाएँ (दस्तावेज़ीकरण और LLM के लिए)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_DESC",
+      "text": "प्रथम नाम जनरेट करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC",
+      "text": "जनरेट करने के लिए प्रथम नामों की संख्या"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_DESC",
+      "text": "उपनाम जनरेट करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC",
+      "text": "जनरेट करने के लिए उपनामों की संख्या"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID",
+      "text": "फ़िगलेट की चौड़ाई अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID",
+      "text": "अपशब्दों का प्रकार अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID",
+      "text": "अधिकतम शब्द लंबाई अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID",
+      "text": "सटीक शब्द लंबाई अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID",
+      "text": "वर्ण सूचकांक अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID",
+      "text": "घटना सूचकांक अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID",
+      "text": "शिफ्ट सीमा अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID",
+      "text": "छंटनी सीमा अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH",
+      "text": "वाक्य की चौड़ाई अमान्य है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHARWIDTH_DESC",
+      "text": "वर्ण चौड़ाई प्राप्त करता है (कितने सेल आवश्यक हैं)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STRWIDTH_DESC",
+      "text": "स्ट्रिंग की चौड़ाई प्राप्त करता है (कितने सेल की आवश्यकता है)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC",
+      "text": "संसाधित करने के लिए वर्ण"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_DESC",
+      "text": "वाक्यों के समूह में एक लंबी स्ट्रिंग को लपेटता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC",
+      "text": "वाक्य की अधिकतम चौड़ाई"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC",
+      "text": "एक लंबी स्ट्रिंग को वर्ण-वार विभाजित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PALINDROME_DESC",
+      "text": "जाँचता है कि क्या एक स्ट्रिंग एक पैलिंड्रोम है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NUMERIC_DESC",
+      "text": "जाँचता है कि क्या एक स्ट्रिंग संख्यात्मक"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_DESC",
+      "text": "स्ट्रिंग में एक सबस्ट्रिंग को दूसरी सबस्ट्रिंग से प्रतिस्थापित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC",
+      "text": "प्रतिस्थापित की जाने वाली सबस्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC",
+      "text": "प्रतिस्थापित की जाने वाली सबस्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC",
+      "text": "प्रतिस्थापन के लिए रेगुलर एक्सप्रेशन का उपयोग करें"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_DESC",
+      "text": "स्ट्रिंग में सभी सबस्ट्रिंग को दूसरी सबस्ट्रिंग से प्रतिस्थापित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC",
+      "text": "प्रतिस्थापित की जाने वाली सबस्ट्रिंग के समूह को रिक्त स्थान से सीमांकित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_DESC",
+      "text": "स्ट्रिंग में सभी सबस्ट्रिंग को सबस्ट्रिंग की श्रेणी से प्रतिस्थापित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC",
+      "text": "प्रतिस्थापित की जाने वाली सबस्ट्रिंग के समूह को पाइप वर्ण से सीमांकित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC",
+      "text": "रिक्त स्थान से अलग की गई स्ट्रिंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_DESC",
+      "text": "स्ट्रिंग में एक वर्ण को दूसरे वर्ण से प्रतिस्थापित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC",
+      "text": "संसाधित करने के लिए वर्ण अनुक्रमणिका"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC",
+      "text": "प्रतिस्थापित करने के लिए वर्ण"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACELASTOCC_DESC",
+      "text": "स्ट्रिंग में एक सबस्ट्रिंग की अंतिम उपस्थिति को दूसरी सबस्ट्रिंग से प्रतिस्थापित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_DESC",
+      "text": "स्ट्रिंग में एक सबस्ट्रिंग की निर्दिष्ट उपस्थिति को दूसरी सबस्ट्रिंग से प्रतिस्थापित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+      "text": "सबस्ट्रिंग उपस्थिति सूचकांक"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSE_DESC",
+      "text": "स्ट्रिंग में वर्णों के अनुक्रम को उलट देता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_DESC",
+      "text": "स्ट्रिंग में वर्णों को स्थानांतरित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC",
+      "text": "शिफ्ट थ्रेशोल्ड"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_DESC",
+      "text": "स्ट्रिंग को एक सीमांकक से विभाजित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC",
+      "text": "स्ट्रिंग को विभाजित करने के लिए सीमांकक"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITNEWLINES_DESC",
+      "text": "स्ट्रिंग को एक नई पंक्ति से विभाजित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITDQ_DESC",
+      "text": "स्ट्रिंग को एक सीमांकक से विभाजित करता है (डबल कोट्स सपोर्ट)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_DESC",
+      "text": "लंबी स्ट्रिंग को छोटा करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC",
+      "text": "छंटनी सीमा"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC",
+      "text": "छंटनी की गई स्ट्रिंग में एलिप्सिस अक्षम करें"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ESCAPESTR_DESC",
+      "text": "स्ट्रिंग में विशेष वर्णों के अनुक्रम को एस्केप करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNESCAPESTR_DESC",
+      "text": "स्ट्रिंग में विशेष वर्णों के अनुक्रम को अनएस्केप करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOBRAILLE_DESC",
+      "text": "स्ट्रिंग को ब्रेल अनुक्रम में परिवर्तित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_DESC",
+      "text": "स्ट्रिंग को रेंडर किए गए फ़िगलेट टेक्स्ट में परिवर्तित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC",
+      "text": "फ़िगलेट फ़ॉन्ट नाम"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+      "text": "फ़िगलेट की अधिकतम चौड़ाई (अक्षम करने के लिए 0)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_DESC",
+      "text": "फ़िगलेट मेट्रिक्स दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC",
+      "text": "फ़िगलेट के विस्तृत मेट्रिक्स दिखाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSERTL_DESC",
+      "text": "RTL के लिए वर्णों के अनुक्रम को उलट देता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORD_DESC",
+      "text": "एक यादृच्छिक शब्द लौटाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_DESC",
+      "text": "एक यादृच्छिक शब्द लौटाता है (सशर्त)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+      "text": "अधिकतम शब्द लंबाई"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC",
+      "text": "शब्द की शुरुआत होनी चाहिए"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC",
+      "text": "शब्द की समाप्ति होनी चाहिए"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+      "text": "सटीक शब्द लंबाई"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_DESC",
+      "text": "स्ट्रिंग में अपशब्द ढूँढता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+      "text": "अपशब्द का प्रकार"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FILTERPROFANITY_DESC",
+      "text": "स्ट्रिंग में अपशब्द फ़िल्टर करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_DESC",
+      "text": "स्ट्रिंग में रिक्त स्थान को सामान्य करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC",
+      "text": "सरल रिक्त स्थान खोज"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC",
+      "text": "विश्लेषणात्मक रिक्त स्थान खोज"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_COLORINVALID",
+      "text": "अमान्य पृष्ठभूमि रंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_COLORINVALID",
+      "text": "अमान्य अग्रभूमि रंग"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_DESC",
+      "text": "पृष्ठभूमि रंग अनुक्रम लौटाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC",
+      "text": "रंग प्रोसेस करने के लिए निर्दिष्टकर्ता"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC",
+      "text": "VT अनुक्रमों के बिना सादा अनुक्रम"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC",
+      "text": "ट्रू कलर VT अनुक्रम"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC",
+      "text": "कंसोल आयाम लौटाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_DESC",
+      "text": "अग्रभूमि रंग अनुक्रम लौटाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HISTORY_DESC",
+      "text": "हाल के आदेशों की सूची लौटाता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_DESC",
+      "text": "फ़ॉर्मेट समर्थन के साथ एक स्ट्रिंग प्रिंट करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC",
+      "text": "फ़ॉर्मेटिंग के रूप में उपयोग करने के लिए पैरामीटर"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ANGLEINVALID",
+      "text": "अमान्य कोण"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_PIXELSINVALID",
+      "text": "अमान्य पिक्सेल संख्या"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_INCHESINVALID",
+      "text": "अमान्य इंच"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_WIDTHINVALID",
+      "text": "पिक्सेल में अमान्य चौड़ाई"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID",
+      "text": "पिक्सेल में अमान्य ऊँचाई"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_DESC",
+      "text": "डिग्री में कोण को रेडियन में परिवर्तित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC",
+      "text": "रूपांतरित करने के लिए रेडियन में कोण"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_DESC",
+      "text": "पिक्सेल से DPI प्राप्त करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+      "text": "प्रति इंच कितने पिक्सेल?"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+      "text": "इंच में लंबाई"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_DESC",
+      "text": "पिक्सेल की कुल संख्या प्राप्त करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+      "text": "पिक्सेल में चौड़ाई"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+      "text": "पिक्सेल में ऊँचाई"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_DESC",
+      "text": "रेडियन में कोण को डिग्री में परिवर्तित करता है"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+      "text": "रूपांतरित करने के लिए डिग्री में कोण"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPTITLE",
+      "text": "सहायता पृष्ठ शीर्षक"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPDESC",
+      "text": "सहायता पृष्ठ विवरण"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
+      "text": "सहायता पृष्ठ मुख्य भाग। इसका अर्थ है कि एप्लिकेशन वह सहायता लेख प्रदान नहीं कर रहा है जिसकी आपको आवश्यकता हो सकती है।"
     }
   ]
 }

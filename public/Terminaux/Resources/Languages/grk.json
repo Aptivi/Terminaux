@@ -2982,6 +2982,594 @@
     {
       "loc": "T_SHELL_UNIFIED_LSVARS_DESC",
       "text": "Εμφανίζει τις διαθέσιμες μεταβλητές UESH"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDPREFIX_DESC",
+      "text": "Προσθέτει πρόθεμα στη συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC",
+      "text": "Κείμενο προς επεξεργασία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC",
+      "text": "Πρόθεμα μιας συμβολοσειράς"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX",
+      "text": "Ελέγχει το πρόθεμα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC",
+      "text": "Εκτυπώνει την έξοδο στην κονσόλα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ADDSUFFIX_DESC",
+      "text": "Προσθέτει επίθημα στη συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC",
+      "text": "Επίθημα μιας συμβολοσειράς"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX",
+      "text": "Ελέγχει το επίθημα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKPREFIX_DESC",
+      "text": "Ελέγχει το πρόθεμα στη συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHKSUFFIX_DESC",
+      "text": "Ελέγχει το επίθημα στη συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC",
+      "text": "Ελέγχει αν η συμβολοσειρά περιέχει όλους τους χαρακτήρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC",
+      "text": "Ακολουθία χαρακτήρων"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC",
+      "text": "Ελέγχει αν η συμβολοσειρά περιέχει όλες τις υποσυμβολοσειρές"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC",
+      "text": "Ακολουθία συμβολοσειρών που οριοθετούνται με κενά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC",
+      "text": "Ελέγχει αν η συμβολοσειρά περιέχει οποιονδήποτε από τους χαρακτήρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC",
+      "text": "Ελέγχει αν η συμβολοσειρά περιέχει οποιαδήποτε υποσυμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONTAINS_DESC",
+      "text": "Ελέγχει εάν η συμβολοσειρά περιέχει μια δευτερεύουσα συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC",
+      "text": "Ελέγχει μια υποσυμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC",
+      "text": "Αγνοεί την πεζά-κεφαλαία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC",
+      "text": "Ελέγχει αν μια συμβολοσειρά τελειώνει με όλους τους χαρακτήρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC",
+      "text": "Ελέγχει αν μια συμβολοσειρά τελειώνει με όλους τους χαρακτήρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC",
+      "text": "Ελέγχει αν μια συμβολοσειρά τελειώνει με οποιονδήποτε από τους χαρακτήρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC",
+      "text": "Ελέγχει αν μια συμβολοσειρά τελειώνει με οποιαδήποτε από τις συμβολοσειρές"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ENDSWITH_DESC",
+      "text": "Ελέγχει αν μια συμβολοσειρά τελειώνει με μια υποσυμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_EQUALS_DESC",
+      "text": "Ελέγχει αν μια συμβολοσειρά είναι ίση με μια άλλη συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_TERM_DESC",
+      "text": "Όρος αναζήτησης"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_LOWERCASE_DESC",
+      "text": "Χρησιμοποιεί μια συμβολοσειρά με πεζά γράμματα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC",
+      "text": "Επεξεργάζεται το ολόκληρη συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC",
+      "text": "Επεξεργασία μόνο του πρώτου χαρακτήρα μιας συμβολοσειράς"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMPREFIX_DESC",
+      "text": "Αφαιρεί ένα πρόθεμα από μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REMSUFFIX_DESC",
+      "text": "Αφαιρεί ένα επίθημα από μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC",
+      "text": "Ελέγχει εάν μια συμβολοσειρά ξεκινά με όλους τους χαρακτήρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC",
+      "text": "Ελέγχει εάν μια συμβολοσειρά ξεκινά με όλους τους χαρακτήρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC",
+      "text": "Ελέγχει εάν μια συμβολοσειρά ξεκινά με οποιαδήποτε συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC",
+      "text": "Ελέγχει εάν μια συμβολοσειρά ξεκινά με μια δευτερεύουσα συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STARTSWITH_DESC",
+      "text": "Ελέγχει εάν μια συμβολοσειρά ξεκινά με δευτερεύουσα συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TITLECASE_DESC",
+      "text": "Χρησιμοποιεί τίτλο σε συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UPPERCASE_DESC",
+      "text": "Χρησιμοποιεί κεφαλαία γράμματα σε συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS",
+      "text": "Υπάρχουν {0} κρυφές εντολές. Μπορείτε να τις εμφανίσετε χρησιμοποιώντας -hidden."
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC",
+      "text": "Εμφανίζει τις κρυφές εντολές"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC",
+      "text": "Εμφανίζει τον αριθμό εντολών"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND",
+      "text": "Εντολή"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS",
+      "text": "Ψευδώνυμο"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE",
+      "text": "Χρήση"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION",
+      "text": "Περιγραφή"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS",
+      "text": "Σημαίες"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS",
+      "text": "Γενικές εντολές για"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS",
+      "text": "Ενοποιημένες εντολές για"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS",
+      "text": "Ενοποιημένες εντολές για"
+    },
+    {
+      "loc": "T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS",
+      "text": "Επιπλέον εντολές για"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC",
+      "text": "Εμφάνιση λίστας εντολών ως Markdown (για τεκμηρίωση και LLM)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_DESC",
+      "text": "Δημιουργεί μικρά ονόματα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC",
+      "text": "Αριθμό ονομάτων προς δημιουργία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_DESC",
+      "text": "Δημιουργεί επώνυμα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC",
+      "text": "Αριθμό επωνύμων προς δημιουργία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID",
+      "text": "Το πλάτος των εντολών δεν είναι έγκυρο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID",
+      "text": "Ο τύπος βωμολοχίας δεν είναι έγκυρος"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID",
+      "text": "Το μέγιστο μήκος λέξης δεν είναι έγκυρο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID",
+      "text": "Το ακριβές μήκος λέξης δεν είναι έγκυρο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID",
+      "text": "Ο δείκτης χαρακτήρων δεν είναι έγκυρος"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID",
+      "text": "Ο δείκτης εμφάνισης δεν είναι έγκυρος"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID",
+      "text": "Το όριο μετατόπισης δεν είναι έγκυρο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID",
+      "text": "Το όριο περικοπής δεν είναι έγκυρο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH",
+      "text": "Το πλάτος της πρότασης δεν είναι έγκυρο"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CHARWIDTH_DESC",
+      "text": "Λαμβάνει το πλάτος των χαρακτήρων (πόσα κελιά χρειάζονται)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_STRWIDTH_DESC",
+      "text": "Λαμβάνει το πλάτος της συμβολοσειράς (πόσα κελιά χρειάζονται)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC",
+      "text": "Χαρακτήρας προς επεξεργασία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_DESC",
+      "text": "Τυλίγει μια μεγάλη συμβολοσειρά σε μια ομάδα προτάσεων"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC",
+      "text": "Μέγιστο πλάτος μιας πρότασης"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC",
+      "text": "Διαχωρίζει μια μεγάλη συμβολοσειρά ανά χαρακτήρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PALINDROME_DESC",
+      "text": "Ελέγχει εάν μια συμβολοσειρά είναι παλίνδρομη"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NUMERIC_DESC",
+      "text": "Ελέγχει εάν μια συμβολοσειρά είναι αριθμητική"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_DESC",
+      "text": "Αντικαθιστά μια υποσυμβολοσειρά σε μια συμβολοσειρά με μια άλλη υποσυμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC",
+      "text": "Μια υποσυμβολοσειρά που θα αντικαταστάθηκε"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC",
+      "text": "Μια δευτερεύουσα συμβολοσειρά για αντικατάσταση με"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC",
+      "text": "Χρήση κανονικών εκφράσεων για αντικατάσταση"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_DESC",
+      "text": "Αντικαθιστά όλες τις δευτερεύουσες συμβολοσειρές σε μια συμβολοσειρά με μια άλλη δευτερεύουσα συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC",
+      "text": "Μια ομάδα δευτερευουσών συμβολοσειρών που θα αντικατασταθούν, οριοθετημένες με κενά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_DESC",
+      "text": "Αντικαθιστά όλες τις δευτερεύουσες συμβολοσειρές σε μια συμβολοσειρά με μια περιοχή δευτερευουσών συμβολοσειρών"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC",
+      "text": "Μια ομάδα δευτερευουσών συμβολοσειρών που θα αντικατασταθούν, οριοθετημένες με έναν χαρακτήρα καθέτου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC",
+      "text": "Συμβολοσειρές που χωρίζονται με κενό"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_DESC",
+      "text": "Αντικαθιστά έναν χαρακτήρα σε μια συμβολοσειρά με έναν άλλο χαρακτήρα"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC",
+      "text": "Δείκτης χαρακτήρων για επεξεργασία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC",
+      "text": "Ένας χαρακτήρας για αντικατάσταση με"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACELASTOCC_DESC",
+      "text": "Αντικαθιστά την τελευταία εμφάνιση μιας δευτερεύουσας συμβολοσειράς σε μια συμβολοσειρά με μια άλλη δευτερεύουσα συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_DESC",
+      "text": "Αντικαθιστά μια καθορισμένη εμφάνιση μιας δευτερεύουσας συμβολοσειράς σε μια συμβολοσειρά με μια άλλη δευτερεύουσα συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC",
+      "text": "Δείκτης εμφάνισης δευτερεύουσας συμβολοσειράς"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSE_DESC",
+      "text": "Αντιστρέφει μια ακολουθία χαρακτήρων σε μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_DESC",
+      "text": "Μετατοπίζει χαρακτήρες σε μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC",
+      "text": "Μετατόπιση κατωφλίου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_DESC",
+      "text": "Διαχωρίζει μια συμβολοσειρά με έναν οριοθέτη"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC",
+      "text": "Διαχωρίζει για να διαιρέσει μια συμβολοσειρά με"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITNEWLINES_DESC",
+      "text": "Διαχωρίζει μια συμβολοσειρά με μια νέα γραμμή"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SPLITDQ_DESC",
+      "text": "Διαχωρίζει μια συμβολοσειρά με έναν οριοθέτη (υποστήριξη διπλών εισαγωγικών)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_DESC",
+      "text": "Περικόπτει μια μεγάλη συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC",
+      "text": "Κατώφλι περικοπής"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC",
+      "text": "Απενεργοποίηση αποσιωπητικών σε περικομμένα συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ESCAPESTR_DESC",
+      "text": "Διαφεύγει από μια ακολουθία ειδικών χαρακτήρων σε μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_UNESCAPESTR_DESC",
+      "text": "Αφαιρεί την διαφυγή από μια ακολουθία ειδικών χαρακτήρων σε μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOBRAILLE_DESC",
+      "text": "Μετατρέπει μια συμβολοσειρά σε ακολουθία Braille"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_DESC",
+      "text": "Μετατρέπει μια συμβολοσειρά σε κείμενο Figlet που αποδίδεται"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC",
+      "text": "Όνομα γραμματοσειράς Figlet"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC",
+      "text": "Μέγιστο πλάτος figlet (0 για απενεργοποίηση)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_DESC",
+      "text": "Εμφανίζει μετρήσεις figlet"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC",
+      "text": "Εμφανίζει λεπτομερείς μετρήσεις figlet"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_REVERSERTL_DESC",
+      "text": "Αντιστρέφει μια ακολουθία χαρακτήρων για RTL"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORD_DESC",
+      "text": "Επιστρέφει μια τυχαία λέξη"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_DESC",
+      "text": "Επιστρέφει μια τυχαία λέξη (υπό όρους)"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC",
+      "text": "Μέγιστο μήκος λέξης"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC",
+      "text": "Η λέξη πρέπει να ξεκινά με"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC",
+      "text": "Η λέξη πρέπει να τελειώνει με"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC",
+      "text": "Ακριβές μήκος λέξης"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_DESC",
+      "text": "Εύρεση βωμολοχιών σε μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC",
+      "text": "Τύπος βωμολοχιών"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FILTERPROFANITY_DESC",
+      "text": "Φιλτράρισμα βωμολοχιών σε μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_DESC",
+      "text": "Ομαλοποίηση των κενών σε μια συμβολοσειρά"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC",
+      "text": "Απλή αναζήτηση χώρου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC",
+      "text": "Αναλυτική αναζήτηση χώρου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_COLORINVALID",
+      "text": "Μη έγκυρο χρώμα φόντου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_COLORINVALID",
+      "text": "Μη έγκυρο χρώμα προσκηνίου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_BGCOLOR_DESC",
+      "text": "Επιστρέφει μια ακολουθία χρωμάτων φόντου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC",
+      "text": "Προδιαγραφέας χρώματος για επεξεργασία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_PLAIN_DESC",
+      "text": "Απλή ακολουθία χωρίς ακολουθίες VT"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC",
+      "text": "Ακολουθία VT πραγματικού χρώματος"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC",
+      "text": "Επιστρέφει διαστάσεις κονσόλας"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_FGCOLOR_DESC",
+      "text": "Επιστρέφει μια ακολουθία χρωμάτων προσκηνίου"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_HISTORY_DESC",
+      "text": "Επιστρέφει μια λίστα πρόσφατων εντολών"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_DESC",
+      "text": "Εκτυπώνει μια συμβολοσειρά με Υποστήριξη μορφής"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC",
+      "text": "Παράμετροι για χρήση ως μορφοποίηση"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ANGLEINVALID",
+      "text": "Μη έγκυρη γωνία"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_PIXELSINVALID",
+      "text": "Μη έγκυρος αριθμός pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_INCHESINVALID",
+      "text": "Μη έγκυρες ίντσες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_WIDTHINVALID",
+      "text": "Μη έγκυρο πλάτος σε pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID",
+      "text": "Μη έγκυρο ύψος σε pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_DESC",
+      "text": "Μετατρέπει τη γωνία σε μοίρες σε ακτίνια"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC",
+      "text": "Γωνία σε ακτίνια για μετατροπή"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_DESC",
+      "text": "Λαμβάνει το DPI από pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC",
+      "text": "Πόσα pixel ανά ίντσα;"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC",
+      "text": "Μήκος σε ίντσες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_DESC",
+      "text": "Λαμβάνει τον συνολικό αριθμό pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC",
+      "text": "Πλάτος σε pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC",
+      "text": "Ύψος σε pixel"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_DESC",
+      "text": "Μετατρέπει τη γωνία σε ακτίνια σε μοίρες"
+    },
+    {
+      "loc": "T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC",
+      "text": "Γωνία σε μοίρες για μετατροπή"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPTITLE",
+      "text": "Τίτλος σελίδας βοήθειας"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPDESC",
+      "text": "Περιγραφή σελίδας βοήθειας"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
+      "text": "Κόρνος σελίδας βοήθειας. Αυτό σημαίνει ότι η εφαρμογή δεν παρέχει το άρθρο βοήθειας που μπορεί να χρειάζεστε."
     }
   ]
 }
