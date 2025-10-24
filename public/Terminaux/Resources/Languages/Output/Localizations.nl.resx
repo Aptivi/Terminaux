@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>Algemene Terminaux-fout!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>Interne fout in Terminals!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>Onbekende fout</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>Nog niet geïmplementeerd.</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>Dit programma kan niet doorgaan.</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>Druk op een toets om door te gaan...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Ongeldig type</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>U moet het schermonderdeel opgeven.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>U moet de schermnaam opgeven.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>De opgegeven onderdeelindex valt buiten het bereik.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>De opgegeven onderdeelnaam is niet gevonden.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>Het opgegeven onderdeel is niet gevonden.</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>De bufferindex mag niet kleiner zijn dan nul of groter dan {0} buffers.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>Scherm is niet gespecificeerd.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>Het scherm is niet cyclisch.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren met behulp van een domme terminal.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>Deze applicatie maakt gebruik van uitgebreide consolefuncties van Terminaux die functies vereisen die niet worden ondersteund door &apos;domme&apos; terminals.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
+    <value>Mogelijke oplossing: Gebruik een geschikte terminal-emulator of raadpleeg uw terminalinstellingen om het terminaltype in te stellen op iets anders dan &quot;dom&quot;. We raden aan de &quot;vt100&quot; terminal-emulators te gebruiken om deze applicatie optimaal te benutten.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminaltype dat op de zwarte lijst staat.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Het consoletype dat u momenteel gebruikt, {0}, staat op de zwarte lijst: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Het consoletype dat u momenteel gebruikt, {0}, staat op de grijze lijst: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op een terminal-emulator die op de zwarte lijst staat.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>De terminal-emulator die u momenteel gebruikt, {0}, staat op de zwarte lijst: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>De terminal-emulator die u momenteel gebruikt, {0}, staat op de grijze lijst: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>Terminaltype {0} ondersteunt volgens terminfo geen 256 kleuren</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>Gebruiker probeerde een Terminaux-applicatie uit te voeren op Git Bash&apos;s MinTTY zonder winpty.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>Je hebt WinPty nodig om dit programma te kunnen gebruiken. Als je zeker weet dat je Git Bash niet gebruikt, zorg er dan voor dat je een geschikte Windows-terminal gebruikt.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>De consolepositionering werkt niet vanwege een I/O-fout. Deze toepassing kan zich daardoor vreemd gedragen.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>De positionering van de console werkt niet goed, waardoor deze toepassing mogelijk vreemd gedrag vertoont.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>Je console is te klein om goed te kunnen draaien: {0}x{1} | buff: {2}x{3} | min: {4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>Voor een betere ervaring kunt u het formaat van uw consolevenster aanpassen terwijl u nog steeds op dit scherm bent. Druk op een toets om door te gaan...</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>Montage niet voorzien.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} Kan niet doorgaan.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>Het consoletype ondersteunt alleen basisschrijfbewerkingen.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>Het type console is van onbekende aard.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>Deze applicatie maakt gebruik van VT escape sequences, maar Terminal.app ondersteunt geen 255 en true colors meer.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>Het consoletype ondersteunt geen 256 kleuren.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>Kan niet filteren zonder query.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>Kan niet filteren met een ongeldige zoekopdracht.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>Er is geen expressie in het consolefilter.</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
+    <value>Kan nieuwe termios-kenmerken voor de raw-modus niet herstellen: {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED" xml:space="preserve">
+    <value>Kan bestandsdescriptorvlaggen niet ophalen: {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED" xml:space="preserve">
+    <value>Kan bestandsdescriptorvlag niet instellen op niet-blokkerend lezen: {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED" xml:space="preserve">
+    <value>Kan bestandsdescriptorvlag niet instellen om lezen te blokkeren: {0}</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>Kan geen synth-info verkrijgen uit de verstrekte weergave.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>Synth-representatie is ongeldig op [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>Frequentie is ongeldig op [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>Duur is ongeldig op [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>Het doel is mogelijk niet nul</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>De maximale waarde [{0}] mag niet kleiner zijn dan de voortgangswaarde [{1}]</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>De voortgangswaarde [{0}] moet tussen 0 en de maximumwaarde van {1} liggen.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>Deze aanduiding mag niet aan het einde van de tekenreeks worden geplaatst zonder één parameter op te geven</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>Deze aanduiding mag alleen een getal als parameter hebben.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>Deze aanduiding mag alleen een cijfer van 1 tot en met 9 bevatten.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>Deze aanduiding mag alleen een letter als parameter hebben.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>Deze aanduiding heeft een geheel getal als constante nodig</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>Deze aanduiding bevat een ongeldige gehele constante</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>Deze aanduiding mag niet aan het einde van de tekenreeks worden geplaatst zonder een tekenconstante op te geven</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>Je kunt niet meer dan één teken toevoegen</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>Deze aanduiding heeft een tekenverzameling nodig</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>Breedte is niet geldig</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>Deze aanduiding mag niet aan het einde van de tekenreeks worden geplaatst zonder een type op te geven</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>Kan nulreeks niet verwerken.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>Kan geen null-parameters verwerken.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>Deze vlag moet een minteken voorstellen</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>Er zijn nog verdere gegevens na index {0} van {1} voor opmaak</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>De gehele constante voor het teken is niet geldig.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>Gehele constante is niet geldig.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>Kan een niet-bestaande variabele niet pushen.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>Dit is een binaire bewerking, maar het aantal in de wachtrij geplaatste argumenten is {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>Gehele constante voor de eerste operand is niet geldig.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>Gehele constante voor tweede operand is ongeldig.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>Dit is een unaire bewerking, maar het aantal in de wachtrij geplaatste argumenten is {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>Voorwaardelijke weergave {0} is ongeldig.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>Het gevraagde aantal bytes kon niet worden gelezen.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>Ongeldige tekenreekstabel!</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>Ongeldige header magie</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>Kan parameter niet verwerken op een waarde van een ander type dan een tekenreeks. Enum is {0} en type is {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>De vertragingsaanduiding is voortijdig beëindigd.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>Ongeldige vertragingsaanduiding.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>De vertragingswaarde is geen getal.</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>Onbekend capaciteitstype &apos;{0}&apos;</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>Kan {0} niet laden</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>De kleur valt buiten het bereik.</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>Weet je zeker dat dit verloop niet nul is?</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>Geef minimaal één kleur op.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>Kan geen null-bron converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>Kan niet converteren naar nultype.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>U moet een specifiek bronkleurmodel opgeven, niet het basiskleurmodel.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>Geen kleurmodel.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>U moet een specifiek doelkleurmodel opgeven, niet het basiskleurmodel.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>Geen doelkleurmodel.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>Kan hetzelfde kleurmodel niet converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>Kan niet naar RGB converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>Kan niet converteren van basiskleurmodel.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>Kan niet naar CMYK converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>Kan niet naar CMY converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>Kan niet naar HSL converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>Kan niet naar HSV converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>Kan niet naar RYB converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>Kan niet naar YIQ converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>Kan niet naar YUV converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>Kan niet naar XYZ converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>Kan niet naar YXY converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>Kan niet converteren naar HunterLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>Kan niet converteren naar CieLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>Kan niet converteren naar CieLuv.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>Kan niet converteren naar CieLch.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHWBFAILED" xml:space="preserve">
+    <value>Kan niet naar HWB converteren.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>Kan niet converteren van RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar CMYK converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar CMY converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar HSL converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar HSV converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar RYB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar YIQ converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar YUV converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar XYZ converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>Kan een nul-RGB-instantie niet naar YXY converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>Kan een null RGB-instantie niet naar HunterLab converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>Kan een null RGB-instantie niet naar CieLab converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>Kan een null RGB-instantie niet naar CieLuv converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>Kan een null RGB-instantie niet naar CieLch converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB" xml:space="preserve">
+    <value>Kan een null RGB-instantie niet naar HWB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>Kan een lege CMYK-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>Kan een lege CMY-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>Kan een null HSL-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>Kan een nul-HSV-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>Kan een null RYB-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>Kan een nul YIQ-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>Kan een nul-YUV-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>Kan een nul XYZ-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>Kan een null YXY-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>Kan een null HunterLab-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>Kan een nul CieLab-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>Kan een null CieLuv-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>Kan een null CieLch-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB" xml:space="preserve">
+    <value>Kan een null HWB-instantie niet naar RGB converteren!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>De waarnemer moet 2 of 10 zijn</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>Verlichtingsmiddel is ongeldig</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>Kan geen referenties uit de tabel halen</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>Ongeldige kleurspecificatie &quot;{0}&quot;. Als u 256 kleuren gebruikt, moet u een positieve waarde tussen 0 en 255 of een geldige kleurnaam invoeren. Als u ware kleuren gebruikt, moet u een geldige kleurspecificatie invoeren, zoals RRR;GGG;BBB, of een kleurcode tot 16777215.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>Het rode kleurniveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>Het groene kleurniveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>Het blauwe kleurniveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>Ongeldige hex-kleurspecificatie &quot;{0}&quot;. Deze specificatie moet beginnen met de hashtag. Zorg ervoor dat deze de juiste notatie heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>Ongeldige hex-lengte van de kleur &quot;{0}&quot;. Zorg ervoor dat deze de juiste notatie heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>Kan kleur hex &quot;{0}&quot; niet oplossen.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>Ongeldige CieLab-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>De L-waarde ligt buiten het bereik (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>De A-waarde ligt buiten het bereik (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>De B-waarde ligt buiten het bereik (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige CieLab-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>Ongeldige CieLch-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>De C-waarde ligt buiten het bereik (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>De H-waarde ligt buiten het bereik (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige CieLch-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>Ongeldige CieLuv-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>De U-waarde ligt buiten het bereik (-134,0 -&gt; 220,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>De V-waarde ligt buiten het bereik (-140,0 -&gt; 122,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige CieLuv-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>Ongeldige CMY-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze het juiste formaat heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>Het cyaankleurniveau ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>Het kleurniveau magenta ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>Het gele kleurniveau ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige CMY-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>Ongeldige CMYK-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze het juiste formaat heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>Ongeldige HSL-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>Het tintniveau ligt buiten het bereik (0&apos; -&gt; 360&apos; graden).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>Het verzadigingsniveau ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>Het helderheidsniveau ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige HSL-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>Ongeldige HSV-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>De waarde ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige HSV-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER" xml:space="preserve">
+    <value>Ongeldige HWB-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze het juiste formaat heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL" xml:space="preserve">
+    <value>Het witheidsniveau ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL" xml:space="preserve">
+    <value>Het zwartheidsniveau ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige HWB-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>Ongeldige HunterLab-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>De A-waarde ligt buiten het bereik (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>De B-waarde ligt buiten het bereik (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige HunterLab-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>Ongeldige YUV-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>Het luma-niveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>Het chroma (U)-niveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>Het chroma (V)-niveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige YUV-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>Ongeldige YIQ-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>Het in-fase niveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>Het kwadratuurniveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige YIQ-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>Ongeldige kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste notatie heeft, wat betekent een getal van 0-255 als u 255 kleuren gebruikt of een VT-reeks als u ware kleuren gebruikt, zoals hieronder.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>Deze kleur is al een originele kleur.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>Ongeldige RYB-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>Het rode niveau valt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>Het gele niveau valt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>Het blauwe niveau ligt buiten het bereik (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige RYB-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Ongeldige XYZ-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>De X-waarde ligt buiten het bereik (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>De Y-waarde ligt buiten het bereik (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>De Z-waarde ligt buiten het bereik (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige XYZ-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>Ongeldige YXY-kleurspecificatie &quot;{0}&quot;. Zorg ervoor dat deze de juiste indeling heeft.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>De Y1-waarde ligt buiten het bereik (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>De X-waarde ligt buiten het bereik (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>De Y2-waarde ligt buiten het bereik (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige YXY-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft.</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Kleurtype is ongeldig</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>Kleurspecificatie voor zichtbaarheid is ongeldig</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>Ongeldig monochromatietype</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>Ik kan niet bepalen hoe ik een {0} van {1} naar een kleur kan converteren.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>Ik kan niet bepalen hoe ik een {0} van een onbekend type naar een kleur kan converteren.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>Ik krijg geen kleur.</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>Achtergrond instellen mislukt</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>Er is geen kleurinstantie beschikbaar.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Uitgang</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Toetscombinaties</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>Vind volgende</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP1" xml:space="preserve">
+    <value>Omhoog gaan</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>Ga één element omhoog</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN1" xml:space="preserve">
+    <value>Omlaag verplaatsen</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>Ga één element naar beneden</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1" xml:space="preserve">
+    <value>Vorige pagina</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>Ga naar de vorige pagina</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1" xml:space="preserve">
+    <value>Volgende pagina</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>Ga naar de volgende pagina</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST1" xml:space="preserve">
+    <value>Ga naar Begin</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>Ga naar het eerste element</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST1" xml:space="preserve">
+    <value>Ga naar Einde</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>Ga naar het laatste element</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>Schrijf een zoekterm (ondersteunt reguliere expressies)</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>Uw query is geen geldige reguliere expressie.</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>Selecteer een van de items:</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>Geen item gevonden.</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Zoek naar een element</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>Ga één regel omhoog (informatief)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>Ga één regel naar beneden (informatief)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>Schakelaar</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>Lijst met {0} vooraf gedefinieerde kleuren</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>Grijs</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>Transparantie</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>Schaduw en tint</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>Kleurinfo</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>Transformeren</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>Ongeldig kleurtype in de kleurenkiezer</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>Schrijf de naam van het lettertype. Deze wordt omgezet naar kleine letters.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>Het lettertype bestaat niet.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>Selecteer een figletlettertype uit de onderstaande lijst</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Lettertypeselectie</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>Selector is niet gespecificeerd</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Lees verder...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>Lijst met sneltoetsen</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>Beweeg rond</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Verlaat de interactieve TUI</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>Artikelinfo</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>De selectiestijl vereist dat er minimaal één keuze is ingeschakeld.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>Schrijf de naam van de spinner. Deze wordt omgezet naar kleine letters.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>De spinner bestaat niet.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>Selecteer een spinner uit de onderstaande lijst</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Spinnerselectie</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>Geen informatie.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>Geen status</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>Probeer interactieve TUI-items weer te geven voor het secundaire deelvenster op een interactieve TUI die alleen interactie vanuit één deelvenster toestaat.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>Er werd geprobeerd informatie weer te geven op het secundaire deelvenster in een interactieve TUI die interactie tussen twee deelvensters toestaat, waardoor de selectieweergave daar in de war raakte.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>Probeerde informatie over nulgegevens weer te geven</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>Het is niet gelukt om de informatie te verkrijgen.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>Een actie uitvoeren op het geselecteerde item</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>Geef een interactieve TUI-basisklasse en probeer het opnieuw.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>De interactieve TUI {0} bevat geen gegevensbron.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>De interactieve TUI {0} heeft conflicterende toetsenbord- of muiskoppelingen.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>De volgende toetscombinaties of muiscombinaties veroorzaken conflicten:</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>De tekstuele gebruikersinterface is gecrasht. Dit is meestal een probleem aan de applicatiekant.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>Tekstuele gebruikersinterface is niet gespecificeerd</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>Deze tekstuele gebruikersinterface [{0}] is niet gereed omdat de status {1} is</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>Er zijn {0} conflicterende toetscombinaties in de [{1}] tekstuele gebruikersinterface</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>De context van de aanwijzergebeurtenis is niet gespecificeerd</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>De startpositie mag niet kleiner zijn dan nul</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>Eindpositie mag niet kleiner zijn dan nul</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>De start X-positie mag niet groter zijn dan de eind X-positie</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>De startpositie Y mag niet groter zijn dan de eindpositie Y</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>Invoernaam is niet opgegeven</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>Voorschot</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPT" xml:space="preserve">
+    <value>Voor deze presentatiepagina moeten de volgende gegevens worden ingevuld voordat u naar de volgende pagina kunt gaan.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>Invoer vereist</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>Een of meer van de volgende velden zijn niet correct ingevuld:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>Onjuiste invoer</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>De vereiste invoergegevens zijn niet verstrekt. U moet de waarden van de volgende invoergegevens invullen:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>Invoer niet verstrekt</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>Je kunt geen keuze tonen als er geen antwoorden en alternatieve antwoorden zijn.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Voor de keuzestijl is het vereist dat er minimaal één keuze is ingeschakeld.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>In de modus voor één teken kunt u geen antwoorden met meer dan één teken opgeven.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>Verkeerd antwoord. Probeer het opnieuw.</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT" xml:space="preserve">
+    <value>Naar links bewegen</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT" xml:space="preserve">
+    <value>Ga naar rechts</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>Invoegen</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>Vervangen</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>Alles vervangen</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>Klaar</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>Niet gevonden. Controleer uw syntaxis of verbreed uw zoekopdracht.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>Nummerinfo</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>Vervang alles wat</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>Schrijf het bytenummer met de hexadecimale waarde.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>Het opgegeven bytenummer is ongeldig.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>Ongeldige byte {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>Schrijf het bytenummer met de hexadecimale waarde waarmee {0} vervangen moet worden.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>Schrijf het bytenummer met de hexadecimale waarde die vervangen moet worden.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>Schrijf een byte of een groep bytes gescheiden door spaties.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>Er zijn bytes nodig om te vinden, maar u heeft er geen opgegeven.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>Positie</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>Hexadecimaal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>Octaal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>Nummer</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>Binair</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>Nummerinformatie</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT" xml:space="preserve">
+    <value>Lege inhoud</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>Het opgegeven startbytenummer mag niet groter zijn dan de bestandsgrootte.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>Het opgegeven eindbytenummer mag niet groter zijn dan de bestandsgrootte.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>Het opgegeven bytenummer is ongeldig.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>Het opgegeven bytenummer mag niet groter zijn dan {0} of kleiner dan 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>Het opgegeven bytenummer mag niet groter zijn dan {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>Deze bewerking kan niet worden uitgevoerd op een null-array.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>Bytenummer moet beginnen met 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>Het opgegeven startbytenummer mag niet groter zijn dan {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>Het opgegeven eindbytenummer mag niet groter zijn dan {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>Binnenkomen...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>Hier verwijderen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>Regel verwijderen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>Stop met binnenkomen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>Nieuwe lijn</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE" xml:space="preserve">
+    <value>Backspace</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>Schrijf de string om te vinden</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>Schrijf de vervangende string</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>Schrijf een string om te vinden. Ondersteunt reguliere expressies.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>Er is een string vereist om te vinden, maar u heeft er geen opgegeven.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>Deze te vinden tekenreeks is geen geldige reguliere expressie.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>Lijnen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>Kolom</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>Rij</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>Het opgegeven regelnummer mag niet groter zijn dan {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>Deze bewerking kan niet worden uitgevoerd op een lijst met lege regels.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>Toont meer info in een infobox</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>Gaat één lijn omhoog</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>Gaat één regel naar beneden</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>Gaat naar de vorige tekstpagina</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>Gaat naar de volgende tekstpagina</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>Verzendt de waarde</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>Verzendt de waarden</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>Sluit zonder de waarde in te dienen</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>Sluit zonder de waarden in te dienen</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT" xml:space="preserve">
+    <value>Voert een actie uit of selecteert een keuze</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Verlaagt de waarde of verplaatst drie tekstregels omhoog</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Verhoogt de waarde of verplaatst drie regels tekst naar beneden</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE" xml:space="preserve">
+    <value>Vorige keuze of vorige drie tekstregels</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE" xml:space="preserve">
+    <value>Volgende keuze of volgende drie tekstregels</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>Verlaagt de huidige waarde</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>Verhoogt de huidige waarde</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>Stelt de waarde in op de minimumwaarde</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>Stelt de waarde in op de maximale waarde</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT" xml:space="preserve">
+    <value>Stelt de huidige focus in op het volgende waarde-element</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT" xml:space="preserve">
+    <value>Stelt de huidige focus in op het vorige waarde-element</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>Gaat naar de vorige knop</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>Gaat naar de volgende knop</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Vorige knop of vorige drie tekstregels</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Volgende knop of volgende drie regels tekst</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>Gaat naar de eerste tekstregel</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>Gaat naar de laatste tekstregel</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>Gaat naar de volgende tekstpagina of sluit het modale informatievenster</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>Sluit het modale informatievenster</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION" xml:space="preserve">
+    <value>Voert een actie uit</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Vorige drie regels tekst</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Volgende drie regels tekst</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS" xml:space="preserve">
+    <value>Gaat naar de vorige pagina met invoer</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS" xml:space="preserve">
+    <value>Gaat naar de volgende pagina met invoer</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS" xml:space="preserve">
+    <value>Zoekt naar een invoer</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE" xml:space="preserve">
+    <value>Wijzigt de geselecteerde invoerwaarde</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Gaat één keuze omhoog (volgende keuze)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Gaat één keuze omlaag (vorige keuze)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>Gaat naar de eerste keuze</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>Gaat naar de laatste keuze</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>Gaat naar de vorige pagina met keuzes</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>Gaat naar de volgende pagina met keuzes</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>Zoekt naar een keuze</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>Selecteert of deselecteert alle keuzes</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>Kan categorie en groep niet ophalen in keuzenummer {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>Algemene keuzes</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>Beschikbare keuzes</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>Alternatieve keuzes</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>Bevestigen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>Zijbalk</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_MORE" xml:space="preserve">
+    <value>Meer</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>Bevestigt selectie(s)</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO" xml:space="preserve">
+    <value>Wijzigt de geselecteerde waarde (keuzerondjes)</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>Selectie(s) annuleren</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Gaat één element omhoog</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Gaat één element naar beneden</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>Gaat naar het eerste element</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>Gaat naar het laatste element</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Gaat naar de vorige pagina</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Gaat naar de volgende pagina</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Zoekt naar een element</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>Ga omhoog in een zijbalk</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>Ga naar beneden in een zijbalk</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>Ga omhoog in een vragenbox</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>Ga naar beneden in een vragenbox</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>Toon pagina en keuze aantal</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>Iteminfo weergeven</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>Selecteert of deselecteert een keuze</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>Selecteert alle elementen in dezelfde groep en categorie</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>Selecteert alle elementen in alle groepen in dezelfde categorie</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>Selecteert alle elementen in alle groepen in alle categorieën</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP" xml:space="preserve">
+    <value>Gaat één element of showcase line-up</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN" xml:space="preserve">
+    <value>Gaat één element of showcase-regel naar beneden</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>Positie bijwerken</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>Vorig</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>Volgende</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>Indienen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>Hulp</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>Klaar</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>Selecteer</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>Handmatige selectie</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>Kleurinformatie</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>Volgende simulatie van kleurenblindheid</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>Eerdere simulatie van kleurenblindheid</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Verhoog de transformatiefrequentie</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Verlaag de transformatiefrequentie</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>Selecteer webkleur</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>Verhoog de ondoorzichtigheid</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>Verhoog de transparantie</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>Volgende kleurmodus</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>Vorige kleurmodus</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>Verhoog de waarde</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>Waarde verlagen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>Kleurtoon verminderen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>Kleurtoon verhogen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>Verminder de kleurhelderheid</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>Verhoog de kleurhelderheid</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>Verzadiging verminderen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>Verhoog de verzadiging</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>Vorige kleur</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>Volgende kleur</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>Kleurenlijst weergeven en verbergen</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>Karakterpresentatie</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>Deze fixture is mogelijk geen basis Fixture-klasse. Specificeer een onvoorwaardelijke fixture.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>Deze fixture is mogelijk geen basis Fixture-klasse. Specificeer een voorwaardelijke fixture.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>De geretourneerde waarde {0} komt niet overeen met de verwachte waarde {1}</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>Deze wedstrijd is niet voorwaardelijk.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Dit type fixture is ongeldig.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>Geen fittingen hier. Voeg er een toe.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>Kies een testopstelling.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>Verlaat de testfixture-selector</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>Deze test is geslaagd!</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Verwachte waarde komt overeen met werkelijke waarde.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>Deze test is mislukt.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Verwachte waarde komt niet overeen met werkelijke waarde.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>Methode in deze gedelegeerde retourneert mogelijk geen void</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>Methode in deze gedelegeerde moet void retourneren</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>Component reguliere expressie is ongeldig</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>Component reguliere expressie niet verstrekt</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>Component voorgrondkleur niet opgegeven</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>Achtergrondkleur van component niet opgegeven</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Er is geen naam voor de markeerstift opgegeven.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Er is geen naam opgegeven voor de basismarkeerstift.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>Kan markeerstift {0} niet vinden</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>Kan markeerstift niet vinden</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>Kan component {0} niet vinden in markeerstift {1}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>Ongeldige markeerstift.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>Markeerstift heeft geen naam.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>Markeerstift bestaat al.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>Markeerstift heeft geen componenten.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>Kan ingebouwde markeerstift niet verwijderen {0}</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>Geschiedenisnaam is niet opgegeven</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>Geschiedenisvermeldingen zijn niet gespecificeerd</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>Het pad naar het geschiedenisbestand is niet opgegeven.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>Er is geen JSON-weergave van de geschiedenis beschikbaar.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>JSON geparseerd, maar er wordt geen JSON-geschiedenisrepresentatie verstrekt.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>Er wordt geen historische informatie verstrekt.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>De geschiedenisnaam is niet opgegeven. Weet u zeker dat u de naam in uw JSON-weergave hebt opgegeven?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>Er worden geen historische items verstrekt. Weet u zeker dat u de items in uw JSON-weergave hebt opgegeven?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>Geschiedenis {0} niet gevonden.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>De algemene geschiedenis kan niet worden verwijderd, maar wel gewist.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>Geschiedenis maakt geen deel uit van de geregistreerde geschiedenissen.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>Het verwijderen van de geschiedenis is mislukt.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>Er is geen geschiedenisinvoer beschikbaar.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>Er is geen lijst met historische vermeldingen beschikbaar.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>Er is een conflict tussen {0} en {1}.</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>Invoerlezer is defect</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>Deze stroom kan niet zoeken.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>Kan geen VT-sequentie bouwen voor niet-bestaand type {0}</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>Kan VT-reeks niet bouwen met ontbrekende argumenten. Verwachte {0} argumenten, ontvangen {1} argumenten.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>Alias kan niet dezelfde naam zijn als een opdracht.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>Opdracht niet gevonden om alias aan {0} te geven.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>Alias al gevonden</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>Alias {0} kan niet worden verwijderd.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>Alias {0} kan niet worden opgevraagd.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>Gebruik</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>Commando</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>Geen hulp voor argument &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>Geen argument help beschrijving</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>Dit argument is nog niet geïmplementeerd.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>Er waren niet genoeg argumenten.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>Onbekend argument</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>Onherstelbare fout in argument</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>Kan geen argumentinfo voor commando of argument ophalen</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>Er zijn geen threadparameters opgegeven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>Vereiste argumenten zijn niet voor alle onderstaande toepassingen beschikbaar:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>Vereiste argumenten zijn niet opgegeven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>Vereiste schakelaars zijn niet aanwezig.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>Voor een van de schakelaars is een waarde nodig die niet is opgegeven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>De hieronder vermelde schakelaars zijn onbekend.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>De hieronder vermelde schakelaars conflicteren met elkaar.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>De onderstaande schakelaars accepteren geen waarden.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>Een of meer argumenten verwachten een numerieke waarde, maar u hebt een ongeldig getal opgegeven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>Een of meer argumenten verwachten een exacte formulering, maar u hebt een ongeldig woord opgegeven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>Een of meer schakelaars verwachten een numerieke waarde, maar u hebt een ongeldig getal opgegeven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>Raadpleeg het help-item voor deze opdracht voor meer informatie</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>Het commando wordt onderbroken...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>Fout bij het uitvoeren van opdracht {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>Opdracht afgebroken om de volgende reden</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>Er is een ongeldig opdrachtpatroon opgegeven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>Opdracht niet gevonden.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>Shell type {0} bestaat niet.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>U moet de commandobasis opgeven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>U moet het commando geven.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>De opgegeven opdracht is al toegevoegd.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>Sommige aangepaste opdrachten kunnen niet worden geladen.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>De opgegeven aangepaste opdracht is niet gevonden.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>Sommige aangepaste opdrachten kunnen niet worden ontladen.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>Deze shell gebruikt de slash-opdrachten om opdrachten uit te voeren. Voeg het slash-symbool &apos;/&apos; toe aan het begin van de opdracht om te beginnen. Bijvoorbeeld:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>Deze opdracht is niet gedefinieerd.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>Beschikbare opdrachten:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>Algemene commando&apos;s:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>Geen shell-opdrachten.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>Extra commando&apos;s:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>Geen extra opdrachten.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>Alias-opdrachten:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>Geen aliasopdrachten.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>Geünificeerde opdrachten:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>Geen uniforme commando’s.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>Commando gedefinieerd door</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>Deze opdracht heeft de onderstaande argumenten die de werking veranderen:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>Ongespecificeerde argumentbeschrijving</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>Deze opdracht heeft de onderstaande schakelaars waarmee u de werking kunt wijzigen:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>Ongespecificeerde schakelaarbeschrijving</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>Geen hulp voor opdracht &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>De opgegeven voorinstelling {0} is niet gevonden.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>Selecteer voorinstelling voor {0}:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>Geen opdrachten gevonden.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>Verlaat de shell als deze op een subshell wordt uitgevoerd</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>Zoekt de beschikbare opdrachten in het huidige shelltype</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>Helppagina</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>Toont algemene opdrachten (standaard)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>Geeft aliasopdrachten weer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Geeft uniforme opdrachten weer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>Geeft extra opdrachten weer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>Toont alle opdrachten</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Gebruikt vereenvoudigde hulp</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>Opent de shell-presetbibliotheek</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>Shell-bericht: De gevraagde opdracht {0} is niet gevonden. Zie &apos;help&apos; voor beschikbare opdrachten.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>Fout bij het uitvoeren van de opdracht.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>Kan shell-uitvoerder voor {0} niet verkrijgen</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>Het initialiseren van de shell is mislukt</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>Kan niet bepalen of de selectie-invoer enkelvoudig of meervoudig is</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>Er is geen markering opgegeven.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>Ongeldige eindtag-specificatie.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>Er zijn geen wachtrijsequenties waarmee de tag kan worden afgesloten.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>Er ontbreken {0} eindtags.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>In de initiële opmaak mag geen tekst worden afgedrukt, maar mogen alleen opmaak-VT-reeksen voorkomen.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND" xml:space="preserve">
+    <value>Er is geen Asciicast-bestand</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE" xml:space="preserve">
+    <value>Kan de basis Asciicast-weergave niet deserialiseren</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE" xml:space="preserve">
+    <value>Kan Asciicast v1-weergave niet deserialiseren</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE" xml:space="preserve">
+    <value>Kan Asciicast v2-weergave niet deserialiseren</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO" xml:space="preserve">
+    <value>Kan geen evenementinformatie verkrijgen</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>Beschikbare sneltoetsen</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>Er zijn geen bindingen gedefinieerd in deze context.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>Toetsenbordbindingen</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>Muisbindingen</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>Ongeldige Nerd Fonts-karakternaam {0} in type {1}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Ongeldige Nerd Fonts-tekenweergave {0} van {1} in type {2}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>Ongeldig Nerd-lettertype {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>Nerd-lettertypen type {0} heeft geen tekens</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>Renderable is al geregistreerd</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>Renderable is niet geregistreerd</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>Alle spinners moeten dezelfde breedte hebben.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Gaat één invoerelement omhoog</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Gaat één invoerelement naar beneden</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST" xml:space="preserve">
+    <value>Gaat naar de eerste ingang</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST" xml:space="preserve">
+    <value>Gaat naar de laatste invoer</value>
+  </data>
+  <data name="T_SHELL_BASE_SWITCH_SET_DESC" xml:space="preserve">
+    <value>Stelt de waarde van de uitvoer in op de geselecteerde MESH-variabele</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION" xml:space="preserve">
+    <value>Threadparameters voor procesuitvoering kunnen niet worden opgehaald.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_ERROREXECUTE1" xml:space="preserve">
+    <value>Fout bij proberen opdracht uit te voeren</value>
+  </data>
+  <data name="T_COMMON_ERRORDESC" xml:space="preserve">
+    <value>Fout {0}: {1}</value>
+  </data>
+  <data name="T_SHELL_BASE_OBSOLETECMD" xml:space="preserve">
+    <value>Deze opdracht is verouderd en wordt in een toekomstige versie verwijderd.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND" xml:space="preserve">
+    <value>De wrappable-opdracht is niet gevonden.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN" xml:space="preserve">
+    <value>U mag deze opdracht niet rechtstreeks uitvoeren in een ingepakte modus.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE" xml:space="preserve">
+    <value>De opdracht kan niet worden ingepakt. Deze commando&apos;s zijn wrappable:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPFAILED" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het inpakken van een opdrachtuitvoer</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE" xml:space="preserve">
+    <value>Een opdracht die niet als wrappable is ingesteld, kan niet worden gebufferd.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION" xml:space="preserve">
+    <value>Je kunt het nieuwe blok niet declareren voordat je expressies hebt geplaatst die de creatie ondersteunen, zoals voorwaarden of lussen. Het stapelnummer is {0}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID" xml:space="preserve">
+    <value>Wanneer u een nieuw blok start, zorg er dan voor dat u de stapel correct hebt ingesprongen. Het stapelnummer is {0}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED" xml:space="preserve">
+    <value>Het script is misvormd. Controleer het script en los eventuele fouten op: {0}</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND" xml:space="preserve">
+    <value>De voorwaarde is niet gevonden in de expressie.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH" xml:space="preserve">
+    <value>Voorwaarde {0} vereist {1} argumenten. Heb {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END" xml:space="preserve">
+    <value>De voorwaarde moet uiteindelijk worden geplaatst.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX" xml:space="preserve">
+    <value>Fout bij parseren van expressie vanwege syntaxisfout.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE" xml:space="preserve">
+    <value>Kan een voorwaarde die al bestaat niet registreren.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY" xml:space="preserve">
+    <value>Kan een lege voorwaarde niet registreren.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE" xml:space="preserve">
+    <value>Het opgegeven gegevenstype {0} is ongeldig.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM" xml:space="preserve">
+    <value>Het opgegeven platform {0} is ongeldig.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_SOURCEFAILED" xml:space="preserve">
+    <value>Uitvoering van bronopdracht mislukt.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_TARGETFAILED" xml:space="preserve">
+    <value>Uitvoering van de doelopdracht is mislukt. De inhoud is mogelijk niet correct ingevuld. De uitgevoerde opdracht was</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_FAILED" xml:space="preserve">
+    <value>De pijp is kapot.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_REPEAT_INVALIDTIMES" xml:space="preserve">
+    <value>Ongeldig aantal keren.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_REPEAT_REPEATSELF" xml:space="preserve">
+    <value>Kan mezelf niet herhalen.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_COMMANDSHELPER" xml:space="preserve">
+    <value>Inpakbare commando&apos;s:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC" xml:space="preserve">
+    <value>Herinnering voor de slash-opdrachten</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_DESC" xml:space="preserve">
+    <value>Voert een extern proces uit</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Pad naar een proces</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC" xml:space="preserve">
+    <value>Argumenten om door te geven aan een proces</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC" xml:space="preserve">
+    <value>Voert het proces uit zonder de shell-thread te onderbreken. Er wordt een apart venster gemaakt.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Opdracht om help-item te tonen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LOADHISTORIES_DESC" xml:space="preserve">
+    <value>Laadt shell-geschiedenissen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_DESC" xml:space="preserve">
+    <value>Stuurt de opdrachtuitvoer door naar een andere opdracht als parameters</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC" xml:space="preserve">
+    <value>Bronopdracht om de uitvoer ervan als laatste parameter naar de doelopdracht te sturen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
+    <value>Doelopdracht die moet worden uitgevoerd bij het opbouwen van een argument op basis van de uitvoer van de bronopdracht</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC" xml:space="preserve">
+    <value>Of de uitvoer van de bronopdracht moet worden doorgegeven als één aangehaald argument of als een niet-aangehaald argument</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
+    <value>Herhaalt de laatste actie of het opgegeven commando</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
+    <value>Slaat shellgeschiedenissen op</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAP_DESC" xml:space="preserve">
+    <value>Wikkelt de console-uitvoer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Opdracht om de uitvoer ervan te verpakken</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE" xml:space="preserve">
+    <value>Fout bij het uitvoeren van script: {0}</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_DESC" xml:space="preserve">
+    <value>Voert opdrachten uit zodra aan de MESH-expressies is voldaan</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC" xml:space="preserve">
+    <value>MESH-expressie om te testen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Opdracht om uit te voeren bij succesvolle evaluatie</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_CHOICE_HELPER" xml:space="preserve">
+    <value>waar &lt;antwoorden&gt; zijn antwoorden met één letter van de vraag, gescheiden door schuine strepen</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH" xml:space="preserve">
+    <value>U moet de schakeloptie -set doorgeven aan de variabele waarop u deze waarde wilt instellen.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_DESC" xml:space="preserve">
+    <value>Maakt keuzes voor gebruikers</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
+    <value>Antwoorden op splitsen met een slash</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
+    <value>Vraag om op het scherm af te drukken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
+    <value>Eerste antwoordtitel</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
+    <value>Titel van het tweede antwoord, enzovoort...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC" xml:space="preserve">
+    <value>Eén lijnkeuzestijl</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC" xml:space="preserve">
+    <value>Keuze uit twee lijnen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC" xml:space="preserve">
+    <value>Moderne keuzestijl</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>De uitvoer kan slechts één teken bevatten</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC" xml:space="preserve">
+    <value>De uitvoer kan meer zijn dan een teken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CLS_DESC" xml:space="preserve">
+    <value>Wist het scherm</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_DESC" xml:space="preserve">
+    <value>Schrijft tekst in de console</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>String om af te drukken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC" xml:space="preserve">
+    <value>Drukt de tekst af zoals deze is, zonder parsering van tijdelijke aanduidingen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FORK_DESC" xml:space="preserve">
+    <value>Splitst de MESH-shell om een andere instantie te maken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
+    <value>Hiermee kan de gebruiker invoer invoeren</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
+    <value>Hiermee kan de gebruiker invoer als wachtwoord invoeren</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHOWTD_DESC" xml:space="preserve">
+    <value>Toont datum en tijd</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Toont alleen de datum</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Toont precies de tijd</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Gebruikt UTC in plaats van lokaal</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
+    <value>Biedt een selectiekeuze</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
+    <value>Stelt een variabele in op een waarde in een script</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Waarde om in te stellen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_DESC" xml:space="preserve">
+    <value>Creëert een variabele array met de opgegeven waarden</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC" xml:space="preserve">
+    <value>Eerste waarde</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC" xml:space="preserve">
+    <value>Tweede waarde</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC" xml:space="preserve">
+    <value>Derde waarde, enzovoort...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SLEEP_DESC" xml:space="preserve">
+    <value>Slaapt gedurende gespecificeerde milliseconden</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC" xml:space="preserve">
+    <value>Interval om te slapen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_DESC" xml:space="preserve">
+    <value>Verwijdert een variabele uit de MESH-variabelenlijst</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC" xml:space="preserve">
+    <value>Variabele naam</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC" xml:space="preserve">
+    <value>Wist gewoon de variabelewaarde zonder deze te verwijderen</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
+    <value>U kunt nu &apos;{0}&apos; uitvoeren als &apos;{1}&apos;!</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Ongeldig type {0}.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS" xml:space="preserve">
+    <value>Alias {0} verwijderd.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER" xml:space="preserve">
+    <value>Kan de registratie van een voorwaarde die niet bestaat niet ongedaan maken.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_DESC" xml:space="preserve">
+    <value>Voegt aliassen toe aan opdrachten</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Voegt een alias toe</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC" xml:space="preserve">
+    <value>Shell-type om opdrachten van op te halen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC" xml:space="preserve">
+    <value>Alias-naam</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC" xml:space="preserve">
+    <value>Opdracht die als snelkoppeling gebruikt moet worden</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC" xml:space="preserve">
+    <value>Verwijdert een alias</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND" xml:space="preserve">
+    <value>Console wrapper is al gevonden</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED" xml:space="preserve">
+    <value>Naam console wrapper mogelijk niet leeg</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Console wrapper is niet gevonden</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN" xml:space="preserve">
+    <value>Een ingebouwde console wrapper is mogelijk niet verwijderd</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED" xml:space="preserve">
+    <value>Verwijderen console wrapper mislukt</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED" xml:space="preserve">
+    <value>Het is niet gelukt om het standaardthema in te vullen</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA" xml:space="preserve">
+    <value>Er zijn geen themametagegevens gedefinieerd.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID" xml:space="preserve">
+    <value>Metagegevens kunnen niet worden gedeserialiseerd.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR" xml:space="preserve">
+    <value>Je console moet True Color ondersteunen om dit thema te kunnen gebruiken.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXITPREVIEW_DESC" xml:space="preserve">
+    <value>Sluit het voorbeeld af</value>
+  </data>
+  <data name="T_COLORS_THEMES_THEMESHOWCASE" xml:space="preserve">
+    <value>Zo ziet je thema eruit:</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>Ongeldige kleurensjabloon {0}</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME" xml:space="preserve">
+    <value>Het thema {0} viert een evenement, maar je bent te vroeg of te laat om aanwezig te zijn. Elk jaar is dit thema toegankelijk van {1}/{2} tot en met {3}/{4}.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR" xml:space="preserve">
+    <value>Het thema {0} heeft ondersteuning voor echte kleuren nodig, maar je console ondersteunt dit niet.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
+    <value>Een of meer van de kleuren is ongeldig.</value>
+  </data>
+  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>Het standaardthema voor de kernel</value>
+  </data>
+  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>Overal accenten!</value>
+  </data>
+  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>Kleurloze, dampende en zeer bijtende vloeistof</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
+    <value>U moet ConEmu of een Windows 10-opdrachtprompt gebruiken waarbij VT-verwerking is ingeschakeld.</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_INFO" xml:space="preserve">
+    <value>Uw terminal is {0} op {1}.</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
+    <value>Zien deze opritten er goed uit voor jou? Ze moeten soepel overgaan.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>Het zwarte kleurniveau ligt buiten het bereik (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ongeldige CMYK-kleurspecificatie &quot;{0}&quot;. De specificatie mag niet meer dan vier elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>Kan geen kleurgegevens ophalen.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>Het is ons niet gelukt een werkende VT-reeks van type {0} met actie {1} te genereren. Controleer of u de waarden correct hebt opgegeven.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>Antwoord zonder titel</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
+    <value>Armatuur zonder titel</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
+    <value>Even geduld terwijl de huidige bewerking wordt verwerkt...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
+    <value>Ga naar het eerste teken op de huidige regel</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE" xml:space="preserve">
+    <value>Ga naar het laatste teken op de huidige regel</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM" xml:space="preserve">
+    <value>Wijzig de transformatiefrequentie</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED" xml:space="preserve">
+    <value>De aanvulfunctie is al geregistreerd.</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED" xml:space="preserve">
+    <value>De aanvulfunctie is niet geregistreerd.</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN" xml:space="preserve">
+    <value>De ingebouwde aanvulfunctie kan niet worden verwijderd.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_DESC" xml:space="preserve">
+    <value>Voornaamzoeker</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Zoekterm</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
+    <value>Naamvoorvoegsel om te zoeken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
+    <value>Naamsuffix om te zoeken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC" xml:space="preserve">
+    <value>Genereer naamtags (umlauts worden momenteel niet ondersteund)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC" xml:space="preserve">
+    <value>Genereer namen met behulp van de lijst met mannelijke namen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC" xml:space="preserve">
+    <value>Genereer namen met behulp van de lijst met vrouwelijke namen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC" xml:space="preserve">
+    <value>Genereer namen met behulp van de uniforme namenlijst</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_DESC" xml:space="preserve">
+    <value>Achternaamzoeker</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
+    <value>Achternaamvoorvoegsel om te zoeken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
+    <value>Achternaamsuffix om te zoeken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENNAMES_DESC" xml:space="preserve">
+    <value>Naam- en achternaamgenerator</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
+    <value>Hoeveel namen moeten er worden gegenereerd?</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DECODEBASE64_DESC" xml:space="preserve">
+    <value>Decodeert de tekst uit de BASE64-weergave</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
+    <value>Gecodeerde BASE64-string</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
+    <value>Codeert de tekst naar een BASE64-weergave</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>String om te coderen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
+    <value>Controleert een UESH-script op syntaxisfouten</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
+    <value>Pad naar UESH-script</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS" xml:space="preserve">
+    <value>Scriptlint is gelukt.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_FAILED" xml:space="preserve">
+    <value>Scriptlint is mislukt. Hoogstwaarschijnlijk is er een syntaxisfout. Controleer uw script op fouten en probeer de linter opnieuw uit te voeren.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
+    <value>Scriptlinter is onverwacht mislukt bij het parseren van uw script.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LSVARS_DESC" xml:space="preserve">
+    <value>Geeft beschikbare UESH-variabelen weer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ADDPREFIX_DESC" xml:space="preserve">
+    <value>Voegt een voorvoegsel toe aan de tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Te verwerken tekst</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC" xml:space="preserve">
+    <value>Voorvoegsel van een tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX" xml:space="preserve">
+    <value>Controleert het voorvoegsel</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC" xml:space="preserve">
+    <value>Geeft de uitvoer naar de console</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ADDSUFFIX_DESC" xml:space="preserve">
+    <value>Voegt een achtervoegsel toe aan de tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC" xml:space="preserve">
+    <value>Achtervoegsel van een tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX" xml:space="preserve">
+    <value>Controleert het achtervoegsel</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHKPREFIX_DESC" xml:space="preserve">
+    <value>Controleert het voorvoegsel in de tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHKSUFFIX_DESC" xml:space="preserve">
+    <value>Controleert het achtervoegsel in de tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC" xml:space="preserve">
+    <value>Controleert of de tekenreeks alle tekens bevat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC" xml:space="preserve">
+    <value>Volgorde van tekens</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC" xml:space="preserve">
+    <value>Controleert of de tekenreeks alle subtekenreeksen bevat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC" xml:space="preserve">
+    <value>Volgorde van tekenreeksen gescheiden door spaties</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC" xml:space="preserve">
+    <value>Controleert of de tekenreeks een van de tekens bevat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC" xml:space="preserve">
+    <value>Controleert of de tekenreeks een van de subtekenreeksen bevat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINS_DESC" xml:space="preserve">
+    <value>Controleert of de tekenreeks een subtekenreeks bevat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC" xml:space="preserve">
+    <value>Een subtekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC" xml:space="preserve">
+    <value>Negeer hoofdlettergebruik</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks eindigt met alle tekens</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks eindigt met alle tekenreeksen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks eindigt met een van de tekens</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks eindigt met een van de tekenreeksen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITH_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks eindigt met een subtekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EQUALS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks gelijk is aan een andere tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Zoekterm</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LOWERCASE_DESC" xml:space="preserve">
+    <value>Een tekenreeks in kleine letters zetten</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC" xml:space="preserve">
+    <value>De hele tekenreeks verwerken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC" xml:space="preserve">
+    <value>Alleen het eerste teken van een tekenreeks verwerken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REMPREFIX_DESC" xml:space="preserve">
+    <value>Een voorvoegsel uit een tekenreeks verwijderen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REMSUFFIX_DESC" xml:space="preserve">
+    <value>Een achtervoegsel uit een tekenreeks verwijderen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks met alle tekens begint</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks met alle tekens begint</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks met een van de tekens begint</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks met een van de tekenreeksen begint</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITH_DESC" xml:space="preserve">
+    <value>Controleert of een tekenreeks met een subtekenreeks begint</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TITLECASE_DESC" xml:space="preserve">
+    <value>Titels van een tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UPPERCASE_DESC" xml:space="preserve">
+    <value>Een tekenreeks in hoofdletters zetten</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS" xml:space="preserve">
+    <value>Er zijn {0} verborgen opdrachten. Je kunt ze weergeven met -hidden.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC" xml:space="preserve">
+    <value>Toont de verborgen opdrachten</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC" xml:space="preserve">
+    <value>Toont het aantal opdrachten</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND" xml:space="preserve">
+    <value>Opdracht</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE" xml:space="preserve">
+    <value>Gebruik</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS" xml:space="preserve">
+    <value>Vlaggen</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS" xml:space="preserve">
+    <value>Algemene opdrachten voor</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS" xml:space="preserve">
+    <value>Uniforme opdrachten voor</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS" xml:space="preserve">
+    <value>Gealiaste opdrachten voor</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS" xml:space="preserve">
+    <value>Extra opdrachten voor</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC" xml:space="preserve">
+    <value>Toont een lijst met opdrachten als Markdown (voor documentatie en LLM&apos;s)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_DESC" xml:space="preserve">
+    <value>Genereer voornamen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC" xml:space="preserve">
+    <value>Aantal te genereren voornamen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENLASTNAMES_DESC" xml:space="preserve">
+    <value>Genereer achternamen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC" xml:space="preserve">
+    <value>Aantal te genereren achternamen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID" xml:space="preserve">
+    <value>Figletbreedte is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID" xml:space="preserve">
+    <value>Type vloeken is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID" xml:space="preserve">
+    <value>Maximale woordlengte is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID" xml:space="preserve">
+    <value>Exacte woordlengte is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID" xml:space="preserve">
+    <value>Tekenindex is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID" xml:space="preserve">
+    <value>Voorkomensindex is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID" xml:space="preserve">
+    <value>Drempelwaarde voor verschuiving is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID" xml:space="preserve">
+    <value>Drempelwaarde voor afkapping is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH" xml:space="preserve">
+    <value>Zinbreedte is ongeldig</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHARWIDTH_DESC" xml:space="preserve">
+    <value>Haal de tekenbreedte op (hoeveel cellen er nodig zijn)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STRWIDTH_DESC" xml:space="preserve">
+    <value>Geeft de tekenreeksbreedte (hoeveel cellen zijn er nodig)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC" xml:space="preserve">
+    <value>Teken om te verwerken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_DESC" xml:space="preserve">
+    <value>Wikkelt een lange string om in een groep zinnen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Maximale breedte van een zin</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC" xml:space="preserve">
+    <value>Splitst een lange string per teken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PALINDROME_DESC" xml:space="preserve">
+    <value>Controleert of een string een palindroom is</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NUMERIC_DESC" xml:space="preserve">
+    <value>Controleert of een string numeriek is</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_DESC" xml:space="preserve">
+    <value>Vervangt een substring in Een tekenreeks met een andere subtekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Een te vervangen subtekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC" xml:space="preserve">
+    <value>Een subtekenreeks waarmee moet worden vervangen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC" xml:space="preserve">
+    <value>Gebruik reguliere expressies voor vervanging</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALL_DESC" xml:space="preserve">
+    <value>Vervangt alle subtekenreeksen in een tekenreeks door een andere subtekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Een groep te vervangen subtekenreeksen, gescheiden door spaties</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALLRANGE_DESC" xml:space="preserve">
+    <value>Vervangt alle subtekenreeksen in een tekenreeks door een reeks subtekenreeksen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Een groep te vervangen subtekenreeksen, gescheiden door een sluisteken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC" xml:space="preserve">
+    <value>Tekenreeksen gescheiden door een spatie</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_DESC" xml:space="preserve">
+    <value>Vervangt een teken in een tekenreeks door een ander teken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC" xml:space="preserve">
+    <value>Tekenindex om te verwerken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Een teken om te vervangen door</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACELASTOCC_DESC" xml:space="preserve">
+    <value>Vervangt de laatste keer dat een subtekenreeks in een tekenreeks voorkomt door een andere subtekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_DESC" xml:space="preserve">
+    <value>Vervangt een opgegeven keer dat een subtekenreeks in een tekenreeks voorkomt door een andere subtekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC" xml:space="preserve">
+    <value>Index voor voorkomen van subtekenreeksen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REVERSE_DESC" xml:space="preserve">
+    <value>Keert een reeks tekens in een tekenreeks om</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_DESC" xml:space="preserve">
+    <value>Verschuift tekens in een tekenreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC" xml:space="preserve">
+    <value>Drempelwaarde voor verschuiving</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLIT_DESC" xml:space="preserve">
+    <value>Splitst een tekenreeks met een scheidingsteken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC" xml:space="preserve">
+    <value>Scheidingsteken waarmee een tekenreeks moet worden gesplitst</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLITNEWLINES_DESC" xml:space="preserve">
+    <value>Splitst een tekenreeks met een nieuwe regel</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLITDQ_DESC" xml:space="preserve">
+    <value>Splitst een tekenreeks met een scheidingsteken (ondersteuning voor dubbele aanhalingstekens)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_DESC" xml:space="preserve">
+    <value>Kort een lange reeks af String</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC" xml:space="preserve">
+    <value>Afkappingsdrempel</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC" xml:space="preserve">
+    <value>Beletseltekens in afgekapte string uitschakelen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ESCAPESTR_DESC" xml:space="preserve">
+    <value>Escapes een reeks speciale tekens in een string</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNESCAPESTR_DESC" xml:space="preserve">
+    <value>Escapes een reeks speciale tekens in een string ongedaan maken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOBRAILLE_DESC" xml:space="preserve">
+    <value>Converteert een string naar een braillereeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_DESC" xml:space="preserve">
+    <value>Converteert een string naar een gerenderde Figlet-tekst</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC" xml:space="preserve">
+    <value>Figlet-lettertypenaam</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Maximale figletbreedte (0 om uit te schakelen)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIGLETMETRICS_DESC" xml:space="preserve">
+    <value>Toont figlet-statistieken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC" xml:space="preserve">
+    <value>Toont gedetailleerde figlet-statistieken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REVERSERTL_DESC" xml:space="preserve">
+    <value>Keert een reeks tekens om voor RTL</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORD_DESC" xml:space="preserve">
+    <value>Retourneert een willekeurig woord</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_DESC" xml:space="preserve">
+    <value>Retourneert een willekeurig woord (voorwaardelijk)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC" xml:space="preserve">
+    <value>Maximale woordlengte</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC" xml:space="preserve">
+    <value>Woord moet beginnen met</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC" xml:space="preserve">
+    <value>Woord moet eindigen met</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC" xml:space="preserve">
+    <value>Exacte woordlengte</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_DESC" xml:space="preserve">
+    <value>Vindt scheldwoorden in een string</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC" xml:space="preserve">
+    <value>Type scheldwoorden</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FILTERPROFANITY_DESC" xml:space="preserve">
+    <value>Filtert scheldwoorden in een string</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_DESC" xml:space="preserve">
+    <value>Normaliseert de spaties in een string</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC" xml:space="preserve">
+    <value>Eenvoudige ruimtezoekopdracht</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC" xml:space="preserve">
+    <value>Analytische ruimtezoekopdracht</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_BGCOLOR_COLORINVALID" xml:space="preserve">
+    <value>Ongeldige achtergrondkleur</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FGCOLOR_COLORINVALID" xml:space="preserve">
+    <value>Ongeldige voorgrondkleur</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_BGCOLOR_DESC" xml:space="preserve">
+    <value>Retourneert een achtergrondkleurreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Kleurspecificatie om te verwerken</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_PLAIN_DESC" xml:space="preserve">
+    <value>Gewone reeks zonder VT-reeksen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC" xml:space="preserve">
+    <value>True color VT-reeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC" xml:space="preserve">
+    <value>Retourneert console Dimensions</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FGCOLOR_DESC" xml:space="preserve">
+    <value>Retourneert een voorgrondkleurreeks</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HISTORY_DESC" xml:space="preserve">
+    <value>Retourneert een lijst met recente opdrachten</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRINTF_DESC" xml:space="preserve">
+    <value>Druk een tekenreeks af met opmaakondersteuning</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC" xml:space="preserve">
+    <value>Parameters voor opmaak</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_ANGLEINVALID" xml:space="preserve">
+    <value>Ongeldige hoek</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_PIXELSINVALID" xml:space="preserve">
+    <value>Ongeldig aantal pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_INCHESINVALID" xml:space="preserve">
+    <value>Ongeldige inches</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_WIDTHINVALID" xml:space="preserve">
+    <value>Ongeldige breedte in pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID" xml:space="preserve">
+    <value>Ongeldige hoogte in pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_DESC" xml:space="preserve">
+    <value>Converteert de hoek in graden naar radialen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC" xml:space="preserve">
+    <value>Om te rekenen hoek in radialen</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_DESC" xml:space="preserve">
+    <value>Haal de DPI uit pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC" xml:space="preserve">
+    <value>Hoeveel pixels per inch?</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC" xml:space="preserve">
+    <value>Lengte in inches</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_DESC" xml:space="preserve">
+    <value>Stel het totale aantal pixels op</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Breedte in pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC" xml:space="preserve">
+    <value>Hoogte in pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RADIANS_DESC" xml:space="preserve">
+    <value>Converteert de hoek in radialen naar graden</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC" xml:space="preserve">
+    <value>Om te rekenen hoek in graden</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPTITLE" xml:space="preserve">
+    <value>Titel van de helppagina</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPDESC" xml:space="preserve">
+    <value>Beschrijving van de helppagina</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
+    <value>Body van de helppagina. Dit betekent dat de applicatie niet het helpartikel biedt dat u mogelijk nodig hebt.</value>
+  </data>
+
+</root>

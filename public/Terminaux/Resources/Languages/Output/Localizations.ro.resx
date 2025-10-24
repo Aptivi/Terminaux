@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>Eroare generală Terminals!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>Eroare internă Terminals!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>Eroare necunoscută</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>Încă nu a fost implementat.</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>Acest program nu poate continua.</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>Apăsați orice tastă pentru a continua...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Tip nevalid</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>Trebuie să specificați partea de ecran.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>Trebuie să specificați numele de utilizator.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>Indexul piesei specificat este în afara intervalului.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>Numele piesei specificat nu a fost găsit.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>Piesa specificată nu a fost găsită.</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>Indexul bufferului nu poate fi mai mic decât zero sau mai mare decât {0} buffere.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>Ecranul nu este specificat.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>Ecranul nu este ciclic.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>Utilizatorul a încercat să ruleze o aplicație Terminaux folosind un terminal prost.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>Această aplicație folosește funcții extinse ale consolei oferite de Terminaux, care necesită funcții neacceptate de terminalele „proste”.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
+    <value>Soluție posibilă: Folosiți un emulator de terminal adecvat sau consultați setările terminalului pentru a seta tipul de terminal diferit de „dumb”. Vă recomandăm să utilizați emulatorii de terminal „vt100” pentru a profita la maximum de această aplicație.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Utilizatorul a încercat să ruleze o aplicație Terminaux pe un tip de terminal aflat pe lista neagră.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Tipul de consolă pe care îl utilizați în prezent, {0}, este pe lista neagră: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Tipul de consolă pe care îl utilizați în prezent, {0}, este pe lista gri: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Utilizatorul a încercat să ruleze o aplicație Terminaux pe un emulator de terminal aflat pe lista neagră.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Emulatorul de terminal pe care îl utilizați în prezent, {0}, este pe lista neagră: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Emulatorul de terminal pe care îl utilizați în prezent, {0}, este pe lista gri: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>Tipul de terminal {0} nu acceptă 256 de culori conform terminfo</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>Utilizatorul a încercat să ruleze o aplicație Terminaux pe MinTTY din Git Bash fără winpty.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>Va trebui să utilizați winpty pentru a putea utiliza acest program. Dacă sunteți sigur că nu rulați Git Bash, asigurați-vă că utilizați un terminal Windows corespunzător.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>Poziționarea consolei nu funcționează din cauza unei erori I/O, așadar această aplicație s-ar putea comporta neregulat.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>Poziționarea consolei nu funcționează corect, așadar această aplicație s-ar putea comporta neregulat.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>Consola ta este prea mică pentru a rula corect: {0}x{1} | buff: {2}x{3} | min: {4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>Pentru o experiență mai bună, redimensionați fereastra consolei în timp ce vă aflați încă pe acest ecran. Apăsați orice tastă pentru a continua...</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>Asamblarea nu este inclusă.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} Nu se poate continua.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>Tipul de consolă acceptă doar scrierea de bază.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>Tipul consolei este de natură necunoscută.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>Această aplicație folosește secvențe de escape VT, dar Terminal.app nu mai suportă 255 și culorile reale.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>Tipul de consolă nu acceptă 256 de culori.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>Nu se poate filtra fără nicio interogare.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>Nu se poate filtra cu o interogare nevalidă.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>Nu există nicio expresie în filtrul consolei.</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
+    <value>Nu se pot restaura noile atribute termios pentru modul brut: {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED" xml:space="preserve">
+    <value>Nu se pot obține semnalizatoarele descriptorului de fișier: {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED" xml:space="preserve">
+    <value>Nu se poate seta indicatorul descriptorului de fișier la citire neblocantă: {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED" xml:space="preserve">
+    <value>Nu se poate seta indicatorul descriptorului de fișier la blocarea citirii: {0}</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>Nu se pot obține informații despre sintetizator din reprezentarea furnizată.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>Reprezentarea sintetizatorului este invalidă la [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>Frecvența este invalidă la [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>Durata este invalidă la [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>Ținta poate să nu fie nulă</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>Valoarea maximă [{0}] nu trebuie să fie mai mică decât valoarea de progres [{1}]</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>Valoarea de progres [{0}] trebuie să fie între 0 și valoarea maximă {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>Acest indicator nu poate fi amplasat la sfârșitul șirului fără a specifica un parametru.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>Acest designator poate lua ca parametru doar un număr.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>Acest indicator poate lua doar un număr de la 1 la 9.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>Acest indicator poate lua ca parametru doar o literă.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>Acest designator necesită o constantă întreagă</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>Acest indicator conține o constantă întreagă nevalidă</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>Acest indicator nu poate fi amplasat la sfârșitul șirului fără a specifica o constantă de caractere.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>Nu poți adăuga mai mult de un caracter</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>Acest designator are nevoie de o colecție de caractere</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>Lățimea nu este validă</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>Acest designator nu poate fi amplasat la sfârșitul șirului fără a specifica un tip</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>Nu se poate procesa secvența nulă.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>Nu se pot procesa parametrii nuli.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>Acest steag trebuie să reprezinte un semn minus</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>Există încă date suplimentare după indexul {0} din {1} pentru formatare</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>Constanta întreagă pentru caracter nu este validă.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>Constanta întreagă nu este validă.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>Nu se poate introduce o variabilă inexistentă.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>Aceasta este o operație binară, dar numărul de argumente puse în coadă este {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>Constanta întreagă pentru primul operand nu este validă.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>Constanta întreagă pentru al doilea operand nu este validă.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>Aceasta este o operație unară, dar numărul de argumente puse în coadă este {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>Reprezentarea condiționată {0} este invalidă.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>Nu s-a putut citi numărul solicitat de octeți.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>Tabela de șiruri de caractere este invalidă!</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>Magie de antet nevalidă</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>Nu se poate procesa parametrul pe un tip de valoare care nu este șir de caractere. Enumerarea este {0}, iar tipul este {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>Indicatorul de întârziere s-a încheiat prematur.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>Indicator de întârziere nevalid.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>Valoarea întârzierii nu este un număr.</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>Tip de capacitate necunoscut „{0}”</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>Nu se poate încărca {0}</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>Culoarea este în afara intervalului.</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>Ești sigur că acest gradient nu este nul?</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>Specificați cel puțin o culoare.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>Nu se poate converti sursa nulă.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>Nu se poate converti la tip nul.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>Ar trebui să specificați un model de culoare sursă specific, nu cel de bază.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>Nu este un model de culoare.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>Ar trebui să specificați un model de culoare țintă specific, nu cel de bază.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>Nu este un model de culoare țintă.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>Nu se poate converti același model de culoare.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>Nu se poate converti în RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>Nu se poate converti din modelul de culoare de bază.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>Nu se poate converti în CMYK.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>Nu se poate converti în CMY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>Nu se poate converti la HSL.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>Nu se poate converti în HSV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>Nu se poate converti în RYB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>Nu se poate converti în YIQ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>Nu se poate converti la YUV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>Nu se poate converti în XYZ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>Nu se poate converti în YXY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>Nu se poate converti la HunterLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>Nu se poate converti în CieLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>Nu se poate converti în CieLuv.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>Nu se poate converti în CieLch.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHWBFAILED" xml:space="preserve">
+    <value>Nu se poate converti în HWB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>Nu se poate converti din RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în CMYK!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în CMY!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în HSL!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în HSV!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în RYB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în YIQ!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în YUV!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în XYZ!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în YXY!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în HunterLab!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în CieLab!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în CieLuv!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în CieLch!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RGB nulă în HWB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>Nu se poate converti o instanță CMYK nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>Nu se poate converti o instanță CMY nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>Nu se poate converti o instanță HSL nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>Nu se poate converti o instanță HSV nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>Nu se poate converti o instanță RYB nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>Nu se poate converti o instanță YIQ nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>Nu se poate converti o instanță YUV nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>Nu se poate converti o instanță XYZ nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>Nu se poate converti o instanță YXY nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>Nu se poate converti o instanță HunterLab nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>Nu se poate converti o instanță CieLab nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>Nu se poate converti o instanță CieLuv nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>Nu se poate converti o instanță CieLch nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB" xml:space="preserve">
+    <value>Nu se poate converti o instanță HWB nulă în RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>Observatorul trebuie să fie fie 2, fie 10</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>Iluminantul este invalid</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>Nu se pot obține referințe din tabel</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare nevalid „{0}”. Dacă utilizați 256 de culori, va trebui să introduceți o valoare pozitivă de la 0 la 255 sau un nume de culoare valid. Dacă utilizați culoarea reală, va trebui fie să scrieți un specificator de culoare valid, cum ar fi RRR;GGG;BBB, fie un cod de culoare până la 16777215.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>Nivelul culorii roșii este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>Nivelul culorii verde este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>Nivelul culorii albastre este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>Specificator hexadecimal de culoare nevalid „{0}”. Acest specificator trebuie să înceapă cu hashtagul. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>Lungime hexadecimală a culorii „{0}” nevalidă. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>Nu se poate rezolva hexagrama culorii „{0}”.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare CieLab nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>Valoarea L este în afara intervalului (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>Valoarea A este în afara intervalului (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>Valoarea B este în afara intervalului (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare CieLab nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare CieLch nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>Valoarea C este în afara intervalului (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>Valoarea H este în afara intervalului (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare CieLch nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare CieLuv nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>Valoarea U este în afara intervalului (-134,0 -&gt; 220,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>Valoarea V este în afara intervalului (-140,0 -&gt; 122,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare CieLuv nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare CMY nevalid „{0}”. Asigurați-vă că este în formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>Nivelul de culoare cyan este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>Nivelul de culoare magenta este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>Nivelul culorii galbene este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare CMY nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare CMYK nevalid „{0}”. Asigurați-vă că este în formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare HSL nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>Nivelul de nuanță este în afara intervalului (0&apos; -&gt; 360&apos; grade).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>Nivelul de saturație este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>Nivelul de luminozitate este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare HSL nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare HSV nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>Nivelul valorii este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare HSV nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare HWB nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL" xml:space="preserve">
+    <value>Nivelul de alb este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL" xml:space="preserve">
+    <value>Nivelul de întuneric este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare HWB nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare HunterLab nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>Valoarea A este în afara intervalului (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>Valoarea B este în afara intervalului (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare HunterLab nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare YUV nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>Nivelul de luminanță este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>Nivelul de cromă (U) este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>Nivelul de cromă (V) este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare YUV nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare YIQ nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>Nivelul în fază este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>Nivelul de cuadratură este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare YIQ nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare nevalid „{0}”. Asigurați-vă că este în formatul corect, adică un număr de la 0 la 255 dacă utilizați 255 de culori sau o secvență VT dacă utilizați culoarea reală, după cum urmează.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>Această culoare este deja o culoare originală.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare RYB nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>Nivelul roșu este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>Nivelul galben este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>Nivelul de albastru este în afara intervalului (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare RYB nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare XYZ nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>Valoarea X este în afara intervalului (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Valoarea Y este în afara intervalului (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Valoarea Z este în afara intervalului (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare XYZ nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>Specificator de culoare YXY nevalid „{0}”. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>Valoarea Y1 este în afara intervalului (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>Valoarea X este în afara intervalului (0.0 -&gt; 1.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>Valoarea Y2 este în afara intervalului (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare YXY „{0}” nevalid. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Tipul de culoare este invalid</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>Specificatorul de culoare pentru vizibilitate este nevalid</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>Tip de monocromație nevalid</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>Nu se poate determina cum se convertește un(n) {0} din {1} într-o culoare.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>Nu se poate determina cum se convertește un(n) {0} de tip necunoscut într-o culoare.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>Nu pot obține culoare.</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>Nu s-a putut seta fundalul</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>Instanța de culoare nu este furnizată.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Combinări de taste</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>Găsește următorul</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP1" xml:space="preserve">
+    <value>Mută în sus</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>Mergeți cu un element în sus</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN1" xml:space="preserve">
+    <value>Mutare în jos</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>Mergeți cu un element mai jos</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1" xml:space="preserve">
+    <value>Pagina anterioară</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>Mergi la pagina anterioară</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1" xml:space="preserve">
+    <value>Pagina următoare</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>Mergi la pagina următoare</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST1" xml:space="preserve">
+    <value>Mergi la început</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>Mergi la primul element</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST1" xml:space="preserve">
+    <value>Mergi la final</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>Mergi la ultimul element</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>Scrieți un termen de căutare (acceptă expresii regulate)</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>Interogarea ta nu este o expresie regulată validă.</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>Selectați una dintre intrări:</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>Niciun articol găsit.</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Căutați un element</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>Mergeți cu un rând mai sus (informativ)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>Mergeți cu o linie mai jos (informativ)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>Comutator</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>Listă de {0} culori predefinite</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>Gri</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>Transparenţă</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>Umbră și nuanță</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>Informații despre culoare</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>Transforma</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>Tip de culoare nevalid în selectorul de culori</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>Scrieți numele fontului. Acesta va fi convertit în litere mici.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>Fontul nu există.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>Selectați un font figlet din lista de mai jos</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Selectarea fontului</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>Selectorul nu este specificat</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Citeşte mai mult...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>Listează combinațiile de taste</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>Mișcă-te</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Ieșire din interfața interactivă TUI</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>Informații despre articol</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Stilul de selecție necesită activarea a cel puțin o opțiune.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>Scrieți numele rotiței. Acesta va fi convertit în litere mici.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>Rotitorul nu există.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>Selectați un spinner din lista de mai jos</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Selecție de spinner</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>Nicio informație.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>Fără statut</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>Am încercat să redau elemente TUI interactive pentru panoul secundar dintr-un TUI interactiv care permite interacțiunea doar dintr-un singur panou.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>Am încercat să redau informații în panoul secundar într-o interfață TUI interactivă care permite interacțiunea din două panouri, perturbând randarea selecției acolo.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>S-a încercat redarea informațiilor despre datele nule</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>Nu s-au putut obține informații.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>Efectuați o acțiune asupra elementului selectat</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>Vă rugăm să furnizați o clasă TUI interactivă de bază și să încercați din nou.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>Interfața interactivă TUI {0} nu conține nicio sursă de date.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>Interfața interactivă TUI {0} are legături contradictorii de tastatură sau mouse.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>Următoarele combinații de taste sau combinații de mouse intră în conflict:</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>Interfața textuală s-a blocat. De obicei, este o problemă din partea aplicației.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>Interfața textuală nu este specificată</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>Această interfață textuală [{0}] nu este gata deoarece starea este {1}</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>Există {0} combinații de taste conflictuale în interfața textuală [{1}]</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>Contextul evenimentului pointerului nu este specificat</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>Poziția de pornire nu poate fi mai mică decât zero</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>Poziția finală nu poate fi mai mică decât zero</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>Poziția X de început nu poate fi mai mare decât poziția X de sfârșit</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>Poziția inițială Y nu poate fi mai mare decât poziția finală Y</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>Numele intrării nu este specificat</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>Avans</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPT" xml:space="preserve">
+    <value>Această pagină de prezentare necesită completarea următoarelor câmpuri înainte de a putea trece la pagina următoare.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>Introducerea este necesară</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>Unul sau mai multe dintre următoarele câmpuri nu au fost completate corect:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>Introducere incorectă</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>Nu au fost furnizate datele de intrare necesare. Va trebui să completați valorile următoarelor date de intrare:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>Intrarea nu a fost furnizată</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>Nu se poate demonstra o alegere fără răspunsuri și fără răspunsuri alternative.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Stilul de alegere necesită activarea a cel puțin o opțiune.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>Nu poți oferi răspunsuri cu mai mult de un caracter în modul cu un singur caracter.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>Răspuns greșit. Vă rugăm să încercați din nou.</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT" xml:space="preserve">
+    <value>Mutare la stânga</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT" xml:space="preserve">
+    <value>Mută la dreapta</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>Introduce</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>Înlocui</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>Înlocuiți tot</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>Gata</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>Nu a fost găsit. Verificați sintaxa sau extindeți căutarea.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>Informații despre număr</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>Înlocuiți tot ce</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>Scrieți numărul de octeți cu valoarea hexazecimală.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>Numărul de octeți specificat nu este valid.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>Octet {0} nevalid.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>Scrieți numărul de octeți cu valoarea hexazecimală cu care se va înlocui {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>Scrieți numărul de octet cu valoarea hexazecimală care trebuie înlocuită.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>Scrieți un octet sau un grup de octeți separați prin spații albe.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>Sunt necesari octeți pentru a găsi, dar nu ai furnizat niciunul.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>Poziţie</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>Hexazecimal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>Octal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>Număr</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>Binar</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>Informații despre număr</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT" xml:space="preserve">
+    <value>Conținut gol</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>Numărul specificat pentru octetul de început nu poate fi mai mare decât dimensiunea fișierului.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>Numărul specificat pentru octetul final nu poate fi mai mare decât dimensiunea fișierului.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>Numărul de octeți specificat este invalid.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>Numărul de octeți specificat nu poate fi mai mare decât {0} sau mai mic decât 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>Numărul de octeți specificat nu poate fi mai mare de {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>Nu se poate efectua această operațiune pe o matrice nulă.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>Numărul de octeți trebuie să înceapă cu 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>Numărul specificat pentru octetul de început nu poate fi mai mare de {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>Numărul specificat pentru octetul final nu poate fi mai mare de {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>Introduceți...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>Ștergeți aici</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>Eliminați linia</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>Nu mai intrați</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>Linie nouă</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE" xml:space="preserve">
+    <value>Backspace</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Şterge</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>Scrieți șirul pentru a găsi</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>Scrieți șirul de înlocuire</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>Scrieți un șir de caractere pentru a-l găsi. Acceptă expresii regulate.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>Șirul de caractere este necesar pentru a găsi, dar nu ați furnizat unul.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>Acest șir de caractere de găsit nu este o expresie regulată validă.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>Linii</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>Coloană</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>Rând</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>Numărul liniei specificat nu poate fi mai mare decât {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>Nu se poate efectua această operațiune pe o listă de linii nule.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>Afișează mai multe informații într-o casetă informativă</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>Merge cu o linie mai sus</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>Merge cu o linie mai jos</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>Merge la pagina anterioară a textului</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>Merge la pagina următoare de text</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>Trimite valoarea</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>Trimite valorile</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>Se închide fără a trimite valoarea</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>Se închide fără a trimite valorile</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT" xml:space="preserve">
+    <value>Efectuează o acțiune sau selectează o opțiune</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Decrementează valoarea sau mută textul cu trei rânduri în sus</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Incrementează valoarea sau mută textul cu trei rânduri în jos</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE" xml:space="preserve">
+    <value>Alegerea anterioară sau ultimele trei rânduri de text</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE" xml:space="preserve">
+    <value>Următoarea opțiune sau următoarele trei rânduri de text</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>Decrementează valoarea curentă</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>Incrementează valoarea curentă</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>Setează valoarea la valoarea minimă</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>Setează valoarea la valoarea maximă</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT" xml:space="preserve">
+    <value>Setează focalizarea curentă la următorul element de valoare</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT" xml:space="preserve">
+    <value>Setează focalizarea curentă la elementul de valoare anterior</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>Merge la butonul anterior</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>Merge la butonul următor</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Butonul anterior sau ultimele trei rânduri de text</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Butonul Următorul sau următoarele trei rânduri de text</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>Merge la prima linie de text</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>Merge la ultima linie de text</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>Merge la pagina următoare de text sau închide caseta informativă modală</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>Închide caseta informativă modală</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION" xml:space="preserve">
+    <value>Efectuează o acțiune</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Cele trei rânduri de text anterioare</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Următoarele trei rânduri de text</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS" xml:space="preserve">
+    <value>Merge la pagina anterioară de intrări</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS" xml:space="preserve">
+    <value>Merge la următoarea pagină de intrări</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS" xml:space="preserve">
+    <value>Caută o intrare</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE" xml:space="preserve">
+    <value>Modifică valoarea de intrare selectată</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Urmează o opțiune (următoarea opțiune)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Coboară o opțiune (opțiunea anterioară)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>Merge la prima opțiune</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>Merge la ultima opțiune</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>Merge la pagina anterioară de opțiuni</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>Merge la pagina următoare de opțiuni</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>Caută o alegere</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>Selectează sau deselectează toate opțiunile</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>Nu se pot obține categoria și grupul în opțiunea numărul {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>Alegeri generale</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>Opțiuni disponibile</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>Opțiuni alternative</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>Confirma</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>Bara laterală</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_MORE" xml:space="preserve">
+    <value>Mai mult</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>Confirmă selecția/selecțiile</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO" xml:space="preserve">
+    <value>Modifică valoarea selectată (butoane radio)</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>Anulați selecția/selecțiile</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Merge cu un element în sus</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Coboară cu un element</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>Merge la primul element</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>Merge la ultimul element</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Merge la pagina anterioară</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Merge la pagina următoare</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Caută un element</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>Mergeți în sus într-o bară laterală</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>Mergeți în jos într-o bară laterală</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>Mergeți în sus într-o casetă de întrebări</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>Coborâți într-o casetă de întrebări</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>Afișați numărul de pagini și opțiuni</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>Afișează informații despre articol</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>Selectează sau deselectează o opțiune</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>Selectează toate elementele din același grup și categorie</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>Selectează toate elementele din toate grupurile din aceeași categorie</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>Selectează toate elementele din toate grupurile din toate categoriile</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP" xml:space="preserve">
+    <value>Predă un element sau o linie de prezentare</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN" xml:space="preserve">
+    <value>Merge cu un element sau o linie de prezentare mai jos</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>Actualizați poziția</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>Următorul</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>Trimite</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>Anula</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>Ajutor</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>Făcut</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>Selecta</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>Selectare manuală</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>Informații despre culoare</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>Următoarea simulare a daltonismului</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>Simulare anterioară a daltonismului</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Creșterea frecvenței de transformare</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Reduceți frecvența de transformare</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>Selectați culoarea web</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>Crește opacitatea</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>Creșterea transparenței</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>Următorul mod de culoare</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>Modul de culoare anterior</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>Creșteți valoarea</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>Reduceți valoarea</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>Reduceți nuanța culorii</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>Crește nuanța culorii</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>Reduceți luminozitatea culorii</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>Creșterea luminozității culorii</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>Reduceți saturația</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>Creșterea saturației</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>Culoarea anterioară</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>Următoarea culoare</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>Afișează și ascunde lista de culori</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>Prezentare de personaje</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>Este posibil ca acest dispozitiv de fixare să nu fie o clasă de dispozitive de fixare de bază. Specificați un dispozitiv de fixare necondiționat.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>Este posibil ca acest dispozitiv de fixare să nu fie o clasă de dispozitive de fixare de bază. Specificați un dispozitiv de fixare condițional.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>Valoarea returnată {0} nu corespunde valorii așteptate {1}</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>Această fixare nu este condiționată.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Acest tip de dispozitiv de fixare este invalid.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>Nu există accesorii aici. Introduceți unul.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>Alegeți un dispozitiv de testare.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>Ieșire din selectorul de dispozitive de testare</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>Acest test a reușit!</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Valoarea așteptată corespunde cu valoarea reală.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>Acest test a eșuat.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Mesaj</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Valoarea așteptată nu corespunde cu valoarea reală.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>Metoda din acest delegat nu poate returna void</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>Metoda din acest delegat trebuie să returneze void.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>Expresia regulată a componentei este invalidă</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>Expresia regulată a componentei nu a fost furnizată</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>Culoarea de prim-plan a componentei nu a fost furnizată</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>Culoarea de fundal a componentei nu a fost furnizată</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Nu a fost furnizat numele evidențiatorului.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Nu a fost furnizat numele evidențiatorului de bază.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>Nu găsesc evidențiatorul {0}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>Nu găsesc evidențiatorul</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>Nu se poate găsi componenta {0} în evidențiatorul {1}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>Evidențiator nevalid.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>Evidențiatorul nu are nume.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>Evidențiatorul există deja.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>Evidențiatorul nu are componente.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>Nu se poate elimina evidențiatorul încorporat {0}</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>Numele istoricului nu este specificat</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>Intrările din istoric nu sunt specificate</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>Calea fișierului istoric nu este furnizată.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>Reprezentarea JSON istorică nu este furnizată.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>JSON analizat, dar reprezentarea istorică JSON nu este furnizată.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>Informațiile istorice nu sunt furnizate.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>Numele istoric nu este furnizat. Sigur ați specificat numele în reprezentarea JSON?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>Nu sunt furnizate intrările din istoric. Sunteți sigur că ați specificat intrările în reprezentarea JSON?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>Istoricul {0} nu a fost găsit.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>Istoricul general nu poate fi eliminat, dar poate fi șters.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>Istoricul nu face parte din istoriile înregistrate.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>Istoricul nu a putut fi șters.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>Nu este furnizată intrarea în istoric.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>Lista de intrări din istoric nu este furnizată.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>Există un conflict între {0} și {1}.</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>Cititorul de intrare a eșuat</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>Acest flux nu poate căuta.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>Nu se poate construi secvența VT pentru tipul inexistent {0}</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>Nu se poate construi secvența VT fără argumente. Se așteptau {0} argumente, dar s-au obținut {1} argumente.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>Un alias nu poate avea același nume ca o comandă.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>Comanda nu a fost găsită pentru aliasul {0}.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>Aliasul a fost deja găsit</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>Aliasul {0} nu a fost găsit ca fiind eliminat.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>Aliasul {0} nu a fost găsit pentru a fi interogat.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>Utilizare</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>Comanda</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>Nu există ajutor pentru argumentul „{0}”.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>Descrierea fără ajutor la argumente</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>Acest argument nu este încă implementat.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>Nu au fost suficiente argumente.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>Argument necunoscut</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>Eroare irecuperabilă în argument</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>Nu se pot obține informații despre argumente pentru comandă sau argument.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>Parametrii firului de execuție nu sunt specificați.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>Argumentele obligatorii nu sunt furnizate pentru toate utilizările de mai jos:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>Nu sunt furnizate argumentele necesare.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>Comutatoarele necesare nu sunt furnizate.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>Unul dintre comutatoare necesită o valoare care nu este furnizată.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>Comutatoarele enumerate mai jos sunt necunoscute.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>Comutatoarele enumerate mai jos intră în conflict între ele.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>Comutatoarele de mai jos nu acceptă valori.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>Unul sau mai multe dintre argumente așteaptă o valoare numerică, dar ați furnizat un număr nevalid.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>Unul sau mai multe dintre argumente așteaptă o formulare exactă, dar ați furnizat un cuvânt nevalid.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>Unul sau mai multe dintre comutatoare așteaptă o valoare numerică, dar ați furnizat un număr nevalid.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>Consultați intrarea de ajutor pentru această comandă pentru mai multe informații.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>Comanda este întreruptă...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>Eroare la încercarea de executare a comenzii {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>Eroare</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>Comandă anulată din următorul motiv</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>Model de comandă furnizat nevalid.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>Comandă negăsită.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>Tipul de shell {0} nu există.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>Trebuie să furnizați baza de comandă.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>Trebuie să furnizați comanda.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>Comanda specificată este deja adăugată.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>Unele dintre comenzile personalizate nu pot fi încărcate.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>Comanda personalizată specificată nu a fost găsită.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>Unele dintre comenzile personalizate nu pot fi descărcate.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>Această shell folosește comenzile slash pentru a executa comenzile. Adăugați simbolul slash „/” la începutul comenzii pentru a începe. De exemplu:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>Această comandă nu este definită.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>Comenzi disponibile:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>Comenzi generale:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>Nicio comandă shell.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>Comenzi suplimentare:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>Fără comenzi suplimentare.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>Comenzi alias:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>Fără comenzi alias.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>Comenzi unificate:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>Fără comenzi unificate.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>Comandă definită de</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>Această comandă are următoarele argumente care îi modifică funcționarea:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>Descrierea argumentului nespecificată</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>Această comandă are următoarele comutatoare care îi modifică modul de funcționare:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>Descrierea comutatorului nespecificată</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>Nu există ajutor pentru comanda „{0}”.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Presetarea specificată {0} nu a fost găsită.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>Selectați o presetare pentru {0}:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>Nu s-au găsit comenzi.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>Ieșire din shell dacă rulează pe subshell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>Găsește comenzile disponibile în tipul curent de shell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>Pagină de ajutor</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>Afișează comenzi generale (implicit)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>Afișează comenzi aliasate</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Afișează comenzi unificate</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>Afișează comenzi suplimentare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>Afișează toate comenzile</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Folosește ajutor simplificat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>Deschide biblioteca de preseturi shell</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>Mesaj shell: Comanda solicitată {0} nu a fost găsită. Consultați secțiunea „ajutor” pentru comenzile disponibile.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>Eroare la încercarea de executare a comenzii.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>Nu se poate obține executorul shell pentru {0}</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>Încercarea de inițializare a shell-ului a eșuat</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>Nu se poate determina dacă intrarea de selecție este una sau mai multe</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>Marcajul nu este specificat.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>Specificator de etichetă de încheiere nevalid.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>Nu există secvențe în coadă cu care să se încheie eticheta.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>Lipsesc {0} etichete de încheiere.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>Formatul inițial nu trebuie să afișeze niciun text; trebuie să conțină doar secvențe VT de formatare.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND" xml:space="preserve">
+    <value>Nu există niciun fișier Asciicast</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE" xml:space="preserve">
+    <value>Nu se poate deserializa reprezentarea Asciicast de bază</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE" xml:space="preserve">
+    <value>Nu se poate deserializa reprezentarea Asciicast v1</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE" xml:space="preserve">
+    <value>Nu se poate deserializa reprezentarea Asciicast v2</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO" xml:space="preserve">
+    <value>Nu se pot obține informații despre eveniment</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>Combinații de taste disponibile</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>Nu sunt definite legături în acest context.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>Legături de tastatură</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>Legături pentru mouse</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>Nume de caracter {0} invalid în fonturile Nerd Fonts, în tipul {1}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Reprezentare invalidă a caracterelor {0} din {1} în fonturile Nerd Fonts, în tipul {2}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>Tip de fonturi Nerd nevalid {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>Fonturile Nerd de tip {0} nu au caractere</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>Renderabilul este deja înregistrat</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>Renderabilul nu este înregistrat</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>Toate rotitoarele ar trebui să aibă aceeași lățime.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Urcă cu un element de intrare în sus</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Coboară un element de intrare în jos</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST" xml:space="preserve">
+    <value>Trece la prima intrare</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST" xml:space="preserve">
+    <value>Trece la ultima intrare</value>
+  </data>
+  <data name="T_SHELL_BASE_SWITCH_SET_DESC" xml:space="preserve">
+    <value>Setează valoarea ieșirii la variabila MESH selectată</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION" xml:space="preserve">
+    <value>Nu se pot obține parametrii firului de execuție pentru execuția procesului.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_ERROREXECUTE1" xml:space="preserve">
+    <value>Eroare la încercarea de a executa comanda</value>
+  </data>
+  <data name="T_COMMON_ERRORDESC" xml:space="preserve">
+    <value>Eroare {0}: {1}</value>
+  </data>
+  <data name="T_SHELL_BASE_OBSOLETECMD" xml:space="preserve">
+    <value>Această comandă este învechită și va fi eliminată într-o versiune viitoare.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND" xml:space="preserve">
+    <value>Comanda wrappable nu este găsită.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN" xml:space="preserve">
+    <value>Nu trebuie să executați direct această comandă într-un mod înfășurat.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE" xml:space="preserve">
+    <value>Comanda nu poate fi ambalată. Aceste comenzi pot fi incluse:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPFAILED" xml:space="preserve">
+    <value>A apărut o eroare la încercarea de a împacheta o ieșire de comandă</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE" xml:space="preserve">
+    <value>Nu se poate salva o comandă care nu este setată ca încapsulabilă.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION" xml:space="preserve">
+    <value>Nu puteți declara noul bloc înainte de a plasa expresii care sprijină crearea, cum ar fi condiții sau bucle. Numărul stivei este {0}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID" xml:space="preserve">
+    <value>Când începeți un bloc nou, asigurați-vă că ați indentat corect stiva. Numărul stivei este {0}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED" xml:space="preserve">
+    <value>Scriptul este incorect. Verificați scriptul și rezolvați eventualele erori: {0}</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND" xml:space="preserve">
+    <value>Condiția nu a fost găsită în expresie.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH" xml:space="preserve">
+    <value>Condiția {0} necesită {1} argumente. Am primit {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END" xml:space="preserve">
+    <value>Condiția trebuie pusă până la urmă.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX" xml:space="preserve">
+    <value>Eroare la analizarea expresiei din cauza unei erori de sintaxă.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE" xml:space="preserve">
+    <value>Nu se poate înregistra o condiție care există deja.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY" xml:space="preserve">
+    <value>Nu se poate înregistra o condiție goală.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE" xml:space="preserve">
+    <value>Tipul de date {0} specificat este nevalid.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM" xml:space="preserve">
+    <value>Platforma {0} specificată este nevalidă.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_SOURCEFAILED" xml:space="preserve">
+    <value>Execuția comenzii sursă a eșuat.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_TARGETFAILED" xml:space="preserve">
+    <value>Execuția comenzii țintă a eșuat. Este posibil ca conținutul să nu fi fost populat corespunzător. Comanda executată a fost</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_FAILED" xml:space="preserve">
+    <value>Conducta este sparta.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_REPEAT_INVALIDTIMES" xml:space="preserve">
+    <value>Număr nevalid de ori.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_REPEAT_REPEATSELF" xml:space="preserve">
+    <value>Nu se poate repeta.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_COMMANDSHELPER" xml:space="preserve">
+    <value>Comenzi încapsulabile:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC" xml:space="preserve">
+    <value>Memento pentru comenzile slash</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_DESC" xml:space="preserve">
+    <value>Execută un proces extern</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Calea către un proces</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC" xml:space="preserve">
+    <value>Argumente pentru a trece la un proces</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC" xml:space="preserve">
+    <value>Execută procesul fără a întrerupe firul de shell. Va fi creată o fereastră separată.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Comandă pentru a afișa intrarea de ajutor</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LOADHISTORIES_DESC" xml:space="preserve">
+    <value>Încarcă istoricul shell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_DESC" xml:space="preserve">
+    <value>Transmite ieșirea comenzii către o altă comandă ca parametri</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC" xml:space="preserve">
+    <value>Comanda sursă pentru a-și direcționa ieșirea către comanda țintă ca ultimul parametru</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
+    <value>Comanda țintă de executat la construirea argumentului bazat pe rezultatul comenzii sursă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC" xml:space="preserve">
+    <value>Dacă se transmite ieșirea comenzii sursă ca un argument citat sau necotat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
+    <value>Repetă ultima acțiune sau comanda specificată</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
+    <value>Salvează istoricul shell-ului</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAP_DESC" xml:space="preserve">
+    <value>Încheie ieșirea consolei</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Comanda pentru a-și împacheta ieșirea</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE" xml:space="preserve">
+    <value>Eroare la încercarea de a executa scriptul: {0}</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_DESC" xml:space="preserve">
+    <value>Execută comenzi odată ce expresiile MESH sunt satisfăcute</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC" xml:space="preserve">
+    <value>Expresia MESH de testat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Comanda de executat la evaluarea cu succes</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_CHOICE_HELPER" xml:space="preserve">
+    <value>unde &lt;răspunsuri&gt; sunt răspunsuri cu o literă la întrebare, separate prin bare oblice</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH" xml:space="preserve">
+    <value>Trebuie să treceți comutatorul -set cu variabila la care doriți să setați această valoare.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_DESC" xml:space="preserve">
+    <value>Face alegerile utilizatorului</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
+    <value>Răspunsuri la împărțire cu o oblică</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
+    <value>Întrebare de imprimat pe ecran</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
+    <value>Titlul primului răspuns</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
+    <value>Titlul celui de-al doilea răspuns și așa mai departe...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC" xml:space="preserve">
+    <value>Stil de alegere cu o singură linie</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC" xml:space="preserve">
+    <value>Stil de alegere în două linii</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC" xml:space="preserve">
+    <value>Stil de alegere modern</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>Ieșirea poate fi doar un caracter</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC" xml:space="preserve">
+    <value>Ieșirea poate fi mai mult decât un caracter</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CLS_DESC" xml:space="preserve">
+    <value>Șterge ecranul</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_DESC" xml:space="preserve">
+    <value>Scrie text în consolă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>String de tipărit</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC" xml:space="preserve">
+    <value>Imprimă textul așa cum este, fără analizarea substituenților</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FORK_DESC" xml:space="preserve">
+    <value>Forkează shell-ul MESH pentru a crea o altă instanță</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
+    <value>Permite utilizatorului să introducă intrarea</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
+    <value>Permite utilizatorului să introducă introducerea ca parolă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHOWTD_DESC" xml:space="preserve">
+    <value>Afișează data și ora</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Arată doar data</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Arată doar timpul</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Folosește UTC în loc de local</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
+    <value>Oferă o alegere de selecție</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
+    <value>Setează o variabilă la o valoare într-un script</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Valoare de setat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_DESC" xml:space="preserve">
+    <value>Creează o matrice variabilă cu valorile furnizate</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC" xml:space="preserve">
+    <value>Prima valoare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC" xml:space="preserve">
+    <value>A doua valoare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC" xml:space="preserve">
+    <value>A treia valoare și așa mai departe...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SLEEP_DESC" xml:space="preserve">
+    <value>Dorește timp de milisecunde specificate</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC" xml:space="preserve">
+    <value>Interval până la somn</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_DESC" xml:space="preserve">
+    <value>Elimină o variabilă din lista de variabile MESH</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC" xml:space="preserve">
+    <value>Nume variabilă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC" xml:space="preserve">
+    <value>Doar șterge valoarea variabilei fără a o elimina</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
+    <value>Acum puteți rula „{0}” ca „{1}”!</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Tip nevalid {0}.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS" xml:space="preserve">
+    <value>Aliasul {0} a fost eliminat cu succes.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER" xml:space="preserve">
+    <value>Nu se poate anula înregistrarea unei afecțiuni care nu există.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_DESC" xml:space="preserve">
+    <value>Adaugă alias-uri la comenzi</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Adaugă un alias</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC" xml:space="preserve">
+    <value>Tip shell pentru a prelua comenzile de la</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC" xml:space="preserve">
+    <value>Nume alias</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC" xml:space="preserve">
+    <value>Comandă care trebuie utilizată ca scurtătură</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC" xml:space="preserve">
+    <value>Îndepărtează un alias</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND" xml:space="preserve">
+    <value>Învelișul consolei este deja găsit</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED" xml:space="preserve">
+    <value>Numele pachetului de consolă poate să nu fie gol</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Învelișul consolei nu a fost găsit</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN" xml:space="preserve">
+    <value>Este posibil ca un pachet de consolă încorporat să nu fie îndepărtat</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED" xml:space="preserve">
+    <value>Înlăturarea pachetului de consolă a eșuat</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED" xml:space="preserve">
+    <value>Nu s-a putut completa tema prestabilită</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA" xml:space="preserve">
+    <value>Nu există metadate ale temei definite.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID" xml:space="preserve">
+    <value>Nu se pot deserializa metadatele.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR" xml:space="preserve">
+    <value>Consola dvs. trebuie să accepte culori reale pentru a utiliza această temă.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXITPREVIEW_DESC" xml:space="preserve">
+    <value>Ieși din previzualizare</value>
+  </data>
+  <data name="T_COLORS_THEMES_THEMESHOWCASE" xml:space="preserve">
+    <value>Iată cum va arăta tema ta:</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>Șablon de culoare nevalid {0}</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME" xml:space="preserve">
+    <value>Tema {0} celebrează un eveniment, dar sunteți fie prea devreme, fie prea târziu pentru a participa. În fiecare an, această temă este accesibilă de la {1}/{2} la {3}/{4}.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR" xml:space="preserve">
+    <value>Tema {0} are nevoie de suport pentru culori reale, dar consola dvs. nu o acceptă.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
+    <value>Una sau mai multe culori sunt nevalide.</value>
+  </data>
+  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>Tema implicită pentru nucleu</value>
+  </data>
+  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>Accente peste tot!</value>
+  </data>
+  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>Lichid incolor, fumos și foarte coroziv</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
+    <value>Trebuie să rulați fie ConEmu, fie un prompt de comandă Windows 10 cu procesarea VT activată.</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_INFO" xml:space="preserve">
+    <value>Terminalul dvs. este {0} pe {1}.</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
+    <value>Aceste rampe vi se par corect? Ar trebui să tranzițieze fără probleme.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>Nivelul de culoare neagră este în afara intervalului (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator de culoare CMYK nevalid „{0}”. Specificatorul nu poate avea mai mult de patru elemente. Asigurați-vă că are formatul corect.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>Nu se pot obține date despre culoare.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>Nu am reușit să generăm o secvență VT funcțională de tip {0} cu acțiunea {1}. Asigurați-vă că ați specificat corect valorile.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>Răspuns fără titlu</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
+    <value>Fixture fără titlu</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
+    <value>Vă rugăm să așteptați în timp ce operațiunea curentă este procesată...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
+    <value>Salt la primul caracter din linia curentă</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE" xml:space="preserve">
+    <value>Salt la ultimul caracter din linia curentă</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM" xml:space="preserve">
+    <value>Modificați frecvența de transformare</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED" xml:space="preserve">
+    <value>Funcția de completare este deja înregistrată.</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED" xml:space="preserve">
+    <value>Funcția de completare nu este înregistrată.</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN" xml:space="preserve">
+    <value>Funcția de completare încorporată nu poate fi eliminată.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_DESC" xml:space="preserve">
+    <value>Găsitor de prenume</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Termen de căutare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
+    <value>Prefix de nume pentru căutare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
+    <value>Sufix de nume pentru căutare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC" xml:space="preserve">
+    <value>Generați etichete de nume (în prezent nu sunt acceptate umlauturile)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC" xml:space="preserve">
+    <value>Generați nume folosind lista de nume masculine</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC" xml:space="preserve">
+    <value>Generați nume folosind lista de nume de femei</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC" xml:space="preserve">
+    <value>Generați nume utilizând lista unificată de nume</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_DESC" xml:space="preserve">
+    <value>Găsește nume de familie</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
+    <value>Prefixul numelui pentru căutare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
+    <value>Sufixul numelui pentru căutare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENNAMES_DESC" xml:space="preserve">
+    <value>Generator de nume și prenume</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
+    <value>Câte nume de generat?</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DECODEBASE64_DESC" xml:space="preserve">
+    <value>Decodifică textul din reprezentarea BASE64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
+    <value>Șir codificat BASE64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
+    <value>Codifică textul într-o reprezentare BASE64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Șir de codat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
+    <value>Verifică un script UESH pentru erori de sintaxă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
+    <value>Calea către scriptul UESH</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS" xml:space="preserve">
+    <value>Script lint a reușit.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_FAILED" xml:space="preserve">
+    <value>Script-ul nu a reușit. Cel mai probabil există o eroare de sintaxă. Verificați scriptul pentru erori și încercați din nou să rulați linter.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
+    <value>Script-ul linter a eșuat în mod neașteptat încercând să vă analizeze scriptul.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LSVARS_DESC" xml:space="preserve">
+    <value>Enumeră variabilele UESH disponibile</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ADDPREFIX_DESC" xml:space="preserve">
+    <value>Adaugă prefix la șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Text de procesat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC" xml:space="preserve">
+    <value>Prefixul unui șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX" xml:space="preserve">
+    <value>Verifică prefixul</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC" xml:space="preserve">
+    <value>Afișează ieșirea în consolă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ADDSUFFIX_DESC" xml:space="preserve">
+    <value>Adaugă sufix la șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC" xml:space="preserve">
+    <value>Sufixul unui șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX" xml:space="preserve">
+    <value>Verifică sufixul</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHKPREFIX_DESC" xml:space="preserve">
+    <value>Verifică prefixul din șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHKSUFFIX_DESC" xml:space="preserve">
+    <value>Verifică sufixul din șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC" xml:space="preserve">
+    <value>Verifică dacă șirul conține toate caracterele</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC" xml:space="preserve">
+    <value>Secvența de caractere</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC" xml:space="preserve">
+    <value>Verifică dacă șirul conține toate subșirurile</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC" xml:space="preserve">
+    <value>Secvența de șiruri delimitate prin spații</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC" xml:space="preserve">
+    <value>Verifică dacă șirul conține vreunul dintre caracterele</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC" xml:space="preserve">
+    <value>Verifică dacă șirul conține vreunul dintre subșiruri</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINS_DESC" xml:space="preserve">
+    <value>Verifică dacă șirul conține un subșir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC" xml:space="preserve">
+    <value>Un subșir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC" xml:space="preserve">
+    <value>Ignoră majusculele/minusculele</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir se termină cu toate caracterele</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir se termină cu toate șirurile</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir se termină cu vreunul dintre caracterele</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir se termină cu vreunul dintre șiruri</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITH_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir se termină cu un subșir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EQUALS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir este egal cu un alt șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Termen de căutare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LOWERCASE_DESC" xml:space="preserve">
+    <value>Scrie un șir cu litere mici</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC" xml:space="preserve">
+    <value>Procesează întregul șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC" xml:space="preserve">
+    <value>Procesează doar primul caracter al unui șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REMPREFIX_DESC" xml:space="preserve">
+    <value>Elimină un prefix dintr-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REMSUFFIX_DESC" xml:space="preserve">
+    <value>Elimină un sufix dintr-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir începe cu toate caracterele</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir începe cu toate șirurile</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir începe cu oricare dintre caracterele</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir începe cu oricare dintre șiruri</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITH_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir începe cu un subșir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TITLECASE_DESC" xml:space="preserve">
+    <value>Titlează un șir cu majuscule</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UPPERCASE_DESC" xml:space="preserve">
+    <value>Titlează un șir cu majuscule</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS" xml:space="preserve">
+    <value>Există {0} comenzi ascunse. Le puteți afișa folosind -hidden.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC" xml:space="preserve">
+    <value>Afișează comenzile ascunse</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC" xml:space="preserve">
+    <value>Afișează numărul de comenzi</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND" xml:space="preserve">
+    <value>Comandă</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE" xml:space="preserve">
+    <value>Utilizare</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS" xml:space="preserve">
+    <value>Stampile</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS" xml:space="preserve">
+    <value>Comenzi generale pentru</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS" xml:space="preserve">
+    <value>Comenzi unificate pentru</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS" xml:space="preserve">
+    <value>Comenzi alias pentru</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS" xml:space="preserve">
+    <value>Comenzi suplimentare pentru</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC" xml:space="preserve">
+    <value>Afișează o listă de comenzi ca Markdown (pentru documentație și LLM-uri)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_DESC" xml:space="preserve">
+    <value>Generează prenume</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC" xml:space="preserve">
+    <value>Numărul de prenume de generat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENLASTNAMES_DESC" xml:space="preserve">
+    <value>Generează nume de familie</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC" xml:space="preserve">
+    <value>Numărul de nume de familie de generat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID" xml:space="preserve">
+    <value>Lățimea figletului este invalidă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID" xml:space="preserve">
+    <value>Tipul de blasfemie este invalid</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID" xml:space="preserve">
+    <value>Lungimea maximă a cuvântului este invalidă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID" xml:space="preserve">
+    <value>Lungimea exactă a cuvântului este invalidă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID" xml:space="preserve">
+    <value>Indicele caracterelor este invalid</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID" xml:space="preserve">
+    <value>Indicele de apariție este invalid</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID" xml:space="preserve">
+    <value>Pragul de deplasare este invalid</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID" xml:space="preserve">
+    <value>Pragul de trunchiere este invalid</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH" xml:space="preserve">
+    <value>Lățimea propoziției este invalidă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHARWIDTH_DESC" xml:space="preserve">
+    <value>Obține lățimea caracterului (câte celule sunt necesare)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STRWIDTH_DESC" xml:space="preserve">
+    <value>Obține lățimea șirului (câte celule sunt necesare)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC" xml:space="preserve">
+    <value>Caracter de procesat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_DESC" xml:space="preserve">
+    <value>Încadrează un șir lung într-un grup de propoziții</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Lățimea maximă a unei propoziții</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC" xml:space="preserve">
+    <value>Împarte un șir lung pe caractere</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PALINDROME_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir este un palindrom</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NUMERIC_DESC" xml:space="preserve">
+    <value>Verifică dacă un șir este numeric</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_DESC" xml:space="preserve">
+    <value>Înlocuiește un subșir dintr-un șir cu un alt subșir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Un subșir de înlocuit</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC" xml:space="preserve">
+    <value>A subșir de înlocuit cu</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC" xml:space="preserve">
+    <value>Utilizați expresii regulate pentru înlocuire</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALL_DESC" xml:space="preserve">
+    <value>Înlocuiește toate subșirurile dintr-un șir cu un alt subșir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Un grup de subșiruri de înlocuit, delimitate cu spații</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALLRANGE_DESC" xml:space="preserve">
+    <value>Înlocuiește toate subșirurile dintr-un șir cu un interval de subșiruri</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Un grup de subșiruri de înlocuit, delimitate cu un caracter bară</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC" xml:space="preserve">
+    <value>Șiruri separate printr-un spațiu</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_DESC" xml:space="preserve">
+    <value>Înlocuiește un caracter dintr-un șir cu un alt caracter</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC" xml:space="preserve">
+    <value>Index de caractere de procesat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Un caracter de înlocuit cu</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACELASTOCC_DESC" xml:space="preserve">
+    <value>Înlocuiește ultima apariție a unui subșir dintr-un șir cu un alt subșir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_DESC" xml:space="preserve">
+    <value>Înlocuiește o apariție specificată a unui subșir dintr-un șir cu un alt subșir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC" xml:space="preserve">
+    <value>Index de apariție a subșirurilor</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REVERSE_DESC" xml:space="preserve">
+    <value>Inversează o secvență de caractere dintr-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_DESC" xml:space="preserve">
+    <value>Deplasează caracterele dintr-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC" xml:space="preserve">
+    <value>Prag de deplasare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLIT_DESC" xml:space="preserve">
+    <value>Împarte un șir cu un delimitator</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC" xml:space="preserve">
+    <value>Delimitator pentru a împărți un șir cu</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLITNEWLINES_DESC" xml:space="preserve">
+    <value>Împarte un șir cu o linie nouă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLITDQ_DESC" xml:space="preserve">
+    <value>Împarte un șir cu un delimitator (suport pentru ghilimele duble)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_DESC" xml:space="preserve">
+    <value>Trunchiază un șir lung</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC" xml:space="preserve">
+    <value>Prag de trunchiere</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC" xml:space="preserve">
+    <value>Dezactivează punctele de suspensie în șirul trunchiat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ESCAPESTR_DESC" xml:space="preserve">
+    <value>Escapează o secvență de caractere speciale caractere într-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNESCAPESTR_DESC" xml:space="preserve">
+    <value>Eliminează caracterele escape dintr-o secvență de caractere speciale dintr-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOBRAILLE_DESC" xml:space="preserve">
+    <value>Convertește un șir într-o secvență Braille</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_DESC" xml:space="preserve">
+    <value>Convertește un șir într-un text Figlet randat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC" xml:space="preserve">
+    <value>Numele fontului Figlet</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Lățimea maximă a figletului (0 pentru dezactivare)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIGLETMETRICS_DESC" xml:space="preserve">
+    <value>Afișează metricile figletului</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC" xml:space="preserve">
+    <value>Afișează metricile detaliate ale figletului</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REVERSERTL_DESC" xml:space="preserve">
+    <value>Inversează o secvență de caractere pentru RTL</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORD_DESC" xml:space="preserve">
+    <value>Returnează un cuvânt aleatoriu</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_DESC" xml:space="preserve">
+    <value>Returnează un cuvânt aleatoriu (condițional)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC" xml:space="preserve">
+    <value>Lungimea maximă a cuvântului</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC" xml:space="preserve">
+    <value>Cuvântul trebuie să înceapă cu</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC" xml:space="preserve">
+    <value>Cuvântul trebuie să se termine cu</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC" xml:space="preserve">
+    <value>Lungimea exactă a cuvântului</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_DESC" xml:space="preserve">
+    <value>Găsește blasfemii într-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC" xml:space="preserve">
+    <value>Tip de blasfemie</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FILTERPROFANITY_DESC" xml:space="preserve">
+    <value>Filtrează blasfemiile într-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_DESC" xml:space="preserve">
+    <value>Normalizează spațiile dintr-un șir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC" xml:space="preserve">
+    <value>Căutare simplă de spații</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC" xml:space="preserve">
+    <value>Căutare analitică de spații</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_BGCOLOR_COLORINVALID" xml:space="preserve">
+    <value>Culoare de fundal nevalidă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FGCOLOR_COLORINVALID" xml:space="preserve">
+    <value>Culoare de prim-plan nevalidă</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_BGCOLOR_DESC" xml:space="preserve">
+    <value>Returnează o secvență de culori de fundal</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Specificator de culoare de procesat</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_PLAIN_DESC" xml:space="preserve">
+    <value>Secvență simplă fără secvențe VT</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC" xml:space="preserve">
+    <value>Secvență VT în culori reale</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC" xml:space="preserve">
+    <value>Returnează dimensiunile consolei</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FGCOLOR_DESC" xml:space="preserve">
+    <value>Returnează o secvență de culori de prim-plan</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HISTORY_DESC" xml:space="preserve">
+    <value>Returnează o listă de comenzi recente</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRINTF_DESC" xml:space="preserve">
+    <value>Afișează un șir cu suport de format</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC" xml:space="preserve">
+    <value>Parametri de utilizat ca formatare</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_ANGLEINVALID" xml:space="preserve">
+    <value>Unghi invalid</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_PIXELSINVALID" xml:space="preserve">
+    <value>Număr invalid de pixeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_INCHESINVALID" xml:space="preserve">
+    <value>Inci invalidi</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_WIDTHINVALID" xml:space="preserve">
+    <value>Lățime invalidă în pixeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID" xml:space="preserve">
+    <value>Înălțime invalidă în pixeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_DESC" xml:space="preserve">
+    <value>Convertește unghiul în grade în radiani</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC" xml:space="preserve">
+    <value>Unghi în radiani de convertit</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_DESC" xml:space="preserve">
+    <value>Obține DPI-ul din pixeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC" xml:space="preserve">
+    <value>Câți pixeli pe inch?</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC" xml:space="preserve">
+    <value>Lungime în inci</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_DESC" xml:space="preserve">
+    <value>Obține numărul total de pixeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Lățime în pixeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC" xml:space="preserve">
+    <value>Înălțime în pixeli</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RADIANS_DESC" xml:space="preserve">
+    <value>Convertește unghiul în radiani în grade</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC" xml:space="preserve">
+    <value>Unghi în grade de convertit</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPTITLE" xml:space="preserve">
+    <value>Titlul paginii de ajutor</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPDESC" xml:space="preserve">
+    <value>Descrierea paginii de ajutor</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
+    <value>Corpul paginii de ajutor. Aceasta înseamnă că aplicația nu oferă articolul de ajutor de care ați putea avea nevoie.</value>
+  </data>
+
+</root>

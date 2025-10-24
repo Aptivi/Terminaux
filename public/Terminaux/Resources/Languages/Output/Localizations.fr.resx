@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>Erreur des terminaux généraux !</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>Erreur interne des terminaux !</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>Erreur inconnue</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>Pas encore implémenté.</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>Ce programme ne peut pas continuer.</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>Appuyez sur n&apos;importe quelle touche pour continuer...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Type invalide</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>Vous devez spécifier la partie écran.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>Vous devez spécifier le nom de l&apos;écran.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>L&apos;index de pièce spécifié est hors de portée.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>Le nom de pièce spécifié n&apos;est pas trouvé.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>La pièce spécifiée n&apos;est pas trouvée.</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>L&apos;index du tampon ne peut pas être inférieur à zéro ni supérieur à {0} tampons.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>L&apos;écran n&apos;est pas spécifié.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>L&apos;écran n&apos;est pas cyclique.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>L&apos;utilisateur a essayé d&apos;exécuter une application Terminaux à l&apos;aide d&apos;un terminal muet.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>Cette application utilise des fonctionnalités de console étendues fournies par Terminaux qui nécessitent des fonctionnalités non prises en charge par les terminaux « muets ».</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
+    <value>Solution possible : utilisez un émulateur de terminal approprié ou consultez les paramètres de votre terminal pour définir un type de terminal autre que « stupide ». Nous recommandons l&apos;utilisation des émulateurs de terminal « vt100 » pour tirer le meilleur parti de cette application.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>L&apos;utilisateur a essayé d&apos;exécuter une application Terminaux sur un type de terminal sur liste noire.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Le type de console que vous utilisez actuellement, {0}, est sur liste noire : {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Le type de console que vous utilisez actuellement, {0}, est sur liste grise : {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>L&apos;utilisateur a essayé d&apos;exécuter une application Terminaux sur un émulateur de terminal sur liste noire.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>L&apos;émulateur de terminal que vous utilisez actuellement, {0}, est sur liste noire : {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>L&apos;émulateur de terminal que vous utilisez actuellement, {0}, est sur liste grise : {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>Le type de terminal {0} ne prend pas en charge 256 couleurs selon terminfo</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>L&apos;utilisateur a essayé d&apos;exécuter une application Terminaux sur MinTTY de Git Bash sans winpty.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>Vous devrez utiliser winpty pour utiliser ce programme. Si vous êtes certain de ne pas utiliser Git Bash, assurez-vous d&apos;utiliser un terminal Windows approprié.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>Le positionnement de la console ne fonctionne pas en raison d&apos;une erreur d&apos;E/S, cette application peut donc se comporter de manière erratique.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>Le positionnement de la console ne fonctionne pas correctement, cette application peut donc se comporter de manière erratique.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>Votre console est trop petite pour fonctionner correctement : {0}x{1} | buff : {2}x{3} | min : {4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>Pour une meilleure expérience, redimensionnez la fenêtre de votre console sans quitter cet écran. Appuyez sur n&apos;importe quelle touche pour continuer…</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>Montage non fourni.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} Impossible de continuer.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>Le type de console ne prend en charge que l&apos;écriture de base.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>Le type de console est de nature inconnue.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>Cette application utilise des séquences d&apos;échappement VT, mais Terminal.app ne prend plus en charge les couleurs 255 et vraies.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>Le type de console ne prend pas en charge 256 couleurs.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>Impossible de filtrer sans aucune requête.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>Impossible de filtrer avec une requête non valide.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>Il n&apos;y a aucune expression dans le filtre de la console.</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
+    <value>Impossible de restaurer les nouveaux attributs termios pour le mode brut : {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les indicateurs de descripteur de fichier : {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED" xml:space="preserve">
+    <value>Impossible de définir l&apos;indicateur de descripteur de fichier sur une lecture non bloquante : {0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED" xml:space="preserve">
+    <value>Impossible de définir l&apos;indicateur de descripteur de fichier sur le blocage de la lecture : {0}</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>Impossible d&apos;obtenir des informations de synthèse à partir de la représentation fournie.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>La représentation du synthétiseur n&apos;est pas valide à [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>La fréquence n&apos;est pas valide à [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>La durée n&apos;est pas valide à [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>La cible peut ne pas être nulle</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>La valeur maximale [{0}] ne doit pas être inférieure à la valeur de progression [{1}]</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>La valeur de progression [{0}] doit être comprise entre 0 et la valeur maximale de {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>Ce désignateur ne peut pas être situé à la fin de la chaîne sans spécifier un paramètre</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>Ce désignateur ne peut prendre qu&apos;un nombre comme paramètre.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>Ce désignateur ne peut prendre qu&apos;un numéro compris entre 1 et 9.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>Ce désignateur ne peut prendre qu&apos;une lettre comme paramètre.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>Ce désignateur nécessite une constante entière</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>Ce désignateur contient une constante entière non valide</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>Ce désignateur ne peut pas être situé à la fin de la chaîne sans spécifier une constante de caractère</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>Vous ne pouvez pas ajouter plus d&apos;un caractère</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>Ce désignateur nécessite une collection de caractères</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>La largeur n&apos;est pas valide</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>Ce désignateur ne peut pas être situé à la fin de la chaîne sans spécifier un type</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>Impossible de traiter la séquence nulle.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>Impossible de traiter les paramètres nuls.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>Ce drapeau doit représenter un signe moins</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>Il reste encore des données après l&apos;index {0} sur {1} pour le formatage</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>La constante entière pour le caractère n&apos;est pas valide.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>La constante entière n&apos;est pas valide.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>Impossible de pousser une variable inexistante.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>Il s&apos;agit d&apos;une opération binaire, mais le nombre d&apos;arguments mis en file d&apos;attente est de {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>La constante entière pour le premier opérande n&apos;est pas valide.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>La constante entière pour le deuxième opérande n&apos;est pas valide.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>Il s&apos;agit d&apos;une opération unaire, mais le nombre d&apos;arguments mis en file d&apos;attente est de {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>La représentation conditionnelle {0} n&apos;est pas valide.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>Impossible de lire le nombre d&apos;octets demandé.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>Tableau de chaînes non valide !</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>En-tête magique invalide</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>Impossible de traiter un paramètre sur une valeur de type autre qu&apos;une chaîne. L&apos;énumération est {0} et le type est {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>Le désignateur de retard s&apos;est terminé prématurément.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>Désignateur de délai non valide.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>La valeur du retard n’est pas un nombre.</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>Type de capacité inconnu « {0} »</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>Impossible de charger {0}</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>La couleur est hors de portée.</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>Êtes-vous sûr que ce gradient n&apos;est pas nul ?</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>Spécifiez au moins une couleur.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>Impossible de convertir la source nulle.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>Impossible de convertir en type null.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>Vous devez spécifier un modèle de couleur source spécifique, et non celui de base.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>Pas un modèle couleur.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>Vous devez spécifier un modèle de couleur cible spécifique, et non celui de base.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>Ce n&apos;est pas un modèle de couleur cible.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>Impossible de convertir le même modèle de couleur.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>Impossible de convertir en RVB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>Impossible de convertir à partir du modèle de couleur de base.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>Impossible de convertir en CMJN.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>Impossible de convertir en CMJ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>Impossible de convertir en HSL.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>Impossible de convertir en HSV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>Impossible de convertir en RYB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>Impossible de convertir en YIQ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>Impossible de convertir en YUV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>Impossible de convertir en XYZ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>Impossible de convertir en YXY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>Impossible de convertir en HunterLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>Impossible de convertir en CieLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>Impossible de convertir en CieLuv.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>Impossible de convertir en CieLch.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHWBFAILED" xml:space="preserve">
+    <value>Impossible de convertir en HWB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>Impossible de convertir à partir de RVB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en CMJN !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en CMJ !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en HSL !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en HSV !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en RYB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en YIQ !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en YUV !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en XYZ !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en YXY !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en HunterLab !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en CieLab !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en CieLuv !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en CieLch !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB" xml:space="preserve">
+    <value>Impossible de convertir une instance RVB nulle en HWB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>Impossible de convertir une instance CMJN nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>Impossible de convertir une instance CMJ nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>Impossible de convertir une instance HSL nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>Impossible de convertir une instance HSV nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>Impossible de convertir une instance RYB nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>Impossible de convertir une instance YIQ nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>Impossible de convertir une instance YUV nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>Impossible de convertir une instance XYZ nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>Impossible de convertir une instance YXY nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>Impossible de convertir une instance HunterLab nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>Impossible de convertir une instance CieLab nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>Impossible de convertir une instance CieLuv nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>Impossible de convertir une instance CieLch nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB" xml:space="preserve">
+    <value>Impossible de convertir une instance HWB nulle en RVB !</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>L&apos;observateur doit être soit 2 soit 10</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>L&apos;illuminant n&apos;est pas valide</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les références du tableau</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur non valide « {0} ». Si vous utilisez 256 couleurs, vous devrez saisir une valeur positive comprise entre 0 et 255 ou un nom de couleur valide. Si vous utilisez des couleurs vraies, vous devrez saisir un spécificateur de couleur valide, tel que RRR;GGG;BBB, ou un code couleur jusqu&apos;à 16777215.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>Le niveau de couleur rouge est hors de portée (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>Le niveau de couleur verte est hors de portée (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>Le niveau de couleur bleue est hors de portée (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>Spécificateur hexadécimal de couleur « {0} » non valide. Ce spécificateur doit commencer par le hashtag. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>Longueur hexadécimale de couleur non valide « {0} ». Assurez-vous qu&apos;elle est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>Impossible de résoudre l&apos;hexagone de couleur « {0} ».</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur CieLab « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>La valeur L est hors plage (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>La valeur A est hors plage (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>La valeur B est hors plage (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur CieLab « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur CieLch « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>La valeur C est hors plage (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>La valeur H est hors plage (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur CieLch « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur CieLuv « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>La valeur U est hors plage (-134,0 -&gt; 220,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>La valeur V est hors plage (-140,0 -&gt; 122,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur CieLuv « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur CMJ « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>Le niveau de couleur cyan est hors plage (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>Le niveau de couleur magenta est hors de portée (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>Le niveau de couleur jaune est hors de portée (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur CMJ « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur CMJN « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur HSL « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>Le niveau de teinte est hors de portée (0&apos; -&gt; 360&apos; degrés).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>Le niveau de saturation est hors plage (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>Le niveau de luminosité est hors plage (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur HSL « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur HSV « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>Le niveau de valeur est hors plage (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur HSV « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur HWB « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL" xml:space="preserve">
+    <value>Le niveau de blancheur est hors plage (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL" xml:space="preserve">
+    <value>Le niveau de noirceur est hors de portée (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur HWB « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur HunterLab « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>La valeur A est hors plage (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>La valeur B est hors plage (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur HunterLab « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur YUV « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>Le niveau de luminance est hors plage (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>Le niveau de chrominance (U) est hors plage (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>Le niveau de chrominance (V) est hors plage (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur YUV « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur YIQ « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>Le niveau en phase est hors plage (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>Le niveau de quadrature est hors plage (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur YIQ « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur « {0} » non valide. Assurez-vous qu&apos;il est au bon format, c&apos;est-à-dire un nombre compris entre 0 et 255 si vous utilisez 255 couleurs, ou une séquence VT si vous utilisez des couleurs vraies, comme suit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>Cette couleur est déjà une couleur originale.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur RYB « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>Le niveau rouge est hors de portée (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>Le niveau jaune est hors plage (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>Le niveau de bleu est hors de portée (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur RYB « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur XYZ « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>La valeur X est hors plage (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>La valeur Y est hors plage (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>La valeur Z est hors plage (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur XYZ « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>Spécificateur de couleur YXY « {0} » non valide. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>La valeur Y1 est hors plage (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>La valeur X est hors plage (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>La valeur Y2 est hors plage (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur YXY « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Le type de couleur n&apos;est pas valide</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>Le spécificateur de couleur pour la visibilité n&apos;est pas valide</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>Type de monochromatisme invalide</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>Je n&apos;arrive pas à déterminer comment convertir un(e) {0} de {1} en une couleur.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>Je n&apos;arrive pas à déterminer comment convertir un(e) {0} d&apos;un type inconnu en une couleur.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>Je n&apos;arrive pas à obtenir de couleur.</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>Échec de la définition de l&apos;arrière-plan</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>L&apos;instance de couleur n&apos;est pas fournie.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Sortie</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Raccourcis clavier</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>Trouver la suite</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP1" xml:space="preserve">
+    <value>Monter</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>Monter d&apos;un élément</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN1" xml:space="preserve">
+    <value>Descendre</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>Descendre d&apos;un élément</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1" xml:space="preserve">
+    <value>Page précédente</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>Aller à la page précédente</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1" xml:space="preserve">
+    <value>Page suivante</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>Aller à la page suivante</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST1" xml:space="preserve">
+    <value>Aller au début</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>Aller au premier élément</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST1" xml:space="preserve">
+    <value>Aller à la fin</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>Aller au dernier élément</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>Écrire un terme de recherche (prend en charge les expressions régulières)</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>Votre requête n&apos;est pas une expression régulière valide.</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>Sélectionnez l&apos;une des entrées :</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>Aucun élément trouvé.</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Rechercher un élément</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>Montez d&apos;une ligne (informatif)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>Descendre d&apos;une ligne (informatif)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>Changer</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>Liste de {0} couleurs prédéfinies</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>Gris</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>Transparence</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>Ombre et teinte</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>Informations sur la couleur</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>Transformer</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>Type de couleur non valide dans le sélecteur de couleurs</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>Écrivez le nom de la police. Il sera converti en minuscules.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>La police n&apos;existe pas.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>Sélectionnez une police figlet dans la liste ci-dessous</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Sélection de polices</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>Le sélecteur n&apos;est pas spécifié</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>En savoir plus...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>Liste des raccourcis clavier</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>Se déplacer</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Quitte l&apos;interface interactive TUI</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>Informations sur l&apos;article</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Le style de sélection nécessite qu&apos;au moins un choix soit activé.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>Écrivez le nom du spinner. Il sera converti en minuscules.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>Le spinner n&apos;existe pas.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>Sélectionnez un spinner dans la liste ci-dessous</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Sélection de fileurs</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>Aucune information.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>Aucun statut</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>J&apos;ai essayé de restituer des éléments TUI interactifs pour le volet secondaire sur un TUI interactif qui n&apos;autorise l&apos;interaction qu&apos;à partir d&apos;un seul volet.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>J&apos;ai essayé de restituer des informations sur le volet secondaire dans une TUI interactive qui permet l&apos;interaction à partir de deux volets, ce qui perturbe le rendu de la sélection à cet endroit.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>Tentative de rendu d&apos;informations sur des données nulles</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>Impossible d&apos;obtenir des informations.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>Effectuer une action sur l&apos;élément sélectionné</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>Veuillez fournir une classe TUI interactive de base et réessayer.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>L&apos;interface utilisateur interactive {0} ne contient aucune source de données.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>L&apos;interface utilisateur interactive {0} présente des liaisons de clavier ou de souris conflictuelles.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>Les raccourcis clavier ou raccourcis souris suivants sont en conflit :</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>L&apos;interface utilisateur textuelle a planté. Le problème vient généralement de l&apos;application.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>L&apos;interface utilisateur textuelle n&apos;est pas spécifiée</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>Cette interface utilisateur textuelle [{0}] n&apos;est pas prête car l&apos;état est {1}</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>Il y a {0} combinaison(s) de touches en conflit dans l&apos;interface utilisateur textuelle [{1}]</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>Le contexte de l&apos;événement du pointeur n&apos;est pas spécifié</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>La position de départ ne peut pas être inférieure à zéro</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>La position finale ne peut pas être inférieure à zéro</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>La position X de départ ne peut pas être supérieure à la position X de fin</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>La position de départ Y ne peut pas être supérieure à la position de fin Y</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>Le nom d&apos;entrée n&apos;est pas spécifié</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>Avance</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPT" xml:space="preserve">
+    <value>Cette page de présentation nécessite que les entrées suivantes soient remplies avant de pouvoir passer à la page suivante.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>Entrée requise</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>Une ou plusieurs des entrées suivantes n&apos;ont pas été remplies correctement :</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>Entrée incorrecte</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>Les champs obligatoires n&apos;ont pas été renseignés. Vous devrez renseigner les valeurs suivantes :</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>Entrée non fournie</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>Impossible de montrer un choix sans réponses et sans réponses alternatives.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Le style de choix nécessite qu&apos;au moins un choix soit activé.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>Vous ne pouvez pas fournir de réponses avec plus d&apos;un caractère en mode caractère unique.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>Mauvaise réponse. Veuillez réessayer.</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT" xml:space="preserve">
+    <value>Déplacer vers la gauche</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT" xml:space="preserve">
+    <value>Déplacer vers la droite</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>Remplacer</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>Remplacer tout</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>Prêt</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>Introuvable. Vérifiez votre syntaxe ou élargissez votre recherche.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>Informations sur le numéro</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Retirer</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>Remplacer tout ce qui</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>Écrivez le numéro d&apos;octet avec la valeur hexadécimale.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>Le numéro d&apos;octet spécifié n&apos;est pas valide.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>Octet non valide {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>Écrivez le numéro d&apos;octet avec la valeur hexadécimale pour remplacer {0} par.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>Écrivez le numéro d&apos;octet avec la valeur hexadécimale à remplacer.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>Écrivez un octet ou un groupe d&apos;octets séparés par des espaces.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>Des octets sont nécessaires pour la recherche, mais vous n&apos;en avez pas fourni.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>Hexadécimal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>Octal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>Binaire</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>Informations sur les numéros</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT" xml:space="preserve">
+    <value>Contenu vide</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>Le nombre d&apos;octets de départ spécifié ne peut pas être supérieur à la taille du fichier.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>Le numéro d&apos;octet de fin spécifié ne peut pas être supérieur à la taille du fichier.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>Le numéro d&apos;octet spécifié n&apos;est pas valide.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>Le nombre d&apos;octets spécifié ne peut pas être supérieur à {0} ni inférieur à 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>Le nombre d&apos;octets spécifié ne peut pas être supérieur à {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>Impossible d&apos;effectuer cette opération sur un tableau nul.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>Le numéro d&apos;octet doit commencer par 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>Le numéro d&apos;octet de départ spécifié ne peut pas être supérieur à {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>Le numéro d&apos;octet de fin spécifié ne peut pas être supérieur à {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>Entrer...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>Supprimer ici</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>Supprimer la ligne</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>Arrêtez d&apos;entrer</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>Nouvelle ligne</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE" xml:space="preserve">
+    <value>Retour arrière</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>Écrivez la chaîne à trouver</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>Écrire la chaîne de remplacement</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>Écrivez une chaîne à rechercher. Prise en charge des expressions régulières.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>Une chaîne est requise pour la recherche, mais vous n&apos;en avez pas fourni.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>Cette chaîne à rechercher n&apos;est pas une expression régulière valide.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>Lignes</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>Colonne</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>Rangée</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>Le numéro de ligne spécifié ne peut pas être supérieur à {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>Impossible d&apos;effectuer cette opération sur une liste de lignes nulles.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>Affiche plus d&apos;informations dans une infobox</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>Monte une ligne plus haut</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>Descend une ligne plus bas</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>Accéder à la page précédente du texte</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>Passe à la page suivante du texte</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>Soumet la valeur</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>Soumet les valeurs</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>Se ferme sans soumettre la valeur</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>Se ferme sans soumettre les valeurs</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT" xml:space="preserve">
+    <value>Effectue une action ou sélectionne un choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Diminue la valeur ou déplace le texte de trois lignes vers le haut</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Incrémente la valeur ou déplace trois lignes de texte vers le bas</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE" xml:space="preserve">
+    <value>Choix précédent ou trois lignes de texte précédentes</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE" xml:space="preserve">
+    <value>Choix suivant ou trois lignes de texte suivantes</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>Diminue la valeur actuelle</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>Incrémente la valeur actuelle</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>Définit la valeur à la valeur minimale</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>Définit la valeur à la valeur maximale</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT" xml:space="preserve">
+    <value>Définit le focus actuel sur l&apos;élément de valeur suivant</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT" xml:space="preserve">
+    <value>Définit le focus actuel sur l&apos;élément de valeur précédent</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>Passe au bouton précédent</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>Passe au bouton suivant</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Bouton précédent ou trois lignes de texte précédentes</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Bouton suivant ou trois lignes de texte suivantes</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>Va à la première ligne du texte</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>Va à la dernière ligne de texte</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>Passe à la page de texte suivante ou ferme la boîte d&apos;information modale</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>Ferme la boîte d&apos;information modale</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION" xml:space="preserve">
+    <value>Effectue une action</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>Les trois lignes de texte précédentes</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>Les trois lignes de texte suivantes</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS" xml:space="preserve">
+    <value>Accéder à la page précédente des entrées</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS" xml:space="preserve">
+    <value>Passe à la page suivante des entrées</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS" xml:space="preserve">
+    <value>Recherche une entrée</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE" xml:space="preserve">
+    <value>Modifie la valeur d&apos;entrée sélectionnée</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Monte d&apos;un choix (choix suivant)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Descend d&apos;un choix (choix précédent)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>Va au premier choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>Va au dernier choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>Accéder à la page précédente des choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>Passe à la page suivante des choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>Recherche un choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>Sélectionne ou désélectionne tous les choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>Impossible d&apos;obtenir la catégorie et le groupe dans le choix numéro {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>Choix généraux</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>Choix disponibles</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>Choix alternatifs</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>Confirmer</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>Barre latérale</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_MORE" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>Confirme la ou les sélections</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO" xml:space="preserve">
+    <value>Modifie la valeur sélectionnée (boutons radio)</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>Annuler la ou les sélections</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Monte d&apos;un élément</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Un élément descend</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>Va au premier élément</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>Va au dernier élément</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Passe à la page précédente</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Passe à la page suivante</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Recherche un élément</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>Monter dans une barre latérale</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>Descendre dans une barre latérale</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>Monter dans une boîte à questions</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>Descendre dans une boîte à questions</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>Afficher le nombre de pages et de choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>Afficher les informations sur l&apos;article</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>Sélectionne ou désélectionne un choix</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>Sélectionne tous les éléments du même groupe et de la même catégorie</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>Sélectionne tous les éléments de tous les groupes de la même catégorie</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>Sélectionne tous les éléments de tous les groupes dans toutes les catégories</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP" xml:space="preserve">
+    <value>Il y a un élément ou une ligne de vitrine</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN" xml:space="preserve">
+    <value>Descend d&apos;un élément ou d&apos;une ligne de vitrine</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>Mettre à jour la position</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>Soumettre</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>Fait</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>Sélection manuelle</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>Informations sur les couleurs</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>Prochaine simulation de daltonisme</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>Simulation précédente de daltonisme</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Augmenter la fréquence de transformation</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Diminuer la fréquence de transformation</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>Sélectionnez la couleur du Web</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>Augmenter l&apos;opacité</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>Augmenter la transparence</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>Mode de couleur suivant</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>Mode couleur précédent</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>Augmenter la valeur</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>Diminuer la valeur</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>Réduire la teinte des couleurs</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>Augmenter la teinte des couleurs</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>Réduire la luminosité des couleurs</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>Augmenter la luminosité des couleurs</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>Réduire la saturation</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>Augmenter la saturation</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>Couleur précédente</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>Couleur suivante</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>Afficher et masquer la liste des couleurs</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>Présentation des personnages</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>Ce luminaire n&apos;est peut-être pas une classe de luminaire de base. Spécifiez un luminaire inconditionnel.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>Ce luminaire n&apos;est peut-être pas une classe de luminaire de base. Spécifiez un luminaire conditionnel.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>La valeur renvoyée {0} ne correspond pas à la valeur attendue {1}</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>Ce match n&apos;est pas conditionnel.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Ce type de luminaire n&apos;est pas valide.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>Pas de luminaires ici. Insérez-en un.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>Choisissez un montage de test.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>Quitte le sélecteur de montage de test</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>Ce test a réussi !</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>La valeur attendue correspond à la valeur réelle.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>Ce test a échoué.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>La valeur attendue ne correspond pas à la valeur réelle.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>La méthode de ce délégué ne peut pas renvoyer void</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>La méthode de ce délégué doit renvoyer void</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>L&apos;expression régulière du composant n&apos;est pas valide</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>Expression régulière du composant non fournie</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>Couleur de premier plan du composant non fournie</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>Couleur d&apos;arrière-plan du composant non fournie</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Aucun nom du surligneur n&apos;est fourni.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Aucun nom du surligneur de base n&apos;est fourni.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>Impossible de trouver le surligneur {0}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>Je ne trouve pas de surligneur</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>Impossible de trouver le composant {0} dans le surligneur {1}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>Surligneur invalide.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>Le surligneur n&apos;a pas de nom.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>Le surligneur existe déjà.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>Le surligneur n&apos;a aucun composant.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>Impossible de supprimer le surligneur intégré {0}</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>Le nom de l&apos;historique n&apos;est pas spécifié</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>Les entrées d&apos;historique ne sont pas spécifiées</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>Le chemin du fichier d&apos;historique n&apos;est pas fourni.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>La représentation JSON de l&apos;historique n&apos;est pas fournie.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>JSON analysé, mais la représentation JSON de l&apos;historique n&apos;est pas fournie.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>Les informations historiques ne sont pas fournies.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>Le nom de l&apos;historique n&apos;est pas fourni. Êtes-vous sûr d&apos;avoir spécifié le nom dans votre représentation JSON ?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>Les entrées d&apos;historique ne sont pas fournies. Êtes-vous sûr d&apos;avoir spécifié les entrées dans votre représentation JSON ?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>Historique {0} non trouvé.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>L&apos;historique général ne peut pas être supprimé, mais peut être effacé.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>L’histoire ne fait pas partie des histoires enregistrées.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>Échec de la suppression de l&apos;historique.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>L&apos;entrée d&apos;historique n&apos;est pas fournie.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>La liste des entrées d&apos;historique n&apos;est pas fournie.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>Il y a un conflit entre {0} et {1}.</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>Le lecteur d&apos;entrée a échoué</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>Ce flux ne peut pas chercher.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>Impossible de créer une séquence VT pour un type inexistant {0}</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>Impossible de créer une séquence VT avec des arguments manquants. {0} arguments attendus, {1} arguments obtenus.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>L&apos;alias ne peut pas être le même nom qu&apos;une commande.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>Commande non trouvée pour l&apos;alias de {0}.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>Alias déjà trouvé</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>L&apos;alias {0} n&apos;a pas été trouvé pour être supprimé.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>L&apos;alias {0} n&apos;a pas été trouvé pour être interrogé.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>Usage</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>Commande</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>Aucune aide pour l&apos;argument « {0} ».</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>Description de l&apos;aide sans argument</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>Cet argument n&apos;est pas encore implémenté.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>Il n’y avait pas assez d’arguments.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>Argument inconnu</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>Erreur irrécupérable dans l&apos;argument</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les informations d&apos;argument pour la commande ou l&apos;argument</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>Les paramètres de thread ne sont pas spécifiés.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>Les arguments requis ne sont pas fournis pour toutes les utilisations ci-dessous :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>Les arguments obligatoires ne sont pas fournis.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>Les commutateurs requis ne sont pas fournis.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>L’un des commutateurs nécessite une valeur qui n’est pas fournie.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>Les commutateurs répertoriés ci-dessous sont inconnus.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>Les commutateurs répertoriés ci-dessous sont en conflit les uns avec les autres.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>Les commutateurs ci-dessous n&apos;acceptent pas de valeurs.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>Un ou plusieurs arguments attendent une valeur numérique, mais vous avez fourni un nombre non valide.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>Un ou plusieurs arguments attendent une formulation exacte, mais vous avez fourni un mot non valide.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>Un ou plusieurs commutateurs attendent une valeur numérique, mais vous avez fourni un nombre non valide.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>Consultez l&apos;entrée d&apos;aide de cette commande pour plus d&apos;informations</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>La commande est interrompue...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>Erreur lors de la tentative d&apos;exécution de la commande {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>Commande abandonnée pour la raison suivante</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>Modèle de commande non valide fourni.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>Commande non trouvée.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>Le type de shell {0} n&apos;existe pas.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>Vous devez fournir la base de commande.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>Vous devez fournir la commande.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>La commande spécifiée est déjà ajoutée.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>Certaines commandes personnalisées ne peuvent pas être chargées.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>La commande personnalisée spécifiée n&apos;est pas trouvée.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>Certaines commandes personnalisées ne peuvent pas être déchargées.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>Ce shell utilise les commandes slash pour exécuter les commandes. Pour commencer, ajoutez le symbole slash « / » au début de la commande. Par exemple :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>Cette commande n&apos;est pas définie.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>Commandes disponibles :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>Commandes générales :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>Aucune commande shell.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>Commandes supplémentaires :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>Aucune commande supplémentaire.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>Commandes d&apos;alias :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>Aucune commande d&apos;alias.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>Commandes unifiées :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>Pas de commandes unifiées.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>Commande définie par</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>Cette commande possède les arguments ci-dessous qui modifient son fonctionnement :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>Description de l&apos;argument non spécifié</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>Cette commande possède les commutateurs ci-dessous qui modifient son fonctionnement :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>Description du commutateur non spécifiée</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>Aucune aide pour la commande &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Le préréglage spécifié {0} n&apos;est pas trouvé.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>Sélectionnez le préréglage pour {0} :</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>Aucune commande trouvée.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>Quitte le shell s&apos;il est exécuté sur un sous-shell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>Recherche les commandes disponibles dans le type de shell actuel</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>Page d&apos;aide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>Affiche les commandes générales (par défaut)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>Affiche les commandes aliasées</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Affiche les commandes unifiées</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>Affiche des commandes supplémentaires</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>Affiche toutes les commandes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Utilise une aide simplifiée</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>Ouvre la bibliothèque de préréglages du shell</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>Message shell : la commande demandée {0} est introuvable. Consultez « Aide » pour connaître les commandes disponibles.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>Erreur lors de la tentative d&apos;exécution de la commande.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>Impossible d&apos;obtenir l&apos;exécuteur shell pour {0}</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>Échec de la tentative d&apos;initialisation du shell</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>Impossible de déterminer si l&apos;entrée de sélection est unique ou multiple</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>Le balisage n&apos;est pas spécifié.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>Spécificateur de balise de fin non valide.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>Il n&apos;y a pas de séquences en file d&apos;attente pour terminer la balise.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>Il manque {0} balises de fin.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>Le format initial ne doit imprimer aucun texte ; il doit contenir uniquement des séquences VT de formatage.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND" xml:space="preserve">
+    <value>Il n&apos;y a pas de fichier Asciicast</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE" xml:space="preserve">
+    <value>Impossible de désérialiser la représentation Asciicast de base</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE" xml:space="preserve">
+    <value>Impossible de désérialiser la représentation Asciicast v1</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE" xml:space="preserve">
+    <value>Impossible de désérialiser la représentation Asciicast v2</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les informations sur l&apos;événement</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>Raccourcis clavier disponibles</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>Aucune liaison définie dans ce contexte.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>Raccourcis clavier</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>Raccourcis de la souris</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>Nom de caractère de polices Nerd non valide {0} dans le type {1}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Représentation de caractère de polices Nerd non valide {0} de {1} dans le type {2}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>Polices Nerd invalides type {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>Le type de polices Nerd {0} n&apos;a aucun caractère</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>Renderable est déjà enregistré</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>Le rendu n&apos;est pas enregistré</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>Tous les spinners doivent avoir la même largeur.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Monte d&apos;un élément d&apos;entrée</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Descend d&apos;un élément d&apos;entrée</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST" xml:space="preserve">
+    <value>Va à la première entrée</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST" xml:space="preserve">
+    <value>Va à la dernière entrée</value>
+  </data>
+  <data name="T_SHELL_BASE_SWITCH_SET_DESC" xml:space="preserve">
+    <value>Définit la valeur de la sortie sur la variable MESH sélectionnée</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les paramètres de thread pour l&apos;exécution du processus.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_ERROREXECUTE1" xml:space="preserve">
+    <value>Erreur lors de la tentative d&apos;exécution de la commande</value>
+  </data>
+  <data name="T_COMMON_ERRORDESC" xml:space="preserve">
+    <value>Erreur {0}: {1}</value>
+  </data>
+  <data name="T_SHELL_BASE_OBSOLETECMD" xml:space="preserve">
+    <value>Cette commande est obsolète et sera supprimée dans une prochaine version.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND" xml:space="preserve">
+    <value>La commande enveloppable est introuvable.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN" xml:space="preserve">
+    <value>Vous ne devez pas exécuter directement cette commande en mode encapsulé.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE" xml:space="preserve">
+    <value>La commande n&apos;est pas enveloppable. Ces commandes sont enveloppables :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPFAILED" xml:space="preserve">
+    <value>Une erreur s&apos;est produite lors de la tentative d&apos;encapsulage du résultat d&apos;une commande</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE" xml:space="preserve">
+    <value>Impossible de mettre en mémoire tampon une commande qui n&apos;est pas définie comme encapsulable.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION" xml:space="preserve">
+    <value>Vous ne pouvez pas déclarer le nouveau bloc avant de placer des expressions qui prennent en charge la création, comme des conditions ou des boucles. Le numéro de pile est {0}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID" xml:space="preserve">
+    <value>Lorsque vous démarrez un nouveau bloc, assurez-vous que vous avez correctement indenté la pile. Le numéro de pile est {0}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED" xml:space="preserve">
+    <value>Le script est mal formé. Vérifiez le script et résolvez les éventuelles erreurs : {0}</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND" xml:space="preserve">
+    <value>La condition n&apos;a pas été trouvée dans l&apos;expression.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH" xml:space="preserve">
+    <value>La condition {0} nécessite {1} arguments. J&apos;ai {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END" xml:space="preserve">
+    <value>La condition doit être posée à la fin.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX" xml:space="preserve">
+    <value>Erreur lors de l&apos;analyse de l&apos;expression en raison d&apos;une erreur de syntaxe.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE" xml:space="preserve">
+    <value>Impossible d&apos;enregistrer une condition qui existe déjà.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY" xml:space="preserve">
+    <value>Impossible d&apos;enregistrer une condition vide.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE" xml:space="preserve">
+    <value>Le type de données {0} spécifié n&apos;est pas valide.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM" xml:space="preserve">
+    <value>La plate-forme {0} spécifiée n&apos;est pas valide.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_SOURCEFAILED" xml:space="preserve">
+    <value>L&apos;exécution de la commande source a échoué.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_TARGETFAILED" xml:space="preserve">
+    <value>L&apos;exécution de la commande cible a échoué. Le contenu n&apos;a peut-être pas été correctement renseigné. La commande exécutée a été</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_FAILED" xml:space="preserve">
+    <value>Le tuyau est cassé.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_REPEAT_INVALIDTIMES" xml:space="preserve">
+    <value>Nombre de fois invalide.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_REPEAT_REPEATSELF" xml:space="preserve">
+    <value>Je ne peux pas me répéter.</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_COMMANDSHELPER" xml:space="preserve">
+    <value>Commandes enveloppables :</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC" xml:space="preserve">
+    <value>Rappel des commandes slash</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_DESC" xml:space="preserve">
+    <value>Exécute un processus externe</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Chemin vers un processus</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC" xml:space="preserve">
+    <value>Arguments à transmettre à un processus</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC" xml:space="preserve">
+    <value>Exécute le processus sans interrompre le thread shell. Une fenêtre séparée sera créée.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Commande pour afficher l&apos;entrée d&apos;aide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LOADHISTORIES_DESC" xml:space="preserve">
+    <value>Charge les historiques de shell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_DESC" xml:space="preserve">
+    <value>Transfère la sortie de la commande vers une autre commande en tant que paramètres</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC" xml:space="preserve">
+    <value>Commande source pour canaliser sa sortie vers la commande cible en tant que dernier paramètre</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
+    <value>Commande cible à exécuter lors de la création d&apos;un argument basé sur la sortie de la commande source</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC" xml:space="preserve">
+    <value>S&apos;il faut transmettre la sortie de la commande source sous forme d&apos;un argument entre guillemets ou d&apos;un argument sans guillemets</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
+    <value>Répète la dernière action ou la commande spécifiée</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
+    <value>Enregistre les historiques de shell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAP_DESC" xml:space="preserve">
+    <value>Enveloppe la sortie de la console</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Commande pour envelopper sa sortie</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE" xml:space="preserve">
+    <value>Erreur lors de la tentative d&apos;exécution du script: {0}</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_DESC" xml:space="preserve">
+    <value>Exécute les commandes une fois que les expressions MESH sont satisfaites</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC" xml:space="preserve">
+    <value>Expression MESH à tester</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Commande à exécuter en cas d&apos;évaluation réussie</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_CHOICE_HELPER" xml:space="preserve">
+    <value>où &lt;réponses&gt; sont des réponses à une lettre de la question séparées par des barres obliques</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH" xml:space="preserve">
+    <value>Vous devez transmettre le commutateur -set avec la variable à laquelle vous souhaitez définir cette valeur.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_DESC" xml:space="preserve">
+    <value>Fait des choix d&apos;utilisateur</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
+    <value>Réponses à la question &quot;séparer avec une barre oblique&quot;</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
+    <value>Question à imprimer à l&apos;écran</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
+    <value>Titre de la première réponse</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
+    <value>Deuxième titre de réponse, et ainsi de suite...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC" xml:space="preserve">
+    <value>Style de choix d&apos;une ligne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC" xml:space="preserve">
+    <value>Style de choix à deux lignes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC" xml:space="preserve">
+    <value>Style de choix moderne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>La sortie ne peut être qu&apos;un seul caractère</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC" xml:space="preserve">
+    <value>La sortie peut être plus qu&apos;un caractère</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CLS_DESC" xml:space="preserve">
+    <value>Efface l&apos;écran</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_DESC" xml:space="preserve">
+    <value>Écrit du texte dans la console</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Chaîne à imprimer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC" xml:space="preserve">
+    <value>Imprime le texte tel quel sans analyse d&apos;espace réservé</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FORK_DESC" xml:space="preserve">
+    <value>Forks le shell MESH pour créer une autre instance</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
+    <value>Permet à l&apos;utilisateur d&apos;entrer une entrée</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
+    <value>Permet à l&apos;utilisateur de saisir une entrée comme mot de passe</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHOWTD_DESC" xml:space="preserve">
+    <value>Affiche la date et l&apos;heure</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Affiche juste la date</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Montre juste l&apos;heure</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Utilise UTC au lieu de local</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
+    <value>Fournit un choix de sélection</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
+    <value>Définit une variable à une valeur dans un script</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Valeur à définir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_DESC" xml:space="preserve">
+    <value>Crée un tableau de variables avec les valeurs fournies</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC" xml:space="preserve">
+    <value>Première valeur</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC" xml:space="preserve">
+    <value>Deuxième valeur</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC" xml:space="preserve">
+    <value>Troisième valeur, et ainsi de suite...</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SLEEP_DESC" xml:space="preserve">
+    <value>Sommes en veille pendant les millisecondes spécifiées</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC" xml:space="preserve">
+    <value>Intervalle pour dormir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_DESC" xml:space="preserve">
+    <value>Supprime une variable de la liste des variables MESH</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC" xml:space="preserve">
+    <value>Nom de la variable</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC" xml:space="preserve">
+    <value>Efface simplement la valeur de la variable sans la supprimer</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
+    <value>Vous pouvez désormais exécuter « {0} » en tant que « {1} » !</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Type non valide {0}.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS" xml:space="preserve">
+    <value>L&apos;alias {0} a bien été supprimé.</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER" xml:space="preserve">
+    <value>Impossible de désenregistrer une condition qui n&apos;existe pas.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_DESC" xml:space="preserve">
+    <value>Ajoute des alias aux commandes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Ajoute un alias</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC" xml:space="preserve">
+    <value>Type de shell à partir duquel récupérer les commandes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC" xml:space="preserve">
+    <value>Nom d&apos;alias</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC" xml:space="preserve">
+    <value>Commande à utiliser comme raccourci</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC" xml:space="preserve">
+    <value>Supprime un alias</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND" xml:space="preserve">
+    <value>Le wrapper de console est déjà trouvé.</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED" xml:space="preserve">
+    <value>Le nom du wrapper de console n&apos;est peut-être pas vide.</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Le wrapper de console est introuvable.</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN" xml:space="preserve">
+    <value>Un wrapper de console intégré ne peut peut-être pas être supprimé.</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED" xml:space="preserve">
+    <value>La suppression du wrapper de console a échoué.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED" xml:space="preserve">
+    <value>Impossible de remplir le thème par défaut</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA" xml:space="preserve">
+    <value>Aucune métadonnée de thème n&apos;est définie.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID" xml:space="preserve">
+    <value>Impossible de désérialiser les métadonnées.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR" xml:space="preserve">
+    <value>Votre console doit prendre en charge les vraies couleurs pour utiliser ce thème.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXITPREVIEW_DESC" xml:space="preserve">
+    <value>Quitter l&apos;aperçu</value>
+  </data>
+  <data name="T_COLORS_THEMES_THEMESHOWCASE" xml:space="preserve">
+    <value>Voici à quoi ressemblera votre thème :</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>Modèle de couleur non valide {0}</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME" xml:space="preserve">
+    <value>Le thème {0} célèbre un événement, mais vous arrivez trop tôt ou trop tard pour y assister. Chaque année, ce thème est accessible du {1}/{2} au {3}/{4}.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR" xml:space="preserve">
+    <value>Le thème {0} nécessite la prise en charge des couleurs réelles, mais votre console ne la prend pas en charge.</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
+    <value>Une ou plusieurs des couleurs sont invalides.</value>
+  </data>
+  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>Le thème par défaut du noyau</value>
+  </data>
+  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>Des accents partout !</value>
+  </data>
+  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>Liquide incolore, fumant et hautement corrosif</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
+    <value>Vous devez exécuter ConEmu ou une invite de commande Windows 10 avec le traitement VT activé.</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_INFO" xml:space="preserve">
+    <value>Votre terminal est à {0} sur {1}.</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
+    <value>Ces rampes vous conviennent-elles ? Ils devraient faire une transition en douceur.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>Le niveau de couleur noire est hors de portée (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>Spécificateur de couleur CMJN « {0} » non valide. Ce spécificateur ne doit pas comporter plus de quatre éléments. Assurez-vous qu&apos;il est au bon format.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les données de couleur.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>Nous n&apos;avons pas réussi à générer une séquence VT fonctionnelle de type {0} avec l&apos;action {1}. Assurez-vous d&apos;avoir correctement spécifié les valeurs.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>Réponse sans titre</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
+    <value>Installation sans titre</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
+    <value>Veuillez patienter pendant le traitement de l&apos;opération en cours...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
+    <value>Accéder au premier caractère de la ligne en cours</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE" xml:space="preserve">
+    <value>Accéder au dernier caractère de la ligne en cours</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM" xml:space="preserve">
+    <value>Modifier la fréquence de transformation</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED" xml:space="preserve">
+    <value>La fonction de complétion est déjà enregistrée.</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED" xml:space="preserve">
+    <value>La fonction de complétion n&apos;est pas enregistrée.</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN" xml:space="preserve">
+    <value>La fonction de complétion intégrée ne peut pas être supprimée.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_DESC" xml:space="preserve">
+    <value>Recherche de prénom</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Terme de recherche</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
+    <value>Préfixe du nom à rechercher</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
+    <value>Suffixe de nom à rechercher</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC" xml:space="preserve">
+    <value>Générer des étiquettes de nom (les trémas ne sont actuellement pas pris en charge)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC" xml:space="preserve">
+    <value>Générez des noms à l&apos;aide de la liste des noms masculins</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC" xml:space="preserve">
+    <value>Générez des noms à l&apos;aide de la liste des prénoms féminins</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC" xml:space="preserve">
+    <value>Générez des noms à l&apos;aide de la liste de noms unifiée</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_DESC" xml:space="preserve">
+    <value>Recherche de nom de famille</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
+    <value>Préfixe de nom de famille à rechercher</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
+    <value>Suffixe de nom de famille à rechercher</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENNAMES_DESC" xml:space="preserve">
+    <value>Générateur de nom et prénom</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
+    <value>Combien de noms générer ?</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DECODEBASE64_DESC" xml:space="preserve">
+    <value>Décode le texte de la représentation BASE64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
+    <value>Chaîne BASE64 codée</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
+    <value>Encode le texte dans une représentation BASE64</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Chaîne à encoder</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
+    <value>Vérifie un script UESH pour les erreurs de syntaxe</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
+    <value>Chemin vers le script UESH</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS" xml:space="preserve">
+    <value>Le script Lint a réussi.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_FAILED" xml:space="preserve">
+    <value>Le script Lint a échoué. Il s&apos;agit très probablement d&apos;une erreur de syntaxe. Vérifiez votre script pour les erreurs et réessayez d&apos;exécuter le linter.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
+    <value>Le linter de script a échoué de manière inattendue en essayant d&apos;analyser votre script.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LSVARS_DESC" xml:space="preserve">
+    <value>Répertorie les variables UESH disponibles</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ADDPREFIX_DESC" xml:space="preserve">
+    <value>Ajoute un préfixe à la chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Texte à traiter</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC" xml:space="preserve">
+    <value>Préfixe d&apos;une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX" xml:space="preserve">
+    <value>Vérifie le préfixe</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC" xml:space="preserve">
+    <value>Affiche le résultat sur la console</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ADDSUFFIX_DESC" xml:space="preserve">
+    <value>Ajoute un suffixe à la chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC" xml:space="preserve">
+    <value>Suffixe d&apos;une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX" xml:space="preserve">
+    <value>Vérifie le suffixe</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHKPREFIX_DESC" xml:space="preserve">
+    <value>Vérifie le préfixe dans la chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHKSUFFIX_DESC" xml:space="preserve">
+    <value>Vérifie le suffixe dans la chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC" xml:space="preserve">
+    <value>Vérifie si la chaîne contient tous les caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC" xml:space="preserve">
+    <value>Séquence de caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC" xml:space="preserve">
+    <value>Vérifie si la chaîne contient toutes les sous-chaînes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC" xml:space="preserve">
+    <value>Séquence de chaînes délimitées par des espaces</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC" xml:space="preserve">
+    <value>Vérifie si la chaîne contient des caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC" xml:space="preserve">
+    <value>Vérifie si la chaîne contient des sous-chaînes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINS_DESC" xml:space="preserve">
+    <value>Vérifie si la chaîne contient une sous-chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC" xml:space="preserve">
+    <value>Une sous-chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC" xml:space="preserve">
+    <value>Ignorer la casse</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne se termine par tous les caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne se termine par tous les caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne se termine par l&apos;un des caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne se termine par l&apos;une des chaînes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITH_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne se termine par une sous-chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EQUALS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne est égale à une autre chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Terme de recherche</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LOWERCASE_DESC" xml:space="preserve">
+    <value>Met une chaîne en minuscules</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC" xml:space="preserve">
+    <value>Traite toute la chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC" xml:space="preserve">
+    <value>Traite uniquement le premier caractère d&apos;une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REMPREFIX_DESC" xml:space="preserve">
+    <value>Supprime un préfixe d&apos;une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REMSUFFIX_DESC" xml:space="preserve">
+    <value>Supprime un suffixe d&apos;une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne commence par tous les caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne commence par tous les caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne commence par tous les caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne commence par tous les caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITH_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne commence par tous les caractères</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TITLECASE_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne commence par une sous-chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UPPERCASE_DESC" xml:space="preserve">
+    <value>Met une chaîne en majuscules</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS" xml:space="preserve">
+    <value>Il existe {0} commandes masquées. Vous pouvez les afficher avec -hidden.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC" xml:space="preserve">
+    <value>Affiche les commandes masquées</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC" xml:space="preserve">
+    <value>Affiche le nombre de commandes</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND" xml:space="preserve">
+    <value>Commande</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE" xml:space="preserve">
+    <value>Utilisation</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS" xml:space="preserve">
+    <value>Indicateurs</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS" xml:space="preserve">
+    <value>Commandes générales</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS" xml:space="preserve">
+    <value>Commandes unifiées</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS" xml:space="preserve">
+    <value>Commandes avec alias</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS" xml:space="preserve">
+    <value>Commandes supplémentaires</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC" xml:space="preserve">
+    <value>Afficher une liste de commandes au format Markdown (pour la documentation et les LLM)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_DESC" xml:space="preserve">
+    <value>Génère les prénoms</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC" xml:space="preserve">
+    <value>Nombre de prénoms à générer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENLASTNAMES_DESC" xml:space="preserve">
+    <value>Génère les noms de famille</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC" xml:space="preserve">
+    <value>Nombre de noms de famille à générer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID" xml:space="preserve">
+    <value>La largeur du figlet est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID" xml:space="preserve">
+    <value>Le type de blasphème est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID" xml:space="preserve">
+    <value>La longueur maximale du mot est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID" xml:space="preserve">
+    <value>La longueur exacte du mot est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID" xml:space="preserve">
+    <value>L&apos;index des caractères est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID" xml:space="preserve">
+    <value>L&apos;index des occurrences est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID" xml:space="preserve">
+    <value>Le seuil de décalage est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID" xml:space="preserve">
+    <value>Le seuil de troncature est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH" xml:space="preserve">
+    <value>La largeur des phrases est invalide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHARWIDTH_DESC" xml:space="preserve">
+    <value>Obtient la largeur des caractères (nombre de cellules nécessaires)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STRWIDTH_DESC" xml:space="preserve">
+    <value>Obtient la largeur de la chaîne (combien de cellules sont nécessaires)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC" xml:space="preserve">
+    <value>Caractère à traiter</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_DESC" xml:space="preserve">
+    <value>Transforme une longue chaîne en un groupe de phrases</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Largeur maximale d&apos;une phrase</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC" xml:space="preserve">
+    <value>Découpe une longue chaîne caractère par caractère</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PALINDROME_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne est un palindrome</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NUMERIC_DESC" xml:space="preserve">
+    <value>Vérifie si une chaîne est numérique</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_DESC" xml:space="preserve">
+    <value>Remplace un Sous-chaîne d&apos;une chaîne par une autre</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Sous-chaîne à remplacer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC" xml:space="preserve">
+    <value>Sous-chaîne à remplacer par</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC" xml:space="preserve">
+    <value>Utiliser des expressions régulières pour le remplacement</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALL_DESC" xml:space="preserve">
+    <value>Remplace toutes les sous-chaînes d&apos;une chaîne par une autre</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Groupe de sous-chaînes à remplacer, délimité par des espaces</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALLRANGE_DESC" xml:space="preserve">
+    <value>Remplace toutes les sous-chaînes d&apos;une chaîne par une plage de sous-chaînes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Groupe de sous-chaînes à remplacer, délimité par une barre verticale</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC" xml:space="preserve">
+    <value>Chaînes séparées par un espace</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_DESC" xml:space="preserve">
+    <value>Remplace un caractère d&apos;une chaîne par un autre</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC" xml:space="preserve">
+    <value>Index de caractère à traiter</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>Caractère à remplacer par</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACELASTOCC_DESC" xml:space="preserve">
+    <value>Remplace la dernière occurrence d&apos;une sous-chaîne d&apos;une chaîne par une autre</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_DESC" xml:space="preserve">
+    <value>Remplace une occurrence spécifiée d&apos;une sous-chaîne d&apos;une chaîne par une autre</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC" xml:space="preserve">
+    <value>Index d&apos;occurrence de sous-chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REVERSE_DESC" xml:space="preserve">
+    <value>Inverse une séquence de caractères dans une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_DESC" xml:space="preserve">
+    <value>Décale les caractères d&apos;une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC" xml:space="preserve">
+    <value>Seuil de décalage</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLIT_DESC" xml:space="preserve">
+    <value>Scinde une chaîne avec un délimiteur</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC" xml:space="preserve">
+    <value>Délimiteur pour scinder une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLITNEWLINES_DESC" xml:space="preserve">
+    <value>Scinde une chaîne avec un saut de ligne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLITDQ_DESC" xml:space="preserve">
+    <value>Scinde une chaîne avec un délimiteur (guillemets doubles) Prise en charge)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_DESC" xml:space="preserve">
+    <value>Tronque une longue chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC" xml:space="preserve">
+    <value>Seuil de troncature</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC" xml:space="preserve">
+    <value>Désactive les points de suspension dans une chaîne tronquée</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ESCAPESTR_DESC" xml:space="preserve">
+    <value>Échappe une séquence de caractères spéciaux dans une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNESCAPESTR_DESC" xml:space="preserve">
+    <value>Récupère l&apos;échappement d&apos;une séquence de caractères spéciaux dans une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOBRAILLE_DESC" xml:space="preserve">
+    <value>Convertit une chaîne en séquence Braille</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_DESC" xml:space="preserve">
+    <value>Convertit une chaîne en texte Figlet rendu</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC" xml:space="preserve">
+    <value>Nom de la police Figlet</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Largeur maximale du Figlet (0 pour désactiver)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIGLETMETRICS_DESC" xml:space="preserve">
+    <value>Affiche les métriques du Figlet</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC" xml:space="preserve">
+    <value>Affiche les métriques détaillées du Figlet</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REVERSERTL_DESC" xml:space="preserve">
+    <value>Inverse une séquence de caractères pour le RTL</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORD_DESC" xml:space="preserve">
+    <value>Renvoie un mot aléatoire</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_DESC" xml:space="preserve">
+    <value>Renvoie un mot aléatoire (conditionnel)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC" xml:space="preserve">
+    <value>Longueur maximale du mot</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC" xml:space="preserve">
+    <value>Le mot doit commencer par</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC" xml:space="preserve">
+    <value>Le mot doit se terminer par</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC" xml:space="preserve">
+    <value>Longueur exacte du mot</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_DESC" xml:space="preserve">
+    <value>Trouver des grossièretés dans une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC" xml:space="preserve">
+    <value>Type de grossièreté</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FILTERPROFANITY_DESC" xml:space="preserve">
+    <value>Filtre les grossièretés dans une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_DESC" xml:space="preserve">
+    <value>Normalise les espaces dans une chaîne</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC" xml:space="preserve">
+    <value>Recherche d&apos;espaces simple</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC" xml:space="preserve">
+    <value>Recherche d&apos;espaces analytique</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_BGCOLOR_COLORINVALID" xml:space="preserve">
+    <value>Couleur d&apos;arrière-plan non valide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FGCOLOR_COLORINVALID" xml:space="preserve">
+    <value>Couleur de premier plan non valide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_BGCOLOR_DESC" xml:space="preserve">
+    <value>Renvoie une séquence de couleurs d&apos;arrière-plan</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Spécificateur de couleur à traiter</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_PLAIN_DESC" xml:space="preserve">
+    <value>Séquence simple sans VT Séquences</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC" xml:space="preserve">
+    <value>Séquence VT en vraies couleurs</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC" xml:space="preserve">
+    <value>Renvoie les dimensions de la console</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FGCOLOR_DESC" xml:space="preserve">
+    <value>Renvoie une séquence de couleurs de premier plan</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HISTORY_DESC" xml:space="preserve">
+    <value>Renvoie la liste des commandes récentes</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRINTF_DESC" xml:space="preserve">
+    <value>Imprime une chaîne avec prise en charge des formats</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC" xml:space="preserve">
+    <value>Paramètres à utiliser pour la mise en forme</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_ANGLEINVALID" xml:space="preserve">
+    <value>Angle non valide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_PIXELSINVALID" xml:space="preserve">
+    <value>Nombre de pixels non valide</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_INCHESINVALID" xml:space="preserve">
+    <value>Pouces non valides</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_WIDTHINVALID" xml:space="preserve">
+    <value>Largeur non valide en pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID" xml:space="preserve">
+    <value>Hauteur non valide en pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_DESC" xml:space="preserve">
+    <value>Convertit l&apos;angle en degrés en radians</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC" xml:space="preserve">
+    <value>Angle en radians à convertir</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_DESC" xml:space="preserve">
+    <value>Obtient la résolution en pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC" xml:space="preserve">
+    <value>Combien de pixels par pouce ?</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC" xml:space="preserve">
+    <value>Longueur en pouces</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_DESC" xml:space="preserve">
+    <value>Obtient le nombre total de pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>Largeur en pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC" xml:space="preserve">
+    <value>Hauteur en pixels</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RADIANS_DESC" xml:space="preserve">
+    <value>Convertit l&apos;angle en radians en degrés</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC" xml:space="preserve">
+    <value>Angle en degrés à convertir</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPTITLE" xml:space="preserve">
+    <value>Titre de la page d&apos;aide</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPDESC" xml:space="preserve">
+    <value>Description de la page d&apos;aide</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
+    <value>Corps de la page d&apos;aide. Cela signifie que l&apos;application ne fournit pas l&apos;article d&apos;aide dont vous pourriez avoir besoin.</value>
+  </data>
+
+</root>

@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>常規終端錯誤！</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>Terminaux 內部錯誤！</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>未知錯誤</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>尚未實施。</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>該程式無法繼續。</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>按任意鍵繼續...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>類型無效</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>您必須指定螢幕部分。</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>您必須指定螢幕名稱。</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>指定的部件索引超出範圍。</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>未找到指定的部件名稱。</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>未找到指定的部件。</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>緩衝區索引不能小於零或大於 {0} 個緩衝區。</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>未指定螢幕。</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>螢幕不是循環的。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>使用者嘗試使用啞終端運行 Terminaux 應用程式。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>此應用程式利用 Terminaux 提供的擴充控制台功能，這些功能需要「啞」終端不支援的功能。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_2" xml:space="preserve">
+    <value>可能的解決方案：使用合適的終端模擬器，或查看終端設置，將終端類型設定為「dumb」以外的其他類型。我們建議使用“vt100”終端模擬器，以充分利用此應用程式。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>使用者嘗試在黑名單終端機類型上執行 Terminaux 應用程式。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>您目前使用的控制台類型 {0} 已被列入黑名單：{1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>您目前使用的控制台類型 {0} 已列入灰名單：{1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>使用者嘗試在黑名單終端模擬器上執行 Terminaux 應用程式。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>您目前使用的終端機模擬器 {0} 已被列入黑名單：{1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>您目前使用的終端機模擬器 {0} 已列入灰名單：{1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>根據 terminfo，終端類型 {0} 不支援 256 種顏色</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>用戶嘗試在沒有 winpty 的情況下在 Git Bash 的 MinTTY 上執行 Terminaux 應用程式。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>您需要使用 winpty 才能使用此程式。如果您確定沒有執行 Git Bash，請確保您使用的是合適的 Windows 終端。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>由於 I/O 錯誤，控制台定位無法運作，因此該應用程式可能會行為異常。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>控制台定位無法正常工作，因此該應用程式可能會行為異常。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>您的控制台太小，無法正常運作：{0}x{1} | buff：{2}x{3} | min：{4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>為了獲得更好的體驗，請在目前螢幕停留期間調整控制台視窗的大小。按任意鍵繼續…</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>未提供組裝。</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} 無法繼續。</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>控制台類型僅支援基本寫入。</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>控制台類型未知。</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>該應用程式使用 VT 轉義序列，但 Terminal.app 不再支援 255 和真彩色。</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>控制台類型不支援 256 色。</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>沒有任何查詢就無法過濾。</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>無法使用無效查詢進行過濾。</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>控制台過濾器中沒有表達式。</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_TCSETATTR_FAILED" xml:space="preserve">
+    <value>無法恢復原始模式的新 termios 屬性：{0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_GET_FAILED" xml:space="preserve">
+    <value>無法取得檔案描述符標誌：{0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_NOBLOCK_FAILED" xml:space="preserve">
+    <value>無法將檔案描述符標誌設為非阻塞讀取：{0}</value>
+  </data>
+  <data name="T_CE_NATIVE_UNIX_EXCEPTION_FCNTL_SET_BLOCK_FAILED" xml:space="preserve">
+    <value>無法將檔案描述符標誌設定為阻止讀取：{0}</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>無法從提供的表示中獲取合成資訊。</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>合成器表示在 [{0}.{1}] 處無效</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>頻率無效，為 [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>持續時間無效，為 [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>目標不能為空</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>最大值 [{0}] 不小於進度值 [{1}]</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>進度值 [{0}] 必須介於 0 和最大值 {1} 之間。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>如果不指定一個參數，此指示符可能無法位於字串的末尾</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>此指示符只能接受數字作為參數。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>此指示器只能採用 1 至 9 之間的數字。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>此指示符只能以字母作為參數。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>此指示符需要一個整數常數</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>此指示器包含無效的整數常數</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>如果不指定字元常數，則指示符就不能位於字串的末尾</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>不能附加多個字符</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>此指示器需要字元集合</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>寬度無效</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>如果不指定類型，此指示符可能無法位於字串的末尾</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>無法處理空序列。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>無法處理空參數。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>該標誌需要代表減號</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>索引 {0} 之後仍有 {1} 個資料需要格式化</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>字元的整數常數無效。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>整數常數無效。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>無法推送不存在的變數。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>這是一個二元運算，但入隊參數數量為 {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>第一個操作數的整數常數無效。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>第二個操作數的整數常數無效。</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>這是一個一元運算，但入隊參數數量為 {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>條件表示 {0} 無效。</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>無法讀取請求的位元組數。</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>無效的字串表！</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>無效的標頭魔法</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>無法處理非字串值類型的參數。枚舉為 {0}，類型為 {1}。</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>延遲指示器提前結束。</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>無效的延遲指示符。</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>延遲值不是一個數字。</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>未知功能類型“{0}”</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>無法載入{0}</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>顏色超出範圍。</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>你確定這個梯度不為空嗎？</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>指定至少一種顏色。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>無法轉換空源。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>無法轉換為空類型。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>您應該指定特定的來源色彩模型，而不是基本模型。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>不是彩色模型。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>您應該指定特定的目標顏色模型，而不是基本模型。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>不是目標顏色模型。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>無法轉換相同的色彩模型。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>無法轉換為 RGB。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>無法從基本色彩模型轉換。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>無法轉換為 CMYK。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>無法轉換為 CMY。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>無法轉換為 HSL。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>無法轉換為 HSV。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>無法轉換為 RYB。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>無法轉換為 YIQ。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>無法轉換為 YUV。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>無法轉換為 XYZ。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>無法轉換為 YXY。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>無法轉換為 HunterLab。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>無法轉換為 CieLab。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>無法轉換為 CieLuv。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>無法轉換為 CieLch。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHWBFAILED" xml:space="preserve">
+    <value>無法轉換為 HWB。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>無法從 RGB 轉換。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 CMYK！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 CMY！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 HSL！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 HSV！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 RYB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 YIQ！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 YUV！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>空 RGB 實例無法轉換為 XYZ！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 YXY！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 執行個體轉換為 HunterLab！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 CieLab！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 CieLuv！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 實例轉換為 CieLch！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHWBNULLRGB" xml:space="preserve">
+    <value>無法將空 RGB 執行個體轉換為 HWB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>無法將空的 CMYK 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>無法將空的 CMY 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>無法將空 HSL 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>無法將空的 HSV 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>無法將空白 RYB 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>無法將空的 YIQ 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>無法將空 YUV 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>無法將空的 XYZ 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>無法將空的 YXY 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>無法將空的 HunterLab 執行個體轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>無法將空的 CieLab 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>無法將空的 CieLuv 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>無法將空的 CieLch 實例轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHWB" xml:space="preserve">
+    <value>無法將空的 HWB 執行個體轉換為 RGB！</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>觀察者必須是 2 或 10</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>光源無效</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>無法從表中取得引用</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>顏色說明符“{0}”無效。如果您使用的是 256 色，則需要輸入 0 到 255 之間的正值或有效的顏色名稱。如果您使用的是真彩色，則需要輸入有效的顏色說明符（例如 RRR;GGG;BBB）或最大為 16777215 的顏色代碼。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>紅色等級超出範圍 (0 -&gt; 255)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>綠色等級超出範圍 (0 -&gt; 255)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>藍色等級超出範圍 (0 -&gt; 255)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>顏色十六進位說明符「{0}」無效。此說明符必須以井號標籤開頭。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>顏色十六進位長度「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>無法解析顏色十六進位“{0}”。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>CieLab 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>L 值超出範圍 (0.0 -&gt; 100.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>A 值超出範圍 (-128.0 -&gt; 128.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>B 值超出範圍 (-128.0 -&gt; 128.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>CieLab 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>CieLch 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>C 值超出範圍 (-128.0 -&gt; 128.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>H 值超出範圍 (-128.0 -&gt; 128.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>CieLch 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>CieLuv 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>U 值超出範圍 (-134.0 -&gt; 220.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>V 值超出範圍 (-140.0 -&gt; 122.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>CieLuv 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>CMY 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>青色顏色等級超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>洋紅色色階超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>黃色等級超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>CMY 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>CMYK 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>HSL 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>色調等級超出範圍（0&apos; -&gt; 360&apos; 度）。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>飽和度超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>亮度等級超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>HSL 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>HSV 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>值等級超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>HSV 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIER" xml:space="preserve">
+    <value>HWB 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHWBWLEVEL" xml:space="preserve">
+    <value>白度超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHWBBLEVEL" xml:space="preserve">
+    <value>黑度超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHWBSPECIFIEREXCEED" xml:space="preserve">
+    <value>HWB 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>HunterLab 顏色說明符「{0}」無效。請確保其格式正確。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>A 值超出範圍 (-128.0 -&gt; 127.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>B 值超出範圍 (-128.0 -&gt; 127.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>HunterLab 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>YUV 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>亮度等級超出範圍（0 -&gt; 255）。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>色度（U）等級超出範圍（0 -&gt; 255）。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>色度（V）等級超出範圍（0 -&gt; 255）。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>YUV 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>YIQ 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>同相等級超出範圍 (0 -&gt; 255)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>正交等級超出範圍 (0 -&gt; 255)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>YIQ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>顏色說明符“{0}”無效。請確保其格式正確，即如果使用 255 種顏色，則為 0-255 之間的數字；如果使用真彩色，則為 VT 序列，如下所示</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>顏色說明符“{0}”無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>這個顏色已經是原來的顏色了。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>RYB 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>紅色等級超出範圍 (0 -&gt; 255)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>黃色等級超出範圍（0 -&gt; 255）。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>藍色等級超出範圍 (0 -&gt; 255)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>RYB 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>XYZ 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>X 值超出範圍 (0.0 -&gt; 95.047)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Y 值超出範圍 (0.0 -&gt; 100.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Z 值超出範圍 (0.0 -&gt; 108.883)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>XYZ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>YXY 顏色說明符「{0}」無效。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>Y1 值超出範圍 (0.0 -&gt; 100.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>X 值超出範圍 (0.0 -&gt; 1.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>Y2 值超出範圍 (0.0 -&gt; 1.0)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>YXY 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>顏色類型無效</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>可見性的顏色說明符無效</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>單色類型無效</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>無法確定如何將 {1} 中的 {0} 轉換為顏色。</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>無法確定如何將未知類型的 {0} 轉換為顏色。</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>無法取得顏色。</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>設定背景失敗</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>未提供顏色實例。</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>出口</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>按鍵綁定</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>尋找下一個</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP1" xml:space="preserve">
+    <value>上移</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>向上移動一個元素</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN1" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>向下移動一個元素</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE1" xml:space="preserve">
+    <value>上一頁</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>轉至上一頁</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE1" xml:space="preserve">
+    <value>下一頁</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>轉至下一頁</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST1" xml:space="preserve">
+    <value>轉至開頭</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>轉到第一個元素</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST1" xml:space="preserve">
+    <value>前往結尾</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>轉到最後一個元素</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>輸入搜尋字詞（支援正規表示式）</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>您的查詢不是有效的正規表示式。</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>選擇以下條目之一：</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>未找到任何商品。</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>搜尋元素</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>向上一行（資訊性）</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>向下一行（訊息）</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>轉變</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>{0} 個預定義顏色列表</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>灰色的</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>透明度</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>陰影和色調</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>顏色訊息</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>轉換</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>顏色選擇器中的顏色類型無效</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>輸入字體名稱。它將被轉換為小寫。</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>該字體不存在。</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>從下面的清單中選擇一個 figlet 字體</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>字體選擇</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>未指定選擇器</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>閱讀更多...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>列出鍵綁定</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>四處走動</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>退出互動式 TUI</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>商品資訊</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>選擇樣式要求至少有一個啟用的選項。</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>寫下微調器的名稱。它將被轉換為小寫。</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>旋轉器不存在。</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>從下面的清單中選擇一個旋轉器</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>微調器選擇</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>沒有資訊。</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>無狀態</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>嘗試在僅允許從一個窗格進行互動的互動式 TUI 上為輔助窗格呈現互動式 TUI 專案。</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>嘗試在允許兩個窗格互動的互動式 TUI 中的輔助窗格上呈現訊息，從而弄亂那裡的選擇渲染。</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>嘗試渲染有關空數據的信息</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>無法獲取資訊。</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>對選定項目執行操作</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>請提供一個基本互動式 TUI 類別並重試。</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>互動式 TUI {0} 不包含任何資料來源。</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>互動式 TUI {0} 的鍵盤或滑鼠綁定有衝突。</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>以下鍵綁定或滑鼠綁定發生衝突：</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>文字 UI 崩潰了。這通常是應用程式端的問題。</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>未指定文字 UI</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>此文字 UI [{0}] 尚未準備好，因為狀態為 {1}</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>[{1}] 文字 UI 中存在 {0} 個衝突的鍵綁定</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>未指定指標事件上下文</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>起始位置不得小於零</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>結束位置不得小於零</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>起始 X 位置不得大於結束 X 位置</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>起始 Y 位置不得大於結束 Y 位置</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>未指定輸入名稱</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>進步</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPT" xml:space="preserve">
+    <value>此示範頁面需要完成以下輸入才能進入下一頁。</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>需要輸入</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>以下一個或多個輸入未正確填寫：</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>輸入錯誤</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>尚未提供必需的輸入。您需要填寫以下輸入的值：</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>未提供輸入</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>無法顯示沒有答案且沒有替代答案的選項。</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>選擇樣式要求至少有一個啟用的選擇。</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>在單字元模式下，您無法提供包含多個字元的答案。</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>答案錯誤。請重試。</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_MOVELEFT" xml:space="preserve">
+    <value>向左移動</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_MOVERIGHT" xml:space="preserve">
+    <value>右移</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>插入</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>代替</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>全部替換</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>準備好</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>未找到。請檢查語法或擴大搜尋範圍。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>號碼訊息</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>消除</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>全部替換</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>用十六進制值寫入位元組數。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>指定的位元組數無效。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>無效位元組 {0}。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>用十六進位值寫入要取代 {0} 的位元組數。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>用十六進制值寫入要替換的位元組數。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>寫入一個位元組或一組以空格分隔的位元組。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>需要位元組來查找，但您尚未提供。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>十六進位</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>八進位</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>數位</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>二進位</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>號碼訊息</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EMPTYCONTENT" xml:space="preserve">
+    <value>內容為空</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>指定的起始位元組數不能大於檔案大小。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>指定的結束位元組數不能大於檔案大小。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>指定的位元組數無效。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>指定的位元組數不能大於{0}或小於1。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>指定的位元組數不能大於{0}。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>無法對空數組執行此操作。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>位元組數必須以 1 開頭。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>指定的起始位元組數不能大於{0}。</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>指定的結束位元組數不能大於{0}。</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>進入...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>刪除此處</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>刪除線</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>停止進入</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>新線</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_BACKSPACE" xml:space="preserve">
+    <value>退格鍵</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETE" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>寫入要查找的字串</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>寫入替換字串</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>寫一個字串進行查找。支援正規表達式。</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>查找時需要字串，但您尚未提供。</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>要查找的字串不是有效的正規表示式。</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>線條</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>柱子</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>排</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>指定的行號不能大於{0}。</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>無法對空白行清單執行此操作。</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>在資訊框中顯示更多信息</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>向上一行</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>向下一行</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>前往上一頁文本</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>前往下一頁文本</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>提交值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>提交值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>關閉而不提交值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>關閉而不提交值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PERFORMORSELECT" xml:space="preserve">
+    <value>執行操作或選擇選項</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>減少值或將文字向上移動三行</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>增加值或向下移動三行文本</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELUPCHOICE" xml:space="preserve">
+    <value>先前的選擇或前三行文本</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_WHEELDOWNCHOICE" xml:space="preserve">
+    <value>下一個選擇或接下來的三行文本</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>減少當前值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>增加當前值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>將值設為最小值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>將值設為最大值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTVALUEELEMENT" xml:space="preserve">
+    <value>將目前焦點設定到下一個值元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVVALUEELEMENT" xml:space="preserve">
+    <value>將目前焦點設定為前一個值元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>轉到上一個按鈕</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>轉到下一個按鈕</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>上一個按鈕或前三行文本</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>下一個按鈕或接下來的三行文本</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>轉到文字的第一行</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>轉到文字的最後一行</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>轉到下一頁文本，或關閉模態訊息框</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>關閉模態資訊框</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_PERFORMACTION" xml:space="preserve">
+    <value>執行操作</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELUP" xml:space="preserve">
+    <value>前三行文字</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_WHEELDOWN" xml:space="preserve">
+    <value>接下來的三行文字</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_PREVPAGEINPUTS" xml:space="preserve">
+    <value>前往上一頁輸入</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_NEXTPAGEINPUTS" xml:space="preserve">
+    <value>轉至下一頁輸入</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_SEARCHINPUTS" xml:space="preserve">
+    <value>搜尋輸入</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_CHANGEINPUTVALUE" xml:space="preserve">
+    <value>變更選定的輸入值</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>向上選擇（下一個選擇）</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>向下選擇一項（上一項）</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>前往第一選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>轉到最後一個選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>轉至上一頁選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>進入下一頁選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>尋找選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>選擇或取消選擇所有選項</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>無法取得選項編號 {0} 中的類別和群組。</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>常規選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>可用選項</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>其他選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>側邊欄</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_MORE" xml:space="preserve">
+    <value>更多的</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>確認選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CHANGEVALUERADIO" xml:space="preserve">
+    <value>變更選定的值（單選按鈕）</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>取消選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>向上移動一個元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>向下移動一個元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>轉到第一個元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>轉到最後一個元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>轉至上一頁</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>轉到下一頁</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>搜尋元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>在側邊欄中向上移動</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>進入側邊欄</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>進入問題箱</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>進入問題箱</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>顯示頁面和選擇計數</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>顯示商品資訊</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>選擇或取消選擇一個選項</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>選擇同一組和類別中的所有元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>選擇同一類別的所有群組中的所有元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>選擇所有類別的所有群組中的所有元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEUP" xml:space="preserve">
+    <value>進入一個元素或展示線</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_ELEMENTORSHOWCASEDOWN" xml:space="preserve">
+    <value>向下移動一個元素或展示行</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>更新位置</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>以前的</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>下一個</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>幫助</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>完畢</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>手動選擇</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>顏色訊息</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>下一個色盲模擬</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>先前的色盲模擬</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>增加轉換頻率</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>降低變換頻率</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>選擇網頁顏色</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>增加不透明度</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>提高透明度</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>下一個顏色模式</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>先前的顏色模式</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>增加價值</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>減少價值</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>降低色調</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>增加色調</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>降低顏色亮度</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>增加顏色亮度</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>降低飽和度</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>增加飽和度</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>以前的顏色</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>下一個顏色</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>顯示和隱藏顏色列表</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>角色展示</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>此 Fixture 可能不是基底 Fixture 類別。請指定一個無條件 Fixture。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>此 Fixture 可能不是基底 Fixture 類別。請指定一個條件 Fixture。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>傳回值 {0} 與預期值 {1} 不匹配</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>此裝置無條件。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>此裝置類型無效。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>此處沒有固定裝置。請插入一個。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>選擇測試夾具。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>退出測試夾具選擇器</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>本次測試成功！</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>預期值與實際值相符。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>這次測試失敗了。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>訊息</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>預期值與實際值不符。</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>此委託中的方法不得回傳 void</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>此委託中的方法需要傳回 void</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>組件正規表示式無效</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>未提供組件正規表示式</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>未提供組件前景色</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>未提供組件背景顏色</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>沒有提供螢光筆的名稱。</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>沒有提供基本螢光筆的名稱。</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>找不到螢光筆 {0}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>找不到螢光筆</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>在螢光筆 {1} 中找不到組件 {0}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>螢光筆無效。</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>螢光筆沒有名字。</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>螢光筆已存在。</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>螢光筆沒有組件。</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>無法刪除內建螢光筆 {0}</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>未指定歷史記錄名稱</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>未指定歷史記錄條目</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>未提供歷史文件路徑。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>未提供歷史記錄 JSON 表示。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>JSON 已解析，但未提供歷史 JSON 表示。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>未提供歷史資訊。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>未提供歷史記錄名稱。您確定已在 JSON 表示中指定名稱嗎？</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>未提供歷史記錄條目。您確定已在 JSON 表示中指定了這些條目嗎？</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>未找到歷史記錄 {0}。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>一般歷史記錄無法刪除，但可以清除。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>歷史不屬於已登記的歷史。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>刪除歷史記錄失敗。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>不提供歷史記錄。</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>未提供歷史條目清單。</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>{0} 和 {1} 之間有衝突。</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>輸入讀取器發生故障</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>此串流無法尋找。</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>無法為不存在的類型 {0} 建立 VT 序列</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>無法建構缺少參數的 VT 序列。預期有 {0} 個參數，實際上只有 {1} 個參數。</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>別名不能與指令同名。</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>未找到別名為 {0} 的指令。</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>別名已找到</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>未發現要刪除的別名 {0}。</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>未找到要查詢的別名 {0}。</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>用法</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>命令</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>沒有參數「{0}」的幫助。</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>無參數幫助說明</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>此論點尚未實現。</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>沒有足夠的論點。</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>未知參數</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>參數中存在無法恢復的錯誤</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>無法取得命令或參數的參數訊息</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>未指定線程參數。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>以下所有用法均未提供必要參數：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>未提供必需的參數。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>未提供所需的開關。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>其中一個開關需要未提供的值。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>下面列出的開關是未知的。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>下面列出的開關相互衝突。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>以下開關不接受值。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>一個或多個參數需要一個數值，但您提供了無效的數字。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>一個或多個參數需要精確的措辭，但您提供了無效的單字。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>一個或多個開關需要一個數字值，但您提供了無效的數字。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>查閱此命令的幫助條目以獲取更多信息</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>命令被中斷...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>嘗試執行指令 {2} 時發生錯誤。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>命令因以下原因中止</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>提供的命令模式無效。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>未找到命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>Shell 類型 {0} 不存在。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>您必須提供命令基礎。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>您必須提供命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>指定的命令已新增。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>某些自訂命令無法載入。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>未找到指定的自訂命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>部分自訂命令無法卸載。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>此 shell 使用斜線指令來執行指令。請在指令開頭附加斜線符號“/”即可開始執行。例如：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>該命令未定義。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>可用指令：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>常規命令：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>沒有 shell 指令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>額外命令：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>沒有額外的命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>別名命令：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>沒有別名命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>統一命令：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>沒有統一的命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>命令定義</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>此命令具有以下改變其工作方式的參數：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>未指定的參數描述</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>此命令具有以下可改變其工作方式的開關：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>未指定的開關描述</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>沒有指令「{0}」的幫助。</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>未找到指定的預設 {0}。</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>為 {0} 選擇預設：</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>未找到命令。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>如果在子 shell 中運行，則退出 shell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>尋找目前 shell 類型中可用的命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>幫助頁面</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>顯示常規命令（預設）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>顯示別名指令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>顯示統一指令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>顯示額外命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>顯示所有命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>使用簡化的幫助</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>開啟 Shell 預設函式庫</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>Shell 訊息：未找到請求的指令 {0}。請參閱「說明」以了解可用指令。</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>嘗試執行命令時出錯。</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>無法取得 {0} 的 shell 執行程式</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>嘗試初始化 shell 失敗</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>無法確定選擇輸入是單一或多個</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>未指定標記。</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>無效的結束標記說明符。</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>沒有排隊序列來結束標籤。</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>缺少 {0} 個結束標記。</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>初始格式不得列印任何文字；它必須只包含格式化 VT 序列。</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTFILENOTFOUND" xml:space="preserve">
+    <value>沒有 Asciicast 文件</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTBASEDESERIALIZE" xml:space="preserve">
+    <value>無法反序列化基本 Asciicast 表示</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV1DESERIALIZE" xml:space="preserve">
+    <value>無法反序列化 Asciicast v1 表示</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2DESERIALIZE" xml:space="preserve">
+    <value>無法反序列化 Asciicast v2 表示</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_ASCIINEMA_EXCEPTION_ASCIICASTV2EVENTINFO" xml:space="preserve">
+    <value>無法取得活動資訊</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>可用的按鍵綁定</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>此上下文中未定義綁定。</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>鍵盤綁定</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>滑鼠綁定</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>Nerd Fonts 字元名稱 {0} 在類型 {1} 中無效</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>來自 {1} 的 Nerd Fonts 字元表示 {0} 無效，類型為 {2}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>Nerd 字型類型 {0} 無效</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>Nerd Fonts 類型 {0} 沒有字符</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>Renderable 已註冊</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>Renderable 未註冊</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>所有旋轉器應具有相同的寬度。</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOUP" xml:space="preserve">
+    <value>向上移動一個輸入元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>向下移動一個輸入元素</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOFIRST" xml:space="preserve">
+    <value>轉到第一個輸入</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MULTIINPUT_KEYBINDING_GOLAST" xml:space="preserve">
+    <value>轉到最後一個輸入</value>
+  </data>
+  <data name="T_SHELL_BASE_SWITCH_SET_DESC" xml:space="preserve">
+    <value>將輸出值設定為選定的 MESH 變數</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION" xml:space="preserve">
+    <value>無法取得進程執行的執行緒參數。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_ERROREXECUTE1" xml:space="preserve">
+    <value>嘗試執行命令時出錯</value>
+  </data>
+  <data name="T_COMMON_ERRORDESC" xml:space="preserve">
+    <value>錯誤 {0}：{1}</value>
+  </data>
+  <data name="T_SHELL_BASE_OBSOLETECMD" xml:space="preserve">
+    <value>此命令已過時，將在未來版本中刪除。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND" xml:space="preserve">
+    <value>找不到可包裝命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN" xml:space="preserve">
+    <value>您不得在包裝模式下直接執行此命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPUNWRAPPABLE" xml:space="preserve">
+    <value>該命令不可包裝。這些命令是可包裝的：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_WRAPFAILED" xml:space="preserve">
+    <value>嘗試包裝指令輸出時發生錯誤</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE" xml:space="preserve">
+    <value>無法緩衝未設定為可包裝的命令。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION" xml:space="preserve">
+    <value>在放置支援建立的表達式（例如條件或循環）之前，您無法聲明新區塊。堆疊編號為{0}。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID" xml:space="preserve">
+    <value>開始新區塊時，請確保堆疊縮排正確。堆疊編號為{0}。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED" xml:space="preserve">
+    <value>腳本格式不正確。檢查腳本並解決所有錯誤：{0}</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND" xml:space="preserve">
+    <value>在表達式中找不到條件。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH" xml:space="preserve">
+    <value>條件 {0} 需要 {1} 個參數。得到{2}。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END" xml:space="preserve">
+    <value>條件需要放在最後。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX" xml:space="preserve">
+    <value>由於語法錯誤，解析表達式時出錯。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE" xml:space="preserve">
+    <value>無法註冊已存在的條件。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY" xml:space="preserve">
+    <value>無法註冊空條件。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE" xml:space="preserve">
+    <value>指定的資料類型 {0} 無效。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM" xml:space="preserve">
+    <value>指定的平台 {0} 無效。</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_SOURCEFAILED" xml:space="preserve">
+    <value>源命令執行失敗。</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_TARGETFAILED" xml:space="preserve">
+    <value>目標命令執行失敗。內容可能未正確填充。執行的命令是</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_FAILED" xml:space="preserve">
+    <value>管子破了。</value>
+  </data>
+  <data name="T_SHELL_SHELLS_REPEAT_INVALIDTIMES" xml:space="preserve">
+    <value>次數無效。</value>
+  </data>
+  <data name="T_SHELL_SHELLS_REPEAT_REPEATSELF" xml:space="preserve">
+    <value>無法重複自己。</value>
+  </data>
+  <data name="T_SHELL_SHELLS_WRAP_COMMANDSHELPER" xml:space="preserve">
+    <value>可包裝命令：</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SLASHREMINDER_DESC" xml:space="preserve">
+    <value>斜杠命令的提醒</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_DESC" xml:space="preserve">
+    <value>執行外部流程</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>流程路徑</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_ARGUMENT_ARGS_DESC" xml:space="preserve">
+    <value>傳遞給進程的參數</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXEC_SWITCH_FORKED_DESC" xml:space="preserve">
+    <value>執行行程而不中斷 shell 執行緒。將創建一個單獨的視窗。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>顯示幫助條目的命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LOADHISTORIES_DESC" xml:space="preserve">
+    <value>載入 shell 歷史記錄</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_DESC" xml:space="preserve">
+    <value>將命令輸出作為參數透過管道傳送給另一個命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_SOURCE_DESC" xml:space="preserve">
+    <value>來源命令將其輸出作為最後一個參數傳遞給目標命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
+    <value>根據來源命令輸出建置參數後執行的目標命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIPE_SWITCH_QUOTED_DESC" xml:space="preserve">
+    <value>是否將來源命令的輸出作為一個帶引號的參數或不帶引號的參數傳遞</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
+    <value>重複上一個動作或指定的命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
+    <value>保存 shell 歷史記錄</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAP_DESC" xml:space="preserve">
+    <value>包裝控制台輸出</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAP_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>包裝其輸出的命令</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_SCRIPTING_CANTEXECUTE" xml:space="preserve">
+    <value>嘗試執行腳本時出錯：{0}</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_DESC" xml:space="preserve">
+    <value>一旦滿足 MESH 表達式，就執行命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_ARGUMENT_MESHEXPRESSION_DESC" xml:space="preserve">
+    <value>MESH 表達測試</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_IF_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>評估成功後執行的命令</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_CHOICE_HELPER" xml:space="preserve">
+    <value>其中 &lt;answers&gt; 是問題的單字母答案，以斜線分隔</value>
+  </data>
+  <data name="T_SHELL_SHELLS_MESH_SET_NEEDSSWITCH" xml:space="preserve">
+    <value>您必須將 -set 開關與要設定該值的變數一起傳遞。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_DESC" xml:space="preserve">
+    <value>做出用戶選擇</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
+    <value>用斜線分割的答案</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
+    <value>列印到螢幕上的問題</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
+    <value>第一個答案標題</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
+    <value>第二個答案標題，等等......</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_O_DESC" xml:space="preserve">
+    <value>一行選擇樣式</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_T_DESC" xml:space="preserve">
+    <value>兩行選擇樣式</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_M_DESC" xml:space="preserve">
+    <value>現代選擇風格</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>輸出只能是一個字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHOICE_SWITCH_MULTIPLE_DESC" xml:space="preserve">
+    <value>輸出可以超過一個字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CLS_DESC" xml:space="preserve">
+    <value>清除屏幕</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_DESC" xml:space="preserve">
+    <value>將文本寫入控制台</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>要列印的字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ECHO_SWITCH_NOPARSE_DESC" xml:space="preserve">
+    <value>按原樣列印文本，不進行佔位符解析</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FORK_DESC" xml:space="preserve">
+    <value>分叉 MESH shell 以建立另一個實例</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
+    <value>允許用戶輸入</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
+    <value>允許使用者輸入密碼</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHOWTD_DESC" xml:space="preserve">
+    <value>顯示日期和時間</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>僅顯示日期</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>僅顯示時間</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>使用 UTC 而不是本地</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
+    <value>提供選擇選項</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
+    <value>將變量設置為腳本中的值</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SET_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>要設定的值</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_DESC" xml:space="preserve">
+    <value>使用提供的值創建一個變量數組</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE1_DESC" xml:space="preserve">
+    <value>第一個值</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE2_DESC" xml:space="preserve">
+    <value>第二個值</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SETRANGE_ARGUMENT_VALUE3_DESC" xml:space="preserve">
+    <value>第三個值，依此類推......</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SLEEP_DESC" xml:space="preserve">
+    <value>休眠指定毫秒</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SLEEP_ARGUMENT_MS_DESC" xml:space="preserve">
+    <value>睡眠間隔</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_DESC" xml:space="preserve">
+    <value>從 MESH 變數清單中刪除變數</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_ARGUMENT_VARIABLE_DESC" xml:space="preserve">
+    <value>變數名</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNSET_SWITCH_JUSTWIPE_DESC" xml:space="preserve">
+    <value>只是擦除變數值而不刪除它</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_SUCCESS" xml:space="preserve">
+    <value>現在您可以將“{0}”作為“{1}”運行！</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>無效的類型 {0}。</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_ALIAS_REMOVALSUCCESS" xml:space="preserve">
+    <value>成功刪除別名 {0}。</value>
+  </data>
+  <data name="T_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER" xml:space="preserve">
+    <value>無法取消註冊不存在的條件。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_DESC" xml:space="preserve">
+    <value>為命令添加別名</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>新增別名</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_TYPE_DESC" xml:space="preserve">
+    <value>從中取得命令的 Shell 類型</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_ALIAS_DESC" xml:space="preserve">
+    <value>別名</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_ADD_CMD_DESC" xml:space="preserve">
+    <value>用作快捷方式的命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ALIAS_ARGUMENT_REM_DESC" xml:space="preserve">
+    <value>刪除別名</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_ALREADYFOUND" xml:space="preserve">
+    <value>已找到控制台包裝器</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_NAMENEEDED" xml:space="preserve">
+    <value>控制台包裝器名稱不能為空</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>未找到控制台包裝器</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVEBUILTIN" xml:space="preserve">
+    <value>內建控制台包裝器無法移除</value>
+  </data>
+  <data name="T_BASE_CONSOLEWRAPPER_EXCEPTION_REMOVALFAILED" xml:space="preserve">
+    <value>控制台包裝器移除失敗</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_DEFAULTTHEMEFAILED" xml:space="preserve">
+    <value>無法填入預設主題</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NOTHEMEMETADATA" xml:space="preserve">
+    <value>沒有定義主題元資料。</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEMETADATAINVALID" xml:space="preserve">
+    <value>無法反序列化元資料。</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR" xml:space="preserve">
+    <value>您的控制台必須支援真彩色才能使用此主題。</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXITPREVIEW_DESC" xml:space="preserve">
+    <value>退出預覽</value>
+  </data>
+  <data name="T_COLORS_THEMES_THEMESHOWCASE" xml:space="preserve">
+    <value>以下是您的主題的外觀：</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>無效的顏色模板 {0}</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_TIMELIMITEDTHEME" xml:space="preserve">
+    <value>主題「{0}」慶祝一項活動，但您要么太早，要么太晚，無法參加。每年，此主題的造訪時間為 {1}/{2} 至 {3}/{4}。</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_NOTRUECOLOR" xml:space="preserve">
+    <value>主題 {0} 需要真彩色支持，但您的控制台不支援。</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_COLORINVALID" xml:space="preserve">
+    <value>一種或多種顏色無效。</value>
+  </data>
+  <data name="T_COLORS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>內核的預設主題</value>
+  </data>
+  <data name="T_COLORS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>到處都是口音！</value>
+  </data>
+  <data name="T_COLORS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>無色、發煙、高腐蝕性液體</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_WARNING" xml:space="preserve">
+    <value>您必須執行 ConEmu 或 Windows 10 命令提示字元並啟用 VT 處理。</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_INFO" xml:space="preserve">
+    <value>您的終端位於 {1} 的 {0}。</value>
+  </data>
+  <data name="T_COLOR_COLORTEST_QUESTION" xml:space="preserve">
+    <value>這些坡道適合您嗎？他們應該順利過渡。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>黑色等級超出範圍 (0 -&gt; 100)。</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>CMYK 顏色說明符「{0}」無效。該說明符不能超過四個元素。請確保其格式正確</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>無法取得顏色資料。</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>我們無法產生類型為 {0} 且操作為 {1} 的有效 VT 序列。請確保您已正確指定值。</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>無標題答案</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_UNTITLEDFIXTURE" xml:space="preserve">
+    <value>無標題夾具</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_PROGRESSBAR_GENERICLOADING" xml:space="preserve">
+    <value>當前操作正在處理中，請等待...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_FIRSTCHARLINE" xml:space="preserve">
+    <value>轉到目前行的第一個字符</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_LASTCHARLINE" xml:space="preserve">
+    <value>轉到目前行的最後一個字符</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_CHANGETRANSFORM" xml:space="preserve">
+    <value>更改轉換頻率</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCALREADYREGISTERED" xml:space="preserve">
+    <value>完成函數已註冊。</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCNOTREGISTERED" xml:space="preserve">
+    <value>完成函數未註冊。</value>
+  </data>
+  <data name="T_SHELL_BASE_CAC_EXCEPTION_COMPFUNCREMOVEBUILTIN" xml:space="preserve">
+    <value>內建完成函數無法移除。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_DESC" xml:space="preserve">
+    <value>名字查找器</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>搜尋詞</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
+    <value>要搜尋的名稱前綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
+    <value>要搜尋的名稱後綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_T_DESC" xml:space="preserve">
+    <value>產生名稱標籤（目前不支援變音符號）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_MALE_DESC" xml:space="preserve">
+    <value>使用男性姓名清單產生姓名</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_FEMALE_DESC" xml:space="preserve">
+    <value>使用女性姓名清單產生姓名</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIRSTNAMES_SWITCH_UNIFIED_DESC" xml:space="preserve">
+    <value>使用統一姓名清單產生姓名</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_DESC" xml:space="preserve">
+    <value>姓氏查找器</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
+    <value>要搜尋的姓氏前綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
+    <value>要搜尋的姓氏後綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENNAMES_DESC" xml:space="preserve">
+    <value>姓名和姓氏生成器</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENNAMES_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
+    <value>要產生多少個名稱？</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DECODEBASE64_DESC" xml:space="preserve">
+    <value>從 BASE64 表示形式解碼文本</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
+    <value>編碼的 BASE64 字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODEBASE64_DESC" xml:space="preserve">
+    <value>將文字編碼為 BASE64 表示形式</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENCODETEXT_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>要編碼的字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_DESC" xml:space="preserve">
+    <value>檢查 UESH 腳本是否有語法錯誤</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
+    <value>UESH 腳本的路徑</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_SUCCESS" xml:space="preserve">
+    <value>腳本 lint 成功。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_FAILED" xml:space="preserve">
+    <value>腳本 lint 失敗。最有可能的是存在語法錯誤。檢查腳本是否有錯誤並重試執行 linter。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
+    <value>腳本 linter 嘗試解析您的腳本時意外失敗。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LSVARS_DESC" xml:space="preserve">
+    <value>列出可用的 UESH 變量</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ADDPREFIX_DESC" xml:space="preserve">
+    <value>為字串添加前綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>待處理的文本</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_PREFIX_DESC" xml:space="preserve">
+    <value>字串的前綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CHECK_DESC_PREFIX" xml:space="preserve">
+    <value>檢查前綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_VERBOSE_DESC" xml:space="preserve">
+    <value>將輸出列印到控制台</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ADDSUFFIX_DESC" xml:space="preserve">
+    <value>為字串添加後綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SUFFIX_DESC" xml:space="preserve">
+    <value>字串的後綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CHECK_DESC_SUFFIX" xml:space="preserve">
+    <value>檢查後綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHKPREFIX_DESC" xml:space="preserve">
+    <value>檢查字串的前綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHKSUFFIX_DESC" xml:space="preserve">
+    <value>檢查字串的後綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSALLCHARS_DESC" xml:space="preserve">
+    <value>檢查字串是否包含所有字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHARSEQ_DESC" xml:space="preserve">
+    <value>字元序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSALLSTRS_DESC" xml:space="preserve">
+    <value>檢查字串是否包含所有子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_STRSEQ_DESC" xml:space="preserve">
+    <value>空格分隔的字串序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSANYCHARS_DESC" xml:space="preserve">
+    <value>檢查字串是否包含任何字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINSANYSTRS_DESC" xml:space="preserve">
+    <value>檢查字串是否包含任何子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONTAINS_DESC" xml:space="preserve">
+    <value>檢查字串是否包含子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SUBSTR_DESC" xml:space="preserve">
+    <value>子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_IGNORECASE_DESC" xml:space="preserve">
+    <value>忽略大寫</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHALLCHARS_DESC" xml:space="preserve">
+    <value>檢查字串是否以所有字元結尾</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHALLSTRS_DESC" xml:space="preserve">
+    <value>檢查字串是否以所有字串結尾</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHANYCHARS_DESC" xml:space="preserve">
+    <value>檢查字串是否以任何字元結尾</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITHANYSTRS_DESC" xml:space="preserve">
+    <value>檢查字串是否以任何字串結尾</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ENDSWITH_DESC" xml:space="preserve">
+    <value>檢查字串是否以子字串結尾</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EQUALS_DESC" xml:space="preserve">
+    <value>檢查一個字串是否與另一個字串相等</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>搜尋詞</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_LOWERCASE_DESC" xml:space="preserve">
+    <value>將字串小寫</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CASING_WHOLE_DESC" xml:space="preserve">
+    <value>處理整個字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_CASING_FIRST_DESC" xml:space="preserve">
+    <value>僅處理字串的第一個字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REMPREFIX_DESC" xml:space="preserve">
+    <value>從字串中刪除前綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REMSUFFIX_DESC" xml:space="preserve">
+    <value>從字串中刪除後綴</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHALLCHARS_DESC" xml:space="preserve">
+    <value>檢查字串是否以所有字元開頭</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHALLSTRS_DESC" xml:space="preserve">
+    <value>檢查字串是否以所有字串開頭</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHANYCHARS_DESC" xml:space="preserve">
+    <value>檢查字串是否以任意字元開頭</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITHANYSTRS_DESC" xml:space="preserve">
+    <value>檢查字串是否以任意字串開頭</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STARTSWITH_DESC" xml:space="preserve">
+    <value>檢查字串是否以子字串開頭</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TITLECASE_DESC" xml:space="preserve">
+    <value>將字串轉換為標題大寫</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UPPERCASE_DESC" xml:space="preserve">
+    <value>將字串轉換為大寫</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_HIDDENCMDS" xml:space="preserve">
+    <value>共有 {0} 個隱藏指令。您可以使用 -hidden 命令顯示它們。</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HIDDEN_SWITCH_DESC" xml:space="preserve">
+    <value>顯示隱藏命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_COUNT_SWITCH_DESC" xml:space="preserve">
+    <value>顯示命令計數</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_COMMAND" xml:space="preserve">
+    <value>命令</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_ALIAS" xml:space="preserve">
+    <value>別名</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_USAGE" xml:space="preserve">
+    <value>用法</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_DESCRIPTION" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_TABLE_FLAGS" xml:space="preserve">
+    <value>標誌</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_GENERALCMDS" xml:space="preserve">
+    <value>通用命令</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_UNIFIEDCMDS" xml:space="preserve">
+    <value>統一命令</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_ALIASEDCMDS" xml:space="preserve">
+    <value>別名命令</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXPORTED_EXTRACMDS" xml:space="preserve">
+    <value>額外命令</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_MARKDOWN_SWITCH_DESC" xml:space="preserve">
+    <value>以 Markdown 格式顯示命令清單（用於文件和法學碩士）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_DESC" xml:space="preserve">
+    <value>生成名字</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENFIRSTNAMES_ARGUMENT_FIRSTNAMESCOUNT_DESC" xml:space="preserve">
+    <value>要生成的名字數量</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENLASTNAMES_DESC" xml:space="preserve">
+    <value>產生姓氏</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_GENLASTNAMES_ARGUMENT_SURNAMESCOUNT_DESC" xml:space="preserve">
+    <value>要產生的姓氏數量</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_WIDTHINVALID" xml:space="preserve">
+    <value>Figlet 寬度無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_PROFANITYTYPEINVALID" xml:space="preserve">
+    <value>髒話類型無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_MAXLENGTHINVALID" xml:space="preserve">
+    <value>最大字長無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_EXACTLENGTHINVALID" xml:space="preserve">
+    <value>精確字長無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_CHARIDXINVALID" xml:space="preserve">
+    <value>字元索引無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_OCCIDXINVALID" xml:space="preserve">
+    <value>出現索引無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_SHIFTNUMINVALID" xml:space="preserve">
+    <value>移位閾值無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_TRUNCATETHRESHOLDINVALID" xml:space="preserve">
+    <value>截斷閾值無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_INVALIDWIDTH" xml:space="preserve">
+    <value>句子寬度無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CHARWIDTH_DESC" xml:space="preserve">
+    <value>取得字元寬度（需要多少個儲存格）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_STRWIDTH_DESC" xml:space="preserve">
+    <value>取得字串寬度（需要多少個單元格）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHAR_DESC" xml:space="preserve">
+    <value>待處理的字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_DESC" xml:space="preserve">
+    <value>將長字串包裝成一組句子</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>句子的最大寬度</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_WRAPSENTENCES_SWITCH_CHARWISE_DESC" xml:space="preserve">
+    <value>按字元拆分長字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PALINDROME_DESC" xml:space="preserve">
+    <value>檢查字串是否為回文</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NUMERIC_DESC" xml:space="preserve">
+    <value>檢查字串是否為數字</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_DESC" xml:space="preserve">
+    <value>將字串中的子字串替換為另一個子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>A待替換的子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_REPLACEWITH_DESC" xml:space="preserve">
+    <value>要替換的子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACE_SWITCH_REGEX_DESC" xml:space="preserve">
+    <value>使用正規表示式進行替換</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALL_DESC" xml:space="preserve">
+    <value>將字串中的所有子字串替換為另一個子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALL_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>一組要替換的子字串（用空格分隔）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALLRANGE_DESC" xml:space="preserve">
+    <value>將字串中的所有子字串替換為一定範圍的子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEALLRANGE_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>一組要替換的子字串（用垂直線分隔）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_STRINGS_DESC" xml:space="preserve">
+    <value>用空格分隔的字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_DESC" xml:space="preserve">
+    <value>將字串中的某個字元替換為另一個字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_CHARIDX_DESC" xml:space="preserve">
+    <value>要處理的字元索引</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACECHAR_ARGUMENT_TOREPLACE_DESC" xml:space="preserve">
+    <value>要替換的字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACELASTOCC_DESC" xml:space="preserve">
+    <value>將字串中最後一次出現的子字串替換為另一個子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_DESC" xml:space="preserve">
+    <value>將字串中指定的子字串替換為另一個子字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REPLACEOCC_ARGUMENT_OCCURRENCENUM_DESC" xml:space="preserve">
+    <value>子字串出現索引</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REVERSE_DESC" xml:space="preserve">
+    <value>反轉字串中的字元序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_DESC" xml:space="preserve">
+    <value>移動字串中的字符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SHIFT_ARGUMENT_SHIFT_DESC" xml:space="preserve">
+    <value>移動閾值</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLIT_DESC" xml:space="preserve">
+    <value>使用分隔符號拆分字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLIT_ARGUMENT_DELIMITER_DESC" xml:space="preserve">
+    <value>用於拆分字串的分隔符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLITNEWLINES_DESC" xml:space="preserve">
+    <value>使用換行符拆分字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SPLITDQ_DESC" xml:space="preserve">
+    <value>使用分隔符號拆分字串（支援雙引號）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_DESC" xml:space="preserve">
+    <value>截斷長字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_ARGUMENT_THRESHOLD_DESC" xml:space="preserve">
+    <value>截斷閾值</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TRUNCATE_SWITCH_NOELLIPSIS_DESC" xml:space="preserve">
+    <value>禁用省略號截斷字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ESCAPESTR_DESC" xml:space="preserve">
+    <value>轉義字串中的特殊字元序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_UNESCAPESTR_DESC" xml:space="preserve">
+    <value>取消轉義字串中的特殊字元序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOBRAILLE_DESC" xml:space="preserve">
+    <value>將字串轉換為點字序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_DESC" xml:space="preserve">
+    <value>將字串轉換為渲染的 Figlet 文本</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_FONT_DESC" xml:space="preserve">
+    <value>Figlet 字體名稱</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_TOFIGLET_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>最大 Figlet 寬度（0 為停用）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIGLETMETRICS_DESC" xml:space="preserve">
+    <value>顯示 Figlet 指標</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIGLETMETRICS_SWITCH_DETAILED_DESC" xml:space="preserve">
+    <value>顯示詳細的 Figlet 指標</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_REVERSERTL_DESC" xml:space="preserve">
+    <value>反轉 RTL 字元序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORD_DESC" xml:space="preserve">
+    <value>回傳隨機單字</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_DESC" xml:space="preserve">
+    <value>傳回隨機單字（有條件）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_MAXLENGTH_DESC" xml:space="preserve">
+    <value>最大單字長度</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_STARTSWITH_DESC" xml:space="preserve">
+    <value>單字開頭應為</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_ENDSWITH_DESC" xml:space="preserve">
+    <value>單字結尾應為</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RANDOMWORDCOND_ARGUMENT_EXACTLENGTH_DESC" xml:space="preserve">
+    <value>精確單字長度</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_DESC" xml:space="preserve">
+    <value>查找字串中的髒話</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDPROFANITY_ARGUMENT_PROFANITYTYPE_DESC" xml:space="preserve">
+    <value>髒話類型</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FILTERPROFANITY_DESC" xml:space="preserve">
+    <value>過濾字串中的髒話</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_DESC" xml:space="preserve">
+    <value>規範化字串中的空格</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_SIMPLE_DESC" xml:space="preserve">
+    <value>簡單空格搜尋</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_NORMALIZESPACES_SWITCH_ANALYTICAL_DESC" xml:space="preserve">
+    <value>分析空格搜尋</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_BGCOLOR_COLORINVALID" xml:space="preserve">
+    <value>無效背景色</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FGCOLOR_COLORINVALID" xml:space="preserve">
+    <value>無效前景色</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_BGCOLOR_DESC" xml:space="preserve">
+    <value>返回背景色序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>要處理的顏色說明符</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_PLAIN_DESC" xml:space="preserve">
+    <value>不含 VT 序列的純文字序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_SWITCH_TRUEVT_DESC" xml:space="preserve">
+    <value>真彩色 VT 序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_CONSOLEDIMENSIONS_DESC" xml:space="preserve">
+    <value>返回控制台尺寸</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FGCOLOR_DESC" xml:space="preserve">
+    <value>返回前景色序列</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HISTORY_DESC" xml:space="preserve">
+    <value>返回最近命令列表</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRINTF_DESC" xml:space="preserve">
+    <value>列印支援格式的字串</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRINTF_ARGUMENT_PARAMETERS_DESC" xml:space="preserve">
+    <value>用於格式化的參數</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_ANGLEINVALID" xml:space="preserve">
+    <value>角度無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_PIXELSINVALID" xml:space="preserve">
+    <value>像素數無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_INCHESINVALID" xml:space="preserve">
+    <value>英吋無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_WIDTHINVALID" xml:space="preserve">
+    <value>寬度（像素）無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_HEIGHTINVALID" xml:space="preserve">
+    <value>高度（像素）無效</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_DESC" xml:space="preserve">
+    <value>將角度（度）轉換為弧度</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DEGREES_ARGUMENT_RADIANS_DESC" xml:space="preserve">
+    <value>要轉換的角度（弧度）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_DESC" xml:space="preserve">
+    <value>從像素取得 DPI</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_ARGUMENT_PIXELS_DESC" xml:space="preserve">
+    <value>每英吋像素數？</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_DPI_ARGUMENT_LENGTHINCHES_DESC" xml:space="preserve">
+    <value>長度（英吋）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_DESC" xml:space="preserve">
+    <value>取得像素總數</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_ARGUMENT_WIDTH_DESC" xml:space="preserve">
+    <value>寬度（像素）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PIXELS_ARGUMENT_HEIGHT_DESC" xml:space="preserve">
+    <value>高度（像素）</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RADIANS_DESC" xml:space="preserve">
+    <value>將角度（弧度）轉換為度</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_RADIANS_ARGUMENT_DEGREES_DESC" xml:space="preserve">
+    <value>要轉換的角度（度數）</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPTITLE" xml:space="preserve">
+    <value>幫助頁面標題</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPDESC" xml:space="preserve">
+    <value>幫助頁面描述</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
+    <value>幫助頁面正文。這意味著該應用程式未提供您可能需要的幫助文章。</value>
+  </data>
+
+</root>

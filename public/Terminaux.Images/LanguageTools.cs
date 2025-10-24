@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LocaleStation.Tools;
-using Terminaux.Images.Localized;
+using System.Resources;
 
 namespace Terminaux.Images
 {
     internal static class LanguageTools
     {
-        private const string localType = "Terminaux.Images";
+        private static readonly ResourceManager resourceManager = new("Terminaux.Images.Resources.Languages.Output.Localizations", typeof(LanguageTools).Assembly);
 
         internal static string GetLocalized(string id)
         {
-            if (!LanguageCommon.IsCustomActionDefined(localType))
-                LanguageCommon.AddCustomAction(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            return LanguageCommon.Translate(id);
+            string resourceLocalization = resourceManager.GetString(id);
+            if (!string.IsNullOrEmpty(resourceLocalization))
+                return resourceLocalization;
+            return id;
         }
     }
 }
