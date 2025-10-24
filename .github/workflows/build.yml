@@ -2,7 +2,7 @@ name: Build Project (Debug)
 
 on:
   push:
-    branches: [ "main", "x/oob/5.4.x", "x/oob/6.1.x", "x/oob/7.0.x" ]
+    branches: [ "main", "x/oob/5.4.x", "x/oob/6.1.x", "x/oob/7.0.x", "x/exp/8.0.x-loc-resx-poc" ]
   pull_request:
     branches: [ "main", "x/oob/5.4.x", "x/oob/6.1.x", "x/oob/7.0.x" ]
     
