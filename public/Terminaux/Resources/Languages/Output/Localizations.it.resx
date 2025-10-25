@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>Errore generale di Terminaux!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>Errore interno di Terminaux!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>Errore sconosciuto</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>Non ancora implementato.</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>Questo programma non può continuare.</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>Premi un tasto qualsiasi per continuare...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Tipo non valido</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>È necessario specificare la parte dello schermo.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>È necessario specificare il nome dello schermo.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>L&apos;indice della parte specificato è fuori intervallo.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>Il nome della parte specificato non è stato trovato.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>La parte specificata non è stata trovata.</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>L&apos;indice del buffer non può essere inferiore a zero o superiore a {0} buffer.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>Lo schermo non è specificato.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>Lo schermo non è ciclico.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>L&apos;utente ha provato a eseguire un&apos;applicazione Terminaux utilizzando un terminale stupido.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>Questa applicazione sfrutta le funzionalità estese della console fornite da Terminaux che richiedono funzionalità non supportate dai terminali &quot;stupidi&quot;.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>L&apos;utente ha tentato di eseguire un&apos;applicazione Terminaux su un tipo di terminale inserito nella blacklist.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Il tipo di console che stai attualmente utilizzando, {0}, è nella blacklist: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Il tipo di console che stai utilizzando attualmente, {0}, è in graylist: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>L&apos;utente ha tentato di eseguire un&apos;applicazione Terminaux su un emulatore di terminale inserito nella blacklist.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>L&apos;emulatore di terminale che stai utilizzando attualmente, {0}, è nella blacklist: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>L&apos;emulatore di terminale che stai utilizzando attualmente, {0}, è nella lista grigia: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>Il tipo di terminale {0} non supporta 256 colori secondo terminfo</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>L&apos;utente ha provato a eseguire un&apos;applicazione Terminaux su MinTTY di Git Bash senza winpty.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>Per poter utilizzare questo programma, è necessario usare winpty. Se sei sicuro di non usare Git Bash, assicurati di utilizzare un terminale Windows appropriato.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>Il posizionamento della console non funziona a causa di un errore I/O, pertanto questa applicazione potrebbe comportarsi in modo anomalo.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>Il posizionamento della console non funziona correttamente, pertanto l&apos;applicazione potrebbe comportarsi in modo anomalo.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>La tua console è troppo piccola per funzionare correttamente: {0}x{1} | buff: {2}x{3} | min: {4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>Per un&apos;esperienza migliore, ridimensiona la finestra della console rimanendo su questa schermata. Premi un tasto qualsiasi per continuare...</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>Montaggio non previsto.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} Impossibile continuare.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>Il tipo console supporta solo la scrittura di base.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>Il tipo di console è di natura sconosciuta.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>Questa applicazione utilizza sequenze di escape VT, ma Terminal.app non supporta più 255 colori e colori reali.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>Il tipo di console non supporta 256 colori.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>Non è possibile filtrare senza alcuna query.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>Impossibile filtrare con una query non valida.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>Non c&apos;è alcuna espressione nel filtro della console.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>Impossibile ottenere informazioni sul sintetizzatore dalla rappresentazione fornita.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>La rappresentazione del sintetizzatore non è valida in [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>La frequenza non è valida in [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>La durata non è valida in [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>Il target non può essere nullo</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>Il valore massimo [{0}] non deve essere inferiore al valore di avanzamento [{1}]</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>Il valore di avanzamento [{0}] deve essere compreso tra 0 e il valore massimo di {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>Questo designatore non può essere posizionato alla fine della stringa senza specificare un parametro</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>Questo designatore può accettare solo un numero come parametro.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>Questo designatore può assumere solo un numero compreso tra 1 e 9.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>Questo designatore può accettare solo una lettera come parametro.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>Questo designatore necessita di una costante intera</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>Questo designatore contiene una costante intera non valida</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>Questo designatore non può essere posizionato alla fine della stringa senza specificare una costante di carattere</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>Non puoi aggiungere più di un carattere</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>Questo designatore necessita di una raccolta di caratteri</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>La larghezza non è valida</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>Questo designatore non può essere posizionato alla fine della stringa senza specificare un tipo</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>Impossibile elaborare la sequenza nulla.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>Impossibile elaborare parametri nulli.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>Questo flag deve rappresentare un segno meno</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>Ci sono ancora ulteriori dati dopo l&apos;indice {0} su {1} per la formattazione</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>La costante intera per il carattere non è valida.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>La costante intera non è valida.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>Impossibile caricare una variabile inesistente.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>Questa è un&apos;operazione binaria, ma il numero di argomenti in coda è {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>La costante intera per il primo operando non è valida.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>La costante intera per il secondo operando non è valida.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>Questa è un&apos;operazione unaria, ma il numero di argomenti in coda è {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>La rappresentazione condizionale {0} non è valida.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>Impossibile leggere il numero di byte richiesto.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>Tabella stringhe non valida!</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>Intestazione magica non valida</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>Impossibile elaborare il parametro su un tipo di valore non stringa. L&apos;enum è {0} e il tipo è {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>Il designatore di ritardo è terminato prematuramente.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>Designatore di ritardo non valido.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>Il valore del ritardo non è un numero.</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>Tipo di capacità sconosciuto &apos;{0}&apos;</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>Impossibile caricare {0}</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>Il colore è fuori gamma.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>Impossibile ottenere i dati sul colore.</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>Sei sicuro che questo gradiente non sia nullo?</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>Specificare almeno un colore.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>Impossibile convertire la sorgente null.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>Impossibile convertire nel tipo null.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>Dovresti specificare un modello di colore sorgente specifico, non quello di base.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>Non è un modello di colore.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>Dovresti specificare un modello di colore di destinazione specifico, non quello di base.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>Non è un modello di colore target.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>Impossibile convertire lo stesso modello di colore.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>Non è possibile convertire in RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>Impossibile convertire dal modello di colore di base.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>Impossibile convertire in CMYK.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>Impossibile convertire in CMY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>Impossibile convertire in HSL.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>Impossibile convertire in HSV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>Non è possibile convertire in RYB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>Impossibile convertire in YIQ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>Non è possibile convertire in YUV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>Impossibile convertire in XYZ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>Impossibile convertire in YXY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>Impossibile convertire in HunterLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>Impossibile convertire in CieLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>Impossibile convertire in CieLuv.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>Impossibile convertire in CieLch.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>Non è possibile convertire da RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in CMYK!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in CMY!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in HSL!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in HSV!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in RYB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in YIQ!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>Non è possibile convertire un&apos;istanza RGB nulla in YUV!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in XYZ!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in YXY!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in HunterLab!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in CieLab!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in CieLuv!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RGB nulla in CieLch!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza CMYK nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza CMY nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza HSL nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza HSV nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza RYB nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza YIQ nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza YUV nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza XYZ nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza YXY nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza HunterLab nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza CieLab nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza CieLuv nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>Impossibile convertire un&apos;istanza CieLch nulla in RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>L&apos;osservatore deve avere 2 o 10 anni</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>L&apos;illuminante non è valido</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>Non riesco a ottenere riferimenti dalla tabella</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore non valido &quot;{0}&quot;. Se utilizzi 256 colori, dovrai inserire un valore positivo compreso tra 0 e 255 o un nome di colore valido. Se utilizzi colori reali, dovrai scrivere uno specificatore di colore valido, ad esempio RRR;GGG;BBB, oppure un codice colore fino a 16777215.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>Il livello del colore rosso è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>Il livello del colore verde è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>Il livello del colore blu è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>Specificatore esadecimale di colore &quot;{0}&quot; non valido. Questo specificatore deve iniziare con il tag hash. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>Lunghezza esadecimale del colore non valida &quot;{0}&quot;. Assicurati che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>Impossibile risolvere il colore esadecimale &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore CieLab non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>Il valore L è fuori intervallo (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>Il valore A è fuori intervallo (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>Il valore B è fuori intervallo (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore CieLab &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore CieLch non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>Il valore C è fuori intervallo (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>Il valore H è fuori intervallo (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore CieLch &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore CieLuv non valido &quot;{0}&quot;. Assicurati che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>Il valore U è fuori intervallo (-134,0 -&gt; 220,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>Il valore V è fuori intervallo (-140,0 -&gt; 122,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore CieLuv &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore CMY non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>Il livello del colore ciano è fuori intervallo (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>Il livello del colore magenta è fuori intervallo (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>Il livello del colore giallo è fuori intervallo (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore CMY &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore CMYK non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>Il livello del colore nero è fuori intervallo (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore CMYK &quot;{0}&quot; non valido. Lo specificatore non può contenere più di quattro elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore HSL non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>Il livello di tonalità è fuori intervallo (0&apos; -&gt; 360&apos; gradi).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>Il livello di saturazione è fuori intervallo (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>Il livello di luminosità è fuori intervallo (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore HSL &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore HSV non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>Il livello del valore è fuori intervallo (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore HSV &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore HunterLab non valido &quot;{0}&quot;. Assicurati che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>Il valore A è fuori intervallo (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>Il valore B è fuori intervallo (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore HunterLab &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore YUV non valido &quot;{0}&quot;. Assicurati che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>Il livello di luminanza è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>Il livello di croma (U) è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>Il livello di crominanza (V) è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore YUV &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore YIQ non valido &quot;{0}&quot;. Assicurati che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>Il livello in fase è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>Il livello di quadratura è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore YIQ &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto, ovvero un numero da 0 a 255 se si utilizzano 255 colori o una sequenza VT se si utilizzano colori reali come segue.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>Questo colore è già un colore originale.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore RYB non valido &quot;{0}&quot;. Assicurati che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>Il livello del rosso è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>Il livello giallo è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>Il livello blu è fuori intervallo (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore RYB &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore XYZ non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>Il valore X è fuori intervallo (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Il valore Y è fuori intervallo (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Il valore Z è fuori intervallo (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore XYZ &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore XYZ non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>Il valore X è fuori intervallo (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Il valore Y è fuori intervallo (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Il valore Z è fuori intervallo (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore XYZ &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>Specificatore di colore YXY non valido &quot;{0}&quot;. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>Il valore Y1 è fuori intervallo (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>Il valore X è fuori intervallo (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>Il valore Y2 è fuori intervallo (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificatore di colore YXY &quot;{0}&quot; non valido. Lo specificatore non può contenere più di tre elementi. Assicurarsi che sia nel formato corretto.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME" xml:space="preserve">
+    <value>Nessun nome di componente specificato.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT" xml:space="preserve">
+    <value>Nessun colore specificato per il componente {0}.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS" xml:space="preserve">
+    <value>Il componente {0} esiste già.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT" xml:space="preserve">
+    <value>Il componente {0} non esiste.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED" xml:space="preserve">
+    <value>Il componente {0} è predefinito e quindi non può essere rimosso.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS" xml:space="preserve">
+    <value>Il modello non ha componenti.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS" xml:space="preserve">
+    <value>Il modello non ha componenti predefiniti che devono essere definiti ({0}).</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>Nessun nome del modello fornito.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE" xml:space="preserve">
+    <value>Impossibile trovare il modello {0}</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE" xml:space="preserve">
+    <value>Impossibile trovare il componente {0} nel modello {1}</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>Modello non valido.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME" xml:space="preserve">
+    <value>Il modello non ha nome.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS" xml:space="preserve">
+    <value>Il modello esiste già.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE" xml:space="preserve">
+    <value>Impossibile rimuovere il modello incorporato {0}</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Il tipo di colore non è valido</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>Lo specificatore di colore per la visibilità non è valido</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>Tipo di monocromia non valido</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>Non riesco a determinare come convertire {0} di {1} in un colore.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>Non riesco a determinare come convertire un {0} di tipo sconosciuto in un colore.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>Non riesco a vedere il colore.</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>Impossibile impostare lo sfondo</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>Non è fornita l&apos;istanza del colore.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Uscita</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Associazioni di tasti</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>Trova successivo</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>Vai su di un elemento</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>Scendi di un elemento</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>Vai alla pagina precedente</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>Vai alla pagina successiva</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>Vai al primo elemento</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>Vai all&apos;ultimo elemento</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>Scrivi un termine di ricerca (supporta le espressioni regolari)</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>La tua query non è un&apos;espressione regolare valida.</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>Seleziona una delle voci:</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>Nessun elemento trovato.</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Cerca un elemento</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>Vai avanti di una fila (informativo)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>Vai alla riga successiva (informativo)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>Interruttore</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>Elenco di {0} colori predefiniti</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>Grigio</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>Trasparenza</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>Ombra e tinta</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>Informazioni sul colore</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>Trasformare</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>Tipo di colore non valido nel selettore colori</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>Scrivi il nome del font. Verrà convertito in minuscolo.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>Il font non esiste.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>Seleziona un font figlet dall&apos;elenco sottostante</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Selezione del carattere</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>Il selettore non è specificato</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Per saperne di più...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>Elenco delle combinazioni di tasti</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>Muoversi</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Esce dalla TUI interattiva</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>Informazioni sull&apos;articolo</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Lo stile di selezione richiede che sia abilitata almeno una scelta.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>Scrivi il nome dello spinner. Verrà convertito in minuscolo.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>Lo spinner non esiste.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>Seleziona uno spinner dall&apos;elenco sottostante</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Selezione dello spinner</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>Nessuna informazione.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>Nessuno stato</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>Si è tentato di eseguire il rendering di elementi TUI interattivi per il riquadro secondario su una TUI interattiva che consente l&apos;interazione solo da un riquadro.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>Ho provato a visualizzare le informazioni nel riquadro secondario in una TUI interattiva che consente l&apos;interazione da due riquadri, rovinando il rendering della selezione in alto.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>Tentativo di rendering di informazioni su dati nulli</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>Impossibile ottenere informazioni.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>Esegui un&apos;azione sull&apos;elemento selezionato</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>Fornisci una classe TUI interattiva di base e riprova.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>L&apos;interfaccia utente interattiva {0} non contiene alcuna fonte dati.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>L&apos;interfaccia utente interattiva {0} presenta associazioni di tastiera o mouse in conflitto.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>Le seguenti combinazioni di tasti o associazioni del mouse creano conflitti:</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>L&apos;interfaccia utente testuale si è bloccata. Di solito è un problema a livello dell&apos;applicazione.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>L&apos;interfaccia utente testuale non è specificata</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>Questa interfaccia utente testuale [{0}] non è pronta perché lo stato è {1}</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>Ci sono {0} associazioni di tasti in conflitto nell&apos;interfaccia utente testuale [{1}]</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>Il contesto dell&apos;evento del puntatore non è specificato</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>La posizione di partenza non può essere inferiore a zero</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>La posizione finale non può essere inferiore a zero</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>La posizione iniziale X non può essere maggiore della posizione finale X</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>La posizione iniziale Y non può essere maggiore della posizione finale Y</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>Il nome dell&apos;input non è specificato</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>Anticipo</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>Input richiesto</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>Uno o più dei seguenti input non sono stati compilati correttamente:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>Input errato</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>Non sono stati forniti i dati richiesti. Dovrai inserire i valori dei seguenti dati:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>Input non fornito</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>Non è possibile mostrare una scelta senza risposte o risposte alternative.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Lo stile di scelta richiede che sia abilitata almeno una scelta.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>Nella modalità a carattere singolo non è possibile fornire risposte composte da più di un carattere.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>Risposta sbagliata. Riprova.</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>Inserire</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>Sostituire</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>Sostituisci tutto</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>Pronto</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>Non trovato. Controlla la sintassi o amplia la ricerca.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>Informazioni sul numero</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Rimuovere</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>Sostituisci tutto ciò che</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>Scrivere il numero di byte con il valore esadecimale.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>Il numero di byte specificato non è valido.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>Byte non valido {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>Scrivi il numero di byte con il valore esadecimale con cui sostituire {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>Scrivere il numero di byte con il valore esadecimale da sostituire.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>Scrive un byte o un gruppo di byte separati da spazi.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>Per la ricerca sono necessari dei byte, ma non ne hai specificato uno.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>Posizione</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>Esadecimale</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>Ottale</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>Numero</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>Binario</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>Informazioni sul numero</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>Il numero di byte di inizio specificato non può essere maggiore della dimensione del file.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>Il numero di byte finali specificato non può essere maggiore della dimensione del file.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>Il numero di byte specificato non è valido.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>Il numero di byte specificato non può essere maggiore di {0} o minore di 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>Il numero di byte specificato non può essere maggiore di {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>Impossibile eseguire questa operazione su un array nullo.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>Il numero di byte deve iniziare con 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>Il numero di byte di inizio specificato non può essere maggiore di {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>Il numero di byte finale specificato non può essere maggiore di {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>Entra...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>Elimina qui</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>Rimuovi linea</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>Smettere di entrare</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>Nuova linea</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>Scrivi la stringa da trovare</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>Scrivi la stringa di sostituzione</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>Scrivi una stringa da trovare. Supporta le espressioni regolari.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>È richiesta una stringa da cercare, ma non ne hai fornita una.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>La stringa da trovare non è un&apos;espressione regolare valida.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>Linee</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>Colonna</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>Riga</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>Il numero di riga specificato non può essere maggiore di {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>Impossibile eseguire questa operazione sull&apos;elenco delle righe nulle.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>Mostra maggiori informazioni in un infobox</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>Va una fila in su</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>Va una riga più in basso</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>Va alla pagina precedente del testo</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>Va alla pagina successiva del testo</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>Invia il valore</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>Invia i valori</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>Chiude senza inviare il valore</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>Chiude senza inviare i valori</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>Decrementa il valore corrente</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>Incrementa il valore corrente</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>Imposta il valore al valore minimo</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>Imposta il valore sul valore massimo</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>Va al pulsante precedente</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>Va al pulsante successivo</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>Va alla prima riga di testo</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>Va all&apos;ultima riga di testo</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>Va alla pagina successiva del testo o chiude la casella informativa modale</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>Chiude la finestra informativa modale</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Va una scelta in su (scelta successiva)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Scende di una scelta (scelta precedente)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>Va alla prima scelta</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>Va all&apos;ultima scelta</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>Va alla pagina precedente delle scelte</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>Va alla pagina successiva delle scelte</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>Ricerche per una scelta</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>Seleziona o deseleziona tutte le scelte</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>Impossibile ottenere la categoria e il gruppo nella scelta numero {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>Scelte generali</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>Scelte disponibili</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>Scelte alternative</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>Confermare</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>Barra laterale</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>Conferma la/le selezione/i</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>Annulla selezione/i</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Sale di un elemento</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Scende di un elemento</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>Va al primo elemento</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>Va all&apos;ultimo elemento</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Va alla pagina precedente</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Va alla pagina successiva</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Cerca un elemento</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>Vai su in una barra laterale</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>Scendi in una barra laterale</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>Vai in una casella delle domande</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>Scendi in una casella delle domande</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>Mostra il numero di pagine e di scelte</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>Mostra informazioni sull&apos;articolo</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>Seleziona o deseleziona una scelta</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>Seleziona tutti gli elementi nello stesso gruppo e categoria</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>Seleziona tutti gli elementi in tutti i gruppi nella stessa categoria</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>Seleziona tutti gli elementi in tutti i gruppi in tutte le categorie</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>Aggiorna posizione</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>Precedente</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>Prossimo</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>Invia</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>Cancellare</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>Aiuto</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>Fatto</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>Selezionare</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>Selezione manuale</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>Informazioni sul colore</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>Prossima simulazione del daltonismo</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>Simulazione precedente di daltonismo</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Aumentare la frequenza di trasformazione</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Diminuire la frequenza di trasformazione</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>Seleziona il colore del web</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>Aumentare l&apos;opacità</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>Aumentare la trasparenza</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>Modalità colore successiva</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>Modalità colore precedente</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>Aumentare il valore</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>Diminuire il valore</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>Ridurre la tonalità del colore</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>Aumenta la tonalità del colore</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>Ridurre la luminosità del colore</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>Aumenta la luminosità del colore</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>Ridurre la saturazione</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>Aumentare la saturazione</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>Colore precedente</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>Colore successivo</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>Mostra e nascondi l&apos;elenco dei colori</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>Vetrina dei personaggi</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>Questa fixture potrebbe non essere una classe base. Specificare una fixture non condizionale.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>Questa fixture potrebbe non essere una classe base. Specificare una fixture condizionale.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>Il valore restituito {0} non corrisponde al valore previsto {1}</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>Questa apparecchiatura non è condizionale.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Questo tipo di dispositivo non è valido.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>Nessuna presenza qui. Inseriscine una.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>Selezionare un dispositivo di prova.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>Esce dal selettore del dispositivo di prova</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>Questo test è riuscito!</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Il valore atteso corrisponde al valore effettivo.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>Questo test è fallito.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Messaggio</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Il valore atteso non corrisponde al valore effettivo.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>Il metodo in questo delegato non può restituire void</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>Il metodo in questo delegato deve restituire void</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>L&apos;espressione regolare del componente non è valida</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>Espressione regolare del componente non fornita</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>Colore di primo piano del componente non fornito</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>Colore di sfondo del componente non fornito</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Non è stato fornito il nome dell&apos;evidenziatore.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Non è stato fornito il nome dell&apos;evidenziatore di base.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>Non riesco a trovare l&apos;evidenziatore {0}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>Non riesco a trovare l&apos;evidenziatore</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>Impossibile trovare il componente {0} nell&apos;evidenziatore {1}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>Evidenziatore non valido.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>L&apos;evidenziatore non ha nome.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>L&apos;evidenziatore esiste già.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>L&apos;evidenziatore non ha componenti.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>Impossibile rimuovere l&apos;evidenziatore incorporato {0}</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>Il nome della cronologia non è specificato</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>Le voci della cronologia non sono specificate</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>Il percorso del file cronologico non è fornito.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>La rappresentazione JSON della cronologia non è fornita.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>JSON analizzato, ma non viene fornita la rappresentazione JSON della cronologia.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>Non vengono fornite informazioni storiche.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>Il nome della cronologia non è stato fornito. Sei sicuro di aver specificato il nome nella rappresentazione JSON?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>Le voci della cronologia non sono fornite. Sei sicuro di averle specificate nella tua rappresentazione JSON?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>Cronologia {0} non trovata.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>La cronologia generale non può essere rimossa, ma può essere cancellata.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>La storia non fa parte delle storie registrate.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>Impossibile eliminare la cronologia.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>Non è prevista alcuna voce nella cronologia.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>Non è fornito l&apos;elenco delle voci cronologiche.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>C&apos;è un conflitto tra {0} e {1}.</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>Il lettore di input non è riuscito</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>Questo flusso non può effettuare la ricerca.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>Impossibile creare la sequenza VT per il tipo inesistente {0}</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>Impossibile creare la sequenza VT con argomenti mancanti. Attesi {0} argomenti, ottenuti {1} argomenti.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>L&apos;alias non può avere lo stesso nome di un comando.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>Comando non trovato per l&apos;alias di {0}.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>Alias ​​già trovato</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>L&apos;alias {0} non è stato rimosso.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>L&apos;alias {0} non è stato trovato per essere interrogato.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>Utilizzo</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>Comando</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>Descrizione</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>Nessun aiuto per l&apos;argomento &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>Nessuna descrizione di aiuto per l&apos;argomento</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>Questa argomentazione non è ancora stata implementata.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>Non c&apos;erano abbastanza argomenti.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>Argomento sconosciuto</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>Errore irrecuperabile nell&apos;argomento</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>Impossibile ottenere informazioni sull&apos;argomento per il comando o l&apos;argomento</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>I parametri del thread non sono specificati.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>Gli argomenti obbligatori non sono forniti per tutti gli utilizzi seguenti:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>Non vengono forniti argomenti obbligatori.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>Non sono forniti gli interruttori necessari.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>Uno degli switch richiede un valore che non è stato fornito.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>Gli switch elencati di seguito sono sconosciuti.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>Gli switch elencati di seguito sono in conflitto tra loro.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>Gli switch sottostanti non accettano valori.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>Uno o più argomenti prevedono un valore numerico, ma hai fornito un numero non valido.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>Uno o più argomenti richiedono una formulazione esatta, ma hai fornito una parola non valida.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>Uno o più switch si aspettano un valore numerico, ma hai fornito un numero non valido.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>Per maggiori informazioni consultare la voce di aiuto per questo comando</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>Il comando è stato interrotto...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>Errore durante il tentativo di esecuzione del comando {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>Errore</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>Comando interrotto per il seguente motivo</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>È stato fornito un modello di comando non valido.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>Comando non trovato.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>Il tipo di shell {0} non esiste.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>È necessario fornire la base di comando.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>Devi fornire il comando.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>Il comando specificato è già stato aggiunto.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>Alcuni comandi personalizzati non possono essere caricati.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>Il comando personalizzato specificato non è stato trovato.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>Alcuni comandi personalizzati non possono essere scaricati.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>Questa shell utilizza i comandi slash per eseguire i comandi. Per iniziare, aggiungere il simbolo slash &apos;/&apos; all&apos;inizio del comando. Per esempio:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>Questo comando non è definito.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>Comandi disponibili:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>Comandi generali:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>Nessun comando shell.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>Comandi aggiuntivi:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>Nessun comando extra.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>Comandi alias:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>Nessun comando alias.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>Comandi unificati:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>Nessun comando unificato.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>Comando definito da</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>Questo comando ha gli argomenti sottostanti che ne modificano il funzionamento:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>Descrizione dell&apos;argomento non specificata</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>Questo comando presenta le seguenti opzioni che ne modificano il funzionamento:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>Descrizione dell&apos;interruttore non specificata</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>Nessun aiuto per il comando &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Il preset specificato {0} non è stato trovato.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>Seleziona preset per {0}:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>Nessun comando trovato.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>Esce dalla shell se è in esecuzione sulla subshell</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>Trova i comandi disponibili nel tipo di shell corrente</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>Pagina di aiuto</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>Mostra i comandi generali (predefinito)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>Mostra i comandi con alias</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Mostra comandi unificati</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>Mostra comandi extra</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>Mostra tutti i comandi</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Utilizza una guida semplificata</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>Apre la libreria delle preimpostazioni della shell</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>Messaggio shell: il comando richiesto {0} non è stato trovato. Consultare la sezione &quot;Aiuto&quot; per i comandi disponibili.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>Errore durante il tentativo di esecuzione del comando.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>Impossibile ottenere l&apos;esecutore shell per {0}</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>Errore nel tentativo di inizializzare la shell</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>Non è possibile determinare se l&apos;input di selezione è singolo o multiplo</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>Il markup non è specificato.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>Specificatore di tag di fine non valido.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>Non ci sono sequenze in coda con cui terminare il tag.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>Mancano {0} tag di fine.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>Il formato iniziale non deve stampare alcun testo; deve contenere solo sequenze di formattazione VT.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>Combinazioni di tasti disponibili</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>Nessun legame definito in questo contesto.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>Associazioni di tastiera</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>Associazioni del mouse</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>Nome del personaggio Nerd Fonts non valido {0} nel tipo {1}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Rappresentazione del carattere Nerd Fonts non valida {0} da {1} nel tipo {2}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>Tipo di font Nerd non valido {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>Il tipo di carattere Nerd {0} non contiene caratteri</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>Il render è già registrato</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>Il render non è registrato</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>Tutti gli spinner dovrebbero avere la stessa larghezza.</value>
+  </data>
+  <data name="T_INPUT_EXCEPTION_READPOINTERFAILED" xml:space="preserve">
+    <value>Impossibile leggere il puntatore.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION" xml:space="preserve">
+    <value>La domanda non è stata fornita.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
+    <value>Le opzioni non sono specificate.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>Il nome del modello non è fornito.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
+    <value>I componenti non sono forniti, ma questo elenco può essere vuoto per l&apos;aggiunta dinamica.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER" xml:space="preserve">
+    <value>Il suggerimento da tastiera per Invio non esiste nel manifest.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT" xml:space="preserve">
+    <value>Il suggerimento da tastiera per Cancella non esiste nel manifest.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING" xml:space="preserve">
+    <value>Il suggerimento da tastiera per Scrittura non esiste nel manifest.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE" xml:space="preserve">
+    <value>Impossibile determinare il tipo da questa sequenza. Assicurarsi di averlo specificato correttamente.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>Non siamo riusciti a generare una sequenza VT funzionante di tipo {0} con azione {1}. Assicurati di aver specificato i valori correttamente.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>Risposta senza titolo</value>
+  </data>
+
+</root>

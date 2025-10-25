@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>Error generalis Terminaux!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>Error internus Terminaux!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>Error ignotus</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>Nondum implementatum.</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>Hoc programma continuari non potest.</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>Preme quamlibet clavem ut pergas...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Typus invalidus</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>Partem scrinii specificare debes.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>Nomen usoris specificare debes.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>Index partis specificatus extra ambitum est.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>Nomen partis specificatum non inventum est.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>Pars specificata non invenitur.</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>Index memoriae intermediae non minor quam zero nec maior quam {0} memoriae intermediae esse potest.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>Tegumentum non specificatum est.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>Pantalla non est cyclica.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>Usor applicationem Terminaux per terminale stultum exsequi conatus est.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>Haec applicatio utitur facultatibus consolae amplificatis a Terminaux praebitis, quae facultates requirunt quas terminales &quot;stulti&quot; non sustinent.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Usor applicationem Terminaux in genere terminali in indice nigro inclusum exsequi conatus est.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Genus consolae quod nunc uteris, {0}, in indice nigro est: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Genus consolae quod nunc uteris, {0}, in indice griseo est: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Usor applicationem Terminaux in aemulatore terminali in indice nigro inclusum exsequi conatus est.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Aemulator terminalis quem nunc uteris, {0}, in indice nigro est: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Aemulator terminalis quem nunc uteris, {0}, in indice griseo est: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>Typus terminalis {0} non sustinet 256 colores secundum terminfo.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>Usor conatus est applicationem Terminaux in MinTTY Git Bash sine winpty exsequi.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>Programmate hoc uti posse, necesse erit tibi &quot;winpty&quot; uti. Si certus es te &quot;Git Bash&quot; non uti, fac ut terminali Windows apto utaris.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>Situs consolae propter errorem I/O non operatur, ergo haec applicatio erratice se gerere potest.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>Situs consolae recte non operatur, ergo haec applicatio erratice se gerere potest.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>Consola tua nimis parva est ad recte currendum: {0}x{1} | amplificatio: {2}x{3} | minima: {4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>Ut meliorem experientiam habeas, fenestram consolae magnitudinem muta dum adhuc in hoc schermo es. Quamlibet clavem preme ut pergas...</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>Conventus non provisus.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} Pergere non possum.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>Typus consolae tantum scripturam fundamentalem sustinet.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>Genus consolae naturae ignotae est.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>Haec applicatio series effugii VT utitur, sed Terminal.app auxilium pro 255 et veris coloribus fractum habet.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>Genus consolae 256 colores non sustinet.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>Sine ulla interrogatione filtrare non potest.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>Non licet cum interrogatione invalida filtrare.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>Nulla expressio in filtro consolae est.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>Informationes syntheticae ex repraesentatione data obtinere non possunt.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>Repraesentatio synthetica invalida est apud [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>Frequentia invalida est apud [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>Duratio invalida est apud [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>Scopus fortasse non nullus est.</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>Valor maximus [{0}] non debet esse minor quam valor progressus [{1}]</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>Valor progressus [{0}] inter 0 et maximum valorem {1} esse debet.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>Hic designator non potest in fine seriei collocari nisi unum parametrum specificaveris.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>Hic designator numerum tantum ut parametrum accipere potest.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>Hic designator numerum tantum ab 1 ad 9 accipere potest.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>Hic designator solam litteram ut parametrum accipere potest.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>Hic designator constantem integram requirit.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>Hic designator constantem integrum invalidum continet.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>Hic designator non potest in fine seriei collocari nisi constantem characteris specificaveris.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>Non potes plus quam unum characterem addere.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>Hic designator collectionem characterum requirit.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>Latitudo non valet</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>Hic designator non potest in fine seriei collocari sine specie specificanda.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>Series nulla tractari non potest.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>Parametra nulla tractare non potest.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>Hoc vexillum signum minus repraesentare debet.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>Post indicem {0} ex {1} adhuc plura data ad formandum exstant.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>Constans integra pro charactere non valet.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>Constans integra non valet.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>Variabilem non existentem impellere non potest.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>Haec operatio binaria est, sed numerus argumentorum in ordine positorum est {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>Constans integra pro primo operando non valet.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>Constans integra pro operando secundo non valet.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>Haec operatio unaria est, sed numerus argumentorum in ordine positorum est {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>Repraesentatio conditionalis {0} invalida est.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>Numerus octetorum petitus legi non potuit.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>Tabula litterarum invalida!</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>Magia capitis invalida</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>Parametrum in genere valoris non litteralis tractare non potest. Enumeratio est {0} et genus est {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>Designator morae praemature finitus est.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>Designator morae invalidus.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>Valor morae non est numerus.</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>Genus facultatis ignotum &apos;{0}&apos;</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>{0} onerare non potest.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>Color extra ambitum est.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>Data colorum accipere non possum.</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>Certusne es hunc gradientem non nullum esse?</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>Saltem unum colorem designa.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>Fontem nullum convertere non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>Ad typum nullum converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>Specificum exemplar coloris fontis, non fundamentalem, specificare debes.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>Non exemplar colorum.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>Specificum exemplar coloris destinati, non fundamentalem, specificare debes.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>Non exemplar coloris destinati.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>Eiusdem coloris exemplar convertere non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>Ad RGB convertere non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>Ex exemplari coloris fundamentalis convertere non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>Ad CMYK converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>Ad CMY converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>Ad HSL converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>Ad HSV converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>Ad RYB converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>Ad YIQ converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>Ad YUV converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>Ad XYZ converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>Ad YXY converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>Ad HunterLab converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>Ad CieLab converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>Ad CieLuv converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>Ad CieLch converti non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>Ex RGB convertere non possum.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad CMYK convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum in CMY convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad HSL convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum in HSV convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum in RYB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad YIQ convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad YUV convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad XYZ convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad YXY convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad HunterLab convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad CieLab convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum in CieLuv convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>Exemplar RGB nullum ad CieLch convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>Exemplar CMYK nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>Exemplar CMY nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>Exemplar HSL nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>Exemplar HSV nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>Exemplar RYB nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>Exemplar YIQ nullam in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>Exemplar YUV nullum in RGB convertere non potest!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>Exemplar XYZ nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>Exemplar YXY nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>Exemplar HunterLab nullum in RGB convertere non potest!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>Exemplar CieLab nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>Exemplar CieLuv nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>Exemplar CieLch nullum in RGB convertere non possum!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>Observator vel 2 vel 10 esse debet.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>Illuminans invalidum est</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>Referentias ex tabula accipere non possum.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris invalidus &quot;{0}&quot;. Si 256 coloribus uteris, valorem positivum ab 0 ad 255 vel nomen coloris validum inserere debebis. Si colore vero uteris, vel specificatorem coloris validum, ut RRR;GGG;BBB, vel codicem coloris usque ad 16777215 scribere debebis.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>Gradus coloris rubri extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>Gradus coloris viridis extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>Gradus coloris caerulei extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>Specificator hexadecimalis coloris &quot;{0}&quot; invalidus. Hic specificator cum nota hash incipere debet. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>Color hexadecimalis longitudo invalida &quot;{0}&quot;. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>Color hexadecimalis &quot;{0}&quot; resolvere non potest.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris CieLab &quot;{0}&quot; invalidus. Fac ut in forma recta sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>Valor L extra ambitum est (0.0 -&gt; 100.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>Valor A extra ambitum est (-128.0 -&gt; 128.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>Valor B extra ambitum est (-128.0 -&gt; 128.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris CieLab &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in forma recta sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris CieLch &quot;{0}&quot; invalidus. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>Valor C extra ambitum est (-128.0 -&gt; 128.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>Valor H extra ambitum est (-128.0 -&gt; 128.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris CieLch &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris CieLuv &quot;{0}&quot; invalidus. Fac ut in forma recta sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>Valor U extra ambitum est (-134.0 -&gt; 220.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>Valor V extra ambitum est (-140.0 -&gt; 122.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris CieLuv &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in forma recta sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris CMY &quot;{0}&quot; invalidus. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>Gradus coloris caerulei extra limites (0 -&gt; 100) est.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>Gradus coloris purpurei extra limites (0 -&gt; 100) est.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>Gradus coloris flavi extra ambitum est (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris CMY &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris CMYK &quot;{0}&quot; invalidus. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>Gradus coloris nigri extra ambitum est (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris CMYK &quot;{0}&quot; invalidus. Specificator non plus quam quattuor elementa continere potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris HSL invalidus &quot;{0}&quot;. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>Gradus coloris extra limites (0&apos; -&gt; 360&apos; gradus) est.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>Gradus saturationis extra limites (0 -&gt; 100) est.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>Gradus levitatis extra limites (0 -&gt; 100) est.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris HSL invalidus &quot;{0}&quot;. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris HSV invalidus &quot;{0}&quot;. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>Gradus valoris extra ambitum est (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris HSV invalidus &quot;{0}&quot;. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris HunterLab &quot;{0}&quot; invalidus. Fac ut in forma recta sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>Valor A extra ambitum est (-128.0 -&gt; 127.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>Valor B extra ambitum est (-128.0 -&gt; 127.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris HunterLab &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris YUV &quot;{0}&quot; invalidus. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>Gradus luminationis extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>Gradus chromae (U) extra limites definitos est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>Gradus chromae (V) extra limites definitos est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris YUV &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris YIQ &quot;{0}&quot; invalidus. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>Gradus in phase extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>Gradus quadraturae extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris YIQ &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris &quot;{0}&quot; invalidus. Fac ut in formato correcto sit, quod significat numerum ab 0 ad 255 si 255 colores uteris, vel seriem VT si verum colorem uteris, ut sequitur.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in forma recta sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>Hic color iam color originalis est.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris RYB &quot;{0}&quot; invalidus. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>Gradus ruber extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>Gradus flavus extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>Gradus caeruleus extra ambitum est (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris RYB &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris XYZ &quot;{0}&quot; invalidus. Fac ut in forma recta sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>Valor X extra ambitum est (0.0 -&gt; 95.047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Valor Y extra ambitum est (0.0 -&gt; 100.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Valor Z extra ambitum est (0.0 -&gt; 108.883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris XYZ &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris XYZ &quot;{0}&quot; invalidus. Fac ut in forma recta sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>Valor X extra ambitum est (0.0 -&gt; 95.047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Valor Y extra ambitum est (0.0 -&gt; 100.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Valor Z extra ambitum est (0.0 -&gt; 108.883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris XYZ &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris YXY &quot;{0}&quot; invalidus. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>Valor Y1 extra ambitum est (0.0 -&gt; 100.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>Valor X extra ambitum est (0.0 -&gt; 1.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>Valor Y2 extra ambitum est (0.0 -&gt; 1.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Specificator coloris YXY &quot;{0}&quot; invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME" xml:space="preserve">
+    <value>Nullum nomen componentium specificatum est.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT" xml:space="preserve">
+    <value>Nullus color pro componente {0} specificatus est.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS" xml:space="preserve">
+    <value>Pars {0} iam exstat.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT" xml:space="preserve">
+    <value>Pars {0} non exstat.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED" xml:space="preserve">
+    <value>Pars {0} praefinita est et ideo removeri non potest.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS" xml:space="preserve">
+    <value>Formula nullas partes habet.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS" xml:space="preserve">
+    <value>Formula nullas partes praedefinitas habet quae definiendae sunt ({0}).</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>Nullum nomen exemplaris datum est.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE" xml:space="preserve">
+    <value>Formulam {0} invenire non possum.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE" xml:space="preserve">
+    <value>Pars {0} in forma {1} inveniri non potest.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>Formula invalida.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME" xml:space="preserve">
+    <value>Formula nomen non habet.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS" xml:space="preserve">
+    <value>Formula iam exstat.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE" xml:space="preserve">
+    <value>Formulam inclusam {0} removere non possum.</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Typus coloris invalidus est</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>Specificator coloris pro visibilitate invalidus est.</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>Typus monochromatiae invalidus</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>Nescitur quomodo {0} ex {1} in colorem convertatur.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>Nescitur quomodo {0} ignoti generis in colorem convertatur.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>Colorem adipisci non possum.</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>Impossibile est imaginem secundariam constituere</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>Exemplar coloris non praebetur.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Exitus</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Claviaturae vincula</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>Invenire Deinde</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>Elementum unum ascende</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>Descendere unum elementum</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>Ad paginam priorem ire</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>Ad paginam sequentem procede</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>Ad primum elementum vade</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>Ad ultimum elementum perge</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>Verbum quaesitum scribe (expressiones regulares sustinet)</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>Quaestio tua non est expressio regularis valida.</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>Unum ex inscriptionibus elige:</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>Nulla res inventa est.</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Elementum quaerere</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>Unam lineam sursum procede (ad informationem)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>Descendere lineam unam (ad informationem)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>Commutatio</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>Index colorum praedefinitorum {0}</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>Cinereus</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>Perspicuitas</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>Umbra et Tinctura</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>Informationes de colore</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>Transformare</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>Typus coloris invalidus in selectore colorum</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>Nomen fontis scribe. In litteras minusculas convertetur.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>Typus litterarum non exstat.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>Fontem figlet ex indice infra elige.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Selectio fontium</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>Selector non specificatus est</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Plura lege...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>Enumera iuncturas clavium</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>Move circum</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Ex interactivo TUI exit.</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>Informationes de re</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Modus selectionis requirit ut saltem una optio activa sit.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>Nomen rotatoris scribe. In litteras minusculas convertetur.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>Rotator non exstat.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>Rotatorium ex indice infra elige.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Selectio rotatoria</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>Nullae informationes.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>Nullum statum</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>Conatus sum res TUI interactivas pro parte secundaria in TUI interactiva quae interactionem ex una parte tantum permittit reddere.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>Conatus sum informationem in fenestra secundaria reddere in interfacie utente interactiva quae interactionem ex duabus fenestris permittit, reddendo selectionis loco perturbans.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>Conatus est informationem de nullis datis reddere.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>Informationem obtinere non potui.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>Actionem in re selecta perage.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>Quaeso, classem TUI interactivam fundamentalem praebe et iterum conare.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>Interfacies usoris interactiva {0} nullam fontem datorum continet.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>Interfacies usoris interactiva {0} iunctiones claviaturae vel muris conflictantes habet.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>Hae combinationes clavium vel muris conflictum habent:</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>Interfacies usoris textualis corruit. Solet hoc problema in fine applicationis oriri.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>Interfacies usoris textualis non specificata est.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>Haec interfacies usoris textualis [{0}] non parata est quia status est {1}</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>Sunt {0} clavium nexus conflictantes in [{1}] interfacie utente textuali.</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>Contextus eventus indicatoris non specificatus est.</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>Positio initialis non minor quam zero esse potest.</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>Positio finalis non minor quam zero esse potest.</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>Positio initialis X non potest esse maior quam positio finalis X.</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>Positio initialis Y non maior esse potest quam positio finalis Y.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>Nomen inscriptionis non specificatum est.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>Progredior</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>Inputum requiritur</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>Una vel plura ex sequentibus inscriptionibus non recte completa sunt:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>Inscriptionem Erratam</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>Inscriptiones necessariae non datae sunt. Valores inscriptionum sequentium tibi implere necesse erit:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>Inputum non datum</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>Non potest demonstrare electionem sine responsis et sine responsis alternativis.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Modus electionis requirit ut saltem una optio activa sit.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>In modo unius characteris, responsa cum pluribus quam uno charactere dare non potes.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>Responsum falsum. Quaeso, iterum conare.</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>Inserere</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>Substituere</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>Omnia Substituere</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>Paratus</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>Non inventum. Syntaxin tuam inspice vel investigationem amplifica.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>Informationes Numeri</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>Omnia Quae Substitue</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>Numerum octetorum cum valore hexadecimali scribe.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>Numerus octetorum specificatus non valet.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>`{0}` byte invalidum.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>Numerum octetorum cum valore hexadecimali scribe quo {0} substituatur.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>Numerum octetorum cum valore hexadecimali substituendo scribe.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>Scribe octetum vel gregem octetorum spatiis albis separatorum.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>Octeti requiruntur ad inveniendum, sed unum non praebuisti.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>Positio</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>Hexadecimalis</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>Octalis</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>Numerus</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>Binarius</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>Informationes numericae</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>Numerus initialis octeti specificatus non maior quam magnitudo fasciculi esse potest.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>Numerus octeti finalis specificatus non maior quam magnitudo fasciculi esse potest.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>Numerus octetorum specificatus invalidus est.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>Numerus octetorum specificatus non maior quam {0} nec minor quam 1 esse potest.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>Numerus octetorum specificatus maior quam {0} esse non potest.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>Hanc operationem in indice nullo perficere non possum.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>Numerus octetorum ab uno incipere debet.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>Numerus initialis octeti specificatus maior quam {0} esse non potest.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>Numerus octetorum finalium specificatus maior quam {0} esse non potest.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>Intra...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>Hic dele</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>Lineam Remove</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>Desine Intrare</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>Nova Linea</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>Scribe seriem litterarum ad inveniendum</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>Scribe seriem substitutivam</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>Scribe seriem litterarum ad inveniendum. Expressiones regulares sustinet.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>Littera requiritur ad inveniendum, sed eam non praebuisti.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>Haec series litterarum invenienda non est expressio regularis valida.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>Lineae</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>Columna</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>Series</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>Numerus lineae specificatus non maior quam {0} esse potest.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>Haec operatio in indice linearum nullarum perficere non potest.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>Plura informationes in capsa informationis ostendit.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>Unam lineam sursum progreditur</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>Unam lineam deorsum descendit</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>Ad paginam priorem textus progreditur</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>Ad paginam textus sequentem progreditur</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>Valorem submittit</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>Valores submittit</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>Clauditur sine valore submisso</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>Clauditur sine valoribus submissis</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>Valorem praesentem decrescit</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>Valorem praesentem auget</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>Valorem ad minimum valorem constituit</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>Valorem ad maximum valorem constituit</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>Ad bullam priorem it</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>Ad proximum bullam progreditur</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>Ad primam lineam textus it</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>Ad ultimam lineam textus pergit</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>Ad paginam textus sequentem progreditur, vel fenestram informationis modalis claudit.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>Arcam informationis modalis claudit.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Una optio ascendit (proxima optio)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Una optio deorsum descendit (optio prior)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>Ad primam electionem it</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>Ad ultimam optionem it</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>Ad paginam priorem optionum progreditur</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>Ad paginam sequentem optionum progreditur</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>Quaerit optionem</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>Omnes optiones deligit vel deseligit.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>Categoria et grex in electione numero {0} obtineri non possunt.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>Electiones generales</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>Optiones praesto</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>Electiones alternativae</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>Confirma</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>Barra lateralis</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>Selectionem (vel selectiones) confirmat</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>Selectionem (vel selectiones) abrogare</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Unum elementum ascendit</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Unum elementum deorsum descendit</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>Ad primum elementum it</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>Ad ultimum elementum it</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Ad paginam priorem it</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Ad paginam sequentem progreditur</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Elementum quaerit</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>In marginem ascende</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>Deorsum in margine laterali descende</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>In arca interrogationum ascende</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>In arca interrogationum descende</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>Pagina et numerum optionum monstra</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>Informationes rei monstra</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>Optionem eligit vel deseligit</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>Omnia elementa in eodem grege et categoria deligit.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>Omnia elementa in omnibus gregibus eiusdem categoriae deligit.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>Omnia elementa in omnibus gregibus in omnibus categoriis deligit.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>Locum renovare</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>Praecedens</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>Deinde</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>Abrogare</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>Auxilium</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>Factum</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>Elige</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>Selectio Manualis</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>Informationes de colore</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>Proxima simulatio daltonismi</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>Simulatio prior daltonismi</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Frequentiam transformationis auge</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Frequentiam transformationis minue</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>Colorem interretialem elige</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>Opacitatem auge</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>Auge perspicuitatem</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>Modus colorum proximus</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>Modus coloris prior</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>Valorem auge</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>Valorem minue</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>Coloris colorem minuere</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>Augere colorem</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>Coloris levitatem minue</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>Coloris levitatem auge</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>Saturationem minuere</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>Saturationem auge</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>Color prior</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>Color proximus</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>Indicem colorum monstrare et celare</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>Exhibitio Personarum</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>Hoc instrumentum fixum fortasse non est classis instrumentorum fixorum fundamentalis. Instrumentum fixum sine conditione specifica.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>Hoc instrumentum fixum fortasse non est classis instrumentorum fixorum fundamentalis. Instrumentum fixum conditionale specifica.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>Valor redditus {0} non congruit cum valore exspectato {1}.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>Haec fixtura non est conditionalis.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Hoc genus instrumenti invalidum est.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>Nullae hic res fixae. Unum inser.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>Instrumentum probationis elige.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>Ex selectore instrumentorum probationis exit</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>Hoc experimentum successit!</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Valor expectatus valori reali congruit.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>Hoc experimentum defecit.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Nuntius</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Valor expectatus valori reali non congruit.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>Methodus in hoc delegato fortasse non vacuum reddere potest.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>Methodus in hoc delegato &quot;vacuum&quot; reddere debet.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>Expressio regularis componentis invalida est.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>Expressio regularis componentis non data</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>Color primi plani componenti non datus est.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>Color fundi componentium non datus est</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Nullum nomen illuminatoris datum est.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Nullum nomen illuminatoris fundamentalis datum est.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>Illuminatorem {0} invenire non possum.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>Illuminatorem invenire non possum.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>Pars {0} in illuminatore {1} inveniri non potest.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>Illuminator invalidus.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>Illuminator nomen non habet.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>Illuminator iam exstat.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>Illuminator nullas partes habet.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>Illuminatorem inclusum {0} removere non possum.</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>Nomen historiae non specificatum est</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>Inscriptiones historiae non specificantur</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>Semita fasciculi historici non data est.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>Repraesentatio historiae JSON non praebetur.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>JSON analizatum est, sed repraesentatio JSON historica non praebetur.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>Notitia historica non praebetur.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>Nomen historiae non datum est. Certusne es te nomen in repraesentatione JSON tua specificasse?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>Inscriptiones historicae non praebentur. Certusne es te inscriptiones in repraesentatione JSON tua specificavisse?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>Historia {0} non inventa.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>Historia generalis deleri non potest, sed deleri.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>Historia non est pars historiarum inscriptarum.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>Historia delenda non potuit.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>Inscriptio historiae non praebetur.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>Index inscriptionum historicarum non praebetur.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>Conflictus est inter {0} et {1}.</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>Lector inputus defecit</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>Hic flumen quaerere non potest.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>Series VT pro typo {0} non existente construere non potest.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>Series VT sine argumentis desuntibus construi non potest. Exspectata sunt {0} argumenta, accepta sunt {1} argumenta.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>Nomen &quot;alias&quot; ac mandatum non potest esse idem nomen.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>Mandatum ad alias {0} non inventum.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>Alias ​​iam inventum</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>Alias ​​{0} non inventum est ut remotus sit.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>Alias ​​{0} non inventum est ut quaeratur.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>Usus</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>Mandatum</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>Descriptio</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>Nullum auxilium pro argumento &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>Descriptio auxilii argumenti nulla</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>Hoc argumentum nondum ad effectum adductum est.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>Argumenta non satis erant.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>Argumentum ignotum</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>Error irreparabilis in argumento</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>Informationem argumenti pro mandato vel argumento accipere non possum.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>Parametri filorum non specificantur.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>Argumenta necessaria non omnibus usibus infra praebentur:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>Argumenta necessaria non praebentur.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>Interruptores necessarii non praebentur.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>Unum ex optionibus valorem non provisum requirit.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>Commutatores qui infra enumerantur ignoti sunt.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>Commutatores infra recensiti inter se conflictantur.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>Infra optiones valores non accipiunt.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>Unum vel plura argumenta valorem numericum exspectant, sed numerum invalidum praebuisti.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>Unum vel plura argumenta verba exacta exspectant, sed verbum invalidum praebuisti.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>Unum vel plura ex optionibus valorem numericum exspectant, sed numerum invalidum praebuisti.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>Plura vide in auxilio huius mandati.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>Mandatum interrumpitur...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>Error dum mandatum {2} exsequi conaris.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>Mandatum ob causam sequentem abrogatum est</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>Forma mandati invalida data est.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>Mandatum non inventum.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>Typus testae {0} non exstat.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>Basis imperii tibi praebenda est.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>Mandatum tibi praebere necesse est.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>Mandatum specificatum iam additum est.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>Quaedam mandata propria onerari non possunt.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>Mandatum consuetudinarium specificatum non inventum est.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>Quaedam mandata consuetudinaria exonerari non possunt.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>Haec testa mandata linea obliqua (vel &quot;slide&quot;) ad mandata exsequenda utitur. Quaeso, signum lineae obliquae &apos;/&apos; initio mandati adde ut incipias. Exempli gratia:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>Hoc mandatum non definitum est.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>Mandata praesto:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>Mandata generalia:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>Nulla mandata testae.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>Mandata addita:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>Nulla mandata extraordinaria.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>Mandata alias:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>Nulla mandata alias.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>Mandata unificata:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>Nulla mandata unificata.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>Mandatum definitum ab</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>Hoc mandatum argumenta infra habet quae modum operationis mutant:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>Descriptio argumenti incerta</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>Hoc mandatum infra habet optiones quae modum operationis mutant:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>Descriptio commutatoris non specificata</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>Nullum auxilium pro mandato &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Praedefinitum {0} specificatum non invenitur.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>Praedefinitum pro {0} elige:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>Nulla mandata inventa sunt.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>Exit e testa si in subteste currit.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>Mandata praesto in genere testae currenti invenit.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>Pagina auxilii</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>Mandata generalia ostendit (praedefinitum)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>Mandata alias ostendit</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Mandata unificata ostendit</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>Mandata addita ostendit</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>Omnia mandata ostendit</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Auxilio simpliciori utitur</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>Bibliothecam praedefinitarum testae aperit</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>Nuntius Shell: Mandatum petitum {0} non inventum est. Vide &apos;auxilium&apos; pro mandatis praesto.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>Error dum mandatum exsequi conaris.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>Executor testae pro {0} obtineri non potest.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>Conatus initiandi testam defecit.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>Non potest determinare utrum selectio singularis an multiplex sit.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>Notatio non specificatur.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>Specificator finis invalidus.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>Nullae sunt series in ordine dispositae quibus signum finiatur.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>{0} notae finales desunt.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>Forma initialis nullum textum imprimere debet; tantummodo formatationem serierum VT continere debet.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>Claviaturae iuncturae praesto</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>Nullae vincula in hoc contextu definita sunt.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>Vincula claviaturae</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>Vincula murium</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>Nomen characteris {0} in fontibus Nerd invalidum in genere {1}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Repraesentatio characteris {0} ex {1} in Nerd Fonts invalida, in genere {2}.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>Typus litterarum Nerd invalidus {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>Typus litterarum Nerd {0} nullos characteres habet.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>Renderabile iam registratum est.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>Reddibilis non est registratus</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>Omnes rotatores eandem latitudinem habere debent.</value>
+  </data>
+  <data name="T_INPUT_EXCEPTION_READPOINTERFAILED" xml:space="preserve">
+    <value>Indicem legere non potui.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION" xml:space="preserve">
+    <value>Quaestio non data est.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
+    <value>Electiones non specificantur.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>Nomen formae non provisum.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
+    <value>Componentes non provisi sunt, sed haec lista vacua esse potest pro additione dynamica.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER" xml:space="preserve">
+    <value>Indicium claviaturae ad inscriptionem in manifesto non exstat.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT" xml:space="preserve">
+    <value>Indicium claviaturae ad rubout in manifesto non exstat.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING" xml:space="preserve">
+    <value>Indicium claviaturae ad scribendum in manifesto non exstat.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE" xml:space="preserve">
+    <value>Typus ex hac serie determinari non potest. Fac ut recte specificaveris.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>Series VT functionalis generis {0} cum actione {1} generare non potuimus. Fac ut valores recte specificaveris.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>Responsum sine titulo</value>
+  </data>
+
+</root>

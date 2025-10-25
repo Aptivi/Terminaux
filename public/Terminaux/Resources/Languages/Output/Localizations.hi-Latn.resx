@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>saamaany tarminoks truti!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>tarminoks aantarik truti!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>agyaat truti</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>abhee tak kaaryaanvit nahin kee gaee hai.</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>yah prograam jaaree nahin rah sakata.</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>jaaree rakhane ke lie koee bhee kunjee dabaen...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>amaany prakaar</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>aapako skreen bhaag nirdisht karana hoga.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>aapako skreen naam nirdisht karana hoga.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>nirdisht bhaag soochakaank seema se baahar hai.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>nirdisht bhaag naam nahin mila.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>nirdisht bhaag nahin mila.</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>baphar soochakaank shoony se kam ya {0} baphar se adhik nahin ho sakata.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>skreen nirdisht nahin hai.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>skreen chakreey nahin hai.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>upayogakarta ne damb tarminal ka upayog karake tarminoks eplikeshan chalaane ka prayaas kiya.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>yah eplikeshan tarminoks dvaara pradaan kee gaee vistaarit kansol suvidhaon ka upayog karata hai jisake lie &quot;damb&quot; tarminalon dvaara samarthit suvidhaon kee aavashyakata nahin hotee hai.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>upayogakarta ne blaikalisted tarminal prakaar par tarminoks eplikeshan chalaane kee koshish kee.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>aap jis kansol prakaar ka upayog kar rahe hain, {0}, vah blaikalisted hai: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>aap jis kansol prakaar ka upayog kar rahe hain, {0}, vah grelisted hai: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>upayogakarta ne blaikalisted tarminal emuletar par tarminoks eplikeshan chalaane kee koshish kee.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>aap jis tarminal emuletar ka upayog kar rahe hain, {0}, vah blaikalisted hai: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>aap jis tarminal emuletar ka upayog kar rahe hain, {0}, vah grelisted hai: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>tarminapho ke anusaar tarminal prakaar {0} 256 rangon ka samarthan nahin karata hai</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>upayogakarta ne git bash ke mintty par winpty ke bina tarminoks eplikeshan chalaane kee koshish kee.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>is prograam ka upayog karane mein saksham hone ke lie aapako winpty ka upayog karana hoga. yadi aap sunishchit hain ki aap git bash nahin chala rahe hain, to sunishchit karen ki aap uchit windows tarminal ka upayog kar rahe hain.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>kansol pojishaning i/o truti ke kaaran kaam nahin kar rahee hai, isalie yah eplikeshan aniyamit roop se vyavahaar kar sakata hai.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>kansol pojishaning theek se kaam nahin kar rahee hai, isalie yah eplikeshan aniyamit roop se vyavahaar kar sakata hai.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>aapaka kansol theek se chalane ke lie bahut chhota hai: {0}x{1} | baf: {2}x{3} | minat: {4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>behatar anubhav ke lie, is skreen par rahate hue bhee apanee kansol vindo ka aakaar badalen. jaaree rakhane ke lie koee bhee kunjee dabaen...</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>asembalee pradaan nahin kee gaee hai.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} jaaree nahin rakha ja sakata.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>kansol prakaar keval mool lekhan ka samarthan karata hai.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>kansol prakaar agyaat prakrti ka hai.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>yah eplikeshan vt eskep anukramon ka upayog karata hai, lekin tarminal.ep ne 255 aur sachche rangon ke lie samarthan tod diya hai.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>kansol prakaar 256 rangon ka samarthan nahin karata hai.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>bina kisee kveree ke filtar nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>amaany kveree ke saath filtar nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>kansol filtar mein koee abhivyakti nahin hai.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>pradaan kie gae pratinidhitv se sinth jaanakaaree praapt nahin kee ja sakatee.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>[{0}.{1}] par sinth pratinidhitv amaany hai</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>[{0}.{1}] par aavrtti amaany hai</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>[{0}.{1}] par avadhi amaany hai</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>lakshy shoony nahin ho sakata</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>adhikatam maan [{0}] pragati maan [{1}] se chhota nahin hona chaahie</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>pragati maan [{0}] 0 aur {1} ke adhikatam maan ke beech hona chaahie.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>yah dizainar ek pairaameetar nirdisht kie bina string ke ant mein sthit nahin ho sakata hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>yah dizainar pairaameetar ke roop mein keval ek sankhya le sakata hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>yah dizainar keval 1 se 9 tak kee sankhya le sakata hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>yah dizainar keval ek akshar ko pairaameetar ke roop mein le sakata hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>is dizainar ko poornaank sthiraank kee aavashyakata hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>is dizainar mein amaany poornaank sthiraank hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>yah dizainar varn sthiraank nirdisht kie bina string ke ant mein sthit nahin ho sakata hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>aap ek se adhik varn nahin jod sakate hain</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>is dizainar ko varn sangrah kee aavashyakata hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>chaudaee maany nahin hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>yah dizainar prakaar nirdisht kie bina string ke ant mein sthit nahin ho sakata hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>shoony anukram ko sansaadhit nahin kar sakata hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>shoony pairaameetar ko sansaadhit nahin kar sakata hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>is dhvaj ko mainas chihn ka pratinidhitv karane kee aavashyakata hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>svaroopan ke lie {1} mein se indeks {0} ke baad abhee bhee aur deta hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>varn ke lie poornaank sthiraank maany nahin hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>poornaank sthiraank maany nahin hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>astitvaheen char ko push nahin kiya ja sakata hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>yah ek bainaree opareshan hai, lekin panktibaddh tark ganana {0} hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>pahale oparend ke lie poornaank sthiraank maany nahin hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>doosare oparend ke lie poornaank sthiraank maany nahin hai.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>yah ek ekal opareshan hai, lekin panktibaddh tark sankhya {0} hai</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>sashart pratinidhitv {0} amaany hai.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>anurodhit baits kee sankhya nahin padhee ja sakee.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>amaany string taalika!</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>amaany hedar maijik</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>gair-string maan prakaar par pairaameetar sansaadhit nahin kiya ja sakata. enam {0} hai aur prakaar {1} hai.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>vilamb nirdishtakarta samay se pahale samaapt ho gaya.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>amaany vilamb nirdishtakarta.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>vilamb maan koee sankhya nahin hai.</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>agyaat kshamata prakaar {0}</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>lod nahin kiya ja sakata {0}</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>rang seema se baahar hai.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>rang deta praapt nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>kya aap sunishchit hain ki yah gredient shoony nahin hai?</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>kam se kam ek rang nirdisht karen.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>shoony srot ko parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>shoony prakaar mein parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>aapako ek vishisht srot rang modal nirdisht karana chaahie, aadhaar nahin.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>rang modal nahin.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>aapako ek vishisht lakshy rang modal nirdisht karana chaahie, aadhaar nahin.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>lakshy rang modal nahin.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>samaan rang modal ko parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>rgb mein parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>bes rang modal se parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>chmyk mein parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>chmy mein parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>hsl mein parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>hsv mein parivartit nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>ryb mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>yiq mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>yuv mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>xyz mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>yxy mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>huntairlab mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>chiailab mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>chiailuv mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>chiailchh mein kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>rgb se kanavart nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>ek shoony rgb instens ko chmyk mein kanavart nahin kiya ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>ek shoony rgb instens ko chmy mein kanavart nahin kiya ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>ek shoony rgb instens ko hsl mein kanavart nahin kiya ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>ek shoony rgb instens ko hsv mein kanavart nahin kiya ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>ek shoony rgb instens ko ryb mein kanavart nahin kiya ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>ek shoony rgb instens ko yiq mein kanavart nahin kiya ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>ek shoony rgb instens ko yuv mein kanavart nahin kiya ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>shoony rgb instens ko xyz mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>shoony rgb instens ko yxy mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>shoony rgb instens ko huntairlab mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>shoony rgb instens ko chiailab mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>shoony rgb instens ko chiailuv mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>shoony rgb instens ko chiailchh mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>shoony chmyk instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>shoony chmy instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>shoony hsl instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>shoony hsv instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>shoony ryb instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>shoony yiq instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>shoony yuv instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>shoony xyz instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>shoony yxy instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>shoony huntairlab instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>shoony chiailab instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>shoony chiailuv instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>shoony chiailchh instens ko rgb mein nahin badala ja sakata!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>objarvar 2 ya 10 mein se koee ek hona chaahie</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>ilyuminent amaany hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>tebal se sandarbh nahin mil sakate</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>amaany rang vinirdeshak &quot;{0}&quot;. agar aap 256 rangon ka istemaal kar rahe hain, to aapako 0 se 255 tak ka koee sakaaraatmak maan ya koee maany rang naam darj karana hoga. agar aap sahee rang ka istemaal kar rahe hain, to aapako ya to koee maany rang vinirdeshak likhana hoga, jaise ki rrr;ggg;bbb, ya 16777215 tak ka koee rang kod.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>laal rang ka star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>hara rang star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>neela rang star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>amaany rang heks vinirdeshak &quot;{0}&quot;. yah vinirdeshak haish taig se shuroo hona chaahie. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>amaany rang heks lambaee &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>rang heks &quot;{0}&quot; ko hal nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>amaany chiailab rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>l maan seema se baahar hai (0.0 -&gt; 100.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>a maan seema se baahar hai (-128.0 -&gt; 128.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>b maan seema se baahar hai (-128.0 -&gt; 128.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany chiailab rang vinirdeshak &quot;{0}&quot;. vinirdeshak mein teen se zyaada tatv nahin ho sakate. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>amaany chiailchh rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>ch maan seema se baahar hai (-128.0 -&gt; 128.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>h maan seema se baahar hai (-128.0 -&gt; 128.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany chiailchh rang vinirdeshak &quot;{0}&quot;. vinirdeshak mein teen se zyaada tatv nahin ho sakate. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>amaany chiailuv rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>u maan seema se baahar hai (-134.0 -&gt; 220.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>v maan seema se baahar hai (-140.0 -&gt; 122.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany chiailuv rang vinirdeshak &quot;{0}&quot;. vinirdeshak mein teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>amaany chmy rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>siyaan rang star seema se baahar hai (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>maijenta rang star seema se baahar hai (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>peela rang star seema se baahar hai (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany chmy rang vinirdeshak &quot;{0}&quot;. vinirdeshak mein teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>amaany chmyk rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>kaala rang star seema se baahar hai (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany chmyk rang vinirdeshak &quot;{0}&quot;. vinirdeshak chaar tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>amaany hsl rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>rang star seema se baahar hai (0 -&gt; 360 digree).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>santrpti star seema se baahar hai (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>halkaapan star seema se baahar hai (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany hsl rang vinirdeshak &quot;{0}&quot;. vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>amaany hsv rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>maan star seema se baahar hai (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany hsv rang vinirdeshak &quot;{0}&quot;. vinirdeshak mein teen se zyaada tatv nahin ho sakate. sunishchit karen ki yah sahee formet par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>amaany huntairlab rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>a maan seema se baahar hai (-128.0 -&gt; 127.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>b maan seema se baahar hai (-128.0 -&gt; 127.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany huntairlab rang vinirdeshak &quot;{0}&quot;. vinirdeshak mein teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>amaany yuv rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>lyooma star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>kroma (u) star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>kroma (v) star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany yuv rang vinirdeshak &quot;{0}&quot;. vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>amaany yiq rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>in-fez star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>chaturbhuj star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany yiq rang vinirdeshak &quot;{0}&quot;. vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>amaany rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai, jisaka arth hai ki 255 rangon ka upayog karane par 0-255 tak kee sankhya ya sahee rang ka upayog karane par vt anukram jaisa ki neeche diya gaya hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany rang vinirdeshak &quot;{0}&quot;. vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>yah rang pahale se hee ek mool rang hai.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>amaany ryb rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>laal star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>peela star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>neela star seema se baahar hai (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany ryb rang vinirdeshak &quot;{0}&quot;. vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>amaany xyz rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>x maan seema se baahar hai (0.0 -&gt; 95.047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>y maan seema se baahar hai (0.0 -&gt; 100.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>z maan seema se baahar hai (0.0 -&gt; 108.883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany xyz rang vinirdeshak &quot;{0}&quot;. vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>amaany xyz rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>x maan seema se baahar hai (0.0 -&gt; 95.047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>y maan seema se baahar hai (0.0 -&gt; 100.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>z maan seema se baahar hai (0.0 -&gt; 108.883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany xyz rang vinirdeshak &quot;{0}&quot;. vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>amaany yxy rang vinirdeshak &quot;{0}&quot;. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>y1 maan seema se baahar hai (0.0 -&gt; 100.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>x maan seema se baahar hai (0.0 -&gt; 1.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>y2 maan seema se baahar hai (0.0 -&gt; 1.0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>amaany yxy rang vinirdeshak &quot;{0}&quot;. vinirdeshak teen tatvon se adhik nahin ho sakata. sunishchit karen ki yah sahee praaroop par hai</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME" xml:space="preserve">
+    <value>koee ghatak naam nirdisht nahin hai.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT" xml:space="preserve">
+    <value>ghatak {0} ke lie koee rang nirdisht nahin hai.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS" xml:space="preserve">
+    <value>ghatak {0} pahale se maujood hai.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT" xml:space="preserve">
+    <value>ghatak {0} maujood nahin hai.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED" xml:space="preserve">
+    <value>ghatak {0} poorvanirdhaarit hai aur isalie ise hataaya nahin ja sakata.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS" xml:space="preserve">
+    <value>tempalet mein koee ghatak nahin hai.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS" xml:space="preserve">
+    <value>tempalet mein koee poorv-nirdhaarit ghatak nahin hai jise paribhaashit kiya jaana chaahie ({0}).</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>pradaan kie gae tempalet ka koee naam nahin hai.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE" xml:space="preserve">
+    <value>tempalet {0} nahin mil raha</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE" xml:space="preserve">
+    <value>tempalet {1} mein ghatak {0} nahin mil raha</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>amaany tempalet.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME" xml:space="preserve">
+    <value>tempalet ka koee naam nahin hai.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS" xml:space="preserve">
+    <value>tempalet pahale se maujood hai.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE" xml:space="preserve">
+    <value>antarnihit tempalet {0} ko hataaya nahin ja sakata</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>rang prakaar amaany hai</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>drshyata ke lie rang vinirdeshak amaany hai</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>amaany monokromesee prakaar</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>yah nirdhaarit nahin kiya ja sakata ki {1} mein se {0} ko rang mein kaise badala jae.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>yah nirdhaarit nahin kiya ja sakata ki agyaat prakaar ke {0} ko rang mein kaise badala jae.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>rang nahin mil raha.</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>prshthabhoomi set karane mein viphal</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>rang udaaharan pradaan nahin kiya gaya hai.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>baahar nikalen</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>keebainding</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>agala khojen</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>ek tatv oopar jaen</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>ek tatv neeche jaen</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>pichhale prshth par jaen</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>agale prshth par jaen</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>pahale tatv par jaen</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>antim tatv par jaen</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>khoj shabd likhen (niyamit abhivyaktiyon ka samarthan karata hai)</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>aapakee kveree ek maany niyamit abhivyakti nahin hai.</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>pravishtiyon mein se ek ka chayan karen:</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>koee aaitam nahin mila.</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>tatv kee khoj karen</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>ek pankti oopar jaen (soochanaatmak)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>ek pankti neeche jaen (soochanaatmak)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>svich karen</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>{0} poorvanirdhaarit rangon kee soochee</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>gre</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>paaradarshita</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>chhaaya aur rang</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>rang jaanakaaree</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>roopaantarit karen</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>rang chayanakarta mein amaany rang prakaar</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>font naam likhen. ise loarakes mein badal diya jaega.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>font maujood nahin hai.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>neeche dee gaee soochee se phigalet font chunen</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>font chayan</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>chayanakarta nirdisht nahin hai</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>aur padhen...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>soochee keebainding</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>chaaron or jaen</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>intaraiktiv tui se baahar nikalata hai</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>aaitam jaanakaaree</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>chayan shailee ke lie aavashyak hai ki kam se kam ek vikalp saksham ho.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>spinar ka naam likhen. ise loarakes mein badal diya jaega.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>spinar maujood nahin hai.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>neeche dee gaee soochee se spinar chunen</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>spinar chayan</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>koee jaanakaaree nahin.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>koee sthiti nahin</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>ek intarektiv tui par sekendaree pain ke lie intarektiv tui aaitam rendar karane kee koshish kee jo keval ek pain se intarekshan kee anumati deta hai.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>ek intarektiv tui mein sekendaree pain par jaanakaaree rendar karane kee koshish kee jo do pain se intarekshan kee anumati deta hai, jisase chayan rendaring gadabada gaee.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>shoony deta ke baare mein jaanakaaree rendar karane ka prayaas kiya gaya</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>jaanakaaree praapt karane mein viphal.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>chayanit aaitam par koee kaarravaee karen</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>krpaya ek aadhaar intaraiktiv tui klaas pradaan karen aur punah prayaas karen.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>intaraiktiv tui {0} mein koee deta srot nahin hai.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>intaraiktiv tui {0} mein paraspar virodhee keebord ya maus bainding hain.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>nimn keebainding ya maus bainding mein virodh hai:</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>tekstual ui kraish ho gaya hai. yah aamataur par eplikeshan ke ant mein ek samasya hai.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>tekstual ui nirdisht nahin hai</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>yah tekstual ui [{0}] taiyaar nahin hai kyonki sthiti {1} hai</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>[{1}] tekstual ui mein {0} paraspar virodhee kunjee bainding hain</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>pointar eevent sandarbh nirdisht nahin hai</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>shuruaatee sthiti shoony se kam nahin ho sakatee hai</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>ant sthiti shoony se kam nahin ho sakatee hai</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>shuruaatee x sthiti ant x sthiti se adhik nahin ho sakatee hai</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>shuruaatee y sthiti ant y sthiti se adhik nahin ho sakatee hai</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>inaput naam nirdisht nahin hai</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>unnat</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>inaput aavashyak hai</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>nimn mein se ek ya adhik inaput sahee dhang se nahin bhare gae hain:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>galat inaput</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>aavashyak inaput pradaan nahin kie gae hain. aapako nimn inaput ke maan bharane honge:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>inaput pradaan nahin kiya gaya</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>bina uttar aur bina vaikalpik uttar ke vikalp nahin dikhae ja sakate.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>vikalp shailee ke lie aavashyak hai ki kam se kam ek vikalp saksham ho.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>aap ekal-varn mod mein ek se adhik varn vaale uttar pradaan nahin kar sakate.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>galat uttar. krpaya punah prayaas karen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>sammilit karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>badalen</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>sabhee badalen</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>taiyaar</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>nahin mila. apana sintaiks jaanchen ya apanee khoj ko vistrt karen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>sankhya jaanakaaree</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>hataen</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>sabhee badalen kya</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>bait sankhya ko heksaadesimal maan ke saath likhen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>nirdisht bait sankhya maany nahin hai.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>amaany bait {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>bait sankhya ko heksaadesimal maan ke saath likhen jise {0} se pratisthaapit kiya jaana hai.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>bait sankhya ko heksaadesimal maan ke saath likhen jise pratisthaapit kiya jaana hai.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>rikt sthaanon se alag karake ek bait ya baits ka samooh likhen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>baits dhoondhane ke lie aavashyak hain, lekin aapane ek bhee nahin diya hai.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>sthiti</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>heksaadesimal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>oktal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>sankhya</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>bainaree</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>sankhya jaanakaaree</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>nirdisht aarambh bait sankhya fail aakaar se badee nahin ho sakatee.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>nirdisht antim bait sankhya fail aakaar se badee nahin ho sakatee.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>nirdisht bait sankhya amaany hai.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>nirdisht bait sankhya {0} se badee ya 1 se chhotee nahin ho sakatee.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>nirdisht bait sankhya {0} se badee nahin ho sakatee.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>yah opareshan shoony saranee par nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>bait sankhya 1 se shuroo honee chaahie.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>nirdisht aarambh bait sankhya {0} se badee nahin ho sakatee.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>nirdisht antim bait sankhya {0} se badee nahin ho sakatee.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>darj karen...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>yahaan mitaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>pankti hataen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>pravisht karana band karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>naee pankti</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>dhoondhane ke lie string likhen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>pratisthaapan string likhen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>dhoondhane ke lie string likhen. niyamit abhivyaktiyon ka samarthan karata hai.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>dhoondhane ke lie string kee aavashyakata hai, lekin aapane ise pradaan nahin kiya hai.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>dhoondhane ke lie yah string ek vaidh niyamit abhivyakti nahin hai.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>panktiyaan</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>stambh</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>pankti</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>nirdisht pankti sankhya {0} se badee nahin ho sakatee.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>shoony panktiyon kee soochee par yah opareshan nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>inphoboks mein adhik jaanakaaree dikhaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>ek pankti oopar jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>ek pankti neeche jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>tekst ke pichhale pej par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>tekst ke agale pej par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>maan sabamit karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>maan sabamit karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>maan sabamit kie bina band ho jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>maan sabamit kie bina band ho jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>vartamaan maan ghataata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>vartamaan maan badhaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>maan ko nyoonatam maan par set karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>maan ko adhikatam maan par set karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>pichhale batan par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>agale batan par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>tekst kee pahalee pankti par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>tekst kee antim pankti par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>tekst ke agale pej par jaata hai, ya band karata hai modal soochana boks</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>modal soochana boks ko band karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>ek vikalp oopar jaata hai (agala vikalp)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>ek vikalp neeche jaata hai (pichhala vikalp)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>pahale vikalp par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>antim vikalp par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>vikalpon ke pichhale prshth par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>vikalpon ke agale prshth par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>vikalp khojata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>sabhee vikalpon ka chayan ya achayan karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>vikalp sankhya {0} mein shrenee aur samooh praapt nahin kiya ja sakata.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>saamaany vikalp</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>upalabdh vikalp</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>vaikalpik vikalp</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>pushti karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>saidabaar</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>chayan kee pushti karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>chayan radd karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>ek tatv oopar jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>ek tatv neeche jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>pahale tatv par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>antim tatv par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>pichhale prshth par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>agale prshth par jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>tatv kee khoj karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>saidabaar mein oopar jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>saidabaar mein neeche jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>prashn boks mein oopar jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>prashn boks mein neeche jaata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>prshth aur vikalp sankhya dikhaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>aaitam jaanakaaree dikhaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>vikalp ka chayan ya achayanit karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>ek hee samooh aur shrenee mein sabhee tatvon ka chayan karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>ek hee shrenee mein sabhee samoohon mein sabhee tatvon ka chayan karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>sabhee shreniyon mein sabhee samoohon mein sabhee tatvon ka chayan karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>sthiti apadet karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>pichhala</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>agala</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>sabamit karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>radd karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>sahaayata</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>sampann</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>chayan karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>mainyual chayan karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>rang jaanakaaree</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>agala rang andhaapan simuleshan</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>pichhala rang andhaapan simuleshan</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>parivartan aavrtti badhaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>parivartan aavrtti ghataen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>veb rang chunen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>apaaradarshita badhaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>apaaradarshita ghataen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>agala rang mod</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>pichhala rang mod</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>mooly badhaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>mooly ghataen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>rang rang ghataen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>rang rang badhaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>rang halkaapan ghataen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>rang halkaapan badhaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>santrpti ghataen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>santrpti badhaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>pichhala rang</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>agala rang</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>rang soochee dikhaen aur chhipaen</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>charitr shokes</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>yah phiksachar aadhaar phiksachar varg nahin ho sakata hai. bina shart phiksachar nirdisht karen.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>yah phiksachar aadhaar phiksachar varg nahin ho sakata hai. sashart phiksachar nirdisht karen.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>lautaaya gaya maan {0} apekshit maan {1} se mel nahin khaata hai</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>yah phiksachar sashart nahin hai.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>yah phikschar prakaar amaany hai.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>yahaan koee phikschar nahin hai. ek daalen.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>ek pareekshan phikschar chunen.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>pareekshan phikschar chayanakarta se baahar nikalata hai</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>yah pareekshan saphal hua hai!</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>apekshit maan vaastavik maan se mel khaata hai.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>yah pareekshan viphal ho gaya hai.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>sandesh</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>apekshit maan vaastavik maan se mel nahin khaata hai.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>is pratinidhi mein vidhi shoony nahin lauta sakatee hai</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>is pratinidhi mein vidhi ko shoony lautaane kee aavashyakata hai</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>ghatak niyamit abhivyakti amaany hai</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>ghatak niyamit abhivyakti pradaan nahin kee gaee hai</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>ghatak agrabhoomi rang pradaan nahin kiya gaya hai</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>ghatak prshthabhoomi rang pradaan nahin kiya gaya hai</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>hailaitar ka koee naam pradaan nahin kiya gaya hai.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>aadhaar hailaitar ka koee naam pradaan nahin kiya gaya hai.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>hailaitar nahin mil raha hai {0}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>hailaitar nahin mil raha hai</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>hailaitar mein ghatak {0} nahin mil raha hai {1}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>amaany hailaitar.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>hailaitar ka koee naam nahin hai.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>hailaitar pahale se maujood hai.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>hailaitar mein koee ghatak nahin hai.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>antarnihit hailaitar ko hataaya nahin ja sakata hai {0}</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>itihaas ka naam nirdisht nahin hai</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>itihaas pravishtiyaan nirdisht nahin hain</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>itihaas fail path pradaan nahin kiya gaya hai.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>itihaas json pratinidhitv pradaan nahin kiya gaya hai.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>json paars kiya gaya, lekin itihaas json pratinidhitv pradaan nahin kiya gaya hai.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>itihaas jaanakaaree pradaan nahin kee gaee hai.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>itihaas ka naam pradaan nahin kiya gaya hai. kya aap sunishchit hain ki aapane apane json pratinidhitv mein naam nirdisht kiya hai?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>itihaas pravishtiyaan pradaan nahin kee gaee hain. kya aap sunishchit hain ki aapane apane json pratinidhitv mein pravishtiyaan nirdisht kee hain?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>itihaas {0} nahin mila.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>saamaany itihaas ko hataaya nahin ja sakata, lekin saaf kiya ja sakata hai.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>itihaas panjeekrt itihaason ka hissa nahin hai.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>itihaas ko hataane mein viphal.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>itihaas pravishti pradaan nahin kee gaee hai.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>itihaas pravishti soochee pradaan nahin kee gaee hai.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>{0} aur {1} ke beech sangharsh hai.</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>inaput reedar viphal ho gaya hai</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>yah streem nahin khojee ja sakatee.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>gair-maujood prakaar {0} ke lie vt anukram nahin banaaya ja sakata</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>laapata tarkon ke saath vt anukram nahin banaaya ja sakata. apekshit {0} tark, {1} tark mile.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>upanaam kamaand ke samaan naam nahin ho sakata.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>aliyaas {0} ke lie upanaam kamaand nahin mila.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>aliyaas pahale hee mil gaya</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>aliyaas {0} ko hataaya nahin ja saka.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>aliyaas {0} ko kveree karane ke lie nahin mila.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>upayog</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>kamaand</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>vivaran</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>tark &quot;{0}&quot; ke lie koee sahaayata nahin.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>tark sahaayata vivaran nahin</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>yah tark abhee tak laagoo nahin hua hai.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>paryaapt tark nahin the.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>agyaat tark</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>tark mein apraapy truti</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>kamaand ya tark ke lie tark jaanakaaree nahin mil sakatee</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>thred pairaameetar nirdisht nahin hain.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>neeche die gae sabhee upayogon ke lie aavashyak tark pradaan nahin kie gae hain:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>aavashyak tark pradaan nahin kie gae hain.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>aavashyak svich pradaan nahin kie gae hain.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>svich mein se ek ke lie ek maan kee aavashyakata hotee hai jo pradaan nahin kiya gaya hai.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>neeche soocheebaddh svich agyaat hain.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>neeche soocheebaddh svich ek doosare ke saath sangharsh karate hain.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>neeche die gae svich maan sveekaar nahin karate hain.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>ek ya adhik tark sankhyaatmak maan kee apeksha karate hain, lekin aapane ek amaany sankhya pradaan kee hai.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>ek ya adhik tarkon mein sateek shabdaankan kee apeksha kee jaatee hai, lekin aapane ek amaany shabd pradaan kiya hai.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>ek ya adhik svichon mein sankhyaatmak maan kee apeksha kee jaatee hai, lekin aapane ek amaany sankhya pradaan kee hai.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>adhik jaanakaaree ke lie is kamaand ke lie sahaayata pravishti dekhen</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>kamaand baadhit ho raha hai...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>kamaand {2} ko nishpaadit karane ka prayaas karate samay truti.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>truti</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>nimn kaaran se kamaand nirast kiya gaya</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>amaany kamaand paitarn pradaan kiya gaya.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>kamaand nahin mila.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>shel prakaar {0} maujood nahin hai.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>aapako kamaand bes pradaan karana hoga.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>aapako kamaand pradaan karana hoga.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>nirdisht kamaand pahale hee jod dee gaee hai.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>kuchh kastam kamaand lod nahin kie ja sakate.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>nirdisht kastam kamaand nahin mila.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>kuchh kastam kamaand analod nahin kie ja sakate.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>yah shel kamaand nishpaadit karane ke lie slaish kamaand ka upayog karata hai. aarambh karane ke lie krpaya kamaand kee shuruaat mein slaish prateek / joden. udaaharan ke lie:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>yah kamaand paribhaashit nahin hai.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>upalabdh kamaand:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>saamaany kamaand:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>koee shel kamaand nahin.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>atirikt aadesh:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>koee atirikt aadesh nahin.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>upanaam aadesh:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>koee upanaam aadesh nahin.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>ekeekrt aadesh:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>koee ekeekrt aadesh nahin.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>dvaara paribhaashit aadesh</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>is aadesh mein neeche die gae tark hain jo isake kaam karane ke tareeke ko badalate hain:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>anirdisht tark vivaran</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>is aadesh mein neeche die gae svich hain jo isake kaam karane ke tareeke ko badalate hain:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>anirdisht svich vivaran</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>kamaand &quot;{0}&quot; ke lie koee sahaayata nahin.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>nirdisht preeset {0} nahin mila.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>{0} ke lie preeset chunen:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>koee aadesh nahin mila.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>sabashel par chalane par shel se baahar nikalata hai</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>vartamaan shel prakaar mein upalabdh kamaand dhoondhata hai</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>sahaayata prshth</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>saamaany kamaand dikhaata hai (difolt)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>aliyaas kamaand dikhaata hai</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>ekeekrt kamaand dikhaata hai</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>atirikt kamaand dikhaata hai</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>sabhee kamaand dikhaata hai</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>saraleekrt sahaayata ka upayog karata hai</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>shel preeset laibreree kholata hai</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>shel sandesh: anurodhit kamaand {0} nahin mila. upalabdh kamaand ke lie sahaayata dekhen.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>kamaand nishpaadit karane ka prayaas karate samay truti.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>{0} ke lie shel nishpaadak nahin mil sakata</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>shel aarambh karane ka prayaas viphal raha</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>yah nirdhaarit nahin kiya ja sakata ki chayan inaput ekal hai ya ekaadhik</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>maarkap nirdisht nahin hai.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>amaany ant taig vinirdeshak.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>taig ko samaapt karane ke lie koee kataarabaddh anukram nahin hain.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>{0} ant taig gum hain.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>praarambhik praaroop mein koee paath nahin chhapana chaahie; isamen keval svaroopan vt anukram hona chaahie.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>upalabdh keebainding</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>is sandarbh mein koee bainding paribhaashit nahin hai.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>keebord bainding</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>maus bainding</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>taip {1} mein amaany naird fonts kairektar naam {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>taip {2} mein {1} se amaany naird fonts kairektar pratinidhitv {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>taip {0} mein amaany naird fonts</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>taip {0} mein naird fonts mein koee kairektar nahin hai</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>rendar karane yogy pahale se hee panjeekrt hai</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>rendar karane yogy panjeekrt nahin hai</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>sabhee spinar kee chaudaee samaan honee chaahie.</value>
+  </data>
+  <data name="T_INPUT_EXCEPTION_READPOINTERFAILED" xml:space="preserve">
+    <value>pointar padhane mein viphal.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION" xml:space="preserve">
+    <value>prashn pradaan nahin kiya gaya hai.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
+    <value>vikalp nirdisht nahin hain</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>tempalet ka naam pradaan nahin kiya gaya hai</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
+    <value>ghatak pradaan nahin kie gae hain, lekin gatisheel jod ke lie yah soochee khaalee ho sakatee hai.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER" xml:space="preserve">
+    <value>entar ke lie keebord kyoo mainiphest mein maujood nahin hai</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT" xml:space="preserve">
+    <value>rabaut ke lie keebord kyoo mainiphest mein maujood nahin hai</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING" xml:space="preserve">
+    <value>lekhan ke lie keebord kyoo mainiphest mein maujood nahin hai</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE" xml:space="preserve">
+    <value>is anukram se prakaar nirdhaarit nahin kiya ja sakata. sunishchit karen ki aapane ise sahee dhang se nirdisht kiya hai.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>ham {1} kriya ke saath {0} prakaar ka ek kaaryasheel vt anukram utpann karane mein viphal rahe hain. sunishchit karen ki aapane maan sahee dhang se nirdisht kie hain.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>sheershakaheen uttar</value>
+  </data>
+
+</root>

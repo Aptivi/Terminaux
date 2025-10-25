@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>Generell Terminaux-feil!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>Intern feil i Terminalen!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>Ukjent feil</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>Ikke implementert ennå.</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>Dette programmet kan ikke fortsette.</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>Trykk på en hvilken som helst tast for å fortsette...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Ugyldig type</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>Du må spesifisere skjermdelen.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>Du må oppgi skjermnavnet.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>Den angitte delindeksen er utenfor rekkevidde.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>Det angitte delnavnet ble ikke funnet.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>Den angitte delen ble ikke funnet.</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>Bufferindeksen kan ikke være mindre enn null eller større enn {0} buffere.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>Skjerm er ikke spesifisert.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>Skjermen er ikke syklisk.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>Brukeren prøvde å kjøre et Terminaux-program med en dum terminal.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>Denne applikasjonen bruker utvidede konsollfunksjoner levert av Terminaux som krever funksjoner som ikke støttes av &quot;dumme&quot; terminaler.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Brukeren prøvde å kjøre et Terminaux-program på en svartelistet terminaltype.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Konsolltypen du bruker for øyeblikket, {0}, er svartelistet: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Konsolltypen du bruker for øyeblikket, {0}, er grålistet: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Brukeren prøvde å kjøre et Terminaux-program på en svartelistet terminalemulator.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Terminalemulatoren du bruker for øyeblikket, {0}, er svartelistet: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Terminalemulatoren du bruker for øyeblikket, {0}, er grålistet: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>Terminaltypen {0} støtter ikke 256 farger i følge terminfo.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>Brukeren prøvde å kjøre et Terminaux-program på Git Bashs MinTTY uten winpty.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>Du må bruke winpty for å kunne bruke dette programmet. Hvis du er sikker på at du ikke kjører Git Bash, må du sørge for at du bruker en riktig Windows-terminal.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>Konsollposisjoneringen fungerer ikke på grunn av en I/O-feil, så dette programmet kan oppføre seg uregelmessig.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>Konsollposisjoneringen fungerer ikke som den skal, så denne applikasjonen kan oppføre seg uregelmessig.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>Konsollen din er for liten til å kjøre ordentlig: {0}x{1} | buff: {2}x{3} | min: {4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>For å få en bedre opplevelse, endre størrelsen på konsollvinduet mens du fortsatt er på denne skjermen. Trykk på en hvilken som helst tast for å fortsette ...</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>Montering ikke inkludert.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} Kan ikke fortsette.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>Konsolltypen støtter bare grunnleggende skriving.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>Konsolltypen er av ukjent art.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>Denne applikasjonen bruker VT-escape-sekvenser, men Terminal.app har ødelagt støtte for 255 og true colors.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>Konsolltypen støtter ikke 256 farger.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>Kan ikke filtrere uten noen spørring.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>Kan ikke filtrere med en ugyldig spørring.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>Det finnes ikke noe uttrykk i konsollfilteret.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>Kan ikke hente synth-informasjon fra den oppgitte representasjonen.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>Syntrepresentasjonen er ugyldig ved [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>Frekvensen er ugyldig ved [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>Varigheten er ugyldig på [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>Målet kan være ugyldig</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>Maksimalverdien [{0}] skal ikke være mindre enn fremdriftsverdien [{1}]</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>Fremdriftsverdien [{0}] må være mellom 0 og maksimumsverdien på {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>Denne betegnelsen kan ikke plasseres på slutten av strengen uten å spesifisere én parameter</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>Denne betegnelsen kan bare ta et tall som parameter.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>Denne betegnelsen kan bare ha et tall fra 1 til 9.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>Denne betegnelsen kan bare ta en bokstav som parameter.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>Denne betegnelsen trenger en heltallskonstant</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>Denne betegnelsen inneholder en ugyldig heltallskonstant</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>Denne betegnelsen kan ikke plasseres på slutten av strengen uten å spesifisere en tegnkonstant</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>Du kan ikke legge til mer enn ett tegn</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>Denne betegnelsen trenger en tegnsamling</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>Bredden er ikke gyldig</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>Denne betegnelsen kan ikke plasseres på slutten av strengen uten å spesifisere en type</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>Kan ikke behandle nullsekvensen.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>Kan ikke behandle nullparametere.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>Dette flagget må representere et minustegn</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>Det finnes fortsatt flere data etter indeks {0} av {1} for formatering</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>Heltallskonstanten for tegnet er ikke gyldig.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>Heltallskonstanten er ikke gyldig.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>Kan ikke sende ikke-eksisterende variabel.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>Dette er en binær operasjon, men antallet argumenter i køen er {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>Heltallskonstanten for den første operanden er ikke gyldig.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>Heltallskonstanten for den andre operanden er ikke gyldig.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>Dette er en unær operasjon, men antallet argumenter i køen er {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>Betinget representasjon {0} er ugyldig.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>Kunne ikke lese det forespurte antallet byte.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>Ugyldig strengtabell!</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>Ugyldig header-magi</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>Kan ikke behandle parameter på verdier som ikke er strenger. Enum er {0} og typen er {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>Forsinkelsesbetegnelsen ble avsluttet for tidlig.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>Ugyldig forsinkelsesbetegnelse.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>Forsinkelsesverdien er ikke et tall.</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>Ukjent funksjonstype &apos;{0}&apos;</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>Kan ikke laste inn {0}</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>Fargen er utenfor rekkevidde.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>Kan ikke hente fargedata.</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>Er du sikker på at denne gradienten ikke er null?</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>Angi minst én farge.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>Kan ikke konvertere nullkilden.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>Kan ikke konvertere til null-type.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>Du bør spesifisere en spesifikk kildefargemodell, ikke basisfargen.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>Ikke en fargemodell.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>Du bør spesifisere en spesifikk målfargemodell, ikke basisfargen.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>Ikke en målfargemodell.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>Kan ikke konvertere samme fargemodell.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere fra basisfargemodellen.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til CMYK.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til CMY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til HSL.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til HSV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til RYB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til YIQ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til YUV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til XYZ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til YXY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til HunterLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til CieLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til CieLuv.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere til CieLch.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>Kan ikke konvertere fra RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til CMYK!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til CMY!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til HSL!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til HSV!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til RYB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til YIQ!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til YUV!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til XYZ!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til YXY!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til HunterLab!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til CieLab!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til CieLuv!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RGB-instans til CieLch!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>Kan ikke konvertere en null CMYK-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>Kan ikke konvertere en null CMY-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>Kan ikke konvertere en null HSL-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>Kan ikke konvertere en null HSV-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>Kan ikke konvertere en null RYB-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>Kan ikke konvertere en null YIQ-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>Kan ikke konvertere en null YUV-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>Kan ikke konvertere en null XYZ-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>Kan ikke konvertere en null YXY-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>Kan ikke konvertere en null HunterLab-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>Kan ikke konvertere en null CieLab-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>Kan ikke konvertere en null CieLuv-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>Kan ikke konvertere en null CieLch-instans til RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>Observatøren må være enten 2 eller 10</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>Lyskilden er ugyldig</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>Kan ikke hente referanser fra tabellen</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>Ugyldig fargespesifikator «{0}». Hvis du bruker 256 farger, må du angi en positiv verdi fra 0 til 255 eller et gyldig fargenavn. Hvis du bruker ekte farger, må du enten skrive en gyldig fargespesifikator, for eksempel RRR;GGG;BBB, eller en fargekode opptil 16777215.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>Det røde fargenivået er utenfor rekkevidden (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>Grønnfargenivået er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>Blåfargenivået er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>Ugyldig heksadesimal fargespesifikasjon «{0}». Denne spesifiseringen må starte med hashtaggen. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>Ugyldig heksadesimal fargelengde «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>Kan ikke løse fargeheksadesimalen «{0}».</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>Ugyldig CieLab-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>L-verdien er utenfor området (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>A-verdien er utenfor rekkevidden (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>B-verdien er utenfor rekkevidden (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig CieLab-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>Ugyldig CieLch-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>C-verdien er utenfor området (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>H-verdien er utenfor området (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig CieLch-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>Ugyldig CieLuv-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>U-verdien er utenfor området (-134,0 -&gt; 220,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>V-verdien er utenfor rekkevidde (-140,0 -&gt; 122,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig CieLuv-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>Ugyldig CMY-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>Cyanfargenivået er utenfor rekkevidden (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>Fargenivået for magenta er utenfor rekkevidden (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>Gulfargenivået er utenfor rekkevidde (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig CMY-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>Ugyldig CMYK-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>Svartfargenivået er utenfor rekkevidden (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig CMYK-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn fire elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>Ugyldig HSL-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>Fargenivået er utenfor rekkevidde (0&apos; -&gt; 360&apos; grader).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>Metningsnivået er utenfor rekkevidden (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>Lysstyrkenivået er utenfor rekkevidden (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig HSL-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>Ugyldig HSV-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>Verdinivået er utenfor rekkevidden (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig HSV-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>Ugyldig HunterLab-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>A-verdien er utenfor rekkevidden (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>B-verdien er utenfor rekkevidden (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig HunterLab-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>Ugyldig YUV-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>Lumanivået er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>Kromanivået (U) er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>Kromanivået (V) er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig YUV-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>Ugyldig YIQ-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>Fasenivået er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>Kvadraturnivået er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig YIQ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>Ugyldig fargespesifikator «{0}». Sørg for at den er i riktig format, som betyr et tall fra 0–255 hvis du bruker 255 farger, eller en VT-sekvens hvis du bruker ekte farger, som følger.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>Denne fargen er allerede en originalfarge.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>Ugyldig RYB-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>Det røde nivået er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>Gulnivået er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>Blånivået er utenfor rekkevidde (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig RYB-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Ugyldig XYZ-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>X-verdien er utenfor området (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Y-verdien er utenfor området (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Z-verdien er utenfor området (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig XYZ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Ugyldig XYZ-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>X-verdien er utenfor området (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Y-verdien er utenfor området (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Z-verdien er utenfor området (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig XYZ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>Ugyldig YXY-fargespesifikator «{0}». Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>Y1-verdien er utenfor området (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>X-verdien er utenfor området (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>Y2-verdien er utenfor området (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Ugyldig YXY-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME" xml:space="preserve">
+    <value>Ingen komponentnavn er angitt.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT" xml:space="preserve">
+    <value>Ingen farge spesifisert for komponent {0}.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS" xml:space="preserve">
+    <value>Komponent {0} finnes allerede.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT" xml:space="preserve">
+    <value>Komponent {0} finnes ikke.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED" xml:space="preserve">
+    <value>Komponent {0} er forhåndsdefinert og kan derfor ikke fjernes.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS" xml:space="preserve">
+    <value>Malen har ingen komponenter.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS" xml:space="preserve">
+    <value>Malen har ingen forhåndsdefinerte komponenter som må defineres ({0}).</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>Ingen navn på malen er oppgitt.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE" xml:space="preserve">
+    <value>Finner ikke malen {0}</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE" xml:space="preserve">
+    <value>Finner ikke komponent {0} i mal {1}</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>Ugyldig mal.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME" xml:space="preserve">
+    <value>Malen har ikke noe navn.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS" xml:space="preserve">
+    <value>Malen finnes allerede.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE" xml:space="preserve">
+    <value>Kan ikke fjerne innebygd mal {0}</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Fargetypen er ugyldig</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>Fargespesifikasjonen for synlighet er ugyldig</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>Ugyldig monokromatisk type</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>Kan ikke finne ut hvordan man konverterer a(n) {0} av {1} til en farge.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>Kan ikke finne ut hvordan man konverterer a(n) {0} av en ukjent type til en farge.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>Får ikke farge.</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>Kunne ikke angi bakgrunn</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>Fargeeksempel er ikke oppgitt.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Gå</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Tastebindinger</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>Finn neste</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>Gå ett element opp</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>Gå ett element ned</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>Gå til forrige side</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>Gå til neste side</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>Gå til det første elementet</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>Gå til det siste elementet</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>Skriv et søkeord (støtter regulære uttrykk)</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>Spørringen din er ikke et gyldig regulært uttrykk.</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>Velg én av oppføringene:</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>Ingen gjenstand funnet.</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Søk etter et element</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>Gå én linje opp (informativt)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>Gå én linje ned (informativt)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>Bryter</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>Liste over {0} forhåndsdefinerte farger</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>Grå</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>Åpenhet</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>Skygge og fargetone</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>Fargeinformasjon</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>Transform</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>Ugyldig fargetype i fargevelgeren</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>Skriv skriftnavnet. Det vil bli konvertert til små bokstaver.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>Skriften finnes ikke.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>Velg en figlet-skrifttype fra listen nedenfor</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Valg av skrifttype</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>Velger er ikke spesifisert</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Les mer...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>Liste over tastebindinger</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>Beveg deg rundt</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Avslutter den interaktive brukergrensesnittet</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>Vareinformasjon</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Utvalgsstilen krever at minst ett alternativ er aktivert.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>Skriv navnet på spinneren. Det vil bli konvertert til små bokstaver.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>Spinneren finnes ikke.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>Velg en spinner fra listen nedenfor</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Spinnervalg</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>Ingen informasjon.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>Ingen status</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>Forsøkte å gjengi interaktive TUI-elementer for den sekundære ruten på en interaktiv TUI som bare tillater interaksjon fra én rute.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>Prøvde å gjengi informasjon i den sekundære ruten i et interaktivt brukergrensesnitt som tillater interaksjon fra to ruter, noe som rotet til gjengivelsen av valgene der.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>Forsøkte å gjengi informasjon om nulldata</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>Klarte ikke å hente informasjon.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>Utfør en handling på det valgte elementet</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>Vennligst oppgi en grunnleggende interaktiv TUI-klasse og prøv på nytt.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>Den interaktive TUI-en {0} inneholder ingen datakilde.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>Den interaktive TUI-en {0} har motstridende tastatur- eller musebindinger.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>Følgende tastebindinger eller musebindinger er i konflikt:</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>Tekstgrensesnittet har krasjet. Det er vanligvis et problem i applikasjonsdelen.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>Tekstlig brukergrensesnitt er ikke spesifisert</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>Dette tekstlige brukergrensesnittet [{0}] er ikke klart fordi tilstanden er {1}</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>Det er {0} motstridende tastebindinger i det tekstlige brukergrensesnittet [{1}]</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>Pekerhendelseskontekst er ikke spesifisert</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>Startposisjonen kan ikke være mindre enn null</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>Endeposisjonen kan ikke være mindre enn null</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>Start X-posisjonen kan ikke være større enn slutt X-posisjonen</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>Start Y-posisjonen kan ikke være større enn slutt Y-posisjonen</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>Inndatanavn er ikke spesifisert</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>Avansere</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>Inndata kreves</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>En eller flere av følgende felt er ikke riktig utfylt:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>Feil inndata</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>Nødvendige inndata er ikke oppgitt. Du må fylle ut verdiene for følgende inndata:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>Inndata ikke oppgitt</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>Kan ikke vise valg uten svar og uten alternative svar.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Valgstilen krever at minst ett valg er aktivert.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>Du kan ikke oppgi svar med mer enn ett tegn i enkelttegnmodus.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>Feil svar. Prøv igjen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>Sett inn</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>Erstatt</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>Erstatt alle</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>Ferdig</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>Ikke funnet. Sjekk syntaksen din eller utvid søket ditt.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>Nummerinfo</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Fjerne</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>Erstatt alt</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>Skriv bytenummeret med den heksadesimale verdien.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>Det angitte bytenummeret er ikke gyldig.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>Ugyldig byte {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>Skriv bytenummeret med den heksadesimale verdien som skal erstattes med {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>Skriv bytenummeret med den heksadesimale verdien som skal erstattes.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>Skriv en byte eller en gruppe byte atskilt med mellomrom.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>Det kreves byte for å finne, men du har ikke oppgitt noen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>Posisjon</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>Heksadesimal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>Oktal</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>Tall</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>Binær</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>Nummerinformasjon</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>Det angitte startbytenummeret kan ikke være større enn filstørrelsen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>Det angitte sluttbytetallet kan ikke være større enn filstørrelsen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>Det angitte bytenummeret er ugyldig.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>Det angitte bytetallet kan ikke være større enn {0} eller mindre enn 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>Det angitte bytetallet kan ikke være større enn {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>Kan ikke utføre denne operasjonen på en null-array.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>Bytenummeret må starte med 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>Det angitte startbytenummeret kan ikke være større enn {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>Det angitte sluttbytetallet kan ikke være større enn {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>Gå...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>Slett her</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>Fjern linje</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>Stopp å gå inn</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>Ny linje</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>Skriv strengen for å finne</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>Skriv erstatningsstrengen</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>Skriv en streng for å finne. Støtter regulære uttrykk.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>En streng er nødvendig for å finne, men du har ikke oppgitt noen.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>Denne strengen som skal søkes etter er ikke et gyldig regulært uttrykk.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>Linjer</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>Søyle</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>Rad</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>Det angitte linjenummeret kan ikke være større enn {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>Kan ikke utføre denne operasjonen på listen med nulllinjer.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>Viser mer informasjon i en infoboks</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>Går én linje opp</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>Går én linje ned</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>Går til forrige side med tekst</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>Går til neste side med tekst</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>Sender inn verdien</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>Sender inn verdiene</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>Lukker uten å sende inn verdien</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>Lukker uten å sende inn verdiene</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>Reduserer gjeldende verdi</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>Øker gjeldende verdi</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>Setter verdien til minimumsverdien</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>Setter verdien til maksimumsverdien</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>Går til forrige knapp</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>Går til neste knapp</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>Går til den første tekstlinjen</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>Går til siste tekstlinje</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>Går til neste tekstside, eller lukker den modale informasjonsboksen</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>Lukker den modale informasjonsboksen</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Går ett valg opp (neste valg)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Går ett valg ned (forrige valg)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>Går til førstevalget</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>Går til det siste valget</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>Går til forrige side med valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>Går til neste side med valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>Søker etter et valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>Merker eller fjerner merkingen av alle valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>Kan ikke hente kategori og gruppe i valgnummer {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>Generelle valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>Tilgjengelige valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>Alternative valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>Bekrefte</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>Sidefelt</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>Bekrefter valg(er)</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>Avbryt valg(er)</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Går ett element opp</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Går ett element ned</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>Går til det første elementet</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>Går til det siste elementet</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Går til forrige side</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Går til neste side</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Søker etter et element</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>Gå opp i en sidefelt</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>Gå ned i en sidefelt</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>Gå opp i en spørsmålsboks</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>Gå ned i en spørsmålsboks</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>Vis antall sider og valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>Vis vareinformasjon</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>Merker eller fjerner merkingen av et valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>Velger alle elementene i samme gruppe og kategori</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>Velger alle elementene i alle gruppene i samme kategori</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>Velger alle elementene i alle grupper i alle kategorier</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>Oppdater posisjon</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>Tidligere</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>Neste</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>Send inn</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>Kansellere</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>Hjelp</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>Ferdig</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>Velge</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>Manuell valg</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>Fargeinformasjon</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>Neste simulering av fargeblindhet</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>Forrige simulering av fargeblindhet</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Øk transformasjonsfrekvensen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Reduser transformasjonsfrekvensen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>Velg nettfarge</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>Øk ugjennomsiktigheten</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>Øk åpenheten</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>Neste fargemodus</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>Forrige fargemodus</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>Øk verdien</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>Reduser verdien</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>Reduser fargetone</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>Øk fargenyansen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>Reduser fargelyshet</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>Øk fargelysheten</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>Reduser metning</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>Øk metningen</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>Forrige farge</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>Neste farge</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>Vis og skjul fargeliste</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>Karakterutstilling</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>Denne fixturen er kanskje ikke en basis-fixturklasse. Spesifiser en ubetinget fixtur.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>Denne fixturen er kanskje ikke en basis-fixturklasse. Spesifiser en betinget fixtur.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>Returnert verdi {0} samsvarer ikke med forventet verdi {1}</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>Denne innsatsen er ikke betinget.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Denne armaturtypen er ugyldig.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>Ingen inventar her. Sett inn ett.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>Velg en testanordning.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>Går ut av testutstyrsvelgeren</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>Denne testen har vært vellykket!</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Forventet verdi samsvarer med faktisk verdi.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>Denne testen har mislyktes.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Beskjed</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Forventet verdi samsvarer ikke med faktisk verdi.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>Metoden i denne delegaten kan ikke returnere void</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>Metoden i denne delegaten må returnere void</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>Komponentens regulære uttrykk er ugyldig</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>Regulært uttrykk for komponenter er ikke oppgitt</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>Forgrunnsfarge for komponenten er ikke oppgitt</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>Bakgrunnsfarge for komponenten er ikke oppgitt</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Ikke oppgitt navn på markeringspennen.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Ingen navn på basismarkøren er oppgitt.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>Finner ikke markeringspennen {0}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>Finner ikke markeringspennen</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>Finner ikke komponent {0} i markeringspenn {1}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>Ugyldig merkepenn.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>Markeringspennen har ikke noe navn.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>Markeringspennen finnes allerede.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>Markeringspennen har ingen komponenter.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>Kan ikke fjerne innebygd merkepenn {0}</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>Historikknavn er ikke spesifisert</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>Historikkoppføringer er ikke spesifisert</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>Stien til historikkfilen er ikke oppgitt.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>Historikk-JSON-representasjon er ikke oppgitt.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>JSON analysert, men historisk JSON-representasjon er ikke oppgitt.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>Historikkinformasjon er ikke oppgitt.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>Historikknavn er ikke oppgitt. Er du sikker på at du har angitt navnet i JSON-representasjonen din?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>Historikkoppføringer er ikke oppgitt. Er du sikker på at du har spesifisert oppføringene i JSON-representasjonen din?</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>Historikk {0} ikke funnet.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>Generell historikk kan ikke fjernes, men den kan tømmes.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>Historie er ikke en del av de registrerte historiene.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>Kunne ikke slette historikken.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>Historikkoppføring er ikke tilgjengelig.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>Liste over historiske oppføringer er ikke oppgitt.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>Det er en konflikt mellom {0} og {1}.</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>Inndataleseren har feilet</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>Denne strømmen kan ikke søke.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>Kan ikke bygge VT-sekvens for ikke-eksisterende type {0}</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>Kan ikke bygge VT-sekvens med manglende argumenter. Forventet {0} argumenter, mottok {1} argumenter.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>Alias ​​kan ikke være det samme navnet som en kommando.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>Kommandoen til alias til {0} ble ikke funnet.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>Aliaset er allerede funnet</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>Aliaset {0} ble ikke funnet å være fjernet.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>Aliaset {0} ble ikke funnet for å bli søkt.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>Bruk</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>Kommando</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>Beskrivelse</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>Ingen hjelp for argumentet «{0}».</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>Ingen beskrivelse av argumenthjelp</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>Dette argumentet er ikke implementert ennå.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>Det var ikke nok argumenter.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>Ukjent argument</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>Uopprettelig feil i argumentet</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>Kan ikke hente argumentinformasjon for kommando eller argument</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>Trådparametere er ikke spesifisert.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>Obligatoriske argumenter er ikke oppgitt for alle bruksområder nedenfor:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>Nødvendige argumenter er ikke oppgitt.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>Nødvendige brytere er ikke inkludert.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>En av bryterne krever en verdi som ikke er oppgitt.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>Bryterne som er oppført nedenfor er ukjente.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>Bryterne som er oppført nedenfor er i konflikt med hverandre.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>Bryterne nedenfor godtar ikke verdier.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>Ett eller flere av argumentene forventer en numerisk verdi, men du oppga et ugyldig tall.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>Ett eller flere av argumentene forventer en nøyaktig ordlyd, men du oppga et ugyldig ord.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>En eller flere av bryterne forventer en numerisk verdi, men du oppga et ugyldig tall.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>Se hjelpeoppføringen for denne kommandoen for mer informasjon</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>Kommandoen blir avbrutt ...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>Feil ved forsøk på å utføre kommandoen {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>Feil</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>Kommandoen ble avbrutt av følgende grunn</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>Ugyldig kommandomønster oppgitt.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>Kommandoen ble ikke funnet.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>Skalltypen {0} finnes ikke.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>Du må oppgi kommandobasen.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>Du må oppgi kommandoen.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>Den angitte kommandoen er allerede lagt til.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>Noen av de tilpassede kommandoene kan ikke lastes inn.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>Den angitte egendefinerte kommandoen ble ikke funnet.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>Noen av de tilpassede kommandoene kan ikke fjernes.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>Dette skallet bruker skråstrekekommandoer for å utføre kommandoene. Vennligst legg til skråstreketegnet &apos;/&apos; i begynnelsen av kommandoen for å komme i gang. For eksempel:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>Denne kommandoen er ikke definert.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>Tilgjengelige kommandoer:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>Generelle kommandoer:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>Ingen skallkommandoer.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>Ekstra kommandoer:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>Ingen ekstra kommandoer.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>Alias-kommandoer:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>Ingen aliaskommandoer.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>Enhetlige kommandoer:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>Ingen enhetlige kommandoer.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>Kommando definert av</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>Denne kommandoen har argumentene nedenfor som endrer hvordan den fungerer:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>Uspesifisert argumentbeskrivelse</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>Denne kommandoen har følgende brytere som endrer hvordan den fungerer:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>Uspesifisert bryterbeskrivelse</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>Ingen hjelp for kommandoen «{0}».</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Den angitte forhåndsinnstillingen {0} ble ikke funnet.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>Velg forhåndsinnstilling for {0}:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>Ingen kommandoer funnet.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>Avslutter skallet hvis det kjører på et underskall</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>Finner de tilgjengelige kommandoene i gjeldende skalltype</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>Hjelpeside</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>Viser generelle kommandoer (standard)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>Viser aliaserte kommandoer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Viser enhetlige kommandoer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>Viser ekstra kommandoer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>Viser alle kommandoer</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Bruker forenklet hjelp</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>Åpner biblioteket med forhåndsinnstilte skall</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>Shell-melding: Den forespurte kommandoen {0} ble ikke funnet. Se &apos;hjelp&apos; for tilgjengelige kommandoer.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>Feil ved forsøk på å utføre kommandoen.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>Kan ikke hente skallutfører for {0}</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>Mislyktes ved forsøk på å initialisere skallet</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>Kan ikke avgjøre om valginngangen er én eller flere</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>Markering er ikke spesifisert.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>Ugyldig spesifikator for slutttagg.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>Det finnes ingen køsekvenser å avslutte taggen med.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>Det mangler {0} sluttkoder.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>Opprinnelig format må ikke skrive ut tekst; det må bare inneholde formaterende VT-sekvenser.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>Tilgjengelige tastebindinger</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>Ingen bindinger definert i denne konteksten.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>Tastaturbindinger</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>Musebindinger</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>Ugyldig tegnnavn for Nerd Fonts {0} i typen {1}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Ugyldig Nerd Fonts-tegnrepresentasjon {0} fra {1} i typen {2}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>Ugyldig Nerd-fonttype {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>Nerd-fonter av typen {0} har ingen tegn</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>Renderbar er allerede registrert</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>Gjengivelsesfunksjonen er ikke registrert</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>Alle spinnere skal ha samme bredde.</value>
+  </data>
+  <data name="T_INPUT_EXCEPTION_READPOINTERFAILED" xml:space="preserve">
+    <value>Klarte ikke å lese pekeren.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION" xml:space="preserve">
+    <value>Spørsmålet er ikke oppgitt.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
+    <value>Valg er ikke angitt.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>Navn på malen er ikke oppgitt.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
+    <value>Komponenter er ikke oppgitt, men denne listen kan være tom for dynamisk addisjon.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER" xml:space="preserve">
+    <value>Tastatursignal for Enter finnes ikke i manifestet.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT" xml:space="preserve">
+    <value>Tastatursignal for Rubout finnes ikke i manifestet.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING" xml:space="preserve">
+    <value>Tastatursignal for skriving finnes ikke i manifestet.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE" xml:space="preserve">
+    <value>Kan ikke bestemme typen fra denne sekvensen. Sørg for at du har angitt den riktig.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>Vi klarte ikke å generere en fungerende VT-sekvens av typen {0} med handling {1}. Sørg for at du har angitt verdiene riktig.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>Uten tittel svar</value>
+  </data>
+
+</root>

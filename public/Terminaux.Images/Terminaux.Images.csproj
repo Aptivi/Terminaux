@@ -22,9 +22,6 @@
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
-
-    <!-- For cross platform and .NET 8.0+ support -->
-    <AptLocDisableInvalidCultureWarnings>true</AptLocDisableInvalidCultureWarnings>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,8 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LocaleStation" Version="1.3.2" />
-    <PackageReference Include="LocaleStation.Tools" Version="1.3.2" />
     <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.8.2" />
   </ItemGroup>
 
@@ -44,10 +39,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Placeholders\*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="T_EXCEPTION_UNKNOWNERROR1" xml:space="preserve">
+    <value>Γενικό σφάλμα Terminaux!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR2" xml:space="preserve">
+    <value>Εσωτερικό σφάλμα Terminaux!</value>
+  </data>
+  <data name="T_EXCEPTION_UNKNOWNERROR3" xml:space="preserve">
+    <value>Άγνωστο σφάλμα</value>
+  </data>
+  <data name="T_EXCEPTION_NOTIMPLEMENTED" xml:space="preserve">
+    <value>Δεν έχει εφαρμοστεί ακόμη.</value>
+  </data>
+  <data name="T_COMMON_CANTCONTINUE" xml:space="preserve">
+    <value>Αυτό το πρόγραμμα δεν μπορεί να συνεχιστεί.</value>
+  </data>
+  <data name="T_COMMON_ANYKEY" xml:space="preserve">
+    <value>Πατήστε οποιοδήποτε πλήκτρο για να συνεχίσετε...</value>
+  </data>
+  <data name="T_COMMON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Μη έγκυρος τύπος</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPART" xml:space="preserve">
+    <value>Πρέπει να καθορίσετε το τμήμα της οθόνης.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENNAME" xml:space="preserve">
+    <value>Πρέπει να καθορίσετε το όνομα οθόνης.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>Ο καθορισμένος δείκτης εξαρτήματος είναι εκτός εύρους τιμών.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_NOSCREENPARTNAME" xml:space="preserve">
+    <value>Το καθορισμένο όνομα εξαρτήματος δεν βρέθηκε.</value>
+  </data>
+  <data name="T_BB_SCREEN_EXCEPTION_SCREENPARTNOTFOUND" xml:space="preserve">
+    <value>Το καθορισμένο μέρος δεν βρέθηκε.</value>
+  </data>
+  <data name="T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE" xml:space="preserve">
+    <value>Ο δείκτης buffer δεν μπορεί να είναι μικρότερος από μηδέν ή μεγαλύτερος από {0} buffer.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN" xml:space="preserve">
+    <value>Η οθόνη δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="T_BB_SCREENTOOLS_EXCEPTION_SCREENNOTCYCLIC" xml:space="preserve">
+    <value>Η οθόνη δεν είναι κυκλική.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_EVT_MESSAGE" xml:space="preserve">
+    <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux χρησιμοποιώντας ένα ανόητο τερματικό.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_ISDUMB_MESSAGE_1" xml:space="preserve">
+    <value>Αυτή η εφαρμογή χρησιμοποιεί εκτεταμένες λειτουργίες κονσόλας που παρέχονται από την Terminaux και απαιτούν λειτουργίες που δεν υποστηρίζονται από &quot;χαζά&quot; τερματικά.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux σε έναν τύπο τερματικού που βρίσκεται στη μαύρη λίστα.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Ο τύπος κονσόλας που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη μαύρη λίστα: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Ο τύπος κονσόλας που χρησιμοποιείτε αυτήν τη στιγμή, {0}, είναι στη γκρι λίστα: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_EVT_MESSAGE" xml:space="preserve">
+    <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux σε έναν εξομοιωτή τερματικού που βρίσκεται στη μαύρη λίστα.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_BLACKLISTED_MESSAGE_1" xml:space="preserve">
+    <value>Ο εξομοιωτής τερματικού που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη μαύρη λίστα: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TE_GRAYLISTED_MESSAGE" xml:space="preserve">
+    <value>Ο εξομοιωτής τερματικού που χρησιμοποιείτε αυτήν τη στιγμή, {0}, βρίσκεται στη γκρι λίστα: {1}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_TT_NO256COLORS_MESSAGE" xml:space="preserve">
+    <value>Ο τύπος τερματικού {0} δεν υποστηρίζει 256 χρώματα σύμφωνα με το terminfo</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_EVT_MESSAGE" xml:space="preserve">
+    <value>Ο χρήστης προσπάθησε να εκτελέσει μια εφαρμογή Terminaux στο MinTTY του Git Bash χωρίς το winpty.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_MINTTY_MESSAGE_1" xml:space="preserve">
+    <value>Θα χρειαστεί να χρησιμοποιήσετε το winpty για να μπορέσετε να χρησιμοποιήσετε αυτό το πρόγραμμα. Εάν είστε βέβαιοι ότι δεν εκτελείτε το Git Bash, βεβαιωθείτε ότι χρησιμοποιείτε ένα κατάλληλο τερματικό των Windows.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_IOERROR_MESSAGE" xml:space="preserve">
+    <value>Η τοποθέτηση της κονσόλας δεν λειτουργεί λόγω σφάλματος εισόδου/εξόδου, επομένως αυτή η εφαρμογή ενδέχεται να παρουσιάζει αστάθεια.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_POS_ERROR_MESSAGE" xml:space="preserve">
+    <value>Η τοποθέτηση της κονσόλας δεν λειτουργεί σωστά, επομένως αυτή η εφαρμογή ενδέχεται να παρουσιάζει αστάθεια.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_1" xml:space="preserve">
+    <value>Η κονσόλα σας είναι πολύ μικρή για να λειτουργήσει σωστά: {0}x{1} | ενίσχυση: {2}x{3} | ελάχιστο: {4}x{5}</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_COORDS_TOO_SMALL_2" xml:space="preserve">
+    <value>Για μια καλύτερη εμπειρία, αλλάξτε το μέγεθος του παραθύρου της κονσόλας σας ενώ βρίσκεστε ακόμα σε αυτήν την οθόνη. Πατήστε οποιοδήποτε πλήκτρο για να συνεχίσετε...</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_EXCEPTION_NOASSEMBLY" xml:space="preserve">
+    <value>Δεν παρέχεται συναρμολόγηση.</value>
+  </data>
+  <data name="T_BC_CONSOLECHECKER_FASTFAIL_RUDEEXIT" xml:space="preserve">
+    <value>{0} Δεν είναι δυνατή η συνέχεια.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_DUMB_JUSTIFICATION" xml:space="preserve">
+    <value>Ο τύπος κονσόλας υποστηρίζει μόνο βασική γραφή.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_UNKNOWN_JUSTIFICATION" xml:space="preserve">
+    <value>Ο τύπος κονσόλας είναι άγνωστης φύσης.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_APPLETERMINAL_JUSTIFICATION" xml:space="preserve">
+    <value>Αυτή η εφαρμογή χρησιμοποιεί ακολουθίες διαφυγής VT, αλλά το Terminal.app δεν υποστηρίζει πλέον χρώματα 255 και πραγματικά χρώματα.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_BASEFILTERS_NO256COLORS_JUSTIFICATION" xml:space="preserve">
+    <value>Ο τύπος κονσόλας δεν υποστηρίζει 256 χρώματα.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_NOQUERY" xml:space="preserve">
+    <value>Δεν είναι δυνατό το φιλτράρισμα χωρίς κανένα ερώτημα.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTER_EXCEPTION_INVALIDQUERY" xml:space="preserve">
+    <value>Δεν είναι δυνατό το φιλτράρισμα με μη έγκυρο ερώτημα.</value>
+  </data>
+  <data name="T_BC_CONSOLEFILTERINFO_EXCEPTION_NOEXPRESSION" xml:space="preserve">
+    <value>Δεν υπάρχει έκφραση στο φίλτρο κονσόλας.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_NOSYNTHINFO" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη πληροφοριών συνθεσάιζερ από την παρεχόμενη αναπαράσταση.</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDSYNTH" xml:space="preserve">
+    <value>Η αναπαράσταση του συνθεσάιζερ δεν είναι έγκυρη στο [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDFREQUENCY" xml:space="preserve">
+    <value>Η συχνότητα δεν είναι έγκυρη στο [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_ACOUSTIC_EXCEPTION_INVALIDDURATION" xml:space="preserve">
+    <value>Η διάρκεια δεν είναι έγκυρη στο [{0}.{1}]</value>
+  </data>
+  <data name="T_CE_MISC_EXCEPTION_NULLTARGET" xml:space="preserve">
+    <value>Ο στόχος ενδέχεται να μην είναι μηδενικός</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_MAXLARGERTHANPROGRESS" xml:space="preserve">
+    <value>Η μέγιστη τιμή [{0}] δεν πρέπει να είναι μικρότερη από την τιμή προόδου [{1}]</value>
+  </data>
+  <data name="T_CE_TASKBARPROGRESS_EXCEPTION_PROGRESSEXCEEDSMAX" xml:space="preserve">
+    <value>Η τιμή προόδου [{0}] πρέπει να είναι μεταξύ 0 και της μέγιστης τιμής {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOPARAM" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής δεν μπορεί να βρίσκεται στο τέλος της συμβολοσειράς χωρίς να καθοριστεί μία παράμετρος</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYNUM" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής μπορεί να λάβει μόνο έναν αριθμό ως παράμετρο.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYSINGLEDIGIT" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής μπορεί να λάβει μόνο έναν αριθμό από το 1 έως το 9.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORONLYCHAR" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής μπορεί να δέχεται μόνο ένα γράμμα ως παράμετρο.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSINTCONST" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής χρειάζεται μια ακέραια σταθερά</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDINTCONST" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής περιέχει μη έγκυρη ακέραια σταθερά</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOCHARCONST" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής δεν μπορεί να βρίσκεται στο τέλος της συμβολοσειράς χωρίς να καθορίζεται μια σταθερά χαρακτήρα</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORMORETHANONECHAR" xml:space="preserve">
+    <value>Δεν μπορείτε να προσθέσετε περισσότερους από έναν χαρακτήρες</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNEEDSCHARARRAY" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής χρειάζεται μια συλλογή χαρακτήρων</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORINVALIDWIDTH" xml:space="preserve">
+    <value>Το πλάτος δεν είναι έγκυρο</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_DESIGNATORNOTYPE" xml:space="preserve">
+    <value>Αυτός ο προσδιοριστής δεν μπορεί να βρίσκεται στο τέλος της συμβολοσειράς χωρίς να καθορίζεται ένας τύπος</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOSEQUENCE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η επεξεργασία μηδενικής ακολουθίας.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOPARAMETERS" xml:space="preserve">
+    <value>Δεν είναι δυνατή η επεξεργασία μηδενικών παραμέτρων.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORMINUSREQUIRED" xml:space="preserve">
+    <value>Αυτή η σημαία πρέπει να αντιπροσωπεύει ένα σύμβολο μείον</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORGARBAGEDATA" xml:space="preserve">
+    <value>Υπάρχουν ακόμη περισσότερα δεδομένα μετά τον δείκτη {0} από {1} για μορφοποίηση</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONSTCHAR" xml:space="preserve">
+    <value>Η ακέραια σταθερά για τον χαρακτήρα δεν είναι έγκυρη.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINVALIDINTCONST" xml:space="preserve">
+    <value>Η ακέραια σταθερά δεν είναι έγκυρη.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORNOVAR" xml:space="preserve">
+    <value>Δεν είναι δυνατή η προώθηση ανύπαρκτης μεταβλητής.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORBINARYMORETHANTWO" xml:space="preserve">
+    <value>Αυτή είναι μια δυαδική λειτουργία, αλλά ο αριθμός των ορισμάτων στην ουρά είναι {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTFIRSTOPERANDINVALID" xml:space="preserve">
+    <value>Η ακέραια σταθερά για τον πρώτο τελεστέο δεν είναι έγκυρη.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORINTSECONDOPERANDINVALID" xml:space="preserve">
+    <value>Η ακέραια σταθερά για τον δεύτερο τελεστέο δεν είναι έγκυρη.</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORUNARYMORETHANONE" xml:space="preserve">
+    <value>Αυτή είναι μια μοναδιαία λειτουργία, αλλά ο αριθμός των ορισμάτων στην ουρά είναι {0}</value>
+  </data>
+  <data name="T_CT_PARSING_PARAMETERS_EXCEPTION_PROCESSORCONDITIONALINVALID" xml:space="preserve">
+    <value>Η υπό όρους αναπαράσταση {0} δεν είναι έγκυρη.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_BYTESREAD" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η ανάγνωση του ζητούμενου αριθμού byte.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_STRINGTABLE" xml:space="preserve">
+    <value>Μη έγκυρος πίνακας συμβολοσειρών!</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_HEADERMAGIC" xml:space="preserve">
+    <value>Μη έγκυρη μαγεία κεφαλίδας</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_PARAMONNONSTRING" xml:space="preserve">
+    <value>Δεν είναι δυνατή η επεξεργασία παραμέτρου σε τύπο τιμής που δεν είναι συμβολοσειρά. Η απαρίθμηση είναι {0} και ο τύπος είναι {1}.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORENDED" xml:space="preserve">
+    <value>Ο προσδιοριστής καθυστέρησης έληξε πρόωρα.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYDESIGNATORINVALID" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής καθυστέρησης.</value>
+  </data>
+  <data name="T_CT_PARSING_EXCEPTION_DELAYVALUENOTANUMBER" xml:space="preserve">
+    <value>Η τιμή καθυστέρησης δεν είναι αριθμός.</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_CAPABILITYTYPE" xml:space="preserve">
+    <value>Άγνωστος τύπος δυνατότητας &apos;{0}&apos;</value>
+  </data>
+  <data name="T_CT_TERMINFO_EXCEPTION_LOADERFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση του {0}</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLOROUTOFRANGE" xml:space="preserve">
+    <value>Το χρώμα είναι εκτός εύρους.</value>
+  </data>
+  <data name="T_COLOR_DATA_EXCEPTION_COLORNODATA" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη δεδομένων χρώματος.</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_GRADIENTNULL" xml:space="preserve">
+    <value>Είστε σίγουροι ότι αυτή η διαβάθμιση δεν είναι μηδενική;</value>
+  </data>
+  <data name="T_COLOR_GRADIENT_EXCEPTION_COLORNEEDED" xml:space="preserve">
+    <value>Καθορίστε τουλάχιστον ένα χρώμα.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOSOURCE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή της μηδενικής πηγής.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTYPE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε τύπο null.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYSOURCEMODEL" xml:space="preserve">
+    <value>Θα πρέπει να καθορίσετε ένα συγκεκριμένο μοντέλο χρώματος πηγής, όχι το βασικό.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTSOURCEMODEL" xml:space="preserve">
+    <value>Δεν είναι χρωματικό μοντέλο.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SPECIFYTARGETMODEL" xml:space="preserve">
+    <value>Θα πρέπει να καθορίσετε ένα συγκεκριμένο μοντέλο χρώματος-στόχου, όχι το βασικό.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_NOTTARGETMODEL" xml:space="preserve">
+    <value>Δεν είναι στοχευόμενο χρωματικό μοντέλο.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_SAMEMODEL" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή του ίδιου χρωματικού μοντέλου.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMBASEFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή από το βασικό μοντέλο χρώματος.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε CMYK.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε CMY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε HSL.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVFAILED" xml:space="preserve">
+    <value>Δεν μπορώ να μετατραπώ σε HSV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε RYB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε YIQ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε YUV.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε XYZ.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε YXY.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε HunterLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε CieLab.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε CieLuv.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή σε CieLch.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_FROMRGBFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή από RGB.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYKNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε CMYK!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCMYNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας RGB σε CMY!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSLNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας RGB σε HSL!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHSVNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε HSV!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORYBNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας RGB σε RYB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYIQNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας RGB σε YIQ!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYUVNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε YUV!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOXYZNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας RGB σε XYZ!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOYXYNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε YXY!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOHUNTERLABNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε HunterLab!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELABNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε CieLab!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELUVNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε CieLuv!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TOCIELCHNULLRGB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής RGB παρουσίας σε CieLch!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMYK" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας CMYK σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCMY" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας CMY σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSL" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας HSL σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHSV" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας HSV σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLRYB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας RYB σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYIQ" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας YIQ σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYUV" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας YUV σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLXYZ" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας XYZ σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLYXY" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας YXY σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLHUNTERLAB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας HunterLab σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELAB" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας CieLab σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELUV" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας CieLuv σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_TORGBNULLCIELCH" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετατροπή μιας μηδενικής παρουσίας CieLch σε RGB!</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDOBSERVER" xml:space="preserve">
+    <value>Ο παρατηρητής πρέπει να είναι είτε 2 είτε 10</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCEINVALIDILLUMINANT" xml:space="preserve">
+    <value>Το φωτιστικό δεν είναι έγκυρο</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_ILLUMINANCENOREFERENCE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη αναφορών από τον πίνακα</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος &quot;{0}&quot;. Εάν χρησιμοποιείτε 256 χρώματα, θα πρέπει να εισαγάγετε μια θετική τιμή από 0 έως 255 ή ένα έγκυρο όνομα χρώματος. Εάν χρησιμοποιείτε πραγματικό χρώμα, θα πρέπει είτε να γράψετε έναν έγκυρο προσδιοριστή χρώματος, όπως RRR;GGG;BBB, είτε έναν κωδικό χρώματος έως 16777215.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBREDLEVEL" xml:space="preserve">
+    <value>Το επίπεδο κόκκινου χρώματος είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBGREENLEVEL" xml:space="preserve">
+    <value>Το επίπεδο πράσινου χρώματος είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBBLUELEVEL" xml:space="preserve">
+    <value>Το επίπεδο μπλε χρώματος είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος δεκαεξαδικός προσδιοριστής χρώματος &quot;{0}&quot;. Αυτός ο προσδιοριστής πρέπει να ξεκινά με την ετικέτα hashtag. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHEXLENGTH" xml:space="preserve">
+    <value>Μη έγκυρο δεκαεξαδικό μήκος χρώματος &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHEXUNRESOLVABLE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η ανάλυση του δεκαεξαδικού χρώματος &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CieLab &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABLLEVEL" xml:space="preserve">
+    <value>Η τιμή L είναι εκτός εύρους (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABALEVEL" xml:space="preserve">
+    <value>Η τιμή A είναι εκτός εύρους (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELABBLEVEL" xml:space="preserve">
+    <value>Η τιμή B είναι εκτός εύρους (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CieLab &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CieLch &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHCLEVEL" xml:space="preserve">
+    <value>Η τιμή C είναι εκτός εύρους (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELCHHLEVEL" xml:space="preserve">
+    <value>Η τιμή H είναι εκτός εύρους (-128,0 -&gt; 128,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELCHSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CieLch &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CieLuv &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVULEVEL" xml:space="preserve">
+    <value>Η τιμή U είναι εκτός εύρους (-134,0 -&gt; 220,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECIELUVVLEVEL" xml:space="preserve">
+    <value>Η τιμή V είναι εκτός εύρους (-140,0 -&gt; 122,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCIELUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CieLuv &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CMY &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYCLEVEL" xml:space="preserve">
+    <value>Το επίπεδο κυανού χρώματος είναι εκτός εύρους (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYMLEVEL" xml:space="preserve">
+    <value>Το επίπεδο χρώματος ματζέντα είναι εκτός εύρους (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYYLEVEL" xml:space="preserve">
+    <value>Το επίπεδο κίτρινου χρώματος είναι εκτός εύρους (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CMY &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CMYK &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSECMYKKLEVEL" xml:space="preserve">
+    <value>Η στάθμη μαύρου χρώματος είναι εκτός εύρους (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDCMYKSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος CMYK &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τέσσερα στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος HSL &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLHLEVEL" xml:space="preserve">
+    <value>Η στάθμη απόχρωσης είναι εκτός εύρους (0&apos; -&gt; 360&apos; μοίρες).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLSLEVEL" xml:space="preserve">
+    <value>Το επίπεδο κορεσμού είναι εκτός εύρους (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSLLLEVEL" xml:space="preserve">
+    <value>Το επίπεδο φωτεινότητας είναι εκτός εύρους (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSLSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος HSL &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος HSV &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHSVVLEVEL" xml:space="preserve">
+    <value>Το επίπεδο τιμής είναι εκτός εύρους (0 -&gt; 100).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHSVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος HSV &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος HunterLab &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABALEVEL" xml:space="preserve">
+    <value>Η τιμή A είναι εκτός εύρους (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEHUNTERLABBLEVEL" xml:space="preserve">
+    <value>Η τιμή B είναι εκτός εύρους (-128,0 -&gt; 127,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDHUNTERLABSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος HunterLab &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος YUV &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVYLEVEL" xml:space="preserve">
+    <value>Η στάθμη φωτεινότητας είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVULEVEL" xml:space="preserve">
+    <value>Το επίπεδο χρωματικότητας (U) είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYUVVLEVEL" xml:space="preserve">
+    <value>Το επίπεδο χρωματικής (V) είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYUVSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος YUV &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος YIQ &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQILEVEL" xml:space="preserve">
+    <value>Το επίπεδο σε φάση είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYIQQLEVEL" xml:space="preserve">
+    <value>Το επίπεδο τετραγωνισμού είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYIQSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος YIQ &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή, που σημαίνει έναν αριθμό από 0-255 εάν χρησιμοποιείτε 255 χρώματα ή μια ακολουθία VT εάν χρησιμοποιείτε πραγματικό χρώμα ως εξής.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRGBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERGBISORIGINALCOLOR" xml:space="preserve">
+    <value>Αυτό το χρώμα είναι ήδη ένα αρχικό χρώμα.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος RYB &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBRLEVEL" xml:space="preserve">
+    <value>Η κόκκινη στάθμη είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBYLEVEL" xml:space="preserve">
+    <value>Το κίτρινο επίπεδο είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSERYBBLEVEL" xml:space="preserve">
+    <value>Το μπλε επίπεδο είναι εκτός εύρους (0 -&gt; 255).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDRYBSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος RYB &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος XYZ &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>Η τιμή X είναι εκτός εύρους (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Η τιμή Y είναι εκτός εύρους (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Η τιμή Z είναι εκτός εύρους (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος XYZ &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος XYZ &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
+    <value>Η τιμή X είναι εκτός εύρους (0,0 -&gt; 95,047).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
+    <value>Η τιμή Y είναι εκτός εύρους (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
+    <value>Η τιμή Z είναι εκτός εύρους (0,0 -&gt; 108,883).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος XYZ &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος YXY &quot;{0}&quot;. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY1LEVEL" xml:space="preserve">
+    <value>Η τιμή Y1 είναι εκτός εύρους (0,0 -&gt; 100,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYX1LEVEL" xml:space="preserve">
+    <value>Η τιμή X είναι εκτός εύρους (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEYXYY2LEVEL" xml:space="preserve">
+    <value>Η τιμή Y2 είναι εκτός εύρους (0,0 -&gt; 1,0).</value>
+  </data>
+  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIEREXCEED" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής χρώματος YXY &quot;{0}&quot;. Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTNAME" xml:space="preserve">
+    <value>Δεν έχει καθοριστεί όνομα στοιχείου.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOLORFORCOMPONENT" xml:space="preserve">
+    <value>Δεν έχει καθοριστεί χρώμα για το στοιχείο {0}.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTEXISTS" xml:space="preserve">
+    <value>Το στοιχείο {0} υπάρχει ήδη.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENT" xml:space="preserve">
+    <value>Το στοιχείο {0} δεν υπάρχει.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_COMPONENTREMOVEPREDEFINED" xml:space="preserve">
+    <value>Το στοιχείο {0} είναι προκαθορισμένο και επομένως δεν μπορεί να αφαιρεθεί.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS" xml:space="preserve">
+    <value>Το πρότυπο δεν έχει στοιχεία.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOPREDEFINEDCOMPONENTS" xml:space="preserve">
+    <value>Το πρότυπο δεν έχει προκαθορισμένα στοιχεία που πρέπει να οριστούν ({0}).</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>Δεν παρέχεται όνομα για το πρότυπο.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η εύρεση του προτύπου {0}</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOCOMPONENTINTEMPLATE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η εύρεση του στοιχείου {0} στο πρότυπο {1}</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEINVALID" xml:space="preserve">
+    <value>Μη έγκυρο πρότυπο.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATENONAME" xml:space="preserve">
+    <value>Το πρότυπο δεν έχει όνομα.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEEXISTS" xml:space="preserve">
+    <value>Το πρότυπο υπάρχει ήδη.</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEBUILTINREMOVE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η κατάργηση του ενσωματωμένου προτύπου {0}</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Ο τύπος χρώματος δεν είναι έγκυρος</value>
+  </data>
+  <data name="T_COLOR_CONTRAST_EXCEPTION_INVALIDSPECIFIER" xml:space="preserve">
+    <value>Ο προσδιοριστής χρώματος για την ορατότητα δεν είναι έγκυρος</value>
+  </data>
+  <data name="T_COLOR_FORMULAS_EXCEPTION_INVALIDMONOCHROMACYTYPE" xml:space="preserve">
+    <value>Μη έγκυρος τύπος μονοχρωματικότητας</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR1" xml:space="preserve">
+    <value>Δεν είναι δυνατός ο προσδιορισμός του τρόπου μετατροπής a(n) {0} από {1} σε χρώμα.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_READERROR2" xml:space="preserve">
+    <value>Δεν είναι δυνατός ο προσδιορισμός του τρόπου μετατροπής a(n) {0} άγνωστου τύπου σε χρώμα.</value>
+  </data>
+  <data name="T_COLOR_SERIALIZER_EXCEPTION_WRITEERROR" xml:space="preserve">
+    <value>Δεν μπορώ να βρω χρώμα.</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_SETBACKGROUND" xml:space="preserve">
+    <value>Αποτυχία ορισμού φόντου</value>
+  </data>
+  <data name="T_COLOR_EXCEPTION_COLORISNULL" xml:space="preserve">
+    <value>Δεν παρέχεται η έγχρωμη παρουσία.</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Εξοδος</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Συνδέσεις πλήκτρων</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_FINDNEXT" xml:space="preserve">
+    <value>Εύρεση επόμενου</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOUP2" xml:space="preserve">
+    <value>Πηγαίνετε ένα στοιχείο προς τα πάνω</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GODOWN2" xml:space="preserve">
+    <value>Πηγαίνετε ένα στοιχείο προς τα κάτω</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOPREVPAGE2" xml:space="preserve">
+    <value>Μετάβαση στην προηγούμενη σελίδα</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2" xml:space="preserve">
+    <value>Μετάβαση στην επόμενη σελίδα</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOFIRST2" xml:space="preserve">
+    <value>Μετάβαση στο πρώτο στοιχείο</value>
+  </data>
+  <data name="T_INPUT_COMMON_KEYBINDING_GOLAST2" xml:space="preserve">
+    <value>Μετάβαση στο τελευταίο στοιχείο</value>
+  </data>
+  <data name="T_INPUT_COMMON_SEARCHPROMPT" xml:space="preserve">
+    <value>Γράψτε έναν όρο αναζήτησης (υποστηρίζει κανονικές εκφράσεις)</value>
+  </data>
+  <data name="T_INPUT_COMMON_INVALIDQUERY" xml:space="preserve">
+    <value>Το ερώτημά σας δεν είναι έγκυρη κανονική έκφραση.</value>
+  </data>
+  <data name="T_INPUT_COMMON_ENTRYPROMPT" xml:space="preserve">
+    <value>Επιλέξτε μία από τις καταχωρίσεις:</value>
+  </data>
+  <data name="T_INPUT_COMMON_NOITEMS" xml:space="preserve">
+    <value>Δεν βρέθηκε κανένα στοιχείο.</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Αναζήτηση για ένα στοιχείο</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO" xml:space="preserve">
+    <value>Πηγαίνετε μια γραμμή προς τα πάνω (ενημερωτικά)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO" xml:space="preserve">
+    <value>Πηγαίνετε μια γραμμή παρακάτω (πληροφοριακά)</value>
+  </data>
+  <data name="T_INPUT_IS_COMMON_KEYBINDING_SWITCH" xml:space="preserve">
+    <value>Διακόπτης</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_LISTOFPREDEFINEDCOLORS" xml:space="preserve">
+    <value>Λίστα με {0} προκαθορισμένα χρώματα</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_GRAY" xml:space="preserve">
+    <value>Γκρί</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY" xml:space="preserve">
+    <value>Διαφάνεια</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_SHADETINTFRAME" xml:space="preserve">
+    <value>Σκιά και Απόχρωση</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_COLORINFOFRAME" xml:space="preserve">
+    <value>Πληροφορίες χρώματος</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_TRANSFORMFRAME" xml:space="preserve">
+    <value>Μετασχηματίζω</value>
+  </data>
+  <data name="T_INPUT_IS_COLOR_EXCEPTION_INVALIDCOLORTYPE" xml:space="preserve">
+    <value>Μη έγκυρος τύπος χρώματος στον επιλογέα χρώματος</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTNAMEPROMPT" xml:space="preserve">
+    <value>Γράψτε το όνομα της γραμματοσειράς. Θα μετατραπεί σε πεζά γράμματα.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_NOFONT" xml:space="preserve">
+    <value>Η γραμματοσειρά δεν υπάρχει.</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPT" xml:space="preserve">
+    <value>Επιλέξτε μια γραμματοσειρά figlet από την παρακάτω λίστα</value>
+  </data>
+  <data name="T_INPUT_IS_FIGLET_FONTSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Επιλογή γραμματοσειράς</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_EXCEPTION_NOSELECTOR" xml:space="preserve">
+    <value>Ο επιλογέας δεν έχει καθοριστεί</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Διαβάστε περισσότερα...</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_LISTBINDINGS" xml:space="preserve">
+    <value>Λίστα συνδυασμών πλήκτρων</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND" xml:space="preserve">
+    <value>Μετακίνηση</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTOR_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Έξοδος από το διαδραστικό TUI</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_ITEMINFO" xml:space="preserve">
+    <value>Πληροφορίες αντικειμένου</value>
+  </data>
+  <data name="T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Το στυλ επιλογής απαιτεί να είναι ενεργοποιημένη τουλάχιστον μία επιλογή.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERNAMEPROMPT" xml:space="preserve">
+    <value>Γράψτε το όνομα του περιστρεφόμενου μοχλού. Θα μετατραπεί σε πεζά γράμματα.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_NOSPINNER" xml:space="preserve">
+    <value>Ο περιστρεφόμενος μηχανισμός δεν υπάρχει.</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPT" xml:space="preserve">
+    <value>Επιλέξτε έναν περιστρεφόμενο δίσκο από την παρακάτω λίστα</value>
+  </data>
+  <data name="T_INPUT_IS_SPINNER_SPINNERSELECTPROMPTTITLE" xml:space="preserve">
+    <value>Επιλογή περιστρεφόμενου</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOINFO" xml:space="preserve">
+    <value>Δεν υπάρχουν πληροφορίες.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_BASE_NOSTATUS" xml:space="preserve">
+    <value>Χωρίς κατάσταση</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERSECONDONLYONEPANE" xml:space="preserve">
+    <value>Προσπάθησα να αποδώσω διαδραστικά στοιχεία TUI για το δευτερεύον παράθυρο σε ένα διαδραστικό TUI που επιτρέπει την αλληλεπίδραση μόνο από ένα παράθυρο.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFOTWOPANES" xml:space="preserve">
+    <value>Προσπάθησα να αποδώσω πληροφορίες στο δευτερεύον παράθυρο σε ένα διαδραστικό TUI που επιτρέπει την αλληλεπίδραση από δύο παράθυρα, με αποτέλεσμα να δημιουργηθεί πρόβλημα στην απόδοση των επιλογών εκεί.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA" xml:space="preserve">
+    <value>Προσπάθεια απόδοσης πληροφοριών σχετικά με μηδενικά δεδομένα</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_INFOFAILED" xml:space="preserve">
+    <value>Αποτυχία λήψης πληροφοριών.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_KEYBINDING_DOACTION" xml:space="preserve">
+    <value>Εκτέλεση ενέργειας στο επιλεγμένο στοιχείο</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NEEDSBASECLASS" xml:space="preserve">
+    <value>Παρακαλώ δώστε μια βασική κλάση Interactive TUI και προσπαθήστε ξανά.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_NODATASOURCE" xml:space="preserve">
+    <value>Το διαδραστικό TUI {0} δεν περιέχει καμία πηγή δεδομένων.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS1" xml:space="preserve">
+    <value>Το διαδραστικό TUI {0} έχει αντικρουόμενες συνδέσεις πληκτρολογίου ή ποντικιού.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_EXCEPTION_CONFLICTBINDINGS2" xml:space="preserve">
+    <value>Οι ακόλουθες συνδέσεις πλήκτρων ή συνδέσεων ποντικιού συγκρούονται:</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_CRASH" xml:space="preserve">
+    <value>Το κείμενο του UI παρουσίασε σφάλμα. Συνήθως πρόκειται για πρόβλημα στην πλευρά της εφαρμογής.</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTSPECIFIED" xml:space="preserve">
+    <value>Δεν έχει καθοριστεί κείμενο στο περιβάλλον χρήστη</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_NOTREADY" xml:space="preserve">
+    <value>Αυτό το κείμενο του UI [{0}] δεν είναι έτοιμο επειδή η κατάσταση είναι {1}</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TEXTUAL_EXCEPTION_CONFLICTBINDINGS" xml:space="preserve">
+    <value>Υπάρχουν {0} αντικρουόμενες συνδέσεις πλήκτρων στο [{1}] text UI</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_NOEVENTCTX" xml:space="preserve">
+    <value>Το περιβάλλον συμβάντος δείκτη δεν καθορίζεται</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTPOSUNDERFLOW" xml:space="preserve">
+    <value>Η αρχική θέση δεν μπορεί να είναι μικρότερη από μηδέν</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_ENDPOSUNDERFLOW" xml:space="preserve">
+    <value>Η τελική θέση δεν μπορεί να είναι μικρότερη από μηδέν</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTXPOSOVERFLOWSEND" xml:space="preserve">
+    <value>Η αρχική θέση X δεν μπορεί να είναι μεγαλύτερη από την τελική θέση X</value>
+  </data>
+  <data name="T_INPUT_POINTER_EXCEPTION_STARTYPOSOVERFLOWSEND" xml:space="preserve">
+    <value>Η αρχική θέση Y δεν μπορεί να είναι μεγαλύτερη από την τελική θέση Y</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NOINPUTNAME" xml:space="preserve">
+    <value>Δεν έχει καθοριστεί όνομα εισόδου</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_KEYBINDING_ADVANCE" xml:space="preserve">
+    <value>Προκαταβολή</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE" xml:space="preserve">
+    <value>Απαιτείται εισαγωγή</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLY" xml:space="preserve">
+    <value>Μία ή περισσότερες από τις ακόλουθες εισόδους δεν έχουν συμπληρωθεί σωστά:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTFILLEDINCORRECTLYTITLE" xml:space="preserve">
+    <value>Λανθασμένη εισαγωγή</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDED" xml:space="preserve">
+    <value>Δεν έχουν καταχωρηθεί τα απαιτούμενα δεδομένα. Θα χρειαστεί να συμπληρώσετε τις τιμές των ακόλουθων δεδομένων:</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE" xml:space="preserve">
+    <value>Δεν παρέχεται εισαγωγή</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NOANSWERS" xml:space="preserve">
+    <value>Δεν είναι δυνατή η εμφάνιση επιλογής χωρίς απαντήσεις και χωρίς εναλλακτικές απαντήσεις.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_NEEDSATLEASTONEITEM" xml:space="preserve">
+    <value>Το στυλ επιλογής απαιτεί να είναι ενεργοποιημένη τουλάχιστον μία επιλογή.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_EXCEPTION_ONECHARINVALIDCHOICES" xml:space="preserve">
+    <value>Δεν μπορείτε να δώσετε απαντήσεις με περισσότερους από έναν χαρακτήρες σε λειτουργία ενός χαρακτήρα.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_WRONGANSWER" xml:space="preserve">
+    <value>Λάθος απάντηση. Παρακαλώ προσπαθήστε ξανά.</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_INSERT" xml:space="preserve">
+    <value>Εισάγω</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACE" xml:space="preserve">
+    <value>Αντικαθιστώ</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_KEYBINDING_REPLACEALL" xml:space="preserve">
+    <value>Αντικατάσταση όλων</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_STATUS_READY" xml:space="preserve">
+    <value>Ετοιμος</value>
+  </data>
+  <data name="T_INPUT_STYLES_EDITORS_NOTFOUND" xml:space="preserve">
+    <value>Δεν βρέθηκε. Ελέγξτε τη σύνταξη ή διευρύνετε την αναζήτησή σας.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO" xml:space="preserve">
+    <value>Πληροφορίες αριθμού</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Αφαιρώ</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_KEYBINDING_REPLACEALLWHAT" xml:space="preserve">
+    <value>Αντικατάσταση Όλων Τι</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT" xml:space="preserve">
+    <value>Γράψτε τον αριθμό byte με την δεκαεξαδική τιμή.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1" xml:space="preserve">
+    <value>Ο αριθμός byte που καθορίστηκε δεν είναι έγκυρος.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID2" xml:space="preserve">
+    <value>Μη έγκυρο byte {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACE" xml:space="preserve">
+    <value>Γράψτε τον αριθμό byte με την δεκαεξαδική τιμή που θα αντικαταστήσει το {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMPROMPT_REPLACED" xml:space="preserve">
+    <value>Γράψτε τον αριθμό byte με την δεκαεξαδική τιμή που θα αντικατασταθεί.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSPROMPT" xml:space="preserve">
+    <value>Γράψτε ένα byte ή μια ομάδα byte που χωρίζονται από κενά.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_BYTENUMSREQUIRED" xml:space="preserve">
+    <value>Απαιτούνται byte για την εύρεση, αλλά δεν έχετε δώσει ένα.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_POSITION" xml:space="preserve">
+    <value>Θέση</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_HEXADECIMAL" xml:space="preserve">
+    <value>Δεκαεξαδικό</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_OCTAL" xml:space="preserve">
+    <value>Οκτάεδρος</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_NUMBER" xml:space="preserve">
+    <value>Αριθμός</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_BINARY" xml:space="preserve">
+    <value>Δυάδικος</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE" xml:space="preserve">
+    <value>Πληροφορίες αριθμού</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER1" xml:space="preserve">
+    <value>Ο καθορισμένος αριθμός byte έναρξης δεν μπορεί να είναι μεγαλύτερος από το μέγεθος του αρχείου.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER1" xml:space="preserve">
+    <value>Ο καθορισμένος αριθμός byte στο τέλος δεν μπορεί να είναι μεγαλύτερος από το μέγεθος του αρχείου.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_INVALIDBYTENUMBER" xml:space="preserve">
+    <value>Ο καθορισμένος αριθμός byte δεν είναι έγκυρος.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER1" xml:space="preserve">
+    <value>Ο καθορισμένος αριθμός byte δεν μπορεί να είναι μεγαλύτερος από {0} ή μικρότερος από 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMLARGER2" xml:space="preserve">
+    <value>Ο καθορισμένος αριθμός byte δεν μπορεί να είναι μεγαλύτερος από {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTEARRAYNULL" xml:space="preserve">
+    <value>Δεν είναι δυνατή η εκτέλεση αυτής της λειτουργίας σε έναν μηδενικό πίνακα.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_BYTENUMSMALLER" xml:space="preserve">
+    <value>Ο αριθμός byte πρέπει να ξεκινά με 1.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_STARTBYTELARGER2" xml:space="preserve">
+    <value>Ο καθορισμένος αριθμός byte έναρξης δεν μπορεί να είναι μεγαλύτερος από {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_HEXEDITOR_EXCEPTION_ENDBYTELARGER2" xml:space="preserve">
+    <value>Ο καθορισμένος αριθμός byte τέλους δεν μπορεί να είναι μεγαλύτερος από {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_ENTER" xml:space="preserve">
+    <value>Εισάγω...</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_DELETEHERE" xml:space="preserve">
+    <value>Διαγραφή εδώ</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_REMOVELINE" xml:space="preserve">
+    <value>Αφαίρεση γραμμής</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_STOPENTERING" xml:space="preserve">
+    <value>Σταματήστε την είσοδο</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_KEYBINDING_NEWLINE" xml:space="preserve">
+    <value>Νέα Γραμμή</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGPROMPT" xml:space="preserve">
+    <value>Γράψε τη συμβολοσειρά για να βρεις</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_REPLACESTRINGPROMPT" xml:space="preserve">
+    <value>Γράψτε τη συμβολοσειρά αντικατάστασης</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_FINDSTRINGREGEXPROMPT" xml:space="preserve">
+    <value>Γράψτε μια συμβολοσειρά για εύρεση. Υποστηρίζει κανονικές εκφράσεις.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXREQUIRED" xml:space="preserve">
+    <value>Απαιτείται συμβολοσειρά για την εύρεση, αλλά δεν έχετε δώσει μία.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_STRINGREGEXINVALID" xml:space="preserve">
+    <value>Αυτή η συμβολοσειρά που πρέπει να βρεθεί δεν είναι έγκυρη κανονική έκφραση.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_LINES" xml:space="preserve">
+    <value>Γραμμές</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_COLUMN" xml:space="preserve">
+    <value>Στήλη</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_TEXTINFO_ROW" xml:space="preserve">
+    <value>Σειρά</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINENUMLARGER" xml:space="preserve">
+    <value>Ο καθορισμένος αριθμός γραμμής δεν μπορεί να είναι μεγαλύτερος από {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_TEXTEDITOR_EXCEPTION_LINESARRAYNULL" xml:space="preserve">
+    <value>Δεν είναι δυνατή η εκτέλεση αυτής της λειτουργίας σε λίστα γραμμών null.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MOREINFO" xml:space="preserve">
+    <value>Εμφανίζει περισσότερες πληροφορίες σε ένα πλαίσιο πληροφοριών</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP" xml:space="preserve">
+    <value>Πηγαίνει μια γραμμή πάνω</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEDOWN" xml:space="preserve">
+    <value>Πηγαίνει μια γραμμή προς τα κάτω</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_PREVPAGETEXT" xml:space="preserve">
+    <value>Μεταβαίνει στην προηγούμενη σελίδα του κειμένου</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NEXTPAGETEXT" xml:space="preserve">
+    <value>Μεταβαίνει στην επόμενη σελίδα του κειμένου</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_SINGULAR" xml:space="preserve">
+    <value>Υποβάλλει την τιμή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_SUBMIT_PLURAL" xml:space="preserve">
+    <value>Υποβάλλει τις τιμές</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_SINGULAR" xml:space="preserve">
+    <value>Κλείνει χωρίς να υποβάλει την τιμή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_CANCEL_PLURAL" xml:space="preserve">
+    <value>Κλείνει χωρίς να υποβάλει τις τιμές</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE" xml:space="preserve">
+    <value>Μειώνει την τρέχουσα τιμή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE" xml:space="preserve">
+    <value>Αυξάνει την τρέχουσα τιμή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE" xml:space="preserve">
+    <value>Ορίζει την τιμή στην ελάχιστη τιμή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE" xml:space="preserve">
+    <value>Ορίζει την τιμή στη μέγιστη τιμή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_PREVBUTTON" xml:space="preserve">
+    <value>Μεταβαίνει στο προηγούμενο κουμπί</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_BUTTONS_KEYBINDING_NEXTBUTTON" xml:space="preserve">
+    <value>Μετάβαση στο επόμενο κουμπί</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_FIRSTLINE" xml:space="preserve">
+    <value>Μεταβαίνει στην πρώτη γραμμή κειμένου</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_LASTLINE" xml:space="preserve">
+    <value>Μεταβαίνει στην τελευταία γραμμή κειμένου</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_DOWNORCLOSE" xml:space="preserve">
+    <value>Μεταβαίνει στην επόμενη σελίδα κειμένου ή κλείνει το πλαίσιο πληροφοριών για την τροποποίηση</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_MODAL_KEYBINDING_CLOSE" xml:space="preserve">
+    <value>Κλείνει το πλαίσιο πληροφοριών modal</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Προχωράει μια επιλογή προς τα πάνω (επόμενη επιλογή)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Πηγαίνει μια επιλογή κάτω (προηγούμενη επιλογή)</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_FIRST" xml:space="preserve">
+    <value>Πηγαίνει στην πρώτη επιλογή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_LAST" xml:space="preserve">
+    <value>Πάει στην τελευταία επιλογή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_PREVPAGECHOICES" xml:space="preserve">
+    <value>Μεταβαίνει στην προηγούμενη σελίδα επιλογών</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_NEXTPAGECHOICES" xml:space="preserve">
+    <value>Μεταβαίνει στην επόμενη σελίδα επιλογών</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_COMMON_KEYBINDING_SEARCHCHOICES" xml:space="preserve">
+    <value>Αναζητά μια επιλογή</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_SELECTION_MULTIPLE_KEYBINDING_SELECTALLCHOICES" xml:space="preserve">
+    <value>Επιλέγει ή ακυρώνει όλες τις επιλογές</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_TOOLS_EXCEPTION_CATEGORYGROUPERROR" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη κατηγορίας και ομάδας στην επιλογή με αριθμό {0}.</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_GENERALCHOICES" xml:space="preserve">
+    <value>Γενικές επιλογές</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_AVAILABLECHOICES" xml:space="preserve">
+    <value>Διαθέσιμες επιλογές</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_ALTERNATIVECHOICES" xml:space="preserve">
+    <value>Εναλλακτικές επιλογές</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRM" xml:space="preserve">
+    <value>Επιβεβαιώνω</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR" xml:space="preserve">
+    <value>Πλαϊνή μπάρα</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CONFIRMSELECTIONS" xml:space="preserve">
+    <value>Επιβεβαιώνει την επιλογή/ές</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_CANCELSELECTIONS" xml:space="preserve">
+    <value>Ακύρωση επιλογής/ών</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUP" xml:space="preserve">
+    <value>Ανεβαίνει ένα στοιχείο προς τα πάνω</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWN" xml:space="preserve">
+    <value>Πηγαίνει ένα στοιχείο προς τα κάτω</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_FIRSTELEMENT" xml:space="preserve">
+    <value>Πηγαίνει στο πρώτο στοιχείο</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_LASTELEMENT" xml:space="preserve">
+    <value>Πηγαίνει στο τελευταίο στοιχείο</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Μεταβαίνει στην προηγούμενη σελίδα</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Μεταβαίνει στην επόμενη σελίδα</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Αναζητά ένα στοιχείο</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPSIDEBAR" xml:space="preserve">
+    <value>Μετάβαση προς τα πάνω σε μια πλαϊνή μπάρα</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNSIDEBAR" xml:space="preserve">
+    <value>Μεταβείτε κάτω σε μια πλαϊνή γραμμή</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GOUPQUESTION" xml:space="preserve">
+    <value>Ανεβείτε σε ένα πλαίσιο ερωτήσεων</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_GODOWNQUESTION" xml:space="preserve">
+    <value>Πηγαίνετε σε ένα πλαίσιο ερωτήσεων</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWCOUNT" xml:space="preserve">
+    <value>Εμφάνιση αριθμού σελίδων και επιλογών</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SHOWITEMINFO" xml:space="preserve">
+    <value>Εμφάνιση πληροφοριών αντικειμένου</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTONECHOICE" xml:space="preserve">
+    <value>Επιλέγει ή ακυρώνει μια επιλογή</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSSAMEGROUPSAMECATEGORY" xml:space="preserve">
+    <value>Επιλέγει όλα τα στοιχεία στην ίδια ομάδα και κατηγορία</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSSAMECATEGORIES" xml:space="preserve">
+    <value>Επιλέγει όλα τα στοιχεία σε όλες τις ομάδες στην ίδια κατηγορία</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_SELECTALLITEMSALLGROUPSALLCATEGORIES" xml:space="preserve">
+    <value>Επιλέγει όλα τα στοιχεία σε όλες τις ομάδες σε όλες τις κατηγορίες</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTION_KEYBINDING_UPDATEPOSITION" xml:space="preserve">
+    <value>Ενημέρωση θέσης</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_PREV" xml:space="preserve">
+    <value>Προηγούμενος</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT" xml:space="preserve">
+    <value>Επόμενος</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT" xml:space="preserve">
+    <value>Υποτάσσομαι</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL" xml:space="preserve">
+    <value>Ματαίωση</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP" xml:space="preserve">
+    <value>Βοήθεια</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_DONE" xml:space="preserve">
+    <value>Γινώμενος</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT" xml:space="preserve">
+    <value>Επιλέγω</value>
+  </data>
+  <data name="T_INPUT_STYLES_SELECTORS_KEYBINDING_MANUALSELECT" xml:space="preserve">
+    <value>Χειροκίνητη επιλογή</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_COLORINFO" xml:space="preserve">
+    <value>Πληροφορίες χρώματος</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTTRANSFORM" xml:space="preserve">
+    <value>Επόμενη προσομοίωση αχρωματοψίας</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVTRANSFORM" xml:space="preserve">
+    <value>Προηγούμενη προσομοίωση αχρωματοψίας</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Αύξηση συχνότητας μετασχηματισμού</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASETRANSFORMFREQ" xml:space="preserve">
+    <value>Μείωση συχνότητας μετασχηματισμού</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_WEBCOLOR" xml:space="preserve">
+    <value>Επιλογή χρώματος ιστού</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEOPAQUENESS" xml:space="preserve">
+    <value>Αύξηση της αδιαφάνειας</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASETANSPARENCY" xml:space="preserve">
+    <value>Αύξηση της διαφάνειας</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLORMODE" xml:space="preserve">
+    <value>Επόμενη λειτουργία χρώματος</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLORMODE" xml:space="preserve">
+    <value>Προηγούμενη λειτουργία χρώματος</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEVALUE" xml:space="preserve">
+    <value>Αύξηση αξίας</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEVALUE" xml:space="preserve">
+    <value>Μείωση τιμής</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASEHUE" xml:space="preserve">
+    <value>Μειώστε την απόχρωση του χρώματος</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASEHUE" xml:space="preserve">
+    <value>Αύξηση της απόχρωσης του χρώματος</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASELIGHTNESS" xml:space="preserve">
+    <value>Μειώστε την φωτεινότητα των χρωμάτων</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASELIGHTNESS" xml:space="preserve">
+    <value>Αυξήστε την φωτεινότητα των χρωμάτων</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_DECREASESATURATION" xml:space="preserve">
+    <value>Μειώστε τον κορεσμό</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_INCREASESATURATION" xml:space="preserve">
+    <value>Αύξηση κορεσμού</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_PREVCOLOR" xml:space="preserve">
+    <value>Προηγούμενο χρώμα</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_NEXTCOLOR" xml:space="preserve">
+    <value>Επόμενο χρώμα</value>
+  </data>
+  <data name="T_INPUT_STYLES_COLORSELECTOR_KEYBINDING_SHOWHIDECOLORLIST" xml:space="preserve">
+    <value>Εμφάνιση και απόκρυψη λίστας χρωμάτων</value>
+  </data>
+  <data name="T_INPUT_STYLES_FIGLETSELECTOR_KEYBINDING_SHOWCASE" xml:space="preserve">
+    <value>Παρουσίαση Χαρακτήρων</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_UNCONDITIONAL" xml:space="preserve">
+    <value>Αυτό το εξάρτημα ενδέχεται να μην είναι βασική κλάση Fixture. Καθορίστε ένα εξάρτημα χωρίς όρους.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_MAYNOTBEBASE_CONDITIONAL" xml:space="preserve">
+    <value>Αυτό το εξάρτημα ενδέχεται να μην είναι βασική κλάση Fixture. Καθορίστε ένα εξάρτημα υπό όρους.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_VALUEMISMATCH_CONDITIONAL" xml:space="preserve">
+    <value>Η επιστρεφόμενη τιμή {0} δεν ταιριάζει με την αναμενόμενη τιμή {1}</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONAL" xml:space="preserve">
+    <value>Αυτό το εξάρτημα δεν είναι υπό όρους.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Αυτός ο τύπος εξαρτήματος δεν είναι έγκυρος.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXCEPTION_NOFIXTURES" xml:space="preserve">
+    <value>Δεν υπάρχουν εξαρτήματα εδώ. Εισαγάγετε ένα.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT" xml:space="preserve">
+    <value>Επιλέξτε ένα δοκιμαστικό εξάρτημα.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION" xml:space="preserve">
+    <value>Έξοδος από τον επιλογέα δοκιμαστικού φωτισμού</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+    <value>Αυτή η δοκιμή πέτυχε!</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Η αναμενόμενη τιμή αντιστοιχεί στην πραγματική τιμή.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+    <value>Αυτή η δοκιμή απέτυχε.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Μήνυμα</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Η αναμενόμενη τιμή δεν ταιριάζει με την πραγματική τιμή.</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_CONDITIONALMETHODNOVOID" xml:space="preserve">
+    <value>Η μέθοδος σε αυτόν τον εκπρόσωπο ενδέχεται να μην επιστρέφει void</value>
+  </data>
+  <data name="T_INPUT_TESTFIXTURES_EXCEPTION_UNCONDITIONALMETHODNEEDSVOID" xml:space="preserve">
+    <value>Η μέθοδος σε αυτόν τον εκπρόσωπο πρέπει να επιστρέψει void</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXINVALID" xml:space="preserve">
+    <value>Η κανονική έκφραση του στοιχείου δεν είναι έγκυρη</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTREGEXNOTPROVIDED" xml:space="preserve">
+    <value>Δεν παρέχεται κανονική έκφραση στοιχείου</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTFORECOLORNOTPROVIDED" xml:space="preserve">
+    <value>Δεν παρέχεται χρώμα προσκηνίου στοιχείου</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_EXCEPTION_COMPONENTBACKCOLORNOTPROVIDED" xml:space="preserve">
+    <value>Δεν παρέχεται χρώμα φόντου στοιχείου</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Δεν παρέχεται όνομα του επισημάντη.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_NEEDSBASEHIGHLIGHTERNAME" xml:space="preserve">
+    <value>Δεν παρέχεται όνομα του βασικού επισημάντη.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND1" xml:space="preserve">
+    <value>Δεν είναι δυνατή η εύρεση του μαρκαδόρου επισήμανσης {0}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOTFOUND2" xml:space="preserve">
+    <value>Δεν είναι δυνατή η εύρεση του μαρκαδόρου επισήμανσης</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_COMPONENTNOTFOUND" xml:space="preserve">
+    <value>Δεν είναι δυνατή η εύρεση του στοιχείου {0} στο εργαλείο επισήμανσης {1}</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERINVALID" xml:space="preserve">
+    <value>Μη έγκυρος επισημάντης.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNONAME" xml:space="preserve">
+    <value>Το εργαλείο επισήμανσης δεν έχει όνομα.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTEREXISTS" xml:space="preserve">
+    <value>Το εργαλείο επισήμανσης υπάρχει ήδη.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_HIGHLIGHTERNOCOMPONENTS" xml:space="preserve">
+    <value>Το εργαλείο επισήμανσης δεν έχει εξαρτήματα.</value>
+  </data>
+  <data name="T_READER_HIGHLIGHT_TOOLS_EXCEPTION_REMOVEBUILTINHIGHLIGHTER" xml:space="preserve">
+    <value>Δεν είναι δυνατή η κατάργηση του ενσωματωμένου επισημάντη {0}</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYNAMENEEDED" xml:space="preserve">
+    <value>Το όνομα του ιστορικού δεν έχει καθοριστεί</value>
+  </data>
+  <data name="T_READER_HISTORY_EXCEPTION_HISTORYENTRIESNEEDED" xml:space="preserve">
+    <value>Δεν έχουν καθοριστεί καταχωρήσεις ιστορικού</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYPATHNEEDED" xml:space="preserve">
+    <value>Δεν παρέχεται διαδρομή αρχείου ιστορικού.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONNEEDED" xml:space="preserve">
+    <value>Δεν παρέχεται αναπαράσταση ιστορικού JSON.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYJSONMALFORMED" xml:space="preserve">
+    <value>Το JSON αναλύθηκε, αλλά δεν παρέχεται ιστορικό αναπαράστασης JSON.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYINFONEEDED" xml:space="preserve">
+    <value>Δεν παρέχονται πληροφορίες ιστορικού.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNAMENOTFOUND" xml:space="preserve">
+    <value>Δεν παρέχεται όνομα ιστορικού. Είστε βέβαιοι ότι έχετε καθορίσει το όνομα στην αναπαράσταση JSON;</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRIESNOTFOUND" xml:space="preserve">
+    <value>Δεν παρέχονται καταχωρίσεις ιστορικού. Είστε βέβαιοι ότι έχετε καθορίσει τις καταχωρίσεις στην αναπαράσταση JSON σας;</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTFOUND_NAMED" xml:space="preserve">
+    <value>Το ιστορικό {0} δεν βρέθηκε.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_UNLOADINGGENERALHISTORY" xml:space="preserve">
+    <value>Το γενικό ιστορικό δεν μπορεί να καταργηθεί, αλλά μπορεί να διαγραφεί.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED" xml:space="preserve">
+    <value>Η ιστορία δεν αποτελεί μέρος των καταχωρημένων ιστοριών.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYUNLOADFAILED" xml:space="preserve">
+    <value>Η διαγραφή του ιστορικού απέτυχε.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYNEEDED" xml:space="preserve">
+    <value>Δεν παρέχεται καταχώρηση ιστορικού.</value>
+  </data>
+  <data name="T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYENTRYLISTNEEDED" xml:space="preserve">
+    <value>Δεν παρέχεται λίστα ιστορικού καταχωρίσεων.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_PRINTWRITE" xml:space="preserve">
+    <value>Υπάρχει μια διένεξη μεταξύ των {0} και {1}.</value>
+  </data>
+  <data name="T_READER_FAILED" xml:space="preserve">
+    <value>Ο αναγνώστης εισόδου απέτυχε.</value>
+  </data>
+  <data name="T_READER_CUE_EXCEPTION_UNSEEKABLE" xml:space="preserve">
+    <value>Αυτή η ροή δεν μπορεί να αναζητήσει.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
+    <value>Δεν είναι δυνατή η δημιουργία ακολουθίας VT για ανύπαρκτο τύπο {0}</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING" xml:space="preserve">
+    <value>Δεν είναι δυνατή η δημιουργία ακολουθίας VT με ελλείποντα ορίσματα. Αναμένονταν {0} ορίσματα, ελήφθησαν {1} ορίσματα.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASCMDSAMENAME" xml:space="preserve">
+    <value>Το ψευδώνυμο δεν μπορεί να έχει το ίδιο όνομα με μια εντολή.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_CMDNOTFOUND" xml:space="preserve">
+    <value>Δεν βρέθηκε εντολή με ψευδώνυμο {0}.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASFOUND" xml:space="preserve">
+    <value>Το ψευδώνυμο βρέθηκε ήδη</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_REMOVE" xml:space="preserve">
+    <value>Δεν βρέθηκε να έχει αφαιρεθεί το ψευδώνυμο {0}.</value>
+  </data>
+  <data name="T_SHELL_ALIAS_EXCEPTION_ALIASNOTFOUND_QUERY" xml:space="preserve">
+    <value>Δεν βρέθηκε να έχει υποβληθεί ερώτημα για το ψευδώνυμο {0}.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_USAGE" xml:space="preserve">
+    <value>Χρήση</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_HELP_CMD" xml:space="preserve">
+    <value>Εντολή</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_USAGEINFO_DESC" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELP_ARG" xml:space="preserve">
+    <value>Δεν υπάρχει βοήθεια για το όρισμα &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_BASE_HELP_NOHELPDESC_ARG" xml:space="preserve">
+    <value>Χωρίς περιγραφή βοήθειας για όρισμα</value>
+  </data>
+  <data name="T_SHELL_BASE_EXCEPTION_ARGNOTIMPLEMENTED" xml:space="preserve">
+    <value>Αυτό το επιχείρημα δεν έχει υλοποιηθεί ακόμη.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_NOTENOUGHARGS" xml:space="preserve">
+    <value>Δεν υπήρχαν αρκετά επιχειρήματα.</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNKNOWNARG" xml:space="preserve">
+    <value>Άγνωστο όρισμα</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGPARSE_UNRECOVERABLEERROR" xml:space="preserve">
+    <value>Μη αναστρέψιμο σφάλμα στο όρισμα</value>
+  </data>
+  <data name="T_SHELL_BASE_ARGSPARSE_EXCEPTION_ARGINFO" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη πληροφοριών ορίσματος για εντολή ή όρισμα</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_EXCEPTION_THREADPARAMS" xml:space="preserve">
+    <value>Οι παράμετροι νήματος δεν καθορίζονται.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDEDLIST" xml:space="preserve">
+    <value>Δεν παρέχονται απαιτούμενα ορίσματα για όλες τις παρακάτω χρήσεις:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGSNOTPROVIDED" xml:space="preserve">
+    <value>Δεν παρέχονται τα απαιτούμενα ορίσματα.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOTPROVIDED" xml:space="preserve">
+    <value>Δεν παρέχονται οι απαιτούμενοι διακόπτες.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNEEDVALUE" xml:space="preserve">
+    <value>Ένας από τους διακόπτες απαιτεί μια τιμή που δεν παρέχεται.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNKNOWNSWITCHES" xml:space="preserve">
+    <value>Οι διακόπτες που αναφέρονται παρακάτω είναι άγνωστοι.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESCONFLICT" xml:space="preserve">
+    <value>Οι διακόπτες που αναφέρονται παρακάτω έρχονται σε διένεξη μεταξύ τους.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHESNOVALUES" xml:space="preserve">
+    <value>Οι παρακάτω διακόπτες δεν δέχονται τιμές.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGNUMERIC" xml:space="preserve">
+    <value>Ένα ή περισσότερα από τα ορίσματα αναμένουν αριθμητική τιμή, αλλά δώσατε έναν μη έγκυρο αριθμό.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ARGEXACT" xml:space="preserve">
+    <value>Ένα ή περισσότερα από τα ορίσματα αναμένουν ακριβή διατύπωση, αλλά παρείχατε μια μη έγκυρη λέξη.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SWITCHNUMERIC" xml:space="preserve">
+    <value>Ένας ή περισσότεροι από τους διακόπτες αναμένουν αριθμητική τιμή, αλλά δώσατε έναν μη έγκυρο αριθμό.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CONSULTHELP" xml:space="preserve">
+    <value>Συμβουλευτείτε την καταχώρηση βοήθειας για αυτήν την εντολή για περισσότερες πληροφορίες</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDINTERRUPT" xml:space="preserve">
+    <value>Η εντολή διακόπτεται...</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND1" xml:space="preserve">
+    <value>Σφάλμα κατά την προσπάθεια εκτέλεσης της εντολής {2}.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ERRORCOMMAND2" xml:space="preserve">
+    <value>Σφάλμα</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_ABORTEXCEPTION" xml:space="preserve">
+    <value>Η εντολή ακυρώθηκε για τον ακόλουθο λόγο</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_INVALIDPATTERN" xml:space="preserve">
+    <value>Δόθηκε μη έγκυρο μοτίβο εντολής.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_COMMANDNOTFOUND" xml:space="preserve">
+    <value>Η εντολή δεν βρέθηκε.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_SHELLTYPENOTFOUND" xml:space="preserve">
+    <value>Ο τύπος κελύφους {0} δεν υπάρχει.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDBASENULL" xml:space="preserve">
+    <value>Πρέπει να παρέχετε τη βάση εντολών.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNAMENULL" xml:space="preserve">
+    <value>Πρέπει να δώσετε την εντολή.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDALREADYADDED" xml:space="preserve">
+    <value>Η καθορισμένη εντολή έχει ήδη προστεθεί.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTLOAD" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση ορισμένων από τις προσαρμοσμένες εντολές.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMNOTFOUND" xml:space="preserve">
+    <value>Η καθορισμένη προσαρμοσμένη εντολή δεν βρέθηκε.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDCUSTOMCANTUNLOAD" xml:space="preserve">
+    <value>Δεν είναι δυνατή η κατάργηση της φόρτωσης ορισμένων από τις προσαρμοσμένες εντολές.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_CMDNEEDSSLASH" xml:space="preserve">
+    <value>Αυτό το κέλυφος χρησιμοποιεί τις εντολές κάθετου για την εκτέλεση των εντολών. Προσαρτήστε το σύμβολο κάθετου &apos;/&apos; στην αρχή της εντολής για να ξεκινήσετε. Για παράδειγμα:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_UNDEFINED" xml:space="preserve">
+    <value>Αυτή η εντολή δεν έχει οριστεί.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_AVAILABLECMDS" xml:space="preserve">
+    <value>Διαθέσιμες εντολές:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_GENERALCMDS" xml:space="preserve">
+    <value>Γενικές εντολές:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOSHELLCMDS" xml:space="preserve">
+    <value>Δεν υπάρχουν εντολές κελύφους.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_EXTRACMDS" xml:space="preserve">
+    <value>Επιπλέον εντολές:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOEXTRACMDS" xml:space="preserve">
+    <value>Χωρίς επιπλέον εντολές.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ALIASCMDS" xml:space="preserve">
+    <value>Εντολές ψευδωνύμου:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOALIASCMDS" xml:space="preserve">
+    <value>Δεν υπάρχουν εντολές ψευδωνύμου.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_UNIFIEDCMDS" xml:space="preserve">
+    <value>Ενοποιημένες εντολές:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_NOUNIFIEDCMDS" xml:space="preserve">
+    <value>Δεν υπάρχουν ενοποιημένες εντολές.</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDDEFINEDBY" xml:space="preserve">
+    <value>Εντολή που ορίζεται από</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGSLIST" xml:space="preserve">
+    <value>Αυτή η εντολή έχει τα παρακάτω ορίσματα που αλλάζουν τον τρόπο λειτουργίας της:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED" xml:space="preserve">
+    <value>Μη καθορισμένη περιγραφή ορίσματος</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST" xml:space="preserve">
+    <value>Αυτή η εντολή έχει τους παρακάτω διακόπτες που αλλάζουν τον τρόπο λειτουργίας της:</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED" xml:space="preserve">
+    <value>Μη καθορισμένη περιγραφή διακόπτη</value>
+  </data>
+  <data name="T_SHELL_BASE_COMMAND_HELP_CMDNOHELP" xml:space="preserve">
+    <value>Δεν υπάρχει βοήθεια για την εντολή &quot;{0}&quot;.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_EXCEPTION_NOTFOUND" xml:space="preserve">
+    <value>Η καθορισμένη προεπιλογή {0} δεν βρέθηκε.</value>
+  </data>
+  <data name="T_SHELL_PROMPTS_PRESETS_SELECTPRESET" xml:space="preserve">
+    <value>Επιλογή προεπιλογής για {0}:</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FIND_NOTFOUND" xml:space="preserve">
+    <value>Δεν βρέθηκαν εντολές.</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_EXIT_HELP_DESC" xml:space="preserve">
+    <value>Έξοδος από το κέλυφος εάν εκτελείται σε υποκέλυφος</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_FINDCMDS_HELP_DESC" xml:space="preserve">
+    <value>Βρίσκει τις διαθέσιμες εντολές στον τρέχοντα τύπο κελύφους</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_HELP_DESC" xml:space="preserve">
+    <value>Σελίδα βοήθειας</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_GENERAL_SWITCH_DESC" xml:space="preserve">
+    <value>Εμφανίζει γενικές εντολές (προεπιλογή)</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALIAS_SWITCH_DESC" xml:space="preserve">
+    <value>Εμφανίζει ψευδώνυμες εντολές</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_UNIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Εμφανίζει ενοποιημένες εντολές</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_EXTRA_SWITCH_DESC" xml:space="preserve">
+    <value>Εμφανίζει επιπλέον εντολές</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_ALL_SWITCH_DESC" xml:space="preserve">
+    <value>Εμφανίζει όλες τις εντολές</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_HELP_SIMPLIFIED_SWITCH_DESC" xml:space="preserve">
+    <value>Χρησιμοποιεί απλοποιημένη βοήθεια</value>
+  </data>
+  <data name="T_SHELL_UNIFIED_PRESETS_HELP_DESC" xml:space="preserve">
+    <value>Ανοίγει τη βιβλιοθήκη προεπιλογών κελύφους</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDNOTFOUND" xml:space="preserve">
+    <value>Μήνυμα κελύφους: Η ζητούμενη εντολή {0} δεν βρέθηκε. Δείτε τη &apos;βοήθεια&apos; για τις διαθέσιμες εντολές.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_CMDEXECUTEERROR" xml:space="preserve">
+    <value>Σφάλμα κατά την προσπάθεια εκτέλεσης εντολής.</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη του εκτελέστη κελύφους για το {0}</value>
+  </data>
+  <data name="T_SHELL_SHELLMANAGER_EXCEPTION_SHELLINIT" xml:space="preserve">
+    <value>Αποτυχία προσπάθειας αρχικοποίησης του κελύφους</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_GRAPHICAL_SELECTION_EXCEPTION_SINGLEMULTIPLE" xml:space="preserve">
+    <value>Δεν είναι δυνατός ο προσδιορισμός εάν η είσοδος επιλογής είναι μία ή πολλαπλή</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MARKUPUNSPECIFIED" xml:space="preserve">
+    <value>Η σήμανση δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_ENDTAGINVALID" xml:space="preserve">
+    <value>Μη έγκυρος προσδιοριστής ετικέτας λήξης.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_NOQUEUEDSEQS" xml:space="preserve">
+    <value>Δεν υπάρχουν ακολουθίες σε ουρά για να τερματιστεί η ετικέτα.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_MISSINGTAGS" xml:space="preserve">
+    <value>Λείπουν {0} τελικές ετικέτες.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_RENDERER_MARKUP_EXCEPTION_FORMATONLYVT" xml:space="preserve">
+    <value>Η αρχική μορφή δεν πρέπει να εκτυπώνει κείμενο. Πρέπει να περιέχει μόνο ακολουθίες VT μορφοποίησης.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS" xml:space="preserve">
+    <value>Διαθέσιμες συνδυασμοί πλήκτρων</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_NOBINDINGS" xml:space="preserve">
+    <value>Δεν έχουν οριστεί συνδέσεις σε αυτό το πλαίσιο.</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_KEYBOARDBINDINGS" xml:space="preserve">
+    <value>Συνδέσεις πληκτρολογίου</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS" xml:space="preserve">
+    <value>Συνδέσεις ποντικιού</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARINVALID" xml:space="preserve">
+    <value>Μη έγκυρο όνομα χαρακτήρα Nerd Fonts {0} στον τύπο {1}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_CHARREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Μη έγκυρη αναπαράσταση χαρακτήρων Nerd Fonts {0} από {1} στον τύπο {2}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPEINVALID" xml:space="preserve">
+    <value>Μη έγκυρος τύπος γραμματοσειράς Nerd {0}</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_NERDFONTS_EXCEPTION_TYPENOCHARS" xml:space="preserve">
+    <value>Ο τύπος γραμματοσειράς Nerd {0} δεν έχει χαρακτήρες</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASRENDERABLE" xml:space="preserve">
+    <value>Το Renderable είναι ήδη καταχωρημένο</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_TOOLS_CONTAINER_EXCEPTION_HASNORENDERABLE" xml:space="preserve">
+    <value>Το Renderable δεν είναι καταχωρημένο</value>
+  </data>
+  <data name="T_WRITER_CYCLICWRITERS_SIMPLE_SPINNER_EXCEPTION_NOTSAMEWIDTH" xml:space="preserve">
+    <value>Όλοι οι περιστρεφόμενοι τροχοί πρέπει να έχουν το ίδιο πλάτος.</value>
+  </data>
+  <data name="T_INPUT_EXCEPTION_READPOINTERFAILED" xml:space="preserve">
+    <value>Αποτυχία ανάγνωσης του δείκτη.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSQUESTION" xml:space="preserve">
+    <value>Η ερώτηση δεν έχει παρασχεθεί.</value>
+  </data>
+  <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
+    <value>Δεν έχουν καθοριστεί επιλογές</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
+    <value>Δεν παρέχεται όνομα του προτύπου</value>
+  </data>
+  <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
+    <value>Δεν παρέχονται στοιχεία, αλλά αυτή η λίστα μπορεί να είναι κενή για δυναμική προσθήκη.</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_ENTER" xml:space="preserve">
+    <value>Το keyboard sign για enter δεν υπάρχει στο μανιφέστο</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_RUBOUT" xml:space="preserve">
+    <value>Το keyboard sign για rubout δεν υπάρχει στο μανιφέστο</value>
+  </data>
+  <data name="T_READER_EXCEPTION_KEYBOARDCUENOTFOUND_WRITING" xml:space="preserve">
+    <value>Το keyboard sign για εγγραφή δεν υπάρχει στο μανιφέστο</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_TYPEUNDETERMINABLE" xml:space="preserve">
+    <value>Δεν είναι δυνατός ο προσδιορισμός του τύπου από αυτήν την ακολουθία. Βεβαιωθείτε ότι τον έχετε καθορίσει σωστά.</value>
+  </data>
+  <data name="T_SEQUENCES_BUILDER_EXCEPTION_GENERATIONFAILED" xml:space="preserve">
+    <value>Αποτύχαμε να δημιουργήσουμε μια λειτουργική ακολουθία VT τύπου {0} με την ενέργεια {1}. Βεβαιωθείτε ότι έχετε καθορίσει σωστά τις τιμές.</value>
+  </data>
+  <data name="T_INPUT_STYLES_CHOICE_UNTITLEDANSWER" xml:space="preserve">
+    <value>Απάντηση χωρίς τίτλο</value>
+  </data>
+
+</root>
