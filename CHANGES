@@ -1,10 +1,10 @@
-We've released this version to improve performance of text truncation.
+We've released this version to make localization faster.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Improved text truncation performance
+- `[*]` General improvements
 
 Review the commit history if you want to get a deep insight about the changes.
 
