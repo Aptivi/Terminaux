@@ -17,10 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LocaleStation.Tools;
 using System;
+using System.Globalization;
 using System.Linq;
-using Terminaux.Localized;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Localization
@@ -31,11 +30,12 @@ namespace Terminaux.Console.Fixtures.Cases.Localization
 
         public void RunFixture()
         {
+            string[] cultures = ["ar", "de", "el", "en-GB", "en", "es", "fr", "ga", "hi", "hi-Latn", "id", "it", "ja", "ko", "la", "ms", "nb", "nl", "pt", "pt-BR", "ro", "tr", "uk", "vi", "zh"];
             TextWriterColor.Write("Selecting random language...");
             var randomNumberGenerator = new Random();
-            int randomLangIdx = randomNumberGenerator.Next(LocalStrings.Languages.Count);
-            string language = LocalStrings.Languages.ElementAt(randomLangIdx).Key;
-            LanguageCommon.Language = language;
+            int randomLangIdx = randomNumberGenerator.Next(cultures.Length);
+            string language = cultures[randomLangIdx];
+            CultureInfo.CurrentUICulture = new(language);
             TextWriterColor.Write($"Selected language {language}");
         }
     }
