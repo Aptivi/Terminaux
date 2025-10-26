@@ -17,11 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LocaleStation.Tools;
+using System.Globalization;
 using System.Linq;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Choice;
-using Terminaux.Localized;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Localization
@@ -32,13 +31,14 @@ namespace Terminaux.Console.Fixtures.Cases.Localization
 
         public void RunFixture()
         {
-            InputChoiceInfo[] choices = InputChoiceTools.GetInputChoices([.. LocalStrings.Languages.Select((kvp) => (kvp.Key, kvp.Value))]);
+            string[] cultures = ["ar", "de", "el", "en-GB", "en", "es", "fr", "ga", "hi", "hi-Latn", "id", "it", "ja", "ko", "la", "ms", "nb", "nl", "pt", "pt-BR", "ro", "tr", "uk", "vi", "zh"];
+            InputChoiceInfo[] choices = InputChoiceTools.GetInputChoices([.. cultures.Select((culture) => (culture, new CultureInfo(culture).EnglishName))]);
             string languageStr = ChoiceStyle.PromptChoice("Choose a language", choices, new()
             {
                 PressEnter = true,
                 OutputType = ChoiceOutputType.Modern,
             });
-            LanguageCommon.Language = languageStr;
+            CultureInfo.CurrentUICulture = new(languageStr);
             TextWriterColor.Write($"Selected language {languageStr}");
         }
     }

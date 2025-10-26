@@ -358,7 +358,6 @@ namespace Terminaux.Console.Fixtures
             // Localization
             new Localize(),
             new LocalizeDefault(),
-            new LocalizeInfer(),
             new LocalizeManual(),
         ];
     }
