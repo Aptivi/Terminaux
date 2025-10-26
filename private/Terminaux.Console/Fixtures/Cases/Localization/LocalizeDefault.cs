@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LocaleStation.Tools;
+using System.Globalization;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Localization
@@ -28,7 +28,7 @@ namespace Terminaux.Console.Fixtures.Cases.Localization
 
         public void RunFixture()
         {
-            LanguageCommon.Language = "eng";
+            CultureInfo.CurrentUICulture = new("en");
             TextWriterColor.Write("Selected default language");
         }
     }
