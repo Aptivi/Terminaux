@@ -17,25 +17,33 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using System.Resources;
+using ResourceLab.Management;
 
 namespace Terminaux.Base
 {
     internal static class LanguageTools
     {
-        internal static readonly Dictionary<string, ResourceManager> resourceManagers = new()
-        {
-            { "Terminaux", new("Terminaux.Resources.Languages.Output.Localizations", typeof(LanguageTools).Assembly) }
-        };
+        private const string LocalName = "Terminaux";
 
         internal static string GetLocalized(string id)
         {
-            foreach (var resourceManager in resourceManagers.Values)
+            // Add local resource
+            if (!ResourcesManager.ResourceManagerExists(LocalName))
+                ResourcesManager.AddResourceManager(LocalName, new($"{LocalName}.Resources.Languages.Output.Localizations", typeof(LanguageTools).Assembly));
+
+            // Loop through all resource managers
+            foreach (var resourceManager in ResourcesManager.ResourceManagers.Values)
             {
-                string resourceLocalization = resourceManager.GetString(id);
-                if (!string.IsNullOrEmpty(resourceLocalization))
-                    return resourceLocalization;
+                try
+                {
+                    string resourceLocalization = resourceManager.GetString(id);
+                    if (!string.IsNullOrEmpty(resourceLocalization))
+                        return resourceLocalization;
+                }
+                catch
+                {
+                    return id;
+                }
             }
             return id;
         }
