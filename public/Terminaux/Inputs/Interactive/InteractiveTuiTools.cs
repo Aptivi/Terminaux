@@ -279,6 +279,8 @@ namespace Terminaux.Inputs.Interactive
                         $"{ColorTools.RenderSetConsoleColor(finalForeColor, false, true)}" +
                         $"{ColorTools.RenderSetConsoleColor(finalBackColor, true)}" +
                         finalEntry +
+                        $"{ColorTools.RenderSetConsoleColor(finalForeColor, false, true)}" +
+                        $"{ColorTools.RenderSetConsoleColor(finalBackColor, true)}" +
                         new string(' ', SeparatorHalfConsoleWidthInterior - width - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? -1 : 0)) +
                         $"{ColorTools.RenderSetConsoleColor(interactiveTui.Settings.PaneItemBackColor, true)}";
                     builder.Append(text);
