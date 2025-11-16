@@ -239,8 +239,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             };
                             int hitboxIdx = selectionsRendered.GetHitboxIndex();
                             var hitbox = selectionsRendered.GenerateSelectionHitbox(hitboxIdx);
-                            popoverPos = new(hitbox.hitbox.Start.X + maxModuleSelectWidth, hitbox.hitbox.Start.Y);
-                            popoverSize = new(hitbox.hitbox.Size.Width - maxModuleSelectWidth - 1, chosenModule.ExtraPopoverHeight > 0 ? chosenModule.ExtraPopoverHeight : hitbox.hitbox.Size.Height);
+                            popoverPos = new(hitbox.hitbox.Start.X + 1 + maxModuleSelectWidth, hitbox.hitbox.Start.Y);
+                            popoverSize = new(hitbox.hitbox.Size.Width - maxModuleSelectWidth - 2, chosenModule.ExtraPopoverHeight > 0 ? chosenModule.ExtraPopoverHeight : hitbox.hitbox.Size.Height);
                         }
                     }
 
