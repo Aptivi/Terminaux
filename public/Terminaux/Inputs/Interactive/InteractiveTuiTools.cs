@@ -407,9 +407,12 @@ namespace Terminaux.Inputs.Interactive
             }
 
             // Now, write info
+            string truncatedStatus = interactiveTui.Status.Truncate(ConsoleWrapper.WindowWidth);
+            int statusWidth = ConsoleChar.EstimateCellWidth(truncatedStatus);
             var builder = new StringBuilder();
-            builder.Append(TextWriterWhereColor.RenderWhereColorBack(interactiveTui.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, interactiveTui.Settings.ForegroundColor, interactiveTui.Settings.BackgroundColor));
-            builder.Append(ConsoleClearing.GetClearLineToRightSequence());
+            builder.Append(TextWriterWhereColor.RenderWhereColorBack(truncatedStatus, 0, 0, interactiveTui.Settings.ForegroundColor, interactiveTui.Settings.BackgroundColor));
+            if (statusWidth < ConsoleWrapper.WindowWidth)
+                builder.Append(ConsoleClearing.GetClearLineToRightSequence());
             return builder.ToString();
         }
 
