@@ -1,10 +1,12 @@
-We have updated this library for further refinements!
+This version of Terminaux has been further enhanced to include some more aesthetical improvements!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements
+- `[*]` Reset color when entry is written
+- `[*]` Fixed popover position for input modules
+- `[*]` Fixed hidden truncation ellipsis in the interactive TUI
 
 Review the commit history if you want to get a deep insight about the changes.
 
