@@ -107,17 +107,21 @@ namespace Terminaux.Inputs.Interactive
         public void RequireRefresh() =>
             uiScreen.RequireRefresh();
 
+        /// <summary>
+        /// Resets the keybindings
+        /// </summary>
+        public void ResetKeybindings()
+        {
+            Keybindings.Clear();
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K), (_, _, _) => ListBindings()));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H), (_, _, _) => OpenHelpPages()));
+        }
+
         private void ListBindings()
         {
             // Populate appropriate bindings, depending on the SecondPaneInteractable value
             var uiBindings = Keybindings.Select((kb) => kb.binding).ToArray();
-            List<Keybinding> finalBindings =
-            [
-                new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
-                new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H),
-            ];
-            finalBindings.AddRange(uiBindings);
-            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText([.. finalBindings]), new InfoBoxSettings()
+            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText([.. uiBindings]), new InfoBoxSettings()
             {
                 Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS")
             });
@@ -160,8 +164,7 @@ namespace Terminaux.Inputs.Interactive
 
         internal TextualUI()
         {
-            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K), (_, _, _) => ListBindings()));
-            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H), (_, _, _) => OpenHelpPages()));
+            ResetKeybindings();
         }
     }
 }

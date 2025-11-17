@@ -58,7 +58,6 @@ namespace Terminaux.Inputs.Styles.Editor
         private static Keybinding[] Bindings =>
         [
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
-            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Divide),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP1"), ConsoleKey.UpArrow),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN1"), ConsoleKey.DownArrow),
@@ -367,22 +366,6 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 RemoveLine(false);
-        }
-
-        private void RenderKeybindingsBox()
-        {
-            // Show the available keys list
-            var finalBindings = editable ? entering ? BindingsEntering : EditorBindings : Bindings;
-            if (finalBindings.Length == 0)
-                return;
-
-            // User needs an infobox that shows all available keys
-            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(finalBindings);
-            InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
-            {
-                Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS")
-            });
-            RequireRefresh();
         }
 
         private void MoveBackward() =>
@@ -734,19 +717,19 @@ namespace Terminaux.Inputs.Styles.Editor
 
         private void UpdateKeybindings()
         {
-            Keybindings.Clear();
+            ResetKeybindings();
 
             // Add some common keybindings
-            Keybindings.Add((Bindings[3], (ui, _, _) => ((TextEditInteractive)ui).MoveUp()));
-            Keybindings.Add((Bindings[4], (ui, _, _) => ((TextEditInteractive)ui).MoveDown()));
-            Keybindings.Add((Bindings[5], (ui, _, _) => ((TextEditInteractive)ui).MoveBackward()));
-            Keybindings.Add((Bindings[6], (ui, _, _) => ((TextEditInteractive)ui).MoveForward()));
-            Keybindings.Add((Bindings[7], (ui, _, _) => ((TextEditInteractive)ui).PreviousPage()));
-            Keybindings.Add((Bindings[8], (ui, _, _) => ((TextEditInteractive)ui).NextPage()));
-            Keybindings.Add((Bindings[9], (ui, _, _) => ((TextEditInteractive)ui).LineBeginning()));
-            Keybindings.Add((Bindings[10], (ui, _, _) => ((TextEditInteractive)ui).LineEnd()));
-            Keybindings.Add((Bindings[11], (ui, _, _) => ((TextEditInteractive)ui).Beginning()));
-            Keybindings.Add((Bindings[12], (ui, _, _) => ((TextEditInteractive)ui).End()));
+            Keybindings.Add((Bindings[2], (ui, _, _) => ((TextEditInteractive)ui).MoveUp()));
+            Keybindings.Add((Bindings[3], (ui, _, _) => ((TextEditInteractive)ui).MoveDown()));
+            Keybindings.Add((Bindings[4], (ui, _, _) => ((TextEditInteractive)ui).MoveBackward()));
+            Keybindings.Add((Bindings[5], (ui, _, _) => ((TextEditInteractive)ui).MoveForward()));
+            Keybindings.Add((Bindings[6], (ui, _, _) => ((TextEditInteractive)ui).PreviousPage()));
+            Keybindings.Add((Bindings[7], (ui, _, _) => ((TextEditInteractive)ui).NextPage()));
+            Keybindings.Add((Bindings[8], (ui, _, _) => ((TextEditInteractive)ui).LineBeginning()));
+            Keybindings.Add((Bindings[9], (ui, _, _) => ((TextEditInteractive)ui).LineEnd()));
+            Keybindings.Add((Bindings[10], (ui, _, _) => ((TextEditInteractive)ui).Beginning()));
+            Keybindings.Add((Bindings[11], (ui, _, _) => ((TextEditInteractive)ui).End()));
 
             // Add mode-specific keybindings
             if (entering)
@@ -763,21 +746,20 @@ namespace Terminaux.Inputs.Styles.Editor
 
                 // Assign keybindings
                 Keybindings.Add((Bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
-                Keybindings.Add((Bindings[1], (ui, _, _) => ((TextEditInteractive)ui).RenderKeybindingsBox()));
-                Keybindings.Add((Bindings[2], (ui, _, _) => ((TextEditInteractive)ui).FindNext()));
+                Keybindings.Add((Bindings[1], (ui, _, _) => ((TextEditInteractive)ui).FindNext()));
                 Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Oem2), (ui, _, _) => ((TextEditInteractive)ui).FindNext()));
 
                 // Assign edit keybindings
                 if (editable)
                 {
-                    Keybindings.Add((EditorBindings[13], (ui, _, _) => ((TextEditInteractive)ui).SwitchEnter()));
-                    Keybindings.Add((EditorBindings[14], (ui, _, _) => ((TextEditInteractive)ui).DeleteChar()));
-                    Keybindings.Add((EditorBindings[15], (ui, _, _) => ((TextEditInteractive)ui).Insert()));
-                    Keybindings.Add((EditorBindings[16], (ui, _, _) => ((TextEditInteractive)ui).RemoveLine()));
-                    Keybindings.Add((EditorBindings[17], (ui, _, _) => ((TextEditInteractive)ui).InsertNoMove()));
-                    Keybindings.Add((EditorBindings[18], (ui, _, _) => ((TextEditInteractive)ui).RemoveLineNoMove()));
-                    Keybindings.Add((EditorBindings[19], (ui, _, _) => ((TextEditInteractive)ui).Replace()));
-                    Keybindings.Add((EditorBindings[20], (ui, _, _) => ((TextEditInteractive)ui).ReplaceAll()));
+                    Keybindings.Add((EditorBindings[12], (ui, _, _) => ((TextEditInteractive)ui).SwitchEnter()));
+                    Keybindings.Add((EditorBindings[13], (ui, _, _) => ((TextEditInteractive)ui).DeleteChar()));
+                    Keybindings.Add((EditorBindings[14], (ui, _, _) => ((TextEditInteractive)ui).Insert()));
+                    Keybindings.Add((EditorBindings[15], (ui, _, _) => ((TextEditInteractive)ui).RemoveLine()));
+                    Keybindings.Add((EditorBindings[16], (ui, _, _) => ((TextEditInteractive)ui).InsertNoMove()));
+                    Keybindings.Add((EditorBindings[17], (ui, _, _) => ((TextEditInteractive)ui).RemoveLineNoMove()));
+                    Keybindings.Add((EditorBindings[18], (ui, _, _) => ((TextEditInteractive)ui).Replace()));
+                    Keybindings.Add((EditorBindings[19], (ui, _, _) => ((TextEditInteractive)ui).ReplaceAll()));
                 }
             }
         }

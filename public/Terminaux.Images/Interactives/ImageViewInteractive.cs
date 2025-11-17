@@ -64,7 +64,6 @@ namespace Terminaux.Images.Interactives
             bindings =
             [
                 new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_EXIT"), ConsoleKey.Escape),
-                new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_KEYBINDINGS"), ConsoleKey.K),
                 new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_FITORSCALED"), ConsoleKey.F),
                 new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEUP"), ConsoleKey.UpArrow),
                 new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_MOVEDOWN"), ConsoleKey.DownArrow),
@@ -76,16 +75,15 @@ namespace Terminaux.Images.Interactives
                 new Keybinding(LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_BINDINGS_GOTOENDING"), ConsoleKey.End),
             ];
             imageViewer.Keybindings.Add((bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
-            imageViewer.Keybindings.Add((bindings[1], (ui, _, _) => ((ImageViewInteractive)ui).RenderKeybindingsBox()));
-            imageViewer.Keybindings.Add((bindings[2], (ui, _, _) => ((ImageViewInteractive)ui).FitScale()));
-            imageViewer.Keybindings.Add((bindings[3], (ui, _, _) => ((ImageViewInteractive)ui).MoveUp()));
-            imageViewer.Keybindings.Add((bindings[4], (ui, _, _) => ((ImageViewInteractive)ui).MoveDown()));
-            imageViewer.Keybindings.Add((bindings[5], (ui, _, _) => ((ImageViewInteractive)ui).MoveBackward()));
-            imageViewer.Keybindings.Add((bindings[6], (ui, _, _) => ((ImageViewInteractive)ui).MoveForward()));
-            imageViewer.Keybindings.Add((bindings[7], (ui, _, _) => ((ImageViewInteractive)ui).PreviousPage()));
-            imageViewer.Keybindings.Add((bindings[8], (ui, _, _) => ((ImageViewInteractive)ui).NextPage()));
-            imageViewer.Keybindings.Add((bindings[9], (ui, _, _) => ((ImageViewInteractive)ui).Beginning()));
-            imageViewer.Keybindings.Add((bindings[10], (ui, _, _) => ((ImageViewInteractive)ui).End()));
+            imageViewer.Keybindings.Add((bindings[1], (ui, _, _) => ((ImageViewInteractive)ui).FitScale()));
+            imageViewer.Keybindings.Add((bindings[2], (ui, _, _) => ((ImageViewInteractive)ui).MoveUp()));
+            imageViewer.Keybindings.Add((bindings[3], (ui, _, _) => ((ImageViewInteractive)ui).MoveDown()));
+            imageViewer.Keybindings.Add((bindings[4], (ui, _, _) => ((ImageViewInteractive)ui).MoveBackward()));
+            imageViewer.Keybindings.Add((bindings[5], (ui, _, _) => ((ImageViewInteractive)ui).MoveForward()));
+            imageViewer.Keybindings.Add((bindings[6], (ui, _, _) => ((ImageViewInteractive)ui).PreviousPage()));
+            imageViewer.Keybindings.Add((bindings[7], (ui, _, _) => ((ImageViewInteractive)ui).NextPage()));
+            imageViewer.Keybindings.Add((bindings[8], (ui, _, _) => ((ImageViewInteractive)ui).Beginning()));
+            imageViewer.Keybindings.Add((bindings[9], (ui, _, _) => ((ImageViewInteractive)ui).End()));
 
             // Run the TUI
             TextualUITools.RunTui(imageViewer);
@@ -132,20 +130,6 @@ namespace Terminaux.Images.Interactives
                 Fit = fit,
             };
             return renderer.Render();
-        }
-
-        private void RenderKeybindingsBox()
-        {
-            // Show the available keys list
-            if (bindings.Length == 0)
-                return;
-
-            // User needs an infobox that shows all available keys
-            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
-            InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
-            {
-                Title = LanguageTools.GetLocalized("TI_IMAGEVIEWINTERACTIVE_RENDERKEYBINDINGSBOX_INFOBOX_TITLE")
-            });
         }
 
         private void FitScale()

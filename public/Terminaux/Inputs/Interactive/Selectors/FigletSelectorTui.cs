@@ -139,7 +139,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void UpdateKeybindings(int screenNum)
         {
-            Keybindings.Clear();
+            ResetKeybindings();
             if (screenNum == 0)
             {
                 // Keyboard bindings
@@ -147,7 +147,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 Keybindings.Add((FigletSelector.Bindings[1], Next));
                 Keybindings.Add((FigletSelector.Bindings[2], (ui, _, _) => Exit(ui, false)));
                 Keybindings.Add((FigletSelector.Bindings[3], (ui, _, _) => Exit(ui, true)));
-                Keybindings.Add((FigletSelector.Bindings[4], Help));
                 Keybindings.Add((FigletSelector.AdditionalBindings[0], (ui, _, _) => Select(ui, false)));
                 Keybindings.Add((FigletSelector.AdditionalBindings[1], (ui, _, _) => Select(ui, true)));
                 Keybindings.Add((FigletSelector.AdditionalBindings[2], Showcase));
@@ -204,13 +203,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             this.cancel = cancel;
             TextualUITools.ExitTui(ui);
-        }
-
-        private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
-        {
-            Keybinding[] allBindings = [.. FigletSelector.Bindings, .. FigletSelector.AdditionalBindings];
-            KeybindingTools.ShowKeybindingInfobox(allBindings);
-            ui.RequireRefresh();
         }
 
         private void Select(TextualUI ui, bool write)

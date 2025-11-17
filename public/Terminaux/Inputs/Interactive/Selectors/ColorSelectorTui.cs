@@ -468,12 +468,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void UpdateKeybindings()
         {
-            Keybindings.Clear();
+            ResetKeybindings();
 
             // General keybindings
             Keybindings.Add((ColorSelector.Bindings[0], (ui, _, _) => Exit(ui, false)));
             Keybindings.Add((ColorSelector.Bindings[1], (ui, _, _) => Exit(ui, true)));
-            Keybindings.Add((ColorSelector.Bindings[2], Help));
             Keybindings.Add((ColorSelector.AdditionalBindingsGeneral[0], ShowColorInfo));
 
             // Simulation of color-blindness and transformations
@@ -532,18 +531,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             this.cancel = cancel;
             TextualUITools.ExitTui(ui);
-        }
-
-        private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
-        {
-            Keybinding[] allBindings =
-                readOnly ?
-                [.. ColorSelector.Bindings, ..ColorSelector.AdditionalBindingsGeneral] :
-                type == ColorType.TrueColor ?
-                [.. ColorSelector.Bindings, ..ColorSelector.AdditionalBindingsTrueColor] :
-                [.. ColorSelector.Bindings, ..ColorSelector.AdditionalBindingsNormalColor] ;
-            KeybindingTools.ShowKeybindingInfobox(allBindings);
-            ui.RequireRefresh();
         }
 
         private void ShowColorInfo(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)

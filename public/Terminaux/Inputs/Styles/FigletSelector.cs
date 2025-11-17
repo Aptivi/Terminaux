@@ -41,7 +41,6 @@ namespace Terminaux.Inputs.Styles
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_NEXT"), ConsoleKey.RightArrow),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SUBMIT"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_CANCEL"), ConsoleKey.Escape),
-            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.H),
         ];
 
         internal static Keybinding[] AdditionalBindings =>

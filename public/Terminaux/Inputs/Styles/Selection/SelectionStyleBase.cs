@@ -40,10 +40,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
         internal static Keybinding[] ShowBindings =>
         [
-            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_SELECT"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_SIDEBAR"), ConsoleKey.S),
-            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTION_KEYBINDING_MORE"), ConsoleKey.Tab),
-            new(LanguageTools.GetLocalized("T_INPUT_STYLES_SELECTORS_KEYBINDING_HELP"), ConsoleKey.K),
         ];
 
         internal static Keybinding[] Bindings =>

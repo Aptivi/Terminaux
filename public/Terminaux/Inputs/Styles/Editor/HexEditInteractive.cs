@@ -45,7 +45,6 @@ namespace Terminaux.Inputs.Styles.Editor
         private static Keybinding[] Bindings =>
         [
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), ConsoleKey.Escape),
-            new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_KEYBINDING_NUMBERINFO"), ConsoleKey.F4),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Divide),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP1"), ConsoleKey.UpArrow),
@@ -98,27 +97,26 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Assign keybindings
             hexEditor.Keybindings.Add((Bindings[0], (ui, _, _) => TextualUITools.ExitTui(ui)));
-            hexEditor.Keybindings.Add((Bindings[1], (ui, _, _) => ((HexEditInteractive)ui).RenderKeybindingsBox()));
-            hexEditor.Keybindings.Add((Bindings[2], (ui, _, _) => ((HexEditInteractive)ui).NumInfo()));
-            hexEditor.Keybindings.Add((Bindings[3], (ui, _, _) => ((HexEditInteractive)ui).FindNext()));
+            hexEditor.Keybindings.Add((Bindings[1], (ui, _, _) => ((HexEditInteractive)ui).NumInfo()));
+            hexEditor.Keybindings.Add((Bindings[2], (ui, _, _) => ((HexEditInteractive)ui).FindNext()));
             hexEditor.Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_FINDNEXT"), ConsoleKey.Oem2), (ui, _, _) => ((HexEditInteractive)ui).FindNext()));
-            hexEditor.Keybindings.Add((Bindings[4], (ui, _, _) => ((HexEditInteractive)ui).MoveUp()));
-            hexEditor.Keybindings.Add((Bindings[5], (ui, _, _) => ((HexEditInteractive)ui).MoveDown()));
-            hexEditor.Keybindings.Add((Bindings[6], (ui, _, _) => ((HexEditInteractive)ui).MoveBackward()));
-            hexEditor.Keybindings.Add((Bindings[7], (ui, _, _) => ((HexEditInteractive)ui).MoveForward()));
-            hexEditor.Keybindings.Add((Bindings[8], (ui, _, _) => ((HexEditInteractive)ui).PreviousPage()));
-            hexEditor.Keybindings.Add((Bindings[9], (ui, _, _) => ((HexEditInteractive)ui).NextPage()));
-            hexEditor.Keybindings.Add((Bindings[10], (ui, _, _) => ((HexEditInteractive)ui).Beginning()));
-            hexEditor.Keybindings.Add((Bindings[11], (ui, _, _) => ((HexEditInteractive)ui).End()));
+            hexEditor.Keybindings.Add((Bindings[3], (ui, _, _) => ((HexEditInteractive)ui).MoveUp()));
+            hexEditor.Keybindings.Add((Bindings[4], (ui, _, _) => ((HexEditInteractive)ui).MoveDown()));
+            hexEditor.Keybindings.Add((Bindings[5], (ui, _, _) => ((HexEditInteractive)ui).MoveBackward()));
+            hexEditor.Keybindings.Add((Bindings[6], (ui, _, _) => ((HexEditInteractive)ui).MoveForward()));
+            hexEditor.Keybindings.Add((Bindings[7], (ui, _, _) => ((HexEditInteractive)ui).PreviousPage()));
+            hexEditor.Keybindings.Add((Bindings[8], (ui, _, _) => ((HexEditInteractive)ui).NextPage()));
+            hexEditor.Keybindings.Add((Bindings[9], (ui, _, _) => ((HexEditInteractive)ui).Beginning()));
+            hexEditor.Keybindings.Add((Bindings[10], (ui, _, _) => ((HexEditInteractive)ui).End()));
 
             // Assign edit keybindings
             if (edit)
             {
-                hexEditor.Keybindings.Add((EditorBindings[12], (ui, _, _) => ((HexEditInteractive)ui).Insert()));
-                hexEditor.Keybindings.Add((EditorBindings[13], (ui, _, _) => ((HexEditInteractive)ui).Remove()));
-                hexEditor.Keybindings.Add((EditorBindings[14], (ui, _, _) => ((HexEditInteractive)ui).Replace()));
-                hexEditor.Keybindings.Add((EditorBindings[15], (ui, _, _) => ((HexEditInteractive)ui).ReplaceAll()));
-                hexEditor.Keybindings.Add((EditorBindings[16], (ui, _, _) => ((HexEditInteractive)ui).ReplaceAllWhat()));
+                hexEditor.Keybindings.Add((EditorBindings[11], (ui, _, _) => ((HexEditInteractive)ui).Insert()));
+                hexEditor.Keybindings.Add((EditorBindings[12], (ui, _, _) => ((HexEditInteractive)ui).Remove()));
+                hexEditor.Keybindings.Add((EditorBindings[13], (ui, _, _) => ((HexEditInteractive)ui).Replace()));
+                hexEditor.Keybindings.Add((EditorBindings[14], (ui, _, _) => ((HexEditInteractive)ui).ReplaceAll()));
+                hexEditor.Keybindings.Add((EditorBindings[15], (ui, _, _) => ((HexEditInteractive)ui).ReplaceAllWhat()));
             }
 
             // Run the TUI
@@ -231,22 +229,6 @@ namespace Terminaux.Inputs.Styles.Editor
                 $"{TextWriterWhereColor.RenderWherePlain(rendered, fullscreen ? 0 : 1, SeparatorMinimumHeightInterior)}"
             );
             return builder.ToString();
-        }
-
-        private void RenderKeybindingsBox()
-        {
-            // Show the available keys list
-            var finalBindings = editable ? EditorBindings : Bindings;
-            if (finalBindings.Length == 0)
-                return;
-
-            // User needs an infobox that shows all available keys
-            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(finalBindings);
-            InfoBoxModalColor.WriteInfoBoxModal(bindingsHelp, new InfoBoxSettings(settings.InfoBoxSettings)
-            {
-                Title = LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS"),
-            });
-            RequireRefresh();
         }
 
         private void MoveBackward()

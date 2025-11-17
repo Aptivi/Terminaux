@@ -136,13 +136,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
-        {
-            Keybinding[] allBindings = [.. SpinnerSelector.Bindings, .. SpinnerSelector.AdditionalBindings];
-            KeybindingTools.ShowKeybindingInfobox(allBindings);
-            ui.RequireRefresh();
-        }
-
         private void Select(TextualUI ui, bool write)
         {
             if (write)
@@ -191,7 +184,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SpinnerSelector.Bindings[1], Next));
             Keybindings.Add((SpinnerSelector.Bindings[2], (ui, _, _) => Exit(ui, false)));
             Keybindings.Add((SpinnerSelector.Bindings[3], (ui, _, _) => Exit(ui, true)));
-            Keybindings.Add((SpinnerSelector.Bindings[4], Help));
             Keybindings.Add((SpinnerSelector.AdditionalBindings[0], (ui, _, _) => Select(ui, false)));
             Keybindings.Add((SpinnerSelector.AdditionalBindings[1], (ui, _, _) => Select(ui, true)));
 

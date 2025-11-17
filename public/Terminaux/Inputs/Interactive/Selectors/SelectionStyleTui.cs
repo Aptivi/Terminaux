@@ -445,13 +445,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.RequireRefresh();
         }
 
-        private void Help(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
-        {
-            Keybinding[] allBindings = multiple ? SelectionStyleBase.BindingsMultiple : SelectionStyleBase.Bindings;
-            KeybindingTools.ShowKeybindingInfobox(allBindings);
-            ui.RequireRefresh();
-        }
-
         private void ModifyChoice(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
             if (!selectedAnswers.Remove(highlightedAnswer - 1))
@@ -681,7 +674,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             };
 
             // Install keybindings
-            Keybindings.RemoveAt(0);
             Keybindings.Add((SelectionStyleBase.Bindings[0], (ui, _, _) => Exit(ui, false)));
             Keybindings.Add((SelectionStyleBase.Bindings[1], (_, _, _) => ProcessSelect()));
             Keybindings.Add((SelectionStyleBase.Bindings[2], (ui, _, _) => Exit(ui, true)));
@@ -698,8 +690,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.Bindings[13], QuestionGoDown));
             Keybindings.Add((SelectionStyleBase.Bindings[14], ShowCount));
             Keybindings.Add((SelectionStyleBase.Bindings[15], ShowItemInfo));
-            Keybindings.Add((SelectionStyleBase.ShowBindings[1], ShowSidebar));
-            Keybindings.Add((SelectionStyleBase.ShowBindings[3], Help));
+            Keybindings.Add((SelectionStyleBase.ShowBindings[0], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.BindingsMouse[0], (_, _, mouse) => ProcessMouseWheel(mouse, true)));
             Keybindings.Add((SelectionStyleBase.BindingsMouse[1], (_, _, mouse) => ProcessMouseWheel(mouse)));
             Keybindings.Add((SelectionStyleBase.BindingsMouse[2], ProcessLeftClick));
