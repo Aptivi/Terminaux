@@ -3594,6 +3594,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Cuerpo de la página de ayuda. Esto significa que la aplicación no proporciona el artículo de ayuda que necesita."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Ayuda interactiva de la interfaz de usuario"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Seleccione cualquiera de las páginas de ayuda que aparecen a continuación."
     }
   ]
 }

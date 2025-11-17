@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Текст сторінки довідки. Це означає, що програма не надає статтю довідки, яка вам може знадобитися.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Інтерактивна довідка TUI</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Виберіть будь-яку зі сторінок довідки, перелічених нижче.</value>
+  </data>
 
 </root>

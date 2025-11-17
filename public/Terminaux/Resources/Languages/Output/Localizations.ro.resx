@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Corpul paginii de ajutor. Aceasta înseamnă că aplicația nu oferă articolul de ajutor de care ați putea avea nevoie.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Ajutor interactiv TUI</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Selectați oricare dintre paginile de ajutor listate mai jos.</value>
+  </data>
 
 </root>

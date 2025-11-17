@@ -3570,6 +3570,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Corpul paginii de ajutor. Aceasta înseamnă că aplicația nu oferă articolul de ajutor de care ați putea avea nevoie."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Ajutor interactiv TUI"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Selectați oricare dintre paginile de ajutor listate mai jos."
     }
   ]
 }

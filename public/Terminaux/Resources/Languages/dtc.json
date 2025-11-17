@@ -3575,6 +3575,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Body van de helppagina. Dit betekent dat de applicatie niet het helpartikel biedt dat u mogelijk nodig hebt."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Interactieve TUI-hulp"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Selecteer een van de onderstaande hulppagina's."
     }
   ]
 }

@@ -3570,6 +3570,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Yardım sayfası gövdesi. Bu, uygulamanın ihtiyaç duyabileceğiniz yardım makalesini sağlamadığı anlamına gelir."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Etkileşimli TUI yardımı"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Aşağıda listelenen yardım sayfalarından herhangi birini seçin."
     }
   ]
 }

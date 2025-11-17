@@ -3570,6 +3570,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Corp an leathanaigh chabhrach. Ciallaíonn sé seo nach bhfuil an t-alt cabhrach a d'fhéadfadh a bheith uait á sholáthar ag an bhfeidhmchlár."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Cabhair idirghníomhach TUI"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Roghnaigh aon cheann de na leathanaigh chabhrach atá liostaithe thíos."
     }
   ]
 }

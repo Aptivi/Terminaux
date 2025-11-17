@@ -3573,6 +3573,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Brødtekst på hjelpesiden. Dette betyr at applikasjonen ikke tilbyr hjelpeartikkelen du trenger."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Interaktiv TUI-hjelp"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Velg en av hjelpesidene som er oppført nedenfor."
     }
   ]
 }

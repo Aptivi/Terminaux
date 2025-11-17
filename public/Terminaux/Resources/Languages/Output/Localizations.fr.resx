@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Corps de la page d&apos;aide. Cela signifie que l&apos;application ne fournit pas l&apos;article d&apos;aide dont vous pourriez avoir besoin.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Aide interactive de l&apos;interface utilisateur</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Sélectionnez l&apos;une des pages d&apos;aide listées ci-dessous.</value>
+  </data>
 
 </root>

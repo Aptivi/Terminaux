@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>ヘルプページの本文。これは、アプリケーションが必要なヘルプ記事を提供していないことを意味します。</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>インタラクティブなTUIヘルプ</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>以下のヘルプページからいずれかを選択してください。</value>
+  </data>
 
 </root>

@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Isi halaman bantuan. Ini berarti aplikasi tidak menyediakan artikel bantuan yang mungkin Anda butuhkan.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Bantuan TUI interaktif</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Pilih salah satu halaman bantuan yang tercantum di bawah ini.</value>
+  </data>
 
 </root>

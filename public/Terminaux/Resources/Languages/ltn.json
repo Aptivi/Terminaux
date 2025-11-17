@@ -3569,6 +3569,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Corpus paginae auxilii. Hoc significat applicationem articulum auxilii quem fortasse requiris non praebere."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Auxilium interactivum TUI"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Elige quamlibet paginam auxilii infra recensitam."
     }
   ]
 }

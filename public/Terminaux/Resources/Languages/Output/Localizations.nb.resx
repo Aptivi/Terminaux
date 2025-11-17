@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Brødtekst på hjelpesiden. Dette betyr at applikasjonen ikke tilbyr hjelpeartikkelen du trenger.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Interaktiv TUI-hjelp</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Velg en av hjelpesidene som er oppført nedenfor.</value>
+  </data>
 
 </root>

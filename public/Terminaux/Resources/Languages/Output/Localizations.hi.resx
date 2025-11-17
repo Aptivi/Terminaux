@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>सहायता पृष्ठ मुख्य भाग। इसका अर्थ है कि एप्लिकेशन वह सहायता लेख प्रदान नहीं कर रहा है जिसकी आपको आवश्यकता हो सकती है।</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>इंटरैक्टिव TUI सहायता</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>नीचे सूचीबद्ध किसी भी सहायता पृष्ठ का चयन करें।</value>
+  </data>
 
 </root>

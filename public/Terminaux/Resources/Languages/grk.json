@@ -3570,6 +3570,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Κόρνος σελίδας βοήθειας. Αυτό σημαίνει ότι η εφαρμογή δεν παρέχει το άρθρο βοήθειας που μπορεί να χρειάζεστε."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Διαδραστική βοήθεια TUI"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Επιλέξτε οποιαδήποτε από τις σελίδες βοήθειας που αναφέρονται παρακάτω."
     }
   ]
 }

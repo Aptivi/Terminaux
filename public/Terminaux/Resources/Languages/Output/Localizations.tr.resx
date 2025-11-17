@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Yardım sayfası gövdesi. Bu, uygulamanın ihtiyaç duyabileceğiniz yardım makalesini sağlamadığı anlamına gelir.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Etkileşimli TUI yardımı</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Aşağıda listelenen yardım sayfalarından herhangi birini seçin.</value>
+  </data>
 
 </root>

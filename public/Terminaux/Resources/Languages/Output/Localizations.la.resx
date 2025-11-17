@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Corpus paginae auxilii. Hoc significat applicationem articulum auxilii quem fortasse requiris non praebere.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Auxilium interactivum TUI</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Elige quamlibet paginam auxilii infra recensitam.</value>
+  </data>
 
 </root>

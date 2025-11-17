@@ -3569,6 +3569,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "sahaayata prshth mukhy bhaag. isaka arth hai ki eplikeshan vah sahaayata lekh pradaan nahin kar raha hai jisakee aapako aavashyakata ho sakatee hai."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "intaraiktiv tui sahaayata"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "neeche soocheebaddh kisee bhee sahaayata prshth ka chayan karen."
     }
   ]
 }

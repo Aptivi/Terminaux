@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>도움말 페이지 본문. 이는 애플리케이션이 필요한 도움말을 제공하지 않음을 의미합니다.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>대화형 TUI 도움말</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>아래 나열된 도움말 페이지 중에서 선택하세요.</value>
+  </data>
 
 </root>

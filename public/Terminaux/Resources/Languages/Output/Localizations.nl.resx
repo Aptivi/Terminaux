@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Body van de helppagina. Dit betekent dat de applicatie niet het helpartikel biedt dat u mogelijk nodig hebt.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Interactieve TUI-hulp</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Selecteer een van de onderstaande hulppagina&apos;s.</value>
+  </data>
 
 </root>

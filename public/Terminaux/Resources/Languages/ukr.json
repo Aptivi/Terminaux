@@ -3569,6 +3569,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Текст сторінки довідки. Це означає, що програма не надає статтю довідки, яка вам може знадобитися."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Інтерактивна довідка TUI"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Виберіть будь-яку зі сторінок довідки, перелічених нижче."
     }
   ]
 }

@@ -3577,6 +3577,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "帮助页面正文。这意味着该应用程序未提供您可能需要的帮助文章。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "交互式TUI帮助"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "请选择以下列出的任意帮助页面。"
     }
   ]
 }

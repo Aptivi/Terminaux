@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Nội dung trang trợ giúp. Điều này có nghĩa là ứng dụng không cung cấp bài viết trợ giúp mà bạn có thể cần.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Trợ giúp TUI tương tác</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Chọn bất kỳ trang trợ giúp nào được liệt kê bên dưới.</value>
+  </data>
 
 </root>

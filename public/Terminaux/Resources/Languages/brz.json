@@ -3568,6 +3568,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Corpo da página de ajuda. Isso significa que o aplicativo não está fornecendo o artigo de ajuda que você pode precisar."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Ajuda interativa da TUI"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Selecione qualquer uma das páginas de ajuda listadas abaixo."
     }
   ]
 }

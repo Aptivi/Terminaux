@@ -3595,6 +3595,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "نص صفحة المساعدة. هذا يعني أن التطبيق لا يوفر مقالة المساعدة التي قد تحتاجها."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "مساعدة واجهة المستخدم التفاعلية"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "اختر أيًا من صفحات المساعدة المدرجة أدناه."
     }
   ]
 }

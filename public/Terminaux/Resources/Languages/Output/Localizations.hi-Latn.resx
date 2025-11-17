@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>sahaayata prshth mukhy bhaag. isaka arth hai ki eplikeshan vah sahaayata lekh pradaan nahin kar raha hai jisakee aapako aavashyakata ho sakatee hai.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>intaraiktiv tui sahaayata</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>neeche soocheebaddh kisee bhee sahaayata prshth ka chayan karen.</value>
+  </data>
 
 </root>

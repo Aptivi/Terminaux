@@ -3569,6 +3569,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "सहायता पृष्ठ मुख्य भाग। इसका अर्थ है कि एप्लिकेशन वह सहायता लेख प्रदान नहीं कर रहा है जिसकी आपको आवश्यकता हो सकती है।"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "इंटरैक्टिव TUI सहायता"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "नीचे सूचीबद्ध किसी भी सहायता पृष्ठ का चयन करें।"
     }
   ]
 }

@@ -3569,6 +3569,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Isi halaman bantuan. Ini berarti aplikasi tidak menyediakan artikel bantuan yang mungkin Anda butuhkan."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Bantuan TUI interaktif"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Pilih salah satu halaman bantuan yang tercantum di bawah ini."
     }
   ]
 }

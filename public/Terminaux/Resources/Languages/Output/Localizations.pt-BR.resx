@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Corpo da página de ajuda. Isso significa que o aplicativo não está fornecendo o artigo de ajuda que você pode precisar.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Ajuda interativa da TUI</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Selecione qualquer uma das páginas de ajuda listadas abaixo.</value>
+  </data>
 
 </root>

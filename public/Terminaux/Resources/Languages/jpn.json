@@ -3569,6 +3569,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "ヘルプページの本文。これは、アプリケーションが必要なヘルプ記事を提供していないことを意味します。"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "インタラクティブなTUIヘルプ"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "以下のヘルプページからいずれかを選択してください。"
     }
   ]
 }

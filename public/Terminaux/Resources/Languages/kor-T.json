@@ -3570,6 +3570,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "도움말 페이지 본문. 이는 애플리케이션이 필요한 도움말을 제공하지 않음을 의미합니다."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "대화형 TUI 도움말"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "아래 나열된 도움말 페이지 중에서 선택하세요."
     }
   ]
 }

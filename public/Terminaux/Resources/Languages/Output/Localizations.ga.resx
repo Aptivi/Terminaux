@@ -2790,5 +2790,11 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELPBODY" xml:space="preserve">
     <value>Corp an leathanaigh chabhrach. Ciallaíonn sé seo nach bhfuil an t-alt cabhrach a d&apos;fhéadfadh a bheith uait á sholáthar ag an bhfeidhmchlár.</value>
   </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE" xml:space="preserve">
+    <value>Cabhair idirghníomhach TUI</value>
+  </data>
+  <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
+    <value>Roghnaigh aon cheann de na leathanaigh chabhrach atá liostaithe thíos.</value>
+  </data>
 
 </root>

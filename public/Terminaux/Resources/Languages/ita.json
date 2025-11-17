@@ -3572,6 +3572,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Corpo della pagina di aiuto. Ciò significa che l'applicazione non fornisce l'articolo di aiuto di cui potresti aver bisogno."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Guida interattiva TUI"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Seleziona una delle pagine di aiuto elencate di seguito."
     }
   ]
 }

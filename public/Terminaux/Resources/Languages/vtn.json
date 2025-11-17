@@ -3569,6 +3569,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Nội dung trang trợ giúp. Điều này có nghĩa là ứng dụng không cung cấp bài viết trợ giúp mà bạn có thể cần."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Trợ giúp TUI tương tác"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Chọn bất kỳ trang trợ giúp nào được liệt kê bên dưới."
     }
   ]
 }

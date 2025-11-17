@@ -3590,6 +3590,14 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELPBODY",
       "text": "Text der Hilfeseite. Dies bedeutet, dass die Anwendung den benötigten Hilfeartikel nicht bereitstellt."
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOXTITLE",
+      "text": "Interaktive TUI-Hilfe"
+    },
+    {
+      "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
+      "text": "Wählen Sie eine der unten aufgeführten Hilfeseiten aus."
     }
   ]
 }
