@@ -831,26 +831,6 @@
       "text": "XYZ 颜色说明符“{0}”无效。该说明符不能超过三个元素。请确保其格式正确"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "XYZ 颜色说明符“{0}”无效。请确保其格式正确"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X 值超出范围 (0.0 -> 95.047)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y 值超出范围 (0.0 -> 100.0)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z 值超出范围 (0.0 -> 108.883)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "XYZ 颜色说明符“{0}”无效。该说明符不能超过三个元素。请确保其格式正确"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "YXY 颜色说明符“{0}”无效。请确保其格式正确"
     },
@@ -2571,10 +2551,6 @@
       "text": "重复上一个操作或指定的命令"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "根据源命令输出构建参数后执行的目标命令"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "保存 shell 历史记录"
     },
@@ -2675,10 +2651,6 @@
       "text": "允许用户输入输入"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "打印到屏幕上的问题"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "允许用户输入密码"
     },
@@ -2701,22 +2673,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "提供选择选项"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "用斜线分割的答案"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "打印到屏幕上的问题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "第一个答案标题"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "第二个答案标题，等等......"
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

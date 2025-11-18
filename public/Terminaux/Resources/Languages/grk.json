@@ -828,26 +828,6 @@
       "text": "Μη έγκυρος προσδιοριστής χρώματος XYZ \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Μη έγκυρος προσδιοριστής χρώματος XYZ \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Η τιμή X είναι εκτός εύρους (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Η τιμή Y είναι εκτός εύρους (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Η τιμή Z είναι εκτός εύρους (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Μη έγκυρος προσδιοριστής χρώματος XYZ \"{0}\". Ο προσδιοριστής δεν μπορεί να έχει περισσότερα από τρία στοιχεία. Βεβαιωθείτε ότι έχει τη σωστή μορφή."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Μη έγκυρος προσδιοριστής χρώματος YXY \"{0}\". Βεβαιωθείτε ότι έχει τη σωστή μορφή."
     },
@@ -2568,10 +2548,6 @@
       "text": "Επαναλαμβάνει την τελευταία ενέργεια ή την καθορισμένη εντολή"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Εντολή στόχου που θα εκτελεστεί κατά την κατασκευή του ορίσματος με βάση την έξοδο της εντολής πηγής"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Αποθηκεύει ιστορικά κελύφους"
     },
@@ -2672,10 +2648,6 @@
       "text": "Επιτρέπει στον χρήστη να εισάγει είσοδο"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ερώτηση για εκτύπωση στην οθόνη"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Επιτρέπει στον χρήστη να εισαγάγει την είσοδο ως κωδικό πρόσβασης"
     },
@@ -2698,22 +2670,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Παρέχει μια επιλογή επιλογής"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Απαντήσεις σε διάσπαση με κάθετο"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ερώτηση για εκτύπωση στην οθόνη"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Τίτλος πρώτης απάντησης"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Τίτλος δεύτερης απάντησης και ούτω καθεξής..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

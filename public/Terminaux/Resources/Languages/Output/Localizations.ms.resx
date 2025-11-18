@@ -732,21 +732,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>Penentu warna XYZ tidak sah &quot;{0}&quot;. Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>Penentu warna XYZ tidak sah &quot;{0}&quot;. Pastikan ia berada pada format yang betul</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>Nilai X berada di luar julat (0.0 -&gt; 95.047).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Nilai Y berada di luar julat (0.0 -&gt; 100.0).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Nilai Z berada di luar julat (0.0 -&gt; 108.883).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>Penentu warna XYZ tidak sah &quot;{0}&quot;. Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>Penentu warna YXY tidak sah &quot;{0}&quot;. Pastikan ia berada pada format yang betul</value>
   </data>
@@ -2037,9 +2022,6 @@
   <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
     <value>Mengulangi tindakan terakhir atau arahan yang ditentukan</value>
   </data>
-  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
-    <value>Arahan sasaran untuk dilaksanakan semasa membina hujah berdasarkan output arahan sumber</value>
-  </data>
   <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
     <value>Menyimpan sejarah shell</value>
   </data>
@@ -2115,9 +2097,6 @@
   <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
     <value>Membenarkan pengguna memasukkan input</value>
   </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Soalan untuk dicetak ke skrin</value>
-  </data>
   <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
     <value>Membenarkan pengguna memasukkan input sebagai kata laluan</value>
   </data>
@@ -2135,18 +2114,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
     <value>Menyediakan pilihan pilihan</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
-    <value>Jawapan untuk berpecah dengan garis miring</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Soalan untuk dicetak ke skrin</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
-    <value>Tajuk jawapan pertama</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
-    <value>Tajuk jawapan kedua, dan seterusnya...</value>
   </data>
   <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
     <value>Menetapkan pembolehubah kepada nilai dalam skrip</value>

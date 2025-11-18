@@ -827,26 +827,6 @@
       "text": "Specificator coloris XYZ \"{0}\" invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Specificator coloris XYZ \"{0}\" invalidus. Fac ut in forma recta sit."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Valor X extra ambitum est (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Valor Y extra ambitum est (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Valor Z extra ambitum est (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Specificator coloris XYZ \"{0}\" invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Specificator coloris YXY \"{0}\" invalidus. Fac ut in formato correcto sit."
     },
@@ -2567,10 +2547,6 @@
       "text": "Repetit ultimum actum seu praefinitum mandatum"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Scopum mandatum exsequi super aedificium argumentum ex fonte mandatum output"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Salvet crusta historiis"
     },
@@ -2671,10 +2647,6 @@
       "text": "Permittit user intrare initus"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Quaestio imprimendi in screen"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Initus ut password permittit user intrare"
     },
@@ -2697,22 +2669,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Electionem praebet"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Answers ad scindendum cum VULNUS"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Quaestio imprimendi in screen"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Primum responsum titulum"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Secundo respondetur titulus, et sic de aliis."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

@@ -830,26 +830,6 @@
       "text": "Penentu warna XYZ tidak sah \"{0}\". Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Penentu warna XYZ tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Nilai X berada di luar julat (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Nilai Y berada di luar julat (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Nilai Z berada di luar julat (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Penentu warna XYZ tidak sah \"{0}\". Penentu mungkin tidak lebih daripada tiga elemen. Pastikan ia berada pada format yang betul"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Penentu warna YXY tidak sah \"{0}\". Pastikan ia berada pada format yang betul"
     },
@@ -2570,10 +2550,6 @@
       "text": "Mengulangi tindakan terakhir atau arahan yang ditentukan"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Arahan sasaran untuk dilaksanakan semasa membina hujah berdasarkan output arahan sumber"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Menyimpan sejarah shell"
     },
@@ -2674,10 +2650,6 @@
       "text": "Membenarkan pengguna memasukkan input"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Soalan untuk dicetak ke skrin"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Membenarkan pengguna memasukkan input sebagai kata laluan"
     },
@@ -2700,22 +2672,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Menyediakan pilihan pilihan"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Jawapan untuk berpecah dengan garis miring"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Soalan untuk dicetak ke skrin"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Tajuk jawapan pertama"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Tajuk jawapan kedua, dan seterusnya..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

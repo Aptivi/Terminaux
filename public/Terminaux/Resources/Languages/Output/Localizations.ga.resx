@@ -732,21 +732,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>Sonraitheoir datha XYZ neamhbhailí &quot;{0}&quot;. Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart.</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>Sonraitheoir datha XYZ neamhbhailí &quot;{0}&quot;. Cinntigh go bhfuil sé san fhormáid cheart.</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>Tá an luach X lasmuigh den raon (0.0 -&gt; 95.047).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Tá an luach Y lasmuigh den raon (0.0 -&gt; 100.0).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Tá an luach Z lasmuigh den raon (0.0 -&gt; 108.883).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>Sonraitheoir datha XYZ neamhbhailí &quot;{0}&quot;. Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart.</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>Sonraitheoir datha YXY neamhbhailí &quot;{0}&quot;. Cinntigh go bhfuil sé san fhormáid cheart.</value>
   </data>
@@ -2037,9 +2022,6 @@
   <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
     <value>Athdhéantar seo an gníomh deireanach nó an t-ordú sonraithe</value>
   </data>
-  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
-    <value>Sprioc-ordú a fhorghníomhú ar argóint tógála bunaithe ar an aschur ordú foinse</value>
-  </data>
   <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
     <value>Sábhálann sé stair bhlaosc</value>
   </data>
@@ -2115,9 +2097,6 @@
   <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
     <value>Ligeann sé don úsáideoir ionchur a chur isteach</value>
   </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Ceist le priontáil ar an scáileán</value>
-  </data>
   <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
     <value>Ligeann sé don úsáideoir ionchur a chur isteach mar phasfhocal</value>
   </data>
@@ -2135,18 +2114,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
     <value>Soláthraíonn rogha rogha</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
-    <value>Freagraí ar scoilt le slais</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Ceist le priontáil ar an scáileán</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
-    <value>Teideal an chéad fhreagra</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
-    <value>Teideal an dara freagra, agus mar sin de...</value>
   </data>
   <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
     <value>Socraíonn sé athróg ar luach i script</value>

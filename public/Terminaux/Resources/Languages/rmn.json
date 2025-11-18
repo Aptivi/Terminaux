@@ -828,26 +828,6 @@
       "text": "Specificator de culoare XYZ nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Specificator de culoare XYZ nevalid „{0}”. Asigurați-vă că are formatul corect."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Valoarea X este în afara intervalului (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Valoarea Y este în afara intervalului (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Valoarea Z este în afara intervalului (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Specificator de culoare XYZ nevalid „{0}”. Specificatorul nu poate avea mai mult de trei elemente. Asigurați-vă că are formatul corect."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Specificator de culoare YXY nevalid „{0}”. Asigurați-vă că are formatul corect."
     },
@@ -2568,10 +2548,6 @@
       "text": "Repetă ultima acțiune sau comanda specificată"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Comanda țintă de executat la construirea argumentului bazat pe rezultatul comenzii sursă"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Salvează istoricul shell-ului"
     },
@@ -2672,10 +2648,6 @@
       "text": "Permite utilizatorului să introducă intrarea"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Întrebare de imprimat pe ecran"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Permite utilizatorului să introducă introducerea ca parolă"
     },
@@ -2698,22 +2670,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Oferă o alegere de selecție"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Răspunsuri la împărțire cu o oblică"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Întrebare de imprimat pe ecran"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Titlul primului răspuns"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Titlul celui de-al doilea răspuns și așa mai departe..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

@@ -732,21 +732,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>Ungültiger XYZ-Farbspezifizierer &quot;{0}&quot;. Der Spezifizierer darf nicht mehr als drei Elemente umfassen. Stellen Sie sicher, dass er das richtige Format hat.</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>Ungültiger XYZ-Farbbezeichner &quot;{0}&quot;. Stellen Sie sicher, dass das richtige Format verwendet wird.</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>Der X-Wert liegt außerhalb des Bereichs (0,0 -&gt; 95,047).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Der Y-Wert liegt außerhalb des Bereichs (0,0 -&gt; 100,0).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Der Z-Wert liegt außerhalb des Bereichs (0,0 -&gt; 108,883).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>Ungültiger XYZ-Farbspezifizierer &quot;{0}&quot;. Der Spezifizierer darf nicht mehr als drei Elemente umfassen. Stellen Sie sicher, dass er das richtige Format hat.</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>Ungültiger YXY-Farbbezeichner &quot;{0}&quot;. Stellen Sie sicher, dass das richtige Format verwendet wird.</value>
   </data>
@@ -2037,9 +2022,6 @@
   <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
     <value>Wiederholt die letzte Aktion oder den angegebenen Befehl</value>
   </data>
-  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
-    <value>Zielbefehl, der beim Erstellen des Arguments basierend auf der Ausgabe des Quellbefehls ausgeführt werden soll</value>
-  </data>
   <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
     <value>Speichert Shell-Verläufe</value>
   </data>
@@ -2115,9 +2097,6 @@
   <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
     <value>Ermöglicht dem Benutzer die Eingabe</value>
   </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Frage zum Drucken auf dem Bildschirm</value>
-  </data>
   <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
     <value>Ermöglicht dem Benutzer die Eingabe eines Passworts</value>
   </data>
@@ -2135,18 +2114,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
     <value>Bietet eine Auswahlmöglichkeit</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
-    <value>Antworten zum Teilen mit einem Schrägstrich</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Frage zum Drucken auf dem Bildschirm</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
-    <value>Titel der ersten Antwort</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
-    <value>Titel der zweiten Antwort und so weiter …</value>
   </data>
   <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
     <value>Setzt eine Variable auf einen Wert in einem Skript</value>

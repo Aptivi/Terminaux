@@ -732,21 +732,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>Invalid XYZ color specifier &quot;{0}&quot;. The specifier may not be more than three elements. Ensure that it&apos;s on the correct format</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>Invalid XYZ color specifier &quot;{0}&quot;. Ensure that it&apos;s on the correct format</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>The X value is out of range (0.0 -&gt; 95.047).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>The Y value is out of range (0.0 -&gt; 100.0).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>The Z value is out of range (0.0 -&gt; 108.883).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>Invalid XYZ color specifier &quot;{0}&quot;. The specifier may not be more than three elements. Ensure that it&apos;s on the correct format</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>Invalid YXY color specifier &quot;{0}&quot;. Ensure that it&apos;s on the correct format</value>
   </data>
@@ -2037,9 +2022,6 @@
   <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
     <value>Repeats the last action or the specified command</value>
   </data>
-  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
-    <value>Target command to execute upon building argument based on the source command output</value>
-  </data>
   <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
     <value>Saves shell histories</value>
   </data>
@@ -2115,9 +2097,6 @@
   <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
     <value>Allows user to enter input</value>
   </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Question to print to the screen</value>
-  </data>
   <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
     <value>Allows user to enter input as password</value>
   </data>
@@ -2135,18 +2114,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
     <value>Provides a selection choice</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
-    <value>Answers to split with a slash</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Question to print to the screen</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
-    <value>First answer title</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
-    <value>Second answer title, and so on...</value>
   </data>
   <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
     <value>Sets a variable to a value in a script</value>

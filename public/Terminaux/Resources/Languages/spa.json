@@ -852,26 +852,6 @@
       "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Especificador de color YXY \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
     },
@@ -2592,10 +2572,6 @@
       "text": "Repite la última acción o el comando especificado."
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Comando de destino que se ejecutará al crear un argumento basado en la salida del comando de origen"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Guarda historiales de shell"
     },
@@ -2696,10 +2672,6 @@
       "text": "Permite al usuario ingresar la entrada"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Pregunta para imprimir en pantalla"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Permite al usuario ingresar datos como contraseña"
     },
@@ -2722,22 +2694,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Proporciona una opción de selección"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Respuestas a dividir con una barra"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Pregunta para imprimir en pantalla"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Título de la primera respuesta"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Título del segundo respuesta, y así sucesivamente..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

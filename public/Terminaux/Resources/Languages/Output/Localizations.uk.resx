@@ -732,21 +732,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>Недійсний специфікатор кольору XYZ &quot;{0}&quot;. Специфікатор не може містити більше трьох елементів. Переконайтеся, що він у правильному форматі.</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>Недійсний специфікатор кольору XYZ &quot;{0}&quot;. Переконайтеся, що він у правильному форматі.</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>Значення X виходить за межі діапазону (0,0 -&gt; 95,047).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Значення Y виходить за межі діапазону (0,0 -&gt; 100,0).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Значення Z виходить за межі діапазону (0,0 -&gt; 108,883).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>Недійсний специфікатор кольору XYZ &quot;{0}&quot;. Специфікатор не може містити більше трьох елементів. Переконайтеся, що він у правильному форматі.</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>Недійсний специфікатор кольору YXY &quot;{0}&quot;. Переконайтеся, що він у правильному форматі.</value>
   </data>
@@ -2037,9 +2022,6 @@
   <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
     <value>Повторює останню дію або вказану команду</value>
   </data>
-  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
-    <value>Цільова команда для виконання після побудови аргументу на основі вихідних даних вихідної команди</value>
-  </data>
   <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
     <value>Зберігає історію оболонки</value>
   </data>
@@ -2115,9 +2097,6 @@
   <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
     <value>Дозволяє користувачеві вводити дані</value>
   </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Питання для друку на екрані</value>
-  </data>
   <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
     <value>Дозволяє користувачеві вводити дані як пароль</value>
   </data>
@@ -2135,18 +2114,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
     <value>Надає можливість вибору</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
-    <value>Відповіді розділити косою рискою</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>Питання для друку на екрані</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
-    <value>Назва першої відповіді</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
-    <value>Назва другої відповіді тощо...</value>
   </data>
   <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
     <value>Встановлює значення змінної в сценарії</value>

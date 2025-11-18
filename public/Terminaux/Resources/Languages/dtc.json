@@ -833,26 +833,6 @@
       "text": "Ongeldige XYZ-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Ongeldige XYZ-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "De X-waarde ligt buiten het bereik (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "De Y-waarde ligt buiten het bereik (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "De Z-waarde ligt buiten het bereik (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Ongeldige XYZ-kleurspecificatie \"{0}\". De specificatie mag niet meer dan drie elementen bevatten. Zorg ervoor dat deze de juiste notatie heeft."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Ongeldige YXY-kleurspecificatie \"{0}\". Zorg ervoor dat deze de juiste indeling heeft."
     },
@@ -2573,10 +2553,6 @@
       "text": "Herhaalt de laatste actie of het opgegeven commando"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Doelopdracht die moet worden uitgevoerd bij het opbouwen van een argument op basis van de uitvoer van de bronopdracht"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Slaat shellgeschiedenissen op"
     },
@@ -2677,10 +2653,6 @@
       "text": "Hiermee kan de gebruiker invoer invoeren"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Vraag om op het scherm af te drukken"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Hiermee kan de gebruiker invoer als wachtwoord invoeren"
     },
@@ -2703,22 +2675,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Biedt een selectiekeuze"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Antwoorden op splitsen met een slash"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Vraag om op het scherm af te drukken"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Eerste antwoordtitel"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Titel van het tweede antwoord, enzovoort..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

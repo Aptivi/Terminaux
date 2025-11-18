@@ -836,26 +836,6 @@
       "text": "Ungültiger XYZ-Farbspezifizierer \"{0}\". Der Spezifizierer darf nicht mehr als drei Elemente umfassen. Stellen Sie sicher, dass er das richtige Format hat."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Ungültiger XYZ-Farbbezeichner \"{0}\". Stellen Sie sicher, dass das richtige Format verwendet wird."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Der X-Wert liegt außerhalb des Bereichs (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Der Y-Wert liegt außerhalb des Bereichs (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Der Z-Wert liegt außerhalb des Bereichs (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Ungültiger XYZ-Farbspezifizierer \"{0}\". Der Spezifizierer darf nicht mehr als drei Elemente umfassen. Stellen Sie sicher, dass er das richtige Format hat."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Ungültiger YXY-Farbbezeichner \"{0}\". Stellen Sie sicher, dass das richtige Format verwendet wird."
     },
@@ -2576,10 +2556,6 @@
       "text": "Wiederholt die letzte Aktion oder den angegebenen Befehl"
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Zielbefehl, der beim Erstellen des Arguments basierend auf der Ausgabe des Quellbefehls ausgeführt werden soll"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "Speichert Shell-Verläufe"
     },
@@ -2680,10 +2656,6 @@
       "text": "Ermöglicht dem Benutzer die Eingabe"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Frage zum Drucken auf dem Bildschirm"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "Ermöglicht dem Benutzer die Eingabe eines Passworts"
     },
@@ -2706,22 +2678,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "Bietet eine Auswahlmöglichkeit"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Antworten zum Teilen mit einem Schrägstrich"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Frage zum Drucken auf dem Bildschirm"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Titel der ersten Antwort"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Titel der zweiten Antwort und so weiter …"
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

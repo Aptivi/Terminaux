@@ -828,26 +828,6 @@
       "text": "XYZ 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 지정자는 세 개 이상의 요소를 포함할 수 없습니다. 올바른 형식을 사용하고 있는지 확인하세요."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "XYZ 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X 값이 범위를 벗어났습니다(0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y 값이 범위를 벗어났습니다(0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z 값이 범위를 벗어났습니다(0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "XYZ 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 지정자는 세 개 이상의 요소를 포함할 수 없습니다. 올바른 형식을 사용하고 있는지 확인하세요."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "YXY 색상 지정자 \"{0}\"이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요."
     },
@@ -2568,10 +2548,6 @@
       "text": "마지막 작업이나 지정된 명령을 반복합니다."
     },
     {
-      "loc": "T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "소스 명령 출력을 기반으로 인수를 빌드할 때 실행할 대상 명령"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_SAVEHISTORIES_DESC",
       "text": "쉘 기록을 저장합니다"
     },
@@ -2672,10 +2648,6 @@
       "text": "사용자가 입력을 입력 할 수 있습니다"
     },
     {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "화면에 인쇄할 질문"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_INPUTPASS_DESC",
       "text": "사용자가 비밀번호를 입력하도록 허용합니다."
     },
@@ -2698,22 +2670,6 @@
     {
       "loc": "T_SHELL_UNIFIED_SELECT_DESC",
       "text": "선택 선택을 제공합니다"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "슬래시로 나누는 답변"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "화면에 인쇄할 질문"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "첫 번째 답변 제목"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "두 번째 답변 제목 등등..."
     },
     {
       "loc": "T_SHELL_UNIFIED_SET_DESC",

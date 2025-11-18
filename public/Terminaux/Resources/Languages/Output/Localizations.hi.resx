@@ -732,21 +732,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>अमान्य XYZ रंग विनिर्देशक &quot;{0}&quot;। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>अमान्य XYZ रंग विनिर्देशक &quot;{0}&quot;। सुनिश्चित करें कि यह सही प्रारूप पर है</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>X मान सीमा से बाहर है (0.0 -&gt; 95.047).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Y मान सीमा से बाहर है (0.0 -&gt; 100.0).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Z मान सीमा से बाहर है (0.0 -&gt; 108.883).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>अमान्य XYZ रंग विनिर्देशक &quot;{0}&quot;। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>अमान्य YXY रंग विनिर्देशक &quot;{0}&quot;। सुनिश्चित करें कि यह सही प्रारूप पर है</value>
   </data>
@@ -2037,9 +2022,6 @@
   <data name="T_SHELL_UNIFIED_REPEAT_DESC" xml:space="preserve">
     <value>अंतिम क्रिया या निर्दिष्ट आदेश को दोहराता है</value>
   </data>
-  <data name="T_SHELL_UNIFIED_PIPE_ARGUMENT_TARGET_DESC" xml:space="preserve">
-    <value>स्रोत कमांड आउटपुट के आधार पर बिल्डिंग तर्क पर निष्पादित करने के लिए लक्ष्य कमांड</value>
-  </data>
   <data name="T_SHELL_UNIFIED_SAVEHISTORIES_DESC" xml:space="preserve">
     <value>शेल इतिहास सहेजता है</value>
   </data>
@@ -2115,9 +2097,6 @@
   <data name="T_SHELL_UNIFIED_INPUT_DESC" xml:space="preserve">
     <value>उपयोगकर्ता को इनपुट दर्ज करने की अनुमति देता है</value>
   </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>स्क्रीन पर प्रिंट करने के लिए प्रश्न</value>
-  </data>
   <data name="T_SHELL_UNIFIED_INPUTPASS_DESC" xml:space="preserve">
     <value>उपयोगकर्ता को पासवर्ड के रूप में इनपुट दर्ज करने की अनुमति देता है</value>
   </data>
@@ -2135,18 +2114,6 @@
   </data>
   <data name="T_SHELL_UNIFIED_SELECT_DESC" xml:space="preserve">
     <value>एक चयन विकल्प प्रदान करता है</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_ANSWERS_DESC" xml:space="preserve">
-    <value>स्लैश से विभाजित करने के उत्तर</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_INPUT_DESC" xml:space="preserve">
-    <value>स्क्रीन पर प्रिंट करने के लिए प्रश्न</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE1_DESC" xml:space="preserve">
-    <value>प्रथम उत्तर शीर्षक</value>
-  </data>
-  <data name="T_SHELL_UNIFIED_CHOICE_ARGUMENT_TITLE2_DESC" xml:space="preserve">
-    <value>दूसरा उत्तर शीर्षक, और इसी तरह...</value>
   </data>
   <data name="T_SHELL_UNIFIED_SET_DESC" xml:space="preserve">
     <value>एक चर को एक स्क्रिप्ट में एक मान पर सेट करता है</value>
