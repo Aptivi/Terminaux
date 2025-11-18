@@ -791,26 +791,6 @@
       "text": "XYZカラー指定子「{0}」が無効です。指定子は3要素以下にする必要があります。正しい形式であることを確認してください。"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "XYZカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X値が範囲外です（0.0 -> 95.047）。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y値が範囲外です（0.0 -> 100.0）。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z値が範囲外です（0.0 -> 108.883）。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "XYZカラー指定子「{0}」が無効です。指定子は3要素以下にする必要があります。正しい形式であることを確認してください。"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "YXYカラー指定子「{0}」が無効です。正しい形式であることを確認してください。"
     },
@@ -2277,10 +2257,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "選択肢が指定されていません。"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "テンプレート名が指定されていません。"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

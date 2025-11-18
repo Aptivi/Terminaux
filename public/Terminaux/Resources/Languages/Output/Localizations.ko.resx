@@ -705,21 +705,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>XYZ 색상 지정자 &quot;{0}&quot;이(가) 잘못되었습니다. 지정자는 세 개 이상의 요소를 포함할 수 없습니다. 올바른 형식을 사용하고 있는지 확인하세요.</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>XYZ 색상 지정자 &quot;{0}&quot;이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요.</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>X 값이 범위를 벗어났습니다(0.0 -&gt; 95.047).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Y 값이 범위를 벗어났습니다(0.0 -&gt; 100.0).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Z 값이 범위를 벗어났습니다(0.0 -&gt; 108.883).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>XYZ 색상 지정자 &quot;{0}&quot;이(가) 잘못되었습니다. 지정자는 세 개 이상의 요소를 포함할 수 없습니다. 올바른 형식을 사용하고 있는지 확인하세요.</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>YXY 색상 지정자 &quot;{0}&quot;이(가) 잘못되었습니다. 올바른 형식을 사용하고 있는지 확인하세요.</value>
   </data>
@@ -1820,9 +1805,6 @@
   </data>
   <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
     <value>선택 항목이 지정되지 않았습니다.</value>
-  </data>
-  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
-    <value>템플릿 이름이 제공되지 않았습니다.</value>
   </data>
   <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
     <value>구성 요소가 제공되지 않았지만, 동적 추가를 위해 이 목록은 비어 있을 수 있습니다.</value>

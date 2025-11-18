@@ -816,26 +816,6 @@
       "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "El especificador de color XYZ \"{0}\" no es válido. Asegúrese de que tenga el formato correcto."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "El valor X está fuera de rango (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "El valor Y está fuera de rango (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "El valor Z está fuera de rango (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de color XYZ \"{0}\" no válido. El especificador no puede tener más de tres elementos. Asegúrese de que tenga el formato correcto."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Especificador de color YXY \"{0}\" no válido. Asegúrese de que tenga el formato correcto."
     },
@@ -2302,10 +2282,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "No se especificaron las opciones."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "No se proporcionó el nombre de la plantilla."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

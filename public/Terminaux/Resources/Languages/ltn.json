@@ -791,26 +791,6 @@
       "text": "Specificator coloris XYZ \"{0}\" invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Specificator coloris XYZ \"{0}\" invalidus. Fac ut in forma recta sit."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Valor X extra ambitum est (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Valor Y extra ambitum est (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Valor Z extra ambitum est (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Specificator coloris XYZ \"{0}\" invalidus. Specificator non plus quam tribus elementis constare potest. Fac ut in formato correcto sit."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Specificator coloris YXY \"{0}\" invalidus. Fac ut in formato correcto sit."
     },
@@ -2277,10 +2257,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "Electiones non specificantur."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Nomen formae non provisum."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

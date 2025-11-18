@@ -791,26 +791,6 @@
       "text": "Penentu warna XYZ \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Penentu warna XYZ \"{0}\" tidak valid. Pastikan formatnya benar"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "Nilai X berada di luar rentang (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Nilai Y berada di luar kisaran (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Nilai Z berada di luar rentang (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Penentu warna XYZ \"{0}\" tidak valid. Penentu tidak boleh lebih dari tiga elemen. Pastikan formatnya benar"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Penentu warna YXY \"{0}\" tidak valid. Pastikan formatnya benar"
     },
@@ -2277,10 +2257,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "Pilihan tidak ditentukan"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Nama templat tidak diberikan"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

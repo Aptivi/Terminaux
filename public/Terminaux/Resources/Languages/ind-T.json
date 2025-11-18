@@ -791,26 +791,6 @@
       "text": "अमान्य XYZ रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "अमान्य XYZ रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X मान सीमा से बाहर है (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y मान सीमा से बाहर है (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z मान सीमा से बाहर है (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "अमान्य XYZ रंग विनिर्देशक \"{0}\"। विनिर्देशक में तीन से ज़्यादा तत्व नहीं होने चाहिए। सुनिश्चित करें कि यह सही फ़ॉर्मेट में है"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "अमान्य YXY रंग विनिर्देशक \"{0}\"। सुनिश्चित करें कि यह सही प्रारूप पर है"
     },
@@ -2277,10 +2257,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "विकल्प निर्दिष्ट नहीं हैं"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "टेम्पलेट का नाम प्रदान नहीं किया गया है"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

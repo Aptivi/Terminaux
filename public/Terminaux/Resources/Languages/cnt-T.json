@@ -794,26 +794,6 @@
       "text": "XYZ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "XYZ 顏色說明符「{0}」無效。請確保其格式正確"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X 值超出範圍 (0.0 -> 95.047)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y 值超出範圍 (0.0 -> 100.0)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z 值超出範圍 (0.0 -> 108.883)。"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "XYZ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "YXY 顏色說明符「{0}」無效。請確保其格式正確"
     },
@@ -2280,10 +2260,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "未指定選項"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "未提供模板名稱"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

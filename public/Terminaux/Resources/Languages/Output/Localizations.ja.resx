@@ -705,21 +705,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>XYZカラー指定子「{0}」が無効です。指定子は3要素以下にする必要があります。正しい形式であることを確認してください。</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>XYZカラー指定子「{0}」が無効です。正しい形式であることを確認してください。</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>X値が範囲外です（0.0 -&gt; 95.047）。</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Y値が範囲外です（0.0 -&gt; 100.0）。</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Z値が範囲外です（0.0 -&gt; 108.883）。</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>XYZカラー指定子「{0}」が無効です。指定子は3要素以下にする必要があります。正しい形式であることを確認してください。</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>YXYカラー指定子「{0}」が無効です。正しい形式であることを確認してください。</value>
   </data>
@@ -1820,9 +1805,6 @@
   </data>
   <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
     <value>選択肢が指定されていません。</value>
-  </data>
-  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
-    <value>テンプレート名が指定されていません。</value>
   </data>
   <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
     <value>コンポーネントが指定されていませんが、動的な追加のためにこのリストは空でも構いません。</value>

@@ -837,26 +837,6 @@
       "text": "Spécificateur de couleur XYZ « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu'il est au bon format."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Spécificateur de couleur XYZ « {0} » non valide. Assurez-vous qu'il est au bon format."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "La valeur X est hors plage (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "La valeur Y est hors plage (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "La valeur Z est hors plage (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Spécificateur de couleur XYZ « {0} » non valide. Ce spécificateur ne doit pas comporter plus de trois éléments. Assurez-vous qu'il est au bon format."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Spécificateur de couleur YXY « {0} » non valide. Assurez-vous qu'il est au bon format."
     },
@@ -2323,10 +2303,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "Les choix ne sont pas spécifiés."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Nom du modèle non fourni."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

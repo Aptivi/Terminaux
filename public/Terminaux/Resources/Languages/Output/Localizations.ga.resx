@@ -705,21 +705,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>Sonraitheoir datha XYZ neamhbhailí &quot;{0}&quot;. Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart.</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>Sonraitheoir datha XYZ neamhbhailí &quot;{0}&quot;. Cinntigh go bhfuil sé san fhormáid cheart.</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>Tá an luach X lasmuigh den raon (0.0 -&gt; 95.047).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Tá an luach Y lasmuigh den raon (0.0 -&gt; 100.0).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Tá an luach Z lasmuigh den raon (0.0 -&gt; 108.883).</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>Sonraitheoir datha XYZ neamhbhailí &quot;{0}&quot;. Ní fhéadfaidh níos mó ná trí eilimint a bheith sa sonraitheoir. Cinntigh go bhfuil sé san fhormáid cheart.</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>Sonraitheoir datha YXY neamhbhailí &quot;{0}&quot;. Cinntigh go bhfuil sé san fhormáid cheart.</value>
   </data>
@@ -1820,9 +1805,6 @@
   </data>
   <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
     <value>Níor sonraíodh roghanna.</value>
-  </data>
-  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
-    <value>Níor soláthraíodh ainm an teimpléid.</value>
   </data>
   <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
     <value>Níor soláthraíodh comhpháirteanna, ach is féidir an liosta seo a bheith folamh le haghaidh suimiú dinimiciúil.</value>

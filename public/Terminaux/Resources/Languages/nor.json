@@ -795,26 +795,6 @@
       "text": "Ugyldig XYZ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Ugyldig XYZ-fargespesifikator «{0}». Sørg for at den er i riktig format."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X-verdien er utenfor området (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y-verdien er utenfor området (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z-verdien er utenfor området (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Ugyldig XYZ-fargespesifikator «{0}». Spesifikatoren kan ikke inneholde mer enn tre elementer. Sørg for at den er i riktig format."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Ugyldig YXY-fargespesifikator «{0}». Sørg for at den er i riktig format."
     },
@@ -2281,10 +2261,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "Valg er ikke angitt."
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Navn på malen er ikke oppgitt."
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

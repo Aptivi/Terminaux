@@ -790,26 +790,6 @@
       "text": "Especificador de cor XYZ inválido \"{0}\". O especificador não pode ter mais de três elementos. Certifique-se de que esteja no formato correto."
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Especificador de cor XYZ inválido \"{0}\". Certifique-se de que esteja no formato correto."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "O valor X está fora do intervalo (0,0 -> 95,047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "O valor Y está fora do intervalo (0,0 -> 100,0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "O valor Z está fora do intervalo (0,0 -> 108,883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Especificador de cor XYZ inválido \"{0}\". O especificador não pode ter mais de três elementos. Certifique-se de que esteja no formato correto."
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Especificador de cor YXY inválido \"{0}\". Certifique-se de que esteja no formato correto."
     },
@@ -2276,10 +2256,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "Opções não especificadas"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Nome do modelo não fornecido"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",

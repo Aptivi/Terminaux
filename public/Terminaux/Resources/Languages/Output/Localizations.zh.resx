@@ -705,21 +705,6 @@
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
     <value>XYZ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
   </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER" xml:space="preserve">
-    <value>XYZ 顏色說明符「{0}」無效。請確保其格式正確</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL" xml:space="preserve">
-    <value>X 值超出範圍 (0.0 -&gt; 95.047)。</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL" xml:space="preserve">
-    <value>Y 值超出範圍 (0.0 -&gt; 100.0)。</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL" xml:space="preserve">
-    <value>Z 值超出範圍 (0.0 -&gt; 108.883)。</value>
-  </data>
-  <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED" xml:space="preserve">
-    <value>XYZ 顏色說明符「{0}」無效。該說明符不能超過三個元素。請確保其格式正確</value>
-  </data>
   <data name="T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER" xml:space="preserve">
     <value>YXY 顏色說明符「{0}」無效。請確保其格式正確</value>
   </data>
@@ -1820,9 +1805,6 @@
   </data>
   <data name="T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES" xml:space="preserve">
     <value>未指定選項</value>
-  </data>
-  <data name="T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME" xml:space="preserve">
-    <value>未提供模板名稱</value>
   </data>
   <data name="T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR" xml:space="preserve">
     <value>未提供元件，但此清單可以為空以便動態新增。</value>

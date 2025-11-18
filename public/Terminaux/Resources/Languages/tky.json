@@ -792,26 +792,6 @@
       "text": "Geçersiz XYZ renk belirteci \"{0}\". Belirteç üçten fazla öğeden oluşamaz. Doğru biçimde olduğundan emin olun"
     },
     {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIER",
-      "text": "Geçersiz XYZ renk belirteci \"{0}\". Doğru biçimde olduğundan emin olun"
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZXLEVEL",
-      "text": "X değeri aralık dışında (0.0 -> 95.047)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZYLEVEL",
-      "text": "Y değeri aralık dışında (0.0 -> 100.0)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEXYZZLEVEL",
-      "text": "Z değeri aralık dışında (0.0 -> 108.883)."
-    },
-    {
-      "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDXYZSPECIFIEREXCEED",
-      "text": "Geçersiz XYZ renk belirteci \"{0}\". Belirteç üçten fazla öğeden oluşamaz. Doğru biçimde olduğundan emin olun"
-    },
-    {
       "loc": "T_COLOR_MODEL_EXCEPTION_PARSEINVALIDYXYSPECIFIER",
       "text": "Geçersiz YXY renk belirteci \"{0}\". Doğru biçimde olduğundan emin olun"
     },
@@ -2278,10 +2258,6 @@
     {
       "loc": "T_INPUT_PRESENTATION_EXCEPTION_NEEDSCHOICES",
       "text": "Seçenekler belirtilmedi"
-    },
-    {
-      "loc": "T_COLOR_TEMPLATE_EXCEPTION_NOTEMPLATENAME",
-      "text": "Şablon adı sağlanmadı"
     },
     {
       "loc": "T_COLOR_TEMPLATE_EXCEPTION_TEMPLATEHASNOCOMPONENTS_CTOR",
