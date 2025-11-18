@@ -36,6 +36,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 {
     internal class InteractiveSelectorTui<TPrimary, TSecondary> : TextualUI
     {
+        internal InteractiveTuiHelpPage[] extraHelpPages = [];
         private readonly BaseInteractiveTui<TPrimary, TSecondary> selectorTui;
         private int paneCurrentSelection;
 
@@ -50,7 +51,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     HelpDescription = "T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_AVAILABLE_KEYBINDINGS",
                     HelpBody = moreKeybindingsHelpPageBody
                 };
-                return [moreKeybindingsHelpPage];
+                return [moreKeybindingsHelpPage, .. extraHelpPages];
             }
         }
 

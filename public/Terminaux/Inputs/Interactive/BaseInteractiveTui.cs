@@ -68,6 +68,8 @@ namespace Terminaux.Inputs.Interactive
         public virtual int RefreshInterval => 0;
         /// <inheritdoc/>
         public virtual bool AcceptsEmptyData => false;
+        /// <inheritdoc/>
+        public virtual InteractiveTuiHelpPage[] HelpPages { get; } = [];
 
         /// <inheritdoc/>
         public virtual IEnumerable<TPrimary> PrimaryDataSource => [];

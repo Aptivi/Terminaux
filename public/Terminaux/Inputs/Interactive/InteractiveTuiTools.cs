@@ -64,7 +64,8 @@ namespace Terminaux.Inputs.Interactive
                 // Make the screen
                 var tui = new InteractiveSelectorTui<TPrimary, TSecondary>(interactiveTui)
                 {
-                    RefreshDelay = interactiveTui.RefreshInterval
+                    RefreshDelay = interactiveTui.RefreshInterval,
+                    extraHelpPages = interactiveTui.HelpPages,
                 };
                 TextualUITools.RunTui(tui);
             }

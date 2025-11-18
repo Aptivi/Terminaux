@@ -44,6 +44,10 @@ namespace Terminaux.Inputs.Interactive
         /// Whether empty data is accepted
         /// </summary>
         public bool AcceptsEmptyData { get; }
+        /// <summary>
+        /// A list of help pages
+        /// </summary>
+        public InteractiveTuiHelpPage[] HelpPages { get; }
 
         /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane one)
