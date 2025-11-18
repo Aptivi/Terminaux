@@ -18,11 +18,13 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
@@ -91,6 +93,19 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             if (bindingMouseRepresentations.Length > 0)
                 helpTextBuilder.Append("\n\n" + LanguageTools.GetLocalized("T_WRITER_CYCLICWRITERS_TOOLS_KEYBINDING_MOUSEBINDINGS") + $":\n\n{string.Join("\n", bindingMouseRepresentations)}");
             return helpTextBuilder.ToString();
+        }
+
+        internal static Keybinding[] ConvertFromTuiKeybindingsToKeybindings<TPrimary, TSecondary>(List<InteractiveTuiBinding<TPrimary, TSecondary>> interactiveTuiBindings)
+        {
+            var keybindings = new List<Keybinding>();
+            foreach (var binding in interactiveTuiBindings)
+            {
+                var finalBinding = binding.BindingUsesMouse ?
+                    new Keybinding(binding.BindingName, binding.BindingPointerButton, binding.BindingPointerButtonPress, binding.BindingPointerModifiers, binding.BindingHidden) :
+                    new Keybinding(binding.BindingName, binding.BindingKeyName, binding.BindingKeyModifiers, binding.BindingHidden);
+                keybindings.Add(finalBinding);
+            }
+            return [.. keybindings];
         }
 
         internal static string GetBindingKeyShortcut(Keybinding bind, bool mark = true) =>
