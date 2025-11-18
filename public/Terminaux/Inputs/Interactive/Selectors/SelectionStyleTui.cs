@@ -690,7 +690,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((SelectionStyleBase.Bindings[13], QuestionGoDown));
             Keybindings.Add((SelectionStyleBase.Bindings[14], ShowCount));
             Keybindings.Add((SelectionStyleBase.Bindings[15], ShowItemInfo));
-            Keybindings.Add((SelectionStyleBase.ShowBindings[0], ShowSidebar));
+            Keybindings.Add((SelectionStyleBase.ShowBindings[1], ShowSidebar));
             Keybindings.Add((SelectionStyleBase.BindingsMouse[0], (_, _, mouse) => ProcessMouseWheel(mouse, true)));
             Keybindings.Add((SelectionStyleBase.BindingsMouse[1], (_, _, mouse) => ProcessMouseWheel(mouse)));
             Keybindings.Add((SelectionStyleBase.BindingsMouse[2], ProcessLeftClick));
@@ -700,7 +700,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Install mode-dependent keybindings
             if (multiple)
             {
-                Keybindings.RemoveAt(1);
+                Keybindings.RemoveAt(3);
                 Keybindings.Add((SelectionStyleBase.BindingsMultiple[16], ModifyChoice));
                 Keybindings.Add((SelectionStyleBase.BindingsMultiple[17], (_, _, _) => ProcessSelectAll(1)));
                 Keybindings.Add((SelectionStyleBase.BindingsMultiple[18], (_, _, _) => ProcessSelectAll(2)));
