@@ -156,7 +156,7 @@ namespace Terminaux.Inputs.Interactive
                     // Open an infobox that shows the help page
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized(page.HelpBody), new InfoBoxSettings()
                     {
-                        Title = choice.ChoiceName + " - " + choice.ChoiceDescription,
+                        Title = choice.ChoiceName + " - " + choice.ChoiceTitle,
                     });
                 }
             }
