@@ -4,7 +4,8 @@ We've made some more improvements to the Terminaux library!
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Improvements to the keybindings handler
+- `[+]` Added custom help page support for selector TUIs
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
