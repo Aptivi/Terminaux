@@ -32,7 +32,23 @@
     <ProjectReference Include="..\..\public\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
-  <Import Project="..\Terminaux.Tests.Shared\Terminaux.Tests.Shared.projitems" Label="Shared" />
+  <ItemGroup>
+    <Compile Include="..\Terminaux.Tests.Shared\Shells\Commands\Write.cs">
+      <Link>Common\Shells\Commands\Write.cs</Link>
+    </Compile>
+    <Compile Include="..\Terminaux.Tests.Shared\Shells\Commands\WriteArg.cs">
+      <Link>Common\Shells\Commands\WriteArg.cs</Link>
+    </Compile>
+    <Compile Include="..\Terminaux.Tests.Shared\Shells\Presets\TestPreset.cs">
+      <Link>Common\Shells\Presets\TestPreset.cs</Link>
+    </Compile>
+    <Compile Include="..\Terminaux.Tests.Shared\Shells\TestShellInfo.cs">
+      <Link>Common\Shells\TestShellInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Terminaux.Tests.Shared\Shells\TestShellInstance.cs">
+      <Link>Common\Shells\TestShellInstance.cs</Link>
+    </Compile>
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="TestData\*">
