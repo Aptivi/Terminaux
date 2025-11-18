@@ -92,6 +92,14 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Write the question in a bordered box.
             if (sentenceLineCount > 0)
             {
+                var boundClear = new Box()
+                {
+                    Left = 1,
+                    Top = 1,
+                    Width = interiorWidth,
+                    Height = totalHeight,
+                    Color = settings.BackgroundColor,
+                };
                 var boundedQuestion = new BoundedText()
                 {
                     Left = 1,
@@ -103,7 +111,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     Line = questionLine,
                     Text = question,
                 };
-                selectionBuilder.Append(boundedQuestion.Render());
+                selectionBuilder.Append(boundClear.Render() + boundedQuestion.Render());
             }
 
             // Populate the answers
