@@ -2805,5 +2805,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Wählen Sie eine der unten aufgeführten Hilfeseiten aus.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Diese Seite listet zusätzlich zu den Standardtastenkombinationen weitere Tastenkombinationen auf, die für diese interaktive TUI unterstützt werden.</value>
+  </data>
 
 </root>

@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Selecione qualquer uma das páginas de ajuda listadas abaixo.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Esta página lista atalhos de teclado adicionais que são suportados para esta interface de utilizador interativa (TUI), para além dos básicos.</value>
+  </data>
 
 </root>

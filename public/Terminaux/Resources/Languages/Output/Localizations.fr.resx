@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Sélectionnez l&apos;une des pages d&apos;aide listées ci-dessous.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Cette page répertorie les raccourcis clavier supplémentaires pris en charge par cette interface utilisateur interactive, en plus des raccourcis de base.</value>
+  </data>
 
 </root>

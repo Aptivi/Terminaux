@@ -3577,6 +3577,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Pilih salah satu halaman bantuan yang tercantum di bawah ini."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Halaman ini mencantumkan pengikatan tombol tambahan yang didukung untuk TUI interaktif ini, selain yang dasar."
     }
   ]
 }

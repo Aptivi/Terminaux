@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>請選擇以下列出的任何幫助頁面。</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>除了基本按鍵綁定之外，此頁面還列出了此互動式 TUI 支援的其他按鍵綁定。</value>
+  </data>
 
 </root>

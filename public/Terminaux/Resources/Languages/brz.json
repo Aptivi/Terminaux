@@ -3576,6 +3576,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Selecione qualquer uma das páginas de ajuda listadas abaixo."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Esta página lista atalhos de teclado adicionais que são suportados para esta interface de usuário interativa (TUI), além dos básicos."
     }
   ]
 }

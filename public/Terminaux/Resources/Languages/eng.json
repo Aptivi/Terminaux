@@ -3683,6 +3683,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Select any of the help pages that are listed below."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "This page lists additional keybindings that are supported for this interactive TUI, in addition to the basic ones."
     }
   ]
 }

@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>以下のヘルプページからいずれかを選択してください。</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>このページには、基本的なキーバインドに加えて、このインタラクティブ TUI でサポートされている追加のキーバインドがリストされています。</value>
+  </data>
 
 </root>

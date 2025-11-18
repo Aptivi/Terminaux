@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Selectați oricare dintre paginile de ajutor listate mai jos.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Această pagină listează combinații de taste suplimentare acceptate pentru această interfață interactivă TUI, pe lângă cele de bază.</value>
+  </data>
 
 </root>

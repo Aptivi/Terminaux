@@ -3577,6 +3577,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Chọn bất kỳ trang trợ giúp nào được liệt kê bên dưới."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Trang này liệt kê các phím tắt bổ sung được hỗ trợ cho TUI tương tác này, ngoài các phím tắt cơ bản."
     }
   ]
 }

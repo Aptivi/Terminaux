@@ -3598,6 +3598,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Wählen Sie eine der unten aufgeführten Hilfeseiten aus."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Diese Seite listet zusätzlich zu den Standardtastenkombinationen weitere Tastenkombinationen auf, die für diese interaktive TUI unterstützt werden."
     }
   ]
 }

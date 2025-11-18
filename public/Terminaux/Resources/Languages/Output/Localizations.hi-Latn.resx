@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>neeche soocheebaddh kisee bhee sahaayata prshth ka chayan karen.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>yah prshth mool keebainding ke atirikt, is intaraiktiv tui ke lie samarthit atirikt keebainding ko soocheebaddh karata hai.</value>
+  </data>
 
 </root>

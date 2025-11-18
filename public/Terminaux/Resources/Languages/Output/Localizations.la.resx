@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Elige quamlibet paginam auxilii infra recensitam.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Haec pagina clavium iuncturas additionales enumerat quae, praeter fundamentales, ab hac interfacie utente interactiva sustinentur.</value>
+  </data>
 
 </root>

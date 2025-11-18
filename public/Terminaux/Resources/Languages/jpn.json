@@ -3577,6 +3577,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "以下のヘルプページからいずれかを選択してください。"
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "このページには、基本的なキーバインドに加えて、このインタラクティブ TUI でサポートされている追加のキーバインドがリストされています。"
     }
   ]
 }

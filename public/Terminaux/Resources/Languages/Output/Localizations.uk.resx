@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Виберіть будь-яку зі сторінок довідки, перелічених нижче.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>На цій сторінці перелічено додаткові комбінації клавіш, що підтримуються для цього інтерактивного TUI, окрім основних.</value>
+  </data>
 
 </root>

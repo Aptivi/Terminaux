@@ -3581,6 +3581,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Velg en av hjelpesidene som er oppført nedenfor."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Denne siden viser flere tastebindinger som støttes for dette interaktive brukergrensesnittet, i tillegg til de grunnleggende."
     }
   ]
 }

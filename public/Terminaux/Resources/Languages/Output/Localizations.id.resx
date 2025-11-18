@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Pilih salah satu halaman bantuan yang tercantum di bawah ini.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Halaman ini mencantumkan pengikatan tombol tambahan yang didukung untuk TUI interaktif ini, selain yang dasar.</value>
+  </data>
 
 </root>

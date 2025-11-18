@@ -3578,6 +3578,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Aşağıda listelenen yardım sayfalarından herhangi birini seçin."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Bu sayfada, temel tuş atamalarının yanı sıra, bu etkileşimli TUI için desteklenen ek tuş atamaları listelenmektedir."
     }
   ]
 }

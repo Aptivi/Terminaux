@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Chọn bất kỳ trang trợ giúp nào được liệt kê bên dưới.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Trang này liệt kê các phím tắt bổ sung được hỗ trợ cho TUI tương tác này, ngoài các phím tắt cơ bản.</value>
+  </data>
 
 </root>

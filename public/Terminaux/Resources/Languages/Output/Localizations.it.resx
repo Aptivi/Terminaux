@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Seleziona una delle pagine di aiuto elencate di seguito.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Liostaítear ar an leathanach seo ceangail eochracha breise a dtacaítear leo don TUI idirghníomhach seo, sa bhreis ar na cinn bhunúsacha.</value>
+  </data>
 
 </root>

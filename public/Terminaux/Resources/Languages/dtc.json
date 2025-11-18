@@ -3583,6 +3583,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Selecteer een van de onderstaande hulppagina's."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Op deze pagina vindt u aanvullende sneltoetsen die voor deze interactieve TUI worden ondersteund, naast de basistoetsen."
     }
   ]
 }

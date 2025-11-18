@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>नीचे सूचीबद्ध किसी भी सहायता पृष्ठ का चयन करें।</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>यह पृष्ठ मूल कीबाइंडिंग के अतिरिक्त, इस इंटरैक्टिव TUI के लिए समर्थित अतिरिक्त कीबाइंडिंग को सूचीबद्ध करता है।</value>
+  </data>
 
 </root>

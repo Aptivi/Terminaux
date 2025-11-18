@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Selecteer een van de onderstaande hulppagina&apos;s.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Op deze pagina vindt u aanvullende sneltoetsen die voor deze interactieve TUI worden ondersteund, naast de basistoetsen.</value>
+  </data>
 
 </root>

@@ -3602,6 +3602,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Seleccione cualquiera de las páginas de ayuda que aparecen a continuación."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Esta página enumera combinaciones de teclas adicionales compatibles con esta interfaz de usuario interactiva, además de las básicas."
     }
   ]
 }

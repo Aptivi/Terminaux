@@ -3580,6 +3580,10 @@
     {
       "loc": "T_INPUT_INTERACTIVE_TUIHELP_INFOBOX",
       "text": "Pilih mana-mana halaman bantuan yang disenaraikan di bawah."
+    },
+    {
+      "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
+      "text": "Halaman ini menyenaraikan pengikatan kekunci tambahan yang disokong untuk TUI interaktif ini, selain daripada yang asas."
     }
   ]
 }

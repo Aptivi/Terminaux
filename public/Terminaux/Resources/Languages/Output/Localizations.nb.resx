@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Velg en av hjelpesidene som er oppført nedenfor.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>Denne siden viser flere tastebindinger som støttes for dette interaktive brukergrensesnittet, i tillegg til de grunnleggende.</value>
+  </data>
 
 </root>

@@ -2796,5 +2796,8 @@
   <data name="T_INPUT_INTERACTIVE_TUIHELP_INFOBOX" xml:space="preserve">
     <value>Select any of the help pages that are listed below.</value>
   </data>
+  <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
+    <value>This page lists additional keybindings that are supported for this interactive TUI, in addition to the basic ones.</value>
+  </data>
 
 </root>
