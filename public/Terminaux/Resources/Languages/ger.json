@@ -2932,18 +2932,6 @@
       "text": "Generieren Sie Namen mithilfe der einheitlichen Namensliste"
     },
     {
-      "loc": "T_SHELL_UNIFIED_LASTNAMES_DESC",
-      "text": "Nachnamenfinder"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMEPREFIX_DESC",
-      "text": "Zu suchendes Nachnamenpräfix"
-    },
-    {
-      "loc": "T_SHELL_UNIFIED_LASTNAMES_ARGUMENT_SURNAMESUFFIX_DESC",
-      "text": "Zu suchender Nachnamensuffix"
-    },
-    {
       "loc": "T_SHELL_UNIFIED_GENNAMES_DESC",
       "text": "Vor- und Nachnamengenerator"
     },
