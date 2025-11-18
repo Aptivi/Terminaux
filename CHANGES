@@ -1,11 +1,10 @@
-This version of Terminaux has been further enhanced to include some more aesthetical improvements!
+This version of Terminaux has been enhanced to include some more improvements!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Reset color when entry is written
-- `[*]` Fixed hidden truncation ellipsis in the interactive TUI
+- `[*]` General improvements
 
 Review the commit history if you want to get a deep insight about the changes.
 
