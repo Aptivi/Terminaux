@@ -33,6 +33,7 @@ namespace Terminaux.Base.Buffered
     {
         private bool needsRefresh = true;
         private bool resetResize = true;
+        private bool refreshWasDone = false;
         private int cycleFrequency = 0;
         private readonly ScreenPart clearPart = new();
         private readonly Dictionary<string, ScreenPart> screenParts = [];
@@ -57,6 +58,12 @@ namespace Terminaux.Base.Buffered
         /// </summary>
         public bool NeedsRefresh =>
             needsRefresh;
+
+        /// <summary>
+        /// If <see cref="NeedsRefresh"/> was true before the screen was rendered, this returns true.
+        /// </summary>
+        public bool RefreshWasDone =>
+            refreshWasDone;
 
         /// <summary>
         /// Specifies the amount of milliseconds of cyclic screen frequency
@@ -329,10 +336,12 @@ namespace Terminaux.Base.Buffered
                 ConsoleWrapper.CursorVisible = false;
                 var builder = new StringBuilder();
                 builder.Append(ColorTools.RenderRevertBackground());
+                refreshWasDone = false;
                 if (needsRefresh || ConsoleResizeHandler.WasResized(ResetResize))
                 {
                     ConsoleLogger.Info("Screen requires refresh due to refresh request ({0}) or resize.", needsRefresh);
                     needsRefresh = false;
+                    refreshWasDone = true;
                     builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
                 }
                 return builder.ToString();

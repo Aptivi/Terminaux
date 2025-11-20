@@ -368,6 +368,7 @@ namespace Terminaux.Console.Fixtures
             new TestScreenBufferVisibility(),
             new TestScreenCyclic(),
             new TestScreenPosCanvas(),
+            new TestScreenWasRefreshed(),
 
             // Presentation
             new TestPresentation(),
