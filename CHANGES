@@ -1,11 +1,10 @@
-We've made some more improvements to the Terminaux library!
+We've added a powerful feature that allows you to check to see if the refresh was done on the screen!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added custom help page support for selector TUIs
-- `[*]` General improvements and bug fixes
+- `[+]` Added "refresh was done" flag for screens
 
 Review the commit history if you want to get a deep insight about the changes.
 
