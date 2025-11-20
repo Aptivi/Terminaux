@@ -1,10 +1,10 @@
-This version of Terminaux has been enhanced to include some more improvements!
+We've added a powerful feature that allows you to check to see if the refresh was done on the screen!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements
+- `[+]` Added "refresh was done" flag for screens
 
 Review the commit history if you want to get a deep insight about the changes.
 
