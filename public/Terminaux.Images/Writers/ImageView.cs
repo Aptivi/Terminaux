@@ -21,6 +21,7 @@ using ImageMagick;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters;
@@ -126,9 +127,9 @@ namespace Terminaux.Images.Writers
             int absoluteY = 0;
 
             // Process the pixels in scanlines
-            string bgSeq = BackgroundColor is null ? ColorTools.RenderRevertBackground() : ColorTools.RenderSetConsoleColor(BackgroundColor, true);
-            string bgSeqFg = BackgroundColor is null ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor) : ColorTools.RenderSetConsoleColor(BackgroundColor);
             var themeBackground = ThemeColorsTools.GetColor(ThemeColorType.Background);
+            string bgSeq = BackgroundColor is null ? ColorTools.RenderRevertBackground() : ColorTools.RenderSetConsoleColor(BackgroundColor, true);
+            string bgSeqFg = BackgroundColor is null ? (!ColorTools.AllowBackground ? ColorTools.RenderSetConsoleColor(ConsoleColors.Black) : ColorTools.RenderSetConsoleColor(themeBackground)) : ColorTools.RenderSetConsoleColor(BackgroundColor);
             var imageBackground = BackgroundColor is null ? Color.Empty : BackgroundColor;
             for (double y = RowOffset; y < imageHeight && absoluteY < Height; y += Fit ? imageHeightThreshold : 2, absoluteY++)
             {
@@ -144,7 +145,7 @@ namespace Terminaux.Images.Writers
                     int pixelX = (int)x;
                     int pixelY = (int)y;
                     var imageColor = imageColors[pixelX, pixelY];
-                    var imageColorNext = (pixelY + 1 < imageColors.GetLength(1) ? imageColors[pixelX, pixelY + 1] : BackgroundColor) ?? ColorTools.CurrentBackgroundColor;
+                    var imageColorNext = (pixelY + 1 < imageColors.GetLength(1) ? imageColors[pixelX, pixelY + 1] : BackgroundColor) ?? themeBackground;
                     string highSequence = (imageColor.RGB == themeBackground.RGB || imageColor.RGB == imageBackground.RGB) && imageColor.RGB.A == 0 ? bgSeqFg : imageColor.VTSequenceForegroundTrueColor;
                     string lowSequence = (imageColorNext.RGB == themeBackground.RGB || imageColorNext.RGB == imageBackground.RGB) && imageColorNext.RGB.A == 0 ? bgSeq : imageColorNext.VTSequenceBackgroundTrueColor;
                     buffer.Append(

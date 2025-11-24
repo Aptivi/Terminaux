@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using ImageMagick;
 using System.IO;
+using ImageMagick;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Images.Writers;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -101,8 +103,8 @@ namespace Terminaux.Images
         /// Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)
         /// </summary>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(int width = 0, int height = 0) =>
-            GetColorsFromImage(placeholderStream, width, height);
+        public static Color[,] GetColorsFromImage(int width = 0, int height = 0, Color? background = null) =>
+            GetColorsFromImage(placeholderStream, width, height, background);
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the image
@@ -111,7 +113,7 @@ namespace Terminaux.Images
         /// <param name="width">Target width. Set to 0 to prevent resize.</param>
         /// <param name="height">Target height. Set to 0 to prevent resize.</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(string imagePath, int width = 0, int height = 0)
+        public static Color[,] GetColorsFromImage(string imagePath, int width = 0, int height = 0, Color? background = null)
         {
             // Check for null
             if (string.IsNullOrWhiteSpace(imagePath))
@@ -120,7 +122,7 @@ namespace Terminaux.Images
             ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
             ConsoleLogger.Debug("Image file length is {0} bytes", imageStream.Length);
-            return GetColorsFromImage(imageStream, width, height);
+            return GetColorsFromImage(imageStream, width, height, background);
         }
 
         /// <summary>
@@ -130,7 +132,7 @@ namespace Terminaux.Images
         /// <param name="width">Target width. Set to 0 to prevent resize.</param>
         /// <param name="height">Target height. Set to 0 to prevent resize.</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(byte[] imageBytes, int width = 0, int height = 0)
+        public static Color[,] GetColorsFromImage(byte[] imageBytes, int width = 0, int height = 0, Color? background = null)
         {
             // Check for null
             if (imageBytes is null || imageBytes.Length == 0)
@@ -138,7 +140,7 @@ namespace Terminaux.Images
 
             var imageStream = new MemoryStream(imageBytes);
             ConsoleLogger.Debug("Image stream length is {0} bytes", imageStream.Length);
-            return GetColorsFromImage(imageStream, width, height);
+            return GetColorsFromImage(imageStream, width, height, background);
         }
 
         /// <summary>
@@ -148,7 +150,7 @@ namespace Terminaux.Images
         /// <param name="width">Target width. Set to 0 to prevent resize.</param>
         /// <param name="height">Target height. Set to 0 to prevent resize.</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(Stream imageStream, int width = 0, int height = 0)
+        public static Color[,] GetColorsFromImage(Stream imageStream, int width = 0, int height = 0, Color? background = null)
         {
             // Check for null
             if (imageStream is null)
@@ -157,7 +159,7 @@ namespace Terminaux.Images
             // Open the image
             var image = OpenImage(imageStream);
             ConsoleLogger.Debug("Returning valid Magick image of format {0}...", image.Format);
-            return GetColorsFromImage(image, width, height);
+            return GetColorsFromImage(image, width, height, background);
         }
 
         /// <summary>
@@ -167,7 +169,7 @@ namespace Terminaux.Images
         /// <param name="width">Target width. Set to 0 to prevent resize.</param>
         /// <param name="height">Target height. Set to 0 to prevent resize.</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(MagickImage image, int width = 0, int height = 0)
+        public static Color[,] GetColorsFromImage(MagickImage image, int width = 0, int height = 0, Color? background = null)
         {
             // Check for null
             if (image is null)
@@ -183,6 +185,7 @@ namespace Terminaux.Images
             Color[,] colors = new Color[image.Width, image.Height];
 
             // Iterate through each pixel
+            var themeBackground = ThemeColorsTools.GetColor(ThemeColorType.Background);
             foreach (var pixel in pixelCollection)
             {
                 int pixelX = pixel.X;
@@ -193,7 +196,15 @@ namespace Terminaux.Images
                 if (pixelColor is null)
                     continue;
                 ConsoleLogger.Debug("[{0}, {1}] RGBA: {2}, {3}, {4}, {5}", pixelX, pixelY, pixelColor.R, pixelColor.G, pixelColor.B, pixelColor.A);
-                var color = new Color(pixelColor.R, pixelColor.G, pixelColor.B, new(ColorTools.GlobalSettings) { Opacity = pixelColor.A });
+                var color = new Color(
+                    pixelColor.A == 0 ? 0 : pixelColor.R,
+                    pixelColor.A == 0 ? 0 : pixelColor.G,
+                    pixelColor.A == 0 ? 0 : pixelColor.B,
+                    new(ColorTools.GlobalSettings)
+                    {
+                        Opacity = pixelColor.A,
+                        OpacityColor = background is null ? (ColorTools.AllowBackground ? themeBackground : ConsoleColors.Black) : background,
+                    });
                 colors[pixelX, pixelY] = color;
             }
 
