@@ -227,7 +227,7 @@ namespace Terminaux.Images
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(string imagePath, int width, int height, int left, int top, Color? background = null, bool resize = true)
         {
-            var imageColors = resize ? GetColorsFromImage(imagePath, width, height) : GetColorsFromImage(imagePath);
+            var imageColors = resize ? GetColorsFromImage(imagePath, width, height * 2) : GetColorsFromImage(imagePath);
             return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
@@ -244,7 +244,7 @@ namespace Terminaux.Images
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(byte[] imageBytes, int width, int height, int left, int top, Color? background = null, bool resize = true)
         {
-            var imageColors = resize ? GetColorsFromImage(imageBytes, width, height) : GetColorsFromImage(imageBytes);
+            var imageColors = resize ? GetColorsFromImage(imageBytes, width, height * 2) : GetColorsFromImage(imageBytes);
             return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
@@ -261,7 +261,7 @@ namespace Terminaux.Images
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(Stream imageStream, int width, int height, int left, int top, Color? background = null, bool resize = true)
         {
-            var imageColors = resize ? GetColorsFromImage(imageStream, width, height) : GetColorsFromImage(imageStream);
+            var imageColors = resize ? GetColorsFromImage(imageStream, width, height * 2) : GetColorsFromImage(imageStream);
             ConsoleLogger.Debug("Can seek: {0}", imageStream.CanSeek);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
@@ -281,7 +281,7 @@ namespace Terminaux.Images
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color? background = null, bool resize = true)
         {
-            var imageColors = resize ? GetColorsFromImage(image, width, height) : GetColorsFromImage(image);
+            var imageColors = resize ? GetColorsFromImage(image, width, height * 2) : GetColorsFromImage(image);
             return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
@@ -307,7 +307,7 @@ namespace Terminaux.Images
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(string imagePath, int width, int height, Color? background = null, bool resize = true)
         {
-            var imageColors = resize ? GetColorsFromImage(imagePath, width, height) : GetColorsFromImage(imagePath);
+            var imageColors = resize ? GetColorsFromImage(imagePath, width, height * 2) : GetColorsFromImage(imagePath);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
         }
 
@@ -322,7 +322,7 @@ namespace Terminaux.Images
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(byte[] imageBytes, int width, int height, Color? background = null, bool resize = true)
         {
-            var imageColors = resize ? GetColorsFromImage(imageBytes, width, height) : GetColorsFromImage(imageBytes);
+            var imageColors = resize ? GetColorsFromImage(imageBytes, width, height * 2) : GetColorsFromImage(imageBytes);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
         }
 
@@ -337,7 +337,7 @@ namespace Terminaux.Images
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(Stream imageStream, int width, int height, Color? background = null, bool resize = true)
         {
-            var imageColors = resize ? GetColorsFromImage(imageStream, width, height) : GetColorsFromImage(imageStream);
+            var imageColors = resize ? GetColorsFromImage(imageStream, width, height * 2) : GetColorsFromImage(imageStream);
             ConsoleLogger.Debug("Can seek: {0}", imageStream.CanSeek);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
@@ -355,7 +355,7 @@ namespace Terminaux.Images
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(MagickImage image, int width, int height, Color? background = null, bool resize = true)
         {
-            var imageColors = resize ? GetColorsFromImage(image, width, height) : GetColorsFromImage(image);
+            var imageColors = resize ? GetColorsFromImage(image, width, height * 2) : GetColorsFromImage(image);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
         }
 

@@ -38,7 +38,7 @@ namespace Terminaux.Images.Writers
         private int height = 0;
         private int columnOffset = 0;
         private int rowOffset = 0;
-        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
+        private Color? backgroundColor;
 
         /// <summary>
         /// An image to render
@@ -56,7 +56,7 @@ namespace Terminaux.Images.Writers
         /// <summary>
         /// Background color of the image, overriding any transparency
         /// </summary>
-        public Color BackgroundColor
+        public Color? BackgroundColor
         {
             get => backgroundColor;
             set => backgroundColor = value;
@@ -127,7 +127,10 @@ namespace Terminaux.Images.Writers
 
             // Process the pixels in scanlines
             string bgSeq = BackgroundColor is null ? ColorTools.RenderRevertBackground() : ColorTools.RenderSetConsoleColor(BackgroundColor, true);
-            for (double y = RowOffset; y < imageHeight && absoluteY < Height; y += Fit ? imageHeightThreshold : 1, absoluteY++)
+            string bgSeqFg = BackgroundColor is null ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor) : ColorTools.RenderSetConsoleColor(BackgroundColor);
+            var themeBackground = ThemeColorsTools.GetColor(ThemeColorType.Background);
+            var imageBackground = BackgroundColor is null ? Color.Empty : BackgroundColor;
+            for (double y = RowOffset; y < imageHeight && absoluteY < Height; y += Fit ? imageHeightThreshold : 2, absoluteY++)
             {
                 // Some positioning
                 if (UsePositioning)
@@ -141,7 +144,13 @@ namespace Terminaux.Images.Writers
                     int pixelX = (int)x;
                     int pixelY = (int)y;
                     var imageColor = imageColors[pixelX, pixelY];
-                    buffer.Append((imageColor.RGB == ThemeColorsTools.GetColor(ThemeColorType.Background).RGB && imageColor.RGB.A == 0 ? bgSeq : imageColor.VTSequenceBackgroundTrueColor) + " ");
+                    var imageColorNext = (pixelY + 1 < imageColors.GetLength(1) ? imageColors[pixelX, pixelY + 1] : BackgroundColor) ?? ColorTools.CurrentBackgroundColor;
+                    string highSequence = (imageColor.RGB == themeBackground.RGB || imageColor.RGB == imageBackground.RGB) && imageColor.RGB.A == 0 ? bgSeqFg : imageColor.VTSequenceForegroundTrueColor;
+                    string lowSequence = (imageColorNext.RGB == themeBackground.RGB || imageColorNext.RGB == imageBackground.RGB) && imageColorNext.RGB.A == 0 ? bgSeq : imageColorNext.VTSequenceBackgroundTrueColor;
+                    buffer.Append(
+                        highSequence +
+                        lowSequence +
+                        "▀");
                 }
 
                 // Add space if not using console positioning
