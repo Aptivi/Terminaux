@@ -1,4 +1,4 @@
-//
+﻿//
 // Terminaux  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of Terminaux
@@ -17,11 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using ImageMagick;
 using System.IO;
 using System.Text;
+using ImageMagick;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -54,6 +55,7 @@ namespace Terminaux.Images
 
             ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
+            ConsoleLogger.Debug("Image file length is {0} bytes", imageStream.Length);
             return OpenImage(imageStream);
         }
 
@@ -69,6 +71,7 @@ namespace Terminaux.Images
                 throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA"));
 
             var imageStream = new MemoryStream(imageBytes);
+            ConsoleLogger.Debug("Image stream length is {0} bytes", imageStream.Length);
             return OpenImage(imageStream);
         }
 
@@ -88,9 +91,11 @@ namespace Terminaux.Images
             {
                 BackgroundColor = MagickColors.Transparent,
             };
+            ConsoleLogger.Debug("Created Magick read settings, can seek: {0}", imageStream.CanSeek);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
             var image = new MagickImage(imageStream, settings);
+            ConsoleLogger.Debug("Returning valid Magick image of format {0}...", image.Format);
             return image;
         }
 
@@ -98,15 +103,18 @@ namespace Terminaux.Images
         /// Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)
         /// </summary>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage() =>
-            GetColorsFromImage(placeholderStream);
+        public static Color[,] GetColorsFromImage(int width = 0, int height = 0, Color? background = null) =>
+            GetColorsFromImage(placeholderStream, width, height, background);
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the image
         /// </summary>
         /// <param name="imagePath">Path to the image that ImageMagick can process</param>
+        /// <param name="width">Target width. Set to 0 to prevent resize.</param>
+        /// <param name="height">Target height. Set to 0 to prevent resize.</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(string imagePath)
+        public static Color[,] GetColorsFromImage(string imagePath, int width = 0, int height = 0, Color? background = null)
         {
             // Check for null
             if (string.IsNullOrWhiteSpace(imagePath))
@@ -114,30 +122,38 @@ namespace Terminaux.Images
 
             ConsoleLogger.Info("Opening image file {0}...", imagePath);
             var imageStream = File.OpenRead(imagePath);
-            return GetColorsFromImage(imageStream);
+            ConsoleLogger.Debug("Image file length is {0} bytes", imageStream.Length);
+            return GetColorsFromImage(imageStream, width, height, background);
         }
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the image
         /// </summary>
         /// <param name="imageBytes">Array of bytes that contains the image data that ImageMagick can process</param>
+        /// <param name="width">Target width. Set to 0 to prevent resize.</param>
+        /// <param name="height">Target height. Set to 0 to prevent resize.</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(byte[] imageBytes)
+        public static Color[,] GetColorsFromImage(byte[] imageBytes, int width = 0, int height = 0, Color? background = null)
         {
             // Check for null
             if (imageBytes is null || imageBytes.Length == 0)
                 throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_OPENIMAGE_EXCEPTION_NULLDATA"));
 
             var imageStream = new MemoryStream(imageBytes);
-            return GetColorsFromImage(imageStream);
+            ConsoleLogger.Debug("Image stream length is {0} bytes", imageStream.Length);
+            return GetColorsFromImage(imageStream, width, height, background);
         }
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the image
         /// </summary>
         /// <param name="imageStream">Stream that contains the image data that ImageMagick can process</param>
+        /// <param name="width">Target width. Set to 0 to prevent resize.</param>
+        /// <param name="height">Target height. Set to 0 to prevent resize.</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(Stream imageStream)
+        public static Color[,] GetColorsFromImage(Stream imageStream, int width = 0, int height = 0, Color? background = null)
         {
             // Check for null
             if (imageStream is null)
@@ -145,25 +161,35 @@ namespace Terminaux.Images
 
             // Open the image
             var image = OpenImage(imageStream);
-            return GetColorsFromImage(image);
+            ConsoleLogger.Debug("Returning valid Magick image of format {0}...", image.Format);
+            return GetColorsFromImage(image, width, height, background);
         }
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the image
         /// </summary>
         /// <param name="image">Image data that ImageMagick can process</param>
+        /// <param name="width">Target width. Set to 0 to prevent resize.</param>
+        /// <param name="height">Target height. Set to 0 to prevent resize.</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
-        public static Color[,] GetColorsFromImage(MagickImage image)
+        public static Color[,] GetColorsFromImage(MagickImage image, int width = 0, int height = 0, Color? background = null)
         {
             // Check for null
             if (image is null)
                 throw new TerminauxException(LanguageTools.GetLocalized("TI_IMAGEPROCESSOR_GETCOLORSFROMIMAGE_EXCEPTION_NULLIMAGE"));
 
+            // Check if resizing is needed
+            if (width > 0 && height > 0)
+                image.Resize((uint)width, (uint)height);
+
             // Get the amount of pixels to get color information
             var pixelCollection = image.GetPixels();
+            ConsoleLogger.Debug("Width: {0}, height: {1}", image.Width, image.Height);
             Color[,] colors = new Color[image.Width, image.Height];
 
             // Iterate through each pixel
+            var currentBackground = ColorTools.CurrentBackgroundColor;
             foreach (var pixel in pixelCollection)
             {
                 int pixelX = pixel.X;
@@ -173,7 +199,16 @@ namespace Terminaux.Images
                 var pixelColor = pixel.ToColor();
                 if (pixelColor is null)
                     continue;
-                var color = new Color(pixelColor.R, pixelColor.G, pixelColor.B, new(ColorTools.GlobalSettings) { Opacity = pixelColor.A });
+                ConsoleLogger.Debug("[{0}, {1}] RGBA: {2}, {3}, {4}, {5}", pixelX, pixelY, pixelColor.R, pixelColor.G, pixelColor.B, pixelColor.A);
+                var color = new Color(
+                    pixelColor.A == 0 ? 0 : pixelColor.R,
+                    pixelColor.A == 0 ? 0 : pixelColor.G,
+                    pixelColor.A == 0 ? 0 : pixelColor.B,
+                    new(ColorTools.GlobalSettings)
+                    {
+                        Opacity = pixelColor.A,
+                        OpacityColor = background is null ? (ColorTools.AllowBackground ? currentBackground : ConsoleColors.Black) : background,
+                    });
                 colors[pixelX, pixelY] = color;
             }
 
@@ -189,9 +224,10 @@ namespace Terminaux.Images
         /// <param name="left">Zero-based console left position to start writing the image to</param>
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(int width, int height, int left, int top, Color? background = null) =>
-            RenderImage(placeholderStream, width, height, left, top, background);
+        public static string RenderImage(int width, int height, int left, int top, Color? background = null, bool resize = true) =>
+            RenderImage(placeholderStream, width, height, left, top, background, resize);
 
         /// <summary>
         /// Renders the image to a string that you can print to the console
@@ -202,10 +238,11 @@ namespace Terminaux.Images
         /// <param name="left">Zero-based console left position to start writing the image to</param>
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(string imagePath, int width, int height, int left, int top, Color? background = null)
+        public static string RenderImage(string imagePath, int width, int height, int left, int top, Color? background = null, bool resize = true)
         {
-            var imageColors = GetColorsFromImage(imagePath);
+            var imageColors = resize ? GetColorsFromImage(imagePath, width, height * 2) : GetColorsFromImage(imagePath);
             return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
@@ -218,10 +255,11 @@ namespace Terminaux.Images
         /// <param name="left">Zero-based console left position to start writing the image to</param>
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(byte[] imageBytes, int width, int height, int left, int top, Color? background = null)
+        public static string RenderImage(byte[] imageBytes, int width, int height, int left, int top, Color? background = null, bool resize = true)
         {
-            var imageColors = GetColorsFromImage(imageBytes);
+            var imageColors = resize ? GetColorsFromImage(imageBytes, width, height * 2) : GetColorsFromImage(imageBytes);
             return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
@@ -234,10 +272,12 @@ namespace Terminaux.Images
         /// <param name="left">Zero-based console left position to start writing the image to</param>
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(Stream imageStream, int width, int height, int left, int top, Color? background = null)
+        public static string RenderImage(Stream imageStream, int width, int height, int left, int top, Color? background = null, bool resize = true)
         {
-            var imageColors = GetColorsFromImage(imageStream);
+            var imageColors = resize ? GetColorsFromImage(imageStream, width, height * 2) : GetColorsFromImage(imageStream);
+            ConsoleLogger.Debug("Can seek: {0}", imageStream.CanSeek);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
             return RenderImage(imageColors, width, height, left, top, background, true);
@@ -252,10 +292,11 @@ namespace Terminaux.Images
         /// <param name="left">Zero-based console left position to start writing the image to</param>
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color? background = null)
+        public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color? background = null, bool resize = true)
         {
-            var imageColors = GetColorsFromImage(image);
+            var imageColors = resize ? GetColorsFromImage(image, width, height * 2) : GetColorsFromImage(image);
             return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
@@ -265,9 +306,10 @@ namespace Terminaux.Images
         /// <param name="width">Width of the resulting image</param>
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(int width, int height, Color? background = null) =>
-            RenderImage(placeholderStream, width, height, background);
+        public static string RenderImage(int width, int height, Color? background = null, bool resize = true) =>
+            RenderImage(placeholderStream, width, height, background, resize);
 
         /// <summary>
         /// Renders the image to a string that you can print to the console
@@ -276,10 +318,11 @@ namespace Terminaux.Images
         /// <param name="width">Width of the resulting image</param>
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(string imagePath, int width, int height, Color? background = null)
+        public static string RenderImage(string imagePath, int width, int height, Color? background = null, bool resize = true)
         {
-            var imageColors = GetColorsFromImage(imagePath);
+            var imageColors = resize ? GetColorsFromImage(imagePath, width, height * 2) : GetColorsFromImage(imagePath);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
         }
 
@@ -290,10 +333,11 @@ namespace Terminaux.Images
         /// <param name="width">Width of the resulting image</param>
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(byte[] imageBytes, int width, int height, Color? background = null)
+        public static string RenderImage(byte[] imageBytes, int width, int height, Color? background = null, bool resize = true)
         {
-            var imageColors = GetColorsFromImage(imageBytes);
+            var imageColors = resize ? GetColorsFromImage(imageBytes, width, height * 2) : GetColorsFromImage(imageBytes);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
         }
 
@@ -304,10 +348,12 @@ namespace Terminaux.Images
         /// <param name="width">Width of the resulting image</param>
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(Stream imageStream, int width, int height, Color? background = null)
+        public static string RenderImage(Stream imageStream, int width, int height, Color? background = null, bool resize = true)
         {
-            var imageColors = GetColorsFromImage(imageStream);
+            var imageColors = resize ? GetColorsFromImage(imageStream, width, height * 2) : GetColorsFromImage(imageStream);
+            ConsoleLogger.Debug("Can seek: {0}", imageStream.CanSeek);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
@@ -320,41 +366,53 @@ namespace Terminaux.Images
         /// <param name="width">Width of the resulting image</param>
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
+        /// <param name="resize">Whether to perform a resize or not</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(MagickImage image, int width, int height, Color? background = null)
+        public static string RenderImage(MagickImage image, int width, int height, Color? background = null, bool resize = true)
         {
-            var imageColors = GetColorsFromImage(image);
+            var imageColors = resize ? GetColorsFromImage(image, width, height * 2) : GetColorsFromImage(image);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
         }
 
         internal static string RenderImage(Color[,] imageColors, int width, int height, int left, int top, Color? background, bool useLeftTop)
         {
-            // Get the image width and height in pixels and get their comparison factor
+            // Figure out how to render the image, but we need to get info about the width and the height.
             int imageWidth = imageColors.GetLength(0);
             int imageHeight = imageColors.GetLength(1);
             double imageWidthThreshold = (double)imageWidth / width;
             double imageHeightThreshold = (double)imageHeight / height;
+            ConsoleLogger.Debug("Width: {0} [T: {1}], height: {2} [T: {3}]", imageWidth, imageWidthThreshold, imageHeight, imageHeightThreshold);
 
             // Build the buffer
             StringBuilder buffer = new();
             int absoluteY = 0;
 
             // Process the pixels in scanlines
+            var themeBackground = ColorTools.CurrentBackgroundColor;
             string bgSeq = background is null ? ColorTools.RenderRevertBackground() : ColorTools.RenderSetConsoleColor(background, true);
-            for (double y = 0; y < imageHeight; y += imageHeightThreshold, absoluteY++)
+            string bgSeqFg = background is null ? (!ColorTools.AllowBackground ? ColorTools.RenderSetConsoleColor(ConsoleColors.Black) : ColorTools.RenderSetConsoleColor(themeBackground)) : ColorTools.RenderSetConsoleColor(background);
+            var imageBackground = background is null ? Color.Empty : background;
+            for (double y = 0; y < imageHeight && absoluteY < height; y += 2, absoluteY++)
             {
                 // Some positioning
                 if (useLeftTop)
                     buffer.Append(CsiSequences.GenerateCsiCursorPosition(left + 1, top + absoluteY + 1));
 
                 // Determine how to process the width
-                for (double x = 0; x < imageWidth; x += imageWidthThreshold)
+                int absoluteX = 0;
+                for (double x = 0; x < imageWidth && absoluteX < width; x += 1, absoluteX++)
                 {
                     // Add the appropriate color to the buffer
                     int pixelX = (int)x;
                     int pixelY = (int)y;
                     var imageColor = imageColors[pixelX, pixelY];
-                    buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB && imageColor.RGB.A == 0 ? bgSeq : imageColor.VTSequenceBackgroundTrueColor) + " ");
+                    var imageColorNext = (pixelY + 1 < imageColors.GetLength(1) ? imageColors[pixelX, pixelY + 1] : background) ?? themeBackground;
+                    string highSequence = (imageColor.RGB == themeBackground.RGB || imageColor.RGB == imageBackground.RGB) && imageColor.RGB.A == 0 ? bgSeqFg : imageColor.VTSequenceForegroundTrueColor;
+                    string lowSequence = (imageColorNext.RGB == themeBackground.RGB || imageColorNext.RGB == imageBackground.RGB) && imageColorNext.RGB.A == 0 ? bgSeq : imageColorNext.VTSequenceBackgroundTrueColor;
+                    buffer.Append(
+                        highSequence +
+                        lowSequence +
+                        "▀");
                 }
 
                 // Add space if not using console positioning
