@@ -112,6 +112,7 @@ namespace Terminaux.Images
         /// <param name="imagePath">Path to the image that ImageMagick can process</param>
         /// <param name="width">Target width. Set to 0 to prevent resize.</param>
         /// <param name="height">Target height. Set to 0 to prevent resize.</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage(string imagePath, int width = 0, int height = 0, Color? background = null)
         {
@@ -131,6 +132,7 @@ namespace Terminaux.Images
         /// <param name="imageBytes">Array of bytes that contains the image data that ImageMagick can process</param>
         /// <param name="width">Target width. Set to 0 to prevent resize.</param>
         /// <param name="height">Target height. Set to 0 to prevent resize.</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage(byte[] imageBytes, int width = 0, int height = 0, Color? background = null)
         {
@@ -149,6 +151,7 @@ namespace Terminaux.Images
         /// <param name="imageStream">Stream that contains the image data that ImageMagick can process</param>
         /// <param name="width">Target width. Set to 0 to prevent resize.</param>
         /// <param name="height">Target height. Set to 0 to prevent resize.</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage(Stream imageStream, int width = 0, int height = 0, Color? background = null)
         {
@@ -168,6 +171,7 @@ namespace Terminaux.Images
         /// <param name="image">Image data that ImageMagick can process</param>
         /// <param name="width">Target width. Set to 0 to prevent resize.</param>
         /// <param name="height">Target height. Set to 0 to prevent resize.</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage(MagickImage image, int width = 0, int height = 0, Color? background = null)
         {
