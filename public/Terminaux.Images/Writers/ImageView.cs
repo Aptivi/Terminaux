@@ -146,12 +146,14 @@ namespace Terminaux.Images.Writers
                     int pixelY = (int)y;
                     var imageColor = imageColors[pixelX, pixelY];
                     var imageColorNext = (pixelY + 1 < imageColors.GetLength(1) ? imageColors[pixelX, pixelY + 1] : BackgroundColor) ?? themeBackground;
+                    bool isSame = imageColor == imageColorNext;
+                    bool isSameTransparency = imageColor.RGB.A == 0 && imageColorNext.RGB.A == 0;
                     string highSequence = (imageColor.RGB == themeBackground.RGB || imageColor.RGB == imageBackground.RGB) && imageColor.RGB.A == 0 ? bgSeqFg : imageColor.VTSequenceForegroundTrueColor;
                     string lowSequence = (imageColorNext.RGB == themeBackground.RGB || imageColorNext.RGB == imageBackground.RGB) && imageColorNext.RGB.A == 0 ? bgSeq : imageColorNext.VTSequenceBackgroundTrueColor;
                     buffer.Append(
                         highSequence +
                         lowSequence +
-                        "▀");
+                        (isSameTransparency ? " " : isSame ? "█" : "▀"));
                 }
 
                 // Add space if not using console positioning
