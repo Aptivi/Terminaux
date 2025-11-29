@@ -179,7 +179,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     lines, Settings, ForegroundColor, BackgroundColor, Width, Height, Left, Top, UseColors, Row, Column);
             else
                 return RenderTextLinewise(
-                    lines, Settings, ForegroundColor, BackgroundColor, Height, Left, Top, UseColors, Line, ref incrementRate);
+                    lines, Settings, ForegroundColor, BackgroundColor, Width, Height, Left, Top, UseColors, Line, ref incrementRate);
         }
 
         internal void UpdateInternalSize()
@@ -188,7 +188,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             height = ConsoleWrapper.WindowHeight;
         }
 
-        internal static string RenderTextLinewise(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int left, int top, bool useColor, int currIdx, ref int increment)
+        internal static string RenderTextLinewise(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdx, ref int increment)
         {
             int linesMade = 0;
             var buffer = new StringBuilder();
@@ -202,7 +202,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             for (int i = currIdx; i < lines.Length; i++)
             {
                 var line = lines[i];
-                int posX = TextWriterTools.DetermineTextAlignment(line, settings.Alignment, left);
+                int posX = TextWriterTools.DetermineTextAlignment(line, width, settings.Alignment, left);
                 if (linesMade % height == 0 && linesMade > 0)
                 {
                     // Reached the end of the box. Bail.
