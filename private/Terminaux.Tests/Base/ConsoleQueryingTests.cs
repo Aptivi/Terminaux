@@ -137,6 +137,22 @@ namespace Terminaux.Tests.Base
         }
 
         /// <summary>
+        /// Tests getting wrapped sentences
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetWrappedSentencesByWordsEdgeCase2()
+        {
+            string phrase = "Equal length of a word";
+            var sentences = ConsoleMisc.GetWrappedSentencesByWords(phrase, phrase.Length);
+            sentences.ShouldNotBeNull();
+            sentences.ShouldNotBeEmpty();
+            sentences.Length.ShouldBe(1);
+            sentences[0].Length.ShouldBe(phrase.Length);
+            sentences[0].ShouldBe(phrase);
+        }
+
+        /// <summary>
         /// Tests truncating...
         /// </summary>
         [TestMethod]

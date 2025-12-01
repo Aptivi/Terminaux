@@ -85,7 +85,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             // Deal with the lines to actually fit text in the infobox
             string buttons = GetButtons(settings);
             int buttonsWidth = writeBinding ? ConsoleChar.EstimateCellWidth(buttons) : -2;
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, maxWidth + 1, vars);
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, maxWidth, vars);
 
             // Finalize the offsets
             var titleSettings = new TextSettings()
@@ -123,7 +123,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 Top = borderY + 1,
                 Line = currIdx,
                 Height = maxHeight - maxHeightOffset,
-                Width = maxWidth + 1,
+                Width = maxWidth,
                 ForegroundColor = InfoBoxColor,
                 BackgroundColor = BackgroundColor,
                 Text = text.FormatString(vars)
