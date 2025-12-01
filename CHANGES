@@ -1,11 +1,10 @@
-We've released this version of Terminaux to fix a long-standing bug regarding infoboxes!
+We've released this version of Terminaux to improve the logging enablement mechanism!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed a bug that caused word wrapping to work incorrectly in some cases
-- `[*]` Improved item position handling in the interactive selector TUIs
+- `[*]` Fixed logging trying to log to files even when logging is disabled
 
 Review the commit history if you want to get a deep insight about the changes.
 
