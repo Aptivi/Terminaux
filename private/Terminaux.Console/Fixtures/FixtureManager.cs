@@ -146,6 +146,7 @@ namespace Terminaux.Console.Fixtures
             new TestNonModalInfoBox(),
             new TestNonModalInfoBoxExcess(),
             new TestModalInfoBoxExcess(),
+            new TestModalInfoBoxOverflow(),
             new TestTextMarquee(),
             new TestTextMarqueeCjk(),
             new TestSpinner1(),
