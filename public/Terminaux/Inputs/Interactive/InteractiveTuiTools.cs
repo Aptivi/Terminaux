@@ -389,20 +389,26 @@ namespace Terminaux.Inputs.Interactive
             if (interactiveTui.CurrentPane == 2)
             {
                 var data = interactiveTui.SecondaryDataSource;
-                if (data.Length() > 0)
+                int length = data.Length();
+                if (length > 0 && interactiveTui.SecondPaneCurrentSelection > 0 && interactiveTui.SecondPaneCurrentSelection <= length)
                 {
                     TSecondary? selectedData = (TSecondary?)data.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
                     interactiveTui.Status = selectedData is not null ? interactiveTui.GetStatusFromItemSecondary(selectedData) : "No status.";
                 }
+                else
+                    interactiveTui.Status = "No status.";
             }
             else
             {
                 var data = interactiveTui.PrimaryDataSource;
-                if (data.Length() > 0)
+                int length = data.Length();
+                if (length > 0 && interactiveTui.FirstPaneCurrentSelection > 0 && interactiveTui.FirstPaneCurrentSelection <= length)
                 {
                     TPrimary? selectedData = (TPrimary?)data.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
                     interactiveTui.Status = selectedData is not null ? interactiveTui.GetStatusFromItem(selectedData) : "No status.";
                 }
+                else
+                    interactiveTui.Status = "No status.";
             }
 
             // Now, write info
@@ -428,7 +434,7 @@ namespace Terminaux.Inputs.Interactive
                 // Populate selected data
                 if (interactiveTui.CurrentPane == 2)
                 {
-                    if (dataCount > 0)
+                    if (dataCount > 0 && interactiveTui.SecondPaneCurrentSelection > 0 && interactiveTui.SecondPaneCurrentSelection <= dataCount)
                     {
                         TSecondary selectedData = (TSecondary)(dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1) ??
                             throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA")));
@@ -439,7 +445,7 @@ namespace Terminaux.Inputs.Interactive
                 }
                 else
                 {
-                    if (dataCount > 0)
+                    if (dataCount > 0 && interactiveTui.FirstPaneCurrentSelection > 0 && interactiveTui.FirstPaneCurrentSelection <= dataCount)
                     {
                         TPrimary selectedData = (TPrimary)(dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1) ??
                             throw new TerminauxInternalException(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_EXCEPTION_RENDERINFONULLDATA")));
