@@ -1,10 +1,11 @@
-We've released this version of Terminaux!
+We've released this version of Terminaux to fix a long-standing bug regarding infoboxes!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements
+- `[*]` Fixed a bug that caused word wrapping to work incorrectly in some cases
+- `[*]` Improved item position handling in the interactive selector TUIs
 
 Review the commit history if you want to get a deep insight about the changes.
 
