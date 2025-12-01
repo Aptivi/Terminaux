@@ -41,6 +41,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             var builder = new StringBuilder();
 
+            // Check position
+            InteractiveTuiTools.FirstOnUnderflow(selectorTui);
+            InteractiveTuiTools.LastOnOverflow(selectorTui);
+
             // Draw the boxes
             builder.Append(InteractiveTuiTools.RenderInteractiveTui(selectorTui));
 
