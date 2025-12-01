@@ -281,7 +281,7 @@ namespace Terminaux.Base.Extensions
                         IncompleteSentenceBuilder.Append(charSplitLastText);
                         sentenceWidth = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString());
                     }
-                    else if (sentenceWidth + wordWidth < finalMaximum)
+                    else if (sentenceWidth + wordWidth <= finalMaximum)
                     {
                         IncompleteSentenceBuilder.Append(word);
                         sentenceWidth = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString());
@@ -289,7 +289,7 @@ namespace Terminaux.Base.Extensions
 
                     // Check to see if we're at the maximum length
                     int nextWord = i + 1 >= words.Length ? 1 : ConsoleChar.EstimateCellWidth(words[i + 1]) + 1;
-                    if (sentenceWidth + nextWord >= finalMaximum)
+                    if (sentenceWidth + nextWord > finalMaximum)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                         IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
@@ -299,7 +299,7 @@ namespace Terminaux.Base.Extensions
                         indentLength = 0;
                     }
                     else
-                        IncompleteSentenceBuilder.Append(sentenceWidth + nextWord >= finalMaximum || i + 1 >= words.Length ? "" : " ");
+                        IncompleteSentenceBuilder.Append(sentenceWidth + nextWord > finalMaximum || i + 1 >= words.Length ? "" : " ");
                 }
                 if (IncompleteSentenceBuilder.Length > 0)
                     IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
