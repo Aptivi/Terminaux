@@ -32,7 +32,7 @@ namespace Terminaux.Base
     /// </summary>
     public static class ConsoleLogger
     {
-        private static BaseLogger? abstractLogger = new SerilogLogger(new LoggerConfiguration().WriteTo.File(LogTools.GenerateLogFilePath(out _)));
+        private static BaseLogger? abstractLogger;
 
         /// <summary>
         /// Whether to enable logging or not
@@ -49,34 +49,34 @@ namespace Terminaux.Base
         }
 
         internal static void Debug(string message, params object?[]? args) =>
-            abstractLogger?.Debug(message.FilterMessage(args), args);
+            AbstractLogger?.Debug(message.FilterMessage(args), args);
 
         internal static void Debug(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Debug(ex, message.FilterMessage(args), args);
+            AbstractLogger?.Debug(ex, message.FilterMessage(args), args);
 
         internal static void Error(string message, params object?[]? args) =>
-            abstractLogger?.Error(message.FilterMessage(args), args);
+            AbstractLogger?.Error(message.FilterMessage(args), args);
 
         internal static void Error(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Error(ex, message.FilterMessage(args), args);
+            AbstractLogger?.Error(ex, message.FilterMessage(args), args);
 
         internal static void Fatal(string message, params object?[]? args) =>
-            abstractLogger?.Fatal(message.FilterMessage(args), args);
+            AbstractLogger?.Fatal(message.FilterMessage(args), args);
 
         internal static void Fatal(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Fatal(ex, message.FilterMessage(args), args);
+            AbstractLogger?.Fatal(ex, message.FilterMessage(args), args);
 
         internal static void Info(string message, params object?[]? args) =>
-            abstractLogger?.Info(message.FilterMessage(args), args);
+            AbstractLogger?.Info(message.FilterMessage(args), args);
 
         internal static void Info(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Info(ex, message.FilterMessage(args), args);
+            AbstractLogger?.Info(ex, message.FilterMessage(args), args);
 
         internal static void Warning(string message, params object?[]? args) =>
-            abstractLogger?.Warning(message.FilterMessage(args), args);
+            AbstractLogger?.Warning(message.FilterMessage(args), args);
 
         internal static void Warning(Exception ex, string message, params object?[]? args) =>
-            abstractLogger?.Warning(ex, message.FilterMessage(args), args);
+            AbstractLogger?.Warning(ex, message.FilterMessage(args), args);
 
         private static string FilterMessage(this string message, params object?[]? args)
         {
