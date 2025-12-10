@@ -104,7 +104,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Sequences_Builder_VtSequenceBuilderTools_BuildVtSequence_Terminaux_Sequences_Builder_VtSequenceSpecificTypes_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Sequences.Builder.VtSequenceBuilderTools.BuildVtSequence(Terminaux.Sequences.Builder.VtSequenceSpecificTypes%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Sequences/Builder/VtSequenceBuilderTools.cs/#L37">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Sequences/Builder/VtSequenceBuilderTools.cs/#L39">View Source</a>
   </span>
   <a id="Terminaux_Sequences_Builder_VtSequenceBuilderTools_BuildVtSequence_" data-uid="Terminaux.Sequences.Builder.VtSequenceBuilderTools.BuildVtSequence*"></a>
   <h4 id="Terminaux_Sequences_Builder_VtSequenceBuilderTools_BuildVtSequence_Terminaux_Sequences_Builder_VtSequenceSpecificTypes_System_Object___" data-uid="Terminaux.Sequences.Builder.VtSequenceBuilderTools.BuildVtSequence(Terminaux.Sequences.Builder.VtSequenceSpecificTypes,System.Object[])">BuildVtSequence(VtSequenceSpecificTypes, params object[])</h4>
@@ -172,19 +172,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Sequences_Builder_VtSequenceBuilderTools_DetermineTypeFromSequence_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Sequences.Builder.VtSequenceBuilderTools.DetermineTypeFromSequence(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Sequences_Builder_VtSequenceBuilderTools_DetermineTypesFromSequence_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Sequences.Builder.VtSequenceBuilderTools.DetermineTypesFromSequence(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Sequences/Builder/VtSequenceBuilderTools.cs/#L61">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Sequences/Builder/VtSequenceBuilderTools.cs/#L62">View Source</a>
   </span>
-  <a id="Terminaux_Sequences_Builder_VtSequenceBuilderTools_DetermineTypeFromSequence_" data-uid="Terminaux.Sequences.Builder.VtSequenceBuilderTools.DetermineTypeFromSequence*"></a>
-  <h4 id="Terminaux_Sequences_Builder_VtSequenceBuilderTools_DetermineTypeFromSequence_System_String_" data-uid="Terminaux.Sequences.Builder.VtSequenceBuilderTools.DetermineTypeFromSequence(System.String)">DetermineTypeFromSequence(string)</h4>
-  <div class="markdown level1 summary"><p>Determines the VT sequence type from the given sequence</p>
+  <a id="Terminaux_Sequences_Builder_VtSequenceBuilderTools_DetermineTypesFromSequence_" data-uid="Terminaux.Sequences.Builder.VtSequenceBuilderTools.DetermineTypesFromSequence*"></a>
+  <h4 id="Terminaux_Sequences_Builder_VtSequenceBuilderTools_DetermineTypesFromSequence_System_String_" data-uid="Terminaux.Sequences.Builder.VtSequenceBuilderTools.DetermineTypesFromSequence(System.String)">DetermineTypesFromSequence(string)</h4>
+  <div class="markdown level1 summary"><p>Determines the VT sequence types from the given sequence</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static (VtSequenceType, VtSequenceSpecificTypes) DetermineTypeFromSequence(string sequence)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(VtSequenceType, VtSequenceSpecificTypes)&gt; DetermineTypesFromSequence(string sequence)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -214,24 +214,9 @@
     </thead>
     <tbody>
       <tr>
-        <td>(<a class="xref" href="Terminaux.Sequences.VtSequenceType.html">VtSequenceType</a>, <a class="xref" href="Terminaux.Sequences.Builder.VtSequenceSpecificTypes.html">VtSequenceSpecificTypes</a>)</td>
-        <td><p>A tuple of (<a class="xref" href="Terminaux.Sequences.VtSequenceType.html">VtSequenceType</a>, <a class="xref" href="Terminaux.Sequences.Builder.VtSequenceSpecificTypes.html">VtSequenceSpecificTypes</a>) containing information about a sequence type and a sequence command type</p>
+        <td><span class="xref">IEnumerable</span>&lt;(<a class="xref" href="Terminaux.Sequences.VtSequenceType.html">VtSequenceType</a>, <a class="xref" href="Terminaux.Sequences.Builder.VtSequenceSpecificTypes.html">VtSequenceSpecificTypes</a>)&gt;</td>
+        <td><p>An array of a tuple of (<a class="xref" href="Terminaux.Sequences.VtSequenceType.html">VtSequenceType</a>, <a class="xref" href="Terminaux.Sequences.Builder.VtSequenceSpecificTypes.html">VtSequenceSpecificTypes</a>) containing information about a sequence type and a sequence command type, or an empty array if nothing is found</p>
 </td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Terminaux.Base.TerminauxException.html">TerminauxException</a></td>
-        <td></td>
       </tr>
     </tbody>
   </table>
@@ -243,6 +228,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Sequences_Builder_VtSequenceBuilderTools.md&amp;value=---%0Auid%3A%20Terminaux.Sequences.Builder.VtSequenceBuilderTools%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/obj/Release/netstandard2.0/Terminaux.SequenceTypesGen/Terminaux.SequenceTypesGen.SequenceTypeGen/VtSequenceBuilderTools.g.cs/#L31" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

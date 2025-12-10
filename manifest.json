@@ -85,62 +85,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Base.Checks.ConsoleFilter.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Base.Checks.ConsoleFilter",
-      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleFilter.yml\" sourcestartlinenumber=\"1\">Console filter tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilterInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterInfo.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Base.Checks.ConsoleFilterInfo",
-      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleFilterInfo.yml\" sourcestartlinenumber=\"1\">Filtered console information</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilterSeverity.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterSeverity.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Base.Checks.ConsoleFilterSeverity",
-      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleFilterSeverity.yml\" sourcestartlinenumber=\"1\">Console filter severity</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilterType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterType.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Base.Checks.ConsoleFilterType",
-      "Summary": "<p sourcefile=\"api/Terminaux.Base.Checks.ConsoleFilterType.yml\" sourcestartlinenumber=\"1\">Console filter types</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Checks.yml",
       "output": {
         ".html": {
@@ -281,6 +225,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.ConsoleFilesystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.ConsoleFilesystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.ConsoleFilesystem",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.ConsoleFilesystem.yml\" sourcestartlinenumber=\"1\">Console filesystem tools</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Extensions.ConsoleFormatting.yml",
       "output": {
         ".html": {
@@ -390,6 +348,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Base.Extensions.Data.ConsoleBell",
       "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.Data.ConsoleBell.yml\" sourcestartlinenumber=\"1\">Console bell type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.ConsoleKeyAudioCue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.ConsoleKeyAudioCue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Extensions.Data.ConsoleKeyAudioCue",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Extensions.Data.ConsoleKeyAudioCue.yml\" sourcestartlinenumber=\"1\">Console keyboard audio cue</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -687,6 +659,62 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Tabsets.Tabset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Tabsets.Tabset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Tabsets.Tabset",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.Tabsets.Tabset.yml\" sourcestartlinenumber=\"1\">Tabset class definition</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Tabsets.TabsetParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Tabsets.TabsetParser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Tabsets.TabsetParser",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.Tabsets.TabsetParser.yml\" sourcestartlinenumber=\"1\">Tabset parser</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Tabsets.TabsetType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Tabsets.TabsetType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Tabsets.TabsetType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.TermInfo.Tabsets.TabsetType.yml\" sourcestartlinenumber=\"1\">Tabset type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Tabsets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Tabsets.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.TermInfo.Tabsets",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.Boolean.yml",
       "output": {
         ".html": {
@@ -796,6 +824,34 @@
       "IsMRef": true,
       "Title": "Terminaux.Base.TerminauxInternalException",
       "Summary": "<p sourcefile=\"api/Terminaux.Base.TerminauxInternalException.yml\" sourcestartlinenumber=\"1\">Terminaux exception class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Wrappers.BaseConsoleWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Wrappers.BaseConsoleWrapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Wrappers.BaseConsoleWrapper",
+      "Summary": "<p sourcefile=\"api/Terminaux.Base.Wrappers.BaseConsoleWrapper.yml\" sourcestartlinenumber=\"1\">Base console wrapper class for the <xref href=\"System.Console\" data-throw-if-not-resolved=\"false\"></xref> class to ensure safety against dumb consoles and Windows-only features.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Wrappers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Wrappers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Base.Wrappers",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1359,58 +1415,114 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Templates.PredefinedComponentType.yml",
+      "source_relative_path": "api/Terminaux.Colors.Themes.Colors.ThemeColorType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Colors.Templates.PredefinedComponentType.html"
+          "relative_path": "api/Terminaux.Colors.Themes.Colors.ThemeColorType.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Colors.Templates.PredefinedComponentType",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Templates.PredefinedComponentType.yml\" sourcestartlinenumber=\"1\">Specifies all the predefined component types required in all the templates</p>\n"
+      "Title": "Terminaux.Colors.Themes.Colors.ThemeColorType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Themes.Colors.ThemeColorType.yml\" sourcestartlinenumber=\"1\">Theme color type</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Templates.TemplateInfo.yml",
+      "source_relative_path": "api/Terminaux.Colors.Themes.Colors.ThemeColorsTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Colors.Templates.TemplateInfo.html"
+          "relative_path": "api/Terminaux.Colors.Themes.Colors.ThemeColorsTools.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Colors.Templates.TemplateInfo",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Templates.TemplateInfo.yml\" sourcestartlinenumber=\"1\">Template information containing colors set to each component of the template</p>\n"
+      "Title": "Terminaux.Colors.Themes.Colors.ThemeColorsTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Themes.Colors.ThemeColorsTools.yml\" sourcestartlinenumber=\"1\">Tools for theme colors</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Templates.TemplateTools.yml",
+      "source_relative_path": "api/Terminaux.Colors.Themes.Colors.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Colors.Templates.TemplateTools.html"
+          "relative_path": "api/Terminaux.Colors.Themes.Colors.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Colors.Templates.TemplateTools",
-      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Templates.TemplateTools.yml\" sourcestartlinenumber=\"1\">Template tools class to manage templates</p>\n"
+      "Title": "Terminaux.Colors.Themes.Colors",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Templates.yml",
+      "source_relative_path": "api/Terminaux.Colors.Themes.ThemeCategory.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Colors.Templates.html"
+          "relative_path": "api/Terminaux.Colors.Themes.ThemeCategory.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Colors.Templates",
+      "Title": "Terminaux.Colors.Themes.ThemeCategory",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Themes.ThemeCategory.yml\" sourcestartlinenumber=\"1\">Theme category</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Themes.ThemeInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Themes.ThemeInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Themes.ThemeInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Themes.ThemeInfo.yml\" sourcestartlinenumber=\"1\">Theme information class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Themes.ThemePreviewTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Themes.ThemePreviewTools.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Themes.ThemePreviewTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Themes.ThemePreviewTools.yml\" sourcestartlinenumber=\"1\">Theme preview tools (simple preview and wheel-based preview)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Themes.ThemeTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Themes.ThemeTools.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Themes.ThemeTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Colors.Themes.ThemeTools.yml\" sourcestartlinenumber=\"1\">Theme tools module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Themes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Themes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Colors.Themes",
       "Summary": null
     },
     {
@@ -1723,34 +1835,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Images.Icons.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Images.Icons.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Images.Icons.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Terminaux.Images.Icons.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Images.Icons.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Images.Icons.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Images.Icons.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Images.Icons.yml",
       "output": {
         ".html": {
@@ -1803,34 +1887,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Images.Interactives",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Images.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Images.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Images.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Terminaux.Images.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Images.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Images.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Images.Localized",
       "Summary": null
     },
     {
@@ -2014,6 +2070,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Inputs.Interactive.InteractiveTuiBinding<TPrimary, TSecondary>",
       "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-2.yml\" sourcestartlinenumber=\"1\">Interactive TUI binding information class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiHelpPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiHelpPage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Interactive.InteractiveTuiHelpPage",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Interactive.InteractiveTuiHelpPage.yml\" sourcestartlinenumber=\"1\">Help page information for interactive TUI to provide users with more help</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2605,20 +2675,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Styles.Editor.HexViewInteractive",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.yml\" sourcestartlinenumber=\"1\">Interactive hex viewer</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.TextEditInteractive.yml",
       "output": {
         ".html": {
@@ -2630,20 +2686,6 @@
       "IsMRef": true,
       "Title": "Terminaux.Inputs.Styles.Editor.TextEditInteractive",
       "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Editor.TextEditInteractive.yml\" sourcestartlinenumber=\"1\">Interactive text editor</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Inputs.Styles.Editor.TextViewInteractive",
-      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.yml\" sourcestartlinenumber=\"1\">Interactive text viewer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2826,6 +2868,48 @@
       "IsMRef": true,
       "Title": "Terminaux.Inputs.Styles.Infobox.InfoBoxTimeColor",
       "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.InfoBoxTimeColor.yml\" sourcestartlinenumber=\"1\">Info box writer with time and color support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.Tools.InfoBox",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBox.yml\" sourcestartlinenumber=\"1\">Informational box class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxInputType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxInputType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxInputType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxInputType.yml\" sourcestartlinenumber=\"1\">Informational box input type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxPositioning.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxPositioning.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxPositioning",
+      "Summary": "<p sourcefile=\"api/Terminaux.Inputs.Styles.Infobox.Tools.InfoBoxPositioning.yml\" sourcestartlinenumber=\"1\">Positioning class for infoboxes</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3151,34 +3235,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Terminaux.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Reader.Bindings.BaseBinding.yml",
       "output": {
         ".html": {
@@ -3455,7 +3511,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Sequences.Builder.Types.ApcSequences",
-      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.ApcSequences.yml\" sourcestartlinenumber=\"1\">List of APC sequences and their regular expressions</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.ApcSequences.yml\" sourcestartlinenumber=\"1\">List of APC sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3469,7 +3525,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Sequences.Builder.Types.C1Sequences",
-      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.C1Sequences.yml\" sourcestartlinenumber=\"1\">List of C1 sequences and their regular expressions</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.C1Sequences.yml\" sourcestartlinenumber=\"1\">List of C1 sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3483,7 +3539,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Sequences.Builder.Types.CsiSequences",
-      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.CsiSequences.yml\" sourcestartlinenumber=\"1\">List of CSI sequences and their regular expressions</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.CsiSequences.yml\" sourcestartlinenumber=\"1\">List of CSI sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3497,7 +3553,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Sequences.Builder.Types.DcsSequences",
-      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.DcsSequences.yml\" sourcestartlinenumber=\"1\">List of DCS sequences and their regular expressions</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.DcsSequences.yml\" sourcestartlinenumber=\"1\">List of DCS sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3511,7 +3567,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Sequences.Builder.Types.EscSequences",
-      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.EscSequences.yml\" sourcestartlinenumber=\"1\">List of ESC sequences and their regular expressions</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.EscSequences.yml\" sourcestartlinenumber=\"1\">List of ESC sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3525,7 +3581,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Sequences.Builder.Types.OscSequences",
-      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.OscSequences.yml\" sourcestartlinenumber=\"1\">List of OSC sequences and their regular expressions</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.OscSequences.yml\" sourcestartlinenumber=\"1\">List of OSC sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3539,7 +3595,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Sequences.Builder.Types.PmSequences",
-      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.PmSequences.yml\" sourcestartlinenumber=\"1\">List of PM sequences and their regular expressions</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.Builder.Types.PmSequences.yml\" sourcestartlinenumber=\"1\">List of PM sequences</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3613,17 +3669,31 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Sequences.VtSequenceRegexes.yml",
+      "source_relative_path": "api/Terminaux.Sequences.VtSequenceInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Sequences.VtSequenceRegexes.html"
+          "relative_path": "api/Terminaux.Sequences.VtSequenceInfo.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Terminaux.Sequences.VtSequenceRegexes",
-      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.VtSequenceRegexes.yml\" sourcestartlinenumber=\"1\">VT sequence regular expressions</p>\n"
+      "Title": "Terminaux.Sequences.VtSequenceInfo",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.VtSequenceInfo.yml\" sourcestartlinenumber=\"1\">VT sequence token info</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.VtSequenceStartType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.VtSequenceStartType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Sequences.VtSequenceStartType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Sequences.VtSequenceStartType.yml\" sourcestartlinenumber=\"1\">VT sequence start type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3935,6 +4005,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.CancellationHandlers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.CancellationHandlers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.CancellationHandlers",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.CancellationHandlers.yml\" sourcestartlinenumber=\"1\">Cancellation handler tools</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Shell.Commands.CommandExecutor.yml",
       "output": {
         ".html": {
@@ -3946,6 +4030,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Shell.Commands.CommandExecutor",
       "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.CommandExecutor.yml\" sourcestartlinenumber=\"1\">Command executor module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.CommandFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.CommandFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.CommandFlags",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.CommandFlags.yml\" sourcestartlinenumber=\"1\">Command flags</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4005,6 +4103,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.ProcessExecution.ProcessExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.ProcessExecution.ProcessExecutor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.ProcessExecution.ProcessExecutor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Commands.ProcessExecution.ProcessExecutor.yml\" sourcestartlinenumber=\"1\">Process executor module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Commands.ProcessExecution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Commands.ProcessExecution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Commands.ProcessExecution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Shell.Commands.yml",
       "output": {
         ".html": {
@@ -4016,6 +4142,34 @@
       "IsMRef": true,
       "Title": "Terminaux.Shell.Commands",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Help.HelpCommandType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Help.HelpCommandType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Help.HelpCommandType",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Help.HelpCommandType.yml\" sourcestartlinenumber=\"1\">Help command type for filtering</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Help.HelpExporter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Help.HelpExporter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Help.HelpExporter",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Help.HelpExporter.yml\" sourcestartlinenumber=\"1\">Help exporter for commands and arguments</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4103,6 +4257,426 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.BaseCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.BaseCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.BaseCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.BaseCondition.yml\" sourcestartlinenumber=\"1\">Base MESH scripting condition class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.ICondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.ICondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.ICondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.ICondition.yml\" sourcestartlinenumber=\"1\">MESH scripting condition interface</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.MESHConditional.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.MESHConditional.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.MESHConditional",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.MESHConditional.yml\" sourcestartlinenumber=\"1\">MESH condition manager</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.ContainsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.ContainsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.ContainsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.ContainsCondition.yml\" sourcestartlinenumber=\"1\">Condition that checks to see if it contains an expression</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.DirectoryExistsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.DirectoryExistsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.DirectoryExistsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.DirectoryExistsCondition.yml\" sourcestartlinenumber=\"1\">Condition to check to see if the directory exists</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.DirectoryNotExistsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.DirectoryNotExistsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.DirectoryNotExistsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.DirectoryNotExistsCondition.yml\" sourcestartlinenumber=\"1\">Condition to check to see if the directory doesn't exist</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.EqualsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.EqualsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.EqualsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.EqualsCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if the two MESH variables are equal</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.FileExistsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.FileExistsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.FileExistsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.FileExistsCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if the value of the MESH variable is a file path and exists</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.FileNotExistsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.FileNotExistsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.FileNotExistsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.FileNotExistsCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if the value of the MESH variable is a file path and doesn't exist</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.GreaterThanCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.GreaterThanCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.GreaterThanCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.GreaterThanCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if one of the two MESH variables is greater than the other</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.GreaterThanOrEqualCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.GreaterThanOrEqualCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.GreaterThanOrEqualCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.GreaterThanOrEqualCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if one of the two MESH variables is greater than the other or equal to each other</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.InvalidFileNameCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.InvalidFileNameCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.InvalidFileNameCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.InvalidFileNameCondition.yml\" sourcestartlinenumber=\"1\">Condition to check if the filename is not valid</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.InvalidPathCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.InvalidPathCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.InvalidPathCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.InvalidPathCondition.yml\" sourcestartlinenumber=\"1\">Condition to check if the path is not valid</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.IsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.IsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.IsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.IsCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if a MESH variable is of the correct type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.IsNotCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.IsNotCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.IsNotCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.IsNotCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if a MESH variable is not of the correct type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.IsNotPlatCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.IsNotPlatCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.IsNotPlatCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.IsNotPlatCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if a MESH variable is not of the correct type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.IsPlatCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.IsPlatCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.IsPlatCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.IsPlatCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if a MESH variable is of the correct type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.LessThanCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.LessThanCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.LessThanCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.LessThanCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if one of the two MESH variables is less than the other</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.LessThanOrEqualCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.LessThanOrEqualCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.LessThanOrEqualCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.LessThanOrEqualCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if one of the two MESH variables is less than the other or equal to each other</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.NoneCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.NoneCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.NoneCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.NoneCondition.yml\" sourcestartlinenumber=\"1\">This condition always returns true.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.NotContainsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.NotContainsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.NotContainsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.NotContainsCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if a MESH variable doesn't contain an expression</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.NotEqualsCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.NotEqualsCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.NotEqualsCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.NotEqualsCondition.yml\" sourcestartlinenumber=\"1\">Checks to see if the two MESH variables are different</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.ValidFileNameCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.ValidFileNameCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.ValidFileNameCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.ValidFileNameCondition.yml\" sourcestartlinenumber=\"1\">Condition to check if the filename is valid</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.ValidPathCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.ValidPathCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types.ValidPathCondition",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.Conditions.Types.ValidPathCondition.yml\" sourcestartlinenumber=\"1\">Condition to check if the path is valid</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.Types.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions.Types",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.Conditions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.Conditions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.Conditions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.MESHOperators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.MESHOperators.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.MESHOperators",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.MESHOperators.yml\" sourcestartlinenumber=\"1\">MESH operator code functions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.MESHParse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.MESHParse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.MESHParse",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.MESHParse.yml\" sourcestartlinenumber=\"1\">MESH script parser</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.MESHVariables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.MESHVariables.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting.MESHVariables",
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Scripting.MESHVariables.yml\" sourcestartlinenumber=\"1\">MESH shell variable manager</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Shell.Scripting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Shell.Scripting.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Shell.Scripting",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Shell.Shells.BaseShell.yml",
       "output": {
         ".html": {
@@ -4127,7 +4701,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Terminaux.Shell.Shells.BaseShellInfo<TShell>",
-      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.BaseShellInfo-1.yml\" sourcestartlinenumber=\"1\">Shell information for both the KS shells and the custom shells made by mods</p>\n"
+      "Summary": "<p sourcefile=\"api/Terminaux.Shell.Shells.BaseShellInfo-1.yml\" sourcestartlinenumber=\"1\">Shell information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4271,34 +4845,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Spectre.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Spectre.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Spectre.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Terminaux.Spectre.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Spectre.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Spectre.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Terminaux.Spectre.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Spectre.TranslationTools.yml",
       "output": {
         ".html": {
@@ -4338,6 +4884,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Writer.ConsoleWriters.ListEntryWriterColor",
       "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.ListEntryWriterColor.yml\" sourcestartlinenumber=\"1\">List entry writer with color support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.ListWriterColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.ConsoleWriters.ListWriterColor",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.ConsoleWriters.ListWriterColor.yml\" sourcestartlinenumber=\"1\">List writer with color support</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4646,6 +5206,216 @@
       "IsMRef": true,
       "Title": "Terminaux.Writer.CyclicWriters.Graphical.BreakdownChart",
       "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.BreakdownChart.yml\" sourcestartlinenumber=\"1\">Breakdown chart renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.BaseCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.BaseCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.BaseCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.BaseCalendar.yml\" sourcestartlinenumber=\"1\">System calendar class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTools.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTools",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTools.yml\" sourcestartlinenumber=\"1\">Calendar tools</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes.yml\" sourcestartlinenumber=\"1\">Calendar types</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.ICalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.ICalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.ICalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.ICalendar.yml\" sourcestartlinenumber=\"1\">Calendar interface</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.ChineseCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.ChineseCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.ChineseCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.ChineseCalendar.yml\" sourcestartlinenumber=\"1\">Chinese calendar</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.GregorianCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.GregorianCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.GregorianCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.GregorianCalendar.yml\" sourcestartlinenumber=\"1\">Standard calendar</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.HijriCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.HijriCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.HijriCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.HijriCalendar.yml\" sourcestartlinenumber=\"1\">Hijri calendar</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.JapaneseCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.JapaneseCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.JapaneseCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.JapaneseCalendar.yml\" sourcestartlinenumber=\"1\">Japanese calendar</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.PersianCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.PersianCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.PersianCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.PersianCalendar.yml\" sourcestartlinenumber=\"1\">Persian calendar (Iran)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.SaudiHijriCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.SaudiHijriCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.SaudiHijriCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.SaudiHijriCalendar.yml\" sourcestartlinenumber=\"1\">Hijri calendar (Saudi Arabia)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.TaiwaneseCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.TaiwaneseCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.TaiwaneseCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.TaiwaneseCalendar.yml\" sourcestartlinenumber=\"1\">Taiwanese calendar</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.ThaiBuddhistCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.ThaiBuddhistCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.ThaiBuddhistCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.ThaiBuddhistCalendar.yml\" sourcestartlinenumber=\"1\">Thai Buddhist calendar</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.VariantCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.VariantCalendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.VariantCalendar",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.VariantCalendar.yml\" sourcestartlinenumber=\"1\">Variant calendar (dynamic)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring.Types",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.Calendaring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.Calendaring",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -4982,6 +5752,34 @@
       "IsMRef": true,
       "Title": "Terminaux.Writer.CyclicWriters.Graphical.TextPath",
       "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.TextPath.yml\" sourcestartlinenumber=\"1\">Path text renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.ValueShowcase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.ValueShowcase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.ValueShowcase",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.ValueShowcase.yml\" sourcestartlinenumber=\"1\">Value showcase renderable</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.ValueShowcaseDouble.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Graphical.ValueShowcaseDouble.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Graphical.ValueShowcaseDouble",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Graphical.ValueShowcaseDouble.yml\" sourcestartlinenumber=\"1\">Value showcase (for two values) renderable</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5752,6 +6550,20 @@
       "IsMRef": true,
       "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders",
       "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders.yml\" sourcestartlinenumber=\"1\">Pre-defined border list class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ProgressState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ProgressState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Terminaux.Writer.CyclicWriters.Renderer.Tools.ProgressState",
+      "Summary": "<p sourcefile=\"api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ProgressState.yml\" sourcestartlinenumber=\"1\">Progress bar state</p>\n"
     },
     {
       "type": "ManagedReference",
