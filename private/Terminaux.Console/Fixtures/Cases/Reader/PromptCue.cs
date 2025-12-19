@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -28,8 +29,10 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 
         public void RunFixture()
         {
+            Input.KeyboardCues = true;
             string input = TermReader.Read("", "", new() { KeyboardCues = true }, false, false, false);
             TextWriterColor.Write("You said: " + input);
+            Input.KeyboardCues = false;
         }
     }
 }
