@@ -422,6 +422,7 @@ namespace Terminaux.Console.Fixtures
             new RenderEllipsis(),
             new RenderCircle(),
             new RenderArc(),
+            new RenderArcPositional(),
 
             // Shell
             new TestShell(),

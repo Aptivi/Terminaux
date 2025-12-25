@@ -63,6 +63,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
         public int AngleEnd { get; set; }
 
         /// <summary>
+        /// Center X position of the circle within the canvas
+        /// </summary>
+        public int CenterPosX { get; set; } = -1;
+
+        /// <summary>
+        /// Center Y position of the circle within the canvas
+        /// </summary>
+        public int CenterPosY { get; set; } = -1;
+
+        /// <summary>
         /// Shape color
         /// </summary>
         public Color ShapeColor { get; }
@@ -87,10 +97,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes
             ConsoleLogger.Debug("Arc angles: {0} -> {1}", angleStart, angleEnd);
 
             // Get the center X and Y positions, since we're dealing with the upper left corner positions, so that we know
-            // the radius of the circle
-            int centerX = Width / 2;
-            int centerY = Height / 2;
+            // the radius of the circle. However, CenterPosX and CenterPosY may override the width and the height halves.
+            int centerX = CenterPosX < 0 ? Width / 2 : CenterPosX;
+            int centerY = CenterPosY < 0 ? Height / 2 : CenterPosY;
             ConsoleLogger.Debug("Center position: {0}, {1}", centerX, centerY);
+            ConsoleLogger.Debug("Overridden positions: {0}, {1}", CenterPosX, CenterPosY);
 
             // Trace the arc radius
             var canvas = new Canvas()
