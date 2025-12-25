@@ -39,7 +39,7 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
                 CenterPosX = 5,
                 CenterPosY = 5,
             };
-            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(arc));
+            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(arc, false));
         }
     }
 }
