@@ -252,7 +252,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     }
 
                     // Now, split the sentences and count them to fit the box
-                    string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, Width + 1);
+                    string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, Width);
                     for (int i = 0; i < sentences.Length; i++)
                     {
                         string sentence = sentences[i];
