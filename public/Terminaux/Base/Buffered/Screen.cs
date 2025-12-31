@@ -35,8 +35,10 @@ namespace Terminaux.Base.Buffered
         private bool resetResize = true;
         private bool refreshWasDone = false;
         private int cycleFrequency = 0;
+        private ScreenPart? overlayPart;
         private readonly ScreenPart clearPart = new();
         private readonly Dictionary<string, ScreenPart> screenParts = [];
+        private static ScreenPart? globalOverlayPart;
 
         /// <summary>
         /// Buffered screen parts list to render one by one while buffering the console
@@ -72,6 +74,24 @@ namespace Terminaux.Base.Buffered
         {
             get => cycleFrequency;
             set => cycleFrequency = value;
+        }
+
+        /// <summary>
+        /// The screen overlay part that renders on top of this screen instance
+        /// </summary>
+        public ScreenPart? OverlayPart
+        {
+            get => overlayPart;
+            set => overlayPart = value;
+        }
+
+        /// <summary>
+        /// The screen overlay part that renders on top of all screen instances
+        /// </summary>
+        public static ScreenPart? GlobalOverlayPart
+        {
+            get => globalOverlayPart;
+            set => globalOverlayPart = value;
         }
 
         /// <summary>
@@ -307,11 +327,27 @@ namespace Terminaux.Base.Buffered
         public string GetBuffer()
         {
             var builder = new StringBuilder();
+
+            // Clear the screen
             builder.Append(clearPart.GetBuffer());
+
+            // Add the screen parts sorted by their order
             var sortedParts = ScreenParts.OrderBy((part) => part.Order).ToList();
             ConsoleLogger.Info("Getting buffer from {0} parts...", sortedParts.Count);
             foreach (var part in sortedParts)
                 builder.Append(part.GetBuffer());
+
+            // Add a screen-specific overlay part
+            ConsoleLogger.Info("Screen-specific overlay part required: {0}", OverlayPart is not null);
+            if (OverlayPart is not null)
+                builder.Append(OverlayPart.GetBuffer());
+
+            // Add a global overlay part
+            ConsoleLogger.Info("Global overlay part required: {0}", GlobalOverlayPart is not null);
+            if (GlobalOverlayPart is not null)
+                builder.Append(GlobalOverlayPart.GetBuffer());
+
+            // Return the result
             return builder.ToString();
         }
 

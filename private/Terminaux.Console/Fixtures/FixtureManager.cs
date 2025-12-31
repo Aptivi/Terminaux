@@ -370,6 +370,7 @@ namespace Terminaux.Console.Fixtures
             new TestScreenCyclic(),
             new TestScreenPosCanvas(),
             new TestScreenWasRefreshed(),
+            new TestScreenOverlays(),
 
             // Presentation
             new TestPresentation(),
