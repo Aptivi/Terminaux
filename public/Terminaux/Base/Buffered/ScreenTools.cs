@@ -35,6 +35,12 @@ namespace Terminaux.Base.Buffered
         private static readonly List<Screen> screens = [];
 
         /// <summary>
+        /// Gets an array of screens, with the last screen being the currently displaying screen
+        /// </summary>
+        public static Screen[] Screens =>
+            [.. screens];
+
+        /// <summary>
         /// Gets the currently displaying screen
         /// </summary>
         public static Screen? CurrentScreen =>
