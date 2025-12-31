@@ -1,5 +1,5 @@
 ﻿//
-// Terminaux  Copyright (C) 2023-2025  Aptivi
+// Terminaux  Copyright (C) 2023-2026  Aptivi
 //
 // This file is part of Terminaux
 //
@@ -60,7 +60,7 @@ namespace Terminaux.ColorDataGen
             string header =
                 $$"""
                 //
-                // Terminaux  Copyright (C) 2023-2025  Aptivi
+                // Terminaux  Copyright (C) 2023-2026  Aptivi
                 //
                 // This file is part of Terminaux
                 //
@@ -179,7 +179,7 @@ namespace Terminaux.ColorDataGen
             string header =
                 $$"""
                 //
-                // Terminaux  Copyright (C) 2023-2025  Aptivi
+                // Terminaux  Copyright (C) 2023-2026  Aptivi
                 //
                 // This file is part of Terminaux
                 //
@@ -249,7 +249,7 @@ namespace Terminaux.ColorDataGen
             string header =
                 $$"""
                 //
-                // Terminaux  Copyright (C) 2023-2025  Aptivi
+                // Terminaux  Copyright (C) 2023-2026  Aptivi
                 //
                 // This file is part of Terminaux
                 //
