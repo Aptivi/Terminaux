@@ -1,10 +1,10 @@
-We've released this version of Terminaux to update native dependencies!
+We've released this version of Terminaux to update ImageMagick!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated native dependencies
+- `[*]` Updated ImageMagick
 
 Review the commit history if you want to get a deep insight about the changes.
 
