@@ -23,6 +23,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
@@ -132,20 +133,30 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     if (!File.Exists(finalHighlightProcess))
                     {
-                        ConsoleLogger.Warning("Can't use highlight because {0} doesn't exist", finalHighlightProcess);
-                        if (PlatformHelper.IsOnWindows())
+                        ConsoleLogger.Warning("Can't use highlight because {0} doesn't exist, trying PATH...", finalHighlightProcess);
+
+                        // Try PATH
+                        bool isOnWindows = PlatformHelper.IsOnWindows();
+                        bool pathExists = ConsoleFilesystem.FileExistsInPath(finalHighlightProcess + (isOnWindows ? ".exe" : ""), ref finalHighlightProcess);
+                        ConsoleLogger.Info("PATH status is {0}, {1}", pathExists, finalHighlightProcess);
+
+                        // Try systemwide highlight on Windows, if PATH fails
+                        if (!pathExists)
                         {
-                            // It doesn't exist. It's possible that Windows users might have installed highlight using the
-                            // Windows installer. Look at "%SYSTEMDRIVE%/Program Files/Highlight/highlight.exe".
-                            finalHighlightProcess = Path.GetFullPath($"{Environment.GetEnvironmentVariable("SYSTEMDRIVE")}/Program Files/Highlight/highlight.exe");
-                            if (!File.Exists(finalHighlightProcess))
+                            if (isOnWindows)
                             {
-                                ConsoleLogger.Warning("Can't use systemwide highlight because {0} doesn't exist", finalHighlightProcess);
-                                canHighlight = false;
+                                // It doesn't exist. It's possible that Windows users might have installed highlight using the
+                                // Windows installer. Look at "%SYSTEMDRIVE%/Program Files/Highlight/highlight.exe".
+                                finalHighlightProcess = Path.GetFullPath($"{Environment.GetEnvironmentVariable("SYSTEMDRIVE")}/Program Files/Highlight/highlight.exe");
+                                if (!File.Exists(finalHighlightProcess))
+                                {
+                                    ConsoleLogger.Warning("Can't use systemwide highlight because {0} doesn't exist", finalHighlightProcess);
+                                    canHighlight = false;
+                                }
                             }
+                            else
+                                canHighlight = false;
                         }
-                        else
-                            canHighlight = false;
                     }
                 }
                 ConsoleLogger.Debug("Can highlight: {0}", canHighlight);
