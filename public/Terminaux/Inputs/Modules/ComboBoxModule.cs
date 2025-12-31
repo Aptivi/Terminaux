@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;

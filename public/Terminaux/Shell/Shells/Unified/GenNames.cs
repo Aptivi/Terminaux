@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Textify.Data.NameGen;

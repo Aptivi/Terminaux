@@ -25,7 +25,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using Terminaux.Base;
-using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;

@@ -19,7 +19,6 @@
 
 using System;
 using System.Linq;
-using Terminaux.Base.Checks;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Builtins;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

@@ -23,7 +23,6 @@ using Terminaux.Colors;
 using System.Linq;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using Terminaux.Base.Checks;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;

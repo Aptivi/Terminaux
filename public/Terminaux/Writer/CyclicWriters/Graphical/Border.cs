@@ -33,7 +33,7 @@ using Textify.General;
 namespace Terminaux.Writer.CyclicWriters.Graphical
 {
     /// <summary>
-    /// Aligned text renderable
+    /// Border renderable
     /// </summary>
     public class Border : GraphicalCyclicWriter
     {
@@ -188,7 +188,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         public Color ShadowColor { get; set; } = ConsoleColors.Grey;
 
         /// <summary>
-        /// Rulers that divide the box frame
+        /// Rulers that divide the border
         /// </summary>
         public RulerInfo[] Rulers { get; set; } = [];
 

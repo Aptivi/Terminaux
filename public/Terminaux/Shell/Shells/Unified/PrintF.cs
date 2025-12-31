@@ -19,8 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using Textify.Tools.Placeholder;
 using System.Linq;
 using Textify.General;
 

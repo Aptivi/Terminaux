@@ -18,7 +18,6 @@
 //
 
 using System;
-using Terminaux.Base.Checks;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 

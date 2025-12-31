@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Terminaux.Base.Checks;
 using Terminaux.Base.TermInfo;
 using Terminaux.Base.TermInfo.Parsing;
 using Terminaux.Sequences.Builder;

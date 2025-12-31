@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Textify.Tools.Placeholder;
 
 namespace Terminaux.Shell.Shells.Unified

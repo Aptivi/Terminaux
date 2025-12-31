@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Base;
-using Terminaux.Base.Checks;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Interactive.Selectors;
 using Terminaux.Inputs.Pointer;

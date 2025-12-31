@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Terminaux.Shell.Scripting;
 
 namespace Terminaux.Shell.Shells.Unified

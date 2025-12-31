@@ -19,7 +19,6 @@
 
 using Textify.Data.Figlet;
 using System;
-using Terminaux.Base.Checks;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Interactive;

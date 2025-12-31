@@ -19,14 +19,8 @@
 
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
-using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
-using System.Linq;
-using Terminaux.Base.Extensions;
 using Terminaux.Colors.Themes.Colors;
-using System.Text.RegularExpressions;
-using Textify.Accessibility;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.Data.Figlet;
 using System.Text;
 

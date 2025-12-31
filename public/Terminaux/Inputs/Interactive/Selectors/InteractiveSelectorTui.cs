@@ -27,8 +27,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Reader.Bindings;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Tools;
 

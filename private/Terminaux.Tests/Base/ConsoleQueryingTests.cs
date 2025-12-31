@@ -22,8 +22,6 @@ using Shouldly;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Sequences.Builder;
-using Textify.General;
-using Textify.General.Data;
 
 namespace Terminaux.Tests.Base
 {

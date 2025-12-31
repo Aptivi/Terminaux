@@ -25,7 +25,6 @@ using Terminaux.Base;
 using Textify.General;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
-using Terminaux.Base.Checks;
 using Terminaux.Colors.Themes.Colors;
 
 namespace Terminaux.Writer.ConsoleWriters

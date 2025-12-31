@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using System.Linq;
 using System;
 using System.Globalization;
 using System.Text;

@@ -19,7 +19,6 @@
 
 using Terminaux.Shell.Commands;
 using System.Linq;
-using Terminaux.Shell.Switches;
 using Terminaux.Shell.Commands.ProcessExecution;
 
 namespace Terminaux.Shell.Shells.Unified

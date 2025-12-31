@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Terminaux.Base.Checks;
 using Terminaux.Writer.ConsoleWriters;
 using ThreadState = System.Threading.ThreadState;
 

@@ -20,7 +20,6 @@
 using System;
 using System.Threading;
 using Terminaux.Base;
-using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;

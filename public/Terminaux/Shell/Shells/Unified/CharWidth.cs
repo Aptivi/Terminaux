@@ -18,10 +18,8 @@
 //
 
 using Terminaux.Shell.Commands;
-using Terminaux.Base;
 using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
-using System.Linq;
 using Terminaux.Base.Extensions;
 
 namespace Terminaux.Shell.Shells.Unified

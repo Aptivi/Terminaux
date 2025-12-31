@@ -21,7 +21,6 @@ using System;
 using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Base.Checks;
 using Terminaux.Sequences;
 using System.Collections.ObjectModel;
 

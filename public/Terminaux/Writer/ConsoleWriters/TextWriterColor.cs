@@ -20,7 +20,6 @@
 using System;
 using System.Text;
 using Terminaux.Base;
-using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Reader;

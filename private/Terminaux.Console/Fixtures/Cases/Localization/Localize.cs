@@ -19,7 +19,6 @@
 
 using System;
 using System.Globalization;
-using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Localization

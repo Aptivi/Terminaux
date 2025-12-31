@@ -19,14 +19,12 @@
 
 using System;
 using System.Text;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Inputs.Styles.Infobox.Tools;
 using ImageMagick;
 using Terminaux.Images.Writers;
 

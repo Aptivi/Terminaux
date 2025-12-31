@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Base;
-using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;

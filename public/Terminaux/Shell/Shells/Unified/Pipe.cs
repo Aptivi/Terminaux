@@ -20,7 +20,6 @@
 using Terminaux.Shell.Commands;
 using System;
 using System.Text;
-using Terminaux.Shell.Switches;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;

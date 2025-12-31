@@ -19,7 +19,6 @@
 
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Help;
-using Terminaux.Shell.Switches;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified

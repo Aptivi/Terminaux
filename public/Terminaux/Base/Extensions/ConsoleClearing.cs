@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Base.Checks;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 

@@ -25,7 +25,6 @@ using System.Text;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.General.Structures;

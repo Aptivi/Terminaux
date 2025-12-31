@@ -18,8 +18,6 @@
 //
 
 using Aptivestigate.Logging;
-using Aptivestigate.Serilog;
-using Serilog;
 using System;
 using System.Linq;
 using System.Text;

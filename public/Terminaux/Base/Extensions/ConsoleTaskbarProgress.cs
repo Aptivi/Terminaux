@@ -19,7 +19,6 @@
 
 using SpecProbe.Software.Platform;
 using System;
-using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;

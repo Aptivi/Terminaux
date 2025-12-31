@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Magico.Enumeration;
 using System;
 using System.Collections;
 using System.Collections.Generic;
