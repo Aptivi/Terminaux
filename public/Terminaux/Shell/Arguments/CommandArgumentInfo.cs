@@ -122,10 +122,11 @@ namespace Terminaux.Shell.Arguments
                     bool required = Argument.ArgumentRequired;
                     bool justNumeric = Argument.Options.IsNumeric;
                     bool hasWordingRequirement = Argument.Options.ExactWording.Length > 0;
-                    string requiredTagStart = hasWordingRequirement ? "" : required ? "<" : "[";
-                    string requiredTagEnd = hasWordingRequirement ? "" : required ? ">" : "]";
+                    string requiredTagStart = required ? "<" : "[";
+                    string requiredTagEnd = required ? ">" : "]";
                     string numericRender = justNumeric ? ":int" : "";
-                    string renderedArgument =
+                    string renderedArgument = hasWordingRequirement ?
+                        $"{Argument.ArgumentExpression}{(Argument.Options.ExactWording[0] == Argument.ArgumentExpression ? "" : ":" + string.Join("/", Argument.Options.ExactWording))} " :
                         $"{requiredTagStart}{Argument.ArgumentExpression}{numericRender}{requiredTagEnd} ";
                     usageBuilder.Append(renderedArgument);
                 }
