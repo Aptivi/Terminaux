@@ -41,6 +41,12 @@ namespace Terminaux.Base.Buffered
             screens.Count > 0 ? screens[screens.Count - 1] : null;
 
         /// <summary>
+        /// Checks to see if the terminal app is displaying a screen or not
+        /// </summary>
+        public static bool IsOnScreen =>
+            CurrentScreen is not null;
+
+        /// <summary>
         /// Renders the current screen one time
         /// </summary>
         public static void Render() =>
