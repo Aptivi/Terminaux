@@ -17,12 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using System;
 using System.Collections.Generic;
-using Terminaux.Shell.Switches;
-using Terminaux.Writer.CyclicWriters.Simple;
+using System.Linq;
 using Terminaux.Base;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.General;
 
 namespace Terminaux.Shell.Arguments.Base.Help
 {
@@ -32,11 +35,13 @@ namespace Terminaux.Shell.Arguments.Base.Help
         {
             foreach (string arg in arguments.Keys)
             {
-                string entry = LanguageTools.GetLocalized(arguments[arg].HelpDefinition);
+                var argumentInstance = arguments[arg];
+                string[] usages = [.. argumentInstance.ArgArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                 TextWriterRaw.WriteRaw(new ListEntry()
                 {
-                    Entry = arg,
-                    Value = entry,
+                    Entry = "  - {0}{1}".FormatString(argumentInstance.Argument, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                    Value = LanguageTools.GetLocalized(argumentInstance.HelpDefinition),
+                    Indicator = false,
                 }.Render() + "\n");
             }
         }
@@ -59,42 +64,66 @@ namespace Terminaux.Shell.Arguments.Base.Help
             ConsoleLogger.Debug("Showing usage of {0} with {1} argument info instances", argument, argumentInfos.Length);
             foreach (var argumentInfo in argumentInfos)
             {
-                if (argumentInfo is null)
-                    continue;
-                CommandArgumentPart[] Arguments = argumentInfo.Arguments;
-                SwitchInfo[] Switches = argumentInfo.Switches;
+                var Arguments = Array.Empty<CommandArgumentPart>();
+                var Switches = Array.Empty<SwitchInfo>();
+                string renderedUsage = "";
+
+                // Populate help usages
+                if (argumentInfo is not null)
+                {
+                    Arguments = argumentInfo.Arguments;
+                    Switches = argumentInfo.Switches;
+                    renderedUsage = argumentInfo.RenderedUsage;
+                }
 
                 // Print usage information
-                ConsoleLogger.Debug("Found {0} arguments and {1} switches", Arguments.Length, Switches.Length);
-                if (Arguments.Length != 0 || Switches.Length != 0)
+                TextWriterRaw.Write();
+                TextWriterRaw.WriteRaw(new ListEntry()
                 {
-                    // Print the usage information holder
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE") + $": {argument}", false, ThemeColorType.ListEntry);
+                    Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE"),
+                    Value = $"{argument} {renderedUsage}",
+                    Indicator = false,
+                }.Render() + "\n");
 
-                    // Enumerate through the available switches first
-                    foreach (var Switch in Switches)
-                    {
-                        bool required = Switch.IsRequired;
-                        string switchName = Switch.SwitchName;
-                        string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
-                        ConsoleLogger.Debug("Switch {0} ({1}) rendered as {2}", switchName, required, renderedSwitch);
-                        TextWriterColor.Write(renderedSwitch, false, ThemeColorType.ListEntry);
-                    }
-
-                    // Enumerate through the available arguments
-                    int howManyRequired = argumentInfo.MinimumArguments;
-                    int queriedArgs = 1;
+                // If we have arguments, print their descriptions
+                if (Arguments.Length != 0)
+                {
+                    TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGSLIST"), ThemeColorType.ListTitle);
                     foreach (var argumentPart in Arguments)
                     {
-                        bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
-                        string renderedArgument = required ? $" <{argumentPart.ArgumentExpression}>" : $" [{argumentPart.ArgumentExpression}]";
-                        ConsoleLogger.Debug("Argument {0} ({1}) rendered as {2}", argumentPart.ArgumentExpression, required, renderedArgument);
-                        TextWriterColor.Write(renderedArgument, false, ThemeColorType.ListEntry);
+                        string argumentName = argumentPart.ArgumentExpression;
+                        string argumentDesc = LanguageTools.GetLocalized(argumentPart.Options.ArgumentDescription);
+                        if (string.IsNullOrWhiteSpace(argumentDesc))
+                            argumentDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_ARGDESCUNSPECIFIED");
+                        TextWriterRaw.WriteRaw(new ListEntry()
+                        {
+                            Entry = argumentName,
+                            Value = argumentDesc,
+                            Indentation = 1,
+                            Indicator = false,
+                        }.Render() + "\n");
                     }
-                    TextWriterRaw.Write();
                 }
-                else
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE") + $": {argument}", true, ThemeColorType.ListEntry);
+
+                // If we have switches, print their descriptions
+                if (Switches.Length != 0)
+                {
+                    TextWriterColor.Write("* " + LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHESLIST"), ThemeColorType.ListTitle);
+                    foreach (var Switch in Switches)
+                    {
+                        string switchName = Switch.SwitchName;
+                        string switchDesc = LanguageTools.GetLocalized(Switch.HelpDefinition);
+                        if (string.IsNullOrWhiteSpace(switchDesc))
+                            switchDesc = LanguageTools.GetLocalized("T_SHELL_BASE_COMMAND_HELP_SWITCHDESCUNSPECIFIED");
+                        TextWriterRaw.WriteRaw(new ListEntry()
+                        {
+                            Entry = $"-{switchName}",
+                            Value = switchDesc,
+                            Indentation = 1,
+                            Indicator = false,
+                        }.Render() + "\n");
+                    }
+                }
             }
 
             // Write the description now

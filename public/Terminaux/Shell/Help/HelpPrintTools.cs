@@ -19,16 +19,17 @@
 
 using System;
 using System.Linq;
-using Terminaux.Writer.ConsoleWriters;
-using Textify.General;
-using Terminaux.Shell.Switches;
-using Terminaux.Shell.Shells;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Aliases;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Base;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Shell.Aliases;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Arguments.Base;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.General;
 
 namespace Terminaux.Shell.Help
 {
@@ -229,7 +230,12 @@ namespace Terminaux.Shell.Help
 
                     // Print usage information
                     TextWriterRaw.Write();
-                    TextWriterColor.Write($"{FinalCommand} {renderedUsage}", ThemeColorType.ListEntry);
+                    TextWriterRaw.WriteRaw(new ListEntry()
+                    {
+                        Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE"),
+                        Value = $"{FinalCommand} {renderedUsage}",
+                        Indicator = false,
+                    }.Render() + "\n");
 
                     // If we have arguments, print their descriptions
                     if (Arguments.Length != 0)
@@ -245,7 +251,7 @@ namespace Terminaux.Shell.Help
                             {
                                 Entry = argumentName,
                                 Value = argumentDesc,
-                                Indentation = 2,
+                                Indentation = 1,
                                 Indicator = false,
                             }.Render() + "\n");
                         }
@@ -265,7 +271,7 @@ namespace Terminaux.Shell.Help
                             {
                                 Entry = $"-{switchName}",
                                 Value = switchDesc,
-                                Indentation = 2,
+                                Indentation = 1,
                                 Indicator = false,
                             }.Render() + "\n");
                         }
