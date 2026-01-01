@@ -57,9 +57,22 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELP_ARG"), ThemeColorType.Error, argument);
                 return;
             }
+            
+            // Write the description now
+            string HelpDefinition = LanguageTools.GetLocalized(argInfo.HelpDefinition);
+            if (string.IsNullOrEmpty(HelpDefinition))
+            {
+                ConsoleLogger.Warning("No argument help description for {0}", argument);
+                HelpDefinition = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELPDESC_ARG");
+            }
+            TextWriterRaw.WriteRaw(new ListEntry()
+            {
+                Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC"),
+                Value = HelpDefinition,
+                Indicator = false,
+            }.Render() + "\n");
 
             // Now, populate usages for each argument
-            string HelpDefinition = LanguageTools.GetLocalized(argInfo.HelpDefinition);
             var argumentInfos = argInfo.ArgArgumentInfo;
             ConsoleLogger.Debug("Showing usage of {0} with {1} argument info instances", argument, argumentInfos.Length);
             foreach (var argumentInfo in argumentInfos)
@@ -126,13 +139,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 }
             }
 
-            // Write the description now
-            if (string.IsNullOrEmpty(HelpDefinition))
-            {
-                ConsoleLogger.Warning("No argument help description for {0}", argument);
-                HelpDefinition = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_NOHELPDESC_ARG");
-            }
-            TextWriterColor.Write(LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_DESC") + $": {HelpDefinition}", true, ThemeColorType.ListValue);
+            // Extra help action for some arguments
             argInfo.ArgumentBase.HelpHelper();
         }
     }
