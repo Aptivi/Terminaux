@@ -39,7 +39,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 string[] usages = [.. argumentInstance.ArgArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                 TextWriterRaw.WriteRaw(new ListEntry()
                 {
-                    Entry = "  - {0}{1}".FormatString(argumentInstance.Argument, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
+                    Entry = "  --{0}{1}".FormatString(argumentInstance.Argument, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : ""),
                     Value = LanguageTools.GetLocalized(argumentInstance.HelpDefinition),
                     Indicator = false,
                 }.Render() + "\n");
@@ -81,7 +81,7 @@ namespace Terminaux.Shell.Arguments.Base.Help
                 TextWriterRaw.WriteRaw(new ListEntry()
                 {
                     Entry = LanguageTools.GetLocalized("T_SHELL_BASE_HELP_USAGEINFO_USAGE"),
-                    Value = $"{argument} {renderedUsage}",
+                    Value = $"--{argument} {renderedUsage}",
                     Indicator = false,
                 }.Render() + "\n");
 
