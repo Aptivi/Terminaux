@@ -71,7 +71,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Render as necessary
-                    ConsoleWrapper.Write(RenderWhere(msg, Left, Top, Return, RightMargin, vars));
+                    ConsoleWrapper.Write(RenderWhere(msg, Left, Top, Return, RightMargin, ThemeColorsTools.GetColor(ThemeColorType.NeutralText), ThemeColorsTools.GetColor(ThemeColorType.Background), false, vars));
                 }
                 catch (Exception ex)
                 {
