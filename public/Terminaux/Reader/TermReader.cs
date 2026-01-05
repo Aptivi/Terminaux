@@ -332,7 +332,8 @@ namespace Terminaux.Reader
                     {
                         ConsoleLogger.Debug("Inserting default value {0} and seeking to initial position {1}...", defaultValue, readState.Settings.InitialPosition);
                         TermReaderTools.InsertNewText(defaultValue);
-                        PositioningTools.SeekTo(readState.Settings.InitialPosition, ref readState);
+                        if (!readState.Settings.AutoInitialPosition)
+                            PositioningTools.SeekTo(readState.Settings.InitialPosition, ref readState);
                     }
                     while (!terminate)
                     {

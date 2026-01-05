@@ -361,7 +361,12 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
-        /// Initial position of the reader. This is applied only when the default value is supplied and <see cref="WriteDefaultValue"/> is on.
+        /// Automatically changes the initial position. This is applied only when the default value is supplied and <see cref="WriteDefaultValue"/> is on.
+        /// </summary>
+        public bool AutoInitialPosition { get; set; } = true;
+
+        /// <summary>
+        /// Initial position of the reader. This is applied only when the default value is supplied, <see cref="AutoInitialPosition"/> is off, and <see cref="WriteDefaultValue"/> is on.
         /// </summary>
         public int InitialPosition
         {
