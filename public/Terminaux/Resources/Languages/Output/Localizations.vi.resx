@@ -2799,5 +2799,20 @@
   <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
     <value>Trang này liệt kê các phím tắt bổ sung được hỗ trợ cho TUI tương tác này, ngoài các phím tắt cơ bản.</value>
   </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
+    <value>Giảm giá trị hiện tại đi 100</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE" xml:space="preserve">
+    <value>Tăng giá trị hiện tại lên 100</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE" xml:space="preserve">
+    <value>Người dùng nhập giá trị thủ công</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE" xml:space="preserve">
+    <value>Nhập giá trị từ {0} đến {1} vào ô nhập liệu bên dưới</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
+    <value>Giá trị nhập không hợp lệ</value>
+  </data>
 
 </root>

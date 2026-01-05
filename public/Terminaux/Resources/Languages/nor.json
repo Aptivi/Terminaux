@@ -3585,6 +3585,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "Denne siden viser flere tastebindinger som støttes for dette interaktive brukergrensesnittet, i tillegg til de grunnleggende."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "Reduserer gjeldende verdi med 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "Øker gjeldende verdi med 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "Skriver inn verdien manuelt av brukeren"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "Skriv inn verdien fra {0} til {1} ​​i inndataboksen nedenfor"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "Ugyldig verdi angitt"
     }
   ]
 }

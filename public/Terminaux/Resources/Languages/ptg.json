@@ -3591,6 +3591,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "Esta página lista atalhos de teclado adicionais que são suportados para esta interface de utilizador interativa (TUI), para além dos básicos."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "Diminui o valor atual em 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "Incrementa o valor atual em 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "O utilizador introduz o valor manualmente"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "Introduza o valor de {0} a {1} na caixa de entrada abaixo"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "Valor inválido introduzido"
     }
   ]
 }

@@ -3584,6 +3584,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "Halaman ini menyenaraikan pengikatan kekunci tambahan yang disokong untuk TUI interaktif ini, selain daripada yang asas."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "Mengurangkan nilai semasa sebanyak 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "Meningkatkan nilai semasa sebanyak 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "Memasukkan nilai secara manual oleh pengguna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "Masukkan nilai dari {0} hingga {1} dalam kotak input di bawah"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "Nilai yang dimasukkan tidak sah"
     }
   ]
 }

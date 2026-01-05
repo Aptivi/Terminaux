@@ -3607,6 +3607,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "تسرد هذه الصفحة اختصارات المفاتيح الإضافية المدعومة لهذه الواجهة التفاعلية، بالإضافة إلى الاختصارات الأساسية."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "يُنقص القيمة الحالية بمقدار 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "يزيد القيمة الحالية بمقدار 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "يدخل المستخدم القيمة يدويًا"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "أدخل القيمة من {0} إلى {1} في مربع الإدخال أدناه"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "قيمة غير صالحة"
     }
   ]
 }

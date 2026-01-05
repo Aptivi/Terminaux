@@ -2799,5 +2799,20 @@
   <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
     <value>Esta página enumera combinaciones de teclas adicionales compatibles con esta interfaz de usuario interactiva, además de las básicas.</value>
   </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
+    <value>Disminuye el valor actual en 100</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE" xml:space="preserve">
+    <value>Incrementa el valor actual en 100</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE" xml:space="preserve">
+    <value>Introduce el valor manualmente por el usuario</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE" xml:space="preserve">
+    <value>Introduce el valor de {0} a {1} en el cuadro de entrada a continuación</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
+    <value>Valor introducido no válido</value>
+  </data>
 
 </root>

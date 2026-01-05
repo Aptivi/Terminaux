@@ -3581,6 +3581,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "यह पृष्ठ मूल कीबाइंडिंग के अतिरिक्त, इस इंटरैक्टिव TUI के लिए समर्थित अतिरिक्त कीबाइंडिंग को सूचीबद्ध करता है।"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "मौजूदा वैल्यू में 100 की कमी करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "मौजूदा वैल्यू में 100 की बढ़ोतरी करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "यूज़र द्वारा मैन्युअल रूप से वैल्यू एंटर करता है"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "नीचे दिए गए इनपुट बॉक्स में {0} से {1} तक की वैल्यू एंटर करें"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "अमान्य वैल्यू एंटर की गई"
     }
   ]
 }

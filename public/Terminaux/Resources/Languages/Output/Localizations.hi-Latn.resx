@@ -2799,5 +2799,20 @@
   <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
     <value>yah prshth mool keebainding ke atirikt, is intaraiktiv tui ke lie samarthit atirikt keebainding ko soocheebaddh karata hai.</value>
   </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
+    <value>maujooda vailyoo mein 100 kee kamee karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE" xml:space="preserve">
+    <value>maujooda vailyoo mein 100 kee badhotaree karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE" xml:space="preserve">
+    <value>yoozar dvaara mainyual roop se vailyoo entar karata hai</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE" xml:space="preserve">
+    <value>neeche die gae inaput boks mein {0} se {1} tak kee vailyoo entar karen</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
+    <value>amaany vailyoo entar kee gaee</value>
+  </data>
 
 </root>

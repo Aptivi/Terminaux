@@ -2799,5 +2799,20 @@
   <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
     <value>이 페이지에서는 기본 키 바인딩 외에도 이 대화형 TUI에서 지원되는 추가 키 바인딩을 나열합니다.</value>
   </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
+    <value>현재 값을 100만큼 감소시킵니다.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE" xml:space="preserve">
+    <value>현재 값을 100만큼 증가시킵니다.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE" xml:space="preserve">
+    <value>사용자가 값을 직접 입력합니다.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE" xml:space="preserve">
+    <value>아래 입력란에 {0}에서 {1} 사이의 값을 입력하세요.</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
+    <value>잘못된 값이 입력되었습니다.</value>
+  </data>
 
 </root>

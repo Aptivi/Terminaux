@@ -2799,5 +2799,20 @@
   <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
     <value>Denne siden viser flere tastebindinger som støttes for dette interaktive brukergrensesnittet, i tillegg til de grunnleggende.</value>
   </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
+    <value>Reduserer gjeldende verdi med 100</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE" xml:space="preserve">
+    <value>Øker gjeldende verdi med 100</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE" xml:space="preserve">
+    <value>Skriver inn verdien manuelt av brukeren</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE" xml:space="preserve">
+    <value>Skriv inn verdien fra {0} til {1} ​​i inndataboksen nedenfor</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
+    <value>Ugyldig verdi angitt</value>
+  </data>
 
 </root>

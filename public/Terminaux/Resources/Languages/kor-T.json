@@ -3582,6 +3582,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "이 페이지에서는 기본 키 바인딩 외에도 이 대화형 TUI에서 지원되는 추가 키 바인딩을 나열합니다."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "현재 값을 100만큼 감소시킵니다."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "현재 값을 100만큼 증가시킵니다."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "사용자가 값을 직접 입력합니다."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "아래 입력란에 {0}에서 {1} 사이의 값을 입력하세요."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "잘못된 값이 입력되었습니다."
     }
   ]
 }

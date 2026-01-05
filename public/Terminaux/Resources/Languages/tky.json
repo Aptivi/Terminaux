@@ -3582,6 +3582,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "Bu sayfada, temel tuş atamalarının yanı sıra, bu etkileşimli TUI için desteklenen ek tuş atamaları listelenmektedir."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "Geçerli değeri 100 azaltır"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "Geçerli değeri 100 artırır"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "Değeri kullanıcı tarafından manuel olarak girer"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "Aşağıdaki giriş kutusuna {0} ile {1} arasında bir değer girin"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "Geçersiz değer girildi"
     }
   ]
 }

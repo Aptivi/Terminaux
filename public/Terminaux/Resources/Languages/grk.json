@@ -3582,6 +3582,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "Αυτή η σελίδα παραθέτει πρόσθετες συνδυασμούς πλήκτρων που υποστηρίζονται για αυτό το διαδραστικό TUI, εκτός από τις βασικές."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "Μειώνει την τρέχουσα τιμή κατά 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "Αυξάνει την τρέχουσα τιμή κατά 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "Εισάγει την τιμή χειροκίνητα από τον χρήστη"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "Εισάγετε την τιμή από {0} έως {1} στο παρακάτω πλαίσιο εισαγωγής"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "Εισήχθη μη έγκυρη τιμή"
     }
   ]
 }

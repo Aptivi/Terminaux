@@ -44,6 +44,9 @@ namespace Terminaux.Inputs.Styles.Infobox
         [
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUE"), ConsoleKey.LeftArrow),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUE"), ConsoleKey.RightArrow),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE"), ConsoleKey.LeftArrow, ConsoleModifiers.Shift),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE"), ConsoleKey.RightArrow, ConsoleModifiers.Shift),
+            new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE"), ConsoleKey.Spacebar),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MINIMUMVALUE"), ConsoleKey.Home),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_MAXIMUMVALUE"), ConsoleKey.End),
             new Keybinding(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ONELINEUP"), ConsoleKey.W),
@@ -230,10 +233,29 @@ namespace Terminaux.Inputs.Styles.Infobox
                         switch (cki.Key)
                         {
                             case ConsoleKey.LeftArrow:
-                                ValueGoUp(ref selected, minPos, maxPos);
+                                {
+                                    int factor = 1;
+                                    if (cki.Modifiers.HasFlag(ConsoleModifiers.Shift))
+                                        factor = 100;
+                                    ValueGoUp(ref selected, minPos, maxPos, factor);
+                                }
                                 break;
                             case ConsoleKey.RightArrow:
-                                ValueGoDown(ref selected, minPos, maxPos);
+                                {
+                                    int factor = 1;
+                                    if (cki.Modifiers.HasFlag(ConsoleModifiers.Shift))
+                                        factor = 100;
+                                    ValueGoDown(ref selected, minPos, maxPos, factor);
+                                }
+                                break;
+                            case ConsoleKey.Spacebar:
+                                string inputString = InfoBoxInputColor.WriteInfoBoxInput($"{selected}", LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE"), vars: [minPos, maxPos]);
+                                if (!inputString.IsStringNumeric())
+                                {
+                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID"));
+                                    break;
+                                }
+                                SelectionSet(ref selected, int.Parse(inputString));
                                 break;
                             case ConsoleKey.Home:
                                 SelectionSet(ref selected, minPos);
@@ -303,18 +325,22 @@ namespace Terminaux.Inputs.Styles.Infobox
             return PointerTools.PointerWithinRange(mouse, (sliderArrowLeft, sliderArrowTop), (sliderArrowRight, sliderArrowTop));
         }
 
-        private static void ValueGoUp(ref int selected, int minPos, int maxPos)
+        private static void ValueGoUp(ref int selected, int minPos, int maxPos, int factor = 1)
         {
-            selected--;
+            if (factor < 1)
+                factor = 1;
+            selected -= factor;
             if (selected < minPos)
-                selected = maxPos;
+                selected = factor > 1 ? minPos : maxPos;
         }
 
-        private static void ValueGoDown(ref int selected, int minPos, int maxPos)
+        private static void ValueGoDown(ref int selected, int minPos, int maxPos, int factor = 1)
         {
-            selected++;
+            if (factor < 1)
+                factor = 1;
+            selected += factor;
             if (selected > maxPos)
-                selected = minPos;
+                selected = factor > 1 ? maxPos : minPos;
         }
 
         private static void SelectionSet(ref int selected, int value) =>

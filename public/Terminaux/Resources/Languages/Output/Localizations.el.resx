@@ -2799,5 +2799,20 @@
   <data name="T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO" xml:space="preserve">
     <value>Αυτή η σελίδα παραθέτει πρόσθετες συνδυασμούς πλήκτρων που υποστηρίζονται για αυτό το διαδραστικό TUI, εκτός από τις βασικές.</value>
   </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE" xml:space="preserve">
+    <value>Μειώνει την τρέχουσα τιμή κατά 100</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE" xml:space="preserve">
+    <value>Αυξάνει την τρέχουσα τιμή κατά 100</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE" xml:space="preserve">
+    <value>Εισάγει την τιμή χειροκίνητα από τον χρήστη</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE" xml:space="preserve">
+    <value>Εισάγετε την τιμή από {0} έως {1} στο παρακάτω πλαίσιο εισαγωγής</value>
+  </data>
+  <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
+    <value>Εισήχθη μη έγκυρη τιμή</value>
+  </data>
 
 </root>

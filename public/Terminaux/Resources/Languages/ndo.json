@@ -3581,6 +3581,26 @@
     {
       "loc": "T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO",
       "text": "Halaman ini mencantumkan pengikatan tombol tambahan yang didukung untuk TUI interaktif ini, selain yang dasar."
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_DECREMENTVALUEMORE",
+      "text": "Mengurangi nilai saat ini sebesar 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_INCREMENTVALUEMORE",
+      "text": "Menambah nilai saat ini sebesar 100"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_MANUALVALUE",
+      "text": "Memasukkan nilai secara manual oleh pengguna"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_ENTERNUMBERVALUE",
+      "text": "Masukkan nilai dari {0} hingga {1} di kotak input di bawah ini"
+    },
+    {
+      "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
+      "text": "Nilai yang dimasukkan tidak valid"
     }
   ]
 }
