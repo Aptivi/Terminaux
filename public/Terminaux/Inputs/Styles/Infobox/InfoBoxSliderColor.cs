@@ -18,19 +18,20 @@
 //
 
 using System;
-using Terminaux.Colors;
+using System.Numerics;
 using System.Text;
-using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
+using Terminaux.Colors;
+using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Base.Structures;
 using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox
@@ -255,13 +256,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID"));
                                     break;
                                 }
-                                SelectionSet(ref selected, int.Parse(inputString));
+                                SelectionSet(ref selected, minPos, maxPos, int.Parse(inputString));
                                 break;
                             case ConsoleKey.Home:
-                                SelectionSet(ref selected, minPos);
+                                SelectionSet(ref selected, minPos, maxPos, minPos);
                                 break;
                             case ConsoleKey.End:
-                                SelectionSet(ref selected, maxPos);
+                                SelectionSet(ref selected, minPos, maxPos, maxPos);
                                 break;
                             case ConsoleKey.E:
                                 InfoBoxTools.GoUp(ref currIdx, maxHeight);
@@ -343,7 +344,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                 selected = factor > 1 ? maxPos : minPos;
         }
 
-        private static void SelectionSet(ref int selected, int value) =>
+        private static void SelectionSet(ref int selected, int minPos, int maxPos, int value)
+        {
             selected = value;
+            if (selected > maxPos)
+                selected = maxPos;
+            if (selected < minPos)
+                selected = minPos;
+        }
     }
 }
