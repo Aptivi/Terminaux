@@ -137,7 +137,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <returns>The result</returns>
         public override string Render()
         {
-            var rendered = new StringBuilder(ColorTools.RenderSetConsoleColor(SliderBackgroundColor, true));
+            var rendered = new StringBuilder();
+            if (UseColors)
+                rendered.Append(ColorTools.RenderSetConsoleColor(SliderBackgroundColor, true));
             if (Vertical)
             {
                 // Estimate how many cells the slider takes

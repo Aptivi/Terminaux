@@ -190,6 +190,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public override string Render()
         {
             var rendered = new StringBuilder();
+            if (UseColors)
+                rendered.Append(ColorTools.RenderSetConsoleColor(ProgressBackgroundColor, true));
 
             // Choose the color, depending on the progress state
             var activeProgressColor =
