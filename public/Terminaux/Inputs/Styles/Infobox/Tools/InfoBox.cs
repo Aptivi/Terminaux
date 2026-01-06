@@ -20,8 +20,10 @@
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
@@ -68,6 +70,42 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 int maxTextHeight = maxHeight - Positioning.ExtraHeight;
                 return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, maxTextHeight, splitFinalLines.Length);
             }
+        }
+
+        /// <summary>
+        /// Incrementation rate for text in this infobox
+        /// </summary>
+        public int IncrementationRate
+        {
+            get
+            {
+                var (maxWidth, maxHeight, _, borderX, borderY, _, _) = Dimensions;
+                var bounded = new BoundedText()
+                {
+                    Left = borderX + 1,
+                    Top = borderY + 1,
+                    Line = 0,
+                    Height = maxHeight - Positioning.ExtraHeight,
+                    Width = maxWidth,
+                    Text = Text
+                };
+                bounded.Render();
+                int increment = bounded.IncrementRate;
+                return increment;
+            }
+        }
+
+        /// <summary>
+        /// Renders this informational box
+        /// </summary>
+        /// <param name="currIdx">Current index of text line in the text area</param>
+        /// <param name="drawBar">Whether to draw the slider bar for the text area or not</param>
+        /// <param name="writeBinding">Whether to write the key bindings in the upper right corner of the box or not</param>
+        /// <returns></returns>
+        public string Render(int currIdx = 0, bool drawBar = false, bool writeBinding = false)
+        {
+            int increment = 0;
+            return Render(ref increment, currIdx, drawBar, writeBinding);
         }
 
         /// <summary>
