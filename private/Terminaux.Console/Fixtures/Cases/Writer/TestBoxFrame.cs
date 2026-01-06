@@ -100,8 +100,10 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 [
                     new(16, RulerOrientation.Vertical),
                     new(8, RulerOrientation.Vertical),
-                    new(4, RulerOrientation.Horizontal, 1),
+                    new(6, RulerOrientation.Horizontal, 0, true),
+                    new(4, RulerOrientation.Horizontal, 1, true),
                     new(2, RulerOrientation.Horizontal, 2, true),
+                    new(11, RulerOrientation.Vertical, 2, true),
                 ]
             };
             TextWriterRaw.WriteRaw(frame1.Render());

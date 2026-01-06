@@ -258,12 +258,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         case RulerOrientation.Horizontal:
                             int top = Top + ruler.Position + 1;
-                            if (top > Top && top < Top + Height)
+                            if (top > Top && top <= Top + Height)
                             {
                                 // Render the ruler
                                 int i = ruler.InvertDirection ? Width : 1;
                                 int length = 0;
-                                while (ruler.InvertDirection && i >= 1 || i <= Width)
+                                while ((ruler.InvertDirection && i >= 1) || (!ruler.InvertDirection && i <= Width))
                                 {
                                     Coordinate coord = new(Left + i, top);
                                     bool intersected = processedPositions.Contains(coord);
@@ -288,7 +288,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                 if (ruler.InvertDirection)
                                 {
                                     frameBuilder.Append(
-                                        ConsolePositioning.RenderChangePosition(Left + length - 2, top) +
+                                        ConsolePositioning.RenderChangePosition(Left + Width - length, top) +
                                         (settings.BorderLeftHorizontalIntersectionEnabled ? $"{settings.BorderLeftHorizontalIntersectionChar}" : " ")
                                     );
                                     frameBuilder.Append(
@@ -311,12 +311,12 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             break;
                         case RulerOrientation.Vertical:
                             int left = Left + ruler.Position + 1;
-                            if (left > Left && left < Left + Width)
+                            if (left > Left && left <= Left + Width)
                             {
                                 // Render the ruler
                                 int i = ruler.InvertDirection ? Height : 1;
                                 int length = 0;
-                                while (ruler.InvertDirection && i >= 1 || i <= Height)
+                                while ((ruler.InvertDirection && i >= 1) || (!ruler.InvertDirection && i <= Height))
                                 {
                                     Coordinate coord = new(left, Top + i);
                                     bool intersected = processedPositions.Contains(coord);
@@ -341,7 +341,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                 if (ruler.InvertDirection)
                                 {
                                     frameBuilder.Append(
-                                        ConsolePositioning.RenderChangePosition(left, Top + length + 1) +
+                                        ConsolePositioning.RenderChangePosition(left, Top + Height - length) +
                                         (settings.BorderTopVerticalIntersectionEnabled ? $"{settings.BorderTopVerticalIntersectionChar}" : " ")
                                     );
                                     frameBuilder.Append(
