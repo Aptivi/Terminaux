@@ -92,8 +92,13 @@ namespace Terminaux.Base.Buffered
         /// <summary>
         /// Clears the buffer
         /// </summary>
-        public void Clear() =>
-            dynamicBuffers.Clear();
+        public void Clear()
+        {
+            lock (this)
+            {
+                dynamicBuffers.Clear();
+            }
+        }
 
         /// <summary>
         /// Gets the resulting buffer
@@ -104,12 +109,15 @@ namespace Terminaux.Base.Buffered
             if (!visible)
                 return "";
             var finalBuffer = new StringBuilder();
-            for (int i = 0; i < dynamicBuffers.Count; i++)
+            lock (this)
             {
-                (bool visible, Func<string> buffer) dynamicBuffer = dynamicBuffers[i];
-                ConsoleLogger.Debug("Dynamic buffer {0} visibility ({1}).", i, dynamicBuffer.visible);
-                if (dynamicBuffer.visible)
-                    finalBuffer.Append(dynamicBuffer.buffer());
+                for (int i = 0; i < dynamicBuffers.Count; i++)
+                {
+                    (bool visible, Func<string> buffer) dynamicBuffer = dynamicBuffers[i];
+                    ConsoleLogger.Debug("Dynamic buffer {0} visibility ({1}).", i, dynamicBuffer.visible);
+                    if (dynamicBuffer.visible)
+                        finalBuffer.Append(dynamicBuffer.buffer());
+                }
             }
             return finalBuffer.ToString();
         }
@@ -137,7 +145,10 @@ namespace Terminaux.Base.Buffered
         {
             if (buffer < 0 || buffer >= dynamicBuffers.Count)
                 throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENPART_EXCEPTION_IDXOUTOFRANGE").FormatString(dynamicBuffers));
-            dynamicBuffers[buffer] = (visible, dynamicBuffers[buffer].buffer);
+            lock (this)
+            {
+                dynamicBuffers[buffer] = (visible, dynamicBuffers[buffer].buffer);
+            }
         }
 
         /// <summary>

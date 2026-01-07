@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
@@ -114,7 +115,10 @@ namespace Terminaux.Base.Buffered
 
             // Now, add the buffered part
             ConsoleLogger.Info("Adding screen part {0}...", name);
-            screenParts.Add(name, part);
+            lock (this)
+            {
+                screenParts.Add(name, part);
+            }
         }
 
         /// <summary>
@@ -152,7 +156,10 @@ namespace Terminaux.Base.Buffered
 
             // Now, edit the buffered part
             ConsoleLogger.Info("Editing screen part {0} from id...", name);
-            screenParts[name] = part;
+            lock (this)
+            {
+                screenParts[name] = part;
+            }
         }
 
         /// <summary>
@@ -172,7 +179,10 @@ namespace Terminaux.Base.Buffered
 
             // Now, edit the buffered part
             ConsoleLogger.Info("Editing screen part {0} from id...", partSource.Key);
-            screenParts[partSource.Key] = part;
+            lock (this)
+            {
+                screenParts[partSource.Key] = part;
+            }
         }
 
         /// <summary>
@@ -204,7 +214,10 @@ namespace Terminaux.Base.Buffered
 
             // Now, remove the buffered part
             ConsoleLogger.Info("Removing screen part {0} from id...", name);
-            screenParts.Remove(name);
+            lock (this)
+            {
+                screenParts.Remove(name);
+            }
         }
 
         /// <summary>
@@ -328,24 +341,27 @@ namespace Terminaux.Base.Buffered
         {
             var builder = new StringBuilder();
 
-            // Clear the screen
-            builder.Append(clearPart.GetBuffer());
+            lock (this)
+            {
+                // Clear the screen
+                builder.Append(clearPart.GetBuffer());
 
-            // Add the screen parts sorted by their order
-            var sortedParts = ScreenParts.OrderBy((part) => part.Order).ToList();
-            ConsoleLogger.Info("Getting buffer from {0} parts...", sortedParts.Count);
-            foreach (var part in sortedParts)
-                builder.Append(part.GetBuffer());
+                // Add the screen parts sorted by their order
+                var sortedParts = ScreenParts.OrderBy((part) => part.Order).ToList();
+                ConsoleLogger.Info("Getting buffer from {0} parts...", sortedParts.Count);
+                foreach (var part in sortedParts)
+                    builder.Append(part.GetBuffer());
 
-            // Add a screen-specific overlay part
-            ConsoleLogger.Info("Screen-specific overlay part required: {0}", OverlayPart is not null);
-            if (OverlayPart is not null)
-                builder.Append(OverlayPart.GetBuffer());
+                // Add a screen-specific overlay part
+                ConsoleLogger.Info("Screen-specific overlay part required: {0}", OverlayPart is not null);
+                if (OverlayPart is not null)
+                    builder.Append(OverlayPart.GetBuffer());
 
-            // Add a global overlay part
-            ConsoleLogger.Info("Global overlay part required: {0}", GlobalOverlayPart is not null);
-            if (GlobalOverlayPart is not null)
-                builder.Append(GlobalOverlayPart.GetBuffer());
+                // Add a global overlay part
+                ConsoleLogger.Info("Global overlay part required: {0}", GlobalOverlayPart is not null);
+                if (GlobalOverlayPart is not null)
+                    builder.Append(GlobalOverlayPart.GetBuffer());
+            }
 
             // Return the result
             return builder.ToString();

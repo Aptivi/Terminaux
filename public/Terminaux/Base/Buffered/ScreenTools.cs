@@ -69,12 +69,15 @@ namespace Terminaux.Base.Buffered
                 throw new TerminauxException(LanguageTools.GetLocalized("T_BB_SCREENTOOLS_EXCEPTION_NOSCREEN"));
 
             // Now, render the screen
-            string buffer = screen.GetBuffer();
-            if (string.IsNullOrEmpty(buffer))
-                return;
-            ConsoleWrapper.CursorVisible = false;
-            ConsoleLogger.Debug("Writing {0} bytes from screen buffer...", buffer.Length);
-            TextWriterRaw.WriteRaw(buffer);
+            lock (screen)
+            {
+                string buffer = screen.GetBuffer();
+                if (string.IsNullOrEmpty(buffer))
+                    return;
+                ConsoleWrapper.CursorVisible = false;
+                ConsoleLogger.Debug("Writing {0} bytes from screen buffer...", buffer.Length);
+                TextWriterRaw.WriteRaw(buffer);
+            }
         }
 
         /// <summary>
