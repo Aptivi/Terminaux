@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -71,6 +73,11 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         {
             if (strings.Count > 0)
                 strings.RemoveAt(strings.Count - 1);
+        }
+
+        internal void OpenInfo(string? name)
+        {
+            InfoBoxModalColor.WriteInfoBoxModal(name ?? "Nothing...");
         }
     }
 }

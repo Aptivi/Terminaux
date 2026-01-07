@@ -219,6 +219,30 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (listIndex + 1 != paneCurrentSelection)
                     InteractiveTuiTools.SelectionMovement(selectorTui, listIndex + 1);
             }
+
+            // Check the tier
+            if (mouse.ClickTier > 1)
+            {
+                // Go further and open the item
+                var allBindings = selectorTui.Bindings;
+                if (allBindings is null || allBindings.Count == 0)
+                    return;
+                var submitBindings = allBindings.Where((binding) => binding.BindingKeyName == ConsoleKey.Enter && binding.BindingKeyModifiers == 0);
+                var dataPrimary = selectorTui.PrimaryDataSource;
+                var dataSecondary = selectorTui.SecondaryDataSource;
+                object? selectedData = dataPrimary.GetElementFromIndex(selectorTui.FirstPaneCurrentSelection - 1);
+                object? selectedDataSecondary = dataSecondary.GetElementFromIndex(selectorTui.SecondPaneCurrentSelection - 1);
+                TPrimary? selectedDataCasted = selectedData is not null ? (TPrimary?)selectedData : default;
+                TSecondary? selectedDataSecondaryCasted = selectedDataSecondary is not null ? (TSecondary?)selectedDataSecondary : default;
+                object? finalData = selectorTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
+                foreach (var implementedBinding in submitBindings)
+                {
+                    var binding = implementedBinding.BindingAction;
+                    if (binding is null || (finalData is null && !implementedBinding.BindingCanRunWithoutItems))
+                        continue;
+                    binding.Invoke(selectedDataCasted, selectorTui.FirstPaneCurrentSelection - 1, selectedDataSecondaryCasted, selectorTui.SecondPaneCurrentSelection - 1);
+                }
+            }
         }
 
         private void Act(ConsoleKeyInfo key, PointerEventContext? mouse)

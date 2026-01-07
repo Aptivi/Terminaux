@@ -44,6 +44,7 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
             tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete", ConsoleKey.F2, (_, index, _, _) => tui.Remove(index), true));
             tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete", PointerButton.Right, PointerButtonPress.Released, (_, index, _, _) => tui.Remove(index)));
             tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete Last", ConsoleKey.F3, (_, _, _, _) => tui.RemoveLast(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>("Open info", ConsoleKey.Enter, (name, _, _, _) => tui.OpenInfo(name), true));
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(tui);
