@@ -143,7 +143,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int markedEndFallY = markedY + figHeightFallback;
 
                 // Determine whether to use the selected figlet font or resort to fallbacks
-                if (markedEndFallX >= Width && (OneLine || (!OneLine && markedEndFallY >= Height)))
+                if (markedEndFallX >= Width + markedX && (OneLine || (!OneLine && markedEndFallY >= Height + markedX)))
                 {
                     // The fallback figlet won't fit, so use smaller text
                     string text = Text;
@@ -155,7 +155,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     ConsoleLogger.Warning("Fallback figlet exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndFallX, markedEndFallY, Width, Height);
                     return AlignedText.RenderAligned(markedX, markedY, Width, text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
-                else if (markedEndX >= Width && (OneLine || (!OneLine && markedEndY >= Height)))
+                else if (markedEndX >= Width + markedX && (OneLine || (!OneLine && markedEndY >= Height + markedX)))
                 {
                     // The figlet won't fit, so use small text
                     ConsoleLogger.Warning("Figlet exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndX, markedEndY, Width, Height);
