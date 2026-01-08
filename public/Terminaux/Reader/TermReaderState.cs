@@ -200,7 +200,7 @@ namespace Terminaux.Reader
         /// Input prompt last line length
         /// </summary>
         public int InputPromptLastLineLength =>
-            InputPromptLastLine.Length;
+            ConsoleChar.EstimateCellWidth(InputPromptLastLine);
 
         /// <summary>
         /// Current text
