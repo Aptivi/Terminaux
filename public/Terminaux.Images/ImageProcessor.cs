@@ -33,7 +33,7 @@ namespace Terminaux.Images
     /// </summary>
     public static class ImageProcessor
     {
-        internal static Stream placeholderStream = typeof(ImageProcessor).Assembly.GetManifestResourceStream("Terminaux.Images.Resources.Placeholders.aptivi-logo-transparent-ios-opaque.png");
+        internal static Stream placeholderStream = typeof(ImageProcessor).Assembly.GetManifestResourceStream("Terminaux.Images.Resources.Placeholders.Modern-Logo-64.png");
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)
