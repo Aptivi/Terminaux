@@ -65,6 +65,7 @@ namespace Terminaux.Reader
         private Stream cueWrite = Input.cueWriteFallback;
         private int initialPosition = -1;
         private ConsoleBell bell = ConsoleBell.Audible;
+        private int width;
 
         /// <summary>
         /// Password mask character
@@ -115,6 +116,15 @@ namespace Terminaux.Reader
         {
             get => rightMargin;
             set => rightMargin = value;
+        }
+
+        /// <summary>
+        /// Width of the reader
+        /// </summary>
+        public int Width
+        {
+            get => width <= 0 ? ConsoleWrapper.WindowWidth : width;
+            set => width = value;
         }
 
         /// <summary>
@@ -409,6 +419,7 @@ namespace Terminaux.Reader
             HistoryName = settings.HistoryName;
             LeftMargin = settings.LeftMargin;
             RightMargin = settings.RightMargin;
+            Width = settings.Width;
             InputForegroundColor = settings.InputForegroundColor;
             InputBackgroundColor = settings.InputBackgroundColor;
             InputPlaceholderForegroundColor = settings.InputPlaceholderForegroundColor;

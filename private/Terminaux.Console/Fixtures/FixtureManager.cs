@@ -62,6 +62,8 @@ namespace Terminaux.Console.Fixtures
             new PromptLoopedHistories(),
             new PromptLoopedHistoriesNamed(),
             new PromptLoopedMargin(),
+            new PromptLoopedMarginWidth(),
+            new PromptLoopedWidth(),
             new PromptLoopedManualWrite(),
             new PromptLoopedCompletion(),
             new PromptLoopedCompletionOneLineWrap(),

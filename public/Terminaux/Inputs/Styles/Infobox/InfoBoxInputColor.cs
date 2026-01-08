@@ -101,7 +101,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             bool character = inputType == InfoBoxInputType.Character;
             try
             {
-                int rightMargin = 0;
+                int width = 0;
                 int currIdx = 0;
                 int increment = 0;
                 infoBoxScreenPart.AddDynamicText(() =>
@@ -115,7 +115,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int inputPosX = borderX + 2;
                     int inputEndPosX = inputPosX + maxInputWidth;
                     int inputPosY = borderY + maxHeight - 2;
-                    rightMargin = Console.WindowWidth - inputEndPosX - 2;
+                    width = maxInputWidth;
                     var border = new Border()
                     {
                         Left = inputPosX,
@@ -144,7 +144,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 // Wait until the user presses any key to close the box
                 var readerSettings = new TermReaderSettings()
                 {
-                    RightMargin = rightMargin,
+                    Width = width,
                     WriteDefaultValue = true,
                     PasswordMaskChar = settings.PasswordMaskChar,
                 };

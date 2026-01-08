@@ -100,6 +100,12 @@ namespace Terminaux.Reader
             settings.RightMargin;
 
         /// <summary>
+        /// Width of the reader
+        /// </summary>
+        public int Width =>
+            settings.Width;
+
+        /// <summary>
         /// Current cursor left position
         /// </summary>
         public int CurrentCursorPosLeft =>
@@ -124,7 +130,7 @@ namespace Terminaux.Reader
         {
             get
             {
-                int width = ConsoleWrapper.WindowWidth;
+                int width = Width;
                 return width - settings.RightMargin;
             }
         }
@@ -136,8 +142,8 @@ namespace Terminaux.Reader
         {
             get
             {
-                int width = ConsoleWrapper.WindowWidth;
-                return width - settings.RightMargin - inputPromptLeft - 1;
+                int width = Width;
+                return width - settings.RightMargin - InputPromptLastLineLength;
             }
         }
 
@@ -148,7 +154,7 @@ namespace Terminaux.Reader
         {
             get
             {
-                int width = ConsoleWrapper.WindowWidth;
+                int width = Width;
                 return width - settings.RightMargin - settings.LeftMargin - 1;
             }
         }
@@ -172,7 +178,7 @@ namespace Terminaux.Reader
         {
             get
             {
-                string[] inputPromptLines = ConsoleMisc.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
+                string[] inputPromptLines = ConsoleMisc.GetWrappedSentences(InputPromptText, Width);
                 return inputPromptLines.Length;
             }
         }
@@ -184,7 +190,7 @@ namespace Terminaux.Reader
         {
             get
             {
-                string[] inputPromptLines = ConsoleMisc.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
+                string[] inputPromptLines = ConsoleMisc.GetWrappedSentences(InputPromptText, Width);
                 string inputPromptLastLine = VtSequenceTools.FilterVTSequences(inputPromptLines[inputPromptLines.Length - 1]);
                 return inputPromptLastLine;
             }
