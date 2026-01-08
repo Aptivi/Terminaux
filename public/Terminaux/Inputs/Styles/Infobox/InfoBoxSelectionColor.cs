@@ -352,16 +352,17 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     infoboxButtonHelpHitbox.ProcessPointer(mouse, out _);
                                 else if (infoboxButtonCloseHitbox.IsPointerWithin(mouse))
                                     infoboxButtonCloseHitbox.ProcessPointer(mouse, out _);
-                                else if (settings.RadioButtons)
+                                else
                                 {
                                     if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, infoBox, out hitboxType, ref currentSelection))
                                         break;
                                     if (hitboxType != ChoiceHitboxType.Choice)
                                         break;
-                                    currentSelected = currentSelection;
+                                    if (mouse.ClickTier > 1)
+                                        bail = true;
+                                    else if (settings.RadioButtons)
+                                        currentSelected = currentSelection;
                                 }
-                                else
-                                    bail = InfoBoxTools.UpdateSelectedIndexWithMousePos(mouse, selections, infoBox, out hitboxType, ref currentSelection) && hitboxType == ChoiceHitboxType.Choice;
                                 break;
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
