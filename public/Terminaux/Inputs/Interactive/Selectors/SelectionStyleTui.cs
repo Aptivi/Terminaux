@@ -514,9 +514,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     if (!multiple)
                     {
                         Update(false);
-                        if (!settings.RadioButtons)
+                        if (mouse.ClickTier > 1)
                             Exit(ui, false);
-                        else
+                        else if (settings.RadioButtons)
                             selectedAnswer = highlightedAnswer;
                     }
                     else
