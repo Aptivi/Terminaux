@@ -25,6 +25,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical
@@ -171,7 +172,20 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 }
             }
 
-            // Use the final width to create the actual table
+            // Create a header separator if we need a header
+            var borderRulers = new List<RulerInfo>();
+            if (Header)
+                borderRulers.Add(new(1, RulerOrientation.Horizontal));
+
+            // Create a row separator
+            for (int x = 1; x < columnsCount; x++)
+            {
+                // Try to get the positions for the separator
+                var positionsSeparator = ((int, int))positions.GetValue(x, 0);
+                borderRulers.Add(new(positionsSeparator.Item1 - Left - 2, RulerOrientation.Vertical));
+            }
+
+            // Write the border after setting up rulers
             var border = new Border()
             {
                 Left = Left,
@@ -179,6 +193,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 Width = maxCellWidth * columnsCount - 1,
                 Height = processedHeight,
                 Settings = tableBorderSettings,
+                Rulers = [.. borderRulers],
                 UseColors = UseColors,
             };
             if (UseColors)
@@ -196,57 +211,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 tableBuilder.Append(
                     border.Render()
                 );
-            }
-
-            // Create a header separator if we need a header
-            if (Header)
-            {
-                char begin = tableBorderSettings.BorderLeftHorizontalIntersectionChar;
-                char middle = tableBorderSettings.BorderHorizontalIntersectionChar;
-                char end = tableBorderSettings.BorderRightHorizontalIntersectionChar;
-                int headerBorderPosX = Left;
-                int headerBorderPosY = processedTop + 2;
-                tableBuilder.Append(
-                    CsiSequences.GenerateCsiCursorPosition(headerBorderPosX + 1, headerBorderPosY + 1) +
-                    begin + new string(middle, maxCellWidth * columnsCount - 1) + end
-                );
-            }
-
-            // Create a row separator
-            char beginVertical = tableBorderSettings.BorderTopVerticalIntersectionChar;
-            char middleVertical = tableBorderSettings.BorderVerticalIntersectionChar;
-            char endVertical = tableBorderSettings.BorderBottomVerticalIntersectionChar;
-            char intersect = tableBorderSettings.BorderWholeIntersectionChar;
-            int mode = 0;
-            for (int x = 1; x < columnsCount; x++)
-            {
-                // Try to get the positions for the separator
-                var positionsSeparator = ((int, int))positions.GetValue(x, 0);
-
-                // Build the separator
-                for (int y = 0; y < processedHeight + 2; y++)
-                {
-                    mode =
-                        y == 0 ? 1 :
-                        y == processedHeight + 1 ? 2 :
-                        y == 2 && Header ? 3 :
-                        0;
-                    char finalChar =
-                        mode == 1 ? beginVertical :
-                        mode == 2 ? endVertical :
-                        mode == 3 ? intersect :
-                        middleVertical;
-                    if ((mode == 0 && tableBorderSettings.BorderVerticalIntersectionEnabled) ||
-                        (mode == 1 && tableBorderSettings.BorderTopVerticalIntersectionEnabled) ||
-                        (mode == 2 && tableBorderSettings.BorderBottomVerticalIntersectionEnabled) ||
-                        (mode == 3 && tableBorderSettings.BorderWholeIntersectionEnabled))
-                    {
-                        tableBuilder.Append(
-                            CsiSequences.GenerateCsiCursorPosition(positionsSeparator.Item1, y + processedTop + 1) +
-                            finalChar
-                        );
-                    }
-                }
             }
 
             // Write values
