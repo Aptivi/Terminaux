@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader.History;
 using Terminaux.Sequences;

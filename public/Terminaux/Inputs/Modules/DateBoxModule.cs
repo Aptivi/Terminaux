@@ -21,7 +21,6 @@ using System;
 using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
-using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;

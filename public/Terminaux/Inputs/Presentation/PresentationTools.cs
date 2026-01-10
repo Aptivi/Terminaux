@@ -21,7 +21,6 @@ using System;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Extensions;

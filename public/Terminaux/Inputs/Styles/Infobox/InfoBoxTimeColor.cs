@@ -18,7 +18,6 @@
 //
 
 using System;
-using Terminaux.Colors;
 using System.Text;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;

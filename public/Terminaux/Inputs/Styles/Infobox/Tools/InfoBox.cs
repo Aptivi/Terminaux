@@ -20,11 +20,9 @@
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {

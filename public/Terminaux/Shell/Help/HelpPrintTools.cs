@@ -22,7 +22,6 @@ using System.Linq;
 using Terminaux.Base;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Arguments.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;

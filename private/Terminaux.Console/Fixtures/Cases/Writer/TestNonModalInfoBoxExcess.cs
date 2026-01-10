@@ -19,7 +19,6 @@
 
 using System.Threading;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 

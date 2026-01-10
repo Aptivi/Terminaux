@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors;
 using Terminaux.Reader;
 using System.Text;
 using Terminaux.Base.Buffered;

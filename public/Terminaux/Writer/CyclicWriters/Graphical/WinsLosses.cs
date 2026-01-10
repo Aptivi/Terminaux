@@ -22,7 +22,6 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
-using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

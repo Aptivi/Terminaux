@@ -18,13 +18,11 @@
 //
 
 using System;
-using System.Numerics;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
-using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;

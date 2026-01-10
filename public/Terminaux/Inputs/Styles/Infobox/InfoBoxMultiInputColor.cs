@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles.Infobox.Tools;

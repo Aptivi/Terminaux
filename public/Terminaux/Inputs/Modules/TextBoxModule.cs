@@ -20,7 +20,6 @@
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
-using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Reader;

@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using System.Threading;
 using Terminaux.Writer.CyclicWriters.Renderer;

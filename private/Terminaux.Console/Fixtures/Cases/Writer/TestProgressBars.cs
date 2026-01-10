@@ -20,7 +20,6 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using System.Threading;

@@ -23,7 +23,6 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Themes;
 
 namespace Terminaux.Themes.Colors
 {

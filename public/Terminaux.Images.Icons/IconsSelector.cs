@@ -22,7 +22,6 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;

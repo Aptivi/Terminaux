@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {

@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors;
 using System.Linq;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;

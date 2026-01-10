@@ -23,7 +23,6 @@ using Terminaux.Base;
 using Terminaux.Reader;
 using SpecProbe.Software.Platform;
 using Textify.General;
-using Terminaux.Colors;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
