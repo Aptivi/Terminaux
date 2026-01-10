@@ -46,23 +46,11 @@ namespace Terminaux.Colors
         private readonly string seqTrueColor = "";
         private readonly ColorSettings settings;
 
-        // Terminaux-specific vars (public for extension purposes)
-        /// <summary>
-        /// Parsable VT sequence (Foreground) - Protected internal field for extension purposes
-        /// </summary>
-        protected internal string? vtSeqForeground;
-        /// <summary>
-        /// Parsable VT sequence (Background) - Protected internal field for extension purposes
-        /// </summary>
-        protected internal string? vtSeqBackground;
-        /// <summary>
-        /// Parsable VT sequence (Foreground, true color) - Protected internal field for extension purposes
-        /// </summary>
-        protected internal string? vtSeqForegroundTrue;
-        /// <summary>
-        /// Parsable VT sequence (Background, true color) - Protected internal field for extension purposes
-        /// </summary>
-        protected internal string? vtSeqBackgroundTrue;
+        // Terminaux-specific vars
+        internal string? vtSeqForeground;
+        internal string? vtSeqBackground;
+        internal string? vtSeqForegroundTrue;
+        internal string? vtSeqBackgroundTrue;
 
         /// <summary>
         /// An instance of RGB
