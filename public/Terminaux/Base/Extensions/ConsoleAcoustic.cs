@@ -39,6 +39,12 @@ namespace Terminaux.Base.Extensions
         private static readonly object synthLock = new();
 
         /// <summary>
+        /// Forces Terminaux to check for audio cue support again
+        /// </summary>
+        public static void ForceRecheck() =>
+            cueSupported = true;
+
+        /// <summary>
         /// Gets synth information from the synth JSON representation
         /// </summary>
         /// <param name="synthJson">Synth JSON representation</param>
