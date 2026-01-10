@@ -23,8 +23,9 @@ using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs.Styles;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 
-namespace Terminaux.Colors.Themes
+namespace Terminaux.Themes
 {
     /// <summary>
     /// Theme preview tools (simple preview and wheel-based preview)

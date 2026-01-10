@@ -19,7 +19,7 @@
 
 using System.Diagnostics;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {

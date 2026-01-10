@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors.Themes
+namespace Terminaux.Themes
 {
     /// <summary>
     /// Theme category

@@ -24,8 +24,8 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Images.Writers;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Images

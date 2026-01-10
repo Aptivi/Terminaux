@@ -25,7 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Shell.Commands.ProcessExecution
 {

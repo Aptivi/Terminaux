@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Inputs.Interactive
 {

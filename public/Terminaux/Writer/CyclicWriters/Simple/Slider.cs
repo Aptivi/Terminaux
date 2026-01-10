@@ -21,8 +21,8 @@ using System;
 using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Transformation;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {

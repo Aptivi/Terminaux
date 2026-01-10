@@ -21,9 +21,9 @@ using System;
 using System.Linq;
 using System.Threading;
 using Terminaux.Base;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting.Conditions;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Shells.Unified

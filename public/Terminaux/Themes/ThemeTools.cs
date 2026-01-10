@@ -22,11 +22,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json.Linq;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
+using Terminaux.Themes.Colors;
 
-namespace Terminaux.Colors.Themes
+namespace Terminaux.Themes
 {
     /// <summary>
     /// Theme tools module

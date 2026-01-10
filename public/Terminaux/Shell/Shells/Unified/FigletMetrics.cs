@@ -20,9 +20,9 @@
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
 using Textify.Data.Figlet;
 using System.Text;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Shell.Shells.Unified
 {

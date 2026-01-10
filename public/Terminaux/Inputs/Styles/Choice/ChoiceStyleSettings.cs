@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Inputs.Styles.Choice
 {

@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 
-namespace Terminaux.Colors.Themes
+namespace Terminaux.Themes
 {
     internal class ThemeMetadata
     {

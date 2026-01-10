@@ -21,9 +21,9 @@ using Terminaux.Shell.Commands;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
 using System.Linq;
-using Terminaux.Colors.Themes.Colors;
 using Textify.Data.Words.Profanity;
 using System;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Shell.Shells.Unified
 {

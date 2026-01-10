@@ -21,11 +21,11 @@ using System;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Extensions.Data;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.History;
 using Terminaux.Reader.Tools;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 

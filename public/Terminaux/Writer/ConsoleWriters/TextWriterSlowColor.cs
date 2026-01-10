@@ -22,8 +22,8 @@ using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences;
+using Terminaux.Themes.Colors;
 using Textify.General;
 
 namespace Terminaux.Writer.ConsoleWriters

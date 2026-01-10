@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Writer.ConsoleWriters

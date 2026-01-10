@@ -21,9 +21,11 @@ using System;
 using System.Collections.Generic;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Themes;
 
-namespace Terminaux.Colors.Themes.Colors
+namespace Terminaux.Themes.Colors
 {
     /// <summary>
     /// Tools for theme colors

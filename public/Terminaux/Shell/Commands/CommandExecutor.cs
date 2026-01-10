@@ -30,7 +30,7 @@ using Terminaux.Shell.Scripting;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Switches;
 using Terminaux.Base.Wrappers;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Shell.Commands
 {

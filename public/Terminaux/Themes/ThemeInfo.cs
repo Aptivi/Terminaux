@@ -24,11 +24,12 @@ using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Terminaux.Base;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
 using Textify.General;
 
-namespace Terminaux.Colors.Themes
+namespace Terminaux.Themes
 {
     /// <summary>
     /// Theme information class

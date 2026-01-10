@@ -23,10 +23,10 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions.Data;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Reader.Highlighting;
 using Terminaux.Reader.History;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Reader
 {

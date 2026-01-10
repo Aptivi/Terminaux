@@ -42,11 +42,11 @@ using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using Terminaux.Base.Wrappers;
 using Terminaux.Shell.Aliases;
-using Terminaux.Colors.Themes.Colors;
 using Textify.Tools.Placeholder;
 using Textify.Data.Words.Profanity;
 using Terminaux.Colors;
 using SpecProbe.Software.Platform;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Shell.Shells
 {

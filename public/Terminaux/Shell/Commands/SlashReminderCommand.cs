@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Shell.Commands

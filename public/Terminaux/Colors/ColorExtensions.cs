@@ -27,7 +27,7 @@ namespace Terminaux.Colors
     /// </summary>
     public static class ColorExtensions
     {
-        // TODO: Move the whole color system on Terminaux 8.2 to a separate library, and move Themes to Terminaux.Themes
+        // TODO: Move the whole color system on Terminaux 8.2 to a separate library
         /// <summary>
         /// Parsable VT sequence (Foreground)
         /// </summary>

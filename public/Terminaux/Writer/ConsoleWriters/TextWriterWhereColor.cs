@@ -25,7 +25,7 @@ using Textify.General;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Writer.ConsoleWriters
 {

@@ -18,14 +18,14 @@
 //
 
 using System.IO;
-using Terminaux.Colors.Themes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.Linq;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes;
+using Terminaux.Themes.Colors;
 
-namespace Terminaux.Tests.Colors
+namespace Terminaux.Tests.Themes
 {
 
     [TestClass]

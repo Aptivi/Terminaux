@@ -20,7 +20,7 @@
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Terminaux.Shell.Shells.Unified
 {

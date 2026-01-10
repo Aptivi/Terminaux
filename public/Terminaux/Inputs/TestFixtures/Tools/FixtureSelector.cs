@@ -19,9 +19,9 @@
 
 using System.Collections.Generic;
 using Terminaux.Base;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Inputs.TestFixtures.Tools

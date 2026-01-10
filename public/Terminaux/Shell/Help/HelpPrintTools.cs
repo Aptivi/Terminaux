@@ -20,13 +20,13 @@
 using System;
 using System.Linq;
 using Terminaux.Base;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Arguments.Base;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
