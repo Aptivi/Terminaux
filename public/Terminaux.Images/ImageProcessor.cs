@@ -40,6 +40,7 @@ namespace Terminaux.Images
             DateTime.Now.Day == 1 && DateTime.Now.Month == 10 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-BassBoom-64.png" :
             DateTime.Now.Day == 9 && DateTime.Now.Month == 10 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-BskyId-64.png" :
             DateTime.Now.Day == 19 && DateTime.Now.Month == 8 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-ChemiStar-64.png" :
+            DateTime.Now.Day == 11 && DateTime.Now.Month == 1 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Colorimetry-64.png" :
             DateTime.Now.Day == 16 && DateTime.Now.Month == 5 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Magico-64.png" :
             DateTime.Now.Day == 28 && DateTime.Now.Month == 8 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Metalinker-64.png" :
             DateTime.Now.Day == 19 && DateTime.Now.Month == 12 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Nettify-64.png" :
