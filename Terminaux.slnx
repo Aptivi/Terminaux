@@ -1,0 +1,28 @@
+<Solution>
+  <Folder Name="/Assets/">
+    <File Path="CHANGES" />
+    <File Path="CHANGES.TITLE" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Folder Name="/Private/">
+    <Project Path="private/BuildTargets/BuildTargets.csproj" />
+  </Folder>
+  <Folder Name="/Private/Generators/">
+    <Project Path="private/Terminaux.ColorDataGen/Terminaux.ColorDataGen.csproj" />
+    <Project Path="private/Terminaux.NerdFontGen/Terminaux.NerdFontGen.csproj" />
+    <Project Path="private/Terminaux.SequenceTypesGen/Terminaux.SequenceTypesGen.csproj" />
+    <Project Path="private/Terminaux.TermInfoGen/Terminaux.TermInfoGen.csproj" />
+  </Folder>
+  <Folder Name="/Private/Tests/">
+    <Project Path="private/Terminaux.Console/Terminaux.Console.csproj" />
+    <Project Path="private/Terminaux.Tests/Terminaux.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Public/">
+    <Project Path="public/Terminaux/Terminaux.csproj" />
+  </Folder>
+  <Folder Name="/Public/Extras/">
+    <Project Path="public/Terminaux.Images.Icons/Terminaux.Images.Icons.csproj" />
+    <Project Path="public/Terminaux.Images/Terminaux.Images.csproj" />
+    <Project Path="public/Terminaux.Spectre/Terminaux.Spectre.csproj" />
+  </Folder>
+</Solution>

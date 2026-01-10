@@ -15,4 +15,4 @@ set DOTNET_NOLOGO=1
 set ROOTDIR=%~dp0\..
 
 echo Building with configuration %releaseconfig%...
-"%ProgramFiles%\dotnet\dotnet.exe" build "%ROOTDIR%\Terminaux.sln" -p:Configuration=%releaseconfig% %buildoptions%
+"%ProgramFiles%\dotnet\dotnet.exe" build "%ROOTDIR%\Terminaux.slnx" -p:Configuration=%releaseconfig% %buildoptions%
