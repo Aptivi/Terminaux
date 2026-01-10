@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.IO;
 using ImageMagick;
 using Terminaux.Base;
@@ -33,7 +34,23 @@ namespace Terminaux.Images
     /// </summary>
     public static class ImageProcessor
     {
-        internal static Stream placeholderStream = typeof(ImageProcessor).Assembly.GetManifestResourceStream("Terminaux.Images.Resources.Placeholders.Modern-Logo-64.png");
+        internal static Stream placeholderStream = typeof(ImageProcessor).Assembly.GetManifestResourceStream(
+            DateTime.Now.Day == 16 && DateTime.Now.Month == 12 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Aptivestigate-64.png" :
+            DateTime.Now.Day == 1 && DateTime.Now.Month == 10 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-BassBoom-64.png" :
+            DateTime.Now.Day == 9 && DateTime.Now.Month == 10 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-BskyId-64.png" :
+            DateTime.Now.Day == 19 && DateTime.Now.Month == 8 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-ChemiStar-64.png" :
+            DateTime.Now.Day == 16 && DateTime.Now.Month == 5 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Magico-64.png" :
+            DateTime.Now.Day == 28 && DateTime.Now.Month == 8 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Metalinker-64.png" :
+            DateTime.Now.Day == 19 && DateTime.Now.Month == 12 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Nettify-64.png" :
+            DateTime.Now.Day == 22 && DateTime.Now.Month == 2 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Nitrocid-64.png" :
+            DateTime.Now.Day == 10 && DateTime.Now.Month == 1 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-PowerTools-64.png" :
+            DateTime.Now.Day == 27 && DateTime.Now.Month == 10 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-ResourceLab-64.png" :
+            DateTime.Now.Day == 15 && DateTime.Now.Month == 10 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-SpecProbe-64.png" :
+            DateTime.Now.Day == 6 && DateTime.Now.Month == 8 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Terminaux-64.png" :
+            DateTime.Now.Day == 2 && DateTime.Now.Month == 12 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-Textify-64.png" :
+            DateTime.Now.Day == 20 && DateTime.Now.Month == 2 ? "Terminaux.Images.Resources.Placeholders.OfficialAppIcon-VisualCard-64.png" :
+            "Terminaux.Images.Resources.Placeholders.Modern-Logo-64.png"
+        );
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)
