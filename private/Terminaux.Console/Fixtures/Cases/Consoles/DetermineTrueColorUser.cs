@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
@@ -28,8 +28,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 
         public void RunFixture()
         {
-            ColorTools.DetermineTrueColorFromUser();
-            TextWriterColor.Write($"Result is: {ColorTools.ConsoleSupportsTrueColor}");
+            ConsoleColoring.DetermineTrueColorFromUser();
+            TextWriterColor.Write($"Result is: {ConsoleColoring.ConsoleSupportsTrueColor}");
         }
     }
 }

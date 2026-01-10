@@ -19,6 +19,7 @@
 
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Sequences.Builder.Types;
@@ -60,7 +61,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             // Fill the box with spaces inside it
             StringBuilder box = new();
             box.Append(
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(Color, true) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(Color, true) : "")}" +
                 CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)
             );
             ConsoleLogger.Debug("Box width: {0}, height: {1}", Width, Height);
@@ -70,7 +71,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 1)
                 );
             if (UseColors)
-                box.Append(ColorTools.RenderRevertBackground());
+                box.Append(ConsoleColoring.RenderRevertBackground());
             return box.ToString();
         }
 

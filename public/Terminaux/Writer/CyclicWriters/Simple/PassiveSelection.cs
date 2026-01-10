@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles;
@@ -107,8 +108,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 if (UseColors || force)
                 {
                     buffer.Append(
-                        ColorTools.RenderSetConsoleColor(fore) +
-                        ColorTools.RenderSetConsoleColor(back, true)
+                        ConsoleColoring.RenderSetConsoleColor(fore) +
+                        ConsoleColoring.RenderSetConsoleColor(back, true)
                     );
                 }
                 buffer.AppendLine(text);
@@ -118,8 +119,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             if (UseColors)
             {
                 buffer.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
             }
             return buffer.ToString();

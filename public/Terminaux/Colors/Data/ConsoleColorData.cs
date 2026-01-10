@@ -20,10 +20,10 @@
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
-using System.Numerics;
 
 #if !GENERATOR
 using Terminaux.Colors.Models;
+using System.Numerics;
 #endif
 
 namespace Terminaux.Colors.Data

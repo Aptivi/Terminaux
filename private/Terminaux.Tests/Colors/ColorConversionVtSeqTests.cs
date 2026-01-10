@@ -23,11 +23,12 @@ using Terminaux.Colors;
 using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
+using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Tests.Colors
 {
     [TestClass]
-    public partial class ColorConversionTests
+    public partial class ColorConversionVtSeqTests
     {
         /// <summary>
         /// Tests converting an RGB color to CMYK
@@ -42,10 +43,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -81,10 +86,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -120,10 +129,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -158,10 +171,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -197,10 +214,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -235,10 +256,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -273,10 +298,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -311,10 +340,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -349,10 +382,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -387,10 +424,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -425,10 +466,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -463,10 +508,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -503,10 +552,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -543,10 +596,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -581,10 +638,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -621,10 +682,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -661,10 +726,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -699,10 +768,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -739,10 +812,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -779,10 +856,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -818,10 +899,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -857,10 +942,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -896,10 +985,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -934,10 +1027,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -973,10 +1070,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1011,10 +1112,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1049,10 +1154,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1087,10 +1196,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1125,10 +1238,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1163,10 +1280,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1201,10 +1322,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1239,10 +1364,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1277,10 +1406,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1316,10 +1449,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1355,10 +1492,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1394,10 +1535,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1432,10 +1577,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1471,10 +1620,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1509,10 +1662,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1547,10 +1704,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1585,10 +1746,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1623,10 +1788,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1661,10 +1830,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1699,10 +1872,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1737,10 +1914,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -1775,10 +1956,14 @@ namespace Terminaux.Tests.Colors
             // Check for null
             ColorInstance.ShouldNotBeNull();
             ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground().ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground().ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground().ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;0;22m");
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);

@@ -123,8 +123,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             if (UseColors)
             {
                 rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ForegroundColor) +
-                    ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                    ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
+                    ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                 );
             }
 
@@ -173,7 +173,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             // Finalize the rendered ruler
             if (UseColors)
-                rendered.Append(ColorTools.RenderResetColors());
+                rendered.Append(ConsoleColoring.RenderResetColors());
             return rendered.ToString();
         }
 

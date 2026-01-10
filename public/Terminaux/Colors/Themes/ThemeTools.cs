@@ -24,6 +24,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Colors.Themes
 {
@@ -143,7 +144,7 @@ namespace Terminaux.Colors.Themes
         public static void ApplyTheme(ThemeInfo themeInfo)
         {
             // Check if the console supports true color
-            if (ColorTools.ConsoleSupportsTrueColor && themeInfo.TrueColorRequired || !themeInfo.TrueColorRequired)
+            if (ConsoleColoring.ConsoleSupportsTrueColor && themeInfo.TrueColorRequired || !themeInfo.TrueColorRequired)
             {
                 // Check to see if the event is finished
                 if (themeInfo.IsExpired)
@@ -216,7 +217,7 @@ namespace Terminaux.Colors.Themes
                 throw new TerminauxException(nameof(ThemeInfo));
 
             // Check to see if we're trying to preview theme on non-true color console
-            if (MinimumTypeRequired(ThemeInfo, ColorType.TrueColor) && !ColorTools.ConsoleSupportsTrueColor)
+            if (MinimumTypeRequired(ThemeInfo, ColorType.TrueColor) && !ConsoleColoring.ConsoleSupportsTrueColor)
                 throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR"));
 
             // Set the colors

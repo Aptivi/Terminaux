@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
@@ -30,7 +30,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
         {
             for (double prog = 0.0d; prog < 100.0d; prog += 0.01d)
                 InfoBoxProgressColor.WriteInfoBoxProgress(prog, "请稍等...");
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
         }
     }
 }

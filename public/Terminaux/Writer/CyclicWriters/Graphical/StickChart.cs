@@ -121,9 +121,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         stickChart.Append(
                             ConsolePositioning.RenderChangePosition(stickCoord.X, stickCoord.Y) +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(element.Color, true) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(element.Color, true) : "") +
                             new string(' ', stickWidthInt) +
-                            (UseColors ? ColorTools.RenderResetBackground() : "")
+                            (UseColors ? ConsoleColoring.RenderResetBackground() : "")
                         );
                     }
                 }

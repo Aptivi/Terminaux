@@ -195,8 +195,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (useColor)
             {
                 buffer.Append(
-                    $"{ColorTools.RenderSetConsoleColor(textColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
+                    $"{ConsoleColoring.RenderSetConsoleColor(textColor)}" +
+                    $"{ConsoleColoring.RenderSetConsoleColor(backgroundColor, true)}"
                 );
             }
             for (int i = currIdx; i < lines.Length; i++)
@@ -215,8 +215,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (useColor)
             {
                 buffer.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
             }
             return buffer.ToString();
@@ -240,8 +240,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (useColor)
             {
                 sels.Append(
-                    $"{ColorTools.RenderSetConsoleColor(textColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
+                    $"{ConsoleColoring.RenderSetConsoleColor(textColor)}" +
+                    $"{ConsoleColoring.RenderSetConsoleColor(backgroundColor, true)}"
                 );
             }
             for (int i = startIndex; i <= endIndex; i++)
@@ -291,8 +291,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (useColor)
             {
                 sels.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
             }
             return sels.ToString();

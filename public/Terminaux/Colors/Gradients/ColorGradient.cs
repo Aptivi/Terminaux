@@ -37,17 +37,17 @@ namespace Terminaux.Colors.Gradients
         /// </summary>
         public Color IntermediateColor { get; private set; }
 
+        /// <summary>
+        /// Gets a color string of this gradient
+        /// </summary>
+        public override string ToString() =>
+            IntermediateColor.ToString();
+
         internal ColorGradient(int step, Color intermediateColor)
         {
             Step = step;
             IntermediateColor = intermediateColor ??
                 throw new TerminauxInternalException(nameof(intermediateColor));
         }
-
-        /// <summary>
-        /// Gets a color string of this gradient
-        /// </summary>
-        public override string ToString() =>
-            IntermediateColor.ToString();
     }
 }

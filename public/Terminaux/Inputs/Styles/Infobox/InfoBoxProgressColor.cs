@@ -28,6 +28,7 @@ using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -119,8 +120,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;

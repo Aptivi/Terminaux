@@ -22,6 +22,7 @@ using System.Linq;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs.Styles;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Colors.Themes
 {
@@ -59,7 +60,7 @@ namespace Terminaux.Colors.Themes
         internal static void PreviewTheme(Dictionary<string, Color> colors, ThemeInfo? theme)
         {
             // Check to see if we're trying to preview theme on non-true color console
-            if (ThemeTools.MinimumTypeRequired(colors, ColorType.TrueColor) && !ColorTools.ConsoleSupportsTrueColor)
+            if (ThemeTools.MinimumTypeRequired(colors, ColorType.TrueColor) && !ConsoleColoring.ConsoleSupportsTrueColor)
                 throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_NEEDSTRUECOLOR"));
 
             // Render the choices
@@ -69,7 +70,7 @@ namespace Terminaux.Colors.Themes
                 var type = colors.Keys.ElementAt(key);
                 var color = colors.Values.ElementAt(key);
                 choices.Add(
-                    new(type.ToString(), $"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+                    new(type.ToString(), $"[{color.PlainSequence}]{color.VTSequenceForeground()} Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
                 );
             }
 

@@ -93,8 +93,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         {
             var builder = new StringBuilder();
             builder.Append(
-                (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
-                (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")
+                (UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "") +
+                (UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "")
             );
             if (textWidth > Width)
             {
@@ -154,8 +154,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             else
                 builder.Append(Text);
             builder.Append(
-                (UseColors ? ColorTools.RenderResetBackground() : "") +
-                (UseColors ? ColorTools.RenderResetForeground() : "")
+                (UseColors ? ConsoleColoring.RenderResetBackground() : "") +
+                (UseColors ? ConsoleColoring.RenderResetForeground() : "")
             );
             return builder.ToString();
         }

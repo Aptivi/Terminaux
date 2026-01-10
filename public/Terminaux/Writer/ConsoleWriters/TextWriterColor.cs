@@ -20,6 +20,7 @@
 using System;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Reader;
@@ -321,11 +322,11 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     var buffered = new StringBuilder();
                     buffered.Append(
-                        ColorTools.RenderSetConsoleColor(ForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true) +
+                        ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
+                        ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) +
                         TextTools.FormatString(Text, vars) +
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                     return buffered.ToString();
                 }

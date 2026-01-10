@@ -19,6 +19,7 @@
 
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Gradients;
 
@@ -37,10 +38,10 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             foreach (var grad in grads)
             {
                 var color = grad.IntermediateColor;
-                ColorTools.LoadBackDry(color, true);
+                ConsoleColoring.LoadBackDry(color, true);
                 Thread.Sleep(50);
             }
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
             ConsoleWrapper.CursorVisible = true;
         }
     }

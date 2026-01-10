@@ -19,6 +19,7 @@
 
 using System;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
@@ -191,7 +192,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         {
             var rendered = new StringBuilder();
             if (UseColors)
-                rendered.Append(ColorTools.RenderSetConsoleColor(ProgressBackgroundColor, true));
+                rendered.Append(ConsoleColoring.RenderSetConsoleColor(ProgressBackgroundColor, true));
 
             // Choose the color, depending on the progress state
             var activeProgressColor =
@@ -247,12 +248,12 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 cells = cells > Height ? Height : cells;
                 int remaining = Height - cells;
                 rendered.Append(
-                    UseColors ? ColorTools.RenderSetConsoleColor(activeProgressColor) : ""
+                    UseColors ? ConsoleColoring.RenderSetConsoleColor(activeProgressColor) : ""
                 );
                 for (int i = 0; i < cells; i++)
                     rendered.AppendLine($"{(UseColors ? ProgressVerticalActiveTrackChar : ProgressUncoloredVerticalActiveTrackChar)}");
                 rendered.Append(
-                    UseColors ? ColorTools.RenderSetConsoleColor(progressColor) : ""
+                    UseColors ? ConsoleColoring.RenderSetConsoleColor(progressColor) : ""
                 );
                 for (int i = 0; i < remaining; i++)
                     rendered.AppendLine($"{(UseColors ? ProgressVerticalInactiveTrackChar : ProgressUncoloredVerticalInactiveTrackChar)}");
@@ -269,9 +270,9 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
                 cells = cells > progressWidth ? progressWidth : cells;
                 rendered.Append(
-                    (UseColors ? ColorTools.RenderSetConsoleColor(activeProgressColor) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(activeProgressColor) : "") +
                     new string(UseColors ? ProgressHorizontalActiveTrackChar : ProgressUncoloredHorizontalActiveTrackChar, cells) +
-                    (UseColors ? ColorTools.RenderSetConsoleColor(progressColor) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(progressColor) : "") +
                     new string(UseColors ? ProgressHorizontalInactiveTrackChar : ProgressUncoloredHorizontalInactiveTrackChar, progressWidth - cells)
                 );
 
@@ -280,7 +281,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 {
                     int percentage = (int)(position * 100 / (double)maxPosition);
                     rendered.Append(
-                        (UseColors ? ColorTools.RenderSetConsoleColor(ProgressPercentageTextColor) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(ProgressPercentageTextColor) : "") +
                         $" {percentage,3}%"
                     );
                 }
@@ -288,7 +289,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             // Return the result
             rendered.Append(
-                UseColors ? ColorTools.RenderResetColors() : ""
+                UseColors ? ConsoleColoring.RenderResetColors() : ""
             );
             return rendered.ToString();
         }

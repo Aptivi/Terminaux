@@ -29,6 +29,7 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.General.Structures;
 using Textify.General;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -132,8 +133,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var boxBuffer = new StringBuilder(infoBox.Render(ref increment, currIdx, false, false));
                     boxBuffer.Append(
                         CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2) +
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "")
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true) : "")
                     );
                     return boxBuffer.ToString();
                 });
@@ -173,8 +174,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;

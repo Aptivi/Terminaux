@@ -131,9 +131,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         ConsoleLogger.Debug("Rendering breakdown chart element {0}: ({1} + {2}, {3} + {4})", e, Left, showcaseLength, Top, processedY);
                         breakdownChart.Append(
                             ConsolePositioning.RenderChangePosition(stickCoord.X, stickCoord.Y) +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(element.Color, true) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(element.Color, true) : "") +
                             "  " +
-                            (UseColors ? ColorTools.RenderResetBackground() : "")
+                            (UseColors ? ConsoleColoring.RenderResetBackground() : "")
                         );
                         processedY += 1;
                     }
@@ -155,9 +155,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     // Render the element bar
                     int length = (int)Math.Round(value * Width / maxValue);
                     breakdownChart.Append(
-                        (UseColors ? ColorTools.RenderSetConsoleColor(color, true) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(color, true) : "") +
                         new string(' ', length) +
-                        (UseColors ? ColorTools.RenderResetBackground() : "")
+                        (UseColors ? ConsoleColoring.RenderResetBackground() : "")
                     );
                 }
 
@@ -189,11 +189,11 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                         // Render the showcase element
                         breakdownChart.Append(
-                            (UseColors ? ColorTools.RenderSetConsoleColor(color) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(color) : "") +
                             " ■ " +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                             name + "  " +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Grey) : "") +
                             value +
                             spaces
                         );

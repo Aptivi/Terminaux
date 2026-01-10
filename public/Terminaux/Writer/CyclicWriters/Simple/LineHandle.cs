@@ -117,15 +117,15 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 RepeatBlanks = 0;
             if (RepeatMarkers < 0)
                 RepeatMarkers = 0;
-            builder.AppendLine($"{(useColor ? ColorTools.RenderSetConsoleColor(color) : "")} {LineNumber} | {LineContent}");
-            builder.AppendLine($"{(useColor ? ColorTools.RenderSetConsoleColor(color) : "")} {new string(' ', digits)} | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
+            builder.AppendLine($"{(useColor ? ConsoleColoring.RenderSetConsoleColor(color) : "")} {LineNumber} | {LineContent}");
+            builder.AppendLine($"{(useColor ? ConsoleColoring.RenderSetConsoleColor(color) : "")} {new string(' ', digits)} | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
 
             // Write the resulting buffer
             if (useColor)
             {
                 builder.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
             }
             return builder.ToString();

@@ -43,7 +43,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             try
             {
                 // First, clear the screen
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
 
                 // Then, show the resizable red, green, and blue boxes
                 var redBoxPart = new ScreenPart();
@@ -140,7 +140,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             finally
             {
                 ScreenTools.UnsetCurrent(stickScreen);
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
             }
             Input.EnableMouse = false;
         }

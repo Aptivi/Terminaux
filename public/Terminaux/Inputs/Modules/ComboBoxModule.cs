@@ -75,13 +75,13 @@ namespace Terminaux.Inputs.Modules
 
             // Render the text box contents now
             string textBox =
-                ColorTools.RenderSetConsoleColor(Foreground) +
-                ColorTools.RenderSetConsoleColor(Background, true) +
+                ConsoleColoring.RenderSetConsoleColor(Foreground) +
+                ConsoleColoring.RenderSetConsoleColor(Background, true) +
                 valueString +
-                ColorTools.RenderSetConsoleColor(BlankForeground) +
+                ConsoleColoring.RenderSetConsoleColor(BlankForeground) +
                 underscores +
-                ColorTools.RenderRevertForeground() +
-                ColorTools.RenderRevertBackground();
+                ConsoleColoring.RenderRevertForeground() +
+                ConsoleColoring.RenderRevertBackground();
             return textBox;
         }
 

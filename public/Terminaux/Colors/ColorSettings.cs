@@ -44,16 +44,17 @@ namespace Terminaux.Colors
         /// The opacity at which the color will be calculated.
         /// </summary>
         /// <remarks>
-        /// This fades the color to the current background color of the console currently set by
-        /// <see cref="ColorTools.SetConsoleColor(Color, bool, bool, bool)"/>. That color can be overridable by
+        /// This fades the color to the black color. Using Terminaux's extended color tools, you can use the
+        /// ConsoleColoring.CurrentBackgroundColor property on console applications. That color can be overridable by
         /// setting the <see cref="OpacityColor"/> property to any color you want. Set it to 0, and you'll get the
         /// color that is the same as the value of the <see cref="OpacityColor"/> property. Set it to 255, and you'll
         /// get the color that you've created using the <see cref="Color(int, int, int, ColorSettings)"/> constructor
         /// and its siblings.
         /// <br></br>
         /// <br></br>
-        /// This is still fake transparency for GUI applications, but should behave like real transparency in console
-        /// applications that use background colors.
+        /// This is still fake transparency for TUI applications, but should behave like real transparency in console
+        /// applications that use background colors. For GUI applications on Windows, Linux, and macOS, and for images,
+        /// opacity of a color is real, and is set as is.
         /// </remarks>
         public int Opacity
         {
@@ -80,8 +81,8 @@ namespace Terminaux.Colors
         /// </remarks>
         public Color OpacityColor
         {
-            get => _opacityColor ?? ColorTools.CurrentBackgroundColor;
-            set => _opacityColor = value ?? ColorTools.CurrentBackgroundColor;
+            get => _opacityColor ?? Color.Empty;
+            set => _opacityColor = value ?? Color.Empty;
         }
 
         /// <summary>

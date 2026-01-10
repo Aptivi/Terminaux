@@ -20,7 +20,7 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
@@ -38,7 +38,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             try
             {
                 // First, clear the screen
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
 
                 // Then, show the resizable red, green, and blue boxes
                 var boxes = new ScreenPart();
@@ -141,7 +141,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             finally
             {
                 ScreenTools.UnsetCurrent(stickScreen);
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
             }
         }
     }

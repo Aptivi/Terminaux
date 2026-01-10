@@ -20,7 +20,7 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
 using Terminaux.Sequences.Builder.Types;
@@ -48,7 +48,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             try
             {
                 // First, clear the screen
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
 
                 // Second, show the pixels
                 var pixelsScreenPart = new ScreenPart();
@@ -156,7 +156,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             finally
             {
                 ScreenTools.UnsetCurrent(canvasScreen);
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
             }
         }
     }

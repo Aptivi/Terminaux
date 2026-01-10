@@ -125,7 +125,7 @@ namespace Terminaux.Inputs.Interactive
             {
                 // Bailed.
                 ScreenTools.UnsetCurrent(ui.uiScreen);
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
                 ui.state = TextualUIState.Ready;
             }
         }

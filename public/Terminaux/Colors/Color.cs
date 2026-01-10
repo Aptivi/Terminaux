@@ -29,8 +29,6 @@ using Terminaux.Colors.Models.Parsing;
 using Terminaux.Colors.Interop;
 using Terminaux.Colors.Transformation.Contrast;
 using Newtonsoft.Json;
-using Terminaux.Sequences.Builder;
-using Terminaux.Base.TermInfo;
 using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors
@@ -42,14 +40,29 @@ namespace Terminaux.Colors
     [JsonConverter(typeof(ColorSerializer))]
     public class Color : IEquatable<Color>
     {
+        // General vars
         private ConsoleColorData? colorId;
-        private string? vtSeqForeground;
-        private string? vtSeqBackground;
         private readonly string hex = "";
         private readonly string seqTrueColor = "";
-        private readonly string vtSeqForegroundTrue = "";
-        private readonly string vtSeqBackgroundTrue = "";
         private readonly ColorSettings settings;
+
+        // Terminaux-specific vars (public for extension purposes)
+        /// <summary>
+        /// Parsable VT sequence (Foreground) - Protected internal field for extension purposes
+        /// </summary>
+        protected internal string? vtSeqForeground;
+        /// <summary>
+        /// Parsable VT sequence (Background) - Protected internal field for extension purposes
+        /// </summary>
+        protected internal string? vtSeqBackground;
+        /// <summary>
+        /// Parsable VT sequence (Foreground, true color) - Protected internal field for extension purposes
+        /// </summary>
+        protected internal string? vtSeqForegroundTrue;
+        /// <summary>
+        /// Parsable VT sequence (Background, true color) - Protected internal field for extension purposes
+        /// </summary>
+        protected internal string? vtSeqBackgroundTrue;
 
         /// <summary>
         /// An instance of RGB
@@ -87,66 +100,10 @@ namespace Terminaux.Colors
             Type == ColorType.TrueColor ? PlainSequenceTrueColor : $"{ColorId.ColorId}";
 
         /// <summary>
-        /// Parsable VT sequence (Foreground)
-        /// </summary>
-        public string VTSequenceForeground =>
-            IsOriginal ? VTSequenceForegroundOriginal : VTSequenceForegroundTrueColor;
-
-        /// <summary>
-        /// Parsable VT sequence (Foreground, original)
-        /// </summary>
-        public string VTSequenceForegroundOriginal
-        {
-            get
-            {
-                if (Type == ColorType.TrueColor)
-                    return VTSequenceForegroundTrueColor;
-                vtSeqForeground ??=
-                    TermInfoDesc.Current.SetAForeground?.ProcessSequence(PlainSequence) ??
-                    $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
-                return vtSeqForeground;
-            }
-        }
-
-        /// <summary>
-        /// Parsable VT sequence (Background)
-        /// </summary>
-        public string VTSequenceBackground =>
-            IsOriginal ? VTSequenceBackgroundOriginal : VTSequenceBackgroundTrueColor;
-
-        /// <summary>
-        /// Parsable VT sequence (Background, original)
-        /// </summary>
-        public string VTSequenceBackgroundOriginal
-        {
-            get
-            {
-                if (Type == ColorType.TrueColor)
-                    return VTSequenceBackgroundTrueColor;
-                vtSeqBackground ??=
-                    TermInfoDesc.Current.SetABackground?.ProcessSequence(PlainSequence) ??
-                    $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
-                return vtSeqBackground;
-            }
-        }
-
-        /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
         public string PlainSequenceTrueColor =>
             seqTrueColor;
-
-        /// <summary>
-        /// Parsable VT sequence (Foreground, true color)
-        /// </summary>
-        public string VTSequenceForegroundTrueColor =>
-            vtSeqForegroundTrue;
-
-        /// <summary>
-        /// Parsable VT sequence (Background, true color)
-        /// </summary>
-        public string VTSequenceBackgroundTrueColor =>
-            vtSeqBackgroundTrue;
 
         /// <summary>
         /// Hexadecimal representation of the color
@@ -304,8 +261,6 @@ namespace Terminaux.Colors
             RGB = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
             hex = $"#{RGB.R:X2}{RGB.G:X2}{RGB.B:X2}";
             seqTrueColor = $"{RGB.R};{RGB.G};{RGB.B}";
-            vtSeqForegroundTrue = $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequenceTrueColor}m";
-            vtSeqBackgroundTrue = $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequenceTrueColor}m";
         }
 
         /// <summary>
@@ -321,8 +276,6 @@ namespace Terminaux.Colors
             RGB = result.RGB;
             hex = $"#{RGB.R:X2}{RGB.G:X2}{RGB.B:X2}";
             seqTrueColor = $"{RGB.R};{RGB.G};{RGB.B}";
-            vtSeqForegroundTrue = $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequenceTrueColor}m";
-            vtSeqBackgroundTrue = $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequenceTrueColor}m";
         }
 
         /// <summary>
@@ -402,11 +355,7 @@ namespace Terminaux.Colors
             // Check all the properties
             return
                 other.PlainSequence == other2.PlainSequence &&
-                other.VTSequenceForeground == other2.VTSequenceForeground &&
-                other.VTSequenceBackground == other2.VTSequenceBackground &&
                 other.PlainSequenceTrueColor == other2.PlainSequenceTrueColor &&
-                other.VTSequenceForegroundTrueColor == other2.VTSequenceForegroundTrueColor &&
-                other.VTSequenceBackgroundTrueColor == other2.VTSequenceBackgroundTrueColor &&
                 other.Hex == other2.Hex &&
                 other.Type == other2.Type &&
                 other.Brightness == other2.Brightness &&
@@ -428,11 +377,7 @@ namespace Terminaux.Colors
         {
             int hashCode = -636468195;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequence);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForeground);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackground);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceTrueColor);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForegroundTrueColor);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackgroundTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Hex);
             hashCode = hashCode * -1521134295 + Type.GetHashCode();
             hashCode = hashCode * -1521134295 + Brightness.GetHashCode();

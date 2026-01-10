@@ -275,13 +275,13 @@ namespace Terminaux.Inputs.Interactive
                     int width = ConsoleChar.EstimateCellWidth(finalEntry);
                     string text =
                         $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
-                        $"{ColorTools.RenderSetConsoleColor(finalForeColor, false, true)}" +
-                        $"{ColorTools.RenderSetConsoleColor(finalBackColor, true)}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(finalForeColor, false, true)}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(finalBackColor, true)}" +
                         finalEntry +
-                        $"{ColorTools.RenderSetConsoleColor(finalForeColor, false, true)}" +
-                        $"{ColorTools.RenderSetConsoleColor(finalBackColor, true)}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(finalForeColor, false, true)}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(finalBackColor, true)}" +
                         new string(' ', SeparatorHalfConsoleWidthInterior - width - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? -1 : 0)) +
-                        $"{ColorTools.RenderSetConsoleColor(interactiveTui.Settings.PaneItemBackColor, true)}";
+                        $"{ConsoleColoring.RenderSetConsoleColor(interactiveTui.Settings.PaneItemBackColor, true)}";
                     builder.Append(text);
                 }
                 else

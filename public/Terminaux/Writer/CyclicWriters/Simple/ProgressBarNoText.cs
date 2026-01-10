@@ -238,7 +238,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             // Return the result
             rendered.Append(
-                UseColors ? ColorTools.RenderResetColors() : ""
+                UseColors ? ConsoleColoring.RenderResetColors() : ""
             );
             return rendered.ToString();
         }

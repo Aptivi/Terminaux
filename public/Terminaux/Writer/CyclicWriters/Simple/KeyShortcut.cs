@@ -125,31 +125,31 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             if (canDraw)
             {
                 bindingBuilder.Append(
-                    $"{(UseColors ? ColorTools.RenderSetConsoleColor(optionColor, false, true) : "")}" +
-                    $"{(UseColors ? ColorTools.RenderSetConsoleColor(optionBackgroundColor, true) : "")}" +
+                    $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(optionColor, false, true) : "")}" +
+                    $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(optionBackgroundColor, true) : "")}" +
                     KeybindingTools.GetBindingKeyShortcut(Shortcut, false)
                 );
                 if (WriteLabel)
                 {
                     bindingBuilder.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(optionForegroundColor) : "")}" +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(backgroundColor, true) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(optionForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(backgroundColor, true) : "")}" +
                         $" {Shortcut.BindingName}  "
                     );
                 }
                 else
                 {
                     bindingBuilder.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(optionForegroundColor) : "")}" +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(backgroundColor, true) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(optionForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(backgroundColor, true) : "")}" +
                         " "
                     );
                 }
                 if (UseColors)
                 {
                     bindingBuilder.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
             }

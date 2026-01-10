@@ -387,7 +387,7 @@ namespace Terminaux.Base.Buffered
             {
                 ConsoleWrapper.CursorVisible = false;
                 var builder = new StringBuilder();
-                builder.Append(ColorTools.RenderRevertBackground());
+                builder.Append(ConsoleColoring.RenderRevertBackground());
                 refreshWasDone = false;
                 if (needsRefresh || ConsoleResizeHandler.WasResized(ResetResize))
                 {

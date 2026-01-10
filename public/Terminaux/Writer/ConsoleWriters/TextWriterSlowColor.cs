@@ -124,14 +124,14 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColorDry(ForegroundColor);
-                    ColorTools.SetConsoleColorDry(BackgroundColor, true);
+                    ConsoleColoring.SetConsoleColorDry(ForegroundColor);
+                    ConsoleColoring.SetConsoleColorDry(BackgroundColor, true);
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
 
                     // Reset the colors
-                    ColorTools.ResetColors();
+                    ConsoleColoring.ResetColors();
                 }
                 catch (Exception ex)
                 {

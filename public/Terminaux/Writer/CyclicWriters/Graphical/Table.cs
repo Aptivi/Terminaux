@@ -202,8 +202,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 border.BackgroundColor = BackgroundColor;
                 tableBuilder.Append(
                     border.Render() +
-                    ColorTools.RenderSetConsoleColor(SeparatorColor) +
-                    ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                    ConsoleColoring.RenderSetConsoleColor(SeparatorColor) +
+                    ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                 );
             }
             else

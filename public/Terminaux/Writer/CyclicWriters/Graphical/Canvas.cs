@@ -19,6 +19,7 @@
 
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -93,10 +94,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                 // Print this individual pixel
                 canvas.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(new(' ', widthFactor), Left + (left * widthFactor), Top + top, ColorTools.CurrentForegroundColor, pixel.CellColor)
+                    TextWriterWhereColor.RenderWhereColorBack(new(' ', widthFactor), Left + (left * widthFactor), Top + top, ConsoleColoring.CurrentForegroundColor, pixel.CellColor)
                 );
             }
-            canvas.Append(ColorTools.RenderRevertBackground());
+            canvas.Append(ConsoleColoring.RenderRevertBackground());
             return canvas.ToString();
         }
 

@@ -79,7 +79,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 new TextBoxModule()
                 {
                     Name = "Test enjoyment",
-                    Description = $"Did you enjoy {new Color(ConsoleColors.Green1).VTSequenceForeground}testing?"
+                    Description = $"Did you enjoy {new Color(ConsoleColors.Green1).VTSequenceForeground()}testing?"
                 }, true
             )
             {
@@ -149,7 +149,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                             {
                                 Arguments = [
                                     "Enjoying yet? {0}Color treat!",
-                                    new Color(ConsoleColors.Purple4Alt).VTSequenceForeground
+                                    new Color(ConsoleColors.Purple4Alt).VTSequenceForeground()
                                 ]
                             }
                         ]
@@ -169,17 +169,17 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     "velit dignissim. {3}Tempor {1}orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc {2}pulvinar sapien {1}et ligula ullamcorper malesuada proin.",
-                                    new Color(ConsoleColors.Green).VTSequenceForeground,
-                                    new Color(ConsoleColors.White).VTSequenceForeground,
-                                    new Color(ConsoleColors.Yellow).VTSequenceForeground,
-                                    new Color(ConsoleColors.Red).VTSequenceForeground
+                                    new Color(ConsoleColors.Green).VTSequenceForeground(),
+                                    new Color(ConsoleColors.White).VTSequenceForeground(),
+                                    new Color(ConsoleColors.Yellow).VTSequenceForeground(),
+                                    new Color(ConsoleColors.Red).VTSequenceForeground()
                                 ]
                             },
                             new TextElement()
                             {
                                 Arguments = [
                                     "Happy {0}hacking!",
-                                    new Color(ConsoleColors.Green1).VTSequenceForeground
+                                    new Color(ConsoleColors.Green1).VTSequenceForeground()
                                 ]
                             }
                         ],

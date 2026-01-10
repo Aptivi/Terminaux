@@ -32,6 +32,7 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Images.Icons
 {
@@ -205,7 +206,7 @@ namespace Terminaux.Images.Icons
             finally
             {
                 ScreenTools.UnsetCurrent(screen);
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
             }
             return cancel ? icon : iconName;
         }

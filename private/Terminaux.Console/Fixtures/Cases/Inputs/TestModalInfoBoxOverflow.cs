@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
@@ -42,7 +42,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
                 }
             );
             Input.EnableMouse = false;
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
         }
     }
 }

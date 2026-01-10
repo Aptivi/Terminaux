@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
 
 namespace Terminaux.Colors.Themes.Colors
@@ -199,9 +200,9 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
         public static void SetConsoleColor(string colorType, bool Background, bool resetBack = true)
         {
-            ColorTools.SetConsoleColor(GetColor(colorType), Background);
+            ConsoleColoring.SetConsoleColor(GetColor(colorType), Background);
             if (!Background && resetBack)
-                ColorTools.SetConsoleColor(GetColor(ThemeColorType.Background), true);
+                ConsoleColoring.SetConsoleColor(GetColor(ThemeColorType.Background), true);
         }
 
         /// <summary>
@@ -281,9 +282,9 @@ namespace Terminaux.Colors.Themes.Colors
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
         public static void SetConsoleColorDry(string colorType, bool Background, bool resetBack = true)
         {
-            ColorTools.SetConsoleColorDry(GetColor(colorType), Background);
+            ConsoleColoring.SetConsoleColorDry(GetColor(colorType), Background);
             if (!Background && resetBack)
-                ColorTools.SetConsoleColorDry(GetColor(ThemeColorType.Background), true);
+                ConsoleColoring.SetConsoleColorDry(GetColor(ThemeColorType.Background), true);
         }
 
         /// <summary>
@@ -349,7 +350,7 @@ namespace Terminaux.Colors.Themes.Colors
             if (useThemeColors)
                 SetConsoleColor(ThemeColorType.Background, Background: true);
             else
-                ColorTools.ResetBackground();
+                ConsoleColoring.ResetBackground();
         }
 
         /// <summary>
@@ -361,14 +362,14 @@ namespace Terminaux.Colors.Themes.Colors
             if (useThemeColors)
                 SetConsoleColor(ThemeColorType.NeutralText);
             else
-                ColorTools.ResetForeground();
+                ConsoleColoring.ResetForeground();
         }
 
         /// <summary>
         /// Loads the background color by clearing the screen to the theme background color
         /// </summary>
         public static void LoadBackground() =>
-            ColorTools.LoadBack(GetColor(ThemeColorType.Background));
+            ConsoleColoring.LoadBack(GetColor(ThemeColorType.Background));
 
         private static void UpdateColorList()
         {

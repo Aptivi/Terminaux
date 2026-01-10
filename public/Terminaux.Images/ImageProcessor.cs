@@ -21,6 +21,7 @@ using System;
 using System.IO;
 using ImageMagick;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
@@ -224,7 +225,7 @@ namespace Terminaux.Images
                     new(ColorTools.GlobalSettings)
                     {
                         Opacity = pixelColor.A,
-                        OpacityColor = background is null ? (ColorTools.AllowBackground ? themeBackground : ConsoleColors.Black) : background,
+                        OpacityColor = background is null ? (ConsoleColoring.AllowBackground ? themeBackground : ConsoleColors.Black) : background,
                     });
                 colors[pixelX, pixelY] = color;
             }

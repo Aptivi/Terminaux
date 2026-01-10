@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
@@ -29,7 +30,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
             int diff = state.inputPromptTopBegin;
             state.inputPromptTopBegin = 0;
             state.inputPromptTop -= diff;

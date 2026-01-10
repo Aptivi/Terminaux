@@ -18,6 +18,7 @@
 //
 
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 
@@ -93,11 +94,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             // Then, write the list entry
             var listBuilder = new StringBuilder();
             listBuilder.Append(
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(KeyColor) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(KeyColor) : "")}" +
                 $"{spaces}{(Indicator ? "- " : "")}{Entry}: " +
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(ValueColor) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ValueColor) : "")}" +
                 Value +
-                $"{(UseColors ? ColorTools.RenderRevertForeground() : "")}"
+                $"{(UseColors ? ConsoleColoring.RenderRevertForeground() : "")}"
             );
             return listBuilder.ToString();
         }

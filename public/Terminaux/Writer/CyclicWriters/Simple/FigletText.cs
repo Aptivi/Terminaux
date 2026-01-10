@@ -18,6 +18,7 @@
 //
 
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
@@ -96,11 +97,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         {
             var builder = new StringBuilder();
             builder.Append(
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                 FigletTools.RenderFiglet(Text, Font, Width) +
-                $"{(UseColors ? ColorTools.RenderRevertForeground() : "")}" +
-                $"{(UseColors ? ColorTools.RenderRevertBackground() : "")}"
+                $"{(UseColors ? ConsoleColoring.RenderRevertForeground() : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderRevertBackground() : "")}"
             );
             return builder.ToString();
         }

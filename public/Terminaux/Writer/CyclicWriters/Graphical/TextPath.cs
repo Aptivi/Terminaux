@@ -170,9 +170,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (isRooted)
                 {
                     tokenized.Append(
-                        (UseColors ? ColorTools.RenderSetConsoleColor(RootDriveColor) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(RootDriveColor) : "") +
                         root +
-                        (UseColors ? ColorTools.RenderSetConsoleColor(SeparatorColor) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(SeparatorColor) : "") +
                         (root == "/" ? "" : separator)
                     );
                 }
@@ -188,9 +188,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         {
                             addedEllipsis = true;
                             tokenized.Append(
-                                (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
+                                (UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "") +
                                 "..." +
-                                (UseColors ? ColorTools.RenderSetConsoleColor(SeparatorColor) : "") +
+                                (UseColors ? ConsoleColoring.RenderSetConsoleColor(SeparatorColor) : "") +
                                 separator
                             );
                         }
@@ -201,13 +201,13 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     // Stylize the path
                     Color final = i == paths.Length - 1 ? LastPathColor : ForegroundColor;
                     tokenized.Append(
-                        (UseColors ? ColorTools.RenderSetConsoleColor(final) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(final) : "") +
                         path
                     );
                     if (i < paths.Length - 1)
                     {
                         tokenized.Append(
-                            (UseColors ? ColorTools.RenderSetConsoleColor(SeparatorColor) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(SeparatorColor) : "") +
                             separator
                         );
                     }

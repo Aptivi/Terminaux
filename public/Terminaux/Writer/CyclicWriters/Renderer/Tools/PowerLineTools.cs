@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 
@@ -67,15 +68,15 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                     var nextBack = segment.SegmentBackground;
 
                     // Now, put transition to our string
-                    SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(backAsFore));
-                    SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(nextBack, true));
+                    SegmentStringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(backAsFore));
+                    SegmentStringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(nextBack, true));
                     SegmentStringBuilder.AppendFormat("{0}", segment.SegmentTransitionIcon != default ? segment.SegmentTransitionIcon : transitionChar);
                 }
 
                 // Now, try to append the PowerLine segment and its contents
                 bool appendIcon = segment.SegmentIcon != default;
-                SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(segment.SegmentForeground));
-                SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(segment.SegmentBackground, true));
+                SegmentStringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(segment.SegmentForeground));
+                SegmentStringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(segment.SegmentBackground, true));
                 if (appendIcon)
                     SegmentStringBuilder.AppendFormat(" {0}", segment.SegmentIcon);
                 SegmentStringBuilder.AppendFormat(" {0} ", segment.SegmentText);
@@ -83,16 +84,16 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 // If the segment is the last one, make the final transition!
                 if (segmentIdx == segments.Count - 1)
                 {
-                    SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(segment.SegmentBackground));
-                    SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(EndingColor, true));
+                    SegmentStringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(segment.SegmentBackground));
+                    SegmentStringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(EndingColor, true));
                     SegmentStringBuilder.AppendFormat("{0} ", transitionChar);
                 }
             }
 
             // Return the final string
             SegmentStringBuilder.Append(
-                ColorTools.RenderRevertForeground() +
-                ColorTools.RenderRevertBackground()
+                ConsoleColoring.RenderRevertForeground() +
+                ConsoleColoring.RenderRevertBackground()
             );
             return SegmentStringBuilder.ToString();
         }

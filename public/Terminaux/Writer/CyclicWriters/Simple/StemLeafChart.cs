@@ -129,16 +129,16 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 int stemWidth = ConsoleMisc.GetDigits(stem);
                 int maxSpaces = maxStemWidth - stemWidth;
                 stemLeafChart.Append(
-                    $"{(UseColors ? ColorTools.RenderSetConsoleColor(StemColor) : "")}" +
+                    $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(StemColor) : "")}" +
                     new string(' ', maxSpaces) + stem +
-                    $"{(UseColors ? ColorTools.RenderSetConsoleColor(SeparatorColor) : "")} | "
+                    $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(SeparatorColor) : "")} | "
                 );
 
                 // Write the leafs
                 foreach (int leaf in leafs)
                 {
                     stemLeafChart.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(LeafColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(LeafColor) : "")}" +
                         (hasDecimal ? "." : "") + leaf + " "
                     );
                 }

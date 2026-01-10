@@ -213,8 +213,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (UseColors)
                 {
                     syntax.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 return syntax.ToString();

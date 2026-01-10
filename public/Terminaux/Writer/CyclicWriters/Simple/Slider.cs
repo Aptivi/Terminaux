@@ -139,7 +139,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         {
             var rendered = new StringBuilder();
             if (UseColors)
-                rendered.Append(ColorTools.RenderSetConsoleColor(SliderBackgroundColor, true));
+                rendered.Append(ConsoleColoring.RenderSetConsoleColor(SliderBackgroundColor, true));
             if (Vertical)
             {
                 // Estimate how many cells the slider takes
@@ -150,15 +150,15 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 int rest = Height - (one + times);
                 rest = rest < 0 ? 0 : rest;
                 if (UseColors)
-                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderForegroundColor));
+                    rendered.Append(ConsoleColoring.RenderSetConsoleColor(SliderForegroundColor));
                 for (int i = 0; i < times; i++)
                     rendered.AppendLine($"{(UseColors ? SliderVerticalInactiveTrackChar : SliderUncoloredVerticalInactiveTrackChar)}");
                 if (UseColors)
-                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderActiveForegroundColor));
+                    rendered.Append(ConsoleColoring.RenderSetConsoleColor(SliderActiveForegroundColor));
                 for (int i = 0; i < one; i++)
                     rendered.AppendLine($"{(UseColors ? SliderVerticalActiveTrackChar : SliderUncoloredVerticalActiveTrackChar)}");
                 if (UseColors)
-                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderForegroundColor));
+                    rendered.Append(ConsoleColoring.RenderSetConsoleColor(SliderForegroundColor));
                 for (int i = 0; i < rest; i++)
                     rendered.AppendLine($"{(UseColors ? SliderVerticalInactiveTrackChar : SliderUncoloredVerticalInactiveTrackChar)}");
             }
@@ -172,19 +172,19 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 int rest = Width - (one + times);
                 rest = rest < 0 ? 0 : rest;
                 if (UseColors)
-                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderForegroundColor));
+                    rendered.Append(ConsoleColoring.RenderSetConsoleColor(SliderForegroundColor));
                 rendered.Append(new string(UseColors ? SliderHorizontalInactiveTrackChar : SliderUncoloredHorizontalInactiveTrackChar, times));
                 if (UseColors)
-                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderActiveForegroundColor));
+                    rendered.Append(ConsoleColoring.RenderSetConsoleColor(SliderActiveForegroundColor));
                 rendered.Append(new string(UseColors ? SliderHorizontalActiveTrackChar : SliderUncoloredHorizontalActiveTrackChar, one));
                 if (UseColors)
-                    rendered.Append(ColorTools.RenderSetConsoleColor(SliderForegroundColor));
+                    rendered.Append(ConsoleColoring.RenderSetConsoleColor(SliderForegroundColor));
                 rendered.Append(new string(UseColors ? SliderHorizontalInactiveTrackChar : SliderUncoloredHorizontalInactiveTrackChar, rest));
             }
 
             // Return the result
             rendered.Append(
-                UseColors ? ColorTools.RenderResetColors() : ""
+                UseColors ? ConsoleColoring.RenderResetColors() : ""
             );
             return rendered.ToString();
         }

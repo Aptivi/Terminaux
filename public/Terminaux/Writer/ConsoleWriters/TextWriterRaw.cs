@@ -253,7 +253,7 @@ namespace Terminaux.Writer.ConsoleWriters
 
                     // Write the color setting sequences
                     if (useColors)
-                        WriteRaw(ColorTools.RenderRevertColors());
+                        WriteRaw(ConsoleColoring.RenderRevertColors());
 
                     // Actually write
                     if (Line)

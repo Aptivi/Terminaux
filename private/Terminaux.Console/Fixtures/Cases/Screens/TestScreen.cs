@@ -41,7 +41,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             try
             {
                 // First, clear the screen
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
 
                 // Then, show the resizable sticks
                 var stickScreenPart = new ScreenPart();
@@ -50,9 +50,9 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                     var builder = new StringBuilder();
                     builder.Append(
                         ConsolePositioning.RenderChangePosition(0, 1) +
-                        ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Silver), true) +
+                        ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Silver), true) +
                         GenerateWidthStick() + GenerateHeightStick() +
-                        ColorTools.RenderResetColors()
+                        ConsoleColoring.RenderResetColors()
                     );
                     return builder.ToString();
                 });
@@ -68,7 +68,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             finally
             {
                 ScreenTools.UnsetCurrent(stickScreen);
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
             }
         }
 

@@ -240,7 +240,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void Write(bool legacy, string Text, params object[] vars) =>
@@ -249,7 +249,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -259,7 +259,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -269,7 +269,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
@@ -280,7 +280,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
@@ -291,7 +291,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
@@ -303,7 +303,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -313,7 +313,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
@@ -324,7 +324,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
@@ -335,7 +335,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
@@ -347,7 +347,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -357,7 +357,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -368,7 +368,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="color">A color that will be changed to.</param>
@@ -379,7 +379,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -391,7 +391,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
@@ -403,7 +403,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -423,7 +423,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="color">A color that will be changed to.</param>
@@ -434,7 +434,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -446,7 +446,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
@@ -458,7 +458,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -531,7 +531,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string Render(bool legacy, string Text, params object[] vars) =>
@@ -540,7 +540,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -550,7 +550,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
@@ -567,7 +567,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -577,7 +577,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
-        /// <param name="legacy">Use <see cref="ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
+        /// <param name="legacy">Use <see cref="ConsoleColoring.RenderSetConsoleColor(Color, bool, bool, bool)"/> instead of text formatting</param>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
@@ -593,23 +593,23 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (legacy)
                     {
                         buffered.Append(
-                            ColorTools.RenderSetConsoleColor(ForegroundColor, true) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor) +
+                            ConsoleColoring.RenderSetConsoleColor(ForegroundColor, true) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor) +
                             final +
-                            ColorTools.RenderRevertForeground() +
-                            ColorTools.RenderRevertBackground()
+                            ConsoleColoring.RenderRevertForeground() +
+                            ConsoleColoring.RenderRevertBackground()
                         );
                     }
                     else
                     {
                         buffered.Append(
                             ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Reverse) +
-                            ColorTools.RenderSetConsoleColor(ForegroundColor) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true) +
+                            ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) +
                             final +
                             ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default) +
-                            ColorTools.RenderRevertForeground() +
-                            ColorTools.RenderRevertBackground()
+                            ConsoleColoring.RenderRevertForeground() +
+                            ConsoleColoring.RenderRevertBackground()
                         );
                     }
                     return buffered.ToString();

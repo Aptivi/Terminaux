@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using System;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -131,7 +132,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
                 ConsoleWrapper.SetWindowDimensions(asciicast.Width, asciicast.Height);
 
             // Clear the screen
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
 
             // Process the stdout data
             ConsoleLogger.Info("Playing {0} frames", asciicast.StdOutData.Count);

@@ -55,13 +55,13 @@ namespace Terminaux.Inputs.Modules
 
             // Render the text box contents now
             string textBox =
-                ColorTools.RenderSetConsoleColor(Foreground) +
-                ColorTools.RenderSetConsoleColor(Background, true) +
+                ConsoleColoring.RenderSetConsoleColor(Foreground) +
+                ConsoleColoring.RenderSetConsoleColor(Background, true) +
                 valueString +
-                ColorTools.RenderSetConsoleColor(BlankForeground) +
+                ConsoleColoring.RenderSetConsoleColor(BlankForeground) +
                 underscores +
-                ColorTools.RenderRevertForeground() +
-                ColorTools.RenderRevertBackground();
+                ConsoleColoring.RenderRevertForeground() +
+                ConsoleColoring.RenderRevertBackground();
             return textBox;
         }
 
@@ -86,8 +86,8 @@ namespace Terminaux.Inputs.Modules
                 // input on
                 TextWriterRaw.WriteRaw(
                     CsiSequences.GenerateCsiCursorPosition(inputPopoverPos.X + 1, inputPopoverPos.Y + 1) +
-                    (UseColor ? ColorTools.RenderSetConsoleColor(Foreground) : "") +
-                    (UseColor ? ColorTools.RenderSetConsoleColor(Background, true) : "")
+                    (UseColor ? ConsoleColoring.RenderSetConsoleColor(Foreground) : "") +
+                    (UseColor ? ConsoleColoring.RenderSetConsoleColor(Background, true) : "")
                 );
 
                 // Wait until the user presses any key to close the box

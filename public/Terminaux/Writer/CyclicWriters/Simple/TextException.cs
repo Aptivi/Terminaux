@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 
@@ -207,15 +208,15 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             // Populate the message
             var stackTraceBuilder = new StringBuilder();
             stackTraceBuilder.AppendLine(
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                 new string(' ', indent * 4) +
                 "Error " +
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(ExceptionNameColor) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ExceptionNameColor) : "")}" +
                 ex.GetType().Name +
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                 ": " +
-                $"{(UseColors ? ColorTools.RenderSetConsoleColor(ExceptionMessageColor) : "")}" +
+                $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ExceptionMessageColor) : "")}" +
                 ex.Message
             );
 
@@ -226,7 +227,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             {
                 // Get the frame
                 stackTraceBuilder.Append(
-                    $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                    $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                     new string(' ', indent * 4) +
                     "  at "
                 );
@@ -240,11 +241,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     string memberName = methodInfo.Name;
                     string memberClassName = methodInfo.DeclaringType.Name;
                     stackTraceBuilder.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(MethodMemberColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(MethodMemberColor) : "")}" +
                         $"{memberClassName}." +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(MethodColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(MethodColor) : "")}" +
                         $"{memberName}" +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         "("
                     );
 
@@ -255,23 +256,23 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         string parameterName = parameter.Name;
                         var parameterType = parameter.ParameterType;
                         stackTraceBuilder.Append(
-                            $"{(UseColors ? ColorTools.RenderSetConsoleColor(ParameterTypeColor) : "")}" +
+                            $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ParameterTypeColor) : "")}" +
                             $"{parameterType.Name} " +
-                            $"{(UseColors ? ColorTools.RenderSetConsoleColor(ParameterColor) : "")}" +
+                            $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ParameterColor) : "")}" +
                             $"{parameterName}, "
                         );
                     }
 
                     // Close it
                     stackTraceBuilder.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         ") "
                     );
                 }
                 else
                 {
                     stackTraceBuilder.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(MethodColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(MethodColor) : "")}" +
                         "<unknown method> "
                     );
                 }
@@ -281,18 +282,18 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 {
                     var offset = frame.GetILOffset();
                     stackTraceBuilder.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         "[" +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(IlOffsetColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(IlOffsetColor) : "")}" +
                         $"0x{offset:X8}" +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         "] "
                     );
                 }
                 else
                 {
                     stackTraceBuilder.Append(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(IlOffsetColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(IlOffsetColor) : "")}" +
                         "<unknown il offset> "
                     );
                 }
@@ -304,26 +305,26 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     var fileLineNum = frame.GetFileLineNumber();
                     var fileColumnNum = frame.GetFileColumnNumber();
                     stackTraceBuilder.AppendLine(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         "@ " +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(FileNameColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(FileNameColor) : "")}" +
                         fileName +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         ":" +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(FileLineNumberColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(FileLineNumberColor) : "")}" +
                         fileLineNum +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         "," +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(FileColumnNumberColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(FileColumnNumberColor) : "")}" +
                         fileColumnNum +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         " "
                     );
                 }
                 else
                 {
                     stackTraceBuilder.AppendLine(
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(IlOffsetColor) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(IlOffsetColor) : "")}" +
                         "<unknown source>"
                     );
                 }
@@ -331,7 +332,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             // Reset colors if needed
             stackTraceBuilder.Append(
-                $"{(UseColors ? ColorTools.RenderResetColors() : "")}"
+                $"{(UseColors ? ConsoleColoring.RenderResetColors() : "")}"
             );
             return stackTraceBuilder.ToString();
         }

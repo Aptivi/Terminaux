@@ -136,7 +136,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         double width = (double)i / boxWidth;
                         int hue = (int)(360 * width);
-                        hueRamp.Append($"{new Color($"hsl:{hue};100;50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        hueRamp.Append($"{new Color($"hsl:{hue};100;50", finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
                     }
                     var finalHueColor = new Color($"hsl:{finalHue};100;50", finalSettings);
                     var hueSlider = new Slider(finalHue, 0, 360)
@@ -154,7 +154,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         double width = (double)i / boxWidth;
                         int sat = (int)(100 * width);
-                        satRamp.Append($"{new Color($"hsl:{finalHue};{sat};50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        satRamp.Append($"{new Color($"hsl:{finalHue};{sat};50", finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
                     }
                     var finalSatColor = new Color($"hsl:{finalHue};{finalSaturation};50", finalSettings);
                     var satSlider = new Slider(finalSaturation, 0, 100)
@@ -172,7 +172,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         double width = (double)i / boxWidth;
                         int lig = (int)(100 * width);
-                        ligRamp.Append($"{new Color($"hsl:{finalHue};100;{lig}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        ligRamp.Append($"{new Color($"hsl:{finalHue};100;{lig}", finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
                     }
                     var finalLigColor = new Color($"hsl:{finalHue};100;{finalLightness}", finalSettings);
                     var ligSlider = new Slider(finalLightness, 0, 100)
@@ -213,9 +213,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     {
                         double width = (double)i / boxWidth;
                         int gray = (int)(mono.RGB.R * width);
-                        grayRamp.Append($"{new Color($"{gray};{gray};{gray}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        grayRamp.Append($"{new Color($"{gray};{gray};{gray}", finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
                         int transparency = (int)(mono.RGB.originalAlpha * width);
-                        transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}", finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
                     }
                     var rampFrame = new BoxFrame(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_RAMPFRAME_GRAY") + $": {mono.RGB.R}/255 | " + LanguageTools.GetLocalized("T_INPUT_IS_COLOR_RAMPFRAME_TRANSPARENCY") + $": {finalSettings.Opacity}/255")
                     {
@@ -238,7 +238,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 {
                     StringBuilder darkLightIndicator = new();
                     var indicator = selectedColor.Brightness == ColorBrightness.Light ? ConsoleColors.White : ConsoleColors.Black;
-                    darkLightIndicator.Append($"{new Color(indicator, finalSettings).VTSequenceBackgroundTrueColor}    {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    darkLightIndicator.Append($"{new Color(indicator, finalSettings).VTSequenceBackgroundTrueColor()}    {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
                     var darkLightFrame = new BoxFrame("")
                     {
                         Left = ConsoleWrapper.WindowWidth - 8,
@@ -267,9 +267,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         int red = (int)(selectedColor.RGB.R * width);
                         int green = (int)(selectedColor.RGB.G * width);
                         int blue = (int)(selectedColor.RGB.B * width);
-                        redRamp.Append($"{new Color($"{red};0;0", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                        greenRamp.Append($"{new Color($"0;{green};0", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                        blueRamp.Append($"{new Color($"0;0;{blue}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        redRamp.Append($"{new Color($"{red};0;0", finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
+                        greenRamp.Append($"{new Color($"0;{green};0", finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
+                        blueRamp.Append($"{new Color($"0;0;{blue}", finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
                     }
                     var rgbFrame = new BoxFrame($"R: {selectedColor.RGB.R} | G: {selectedColor.RGB.G} | B: {selectedColor.RGB.B}")
                     {
@@ -298,8 +298,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                     var tints = ColorGradients.GetTints(selectedColor, boxWidth);
                     for (int i = 0; i < boxWidth; i++)
                     {
-                        shadeRamp.Append($"{new Color(shades[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                        tintRamp.Append($"{new Color(tints[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                        shadeRamp.Append($"{new Color(shades[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
+                        tintRamp.Append($"{new Color(tints[i].IntermediateColor.ToString(), finalSettings).VTSequenceBackgroundTrueColor()} {ConsoleColoring.RenderSetConsoleColor(initialBackground, true)}");
                     }
                     var shadeTintFrame = new BoxFrame(LanguageTools.GetLocalized("T_INPUT_IS_COLOR_SHADETINTFRAME"))
                     {

@@ -21,6 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 
@@ -156,7 +157,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 EntryNumber += 1;
             }
             if (UseColors)
-                listBuilder.Append(ColorTools.RenderRevertForeground());
+                listBuilder.Append(ConsoleColoring.RenderRevertForeground());
             return listBuilder.ToString();
         }
 

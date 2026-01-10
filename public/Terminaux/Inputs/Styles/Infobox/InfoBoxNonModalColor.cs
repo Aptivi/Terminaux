@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Textify.General;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -110,8 +111,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;

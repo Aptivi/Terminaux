@@ -102,10 +102,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 Coordinate winLossSeparatorCoord = new(Left + nameLength, Top + (Height / 2));
                 winsLosses.Append(
                     ConsolePositioning.RenderChangePosition(winLossSeparatorCoord.X, winLossSeparatorCoord.Y) +
-                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Silver) : "") +
                     " ▐" +
-                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
-                    (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red, true) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Lime) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red, true) : "") +
                     "▀" +
                     new string('▀', Width - showcaseLength - 1)
                 );
@@ -137,9 +137,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         ConsoleLogger.Debug("Win: rendering this element with width {0}", stickWidthInt);
                         winsLosses.Append(
                             ConsolePositioning.RenderChangePosition(winCoord.X, winCoord.Y) +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Lime, true) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Lime, true) : "") +
                             new string(' ', stickWidthInt) +
-                            (UseColors ? ColorTools.RenderResetBackground() : "")
+                            (UseColors ? ConsoleColoring.RenderResetBackground() : "")
                         );
                     }
 
@@ -151,9 +151,9 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         ConsoleLogger.Debug("Loss: rendering this element with width {0}", stickWidthInt);
                         winsLosses.Append(
                             ConsolePositioning.RenderChangePosition(lossCoord.X, lossCoord.Y) +
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ConsoleColors.Red, true) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red, true) : "") +
                             new string(' ', stickWidthInt) +
-                            (UseColors ? ColorTools.RenderResetBackground() : "")
+                            (UseColors ? ConsoleColoring.RenderResetBackground() : "")
                         );
                     }
                 }

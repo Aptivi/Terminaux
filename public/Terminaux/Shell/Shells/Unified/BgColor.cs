@@ -50,10 +50,10 @@ namespace Terminaux.Shell.Shells.Unified
             var color = new Color(colorSpecifier);
             string plain = color.PlainSequence;
             string processed = trueVtMode ?
-                color.VTSequenceBackgroundTrueColor :
+                color.VTSequenceBackgroundTrueColor() :
                 plainMode ?
                     plain :
-                    color.VTSequenceBackground;
+                    color.VTSequenceBackground();
             variableValue = processed;
             if (print)
                 TextWriterRaw.WritePlain(plain);

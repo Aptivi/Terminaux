@@ -76,11 +76,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             // Return the spinner
             return
-                (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
-                (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
+                (UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "") +
+                (UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "") +
                 spinner +
-                (UseColors ? ColorTools.RenderResetBackground() : "") +
-                (UseColors ? ColorTools.RenderResetForeground() : "");
+                (UseColors ? ConsoleColoring.RenderResetBackground() : "") +
+                (UseColors ? ConsoleColoring.RenderResetForeground() : "");
         }
 
         internal string Peek() =>

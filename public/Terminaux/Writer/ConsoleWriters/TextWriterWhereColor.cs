@@ -534,8 +534,8 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (useColors)
                     {
                         buffered.Append(
-                            ColorTools.RenderSetConsoleColor(ForegroundColor) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                            ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     buffered.Append(
@@ -589,8 +589,8 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (useColors)
                     {
                         buffered.Append(
-                            ColorTools.RenderRevertForeground() +
-                            ColorTools.RenderRevertBackground()
+                            ConsoleColoring.RenderRevertForeground() +
+                            ConsoleColoring.RenderRevertBackground()
                         );
                     }
                     return buffered.ToString();

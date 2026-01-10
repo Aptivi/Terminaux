@@ -122,8 +122,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (UseColors)
                 {
                     animated.Append(
-                        ColorTools.RenderSetConsoleColor(ForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                        ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
+                        ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
                 for (int i = 0; i < sentences.Length; i++)
@@ -141,8 +141,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                             double hueWidth = (double)l / length;
                             int hue = (int)(360 * hueWidth);
                             finalSentence.Append(
-                                ColorTools.RenderSetConsoleColor(rainbowState == 1 ? new Color($"hsl:{hue};100;50") : ForegroundColor) +
-                                ColorTools.RenderSetConsoleColor(rainbowState == 2 ? new Color($"hsl:{hue};100;50") : BackgroundColor, true) +
+                                ConsoleColoring.RenderSetConsoleColor(rainbowState == 1 ? new Color($"hsl:{hue};100;50") : ForegroundColor) +
+                                ConsoleColoring.RenderSetConsoleColor(rainbowState == 2 ? new Color($"hsl:{hue};100;50") : BackgroundColor, true) +
                                 $"{filteredString}"
                             );
                         }
@@ -157,8 +157,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (UseColors)
                 {
                     animated.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 frame++;

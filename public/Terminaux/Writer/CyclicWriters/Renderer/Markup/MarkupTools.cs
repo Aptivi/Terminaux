@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Base.TermInfo;
 using Terminaux.Colors;
 using Terminaux.Sequences;
@@ -209,8 +210,8 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             }
             string finalFormat =
                 useInitialFormat ? initialFormat :
-                $"{(foregroundColor is not null ? ColorTools.RenderSetConsoleColor(foregroundColor) : "")}" +
-                $"{(backgroundColor is not null ? ColorTools.RenderSetConsoleColor(backgroundColor, true) : "")}";
+                $"{(foregroundColor is not null ? ConsoleColoring.RenderSetConsoleColor(foregroundColor) : "")}" +
+                $"{(backgroundColor is not null ? ConsoleColoring.RenderSetConsoleColor(backgroundColor, true) : "")}";
             string resetAll = (TermInfoDesc.Current?.ExitAttributeMode?.Value ?? "") + finalFormat;
             for (int i = finalResult.Length - 1; i >= 0; i--)
             {
@@ -251,7 +252,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                                 if (effectNames.TryGetValue(part, out var effect))
                                     representationBuilder.Append(effect.EffectStart);
                                 else if (ColorTools.TryParseColor(part))
-                                    representationBuilder.Append(ColorTools.RenderSetConsoleColor(part));
+                                    representationBuilder.Append(ConsoleColoring.RenderSetConsoleColor(part));
                             }
                         }
 

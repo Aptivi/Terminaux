@@ -19,7 +19,7 @@
 
 using System;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
 using Textify.Data.Figlet;
@@ -44,7 +44,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             try
             {
                 // First, clear the screen
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
 
                 // Then, show the counter
                 var stickScreenPart = new ScreenPart();
@@ -73,7 +73,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             {
                 ScreenTools.StopCyclicScreen();
                 ScreenTools.UnsetCurrent(stickScreen);
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
             }
         }
     }

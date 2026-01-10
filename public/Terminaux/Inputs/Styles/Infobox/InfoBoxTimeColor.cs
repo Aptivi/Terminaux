@@ -118,10 +118,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string hours = selected.Hour.ToString();
                     int hoursPos = timePosX + maxTimePartWidth / 2 - ConsoleChar.EstimateFullWidths(hours);
                     boxBuffer.Append(
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(inputMode == TimeInputMode.Hours ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(inputMode == TimeInputMode.Hours ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
                         TextWriterWhereColor.RenderWhereColorBack(hours, hoursPos, timePosY + 2, inputMode == TimeInputMode.Hours ? ConsoleColors.Lime : settings.ForegroundColor, settings.BackgroundColor) +
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(settings.ForegroundColor) : "") +
                         TextWriterWhereColor.RenderWhereColorBack("◀", timePosX, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("▶", timePosX + maxTimePartWidth + 1, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor)
                     );
@@ -130,10 +130,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string minutes = selected.Minute.ToString();
                     int minutesPos = timePosX + maxTimePartWidth + maxTimePartWidth / 2 + 3 - ConsoleChar.EstimateFullWidths(minutes);
                     boxBuffer.Append(
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(inputMode == TimeInputMode.Minutes ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(inputMode == TimeInputMode.Minutes ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
                         TextWriterWhereColor.RenderWhereColorBack(minutes, minutesPos, timePosY + 2, inputMode == TimeInputMode.Minutes ? ConsoleColors.Lime : settings.ForegroundColor, settings.BackgroundColor) +
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(settings.ForegroundColor) : "") +
                         TextWriterWhereColor.RenderWhereColorBack("◀", timePosX + maxTimePartWidth + 3, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("▶", timePosX + maxTimePartWidth * 2 + 4, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor)
                     );
@@ -142,10 +142,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string seconds = selected.Second.ToString();
                     int secondsPos = timePosX + maxTimePartWidth * 2 + maxTimePartWidth / 2 + 7 - ConsoleChar.EstimateFullWidths(seconds);
                     boxBuffer.Append(
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(inputMode == TimeInputMode.Seconds ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(inputMode == TimeInputMode.Seconds ? ConsoleColors.Lime : settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true) : "") +
                         TextWriterWhereColor.RenderWhereColorBack(seconds, secondsPos, timePosY + 2, inputMode == TimeInputMode.Seconds ? ConsoleColors.Lime : settings.ForegroundColor, settings.BackgroundColor) +
-                        (settings.UseColors ? ColorTools.RenderSetConsoleColor(settings.ForegroundColor) : "") +
+                        (settings.UseColors ? ConsoleColoring.RenderSetConsoleColor(settings.ForegroundColor) : "") +
                         TextWriterWhereColor.RenderWhereColorBack("◀", timePosX + maxTimePartWidth * 2 + 6, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("▶", timePosX + maxTimePartWidth * 3 + 8, timePosY + 2, settings.ForegroundColor, settings.BackgroundColor)
                     );
@@ -313,8 +313,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (settings.UseColors)
                 {
                     TextWriterRaw.WriteRaw(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;

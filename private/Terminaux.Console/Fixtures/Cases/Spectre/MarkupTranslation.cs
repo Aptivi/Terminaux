@@ -18,7 +18,7 @@
 //
 
 using Spectre.Console;
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
@@ -49,7 +49,7 @@ namespace Terminaux.Console.Fixtures.Cases.Spectre
             TextWriterColor.Write("Spectre.Console's Markup:");
             AnsiConsole.Write(spectreFirstMarkup);
             AnsiConsole.WriteLine();
-            AnsiConsole.Write(ColorTools.RenderSetConsoleColor(ConsoleColors.Green));
+            AnsiConsole.Write(ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Green));
             AnsiConsole.Write(spectreSecondMarkup);
             AnsiConsole.WriteLine();
         }

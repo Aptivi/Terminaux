@@ -172,8 +172,8 @@ namespace Terminaux.Inputs.Styles.Editor
             // Now, render the status
             var builder = new StringBuilder();
             builder.Append(
-                $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
-                $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(settings.ForegroundColor)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
                 $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
             );
             return builder.ToString();
@@ -197,8 +197,8 @@ namespace Terminaux.Inputs.Styles.Editor
                 Height = SeparatorMaximumHeightInterior,
             };
             builder.Append(
-                ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +
-                ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) +
+                ConsoleColoring.RenderSetConsoleColor(settings.PaneSeparatorColor) +
+                ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true) +
                 border.Render()
             );
             return builder.ToString();
@@ -224,8 +224,8 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Render the box
             builder.Append(
-                $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
-                $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(settings.ForegroundColor)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
                 $"{TextWriterWhereColor.RenderWherePlain(rendered, fullscreen ? 0 : 1, SeparatorMinimumHeightInterior)}"
             );
             return builder.ToString();
@@ -567,7 +567,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8}  ");
+                    builder.Append($"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground()}0x{CurrentByteNumber - 1L:X8}  ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
@@ -575,11 +575,11 @@ namespace Terminaux.Inputs.Styles.Editor
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
                         builder.Append(
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
                             $"{CurrentByte:X2}" +
-                            $"{highlightedColorBackground.VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
+                            $"{highlightedColorBackground.VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
                             $" "
                         );
                     }
@@ -602,8 +602,8 @@ namespace Terminaux.Inputs.Styles.Editor
                             RenderedByteChar = ProjectedByteChar;
                         }
                         builder.Append(
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
                             $"{RenderedByteChar}"
                         );
                     }

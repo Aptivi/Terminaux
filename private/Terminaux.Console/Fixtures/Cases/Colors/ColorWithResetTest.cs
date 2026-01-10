@@ -36,7 +36,7 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             if (int.TryParse(Text, out int color))
             {
                 var colorInstance = new Color(color);
-                ColorTools.LoadBack(ConsoleColors.Blue);
+                ConsoleColoring.LoadBack(ConsoleColors.Blue);
                 TextWriterColor.WriteColor("Color {0} [{1}]", true, colorInstance, vars: [colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor]);
                 TextWriterColor.Write("Press any key to reset all.");
                 Input.ReadKey();

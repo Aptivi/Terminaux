@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -29,11 +29,11 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 
         public void RunFixture()
         {
-            if (ColorTools.AllowBackground)
+            if (ConsoleColoring.AllowBackground)
                 TextWriterColor.WriteColor("Disabling...", true, ConsoleColors.Red);
             else
                 TextWriterColor.WriteColor("Enabling...", true, ConsoleColors.Lime);
-            ColorTools.AllowBackground = !ColorTools.AllowBackground;
+            ConsoleColoring.AllowBackground = !ConsoleColoring.AllowBackground;
         }
     }
 }

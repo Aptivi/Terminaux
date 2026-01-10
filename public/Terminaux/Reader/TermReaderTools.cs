@@ -499,13 +499,13 @@ namespace Terminaux.Reader
                 var idx = match.Index;
                 var endIdx = idx + match.Length;
                 if (fgEnabled)
-                    finalString.Insert(endIdx, ColorTools.RenderSetConsoleColor(state.Settings.InputForegroundColor));
+                    finalString.Insert(endIdx, ConsoleColoring.RenderSetConsoleColor(state.Settings.InputForegroundColor));
                 if (bgEnabled)
-                    finalString.Insert(endIdx, ColorTools.RenderSetConsoleColor(state.Settings.InputBackgroundColor, true));
+                    finalString.Insert(endIdx, ConsoleColoring.RenderSetConsoleColor(state.Settings.InputBackgroundColor, true));
                 if (fgEnabled)
-                    finalString.Insert(idx, fgColor.VTSequenceForeground);
+                    finalString.Insert(idx, fgColor.VTSequenceForeground());
                 if (bgEnabled)
-                    finalString.Insert(idx, bgColor.VTSequenceBackground);
+                    finalString.Insert(idx, bgColor.VTSequenceBackground());
             }
 
             // Return the final string

@@ -184,8 +184,8 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (useColor)
                     {
                         separator.Append(
-                            ColorTools.RenderSetConsoleColor(ForegroundColor) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                            ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     separator.Append($"──╢ {Text} ");
@@ -206,8 +206,8 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (useColor)
                     {
                         separator.Append(
-                            ColorTools.RenderSetConsoleColor(ForegroundColor) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                            ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     separator.Append(new string('─', RepeatTimes));
@@ -217,8 +217,8 @@ namespace Terminaux.Writer.ConsoleWriters
                 if (useColor)
                 {
                     separator.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 return separator.ToString();

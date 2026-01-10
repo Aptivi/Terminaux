@@ -246,8 +246,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     if (UseColors)
                     {
                         border.Append(
-                            ColorTools.RenderSetConsoleColor(TextColor) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                            ConsoleColoring.RenderSetConsoleColor(TextColor) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
 
@@ -269,8 +269,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (UseColors)
                 {
                     border.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
             }

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
@@ -33,7 +34,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             var aligned = new AlignedText()
             {
-                Text = $"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}right of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}.",
+                Text = $"Hello world! This is located in the {ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}right of the console{ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Green))}.",
                 ForegroundColor = ConsoleColors.Green,
                 Settings = new() { Alignment = TextAlignment.Right }
             };

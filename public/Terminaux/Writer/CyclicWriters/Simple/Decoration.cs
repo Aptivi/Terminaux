@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 
@@ -90,22 +91,22 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// </summary>
         /// <returns>A string representation of the decoration</returns>
         public string RenderStart()
-            => (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
-               (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
+            => (UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "") +
+               (UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "") +
                Start +
-               (UseColors ? ColorTools.RenderResetBackground() : "") +
-               (UseColors ? ColorTools.RenderResetForeground() : "");
+               (UseColors ? ConsoleColoring.RenderResetBackground() : "") +
+               (UseColors ? ConsoleColoring.RenderResetForeground() : "");
 
         /// <summary>
         /// Renders a decoration (end)
         /// </summary>
         /// <returns>A string representation of the decoration</returns>
         public string RenderEnd()
-            => (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
-               (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
+            => (UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "") +
+               (UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "") +
                End +
-               (UseColors ? ColorTools.RenderResetBackground() : "") +
-               (UseColors ? ColorTools.RenderResetForeground() : "");
+               (UseColors ? ConsoleColoring.RenderResetBackground() : "") +
+               (UseColors ? ConsoleColoring.RenderResetForeground() : "");
 
         /// <summary>
         /// Makes a new decoration instance

@@ -162,13 +162,13 @@ namespace Terminaux.Writer.ConsoleWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColorDry(color);
+                ConsoleColoring.SetConsoleColorDry(color);
 
                 // Write wrapped output
                 WriteWrappedPlain(Text, Line, vars);
 
                 // Reset the colors
-                ColorTools.ResetColors();
+                ConsoleColoring.ResetColors();
             }
             catch (Exception ex)
             {
@@ -189,14 +189,14 @@ namespace Terminaux.Writer.ConsoleWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColorDry(foregroundColor);
-                ColorTools.SetConsoleColorDry(backgroundColor, true);
+                ConsoleColoring.SetConsoleColorDry(foregroundColor);
+                ConsoleColoring.SetConsoleColorDry(backgroundColor, true);
 
                 // Write wrapped output
                 WriteWrappedPlain(Text, Line, vars);
 
                 // Reset the colors
-                ColorTools.ResetColors();
+                ConsoleColoring.ResetColors();
             }
             catch (Exception ex)
             {

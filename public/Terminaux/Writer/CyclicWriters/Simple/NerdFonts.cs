@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -65,11 +66,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// </summary>
         /// <returns>A string representation of the Nerd Fonts glyph</returns>
         public override string Render() =>
-            (UseColors ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "") +
-            (UseColors ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
+            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "") +
+            (UseColors ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "") +
             nerdfonts +
-            (UseColors ? ColorTools.RenderResetBackground() : "") +
-            (UseColors ? ColorTools.RenderResetForeground() : "");
+            (UseColors ? ConsoleColoring.RenderResetBackground() : "") +
+            (UseColors ? ConsoleColoring.RenderResetForeground() : "");
 
         /// <summary>
         /// Makes a new Nerd Fonts instance

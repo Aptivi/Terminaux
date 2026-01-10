@@ -355,8 +355,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     {
                         wiped = true;
                         buffer.Append(
-                            ColorTools.RenderRevertForeground() +
-                            ColorTools.RenderRevertBackground()
+                            ConsoleColoring.RenderRevertForeground() +
+                            ConsoleColoring.RenderRevertBackground()
                         );
                     }
                     buffer.Append(
@@ -371,8 +371,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     if (UseColors || force)
                     {
                         buffer.Append(
-                            ColorTools.RenderSetConsoleColor(fore) +
-                            ColorTools.RenderSetConsoleColor(back, true)
+                            ConsoleColoring.RenderSetConsoleColor(fore) +
+                            ConsoleColoring.RenderSetConsoleColor(back, true)
                         );
                     }
                     var textBuilder = new StringBuilder(text);
@@ -423,8 +423,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             if (UseColors)
             {
                 buffer.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
             }
             return buffer.ToString();

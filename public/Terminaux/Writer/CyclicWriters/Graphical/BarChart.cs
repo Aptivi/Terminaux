@@ -114,10 +114,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 ConsoleLogger.Debug("Rendering bar chart: ({0} + {1}, {2}) len: {3}", coord.X, diff, coord.Y, length);
                 barChart.Append(
                     ConsolePositioning.RenderChangePosition(coord.X + diff, coord.Y) +
-                    (UseColors ? ColorTools.RenderSetConsoleColor(color, true) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(color, true) : "") +
                     new string(' ', length) +
-                    (UseColors ? ColorTools.RenderResetBackground() : "") +
-                    (UseColors ? ColorTools.RenderResetForeground() : "")
+                    (UseColors ? ConsoleColoring.RenderResetBackground() : "") +
+                    (UseColors ? ConsoleColoring.RenderResetForeground() : "")
                 );
             }
 

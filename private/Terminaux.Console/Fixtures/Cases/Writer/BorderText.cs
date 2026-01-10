@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
@@ -31,7 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
             TextWriterRaw.WritePlain("{0}{1}{2}{3}",
                 new Border()
                 {

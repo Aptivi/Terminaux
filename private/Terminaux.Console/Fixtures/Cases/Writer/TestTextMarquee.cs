@@ -25,6 +25,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -49,7 +50,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             try
             {
                 // First, clear the screen
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
 
                 // Then, show the counter
                 var stickScreenPart = new ScreenPart();
@@ -68,7 +69,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             {
                 ScreenTools.StopCyclicScreen();
                 ScreenTools.UnsetCurrent(stickScreen);
-                ColorTools.LoadBack();
+                ConsoleColoring.LoadBack();
             }
         }
     }

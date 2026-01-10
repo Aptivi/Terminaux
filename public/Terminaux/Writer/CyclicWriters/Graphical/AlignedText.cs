@@ -156,8 +156,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 {
                     decoratedText.Insert(0,
                         decoration.RenderStart() +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}"
+                        $"{(useColor ? ConsoleColoring.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(useColor ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "")}"
                     );
                     decoratedText.Append(decoration.RenderEnd());
                 }
@@ -169,8 +169,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (useColor)
                 {
                     aligned.Append(
-                        ColorTools.RenderSetConsoleColor(ForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                        ConsoleColoring.RenderSetConsoleColor(ForegroundColor) +
+                        ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
                 for (int i = 0; i < sentences.Length; i++)
@@ -192,8 +192,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                                 UseTerminalPalette = false,
                             });
                             finalSentence.Append(
-                                ColorTools.RenderSetConsoleColor(rainbowState == 1 ? color : ForegroundColor) +
-                                ColorTools.RenderSetConsoleColor(rainbowState == 2 ? color : BackgroundColor, true) +
+                                ConsoleColoring.RenderSetConsoleColor(rainbowState == 1 ? color : ForegroundColor) +
+                                ConsoleColoring.RenderSetConsoleColor(rainbowState == 2 ? color : BackgroundColor, true) +
                                 $"{filteredString}"
                             );
                         }
@@ -208,8 +208,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (useColor)
                 {
                     aligned.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 return aligned.ToString();

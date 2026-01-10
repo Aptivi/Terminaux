@@ -167,8 +167,8 @@ namespace Terminaux.Inputs.Styles.Editor
             // Now, render the status
             var builder = new StringBuilder();
             builder.Append(
-                $"{ColorTools.RenderSetConsoleColor(settings.ForegroundColor)}" +
-                $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(settings.ForegroundColor)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
                 $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
             );
             return builder.ToString();
@@ -192,8 +192,8 @@ namespace Terminaux.Inputs.Styles.Editor
                 Height = SeparatorMaximumHeightInterior,
             };
             builder.Append(
-                ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +
-                ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) +
+                ConsoleColoring.RenderSetConsoleColor(settings.PaneSeparatorColor) +
+                ConsoleColoring.RenderSetConsoleColor(settings.BackgroundColor, true) +
                 border.Render()
             );
             return builder.ToString();
@@ -266,24 +266,24 @@ namespace Terminaux.Inputs.Styles.Editor
                     bool overflown = lines[i - 1].Length == 0 || lineColIdx >= absolutes.Length;
                     char finalChar = overflown ? ' ' : lines[i - 1][absolutes[lineColIdx].Item1];
                     lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
-                    lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
-                    lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
+                    lineBuilder.Append(ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground));
+                    lineBuilder.Append(ConsoleColoring.RenderSetConsoleColor(highlightedColorBackground, true, true));
                     lineBuilder.Append(finalChar == '\t' ? ' ' : finalChar);
-                    lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
-                    lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
+                    lineBuilder.Append(ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                    lineBuilder.Append(ConsoleColoring.RenderSetConsoleColor(highlightedColorBackground));
                 }
 
                 // Reset the colors
                 lineBuilder.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
 
                 // Change the color depending on the highlighted line and column
                 sels.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
-                    $"{ColorTools.RenderSetConsoleColor(highlightedColorBackground)}" +
-                    $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
+                    $"{ConsoleColoring.RenderSetConsoleColor(highlightedColorBackground)}" +
+                    $"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
                     lineBuilder
                 );
                 count++;

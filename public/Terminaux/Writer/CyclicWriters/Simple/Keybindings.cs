@@ -213,8 +213,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         break;
                     bindingsBuilder.Append(
                         new string(' ', spaces) +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(builtinColor, false, true) : "")}" +
-                        $"{(UseColors ? ColorTools.RenderSetConsoleColor(builtinBackgroundColor, true) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(builtinColor, false, true) : "")}" +
+                        $"{(UseColors ? ConsoleColoring.RenderSetConsoleColor(builtinBackgroundColor, true) : "")}" +
                         renderedExtraBinding
                     );
                     break;
@@ -223,8 +223,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             if (UseColors)
             {
                 bindingsBuilder.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
             }
             return bindingsBuilder.ToString();

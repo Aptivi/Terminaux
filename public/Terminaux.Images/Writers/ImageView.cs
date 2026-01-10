@@ -20,6 +20,7 @@
 using ImageMagick;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
@@ -128,8 +129,8 @@ namespace Terminaux.Images.Writers
 
             // Process the pixels in scanlines
             var themeBackground = ThemeColorsTools.GetColor(ThemeColorType.Background);
-            string bgSeq = BackgroundColor is null ? ColorTools.RenderRevertBackground() : ColorTools.RenderSetConsoleColor(BackgroundColor, true);
-            string bgSeqFg = BackgroundColor is null ? (!ColorTools.AllowBackground ? ColorTools.RenderSetConsoleColor(ConsoleColors.Black) : ColorTools.RenderSetConsoleColor(themeBackground)) : ColorTools.RenderSetConsoleColor(BackgroundColor);
+            string bgSeq = BackgroundColor is null ? ConsoleColoring.RenderRevertBackground() : ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true);
+            string bgSeqFg = BackgroundColor is null ? (!ConsoleColoring.AllowBackground ? ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Black) : ConsoleColoring.RenderSetConsoleColor(themeBackground)) : ConsoleColoring.RenderSetConsoleColor(BackgroundColor);
             var imageBackground = BackgroundColor is null ? Color.Empty : BackgroundColor;
             for (double y = RowOffset; y < imageHeight && absoluteY < Height; y += Fit ? imageHeightThreshold : 2, absoluteY++)
             {
@@ -148,8 +149,8 @@ namespace Terminaux.Images.Writers
                     var imageColorNext = (pixelY + 1 < imageColors.GetLength(1) ? imageColors[pixelX, pixelY + 1] : BackgroundColor) ?? themeBackground;
                     bool isSame = imageColor == imageColorNext;
                     bool isSameTransparency = imageColor.RGB.A == 0 && imageColorNext.RGB.A == 0;
-                    string highSequence = (imageColor.RGB == themeBackground.RGB || imageColor.RGB == imageBackground.RGB) && imageColor.RGB.A == 0 ? bgSeqFg : imageColor.VTSequenceForegroundTrueColor;
-                    string lowSequence = (imageColorNext.RGB == themeBackground.RGB || imageColorNext.RGB == imageBackground.RGB) && imageColorNext.RGB.A == 0 ? bgSeq : imageColorNext.VTSequenceBackgroundTrueColor;
+                    string highSequence = (imageColor.RGB == themeBackground.RGB || imageColor.RGB == imageBackground.RGB) && imageColor.RGB.A == 0 ? bgSeqFg : imageColor.VTSequenceForegroundTrueColor();
+                    string lowSequence = (imageColorNext.RGB == themeBackground.RGB || imageColorNext.RGB == imageBackground.RGB) && imageColorNext.RGB.A == 0 ? bgSeq : imageColorNext.VTSequenceBackgroundTrueColor();
                     buffer.Append(
                         highSequence +
                         lowSequence +
@@ -162,7 +163,7 @@ namespace Terminaux.Images.Writers
             }
 
             // Return the resulting buffer
-            buffer.Append(ColorTools.RenderRevertBackground());
+            buffer.Append(ConsoleColoring.RenderRevertBackground());
             ConsoleLogger.Debug("Need to write {0} bytes to the console", buffer.Length);
             return buffer.ToString();
         }

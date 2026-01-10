@@ -148,16 +148,16 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     if (UseColors)
                     {
                         textBuilder.Append(
-                            ColorTools.RenderSetConsoleColor(TitleColor) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                            ConsoleColoring.RenderSetConsoleColor(TitleColor) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     textBuilder.Append(text.Truncate(finalWidth));
                     if (UseColors)
                     {
                         textBuilder.Append(
-                            ColorTools.RenderSetConsoleColor(FrameColor) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                            ConsoleColoring.RenderSetConsoleColor(FrameColor) +
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     textBuilder.Append(settings.BorderLeftHorizontalIntersectionEnabled ? $" {settings.BorderLeftHorizontalIntersectionChar}" : "");
@@ -169,8 +169,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (UseColors)
                 {
                     frameBuilder.Append(
-                        ColorTools.RenderSetConsoleColor(FrameColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                        ConsoleColoring.RenderSetConsoleColor(FrameColor) +
+                        ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
 
@@ -373,7 +373,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         if (settings.BorderRightFrameEnabled)
                         {
                             frameBuilder.Append(
-                                (UseColors ? ColorTools.RenderSetConsoleColor(ShadowColor, true) : "") +
+                                (UseColors ? ConsoleColoring.RenderSetConsoleColor(ShadowColor, true) : "") +
                                 $"{CsiSequences.GenerateCsiCursorPosition(Left + Width + 3, Top + i + 1)}" +
                                 " "
                             );
@@ -382,7 +382,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     if (settings.BorderLowerFrameEnabled)
                     {
                         frameBuilder.Append(
-                            (UseColors ? ColorTools.RenderSetConsoleColor(ShadowColor, true) : "") +
+                            (UseColors ? ConsoleColoring.RenderSetConsoleColor(ShadowColor, true) : "") +
                             $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + Height + 3)}" +
                             $"{new string(' ', Width + 2)}"
                         );
@@ -393,8 +393,8 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 if (UseColors)
                 {
                     frameBuilder.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
+                        ConsoleColoring.RenderRevertForeground() +
+                        ConsoleColoring.RenderRevertBackground()
                     );
                 }
                 return frameBuilder.ToString();

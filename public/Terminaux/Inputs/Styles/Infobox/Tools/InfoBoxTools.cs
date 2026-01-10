@@ -112,8 +112,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             if (!string.IsNullOrEmpty(title))
                 border.Title = (writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth) : title).FormatString(vars);
             boxBuffer.Append(
-                (useColor ? InfoBoxColor.VTSequenceForeground : "") +
-                (useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
+                (useColor ? InfoBoxColor.VTSequenceForeground() : "") +
+                (useColor ? ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true) : "") +
                 border.Render()
             );
 

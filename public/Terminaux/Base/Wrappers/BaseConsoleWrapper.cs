@@ -422,7 +422,7 @@ namespace Terminaux.Base.Wrappers
         /// </summary>
         public virtual void ClearLoadBack()
         {
-            Write(ColorTools.RenderRevertBackground());
+            Write(ConsoleColoring.RenderRevertBackground());
             Clear();
         }
 
@@ -589,10 +589,10 @@ namespace Terminaux.Base.Wrappers
             PlaceParse.RegisterCustomPlaceholder("$", MESHVariables.GetVariable);
 
             // Now, load the color placeholders
-            PlaceParse.RegisterCustomPlaceholder("f", (c) => new Color(c).VTSequenceForeground);
-            PlaceParse.RegisterCustomPlaceholder("b", (c) => new Color(c).VTSequenceBackground);
-            PlaceParse.RegisterCustomPlaceholder("fgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground);
-            PlaceParse.RegisterCustomPlaceholder("bgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground);
+            PlaceParse.RegisterCustomPlaceholder("f", (c) => new Color(c).VTSequenceForeground());
+            PlaceParse.RegisterCustomPlaceholder("b", (c) => new Color(c).VTSequenceBackground());
+            PlaceParse.RegisterCustomPlaceholder("fgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground());
+            PlaceParse.RegisterCustomPlaceholder("bgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground());
 
             // Load the platform placeholders
             PlaceParse.RegisterCustomPlaceholder("ridgeneric", (_) => PlatformHelper.GetCurrentGenericRid());

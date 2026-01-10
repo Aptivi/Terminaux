@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base;
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 
@@ -30,17 +30,17 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
 
         public void RunFixture()
         {
-            ColorTools.AllowBackground = true;
-            ColorTools.SetConsoleColorDry(ConsoleColors.Green, true);
+            ConsoleColoring.AllowBackground = true;
+            ConsoleColoring.SetConsoleColorDry(ConsoleColors.Green, true);
             ConsoleWrapper.ClearLoadBack();
             Input.ReadKey();
-            ColorTools.SetConsoleColorDry(ConsoleColors.Yellow, true);
+            ConsoleColoring.SetConsoleColorDry(ConsoleColors.Yellow, true);
             ConsoleWrapper.Clear();
             Input.ReadKey();
-            ColorTools.SetConsoleColorDry(ConsoleColors.Red, true);
+            ConsoleColoring.SetConsoleColorDry(ConsoleColors.Red, true);
             ConsoleWrapper.ClearLoadBack();
             Input.ReadKey();
-            ColorTools.AllowBackground = false;
+            ConsoleColoring.AllowBackground = false;
             ConsoleWrapper.ClearLoadBack();
         }
     }

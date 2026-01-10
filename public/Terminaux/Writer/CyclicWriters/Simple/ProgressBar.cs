@@ -245,7 +245,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 spaces = spaces < 0 ? 0 : spaces;
                 finalMarqueeWidth = marqueeWidth + spaces;
                 rendered.Append(
-                    (UseColors ? ColorTools.RenderSetConsoleColor(ProgressTextColor) : "") +
+                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(ProgressTextColor) : "") +
                     marqueeText + new string(' ', spaces) + " "
                 );
             }
@@ -285,7 +285,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
 
             // Return the result
             rendered.Append(
-                UseColors ? ColorTools.RenderResetColors() : ""
+                UseColors ? ConsoleColoring.RenderResetColors() : ""
             );
             return rendered.ToString();
         }

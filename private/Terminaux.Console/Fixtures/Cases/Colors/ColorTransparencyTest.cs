@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
@@ -48,7 +49,7 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             ConsoleWrapper.CursorVisible = false;
 
             // 100% opaque
-            ColorTools.LoadBackDry(opaque, true);
+            ConsoleColoring.LoadBackDry(opaque, true);
             var infoBorder100 = new Border()
             {
                 Text = "100% green, 0% red",
@@ -63,7 +64,7 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             Input.ReadKey();
 
             // 75% opaque
-            ColorTools.LoadBackDry(greenQuarterTransparent, true);
+            ConsoleColoring.LoadBackDry(greenQuarterTransparent, true);
             var infoBorder75 = new Border()
             {
                 Text = "75% green, 25% red",
@@ -78,7 +79,7 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             Input.ReadKey();
 
             // 50% opaque
-            ColorTools.LoadBackDry(greenHalfTransparent, true);
+            ConsoleColoring.LoadBackDry(greenHalfTransparent, true);
             var infoBorder50 = new Border()
             {
                 Text = "50% green, 50% red",
@@ -93,7 +94,7 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             Input.ReadKey();
 
             // 25% opaque
-            ColorTools.LoadBackDry(greenThirdQuarterTransparent, true);
+            ConsoleColoring.LoadBackDry(greenThirdQuarterTransparent, true);
             var infoBorder25 = new Border()
             {
                 Text = "25% green, 75% red",
@@ -108,7 +109,7 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             Input.ReadKey();
 
             // 0% opaque
-            ColorTools.LoadBackDry(greenTransparent, true);
+            ConsoleColoring.LoadBackDry(greenTransparent, true);
             var infoBorder0 = new Border()
             {
                 Text = "0% green, 100% red",
@@ -123,7 +124,7 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             Input.ReadKey();
 
             // Reset
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
         }
     }
 }

@@ -79,7 +79,7 @@ namespace Terminaux.Inputs.Presentation
             // Loop for each page
             var pages = presentation.Pages;
             bool presentExit = false;
-            ColorTools.LoadBackDry(presentation.BackgroundColor);
+            ConsoleColoring.LoadBackDry(presentation.BackgroundColor);
             for (int i = 0; i < pages.Count; i++)
             {
                 // Check to see if we're exiting
@@ -315,7 +315,7 @@ namespace Terminaux.Inputs.Presentation
 
             // Clean up after ourselves
             ScreenTools.UnsetCurrent(screen);
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
             ConsoleWrapper.CursorVisible = true;
         }
 
