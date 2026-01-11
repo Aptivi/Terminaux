@@ -18,6 +18,7 @@
 //
 
 using System.IO;
+using SpecProbe.Software.Platform;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 
@@ -267,7 +268,7 @@ namespace Terminaux.Shell.Scripting
             ConsoleLogger.Debug("Querying {0}...", Variable);
             string VarValue = MESHVariables.GetVariable(Variable);
             ConsoleLogger.Debug("Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = ConsoleFilesystem.TryParsePath(VarValue);
+            Satisfied = PlatformHelper.TryParsePath(VarValue);
             ConsoleLogger.Debug("Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -283,7 +284,7 @@ namespace Terminaux.Shell.Scripting
             ConsoleLogger.Debug("Querying {0}...", Variable);
             string VarValue = MESHVariables.GetVariable(Variable);
             ConsoleLogger.Debug("Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = !ConsoleFilesystem.TryParsePath(VarValue);
+            Satisfied = !PlatformHelper.TryParsePath(VarValue);
             ConsoleLogger.Debug("Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -299,7 +300,7 @@ namespace Terminaux.Shell.Scripting
             ConsoleLogger.Debug("Querying {0}...", Variable);
             string VarValue = MESHVariables.GetVariable(Variable);
             ConsoleLogger.Debug("Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = ConsoleFilesystem.TryParseFileName(VarValue);
+            Satisfied = PlatformHelper.TryParseFileName(VarValue);
             ConsoleLogger.Debug("Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -315,7 +316,7 @@ namespace Terminaux.Shell.Scripting
             ConsoleLogger.Debug("Querying {0}...", Variable);
             string VarValue = MESHVariables.GetVariable(Variable);
             ConsoleLogger.Debug("Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = !ConsoleFilesystem.TryParseFileName(VarValue);
+            Satisfied = !PlatformHelper.TryParseFileName(VarValue);
             ConsoleLogger.Debug("Satisfied: {0}", Satisfied);
             return Satisfied;
         }

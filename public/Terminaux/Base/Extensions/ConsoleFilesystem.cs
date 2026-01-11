@@ -97,63 +97,6 @@ namespace Terminaux.Base.Extensions
             return path;
         }
 
-        internal static bool TryParseFileName(string Name)
-        {
-            try
-            {
-                return !(Name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0);
-            }
-            catch (Exception ex)
-            {
-                ConsoleLogger.Error(ex, "Failed to parse file name {0}: {1}", Name, ex.Message);
-            }
-            return false;
-        }
-
-        internal static bool TryParsePath(string Path)
-        {
-            try
-            {
-                return !(Path.IndexOfAny(GetInvalidPathChars()) >= 0);
-            }
-            catch (Exception ex)
-            {
-                ConsoleLogger.Error(ex, "Failed to parse path {0}: {1}", Path, ex.Message);
-            }
-            return false;
-        }
-
-        internal static char[] GetInvalidPathChars()
-        {
-            var FinalInvalidPathChars = Path.GetInvalidPathChars();
-            var WindowsInvalidPathChars = new[] { '"', '<', '>' };
-            if (PlatformHelper.IsOnWindows())
-            {
-                // It's weird of .NET 6.0 to not consider the above three Windows invalid directory chars to be invalid,
-                // so make them invalid as in .NET Framework.
-                Array.Resize(ref FinalInvalidPathChars, 36);
-                WindowsInvalidPathChars.CopyTo(FinalInvalidPathChars, FinalInvalidPathChars.Length - 3);
-            }
-            return FinalInvalidPathChars;
-        }
-
-        internal static bool FileExistsInPath(string FilePath, ref string Result)
-        {
-            string[] lookupPaths = [.. LookupPaths.Split(Path.PathSeparator)];
-            string ResultingPath;
-            foreach (string LookupPath in lookupPaths)
-            {
-                ResultingPath = NeutralizePath(FilePath, LookupPath);
-                if (File.Exists(ResultingPath))
-                {
-                    Result = ResultingPath;
-                    return true;
-                }
-            }
-            Result = "";
-            return false;
-        }
-
         internal static string GetPath()
         {
             string path =

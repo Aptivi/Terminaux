@@ -137,7 +137,10 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
 
                         // Try PATH
                         bool isOnWindows = PlatformHelper.IsOnWindows();
-                        bool pathExists = ConsoleFilesystem.FileExistsInPath(finalHighlightProcess + (isOnWindows ? ".exe" : ""), ref finalHighlightProcess);
+                        string[] paths = PlatformHelper.GetPossiblePaths(finalHighlightProcess + (isOnWindows ? ".exe" : ""));
+                        bool pathExists = paths.Length > 0;
+                        if (pathExists)
+                            finalHighlightProcess = paths[paths.Length - 1];
                         ConsoleLogger.Info("PATH status is {0}, {1}", pathExists, finalHighlightProcess);
 
                         // Try systemwide highlight on Windows, if PATH fails

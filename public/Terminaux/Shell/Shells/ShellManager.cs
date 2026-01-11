@@ -2239,8 +2239,11 @@ namespace Terminaux.Shell.Shells
 
                     // Get the target file and path
                     TargetFile = TextTools.Unescape(commandName);
-                    bool existsInPath = ConsoleFilesystem.FileExistsInPath(commandName, ref TargetFile);
-                    bool pathValid = ConsoleFilesystem.TryParsePath(TargetFile);
+                    string[] possiblePaths = PlatformHelper.GetPossiblePaths(commandName);
+                    bool existsInPath = possiblePaths.Length > 0;
+                    if (existsInPath)
+                        TargetFile = possiblePaths[possiblePaths.Length - 1];
+                    bool pathValid = PlatformHelper.TryParsePath(TargetFile);
                     if (!existsInPath || string.IsNullOrEmpty(TargetFile))
                         TargetFile = ConsoleFilesystem.NeutralizePath(commandName);
                     if (pathValid)
