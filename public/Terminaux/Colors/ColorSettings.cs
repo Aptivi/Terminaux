@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors
@@ -44,8 +45,8 @@ namespace Terminaux.Colors
         /// The opacity at which the color will be calculated.
         /// </summary>
         /// <remarks>
-        /// This fades the color to the black color. Using Terminaux's extended color tools, you can use the
-        /// ConsoleColoring.CurrentBackgroundColor property on console applications. That color can be overridable by
+        /// This fades the color to the current background color of the console currently set by
+        /// <see cref="ConsoleColoring.SetConsoleColor(Color, bool, bool, bool)"/>. That color can be overridable by
         /// setting the <see cref="OpacityColor"/> property to any color you want. Set it to 0, and you'll get the
         /// color that is the same as the value of the <see cref="OpacityColor"/> property. Set it to 255, and you'll
         /// get the color that you've created using the <see cref="Color(int, int, int, ColorSettings)"/> constructor
@@ -81,8 +82,8 @@ namespace Terminaux.Colors
         /// </remarks>
         public Color OpacityColor
         {
-            get => _opacityColor ?? Color.Empty;
-            set => _opacityColor = value ?? Color.Empty;
+            get => _opacityColor ?? ConsoleColoring.CurrentBackgroundColor;
+            set => _opacityColor = value ?? ConsoleColoring.CurrentBackgroundColor;
         }
 
         /// <summary>
