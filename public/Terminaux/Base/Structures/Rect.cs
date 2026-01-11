@@ -41,19 +41,19 @@ namespace Terminaux.Base.Structures
         /// Coordinate of the rectangle (ending point, lower right corner)
         /// </summary>
         public readonly Coordinate CoordinateEnd =>
-            new(coord.X + size.Width - 1, coord.Y + size.Height - 1);
+            new(coord.X + size.Width, coord.Y + size.Height);
 
         /// <summary>
         /// Coordinate of the rectangle (upper right corner)
         /// </summary>
         public readonly Coordinate CoordinateUpperRight =>
-            new(coord.X + size.Width - 1, coord.Y);
+            new(coord.X + size.Width, coord.Y);
 
         /// <summary>
         /// Coordinate of the rectangle (lower left corner)
         /// </summary>
         public readonly Coordinate CoordinateLowerLeft =>
-            new(coord.X, coord.Y + size.Height - 1);
+            new(coord.X, coord.Y + size.Height);
 
         /// <summary>
         /// Size of the rectangle
