@@ -21,6 +21,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -49,14 +51,6 @@
             </div>
           </div>
         </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div class="container body-content">
 
@@ -101,22 +95,22 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L109">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L117">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter)">RenderRenderable(CyclicWriter)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_System_Boolean_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter,System.Boolean,System.Boolean)">RenderRenderable(CyclicWriter, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the renderable</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderRenderable(CyclicWriter renderable)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderRenderable(CyclicWriter renderable, bool ignoreSetPositions = true, bool ignoreSetSize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -131,10 +125,22 @@
         <td><p>Renderable instance to render</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetPositions</span></td>
+        <td><p>Whether to ignore set positions or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetSize</span></td>
+        <td><p>Whether to ignore set size or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -151,22 +157,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter%2CTerminaux.Base.Structures.Coordinate)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter%2CTerminaux.Base.Structures.Coordinate%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L124">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L133">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter,Terminaux.Base.Structures.Coordinate)">RenderRenderable(CyclicWriter, Coordinate)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter,Terminaux.Base.Structures.Coordinate,System.Boolean)">RenderRenderable(CyclicWriter, Coordinate, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the renderable</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderRenderable(CyclicWriter renderable, Coordinate pos)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderRenderable(CyclicWriter renderable, Coordinate pos, bool ignoreSetSize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -187,10 +193,16 @@
         <td><p>Position to write to</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetSize</span></td>
+        <td><p>Whether to ignore set size or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -210,7 +222,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Size_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter%2CTerminaux.Base.Structures.Coordinate%2CTerminaux.Base.Structures.Size)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L134">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L143">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Size_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter,Terminaux.Base.Structures.Coordinate,Terminaux.Base.Structures.Size)">RenderRenderable(CyclicWriter, Coordinate, Size)</h4>
@@ -222,7 +234,7 @@
     <pre><code class="lang-csharp hljs">public static string RenderRenderable(CyclicWriter renderable, Coordinate pos, Size size)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -252,7 +264,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -269,22 +281,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L166">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L177">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter)">RenderRenderable(GraphicalCyclicWriter)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_System_Boolean_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter,System.Boolean,System.Boolean)">RenderRenderable(GraphicalCyclicWriter, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the renderable</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderRenderable(GraphicalCyclicWriter renderable)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderRenderable(GraphicalCyclicWriter renderable, bool ignoreSetPositions = true, bool ignoreSetSize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -299,10 +311,22 @@
         <td><p>Renderable instance to render</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetPositions</span></td>
+        <td><p>Whether to ignore set positions or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetSize</span></td>
+        <td><p>Whether to ignore set size or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -319,22 +343,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter%2CTerminaux.Base.Structures.Coordinate)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter%2CTerminaux.Base.Structures.Coordinate%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L175">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L187">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter,Terminaux.Base.Structures.Coordinate)">RenderRenderable(GraphicalCyclicWriter, Coordinate)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter,Terminaux.Base.Structures.Coordinate,System.Boolean)">RenderRenderable(GraphicalCyclicWriter, Coordinate, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the renderable</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderRenderable(GraphicalCyclicWriter renderable, Coordinate pos)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderRenderable(GraphicalCyclicWriter renderable, Coordinate pos, bool ignoreSetSize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -355,10 +379,16 @@
         <td><p>Position to write to</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetSize</span></td>
+        <td><p>Whether to ignore set size or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -378,7 +408,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Size_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter%2CTerminaux.Base.Structures.Coordinate%2CTerminaux.Base.Structures.Size)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L185">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L197">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Size_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter,Terminaux.Base.Structures.Coordinate,Terminaux.Base.Structures.Size)">RenderRenderable(GraphicalCyclicWriter, Coordinate, Size)</h4>
@@ -390,7 +420,7 @@
     <pre><code class="lang-csharp hljs">public static string RenderRenderable(GraphicalCyclicWriter renderable, Coordinate pos, Size size)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -420,7 +450,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -440,7 +470,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_SimpleCyclicWriter_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.SimpleCyclicWriter)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L149">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L158">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_SimpleCyclicWriter_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.SimpleCyclicWriter)">RenderRenderable(SimpleCyclicWriter)</h4>
@@ -452,7 +482,7 @@
     <pre><code class="lang-csharp hljs">public static string RenderRenderable(SimpleCyclicWriter renderable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -470,7 +500,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -490,7 +520,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_SimpleCyclicWriter_Terminaux_Base_Structures_Coordinate_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.SimpleCyclicWriter%2CTerminaux.Base.Structures.Coordinate)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L158">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L167">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_RenderRenderable_Terminaux_Writer_CyclicWriters_SimpleCyclicWriter_Terminaux_Base_Structures_Coordinate_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.RenderRenderable(Terminaux.Writer.CyclicWriters.SimpleCyclicWriter,Terminaux.Base.Structures.Coordinate)">RenderRenderable(SimpleCyclicWriter, Coordinate)</h4>
@@ -502,7 +532,7 @@
     <pre><code class="lang-csharp hljs">public static string RenderRenderable(SimpleCyclicWriter renderable, Coordinate pos)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -526,7 +556,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -543,22 +573,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L35">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L37">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter)">WriteRenderable(CyclicWriter)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_System_Boolean_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter,System.Boolean,System.Boolean)">WriteRenderable(CyclicWriter, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Writes the renderable to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteRenderable(CyclicWriter renderable)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteRenderable(CyclicWriter renderable, bool ignoreSetPositions = true, bool ignoreSetSize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -573,26 +603,38 @@
         <td><p>Renderable instance to write</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetPositions</span></td>
+        <td><p>Whether to ignore set positions or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetSize</span></td>
+        <td><p>Whether to ignore set size or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter%2CTerminaux.Base.Structures.Coordinate)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter%2CTerminaux.Base.Structures.Coordinate%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L48">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L51">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter,Terminaux.Base.Structures.Coordinate)">WriteRenderable(CyclicWriter, Coordinate)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter,Terminaux.Base.Structures.Coordinate,System.Boolean)">WriteRenderable(CyclicWriter, Coordinate, bool)</h4>
   <div class="markdown level1 summary"><p>Writes the renderable to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteRenderable(CyclicWriter renderable, Coordinate pos)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteRenderable(CyclicWriter renderable, Coordinate pos, bool ignoreSetSize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -613,6 +655,12 @@
         <td><p>Position to write to</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetSize</span></td>
+        <td><p>Whether to ignore set size or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -620,7 +668,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Size_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter%2CTerminaux.Base.Structures.Coordinate%2CTerminaux.Base.Structures.Size)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L57">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L60">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_CyclicWriter_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Size_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.CyclicWriter,Terminaux.Base.Structures.Coordinate,Terminaux.Base.Structures.Size)">WriteRenderable(CyclicWriter, Coordinate, Size)</h4>
@@ -632,7 +680,7 @@
     <pre><code class="lang-csharp hljs">public static void WriteRenderable(CyclicWriter renderable, Coordinate pos, Size size)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -663,22 +711,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L84">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L89">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter)">WriteRenderable(GraphicalCyclicWriter)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_System_Boolean_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter,System.Boolean,System.Boolean)">WriteRenderable(GraphicalCyclicWriter, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Writes the renderable to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteRenderable(GraphicalCyclicWriter renderable)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteRenderable(GraphicalCyclicWriter renderable, bool ignoreSetPositions = true, bool ignoreSetSize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -693,26 +741,38 @@
         <td><p>Renderable instance to write</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetPositions</span></td>
+        <td><p>Whether to ignore set positions or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetSize</span></td>
+        <td><p>Whether to ignore set size or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter%2CTerminaux.Base.Structures.Coordinate)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter%2CTerminaux.Base.Structures.Coordinate%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L92">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L98">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter,Terminaux.Base.Structures.Coordinate)">WriteRenderable(GraphicalCyclicWriter, Coordinate)</h4>
+  <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_System_Boolean_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter,Terminaux.Base.Structures.Coordinate,System.Boolean)">WriteRenderable(GraphicalCyclicWriter, Coordinate, bool)</h4>
   <div class="markdown level1 summary"><p>Writes the renderable to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteRenderable(GraphicalCyclicWriter renderable, Coordinate pos)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteRenderable(GraphicalCyclicWriter renderable, Coordinate pos, bool ignoreSetSize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -733,6 +793,12 @@
         <td><p>Position to write to</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">ignoreSetSize</span></td>
+        <td><p>Whether to ignore set size or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -740,7 +806,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Size_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter%2CTerminaux.Base.Structures.Coordinate%2CTerminaux.Base.Structures.Size)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L101">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L107">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_GraphicalCyclicWriter_Terminaux_Base_Structures_Coordinate_Terminaux_Base_Structures_Size_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.GraphicalCyclicWriter,Terminaux.Base.Structures.Coordinate,Terminaux.Base.Structures.Size)">WriteRenderable(GraphicalCyclicWriter, Coordinate, Size)</h4>
@@ -752,7 +818,7 @@
     <pre><code class="lang-csharp hljs">public static void WriteRenderable(GraphicalCyclicWriter renderable, Coordinate pos, Size size)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -786,7 +852,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_SimpleCyclicWriter_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.SimpleCyclicWriter)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L69">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L72">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_SimpleCyclicWriter_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.SimpleCyclicWriter)">WriteRenderable(SimpleCyclicWriter)</h4>
@@ -798,7 +864,7 @@
     <pre><code class="lang-csharp hljs">public static void WriteRenderable(SimpleCyclicWriter renderable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -820,7 +886,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_SimpleCyclicWriter_Terminaux_Base_Structures_Coordinate_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.SimpleCyclicWriter%2CTerminaux.Base.Structures.Coordinate)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L77">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Writer/CyclicWriters/Renderer/RendererTools.cs/#L80">View Source</a>
   </span>
   <a id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable*"></a>
   <h4 id="Terminaux_Writer_CyclicWriters_Renderer_RendererTools_WriteRenderable_Terminaux_Writer_CyclicWriters_SimpleCyclicWriter_Terminaux_Base_Structures_Coordinate_" data-uid="Terminaux.Writer.CyclicWriters.Renderer.RendererTools.WriteRenderable(Terminaux.Writer.CyclicWriters.SimpleCyclicWriter,Terminaux.Base.Structures.Coordinate)">WriteRenderable(SimpleCyclicWriter, Coordinate)</h4>
@@ -832,7 +898,7 @@
     <pre><code class="lang-csharp hljs">public static void WriteRenderable(SimpleCyclicWriter renderable, Coordinate pos)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>

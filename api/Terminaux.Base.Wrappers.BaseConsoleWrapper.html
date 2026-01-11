@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class BaseConsoleWrapper | Terminaux API - Aptivi </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class BaseConsoleWrapper | Terminaux API - Aptivi ">
+    
+    <meta name="description" content="Base console wrapper class for the  class to ensure safety against dumb consoles and Windows-only features.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header class="apt-head">
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper">
+
+
+
+  <h1 id="Terminaux_Base_Wrappers_BaseConsoleWrapper" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper" class="text-break">Class BaseConsoleWrapper</h1>
+  <div class="markdown level0 summary"><p>Base console wrapper class for the <span class="xref">System.Console</span> class to ensure safety against dumb consoles and Windows-only features.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">object</span></div>
+    <div class="level1"><span class="xref">BaseConsoleWrapper</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terminaux.html">Terminaux</a>.<a class="xref" href="Terminaux.Base.html">Base</a>.<a class="xref" href="Terminaux.Base.Wrappers.html">Wrappers</a></h6>
+  <h6><strong>Assembly</strong>: Terminaux.dll</h6>
+  <h5 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class BaseConsoleWrapper</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper__moved.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper._moved%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L47">View Source</a>
+  </span>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper__moved" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper._moved">_moved</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the console has moved. Only set this to true if the console has really moved, for example, each call to
+setting cursor position, key reading, writing text, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool _moved</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_BufferHeight.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.BufferHeight%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L164">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_BufferHeight_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.BufferHeight*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_BufferHeight" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.BufferHeight">BufferHeight</h4>
+  <div class="markdown level1 summary"><p>The console buffer height (rows)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int BufferHeight { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_BufferWidth.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.BufferWidth%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L151">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_BufferWidth_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.BufferWidth*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_BufferWidth" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.BufferWidth">BufferWidth</h4>
+  <div class="markdown level1 summary"><p>The console buffer width (columns)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int BufferWidth { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorLeft.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorLeft%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L71">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorLeft_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorLeft*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorLeft" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorLeft">CursorLeft</h4>
+  <div class="markdown level1 summary"><p>The cursor left position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int CursorLeft { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorTop.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorTop%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L95">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorTop_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorTop*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorTop" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorTop">CursorTop</h4>
+  <div class="markdown level1 summary"><p>The cursor top position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int CursorTop { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorVisible.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorVisible%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L177">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorVisible_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorVisible*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_CursorVisible" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.CursorVisible">CursorVisible</h4>
+  <div class="markdown level1 summary"><p>The cursor visibility mode</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CursorVisible { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_GetCursorPosition.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.GetCursorPosition%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L119">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_GetCursorPosition_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.GetCursorPosition*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_GetCursorPosition" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.GetCursorPosition">GetCursorPosition</h4>
+  <div class="markdown level1 summary"><p>The cursor top position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Coordinate GetCursorPosition { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Base.Structures.Coordinate.html">Coordinate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_IsDumb.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.IsDumb%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L52">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_IsDumb_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.IsDumb*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_IsDumb" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.IsDumb">IsDumb</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the console is dumb</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsDumb { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_KeyAvailable.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.KeyAvailable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L186">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_KeyAvailable_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.KeyAvailable*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_KeyAvailable" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.KeyAvailable">KeyAvailable</h4>
+  <div class="markdown level1 summary"><p>Whether a key is pressed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool KeyAvailable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_MovementDetected.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.MovementDetected%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L58">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_MovementDetected_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.MovementDetected*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_MovementDetected" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.MovementDetected">MovementDetected</h4>
+  <div class="markdown level1 summary"><p>Has the console moved? Should be set by Write*, Set*, and all console functions that have to do with moving the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool MovementDetected { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_TreatCtrlCAsInput.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.TreatCtrlCAsInput%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L199">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_TreatCtrlCAsInput_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.TreatCtrlCAsInput*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_TreatCtrlCAsInput" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.TreatCtrlCAsInput">TreatCtrlCAsInput</h4>
+  <div class="markdown level1 summary"><p>Whether to treat Ctrl + C as input or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool TreatCtrlCAsInput { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WindowHeight.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WindowHeight%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L138">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WindowHeight_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WindowHeight*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WindowHeight" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WindowHeight">WindowHeight</h4>
+  <div class="markdown level1 summary"><p>The console window height (rows)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int WindowHeight { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WindowWidth.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WindowWidth%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L125">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WindowWidth_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WindowWidth*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WindowWidth" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WindowWidth">WindowWidth</h4>
+  <div class="markdown level1 summary"><p>The console window width (columns)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int WindowWidth { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_Beep.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.Beep%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L389">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Beep_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Beep*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Beep" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Beep">Beep()</h4>
+  <div class="markdown level1 summary"><p>Beeps the console</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Beep()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_BeepCustom_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.BeepCustom(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L397">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_BeepCustom_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.BeepCustom*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_BeepCustom_System_Int32_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.BeepCustom(System.Int32,System.Int32)">BeepCustom(int, int)</h4>
+  <div class="markdown level1 summary"><p>Beeps the console</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void BeepCustom(int freq, int ms)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">freq</span></td>
+        <td><p>Frequency in hertz</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">ms</span></td>
+        <td><p>Duration in milliseconds</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_BeepSeq.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.BeepSeq%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L411">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_BeepSeq_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.BeepSeq*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_BeepSeq" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.BeepSeq">BeepSeq()</h4>
+  <div class="markdown level1 summary"><p>Beeps the console (VT Sequence method)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void BeepSeq()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_Clear.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L417">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Clear_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Clear*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Clear" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears the console screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_ClearLoadBack.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.ClearLoadBack%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L423">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_ClearLoadBack_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.ClearLoadBack*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_ClearLoadBack" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.ClearLoadBack">ClearLoadBack()</h4>
+  <div class="markdown level1 summary"><p>Clears the console screen while loading the background.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ClearLoadBack()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_ReadKey_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.ReadKey(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L433">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_ReadKey_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.ReadKey*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_ReadKey_System_Boolean_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.ReadKey(System.Boolean)">ReadKey(bool)</h4>
+  <div class="markdown level1 summary"><p>Reads a key</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ConsoleKeyInfo ReadKey(bool intercept = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">intercept</span></td>
+        <td><p>Whether to intercept</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ConsoleKeyInfo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferDimensions_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferDimensions(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L256">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferDimensions_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferDimensions*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferDimensions_System_Int32_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferDimensions(System.Int32,System.Int32)">SetBufferDimensions(int, int)</h4>
+  <div class="markdown level1 summary"><p>Sets the buffer dimensions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetBufferDimensions(int width, int height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>The buffer width to be set (from 0)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>The buffer height to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferHeight_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferHeight(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L371">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferHeight_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferHeight*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferHeight_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferHeight(System.Int32)">SetBufferHeight(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the buffer height</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetBufferHeight(int height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>The buffer height to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferWidth_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferWidth(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L352">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferWidth_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferWidth*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetBufferWidth_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetBufferWidth(System.Int32)">SetBufferWidth(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the buffer width</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetBufferWidth(int width)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>The buffer width to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorLeft_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorLeft(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L278">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorLeft_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorLeft*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorLeft_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorLeft(System.Int32)">SetCursorLeft(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the cursor left</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetCursorLeft(int left)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorPosition_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorPosition(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L219">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorPosition_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorPosition*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorPosition_System_Int32_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorPosition(System.Int32,System.Int32)">SetCursorPosition(int, int)</h4>
+  <div class="markdown level1 summary"><p>Sets the cursor position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetCursorPosition(int left, int top)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left to be set (from 0)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">top</span></td>
+        <td><p>The top to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorTop_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorTop(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L296">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorTop_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorTop*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetCursorTop_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetCursorTop(System.Int32)">SetCursorTop(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the cursor top</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetCursorTop(int top)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">top</span></td>
+        <td><p>The top to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowDimensions_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowDimensions(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L233">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowDimensions_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowDimensions*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowDimensions_System_Int32_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowDimensions(System.Int32,System.Int32)">SetWindowDimensions(int, int)</h4>
+  <div class="markdown level1 summary"><p>Sets the window dimensions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetWindowDimensions(int width, int height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>The window width to be set (from 0)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>The window height to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowHeight_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowHeight(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L333">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowHeight_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowHeight*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowHeight_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowHeight(System.Int32)">SetWindowHeight(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the window height</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetWindowHeight(int height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>The window height to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowWidth_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowWidth(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L314">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowWidth_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowWidth*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_SetWindowWidth_System_Int32_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.SetWindowWidth(System.Int32)">SetWindowWidth(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the window width</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetWindowWidth(int width)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>The window width to be set (from 0)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_System_Char_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.Write(System.Char)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L448">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Write*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_System_Char_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Write(System.Char)">Write(char)</h4>
+  <div class="markdown level1 summary"><p>Writes a character to console (stdout)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Write(char value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">char</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A character</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.Write(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L461">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Write*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_System_String_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Write(System.String)">Write(string)</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stdout)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Write(string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.Write(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L475">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Write*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_Write_System_String_System_Object___" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.Write(System.String,System.Object[])">Write(string, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stdout)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Write(string text, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The arguments to evaluate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_System_Char_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError(System.Char)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L518">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_System_Char_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError(System.Char)">WriteError(char)</h4>
+  <div class="markdown level1 summary"><p>Writes a character to console (stderr)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteError(char value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">char</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A character</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L531">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_System_String_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError(System.String)">WriteError(string)</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stderr)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteError(string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L545">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteError_System_String_System_Object___" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteError(System.String,System.Object[])">WriteError(string, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stderr)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteError(string text, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The arguments to evaluate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L554">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine">WriteErrorLine()</h4>
+  <div class="markdown level1 summary"><p>Writes new line to console (stderr)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteErrorLine()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L567">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine_System_String_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine(System.String)">WriteErrorLine(string)</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stderr) with line terminator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteErrorLine(string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L578">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteErrorLine_System_String_System_Object___" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteErrorLine(System.String,System.Object[])">WriteErrorLine(string, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stderr) with line terminator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteErrorLine(string text, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The arguments to evaluate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L484">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine">WriteLine()</h4>
+  <div class="markdown level1 summary"><p>Writes new line to console (stdout)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteLine()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L497">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine_System_String_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine(System.String)">WriteLine(string)</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stdout) with line terminator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteLine(string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L508">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine_" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine*"></a>
+  <h4 id="Terminaux_Base_Wrappers_BaseConsoleWrapper_WriteLine_System_String_System_Object___" data-uid="Terminaux.Base.Wrappers.BaseConsoleWrapper.WriteLine(System.String,System.Object[])">WriteLine(string, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stdout) with line terminator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteLine(string text, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The arguments to evaluate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Wrappers_BaseConsoleWrapper.md&amp;value=---%0Auid%3A%20Terminaux.Base.Wrappers.BaseConsoleWrapper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Base/Wrappers/BaseConsoleWrapper.cs/#L41" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

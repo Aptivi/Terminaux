@@ -21,6 +21,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -49,14 +51,6 @@
             </div>
           </div>
         </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div class="container body-content">
 
@@ -104,7 +98,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentPart__ctor_System_Boolean_System_String_System_Func_System_String___System_String____System_Boolean_System_String___System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentPart.%23ctor(System.Boolean%2CSystem.String%2CSystem.Func%7BSystem.String%5B%5D%2CSystem.String%5B%5D%7D%2CSystem.Boolean%2CSystem.String%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentPart.cs/#L66">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentPart.cs/#L90">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentPart__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentPart.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentPart__ctor_System_Boolean_System_String_System_Func_System_String___System_String____System_Boolean_System_String___System_String_" data-uid="Terminaux.Shell.Arguments.CommandArgumentPart.#ctor(System.Boolean,System.String,System.Func{System.String[],System.String[]},System.Boolean,System.String[],System.String)">CommandArgumentPart(bool, string, Func&lt;string[], string[]&gt;?, bool, string[]?, string)</h4>
@@ -116,7 +110,7 @@
     <pre><code class="lang-csharp hljs">public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func&lt;string[], string[]&gt;? autoCompleter = null, bool isNumeric = false, string[]? exactWording = null, string argumentDesc = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -168,7 +162,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentPart__ctor_System_Boolean_System_String_Terminaux_Shell_Arguments_CommandArgumentPartOptions_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentPart.%23ctor(System.Boolean%2CSystem.String%2CTerminaux.Shell.Arguments.CommandArgumentPartOptions)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentPart.cs/#L49">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentPart.cs/#L69">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentPart__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentPart.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentPart__ctor_System_Boolean_System_String_Terminaux_Shell_Arguments_CommandArgumentPartOptions_" data-uid="Terminaux.Shell.Arguments.CommandArgumentPart.#ctor(System.Boolean,System.String,Terminaux.Shell.Arguments.CommandArgumentPartOptions)">CommandArgumentPart(bool, string, CommandArgumentPartOptions)</h4>
@@ -180,7 +174,7 @@
     <pre><code class="lang-csharp hljs">public CommandArgumentPart(bool argumentRequired, string argumentExpression, CommandArgumentPartOptions options)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -228,7 +222,7 @@
     <pre><code class="lang-csharp hljs">public string ArgumentExpression { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -259,7 +253,7 @@
     <pre><code class="lang-csharp hljs">public bool ArgumentRequired { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -290,7 +284,7 @@
     <pre><code class="lang-csharp hljs">public CommandArgumentPartOptions Options { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>

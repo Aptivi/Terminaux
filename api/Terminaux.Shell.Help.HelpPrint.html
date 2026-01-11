@@ -21,6 +21,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -49,14 +51,6 @@
             </div>
           </div>
         </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div class="container body-content">
 
@@ -101,22 +95,22 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelp_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelp(System.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelp_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelp(System.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L37">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L38">View Source</a>
   </span>
   <a id="Terminaux_Shell_Help_HelpPrint_ShowHelp_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp*"></a>
-  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelp_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelp(bool, bool, bool, bool, bool)</h4>
+  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelp_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelp(bool, bool, bool, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Shows the list of commands under the current shell type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ShowHelp(bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ShowHelp(bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false, bool showHidden = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -155,26 +149,32 @@
         <td><p>Shows command count</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">showHidden</span></td>
+        <td><p>Shows hidden commands</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelp_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelp(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelp_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelp(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L49">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L51">View Source</a>
   </span>
   <a id="Terminaux_Shell_Help_HelpPrint_ShowHelp_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp*"></a>
-  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelp_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelp(string, bool, bool, bool, bool, bool)</h4>
+  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelp_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelp(string, bool, bool, bool, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Shows the help of a command, or command list under the current shell type if nothing is specified</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ShowHelp(string command, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ShowHelp(string command, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false, bool showHidden = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -219,26 +219,32 @@
         <td><p>Shows command count</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">showHidden</span></td>
+        <td><p>Shows hidden commands</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelp_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelp(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelp_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelp(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L62">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L65">View Source</a>
   </span>
   <a id="Terminaux_Shell_Help_HelpPrint_ShowHelp_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp*"></a>
-  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelp_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp(System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelp(string, string, bool, bool, bool, bool, bool)</h4>
+  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelp_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelp(System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelp(string, string, bool, bool, bool, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Shows the help of a command, or command list under the specified shell type if nothing is specified</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ShowHelp(string command, string commandType, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ShowHelp(string command, string commandType, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false, bool showHidden = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -289,26 +295,32 @@
         <td><p>Shows command count</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">showHidden</span></td>
+        <td><p>Shows hidden commands</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L74">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L78">View Source</a>
   </span>
   <a id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended*"></a>
-  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelpExtended(bool, bool, bool, bool, bool, bool)</h4>
+  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelpExtended(bool, bool, bool, bool, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Shows the list of commands under the current shell type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ShowHelpExtended(bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ShowHelpExtended(bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false, bool showHidden = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -353,26 +365,32 @@
         <td><p>Shows command count</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">showHidden</span></td>
+        <td><p>Shows hidden commands</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L87">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L92">View Source</a>
   </span>
   <a id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended*"></a>
-  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelpExtended(string, bool, bool, bool, bool, bool, bool)</h4>
+  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelpExtended(string, bool, bool, bool, bool, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Shows the help of a command, or command list under the current shell type if nothing is specified</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ShowHelpExtended(string command, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ShowHelpExtended(string command, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false, bool showHidden = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -423,26 +441,32 @@
         <td><p>Shows command count</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">showHidden</span></td>
+        <td><p>Shows hidden commands</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L101">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Help/HelpPrint.cs/#L107">View Source</a>
   </span>
   <a id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended*"></a>
-  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelpExtended(string, string, bool, bool, bool, bool, bool, bool)</h4>
+  <h4 id="Terminaux_Shell_Help_HelpPrint_ShowHelpExtended_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Help.HelpPrint.ShowHelpExtended(System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">ShowHelpExtended(string, string, bool, bool, bool, bool, bool, bool, bool)</h4>
   <div class="markdown level1 summary"><p>Shows the help of a command, or command list under the specified shell type if nothing is specified</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ShowHelpExtended(string command, string commandType, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = false, bool showExtra = false, bool showCount = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ShowHelpExtended(string command, string commandType, bool simplified = false, bool showGeneral = true, bool showAlias = false, bool showUnified = true, bool showExtra = false, bool showCount = false, bool showHidden = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -497,6 +521,12 @@
         <td><span class="xref">bool</span></td>
         <td><span class="parametername">showCount</span></td>
         <td><p>Shows command count</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">showHidden</span></td>
+        <td><p>Shows hidden commands</p>
 </td>
       </tr>
     </tbody>

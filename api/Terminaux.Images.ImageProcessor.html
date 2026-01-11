@@ -21,6 +21,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -49,14 +51,6 @@
             </div>
           </div>
         </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div class="container body-content">
 
@@ -101,54 +95,22 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_ImageMagick_MagickImage_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(ImageMagick.MagickImage%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L104">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L195">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_GetColorsFromImage_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage">GetColorsFromImage()</h4>
-  <div class="markdown level1 summary"><p>Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a>[,]</td>
-        <td><p>A list of Terminaux's <a class="xref" href="Terminaux.Colors.Color.html">Color</a> instance translated from ImageMagick's <span class="xref">ImageMagick.IPixel&lt;TQuantumType&gt;</span> instance</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_ImageMagick_MagickImage_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(ImageMagick.MagickImage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L162">View Source</a>
-  </span>
-  <a id="Terminaux_Images_ImageProcessor_GetColorsFromImage_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_ImageMagick_MagickImage_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(ImageMagick.MagickImage)">GetColorsFromImage(MagickImage)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_ImageMagick_MagickImage_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(ImageMagick.MagickImage,System.Int32,System.Int32,Terminaux.Colors.Color)">GetColorsFromImage(MagickImage, int, int, Color?)</h4>
   <div class="markdown level1 summary"><p>Gets the list of colors by the number of pixels from the image</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(MagickImage image)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(MagickImage image, int width = 0, int height = 0, Color? background = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -163,10 +125,28 @@
         <td><p>Image data that ImageMagick can process</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>Target width. Set to 0 to prevent resize.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>Target height. Set to 0 to prevent resize.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">background</span></td>
+        <td><p>Specifies the background color, or null for default</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -183,22 +163,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_System_Byte___.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(System.Byte%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_System_Byte___System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L129">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L156">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_GetColorsFromImage_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_System_Byte___" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(System.Byte[])">GetColorsFromImage(byte[])</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_System_Byte___System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(System.Byte[],System.Int32,System.Int32,Terminaux.Colors.Color)">GetColorsFromImage(byte[], int, int, Color?)</h4>
   <div class="markdown level1 summary"><p>Gets the list of colors by the number of pixels from the image</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(byte[] imageBytes)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(byte[] imageBytes, int width = 0, int height = 0, Color? background = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -213,10 +193,28 @@
         <td><p>Array of bytes that contains the image data that ImageMagick can process</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>Target width. Set to 0 to prevent resize.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>Target height. Set to 0 to prevent resize.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">background</span></td>
+        <td><p>Specifies the background color, or null for default</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -233,22 +231,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_System_IO_Stream_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(System.IO.Stream)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_System_IO_Stream_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(System.IO.Stream%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L145">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L175">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_GetColorsFromImage_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_System_IO_Stream_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(System.IO.Stream)">GetColorsFromImage(Stream)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_System_IO_Stream_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(System.IO.Stream,System.Int32,System.Int32,Terminaux.Colors.Color)">GetColorsFromImage(Stream, int, int, Color?)</h4>
   <div class="markdown level1 summary"><p>Gets the list of colors by the number of pixels from the image</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(Stream imageStream)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(Stream imageStream, int width = 0, int height = 0, Color? background = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -263,10 +261,28 @@
         <td><p>Stream that contains the image data that ImageMagick can process</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>Target width. Set to 0 to prevent resize.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>Target height. Set to 0 to prevent resize.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">background</span></td>
+        <td><p>Specifies the background color, or null for default</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -283,22 +299,81 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(System.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L112">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L125">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_GetColorsFromImage_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_System_String_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(System.String)">GetColorsFromImage(string)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(System.Int32,System.Int32,Terminaux.Colors.Color)">GetColorsFromImage(int, int, Color?)</h4>
+  <div class="markdown level1 summary"><p>Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(int width = 0, int height = 0, Color? background = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">background</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a>[,]</td>
+        <td><p>A list of Terminaux's <a class="xref" href="Terminaux.Colors.Color.html">Color</a> instance translated from ImageMagick's <span class="xref">ImageMagick.IPixel&lt;TQuantumType&gt;</span> instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_GetColorsFromImage_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.GetColorsFromImage(System.String%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L136">View Source</a>
+  </span>
+  <a id="Terminaux_Images_ImageProcessor_GetColorsFromImage_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage*"></a>
+  <h4 id="Terminaux_Images_ImageProcessor_GetColorsFromImage_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.GetColorsFromImage(System.String,System.Int32,System.Int32,Terminaux.Colors.Color)">GetColorsFromImage(string, int, int, Color?)</h4>
   <div class="markdown level1 summary"><p>Gets the list of colors by the number of pixels from the image</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(string imagePath)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Color[,] GetColorsFromImage(string imagePath, int width = 0, int height = 0, Color? background = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -313,10 +388,28 @@
         <td><p>Path to the image that ImageMagick can process</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>Target width. Set to 0 to prevent resize.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>Target height. Set to 0 to prevent resize.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">background</span></td>
+        <td><p>Specifies the background color, or null for default</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -336,7 +429,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_OpenImage.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.OpenImage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L40">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L61">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_OpenImage_" data-uid="Terminaux.Images.ImageProcessor.OpenImage*"></a>
   <h4 id="Terminaux_Images_ImageProcessor_OpenImage" data-uid="Terminaux.Images.ImageProcessor.OpenImage">OpenImage()</h4>
@@ -348,7 +441,7 @@
     <pre><code class="lang-csharp hljs">public static MagickImage OpenImage()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -368,7 +461,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_OpenImage_System_Byte___.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.OpenImage(System.Byte%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L65">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L86">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_OpenImage_" data-uid="Terminaux.Images.ImageProcessor.OpenImage*"></a>
   <h4 id="Terminaux_Images_ImageProcessor_OpenImage_System_Byte___" data-uid="Terminaux.Images.ImageProcessor.OpenImage(System.Byte[])">OpenImage(byte[])</h4>
@@ -380,7 +473,7 @@
     <pre><code class="lang-csharp hljs">public static MagickImage OpenImage(byte[] imageBytes)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -398,7 +491,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -418,7 +511,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_OpenImage_System_IO_Stream_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.OpenImage(System.IO.Stream)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L81">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L102">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_OpenImage_" data-uid="Terminaux.Images.ImageProcessor.OpenImage*"></a>
   <h4 id="Terminaux_Images_ImageProcessor_OpenImage_System_IO_Stream_" data-uid="Terminaux.Images.ImageProcessor.OpenImage(System.IO.Stream)">OpenImage(Stream)</h4>
@@ -430,7 +523,7 @@
     <pre><code class="lang-csharp hljs">public static MagickImage OpenImage(Stream imageStream)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -448,7 +541,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -468,7 +561,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_OpenImage_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.OpenImage(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L48">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L69">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_OpenImage_" data-uid="Terminaux.Images.ImageProcessor.OpenImage*"></a>
   <h4 id="Terminaux_Images_ImageProcessor_OpenImage_System_String_" data-uid="Terminaux.Images.ImageProcessor.OpenImage(System.String)">OpenImage(string)</h4>
@@ -480,7 +573,7 @@
     <pre><code class="lang-csharp hljs">public static MagickImage OpenImage(string imagePath)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -498,7 +591,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -515,22 +608,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_ImageMagick_MagickImage_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(ImageMagick.MagickImage%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_ImageMagick_MagickImage_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(ImageMagick.MagickImage%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L265">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L316">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_ImageMagick_MagickImage_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(ImageMagick.MagickImage,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(MagickImage, int, int, int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_ImageMagick_MagickImage_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(ImageMagick.MagickImage,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(MagickImage, int, int, int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the image to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -575,10 +668,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -595,22 +694,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_ImageMagick_MagickImage_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(ImageMagick.MagickImage%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_ImageMagick_MagickImage_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(ImageMagick.MagickImage%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L334">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L390">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_ImageMagick_MagickImage_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(ImageMagick.MagickImage,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(MagickImage, int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_ImageMagick_MagickImage_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(ImageMagick.MagickImage,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(MagickImage, int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the image to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(MagickImage image, int width, int height, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(MagickImage image, int width, int height, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -643,10 +742,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -663,22 +768,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_Byte___System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_Byte___System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L230">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L279">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_Byte___System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.Byte[],System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(byte[], int, int, int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_Byte___System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.Byte[],System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(byte[], int, int, int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the image to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(byte[] imageBytes, int width, int height, int left, int top, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(byte[] imageBytes, int width, int height, int left, int top, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -723,10 +828,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -743,22 +854,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_Byte___System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_Byte___System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L303">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L357">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_Byte___System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.Byte[],System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(byte[], int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_Byte___System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.Byte[],System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(byte[], int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the image to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(byte[] imageBytes, int width, int height, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(byte[] imageBytes, int width, int height, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -791,10 +902,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -811,22 +928,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_IO_Stream_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.IO.Stream%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_IO_Stream_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.IO.Stream%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L246">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L296">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_IO_Stream_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(Stream, int, int, int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_IO_Stream_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(Stream, int, int, int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the image to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(Stream imageStream, int width, int height, int left, int top, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(Stream imageStream, int width, int height, int left, int top, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -871,10 +988,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -891,22 +1014,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_IO_Stream_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.IO.Stream%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_IO_Stream_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.IO.Stream%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L317">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L372">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_IO_Stream_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.IO.Stream,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(Stream, int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_IO_Stream_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.IO.Stream,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(Stream, int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the image to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(Stream imageStream, int width, int height, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(Stream imageStream, int width, int height, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -939,10 +1062,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -959,22 +1088,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L201">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L248">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(int, int, int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(int, int, int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the placeholder image (that is, the Aptivi branding) to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(int width, int height, int left, int top, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(int width, int height, int left, int top, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -1013,10 +1142,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -1033,22 +1168,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L278">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L330">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the placeholder image (that is, the Aptivi branding) to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(int width, int height, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(int width, int height, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -1075,10 +1210,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -1095,22 +1236,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L214">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L262">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(string, int, int, int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(string, int, int, int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the image to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(string imagePath, int width, int height, int left, int top, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(string imagePath, int width, int height, int left, int top, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -1155,10 +1296,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -1175,22 +1322,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.String%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor_RenderImage_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor.RenderImage(System.String%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L289">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L342">View Source</a>
   </span>
   <a id="Terminaux_Images_ImageProcessor_RenderImage_" data-uid="Terminaux.Images.ImageProcessor.RenderImage*"></a>
-  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.String,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderImage(string, int, int, Color?)</h4>
+  <h4 id="Terminaux_Images_ImageProcessor_RenderImage_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_" data-uid="Terminaux.Images.ImageProcessor.RenderImage(System.String,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)">RenderImage(string, int, int, Color?, bool)</h4>
   <div class="markdown level1 summary"><p>Renders the image to a string that you can print to the console</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderImage(string imagePath, int width, int height, Color? background = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderImage(string imagePath, int width, int height, Color? background = null, bool resize = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -1223,10 +1370,16 @@
         <td><p>Specifies the background color, or null for default</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">resize</span></td>
+        <td><p>Whether to perform a resize or not</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -1253,7 +1406,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Images_ImageProcessor.md&amp;value=---%0Auid%3A%20Terminaux.Images.ImageProcessor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L32" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux.Images/ImageProcessor.cs/#L36" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

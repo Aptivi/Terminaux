@@ -21,6 +21,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -49,14 +51,6 @@
             </div>
           </div>
         </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div class="container body-content">
 
@@ -97,6 +91,92 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class CommandExecutor</code></pre>
   </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Commands_CommandExecutor_ExecuteCommandWrapped_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Commands.CommandExecutor.ExecuteCommandWrapped(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Commands/CommandExecutor.cs/#L320">View Source</a>
+  </span>
+  <a id="Terminaux_Shell_Commands_CommandExecutor_ExecuteCommandWrapped_" data-uid="Terminaux.Shell.Commands.CommandExecutor.ExecuteCommandWrapped*"></a>
+  <h4 id="Terminaux_Shell_Commands_CommandExecutor_ExecuteCommandWrapped_System_String_" data-uid="Terminaux.Shell.Commands.CommandExecutor.ExecuteCommandWrapped(System.String)">ExecuteCommandWrapped(string)</h4>
+  <div class="markdown level1 summary"><p>Executes a command in a wrapped mode (must be run from a separate command execution entry point, <a class="xref" href="Terminaux.Shell.Commands.BaseCommand.html#Terminaux_Shell_Commands_BaseCommand_Execute_Terminaux_Shell_Commands_CommandParameters_System_String__">Execute(CommandParameters, ref string)</a>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ExecuteCommandWrapped(string Command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">Command</span></td>
+        <td><p>Requested command with its arguments and switches</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Commands_CommandExecutor_GetWrappableCommands_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Commands.CommandExecutor.GetWrappableCommands(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Commands/CommandExecutor.cs/#L385">View Source</a>
+  </span>
+  <a id="Terminaux_Shell_Commands_CommandExecutor_GetWrappableCommands_" data-uid="Terminaux.Shell.Commands.CommandExecutor.GetWrappableCommands*"></a>
+  <h4 id="Terminaux_Shell_Commands_CommandExecutor_GetWrappableCommands_System_String_" data-uid="Terminaux.Shell.Commands.CommandExecutor.GetWrappableCommands(System.String)">GetWrappableCommands(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the wrappable commands</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] GetWrappableCommands(string shellType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">shellType</span></td>
+        <td><p>Shell type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span>[]</td>
+        <td><p>List of commands that one of their flags contains <a class="xref" href="Terminaux.Shell.Commands.CommandFlags.html#Terminaux_Shell_Commands_CommandFlags_Wrappable">Wrappable</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -109,7 +189,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Commands_CommandExecutor.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Commands.CommandExecutor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Commands/CommandExecutor.cs/#L37" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Commands/CommandExecutor.cs/#L40" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

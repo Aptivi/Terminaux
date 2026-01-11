@@ -21,6 +21,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -49,14 +51,6 @@
             </div>
           </div>
         </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div class="container body-content">
 
@@ -104,7 +98,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L139">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L143">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor">CommandArgumentInfo()</h4>
@@ -120,7 +114,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L147">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L151">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_System_Boolean_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(System.Boolean)">CommandArgumentInfo(bool)</h4>
@@ -129,10 +123,10 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(bool infiniteBounds)</code></pre>
+    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(bool AcceptsSet)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -141,6 +135,46 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">AcceptsSet</span></td>
+        <td><p>Whether to accept the -set switch or not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(System.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L160">View Source</a>
+  </span>
+  <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(System.Boolean,System.Boolean)">CommandArgumentInfo(bool, bool)</h4>
+  <div class="markdown level1 summary"><p>Installs a new instance of the command argument info class</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(bool AcceptsSet, bool infiniteBounds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">AcceptsSet</span></td>
+        <td><p>Whether to accept the -set switch or not</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">bool</span></td>
         <td><span class="parametername">infiniteBounds</span></td>
@@ -154,7 +188,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Arguments.CommandArgumentPart%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L155">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L168">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Arguments.CommandArgumentPart[])">CommandArgumentInfo(CommandArgumentPart[])</h4>
@@ -166,7 +200,7 @@
     <pre><code class="lang-csharp hljs">public CommandArgumentInfo(CommandArgumentPart[] Arguments)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -188,7 +222,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Arguments.CommandArgumentPart%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L164">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L177">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___System_Boolean_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Arguments.CommandArgumentPart[],System.Boolean)">CommandArgumentInfo(CommandArgumentPart[], bool)</h4>
@@ -197,10 +231,10 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool infiniteBounds)</code></pre>
+    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -217,6 +251,52 @@
       </tr>
       <tr>
         <td><span class="xref">bool</span></td>
+        <td><span class="parametername">AcceptsSet</span></td>
+        <td><p>Whether to accept the -set switch or not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Arguments.CommandArgumentPart%5B%5D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L187">View Source</a>
+  </span>
+  <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Arguments.CommandArgumentPart[],System.Boolean,System.Boolean)">CommandArgumentInfo(CommandArgumentPart[], bool, bool)</h4>
+  <div class="markdown level1 summary"><p>Installs a new instance of the command argument info class</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet, bool infiniteBounds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Shell.Arguments.CommandArgumentPart.html">CommandArgumentPart</a>[]</td>
+        <td><span class="parametername">Arguments</span></td>
+        <td><p>Command arguments</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">AcceptsSet</span></td>
+        <td><p>Whether to accept the -set switch or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
         <td><span class="parametername">infiniteBounds</span></td>
         <td><p>Whether to accept infinite number of arguments or not</p>
 </td>
@@ -228,7 +308,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___Terminaux_Shell_Switches_SwitchInfo___.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Arguments.CommandArgumentPart%5B%5D%2CTerminaux.Shell.Switches.SwitchInfo%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L190">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L223">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___Terminaux_Shell_Switches_SwitchInfo___" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Arguments.CommandArgumentPart[],Terminaux.Shell.Switches.SwitchInfo[])">CommandArgumentInfo(CommandArgumentPart[], SwitchInfo[])</h4>
@@ -240,7 +320,7 @@
     <pre><code class="lang-csharp hljs">public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -268,7 +348,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___Terminaux_Shell_Switches_SwitchInfo___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Arguments.CommandArgumentPart%5B%5D%2CTerminaux.Shell.Switches.SwitchInfo%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L200">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L233">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___Terminaux_Shell_Switches_SwitchInfo___System_Boolean_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Arguments.CommandArgumentPart[],Terminaux.Shell.Switches.SwitchInfo[],System.Boolean)">CommandArgumentInfo(CommandArgumentPart[], SwitchInfo[], bool)</h4>
@@ -277,10 +357,10 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool infiniteBounds)</code></pre>
+    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -303,6 +383,58 @@
       </tr>
       <tr>
         <td><span class="xref">bool</span></td>
+        <td><span class="parametername">AcceptsSet</span></td>
+        <td><p>Whether to accept the -set switch or not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___Terminaux_Shell_Switches_SwitchInfo___System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Arguments.CommandArgumentPart%5B%5D%2CTerminaux.Shell.Switches.SwitchInfo%5B%5D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L244">View Source</a>
+  </span>
+  <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Arguments_CommandArgumentPart___Terminaux_Shell_Switches_SwitchInfo___System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Arguments.CommandArgumentPart[],Terminaux.Shell.Switches.SwitchInfo[],System.Boolean,System.Boolean)">CommandArgumentInfo(CommandArgumentPart[], SwitchInfo[], bool, bool)</h4>
+  <div class="markdown level1 summary"><p>Installs a new instance of the command argument info class</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet, bool infiniteBounds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Shell.Arguments.CommandArgumentPart.html">CommandArgumentPart</a>[]</td>
+        <td><span class="parametername">Arguments</span></td>
+        <td><p>Command arguments</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Shell.Switches.SwitchInfo.html">SwitchInfo</a>[]</td>
+        <td><span class="parametername">Switches</span></td>
+        <td><p>Command switches</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">AcceptsSet</span></td>
+        <td><p>Whether to accept the -set switch or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
         <td><span class="parametername">infiniteBounds</span></td>
         <td><p>Whether to accept infinite number of arguments or not</p>
 </td>
@@ -314,7 +446,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Switches_SwitchInfo___.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Switches.SwitchInfo%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L172">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L195">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Switches_SwitchInfo___" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Switches.SwitchInfo[])">CommandArgumentInfo(SwitchInfo[])</h4>
@@ -326,7 +458,7 @@
     <pre><code class="lang-csharp hljs">public CommandArgumentInfo(SwitchInfo[] Switches)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -348,7 +480,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Switches_SwitchInfo___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Switches.SwitchInfo%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L181">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L204">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Switches_SwitchInfo___System_Boolean_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Switches.SwitchInfo[],System.Boolean)">CommandArgumentInfo(SwitchInfo[], bool)</h4>
@@ -357,10 +489,10 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(SwitchInfo[] Switches, bool infiniteBounds)</code></pre>
+    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -377,6 +509,52 @@
       </tr>
       <tr>
         <td><span class="xref">bool</span></td>
+        <td><span class="parametername">AcceptsSet</span></td>
+        <td><p>Whether to accept the -set switch or not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Switches_SwitchInfo___System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.%23ctor(Terminaux.Shell.Switches.SwitchInfo%5B%5D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L214">View Source</a>
+  </span>
+  <a id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo__ctor_Terminaux_Shell_Switches_SwitchInfo___System_Boolean_System_Boolean_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.#ctor(Terminaux.Shell.Switches.SwitchInfo[],System.Boolean,System.Boolean)">CommandArgumentInfo(SwitchInfo[], bool, bool)</h4>
+  <div class="markdown level1 summary"><p>Installs a new instance of the command argument info class</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet, bool infiniteBounds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Shell.Switches.SwitchInfo.html">SwitchInfo</a>[]</td>
+        <td><span class="parametername">Switches</span></td>
+        <td><p>Command switches</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td><span class="parametername">AcceptsSet</span></td>
+        <td><p>Whether to accept the -set switch or not</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">bool</span></td>
         <td><span class="parametername">infiniteBounds</span></td>
         <td><p>Whether to accept infinite number of arguments or not</p>
 </td>
@@ -387,10 +565,41 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo_AcceptsSet.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.AcceptsSet%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L59">View Source</a>
+  </span>
+  <a id="Terminaux_Shell_Arguments_CommandArgumentInfo_AcceptsSet_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.AcceptsSet*"></a>
+  <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo_AcceptsSet" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.AcceptsSet">AcceptsSet</h4>
+  <div class="markdown level1 summary"><p>Whether to accept the -set switch to set the MESH variable value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AcceptsSet { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo_ArgChecker.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.ArgChecker%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L64">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L67">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo_ArgChecker_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.ArgChecker*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo_ArgChecker" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.ArgChecker">ArgChecker</h4>
@@ -402,7 +611,7 @@
     <pre><code class="lang-csharp hljs">public Func&lt;CommandParameters, int&gt; ArgChecker { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -416,10 +625,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Terminaux_Shell_Arguments_CommandArgumentInfo_ArgChecker_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>When this checker function returns 0, this means that all arguments are satisfied.<br>
-When this checker function returns something other than 0, this means that not all arguments are satisfied.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo_Arguments.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.Arguments%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
@@ -437,7 +642,7 @@ When this checker function returns something other than 0, this means that not a
     <pre><code class="lang-csharp hljs">public CommandArgumentPart[] Arguments { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -468,7 +673,7 @@ When this checker function returns something other than 0, this means that not a
     <pre><code class="lang-csharp hljs">public bool ArgumentsRequired { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -487,7 +692,7 @@ When this checker function returns something other than 0, this means that not a
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo_InfiniteBounds.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.InfiniteBounds%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L56">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L63">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo_InfiniteBounds_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.InfiniteBounds*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo_InfiniteBounds" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.InfiniteBounds">InfiniteBounds</h4>
@@ -499,7 +704,7 @@ When this checker function returns something other than 0, this means that not a
     <pre><code class="lang-csharp hljs">public bool InfiniteBounds { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -530,7 +735,7 @@ When this checker function returns something other than 0, this means that not a
     <pre><code class="lang-csharp hljs">public int MinimumArguments { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -549,7 +754,7 @@ When this checker function returns something other than 0, this means that not a
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Shell_Arguments_CommandArgumentInfo_RenderedUsage.md&amp;value=---%0Auid%3A%20Terminaux.Shell.Arguments.CommandArgumentInfo.RenderedUsage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L68">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Shell/Arguments/CommandArgumentInfo.cs/#L71">View Source</a>
   </span>
   <a id="Terminaux_Shell_Arguments_CommandArgumentInfo_RenderedUsage_" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.RenderedUsage*"></a>
   <h4 id="Terminaux_Shell_Arguments_CommandArgumentInfo_RenderedUsage" data-uid="Terminaux.Shell.Arguments.CommandArgumentInfo.RenderedUsage">RenderedUsage</h4>
@@ -561,7 +766,7 @@ When this checker function returns something other than 0, this means that not a
     <pre><code class="lang-csharp hljs">public string RenderedUsage { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -592,7 +797,7 @@ When this checker function returns something other than 0, this means that not a
     <pre><code class="lang-csharp hljs">public SwitchInfo[] Switches { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>

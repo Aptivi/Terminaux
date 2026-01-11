@@ -21,6 +21,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -49,14 +51,6 @@
             </div>
           </div>
         </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div class="container body-content">
 
@@ -116,7 +110,13 @@
       <a class="xref" href="Terminaux.Inputs.Interactive.TextualUI.html#Terminaux_Inputs_Interactive_TextualUI_Renderables">TextualUI.Renderables</a>
     </div>
     <div>
+      <a class="xref" href="Terminaux.Inputs.Interactive.TextualUI.html#Terminaux_Inputs_Interactive_TextualUI_HelpPages">TextualUI.HelpPages</a>
+    </div>
+    <div>
       <a class="xref" href="Terminaux.Inputs.Interactive.TextualUI.html#Terminaux_Inputs_Interactive_TextualUI_RequireRefresh">TextualUI.RequireRefresh()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terminaux.Inputs.Interactive.TextualUI.html#Terminaux_Inputs_Interactive_TextualUI_ResetKeybindings">TextualUI.ResetKeybindings()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Terminaux.html">Terminaux</a>.<a class="xref" href="Terminaux.Inputs.html">Inputs</a>.<a class="xref" href="Terminaux.Inputs.Styles.html">Styles</a>.<a class="xref" href="Terminaux.Inputs.Styles.Editor.html">Editor</a></h6>
@@ -132,7 +132,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Editor_TextEditInteractive_OpenInteractive_System_Collections_Generic_List_System_String___Terminaux_Inputs_Interactive_InteractiveTuiSettings_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Editor.TextEditInteractive.OpenInteractive(System.Collections.Generic.List%7BSystem.String%7D%40%2CTerminaux.Inputs.Interactive.InteractiveTuiSettings%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Editor/TextEditInteractive.cs/#L97">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Editor/TextEditInteractive.cs/#L100">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Editor_TextEditInteractive_OpenInteractive_" data-uid="Terminaux.Inputs.Styles.Editor.TextEditInteractive.OpenInteractive*"></a>
   <h4 id="Terminaux_Inputs_Styles_Editor_TextEditInteractive_OpenInteractive_System_Collections_Generic_List_System_String___Terminaux_Inputs_Interactive_InteractiveTuiSettings_System_Boolean_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Editor.TextEditInteractive.OpenInteractive(System.Collections.Generic.List{System.String}@,Terminaux.Inputs.Interactive.InteractiveTuiSettings,System.Boolean,System.Boolean)">OpenInteractive(ref List&lt;string&gt;, InteractiveTuiSettings?, bool, bool)</h4>
@@ -144,7 +144,7 @@
     <pre><code class="lang-csharp hljs">public static void OpenInteractive(ref List&lt;string&gt; lines, InteractiveTuiSettings? settings = null, bool fullscreen = false, bool edit = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -184,7 +184,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Editor_TextEditInteractive_Render.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Editor.TextEditInteractive.Render%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Editor/TextEditInteractive.cs/#L119">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Editor/TextEditInteractive.cs/#L122">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Editor_TextEditInteractive_Render_" data-uid="Terminaux.Inputs.Styles.Editor.TextEditInteractive.Render*"></a>
   <h4 id="Terminaux_Inputs_Styles_Editor_TextEditInteractive_Render" data-uid="Terminaux.Inputs.Styles.Editor.TextEditInteractive.Render">Render()</h4>
@@ -196,7 +196,7 @@
     <pre><code class="lang-csharp hljs">public override string Render()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -229,7 +229,7 @@ renderable container specified in that property will overwrite what's been rende
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Editor_TextEditInteractive.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Editor.TextEditInteractive%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Editor/TextEditInteractive.cs/#L45" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/public/Terminaux/Inputs/Styles/Editor/TextEditInteractive.cs/#L44" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
