@@ -31,7 +31,7 @@ namespace Terminaux.Colors
     /// </summary>
     public static class ColorTools
     {
-        internal static readonly Color _empty = new(0, new());
+        internal static Color _empty = new(0, new());
         internal static Random rng = new();
         internal static readonly ColorSettings globalSettings = new();
 

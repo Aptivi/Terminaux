@@ -72,8 +72,14 @@ namespace Terminaux.Colors
         /// <summary>
         /// Empty color singleton
         /// </summary>
-        public static Color Empty =>
-            ColorTools._empty;
+        public static Color Empty
+        {
+            get
+            {
+                ColorTools._empty ??= new(0, new());
+                return ColorTools._empty;
+            }
+        }
 
         /// <summary>
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the settings.
