@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Calendrier;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Terminaux.Base;
@@ -248,8 +249,6 @@ namespace Terminaux.Themes
             EndMonth = metadata.EndMonth;
             EndDay = metadata.EndDay;
             Calendar = metadata.Calendar;
-            // TODO: Remove this conditional when Calendrier gets released on Jan 12th.
-#if false
             if (!Enum.TryParse(Calendar, out CalendarTypes calendar))
                 calendar = CalendarTypes.Gregorian;
 
@@ -272,7 +271,6 @@ namespace Terminaux.Themes
                 StartDay = dateTimeStart.Day;
                 EndDay = dateTimeEnd.Day;
             }
-#endif
 
             // Month sanity checks
             StartMonth =
