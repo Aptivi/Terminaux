@@ -18,6 +18,7 @@
 //
 
 using System.Reflection;
+using System.Threading;
 using Terminaux.Images;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -40,6 +41,7 @@ namespace Terminaux.Console.Fixtures.Cases.Images
                     return;
                 string rendered = ImageProcessor.RenderImage(stream, 40, 20, 4, 2);
                 TextWriterRaw.WriteRaw(rendered);
+                Thread.Sleep(3000);
             }
         }
     }
