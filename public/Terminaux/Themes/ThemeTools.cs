@@ -94,10 +94,10 @@ namespace Terminaux.Themes
         {
             lock (locker)
             {
-                if (IsThemeFound(theme))
-                    throw new TerminauxException("Theme already exists");
                 if (string.IsNullOrEmpty(theme))
                     throw new TerminauxException("Theme name may not be empty");
+                if (IsThemeFound(theme))
+                    throw new TerminauxException("Theme already exists");
                 themes.Add(theme, themeInfo);
             }
         }
@@ -111,10 +111,10 @@ namespace Terminaux.Themes
         {
             lock (locker)
             {
-                if (!IsThemeFound(theme))
-                    throw new TerminauxException("Theme doesn't exist");
                 if (string.IsNullOrEmpty(theme))
                     throw new TerminauxException("Theme name may not be empty");
+                if (!IsThemeFound(theme))
+                    throw new TerminauxException("Theme doesn't exist");
                 if (!themes.Remove(theme))
                     throw new TerminauxException("Theme removal failed");
             }
@@ -208,7 +208,7 @@ namespace Terminaux.Themes
         }
 
         /// <summary>
-        /// Sets custom colors. It only works if colored shell is enabled.
+        /// Sets custom colors.
         /// </summary>
         /// <param name="ThemeInfo">Theme information</param>
         /// <exception cref="InvalidOperationException"></exception>

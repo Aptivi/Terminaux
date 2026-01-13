@@ -24,6 +24,7 @@ using System;
 using System.Linq;
 using Terminaux.Themes;
 using Terminaux.Themes.Colors;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Tests.Themes
 {
@@ -113,6 +114,27 @@ namespace Terminaux.Tests.Themes
             {
                 string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
                 ThemeInfoInstance.themeColors[type].ShouldNotBeNull();
+            }
+        }
+
+        /// <summary>
+        /// Tests initializing an instance of ThemeInfo from resources and setting its colors
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeThemeInfoFromResourcesAndSetColors()
+        {
+            // Create instance
+            var ThemeInfoInstance = new ThemeInfo();
+
+            // Check for null
+            ThemeInfoInstance.themeColors.ShouldNotBeNull();
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length - 1; typeIndex++)
+            {
+                string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.SetColor(type, ConsoleColors.Aqua);
+                ThemeInfoInstance.themeColors[type].ShouldNotBeNull();
+                ThemeInfoInstance.themeColors[type].ShouldBe(ConsoleColors.Aqua);
             }
         }
 

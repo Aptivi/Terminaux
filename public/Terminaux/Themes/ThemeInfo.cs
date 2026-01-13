@@ -121,6 +121,30 @@ namespace Terminaux.Themes
         public Color GetColor(string type) =>
             themeColors[type];
 
+        /// <summary>
+        /// Sets a color in the color type
+        /// </summary>
+        /// <param name="type">Color type</param>
+        /// <param name="color">Color to edit</param>
+        public void SetColor(ThemeColorType type, Color color) =>
+            SetColor(type.ToString(), color);
+
+        /// <summary>
+        /// Sets a color in the color type. If the color type doesn't exist, it adds a new one to the theme.
+        /// </summary>
+        /// <param name="type">Color type</param>
+        /// <param name="color">Color to edit</param>
+        public void SetColor(string type, Color color)
+        {
+            // Add the extra color type, if it's defined
+            if (!Enum.IsDefined(typeof(ThemeColorType), type) && !themeExtraColors.Contains(type))
+                themeExtraColors.Add(type);
+
+            // Update the colors, then set the color
+            UpdateColors();
+            themeColors[type] = color;
+        }
+
         internal void UpdateColors()
         {
             // Populate the colors
@@ -157,11 +181,9 @@ namespace Terminaux.Themes
                 // Get the color value and check to see if it's null
                 var colorToken = metadataToken.SelectToken(themeExtraColor);
                 if (colorToken is not null)
-                {
-                    if (!themeColors.ContainsKey(themeExtraColor))
-                        themeColors.Add(themeExtraColor, Color.Empty);
                     themeColors[themeExtraColor] = new Color(colorToken.ToString());
-                }
+                else
+                    themeColors[themeExtraColor] = Color.Empty;
 
                 // Apply accent color
                 if (UseAccentTypes.Contains(themeExtraColor) && ThemeColorsTools.UseAccentColors)
