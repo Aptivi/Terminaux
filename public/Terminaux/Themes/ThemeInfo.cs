@@ -171,13 +171,6 @@ namespace Terminaux.Themes
                 }
                 else
                     themeColors[type] = new Color(colorToken.ToString());
-
-                // Apply accent color
-                if (UseAccentTypes.Contains(fullTypeName) && ThemeColorsTools.UseAccentColors)
-                    themeColors[type] =
-                        fullTypeName.EndsWith("BackgroundColor") || fullTypeName.EndsWith("BackColor") ?
-                        new Color(ThemeColorsTools.AccentBackgroundColor) :
-                        new Color(ThemeColorsTools.AccentForegroundColor);
             }
 
             // Deal with extra color types
@@ -189,13 +182,6 @@ namespace Terminaux.Themes
                     themeColors[themeExtraColor] = new Color(colorToken.ToString());
                 else
                     themeColors[themeExtraColor] = Color.Empty;
-
-                // Apply accent color
-                if (UseAccentTypes.Contains(themeExtraColor) && ThemeColorsTools.UseAccentColors)
-                    themeColors[themeExtraColor] =
-                        themeExtraColor.EndsWith("BackgroundColor") || themeExtraColor.EndsWith("BackColor") ?
-                        new Color(ThemeColorsTools.AccentBackgroundColor) :
-                        new Color(ThemeColorsTools.AccentForegroundColor);
             }
 
             // Let the theme-based color tools know about this new type

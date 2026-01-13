@@ -117,6 +117,24 @@ namespace Terminaux.Themes
                 if (!IsThemeFound(theme))
                     throw new TerminauxException("Theme doesn't exist");
                 themes[theme] = themeInfo;
+                themes[theme].UpdateColorsTools();
+            }
+        }
+
+        /// <summary>
+        /// Resets a theme
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void ResetTheme(string theme)
+        {
+            lock (locker)
+            {
+                if (string.IsNullOrEmpty(theme))
+                    throw new TerminauxException("Theme name may not be empty");
+                if (!IsThemeFound(theme))
+                    throw new TerminauxException("Theme doesn't exist");
+                themes[theme].UpdateColors();
             }
         }
 
