@@ -94,10 +94,12 @@ namespace Terminaux.Themes
         {
             lock (locker)
             {
+                // TODO: T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY -> Theme name may not be empty
                 if (string.IsNullOrEmpty(theme))
-                    throw new TerminauxException("Theme name may not be empty");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY"));
+                // TODO: T_COLORS_THEMES_EXCEPTION_THEMEEXISTS -> Theme already exists
                 if (IsThemeFound(theme))
-                    throw new TerminauxException("Theme already exists");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMEEXISTS"));
                 themes.Add(theme, themeInfo);
             }
         }
@@ -113,9 +115,10 @@ namespace Terminaux.Themes
             lock (locker)
             {
                 if (string.IsNullOrEmpty(theme))
-                    throw new TerminauxException("Theme name may not be empty");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY"));
+                // TODO: T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST -> Theme doesn't exist
                 if (!IsThemeFound(theme))
-                    throw new TerminauxException("Theme doesn't exist");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST"));
                 themes[theme] = themeInfo;
                 themes[theme].UpdateColorsTools();
             }
@@ -131,9 +134,9 @@ namespace Terminaux.Themes
             lock (locker)
             {
                 if (string.IsNullOrEmpty(theme))
-                    throw new TerminauxException("Theme name may not be empty");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY"));
                 if (!IsThemeFound(theme))
-                    throw new TerminauxException("Theme doesn't exist");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST"));
                 themes[theme].UpdateColors();
             }
         }
@@ -148,11 +151,12 @@ namespace Terminaux.Themes
             lock (locker)
             {
                 if (string.IsNullOrEmpty(theme))
-                    throw new TerminauxException("Theme name may not be empty");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY"));
                 if (!IsThemeFound(theme))
-                    throw new TerminauxException("Theme doesn't exist");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST"));
+                // TODO: T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED -> Theme removal has failed
                 if (!themes.Remove(theme))
-                    throw new TerminauxException("Theme removal failed");
+                    throw new TerminauxException(LanguageTools.GetLocalized("T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED"));
             }
         }
 
