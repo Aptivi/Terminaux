@@ -118,8 +118,14 @@ namespace Terminaux.Themes
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public Color GetColor(string type) =>
-            themeColors[type];
+        public Color GetColor(string type)
+        {
+            if (UseAccentTypes.Contains(type) && ThemeColorsTools.UseAccentColors)
+                return type.EndsWith("BackgroundColor") || type.EndsWith("BackColor") ?
+                    new Color(ThemeColorsTools.AccentBackgroundColor) :
+                    new Color(ThemeColorsTools.AccentForegroundColor);
+            return themeColors[type];
+        }
 
         /// <summary>
         /// Sets a color in the color type
@@ -140,8 +146,7 @@ namespace Terminaux.Themes
             if (!Enum.IsDefined(typeof(ThemeColorType), type) && !themeExtraColors.Contains(type))
                 themeExtraColors.Add(type);
 
-            // Update the colors, then set the color
-            UpdateColors();
+            // Set the color
             themeColors[type] = color;
         }
 

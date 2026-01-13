@@ -133,8 +133,39 @@ namespace Terminaux.Tests.Themes
             {
                 string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
                 ThemeInfoInstance.SetColor(type, ConsoleColors.Aqua);
+            }
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length - 1; typeIndex++)
+            {
+                string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
                 ThemeInfoInstance.themeColors[type].ShouldNotBeNull();
                 ThemeInfoInstance.themeColors[type].ShouldBe(ConsoleColors.Aqua);
+            }
+        }
+
+        /// <summary>
+        /// Tests initializing an instance of ThemeInfo from resources and setting its colors permanently by editing the theme
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeThemeInfoFromResourcesAndSetColorsPermanently()
+        {
+            // Create instance
+            var ThemeInfoInstance = new ThemeInfo();
+
+            // Check for null
+            ThemeInfoInstance.themeColors.ShouldNotBeNull();
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length - 1; typeIndex++)
+            {
+                string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.SetColor(type, ConsoleColors.Aqua);
+                ThemeInfoInstance.themeColors[type].ShouldNotBeNull();
+                ThemeInfoInstance.themeColors[type].ShouldBe(ConsoleColors.Aqua);
+            }
+            ThemeTools.EditTheme("Default", ThemeInfoInstance);
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length - 1; typeIndex++)
+            {
+                string type = ThemeInfoInstance.themeColors.Keys.ElementAt(typeIndex);
+                ThemeTools.GetThemeInfo("Default").GetColor(type).ShouldBe(ConsoleColors.Aqua);
             }
         }
 

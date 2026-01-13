@@ -103,6 +103,24 @@ namespace Terminaux.Themes
         }
 
         /// <summary>
+        /// Edits a theme
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        /// <param name="themeInfo">Theme info instance</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void EditTheme(string theme, ThemeInfo themeInfo)
+        {
+            lock (locker)
+            {
+                if (string.IsNullOrEmpty(theme))
+                    throw new TerminauxException("Theme name may not be empty");
+                if (!IsThemeFound(theme))
+                    throw new TerminauxException("Theme doesn't exist");
+                themes[theme] = themeInfo;
+            }
+        }
+
+        /// <summary>
         /// Unregisters a theme
         /// </summary>
         /// <param name="theme">Theme name</param>
@@ -133,8 +151,13 @@ namespace Terminaux.Themes
         /// <param name="themeInfo">Theme instance</param>
         public static Dictionary<string, Color> GetColorsFromTheme(ThemeInfo themeInfo)
         {
-            if (themeInfo.UseAccentTypes.Length > 0)
-                themeInfo.UpdateColors();
+            if (themeInfo.UseAccentTypes.Length > 0 && ThemeColorsTools.UseAccentColors)
+            {
+                var colors = new Dictionary<string, Color>();
+                foreach (string type in themeInfo.themeColors.Keys)
+                    colors.Add(type, themeInfo.GetColor(type));
+                return colors;
+            }
             return themeInfo.themeColors;
         }
 
