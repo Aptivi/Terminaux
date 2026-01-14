@@ -2814,5 +2814,17 @@
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
     <value>輸入的值無效</value>
   </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY" xml:space="preserve">
+    <value>主題名稱不能為空</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEEXISTS" xml:space="preserve">
+    <value>主題已存在</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST" xml:space="preserve">
+    <value>主題不存在</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
+    <value>主題移除失敗</value>
+  </data>
 
 </root>

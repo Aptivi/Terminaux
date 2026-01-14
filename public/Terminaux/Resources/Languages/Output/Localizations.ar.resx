@@ -2814,5 +2814,17 @@
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
     <value>قيمة غير صالحة</value>
   </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY" xml:space="preserve">
+    <value>يجب ألا يكون اسم القالب فارغًا</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEEXISTS" xml:space="preserve">
+    <value>القالب موجود بالفعل</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST" xml:space="preserve">
+    <value>القالب غير موجود</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
+    <value>فشلت عملية إزالة القالب</value>
+  </data>
 
 </root>

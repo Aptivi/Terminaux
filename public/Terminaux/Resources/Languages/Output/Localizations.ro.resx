@@ -2814,5 +2814,17 @@
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
     <value>Valoare introdusă nevalidă</value>
   </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY" xml:space="preserve">
+    <value>Numele temei poate fi completat</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEEXISTS" xml:space="preserve">
+    <value>Tema există deja</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST" xml:space="preserve">
+    <value>Tema nu există</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
+    <value>Eliminarea temei a eșuat</value>
+  </data>
 
 </root>

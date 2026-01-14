@@ -2814,5 +2814,17 @@
   <data name="T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID" xml:space="preserve">
     <value>Valore inserito non valido</value>
   </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY" xml:space="preserve">
+    <value>Il nome del tema non può essere vuoto</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEEXISTS" xml:space="preserve">
+    <value>Il tema esiste già</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST" xml:space="preserve">
+    <value>Il tema non esiste</value>
+  </data>
+  <data name="T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED" xml:space="preserve">
+    <value>La rimozione del tema non è riuscita</value>
+  </data>
 
 </root>

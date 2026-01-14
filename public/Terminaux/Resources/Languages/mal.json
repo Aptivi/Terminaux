@@ -3604,6 +3604,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
       "text": "Nilai yang dimasukkan tidak sah"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY",
+      "text": "Nama tema mungkin tidak kosong"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEEXISTS",
+      "text": "Tema sudah wujud"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST",
+      "text": "Tema tidak wujud"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
+      "text": "Penyingkiran tema telah gagal"
     }
   ]
 }

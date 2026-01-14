@@ -3610,6 +3610,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
       "text": "Ungültiger Wert eingegeben."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY",
+      "text": "Der Themenname darf nicht leer sein."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEEXISTS",
+      "text": "Das Thema existiert bereits."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST",
+      "text": "Das Thema existiert nicht."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
+      "text": "Das Entfernen des Themas ist fehlgeschlagen."
     }
   ]
 }

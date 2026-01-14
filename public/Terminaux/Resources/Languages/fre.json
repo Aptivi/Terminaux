@@ -3647,6 +3647,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
       "text": "Valeur incorrecte"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY",
+      "text": "Le nom du thème ne peut pas être vide."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEEXISTS",
+      "text": "Ce thème existe déjà."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST",
+      "text": "Ce thème n'existe pas."
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
+      "text": "La suppression du thème a échoué."
     }
   ]
 }

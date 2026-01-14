@@ -3601,6 +3601,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
       "text": "無効な値が入力されました"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY",
+      "text": "テーマ名は空欄にできません"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEEXISTS",
+      "text": "テーマは既に存在します"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST",
+      "text": "テーマは存在しません"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
+      "text": "テーマの削除に失敗しました"
     }
   ]
 }

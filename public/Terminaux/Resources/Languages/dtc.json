@@ -3607,6 +3607,22 @@
     {
       "loc": "T_INPUT_STYLES_INFOBOX_KEYBINDING_NUMBERVALUEINVALID",
       "text": "Ongeldige waarde ingevoerd"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENAMEEMPTY",
+      "text": "De themanaam mag niet leeg zijn"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEEXISTS",
+      "text": "Het thema bestaat al"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMENOTEXIST",
+      "text": "Het thema bestaat niet"
+    },
+    {
+      "loc": "T_COLORS_THEMES_EXCEPTION_THEMEREMFAILED",
+      "text": "Het verwijderen van het thema is mislukt"
     }
   ]
 }
