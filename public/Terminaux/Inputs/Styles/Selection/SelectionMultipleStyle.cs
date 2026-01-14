@@ -185,7 +185,7 @@ namespace Terminaux.Inputs.Styles.Selection
         {
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Answers)];
             initialChoices ??= SelectionInputTools.SelectDefaults(choices);
-            currentSelection ??= SelectionInputTools.GetDefaultChoice(choices);
+            currentSelection ??= SelectionInputTools.GetDefaultChoice(choices) + 1;
             return SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, true, initialChoices, currentSelection, currentSelection);
         }
 
@@ -204,7 +204,7 @@ namespace Terminaux.Inputs.Styles.Selection
         {
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(Answers), .. SelectionInputTools.GetChoicesFromCategories(AltAnswers)];
             initialChoices ??= SelectionInputTools.SelectDefaults(choices);
-            currentSelection ??= SelectionInputTools.GetDefaultChoice(choices);
+            currentSelection ??= SelectionInputTools.GetDefaultChoice(choices) + 1;
             return SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, true, initialChoices, currentSelection, currentSelection);
         }
     }
