@@ -105,9 +105,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                 int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                 if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
-                    InteractiveTuiTools.InfoScrollUp(selectorTui);
+                    InteractiveTuiTools.InfoScrollUp(selectorTui, 3);
                 else
-                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection - 1);
+                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection - 3);
             }
         }
 
@@ -122,9 +122,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                 int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                 if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
-                    InteractiveTuiTools.InfoScrollDown(selectorTui);
+                    InteractiveTuiTools.InfoScrollDown(selectorTui, 3);
                 else
-                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection + 1);
+                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection + 3);
             }
         }
 

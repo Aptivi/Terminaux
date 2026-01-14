@@ -323,14 +323,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 else if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
                                 {
                                     goingUp = true;
-                                    SelectionGoUp(ref currentSelection, choices);
+                                    SelectionGoUp(ref currentSelection, choices, 3);
                                 }
                                 break;
                             case PointerButton.WheelDown:
                                 if (InfoBoxTools.IsMouseWithinText(infoBox, mouse))
                                     InfoBoxTools.GoDown(ref currIdx, infoBox, 3);
                                 else if (IsMouseWithinInputBox(selectionBoxPosX, selectionBoxPosY, maxSelectionWidth, selectionReservedHeight, mouse))
-                                    SelectionGoDown(ref currentSelection, choices);
+                                    SelectionGoDown(ref currentSelection, choices, 3);
                                 break;
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
@@ -560,18 +560,22 @@ namespace Terminaux.Inputs.Styles.Infobox
             return PointerTools.PointerWithinRange(mouse, (selectionBoxPosX + 1, selectionBoxPosY), (selectionBoxPosX + maxSelectionWidth, selectionBoxPosY + reservedHeight - 3));
         }
 
-        private static void SelectionGoUp(ref int currentSelection, InputChoiceInfo[] selections)
+        private static void SelectionGoUp(ref int currentSelection, InputChoiceInfo[] selections, int factor = 1)
         {
-            currentSelection--;
+            if (factor < 1)
+                factor = 1;
+            currentSelection -= factor;
             if (currentSelection < 0)
-                currentSelection = selections.Length - 1;
+                currentSelection = factor == 1 ? selections.Length - 1 : 0;
         }
 
-        private static void SelectionGoDown(ref int currentSelection, InputChoiceInfo[] selections)
+        private static void SelectionGoDown(ref int currentSelection, InputChoiceInfo[] selections, int factor = 1)
         {
-            currentSelection++;
+            if (factor < 1)
+                factor = 1;
+            currentSelection += factor;
             if (currentSelection > selections.Length - 1)
-                currentSelection = 0;
+                currentSelection = factor == 1 ? 0 : selections.Length - 1;
         }
 
         private static void SelectionSet(ref int currentSelection, InputChoiceInfo[] selections, int value)

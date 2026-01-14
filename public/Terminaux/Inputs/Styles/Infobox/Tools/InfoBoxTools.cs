@@ -353,6 +353,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 
         internal static void GoUp(ref int currIdx, int level = 1)
         {
+            if (level < 1)
+                level = 1;
             currIdx -= level;
             if (currIdx < 0)
                 currIdx = 0;
@@ -361,6 +363,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         internal static void GoDown(ref int currIdx, InfoBox infoBox, int level = 1)
         {
             var (_, _, _, _, _, maxTextHeight, linesLength) = infoBox.Dimensions;
+            if (level < 1)
+                level = 1;
             currIdx += level;
             if (currIdx > linesLength - maxTextHeight)
                 currIdx = linesLength - maxTextHeight;

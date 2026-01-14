@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
@@ -230,19 +231,23 @@ namespace Terminaux.Inputs.Interactive.Selectors
             TextualUITools.ExitTui(ui);
         }
 
-        private void GoUp()
+        private void GoUp(int factor = 1)
         {
-            highlightedAnswer--;
+            if (factor < 1)
+                factor = 1;
+            highlightedAnswer -= factor;
             if (highlightedAnswer < 1)
-                highlightedAnswer = 1;
+                highlightedAnswer = factor == 1 ? allAnswers.Count : 1;
             Update(true);
         }
 
-        private void GoDown()
+        private void GoDown(int factor = 1)
         {
-            highlightedAnswer++;
+            if (factor < 1)
+                factor = 1;
+            highlightedAnswer += factor;
             if (highlightedAnswer > allAnswers.Count)
-                highlightedAnswer = allAnswers.Count;
+                highlightedAnswer = factor == 1 ? 1 : allAnswers.Count;
             Update(false);
         }
 
@@ -358,18 +363,20 @@ namespace Terminaux.Inputs.Interactive.Selectors
             ui.RequireRefresh();
         }
 
-        private void ShowcaseGoUp()
+        private void ShowcaseGoUp(int factor = 1)
         {
             int wholeWidth = ConsoleWrapper.WindowWidth - 4;
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
             if (!sidebarEnabled)
                 return;
-            showcaseLine--;
+            if (factor < 1)
+                factor = 1;
+            showcaseLine -= factor;
             if (showcaseLine < 0)
                 showcaseLine = 0;
         }
 
-        private void ShowcaseGoDown()
+        private void ShowcaseGoDown(int factor = 1)
         {
             int wholeWidth = ConsoleWrapper.WindowWidth - 4;
             bool sidebarEnabled = sidebar && wholeWidth / 4 >= 15;
@@ -389,7 +396,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
             if (lines.Length <= answersPerPage)
                 return;
-            showcaseLine++;
+            if (factor < 1)
+                factor = 1;
+            showcaseLine += factor;
             if (showcaseLine > lines.Length - answersPerPage - totalHeight - 1)
                 showcaseLine = lines.Length - answersPerPage - totalHeight - 1;
         }
@@ -582,16 +591,16 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
                 // Now, scroll the showcase if possible
                 if (goingUp)
-                    ShowcaseGoUp();
+                    ShowcaseGoUp(3);
                 else
-                    ShowcaseGoDown();
+                    ShowcaseGoDown(3);
             }
             else
             {
                 if (goingUp)
-                    GoUp();
+                    GoUp(3);
                 else
-                    GoDown();
+                    GoDown(3);
             }
         }
 

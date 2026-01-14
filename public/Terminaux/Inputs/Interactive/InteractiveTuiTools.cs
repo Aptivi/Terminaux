@@ -460,19 +460,26 @@ namespace Terminaux.Inputs.Interactive
             return finalInfoRendered;
         }
 
-        internal static bool InfoScrollUp<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
+        internal static bool InfoScrollUp<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, int factor = 1)
         {
+            // Get the wrapped info string
+            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+            string finalInfoRendered = RenderFinalInfo(interactiveTui);
+            string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
             if (interactiveTui.CurrentInfoLine == 0)
                 return false;
 
             // Now, ascend
-            interactiveTui.CurrentInfoLine--;
+            if (factor < 1)
+                factor = 1;
+            interactiveTui.CurrentInfoLine -= factor;
             if (interactiveTui.CurrentInfoLine < 0)
-                interactiveTui.CurrentInfoLine = 0;
+                interactiveTui.CurrentInfoLine = factor == 1 ? finalInfoStrings.Length - SeparatorMaximumHeightInterior : 0;
             return true;
         }
 
-        internal static bool InfoScrollDown<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
+        internal static bool InfoScrollDown<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, int factor = 1)
         {
             // Get the wrapped info string
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
@@ -483,9 +490,11 @@ namespace Terminaux.Inputs.Interactive
                 return false;
 
             // Now, descend
-            interactiveTui.CurrentInfoLine++;
+            if (factor < 1)
+                factor = 1;
+            interactiveTui.CurrentInfoLine += factor;
             if (interactiveTui.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
-                interactiveTui.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
+                interactiveTui.CurrentInfoLine = factor == 1 ? 0 : finalInfoStrings.Length - SeparatorMaximumHeightInterior;
             return true;
         }
 
