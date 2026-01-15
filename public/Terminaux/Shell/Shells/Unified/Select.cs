@@ -40,16 +40,13 @@ namespace Terminaux.Shell.Shells.Unified
             var Titles = new List<(string, string)>();
 
             // Add the provided working titles
-            if (parameters.ArgumentsList.Length > 2)
+            var titles = parameters.ArgumentsList.Skip(2).ToArray();
+            var split = parameters.ArgumentsList[0].Split('/');
+            for (int i = 0; i < split.Length; i++)
             {
-                var titles = parameters.ArgumentsList.Skip(2).ToArray();
-                var split = parameters.ArgumentsText.Split('/');
-                for (int i = 0; i < split.Length; i++)
-                {
-                    string answer = split[i];
-                    string title = i >= titles.Length ? $"[{i + 1}]" : titles[i];
-                    Titles.Add((answer, title));
-                }
+                string answer = split[i];
+                string title = i >= titles.Length ? $"[{i + 1}]" : titles[i];
+                Titles.Add((answer, title));
             }
 
             // Prompt for selection
