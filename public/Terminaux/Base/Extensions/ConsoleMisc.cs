@@ -578,8 +578,10 @@ namespace Terminaux.Base.Extensions
                     Console.OutputEncoding = Encoding.Default;
                     break;
                 case ConsoleEncoding.System:
-                    Console.InputEncoding = Encoding.Default;
-                    Console.OutputEncoding = Encoding.Default;
+                    if (windowsInputEncoding is not null)
+                        Console.InputEncoding = windowsInputEncoding;
+                    if (windowsOutputEncoding is not null)
+                        Console.OutputEncoding = windowsOutputEncoding;
                     break;
             }
         }
