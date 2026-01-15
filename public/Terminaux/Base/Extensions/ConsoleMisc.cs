@@ -41,6 +41,8 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleMisc
     {
+        private static Encoding? windowsInputEncoding = null;
+        private static Encoding? windowsOutputEncoding = null;
         private static bool codepageReady = false;
         private static bool isOnAltBuffer = false;
         private static int tabWidth = 4;
@@ -555,6 +557,33 @@ namespace Terminaux.Base.Extensions
             }
         }
 
+        /// <summary>
+        /// Sets the Windows console encoding
+        /// </summary>
+        /// <param name="encoding"></param>
+        public static void SetEncoding(ConsoleEncoding encoding)
+        {
+            if (!PlatformHelper.IsOnWindows())
+                return;
+
+            // Set the encoding on Windows
+            switch (encoding)
+            {
+                case ConsoleEncoding.UTF16:
+                    Console.InputEncoding = Encoding.Unicode;
+                    Console.OutputEncoding = Encoding.Unicode;
+                    break;
+                case ConsoleEncoding.Default:
+                    Console.InputEncoding = Encoding.Default;
+                    Console.OutputEncoding = Encoding.Default;
+                    break;
+                case ConsoleEncoding.System:
+                    Console.InputEncoding = Encoding.Default;
+                    Console.OutputEncoding = Encoding.Default;
+                    break;
+            }
+        }
+
         internal static uint GetMode(IntPtr stdHandle)
         {
             NativeMethods.GetConsoleMode(stdHandle, out uint mode);
@@ -582,8 +611,9 @@ namespace Terminaux.Base.Extensions
             if (PlatformHelper.IsOnWindows())
             {
                 ConsoleLogger.Debug("Setting codepage...");
-                Console.InputEncoding = Encoding.Unicode;
-                Console.OutputEncoding = Encoding.Unicode;
+                windowsInputEncoding = Console.InputEncoding;
+                windowsOutputEncoding = Console.OutputEncoding;
+                SetEncoding(ConsoleEncoding.UTF16);
                 codepageReady = true;
             }
         }
