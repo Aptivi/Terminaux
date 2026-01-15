@@ -93,12 +93,12 @@ namespace Terminaux.Console
                 {
                     Title = "Choose a fixture"
                 }, true);
-                if (selected == fixtureNames.Length + 1)
+                if (selected == fixtureNames.Length)
                     break;
 
                 // Get the fixture from the selection and run it
-                var chosenFixture = fixtures[selected - 1];
-                string chosenFixtureName = fixtureNames[selected - 1];
+                var chosenFixture = fixtures[selected];
+                string chosenFixtureName = fixtureNames[selected];
                 TextWriterColor.Write($"Fixture to be tested: {chosenFixtureName}\n");
                 chosenFixture.RunFixture();
                 Input.ReadKey();

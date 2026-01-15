@@ -85,10 +85,10 @@ namespace Terminaux.Themes
             while (true)
             {
                 int prev = SelectionStyle.PromptSelection((theme is not null ? $"{theme.Name}: {LanguageTools.GetLocalized(theme.Description)}\n\n" : "") + LanguageTools.GetLocalized("T_COLORS_THEMES_THEMESHOWCASE"), [.. choices], [.. altChoices], true);
-                if (prev == choices.Count + 1)
+                if (prev == choices.Count)
                     break;
                 else
-                    ColorSelector.OpenColorSelector(colors.Values.ElementAt(prev - 1), readOnly: true);
+                    ColorSelector.OpenColorSelector(colors.Values.ElementAt(prev), readOnly: true);
             }
         }
     }

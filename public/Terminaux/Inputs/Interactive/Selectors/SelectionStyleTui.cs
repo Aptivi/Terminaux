@@ -43,8 +43,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
 {
     internal class SelectionStyleTui : TextualUI
     {
-        private int highlightedAnswer = 1;
-        private int selectedAnswer = 1;
+        private int highlightedAnswer = 0;
+        private int selectedAnswer = 0;
         private int questionLine;
         private int showcaseLine;
         private bool showCount;
@@ -120,19 +120,19 @@ namespace Terminaux.Inputs.Interactive.Selectors
             selection.Height = answersPerPage;
             selection.Width = interiorWidth;
             selection.ShowRadioButtons = settings.RadioButtons;
-            selection.CurrentSelection = highlightedAnswer - 1;
-            selection.SelectedChoice = selectedAnswer - 1;
+            selection.CurrentSelection = highlightedAnswer;
+            selection.SelectedChoice = selectedAnswer;
             selection.CurrentSelections = multiple ? [.. selectedAnswers] : null;
             selection.Settings = settings;
             selectionBuilder.Append(selection.Render());
             relatedHeights = selection.GetRelatedHeights();
 
             // Write description hint
-            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer];
             if (showCount)
             {
                 int currentPage = SelectionInputTools.DetermineCurrentPage(categories, answersPerPage, highlightedAnswer);
-                string renderedHint = (showCount ? $"[{(multiple ? $"{selectedAnswers.Count} | " : "")}{currentPage + 1}/{choiceNums.Count} | {highlightedAnswer}/{allAnswers.Count}]" : "");
+                string renderedHint = (showCount ? $"[{(multiple ? $"{selectedAnswers.Count} | " : "")}{currentPage + 1}/{choiceNums.Count} | {highlightedAnswer + 1}/{allAnswers.Count}]" : "");
                 int descHintAreaX = interiorWidth - ConsoleChar.EstimateCellWidth(renderedHint) + 2;
                 int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                 selectionBuilder.Append(
@@ -209,7 +209,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void Update(bool goingUp)
         {
-            InfoBoxTools.VerifyDisabled(ref highlightedAnswer, categories, goingUp, true);
+            InfoBoxTools.VerifyDisabled(ref highlightedAnswer, categories, goingUp);
             showcaseLine = 0;
         }
 
@@ -224,9 +224,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
             else if (!multiple)
             {
                 if (settings.RadioButtons)
-                    selectedAnswers.Add(selectedAnswer - 1);
+                    selectedAnswers.Add(selectedAnswer);
                 else
-                    selectedAnswers.Add(highlightedAnswer - 1);
+                    selectedAnswers.Add(highlightedAnswer);
             }
             TextualUITools.ExitTui(ui);
         }
@@ -236,8 +236,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (factor < 1)
                 factor = 1;
             highlightedAnswer -= factor;
-            if (highlightedAnswer < 1)
-                highlightedAnswer = factor == 1 ? allAnswers.Count : 1;
+            if (highlightedAnswer < 0)
+                highlightedAnswer = factor == 1 ? allAnswers.Count - 1 : 0;
             Update(true);
         }
 
@@ -246,20 +246,20 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (factor < 1)
                 factor = 1;
             highlightedAnswer += factor;
-            if (highlightedAnswer > allAnswers.Count)
-                highlightedAnswer = factor == 1 ? 1 : allAnswers.Count;
+            if (highlightedAnswer > allAnswers.Count - 1)
+                highlightedAnswer = factor == 1 ? 0 : allAnswers.Count - 1;
             Update(false);
         }
 
         private void GoFirst(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            highlightedAnswer = 1;
+            highlightedAnswer = 0;
             Update(true);
         }
 
         private void GoLast(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            highlightedAnswer = allAnswers.Count;
+            highlightedAnswer = allAnswers.Count - 1;
             Update(false);
         }
 
@@ -279,13 +279,13 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Use the rendered selection heights to go to the previous page
             var heights = selection.GetSelectionHeights();
             int processedHeight = 0;
-            for (int h = highlightedAnswer - 1; h > 0 && processedHeight < answersPerPage; h--)
+            for (int h = highlightedAnswer; h > 0 && processedHeight < answersPerPage; h--)
             {
                 int height = heights[h];
                 int prevHeight = h - 1 < heights.Count ? heights[h - 1] : 0;
                 highlightedAnswer--;
-                if (highlightedAnswer < 1)
-                    highlightedAnswer = 1;
+                if (highlightedAnswer < 0)
+                    highlightedAnswer = 0;
                 processedHeight += height - prevHeight;
             }
             Update(true);
@@ -312,8 +312,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 int height = heights[h];
                 int nextHeight = h + 1 < heights.Count ? heights[h + 1] : 0;
                 highlightedAnswer++;
-                if (highlightedAnswer > allAnswers.Count)
-                    highlightedAnswer = allAnswers.Count;
+                if (highlightedAnswer > allAnswers.Count - 1)
+                    highlightedAnswer = allAnswers.Count - 1;
                 processedHeight += nextHeight - height > 0 ? nextHeight - height : 1;
             }
             Update(false);
@@ -334,7 +334,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             // Get the result entries
             var regex = new Regex(keyword);
             var resultEntries = entriesString
-                .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, itemNum: idx + 1))
+                .Select((entry, idx) => (entry.ChoiceName, entry.ChoiceTitle, entry.ChoiceDisabled, itemIdx: idx))
                 .Where((entry) => (regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle)) && !entry.ChoiceDisabled).ToArray();
 
             // Act, depending on the result entries
@@ -355,7 +355,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"));
 
             // Change the highlighted answer number
-            var resultNum = idx >= resultEntries.Length ? highlightedAnswer : resultEntries[idx].itemNum;
+            var resultNum = idx >= resultEntries.Length ? highlightedAnswer : resultEntries[idx].itemIdx;
             highlightedAnswer = resultNum;
 
             // Update the TUI
@@ -391,7 +391,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 2;
-            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer];
             string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
             string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
             if (lines.Length <= answersPerPage)
@@ -443,7 +443,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 if (!UpdateSelectedIndexWithMousePos(mouse, out ChoiceHitboxType hitboxType) || hitboxType != ChoiceHitboxType.Choice)
                     return;
             }
-            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer];
             string choiceDesc = highlightedAnswerChoiceInfo.ChoiceDescription;
             if (!string.IsNullOrWhiteSpace(choiceDesc))
             {
@@ -464,8 +464,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void ModifyChoice(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            if (!selectedAnswers.Remove(highlightedAnswer - 1))
-                selectedAnswers.Add(highlightedAnswer - 1);
+            if (!selectedAnswers.Remove(highlightedAnswer))
+                selectedAnswers.Add(highlightedAnswer);
         }
 
         private void ProcessSelect()
@@ -493,7 +493,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 2;
-            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer];
             string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
             string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
 
@@ -570,7 +570,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             int listStartPosition = questionWidth > 0 ? totalHeight + 2 : 1;
             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
             int answersPerPage = listEndPosition - 2;
-            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer - 1];
+            var highlightedAnswerChoiceInfo = allAnswers[highlightedAnswer];
             string finalSidebarText = $"[{highlightedAnswerChoiceInfo.ChoiceName}] {highlightedAnswerChoiceInfo.ChoiceTitle}\n\n{highlightedAnswerChoiceInfo.ChoiceDescription}";
             string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
 
@@ -627,8 +627,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             selection.Height = answersPerPage;
             selection.Width = interiorWidth;
             selection.ShowRadioButtons = settings.RadioButtons;
-            selection.CurrentSelection = highlightedAnswer - 1;
-            selection.SelectedChoice = selectedAnswer - 1;
+            selection.CurrentSelection = highlightedAnswer;
+            selection.SelectedChoice = selectedAnswer;
             selection.CurrentSelections = multiple ? [.. selectedAnswers] : null;
             selection.Settings = settings;
 
@@ -646,7 +646,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (highlightedAnswerChoiceInfo.ChoiceDisabled && hitbox.type == ChoiceHitboxType.Choice)
                 return false;
             if (!highlightedAnswerChoiceInfo.ChoiceDisabled || hitbox.type != ChoiceHitboxType.Choice)
-                highlightedAnswer = hitbox.related;
+                highlightedAnswer = hitbox.related - 1;
             if (checkPos)
                 Update(false);
             hitboxType = hitbox.type;
@@ -660,10 +660,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             selectedAnswers = [.. initialChoices];
             categories = [.. answers, .. altAnswers];
             allAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
-            currentSelection ??= SelectionInputTools.GetDefaultChoice(categories) + 1;
-            currentSelected ??= SelectionInputTools.GetDefaultChoice(categories) + 1;
-            highlightedAnswer = currentSelection ?? 1;
-            selectedAnswer = currentSelected ?? 1;
+            currentSelection ??= SelectionInputTools.GetDefaultChoice(categories);
+            currentSelected ??= SelectionInputTools.GetDefaultChoice(categories);
+            highlightedAnswer = currentSelection ?? 0;
+            selectedAnswer = currentSelected ?? 0;
             if (allAnswers.All((ici) => ici.ChoiceDisabled))
                 throw new TerminauxException(LanguageTools.GetLocalized("T_INPUT_IS_SELECTION_EXCEPTION_NEEDSATLEASTONEITEM"));
 
@@ -675,17 +675,17 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Before we proceed, we need to check the highlighted answer number
             if (highlightedAnswer > allAnswers.Count)
-                highlightedAnswer = 1;
+                highlightedAnswer = 0;
             if (selectedAnswer > allAnswers.Count)
-                selectedAnswer = 1;
+                selectedAnswer = 0;
 
             // Set up the selection renderer instance
             selection = new Selection(categories)
             {
                 Left = 1,
                 ShowRadioButtons = this.settings.RadioButtons,
-                CurrentSelection = highlightedAnswer - 1,
-                SelectedChoice = selectedAnswer - 1,
+                CurrentSelection = highlightedAnswer,
+                SelectedChoice = selectedAnswer,
                 CurrentSelections = multiple ? [.. selectedAnswers] : null,
                 Settings = this.settings,
             };

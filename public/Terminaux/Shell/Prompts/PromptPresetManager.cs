@@ -145,7 +145,7 @@ namespace Terminaux.Shell.Prompts
             int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString(LanguageTools.GetLocalized("T_SHELL_PROMPTS_PRESETS_SELECTPRESET"), shellType), PresetNames);
             if (SelectedPreset == -1)
                 return "Default";
-            string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset - 1);
+            string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset);
             SetPreset(SelectedPresetName, shellType);
             return SelectedPresetName;
         }

@@ -54,7 +54,7 @@ namespace Terminaux.Shell.Shells.Unified
 
             // Prompt for selection
             int SelectedAnswer = SelectionStyle.PromptSelection(parameters.ArgumentsList[1], [.. Titles]);
-            variableValue = $"{SelectedAnswer}";
+            variableValue = $"{(SelectedAnswer == -1 ? -1 : SelectedAnswer + 1)}";
             return 0;
         }
 

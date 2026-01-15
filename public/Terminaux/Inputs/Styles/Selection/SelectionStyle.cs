@@ -34,7 +34,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, (string, string)[] Answers, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, Answers, [], kiosk, currentSelection, currentSelected);
 
@@ -47,7 +47,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), kiosk, currentSelection, currentSelected);
 
@@ -59,7 +59,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceInfo[] Answers, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, Answers, [], SelectionStyleSettings.GlobalSettings, kiosk, currentSelection, currentSelected);
 
@@ -72,7 +72,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, Answers, AltAnswers, SelectionStyleSettings.GlobalSettings, kiosk, currentSelection, currentSelected);
 
@@ -84,7 +84,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, Answers, [], SelectionStyleSettings.GlobalSettings, kiosk, currentSelection, currentSelected);
 
@@ -97,7 +97,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, Answers, AltAnswers, SelectionStyleSettings.GlobalSettings, kiosk, currentSelection, currentSelected);
 
@@ -110,7 +110,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, (string, string)[] Answers, SelectionStyleSettings settings, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk, currentSelection, currentSelected);
 
@@ -124,7 +124,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, SelectionStyleSettings settings, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), settings ?? SelectionStyleSettings.GlobalSettings, kiosk, currentSelection, currentSelected);
 
@@ -137,7 +137,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false, int? currentSelection = null, int? currentSelected = null) =>
             PromptSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk, currentSelection, currentSelected);
 
@@ -151,7 +151,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false, int? currentSelection = null, int? currentSelected = null)
         {
             InputChoiceCategoryInfo[] answersCategory =
@@ -180,15 +180,15 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false, int? currentSelection = null, int? currentSelected = null)
         {
-            currentSelection ??= SelectionInputTools.GetDefaultChoice(Answers) + 1;
-            currentSelected ??= SelectionInputTools.GetDefaultChoice(Answers) + 1;
+            currentSelection ??= SelectionInputTools.GetDefaultChoice(Answers);
+            currentSelected ??= SelectionInputTools.GetDefaultChoice(Answers);
             var answers = SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, false, null, currentSelection, currentSelected);
             if (answers.Length == 0)
                 return -1;
-            return answers[0] + 1;
+            return answers[0];
         }
 
         /// <summary>
@@ -201,15 +201,15 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         /// <param name="currentSelection">Current selection (the choice that will be highlighted)</param>
         /// <param name="currentSelected">Current selected choice (for radio buttons)</param>
-        /// <returns>A one-based selection choice number, or -1 if the user has cancelled the input</returns>
+        /// <returns>A zero-based selection choice number, or -1 if the user has cancelled the input</returns>
         public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false, int? currentSelection = null, int? currentSelected = null)
         {
-            currentSelection ??= SelectionInputTools.GetDefaultChoice([.. Answers, .. AltAnswers]) + 1;
-            currentSelected ??= SelectionInputTools.GetDefaultChoice([.. Answers, .. AltAnswers]) + 1;
+            currentSelection ??= SelectionInputTools.GetDefaultChoice([.. Answers, .. AltAnswers]);
+            currentSelected ??= SelectionInputTools.GetDefaultChoice([.. Answers, .. AltAnswers]);
             var answers = SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, false, null, currentSelection, currentSelected);
             if (answers.Length == 0)
                 return -1;
-            return answers[0] + 1;
+            return answers[0];
         }
     }
 }

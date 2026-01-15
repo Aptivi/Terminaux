@@ -134,7 +134,7 @@ namespace Terminaux.Inputs.Styles.Selection
             {
                 page = pageKvp.Key;
                 position += pageKvp.Value;
-                if (position >= currentNum)
+                if (position > currentNum)
                     break;
             }
             return page;
@@ -149,9 +149,9 @@ namespace Terminaux.Inputs.Styles.Selection
                 {
                     for (int i = 0; i < group.Choices.Length; i++)
                     {
-                        choiceCount++;
                         if (choiceCount == choiceNum)
                             return (category, group);
+                        choiceCount++;
                     }
                 }
             }

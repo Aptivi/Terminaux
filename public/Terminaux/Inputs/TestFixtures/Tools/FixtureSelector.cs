@@ -49,11 +49,11 @@ namespace Terminaux.Inputs.TestFixtures.Tools
 
                 // Let the user select a test fixture
                 int selectedIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_CHOOSEFIXTUREPROMPT"), choices, [new InputChoiceInfo(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_EXIT"), LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_EXIT_DESCRIPTION"))]);
-                if (selectedIndex == -1 || selectedIndex == choices.Length + 1)
+                if (selectedIndex == -1 || selectedIndex == choices.Length)
                     break;
 
                 // Determine what fixture we're going to run, and run it
-                var fixture = fixtures[selectedIndex - 1];
+                var fixture = fixtures[selectedIndex];
                 ConsoleLogger.Debug("Running fixture {0}...", selectedIndex);
                 bool result = FixtureRunner.RunGeneralTest(fixture, out var exc, fixture.initialParameters);
                 if (result)
@@ -69,7 +69,7 @@ namespace Terminaux.Inputs.TestFixtures.Tools
                     if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
                         TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH"), ThemeColorType.Error);
                 }
-                statuses[selectedIndex - 1] = result ? 1 : 2;
+                statuses[selectedIndex] = result ? 1 : 2;
                 Input.ReadKey();
             }
         }

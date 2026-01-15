@@ -160,16 +160,16 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return boxBuffer.ToString();
         }
 
-        internal static void VerifyDisabled(ref int currentSelection, InputChoiceCategoryInfo[] selections, bool goingUp = false, bool addOneMax = false)
+        internal static void VerifyDisabled(ref int currentSelection, InputChoiceCategoryInfo[] selections, bool goingUp = false)
         {
             InputChoiceInfo[] choices = [.. SelectionInputTools.GetChoicesFromCategories(selections)];
-            VerifyDisabled(ref currentSelection, choices, goingUp, addOneMax);
+            VerifyDisabled(ref currentSelection, choices, goingUp);
         }
 
-        internal static void VerifyDisabled(ref int currentSelection, InputChoiceInfo[] selections, bool goingUp = false, bool addOneMax = false)
+        internal static void VerifyDisabled(ref int currentSelection, InputChoiceInfo[] selections, bool goingUp = false)
         {
-            int minSelectionIdx = addOneMax ? 1 : 0;
-            int maxSelectionIdx = addOneMax ? selections.Length : selections.Length - 1;
+            int minSelectionIdx = 0;
+            int maxSelectionIdx = selections.Length - 1;
             if (currentSelection < minSelectionIdx || currentSelection > maxSelectionIdx)
                 currentSelection = minSelectionIdx;
             if (currentSelection >= minSelectionIdx)
