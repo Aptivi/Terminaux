@@ -1,15 +1,9 @@
-Terminaux 8.1 is here! The first point release after the major version is here, with a long support period. This version of Terminaux provides new features and improvements to existing features as part of the Nitrocid 0.2.0 release that will happen on February 12th.
+This is a quick hotfix release to fix remaining localization issues.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added new screen-related properties
-- `[+]` Added new functions for editable themes
-- `[+]` Added screen overlays
-- `[*]` Made help usages more consistent
-- `[*]` Fixed ruler rendering when inverse direction is enabled
-- `[*]` Mouse improvements in interactive TUIs and infoboxes
 - `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
