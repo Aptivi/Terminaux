@@ -528,8 +528,8 @@ namespace Terminaux.Inputs.Interactive
                     new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_GOUPINFO"), ConsoleKey.W, null),
                     new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_GODOWNINFO"), ConsoleKey.S, null),
                     new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_READMORE"), ConsoleKey.I, ConsoleModifiers.Shift, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2") : LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2"), PointerButton.WheelUp, null),
-                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP2") : LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN2"), PointerButton.WheelDown, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN1") : LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP1"), PointerButton.WheelUp, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GOUP1") : LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GODOWN1"), PointerButton.WheelDown, null),
                     new InteractiveTuiBinding<TPrimary, TSecondary>(LanguageTools.GetLocalized("T_INPUT_INTERACTIVE_KEYBINDING_DOACTION"), PointerButton.Left, PointerButtonPress.Released, null),
                 ]);
             }
