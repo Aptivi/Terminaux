@@ -100,7 +100,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         /// <param name="currIdx">Current index of text line in the text area</param>
         /// <param name="drawBar">Whether to draw the slider bar for the text area or not</param>
         /// <param name="writeBinding">Whether to write the key bindings in the upper right corner of the box or not</param>
-        /// <returns></returns>
+        /// <returns>A buffered string you can render to the console</returns>
         public string Render(int currIdx = 0, bool drawBar = false, bool writeBinding = false)
         {
             int increment = 0;
@@ -114,7 +114,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         /// <param name="currIdx">Current index of text line in the text area</param>
         /// <param name="drawBar">Whether to draw the slider bar for the text area or not</param>
         /// <param name="writeBinding">Whether to write the key bindings in the upper right corner of the box or not</param>
-        /// <returns></returns>
+        /// <returns>A buffered string you can render to the console</returns>
         public string Render(ref int increment, int currIdx, bool drawBar, bool writeBinding)
         {
             var (maxWidth, maxHeight, _, borderX, borderY, _, _) = Dimensions;
@@ -140,7 +140,11 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return boxBuffer.ToString();
         }
 
-        internal string Erase()
+        /// <summary>
+        /// Erases this informational box
+        /// </summary>
+        /// <returns>A buffered string you can render to the console</returns>
+        public string Erase()
         {
             var (maxWidth, maxHeight, _, borderX, borderY, _, _) = Dimensions;
             var eraser = new Eraser()

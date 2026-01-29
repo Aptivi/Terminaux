@@ -19,6 +19,8 @@
 
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
@@ -28,8 +30,10 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 
         public void RunFixture()
         {
+            InfoBox? infoBox = null;
             for (double prog = 0.0d; prog < 100.0d; prog += 0.01d)
-                InfoBoxProgressColor.WriteInfoBoxProgress(prog, "请稍等...");
+                infoBox = InfoBoxProgressColor.WriteInfoBoxProgress(prog, "请稍等...");
+            TextWriterRaw.WriteRaw(infoBox?.Erase() ?? "");
             ConsoleColoring.LoadBack();
         }
     }

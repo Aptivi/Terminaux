@@ -18,9 +18,9 @@
 //
 
 using System.Threading;
-using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -30,12 +30,12 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            InfoBoxNonModalColor.WriteInfoBox("This info box should close automatically within 10 seconds.", new InfoBoxSettings()
+            var infobox = InfoBoxNonModalColor.WriteInfoBox("This info box should close automatically within 10 seconds.", new InfoBoxSettings()
             {
                 Title = "Non-modal information box"
             });
             Thread.Sleep(10000);
-            ConsoleColoring.LoadBack();
+            TextWriterRaw.WriteRaw(infobox.Erase());
         }
     }
 }

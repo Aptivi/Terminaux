@@ -42,7 +42,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgress(double progress, string text, params object[] vars) =>
+        public static InfoBox WriteInfoBoxProgress(double progress, string text, params object[] vars) =>
             WriteInfoBoxProgress(progress, text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars)
+        public static InfoBox WriteInfoBoxProgress(double progress, string text, InfoBoxSettings settings, params object[] vars)
         {
             // Prepare the screen
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
@@ -85,7 +85,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                     infoBox.Elements.RemoveRenderables();
                     var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
                     var boxBuffer = new StringBuilder(
-                        infoBox.Erase() +
                         infoBox.Render(ref increment, currIdx, false, false)
                     );
 
@@ -129,6 +128,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
+            return infoBox;
         }
     }
 }

@@ -18,13 +18,14 @@
 //
 
 using System;
+using System.Text;
 using System.Threading;
-using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Textify.General;
+using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -38,7 +39,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// </summary>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBox(string text, params object[] vars) =>
+        public static InfoBox WriteInfoBox(string text, params object[] vars) =>
             WriteInfoBox(text, InfoBoxSettings.GlobalSettings, vars);
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="settings">Infobox settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBox(string text, InfoBoxSettings settings, params object[] vars)
+        public static InfoBox WriteInfoBox(string text, InfoBoxSettings settings, params object[] vars)
         {
             // Prepare the screen
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
@@ -78,7 +79,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool bail = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    return infoBox.Erase() + infoBox.Render(ref increment, currIdx, true, false);
+                    return infoBox.Render(ref increment, currIdx, true, false);
                 });
 
                 // Main loop
@@ -119,6 +120,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
+            return infoBox;
         }
     }
 }
