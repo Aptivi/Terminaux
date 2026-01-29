@@ -296,6 +296,12 @@ namespace Terminaux.Reader
                         defaultValue :
                         readState.CurrentText.ToString();
 
+                    // Load the histories
+                    string historyName = readState.settings.HistoryName;
+                    HistoryTools.LoadHistories();
+                    if (!HistoryTools.IsHistoryRegistered(historyName))
+                        HistoryTools.LoadFromInstance(new HistoryInfo(historyName, []));
+
                     // Initialize some of the state variables
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
                     readState.settings.state = readState;
@@ -318,7 +324,7 @@ namespace Terminaux.Reader
                     readState.currentCursorPosTop = readState.inputPromptTop;
                     readState.passwordMode = password;
                     readState.oneLineWrap = oneLineWrap;
-                    readState.currentHistoryPos = HistoryTools.GetHistoryEntries(readState.settings.HistoryName).Length;
+                    readState.currentHistoryPos = HistoryTools.GetHistoryEntries(historyName).Length;
                     ConsoleWrapper.TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
 
                     // Get input
@@ -444,6 +450,9 @@ namespace Terminaux.Reader
 
                     // Remove the hold for input in case failure occurred during read
                     TermReaderTools.isWaitingForInput = false;
+
+                    // Save histories
+                    HistoryTools.SaveHistories();
                 }
                 state = null;
                 ConsoleLogger.Debug("Attempting to transform input string of {0} bytes to {1}...", input.Length, typeof(T).FullName);
