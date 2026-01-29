@@ -574,6 +574,7 @@ namespace Terminaux.Shell.Shells
             var ShellInstance = ShellStack[ShellStack.Count - 1];
 
             // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
+            HistoryTools.LoadHistories();
             var settings = new TermReaderSettings()
             {
                 Suggestions = (text, index, _) => CommandAutoComplete.GetSuggestions(text, index),
@@ -873,11 +874,6 @@ namespace Terminaux.Shell.Shells
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
                 ShellStack.Add(ShellInfo);
 
-                // Load the histories
-                if (!HistoryTools.IsHistoryRegistered(ShellType))
-                    HistoryTools.LoadFromInstance(new HistoryInfo(ShellType, []));
-                LoadHistories();
-
                 // Load the aliases
                 AliasManager.InitAliases(ShellType);
 
@@ -904,10 +900,6 @@ namespace Terminaux.Shell.Shells
                 ConsoleLogger.Debug("Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
                 if (newShellCount > shellCount)
                     KillShell();
-
-                // Terminaux has introduced recent changes surrounding the history feature of the reader that allows it to save and load custom histories, so we
-                // need to make use of it to be able to save histories in one file.
-                SaveHistories();
 
                 // Save the aliases
                 AliasManager.SaveAliases(ShellType);
@@ -1038,28 +1030,6 @@ namespace Terminaux.Shell.Shells
             {
                 var CommandThread = new Thread((cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                 ShellStack[ShellStack.Count - 1].AltCommandThreads.Add(CommandThread);
-            }
-        }
-
-        internal static void SaveHistories()
-        {
-            foreach (var historyInfo in HistoryTools.histories)
-                File.WriteAllText($"{ConsoleFilesystem.GetSubPath("Histories")}/{historyInfo.HistoryName}.json", JsonConvert.SerializeObject(historyInfo, Formatting.Indented));
-        }
-
-        internal static void LoadHistories()
-        {
-            var histories = Directory.GetFiles(ConsoleFilesystem.GetSubPath("Histories"), "*.json");
-            foreach (string historyFile in histories)
-            {
-                string historyJson = File.ReadAllText(historyFile);
-                var historyInstance = JsonConvert.DeserializeObject<HistoryInfo>(historyJson);
-                if (historyInstance is null)
-                    continue;
-                if (!HistoryTools.IsHistoryRegistered(historyInstance.HistoryName))
-                    HistoryTools.LoadFromInstance(historyInstance);
-                else
-                    HistoryTools.Switch(historyInstance.HistoryName, [.. historyInstance.HistoryEntries]);
             }
         }
 

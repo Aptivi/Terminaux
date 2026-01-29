@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using Newtonsoft.Json;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Reader.History
 {
@@ -255,6 +256,28 @@ namespace Terminaux.Reader.History
                 throw new TerminauxException(LanguageTools.GetLocalized("T_READER_HISTORY_TOOLS_EXCEPTION_HISTORYNOTREGISTERED"));
             string historyInfoString = JsonConvert.SerializeObject(info, Formatting.Indented);
             return historyInfoString;
+        }
+
+        internal static void SaveHistories()
+        {
+            foreach (var historyInfo in histories)
+                File.WriteAllText($"{ConsoleFilesystem.GetSubPath("Histories")}/{historyInfo.HistoryName}.json", JsonConvert.SerializeObject(historyInfo, Formatting.Indented));
+        }
+
+        internal static void LoadHistories()
+        {
+            var histories = Directory.GetFiles(ConsoleFilesystem.GetSubPath("Histories"), "*.json");
+            foreach (string historyFile in histories)
+            {
+                string historyJson = File.ReadAllText(historyFile);
+                var historyInstance = JsonConvert.DeserializeObject<HistoryInfo>(historyJson);
+                if (historyInstance is null)
+                    continue;
+                if (!IsHistoryRegistered(historyInstance.HistoryName))
+                    LoadFromInstance(historyInstance);
+                else
+                    Switch(historyInstance.HistoryName, [.. historyInstance.HistoryEntries]);
+            }
         }
 
         private static int GetHistoryIndexFrom(string historyName)

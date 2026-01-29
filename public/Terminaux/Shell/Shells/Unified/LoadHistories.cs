@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Reader.History;
 using Terminaux.Shell.Commands;
 
 namespace Terminaux.Shell.Shells.Unified
@@ -32,7 +33,7 @@ namespace Terminaux.Shell.Shells.Unified
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ShellManager.LoadHistories();
+            HistoryTools.LoadHistories();
             return 0;
         }
 
