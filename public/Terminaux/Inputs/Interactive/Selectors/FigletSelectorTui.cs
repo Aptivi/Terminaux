@@ -101,8 +101,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 // Write the text using the selected figlet font
                 string character = ((char)chars[showcaseIndex]).ToString();
                 var figletFont = FigletTools.GetFigletFont(font);
+                int figletHeight = FigletTools.GetFigletHeight(character, figletFont);
                 var figletDisplay = new AlignedFigletText(figletFont, character)
                 {
+                    Top = ConsoleWrapper.WindowHeight / 2 - figletHeight / 2,
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle
