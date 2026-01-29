@@ -34,6 +34,8 @@ namespace Terminaux.Tests.Shared.Shells
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
+            new CommandInfo("openempty", "Opens an empty shell", new OpenEmptyCommand()),
+
             new CommandInfo("write", "Writes test text", new WriteCommand()),
 
             new CommandInfo("writearg", "Writes test text with argument support",

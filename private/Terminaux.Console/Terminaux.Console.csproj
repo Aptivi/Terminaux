@@ -34,6 +34,9 @@
     <Compile Include="..\Terminaux.Tests.Shared\Shells\Commands\WriteArg.cs">
       <Link>Common\Shells\Commands\WriteArg.cs</Link>
     </Compile>
+    <Compile Include="..\Terminaux.Tests.Shared\Shells\Commands\OpenEmpty.cs">
+      <Link>Common\Shells\Commands\OpenEmpty.cs</Link>
+    </Compile>
     <Compile Include="..\Terminaux.Tests.Shared\Shells\Presets\TestPreset.cs">
       <Link>Common\Shells\Presets\TestPreset.cs</Link>
     </Compile>
@@ -42,6 +45,12 @@
     </Compile>
     <Compile Include="..\Terminaux.Tests.Shared\Shells\TestShellInstance.cs">
       <Link>Common\Shells\TestShellInstance.cs</Link>
+    </Compile>
+    <Compile Include="..\Terminaux.Tests.Shared\Shells\TestShellEmptyInfo.cs">
+      <Link>Common\Shells\TestShellEmptyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Terminaux.Tests.Shared\Shells\TestShellEmptyInstance.cs">
+      <Link>Common\Shells\TestShellEmptyInstance.cs</Link>
     </Compile>
   </ItemGroup>
 
