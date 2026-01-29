@@ -175,7 +175,10 @@ namespace Terminaux.Images.Icons
                                 {
                                     string promptedIconName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_ICONNAMEPROMPT")).ToLower();
                                     if (!icons.Contains(promptedIconName))
+                                    {
                                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("TII_ICONSSELECTOR_PROMPTFORICONS_SELECT_NOICON"));
+                                        break;
+                                    }
                                     else
                                         iconName = promptedIconName;
                                 }
@@ -192,7 +195,6 @@ namespace Terminaux.Images.Icons
                             case ConsoleKey.H:
                                 Keybinding[] allBindings = [.. Bindings, .. AdditionalBindings];
                                 KeybindingTools.ShowKeybindingInfobox(allBindings);
-                                screen.RequireRefresh();
                                 break;
                         }
                     }

@@ -449,7 +449,6 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Do the replacement!
             Replace(replacementText, replacedText, lineIdx + 1);
-            RequireRefresh();
         }
 
         private void ReplaceAll()
@@ -464,7 +463,6 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Do the replacement!
             Replace(replacementText, replacedText);
-            RequireRefresh();
         }
 
         private void FindNext()
@@ -547,7 +545,6 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_NOTFOUND"), settings.InfoBoxSettings);
-            RequireRefresh();
         }
 
         private void StatusTextInfo()
@@ -646,13 +643,11 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = maxLen;
             if (lineColIdx < 0)
                 lineColIdx = 0;
-            RequireRefresh();
         }
 
         private void SwitchEnter()
         {
             entering = !entering;
-            RequireRefresh();
             UpdateLineIndex(lineIdx);
             UpdateKeybindings();
         }

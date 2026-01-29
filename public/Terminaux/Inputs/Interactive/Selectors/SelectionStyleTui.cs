@@ -327,7 +327,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (!RegexTools.IsValidRegex(keyword))
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
-                ui.RequireRefresh();
                 return;
             }
 
@@ -344,15 +343,15 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 var choices = resultEntries.Select((tuple) => new InputChoiceInfo(tuple.ChoiceName, tuple.ChoiceTitle)).ToArray();
                 idx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("T_INPUT_COMMON_ENTRYPROMPT"));
                 if (idx < 0)
-                {
-                    ui.RequireRefresh();
                     return;
-                }
             }
             else if (resultEntries.Length == 1)
                 idx = 0;
             else
+            {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_NOITEMS"));
+                return;
+            }
 
             // Change the highlighted answer number
             var resultNum = idx >= resultEntries.Length ? highlightedAnswer : resultEntries[idx].itemIdx;
@@ -360,7 +359,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Update the TUI
             Update(false);
-            ui.RequireRefresh();
         }
 
         private void ShowcaseGoUp(int factor = 1)

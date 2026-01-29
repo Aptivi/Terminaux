@@ -317,7 +317,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
         }
 
-        private void LaunchFinder(TextualUI ui)
+        private void LaunchFinder()
         {
             if (selectorTui.CurrentPane == 2 && !selectorTui.SecondaryDataSource.Any())
                 return;
@@ -331,7 +331,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
             if (!RegexTools.IsValidRegex(keyword))
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_INVALIDQUERY"));
-                ui.RequireRefresh();
                 return;
             }
             var regex = new Regex(keyword);
@@ -403,7 +402,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2"), ConsoleKey.PageDown), (_, _, _) => NextPage()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_READMORE"), ConsoleKey.I, ConsoleModifiers.Shift), (_, _, _) => More()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND"), PointerButton.None, PointerButtonPress.Moved), (_, _, mouse) => UpdateSelectionBasedOnMouse(mouse)));
-            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCH"), ConsoleKey.F), (ui, _, _) => LaunchFinder(ui)));
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCH"), ConsoleKey.F), (_, _, _) => LaunchFinder()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_EXIT"), ConsoleKey.Escape), (ui, _, _) => Exit(ui)));
 
             // Informational selector TUI

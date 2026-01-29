@@ -379,7 +379,6 @@ namespace Terminaux.Inputs.Presentation
                     var modules = page.Inputs.Select((pii) => pii.InputMethod).ToArray();
 
                     // Let the user select an option, then process the input
-                    screen.RequireRefresh();
                     inputBail = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("T_INPUT_PRESENTATION_NEEDSINPUTPROMPT"), new InfoBoxSettings()
                     {
                         Title = LanguageTools.GetLocalized("T_INPUT_PRESENTATION_NEEDSINPUTPROMPTTITLE"),
@@ -403,7 +402,6 @@ namespace Terminaux.Inputs.Presentation
                         }
                         else
                         {
-                            screen.RequireRefresh();
                             InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTNOTPROVIDED") + $"\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}", new InfoBoxSettings()
                             {
                                 Title = LanguageTools.GetLocalized("T_INPUT_PRESENTATION_INPUTNOTPROVIDEDTITLE"),

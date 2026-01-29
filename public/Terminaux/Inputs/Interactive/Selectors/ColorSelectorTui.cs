@@ -593,7 +593,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
         private void SelectWebColor(TextualUI ui, ConsoleKeyInfo key, PointerEventContext? mouse)
         {
-            ui.RequireRefresh();
             var colors = WebSafeColors.GetColorList();
             string[] names = WebSafeColors.GetColorNames();
             int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(names.Select((n, idx) => new InputChoiceInfo($"{idx + 1}", n)).ToArray(), "Select a web-safe color from the list below.");

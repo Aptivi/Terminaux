@@ -236,7 +236,6 @@ namespace Terminaux.Inputs.Styles.Editor
             byteIdx--;
             if (byteIdx < 0)
                 byteIdx = 0;
-            RequireRefresh();
         }
 
         private void MoveForward()
@@ -246,7 +245,6 @@ namespace Terminaux.Inputs.Styles.Editor
                 byteIdx = bytes.Length - 1;
             if (byteIdx < 0)
                 byteIdx = 0;
-            RequireRefresh();
         }
 
         private void MoveUp()
@@ -254,7 +252,6 @@ namespace Terminaux.Inputs.Styles.Editor
             byteIdx -= 16;
             if (byteIdx < 0)
                 byteIdx = 0;
-            RequireRefresh();
         }
 
         private void MoveDown()
@@ -264,7 +261,6 @@ namespace Terminaux.Inputs.Styles.Editor
                 byteIdx = bytes.Length - 1;
             if (byteIdx < 0)
                 byteIdx = 0;
-            RequireRefresh();
         }
 
         private void Insert()
@@ -277,7 +273,6 @@ namespace Terminaux.Inputs.Styles.Editor
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_BYTENUMINVALID1"), settings.InfoBoxSettings);
             else
                 AddNewByte(byteNum, byteIdx + 1);
-            RequireRefresh();
         }
 
         private void Remove()
@@ -285,7 +280,6 @@ namespace Terminaux.Inputs.Styles.Editor
             DeleteByte(byteIdx + 1);
             if (byteIdx + 1 > bytes.Length && bytes.Length > 0)
                 MoveBackward();
-            RequireRefresh();
         }
 
         private void Replace()
@@ -307,7 +301,6 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Do the replacement!
             Replace(byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
-            RequireRefresh();
         }
 
         private void ReplaceAll()
@@ -329,7 +322,6 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Do the replacement!
             Replace(byteNum, byteNumReplaced);
-            RequireRefresh();
         }
 
         private void ReplaceAllWhat()
@@ -354,7 +346,6 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Do the replacement!
             Replace(byteNum, byteNumReplaced);
-            RequireRefresh();
         }
 
         private void FindNext()
@@ -450,7 +441,6 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_STYLES_EDITORS_NOTFOUND"), settings.InfoBoxSettings);
-            RequireRefresh();
         }
 
         private void NumInfo()
@@ -476,7 +466,6 @@ namespace Terminaux.Inputs.Styles.Editor
                 {
                     Title = LanguageTools.GetLocalized("T_INPUT_STYLES_HEXEDITOR_NUMINFO_TITLE"),
                 });
-            RequireRefresh();
         }
 
         private void StatusNumInfo()

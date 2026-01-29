@@ -211,7 +211,10 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 string promptedfont = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_FONTNAMEPROMPT")).ToLower();
                 if (!FigletSelector.fonts.Contains(promptedfont))
+                {
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_IS_FIGLET_NOFONT"));
+                    return;
+                }
                 else
                     font = promptedfont;
             }
