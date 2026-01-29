@@ -86,7 +86,7 @@ namespace Terminaux.Inputs.Modules
                 // Wait until the user presses any key to close the box
                 var readerSettings = new TermReaderSettings()
                 {
-                    RightMargin = ConsoleWrapper.WindowWidth - (inputPopoverPos.X + inputPopoverSize.Width) - 1,
+                    Width = inputPopoverSize.Width,
                     WriteDefaultValue = true
                 };
                 if (UseColor)
