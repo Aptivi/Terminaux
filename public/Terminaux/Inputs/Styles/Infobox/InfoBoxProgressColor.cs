@@ -85,6 +85,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     infoBox.Elements.RemoveRenderables();
                     var (maxWidth, maxHeight, _, borderX, borderY, maxTextHeight, _) = infoBox.Dimensions;
                     var boxBuffer = new StringBuilder(
+                        infoBox.Erase() +
                         infoBox.Render(ref increment, currIdx, false, false)
                     );
 

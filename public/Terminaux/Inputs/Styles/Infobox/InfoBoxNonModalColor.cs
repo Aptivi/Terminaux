@@ -78,7 +78,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool bail = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    return infoBox.Render(ref increment, currIdx, true, false);
+                    return infoBox.Erase() + infoBox.Render(ref increment, currIdx, true, false);
                 });
 
                 // Main loop

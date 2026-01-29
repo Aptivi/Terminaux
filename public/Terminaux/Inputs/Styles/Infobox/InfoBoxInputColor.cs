@@ -177,6 +177,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         ConsoleColoring.RenderRevertBackground()
                     );
                 }
+                TextWriterRaw.WriteRaw(infoBox.Erase());
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
                 ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxScreenPart.Id);
                 if (initialScreenIsNull)

@@ -139,5 +139,18 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             // Return the rendered elements
             return boxBuffer.ToString();
         }
+
+        internal string Erase()
+        {
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _) = Dimensions;
+            var eraser = new Eraser()
+            {
+                Left = borderX,
+                Top = borderY,
+                Width = maxWidth + 2,
+                Height = maxHeight + 2,
+            };
+            return eraser.Render();
+        }
     }
 }
