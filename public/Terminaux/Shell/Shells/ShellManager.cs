@@ -2122,6 +2122,7 @@ namespace Terminaux.Shell.Shells
             var ShellInstance = ShellStack[ShellStack.Count - 1];
 
             // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
+            HistoryTools.LoadHistories();
             var settings = new TermReaderSettings()
             {
                 Suggestions = (text, index, _) => CommandAutoComplete.GetSuggestions(text, index),
