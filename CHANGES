@@ -1,11 +1,10 @@
-This is a small maintenance release intended to fix issues related to history loading.
+This is a quick hotfix release to fix history loading issues for the first shell input.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed history loading issues causing disappearance of remembered commands
-- `[*]` Infoboxes now erase themselves when exited
+- `[*]` Fixed history loading issues for the first shell input
 
 Review the commit history if you want to get a deep insight about the changes.
 
