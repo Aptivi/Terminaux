@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Base.TermInfo;
@@ -32,7 +33,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Read_Standard_Format()
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/TermInfo/Data/windows-ansi");
+            var stream = EmbeddedResourceReader.LoadResourceStream("Selective Terminaux.Tests/TermInfo/Data/windows-ansi");
 
             // When
             if (stream is null)
@@ -53,7 +54,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Read_MaxColors(string terminfo, int expected)
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream($"Terminaux.Tests/TermInfo/Data/{terminfo}");
+            var stream = EmbeddedResourceReader.LoadResourceStream($"Selective Terminaux.Tests/TermInfo/Data/{terminfo}");
 
             // When
             if (stream is null)
@@ -69,7 +70,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Read_Extended_Capabilities()
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/TermInfo/Data/eterm-256color");
+            var stream = EmbeddedResourceReader.LoadResourceStream("Selective Terminaux.Tests/TermInfo/Data/eterm-256color");
 
             // When
             if (stream is null)
@@ -80,7 +81,7 @@ namespace Terminaux.Tests.TermInfo
             info.Names.Length.ShouldBe(2);
             info.Names[0].ShouldBe("Eterm-256color");
             info.Names[1].ShouldBe("Eterm with xterm 256-colors");
-            info.Extended.Count.ShouldBe(26);
+            info.Extended.Count.ShouldBe(20);
             var ax = info.Extended.GetBoolean("AX");
             var xt = info.Extended.GetBoolean("XT");
             var kup = info.Extended.GetString("kUP");
@@ -96,7 +97,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Read_Extended__Capabilities_Without_String_Values()
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/TermInfo/Data/linux");
+            var stream = EmbeddedResourceReader.LoadResourceStream("Selective Terminaux.Tests/TermInfo/Data/linux");
 
             // When
             if (stream is null)
@@ -106,19 +107,13 @@ namespace Terminaux.Tests.TermInfo
             // Then
             info.Names.Length.ShouldBe(2);
             info.Names[0].ShouldBe("linux");
-            info.Names[1].ShouldBe("linux console");
-            info.Extended.Count.ShouldBe(10);
+            info.Names[1].ShouldBe("Linux console");
+            info.Extended.Count.ShouldBe(4);
             var ax = info.Extended.GetBoolean("AX");
-            var g0 = info.Extended.GetBoolean("G0");
-            var xt = info.Extended.GetBoolean("XT");
             var u8 = info.Extended.GetNum("U8");
             ax.ShouldNotBeNull();
-            g0.ShouldNotBeNull();
-            xt.ShouldNotBeNull();
             u8.ShouldNotBeNull();
             ax.Value.ShouldBe(true);
-            g0.Value.ShouldBe(false);
-            xt.Value.ShouldBe(false);
             u8.Value.ShouldBe(1);
         }
 
@@ -128,7 +123,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Consider_Extended_Caps_Case_Sensitive(string key, bool? expected)
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/TermInfo/Data/linux");
+            var stream = EmbeddedResourceReader.LoadResourceStream("Selective Terminaux.Tests/TermInfo/Data/linux");
 
             // When
             if (stream is null)
@@ -138,6 +133,24 @@ namespace Terminaux.Tests.TermInfo
             // Then
             var boolean = info.Extended.GetBoolean(key);
             boolean?.Value.ShouldBe(expected);
+        }
+
+        [TestMethod]
+        public void TestReadAllNcursesTermInfos()
+        {
+            var streamNames = EmbeddedResourceReader.GetResourceStreamNames().Where((name) => !name.StartsWith("Selective ") && name.Contains("Terminaux.Tests."));
+            foreach (var name in streamNames)
+            {
+                var stream = EmbeddedResourceReader.LoadResourceStream(name);
+
+                // When
+                if (stream is null)
+                    Assert.Fail(nameof(stream));
+                var info = TermInfoDesc.Load(stream);
+
+                // Then
+                info.Names.Length.ShouldNotBe(0);
+            }
         }
     }
 }

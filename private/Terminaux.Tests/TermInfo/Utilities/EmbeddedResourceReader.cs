@@ -35,5 +35,11 @@ namespace Terminaux.Tests.TermInfo.Utilities
 
             return assembly.GetManifestResourceStream(resourceName);
         }
+
+        public static string[] GetResourceStreamNames()
+        {
+            var assembly = Assembly.GetCallingAssembly();
+            return assembly.GetManifestResourceNames();
+        }
     }
 }
