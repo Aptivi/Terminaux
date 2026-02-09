@@ -33,7 +33,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Read_Standard_Format()
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream("Selective Terminaux.Tests/TermInfo/Data/windows-ansi");
+            var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/a/ansi");
 
             // When
             if (stream is null)
@@ -49,12 +49,12 @@ namespace Terminaux.Tests.TermInfo
         }
 
         [TestMethod]
-        [DataRow("xterm+256color", 256)]
-        [DataRow("xterm+88color", 88)]
+        [DataRow("x/xterm+256color", 256)]
+        [DataRow("x/xterm+88color", 88)]
         public void Should_Read_MaxColors(string terminfo, int expected)
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream($"Selective Terminaux.Tests/TermInfo/Data/{terminfo}");
+            var stream = EmbeddedResourceReader.LoadResourceStream($"Terminaux.Tests/{terminfo}");
 
             // When
             if (stream is null)
@@ -70,7 +70,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Read_Extended_Capabilities()
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream("Selective Terminaux.Tests/TermInfo/Data/eterm-256color");
+            var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/E/Eterm-256color");
 
             // When
             if (stream is null)
@@ -97,7 +97,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Read_Extended__Capabilities_Without_String_Values()
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream("Selective Terminaux.Tests/TermInfo/Data/linux");
+            var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/l/linux");
 
             // When
             if (stream is null)
@@ -123,7 +123,7 @@ namespace Terminaux.Tests.TermInfo
         public void Should_Consider_Extended_Caps_Case_Sensitive(string key, bool? expected)
         {
             // Given
-            var stream = EmbeddedResourceReader.LoadResourceStream("Selective Terminaux.Tests/TermInfo/Data/linux");
+            var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/l/linux");
 
             // When
             if (stream is null)
@@ -138,7 +138,7 @@ namespace Terminaux.Tests.TermInfo
         [TestMethod]
         public void TestReadAllNcursesTermInfos()
         {
-            var streamNames = EmbeddedResourceReader.GetResourceStreamNames().Where((name) => !name.StartsWith("Selective ") && name.Contains("Terminaux.Tests."));
+            var streamNames = EmbeddedResourceReader.GetResourceStreamNames().Where((name) => name.StartsWith("Terminaux.Tests."));
             foreach (var name in streamNames)
             {
                 var stream = EmbeddedResourceReader.LoadResourceStream(name);

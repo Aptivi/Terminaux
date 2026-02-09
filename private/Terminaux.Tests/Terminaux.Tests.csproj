@@ -7,24 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="../../public/Terminaux/Resources/TermFiles/E/Eterm-256color" Visible="false">
-      <LogicalName>Selective Terminaux.Tests.TermInfo.Data.eterm-256color</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="../../public/Terminaux/Resources/TermFiles/l/linux" Visible="false">
-      <LogicalName>Selective Terminaux.Tests.TermInfo.Data.linux</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="../../public/Terminaux/Resources/TermFiles/a/ansi" Visible="false">
-      <LogicalName>Selective Terminaux.Tests.TermInfo.Data.windows-ansi</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="../../public/Terminaux/Resources/TermFiles/x/xterm+256color" Visible="false">
-      <LogicalName>Selective Terminaux.Tests.TermInfo.Data.xterm+256color</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="../../public/Terminaux/Resources/TermFiles/x/xterm+88color" Visible="false">
-      <LogicalName>Selective Terminaux.Tests.TermInfo.Data.xterm+88color</LogicalName>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="../../public/Terminaux/Resources/TermFiles/**/*" Visible="false" />
   </ItemGroup>
 
