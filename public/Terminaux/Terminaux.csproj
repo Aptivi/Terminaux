@@ -34,6 +34,7 @@
     <PackageReference Include="Colorimetry" Version="1.0.0.1" />
     <PackageReference Include="Magico" Version="1.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="QRCoder" Version="1.7.0" />
     <PackageReference Include="ResourceLab" Version="1.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="SpecProbe.Software" Version="3.8.0" />
