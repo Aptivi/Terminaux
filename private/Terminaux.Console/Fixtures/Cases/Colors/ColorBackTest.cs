@@ -19,7 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors

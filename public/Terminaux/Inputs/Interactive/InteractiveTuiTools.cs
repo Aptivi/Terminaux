@@ -24,7 +24,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 using Terminaux.Inputs.Interactive.Selectors;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;

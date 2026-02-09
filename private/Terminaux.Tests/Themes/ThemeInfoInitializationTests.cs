@@ -24,7 +24,7 @@ using System;
 using System.Linq;
 using Terminaux.Themes;
 using Terminaux.Themes.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 
 namespace Terminaux.Tests.Themes
 {

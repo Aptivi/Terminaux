@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Structures;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

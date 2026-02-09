@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;

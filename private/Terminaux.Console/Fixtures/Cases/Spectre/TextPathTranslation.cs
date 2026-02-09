@@ -18,7 +18,7 @@
 //
 
 using Spectre.Console;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

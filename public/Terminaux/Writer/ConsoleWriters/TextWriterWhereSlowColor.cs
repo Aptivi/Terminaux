@@ -19,7 +19,7 @@
 
 using System;
 using System.Threading;
-using Terminaux.Colors;
+using Colorimetry;
 using System.Text;
 using Terminaux.Base;
 using Textify.General;

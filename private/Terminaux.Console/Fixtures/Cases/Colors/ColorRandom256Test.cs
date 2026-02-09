@@ -19,7 +19,7 @@
 
 using System.Threading;
 using Terminaux.Base;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors

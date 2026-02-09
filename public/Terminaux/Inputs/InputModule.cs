@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Base.Structures;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Themes.Colors;
 
 namespace Terminaux.Inputs

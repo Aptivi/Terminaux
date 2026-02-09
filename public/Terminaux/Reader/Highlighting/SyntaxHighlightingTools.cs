@@ -21,8 +21,8 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 
 namespace Terminaux.Reader.Highlighting
 {

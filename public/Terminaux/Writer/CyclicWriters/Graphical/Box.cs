@@ -20,7 +20,7 @@
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Themes.Colors;
 

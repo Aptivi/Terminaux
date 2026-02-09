@@ -21,7 +21,7 @@ using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

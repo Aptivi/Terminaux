@@ -20,8 +20,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;
 

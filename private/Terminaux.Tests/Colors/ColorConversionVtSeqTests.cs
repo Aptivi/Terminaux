@@ -19,10 +19,11 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.Colors;
-using Terminaux.Colors.Models;
-using Terminaux.Colors.Models.Conversion;
-using Terminaux.Colors.Models.Parsing;
+using Colorimetry;
+using Colorimetry.Models;
+using Colorimetry.Models.Conversion;
+using Colorimetry.Models.Parsing;
+using Terminaux.Base.Extensions;
 using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Tests.Colors

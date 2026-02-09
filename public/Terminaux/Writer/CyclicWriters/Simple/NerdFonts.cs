@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

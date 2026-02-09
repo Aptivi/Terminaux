@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
 

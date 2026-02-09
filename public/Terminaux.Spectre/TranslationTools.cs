@@ -21,7 +21,7 @@ using Spectre.Console;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
@@ -33,7 +33,7 @@ using SFigletText = Spectre.Console.FigletText;
 using SCanvas = Spectre.Console.Canvas;
 using STextPath = Spectre.Console.TextPath;
 using SColor = Spectre.Console.Color;
-using TColor = Terminaux.Colors.Color;
+using TColor = Colorimetry.Color;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Spectre
@@ -93,7 +93,7 @@ namespace Terminaux.Spectre
                     else if (ColorTools.TryParseColor(representation))
                     {
                         // Convert to RGB sequence
-                        var parsedColor = new Colors.Color(representation);
+                        var parsedColor = new TColor(representation);
                         representations[r] = parsedColor.Hex;
                     }
                 }

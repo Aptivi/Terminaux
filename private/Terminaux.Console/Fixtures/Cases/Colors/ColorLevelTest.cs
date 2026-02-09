@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors.Data;
-using Terminaux.Colors.Gradients;
+using Colorimetry.Data;
+using Colorimetry.Gradients;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors

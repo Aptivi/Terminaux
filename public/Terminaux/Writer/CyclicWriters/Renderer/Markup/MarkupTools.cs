@@ -23,7 +23,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.TermInfo;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences;
 using Terminaux.Writer.CyclicWriters.Renderer.Effects;
 using Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins;

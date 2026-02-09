@@ -24,7 +24,7 @@ using System.Text;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Interactive;

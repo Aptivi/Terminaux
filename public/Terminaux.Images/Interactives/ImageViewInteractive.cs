@@ -19,7 +19,7 @@
 
 using System;
 using System.Text;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

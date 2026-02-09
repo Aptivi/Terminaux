@@ -29,7 +29,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using System.Collections.Generic;
 using Terminaux.Base.Structures;
 using System.Linq;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 
 namespace Terminaux.Console.Fixtures.Cases.Screens
 {

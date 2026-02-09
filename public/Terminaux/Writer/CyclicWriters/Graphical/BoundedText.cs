@@ -22,7 +22,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;

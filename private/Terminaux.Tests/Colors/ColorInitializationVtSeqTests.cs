@@ -22,11 +22,12 @@ using Shouldly;
 using System;
 using DrawingColor = System.Drawing.Color;
 using Terminaux.Base;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Colors.Transformation.Contrast;
-using Terminaux.Colors.Transformation.Formulas;
-using Terminaux.Colors.Transformation.Tools.ColorBlind;
+using Terminaux.Base.Extensions;
+using Colorimetry;
+using Colorimetry.Data;
+using Colorimetry.Transformation.Contrast;
+using Colorimetry.Transformation.Formulas;
+using Colorimetry.Transformation.Tools.ColorBlind;
 using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Tests.Colors
@@ -2239,7 +2240,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
 
             // Try to get the original of the original, and it'll fail.
-            Should.Throw(() => Console.WriteLine(ColorInstance.RGB.OriginalRgb.OriginalRgb.ToString()), typeof(TerminauxException));
+            Should.Throw(() => Console.WriteLine(ColorInstance.RGB.OriginalRgb.OriginalRgb.ToString()), typeof(ColorException));
         }
     }
 }

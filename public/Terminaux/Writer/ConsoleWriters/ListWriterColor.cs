@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Base;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Simple;
 

@@ -19,7 +19,7 @@
 
 using System;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 

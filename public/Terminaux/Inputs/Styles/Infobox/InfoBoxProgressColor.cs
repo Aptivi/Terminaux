@@ -24,7 +24,7 @@ using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 using Terminaux.Base.Extensions;

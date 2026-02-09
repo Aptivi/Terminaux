@@ -18,7 +18,7 @@
 //
 
 using System;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.TestFixtures;
 using Terminaux.Inputs.TestFixtures.Tools;

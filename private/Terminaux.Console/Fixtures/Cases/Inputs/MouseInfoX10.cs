@@ -18,7 +18,7 @@
 //
 
 using System;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.ConsoleWriters;

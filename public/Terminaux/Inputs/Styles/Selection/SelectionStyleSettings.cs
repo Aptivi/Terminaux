@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 
 namespace Terminaux.Inputs.Styles.Selection

@@ -8,7 +8,6 @@
     <Project Path="private/BuildTargets/BuildTargets.csproj" />
   </Folder>
   <Folder Name="/Private/Generators/">
-    <Project Path="private/Terminaux.ColorDataGen/Terminaux.ColorDataGen.csproj" />
     <Project Path="private/Terminaux.NerdFontGen/Terminaux.NerdFontGen.csproj" />
     <Project Path="private/Terminaux.SequenceTypesGen/Terminaux.SequenceTypesGen.csproj" />
     <Project Path="private/Terminaux.TermInfoGen/Terminaux.TermInfoGen.csproj" />

@@ -22,7 +22,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Editor;
 using Terminaux.Sequences;

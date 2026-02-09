@@ -22,7 +22,7 @@ using System.Text;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;

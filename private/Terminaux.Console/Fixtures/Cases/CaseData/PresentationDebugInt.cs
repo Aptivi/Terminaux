@@ -18,12 +18,13 @@
 //
 
 using System.Linq;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using System;
 using Textify.General;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Modules;
 

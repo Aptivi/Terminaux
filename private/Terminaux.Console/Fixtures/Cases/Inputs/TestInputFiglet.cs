@@ -18,7 +18,7 @@
 //
 
 using Textify.Data.Figlet;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs;

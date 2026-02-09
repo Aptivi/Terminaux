@@ -25,7 +25,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;

@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 
 namespace Terminaux.Console.Fixtures.Cases.Graphics
 {

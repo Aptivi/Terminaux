@@ -20,8 +20,8 @@
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
-using Terminaux.Colors.Gradients;
+using Colorimetry;
+using Colorimetry.Gradients;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors
 {

@@ -25,7 +25,7 @@ using Calendrier;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Terminaux.Base;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 using Textify.General;
 

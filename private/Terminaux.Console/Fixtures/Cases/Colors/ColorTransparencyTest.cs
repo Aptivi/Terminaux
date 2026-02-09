@@ -19,9 +19,9 @@
 
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Colors.Transformation;
+using Colorimetry;
+using Colorimetry.Data;
+using Colorimetry.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;

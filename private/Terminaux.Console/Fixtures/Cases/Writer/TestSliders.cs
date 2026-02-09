@@ -23,8 +23,8 @@ using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
 using System.Threading;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Colors.Data;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Data;
+using Colorimetry.Transformation;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Base.Extensions;
 

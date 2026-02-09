@@ -44,7 +44,7 @@ using Terminaux.Base.Wrappers;
 using Terminaux.Shell.Aliases;
 using Textify.Tools.Placeholder;
 using Textify.Data.Words.Profanity;
-using Terminaux.Colors;
+using Colorimetry;
 using SpecProbe.Software.Platform;
 using Terminaux.Themes.Colors;
 

@@ -32,7 +32,7 @@ using Textify.General;
 using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Base.Structures;

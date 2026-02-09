@@ -21,7 +21,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.Tools;
 
 namespace Terminaux.Reader.Highlighting

@@ -19,7 +19,7 @@
 
 using Spectre.Console;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;

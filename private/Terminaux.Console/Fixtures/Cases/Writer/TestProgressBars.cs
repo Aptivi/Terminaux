@@ -20,11 +20,11 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using System.Threading;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Base.Extensions;
 

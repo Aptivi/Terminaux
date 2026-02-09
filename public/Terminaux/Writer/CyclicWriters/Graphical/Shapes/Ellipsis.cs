@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 
 namespace Terminaux.Writer.CyclicWriters.Graphical.Shapes

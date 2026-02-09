@@ -23,7 +23,7 @@ using System.Threading;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Inputs;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;

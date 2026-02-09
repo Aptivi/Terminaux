@@ -19,12 +19,13 @@
 
 using System;
 using System.Text;
+using Colorimetry;
+using Colorimetry.Data;
+using Colorimetry.Transformation.Contrast;
 using SpecProbe.Software.Platform;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Colors.Transformation.Contrast;
+using Terminaux.Base.TermInfo;
 using Terminaux.Inputs;
 using Terminaux.Sequences.Builder;
 using Terminaux.Themes.Colors;
@@ -67,6 +68,61 @@ namespace Terminaux.Base.Extensions
         {
             get => allowBackground;
             set => allowBackground = value;
+        }
+        /// <summary>
+        /// Parsable VT sequence (Foreground)
+        /// </summary>
+        public static string VTSequenceForeground(this Color color) =>
+            color.IsOriginal ? color.VTSequenceForegroundOriginal() : color.VTSequenceForegroundTrueColor();
+
+        /// <summary>
+        /// Parsable VT sequence (Foreground)
+        /// </summary>
+        public static string VTSequenceForegroundOriginal(this Color color)
+        {
+            if (color.Type == ColorType.TrueColor)
+                return color.VTSequenceForegroundTrueColor();
+            color.vtSeqForeground ??=
+                TermInfoDesc.Current.SetAForeground?.ProcessSequence(color.PlainSequence) ??
+                $"{VtSequenceBasicChars.EscapeChar}[38;5;{color.PlainSequence}m";
+            return color.vtSeqForeground;
+        }
+
+        /// <summary>
+        /// Parsable VT sequence (Foreground, true color)
+        /// </summary>
+        public static string VTSequenceForegroundTrueColor(this Color color)
+        {
+            color.vtSeqForegroundTrue ??= $"{VtSequenceBasicChars.EscapeChar}[38;2;{color.PlainSequenceTrueColor}m";
+            return color.vtSeqForegroundTrue;
+        }
+
+        /// <summary>
+        /// Parsable VT sequence (Background)
+        /// </summary>
+        public static string VTSequenceBackground(this Color color) =>
+            color.IsOriginal ? color.VTSequenceBackgroundOriginal() : color.VTSequenceBackgroundTrueColor();
+
+        /// <summary>
+        /// Parsable VT sequence (Background)
+        /// </summary>
+        public static string VTSequenceBackgroundOriginal(this Color color)
+        {
+            if (color.Type == ColorType.TrueColor)
+                return color.VTSequenceBackgroundTrueColor();
+            color.vtSeqBackground ??=
+                TermInfoDesc.Current.SetABackground?.ProcessSequence(color.PlainSequence) ??
+                $"{VtSequenceBasicChars.EscapeChar}[38;5;{color.PlainSequence}m";
+            return color.vtSeqBackground;
+        }
+
+        /// <summary>
+        /// Parsable VT sequence (Background, true color)
+        /// </summary>
+        public static string VTSequenceBackgroundTrueColor(this Color color)
+        {
+            color.vtSeqBackgroundTrue ??= $"{VtSequenceBasicChars.EscapeChar}[48;2;{color.PlainSequenceTrueColor}m";
+            return color.vtSeqBackgroundTrue;
         }
 
         /// <summary>
