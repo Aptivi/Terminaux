@@ -1,10 +1,10 @@
-This is a quick hotfix release to fix history loading issues for the first shell input.
+We've updated this library to update libraries.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed history loading issues for the first shell input
+- `[*]` Updated libraries
 
 Review the commit history if you want to get a deep insight about the changes.
 
