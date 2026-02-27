@@ -1,10 +1,10 @@
-This is a small maintenance release intended to fix issues related to history loading.
+We've released this version of Terminaux to update ImageMagick!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed history loading issues causing disappearance of remembered commands
+- `[*]` Updated ImageMagick and other dependencies
 
 Review the commit history if you want to get a deep insight about the changes.
 
