@@ -2,9 +2,9 @@ name: Build Project (Debug)
 
 on:
   push:
-    branches: [ "main", "x/oob/4.3.x", "x/oob/5.4.x", "x/oob/6.1.x" ]
+    branches: [ "main", "x/oob/5.4.x", "x/oob/6.1.x", "x/oob/7.0.x" ]
   pull_request:
-    branches: [ "main", "x/oob/4.3.x", "x/oob/5.4.x", "x/oob/6.1.x" ]
+    branches: [ "main", "x/oob/5.4.x", "x/oob/6.1.x", "x/oob/7.0.x" ]
     
 jobs:
   build:
@@ -29,12 +29,8 @@ jobs:
       - name: Setup Mono (macOS)
         if: matrix.runs-on == 'macos-latest'
         run: brew install mono
-      - name: Solution Compilation (Windows)
-        if: matrix.runs-on == 'windows-latest'
-        run: ./tools/build.cmd Debug -p:ContinuousIntegrationBuild=true
-      - name: Solution Compilation (Unix)
-        if: matrix.runs-on != 'windows-latest'
-        run: make dbg-ci
+      - name: Solution Compilation
+        run: python tools/adt.py build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
       - name: Testing
         run: dotnet test --no-build --configuration Debug
         

@@ -29,7 +29,7 @@ jobs:
         run: |
           make rel-ci
           make doc
-          ./tools/docgen-pack.sh
+          python tools/adt.py packdocs
           echo "SUBJECT=$(cat CHANGES.TITLE)" >> "$GITHUB_OUTPUT"
           echo 'BODY<<EOF' >> "$GITHUB_OUTPUT"
           cat CHANGES >> "$GITHUB_OUTPUT"
@@ -45,6 +45,6 @@ jobs:
           body: ${{ steps.release-asset.outputs.BODY }}
           name: ${{ steps.release-asset.outputs.SUBJECT }}
           files: |
-            tools/*.zip
+            artifacts/*.zip
       - name: Package Publication
-        run: NUGET_APIKEY=${{ secrets.NUGET_APIKEY }} ./tools/push.sh
+        run: python tools/adt.py pushbin -a "${{ secrets.NUGET_APIKEY }}"
