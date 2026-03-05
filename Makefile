@@ -22,12 +22,12 @@ rel-ci:
 doc: invoke-doc-build
 
 clean:
-	bash tools/clean.sh
+	python tools/adt.py clean
 
 # Below targets specify functions for full build
 
 invoke-build:
-	bash tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS)
+	python tools/adt.py build -b "-p:Configuration=$(ENVIRONMENT) $(BUILDARGS)"
 
 invoke-doc-build:
-	bash tools/docgen.sh
+	python tools/adt.py gendocs
