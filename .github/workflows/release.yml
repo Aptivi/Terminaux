@@ -33,12 +33,12 @@ jobs:
           echo "SUBJECT=$(cat CHANGES.TITLE)" >> "$GITHUB_OUTPUT"
           echo 'BODY<<EOF' >> "$GITHUB_OUTPUT"
           cat CHANGES >> "$GITHUB_OUTPUT"
-          sha256sum tools/*.zip | sed -e 's/^/- /g' >> "$GITHUB_OUTPUT"
+          sha256sum artifacts/*.zip | sed -e 's/^/- /g' >> "$GITHUB_OUTPUT"
           echo 'EOF' >> "$GITHUB_OUTPUT"
       - name: Binary Attestation
         uses: actions/attest-build-provenance@v1
         with:
-          subject-path: 'tools/*.zip'
+          subject-path: 'artifacts/*.zip'
       - name: Release Making
         uses: softprops/action-gh-release@v2
         with:
