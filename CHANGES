@@ -1,10 +1,11 @@
-This is a quick hotfix release to fix history loading issues for the first shell input.
+This is the second feature release for Terminaux 8.x LTS that provides you with some more features!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed history loading issues for the first shell input
+- `[+]` Added QR code generator
+- `[*]` Moved color tools to Colorimetry
 
 Review the commit history if you want to get a deep insight about the changes.
 
