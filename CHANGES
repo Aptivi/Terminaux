@@ -1,11 +1,10 @@
-This is the second feature release for Terminaux 8.x LTS that provides you with some more features!
+This version of Terminaux provides updated ImageMagick library to fix security bugs
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added QR code generator
-- `[*]` Moved color tools to Colorimetry
+- `[*]` Fixed ImageMagick security bugs
 
 Review the commit history if you want to get a deep insight about the changes.
 
