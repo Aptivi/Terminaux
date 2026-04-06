@@ -98,34 +98,36 @@ namespace Terminaux.Inputs.Interactive.Selectors
         {
             if (mouse is null)
                 return;
-            if (selectorTui.SecondPaneInteractable)
-                GoUp();
-            else
+            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+            if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
             {
-                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-                if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
-                    InteractiveTuiTools.InfoScrollUp(selectorTui, 3);
+                // Check to see whether we need to scroll up in the info box or in the second pane selection
+                if (selectorTui.SecondPaneInteractable)
+                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.SecondPaneCurrentSelection - 3, 2);
                 else
-                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection - 3);
+                    InteractiveTuiTools.InfoScrollUp(selectorTui, 3);
             }
+            else
+                InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection - 3, 1);
         }
 
         private void GoDownDeterministic(PointerEventContext? mouse)
         {
             if (mouse is null)
                 return;
-            if (selectorTui.SecondPaneInteractable)
-                GoDown();
-            else
+            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+            if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
             {
-                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-                if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
-                    InteractiveTuiTools.InfoScrollDown(selectorTui, 3);
+                // Check to see whether we need to scroll down in the info box or in the second pane selection
+                if (selectorTui.SecondPaneInteractable)
+                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.SecondPaneCurrentSelection + 3, 2);
                 else
-                    InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection + 3);
+                    InteractiveTuiTools.InfoScrollDown(selectorTui, 3);
             }
+            else
+                InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection + 3, 1);
         }
 
         private void First()
