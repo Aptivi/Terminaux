@@ -104,12 +104,18 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 // Check to see whether we need to scroll up in the info box or in the second pane selection
                 if (selectorTui.SecondPaneInteractable)
+                {
+                    selectorTui.CurrentPane = 2;
                     InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.SecondPaneCurrentSelection - 3, 2);
+                }
                 else
                     InteractiveTuiTools.InfoScrollUp(selectorTui, 3);
             }
             else
+            {
+                selectorTui.CurrentPane = 1;
                 InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection - 3, 1);
+            }
         }
 
         private void GoDownDeterministic(PointerEventContext? mouse)
@@ -122,12 +128,18 @@ namespace Terminaux.Inputs.Interactive.Selectors
             {
                 // Check to see whether we need to scroll down in the info box or in the second pane selection
                 if (selectorTui.SecondPaneInteractable)
+                {
+                    selectorTui.CurrentPane = 2;
                     InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.SecondPaneCurrentSelection + 3, 2);
+                }
                 else
                     InteractiveTuiTools.InfoScrollDown(selectorTui, 3);
             }
             else
+            {
+                selectorTui.CurrentPane = 1;
                 InteractiveTuiTools.SelectionMovement(selectorTui, selectorTui.FirstPaneCurrentSelection + 3, 1);
+            }
         }
 
         private void First()
