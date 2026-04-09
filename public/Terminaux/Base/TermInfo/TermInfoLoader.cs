@@ -80,12 +80,12 @@ namespace Terminaux.Base.TermInfo
             //
             // To update, "git clone" the source code linked above and run the following commands:
             //
-            //   $ configure_options=(--prefix=/home/USERNAME/ncursesinstall/usr --disable-root-access --disable-root-environ --disable-setuid-environ --enable-widec --enable-pc-files --mandir=/home/USERNAME/ncursesinstall/usr/share/man --with-cxx-binding --with-cxx-shared --with-manpage-format=normal --with-pkg-config-libdir=/usr/lib/pkgconfig --with-shared --with-versioned-syms --with-xterm-kbs=del --without-ada)
+            //   $ configure_options=(--prefix=/home/$USER/ncursesinstall/usr --disable-root-access --disable-root-environ --disable-setuid-environ --enable-widec --enable-pc-files --mandir=/home/$USER/ncursesinstall/usr/share/man --with-cxx-binding --with-cxx-shared --with-manpage-format=normal --with-pkg-config-libdir=/usr/lib/pkgconfig --with-shared --with-versioned-syms --with-xterm-kbs=del --without-ada)
             //   $ ./configure "${configure_options[@]}"
             //   $ make
             //   $ cd misc ; make install.data
             //
-            // After that, find terminfo files under /home/USERNAME/ncursesinstall/usr/share/terminfo and
+            // After that, find terminfo files under /home/$USER/ncursesinstall/usr/share/terminfo and
             // copy contents to public/Terminaux/Resources/TermFiles.
             ConsoleLogger.Warning("All {0} directories led to nonexistent terminfo file when finding {1}", directories.Count, name);
             var builtins = TermInfoDesc.GetBuiltinPaths();
