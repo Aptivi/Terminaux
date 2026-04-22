@@ -273,6 +273,14 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 Vertical = Vertical,
                 Height = Height,
                 Width = Width,
+                SliderHorizontalActiveTrackChar = Accurate ? '█' : ProgressHorizontalActiveTrackChar,
+                SliderHorizontalInactiveTrackChar = Accurate ? '█' : ProgressHorizontalInactiveTrackChar,
+                SliderVerticalActiveTrackChar = Accurate ? '█' : ProgressVerticalActiveTrackChar,
+                SliderVerticalInactiveTrackChar = Accurate ? '█' : ProgressVerticalInactiveTrackChar,
+                SliderUncoloredHorizontalActiveTrackChar = Accurate ? '█' : ProgressUncoloredHorizontalActiveTrackChar,
+                SliderUncoloredHorizontalInactiveTrackChar = Accurate ? '▒' : ProgressUncoloredHorizontalInactiveTrackChar,
+                SliderUncoloredVerticalActiveTrackChar = Accurate ? '█' : ProgressUncoloredVerticalActiveTrackChar,
+                SliderUncoloredVerticalInactiveTrackChar = Accurate ? '▒' : ProgressUncoloredVerticalInactiveTrackChar,
             };
 
             if (Indeterminate)
