@@ -25,6 +25,7 @@ using Colorimetry.Data;
 using Colorimetry.Transformation;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using System.Linq;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
@@ -38,6 +39,30 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         private bool useColors = true;
         private int position = 0;
         private int maxPosition = 0;
+        private readonly (string, double)[] horizontalFractions =
+        [
+            (" ", 0.0d),
+            ("▏", 0.125d),
+            ("▎", 0.25d),
+            ("▍", 0.375d),
+            ("▌", 0.5d),
+            ("▋", 0.625d),
+            ("▊", 0.75d),
+            ("▉", 0.875d),
+            ("█", 1.0d),
+        ];
+        private readonly (string, double)[] verticalFractions =
+        [
+            (" ", 0.0d),
+            ("▁", 0.125d),
+            ("▂", 0.25d),
+            ("▃", 0.375d),
+            ("▄", 0.5d),
+            ("▅", 0.625d),
+            ("▆", 0.75d),
+            ("▇", 0.875d),
+            ("█", 1.0d),
+        ];
 
         /// <summary>
         /// Width of the progress bar
@@ -147,42 +172,74 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Progress vertical inactive track character for drawing
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressVerticalInactiveTrackChar { get; set; } = '┃';
 
         /// <summary>
         /// Progress vertical active track character for drawing
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressVerticalActiveTrackChar { get; set; } = '┃';
 
         /// <summary>
         /// Progress horizontal inactive track character for drawing
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressHorizontalInactiveTrackChar { get; set; } = '━';
 
         /// <summary>
         /// Progress horizontal active track character for drawing
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressHorizontalActiveTrackChar { get; set; } = '━';
 
         /// <summary>
         /// Progress vertical inactive track character for drawing (uncolored)
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressUncoloredVerticalInactiveTrackChar { get; set; } = '▒';
 
         /// <summary>
         /// Progress vertical active track character for drawing (uncolored)
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressUncoloredVerticalActiveTrackChar { get; set; } = '█';
 
         /// <summary>
         /// Progress horizontal inactive track character for drawing (uncolored)
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressUncoloredHorizontalInactiveTrackChar { get; set; } = '▒';
 
         /// <summary>
         /// Progress horizontal active track character for drawing (uncolored)
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressUncoloredHorizontalActiveTrackChar { get; set; } = '█';
+
+        /// <summary>
+        /// Specifies whether the progress bar uses unicode block characters to accurately describe progress or not.
+        /// </summary>
+        /// <remarks>
+        /// If <see cref="Indeterminate"/> is true, this won't be applied.
+        /// </remarks>
+        public bool Accurate { get; set; }
 
         /// <summary>
         /// Renders a scrolling text progress bar
@@ -244,19 +301,44 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             else if (Vertical)
             {
                 // Estimate how many cells the progress bar takes
-                int cells = (int)Math.Round(position * Height / (double)maxPosition);
-                cells = cells > Height ? Height : cells;
-                int remaining = Height - cells;
-                rendered.Append(
-                    UseColors ? ConsoleColoring.RenderSetConsoleColor(activeProgressColor) : ""
-                );
-                for (int i = 0; i < cells; i++)
-                    rendered.AppendLine($"{(UseColors ? ProgressVerticalActiveTrackChar : ProgressUncoloredVerticalActiveTrackChar)}");
-                rendered.Append(
-                    UseColors ? ConsoleColoring.RenderSetConsoleColor(progressColor) : ""
-                );
-                for (int i = 0; i < remaining; i++)
-                    rendered.AppendLine($"{(UseColors ? ProgressVerticalInactiveTrackChar : ProgressUncoloredVerticalInactiveTrackChar)}");
+                double cellsFractional = position * Height / (double)maxPosition;
+                cellsFractional = cellsFractional > Height ? Height : cellsFractional;
+                int cells = (int)Math.Truncate(cellsFractional);
+
+                // Check to see if we're going to use the accurate progress bar indicator or an integer-based indicator
+                if (Accurate)
+                {
+                    // This is an accurate progress bar indicator. Now, get the appropriate unicode block character to print accurate progress.
+                    double remainingFractional = Height - cellsFractional;
+                    rendered.Append(
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(activeProgressColor) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(progressColor, true) : "")
+                    );
+                    for (double i = 0; i < remainingFractional; i++)
+                    {
+                        double factor = remainingFractional - i;
+                        var verticalProgress = verticalFractions.LastOrDefault((tuple) => (1 - factor) >= tuple.Item2 && factor <= 1.0);
+                        rendered.AppendLine(!string.IsNullOrEmpty(verticalProgress.Item1) ? verticalProgress.Item1 : " ");
+                    }
+                    for (int i = 0; i < cells; i++)
+                        rendered.AppendLine("█");
+                }
+                else
+                {
+                    // Standard, fuzzy indicator.
+                    cells = (int)Math.Round(cellsFractional);
+                    int remaining = Height - cells;
+                    rendered.Append(
+                        UseColors ? ConsoleColoring.RenderSetConsoleColor(progressColor) : ""
+                    );
+                    for (int i = 0; i < remaining; i++)
+                        rendered.AppendLine($"{(UseColors ? ProgressVerticalInactiveTrackChar : ProgressUncoloredVerticalInactiveTrackChar)}");
+                    rendered.Append(
+                        UseColors ? ConsoleColoring.RenderSetConsoleColor(activeProgressColor) : ""
+                    );
+                    for (int i = 0; i < cells; i++)
+                        rendered.AppendLine($"{(UseColors ? ProgressVerticalActiveTrackChar : ProgressUncoloredVerticalActiveTrackChar)}");
+                }
             }
             else
             {
@@ -267,14 +349,46 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                     return "";
 
                 // Estimate how many cells the progress bar takes
-                int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
-                cells = cells > progressWidth ? progressWidth : cells;
-                rendered.Append(
-                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(activeProgressColor) : "") +
-                    new string(UseColors ? ProgressHorizontalActiveTrackChar : ProgressUncoloredHorizontalActiveTrackChar, cells) +
-                    (UseColors ? ConsoleColoring.RenderSetConsoleColor(progressColor) : "") +
-                    new string(UseColors ? ProgressHorizontalInactiveTrackChar : ProgressUncoloredHorizontalInactiveTrackChar, progressWidth - cells)
-                );
+                double cellsFractional = position * progressWidth / (double)maxPosition;
+                cellsFractional = cellsFractional > progressWidth ? progressWidth : cellsFractional;
+                int cells = (int)Math.Truncate(cellsFractional);
+
+                // Check to see if we're going to use the accurate progress bar indicator or an integer-based indicator
+                if (Accurate)
+                {
+                    // This is an accurate progress bar indicator. Now, get the appropriate unicode block character to print accurate progress.
+                    double remainingFractional = progressWidth - cellsFractional;
+                    string accuratePart = " ";
+                    rendered.Append(
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(activeProgressColor) : "") +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(progressColor, true) : "")
+                    );
+                    for (int i = 0; i < cells; i++)
+                        rendered.Append("█");
+                    for (double i = 0; i < remainingFractional; i++)
+                    {
+                        double factor = remainingFractional - i;
+                        var horizontalProgress = horizontalFractions.LastOrDefault((tuple) => (1 - factor) >= tuple.Item2 && factor <= 1.0);
+                        accuratePart = !string.IsNullOrEmpty(horizontalProgress.Item1) ? horizontalProgress.Item1 : " ";
+                    }
+                    rendered.Append(accuratePart);
+                    for (double i = 0; i < remainingFractional - 1; i++)
+                        rendered.Append(" ");
+                    rendered.Append(
+                        (UseColors ? ConsoleColoring.RenderRevertBackground() : "")
+                    );
+                }
+                else
+                {
+                    // Standard, fuzzy indicator.
+                    cells = (int)Math.Round(cellsFractional);
+                    rendered.Append(
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(activeProgressColor) : "") +
+                        new string(UseColors ? ProgressHorizontalActiveTrackChar : ProgressUncoloredHorizontalActiveTrackChar, cells) +
+                        (UseColors ? ConsoleColoring.RenderSetConsoleColor(progressColor) : "") +
+                        new string(UseColors ? ProgressHorizontalInactiveTrackChar : ProgressUncoloredHorizontalInactiveTrackChar, progressWidth - cells)
+                    );
+                }
 
                 // Write a progress percentage
                 if (ShowPercentage)

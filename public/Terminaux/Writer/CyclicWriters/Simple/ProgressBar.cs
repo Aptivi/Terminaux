@@ -164,42 +164,74 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         /// <summary>
         /// Progress vertical inactive track character for drawing
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressVerticalInactiveTrackChar { get; set; } = '┃';
 
         /// <summary>
         /// Progress vertical active track character for drawing
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressVerticalActiveTrackChar { get; set; } = '┃';
 
         /// <summary>
         /// Progress horizontal inactive track character for drawing
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressHorizontalInactiveTrackChar { get; set; } = '━';
 
         /// <summary>
         /// Progress horizontal active track character for drawing
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressHorizontalActiveTrackChar { get; set; } = '━';
 
         /// <summary>
         /// Progress vertical inactive track character for drawing (uncolored)
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressUncoloredVerticalInactiveTrackChar { get; set; } = '▒';
 
         /// <summary>
         /// Progress vertical active track character for drawing (uncolored)
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressUncoloredVerticalActiveTrackChar { get; set; } = '█';
 
         /// <summary>
         /// Progress horizontal inactive track character for drawing (uncolored)
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressUncoloredHorizontalInactiveTrackChar { get; set; } = '▒';
 
         /// <summary>
         /// Progress horizontal active track character for drawing (uncolored)
         /// </summary>
+        /// <remarks>
+        /// If <see cref="Accurate"/> is enabled, this property is ignored.
+        /// </remarks>
         public char ProgressUncoloredHorizontalActiveTrackChar { get; set; } = '█';
+
+        /// <summary>
+        /// Specifies whether the progress bar uses unicode block characters to accurately describe progress or not.
+        /// </summary>
+        /// <remarks>
+        /// If <see cref="Indeterminate"/> is true, this won't be applied.
+        /// </remarks>
+        public bool Accurate { get; set; }
 
         /// <summary>
         /// Renders a scrolling text progress bar
@@ -278,6 +310,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 indeterminateStep = indeterminateStep,
                 indeterminateBackwards = indeterminateBackwards,
                 UseColors = UseColors,
+                Accurate = Accurate,
             };
             rendered.Append(bar.Render());
             indeterminateStep = bar.indeterminateStep;
