@@ -61,6 +61,14 @@ namespace Terminaux.Inputs.Interactive
         /// All key bindings for your interactive user interface
         /// </summary>
         public List<InteractiveTuiBinding<TPrimary, TSecondary>> Bindings { get; internal set; } = [];
+        /// <summary>
+        /// All key bindings for your interactive user interface (first pane)
+        /// </summary>
+        public List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsFirstPane { get; internal set; } = [];
+        /// <summary>
+        /// All key bindings for your interactive user interface (first pane)
+        /// </summary>
+        public List<InteractiveTuiBinding<TPrimary, TSecondary>> BindingsSecondPane { get; internal set; } = [];
 
         /// <inheritdoc/>
         public virtual bool SecondPaneInteractable => false;

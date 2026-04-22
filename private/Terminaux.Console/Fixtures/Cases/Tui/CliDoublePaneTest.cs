@@ -22,6 +22,7 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs;
 using Terminaux.Base;
 using System;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.Tui
 {
@@ -42,6 +43,8 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
             tui.Bindings.Add(new InteractiveTuiBinding<string>("Add", ConsoleKey.F1, (_, index, _, index2) => tui.Add(index, index2), true));
             tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete", ConsoleKey.F2, (_, index, _, index2) => tui.Remove(index, index2), true));
             tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete Last", ConsoleKey.F3, (_, _, _, _) => tui.RemoveLast(), true));
+            tui.BindingsFirstPane.Add(new InteractiveTuiBinding<string>("Information", ConsoleKey.F4, (str, _, _, _) => InfoBoxModalColor.WriteInfoBoxModal(str ?? ""), true));
+            tui.BindingsSecondPane.Add(new InteractiveTuiBinding<string>("Length", ConsoleKey.F4, (_, _, str, _) => InfoBoxModalColor.WriteInfoBoxModal($"len={(str ?? "").Length}"), true));
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(tui);

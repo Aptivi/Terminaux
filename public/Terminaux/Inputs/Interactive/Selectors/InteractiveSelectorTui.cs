@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -307,7 +308,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             }
 
             // First, check the bindings
-            var allBindings = selectorTui.Bindings;
+            List<InteractiveTuiBinding<TPrimary, TSecondary>> allBindings = [.. selectorTui.Bindings, .. selectorTui.CurrentPane == 2 ? selectorTui.BindingsSecondPane : selectorTui.BindingsFirstPane];
             if (allBindings is null || allBindings.Count == 0)
                 return;
 
@@ -393,7 +394,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
             helpPageBody.AppendLine(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_HELPPAGE_BODY_INFO") + "\n");
 
             // Now, write all keybindings
-            var uiBindings = KeybindingTools.ConvertFromTuiKeybindingsToKeybindings(selectorTui.Bindings);
+            var uiBindings = KeybindingTools.ConvertFromTuiKeybindingsToKeybindings([.. selectorTui.Bindings, .. selectorTui.CurrentPane == 2 ? selectorTui.BindingsSecondPane : selectorTui.BindingsFirstPane]);
             helpPageBody.Append(KeybindingTools.RenderKeybindingHelpText(uiBindings));
 
             // Return the final body

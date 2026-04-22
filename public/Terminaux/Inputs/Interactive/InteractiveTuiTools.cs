@@ -205,10 +205,14 @@ namespace Terminaux.Inputs.Interactive
 
             // Populate appropriate bindings, depending on the SecondPaneInteractable value, and render them
             var finalBindings = GetAllBindings(interactiveTui);
-            var builtIns = finalBindings.Where((itb) => !interactiveTui.Bindings.Contains(itb)).ToArray();
+            var builtIns = finalBindings.Where((itb) =>
+                !interactiveTui.Bindings.Contains(itb) &&
+                !interactiveTui.BindingsFirstPane.Contains(itb) &&
+                !interactiveTui.BindingsSecondPane.Contains(itb))
+            .ToArray();
             var keybindingsRenderable = new Keybindings()
             {
-                KeybindingList = [.. interactiveTui.Bindings],
+                KeybindingList = [.. interactiveTui.Bindings, .. interactiveTui.CurrentPane == 2 ? interactiveTui.BindingsSecondPane : interactiveTui.BindingsFirstPane],
                 BuiltinKeybindings = builtIns,
                 BuiltinColor = interactiveTui.Settings.KeyBindingBuiltinColor,
                 BuiltinForegroundColor = interactiveTui.Settings.KeyBindingBuiltinForegroundColor,
@@ -220,7 +224,10 @@ namespace Terminaux.Inputs.Interactive
                 Width = ConsoleWrapper.WindowWidth - 1,
                 WriteHelpKeyInfo = false,
             };
-            elements.Append(RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)));
+            elements.Append(
+                RendererTools.RenderRenderable(keybindingsRenderable, new(0, ConsoleWrapper.WindowHeight - 1)) +
+                ConsoleClearing.GetClearLineToRightSequence()
+            );
 
             // Return the result
             return elements.ToString();
@@ -537,6 +544,10 @@ namespace Terminaux.Inputs.Interactive
             // Now, add the custom bindings
             if (interactiveTui.Bindings is not null && interactiveTui.Bindings.Count > 0)
                 finalBindings.AddRange(interactiveTui.Bindings);
+            if (interactiveTui.BindingsFirstPane is not null && interactiveTui.BindingsFirstPane.Count > 0 && interactiveTui.CurrentPane == 1)
+                finalBindings.AddRange(interactiveTui.BindingsFirstPane);
+            if (interactiveTui.BindingsSecondPane is not null && interactiveTui.BindingsSecondPane.Count > 0 && interactiveTui.CurrentPane == 2)
+                finalBindings.AddRange(interactiveTui.BindingsSecondPane);
 
             // Filter the bindings based on the binding type
             return [.. finalBindings];
