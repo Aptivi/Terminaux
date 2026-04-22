@@ -362,10 +362,7 @@ namespace Terminaux.Console.Fixtures
             new CliInfoPaneTestExcess(),
             new CliInfoPaneTestRefreshing(),
             new CliInfoPaneHugeTest(),
-            new CliInfoPaneSlowTest(),
-            new CliInfoPaneSlowTestRefreshing(),
             new CliDoublePaneTest(),
-            new CliDoublePaneSlowTest(),
             new TestScreenPartVisibilityTui(),
             new TestScreenPartVisibilityRefreshTui(),
             
