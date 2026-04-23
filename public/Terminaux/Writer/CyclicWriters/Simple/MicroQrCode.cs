@@ -72,6 +72,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public QRCodeGenerator.ECCLevel ErrorCorrection { get; set; } = QRCodeGenerator.ECCLevel.L;
 
         /// <summary>
+        /// Version to set (that is, how large would you like your Micro QR code to be) (-1, -2, -3, -4, 0)
+        /// </summary>
+        public int Version { get; set; } = 0;
+
+        /// <summary>
         /// Renders a Micro QR code
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
@@ -80,7 +85,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
             if (string.IsNullOrEmpty(Text))
                 return "";
 
-            var qrData = QRCodeGenerator.GenerateMicroQrCode(Text, ErrorCorrection);
+            var qrData = QRCodeGenerator.GenerateMicroQrCode(Text, ErrorCorrection, Version);
             var qrMatrix = qrData.ModuleMatrix;
 
             // Now, we need to use this data to print QR code to the console

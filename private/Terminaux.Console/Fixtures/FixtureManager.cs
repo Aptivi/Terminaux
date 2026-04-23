@@ -207,7 +207,9 @@ namespace Terminaux.Console.Fixtures
             new TestValueShowcaseSingle(),
             new TestValueShowcaseDouble(),
             new TestQrCode(),
+            new TestQrCodeLarge(),
             new TestMicroQrCode(),
+            new TestMicroQrCodeLarge(),
 
             // Input
             new TestInputSelection(),

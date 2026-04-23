@@ -72,6 +72,11 @@ namespace Terminaux.Writer.CyclicWriters.Simple
         public QRCodeGenerator.ECCLevel ErrorCorrection { get; set; } = QRCodeGenerator.ECCLevel.Q;
 
         /// <summary>
+        /// Version to set (that is, how large would you like your QR code to be)
+        /// </summary>
+        public int Version { get; set; } = -1;
+
+        /// <summary>
         /// Renders a QR code
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
@@ -81,7 +86,7 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                 return "";
 
             var qrGenerator = new QRCodeGenerator();
-            var qrData = qrGenerator.CreateQrCode(Text, ErrorCorrection);
+            var qrData = qrGenerator.CreateQrCode(Text, ErrorCorrection, requestedVersion: Version);
             var qrMatrix = qrData.ModuleMatrix;
 
             // Now, we need to use this data to print QR code to the console
