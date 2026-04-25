@@ -279,10 +279,7 @@ namespace Terminaux.Spectre
         public static SCanvas GetCanvas(Writer.CyclicWriters.Graphical.Canvas canvas)
         {
             // Make a new canvas
-            var spectreCanvas = new SCanvas(canvas.Width, canvas.Height)
-            {
-                PixelWidth = canvas.DoubleWidth ? 2 : 1,
-            };
+            var spectreCanvas = new SCanvas(canvas.Width, canvas.Height);
 
             // Set the background pixels (if any)
             if (!canvas.Transparent)
