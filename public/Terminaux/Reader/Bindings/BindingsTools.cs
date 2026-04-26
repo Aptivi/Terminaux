@@ -133,14 +133,16 @@ namespace Terminaux.Reader.Bindings
             {
                 BoundKeys =
                 [
-                    new ConsoleKeyInfo('b', ConsoleKey.B, false, true, false)
+                    new ConsoleKeyInfo('b', ConsoleKey.B, false, true, false),
+                    new ConsoleKeyInfo('\0', ConsoleKey.LeftArrow, false, false, true)
                 ]
             },
             new ForwardOneWord()
             {
                 BoundKeys =
                 [
-                    new ConsoleKeyInfo('f', ConsoleKey.F, false, true, false)
+                    new ConsoleKeyInfo('f', ConsoleKey.F, false, true, false),
+                    new ConsoleKeyInfo('\0', ConsoleKey.RightArrow, false, false, true)
                 ]
             },
             new NextSuggestion()
@@ -175,7 +177,9 @@ namespace Terminaux.Reader.Bindings
             {
                 BoundKeys =
                 [
-                    new ConsoleKeyInfo('\u0017', ConsoleKey.W, false, false, true)
+                    new ConsoleKeyInfo('\u0017', ConsoleKey.W, false, false, true),
+                    new ConsoleKeyInfo('\x7f', ConsoleKey.Backspace, false, false, true),
+                    new ConsoleKeyInfo('\x08', ConsoleKey.Backspace, false, false, true)
                 ]
             },
             new CutForwardOneWord()
@@ -184,6 +188,7 @@ namespace Terminaux.Reader.Bindings
                 [
                     new ConsoleKeyInfo('d', ConsoleKey.D, false, true, false),
                     new ConsoleKeyInfo('\xE4', ConsoleKey.D, false, false, false),
+                    new ConsoleKeyInfo('\0', ConsoleKey.Delete, false, false, true),
                 ]
             },
             new Yank()
