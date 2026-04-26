@@ -32,6 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             TextWriterColor.Write(MarkupTools.ParseMarkup("Hello [bold]world[/] in a default color! This is [Red]red[/] color with [#7711ff][bold]true[/] color[/] support!"));
             TextWriterColor.Write(MarkupTools.ParseMarkup("Hello [bold]world[/] in [[[standout underline]green[/]]]! This is [Red]red[/] color with [#7711ff][underline]true[/] color[/] support!", new Color(ConsoleColors.Green)));
+            TextWriterColor.Write(MarkupTools.ParseMarkup("Nested awesomeness? [bold White]Yes! [Red underline]Ter[Green italic]min[Blue invert]aux[/][/][/]![/]", new Color(ConsoleColors.Yellow)));
         }
     }
 }

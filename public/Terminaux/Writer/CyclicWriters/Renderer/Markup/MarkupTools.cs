@@ -252,13 +252,14 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                         finalResult.Remove(i, isExit ? "[/]".Length : sequence.represent.Length + (sequence.Argument.Length > 0 ? sequence.Argument.Length + 1 : 0));
 
                         // Process representations and form valid sequences from them
+                        var rootSequence = sequences.Where((mi) => mi.nestLevel <= sequence.nestLevel - 1 && mi.exitIndex >= i && mi.entranceIndex <= i).Select((mi) => mi.represent.RemovePrefix("[").RemoveSuffix("]"));
                         string representation =
                             isExit ?
-                                seq > 0 && sequence.nestLevel != sequences[seq - 1].nestLevel ?
-                                sequences[seq - 1].represent :
+                                seq > 0 && rootSequence.Count() > 0 ?
+                                $"[{string.Join(" ", rootSequence)}]" :
                                 resetAll :
                             sequence.represent;
-                        string[] representations = representation.RemovePrefix("[").RemoveSuffix("]").ToString().Split(' ');
+                        string[] representations = representation.RemovePrefix("[").RemoveSuffix("]").Split(' ');
                         var representationBuilder = new StringBuilder(isExit ? resetAll : "");
                         if (representation != resetAll)
                         {
