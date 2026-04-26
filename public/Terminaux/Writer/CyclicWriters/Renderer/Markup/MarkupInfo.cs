@@ -28,6 +28,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
         internal int exitIndex = -1;
         internal int nestLevel = -1;
         internal string represent = "";
+        internal string argument = "";
         internal bool isEscape = false;
 
         /// <summary>
@@ -53,6 +54,12 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
         /// </summary>
         public string Representation =>
             represent;
+
+        /// <summary>
+        /// Markup argument
+        /// </summary>
+        public string Argument =>
+            argument;
 
         /// <summary>
         /// Whether this is an escape markup indicator or not

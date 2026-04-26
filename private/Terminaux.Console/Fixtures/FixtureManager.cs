@@ -104,6 +104,7 @@ namespace Terminaux.Console.Fixtures
             new PrintAlignRightCjk(),
             new PrintAlignRightOffCjk(),
             new PrintMarkup(),
+            new PrintMarkupLinks(),
             new PrintSep(),
             new PrintSepF(),
             new PrintSepColor(),

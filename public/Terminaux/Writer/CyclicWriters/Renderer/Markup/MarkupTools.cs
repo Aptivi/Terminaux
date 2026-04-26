@@ -49,6 +49,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             new StandoutEffect(),
             new StrikethroughEffect(),
             new UnderlineEffect(),
+            new LinkEffect(),
         ];
 
         /// <summary>
@@ -83,7 +84,9 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             List<MarkupInfo> sequences = [];
             List<MarkupInfo> queuedSequences = [];
             StringBuilder appended = new();
+            StringBuilder argument = new();
             bool append = false;
+            bool appendArgument = false;
             int nestLevel = -1;
             for (int i = 0; i < markup.Length; i++)
             {
@@ -148,10 +151,25 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                 // Add a character
                 if (append)
                 {
-                    appended.Append((string)markupChar);
+                    // Check to see if we're going to add an argument
+                    if (appendArgument)
+                    {
+                        if (markupChar != ']')
+                            argument.Append((string)markupChar);
+                    }
+                    else if (markupChar == '=')
+                    {
+                        appended.Append("]");
+                        appendArgument = true;
+                    }
+                    else
+                        appended.Append((string)markupChar);
+
+                    // If we are done, we need to finalize the queued sequence.
                     if (markupChar == ']' && queuedSequences.Count > 0)
                     {
                         queuedSequences[queuedSequences.Count - 1].represent = appended.ToString();
+                        queuedSequences[queuedSequences.Count - 1].argument = argument.ToString();
                         append = false;
                         appended.Clear();
                     }
@@ -231,7 +249,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                         }
 
                         // Remove the representation
-                        finalResult.Remove(i, isExit ? "[/]".Length : sequence.represent.Length);
+                        finalResult.Remove(i, isExit ? "[/]".Length : sequence.represent.Length + (sequence.Argument.Length > 0 ? sequence.Argument.Length + 1 : 0));
 
                         // Process representations and form valid sequences from them
                         string representation =
@@ -250,7 +268,30 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                                     continue;
                                 ConsoleLogger.Warning("Adding part {0}", part);
                                 if (effectNames.TryGetValue(part, out var effect))
+                                {
                                     representationBuilder.Append(effect.EffectStart);
+                                    if (part == "link")
+                                    {
+                                        // Parse a link sequence
+                                        string inside = markup.ToString().Substring(sequence.EntranceIndex + representation.Length, sequence.ExitIndex - (sequence.EntranceIndex + representation.Length));
+                                        if (sequence.Argument.Length > 0)
+                                            inside = inside.Substring(sequence.Argument.Length + 1);
+                                        string display = inside;
+                                        string link = sequence.Argument;
+                                        if (string.IsNullOrEmpty(link))
+                                            link = inside;
+
+                                        // Build a representation that shows a link or a text
+                                        representationBuilder.Append(link);
+                                        representationBuilder.Append("\e\\");
+                                        representationBuilder.Append(display);
+                                        representationBuilder.Append(effect.EffectStart);
+                                        representationBuilder.Append("\e\\");
+
+                                        // Remove extra text from the final result
+                                        finalResult.Remove(i, inside.Length);
+                                    }
+                                }
                                 else if (ColorTools.TryParseColor(part))
                                     representationBuilder.Append(ConsoleColoring.RenderSetConsoleColor(part));
                             }
