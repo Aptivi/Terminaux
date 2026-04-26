@@ -46,8 +46,8 @@ namespace Terminaux.Sequences.Builder
             // Now, check the argument count
             int argCount = sequenceBuilders[specificType].argumentsRequired;
             ConsoleLogger.Debug("Passed {0} arguments, expected {1} arguments", arguments.Length, argCount);
-            if (argCount < arguments.Length)
-                throw new TerminauxException(LanguageTools.GetLocalized("T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING").FormatString(argCount, arguments.Length) + $" {Convert.ToInt32(specificType)}");
+            if (arguments.Length < argCount)
+                throw new TerminauxException(LanguageTools.GetLocalized("T_SEQUENCES_BUILDER_EXCEPTION_ARGSMISSING").FormatString(argCount, arguments.Length) + $" [{Convert.ToInt32(specificType)}: {specificType}]");
 
             // Now, get the sequence and statically give arguments for performance to try to escape from DynamicInvoke
             var sequenceRegexGenerator = sequenceBuilders[specificType].generator;
