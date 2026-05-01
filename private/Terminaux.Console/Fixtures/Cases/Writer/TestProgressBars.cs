@@ -141,7 +141,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 ScreenTools.StartCyclicScreen();
 
                 // Finally, increment the progress bar until it's full
-                for (int progress = 0; progress < 100; progress++)
+                for (int progress = 0; progress <= 100; progress++)
                 {
                     progressBar1.Position = progress;
                     progressBar2.Position = progress;
@@ -161,6 +161,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             }
             finally
             {
+                Thread.Sleep(5000);
                 ScreenTools.StopCyclicScreen();
                 ScreenTools.UnsetCurrent(stickScreen);
                 ConsoleColoring.LoadBack();
