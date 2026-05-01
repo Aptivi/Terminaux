@@ -379,7 +379,8 @@ namespace Terminaux.Writer.CyclicWriters.Simple
                         var horizontalProgress = horizontalFractions.LastOrDefault((tuple) => (1 - factor) >= tuple.Item2 && factor <= 1.0);
                         accuratePart = !string.IsNullOrEmpty(horizontalProgress.Item1) ? horizontalProgress.Item1 : " ";
                     }
-                    rendered.Append(accuratePart);
+                    if (remainingFractional > 0d)
+                        rendered.Append(accuratePart);
                     for (double i = 0; i < remainingFractional - 1; i++)
                         rendered.Append(" ");
                     rendered.Append(
