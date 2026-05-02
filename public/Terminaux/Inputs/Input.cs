@@ -296,6 +296,22 @@ namespace Terminaux.Inputs
         }
 
         /// <summary>
+        /// Reads either a pointer or a key (blocking, supports timeout)
+        /// </summary>
+        /// <param name="timeout">Timeout in milliseconds</param>
+        /// <param name="eventType">Event types to wait for (None implies all events)</param>
+        public static (InputEventInfo result, bool provided) ReadPointerOrKeyUntil(TimeSpan timeout, InputEventType eventType = InputEventType.Mouse | InputEventType.Keyboard)
+        {
+            InputEventInfo input = new();
+            bool result = SpinWait.SpinUntil(() =>
+            {
+                input = ReadPointerOrKeyNoBlock(eventType);
+                return input.EventType != InputEventType.None;
+            }, timeout);
+            return (input, result);
+        }
+
+        /// <summary>
         /// Reads either a pointer or a key (non-blocking)
         /// </summary>
         /// <param name="eventType">Event types to wait for (None implies all events)</param>
