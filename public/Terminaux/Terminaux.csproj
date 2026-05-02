@@ -32,7 +32,7 @@
     <PackageReference Include="BassBoom.Basolia" Version="0.2.13.4" />
     <PackageReference Include="Calendrier" Version="1.0.0.1" />
     <PackageReference Include="Colorimetry" Version="1.0.0.1" />
-    <PackageReference Include="Magico" Version="1.7.2" />
+    <PackageReference Include="Magico" Version="1.7.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="QRCoder" Version="1.8.0" />
     <PackageReference Include="ResourceLab" Version="1.0.0" />
