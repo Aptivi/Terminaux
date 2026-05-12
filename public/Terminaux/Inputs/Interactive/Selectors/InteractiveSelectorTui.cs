@@ -24,12 +24,18 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Magico.Enumeration;
 using Terminaux.Base;
+using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Tools;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -177,6 +183,228 @@ namespace Terminaux.Inputs.Interactive.Selectors
             string finalInfoRendered = InteractiveTuiTools.RenderFinalInfo(selectorTui);
             if (!string.IsNullOrEmpty(finalInfoRendered))
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered, selectorTui.Settings.InfoBoxSettings);
+        }
+
+        private void ShowContextMenu(PointerEventContext? mouse)
+        {
+            if (mouse is null)
+                return;
+
+            // First, check the bindings
+            List<InteractiveTuiBinding<TPrimary, TSecondary>> allBindings = [.. selectorTui.Bindings, .. selectorTui.CurrentPane == 2 ? selectorTui.BindingsSecondPane : selectorTui.BindingsFirstPane];
+            if (allBindings is null || allBindings.Count == 0)
+                return;
+            allBindings = [.. allBindings.Where((bind) => !bind.BindingUsesMouse)];
+            if (allBindings.Count == 0)
+                return;
+
+            // Make a screen buffer that shows context menu
+            var contextMenuKeybindingsChoices = new InputChoiceCategoryInfo[]
+            {
+                new("Context menu category",
+                [
+                    new("Context menu group", InputChoiceTools.GetInputChoices(allBindings.Select((bind) => bind.BindingName).ToArray()))
+                ])
+            };
+            var contextMenuChoices = SelectionInputTools.GetChoicesFromCategories(contextMenuKeybindingsChoices);
+            var contextMenuPositionX = mouse.Coordinates.x;
+            var contextMenuPositionY = mouse.Coordinates.y;
+            var contextMenuScreenBuffer = new ScreenPart();
+            uiScreen.AddBufferedPart("Context menu", contextMenuScreenBuffer);
+
+            // Add dynamic text for the context menu
+            var contextMenuSelections = new Selection(contextMenuKeybindingsChoices)
+            {
+                Settings = new()
+                {
+                    SeparatorColor = selectorTui.Settings.BoxForegroundColor,
+                    BackgroundColor = selectorTui.Settings.BoxBackgroundColor,
+                }
+            };
+            contextMenuScreenBuffer.AddDynamicText(() =>
+            {
+                // Now, show the context menu full of bindings
+                int contextMenuSizeMaxHeight = ConsoleWrapper.WindowHeight - contextMenuPositionY - 2;
+                int contextMenuSizeHeight = allBindings.Count;
+                int contextMenuSizeWidth = ConsoleWrapper.WindowWidth - contextMenuPositionX;
+                var contextMenuBuilder = new StringBuilder();
+                contextMenuSizeWidth = allBindings.Max((bind) => ConsoleChar.EstimateCellWidth(("    " + bind.BindingName).Truncate(contextMenuSizeWidth))) + 2;
+                contextMenuSizeHeight = contextMenuSizeHeight >= contextMenuSizeMaxHeight ? contextMenuSizeMaxHeight : contextMenuSizeHeight;
+                var contextMenuBorder = new BoxFrame()
+                {
+                    FrameColor = selectorTui.Settings.BoxForegroundColor,
+                    BackgroundColor = selectorTui.Settings.BoxBackgroundColor,
+                    Left = contextMenuPositionX,
+                    Top = contextMenuPositionY,
+                    Width = contextMenuSizeWidth,
+                    Height = contextMenuSizeHeight,
+                };
+                contextMenuSelections.Left = contextMenuPositionX + 1;
+                contextMenuSelections.Top = contextMenuPositionY + 1;
+                contextMenuSelections.Width = contextMenuSizeWidth;
+                contextMenuSelections.Height = contextMenuSizeHeight;
+                contextMenuBuilder.Append(
+                    contextMenuBorder.Render() +
+                    contextMenuSelections.Render()
+                );
+                return contextMenuBuilder.ToString();
+            });
+
+            // Wait for a mouse or key press
+            try
+            {
+                bool bailing = false;
+                int currentSelection = 0;
+
+                // Helper functions
+                void GoUp(int factor = 1)
+                {
+                    currentSelection -= factor;
+                    if (currentSelection < 0)
+                        currentSelection = 0;
+                }
+                void GoDown(int factor = 1)
+                {
+                    currentSelection += factor;
+                    if (currentSelection > contextMenuChoices.Count - 1)
+                        currentSelection = contextMenuChoices.Count - 1;
+                }
+                bool IsMouseWithinInputBox(int boxPosX, int boxPosY, int maxSelectionWidth, int reservedHeight, PointerEventContext mouse) =>
+                    PointerTools.PointerWithinRange(mouse, (boxPosX, boxPosY), (boxPosX + maxSelectionWidth, boxPosY + reservedHeight));
+
+                // Main loop
+                while (!bailing)
+                {
+                    // Read input and handle it
+                    contextMenuSelections.CurrentSelection = currentSelection;
+                    ScreenTools.Render();
+                    InputEventInfo data = Input.ReadPointerOrKey();
+                    var dataMouse = data.PointerEventContext;
+                    if (dataMouse is not null)
+                    {
+                        // Make hitboxes for arrow presses
+                        var related = contextMenuSelections.GetRelatedHeights();
+                        int contextMenuSizeMaxHeight = ConsoleWrapper.WindowHeight - contextMenuPositionY - 2;
+                        int contextMenuSizeHeight = allBindings.Count;
+                        int contextMenuSizeWidth = ConsoleWrapper.WindowWidth - contextMenuPositionX;
+                        var contextMenuBuilder = new StringBuilder();
+                        contextMenuSizeWidth = allBindings.Max((bind) => ConsoleChar.EstimateCellWidth(("    " + bind.BindingName).Truncate(contextMenuSizeWidth))) + 2;
+                        contextMenuSizeHeight = contextMenuSizeHeight >= contextMenuSizeMaxHeight ? contextMenuSizeMaxHeight : contextMenuSizeHeight;
+                        int arrowSelectLeft = contextMenuPositionX + contextMenuSizeWidth + 1;
+                        var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, contextMenuPositionY + 1), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, contextMenuPositionY + 1 + contextMenuSizeHeight), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+
+                        // Hitbox type
+                        ChoiceHitboxType hitboxType = ChoiceHitboxType.Choice;
+                        switch (dataMouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                if (IsMouseWithinInputBox(arrowSelectLeft, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, dataMouse))
+                                    GoUp(3);
+                                break;
+                            case PointerButton.WheelDown:
+                                if (IsMouseWithinInputBox(arrowSelectLeft, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, dataMouse))
+                                    GoDown(3);
+                                break;
+                            case PointerButton.Left:
+                                if (dataMouse.ButtonPress != PointerButtonPress.Released)
+                                    break;
+                                if ((arrowSelectUpHitbox.IsPointerWithin(dataMouse) || arrowSelectDownHitbox.IsPointerWithin(dataMouse)) && related.Count > contextMenuSizeHeight)
+                                {
+                                    arrowSelectUpHitbox.ProcessPointer(dataMouse, out bool done);
+                                    if (!done)
+                                        arrowSelectDownHitbox.ProcessPointer(dataMouse, out done);
+                                }
+                                else if (!IsMouseWithinInputBox(contextMenuPositionX, contextMenuPositionY, contextMenuSizeWidth + 1, contextMenuSizeHeight + 1, dataMouse))
+                                    bailing = true;
+                                else
+                                {
+                                    int oldIndex = currentSelection;
+                                    if (InfoBoxTools.UpdateSelectedIndexWithMousePos(dataMouse, contextMenuKeybindingsChoices, contextMenuPositionX, contextMenuPositionY + 1, contextMenuSizeWidth, contextMenuSizeHeight, out hitboxType, ref currentSelection, false))
+                                    {
+                                        switch (hitboxType)
+                                        {
+                                            case ChoiceHitboxType.Choice:
+                                                var selectedBinding = allBindings[currentSelection];
+                                                if (!contextMenuChoices[currentSelection].ChoiceDisabled)
+                                                {
+                                                    var choiceCki = new ConsoleKeyInfo('\0', selectedBinding.BindingKeyName,
+                                                        selectedBinding.BindingKeyModifiers.HasFlag(ConsoleModifiers.Shift),
+                                                        selectedBinding.BindingKeyModifiers.HasFlag(ConsoleModifiers.Alt),
+                                                        selectedBinding.BindingKeyModifiers.HasFlag(ConsoleModifiers.Control));
+                                                    Act(choiceCki, null);
+                                                    bailing = true;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                }
+                                break;
+                            case PointerButton.Right:
+                                if (dataMouse.ButtonPress != PointerButtonPress.Released)
+                                    break;
+                                if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(dataMouse, contextMenuKeybindingsChoices, arrowSelectLeft - 1, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, out hitboxType, ref currentSelection))
+                                    break;
+                                if (hitboxType != ChoiceHitboxType.Choice)
+                                    break;
+                                var selectedInstance = contextMenuChoices[currentSelection];
+                                string choiceName = selectedInstance.ChoiceName;
+                                string choiceTitle = selectedInstance.ChoiceTitle;
+                                string choiceDesc = selectedInstance.ChoiceDescription;
+                                if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                {
+                                    InfoBoxModalColor.WriteInfoBoxModal(choiceDesc, new InfoBoxSettings()
+                                    {
+                                        Title = $"[{choiceName}] {choiceTitle}",
+                                    });
+                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                }
+                                break;
+                            case PointerButton.None:
+                                if (dataMouse.ButtonPress != PointerButtonPress.Moved)
+                                    break;
+                                InfoBoxTools.UpdateSelectedIndexWithMousePos(dataMouse, contextMenuKeybindingsChoices, arrowSelectLeft - 1, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, out hitboxType, ref currentSelection);
+                                break;
+                        }
+                    }
+                    else if (data.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
+                    {
+                        switch (cki.Key)
+                        {
+                            case ConsoleKey.UpArrow:
+                                GoUp();
+                                break;
+                            case ConsoleKey.DownArrow:
+                                GoDown();
+                                break;
+                            case ConsoleKey.Enter:
+                                var selectedBinding = allBindings[currentSelection];
+                                if (!contextMenuChoices[currentSelection].ChoiceDisabled)
+                                {
+                                    var choiceCki = new ConsoleKeyInfo('\0', selectedBinding.BindingKeyName,
+                                        selectedBinding.BindingKeyModifiers.HasFlag(ConsoleModifiers.Shift),
+                                        selectedBinding.BindingKeyModifiers.HasFlag(ConsoleModifiers.Alt),
+                                        selectedBinding.BindingKeyModifiers.HasFlag(ConsoleModifiers.Control));
+                                    Act(choiceCki, null);
+                                    bailing = true;
+                                }
+                                break;
+                            case ConsoleKey.Escape:
+                                bailing = true;
+                                break;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: T_INPUT_COMMON_CONTEXTMENU_FAILED -> "Context menu has failed"
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("T_INPUT_COMMON_CONTEXTMENU_FAILED") + $": {ex.Message}");
+            }
+            finally
+            {
+                uiScreen.RemoveBufferedPart("Context menu");
+            }
         }
 
         private void UpdateSelectionBasedOnMouse(PointerEventContext? mouse)
@@ -417,6 +645,8 @@ namespace Terminaux.Inputs.Interactive.Selectors
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_GONEXTPAGE2"), ConsoleKey.PageDown), (_, _, _) => NextPage()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_READMORE"), ConsoleKey.I, ConsoleModifiers.Shift), (_, _, _) => More()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_MOVEAROUND"), PointerButton.None, PointerButtonPress.Moved), (_, _, mouse) => UpdateSelectionBasedOnMouse(mouse)));
+            // TODO: T_INPUT_COMMON_KEYBINDING_CONTEXTMENU -> "Context menu"
+            Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_COMMON_KEYBINDING_CONTEXTMENU"), PointerButton.Right, PointerButtonPress.Released), (_, _, mouse) => ShowContextMenu(mouse)));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_COMMON_KEYBINDING_SEARCH"), ConsoleKey.F), (_, _, _) => LaunchFinder()));
             Keybindings.Add((new Keybinding(LanguageTools.GetLocalized("T_INPUT_IS_SELECTOR_KEYBINDING_EXIT"), ConsoleKey.Escape), (ui, _, _) => Exit(ui)));
 
