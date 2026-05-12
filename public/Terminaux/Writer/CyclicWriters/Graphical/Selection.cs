@@ -356,7 +356,7 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                         wiped = true;
                         buffer.Append(
                             ConsoleColoring.RenderRevertForeground() +
-                            ConsoleColoring.RenderRevertBackground()
+                            ConsoleColoring.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     buffer.Append(
