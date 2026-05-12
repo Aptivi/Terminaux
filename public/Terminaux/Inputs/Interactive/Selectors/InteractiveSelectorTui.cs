@@ -292,7 +292,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         contextMenuSizeHeight = contextMenuSizeHeight >= contextMenuSizeMaxHeight ? contextMenuSizeMaxHeight : contextMenuSizeHeight;
                         int arrowSelectLeft = contextMenuPositionX + contextMenuSizeWidth + 1;
                         var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, contextMenuPositionY + 1), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
-                        var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, contextMenuPositionY + 1 + contextMenuSizeHeight), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
+                        var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, contextMenuPositionY + contextMenuSizeHeight), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
 
                         // Hitbox type
                         ChoiceHitboxType hitboxType = ChoiceHitboxType.Choice;
@@ -343,7 +343,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                             case PointerButton.Right:
                                 if (dataMouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(dataMouse, contextMenuKeybindingsChoices, arrowSelectLeft - 1, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, out hitboxType, ref currentSelection))
+                                if (!InfoBoxTools.UpdateSelectedIndexWithMousePos(dataMouse, contextMenuKeybindingsChoices, contextMenuPositionX, contextMenuPositionY + 1, contextMenuSizeWidth, contextMenuSizeHeight, out hitboxType, ref currentSelection))
                                     break;
                                 if (hitboxType != ChoiceHitboxType.Choice)
                                     break;
@@ -363,7 +363,7 @@ namespace Terminaux.Inputs.Interactive.Selectors
                             case PointerButton.None:
                                 if (dataMouse.ButtonPress != PointerButtonPress.Moved)
                                     break;
-                                InfoBoxTools.UpdateSelectedIndexWithMousePos(dataMouse, contextMenuKeybindingsChoices, arrowSelectLeft - 1, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, out hitboxType, ref currentSelection);
+                                InfoBoxTools.UpdateSelectedIndexWithMousePos(dataMouse, contextMenuKeybindingsChoices, contextMenuPositionX, contextMenuPositionY + 1, contextMenuSizeWidth, contextMenuSizeHeight, out hitboxType, ref currentSelection);
                                 break;
                         }
                     }
