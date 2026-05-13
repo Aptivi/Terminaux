@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -207,8 +208,6 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 ])
             };
             var contextMenuChoices = SelectionInputTools.GetChoicesFromCategories(contextMenuKeybindingsChoices);
-            var contextMenuPositionX = mouse.Coordinates.x;
-            var contextMenuPositionY = mouse.Coordinates.y;
             var contextMenuScreenBuffer = new ScreenPart();
             uiScreen.AddBufferedPart("Context menu", contextMenuScreenBuffer);
 
@@ -223,13 +222,34 @@ namespace Terminaux.Inputs.Interactive.Selectors
             };
             contextMenuScreenBuffer.AddDynamicText(() =>
             {
+                var contextMenuPositionX = mouse.Coordinates.x;
+                var contextMenuPositionY = mouse.Coordinates.y;
+
                 // Now, show the context menu full of bindings
                 int contextMenuSizeMaxHeight = ConsoleWrapper.WindowHeight - contextMenuPositionY - 2;
                 int contextMenuSizeHeight = allBindings.Count;
                 int contextMenuSizeWidth = ConsoleWrapper.WindowWidth - contextMenuPositionX;
                 var contextMenuBuilder = new StringBuilder();
-                contextMenuSizeWidth = allBindings.Max((bind) => ConsoleChar.EstimateCellWidth(("    " + bind.BindingName).Truncate(contextMenuSizeWidth))) + 2;
-                contextMenuSizeHeight = contextMenuSizeHeight >= contextMenuSizeMaxHeight ? contextMenuSizeMaxHeight : contextMenuSizeHeight;
+                int contextMenuSizeWidthInitial = contextMenuChoices.Max((bind) => ConsoleChar.EstimateCellWidth($"   {bind.ChoiceName}) {bind.ChoiceTitle}"));
+
+                // Check the boundaries
+                contextMenuSizeWidth = contextMenuChoices.Max((bind) => ConsoleChar.EstimateCellWidth($"   {bind.ChoiceName}) {bind.ChoiceTitle}".Truncate(contextMenuSizeWidth - 2)));
+                if (contextMenuSizeWidth < contextMenuSizeWidthInitial)
+                {
+                    contextMenuPositionX -= contextMenuSizeWidthInitial + 1;
+                    if (contextMenuPositionX < 0)
+                        contextMenuPositionX = 0;
+                    contextMenuSizeWidth = ConsoleWrapper.WindowWidth - contextMenuPositionX;
+                    contextMenuSizeWidth = contextMenuChoices.Max((bind) => ConsoleChar.EstimateCellWidth($"   {bind.ChoiceName}) {bind.ChoiceTitle}".Truncate(contextMenuSizeWidth - 2)));
+                }
+                if (contextMenuSizeMaxHeight < contextMenuSizeHeight)
+                {
+                    contextMenuPositionY -= contextMenuSizeHeight + 1;
+                    if (contextMenuPositionY < 0)
+                        contextMenuPositionY = 0;
+                    contextMenuSizeMaxHeight = ConsoleWrapper.WindowHeight - contextMenuPositionY - 2;
+                    contextMenuSizeHeight = contextMenuSizeHeight > contextMenuSizeMaxHeight ? contextMenuSizeMaxHeight : contextMenuSizeHeight;
+                }
                 var contextMenuBorder = new BoxFrame()
                 {
                     FrameColor = selectorTui.Settings.BoxForegroundColor,
@@ -275,6 +295,9 @@ namespace Terminaux.Inputs.Interactive.Selectors
                 // Main loop
                 while (!bailing)
                 {
+                    var contextMenuPositionX = mouse.Coordinates.x;
+                    var contextMenuPositionY = mouse.Coordinates.y;
+
                     // Read input and handle it
                     contextMenuSelections.CurrentSelection = currentSelection;
                     ScreenTools.Render();
@@ -288,8 +311,28 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         int contextMenuSizeHeight = allBindings.Count;
                         int contextMenuSizeWidth = ConsoleWrapper.WindowWidth - contextMenuPositionX;
                         var contextMenuBuilder = new StringBuilder();
-                        contextMenuSizeWidth = allBindings.Max((bind) => ConsoleChar.EstimateCellWidth(("    " + bind.BindingName).Truncate(contextMenuSizeWidth))) + 2;
-                        contextMenuSizeHeight = contextMenuSizeHeight >= contextMenuSizeMaxHeight ? contextMenuSizeMaxHeight : contextMenuSizeHeight;
+                        int contextMenuSizeWidthInitial = contextMenuChoices.Max((bind) => ConsoleChar.EstimateCellWidth($"   {bind.ChoiceName}) {bind.ChoiceTitle}"));
+
+                        // Check the boundaries
+                        contextMenuSizeWidth = contextMenuChoices.Max((bind) => ConsoleChar.EstimateCellWidth($"   {bind.ChoiceName}) {bind.ChoiceTitle}".Truncate(contextMenuSizeWidth - 2)));
+                        if (contextMenuSizeWidth < contextMenuSizeWidthInitial)
+                        {
+                            contextMenuPositionX -= contextMenuSizeWidthInitial + 1;
+                            if (contextMenuPositionX < 0)
+                                contextMenuPositionX = 0;
+                            contextMenuSizeWidth = ConsoleWrapper.WindowWidth - contextMenuPositionX;
+                            contextMenuSizeWidth = contextMenuChoices.Max((bind) => ConsoleChar.EstimateCellWidth($"   {bind.ChoiceName}) {bind.ChoiceTitle}".Truncate(contextMenuSizeWidth - 2)));
+                        }
+                        if (contextMenuSizeMaxHeight < contextMenuSizeHeight)
+                        {
+                            contextMenuPositionY -= contextMenuSizeHeight + 1;
+                            if (contextMenuPositionY < 0)
+                                contextMenuPositionY = 0;
+                            contextMenuSizeMaxHeight = ConsoleWrapper.WindowHeight - contextMenuPositionY - 2;
+                            contextMenuSizeHeight = contextMenuSizeHeight > contextMenuSizeMaxHeight ? contextMenuSizeMaxHeight : contextMenuSizeHeight;
+                        }
+
+                        // Get arrow boundaries
                         int arrowSelectLeft = contextMenuPositionX + contextMenuSizeWidth + 1;
                         var arrowSelectUpHitbox = new PointerHitbox(new(arrowSelectLeft, contextMenuPositionY + 1), new Action<PointerEventContext>((_) => GoUp())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
                         var arrowSelectDownHitbox = new PointerHitbox(new(arrowSelectLeft, contextMenuPositionY + contextMenuSizeHeight), new Action<PointerEventContext>((_) => GoDown())) { Button = PointerButton.Left, ButtonPress = PointerButtonPress.Released };
