@@ -20,7 +20,6 @@
 using Terminaux.Shell.Commands;
 using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
-using System;
 
 namespace Terminaux.Shell.Shells.Unified
 {

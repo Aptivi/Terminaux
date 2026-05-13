@@ -21,7 +21,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using DrawingColor = System.Drawing.Color;
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Colorimetry;
 using Colorimetry.Data;

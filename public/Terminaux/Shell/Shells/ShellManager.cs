@@ -38,7 +38,6 @@ using Terminaux.Shell.Scripting;
 using System.IO;
 using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands.ProcessExecution;
-using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using Terminaux.Base.Wrappers;
 using Terminaux.Shell.Aliases;

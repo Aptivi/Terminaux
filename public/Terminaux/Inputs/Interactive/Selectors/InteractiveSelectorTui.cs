@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -32,11 +31,9 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Tools;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
