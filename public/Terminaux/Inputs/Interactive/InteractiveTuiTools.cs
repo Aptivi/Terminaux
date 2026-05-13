@@ -298,7 +298,7 @@ namespace Terminaux.Inputs.Interactive
             var finalForeColorFirstPane = interactiveTui.CurrentPane == 1 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
             var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
             int left = paneNum == 2 ? SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2) : SeparatorHalfConsoleWidthInterior;
-            if (dataCount > SeparatorMaximumHeightInterior)
+            if (dataCount > SeparatorMaximumHeightInterior && SeparatorMaximumHeightInterior > 3)
             {
                 var finalColor = paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane;
                 var dataSlider = new Slider(paneCurrentSelection, 0, dataCount)
@@ -368,7 +368,7 @@ namespace Terminaux.Inputs.Interactive
 
             // Render the vertical bar
             int left = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2);
-            if (finalInfoStrings.Length > SeparatorMaximumHeightInterior)
+            if (finalInfoStrings.Length > SeparatorMaximumHeightInterior && SeparatorMaximumHeightInterior > 3)
             {
                 var dataSlider = new Slider((int)((double)interactiveTui.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), 0, finalInfoStrings.Length)
                 {
