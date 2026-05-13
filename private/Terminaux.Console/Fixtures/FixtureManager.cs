@@ -129,6 +129,8 @@ namespace Terminaux.Console.Fixtures
             new PrintRtl(),
             new PrintAnimatedText(),
             new PrintPaths(),
+            new PrintCowsay(),
+            new PrintCowsayCustom(),
             new TestDictWriterChar(),
             new TestDictWriterCharWithStringifiers(),
             new TestDictWriterInt(),
