@@ -239,6 +239,7 @@ namespace Terminaux.Console.Fixtures
             new TestInputChoiceNoAlt(),
             new TestInputChoiceNoMain(),
             new TestInputChoiceDisabled(),
+            new TestInputCowsay(),
             new TestInputFiglet(),
             new TestInputIcon(),
             new TestInputInfoBoxButtons(),
