@@ -51,18 +51,14 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         /// <summary>
         /// Full calendar width (constant)
         /// </summary>
-        public override int Width
-        {
-            get => calendarWidth;
-        }
+        public override int Width =>
+            calendarWidth;
 
         /// <summary>
         /// Full calendar height (constant)
         /// </summary>
-        public override int Height
-        {
-            get => calendarHeight;
-        }
+        public override int Height =>
+            calendarHeight;
 
         /// <summary>
         /// Year of the calendar

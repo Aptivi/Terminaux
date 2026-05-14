@@ -34,22 +34,21 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
     /// </summary>
     public class Table : GraphicalCyclicWriter
     {
-        private string[,]? rows;
+        private TableCellOptions[,]? rows;
         private bool header = false;
         private Color separatorColor = ThemeColorsTools.GetColor(ThemeColorType.TableSeparator);
         private Color headerColor = ThemeColorsTools.GetColor(ThemeColorType.TableHeader);
         private Color valueColor = ThemeColorsTools.GetColor(ThemeColorType.TableValue);
         private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
-        private List<CellOptions> settings = [];
         private BorderSettings borderSettings = new();
         private bool useColors = true;
 
         /// <summary>
         /// List of rows and columns
         /// </summary>
-        public string[,] Rows
+        public TableCellOptions[,] Rows
         {
-            get => rows ?? new string[,] {{}};
+            get => rows ?? new TableCellOptions[,] {{}};
             set => rows = value;
         }
 
@@ -105,15 +104,6 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
         {
             get => useColors;
             set => useColors = value;
-        }
-
-        /// <summary>
-        /// Cell settings to use
-        /// </summary>
-        public List<CellOptions> Settings
-        {
-            get => settings;
-            set => settings = value;
         }
 
         /// <summary>
@@ -218,29 +208,24 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 for (int x = 0; x < columnsCount; x++)
                 {
                     // Get the initial values
-                    var positionsValues = ((int, int))positions.GetValue(x, y);
+                    var positionsValues = positions[x, y];
                     if (positionsValues.Item2 > processedHeight + processedTop)
                         break;
-                    string text = (string)Rows.GetValue(y, x) ?? "";
+                    var rowOption = Rows[y, x];
+                    rowOption.RowNumber = y;
+                    rowOption.ColumnNumber = x;
+                    string text = rowOption.Value ?? "";
                     Color finalColor = y == 0 && Header ? HeaderColor : ValueColor;
                     Color finalBackgroundColor = BackgroundColor;
 
                     // Process them according to both the cell width and the cell options
                     string spaces = new(' ', maxCellWidth - 1);
                     text = text.Truncate(maxCellWidth - 1);
-                    var alignment = TextAlignment.Left;
-                    if (Settings is not null && Settings.Count > 0)
+                    var alignment = rowOption.TextSettings.Alignment;
+                    if (rowOption.ColoredCell)
                     {
-                        var options = Settings.FirstOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
-                        if (options is not null)
-                        {
-                            if (options.ColoredCell)
-                            {
-                                finalColor = options.CellColor;
-                                finalBackgroundColor = options.CellBackgroundColor;
-                            }
-                            alignment = options.TextSettings.Alignment;
-                        }
+                        finalColor = rowOption.CellColor;
+                        finalBackgroundColor = rowOption.CellBackgroundColor;
                     }
 
                     // Adjust the X position according to the alignment

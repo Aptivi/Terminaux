@@ -21,6 +21,7 @@ using Spectre.Console;
 using Terminaux.Base;
 using Terminaux.Spectre;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Table = Terminaux.Writer.CyclicWriters.Graphical.Table;
 
 namespace Terminaux.Console.Fixtures.Cases.Spectre
@@ -38,11 +39,11 @@ namespace Terminaux.Console.Fixtures.Cases.Spectre
                 Width = 40,
                 Height = 5,
                 Header = true,
-                Rows = new string[,]
+                Rows = new TableCellOptions[,]
                 {
-                    { "Header", "Header 2", "Header 3" },
-                    { "Hello", "World", "!!!" },
-                    { "!!!", "Hello", "World" },
+                    { new("Header"), new("Header 2"), new("Header 3") },
+                    { new("Hello"),  new("World"),    new("!!!") },
+                    { new("!!!"),    new("Hello"),    new("World") },
                 }
             };
 

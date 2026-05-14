@@ -33,11 +33,11 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         /// <summary>
         /// The column, or row value, number
         /// </summary>
-        public int ColumnNumber { get; private set; }
+        public int ColumnNumber { get; internal set; }
         /// <summary>
         /// The row number
         /// </summary>
-        public int RowNumber { get; private set; }
+        public int RowNumber { get; internal set; }
         /// <summary>
         /// The column, or row value, index
         /// </summary>

@@ -151,16 +151,16 @@ namespace Terminaux.Spectre
             int rowsCount = table.Rows.GetLength(0);
             for (int x = 0; x < columnsCount; x++)
             {
-                string column = table.Rows[0, x];
-                spectreTable.AddColumn(column);
+                var column = table.Rows[0, x];
+                spectreTable.AddColumn(column.Value);
             }
             for (int y = table.Header ? 1 : 0; y < rowsCount; y++)
             {
                 List<string> rows = [];
                 for (int x = 0; x < columnsCount; x++)
                 {
-                    string row = table.Rows[y, x];
-                    rows.Add(row);
+                    var row = table.Rows[y, x];
+                    rows.Add(row.Value);
                 }
                 spectreTable.AddRow([.. rows]);
             }

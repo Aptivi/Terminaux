@@ -32,16 +32,19 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            var Rows = new string[,]
+            var Rows = new TableCellOptions[,]
             {
-                { "Ubuntu版本", "发布日期", "支持结束", "ESM支持结束" },
-                { "12.04（精准穿山甲） [precise]", new DateTime(2012, 4, 26).ToString(), new DateTime(2017, 4, 28).ToString(), new DateTime(2019, 4, 28).ToString() },
-                { "14.04（值得信赖的塔尔） [trusty]", new DateTime(2014, 4, 17).ToString(), new DateTime(2019, 4, 25).ToString(), new DateTime(2024, 4, 25).ToString() },
-                { "16.04（赛尼尔·泽鲁斯） [xenial]", new DateTime(2016, 4, 21).ToString(), new DateTime(2021, 4, 30).ToString(), new DateTime(2026, 4, 30).ToString() },
-                { "18.04（仿生海狸） [bionic]", new DateTime(2018, 4, 26).ToString(), new DateTime(2023, 4, 30).ToString(), new DateTime(2028, 4, 30).ToString() },
-                { "20.04（局灶窝） [focal]", new DateTime(2020, 4, 23).ToString(), new DateTime(2025, 4, 25).ToString(), new DateTime(2030, 4, 25).ToString() },
-                { "22.04（果酱水母） [jammy]", new DateTime(2022, 4, 26).ToString(), new DateTime(2027, 4, 25).ToString(), new DateTime(2032, 4, 25).ToString() }
+                { new("Ubuntu版本"), new("发布日期"), new("支持结束"), new("ESM支持结束") },
+                { new("12.04（精准穿山甲） [precise]"), new(new DateTime(2012, 4, 26).ToString()), new(new DateTime(2017, 4, 28).ToString()), new(new DateTime(2019, 4, 28).ToString()) },
+                { new("14.04（值得信赖的塔尔） [trusty]"), new(new DateTime(2014, 4, 17).ToString()), new(new DateTime(2019, 4, 25).ToString()), new(new DateTime(2024, 4, 25).ToString()) },
+                { new("16.04（赛尼尔·泽鲁斯） [xenial]"), new(new DateTime(2016, 4, 21).ToString()), new(new DateTime(2021, 4, 30).ToString()), new(new DateTime(2026, 4, 30).ToString()) },
+                { new("18.04（仿生海狸） [bionic]"), new(new DateTime(2018, 4, 26).ToString()), new(new DateTime(2023, 4, 30).ToString()), new(new DateTime(2028, 4, 30).ToString()) },
+                { new("20.04（局灶窝） [focal]"), new(new DateTime(2020, 4, 23).ToString()), new(new DateTime(2025, 4, 25).ToString()), new(new DateTime(2030, 4, 25).ToString()) },
+                { new("22.04（果酱水母） [jammy]"), new(new DateTime(2022, 4, 26).ToString()), new(new DateTime(2027, 4, 25).ToString()), new(new DateTime(2032, 4, 25).ToString()) }
             };
+            Rows[1, 1].CellColor = ConsoleColors.Red;
+            Rows[1, 1].CellBackgroundColor = ConsoleColors.DarkRed;
+            Rows[1, 1].ColoredCell = true;
             var table = new Table()
             {
                 Rows = Rows,
@@ -50,15 +53,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Width = ConsoleWrapper.WindowWidth - 7,
                 Height = ConsoleWrapper.WindowHeight - 5,
                 Header = true,
-                Settings =
-                [
-                    new CellOptions(2, 2)
-                    {
-                        CellColor = ConsoleColors.Red,
-                        CellBackgroundColor = ConsoleColors.DarkRed,
-                        ColoredCell = true
-                    }
-                ]
             };
             TextWriterRaw.WriteRaw(table.Render());
         }
