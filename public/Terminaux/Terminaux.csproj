@@ -32,7 +32,6 @@
     <PackageReference Include="BassBoom.Basolia" Version="1.0.0" />
     <PackageReference Include="Calendrier" Version="1.0.0.1" />
     <PackageReference Include="Colorimetry" Version="1.0.0.1" />
-    <PackageReference Include="Cowsay" Version="1.1.33" />
     <PackageReference Include="Magico" Version="1.7.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="QRCoder" Version="1.8.0" />
@@ -40,8 +39,8 @@
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="SpecProbe.Software" Version="3.9.0" />
     <PackageReference Include="System.Memory" Version="4.6.3" />
-    <PackageReference Include="Textify.Offline" Version="2.13.5" />
-    <PackageReference Include="Textify.Offline.Data" Version="2.13.5" />
+    <PackageReference Include="Textify.Offline" Version="2.14.0" />
+    <PackageReference Include="Textify.Offline.Data" Version="2.14.0" />
   </ItemGroup>
 
   <ItemGroup>

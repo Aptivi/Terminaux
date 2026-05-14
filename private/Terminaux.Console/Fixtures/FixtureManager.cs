@@ -131,6 +131,8 @@ namespace Terminaux.Console.Fixtures
             new PrintPaths(),
             new PrintCowsay(),
             new PrintCowsayCustom(),
+            new PrintCowsayThink(),
+            new PrintCowsayThinkCustom(),
             new TestDictWriterChar(),
             new TestDictWriterCharWithStringifiers(),
             new TestDictWriterInt(),

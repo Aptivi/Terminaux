@@ -23,9 +23,8 @@ using Colorimetry;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Textify.General;
-using Cowsay;
-using Cowsay.Abstractions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.Data.Cowsay;
 
 namespace Terminaux.Writer.CyclicWriters.Simple
 {
