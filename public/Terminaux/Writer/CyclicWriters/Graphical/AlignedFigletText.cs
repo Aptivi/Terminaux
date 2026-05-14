@@ -24,6 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.Data.Cowsay;
 using Textify.Data.Figlet;
 using Textify.Data.Figlet.Utilities.Lines;
 using Textify.General;
@@ -131,19 +132,23 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
             {
                 int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
                 var figFontFallback = FigletTools.GetFigletFont("small");
-                int figWidth = FigletTools.GetFigletWidth(Text, Font);
+                var figLines = FigletTools.GetFigletLines(Text, Font, Width);
+                int figWidth = FigletTools.GetFigletWidth(Text, Font, Width);
                 int figHeight = FigletTools.GetFigletHeight(Text, Font, Width);
-                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback);
+                var figLinesFallback = FigletTools.GetFigletLines(Text, figFontFallback, Width);
+                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback, Width);
                 int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback, Width);
-                int markedX = Left;
-                int markedY = Top;
+                string renderedFiglet = string.Join("\n", figLines);
+                string renderedFigletFallback = string.Join("\n", figLinesFallback);
+                int markedX = Left > 0 ? Left : 0;
+                int markedY = Top > 0 ? Top : 0;
                 int markedEndX = markedX + figWidth;
                 int markedEndY = markedY + figHeight;
                 int markedEndFallX = markedX + figWidthFallback;
                 int markedEndFallY = markedY + figHeightFallback;
 
                 // Determine whether to use the selected figlet font or resort to fallbacks
-                if (markedEndFallX >= Width && (OneLine || (!OneLine && markedEndFallY >= Height)))
+                if (markedEndFallX >= Width + markedX || markedEndFallY >= Height + markedY)
                 {
                     // The fallback figlet won't fit, so use smaller text
                     string text = Text;
@@ -155,17 +160,15 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                     ConsoleLogger.Warning("Fallback figlet exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndFallX, markedEndFallY, Width, Height);
                     return AlignedText.RenderAligned(markedX, markedY, Width, text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
-                else if (markedEndX >= Width && (OneLine || (!OneLine && markedEndY >= Height)))
+                else if (markedEndX >= Width + markedX || markedEndY >= Height + markedY)
                 {
                     // The figlet won't fit, so use small text
                     ConsoleLogger.Warning("Figlet exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndX, markedEndY, Width, Height);
-                    string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, Width);
-                    return AlignedText.RenderAligned(markedX, markedY, Width, renderedFiglet, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
+                    return AlignedText.RenderAligned(markedX, markedY, Width, renderedFigletFallback, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
                 else
                 {
                     // Write the figlet.
-                    string renderedFiglet = FigletTools.RenderFiglet(Text, Font, Width);
                     return AlignedText.RenderAligned(markedX, markedY, Width, renderedFiglet, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
             }
