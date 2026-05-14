@@ -339,11 +339,11 @@ namespace Terminaux.Inputs.Interactive.Selectors
                         switch (dataMouse.Button)
                         {
                             case PointerButton.WheelUp:
-                                if (IsMouseWithinInputBox(arrowSelectLeft, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, dataMouse))
+                                if (IsMouseWithinInputBox(contextMenuPositionX, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, dataMouse))
                                     GoUp(3);
                                 break;
                             case PointerButton.WheelDown:
-                                if (IsMouseWithinInputBox(arrowSelectLeft, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, dataMouse))
+                                if (IsMouseWithinInputBox(contextMenuPositionX, contextMenuPositionY, contextMenuSizeWidth, contextMenuSizeHeight, dataMouse))
                                     GoDown(3);
                                 break;
                             case PointerButton.Left:
