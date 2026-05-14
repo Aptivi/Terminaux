@@ -20,16 +20,18 @@
 using System;
 using System.Linq;
 using System.Text;
-using Terminaux.Base;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Inputs.Styles;
-using Terminaux.Inputs.Pointer;
-using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Inputs.Styles.Infobox.Tools;
 using Magico.Enumeration;
+using Newtonsoft.Json.Linq;
+using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Terminaux.Inputs.Interactive.Selectors
 {
@@ -55,9 +57,17 @@ namespace Terminaux.Inputs.Interactive.Selectors
 
             // Write the text using the selected cow
             int cowsayHeight = CowsayTools.GetCowsayHeight(text, cowName);
+            int cowsayHeightFallback = CowsayTools.GetCowsayHeight(text, CowName.Default);
+            int cowsayHeightSmallText = ConsoleMisc.GetWrappedSentences(text, ConsoleWrapper.WindowWidth).Length;
+            int finalTop = ConsoleWrapper.WindowHeight / 2 - cowsayHeight / 2;
+            int finalTopFallback = ConsoleWrapper.WindowHeight / 2 - cowsayHeightFallback / 2;
+            int finalTopFallbackSmallText = ConsoleWrapper.WindowHeight / 2 - cowsayHeightSmallText / 2;
             var cowsayDisplay = new AlignedCowsayText(cowName, text)
             {
-                Top = ConsoleWrapper.WindowHeight / 2 - cowsayHeight / 2,
+                Top =
+                    finalTop > 0 ? finalTop :
+                    finalTopFallback > 0 ? finalTopFallback :
+                    finalTopFallbackSmallText,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle

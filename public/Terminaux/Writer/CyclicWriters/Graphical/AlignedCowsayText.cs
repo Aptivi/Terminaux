@@ -132,31 +132,33 @@ namespace Terminaux.Writer.CyclicWriters.Graphical
                 int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
                 var cowFallback = CowName.Default;
                 var cowLines = CowsayTools.GetCowsayLines(Text, Cow, think, Width);
-                int cowWidth = CowsayTools.GetCowsayWidth(Text, Cow, think);
+                int cowWidth = CowsayTools.GetCowsayWidth(Text, Cow, think, Width);
                 int cowHeight = CowsayTools.GetCowsayHeight(Text, Cow, think, Width);
-                int cowWidthFallback = CowsayTools.GetCowsayWidth(Text, cowFallback, think);
+                var cowLinesFallback = CowsayTools.GetCowsayLines(Text, cowFallback, think, Width);
+                int cowWidthFallback = CowsayTools.GetCowsayWidth(Text, cowFallback, think, Width);
                 int cowHeightFallback = CowsayTools.GetCowsayHeight(Text, cowFallback, think, Width);
                 string renderedCowsay = string.Join("\n", cowLines);
-                int markedX = Left;
-                int markedY = Top;
+                string renderedCowsayFallback = string.Join("\n", cowLinesFallback);
+                int markedX = Left > 0 ? Left : 0;
+                int markedY = Top > 0 ? Top : 0;
                 int markedEndX = markedX + cowWidth;
                 int markedEndY = markedY + cowHeight;
                 int markedEndFallX = markedX + cowWidthFallback;
                 int markedEndFallY = markedY + cowHeightFallback;
 
                 // Determine whether to use the selected cow or resort to fallbacks
-                if (markedEndFallX >= Width + markedX && markedEndFallY >= Height + markedX)
+                if (markedEndFallX >= Width + markedX || markedEndFallY >= Height + markedY)
                 {
                     // The fallback cowsay won't fit, so use smaller text
                     string text = Text;
                     ConsoleLogger.Warning("Fallback cowsay exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndFallX, markedEndFallY, Width, Height);
                     return AlignedText.RenderAligned(markedX, markedY, Width, text, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
-                else if (markedEndX >= Width + markedX && markedEndY >= Height + markedX)
+                else if (markedEndX >= Width + markedX || markedEndY >= Height + markedY)
                 {
                     // The cowsay won't fit, so use small text
                     ConsoleLogger.Warning("Cowsay exceeds (reason: {0}, {1}) (renderable: {2}x{3})", markedEndX, markedEndY, Width, Height);
-                    return AlignedText.RenderAligned(markedX, markedY, Width, renderedCowsay, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
+                    return AlignedText.RenderAligned(markedX, markedY, Width, renderedCowsayFallback, ForegroundColor, BackgroundColor, UseColors, Settings.Alignment, rainbowState);
                 }
                 else
                 {
