@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Textify.Data.Cowsay;
 using Colorimetry.Data;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;

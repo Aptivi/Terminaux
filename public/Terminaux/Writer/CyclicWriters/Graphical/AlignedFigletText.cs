@@ -24,7 +24,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Textify.Data.Cowsay;
 using Textify.Data.Figlet;
 using Textify.Data.Figlet.Utilities.Lines;
 using Textify.General;

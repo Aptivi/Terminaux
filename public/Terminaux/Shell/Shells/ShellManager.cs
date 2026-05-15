@@ -2536,8 +2536,7 @@ namespace Terminaux.Shell.Shells
                 if (PromptPresetManager.CurrentPresets.ContainsKey(ShellType))
                     return;
 
-                // Rare state.
-                ConsoleLogger.Debug("Reached rare state or unconfigurable shell.");
+                // Check to see if we need to add presets
                 var presets = ShellTypeInfo.ShellPresets;
                 var basePreset = new PromptPresetBase();
                 if (presets is not null)
@@ -2603,9 +2602,6 @@ namespace Terminaux.Shell.Shells
                 Name = $"{ShellType} Command Thread"
             };
 
-        /// <summary>
-        /// Initializes the redirection
-        /// </summary>
         private static string InitializeRedirection(string Command)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file

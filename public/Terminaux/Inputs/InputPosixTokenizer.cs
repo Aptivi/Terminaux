@@ -637,7 +637,6 @@ namespace Terminaux.Inputs
         {
             // Some variables
             bool isCtrl, isShift = false;
-            char finalChar = character;
 
             // Determine the pressed modifiers
             bool ctrlLetterPressed = VtSequenceTokenTools.CharInRange(character, (char)1, (char)26);
@@ -706,7 +705,7 @@ namespace Terminaux.Inputs
                 isAlt = character != default;
 
             // Get the final character
-            finalChar =
+            char finalChar =
                 ctrlLetterPressed && isAlt ? default :
                 ctrlDigitPressed ? default :
                 character;

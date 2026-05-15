@@ -20,8 +20,6 @@
 using System;
 using System.Linq;
 using System.Text;
-using Magico.Enumeration;
-using Newtonsoft.Json.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Pointer;

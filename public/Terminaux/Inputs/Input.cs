@@ -66,7 +66,7 @@ namespace Terminaux.Inputs
         private static string bassBoomLibraryRoot = "";
         private static char passwordMaskChar = '*';
         private static readonly Stopwatch inputTimeout = new();
-        private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? NativeMethods.GetStdHandle(-10) : IntPtr.Zero;
+        private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? GetStdHandle(-10) : IntPtr.Zero;
         private static readonly Queue<InputEventInfo> mouseEventQueue = [];
         private static readonly Queue<InputEventInfo> keyboardEventQueue = [];
         private static readonly Queue<InputEventInfo> positionEventQueue = [];
