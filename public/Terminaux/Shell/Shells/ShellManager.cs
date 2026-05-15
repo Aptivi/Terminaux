@@ -19,21 +19,30 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using Terminaux.Reader;
 using System.Collections.ObjectModel;
-using Textify.General;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
+using SpecProbe.Software.Platform;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors.Data;
+using Terminaux.Reader;
 using Terminaux.Reader.History;
+using Terminaux.Shell.Aliases;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Prompts;
-using Terminaux.Shell.Switches;
 using Terminaux.Shell.Shells.Unified;
-using Terminaux.Colors.Data;
-using System.Threading;
+using Terminaux.Shell.Switches;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.Data.Words.Profanity;
+using Textify.General;
+using Textify.Tools;
+using Textify.Tools.Placeholder;
+using Threadify.Manager;
 
 namespace Terminaux.Shell.Shells
 {
@@ -288,6 +297,7 @@ namespace Terminaux.Shell.Shells
                                 CommandExecutor.StartCommandThread(Params);
                             }
                         }
+                        else
                         {
                             ConsoleLogger.Warning("Cmd exec {0} failed: command {0} not found", commandName);
                             TextWriterColor.WriteColor(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_CMDNOTFOUND"), ConsoleColors.Red, commandName);
@@ -326,7 +336,7 @@ namespace Terminaux.Shell.Shells
                     throw new TerminauxException(LanguageTools.GetLocalized("T_SHELL_SHELLMANAGER_EXCEPTION_NOEXECUTOR"), ShellType.ToString());
 
                 // Make a new instance of shell information
-                var ShellCommandThread = RegenerateCommandThread(ShellType);
+                var ShellCommandThread = new ThreadInstance($"Command thread for {ShellType}", true, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                 var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
@@ -448,11 +458,5 @@ namespace Terminaux.Shell.Shells
         /// <returns>True if it exists; false otherwise.</returns>
         public static bool ShellTypeExists(string ShellType) =>
             AvailableShells.ContainsKey(ShellType);
-
-        internal static Thread RegenerateCommandThread(string ShellType) =>
-            new((cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams))
-            {
-                Name = $"{ShellType} Command Thread"
-            };
     }
 }

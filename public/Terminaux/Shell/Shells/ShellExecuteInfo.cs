@@ -17,7 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Threading;
+using System.Collections.Generic;
+using Threadify.Manager;
 
 namespace Terminaux.Shell.Shells
 {
@@ -26,8 +27,9 @@ namespace Terminaux.Shell.Shells
     /// </summary>
     public class ShellExecuteInfo
     {
+        internal readonly List<ThreadInstance> AltCommandThreads = [];
         internal bool interrupting = false;
-        internal Thread shellCommandThread;
+        internal ThreadInstance shellCommandThread;
         private readonly string shellType;
         private readonly BaseShell? shellBase;
 
@@ -44,7 +46,8 @@ namespace Terminaux.Shell.Shells
         /// <summary>
         /// Shell command thread
         /// </summary>
-        public Thread ShellCommandThread => shellCommandThread;
+        public ThreadInstance ShellCommandThread =>
+            shellCommandThread;
 
         /// <summary>
         /// Installs the values to a new instance of ShellInfo
@@ -52,7 +55,7 @@ namespace Terminaux.Shell.Shells
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellBase">Shell base class</param>
         /// <param name="ShellCommandThread">Shell command thread</param>
-        public ShellExecuteInfo(string ShellType, BaseShell? ShellBase, Thread ShellCommandThread)
+        public ShellExecuteInfo(string ShellType, BaseShell? ShellBase, ThreadInstance ShellCommandThread)
         {
             shellType = ShellType;
             shellBase = ShellBase;

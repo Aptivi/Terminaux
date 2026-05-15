@@ -45,8 +45,8 @@ namespace Terminaux.Shell.Commands
             {
                 ConsoleLogger.Info("Starting command thread...");
                 StartCommandThread.Start(ThreadParams);
-                StartCommandThread.Join();
-                ShellInstance.shellCommandThread = ShellManager.RegenerateCommandThread(ShellInstance.ShellType);
+                StartCommandThread.Wait();
+                StartCommandThread.Stop();
             }
         }
 
